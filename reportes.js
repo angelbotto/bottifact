@@ -3,7 +3,8 @@
 (() => {
   'use strict';
   const instances = new WeakMap();
-  const fmt = n => new Intl.NumberFormat('es-CO', {maximumFractionDigits: 2}).format(n);
+  const fmt = n => new Intl.NumberFormat('es-CO', {maximumSignificantDigits: 12, notation: n !== 0 && Math.abs(n) < .001 ? 'scientific' : 'standard'}).format(n);
+  const tickFmt = n => new Intl.NumberFormat('es-CO', {maximumSignificantDigits: 4, notation: Math.abs(n) >= 10000 || (n !== 0 && Math.abs(n) < .01) ? 'scientific' : 'standard'}).format(n);
   const el = (tag, cls, text) => {
     const node = document.createElement(tag); if(cls) node.className = cls;
     if(text !== undefined) node.textContent = text; return node;
@@ -39,8 +40,9 @@
     drawing.append(svg('title',{},title)); box.append(drawing); return [box,drawing];
   }
   function text(root,x,y,value,attrs={}) { const t = svg('text',{x,y,...attrs},value); root.append(t); return t; }
+  const linesOf = (value,size) => value.match(new RegExp('.{1,'+size+'}(?:\\s|$)|.{1,'+size+'}', 'g')) || [''];
   function wrapped(root,x,y,value,size=22) {
-    const lines = value.match(new RegExp('.{1,'+size+'}(?:\\s|$)|.{1,'+size+'}', 'g')) || [''];
+    const lines = linesOf(value,size);
     const t = text(root,x,y,''); lines.forEach((line,i)=>t.append(svg('tspan',{x,dy:i?18:0},line.trim())));
     return lines.length;
   }
@@ -72,14 +74,14 @@
         return {row:r,label:r.cells[0].textContent.trim(),value,from,to:total};
       });
       const d=domain(data.flatMap(r=>[r.from,r.to]));
-      const layout=data.map(r=>Math.max(64,Math.ceil(r.label.length/20)*18+22));
+      const layout=data.map(r=>Math.max(64,linesOf(r.label,20).length*18+22));
       const width=860,height=layout.reduce((a,b)=>a+b,0)+160;
       const [box,s]=region(table.caption?.textContent||'Cascada',width,height);
       s.dataset.xMin=d[0];s.dataset.xMax=d[1];const x=scale(d,300,680),bottom=height-52;
       for(let i=0;i<=4;i++) {
         const tick=d[0]+(d[1]-d[0])*i/4;
         s.append(svg('line',{x1:x(tick),x2:x(tick),y1:40,y2:bottom,class:'grafica-rejilla','data-tick-x':tick}));
-        text(s,x(tick),bottom+30,fmt(tick),{'text-anchor':'middle'});
+        text(s,x(tick),bottom+30,tickFmt(tick),{'text-anchor':'middle'});
       }
       s.append(svg('line',{x1:x(0),x2:x(0),y1:40,y2:bottom,class:'grafica-eje'}));
       let y=56;
@@ -110,7 +112,7 @@
         const [box,s]=region(head+' · '+(table.caption?.textContent||'Serie'),360,290);
         s.dataset.yMin=d[0];s.dataset.yMax=d[1];const x=scale([0,rows.length-1],80,290),y=scale(d,185,25);
         [0,.5,1].forEach(f=>{const tick=d[0]+(d[1]-d[0])*f;
-          text(s,68,y(tick)+4,fmt(tick),{'text-anchor':'end'});
+          text(s,68,y(tick)+4,tickFmt(tick),{'text-anchor':'end'});
           s.append(svg('line',{x1:80,x2:290,y1:y(tick),y2:y(tick),class:'grafica-rejilla','data-tick-y':tick}));});
         let path='',pen=false;
         values.forEach((row,i)=>{
@@ -170,6 +172,7 @@
         if(!id||ids.has(id)||places.length!==2)throw new TypeError('Cada paso necesita una ruta única y dos lugares.');ids.add(id);
         places.forEach(place=>{
           const p={id:place.dataset.lugar,label:place.textContent.trim(),lat:finite(place.getAttribute('data-lat')),lon:finite(place.getAttribute('data-lon'))};
+          if(!p.id || Math.abs(p.lat)>90 || Math.abs(p.lon)>180)throw new TypeError('Coordenada geográfica inválida.');
           if(points.has(p.id)&&JSON.stringify(points.get(p.id))!==JSON.stringify(p))throw new TypeError('Coordenadas o nombre inconsistentes para el mismo lugar.');
           points.set(p.id,p);
         });
@@ -186,7 +189,13 @@
         prev.disabled=index===0;next.disabled=index===steps.length-1;
         status.textContent=`Etapa ${index+1} de ${steps.length}: ${arcs[index].label}. ${arcs[index].detail}`;
       };
-      this.on(prev,'click',()=>go(index-1));this.on(next,'click',()=>go(index+1));go(0);
+      this.on(prev,'click',()=>go(index-1));this.on(next,'click',()=>go(index+1));
+      // La lista nativa del globo y los botones del relato comparten la etapa.
+      this.on(stage,'click',event=>{
+        const button=event.target.closest('[data-route]');if(!button)return;
+        const i=arcs.findIndex(arc=>arc.id===button.dataset.route);if(i>=0)go(i);
+      });
+      go(0);
     }
     destroy() {
       if(this.dead)return;this.dead=true;this.abort.abort();this.globe?.destroy();

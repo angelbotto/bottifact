@@ -616,7 +616,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 .papel-muestra.claro { background: var(--muestra-claro); }
 .papel-muestra.calido { background: var(--muestra-calido); }
 .papel-muestra.sea { background: var(--muestra-sea); }
-[data-comodidad] { font: 13px/1.5 var(--sans); }
+[data-comodidad] { font: 13px/1.5 var(--sans); margin-top: 8px; }
 [data-comodidad][aria-pressed='true'] { background: var(--pieza-suave); border-color: var(--pieza-acento); }
 :root[data-lectura-comoda] body { font-size: 18px; line-height: 1.7; }
 :root[data-lectura-comoda] :is(figcaption,.grafica-leyenda,.calor-leyenda,.globo-ayuda,.sparkline-datos) { font-size: 14px; line-height: 1.65; }

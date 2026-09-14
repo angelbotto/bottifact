@@ -1272,6 +1272,9 @@ un lugar; repetir un ID exige las mismas coordenadas y nombre. Cada ruta necesit
 y dos lugares. No autoavanza ni añade sonido. Empieza pausado; conserva controles de NotaGlobo,
 reduce, pausa por visibilidad y destroy. Sin Three queda mensaje y relato; sin WebGL queda
 además la lista de rutas. No añade mapas, texturas ni geocodificación remota.
+La lista del globo también cambia la etapa del relato. Una ruta seleccionada mantiene su
+orientación: para giro libre usa «Vista inicial» y «Reanudar giro»; anterior/siguiente vuelve
+a orientar la etapa. No interpreta el giro manual como un cambio de etapa.
 
 ## Visor de prototipos con estados
 
