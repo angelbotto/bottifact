@@ -1,0 +1,704 @@
+[
+  {
+    "bar": {
+      "bottom": 732,
+      "left": 8,
+      "right": 312
+    },
+    "buttonGap": 18,
+    "buttonHeight": 44,
+    "contrasts": [
+      {
+        "ratio": 5.734454335904986,
+        "token": "--naranja"
+      },
+      {
+        "ratio": 6.154107318459175,
+        "token": "--verde"
+      },
+      {
+        "ratio": 5.855627151735025,
+        "token": "--azul"
+      },
+      {
+        "ratio": 5.692932179503345,
+        "token": "terminal tenue"
+      }
+    ],
+    "dialog": {
+      "bottom": 597.015625,
+      "left": 19,
+      "right": 301,
+      "top": 142.984375
+    },
+    "documentWidth": 320,
+    "theme": "light",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "bar": {
+      "bottom": 732,
+      "left": 8,
+      "right": 312
+    },
+    "buttonGap": 18,
+    "buttonHeight": 44,
+    "contrasts": [
+      {
+        "ratio": 9.407309039029018,
+        "token": "--naranja"
+      },
+      {
+        "ratio": 8.09157753251427,
+        "token": "--verde"
+      },
+      {
+        "ratio": 9.883961314503813,
+        "token": "--azul"
+      },
+      {
+        "ratio": 5.692932179503345,
+        "token": "terminal tenue"
+      }
+    ],
+    "dialog": {
+      "bottom": 597.015625,
+      "left": 19,
+      "right": 301,
+      "top": 142.984375
+    },
+    "documentWidth": 320,
+    "theme": "dark",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "bar": {
+      "bottom": 732,
+      "left": 8,
+      "right": 312
+    },
+    "buttonGap": 18,
+    "buttonHeight": 44,
+    "contrasts": [
+      {
+        "ratio": 10.238324167533317,
+        "token": "--naranja"
+      },
+      {
+        "ratio": 10.238324167533317,
+        "token": "--verde"
+      },
+      {
+        "ratio": 6.210059704233464,
+        "token": "--azul"
+      },
+      {
+        "ratio": 5.244758986555552,
+        "token": "terminal tenue"
+      }
+    ],
+    "dialog": {
+      "bottom": 597.015625,
+      "left": 19,
+      "right": 301,
+      "top": 142.984375
+    },
+    "documentWidth": 320,
+    "theme": "sea",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "bar": {
+      "bottom": 732,
+      "left": 8,
+      "right": 312
+    },
+    "buttonGap": 18,
+    "buttonHeight": 44,
+    "contrasts": [
+      {
+        "ratio": 5.9622655086666665,
+        "token": "--naranja"
+      },
+      {
+        "ratio": 5.9455067697437824,
+        "token": "--verde"
+      },
+      {
+        "ratio": 5.845457498592666,
+        "token": "--azul"
+      },
+      {
+        "ratio": 5.692932179503345,
+        "token": "terminal tenue"
+      }
+    ],
+    "dialog": {
+      "bottom": 597.015625,
+      "left": 19,
+      "right": 301,
+      "top": 142.984375
+    },
+    "documentWidth": 320,
+    "theme": "oliva",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "bar": {
+      "bottom": 732,
+      "left": 8,
+      "right": 312
+    },
+    "buttonGap": 18,
+    "buttonHeight": 44,
+    "contrasts": [
+      {
+        "ratio": 5.093035690276254,
+        "token": "--naranja"
+      },
+      {
+        "ratio": 5.4970120825279665,
+        "token": "--verde"
+      },
+      {
+        "ratio": 5.294431933848873,
+        "token": "--azul"
+      },
+      {
+        "ratio": 5.692932179503345,
+        "token": "terminal tenue"
+      }
+    ],
+    "dialog": {
+      "bottom": 597.015625,
+      "left": 19,
+      "right": 301,
+      "top": 142.984375
+    },
+    "documentWidth": 320,
+    "theme": "arcilla",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "bar": {
+      "bottom": 732,
+      "left": 8,
+      "right": 312
+    },
+    "buttonGap": 18,
+    "buttonHeight": 44,
+    "contrasts": [
+      {
+        "ratio": 8.311630716257387,
+        "token": "--naranja"
+      },
+      {
+        "ratio": 8.765500771140962,
+        "token": "--verde"
+      },
+      {
+        "ratio": 8.788689668280705,
+        "token": "--azul"
+      },
+      {
+        "ratio": 5.692932179503345,
+        "token": "terminal tenue"
+      }
+    ],
+    "dialog": {
+      "bottom": 597.015625,
+      "left": 19,
+      "right": 301,
+      "top": 142.984375
+    },
+    "documentWidth": 320,
+    "theme": "ciruela",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "bar": {
+      "bottom": 836,
+      "left": 60.109375,
+      "right": 382
+    },
+    "buttonGap": 18,
+    "buttonHeight": 44,
+    "contrasts": [
+      {
+        "ratio": 5.734454335904986,
+        "token": "--naranja"
+      },
+      {
+        "ratio": 6.154107318459175,
+        "token": "--verde"
+      },
+      {
+        "ratio": 5.855627151735025,
+        "token": "--azul"
+      },
+      {
+        "ratio": 5.692932179503345,
+        "token": "terminal tenue"
+      }
+    ],
+    "dialog": {
+      "bottom": 606.703125,
+      "left": 19,
+      "right": 371,
+      "top": 237.296875
+    },
+    "documentWidth": 390,
+    "theme": "light",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "bar": {
+      "bottom": 836,
+      "left": 60.109375,
+      "right": 382
+    },
+    "buttonGap": 18,
+    "buttonHeight": 44,
+    "contrasts": [
+      {
+        "ratio": 9.407309039029018,
+        "token": "--naranja"
+      },
+      {
+        "ratio": 8.09157753251427,
+        "token": "--verde"
+      },
+      {
+        "ratio": 9.883961314503813,
+        "token": "--azul"
+      },
+      {
+        "ratio": 5.692932179503345,
+        "token": "terminal tenue"
+      }
+    ],
+    "dialog": {
+      "bottom": 606.703125,
+      "left": 19,
+      "right": 371,
+      "top": 237.296875
+    },
+    "documentWidth": 390,
+    "theme": "dark",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "bar": {
+      "bottom": 836,
+      "left": 60.109375,
+      "right": 382
+    },
+    "buttonGap": 18,
+    "buttonHeight": 44,
+    "contrasts": [
+      {
+        "ratio": 10.238324167533317,
+        "token": "--naranja"
+      },
+      {
+        "ratio": 10.238324167533317,
+        "token": "--verde"
+      },
+      {
+        "ratio": 6.210059704233464,
+        "token": "--azul"
+      },
+      {
+        "ratio": 5.244758986555552,
+        "token": "terminal tenue"
+      }
+    ],
+    "dialog": {
+      "bottom": 606.703125,
+      "left": 19,
+      "right": 371,
+      "top": 237.296875
+    },
+    "documentWidth": 390,
+    "theme": "sea",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "bar": {
+      "bottom": 836,
+      "left": 60.109375,
+      "right": 382
+    },
+    "buttonGap": 18,
+    "buttonHeight": 44,
+    "contrasts": [
+      {
+        "ratio": 5.9622655086666665,
+        "token": "--naranja"
+      },
+      {
+        "ratio": 5.9455067697437824,
+        "token": "--verde"
+      },
+      {
+        "ratio": 5.845457498592666,
+        "token": "--azul"
+      },
+      {
+        "ratio": 5.692932179503345,
+        "token": "terminal tenue"
+      }
+    ],
+    "dialog": {
+      "bottom": 606.703125,
+      "left": 19,
+      "right": 371,
+      "top": 237.296875
+    },
+    "documentWidth": 390,
+    "theme": "oliva",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "bar": {
+      "bottom": 836,
+      "left": 60.109375,
+      "right": 382
+    },
+    "buttonGap": 18,
+    "buttonHeight": 44,
+    "contrasts": [
+      {
+        "ratio": 5.093035690276254,
+        "token": "--naranja"
+      },
+      {
+        "ratio": 5.4970120825279665,
+        "token": "--verde"
+      },
+      {
+        "ratio": 5.294431933848873,
+        "token": "--azul"
+      },
+      {
+        "ratio": 5.692932179503345,
+        "token": "terminal tenue"
+      }
+    ],
+    "dialog": {
+      "bottom": 606.703125,
+      "left": 19,
+      "right": 371,
+      "top": 237.296875
+    },
+    "documentWidth": 390,
+    "theme": "arcilla",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "bar": {
+      "bottom": 836,
+      "left": 60.109375,
+      "right": 382
+    },
+    "buttonGap": 18,
+    "buttonHeight": 44,
+    "contrasts": [
+      {
+        "ratio": 8.311630716257387,
+        "token": "--naranja"
+      },
+      {
+        "ratio": 8.765500771140962,
+        "token": "--verde"
+      },
+      {
+        "ratio": 8.788689668280705,
+        "token": "--azul"
+      },
+      {
+        "ratio": 5.692932179503345,
+        "token": "terminal tenue"
+      }
+    ],
+    "dialog": {
+      "bottom": 606.703125,
+      "left": 19,
+      "right": 371,
+      "top": 237.296875
+    },
+    "documentWidth": 390,
+    "theme": "ciruela",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "bar": {
+      "bottom": 944,
+      "left": 1102.109375,
+      "right": 1424
+    },
+    "buttonGap": 18,
+    "buttonHeight": 44,
+    "contrasts": [
+      {
+        "ratio": 5.734454335904986,
+        "token": "--naranja"
+      },
+      {
+        "ratio": 6.154107318459175,
+        "token": "--verde"
+      },
+      {
+        "ratio": 5.855627151735025,
+        "token": "--azul"
+      },
+      {
+        "ratio": 5.692932179503345,
+        "token": "terminal tenue"
+      }
+    ],
+    "dialog": {
+      "bottom": 657.5,
+      "left": 410,
+      "right": 1030,
+      "top": 302.484375
+    },
+    "documentWidth": 1440,
+    "theme": "light",
+    "viewport": [
+      1440,
+      960
+    ]
+  },
+  {
+    "bar": {
+      "bottom": 944,
+      "left": 1102.109375,
+      "right": 1424
+    },
+    "buttonGap": 18,
+    "buttonHeight": 44,
+    "contrasts": [
+      {
+        "ratio": 9.407309039029018,
+        "token": "--naranja"
+      },
+      {
+        "ratio": 8.09157753251427,
+        "token": "--verde"
+      },
+      {
+        "ratio": 9.883961314503813,
+        "token": "--azul"
+      },
+      {
+        "ratio": 5.692932179503345,
+        "token": "terminal tenue"
+      }
+    ],
+    "dialog": {
+      "bottom": 657.5,
+      "left": 410,
+      "right": 1030,
+      "top": 302.484375
+    },
+    "documentWidth": 1440,
+    "theme": "dark",
+    "viewport": [
+      1440,
+      960
+    ]
+  },
+  {
+    "bar": {
+      "bottom": 944,
+      "left": 1102.109375,
+      "right": 1424
+    },
+    "buttonGap": 18,
+    "buttonHeight": 44,
+    "contrasts": [
+      {
+        "ratio": 10.238324167533317,
+        "token": "--naranja"
+      },
+      {
+        "ratio": 10.238324167533317,
+        "token": "--verde"
+      },
+      {
+        "ratio": 6.210059704233464,
+        "token": "--azul"
+      },
+      {
+        "ratio": 5.244758986555552,
+        "token": "terminal tenue"
+      }
+    ],
+    "dialog": {
+      "bottom": 657.5,
+      "left": 410,
+      "right": 1030,
+      "top": 302.484375
+    },
+    "documentWidth": 1440,
+    "theme": "sea",
+    "viewport": [
+      1440,
+      960
+    ]
+  },
+  {
+    "bar": {
+      "bottom": 944,
+      "left": 1102.109375,
+      "right": 1424
+    },
+    "buttonGap": 18,
+    "buttonHeight": 44,
+    "contrasts": [
+      {
+        "ratio": 5.9622655086666665,
+        "token": "--naranja"
+      },
+      {
+        "ratio": 5.9455067697437824,
+        "token": "--verde"
+      },
+      {
+        "ratio": 5.845457498592666,
+        "token": "--azul"
+      },
+      {
+        "ratio": 5.692932179503345,
+        "token": "terminal tenue"
+      }
+    ],
+    "dialog": {
+      "bottom": 657.5,
+      "left": 410,
+      "right": 1030,
+      "top": 302.484375
+    },
+    "documentWidth": 1440,
+    "theme": "oliva",
+    "viewport": [
+      1440,
+      960
+    ]
+  },
+  {
+    "bar": {
+      "bottom": 944,
+      "left": 1102.109375,
+      "right": 1424
+    },
+    "buttonGap": 18,
+    "buttonHeight": 44,
+    "contrasts": [
+      {
+        "ratio": 5.093035690276254,
+        "token": "--naranja"
+      },
+      {
+        "ratio": 5.4970120825279665,
+        "token": "--verde"
+      },
+      {
+        "ratio": 5.294431933848873,
+        "token": "--azul"
+      },
+      {
+        "ratio": 5.692932179503345,
+        "token": "terminal tenue"
+      }
+    ],
+    "dialog": {
+      "bottom": 657.5,
+      "left": 410,
+      "right": 1030,
+      "top": 302.484375
+    },
+    "documentWidth": 1440,
+    "theme": "arcilla",
+    "viewport": [
+      1440,
+      960
+    ]
+  },
+  {
+    "bar": {
+      "bottom": 944,
+      "left": 1102.109375,
+      "right": 1424
+    },
+    "buttonGap": 18,
+    "buttonHeight": 44,
+    "contrasts": [
+      {
+        "ratio": 8.311630716257387,
+        "token": "--naranja"
+      },
+      {
+        "ratio": 8.765500771140962,
+        "token": "--verde"
+      },
+      {
+        "ratio": 8.788689668280705,
+        "token": "--azul"
+      },
+      {
+        "ratio": 5.692932179503345,
+        "token": "terminal tenue"
+      }
+    ],
+    "dialog": {
+      "bottom": 657.5,
+      "left": 410,
+      "right": 1030,
+      "top": 302.484375
+    },
+    "documentWidth": 1440,
+    "theme": "ciruela",
+    "viewport": [
+      1440,
+      960
+    ]
+  }
+]

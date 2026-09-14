@@ -1,0 +1,14 @@
+{
+  "before": {
+    "animations": 0,
+    "played": false
+  },
+  "visible": {
+    "animations": 6,
+    "audio": false,
+    "played": true,
+    "visible": true
+  },
+  "reducedAnimations": 0,
+  "metodo": "Orca viewport/scroll real; media emulada y evento MQL explícito. Sin gesto de audio."
+}

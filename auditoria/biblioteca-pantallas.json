@@ -274,8 +274,8 @@
         "width": 278
       },
       {
-        "content": 2646,
-        "end": 2368,
+        "content": 2647,
+        "end": 2369,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -284,12 +284,22 @@
         "width": 278
       },
       {
-        "content": 3855,
-        "end": 3577,
+        "content": 3856,
+        "end": 3578,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Lecturas relacionadas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 2788,
+        "end": 2510,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -466,8 +476,8 @@
         "width": 278
       },
       {
-        "content": 856,
-        "end": 578,
+        "content": 857,
+        "end": 579,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -678,8 +688,8 @@
         "width": 280
       },
       {
-        "content": 8228,
-        "end": 7950,
+        "content": 8229,
+        "end": 7951,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -698,8 +708,8 @@
         "width": 280
       },
       {
-        "content": 7968,
-        "end": 7690,
+        "content": 7970,
+        "end": 7692,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -900,8 +910,8 @@
         "width": 280
       },
       {
-        "content": 856,
-        "end": 578,
+        "content": 857,
+        "end": 579,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -1282,8 +1292,8 @@
         "width": 280
       },
       {
-        "content": 2175,
-        "end": 1897,
+        "content": 2176,
+        "end": 1898,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -1322,8 +1332,8 @@
         "width": 280
       },
       {
-        "content": 1539,
-        "end": 1261,
+        "content": 1540,
+        "end": 1262,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -1348,6 +1358,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Tabla con serie, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Registros ordenables y agrupables, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 4147,
+        "end": 3869,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Tabla interactiva, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -1494,8 +1524,8 @@
         "width": 320
       },
       {
-        "content": 2348,
-        "end": 2070,
+        "content": 3502,
+        "end": 3224,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -1534,8 +1564,8 @@
         "width": 280
       },
       {
-        "content": 7003,
-        "end": 6725,
+        "content": 7005,
+        "end": 6727,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -1766,8 +1796,8 @@
         "width": 280
       },
       {
-        "content": 1304,
-        "end": 1026,
+        "content": 1320,
+        "end": 1042,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -1776,8 +1806,8 @@
         "width": 278
       },
       {
-        "content": 1013,
-        "end": 735,
+        "content": 1014,
+        "end": 736,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -1928,8 +1958,8 @@
         "width": 320
       },
       {
-        "content": 4883,
-        "end": 4605,
+        "content": 4884,
+        "end": 4606,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -1948,8 +1978,8 @@
         "width": 278
       },
       {
-        "content": 11634,
-        "end": 11356,
+        "content": 11636,
+        "end": 11358,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -1974,6 +2004,16 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Terminal, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 4986,
+        "end": 4708,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Comentarios sobre el documento, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -2272,8 +2312,8 @@
         "width": 278
       },
       {
-        "content": 2646,
-        "end": 2368,
+        "content": 2647,
+        "end": 2369,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -2282,12 +2322,22 @@
         "width": 278
       },
       {
-        "content": 3855,
-        "end": 3577,
+        "content": 3856,
+        "end": 3578,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Lecturas relacionadas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 2788,
+        "end": 2510,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -2464,8 +2514,8 @@
         "width": 278
       },
       {
-        "content": 856,
-        "end": 578,
+        "content": 857,
+        "end": 579,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -2676,8 +2726,8 @@
         "width": 280
       },
       {
-        "content": 8228,
-        "end": 7950,
+        "content": 8229,
+        "end": 7951,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -2696,8 +2746,8 @@
         "width": 280
       },
       {
-        "content": 7968,
-        "end": 7690,
+        "content": 7970,
+        "end": 7692,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -2898,8 +2948,8 @@
         "width": 280
       },
       {
-        "content": 856,
-        "end": 578,
+        "content": 857,
+        "end": 579,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -3280,8 +3330,8 @@
         "width": 280
       },
       {
-        "content": 2175,
-        "end": 1897,
+        "content": 2176,
+        "end": 1898,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -3320,8 +3370,8 @@
         "width": 280
       },
       {
-        "content": 1539,
-        "end": 1261,
+        "content": 1540,
+        "end": 1262,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -3346,6 +3396,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Tabla con serie, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Registros ordenables y agrupables, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 4147,
+        "end": 3869,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Tabla interactiva, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -3492,8 +3562,8 @@
         "width": 320
       },
       {
-        "content": 2348,
-        "end": 2070,
+        "content": 3502,
+        "end": 3224,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -3532,8 +3602,8 @@
         "width": 280
       },
       {
-        "content": 7003,
-        "end": 6725,
+        "content": 7005,
+        "end": 6727,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -3764,8 +3834,8 @@
         "width": 280
       },
       {
-        "content": 1304,
-        "end": 1026,
+        "content": 1320,
+        "end": 1042,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -3774,8 +3844,8 @@
         "width": 278
       },
       {
-        "content": 1013,
-        "end": 735,
+        "content": 1014,
+        "end": 736,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -3926,8 +3996,8 @@
         "width": 320
       },
       {
-        "content": 4883,
-        "end": 4605,
+        "content": 4884,
+        "end": 4606,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -3946,8 +4016,8 @@
         "width": 278
       },
       {
-        "content": 11634,
-        "end": 11356,
+        "content": 11636,
+        "end": 11358,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -3972,6 +4042,16 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Terminal, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 4986,
+        "end": 4708,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Comentarios sobre el documento, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -4270,8 +4350,8 @@
         "width": 278
       },
       {
-        "content": 2646,
-        "end": 2368,
+        "content": 2647,
+        "end": 2369,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -4280,12 +4360,22 @@
         "width": 278
       },
       {
-        "content": 3855,
-        "end": 3577,
+        "content": 3856,
+        "end": 3578,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Lecturas relacionadas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 2788,
+        "end": 2510,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -4462,8 +4552,8 @@
         "width": 278
       },
       {
-        "content": 856,
-        "end": 578,
+        "content": 857,
+        "end": 579,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -4674,8 +4764,8 @@
         "width": 280
       },
       {
-        "content": 8228,
-        "end": 7950,
+        "content": 8229,
+        "end": 7951,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -4694,8 +4784,8 @@
         "width": 280
       },
       {
-        "content": 7968,
-        "end": 7690,
+        "content": 7970,
+        "end": 7692,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -4896,8 +4986,8 @@
         "width": 280
       },
       {
-        "content": 856,
-        "end": 578,
+        "content": 857,
+        "end": 579,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -5278,8 +5368,8 @@
         "width": 280
       },
       {
-        "content": 2175,
-        "end": 1897,
+        "content": 2176,
+        "end": 1898,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -5318,8 +5408,8 @@
         "width": 280
       },
       {
-        "content": 1539,
-        "end": 1261,
+        "content": 1540,
+        "end": 1262,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -5344,6 +5434,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Tabla con serie, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Registros ordenables y agrupables, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 4147,
+        "end": 3869,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Tabla interactiva, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -5490,8 +5600,8 @@
         "width": 320
       },
       {
-        "content": 2348,
-        "end": 2070,
+        "content": 3502,
+        "end": 3224,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -5530,8 +5640,8 @@
         "width": 280
       },
       {
-        "content": 7003,
-        "end": 6725,
+        "content": 7005,
+        "end": 6727,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -5762,8 +5872,8 @@
         "width": 280
       },
       {
-        "content": 1304,
-        "end": 1026,
+        "content": 1320,
+        "end": 1042,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -5772,8 +5882,8 @@
         "width": 278
       },
       {
-        "content": 1013,
-        "end": 735,
+        "content": 1014,
+        "end": 736,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -5924,8 +6034,8 @@
         "width": 320
       },
       {
-        "content": 4883,
-        "end": 4605,
+        "content": 4884,
+        "end": 4606,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -5944,8 +6054,8 @@
         "width": 278
       },
       {
-        "content": 11634,
-        "end": 11356,
+        "content": 11636,
+        "end": 11358,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -5970,6 +6080,16 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Terminal, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 4986,
+        "end": 4708,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Comentarios sobre el documento, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -6268,8 +6388,8 @@
         "width": 278
       },
       {
-        "content": 2646,
-        "end": 2368,
+        "content": 2647,
+        "end": 2369,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -6278,12 +6398,22 @@
         "width": 278
       },
       {
-        "content": 3855,
-        "end": 3577,
+        "content": 3856,
+        "end": 3578,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Lecturas relacionadas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 2788,
+        "end": 2510,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -6460,8 +6590,8 @@
         "width": 278
       },
       {
-        "content": 856,
-        "end": 578,
+        "content": 857,
+        "end": 579,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -6672,8 +6802,8 @@
         "width": 280
       },
       {
-        "content": 8228,
-        "end": 7950,
+        "content": 8229,
+        "end": 7951,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -6692,8 +6822,8 @@
         "width": 280
       },
       {
-        "content": 7968,
-        "end": 7690,
+        "content": 7970,
+        "end": 7692,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -6894,8 +7024,8 @@
         "width": 280
       },
       {
-        "content": 856,
-        "end": 578,
+        "content": 857,
+        "end": 579,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -7276,8 +7406,8 @@
         "width": 280
       },
       {
-        "content": 2175,
-        "end": 1897,
+        "content": 2176,
+        "end": 1898,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -7316,8 +7446,8 @@
         "width": 280
       },
       {
-        "content": 1539,
-        "end": 1261,
+        "content": 1540,
+        "end": 1262,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -7342,6 +7472,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Tabla con serie, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Registros ordenables y agrupables, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 4147,
+        "end": 3869,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Tabla interactiva, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -7488,8 +7638,8 @@
         "width": 320
       },
       {
-        "content": 2348,
-        "end": 2070,
+        "content": 3502,
+        "end": 3224,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -7528,8 +7678,8 @@
         "width": 280
       },
       {
-        "content": 7003,
-        "end": 6725,
+        "content": 7005,
+        "end": 6727,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -7760,8 +7910,8 @@
         "width": 280
       },
       {
-        "content": 1304,
-        "end": 1026,
+        "content": 1320,
+        "end": 1042,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -7770,8 +7920,8 @@
         "width": 278
       },
       {
-        "content": 1013,
-        "end": 735,
+        "content": 1014,
+        "end": 736,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -7922,8 +8072,8 @@
         "width": 320
       },
       {
-        "content": 4883,
-        "end": 4605,
+        "content": 4884,
+        "end": 4606,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -7942,8 +8092,8 @@
         "width": 278
       },
       {
-        "content": 11634,
-        "end": 11356,
+        "content": 11636,
+        "end": 11358,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -7968,6 +8118,16 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Terminal, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 4986,
+        "end": 4708,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Comentarios sobre el documento, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -8266,8 +8426,8 @@
         "width": 278
       },
       {
-        "content": 2646,
-        "end": 2368,
+        "content": 2647,
+        "end": 2369,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -8276,12 +8436,22 @@
         "width": 278
       },
       {
-        "content": 3855,
-        "end": 3577,
+        "content": 3856,
+        "end": 3578,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Lecturas relacionadas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 2788,
+        "end": 2510,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -8458,8 +8628,8 @@
         "width": 278
       },
       {
-        "content": 856,
-        "end": 578,
+        "content": 857,
+        "end": 579,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -8670,8 +8840,8 @@
         "width": 280
       },
       {
-        "content": 8228,
-        "end": 7950,
+        "content": 8229,
+        "end": 7951,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -8690,8 +8860,8 @@
         "width": 280
       },
       {
-        "content": 7968,
-        "end": 7690,
+        "content": 7970,
+        "end": 7692,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -8892,8 +9062,8 @@
         "width": 280
       },
       {
-        "content": 856,
-        "end": 578,
+        "content": 857,
+        "end": 579,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -9274,8 +9444,8 @@
         "width": 280
       },
       {
-        "content": 2175,
-        "end": 1897,
+        "content": 2176,
+        "end": 1898,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -9314,8 +9484,8 @@
         "width": 280
       },
       {
-        "content": 1539,
-        "end": 1261,
+        "content": 1540,
+        "end": 1262,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -9340,6 +9510,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Tabla con serie, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Registros ordenables y agrupables, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 4147,
+        "end": 3869,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Tabla interactiva, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -9486,8 +9676,8 @@
         "width": 320
       },
       {
-        "content": 2348,
-        "end": 2070,
+        "content": 3502,
+        "end": 3224,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -9526,8 +9716,8 @@
         "width": 280
       },
       {
-        "content": 7003,
-        "end": 6725,
+        "content": 7005,
+        "end": 6727,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -9758,8 +9948,8 @@
         "width": 280
       },
       {
-        "content": 1304,
-        "end": 1026,
+        "content": 1320,
+        "end": 1042,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -9768,8 +9958,8 @@
         "width": 278
       },
       {
-        "content": 1013,
-        "end": 735,
+        "content": 1014,
+        "end": 736,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -9920,8 +10110,8 @@
         "width": 320
       },
       {
-        "content": 4883,
-        "end": 4605,
+        "content": 4884,
+        "end": 4606,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -9940,8 +10130,8 @@
         "width": 278
       },
       {
-        "content": 11634,
-        "end": 11356,
+        "content": 11636,
+        "end": 11358,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -9966,6 +10156,16 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Terminal, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 4986,
+        "end": 4708,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Comentarios sobre el documento, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -10264,8 +10464,8 @@
         "width": 278
       },
       {
-        "content": 2646,
-        "end": 2368,
+        "content": 2647,
+        "end": 2369,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -10274,12 +10474,22 @@
         "width": 278
       },
       {
-        "content": 3855,
-        "end": 3577,
+        "content": 3856,
+        "end": 3578,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Lecturas relacionadas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 2788,
+        "end": 2510,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -10456,8 +10666,8 @@
         "width": 278
       },
       {
-        "content": 856,
-        "end": 578,
+        "content": 857,
+        "end": 579,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -10668,8 +10878,8 @@
         "width": 280
       },
       {
-        "content": 8228,
-        "end": 7950,
+        "content": 8229,
+        "end": 7951,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -10688,8 +10898,8 @@
         "width": 280
       },
       {
-        "content": 7968,
-        "end": 7690,
+        "content": 7970,
+        "end": 7692,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -10890,8 +11100,8 @@
         "width": 280
       },
       {
-        "content": 856,
-        "end": 578,
+        "content": 857,
+        "end": 579,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -11272,8 +11482,8 @@
         "width": 280
       },
       {
-        "content": 2175,
-        "end": 1897,
+        "content": 2176,
+        "end": 1898,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -11312,8 +11522,8 @@
         "width": 280
       },
       {
-        "content": 1539,
-        "end": 1261,
+        "content": 1540,
+        "end": 1262,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -11338,6 +11548,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Tabla con serie, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Registros ordenables y agrupables, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 4147,
+        "end": 3869,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Tabla interactiva, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -11484,8 +11714,8 @@
         "width": 320
       },
       {
-        "content": 2348,
-        "end": 2070,
+        "content": 3502,
+        "end": 3224,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -11524,8 +11754,8 @@
         "width": 280
       },
       {
-        "content": 7003,
-        "end": 6725,
+        "content": 7005,
+        "end": 6727,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -11756,8 +11986,8 @@
         "width": 280
       },
       {
-        "content": 1304,
-        "end": 1026,
+        "content": 1320,
+        "end": 1042,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -11766,8 +11996,8 @@
         "width": 278
       },
       {
-        "content": 1013,
-        "end": 735,
+        "content": 1014,
+        "end": 736,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -11918,8 +12148,8 @@
         "width": 320
       },
       {
-        "content": 4883,
-        "end": 4605,
+        "content": 4884,
+        "end": 4606,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -11938,8 +12168,8 @@
         "width": 278
       },
       {
-        "content": 11634,
-        "end": 11356,
+        "content": 11636,
+        "end": 11358,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -11964,6 +12194,16 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Terminal, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 4986,
+        "end": 4708,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Comentarios sobre el documento, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -12262,8 +12502,8 @@
         "width": 348
       },
       {
-        "content": 2646,
-        "end": 2298,
+        "content": 2647,
+        "end": 2299,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -12272,12 +12512,22 @@
         "width": 348
       },
       {
-        "content": 3855,
-        "end": 3507,
+        "content": 3856,
+        "end": 3508,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Lecturas relacionadas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 2788,
+        "end": 2440,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -12454,8 +12704,8 @@
         "width": 348
       },
       {
-        "content": 856,
-        "end": 508,
+        "content": 857,
+        "end": 509,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -12666,8 +12916,8 @@
         "width": 350
       },
       {
-        "content": 8228,
-        "end": 7880,
+        "content": 8229,
+        "end": 7881,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -12686,8 +12936,8 @@
         "width": 350
       },
       {
-        "content": 7968,
-        "end": 7620,
+        "content": 7970,
+        "end": 7622,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -12888,8 +13138,8 @@
         "width": 350
       },
       {
-        "content": 856,
-        "end": 508,
+        "content": 857,
+        "end": 509,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -13270,8 +13520,8 @@
         "width": 350
       },
       {
-        "content": 2175,
-        "end": 1827,
+        "content": 2176,
+        "end": 1828,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -13310,8 +13560,8 @@
         "width": 350
       },
       {
-        "content": 1539,
-        "end": 1191,
+        "content": 1540,
+        "end": 1192,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -13336,6 +13586,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Tabla con serie, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Registros ordenables y agrupables, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 4147,
+        "end": 3799,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Tabla interactiva, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -13482,8 +13752,8 @@
         "width": 390
       },
       {
-        "content": 2348,
-        "end": 2000,
+        "content": 3502,
+        "end": 3154,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -13522,8 +13792,8 @@
         "width": 350
       },
       {
-        "content": 7003,
-        "end": 6655,
+        "content": 7005,
+        "end": 6657,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -13754,8 +14024,8 @@
         "width": 350
       },
       {
-        "content": 1304,
-        "end": 956,
+        "content": 1320,
+        "end": 972,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -13764,8 +14034,8 @@
         "width": 348
       },
       {
-        "content": 1013,
-        "end": 665,
+        "content": 1014,
+        "end": 666,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -13916,8 +14186,8 @@
         "width": 390
       },
       {
-        "content": 4883,
-        "end": 4535,
+        "content": 4884,
+        "end": 4536,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -13936,8 +14206,8 @@
         "width": 348
       },
       {
-        "content": 11634,
-        "end": 11286,
+        "content": 11636,
+        "end": 11288,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -13962,6 +14232,16 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Terminal, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 4986,
+        "end": 4638,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Comentarios sobre el documento, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -14260,8 +14540,8 @@
         "width": 348
       },
       {
-        "content": 2646,
-        "end": 2298,
+        "content": 2647,
+        "end": 2299,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -14270,12 +14550,22 @@
         "width": 348
       },
       {
-        "content": 3855,
-        "end": 3507,
+        "content": 3856,
+        "end": 3508,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Lecturas relacionadas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 2788,
+        "end": 2440,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -14452,8 +14742,8 @@
         "width": 348
       },
       {
-        "content": 856,
-        "end": 508,
+        "content": 857,
+        "end": 509,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -14664,8 +14954,8 @@
         "width": 350
       },
       {
-        "content": 8228,
-        "end": 7880,
+        "content": 8229,
+        "end": 7881,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -14684,8 +14974,8 @@
         "width": 350
       },
       {
-        "content": 7968,
-        "end": 7620,
+        "content": 7970,
+        "end": 7622,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -14886,8 +15176,8 @@
         "width": 350
       },
       {
-        "content": 856,
-        "end": 508,
+        "content": 857,
+        "end": 509,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -15268,8 +15558,8 @@
         "width": 350
       },
       {
-        "content": 2175,
-        "end": 1827,
+        "content": 2176,
+        "end": 1828,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -15308,8 +15598,8 @@
         "width": 350
       },
       {
-        "content": 1539,
-        "end": 1191,
+        "content": 1540,
+        "end": 1192,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -15334,6 +15624,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Tabla con serie, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Registros ordenables y agrupables, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 4147,
+        "end": 3799,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Tabla interactiva, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -15480,8 +15790,8 @@
         "width": 390
       },
       {
-        "content": 2348,
-        "end": 2000,
+        "content": 3502,
+        "end": 3154,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -15520,8 +15830,8 @@
         "width": 350
       },
       {
-        "content": 7003,
-        "end": 6655,
+        "content": 7005,
+        "end": 6657,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -15752,8 +16062,8 @@
         "width": 350
       },
       {
-        "content": 1304,
-        "end": 956,
+        "content": 1320,
+        "end": 972,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -15762,8 +16072,8 @@
         "width": 348
       },
       {
-        "content": 1013,
-        "end": 665,
+        "content": 1014,
+        "end": 666,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -15914,8 +16224,8 @@
         "width": 390
       },
       {
-        "content": 4883,
-        "end": 4535,
+        "content": 4884,
+        "end": 4536,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -15934,8 +16244,8 @@
         "width": 348
       },
       {
-        "content": 11634,
-        "end": 11286,
+        "content": 11636,
+        "end": 11288,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -15960,6 +16270,16 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Terminal, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 4986,
+        "end": 4638,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Comentarios sobre el documento, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -16258,8 +16578,8 @@
         "width": 348
       },
       {
-        "content": 2646,
-        "end": 2298,
+        "content": 2647,
+        "end": 2299,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -16268,12 +16588,22 @@
         "width": 348
       },
       {
-        "content": 3855,
-        "end": 3507,
+        "content": 3856,
+        "end": 3508,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Lecturas relacionadas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 2788,
+        "end": 2440,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -16450,8 +16780,8 @@
         "width": 348
       },
       {
-        "content": 856,
-        "end": 508,
+        "content": 857,
+        "end": 509,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -16662,8 +16992,8 @@
         "width": 350
       },
       {
-        "content": 8228,
-        "end": 7880,
+        "content": 8229,
+        "end": 7881,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -16682,8 +17012,8 @@
         "width": 350
       },
       {
-        "content": 7968,
-        "end": 7620,
+        "content": 7970,
+        "end": 7622,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -16884,8 +17214,8 @@
         "width": 350
       },
       {
-        "content": 856,
-        "end": 508,
+        "content": 857,
+        "end": 509,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -17266,8 +17596,8 @@
         "width": 350
       },
       {
-        "content": 2175,
-        "end": 1827,
+        "content": 2176,
+        "end": 1828,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -17306,8 +17636,8 @@
         "width": 350
       },
       {
-        "content": 1539,
-        "end": 1191,
+        "content": 1540,
+        "end": 1192,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -17332,6 +17662,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Tabla con serie, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Registros ordenables y agrupables, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 4147,
+        "end": 3799,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Tabla interactiva, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -17478,8 +17828,8 @@
         "width": 390
       },
       {
-        "content": 2348,
-        "end": 2000,
+        "content": 3502,
+        "end": 3154,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -17518,8 +17868,8 @@
         "width": 350
       },
       {
-        "content": 7003,
-        "end": 6655,
+        "content": 7005,
+        "end": 6657,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -17750,8 +18100,8 @@
         "width": 350
       },
       {
-        "content": 1304,
-        "end": 956,
+        "content": 1320,
+        "end": 972,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -17760,8 +18110,8 @@
         "width": 348
       },
       {
-        "content": 1013,
-        "end": 665,
+        "content": 1014,
+        "end": 666,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -17912,8 +18262,8 @@
         "width": 390
       },
       {
-        "content": 4883,
-        "end": 4535,
+        "content": 4884,
+        "end": 4536,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -17932,8 +18282,8 @@
         "width": 348
       },
       {
-        "content": 11634,
-        "end": 11286,
+        "content": 11636,
+        "end": 11288,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -17958,6 +18308,16 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Terminal, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 4986,
+        "end": 4638,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Comentarios sobre el documento, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -18256,8 +18616,8 @@
         "width": 348
       },
       {
-        "content": 2646,
-        "end": 2298,
+        "content": 2647,
+        "end": 2299,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -18266,12 +18626,22 @@
         "width": 348
       },
       {
-        "content": 3855,
-        "end": 3507,
+        "content": 3856,
+        "end": 3508,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Lecturas relacionadas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 2788,
+        "end": 2440,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -18448,8 +18818,8 @@
         "width": 348
       },
       {
-        "content": 856,
-        "end": 508,
+        "content": 857,
+        "end": 509,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -18660,8 +19030,8 @@
         "width": 350
       },
       {
-        "content": 8228,
-        "end": 7880,
+        "content": 8229,
+        "end": 7881,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -18680,8 +19050,8 @@
         "width": 350
       },
       {
-        "content": 7968,
-        "end": 7620,
+        "content": 7970,
+        "end": 7622,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -18882,8 +19252,8 @@
         "width": 350
       },
       {
-        "content": 856,
-        "end": 508,
+        "content": 857,
+        "end": 509,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -19264,8 +19634,8 @@
         "width": 350
       },
       {
-        "content": 2175,
-        "end": 1827,
+        "content": 2176,
+        "end": 1828,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -19304,8 +19674,8 @@
         "width": 350
       },
       {
-        "content": 1539,
-        "end": 1191,
+        "content": 1540,
+        "end": 1192,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -19330,6 +19700,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Tabla con serie, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Registros ordenables y agrupables, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 4147,
+        "end": 3799,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Tabla interactiva, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -19476,8 +19866,8 @@
         "width": 390
       },
       {
-        "content": 2348,
-        "end": 2000,
+        "content": 3502,
+        "end": 3154,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -19516,8 +19906,8 @@
         "width": 350
       },
       {
-        "content": 7003,
-        "end": 6655,
+        "content": 7005,
+        "end": 6657,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -19748,8 +20138,8 @@
         "width": 350
       },
       {
-        "content": 1304,
-        "end": 956,
+        "content": 1320,
+        "end": 972,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -19758,8 +20148,8 @@
         "width": 348
       },
       {
-        "content": 1013,
-        "end": 665,
+        "content": 1014,
+        "end": 666,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -19910,8 +20300,8 @@
         "width": 390
       },
       {
-        "content": 4883,
-        "end": 4535,
+        "content": 4884,
+        "end": 4536,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -19930,8 +20320,8 @@
         "width": 348
       },
       {
-        "content": 11634,
-        "end": 11286,
+        "content": 11636,
+        "end": 11288,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -19956,6 +20346,16 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Terminal, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 4986,
+        "end": 4638,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Comentarios sobre el documento, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -20254,8 +20654,8 @@
         "width": 348
       },
       {
-        "content": 2646,
-        "end": 2298,
+        "content": 2647,
+        "end": 2299,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -20264,12 +20664,22 @@
         "width": 348
       },
       {
-        "content": 3855,
-        "end": 3507,
+        "content": 3856,
+        "end": 3508,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Lecturas relacionadas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 2788,
+        "end": 2440,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -20446,8 +20856,8 @@
         "width": 348
       },
       {
-        "content": 856,
-        "end": 508,
+        "content": 857,
+        "end": 509,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -20658,8 +21068,8 @@
         "width": 350
       },
       {
-        "content": 8228,
-        "end": 7880,
+        "content": 8229,
+        "end": 7881,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -20678,8 +21088,8 @@
         "width": 350
       },
       {
-        "content": 7968,
-        "end": 7620,
+        "content": 7970,
+        "end": 7622,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -20880,8 +21290,8 @@
         "width": 350
       },
       {
-        "content": 856,
-        "end": 508,
+        "content": 857,
+        "end": 509,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -21262,8 +21672,8 @@
         "width": 350
       },
       {
-        "content": 2175,
-        "end": 1827,
+        "content": 2176,
+        "end": 1828,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -21302,8 +21712,8 @@
         "width": 350
       },
       {
-        "content": 1539,
-        "end": 1191,
+        "content": 1540,
+        "end": 1192,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -21328,6 +21738,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Tabla con serie, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Registros ordenables y agrupables, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 4147,
+        "end": 3799,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Tabla interactiva, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -21474,8 +21904,8 @@
         "width": 390
       },
       {
-        "content": 2348,
-        "end": 2000,
+        "content": 3502,
+        "end": 3154,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -21514,8 +21944,8 @@
         "width": 350
       },
       {
-        "content": 7003,
-        "end": 6655,
+        "content": 7005,
+        "end": 6657,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -21746,8 +22176,8 @@
         "width": 350
       },
       {
-        "content": 1304,
-        "end": 956,
+        "content": 1320,
+        "end": 972,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -21756,8 +22186,8 @@
         "width": 348
       },
       {
-        "content": 1013,
-        "end": 665,
+        "content": 1014,
+        "end": 666,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -21908,8 +22338,8 @@
         "width": 390
       },
       {
-        "content": 4883,
-        "end": 4535,
+        "content": 4884,
+        "end": 4536,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -21928,8 +22358,8 @@
         "width": 348
       },
       {
-        "content": 11634,
-        "end": 11286,
+        "content": 11636,
+        "end": 11288,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -21954,6 +22384,16 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Terminal, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 4986,
+        "end": 4638,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Comentarios sobre el documento, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -22252,8 +22692,8 @@
         "width": 348
       },
       {
-        "content": 2646,
-        "end": 2298,
+        "content": 2647,
+        "end": 2299,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -22262,12 +22702,22 @@
         "width": 348
       },
       {
-        "content": 3855,
-        "end": 3507,
+        "content": 3856,
+        "end": 3508,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Lecturas relacionadas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 2788,
+        "end": 2440,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -22444,8 +22894,8 @@
         "width": 348
       },
       {
-        "content": 856,
-        "end": 508,
+        "content": 857,
+        "end": 509,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -22656,8 +23106,8 @@
         "width": 350
       },
       {
-        "content": 8228,
-        "end": 7880,
+        "content": 8229,
+        "end": 7881,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -22676,8 +23126,8 @@
         "width": 350
       },
       {
-        "content": 7968,
-        "end": 7620,
+        "content": 7970,
+        "end": 7622,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -22878,8 +23328,8 @@
         "width": 350
       },
       {
-        "content": 856,
-        "end": 508,
+        "content": 857,
+        "end": 509,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -23260,8 +23710,8 @@
         "width": 350
       },
       {
-        "content": 2175,
-        "end": 1827,
+        "content": 2176,
+        "end": 1828,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -23300,8 +23750,8 @@
         "width": 350
       },
       {
-        "content": 1539,
-        "end": 1191,
+        "content": 1540,
+        "end": 1192,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -23326,6 +23776,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Tabla con serie, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Registros ordenables y agrupables, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 4147,
+        "end": 3799,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Tabla interactiva, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -23472,8 +23942,8 @@
         "width": 390
       },
       {
-        "content": 2348,
-        "end": 2000,
+        "content": 3502,
+        "end": 3154,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -23512,8 +23982,8 @@
         "width": 350
       },
       {
-        "content": 7003,
-        "end": 6655,
+        "content": 7005,
+        "end": 6657,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -23744,8 +24214,8 @@
         "width": 350
       },
       {
-        "content": 1304,
-        "end": 956,
+        "content": 1320,
+        "end": 972,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -23754,8 +24224,8 @@
         "width": 348
       },
       {
-        "content": 1013,
-        "end": 665,
+        "content": 1014,
+        "end": 666,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -23906,8 +24376,8 @@
         "width": 390
       },
       {
-        "content": 4883,
-        "end": 4535,
+        "content": 4884,
+        "end": 4536,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -23926,8 +24396,8 @@
         "width": 348
       },
       {
-        "content": 11634,
-        "end": 11286,
+        "content": 11636,
+        "end": 11288,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -23952,6 +24422,16 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Terminal, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 4986,
+        "end": 4638,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Comentarios sobre el documento, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -24250,8 +24730,8 @@
         "width": 990
       },
       {
-        "content": 2646,
-        "end": 1656,
+        "content": 2647,
+        "end": 1657,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -24260,12 +24740,22 @@
         "width": 990
       },
       {
-        "content": 3855,
-        "end": 2865,
+        "content": 3856,
+        "end": 2866,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Lecturas relacionadas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 2788,
+        "end": 1798,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -24654,8 +25144,8 @@
         "width": 1216
       },
       {
-        "content": 8228,
-        "end": 7238,
+        "content": 8229,
+        "end": 7239,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -24674,8 +25164,8 @@
         "width": 1216
       },
       {
-        "content": 7968,
-        "end": 6978,
+        "content": 7970,
+        "end": 6980,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -25258,8 +25748,8 @@
         "width": 1216
       },
       {
-        "content": 2175,
-        "end": 1185,
+        "content": 2176,
+        "end": 1186,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -25298,8 +25788,8 @@
         "width": 992
       },
       {
-        "content": 1539,
-        "end": 549,
+        "content": 1540,
+        "end": 550,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -25324,6 +25814,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Tabla con serie, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 1216,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Registros ordenables y agrupables, desplazables",
+        "overflow": "auto",
+        "width": 1216
+      },
+      {
+        "content": 4147,
+        "end": 3157,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Tabla interactiva, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -25470,8 +25980,8 @@
         "width": 1440
       },
       {
-        "content": 2348,
-        "end": 1358,
+        "content": 3502,
+        "end": 2512,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -25510,8 +26020,8 @@
         "width": 992
       },
       {
-        "content": 7003,
-        "end": 6013,
+        "content": 7005,
+        "end": 6015,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -25742,8 +26252,8 @@
         "width": 992
       },
       {
-        "content": 1304,
-        "end": 314,
+        "content": 1320,
+        "end": 330,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -25752,8 +26262,8 @@
         "width": 990
       },
       {
-        "content": 1013,
-        "end": 23,
+        "content": 1014,
+        "end": 24,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -25904,8 +26414,8 @@
         "width": 1440
       },
       {
-        "content": 4883,
-        "end": 3893,
+        "content": 4884,
+        "end": 3894,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -25924,8 +26434,8 @@
         "width": 558
       },
       {
-        "content": 11634,
-        "end": 10644,
+        "content": 11636,
+        "end": 10646,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -25950,6 +26460,16 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Terminal, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 4986,
+        "end": 3996,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Comentarios sobre el documento, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -26248,8 +26768,8 @@
         "width": 990
       },
       {
-        "content": 2646,
-        "end": 1656,
+        "content": 2647,
+        "end": 1657,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -26258,12 +26778,22 @@
         "width": 990
       },
       {
-        "content": 3855,
-        "end": 2865,
+        "content": 3856,
+        "end": 2866,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Lecturas relacionadas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 2788,
+        "end": 1798,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -26652,8 +27182,8 @@
         "width": 1216
       },
       {
-        "content": 8228,
-        "end": 7238,
+        "content": 8229,
+        "end": 7239,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -26672,8 +27202,8 @@
         "width": 1216
       },
       {
-        "content": 7968,
-        "end": 6978,
+        "content": 7970,
+        "end": 6980,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -27256,8 +27786,8 @@
         "width": 1216
       },
       {
-        "content": 2175,
-        "end": 1185,
+        "content": 2176,
+        "end": 1186,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -27296,8 +27826,8 @@
         "width": 992
       },
       {
-        "content": 1539,
-        "end": 549,
+        "content": 1540,
+        "end": 550,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -27322,6 +27852,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Tabla con serie, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 1216,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Registros ordenables y agrupables, desplazables",
+        "overflow": "auto",
+        "width": 1216
+      },
+      {
+        "content": 4147,
+        "end": 3157,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Tabla interactiva, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -27468,8 +28018,8 @@
         "width": 1440
       },
       {
-        "content": 2348,
-        "end": 1358,
+        "content": 3502,
+        "end": 2512,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -27508,8 +28058,8 @@
         "width": 992
       },
       {
-        "content": 7003,
-        "end": 6013,
+        "content": 7005,
+        "end": 6015,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -27740,8 +28290,8 @@
         "width": 992
       },
       {
-        "content": 1304,
-        "end": 314,
+        "content": 1320,
+        "end": 330,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -27750,8 +28300,8 @@
         "width": 990
       },
       {
-        "content": 1013,
-        "end": 23,
+        "content": 1014,
+        "end": 24,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -27902,8 +28452,8 @@
         "width": 1440
       },
       {
-        "content": 4883,
-        "end": 3893,
+        "content": 4884,
+        "end": 3894,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -27922,8 +28472,8 @@
         "width": 558
       },
       {
-        "content": 11634,
-        "end": 10644,
+        "content": 11636,
+        "end": 10646,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -27948,6 +28498,16 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Terminal, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 4986,
+        "end": 3996,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Comentarios sobre el documento, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -28246,8 +28806,8 @@
         "width": 990
       },
       {
-        "content": 2646,
-        "end": 1656,
+        "content": 2647,
+        "end": 1657,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -28256,12 +28816,22 @@
         "width": 990
       },
       {
-        "content": 3855,
-        "end": 2865,
+        "content": 3856,
+        "end": 2866,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Lecturas relacionadas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 2788,
+        "end": 1798,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -28650,8 +29220,8 @@
         "width": 1216
       },
       {
-        "content": 8228,
-        "end": 7238,
+        "content": 8229,
+        "end": 7239,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -28670,8 +29240,8 @@
         "width": 1216
       },
       {
-        "content": 7968,
-        "end": 6978,
+        "content": 7970,
+        "end": 6980,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -29254,8 +29824,8 @@
         "width": 1216
       },
       {
-        "content": 2175,
-        "end": 1185,
+        "content": 2176,
+        "end": 1186,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -29294,8 +29864,8 @@
         "width": 992
       },
       {
-        "content": 1539,
-        "end": 549,
+        "content": 1540,
+        "end": 550,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -29320,6 +29890,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Tabla con serie, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 1216,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Registros ordenables y agrupables, desplazables",
+        "overflow": "auto",
+        "width": 1216
+      },
+      {
+        "content": 4147,
+        "end": 3157,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Tabla interactiva, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -29466,8 +30056,8 @@
         "width": 1440
       },
       {
-        "content": 2348,
-        "end": 1358,
+        "content": 3502,
+        "end": 2512,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -29506,8 +30096,8 @@
         "width": 992
       },
       {
-        "content": 7003,
-        "end": 6013,
+        "content": 7005,
+        "end": 6015,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -29738,8 +30328,8 @@
         "width": 992
       },
       {
-        "content": 1304,
-        "end": 314,
+        "content": 1320,
+        "end": 330,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -29748,8 +30338,8 @@
         "width": 990
       },
       {
-        "content": 1013,
-        "end": 23,
+        "content": 1014,
+        "end": 24,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -29900,8 +30490,8 @@
         "width": 1440
       },
       {
-        "content": 4883,
-        "end": 3893,
+        "content": 4884,
+        "end": 3894,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -29920,8 +30510,8 @@
         "width": 558
       },
       {
-        "content": 11634,
-        "end": 10644,
+        "content": 11636,
+        "end": 10646,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -29946,6 +30536,16 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Terminal, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 4986,
+        "end": 3996,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Comentarios sobre el documento, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -30244,8 +30844,8 @@
         "width": 990
       },
       {
-        "content": 2646,
-        "end": 1656,
+        "content": 2647,
+        "end": 1657,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -30254,12 +30854,22 @@
         "width": 990
       },
       {
-        "content": 3855,
-        "end": 2865,
+        "content": 3856,
+        "end": 2866,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Lecturas relacionadas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 2788,
+        "end": 1798,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -30648,8 +31258,8 @@
         "width": 1216
       },
       {
-        "content": 8228,
-        "end": 7238,
+        "content": 8229,
+        "end": 7239,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -30668,8 +31278,8 @@
         "width": 1216
       },
       {
-        "content": 7968,
-        "end": 6978,
+        "content": 7970,
+        "end": 6980,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -31252,8 +31862,8 @@
         "width": 1216
       },
       {
-        "content": 2175,
-        "end": 1185,
+        "content": 2176,
+        "end": 1186,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -31292,8 +31902,8 @@
         "width": 992
       },
       {
-        "content": 1539,
-        "end": 549,
+        "content": 1540,
+        "end": 550,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -31318,6 +31928,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Tabla con serie, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 1216,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Registros ordenables y agrupables, desplazables",
+        "overflow": "auto",
+        "width": 1216
+      },
+      {
+        "content": 4147,
+        "end": 3157,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Tabla interactiva, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -31464,8 +32094,8 @@
         "width": 1440
       },
       {
-        "content": 2348,
-        "end": 1358,
+        "content": 3502,
+        "end": 2512,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -31504,8 +32134,8 @@
         "width": 992
       },
       {
-        "content": 7003,
-        "end": 6013,
+        "content": 7005,
+        "end": 6015,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -31736,8 +32366,8 @@
         "width": 992
       },
       {
-        "content": 1304,
-        "end": 314,
+        "content": 1320,
+        "end": 330,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -31746,8 +32376,8 @@
         "width": 990
       },
       {
-        "content": 1013,
-        "end": 23,
+        "content": 1014,
+        "end": 24,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -31898,8 +32528,8 @@
         "width": 1440
       },
       {
-        "content": 4883,
-        "end": 3893,
+        "content": 4884,
+        "end": 3894,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -31918,8 +32548,8 @@
         "width": 558
       },
       {
-        "content": 11634,
-        "end": 10644,
+        "content": 11636,
+        "end": 10646,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -31944,6 +32574,16 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Terminal, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 4986,
+        "end": 3996,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Comentarios sobre el documento, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -32242,8 +32882,8 @@
         "width": 990
       },
       {
-        "content": 2646,
-        "end": 1656,
+        "content": 2647,
+        "end": 1657,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -32252,12 +32892,22 @@
         "width": 990
       },
       {
-        "content": 3855,
-        "end": 2865,
+        "content": 3856,
+        "end": 2866,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Lecturas relacionadas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 2788,
+        "end": 1798,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -32646,8 +33296,8 @@
         "width": 1216
       },
       {
-        "content": 8228,
-        "end": 7238,
+        "content": 8229,
+        "end": 7239,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -32666,8 +33316,8 @@
         "width": 1216
       },
       {
-        "content": 7968,
-        "end": 6978,
+        "content": 7970,
+        "end": 6980,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -33250,8 +33900,8 @@
         "width": 1216
       },
       {
-        "content": 2175,
-        "end": 1185,
+        "content": 2176,
+        "end": 1186,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -33290,8 +33940,8 @@
         "width": 992
       },
       {
-        "content": 1539,
-        "end": 549,
+        "content": 1540,
+        "end": 550,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -33316,6 +33966,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Tabla con serie, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 1216,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Registros ordenables y agrupables, desplazables",
+        "overflow": "auto",
+        "width": 1216
+      },
+      {
+        "content": 4147,
+        "end": 3157,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Tabla interactiva, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -33462,8 +34132,8 @@
         "width": 1440
       },
       {
-        "content": 2348,
-        "end": 1358,
+        "content": 3502,
+        "end": 2512,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -33502,8 +34172,8 @@
         "width": 992
       },
       {
-        "content": 7003,
-        "end": 6013,
+        "content": 7005,
+        "end": 6015,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -33734,8 +34404,8 @@
         "width": 992
       },
       {
-        "content": 1304,
-        "end": 314,
+        "content": 1320,
+        "end": 330,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -33744,8 +34414,8 @@
         "width": 990
       },
       {
-        "content": 1013,
-        "end": 23,
+        "content": 1014,
+        "end": 24,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -33896,8 +34566,8 @@
         "width": 1440
       },
       {
-        "content": 4883,
-        "end": 3893,
+        "content": 4884,
+        "end": 3894,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -33916,8 +34586,8 @@
         "width": 558
       },
       {
-        "content": 11634,
-        "end": 10644,
+        "content": 11636,
+        "end": 10646,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -33942,6 +34612,16 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Terminal, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 4986,
+        "end": 3996,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Comentarios sobre el documento, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -34240,8 +34920,8 @@
         "width": 990
       },
       {
-        "content": 2646,
-        "end": 1656,
+        "content": 2647,
+        "end": 1657,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -34250,12 +34930,22 @@
         "width": 990
       },
       {
-        "content": 3855,
-        "end": 2865,
+        "content": 3856,
+        "end": 2866,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Lecturas relacionadas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 2788,
+        "end": 1798,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -34644,8 +35334,8 @@
         "width": 1216
       },
       {
-        "content": 8228,
-        "end": 7238,
+        "content": 8229,
+        "end": 7239,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -34664,8 +35354,8 @@
         "width": 1216
       },
       {
-        "content": 7968,
-        "end": 6978,
+        "content": 7970,
+        "end": 6980,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -35248,8 +35938,8 @@
         "width": 1216
       },
       {
-        "content": 2175,
-        "end": 1185,
+        "content": 2176,
+        "end": 1186,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -35288,8 +35978,8 @@
         "width": 992
       },
       {
-        "content": 1539,
-        "end": 549,
+        "content": 1540,
+        "end": 550,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -35314,6 +36004,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Tabla con serie, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 1216,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Registros ordenables y agrupables, desplazables",
+        "overflow": "auto",
+        "width": 1216
+      },
+      {
+        "content": 4147,
+        "end": 3157,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Tabla interactiva, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -35460,8 +36170,8 @@
         "width": 1440
       },
       {
-        "content": 2348,
-        "end": 1358,
+        "content": 3502,
+        "end": 2512,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -35500,8 +36210,8 @@
         "width": 992
       },
       {
-        "content": 7003,
-        "end": 6013,
+        "content": 7005,
+        "end": 6015,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -35732,8 +36442,8 @@
         "width": 992
       },
       {
-        "content": 1304,
-        "end": 314,
+        "content": 1320,
+        "end": 330,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -35742,8 +36452,8 @@
         "width": 990
       },
       {
-        "content": 1013,
-        "end": 23,
+        "content": 1014,
+        "end": 24,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -35894,8 +36604,8 @@
         "width": 1440
       },
       {
-        "content": 4883,
-        "end": 3893,
+        "content": 4884,
+        "end": 3894,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -35914,8 +36624,8 @@
         "width": 558
       },
       {
-        "content": 11634,
-        "end": 10644,
+        "content": 11636,
+        "end": 10646,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -35940,6 +36650,16 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Terminal, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 4986,
+        "end": 3996,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Comentarios sobre el documento, desplazable",
         "overflow": "auto",
         "width": 990
       }

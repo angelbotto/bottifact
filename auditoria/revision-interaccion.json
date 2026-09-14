@@ -1,0 +1,37 @@
+{
+  "failed": 0,
+  "results": [
+    {
+      "name": "43 recetas y HTML coloreado sin cambiar fuente",
+      "ok": true
+    },
+    {
+      "name": "Tabla filtra, agrupa y ordena las filas visibles",
+      "ok": true
+    },
+    {
+      "name": "Cards conservan tres tipos y enlaces reales",
+      "ok": true
+    },
+    {
+      "name": "Visor carga HTML local, cambia ancho y reinicia",
+      "ok": true
+    },
+    {
+      "name": "Comentario por teclado: guardar marca y prompt",
+      "ok": true
+    },
+    {
+      "name": "Comentario: editar, navegar desde lista y borrar",
+      "ok": true
+    },
+    {
+      "name": "Revision destroy/init limpia barra y listeners",
+      "ok": true
+    },
+    {
+      "name": "Sonido de escritura apagado sin gesto explícito",
+      "ok": true
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "checks": [
+    {
+      "name": "Cinco gráficas SVG, calor y dos escenas inicializados",
+      "ok": true
+    },
+    {
+      "name": "Barras: extremos, cero y longitudes proporcionales",
+      "ok": true
+    },
+    {
+      "name": "Temporal: distancia real, extremos y delta",
+      "ok": true
+    },
+    {
+      "name": "Líneas: ausencia corta el segmento; no conecta observaciones a través del hueco",
+      "ok": true
+    },
+    {
+      "name": "Histograma: áreas proporcionales a frecuencia con intervalos desiguales",
+      "ok": true
+    },
+    {
+      "name": "Calor: todos los niveles alcanzados; cero distinto de ausencia",
+      "ok": true
+    },
+    {
+      "name": "Vacío, cero constante, datos inválidos y reintento sin DOM parcial",
+      "ok": true
+    },
+    {
+      "name": "Fechas inválidas rechazadas; fechas cercanas no superponen sus rótulos",
+      "ok": true
+    },
+    {
+      "name": "Inicialización idempotente y destroy recupera datos",
+      "ok": true
+    },
+    {
+      "name": "Tabla: ordenar, ausencias al final, totales fijos y reversión",
+      "ok": true
+    },
+    {
+      "name": "Sparklines: misma escala para todas las filas y valores completos",
+      "ok": true
+    },
+    {
+      "name": "Three: dominios reales y alturas relativas; sin inflación del tamaño por perspectiva",
+      "ok": true
+    },
+    {
+      "name": "Three: pérdida de contexto cancela RAF y conserva tabla; recuperación y destroy",
+      "ok": true
+    },
+    {
+      "name": "Three ausente: tabla permanente e información accesible",
+      "ok": true
+    },
+    {
+      "name": "Audio: apagado y sin contexto; foco, scroll y clic sintético no lo activan",
+      "ok": true
+    }
+  ],
+  "failed": 0,
+  "passed": 15
+}
