@@ -28,7 +28,7 @@
       if(instances.has(element))throw new TypeError('Ya existe una escena en esta figura.');
       this.model=read(element);this.element=element;this.parts=[];this.dead=false;this.visible=false;
       this.frame=0;this.frames=0;this.last=0;this.rotating=false;this.lost=false;
-      this.phi=.65;this.theta=.38;this.selected=null;this.resources=new Set();this.abort=new AbortController();
+      this.phi=0;this.theta=0;this.selected=null;this.resources=new Set();this.abort=new AbortController();
       this.motion=matchMedia('(prefers-reduced-motion: reduce)');this.scheme=matchMedia('(prefers-color-scheme: dark)');
       this.buildDOM();
       this.listen(this.motion,'change',()=>{this.stop();this.sync();this.draw();this.start();});
@@ -54,12 +54,13 @@
       [left,right,up,reset,this.pauseButton].forEach(b=>{b.type='button';this.controls.append(b);});
       this.listen(left,'click',()=>this.rotate(-.25,0));this.listen(right,'click',()=>this.rotate(.25,0));
       this.listen(up,'click',()=>{this.theta=this.theta>.8?.2:this.theta+.2;this.draw();});
-      this.listen(reset,'click',()=>{this.phi=.65;this.theta=.38;this.draw();});
+      this.listen(reset,'click',()=>{this.phi=0;this.theta=0;this.draw();});
       this.listen(this.pauseButton,'click',()=>{this.rotating=!this.rotating;this.stop();this.sync();this.start();});
       this.status=node('p','',this.model.type==='xyz'?'Tres variables, tres ejes. La tabla permite consultar cada punto.':'La altura representa duración; el orden horizontal representa la secuencia.');this.status.setAttribute('role','status');
       this.selection=node('div','escena-controles');this.selection.setAttribute('role','group');this.selection.setAttribute('aria-label','Seleccionar registro');
       this.model.data.forEach((row,i)=>{const b=node('button','',row.label);b.type='button';b.dataset.registro=i;b.setAttribute('aria-pressed','false');this.listen(b,'click',()=>this.select(this.selected===i?null:i));this.selection.append(b);});
-      this.parts=[title,this.error,this.stage,this.controls,this.status,this.selection];
+      const axes=node('p','secundario',this.model.type==='xyz'?this.model.heads.slice(1).map((h,i)=>['X','Y','Z'][i]+': '+h).join(' · '):'Altura: '+this.model.heads[1]);
+      this.parts=[title,this.error,this.stage,axes,this.controls,this.status,this.selection];
       const before=this.element.firstChild;this.parts.forEach(e=>this.element.insertBefore(e,before));
       this.listen(this.canvas,'webglcontextlost',e=>{e.preventDefault();this.lost=true;this.stop();this.error.hidden=false;this.error.textContent='Vista 3D suspendida. Consulta la tabla.';});
       this.listen(this.canvas,'webglcontextrestored',()=>queueMicrotask(()=>{if(this.dead)return;this.lost=false;this.error.hidden=true;this.draw();this.start();}));
@@ -82,6 +83,7 @@
     text(text,position,size=.3){
       const canvas=document.createElement('canvas');canvas.width=768;canvas.height=96;
       const texture=this.keep(new THREE.CanvasTexture(canvas)),material=this.keep(new THREE.SpriteMaterial({map:texture,transparent:true,depthTest:false}));
+      texture.colorSpace=THREE.SRGBColorSpace;
       const sprite=new THREE.Sprite(material);sprite.scale.set(size*8,size,1);sprite.position.set(...position);
       this.group.add(sprite);this.labels.push({sprite,canvas,texture,text});
     }
@@ -91,15 +93,16 @@
         this.domains=[0,1,2].map(i=>extent(data.map(r=>r.values[i])));
         const map=(v,i)=>-1+(v-this.domains[i][0])/(this.domains[i][1]-this.domains[i][0])*2;
         for(let axis=0;axis<3;axis++){
-          const from=axis===0?[-1,-1.3,1.25]:axis===1?[-1.3,-1,1.25]:[1.3,-1.3,-1];
+          const from=axis===0?[-1,-1.15,1.15]:axis===1?[-1.15,-1,-1.15]:[1.15,-1.15,-1];
           const to=[...from];to[axis]=1.12;this.line(from,to);
           for(let tick=0;tick<=2;tick++){
             const value=this.domains[axis][0]+(this.domains[axis][1]-this.domains[axis][0])*tick/2;
             const p=[...from];p[axis]=map(value,axis);
-            const offset=axis===1?0:1;p[offset]-=.28;
+            if(axis===0)p[2]+=.5;else if(axis===2)p[0]+=.5;else p[0]-=.28;
             this.text(format(value),p,.28);
           }
-          const p=[...from];p[axis]=1.8;this.text(['X: ','Y: ','Z: '][axis]+heads[axis+1],p,.32);
+          const p=axis===0?[0,-1.9,1.15]:axis===1?[-1.15,1.45,-1.15]:[1.15,-1.9,0];
+          this.text(['X','Y','Z'][axis],p,.32);
         }
         data.forEach((r,i)=>{
           const geometry=this.keep(new THREE.SphereGeometry(.045,12,8));
@@ -107,11 +110,11 @@
           mesh.position.set(...r.values.map(map));mesh.userData.index=i;this.group.add(mesh);this.items.push(mesh);
         });
       }else{
-        const max=Math.max(1,...data.map(r=>r.values[0]));this.domains=[[0,data.length-1],[0,max],[0,1]];
+        const max=Math.max(...data.map(r=>r.values[0]))||1;this.domains=[[0,data.length-1],[0,max],[0,1]];
         const sx=i=>data.length===1?0:-1.5+i/(data.length-1)*3,sy=value=>value/max*2;
         this.line([-1.85,-1,0],[-1.85,1.1,0]);
         for(let tick=0;tick<=4;tick++){const v=max*tick/4,y=-1+sy(v);this.text(format(v),[-2.08,y,0],.28);this.line([-1.85,y,0],[1.8,y,0]);}
-        this.text(heads[1],[-1.85,1.7,0],.32);
+        this.text('Duración',[-1.85,1.7,0],.32);
         data.forEach((r,i)=>{
           const height=sy(r.values[0]);
           const material=this.keep(new THREE.MeshBasicMaterial());
@@ -144,7 +147,7 @@
       // Mantiene un lienzo legible de 600 px, desplazable en un teléfono.
       const width=Math.max(600,Math.round(this.stage.clientWidth)),height=440;
       this.renderer.setSize(width,height,false);this.canvas.style.aspectRatio=width+'/'+height;
-      const aspect=width/height,extent=3.15;
+      const aspect=width/height,extent=2.7;
       this.camera.left=-extent*aspect;this.camera.right=extent*aspect;this.camera.top=extent;this.camera.bottom=-extent;this.camera.updateProjectionMatrix();this.draw();
     }
     draw(){

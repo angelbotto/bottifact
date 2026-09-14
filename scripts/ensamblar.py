@@ -54,7 +54,7 @@ TOOLS
   <p class="ceja">Cuaderno 01 / forma y evidencia / septiembre 2026</p>
   <h1>La forma también<br>explica.</h1>
   <p class="bajada">Una nota puede ser rigurosa y tener carácter. La lectura necesita una medida; la evidencia, espacio para respirar.</p>
-  <p class="secundario mono">10 páginas estudiadas · 4 artículos completos</p>
+  <p class="secundario mono">Referencia revisada: 16 rutas · 8 artículos</p>
 </header>
 <nav class="indice" aria-label="Índice del documento"><p class="ceja">En esta nota</p><ol>
   <li><a href="#criterio">Una idea a la vez</a></li><li><a href="#proporcion">El peso de cada cosa</a></li><li><a href="#evidencia">Dejar la evidencia</a></li><li><a href="#rutas">Los lugares se conectan</a></li><li><a href="#guardado">Lo que vale guardar</a></li>
@@ -66,13 +66,13 @@ TOOLS
 <aside class="aviso ojo" aria-label="Aviso 1: criterio"><span class="num">1</span><div><p class="titulo">El estilo no sustituye la evidencia.</p><p>Las proporciones del siguiente mapa son ilustrativas. Las medidas del análisis se citan con su página y su CSS.</p></div></aside>
 <section class="seccion" id="proporcion"><p class="ceja">02 / proporción</p><h2>El peso de cada cosa.</h2><p>El área comunica participación. El valor escrito permite verificarla. Tres grupos bastan para mostrar la relación sin convertir la lectura en una búsqueda.</p></section>
 <figure class="ancho"><div class="mapa" role="group" aria-label="Reparto ilustrativo de 100 horas"><div class="bloque destaca"><span class="n">Investigar</span><span class="d">60 h · 60 %</span></div><div class="bloque"><span class="n">Construir</span><span class="d">25 h · 25 %</span></div><div class="bloque"><span class="n">Revisar</span><span class="d">15 h · 15 %</span></div></div><figcaption>01 — Ejemplo de 100 horas. Rejilla 3:2 y 5:3; las áreas incluyen el borde interior de cada celda.</figcaption></figure>
-<dl class="datos"><div><dt>Cobertura del análisis</dt><dd>6 páginas + 4 artículos</dd></div><div><dt>Texto original</dt><dd>15,5 px / 1,55</dd></div><div><dt>Medida de lectura aquí</dt><dd>máximo 35 rem</dd></div><div><dt>Figuras y tablas</dt><dd>hasta 62 / 76 rem</dd></div></dl>
-<div class="medida"><label for="cobertura">Páginas solicitadas revisadas</label><span class="pct">100 %</span><meter id="cobertura" min="0" max="10" value="10">10 de 10 páginas</meter></div>
+<dl class="datos"><div><dt>Cobertura del análisis</dt><dd>8 páginas + 8 artículos</dd></div><div><dt>Texto original</dt><dd>15,5 px / 1,55</dd></div><div><dt>Medida de lectura aquí</dt><dd>máximo 35 rem</dd></div><div><dt>Figuras y tablas</dt><dd>hasta 62 / 76 rem</dd></div></dl>
+<div class="medida"><label for="cobertura">Rutas del sitemap revisadas</label><span class="pct">100 %</span><meter id="cobertura" min="0" max="16" value="16">16 de 16 rutas</meter></div>
 <section class="seccion" id="evidencia"><p class="ceja">03 / evidencia</p><h2>Lo importante puede ocupar más.</h2><p>El código, las tablas y los diagramas comparten la rejilla del documento. Una figura puede ser más ancha que el texto y seguir perteneciendo a la misma historia.</p></section>
 <figure class="ancho"><div class="codigo"><div class="cab"><span>reporte.js · JavaScript</span><button type="button" data-copiar="codigo-ejemplo" aria-label="Copiar código de reporte.js">Copiar</button><span class="copia-estado" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Código de ejemplo"><code id="codigo-ejemplo"><span class="com">// Un dato sin fuente aún no es evidencia.</span>
 <span class="kw">const</span> lectura = {
   fuente: <span class="str">"CSS publicado de cmrg.me"</span>,
-  paginas: 10,
+  paginas: 16,
   cuerpo: <span class="str">"15.5px / 1.55"</span>,
   observacion: <span class="str">"El tema claro es una adaptación documentada."</span>
 };</code></pre></div><figcaption>02 — Encabezado y copia explícita. El contenido se puede seleccionar también si el portapapeles está bloqueado.</figcaption></figure>
@@ -110,12 +110,14 @@ def recipes():
 catalog='''<section class="seccion" id="libreria"><p class="ceja">06 / componentes para copiar</p>
 <h2>La evidencia tiene muchas formas.</h2><p>Gráficas, tablas y experiencias opcionales. Cada ejemplo conserva sus datos, su criterio y su límite en componentes.md.</p></section>'''
 for key,html in recipes():
+ if key=='multipagina':continue
  catalog += '\n' + html + '\n'
 body=body.replace('<footer class="pie">',catalog+'<footer class="pie">')
 body=body.replace('<li><a href="#guardado">Lo que vale guardar</a></li>','<li><a href="#guardado">Lo que vale guardar</a></li><li><a href="#libreria">Librería de evidencia</a></li>')
 (ROOT/'plantilla.html').write_text(start('Nota Tikin — la forma también explica')+body+script('interacciones.js')+globe_scripts()+script('graficas.js')+script('tablas.js')+script('sonido.js')+script('escritura.js')+script('escena.js'))
 globe_body='<main class="hoja" id="inicio" lang="es">'+tools()+'''<header class="cabecera"><p class="ceja">Nota / geografía</p><h1>Planes, puntos<br>y lugares.</h1><p class="bajada">Un globo de puntos para explorar conexiones. Elige una ruta, gira la Tierra o pausa la vista.</p></header>'''+globe()+'''<footer class="pie">Ejemplo reutilizable · Three.js desde cdnjs · máscara geográfica incrustada · ambos temas y movimiento reducido.</footer></main>'''
 (ROOT/'globo.html').write_text(start('Nota Tikin — globo de rutas')+globe_body+script('interacciones.js')+globe_scripts())
+(ROOT/'multipagina.html').write_text(start('Nota Tikin — capítulos')+dict(recipes())['multipagina']+script('interacciones.js')+script('multipagina.js'))
 from fixture_regresion import build
 build(start,script)
-print('Generados plantilla.html, globo.html y pruebas.html')
+print('Generados plantilla.html, globo.html, multipagina.html y pruebas.html')

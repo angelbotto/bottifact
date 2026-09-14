@@ -1,7 +1,7 @@
 ---
 name: nota-tikin
 description: >-
-  Diseña los artefactos e informes HTML de Angel y Tikin con el estilo editorial de nota: grises cálidos, títulos serif, texto de lectura y figuras anchas, anotaciones, datos verificables y temas claro y oscuro. Incluye una variante Dark Sea y un globo de rutas cuando la geografía aporta información.
+  Diseña los artefactos e informes HTML de Angel y Tikin con una librería editorial de componentes copiables: lectura serif/sans, figuras anchas, tablas, gráficas a escala, mapas de calor, anotaciones, escritura por trazos, sonido optativo y escenas Three.js con alternativa textual. Siempre en claro, oscuro cálido y Dark Sea, autocontenidos y compatibles con la CSP de artefactos.
 ---
 
 # Nota Tikin
@@ -59,6 +59,10 @@ Para un informe de varios capítulos, añade [multipagina.js](multipagina.js).
 [plantilla.html](plantilla.html) muestra todos juntos. Usa solo los que expliquen el contenido;
 la plantilla es un catálogo, no una estructura obligatoria para cada informe.
 
+La revisión de septiembre de 2026 está en [referencia-cmrg.md](referencia-cmrg.md): 16 rutas,
+estilos calculados, movimiento, fuentes de cada medida y límites de lo observado. Lee las
+fuentes actuales antes de modificar piezas; amplía de forma aditiva para conservar artefactos.
+
 - Abre con la decisión, el hallazgo o la pregunta concreta. Luego explica la evidencia y el límite.
 - Conserva la lectura en `.hoja`, con un máximo de `35rem`; no fijes un ancho en píxeles.
 - Pon tablas, código extenso y gráficos en `.ancho` (`62rem`) o `.amplio` (`76rem`), como hijos
@@ -114,6 +118,21 @@ la plantilla es un catálogo, no una estructura obligatoria para cada informe.
 | Mostrar un anticipo que se desvanece | `.extracto` | Solo una copia decorativa `aria-hidden`; el texto completo se abre con `details`. |
 | Guardar referencias que merecen volver a verse | `.kept` | Objeto, título completo y razón concreta; no envolver cada párrafo en tarjeta. |
 | Explicar conexiones geográficas | `NotaGlobo` | La ubicación debe importar. Para estados, flujos o arquitectura usa un diagrama apropiado. |
+| Comparar cantidades, incluidas negativas | `data-grafica="barras"` + [graficas.js](graficas.js) | Cero en el dominio, unidades compartidas, datos completos en tabla. |
+| Seguir categorías o fechas | `lineas` / `temporal` + [graficas.js](graficas.js) | Temporal usa fechas ISO con distancia real y delta frente a la fila anterior; ausencia corta la línea. |
+| Explorar dos variables o una distribución | `dispersion` / `distribucion` + [graficas.js](graficas.js) | Puntos finitos; histograma con intervalos reales y densidad para que el área represente frecuencia. |
+| Comparar intensidades en una matriz | `calor` + [graficas.js](graficas.js) | Cinco intervalos explícitos, leyenda, valor en cada celda, sin dato distinto de cero. No reemplaza `.mapa`. |
+| Comparar opciones, totales o series pequeñas | Recetas de tablas + [tablas.js](tablas.js) | Ordenación optativa, footer fijo, sparkline con escala compartida y serie escrita. |
+| Explicar tres variables o etapas | `NotaEscena` + [escena.js](escena.js) | XYZ / duración; tabla siempre visible, una inclusión de Three compartida con el globo. |
+| Añadir una señal breve de una acción | `NotaSonido` + [sonido.js](sonido.js) | Canal acotado; apagado al cargar, activación explícita, nunca scroll/foco. |
+| Repetir una anotación con gesto de pluma | `NotaEscritura` + [escritura.js](escritura.js) | Paths SVG ordenados y texto equivalente; no convierte una fuente en trazos. |
+
+Las recetas incluyen **HTML completo, cuándo usarlo/cuándo no y sus límites** en
+[componentes.md](componentes.md). Copia sólo los módulos que usa la pieza, una vez al final;
+`init(raíz)` permite inserción tardía, `get(elemento).destroy()` permite retirarla. No cargues
+archivos relativos en un artefacto: incrusta sus contenidos. Las tablas son la fuente de
+datos de gráficas y escenas; no dupliques las cifras en objetos JS que puedan desincronizarse.
+Three.js siempre en `https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js`.
 
 ## Artefactos con CSP estricta
 
@@ -163,7 +182,9 @@ cuidado, y se resuelven igual: **ancho mínimo propio y desplazamiento local**, 
 Lo demás ya cae solo: el índice vuelve al flujo bajo 1600 px, la nota al margen se coloca después
 de su párrafo bajo 1184 px, el código se desplaza dentro de su `pre` y la barra de páginas se
 desplaza de lado dentro de su propio ancho. **Comprueba a 390 px que ninguna caja de tabla o
-diagrama quede sin barra de desplazamiento**: si no la tiene, está comprimida.
+diagrama quede sin barra de desplazamiento**: si no la tiene, está comprimida. Repite
+exactamente a **320 px**; en los dos tamaños comprueba también gráficas, calor, escritura
+y escenas. Sus lienzos conservan mínimos legibles dentro de regiones con foco y nombre.
 
 ## Cuando la nota se parte en páginas
 
@@ -173,9 +194,9 @@ Un informe largo —capítulos, cada uno con su temario— se arma con `multipag
 
 1. `main.hoja.multipagina` contiene `article.pagina` con id; la primera lleva `viva`, las demás
    `hidden`. Las figuras `.ancho` y `.amplio` son hijas de `.pagina`, hermanas de las secciones.
-2. Pega `multipagina.js` **después** de `interacciones.js`. El índice de aquel recorre todo el
-   documento: las secciones ocultas miden cero, las da por pasadas y **tacha el temario entero**.
-   El script de páginas lo recalcula sobre la página viva con `aqui-visto` y `aqui-actual`.
+2. Pega `multipagina.js` **después** de `interacciones.js`. El índice global delega al detectar
+   `.multipagina`; el script de páginas mantiene `aria-current`, `aqui-visto` y `aqui-actual`
+   sólo en la página visible. No mezcles versiones antiguas de esos dos archivos.
 3. Cada página abre con su `header.cabecera` y su `nav.indice`. El hash guarda la página, así que
    un enlace directo a un capítulo funciona.
 
@@ -187,6 +208,11 @@ local permita alcanzar el final de tablas, código y diagramas. Prueba el modo d
 reducido y la lista del globo sin WebGL. No anuncies verificaciones que no ejecutaste.
 
 Si modificas las fuentes de este skill, ejecuta `python3 scripts/ensamblar.py` para actualizar
-ambos HTML y `python3 scripts/validar.py` para comprobar sus restricciones estructurales.
+los HTML y `python3 scripts/validar.py` para comprobar sus restricciones estructurales.
 El ensamblador es local, no instala dependencias ni publica nada. Los HTML generados contienen
 CSS, JS, portadas y máscara terrestre; no requieren subir archivos relativos.
+
+[multipagina.html](multipagina.html) contiene el ejemplo completo de capítulos;
+[pruebas.html](pruebas.html) es la fixture de regresiones (índice, copia, anchos e impresión).
+Para comprobar el navegador con CSP usa `python3 scripts/servir.py` y abre el puerto local
+8766. Los resultados y las limitaciones de esta revisión se guardan en `auditoria/`.

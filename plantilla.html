@@ -474,6 +474,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 .grafica-caja > svg { display: block; width: 100%; min-width: 800px; max-width: none; height: auto; }
 .grafica-caja text { fill: var(--grafica-tinta); font: 12px var(--mono); }
 .grafica-unidad { font-weight: 500; }
+.grafica-unidades { font: 13px/1.6 var(--mono); color: var(--grafica-tinta); margin-bottom: 12px; overflow-wrap: anywhere; }
 .grafica-rejilla { stroke: var(--grafica-linea); stroke-width: 1; stroke-dasharray: 2 5; }
 .grafica-eje { stroke: var(--grafica-tinta); fill: none; stroke-width: 1; }
 .serie-0 { --serie: var(--grafica-1); }
@@ -563,7 +564,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   <p class="ceja">Cuaderno 01 / forma y evidencia / septiembre 2026</p>
   <h1>La forma también<br>explica.</h1>
   <p class="bajada">Una nota puede ser rigurosa y tener carácter. La lectura necesita una medida; la evidencia, espacio para respirar.</p>
-  <p class="secundario mono">10 páginas estudiadas · 4 artículos completos</p>
+  <p class="secundario mono">Referencia revisada: 16 rutas · 8 artículos</p>
 </header>
 <nav class="indice" aria-label="Índice del documento"><p class="ceja">En esta nota</p><ol>
   <li><a href="#criterio">Una idea a la vez</a></li><li><a href="#proporcion">El peso de cada cosa</a></li><li><a href="#evidencia">Dejar la evidencia</a></li><li><a href="#rutas">Los lugares se conectan</a></li><li><a href="#guardado">Lo que vale guardar</a></li><li><a href="#libreria">Librería de evidencia</a></li>
@@ -575,13 +576,13 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 <aside class="aviso ojo" aria-label="Aviso 1: criterio"><span class="num">1</span><div><p class="titulo">El estilo no sustituye la evidencia.</p><p>Las proporciones del siguiente mapa son ilustrativas. Las medidas del análisis se citan con su página y su CSS.</p></div></aside>
 <section class="seccion" id="proporcion"><p class="ceja">02 / proporción</p><h2>El peso de cada cosa.</h2><p>El área comunica participación. El valor escrito permite verificarla. Tres grupos bastan para mostrar la relación sin convertir la lectura en una búsqueda.</p></section>
 <figure class="ancho"><div class="mapa" role="group" aria-label="Reparto ilustrativo de 100 horas"><div class="bloque destaca"><span class="n">Investigar</span><span class="d">60 h · 60 %</span></div><div class="bloque"><span class="n">Construir</span><span class="d">25 h · 25 %</span></div><div class="bloque"><span class="n">Revisar</span><span class="d">15 h · 15 %</span></div></div><figcaption>01 — Ejemplo de 100 horas. Rejilla 3:2 y 5:3; las áreas incluyen el borde interior de cada celda.</figcaption></figure>
-<dl class="datos"><div><dt>Cobertura del análisis</dt><dd>6 páginas + 4 artículos</dd></div><div><dt>Texto original</dt><dd>15,5 px / 1,55</dd></div><div><dt>Medida de lectura aquí</dt><dd>máximo 35 rem</dd></div><div><dt>Figuras y tablas</dt><dd>hasta 62 / 76 rem</dd></div></dl>
-<div class="medida"><label for="cobertura">Páginas solicitadas revisadas</label><span class="pct">100 %</span><meter id="cobertura" min="0" max="10" value="10">10 de 10 páginas</meter></div>
+<dl class="datos"><div><dt>Cobertura del análisis</dt><dd>8 páginas + 8 artículos</dd></div><div><dt>Texto original</dt><dd>15,5 px / 1,55</dd></div><div><dt>Medida de lectura aquí</dt><dd>máximo 35 rem</dd></div><div><dt>Figuras y tablas</dt><dd>hasta 62 / 76 rem</dd></div></dl>
+<div class="medida"><label for="cobertura">Rutas del sitemap revisadas</label><span class="pct">100 %</span><meter id="cobertura" min="0" max="16" value="16">16 de 16 rutas</meter></div>
 <section class="seccion" id="evidencia"><p class="ceja">03 / evidencia</p><h2>Lo importante puede ocupar más.</h2><p>El código, las tablas y los diagramas comparten la rejilla del documento. Una figura puede ser más ancha que el texto y seguir perteneciendo a la misma historia.</p></section>
 <figure class="ancho"><div class="codigo"><div class="cab"><span>reporte.js · JavaScript</span><button type="button" data-copiar="codigo-ejemplo" aria-label="Copiar código de reporte.js">Copiar</button><span class="copia-estado" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Código de ejemplo"><code id="codigo-ejemplo"><span class="com">// Un dato sin fuente aún no es evidencia.</span>
 <span class="kw">const</span> lectura = {
   fuente: <span class="str">"CSS publicado de cmrg.me"</span>,
-  paginas: 10,
+  paginas: 16,
   cuerpo: <span class="str">"15.5px / 1.55"</span>,
   observacion: <span class="str">"El tema claro es una adaptación documentada."</span>
 };</code></pre></div><figcaption>02 — Encabezado y copia explícita. El contenido se puede seleccionar también si el portapapeles está bloqueado.</figcaption></figure>
@@ -607,6 +608,41 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 <aside class="aviso cita"><span class="num" aria-hidden="true">↳</span><div><blockquote>Dejar una buena nota es dejarle contexto a quien llega después.</blockquote><p class="secundario">Principio de esta plantilla</p></div></aside>
 <section class="seccion" id="libreria"><p class="ceja">06 / componentes para copiar</p>
 <h2>La evidencia tiene muchas formas.</h2><p>Gráficas, tablas y experiencias opcionales. Cada ejemplo conserva sus datos, su criterio y su límite en componentes.md.</p></section>
+<figure class="amplio">
+  <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Brechas, desplazable">
+    <table><caption>Seguimiento ilustrativo de brechas</caption>
+      <thead><tr><th scope="col">Brecha</th><th scope="col">Responsable</th><th scope="col">Estado</th><th scope="col">Inicio</th><th scope="col">Revisión</th><th scope="col">Evidencia esperada</th></tr></thead>
+      <tbody><tr><th scope="row">Fuente sin fecha de corte</th><td>Equipo de datos</td><td>Pendiente</td><td><time datetime="2026-09-13">13-sep-2026</time></td><td><time datetime="2026-09-18">18-sep-2026</time></td><td>Registro con fecha y criterio de inclusión.</td></tr>
+        <tr><th scope="row">Definición de unidad</th><td>Equipo de análisis</td><td>En revisión</td><td><time datetime="2026-09-12">12-sep-2026</time></td><td><time datetime="2026-09-16">16-sep-2026</time></td><td>Diccionario con unidad y denominador.</td></tr></tbody>
+    </table>
+  </div>
+  <figcaption>Ejemplo de seis columnas; desplaza la tabla para consultar la última.</figcaption>
+</figure>
+
+<figure class="ancho">
+  <div class="terminal">
+    <div class="cab"><span>saldo por bolsillo · ejemplo ilustrativo</span>
+      <button type="button" data-copiar="t-saldos" aria-label="Copiar la salida">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+          <rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>
+        </svg>
+      </button>
+      <span class="copia-estado" role="status" aria-live="polite"></span>
+    </div>
+    <div class="cuerpo">
+      <pre tabindex="0" aria-label="Distribución del saldo"><code id="t-saldos"><span class="tenue">       rango   bolsillos        total COP</span>
+<span class="tenue">  ------------  ---------  ---------------</span>
+  menos de $100        349            5.120
+    más de $1M          5    <span class="subra">14.434.490</span></code></pre>
+    </div>
+  </div>
+  <figcaption>Datos ilustrativos. La columna que importa va señalada, no en negrita.</figcaption>
+</figure>
+
+<p class="manuscrita">las fechas dicen cuándo pasó cada cosa. lo que explica cómo una llevó a la
+  otra está <span class="senalado">en las brechas</span>, donde dejo de
+  hablar de porcentajes</p>
+
 <figure class="ancho" id="barras-ejemplo" data-grafica="barras" data-unidad="Horas">
   <details open><summary>Ver los datos de balance de horas</summary>
     <div class="tabla-caja" tabindex="0" role="region" aria-label="Balance de horas, tabla desplazable">
@@ -1387,7 +1423,7 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
   }
   // Una única función coloca valores y ticks; nunca hay coordenadas con escala distinta.
   function scale(min, max, start, end) {
-    if (![min,max,start,end].every(Number.isFinite) || min >= max) throw new TypeError('Dominio inválido.');
+    if (![min,max,start,end,max-min,end-start].every(Number.isFinite) || min >= max) throw new TypeError('Dominio inválido.');
     return v => start + (v - min) / (max - min) * (end - start);
   }
   function domain(values, zero = false) {
@@ -1431,6 +1467,7 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
         if (x >= end || values[0] === null || values[0] < 0 || !Number.isInteger(values[0])) throw new TypeError('Intervalos crecientes y frecuencias enteras no negativas.');
         // Columna de densidad se calcula, no es una segunda fuente manual.
         values[1] = values[0] / (end - x);
+        if(!Number.isFinite(values[1]))throw new TypeError('La densidad excede la precisión numérica.');
       }
       if (type === 'dispersion' && values.some(v => v === null)) throw new TypeError('Cada punto necesita X e Y.');
       return {label, values, x, end};
@@ -1455,8 +1492,9 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
       }
     }
     svg.append(svgNode('path',{d:`M${left} ${top}V${bottom}H${right}`,class:'grafica-eje'}));
-    label(svg,left,top-18,yTitle,{class:'grafica-unidad'});
-    if(xTitle) label(svg,(left+right)/2,bottom+62,xTitle,{'text-anchor':'middle',class:'grafica-unidad'});
+    // Unidades completas en HTML: el texto largo puede envolver sin salirse del viewBox.
+    label(svg,left,top-18,'Y',{class:'grafica-unidad'});
+    if(xTitle) label(svg,(left+right)/2,bottom+62,'X',{'text-anchor':'middle',class:'grafica-unidad'});
     return {sx,sy};
   }
   class NotaGrafica {
@@ -1489,11 +1527,12 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
         const b={left:110,right:700,top:50,bottom:310};
         let xd,yd,xTitle=heads[0];
         if(type==='dispersion') {xd=domain(data.map(r=>r.values[0]));yd=domain(data.map(r=>r.values[1]));xTitle=heads[1];}
-        else if(type==='distribucion') {xd=domain(data.flatMap(r=>[r.x,r.end]));yd=[0,Math.max(1,...data.map(r=>r.values[1]))];xTitle=heads[0];}
+        else if(type==='distribucion') {xd=domain(data.flatMap(r=>[r.x,r.end]));yd=[0,Math.max(...data.map(r=>r.values[1]))||1];xTitle=heads[0];}
         else {xd=type==='temporal'?domain(data.map(r=>r.x)):domain(data.map((_,i)=>i));yd=domain(all);}
         // El dominio numérico está expuesto en SVG para verificar el contrato, no para controlarlo.
         svg.dataset.xMin=xd[0];svg.dataset.xMax=xd[1];svg.dataset.yMin=yd[0];svg.dataset.yMax=yd[1];
         const yTitle=type==='dispersion'?heads[2]:type==='distribucion'?heads[2]:(this.figure.dataset.unidad || heads.slice(1).join(' / '));
+        const units=element('p','grafica-unidades','X: '+xTitle+' · Y: '+yTitle);region.before(units);this.parts.push(units);
         const {sx,sy}=axes(svg,xd,yd,b,['lineas','temporal'].includes(type)?null:xTitle,yTitle);
         if(type==='dispersion') data.forEach(r=>{
           const circle=svgNode('circle',{cx:sx(r.values[0]),cy:sy(r.values[1]),r:5,class:'grafica-serie serie-0','data-x':r.values[0],'data-y':r.values[1]});
@@ -1519,11 +1558,12 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
     bars(svg,width,height) {
       const {heads,data}=this.model;
       const values=data.flatMap(r=>r.values).filter(v=>v!==null),xd=domain(values,true);
-      const left=240,right=width-110,top=60,bottom=height-52,sx=scale(...xd,left,right);
+      const left=320,right=width-110,top=60,bottom=height-52,sx=scale(...xd,left,right);
       svg.dataset.xMin=xd[0];svg.dataset.xMax=xd[1];
       for(let i=0;i<=4;i++) {const x=xd[0]+(xd[1]-xd[0])*i/4;svg.append(svgNode('line',{x1:sx(x),x2:sx(x),y1:top-10,y2:bottom,class:'grafica-rejilla','data-tick-x':x}));label(svg,sx(x),bottom+26,fmt(x),{'text-anchor':'middle'});}
       svg.append(svgNode('line',{x1:sx(0),x2:sx(0),y1:top-10,y2:bottom,class:'grafica-eje'}));
-      label(svg,left,28,this.figure.dataset.unidad||heads.slice(1).join(' / '));
+      const units=element('p','grafica-unidades','X: '+(this.figure.dataset.unidad||heads.slice(1).join(' / ')));this.svg.parentElement.before(units);this.parts.push(units);
+      label(svg,left,28,'X');
       let rowTop=top;
       data.forEach((r,j)=>r.values.forEach((v,i)=>{
         const y=rowTop+i*42;
@@ -1553,7 +1593,11 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
         });
         svg.prepend(svgNode('path',{d,class:'grafica-trazo serie-'+i}));
       });
-      const ticks=new Set(Array.from({length:Math.min(5,data.length)},(_,i)=>Math.round(i*(data.length-1)/Math.max(1,Math.min(5,data.length)-1))));
+      // Fechas irregulares: sólo rótulos separados por 115 px. Todos los puntos se dibujan.
+      const candidates=Array.from({length:Math.min(5,data.length)},(_,i)=>Math.round(i*(data.length-1)/Math.max(1,Math.min(5,data.length)-1)));
+      const ticks=new Set([0]);let last=sx(type==='temporal'?data[0].x:0);
+      candidates.slice(1).forEach(i=>{const x=sx(type==='temporal'?data[i].x:i);if(x-last>=115){ticks.add(i);last=x;}});
+      if(data.length>1){const end=data.length-1,x=sx(type==='temporal'?data[end].x:end);[...ticks].forEach(i=>{if(i!==0 && x-sx(type==='temporal'?data[i].x:i)<115)ticks.delete(i);});ticks.add(end);}
       // Etiquetas completas en varias líneas, con altura calculada según su contenido.
       let lines=1;
       data.forEach((r,j)=>{if(ticks.has(j)) {
@@ -1562,8 +1606,9 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
         const x=sx(type==='temporal'?r.x:j),t=label(svg,x,b.bottom+26,'',{'text-anchor':'middle','data-label-index':j});
         chunks.forEach((chunk,i)=>t.append(svgNode('tspan',{x,dy:i?16:0},chunk.trim())));
       }});
-      svg.setAttribute('viewBox',`0 0 800 ${Math.max(400,b.bottom+lines*16+86)}`);
-      label(svg,(b.left+b.right)/2,b.bottom+lines*16+50,heads[0],{'text-anchor':'middle'});
+      const height=Math.max(400,b.bottom+lines*16+86);
+      svg.setAttribute('viewBox',`0 0 800 ${height}`);svg.setAttribute('height',height);
+      label(svg,(b.left+b.right)/2,b.bottom+lines*16+50,'X',{'text-anchor':'middle'});
     }
     comparison() {
       const {data,heads}=this.model;
@@ -1832,7 +1877,7 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
       if(instances.has(element))throw new TypeError('Ya existe una escena en esta figura.');
       this.model=read(element);this.element=element;this.parts=[];this.dead=false;this.visible=false;
       this.frame=0;this.frames=0;this.last=0;this.rotating=false;this.lost=false;
-      this.phi=.65;this.theta=.38;this.selected=null;this.resources=new Set();this.abort=new AbortController();
+      this.phi=0;this.theta=0;this.selected=null;this.resources=new Set();this.abort=new AbortController();
       this.motion=matchMedia('(prefers-reduced-motion: reduce)');this.scheme=matchMedia('(prefers-color-scheme: dark)');
       this.buildDOM();
       this.listen(this.motion,'change',()=>{this.stop();this.sync();this.draw();this.start();});
@@ -1858,12 +1903,13 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
       [left,right,up,reset,this.pauseButton].forEach(b=>{b.type='button';this.controls.append(b);});
       this.listen(left,'click',()=>this.rotate(-.25,0));this.listen(right,'click',()=>this.rotate(.25,0));
       this.listen(up,'click',()=>{this.theta=this.theta>.8?.2:this.theta+.2;this.draw();});
-      this.listen(reset,'click',()=>{this.phi=.65;this.theta=.38;this.draw();});
+      this.listen(reset,'click',()=>{this.phi=0;this.theta=0;this.draw();});
       this.listen(this.pauseButton,'click',()=>{this.rotating=!this.rotating;this.stop();this.sync();this.start();});
       this.status=node('p','',this.model.type==='xyz'?'Tres variables, tres ejes. La tabla permite consultar cada punto.':'La altura representa duración; el orden horizontal representa la secuencia.');this.status.setAttribute('role','status');
       this.selection=node('div','escena-controles');this.selection.setAttribute('role','group');this.selection.setAttribute('aria-label','Seleccionar registro');
       this.model.data.forEach((row,i)=>{const b=node('button','',row.label);b.type='button';b.dataset.registro=i;b.setAttribute('aria-pressed','false');this.listen(b,'click',()=>this.select(this.selected===i?null:i));this.selection.append(b);});
-      this.parts=[title,this.error,this.stage,this.controls,this.status,this.selection];
+      const axes=node('p','secundario',this.model.type==='xyz'?this.model.heads.slice(1).map((h,i)=>['X','Y','Z'][i]+': '+h).join(' · '):'Altura: '+this.model.heads[1]);
+      this.parts=[title,this.error,this.stage,axes,this.controls,this.status,this.selection];
       const before=this.element.firstChild;this.parts.forEach(e=>this.element.insertBefore(e,before));
       this.listen(this.canvas,'webglcontextlost',e=>{e.preventDefault();this.lost=true;this.stop();this.error.hidden=false;this.error.textContent='Vista 3D suspendida. Consulta la tabla.';});
       this.listen(this.canvas,'webglcontextrestored',()=>queueMicrotask(()=>{if(this.dead)return;this.lost=false;this.error.hidden=true;this.draw();this.start();}));
@@ -1886,6 +1932,7 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
     text(text,position,size=.3){
       const canvas=document.createElement('canvas');canvas.width=768;canvas.height=96;
       const texture=this.keep(new THREE.CanvasTexture(canvas)),material=this.keep(new THREE.SpriteMaterial({map:texture,transparent:true,depthTest:false}));
+      texture.colorSpace=THREE.SRGBColorSpace;
       const sprite=new THREE.Sprite(material);sprite.scale.set(size*8,size,1);sprite.position.set(...position);
       this.group.add(sprite);this.labels.push({sprite,canvas,texture,text});
     }
@@ -1895,15 +1942,16 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
         this.domains=[0,1,2].map(i=>extent(data.map(r=>r.values[i])));
         const map=(v,i)=>-1+(v-this.domains[i][0])/(this.domains[i][1]-this.domains[i][0])*2;
         for(let axis=0;axis<3;axis++){
-          const from=axis===0?[-1,-1.3,1.25]:axis===1?[-1.3,-1,1.25]:[1.3,-1.3,-1];
+          const from=axis===0?[-1,-1.15,1.15]:axis===1?[-1.15,-1,-1.15]:[1.15,-1.15,-1];
           const to=[...from];to[axis]=1.12;this.line(from,to);
           for(let tick=0;tick<=2;tick++){
             const value=this.domains[axis][0]+(this.domains[axis][1]-this.domains[axis][0])*tick/2;
             const p=[...from];p[axis]=map(value,axis);
-            const offset=axis===1?0:1;p[offset]-=.28;
+            if(axis===0)p[2]+=.5;else if(axis===2)p[0]+=.5;else p[0]-=.28;
             this.text(format(value),p,.28);
           }
-          const p=[...from];p[axis]=1.8;this.text(['X: ','Y: ','Z: '][axis]+heads[axis+1],p,.32);
+          const p=axis===0?[0,-1.9,1.15]:axis===1?[-1.15,1.45,-1.15]:[1.15,-1.9,0];
+          this.text(['X','Y','Z'][axis],p,.32);
         }
         data.forEach((r,i)=>{
           const geometry=this.keep(new THREE.SphereGeometry(.045,12,8));
@@ -1911,11 +1959,11 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
           mesh.position.set(...r.values.map(map));mesh.userData.index=i;this.group.add(mesh);this.items.push(mesh);
         });
       }else{
-        const max=Math.max(1,...data.map(r=>r.values[0]));this.domains=[[0,data.length-1],[0,max],[0,1]];
+        const max=Math.max(...data.map(r=>r.values[0]))||1;this.domains=[[0,data.length-1],[0,max],[0,1]];
         const sx=i=>data.length===1?0:-1.5+i/(data.length-1)*3,sy=value=>value/max*2;
         this.line([-1.85,-1,0],[-1.85,1.1,0]);
         for(let tick=0;tick<=4;tick++){const v=max*tick/4,y=-1+sy(v);this.text(format(v),[-2.08,y,0],.28);this.line([-1.85,y,0],[1.8,y,0]);}
-        this.text(heads[1],[-1.85,1.7,0],.32);
+        this.text('Duración',[-1.85,1.7,0],.32);
         data.forEach((r,i)=>{
           const height=sy(r.values[0]);
           const material=this.keep(new THREE.MeshBasicMaterial());
@@ -1948,7 +1996,7 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
       // Mantiene un lienzo legible de 600 px, desplazable en un teléfono.
       const width=Math.max(600,Math.round(this.stage.clientWidth)),height=440;
       this.renderer.setSize(width,height,false);this.canvas.style.aspectRatio=width+'/'+height;
-      const aspect=width/height,extent=3.15;
+      const aspect=width/height,extent=2.7;
       this.camera.left=-extent*aspect;this.camera.right=extent*aspect;this.camera.top=extent;this.camera.bottom=-extent;this.camera.updateProjectionMatrix();this.draw();
     }
     draw(){

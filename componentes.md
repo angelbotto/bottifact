@@ -4,6 +4,12 @@ Los bloques siguientes son HTML completo de componente, para copiar dentro de `.
 de pegar `estilo.css` en `<style>`. Los comportamientos se activan pegando `interacciones.js`
 una vez al final del documento. No introducen clases de Tailwind ni dependen de React.
 
+Para empezar por una pieza: [gráficas](#recetas-graficas),
+[calor](#recetas-calor), [tablas](#recetas-tablas),
+[sonido](#recetas-sonido), [escritura](#recetas-escritura),
+[Three.js](#recetas-three). `plantilla.html` es el catálogo ejecutable;
+`multipagina.html` muestra capítulos completos. Las recetas marcadas son sus fuentes.
+
 ## Documento y temas
 
 ```html
@@ -256,8 +262,10 @@ no añadas un `onclick` a un `div`. Las portadas con `<img>` deben ser `data:` U
 
 ## Multipágina
 
+<!-- nota:ejemplo multipagina -->
 ```html
-<div class="barra">
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<div class="barra" tabindex="0" role="region" aria-label="Páginas y tema, desplazable">
   <span class="sello">nota / tikin</span>
   <nav aria-label="Páginas del informe">
     <button type="button" data-ir="p1" aria-current="page"><span class="n">01</span>El destino</button>
@@ -284,20 +292,33 @@ no añadas un `onclick` a un `div`. Las portadas con `<img>` deben ser `data:` U
       <ol><li><a href="#criterio">El criterio</a></li></ol>
     </nav>
     <section class="seccion" id="criterio"><h2>El criterio</h2><p>Texto.</p></section>
-    <figure class="amplio">…</figure>   <!-- hermana de la sección, no hija -->
+    <figure class="amplio">
+      <div class="tabla-caja" tabindex="0" role="region" aria-label="Criterios del destino, desplazable">
+        <table><caption>Criterios ilustrativos</caption>
+          <thead><tr><th scope="col">Criterio</th><th scope="col">Resultado esperado</th></tr></thead>
+          <tbody><tr><th scope="row">Trazabilidad</th><td>Conservar la fuente y la fecha de cada registro.</td></tr></tbody>
+        </table>
+      </div><figcaption>Figura hermana de la sección; conserva el ancho amplio.</figcaption>
+    </figure>
   </article>
 
-  <article class="pagina" id="p2" data-pagina hidden>…</article>
+  <article class="pagina" id="p2" data-pagina hidden>
+    <header class="cabecera"><p class="ceja">Página 02 / evidencia</p><h1>Qué lo sostiene.</h1></header>
+    <nav class="indice" aria-label="Índice de evidencia"><ol><li><a href="#registro">El registro</a></li></ol></nav>
+    <section class="seccion" id="registro"><h2>El registro</h2><p>Una muestra ilustrativa conserva su origen y distingue lo medido de lo pendiente.</p></section>
+    <figure class="ancho"><div class="codigo"><div class="cab"><span>registro.txt</span>
+      <button type="button" data-copiar="registro-p2">Copiar registro</button><span class="copia-estado" role="status"></span></div>
+      <pre tabindex="0" aria-label="Registro ilustrativo"><code id="registro-p2">fuente: ejemplo local
+fecha: 2026-09-13
+estado: pendiente de medir</code></pre></div><figcaption>Datos de ejemplo, sin una medición de producción.</figcaption></figure>
+  </article>
 
   <div class="paginacion" data-paginacion>
     <button type="button" data-nav="prev"><span class="et">Anterior</span><span class="tit"></span></button>
     <button type="button" data-nav="next"><span class="et">Siguiente</span><span class="tit"></span></button>
   </div>
-  <footer class="pie">…</footer>
+  <footer class="pie">Nota Tikin · Dos capítulos de ejemplo.</footer>
 </main>
-
-<script>/* interacciones.js */</script>
-<script>/* multipagina.js — DESPUÉS del anterior */</script>
 ```
 
 **Cuándo:** un informe con capítulos que se leen por separado y merecen cada uno su temario. No
@@ -307,10 +328,15 @@ para una nota de tres secciones: ahí la página única con índice lateral es m
 `por-seccion`: con las páginas de por medio, el selector `>` de `por-seccion` ya no alcanza a las
 secciones y todo termina del ancho del párrafo.
 
-**El orden de los guiones importa.** El índice de `interacciones.js` mide todos los enlaces del
-documento; las secciones ocultas miden cero y las cree ya leídas, así que tacha el temario
-completo. `multipagina.js` lo recalcula sobre la página viva usando `aqui-visto` y `aqui-actual`,
-y la hoja anula las marcas del otro. Si sólo pegas uno de los dos, verás el temario tachado.
+**Instalación:** pega `interacciones.js` y después `multipagina.js`, completos dentro de
+sendos `<script>` al final. El primero delega el índice cuando ve `.multipagina`; el segundo
+mantiene `aria-current`, `aqui-visto` y `aqui-actual` únicamente en la página visible.
+`multipagina.html` contiene la receta completa con ambos guiones y el CSS incrustados.
+
+**Límite:** no carga páginas por red ni implementa un router de aplicación. Un enlace de
+capítulo usa su ID (`#p2`); los enlaces a secciones son internos a la página ya abierta.
+Sin JS sólo se ve el primer capítulo en pantalla; imprime todos los capítulos. No combines
+`por-seccion` con `multipagina`. Cada ID y cada `data-ir` debe ser único y corresponderse.
 
 El botón activo lleva `aria-current="page"`; el hash conserva la página abierta, así que un enlace
 a un capítulo concreto funciona. Al cambiar de página se emite `nota:pagina` por si hay que
@@ -318,11 +344,17 @@ arrancar un lienzo o recalcular una figura.
 
 ## Tablas densas
 
+<!-- nota:ejemplo tabla-densa -->
 ```html
 <figure class="amplio">
   <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Brechas, desplazable">
-    <table><caption>Seis columnas no caben en un teléfono</caption>…</table>
+    <table><caption>Seguimiento ilustrativo de brechas</caption>
+      <thead><tr><th scope="col">Brecha</th><th scope="col">Responsable</th><th scope="col">Estado</th><th scope="col">Inicio</th><th scope="col">Revisión</th><th scope="col">Evidencia esperada</th></tr></thead>
+      <tbody><tr><th scope="row">Fuente sin fecha de corte</th><td>Equipo de datos</td><td>Pendiente</td><td><time datetime="2026-09-13">13-sep-2026</time></td><td><time datetime="2026-09-18">18-sep-2026</time></td><td>Registro con fecha y criterio de inclusión.</td></tr>
+        <tr><th scope="row">Definición de unidad</th><td>Equipo de análisis</td><td>En revisión</td><td><time datetime="2026-09-12">12-sep-2026</time></td><td><time datetime="2026-09-16">16-sep-2026</time></td><td>Diccionario con unidad y denominador.</td></tr></tbody>
+    </table>
   </div>
+  <figcaption>Ejemplo de seis columnas; desplaza la tabla para consultar la última.</figcaption>
 </figure>
 ```
 
@@ -333,10 +365,11 @@ El desplazamiento es local —la página nunca se mueve de lado— y la caja es 
 
 ## Terminal
 
+<!-- nota:ejemplo terminal -->
 ```html
 <figure class="ancho">
   <div class="terminal">
-    <div class="cab"><span>saldo por bolsillo · producción</span>
+    <div class="cab"><span>saldo por bolsillo · ejemplo ilustrativo</span>
       <button type="button" data-copiar="t-saldos" aria-label="Copiar la salida">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
           <rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>
@@ -351,7 +384,7 @@ El desplazamiento es local —la página nunca se mueve de lado— y la caja es 
     más de $1M          5    <span class="subra">14.434.490</span></code></pre>
     </div>
   </div>
-  <figcaption>Medido el 12-sep. La columna que importa va señalada, no en negrita.</figcaption>
+  <figcaption>Datos ilustrativos. La columna que importa va señalada, no en negrita.</figcaption>
 </figure>
 ```
 
@@ -365,9 +398,10 @@ con espacios dentro del `<pre>`; no uses una tabla disfrazada.
 
 ## Nota manuscrita señalada
 
+<!-- nota:ejemplo manuscrita -->
 ```html
 <p class="manuscrita">las fechas dicen cuándo pasó cada cosa. lo que explica cómo una llevó a la
-  otra está <span class="senalado"><a href="#brechas">en las brechas</a></span>, donde dejo de
+  otra está <span class="senalado">en las brechas</span>, donde dejo de
   hablar de porcentajes</p>
 ```
 
@@ -453,10 +487,14 @@ figuras como hijas de `.pagina`. No envuelvas el bloque en otra sección angosta
 `data-valor` usa punto decimal, sin separadores de miles; su texto visible incluye la
 unidad y el formato humano. Vacío significa ausencia, `0` es un cero medido. Los ejemplos
 son ilustrativos y lo dicen en su pie. Los nombres y los datos se insertan como texto.
+Las unidades de los ejes se escriben completas junto al dibujo (`X`, `Y`) para permitir
+que envuelvan en varias líneas. El SVG mantiene los ticks y sus valores en la misma escala.
 Las gráficas no tienen animación ni tooltip imprescindible: la tabla permite consultar
 cada punto por teclado. Las escalas se calculan con los datos, sin recortar extremos.
 No se suman ni se interpolan registros ausentes. Los intervalos entre puntos de una línea
 son segmentos rectos, no observaciones adicionales.
+
+<a id="recetas-graficas"></a>
 
 ## Barras: cantidades y diferencias
 
@@ -580,6 +618,8 @@ son segmentos rectos, no observaciones adicionales.
 
 **Límite:** frecuencias enteras no negativas; intervalos crecientes sin solapamientos. La densidad se calcula como frecuencia/ancho; con intervalos desiguales es el área la que representa el conteo. La tabla declara inclusión/exclusión de extremos; el módulo no agrupa muestras individuales ni inventa bins. No es una curva de probabilidad ni un gráfico de categorías.
 
+<a id="recetas-calor"></a>
+
 ## Attention map: matriz de intensidad
 
 <!-- nota:ejemplo calor -->
@@ -602,6 +642,8 @@ son segmentos rectos, no observaciones adicionales.
 **Cuándo:** buscar concentraciones entre dos dimensiones discretas. Cada celda muestra su valor y la leyenda tiene intervalos explícitos. Para partes de un total usa `.mapa`, que conserva el treemap original.
 
 **Límite:** cinco niveles, definidos por seis límites crecientes; máximo incluido en el último nivel. Un valor fuera del dominio produce error visible y conserva la tabla, nunca se satura en secreto. Hasta 31 × 31 celdas con ancho mínimo por columna y scroll local. No usa degradado ni escala implícita por fila. Las cifras mantienen el significado con colores forzados.
+
+<a id="recetas-tablas"></a>
 
 ## Tabla de comparación
 
@@ -672,6 +714,8 @@ son segmentos rectos, no observaciones adicionales.
 
 **Límite:** X equidistante; todas las filas deben describir los mismos períodos. Exige `data-min`/`data-max` comunes y rechaza dibujar puntos fuera de ellos. No autoescala por fila, no es una gráfica con ejes ni codifica tiempo irregular; para eso usa la serie temporal. El texto sigue disponible si el dibujo no se puede generar.
 
+<a id="recetas-sonido"></a>
+
 ## Sonido: un canal que empieza apagado
 
 Pega [sonido.js](sonido.js) una vez al final, además del CSS. No necesita `interacciones.js`.
@@ -705,6 +749,8 @@ fondo, y la ganancia digital no garantiza un nivel acústico en el dispositivo.
 `NotaSonido.get(contenedor).disable()` apaga; `.destroy()` cierra el contexto y listeners.
 `NotaSonido.init(contenedor)` inicializa HTML nuevo. No hay método público de reproducción
 automática. `[data-sonido]` del sistema anterior conserva su comportamiento fuera del canal.
+
+<a id="recetas-escritura"></a>
 
 ## Escritura: trazo a trazo
 
@@ -747,6 +793,8 @@ no música sincronizada. Web Animations se cancela y completa al salir de pantal
 la pestaña o activar movimiento reducido; no hay RAF ni colas que se reanuden al volver.
 `NotaEscritura.get(elemento).play()`, `.finish()` y `.destroy()` controlan la instancia;
 `.play()` respeta movimiento reducido. `NotaEscritura.init(elemento)` admite inserción tardía.
+
+<a id="recetas-three"></a>
 
 ## Three.js: dispersión XYZ
 

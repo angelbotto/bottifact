@@ -1,3 +1,6 @@
+<title>Nota Tikin — capítulos</title>
+<meta charset="utf-8">
+<style>
 /* NOTA TIKIN · v2 · septiembre 2026
    Pegar completa en <style>. Fuentes por Google Fonts; sin @import ni assets remotos.
    La escala cálida procede del CSS auditado de cmrg.me. Claro y Sea son adaptaciones.
@@ -550,3 +553,288 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   .terminal pre { white-space: pre-wrap; overflow: visible; overflow-wrap: anywhere; }
   .terminal .tenue,.terminal .cab { color: #51473e; }
 }
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Reenie+Beanie&display=swap">
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<div class="barra" tabindex="0" role="region" aria-label="Páginas y tema, desplazable">
+  <span class="sello">nota / tikin</span>
+  <nav aria-label="Páginas del informe">
+    <button type="button" data-ir="p1" aria-current="page"><span class="n">01</span>El destino</button>
+    <button type="button" data-ir="p2"><span class="n">02</span>La evidencia</button>
+  </nav>
+  <div class="temas">
+    <label for="tema" class="sr-only">Papel</label>
+    <select id="tema" data-tema>
+      <option value="system">Sistema</option><option value="light">Claro</option>
+      <option value="dark">Oscuro cálido</option><option value="sea">Dark Sea</option>
+    </select>
+  </div>
+</div>
+
+<main class="hoja multipagina" data-lectura lang="es">
+  <article class="pagina viva" id="p1" data-pagina>
+    <header class="cabecera" id="contenido" tabindex="-1">
+      <p class="ceja">Página 01 / el destino</p>
+      <h1>A dónde tenemos que ir.</h1>
+      <p class="bajada">Una frase que dice de qué trata el capítulo.</p>
+    </header>
+    <nav class="indice" aria-label="Índice de esta página">
+      <p class="ceja">En esta página</p>
+      <ol><li><a href="#criterio">El criterio</a></li></ol>
+    </nav>
+    <section class="seccion" id="criterio"><h2>El criterio</h2><p>Texto.</p></section>
+    <figure class="amplio">
+      <div class="tabla-caja" tabindex="0" role="region" aria-label="Criterios del destino, desplazable">
+        <table><caption>Criterios ilustrativos</caption>
+          <thead><tr><th scope="col">Criterio</th><th scope="col">Resultado esperado</th></tr></thead>
+          <tbody><tr><th scope="row">Trazabilidad</th><td>Conservar la fuente y la fecha de cada registro.</td></tr></tbody>
+        </table>
+      </div><figcaption>Figura hermana de la sección; conserva el ancho amplio.</figcaption>
+    </figure>
+  </article>
+
+  <article class="pagina" id="p2" data-pagina hidden>
+    <header class="cabecera"><p class="ceja">Página 02 / evidencia</p><h1>Qué lo sostiene.</h1></header>
+    <nav class="indice" aria-label="Índice de evidencia"><ol><li><a href="#registro">El registro</a></li></ol></nav>
+    <section class="seccion" id="registro"><h2>El registro</h2><p>Una muestra ilustrativa conserva su origen y distingue lo medido de lo pendiente.</p></section>
+    <figure class="ancho"><div class="codigo"><div class="cab"><span>registro.txt</span>
+      <button type="button" data-copiar="registro-p2">Copiar registro</button><span class="copia-estado" role="status"></span></div>
+      <pre tabindex="0" aria-label="Registro ilustrativo"><code id="registro-p2">fuente: ejemplo local
+fecha: 2026-09-13
+estado: pendiente de medir</code></pre></div><figcaption>Datos de ejemplo, sin una medición de producción.</figcaption></figure>
+  </article>
+
+  <div class="paginacion" data-paginacion>
+    <button type="button" data-nav="prev"><span class="et">Anterior</span><span class="tit"></span></button>
+    <button type="button" data-nav="next"><span class="et">Siguiente</span><span class="tit"></span></button>
+  </div>
+  <footer class="pie">Nota Tikin · Dos capítulos de ejemplo.</footer>
+</main><script>
+/* Nota Tikin. Pegar una vez al final del fragmento, dentro de <script>. */
+(() => {
+  'use strict';
+  const root = document.documentElement;
+  const selector = document.querySelector('[data-tema]');
+  const themes = ['system','light','dark','sea'];
+  function theme(value) {
+    if (!themes.includes(value)) value = 'system';
+    if (value === 'system') delete root.dataset.theme; else root.dataset.theme = value;
+    if (selector) selector.value = value;
+    try { localStorage.setItem('nota-tema',value); } catch {}
+    document.dispatchEvent(new CustomEvent('nota:tema'));
+  }
+  let stored = 'system';
+  try { stored = localStorage.getItem('nota-tema') || 'system'; } catch {}
+  theme(stored);
+  selector?.addEventListener('change', e => theme(e.target.value));
+
+  // El progreso pertenece al artículo, no al footer del documento envolvente.
+  const article = document.querySelector('[data-lectura]');
+  const links = [...document.querySelectorAll('.indice a[href^="#"]')];
+  const sections = links.map(a => document.getElementById(a.hash.slice(1)));
+  const ruler = document.querySelector('.regla');
+  const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  function goToProgress(value) {
+    if (!article) return;
+    const distance=Math.max(0,article.getBoundingClientRect().height-innerHeight);
+    const top=scrollY+article.getBoundingClientRect().top+distance*Math.max(0,Math.min(100,value))/100;
+    scrollTo({top,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+  }
+  ruler?.addEventListener('click',e=>{const r=ruler.getBoundingClientRect();goToProgress((e.clientY-r.top)/r.height*100);});
+  ruler?.addEventListener('keydown',e=>{
+    const current=Number(ruler.getAttribute('aria-valuenow'));
+    const values={ArrowDown:current+1,ArrowRight:current+1,ArrowUp:current-1,ArrowLeft:current-1,PageDown:current+10,PageUp:current-10,Home:0,End:100};
+    if(e.key in values){e.preventDefault();goToProgress(values[e.key]);}
+  });
+  let frame = 0;
+  function update() {
+    frame = 0;
+    if (!article) return;
+    const rect = article.getBoundingClientRect();
+    const available = rect.height - innerHeight;
+    const progress = available <= 0 ? (rect.bottom <= innerHeight ? 1 : 0) : Math.max(0,Math.min(1,-rect.top / available));
+    if (ruler) {
+      ruler.style.setProperty('--lectura',progress);
+      ruler.setAttribute('aria-valuenow',Math.round(progress * 100));
+      const value = ruler.querySelector('.val');
+      if (value) value.textContent = Math.round(progress * 100) + '%';
+    }
+    // En multipágina el índice pertenece a multipagina.js; no medir páginas ocultas.
+    if (article.classList.contains('multipagina')) return;
+    let active = -1;
+    sections.forEach((section,index) => { if (section?.getBoundingClientRect().top <= 120) active = index; });
+    if (progress === 1 && links.length) active = links.length - 1;
+    links.forEach((a,index) => {
+      a.closest('li')?.classList.toggle('visto',index < active);
+      if (index === active) a.setAttribute('aria-current','location'); else a.removeAttribute('aria-current');
+    });
+  }
+  const schedule = () => { if (motion.matches) { if(frame)cancelAnimationFrame(frame);update(); } else if (!frame) frame = requestAnimationFrame(update); };
+  motion.addEventListener('change',schedule);
+  addEventListener('scroll',schedule,{passive:true});
+  addEventListener('resize',schedule);
+  document.addEventListener('nota:pagina',schedule);
+  if (article && window.ResizeObserver) new ResizeObserver(schedule).observe(article);
+  document.fonts?.ready.then(schedule);
+  update();
+
+  document.querySelectorAll('[data-copiar]').forEach(button => {
+    button.addEventListener('click',async () => {
+      const code = document.getElementById(button.dataset.copiar);
+      const status = button.closest('.codigo,.terminal')?.querySelector('[role="status"]');
+      if (!code) return;
+      try {
+        if (!navigator.clipboard?.writeText) throw new Error('clipboard unavailable');
+        await navigator.clipboard.writeText(code.textContent);
+        if (status) status.textContent = 'Código copiado.';
+        // Conservar hijos, icono y nombre accesible; el estado comunica el resultado.
+      } catch {
+        const range = document.createRange(); range.selectNodeContents(code);
+        const selection = getSelection(); selection.removeAllRanges(); selection.addRange(range);
+        if (status) status.textContent = 'Código seleccionado. Usa ⌘C o Ctrl+C para copiar.';
+      }
+    });
+  });
+
+  // Reproducir un sonido exige activación explícita; no se descargan MP3.
+  const soundButton = document.querySelector('[data-sonido]');
+  let soundEnabled = false, audio;
+  soundButton?.addEventListener('click',() => {
+    soundEnabled = !soundEnabled;
+    soundButton.setAttribute('aria-pressed',String(soundEnabled));
+    soundButton.textContent = soundEnabled ? 'Sonido activado' : 'Sonido apagado';
+    if (!soundEnabled) audio?.suspend().catch(()=>{});
+  });
+  document.addEventListener('click',e => {
+    if (!soundEnabled || !e.target.closest('button') || e.target.closest('[data-sonido],[data-canal-sonido]')) return;
+    try {
+      const Audio = window.AudioContext || window.webkitAudioContext;
+      if (!Audio) return;
+      audio ||= new Audio(); audio.resume().catch(()=>{});
+      const oscillator = audio.createOscillator(), gain = audio.createGain(), t = audio.currentTime;
+      oscillator.type = 'sine'; oscillator.frequency.setValueAtTime(680,t);
+      oscillator.frequency.exponentialRampToValueAtTime(420,t+.04);
+      gain.gain.setValueAtTime(.025,t); gain.gain.exponentialRampToValueAtTime(.0001,t+.055);
+      oscillator.connect(gain); gain.connect(audio.destination);
+      oscillator.start(t); oscillator.stop(t+.06);
+      oscillator.onended = () => { oscillator.disconnect(); gain.disconnect(); };
+    } catch {}
+  });
+  // Imprimir el contenido íntegro de los extractos incluso en motores sin ::details-content.
+  let closedForPrint = [];
+  addEventListener('beforeprint',() => { closedForPrint=[...document.querySelectorAll('.extracto details:not([open]),[data-grafica] details:not([open]),[data-escena] details:not([open])')]; closedForPrint.forEach(e=>e.open=true); });
+  addEventListener('afterprint',() => { closedForPrint.forEach(e=>e.open=false); closedForPrint=[]; });
+})();
+
+</script>
+<script>
+/* NOTA TIKIN · multipágina · septiembre 2026
+   Pegar DESPUÉS de interacciones.js, dentro de su propio <script>.
+
+   Reparte una nota larga en páginas con su propio temario, sin cargar nada remoto y sin
+   romper el enlace directo: cada página tiene su id y queda en el hash.
+
+   Espera este esqueleto —ver componentes.md, «Multipágina»—:
+     .barra con un <button data-ir="id"> por página
+     main.hoja.multipagina  >  article.pagina[id]  (la primera con class="viva")
+     .paginacion con [data-nav="prev"] y [data-nav="next"]
+
+   Dos cosas que resuelve y que no son evidentes:
+
+   1. El índice de interacciones.js delega aquí cuando ve .multipagina. Se recalcula
+      mirando sólo la página viva, con aria-current y las clases propias
+      `aqui-visto` y `aqui-actual`. Nunca se miden páginas ocultas.
+   2. Al cambiar de página cambia la altura del documento; se avisa para que la regla de
+      lectura y el índice se recalculen. */
+(function () {
+  "use strict";
+  var hoja = document.querySelector(".hoja.multipagina");
+  if (!hoja) return;
+  var botones = Array.prototype.slice.call(document.querySelectorAll(".barra [data-ir]"));
+  var pags = botones.map(function (b) { return document.getElementById(b.dataset.ir); });
+  if (!pags.length || pags.some(function (p) { return !p; })) return;
+  var titulos = botones.map(function (b) {
+    var n = b.querySelector(".n");
+    return (n ? b.textContent.replace(n.textContent, "") : b.textContent).trim();
+  });
+  var nav = document.querySelector("[data-paginacion]");
+  var prev = nav && nav.querySelector('[data-nav="prev"]');
+  var next = nav && nav.querySelector('[data-nav="next"]');
+  var actual = 0;
+
+  function pintarNav() {
+    if (!nav || !prev || !next) return;
+    prev.disabled = actual === 0;
+    next.disabled = actual === pags.length - 1;
+    var a = prev.querySelector(".tit"), b = next.querySelector(".tit");
+    if (a) a.textContent = actual > 0 ? titulos[actual - 1] : "—";
+    if (b) b.textContent = actual < pags.length - 1 ? titulos[actual + 1] : "—";
+  }
+
+  function ir(i, conFoco) {
+    if (i < 0 || i >= pags.length) return;
+    actual = i;
+    pags.forEach(function (p, k) { p.hidden = k !== i; p.classList.toggle("viva", k === i); });
+    botones.forEach(function (b, k) {
+      if (k === i) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
+    });
+    pintarNav();
+    if (location.hash.slice(1) !== pags[i].id) history.replaceState(null, "", "#" + pags[i].id);
+    var suave = conFoco && !matchMedia("(prefers-reduced-motion: reduce)").matches;
+    scrollTo({ top: 0, behavior: suave ? "smooth" : "auto" });
+    if (conFoco) {
+      var h = pags[i].querySelector("h1");
+      if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); }
+    }
+    document.dispatchEvent(new CustomEvent("nota:pagina", { detail: { indice: i, id: pags[i].id } }));
+  }
+
+  botones.forEach(function (b, k) { b.addEventListener("click", function () { ir(k, true); }); });
+  if (prev) prev.addEventListener("click", function () { ir(actual - 1, true); });
+  if (next) next.addEventListener("click", function () { ir(actual + 1, true); });
+  addEventListener("hashchange", function () {
+    var i = pags.findIndex(function (p) { return p.id === location.hash.slice(1); });
+    if (i >= 0 && i !== actual) ir(i, true);
+  });
+
+  /* El temario, mirando sólo la página viva. */
+  function indiceVivo() {
+    var pg = pags[actual];
+    if (!pg) return;
+    Array.prototype.forEach.call(document.querySelectorAll(".indice li"), function (li) {
+      li.classList.remove("visto");
+      if (!pg.contains(li)) { li.classList.remove("aqui-visto", "aqui-actual"); li.querySelector('a')?.removeAttribute('aria-current'); }
+    });
+    var links = Array.prototype.slice.call(pg.querySelectorAll('.indice a[href^="#"]'));
+    var act = -1;
+    links.forEach(function (a, i) {
+      var s = document.getElementById(a.hash.slice(1));
+      if (s && s.getBoundingClientRect().top <= 120) act = i;
+    });
+    links.forEach(function (a, i) {
+      var li = a.closest("li");
+      if (!li) return;
+      li.classList.toggle("aqui-visto", i < act);
+      li.classList.toggle("aqui-actual", i === act);
+      if(i===act)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');
+    });
+  }
+  var pend = 0;
+  var motion = matchMedia('(prefers-reduced-motion: reduce)');
+  function programar() {
+    if(motion.matches){if(pend)cancelAnimationFrame(pend);pend=0;indiceVivo();return;}
+    if (!pend) pend = requestAnimationFrame(function () { pend = 0; indiceVivo(); });
+  }
+  motion.addEventListener('change',programar);
+  addEventListener("scroll", programar, { passive: true });
+  addEventListener("resize", programar);
+  document.addEventListener("nota:pagina", programar);
+  document.fonts?.ready.then(programar);
+
+  var inicial = pags.findIndex(function (p) { return p.id === location.hash.slice(1); });
+  if (inicial > 0) ir(inicial, false); else { pintarNav(); programar(); }
+})();
+
+</script>

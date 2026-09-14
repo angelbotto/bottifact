@@ -29,7 +29,7 @@
   }
   // Una única función coloca valores y ticks; nunca hay coordenadas con escala distinta.
   function scale(min, max, start, end) {
-    if (![min,max,start,end].every(Number.isFinite) || min >= max) throw new TypeError('Dominio inválido.');
+    if (![min,max,start,end,max-min,end-start].every(Number.isFinite) || min >= max) throw new TypeError('Dominio inválido.');
     return v => start + (v - min) / (max - min) * (end - start);
   }
   function domain(values, zero = false) {
@@ -73,6 +73,7 @@
         if (x >= end || values[0] === null || values[0] < 0 || !Number.isInteger(values[0])) throw new TypeError('Intervalos crecientes y frecuencias enteras no negativas.');
         // Columna de densidad se calcula, no es una segunda fuente manual.
         values[1] = values[0] / (end - x);
+        if(!Number.isFinite(values[1]))throw new TypeError('La densidad excede la precisión numérica.');
       }
       if (type === 'dispersion' && values.some(v => v === null)) throw new TypeError('Cada punto necesita X e Y.');
       return {label, values, x, end};
@@ -97,8 +98,9 @@
       }
     }
     svg.append(svgNode('path',{d:`M${left} ${top}V${bottom}H${right}`,class:'grafica-eje'}));
-    label(svg,left,top-18,yTitle,{class:'grafica-unidad'});
-    if(xTitle) label(svg,(left+right)/2,bottom+62,xTitle,{'text-anchor':'middle',class:'grafica-unidad'});
+    // Unidades completas en HTML: el texto largo puede envolver sin salirse del viewBox.
+    label(svg,left,top-18,'Y',{class:'grafica-unidad'});
+    if(xTitle) label(svg,(left+right)/2,bottom+62,'X',{'text-anchor':'middle',class:'grafica-unidad'});
     return {sx,sy};
   }
   class NotaGrafica {
@@ -131,11 +133,12 @@
         const b={left:110,right:700,top:50,bottom:310};
         let xd,yd,xTitle=heads[0];
         if(type==='dispersion') {xd=domain(data.map(r=>r.values[0]));yd=domain(data.map(r=>r.values[1]));xTitle=heads[1];}
-        else if(type==='distribucion') {xd=domain(data.flatMap(r=>[r.x,r.end]));yd=[0,Math.max(1,...data.map(r=>r.values[1]))];xTitle=heads[0];}
+        else if(type==='distribucion') {xd=domain(data.flatMap(r=>[r.x,r.end]));yd=[0,Math.max(...data.map(r=>r.values[1]))||1];xTitle=heads[0];}
         else {xd=type==='temporal'?domain(data.map(r=>r.x)):domain(data.map((_,i)=>i));yd=domain(all);}
         // El dominio numérico está expuesto en SVG para verificar el contrato, no para controlarlo.
         svg.dataset.xMin=xd[0];svg.dataset.xMax=xd[1];svg.dataset.yMin=yd[0];svg.dataset.yMax=yd[1];
         const yTitle=type==='dispersion'?heads[2]:type==='distribucion'?heads[2]:(this.figure.dataset.unidad || heads.slice(1).join(' / '));
+        const units=element('p','grafica-unidades','X: '+xTitle+' · Y: '+yTitle);region.before(units);this.parts.push(units);
         const {sx,sy}=axes(svg,xd,yd,b,['lineas','temporal'].includes(type)?null:xTitle,yTitle);
         if(type==='dispersion') data.forEach(r=>{
           const circle=svgNode('circle',{cx:sx(r.values[0]),cy:sy(r.values[1]),r:5,class:'grafica-serie serie-0','data-x':r.values[0],'data-y':r.values[1]});
@@ -161,11 +164,12 @@
     bars(svg,width,height) {
       const {heads,data}=this.model;
       const values=data.flatMap(r=>r.values).filter(v=>v!==null),xd=domain(values,true);
-      const left=240,right=width-110,top=60,bottom=height-52,sx=scale(...xd,left,right);
+      const left=320,right=width-110,top=60,bottom=height-52,sx=scale(...xd,left,right);
       svg.dataset.xMin=xd[0];svg.dataset.xMax=xd[1];
       for(let i=0;i<=4;i++) {const x=xd[0]+(xd[1]-xd[0])*i/4;svg.append(svgNode('line',{x1:sx(x),x2:sx(x),y1:top-10,y2:bottom,class:'grafica-rejilla','data-tick-x':x}));label(svg,sx(x),bottom+26,fmt(x),{'text-anchor':'middle'});}
       svg.append(svgNode('line',{x1:sx(0),x2:sx(0),y1:top-10,y2:bottom,class:'grafica-eje'}));
-      label(svg,left,28,this.figure.dataset.unidad||heads.slice(1).join(' / '));
+      const units=element('p','grafica-unidades','X: '+(this.figure.dataset.unidad||heads.slice(1).join(' / ')));this.svg.parentElement.before(units);this.parts.push(units);
+      label(svg,left,28,'X');
       let rowTop=top;
       data.forEach((r,j)=>r.values.forEach((v,i)=>{
         const y=rowTop+i*42;
@@ -195,7 +199,11 @@
         });
         svg.prepend(svgNode('path',{d,class:'grafica-trazo serie-'+i}));
       });
-      const ticks=new Set(Array.from({length:Math.min(5,data.length)},(_,i)=>Math.round(i*(data.length-1)/Math.max(1,Math.min(5,data.length)-1))));
+      // Fechas irregulares: sólo rótulos separados por 115 px. Todos los puntos se dibujan.
+      const candidates=Array.from({length:Math.min(5,data.length)},(_,i)=>Math.round(i*(data.length-1)/Math.max(1,Math.min(5,data.length)-1)));
+      const ticks=new Set([0]);let last=sx(type==='temporal'?data[0].x:0);
+      candidates.slice(1).forEach(i=>{const x=sx(type==='temporal'?data[i].x:i);if(x-last>=115){ticks.add(i);last=x;}});
+      if(data.length>1){const end=data.length-1,x=sx(type==='temporal'?data[end].x:end);[...ticks].forEach(i=>{if(i!==0 && x-sx(type==='temporal'?data[i].x:i)<115)ticks.delete(i);});ticks.add(end);}
       // Etiquetas completas en varias líneas, con altura calculada según su contenido.
       let lines=1;
       data.forEach((r,j)=>{if(ticks.has(j)) {
@@ -204,8 +212,9 @@
         const x=sx(type==='temporal'?r.x:j),t=label(svg,x,b.bottom+26,'',{'text-anchor':'middle','data-label-index':j});
         chunks.forEach((chunk,i)=>t.append(svgNode('tspan',{x,dy:i?16:0},chunk.trim())));
       }});
-      svg.setAttribute('viewBox',`0 0 800 ${Math.max(400,b.bottom+lines*16+86)}`);
-      label(svg,(b.left+b.right)/2,b.bottom+lines*16+50,heads[0],{'text-anchor':'middle'});
+      const height=Math.max(400,b.bottom+lines*16+86);
+      svg.setAttribute('viewBox',`0 0 800 ${height}`);svg.setAttribute('height',height);
+      label(svg,(b.left+b.right)/2,b.bottom+lines*16+50,'X',{'text-anchor':'middle'});
     }
     comparison() {
       const {data,heads}=this.model;
