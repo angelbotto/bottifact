@@ -57,6 +57,9 @@ Lee [estilo.css](estilo.css) y copia la hoja completa dentro de `<style>`; no la
 Incluye también [fuentes.css](fuentes.css), con los WOFF2 incrustados y sus avisos OFL.
 Las familias y pesos son los mismos: la incrustación elimina descargas de fuentes durante la lectura.
 Para un informe de varios capítulos, añade [multipagina.js](multipagina.js).
+La muestra editorial completa está en [informe.html](informe.html): cuatro capítulos,
+apariencia, gráficas, escenario y prototipo. [multipagina.html](multipagina.html) conserva
+el ejemplo mínimo compatible con documentos anteriores.
 [componentes.md](componentes.md) contiene el HTML y los criterios de cada componente.
 [plantilla.html](plantilla.html) muestra todos juntos. Usa solo los que expliquen el contenido;
 la plantilla es un catálogo, no una estructura obligatoria para cada informe.
@@ -76,7 +79,9 @@ fuentes actuales antes de modificar piezas; amplía de forma aditiva para conser
 
 1. **Claro y oscuro siempre.** Empieza en la preferencia del sistema y ofrece el selector
    `Sistema / Claro / Oscuro cálido / Dark Sea`. `data-theme` vive en `document.documentElement`.
-   El claro es una adaptación; cmrg.me sirve una pantalla oscura cálida, no una pareja de temas.
+  El claro es una adaptación; cmrg.me sirve una pantalla oscura cálida, no una pareja de temas.
+   Además están disponibles Oliva (`oliva`), Arcilla (`arcilla`) y Ciruela (`ciruela`). Son
+   paletas completas optativas; no sustituyen Claro, Cálido o Sea. El icono de Ciruela es luna.
 2. **Nada se corta.** Resuelve el ancho con la rejilla y `min-width:0`. No uses márgenes negativos,
    offsets absolutos para contenido, `overflow-x:hidden` en el documento ni elipsis para datos.
    Una tabla o código demasiado ancho tiene desplazamiento local, foco y nombre accesible.
@@ -203,6 +208,13 @@ Un informe largo —capítulos, cada uno con su temario— se arma con `multipag
 3. Cada página abre con su `header.cabecera` y su `nav.indice`. El hash guarda la página, así que
    un enlace directo a un capítulo funciona.
 
+En capítulos cortos, como la muestra de informe, puede omitirse el temario lateral.
+`data-historial` en `.hoja.multipagina` añade Atrás/Adelante para capítulos; sin él se conserva
+el comportamiento anterior. `.barra.capitulos` es la variante editorial de navegación.
+Para vistas breves dentro de una pieza usa [pestanas.js](pestanas.js), nunca mezcles los roles
+de tablist con los botones de navegación de capítulos. Las pestañas no modifican el hash;
+al imprimir se ven todos sus paneles. Copia la receta completa de `componentes.md`.
+
 ## Comprobar la entrega
 
 Abre el resultado a 320–390 px y en escritorio; comprueba los tres temas, el índice, el foco y
@@ -248,6 +260,11 @@ calculadora de capacidad, globo narrado y visor de prototipos.
   Los tres estilos funcionan en Claro, Cálido y Sea. Comprueba los saltos de títulos al cambiar.
 - La búsqueda del catálogo sólo filtra su índice; cada receta tiene un botón para copiar
   su HTML. [catalogo.js](catalogo.js) no es necesario en artículos normales.
+- La firma de cabecera es `.firma-editorial`: “tikin” en serif y una leyenda corta en sans.
+  Usa el nombre de la serie o del documento; evita presentar la marca como una ruta de código.
+- La ficha de hallazgo separa afirmación, evidencia disponible, límite y siguiente prueba.
+  No atribuye certeza: una hipótesis se identifica como tal. Las siguientes posibilidades
+  analizadas están en [capitulos-propuesta.md](auditoria/capitulos-propuesta.md).
 
 El catálogo se sirve en el Mac mini; Angel lo prueba desde el MacBook. Usa la dirección
 HTTPS de Tailscale Serve que confirme el host, no un enlace localhost para la entrega remota.

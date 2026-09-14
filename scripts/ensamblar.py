@@ -33,7 +33,7 @@ def start(title):
  return '<title>' + title + '</title>\n<meta charset="utf-8">\n<style>\n' + (ROOT / 'fuentes.css').read_text() + '\n' + (ROOT / 'estilo.css').read_text() + '\n</style>\n<meta name="viewport" content="width=device-width, initial-scale=1">\n'
 
 def tools():
- return '<div class="herramientas"><a href="#inicio" class="mono">nota / tikin</a>'+appearance()+'</div>'
+ return '<div class="herramientas"><a href="#inicio" class="firma-editorial" aria-label="Inicio de la nota"><span>tikin</span><small>Cuadernos</small></a>'+appearance()+'</div>'
 
 def appearance():
  # Fuente única: copiar el control circular documentado, con IDs/nombres de cabecera.
@@ -116,11 +116,12 @@ catalog='''<section class="seccion" id="libreria"><p class="ceja">06 / component
 <h2>La evidencia tiene muchas formas.</h2><p>Gráficas, tablas y experiencias opcionales. Cada ejemplo conserva sus datos, su criterio y su límite en componentes.md.</p>NAV_COMPONENTES</section>'''
 labels={'tabla-densa':'Tabla densa','terminal':'Terminal','manuscrita':'Nota manuscrita','barras':'Barras','lineas':'Líneas','temporal':'Serie temporal','dispersion':'Dispersión','distribucion':'Distribución','calor':'Mapa de calor','comparacion':'Comparación','totales':'Totales y ordenación','sparkline':'Tabla con serie','sonido':'Sonido optativo','escritura':'Escritura por trazos','xyz':'Three.js · XYZ','etapas':'Three.js · etapas'}
 labels.update({'apariencia':'Apariencia y lectura cómoda','decision':'Ficha de decisión','cronologia':'Cronología anotada','articulo':'Ficha de artículo','referencias':'Referencias con regreso','glosario':'Glosario editorial','metodologia':'Metodología desplegable','antes-despues':'Antes y después','cascada':'Cascada de cantidades','multiples':'Pequeños múltiples','conciliacion':'Conciliación de registros','escenario':'Calculadora de escenarios','recorrido':'Globo narrado','visor':'Visor de prototipos'})
+labels.update({'pestanas':'Pestañas de una pieza','hallazgo':'Ficha de hallazgo'})
 new_keys={'apariencia','decision','cronologia','articulo','referencias','glosario','metodologia','antes-despues','cascada','multiples','conciliacion','escenario','recorrido','visor'}
 keywords={'apariencia':'tema lectura','decision':'reporte informe','cronologia':'historia fechas','articulo':'blog autor fecha','referencias':'blog fuentes citas','glosario':'blog definiciones','metodologia':'blog informe supuestos','antes-despues':'blog cambios','cascada':'reporte balance','multiples':'graficas reporte sedes','conciliacion':'tabla reporte diferencias','escenario':'calculadora reporte supuestos','recorrido':'globo three geografia historia','visor':'prototipo estados responsive'}
 links=[]
 for key,html in recipes():
- if key=='multipagina':continue
+ if key in {'multipagina','informe'}:continue
  first=re.match(r'<[\w-]+\b[^>]*>',html)
  existing=re.search(r'\bid="([^"]+)"',first.group(0))
  anchor=existing.group(1) if existing else 'pieza-'+key
@@ -134,10 +135,13 @@ for key,html in recipes():
 catalog=catalog.replace('NAV_COMPONENTES','<div data-buscador-recetas><div class="buscador-recetas"><label for="buscar-receta">Encuentra una pieza</label><input id="buscar-receta" type="search" placeholder="Tabla, globo, artículo, prototipo…" aria-describedby="buscar-estado"><p id="buscar-estado" role="status"></p></div><nav aria-label="Ejemplos de componentes"><ul class="catalogo-indice">'+''.join(links)+'</ul></nav></div>')
 body=body.replace('<footer class="pie">',catalog+'<footer class="pie">')
 body=body.replace('<li><a href="#guardado">Lo que vale guardar</a></li>','<li><a href="#guardado">Lo que vale guardar</a></li><li><a href="#libreria">Librería de evidencia</a></li><li><a href="#segunda-tanda">Artículos y prototipos</a></li>')
-(ROOT/'plantilla.html').write_text(start('Nota Tikin — la forma también explica')+body+script('interacciones.js')+globe_scripts()+script('graficas.js')+script('tablas.js')+script('sonido.js')+script('escritura.js')+script('escena.js')+script('reportes.js')+script('visor.js')+script('catalogo.js'))
+body=re.sub(r'(<p class="bajada">.*?</p>)',r'\1<p class="enlace-edicion"><a href="informe.html">Explorar el informe con capítulos →</a></p>',body,count=1)
+(ROOT/'plantilla.html').write_text(start('Nota Tikin — la forma también explica')+body+script('interacciones.js')+globe_scripts()+script('graficas.js')+script('tablas.js')+script('sonido.js')+script('escritura.js')+script('escena.js')+script('reportes.js')+script('visor.js')+script('pestanas.js')+script('catalogo.js'))
 globe_body='<main class="hoja" id="inicio" lang="es">'+tools()+'''<header class="cabecera"><p class="ceja">Nota / geografía</p><h1>Planes, puntos<br>y lugares.</h1><p class="bajada">Un globo de puntos para explorar conexiones. Elige una ruta, gira la Tierra o pausa la vista.</p></header>'''+globe()+'''<footer class="pie">Ejemplo reutilizable · Three.js desde cdnjs · máscara geográfica incrustada · ambos temas y movimiento reducido.</footer></main>'''
 (ROOT/'globo.html').write_text(start('Nota Tikin — globo de rutas')+globe_body+script('interacciones.js')+globe_scripts())
 (ROOT/'multipagina.html').write_text(start('Nota Tikin — capítulos')+dict(recipes())['multipagina']+script('interacciones.js')+script('multipagina.js'))
+informe=dict(recipes())['informe'].replace('<div class="edicion-acciones"><span>Edición 02</span></div>','<div class="edicion-acciones"><span>Edición 02</span>'+appearance()+'</div>')
+(ROOT/'informe.html').write_text(start('tikin · Una revisión antes de confirmar')+informe+''.join(script(file) for file in ['interacciones.js','multipagina.js','graficas.js','reportes.js','visor.js','pestanas.js']))
 from fixture_regresion import build
 build(start,script)
-print('Generados plantilla.html, globo.html, multipagina.html y pruebas.html')
+print('Generados plantilla.html, globo.html, multipagina.html, informe.html y pruebas.html')

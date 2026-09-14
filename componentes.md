@@ -20,7 +20,7 @@ Para empezar por una pieza: [gráficas](#recetas-graficas),
 <a class="salto" href="#contenido">Saltar al contenido</a>
 <main class="hoja" data-lectura lang="es">
   <div class="herramientas">
-    <span class="mono">nota / tikin</span>
+    <span class="firma-editorial"><span>tikin</span><small>Cuadernos</small></span>
     <div class="temas">
       <label for="tema">Papel</label>
       <select id="tema" data-tema>
@@ -969,6 +969,9 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
       <label><input type="radio" name="color-apariencia-orbita" value="light" data-elegir-tema><span class="paleta-mini claro" aria-hidden="true"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>
       <label><input type="radio" name="color-apariencia-orbita" value="dark" data-elegir-tema><span class="paleta-mini calido" aria-hidden="true"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>
       <label><input type="radio" name="color-apariencia-orbita" value="sea" data-elegir-tema><span class="paleta-mini sea" aria-hidden="true"><i></i><b></b></span><span>Dark Sea<small>Azul profundo · acento menta</small></span></label>
+      <label><input type="radio" name="color-apariencia-orbita" value="oliva" data-elegir-tema><span class="paleta-mini oliva" aria-hidden="true"><i></i><b></b></span><span>Oliva<small>Papel verde · tinta botánica</small></span></label>
+      <label><input type="radio" name="color-apariencia-orbita" value="arcilla" data-elegir-tema><span class="paleta-mini arcilla" aria-hidden="true"><i></i><b></b></span><span>Arcilla<small>Papel durazno · acento terracota</small></span></label>
+      <label><input type="radio" name="color-apariencia-orbita" value="ciruela" data-elegir-tema><span class="paleta-mini ciruela" aria-hidden="true"><i></i><b></b></span><span>Ciruela<small>Papel oscuro · acento malva</small></span></label>
       <label><input type="radio" name="color-apariencia-orbita" value="system" data-elegir-tema checked><span class="paleta-mini sistema" aria-hidden="true"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>
     </div></fieldset>
     <fieldset class="apariencia"><legend>Estilo de títulos</legend><div class="apariencia-estilos">
@@ -992,6 +995,9 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
       <label><input type="radio" name="color-apariencia-etiqueta" value="light" data-elegir-tema><span class="paleta-mini claro" aria-hidden="true"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>
       <label><input type="radio" name="color-apariencia-etiqueta" value="dark" data-elegir-tema><span class="paleta-mini calido" aria-hidden="true"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>
       <label><input type="radio" name="color-apariencia-etiqueta" value="sea" data-elegir-tema><span class="paleta-mini sea" aria-hidden="true"><i></i><b></b></span><span>Dark Sea<small>Azul profundo · acento menta</small></span></label>
+      <label><input type="radio" name="color-apariencia-etiqueta" value="oliva" data-elegir-tema><span class="paleta-mini oliva" aria-hidden="true"><i></i><b></b></span><span>Oliva<small>Papel verde · tinta botánica</small></span></label>
+      <label><input type="radio" name="color-apariencia-etiqueta" value="arcilla" data-elegir-tema><span class="paleta-mini arcilla" aria-hidden="true"><i></i><b></b></span><span>Arcilla<small>Papel durazno · acento terracota</small></span></label>
+      <label><input type="radio" name="color-apariencia-etiqueta" value="ciruela" data-elegir-tema><span class="paleta-mini ciruela" aria-hidden="true"><i></i><b></b></span><span>Ciruela<small>Papel oscuro · acento malva</small></span></label>
       <label><input type="radio" name="color-apariencia-etiqueta" value="system" data-elegir-tema checked><span class="paleta-mini sistema" aria-hidden="true"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>
     </div></fieldset>
     <fieldset class="apariencia"><legend>Estilo de títulos</legend><div class="apariencia-estilos">
@@ -1015,6 +1021,9 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
       <label><input type="radio" name="color-apariencia-capsula" value="light" data-elegir-tema><span class="paleta-mini claro" aria-hidden="true"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>
       <label><input type="radio" name="color-apariencia-capsula" value="dark" data-elegir-tema><span class="paleta-mini calido" aria-hidden="true"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>
       <label><input type="radio" name="color-apariencia-capsula" value="sea" data-elegir-tema><span class="paleta-mini sea" aria-hidden="true"><i></i><b></b></span><span>Dark Sea<small>Azul profundo · acento menta</small></span></label>
+      <label><input type="radio" name="color-apariencia-capsula" value="oliva" data-elegir-tema><span class="paleta-mini oliva" aria-hidden="true"><i></i><b></b></span><span>Oliva<small>Papel verde · tinta botánica</small></span></label>
+      <label><input type="radio" name="color-apariencia-capsula" value="arcilla" data-elegir-tema><span class="paleta-mini arcilla" aria-hidden="true"><i></i><b></b></span><span>Arcilla<small>Papel durazno · acento terracota</small></span></label>
+      <label><input type="radio" name="color-apariencia-capsula" value="ciruela" data-elegir-tema><span class="paleta-mini ciruela" aria-hidden="true"><i></i><b></b></span><span>Ciruela<small>Papel oscuro · acento malva</small></span></label>
       <label><input type="radio" name="color-apariencia-capsula" value="system" data-elegir-tema checked><span class="paleta-mini sistema" aria-hidden="true"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>
     </div></fieldset>
     <fieldset class="apariencia"><legend>Estilo de títulos</legend><div class="apariencia-estilos">
@@ -1042,7 +1051,7 @@ La cabecera del catálogo reutiliza exactamente el primer control con IDs/nombre
 **Interacción:** pulsar abre/cierra; Escape cierra y devuelve foco; pulsar fuera o salir con
 Tab cierra. Un solo panel abierto. Radios nativos para colores y estilo; no es un menú de
 comandos ni un interruptor binario. La selección permanece abierta para comparar ajustes.
-El icono representa el tema efectivo (sol en claro, luna en oscuro/Sea); Sistema sigue al SO.
+El icono representa el tema efectivo (sol en Claro/Oliva/Arcilla, luna en Cálido/Sea/Ciruela); Sistema sigue al SO.
 El panel se coloca dentro de la ventana y tiene scroll local si falta altura. Sin JavaScript
 `details` se abre en el flujo, pero los ajustes no cambian el documento.
 
@@ -1441,3 +1450,227 @@ catálogo que incluya `data-buscador-recetas`; no se necesita en artículos norm
 Las muestras son componentes de documento, no un constructor de aplicaciones. Cada snippet
 requiere las fuentes y módulos indicados arriba; el botón copia el componente, no toda la
 biblioteca. La plantilla y los ejemplos completos sí son autocontenidos.
+
+## Pestañas dentro de una pieza
+
+<!-- nota:ejemplo pestanas -->
+```html
+<div class="pieza pestanas" id="pestanas-ejemplo" data-pestanas>
+  <h3>La afirmación, sus datos y su límite</h3>
+  <div class="pestanas-caja" tabindex="0" role="region" aria-label="Vistas de la evidencia, desplazables">
+    <div class="pestanas-nav" data-tabs-nav aria-label="Vistas de la evidencia">
+      <button type="button" id="tab-hallazgo" data-tab="panel-hallazgo">Hallazgo</button>
+      <button type="button" id="tab-datos" data-tab="panel-datos">Evidencia</button>
+      <button type="button" id="tab-limites" data-tab="panel-limites">Límites</button>
+    </div>
+  </div>
+  <section id="panel-hallazgo" data-tab-panel><h4>Una hipótesis para probar</h4><p>Un resumen antes de confirmar podría reducir las correcciones posteriores.</p><p>Esta es una hipótesis de diseño, no un resultado medido.</p></section>
+  <section id="panel-datos" data-tab-panel><h4>Qué necesitamos observar</h4><p>Tiempo hasta confirmar, correcciones posteriores y errores detectados antes del envío.</p><p>Comparar tareas del mismo alcance y conservar los registros de cada sesión.</p></section>
+  <section id="panel-limites" data-tab-panel><h4>Qué no se puede concluir</h4><p>Una mejora en velocidad no demuestra menor tasa de error ni ahorro económico.</p><p>El ejemplo no contiene observaciones de personas reales.</p></section>
+</div>
+```
+
+**Cuándo:** alternar vistas cortas de una misma pregunta: hallazgo/evidencia/límite, diseño/datos
+u otras vistas relacionadas. Incluye `pestanas.js` después de `interacciones.js`.
+Flechas, Inicio y Fin mueven el foco; Enter o Espacio activan (comportamiento nativo del botón).
+El ratón activa al pulsar. Hay un solo tabulador activo; cada panel tiene nombre y foco.
+
+**Cuándo no / límite:** no uses pestañas para ocultar pasos obligatorios o avisos esenciales.
+Para capítulos largos usa navegación multipágina. No carga datos, no sincroniza la URL, no
+ofrece pestañas deshabilitadas ni persistencia. Mantén botones y paneles en el mismo orden,
+con IDs únicos. No anides instancias. Sin JS se ven todas las secciones; al imprimir también.
+`NotaPestanas.init(raíz)`, `get(elemento).select(índice)` y `destroy()` siguen el ciclo habitual.
+`select` no mueve foco; se emite `nota:pestana` al cambiar para que otras piezas puedan medir.
+
+## Ficha de hallazgo
+
+<!-- nota:ejemplo hallazgo -->
+```html
+<aside class="pieza hallazgo" id="hallazgo-ejemplo" aria-labelledby="hallazgo-titulo">
+  <p class="ceja">Ficha 01 · hipótesis pendiente</p>
+  <h3 id="hallazgo-titulo">Revisar todo antes de confirmar</h3>
+  <dl>
+    <div><dt>Afirmación</dt><dd>Un resumen final podría facilitar la revisión de los datos antes del envío.</dd></div>
+    <div><dt>Evidencia disponible</dt><dd>Existe un prototipo navegable. Todavía no hay sesiones observadas que prueben la hipótesis.</dd></div>
+    <div><dt>Límite</dt><dd>La existencia del prototipo no acredita usabilidad ni ahorro de tiempo.</dd></div>
+    <div><dt>Siguiente prueba</dt><dd>Observar tareas comparables y registrar duración, errores y correcciones sin cambiar el alcance.</dd></div>
+  </dl>
+</aside>
+```
+
+**Cuándo:** separar una afirmación de la evidencia que la sostiene y de lo que aún falta
+comprobar. Sirve para investigación, reportes, revisiones de prototipo y artículos técnicos.
+**Cuándo no / límite:** no genera conclusiones ni grados de confianza. Una hipótesis pendiente
+no se vuelve un hallazgo confirmado por presentarla aquí. Reemplaza las frases de ejemplo
+por datos, fuentes y límites verificables; no repitas la ficha por cada párrafo del informe.
+HTML estático, sin estado ni eventos; funciona con todos los papeles y al imprimir.
+
+## Informe de cuatro capítulos
+
+El ejemplo [informe.html](informe.html) reúne piezas existentes como una lectura coherente.
+Los botones superiores son navegación de capítulos (`aria-current="page"`), no tabs ARIA;
+las pestañas locales de Evidencia sí son un tablist. Cada capítulo sigue la rejilla multipágina.
+
+<!-- nota:ejemplo informe -->
+```html
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<header class="edicion-cabecera" id="inicio">
+  <div class="edicion-franja"><a class="firma-editorial" href="#resumen" aria-label="Primer capítulo"><span>tikin</span><small>Estudios de producto</small></a><div class="edicion-acciones"><span>Edición 02</span></div></div>
+  <div class="edicion-contexto"><span>Una revisión antes de confirmar</span><span>Septiembre de 2026 · ejemplo ilustrativo</span></div>
+</header>
+<div class="barra capitulos" tabindex="0" role="region" aria-label="Capítulos del informe, desplazables">
+  <nav aria-label="Capítulos">
+    <button type="button" data-ir="resumen" aria-current="page"><span class="n">01</span>Resumen</button>
+    <button type="button" data-ir="evidencia"><span class="n">02</span>Evidencia</button>
+    <button type="button" data-ir="prototipo"><span class="n">03</span>Prototipo</button>
+    <button type="button" data-ir="siguientes"><span class="n">04</span>Próximos pasos</button>
+  </nav>
+</div>
+<main class="hoja multipagina edicion" data-lectura data-historial lang="es">
+<article class="pagina viva" id="resumen" data-pagina>
+  <header class="cabecera" id="contenido" tabindex="-1"><p class="ceja">Capítulo 01 / 04</p><h1>Confirmar sin repetir el trabajo.</h1><p class="bajada">Un informe para explorar una decisión de interfaz, consultar sus supuestos y probar la interacción.</p></header>
+<section class="seccion"><h2>La decisión que queremos probar</h2><p>Reunir los datos en un resumen editable antes de confirmar una sesión. La persona revisa fecha, duración y estado en un mismo lugar.</p><p>Este documento muestra un formato de informe. Sus cifras son supuestos ilustrativos; no son resultados de producción.</p></section><aside class="pieza hallazgo" id="hallazgo-ejemplo" aria-labelledby="hallazgo-titulo">
+  <p class="ceja">Ficha 01 · hipótesis pendiente</p>
+  <h3 id="hallazgo-titulo">Revisar todo antes de confirmar</h3>
+  <dl>
+    <div><dt>Afirmación</dt><dd>Un resumen final podría facilitar la revisión de los datos antes del envío.</dd></div>
+    <div><dt>Evidencia disponible</dt><dd>Existe un prototipo navegable. Todavía no hay sesiones observadas que prueben la hipótesis.</dd></div>
+    <div><dt>Límite</dt><dd>La existencia del prototipo no acredita usabilidad ni ahorro de tiempo.</dd></div>
+    <div><dt>Siguiente prueba</dt><dd>Observar tareas comparables y registrar duración, errores y correcciones sin cambiar el alcance.</dd></div>
+  </dl>
+</aside><dl class="datos"><div><dt>Pregunta</dt><dd>¿Se detectan errores antes de confirmar?</dd></div><div><dt>Estado</dt><dd>Hipótesis por validar</dd></div><div><dt>Alcance</dt><dd>Una tarea de registro</dd></div><div><dt>Entregable</dt><dd>Prototipo y plan de observación</dd></div></dl>
+</article>
+<article class="pagina" id="evidencia" data-pagina hidden>
+  <header class="cabecera"><p class="ceja">Capítulo 02 / 04</p><h1>Qué sabemos y qué falta medir.</h1><p class="bajada">Separar una hipótesis de sus datos evita presentar una intención como un resultado.</p></header>
+<div class="pieza pestanas" id="pestanas-ejemplo" data-pestanas>
+  <h3>La afirmación, sus datos y su límite</h3>
+  <div class="pestanas-caja" tabindex="0" role="region" aria-label="Vistas de la evidencia, desplazables">
+    <div class="pestanas-nav" data-tabs-nav aria-label="Vistas de la evidencia">
+      <button type="button" id="tab-hallazgo" data-tab="panel-hallazgo">Hallazgo</button>
+      <button type="button" id="tab-datos" data-tab="panel-datos">Evidencia</button>
+      <button type="button" id="tab-limites" data-tab="panel-limites">Límites</button>
+    </div>
+  </div>
+  <section id="panel-hallazgo" data-tab-panel><h4>Una hipótesis para probar</h4><p>Un resumen antes de confirmar podría reducir las correcciones posteriores.</p><p>Esta es una hipótesis de diseño, no un resultado medido.</p></section>
+  <section id="panel-datos" data-tab-panel><h4>Qué necesitamos observar</h4><p>Tiempo hasta confirmar, correcciones posteriores y errores detectados antes del envío.</p><p>Comparar tareas del mismo alcance y conservar los registros de cada sesión.</p></section>
+  <section id="panel-limites" data-tab-panel><h4>Qué no se puede concluir</h4><p>Una mejora en velocidad no demuestra menor tasa de error ni ahorro económico.</p><p>El ejemplo no contiene observaciones de personas reales.</p></section>
+</div><figure class="ancho" id="tiempos-ejemplo" data-grafica="barras" data-unidad="Minutos por operación">
+  <details open><summary>Ver los supuestos de duración</summary><div class="tabla-caja" tabindex="0" role="region" aria-label="Supuestos de duración, desplazables"><table><caption>Duración supuesta por operación · no medida</caption><thead><tr><th scope="col">Escenario</th><th scope="col">Minutos</th></tr></thead><tbody><tr><th scope="row">Actual supuesto</th><td data-valor="8">8 min</td></tr><tr><th scope="row">Propuesto supuesto</th><td data-valor="5">5 min</td></tr></tbody></table></div></details><figcaption>La gráfica compara dos supuestos con una escala común desde cero. No representa un experimento.</figcaption>
+</figure><div class="pieza ancho" id="escenario-ejemplo" data-reporte="escenario">
+  <h3>¿Qué cambia si la tarea toma menos tiempo?</h3>
+  <p>Explora capacidad mensual con un volumen fijo. Los valores iniciales son ilustrativos.</p>
+  <form class="escenario-form" aria-label="Supuestos de capacidad mensual">
+    <label>Operaciones al mes<input name="volumen" type="number" min="0" max="1000000" step="1" value="1200" required></label>
+    <label>Antes, minutos por operación<input name="antes" type="number" min="0" max="1440" step="0.1" value="8" required></label>
+    <label>Después, minutos por operación<input name="despues" type="number" min="0" max="1440" step="0.1" value="5" required></label>
+    <button type="reset">Restablecer supuestos</button>
+  </form>
+  <div class="escenario-resultados">
+    <output data-resultado aria-live="polite">60 h/mes liberadas</output>
+    <p data-formula>1.200 × (8 − 5) ÷ 60 = 60 h/mes. Es capacidad estimada, no ahorro monetario ni una predicción.</p>
+  </div>
+</div>
+</article>
+<article class="pagina" id="prototipo" data-pagina hidden>
+  <header class="cabecera"><p class="ceja">Capítulo 03 / 04</p><h1>Recorrer la propuesta.</h1><p class="bajada">Prueba vacío, revisión y confirmación. El visor cambia de ancho sin salir del informe.</p></header>
+<figure class="pieza amplio" id="visor-ejemplo" data-visor>
+  <h3>Una interfaz, varios tamaños</h3>
+  <p>Explora los estados vacío, revisión y confirmado de un registro ilustrativo.</p>
+  <div class="acciones" role="group" aria-label="Ancho de la vista del prototipo">
+    <button type="button" data-ancho-visor="320" aria-pressed="false">320 px</button>
+    <button type="button" data-ancho-visor="390" aria-pressed="true">390 px</button>
+    <button type="button" data-ancho-visor="768" aria-pressed="false">768 px</button>
+    <button type="button" data-ancho-visor="1024" aria-pressed="false">1024 px</button>
+    <button type="button" data-ancho-visor="auto" aria-pressed="false">Ajustar</button>
+    <button type="button" data-reiniciar-visor>Reiniciar ejemplo</button>
+  </div>
+  <p data-visor-estado role="status">Vista inicial: 390 px CSS.</p>
+  <div class="visor-caja" tabindex="0" role="region" aria-label="Prototipo interactivo, desplazable horizontalmente"></div>
+  <template data-prototipo>
+    <style>
+      .demo { padding: 24px; min-width: 0; }
+      .demo nav { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 20px; border-bottom: 1px solid var(--pieza-linea); }
+      .demo button { min-height: 44px; padding: 8px 12px; color: var(--pieza-tinta); background: var(--pieza-papel); border: 1px solid var(--pieza-linea); border-radius: 4px; font: inherit; cursor: pointer; }
+      .demo button[aria-pressed='true'] { background: var(--pieza-suave); border-color: var(--pieza-acento); }
+      .demo h2 { font: 400 32px/1.15 var(--serif); margin: 0 0 16px; }
+      .demo p { margin: 0 0 18px; overflow-wrap: anywhere; }
+      .demo .contexto { margin-top: 24px; font-size: 14px; color: var(--pieza-secundaria); }
+      .demo article { padding-top: 28px; }
+      .demo dl { margin: 0 0 20px; display: grid; gap: 12px; }
+      .demo dt { font-size: 13px; color: var(--pieza-secundaria); }
+      .demo dd { margin: 0; }
+      .demo .estado { padding: 16px; border: 1px dashed var(--pieza-linea); }
+      @container (min-width: 600px) {
+        .demo article { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); gap: 32px; }
+        .demo .contexto { margin-top: 0; padding-top: 4px; }
+      }
+    </style>
+    <div class="demo">
+      <nav aria-label="Estados del prototipo">
+        <button type="button" data-demo-ir="vacio" aria-pressed="true">Vacío</button>
+        <button type="button" data-demo-ir="revision" aria-pressed="false">Revisión</button>
+        <button type="button" data-demo-ir="confirmado" aria-pressed="false">Confirmado</button>
+      </nav>
+      <article data-demo-pagina="vacio">
+        <div><h2>Tu primer registro</h2><p>Todavía no hay registros en este ejemplo.</p><button type="button" data-demo-ir="revision">Crear borrador de ejemplo</button></div>
+        <aside class="contexto"><p>Empieza con un nombre, una fecha y una explicación del movimiento.</p><p class="estado">Estado: sin registros</p></aside>
+      </article>
+      <article data-demo-pagina="revision" hidden>
+        <div><h2>Revisa antes de confirmar</h2><dl><div><dt>Nombre</dt><dd>Sesión de revisión</dd></div><div><dt>Fecha</dt><dd>14 de septiembre de 2026</dd></div><div><dt>Duración</dt><dd>30 minutos</dd></div></dl><button type="button" data-demo-ir="confirmado">Confirmar ejemplo</button></div>
+        <aside class="contexto"><p>Comprueba los datos del borrador. Este prototipo usa un registro fijo para explorar la interacción.</p><p class="estado">Estado: pendiente de confirmar</p></aside>
+      </article>
+      <article data-demo-pagina="confirmado" hidden>
+        <div><h2>Registro confirmado</h2><p>La sesión de revisión aparece en el ejemplo con su fecha y duración.</p><button type="button" data-demo-ir="vacio">Volver al inicio</button></div>
+        <aside class="contexto"><p class="estado">Estado: confirmado en el prototipo</p><p>No se envió ni se guardó información.</p></aside>
+      </article>
+    </div>
+  </template>
+  <div class="visor-fuente"><h4>Estados del ejemplo</h4><ol><li>Vacío: crear un borrador de ejemplo.</li><li>Revisión: sesión del 14-sep-2026, 30 minutos, pendiente de confirmar.</li><li>Confirmado: resultado ilustrativo; no se envían datos.</li></ol></div>
+  <figcaption>Vista interactiva local. El ancho conserva píxeles CSS reales; en una pantalla pequeña se desplaza la región completa.</figcaption>
+</figure>
+</article>
+<article class="pagina" id="siguientes" data-pagina hidden>
+  <header class="cabecera"><p class="ceja">Capítulo 04 / 04</p><h1>La siguiente prueba tiene un propósito.</h1><p class="bajada">Antes de construir más, necesitamos observar si la propuesta resuelve el problema.</p></header>
+<section class="seccion"><h2>Observar, comparar, decidir</h2><ol><li>Definir una tarea y mantener el mismo alcance en ambas versiones.</li><li>Registrar duración, errores detectados y correcciones posteriores.</li><li>Conservar el contexto de cada sesión y explicar las exclusiones.</li><li>Revisar la hipótesis con esos datos antes de afirmar una mejora.</li></ol></section><div class="pieza" id="metodologia-ejemplo">
+  <h3>Cómo leer esta evidencia</h3>
+  <p>El ejemplo compara la duración declarada de una tarea bajo dos supuestos.</p>
+  <details class="metodologia">
+    <summary>Consultar método, supuestos y exclusiones</summary>
+    <dl class="nota-glosario">
+      <div><dt>Unidad</dt><dd>Minutos por operación; volumen mensual constante.</dd></div>
+      <div><dt>Supuesto</dt><dd>Las tareas comparadas tienen el mismo alcance.</dd></div>
+      <div><dt>Exclusión</dt><dd>No incluye capacitación, espera ni fallos de otros sistemas.</dd></div>
+      <div><dt>Límite</dt><dd>El resultado estima capacidad, no demuestra ahorro realizado.</dd></div>
+    </dl>
+  </details>
+</div><aside class="aviso ojo"><span class="num">!</span><div><p class="titulo">El prototipo no confirma la hipótesis.</p><p>Este ejemplo no ha registrado sesiones ni enviado datos. El siguiente entregable debe aportar evidencia.</p></div></aside>
+</article>
+<div class="paginacion" data-paginacion><button type="button" data-nav="prev"><span class="et">Anterior</span><span class="tit"></span></button><button type="button" data-nav="next"><span class="et">Siguiente</span><span class="tit"></span></button></div>
+<footer class="pie"><span>tikin · Estudios de producto</span><p>Cuatro capítulos, una pregunta. Datos ilustrativos, sin solicitudes ni registros reales.</p></footer>
+</main>
+```
+
+**Cuándo:** un reporte con varias tareas de lectura: comprender la decisión, consultar datos,
+probar una propuesta y revisar los próximos pasos. La cabecera conserva una firma editorial
+compacta. Añade una sola llave de apariencia de su receta en `.edicion-acciones` si se necesita;
+el ensamblador del ejemplo ya lo hace. No copies las tres variantes del control.
+
+**Instalación:** `interacciones.js`, `multipagina.js`, `graficas.js`, `reportes.js`, `visor.js`
+y `pestanas.js`, incrustados al final; fuentes y CSS completos. Este ejemplo no necesita Three.
+`data-historial` activa historial de capítulos para Atrás/Adelante; sin ese atributo sigue el
+contrato anterior con replaceState. Los enlaces `#evidencia` y `#prototipo` abren esos capítulos.
+
+**Cuándo no / límite:** no es un router ni carga HTML remoto. Los enlaces a secciones no abren
+otros capítulos; comparte el ID del capítulo. Sin JS sólo se ve el primero en pantalla;
+impresión incluye los cuatro. Si el informe es corto, usa página única. Para alternar sólo
+vistas de una figura, usa la receta de pestañas. Los anchos grandes son hijos de `.pagina`.
+
+## Paletas adicionales
+
+`oliva`, `arcilla` y `ciruela` son opciones explícitas en `data-theme`. Oliva usa papel verde
+claro; Arcilla, papel durazno y tinta terracota; Ciruela, fondo oscuro y acentos malva.
+Son decisiones nuevas de esta librería, no colores medidos en cmrg.me. Todas incluyen escalas
+de gráficas/calor, estados y tonos de WebGL; los tres papeles anteriores permanecen intactos.
+Una paleta no comunica por sí sola estado, certeza o calidad. Mantén palabras y símbolos.
+El color y el estilo tipográfico se eligen por separado. El terminal conserva su superficie
+oscura deliberada, como en los papeles originales.

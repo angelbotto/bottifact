@@ -1344,6 +1344,253 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 :root[data-trama] body { background-image: radial-gradient(circle,color-mix(in srgb,var(--papel-trama) 38%,transparent) .6px,transparent .7px); background-size: 12px 12px; }
 @media print { .apariencia-menu { display: none !important; } :root[data-trama] body { background-image: none; } }
 
+/* 15 — Oliva, Arcilla y Ciruela. Paletas optativas completas, sin alterar las anteriores. */
+:root[data-theme='oliva'] {
+  color-scheme: light;
+  --papel: #f5f6ec;
+  --panel: #ebefdf;
+  --panel-2: #dce3cd;
+  --tinta: #26301e;
+  --tinta-2: #48533c;
+  --tinta-3: #556047;
+  --linea: #c9d2ba;
+  --linea-fuerte: #778465;
+  --naranja: #486123;
+  --naranja-suave: #e3ebd5;
+  --verde: #42622e;
+  --verde-suave: #ebefdf;
+  --rojo: #984534;
+  --rojo-suave: #ebefdf;
+  --azul: #365f79;
+  --azul-suave: #ebefdf;
+  --marcador: #486123;
+  --foco: #486123;
+  --globo-base: #778465;
+  --globo-arco: #556047;
+  --globo-punto: #778465;
+  --globo-glow: #c9d2ba;
+  --globo-dark: 0;
+  --globo-brillo: 2.4;
+  --grafica-1: #486123;
+  --grafica-2: #365f79;
+  --grafica-3: #42622e;
+  --grafica-4: #795276;
+  --grafica-papel: #f5f6ec;
+  --grafica-tinta: #48533c;
+  --grafica-linea: #c9d2ba;
+  --calor-tinta: #26301e;
+  --calor-ausente: #dce3cd;
+  --tabla-total: #ebefdf;
+  --tabla-elegida: #e3ebd5;
+  --escena-1: #486123;
+  --escena-2: #365f79;
+  --escena-3: #42622e;
+  --escena-tinta: #48533c;
+  --escena-linea: #778465;
+  --sonido-papel: #ebefdf;
+  --sonido-activo: #42622e;
+  --sonido-tinta: #26301e;
+  --escritura-trazo: #486123;
+  --escritura-papel: #ebefdf;
+  --calor-0: #edf1e3;
+  --calor-1: #e0e7ca;
+  --calor-2: #cddaaa;
+  --calor-3: #b8cc89;
+  --calor-4: #a3bb72;
+}
+:root[data-theme='arcilla'] {
+  color-scheme: light;
+  --papel: #fcf1e8;
+  --panel: #f2e5dc;
+  --panel-2: #e7d4c7;
+  --tinta: #37251f;
+  --tinta-2: #624a40;
+  --tinta-3: #705349;
+  --linea: #dcc5b7;
+  --linea-fuerte: #9e7e6b;
+  --naranja: #a44027;
+  --naranja-suave: #f3dacc;
+  --verde: #49623c;
+  --verde-suave: #f2e5dc;
+  --rojo: #9a3b3b;
+  --rojo-suave: #f2e5dc;
+  --azul: #3b627a;
+  --azul-suave: #f2e5dc;
+  --marcador: #a44027;
+  --foco: #a44027;
+  --globo-base: #9e7e6b;
+  --globo-arco: #705349;
+  --globo-punto: #9e7e6b;
+  --globo-glow: #dcc5b7;
+  --globo-dark: 0;
+  --globo-brillo: 2.4;
+  --grafica-1: #a44027;
+  --grafica-2: #3b627a;
+  --grafica-3: #49623c;
+  --grafica-4: #795073;
+  --grafica-papel: #fcf1e8;
+  --grafica-tinta: #624a40;
+  --grafica-linea: #dcc5b7;
+  --calor-tinta: #37251f;
+  --calor-ausente: #e7d4c7;
+  --tabla-total: #f2e5dc;
+  --tabla-elegida: #f3dacc;
+  --escena-1: #a44027;
+  --escena-2: #3b627a;
+  --escena-3: #49623c;
+  --escena-tinta: #624a40;
+  --escena-linea: #9e7e6b;
+  --sonido-papel: #f2e5dc;
+  --sonido-activo: #49623c;
+  --sonido-tinta: #37251f;
+  --escritura-trazo: #a44027;
+  --escritura-papel: #f2e5dc;
+  --calor-0: #f3e7dd;
+  --calor-1: #edd6c6;
+  --calor-2: #e3c0a5;
+  --calor-3: #d8a983;
+  --calor-4: #ca926b;
+}
+:root[data-theme='ciruela'] {
+  color-scheme: dark;
+  --papel: #201922;
+  --panel: #2c2330;
+  --panel-2: #3a2e3e;
+  --tinta: #f1e4ef;
+  --tinta-2: #ccb4ca;
+  --tinta-3: #baa4b8;
+  --linea: #514054;
+  --linea-fuerte: #9d809f;
+  --naranja: #e8afd8;
+  --naranja-suave: #402b3d;
+  --verde: #b9cbaa;
+  --verde-suave: #2c2330;
+  --rojo: #f0b4b6;
+  --rojo-suave: #2c2330;
+  --azul: #b4c6eb;
+  --azul-suave: #2c2330;
+  --marcador: #e8afd8;
+  --foco: #e8afd8;
+  --globo-base: #2c2330;
+  --globo-arco: #baa4b8;
+  --globo-punto: #9d809f;
+  --globo-glow: #514054;
+  --globo-dark: .6;
+  --globo-brillo: 10;
+  --grafica-1: #e8afd8;
+  --grafica-2: #b4c6eb;
+  --grafica-3: #b9cbaa;
+  --grafica-4: #d5b5ee;
+  --grafica-papel: #201922;
+  --grafica-tinta: #ccb4ca;
+  --grafica-linea: #514054;
+  --calor-tinta: #f1e4ef;
+  --calor-ausente: #3a2e3e;
+  --tabla-total: #2c2330;
+  --tabla-elegida: #402b3d;
+  --escena-1: #e8afd8;
+  --escena-2: #b4c6eb;
+  --escena-3: #b9cbaa;
+  --escena-tinta: #ccb4ca;
+  --escena-linea: #9d809f;
+  --sonido-papel: #2c2330;
+  --sonido-activo: #b9cbaa;
+  --sonido-tinta: #f1e4ef;
+  --escritura-trazo: #e8afd8;
+  --escritura-papel: #2c2330;
+  --calor-0: #2c2330;
+  --calor-1: #443048;
+  --calor-2: #573c5d;
+  --calor-3: #6b4971;
+  --calor-4: #7e5481;
+}
+:root {
+  --muestra-oliva: #f5f6ec; --muestra-oliva-tinta: #26301e; --muestra-oliva-acento: #486123;
+  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #a44027;
+  --muestra-ciruela: #201922; --muestra-ciruela-tinta: #f1e4ef; --muestra-ciruela-acento: #e8afd8;
+}
+@media(prefers-color-scheme:dark) { :root:not([data-theme]) {
+  --muestra-oliva: #f5f6ec; --muestra-oliva-tinta: #26301e; --muestra-oliva-acento: #486123;
+  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #a44027;
+  --muestra-ciruela: #201922; --muestra-ciruela-tinta: #f1e4ef; --muestra-ciruela-acento: #e8afd8;
+} }
+:root[data-theme='dark'] {
+  --muestra-oliva: #f5f6ec; --muestra-oliva-tinta: #26301e; --muestra-oliva-acento: #486123;
+  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #a44027;
+  --muestra-ciruela: #201922; --muestra-ciruela-tinta: #f1e4ef; --muestra-ciruela-acento: #e8afd8;
+}
+:root[data-theme='sea'] {
+  --muestra-oliva: #f5f6ec; --muestra-oliva-tinta: #26301e; --muestra-oliva-acento: #486123;
+  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #a44027;
+  --muestra-ciruela: #201922; --muestra-ciruela-tinta: #f1e4ef; --muestra-ciruela-acento: #e8afd8;
+}
+:root[data-theme='oliva'] {
+  --muestra-oliva: #f5f6ec; --muestra-oliva-tinta: #26301e; --muestra-oliva-acento: #486123;
+  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #a44027;
+  --muestra-ciruela: #201922; --muestra-ciruela-tinta: #f1e4ef; --muestra-ciruela-acento: #e8afd8;
+}
+:root[data-theme='arcilla'] {
+  --muestra-oliva: #f5f6ec; --muestra-oliva-tinta: #26301e; --muestra-oliva-acento: #486123;
+  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #a44027;
+  --muestra-ciruela: #201922; --muestra-ciruela-tinta: #f1e4ef; --muestra-ciruela-acento: #e8afd8;
+}
+:root[data-theme='ciruela'] {
+  --muestra-oliva: #f5f6ec; --muestra-oliva-tinta: #26301e; --muestra-oliva-acento: #486123;
+  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #a44027;
+  --muestra-ciruela: #201922; --muestra-ciruela-tinta: #f1e4ef; --muestra-ciruela-acento: #e8afd8;
+}
+.paleta-mini.oliva { background: var(--muestra-oliva); }
+.paleta-mini.oliva i { background: var(--muestra-oliva-tinta); }
+.paleta-mini.oliva b { background: var(--muestra-oliva-acento); }
+.paleta-mini.arcilla { background: var(--muestra-arcilla); }
+.paleta-mini.arcilla i { background: var(--muestra-arcilla-tinta); }
+.paleta-mini.arcilla b { background: var(--muestra-arcilla-acento); }
+.paleta-mini.ciruela { background: var(--muestra-ciruela); }
+.paleta-mini.ciruela i { background: var(--muestra-ciruela-tinta); }
+.paleta-mini.ciruela b { background: var(--muestra-ciruela-acento); }
+
+/* 16 — Firma, capítulos y pestañas. Tintas heredadas de los seis papeles. */
+.firma-editorial { display: inline-flex; align-items: baseline; flex-wrap: wrap; gap: 8px 13px; color: var(--tinta); text-decoration: none; }
+.firma-editorial > span { font: 400 29px/1 var(--serif); letter-spacing: -.04em; }
+.firma-editorial > small { font: 12px/1.5 var(--sans); color: var(--tinta-2); }
+.firma-editorial:hover { color: var(--naranja); text-decoration: none; }
+.enlace-edicion { font: 14px/1.5 var(--sans); }
+.edicion-cabecera { width: min(var(--ancho),calc(100% - 2 * var(--gutter))); margin: 28px auto 18px; }
+.edicion-franja { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; }
+.edicion-acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font: 12px/1.5 var(--sans); color: var(--tinta-2); }
+.edicion-contexto { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; border-top: 1px solid var(--linea); margin-top: 18px; padding-top: 12px; font: 12px/1.5 var(--sans); color: var(--tinta-2); }
+.barra.capitulos { background: var(--papel); backdrop-filter: none; padding: 0 max(var(--gutter),calc((100% - var(--ancho)) / 2)); }
+.barra.capitulos nav { gap: 20px; }
+.barra.capitulos button { min-height: 50px; padding: 12px 0; border-radius: 0; border-bottom: 2px solid transparent; font-size: 14px; color: var(--tinta-2); }
+.barra.capitulos button[aria-current='page'] { background: none; color: var(--tinta); border-color: var(--naranja); }
+.barra.capitulos button .n { color: inherit; }
+.hoja.multipagina.edicion { padding-top: 28px; }
+.edicion .cabecera { padding-top: 20px; }
+.edicion .cabecera h1 { margin-top: 12px; }
+.edicion .cabecera .bajada { margin-top: 20px; }
+.edicion .paginacion { margin-top: 36px; }
+.edicion .pie { margin-top: 36px; }
+.pestanas { min-width: 0; }
+.pestanas-caja { display: none; min-width: 0; overflow-x: auto; border-bottom: 1px solid var(--pieza-linea); scrollbar-width: thin; }
+[data-tabs-listas] > .pestanas-caja { display: block; }
+.pestanas-nav { display: flex; gap: 18px; width: max-content; min-width: 100%; }
+.pestanas-nav button { flex: 0 0 auto; border: 0; border-bottom: 2px solid transparent; border-radius: 0; background: none; padding: 12px 4px; min-height: 44px; font: 14px/1.5 var(--sans); color: var(--pieza-secundaria); white-space: nowrap; }
+.pestanas-nav button[aria-selected='true'] { border-bottom-color: var(--pieza-acento); color: var(--pieza-tinta); }
+.pestanas > [data-tab-panel] { padding: 24px 0; min-width: 0; }
+.pestanas > [data-tab-panel] > * + * { margin-top: 14px; }
+.pestanas [role='tabpanel']:focus-visible { outline: 2px dashed var(--foco); outline-offset: 4px; }
+.hallazgo { border-block: 1px solid var(--pieza-linea); padding-block: 24px; }
+.hallazgo dl { display: grid; gap: 18px; }
+.hallazgo dt { font: 600 14px/1.5 var(--sans); }
+.hallazgo dd { margin-top: 4px; color: var(--pieza-secundaria); }
+.matriz-criterios td,.matriz-criterios th { vertical-align: top; }
+.matriz-criterios strong { font-weight: 600; color: var(--pieza-tinta); }
+@media print {
+  .edicion-cabecera,.barra.capitulos,.pestanas-caja { display: none !important; }
+  .pestanas > [data-tab-panel],.pestanas > [data-tab-panel][hidden] { display: block !important; }
+  .pestanas > [data-tab-panel] { border-top: 1px solid var(--linea); }
+}
+
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <a class="salto" href="#contenido">Saltar al contenido</a>
@@ -1374,12 +1621,12 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   'use strict';
   const root = document.documentElement;
   const selectors = document.querySelectorAll('[data-tema]');
-  const themes = ['system','light','dark','sea'];
+  const themes = ['system','light','dark','sea','oliva','arcilla','ciruela'];
   const scheme = matchMedia('(prefers-color-scheme: dark)');
-  const themeNames = {system:'Sistema',light:'Claro',dark:'Cálido',sea:'Dark Sea'};
+  const themeNames = {system:'Sistema',light:'Claro',dark:'Cálido',sea:'Dark Sea',oliva:'Oliva',arcilla:'Arcilla',ciruela:'Ciruela'};
   function syncAppearance() {
     const value=root.dataset.theme||'system';
-    const dark=value==='dark'||value==='sea'||(value==='system'&&scheme.matches);
+    const dark=['dark','sea','ciruela'].includes(value)||(value==='system'&&scheme.matches);
     document.querySelectorAll('[data-apariencia-menu]').forEach(menu=>{
       menu.dataset.oscuro=String(dark);
       menu.querySelector('summary').setAttribute('aria-label','Apariencia. '+themeNames[value]+(value==='system'?', '+(dark?'oscuro':'claro'):'')+'.');
@@ -1390,7 +1637,11 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   function theme(value) {
     if (!themes.includes(value)) value = 'system';
     if (value === 'system') delete root.dataset.theme; else root.dataset.theme = value;
-    selectors.forEach(selector => { selector.value = value; });
+    selectors.forEach(selector => {
+      // Una receta antigua puede no ofrecer las paletas nuevas: el control sigue nombrando el tema activo.
+      if(![...selector.options].some(option=>option.value===value))selector.add(new Option(themeNames[value],value));
+      selector.value = value;
+    });
     document.querySelectorAll('[data-elegir-tema]').forEach(input => { input.checked = input.value === value; });
     syncAppearance();
     try { localStorage.setItem('nota-tema',value); } catch {}
@@ -1603,6 +1854,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   var prev = nav && nav.querySelector('[data-nav="prev"]');
   var next = nav && nav.querySelector('[data-nav="next"]');
   var actual = 0;
+  var historial = hoja.hasAttribute('data-historial');
 
   function pintarNav() {
     if (!nav || !prev || !next) return;
@@ -1613,7 +1865,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
     if (b) b.textContent = actual < pags.length - 1 ? titulos[actual + 1] : "—";
   }
 
-  function ir(i, conFoco) {
+  function ir(i, conFoco, desdeHistorial) {
     if (i < 0 || i >= pags.length) return;
     actual = i;
     pags.forEach(function (p, k) { p.hidden = k !== i; p.classList.toggle("viva", k === i); });
@@ -1621,7 +1873,13 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
       if (k === i) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
     });
     pintarNav();
-    if (location.hash.slice(1) !== pags[i].id) history.replaceState(null, "", "#" + pags[i].id);
+    if (location.hash.slice(1) !== pags[i].id) history[historial && conFoco && !desdeHistorial ? 'pushState' : 'replaceState'](null, "", "#" + pags[i].id);
+    if(historial){
+      var salto=document.querySelector('a.salto');if(salto)salto.setAttribute('href','#'+pags[i].id);
+      pags[i].tabIndex=-1;
+      var caja=botones[i].closest('.barra'),r=botones[i].getBoundingClientRect(),c=caja.getBoundingClientRect();
+      if(r.left<c.left)caja.scrollLeft+=r.left-c.left-12;else if(r.right>c.right)caja.scrollLeft+=r.right-c.right+12;
+    }
     var suave = conFoco && !matchMedia("(prefers-reduced-motion: reduce)").matches;
     scrollTo({ top: 0, behavior: suave ? "smooth" : "auto" });
     if (conFoco) {
@@ -1634,10 +1892,12 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   botones.forEach(function (b, k) { b.addEventListener("click", function () { ir(k, true); }); });
   if (prev) prev.addEventListener("click", function () { ir(actual - 1, true); });
   if (next) next.addEventListener("click", function () { ir(actual + 1, true); });
-  addEventListener("hashchange", function () {
+  function desdeHash() {
     var i = pags.findIndex(function (p) { return p.id === location.hash.slice(1); });
-    if (i >= 0 && i !== actual) ir(i, true);
-  });
+    if (i >= 0 && i !== actual) ir(i, true, true);
+  }
+  addEventListener("hashchange", desdeHash);
+  if(historial)addEventListener('popstate',desdeHash);
 
   /* El temario, mirando sólo la página viva. */
   function indiceVivo() {
@@ -1674,7 +1934,9 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   document.fonts?.ready.then(programar);
 
   var inicial = pags.findIndex(function (p) { return p.id === location.hash.slice(1); });
-  if (inicial > 0) ir(inicial, false); else { pintarNav(); programar(); }
+  if (inicial > 0 || historial) ir(Math.max(0,inicial), false); else { pintarNav(); programar(); }
+  // En la edición nueva, el fragmento identifica el capítulo, pero se abre con su cabecera común.
+  if(historial&&document.readyState!=='complete')addEventListener('load',function(){scrollTo({top:0,behavior:'instant'});},{once:true});
 })();
 
 </script>

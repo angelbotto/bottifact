@@ -3,12 +3,12 @@
   'use strict';
   const root = document.documentElement;
   const selectors = document.querySelectorAll('[data-tema]');
-  const themes = ['system','light','dark','sea'];
+  const themes = ['system','light','dark','sea','oliva','arcilla','ciruela'];
   const scheme = matchMedia('(prefers-color-scheme: dark)');
-  const themeNames = {system:'Sistema',light:'Claro',dark:'Cálido',sea:'Dark Sea'};
+  const themeNames = {system:'Sistema',light:'Claro',dark:'Cálido',sea:'Dark Sea',oliva:'Oliva',arcilla:'Arcilla',ciruela:'Ciruela'};
   function syncAppearance() {
     const value=root.dataset.theme||'system';
-    const dark=value==='dark'||value==='sea'||(value==='system'&&scheme.matches);
+    const dark=['dark','sea','ciruela'].includes(value)||(value==='system'&&scheme.matches);
     document.querySelectorAll('[data-apariencia-menu]').forEach(menu=>{
       menu.dataset.oscuro=String(dark);
       menu.querySelector('summary').setAttribute('aria-label','Apariencia. '+themeNames[value]+(value==='system'?', '+(dark?'oscuro':'claro'):'')+'.');
@@ -19,7 +19,11 @@
   function theme(value) {
     if (!themes.includes(value)) value = 'system';
     if (value === 'system') delete root.dataset.theme; else root.dataset.theme = value;
-    selectors.forEach(selector => { selector.value = value; });
+    selectors.forEach(selector => {
+      // Una receta antigua puede no ofrecer las paletas nuevas: el control sigue nombrando el tema activo.
+      if(![...selector.options].some(option=>option.value===value))selector.add(new Option(themeNames[value],value));
+      selector.value = value;
+    });
     document.querySelectorAll('[data-elegir-tema]').forEach(input => { input.checked = input.value === value; });
     syncAppearance();
     try { localStorage.setItem('nota-tema',value); } catch {}

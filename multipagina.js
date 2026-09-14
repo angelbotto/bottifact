@@ -31,6 +31,7 @@
   var prev = nav && nav.querySelector('[data-nav="prev"]');
   var next = nav && nav.querySelector('[data-nav="next"]');
   var actual = 0;
+  var historial = hoja.hasAttribute('data-historial');
 
   function pintarNav() {
     if (!nav || !prev || !next) return;
@@ -41,7 +42,7 @@
     if (b) b.textContent = actual < pags.length - 1 ? titulos[actual + 1] : "—";
   }
 
-  function ir(i, conFoco) {
+  function ir(i, conFoco, desdeHistorial) {
     if (i < 0 || i >= pags.length) return;
     actual = i;
     pags.forEach(function (p, k) { p.hidden = k !== i; p.classList.toggle("viva", k === i); });
@@ -49,7 +50,13 @@
       if (k === i) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
     });
     pintarNav();
-    if (location.hash.slice(1) !== pags[i].id) history.replaceState(null, "", "#" + pags[i].id);
+    if (location.hash.slice(1) !== pags[i].id) history[historial && conFoco && !desdeHistorial ? 'pushState' : 'replaceState'](null, "", "#" + pags[i].id);
+    if(historial){
+      var salto=document.querySelector('a.salto');if(salto)salto.setAttribute('href','#'+pags[i].id);
+      pags[i].tabIndex=-1;
+      var caja=botones[i].closest('.barra'),r=botones[i].getBoundingClientRect(),c=caja.getBoundingClientRect();
+      if(r.left<c.left)caja.scrollLeft+=r.left-c.left-12;else if(r.right>c.right)caja.scrollLeft+=r.right-c.right+12;
+    }
     var suave = conFoco && !matchMedia("(prefers-reduced-motion: reduce)").matches;
     scrollTo({ top: 0, behavior: suave ? "smooth" : "auto" });
     if (conFoco) {
@@ -62,10 +69,12 @@
   botones.forEach(function (b, k) { b.addEventListener("click", function () { ir(k, true); }); });
   if (prev) prev.addEventListener("click", function () { ir(actual - 1, true); });
   if (next) next.addEventListener("click", function () { ir(actual + 1, true); });
-  addEventListener("hashchange", function () {
+  function desdeHash() {
     var i = pags.findIndex(function (p) { return p.id === location.hash.slice(1); });
-    if (i >= 0 && i !== actual) ir(i, true);
-  });
+    if (i >= 0 && i !== actual) ir(i, true, true);
+  }
+  addEventListener("hashchange", desdeHash);
+  if(historial)addEventListener('popstate',desdeHash);
 
   /* El temario, mirando sólo la página viva. */
   function indiceVivo() {
@@ -102,5 +111,7 @@
   document.fonts?.ready.then(programar);
 
   var inicial = pags.findIndex(function (p) { return p.id === location.hash.slice(1); });
-  if (inicial > 0) ir(inicial, false); else { pintarNav(); programar(); }
+  if (inicial > 0 || historial) ir(Math.max(0,inicial), false); else { pintarNav(); programar(); }
+  // En la edición nueva, el fragmento identifica el capítulo, pero se abre con su cabecera común.
+  if(historial&&document.readyState!=='complete')addEventListener('load',function(){scrollTo({top:0,behavior:'instant'});},{once:true});
 })();
