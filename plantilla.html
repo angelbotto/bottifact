@@ -1329,7 +1329,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 .apariencia-ajustes { display: grid; gap: 6px; border-top: 1px solid var(--linea); margin-top: 18px; padding-top: 12px; }
 .apariencia-ajustes button { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin: 0;
   width: 100%; min-height: 44px; padding: 9px; font: 13px/1.5 var(--sans); text-align: left; }
-.apariencia-ajustes button[aria-pressed='false'] span { visibility: hidden; }
+.apariencia-ajustes button[aria-pressed='false'] span[aria-hidden='true']:not(.interruptor) { visibility: hidden; }
 .apariencia-ajustes button[aria-pressed='true'] { background: var(--pieza-suave); border-color: var(--pieza-acento); }
 .apariencia-variantes { display: flex; flex-wrap: wrap; align-items: start; gap: 24px 36px; }
 .apariencia-variantes > div { min-width: 0; }
@@ -1341,7 +1341,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 :root[data-estilo='tecnico'] h2 { font-size: clamp(25px,3vw,32px); line-height: 1.25; }
 :root[data-estilo='tecnico'] h3 { font-size: 23px; line-height: 1.3; }
 :root[data-estilo] :is(h1,h2,h3) { overflow-wrap: anywhere; }
-:root[data-trama] body { background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22180%22%20height%3D%22180%22%3E%3Cfilter%20id%3D%22grano%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%22.78%22%20numOctaves%3D%223%22%20seed%3D%2217%22%20stitchTiles%3D%22stitch%22%2F%3E%3CfeColorMatrix%20type%3D%22saturate%22%20values%3D%220%22%2F%3E%3CfeComponentTransfer%3E%3CfeFuncA%20type%3D%22linear%22%20slope%3D%22.19%22%2F%3E%3C%2FfeComponentTransfer%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url%28%23grano%29%22%20opacity%3D%22.75%22%2F%3E%3C%2Fsvg%3E"); background-size:180px 180px; }
+:root[data-trama] :is(body,.barra.capitulos) { background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22180%22%20height%3D%22180%22%3E%3Cfilter%20id%3D%22grano%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%22.78%22%20numOctaves%3D%223%22%20seed%3D%2217%22%20stitchTiles%3D%22stitch%22%2F%3E%3CfeColorMatrix%20type%3D%22saturate%22%20values%3D%220%22%2F%3E%3CfeComponentTransfer%3E%3CfeFuncA%20type%3D%22linear%22%20slope%3D%22.19%22%2F%3E%3C%2FfeComponentTransfer%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url%28%23grano%29%22%20opacity%3D%22.75%22%2F%3E%3C%2Fsvg%3E"); background-size:180px 180px; }
 @media print { .apariencia-menu { display: none !important; } :root[data-trama] body { background-image: none; } }
 
 /* 15 — Oliva, Arcilla y Ciruela. Paletas optativas completas, sin alterar las anteriores. */
@@ -1664,6 +1664,84 @@ body:has(.revision-barra) { padding-bottom:100px; }
 @media(max-width:420px) { .revision-barra { right:8px; bottom:8px; max-width:calc(100% - 16px); } .revision-dialogo { padding:18px; } }
 @media print { .revision-ui,.revision-marca,[data-revision] { display:none !important; } body:has(.revision-barra) { padding-bottom:0; } }
 .visor-importar textarea:focus-visible,.revision-dialogo textarea:focus-visible { outline:2px dashed var(--foco); outline-offset:3px; }
+/* 19 — Interacción compacta. Los pines no pertenecen al flujo de lectura. */
+.revision-capa { position:fixed; inset:0; z-index:35; pointer-events:none; }
+.revision-capa .revision-marca { position:absolute; pointer-events:auto; width:28px; min-height:30px; height:30px; margin:0; padding:0; border-radius:50% 50% 50% 4px; box-shadow:0 2px 7px color-mix(in srgb,var(--pieza-tinta) 16%,transparent); background:var(--pieza-acento); color:var(--pieza-papel); border:1px solid var(--pieza-papel); font:600 12px/1 var(--sans); }
+.revision-barra { padding:4px; gap:4px; border-radius:100px; }
+.revision-barra button { display:grid; place-items:center; width:40px; min-height:40px; padding:0; border:0; border-radius:50%; }
+.revision-barra button[aria-pressed=true] { background:var(--pieza-acento); color:var(--pieza-papel); }
+body:has(.revision-barra) { padding-bottom:0; }
+[data-revisando] main :is(p,h1,h2,h3,h4,figure,.card-editorial,li):hover { outline:none; }
+[data-revisando] main,[data-revisando] main * { cursor:crosshair !important; }
+[data-revision-editor].revision-dialogo { position:fixed; inset:auto; z-index:45; margin:0; width:304px; padding:14px; border-radius:12px; box-shadow:0 8px 32px color-mix(in srgb,var(--pieza-tinta) 18%,transparent); }
+[data-revision-editor] h2 { font:600 14px/1.4 var(--sans); margin-bottom:10px; }
+[data-revision-editor] label { position:absolute; width:1px; height:1px; clip-path:inset(50%); }
+[data-revision-editor] textarea { min-height:76px; margin:8px 0; padding:10px; font:14px/1.5 var(--sans); border:1px solid var(--pieza-linea); border-radius:6px; }
+[data-revision-editor] .acciones { justify-content:flex-end; gap:8px; margin:8px 0 0; }
+[data-revision-editor] button { min-height:36px; padding:8px 12px; font:13px var(--sans); }
+.revision-contexto { font:12px/1.5 var(--sans); color:var(--pieza-secundaria); }
+.revision-contexto p { max-height:96px; overflow:auto; padding:6px 0; }
+[data-revision-panel] { width:min(440px,calc(100% - 24px)); padding:20px; }
+[data-revision-panel] h2 { font:400 26px/1.2 var(--serif); }
+[data-revision-panel] ol { padding-left:20px; }
+[data-revision-panel] li details { font:12px/1.6 var(--sans); color:var(--pieza-secundaria); }
+[data-revision-panel] .codigo pre { max-height:140px; }
+@media print { .revision-capa { display:none !important; } }
+.control-etiqueta { position:absolute; width:1px; height:1px; clip-path:inset(50%); }
+.control-menu { position:relative; font:13px/1.4 var(--sans); }
+.control-menu > summary { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:38px; box-sizing:border-box; padding:8px 10px; border:1px solid var(--pieza-linea); border-radius:6px; background:var(--pieza-papel); color:var(--pieza-tinta); cursor:pointer; list-style:none; }
+.control-menu > summary::-webkit-details-marker { display:none; }
+.control-menu[open] > summary { background:var(--pieza-suave); }
+.control-panel { padding:8px; border:1px solid var(--pieza-linea); border-radius:8px; background:var(--pieza-papel); color:var(--pieza-tinta); box-shadow:0 8px 24px color-mix(in srgb,var(--pieza-tinta) 12%,transparent); overflow:auto; box-sizing:border-box; }
+[data-control-listo] > .control-panel { position:fixed; z-index:44; left:12px; top:12px; width:min(264px,calc(100vw - 24px)); max-height:calc(100dvh - 24px); }
+.control-panel label { display:flex; flex-wrap:wrap; align-items:center; gap:8px; padding:8px; }
+.control-panel select { width:100%; min-width:0; padding:8px; background:var(--pieza-papel); color:var(--pieza-tinta); border:1px solid var(--pieza-linea); border-radius:5px; font:inherit; }
+.control-panel button { display:flex; justify-content:space-between; align-items:center; gap:16px; width:100%; min-height:38px; border:0; padding:10px; border-radius:4px; text-align:left; font:13px var(--sans); }
+.control-panel button:hover,.control-panel button[aria-pressed=true] { background:var(--pieza-suave); }
+.control-panel small { color:var(--pieza-secundaria); white-space:nowrap; font:11px var(--mono); }
+.tabla-herramientas,.visor-herramientas { display:flex; align-items:center; flex-wrap:wrap; gap:8px; }
+.tabla-busqueda { display:flex; flex:1 1 180px; max-width:320px; align-items:center; gap:8px; padding:0 10px; border:1px solid var(--pieza-linea); border-radius:6px; min-width:0; background:var(--pieza-papel); }
+.tabla-busqueda input { width:100%; min-width:0; min-height:38px; border:0; outline-offset:3px; background:none; color:var(--pieza-tinta); font:14px var(--sans); }
+.tabla-busqueda svg,.visor-herramientas svg { fill:none; stroke:currentColor; stroke-width:1.5; flex:none; }
+.tabla-orden > summary { border:0; background:none; padding:4px 0; justify-content:flex-start; min-height:36px; font-weight:500; }
+[data-explorador] .tabla-caja { border:1px solid var(--pieza-linea); border-radius:8px; }
+[data-explorador] table { min-width:620px; font:14px/1.5 var(--sans); }
+[data-explorador] th,[data-explorador] td { padding:12px 16px; }
+[data-explorador] td:last-child { font:13px var(--mono); text-align:right; }
+[data-explorador] thead th { background:var(--pieza-suave); }
+[data-explorador-estado] { font:12px/1.5 var(--sans); color:var(--pieza-secundaria); }
+.visor-herramientas { padding:10px; border:1px solid var(--pieza-linea); border-radius:9px; background:var(--pieza-papel); }
+.visor-herramientas > .control-menu { margin-right:auto; }
+.visor-herramientas select,.visor-herramientas > button { min-height:38px; padding:8px 10px; border:1px solid var(--pieza-linea); border-radius:6px; background:var(--pieza-papel); color:var(--pieza-tinta); font:13px var(--sans); }
+.visor-herramientas .control-icono { width:38px; padding:8px; display:grid; place-items:center; }
+.visor-marco { min-width:0; position:relative; flex:none; }
+.visor-marco > .visor-lienzo { box-sizing:border-box; }
+[data-visor-editor] .visor-caja { max-height:760px; overflow:auto; padding:0; background:var(--pieza-suave); }
+[data-visor-editor] [data-visor-estado] { font:12px/1.5 var(--sans); }
+@media print { .tabla-herramientas,.visor-herramientas,.control-panel { display:none !important; } }
+[data-audio-global] { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.interruptor { display:inline-block; width:28px; height:16px; border-radius:12px; background:var(--pieza-linea); position:relative; }
+.interruptor::after { content:''; position:absolute; top:3px; left:3px; width:10px; height:10px; border-radius:50%; background:var(--pieza-papel); }
+[aria-pressed=true] > .interruptor { background:var(--pieza-acento); }
+[aria-pressed=true] > .interruptor::after { left:15px; }
+[data-audio-cabecera] [data-audio-activar] { display:none; }
+[data-revision-editor] textarea { font-size:16px; }
+@media print { :root[data-trama] .barra.capitulos { background-image:none; } }
+.codigo .codigo-numero { color:var(--naranja); }
+.codigo .codigo-alerta { color:var(--rojo); }
+.terminal :is(.kw,.codigo-alerta) { color:var(--term-marca); }
+.terminal .codigo-numero { color:var(--term-marca); }
+.terminal .str { color:color-mix(in srgb,var(--term-tinta) 72%,var(--term-marca)); }
+.terminal .codigo-atributo { color:var(--term-tinta); }
+.terminal .com { color:var(--term-tenue); }
+
+.visor-marco[data-ajustado] { overflow:clip; }
+
+@media(max-width:600px) {
+  .tabla-busqueda input,.control-panel select,.visor-herramientas select { font-size:16px; }
+}
+.visor-marco { margin-inline:auto; }
+[data-explorador] tbody th[scope=row] { background:transparent; color:var(--pieza-tinta); font:inherit; font-weight:500; }
 
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -1689,6 +1767,8 @@ body:has(.revision-barra) { padding-bottom:100px; }
     </div></fieldset>
     <div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
+      <button type="button" data-audio-global aria-pressed="false"><span data-audio-etiqueta>Sonidos apagados</span><span class="interruptor" aria-hidden="true"></span></button>
+      <button type="button" data-ver-escritura>Ver escritura animada ↗</button>
       <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
   </div>
@@ -1740,7 +1820,7 @@ body:has(.revision-barra) { padding-bottom:100px; }
 <div class="extracto"><p class="desvanece" aria-hidden="true">Una nota se termina cuando alguien puede tomar una decisión con ella. La forma prepara el terreno; la evidencia sostiene lo que decimos.</p><details><summary>Leer la nota completa</summary><p>Una nota se termina cuando alguien puede tomar una decisión con ella. La forma prepara el terreno; la evidencia sostiene lo que decimos. Si la pieza necesita una segunda lectura para entender qué propone, todavía queda trabajo editorial.</p></details></div>
 <aside class="aviso cita"><span class="num" aria-hidden="true">↳</span><div><blockquote>Dejar una buena nota es dejarle contexto a quien llega después.</blockquote><p class="secundario">Principio de esta plantilla</p></div></aside>
 <section class="seccion" id="libreria"><p class="ceja">06 / componentes para copiar</p>
-<h2>La evidencia tiene muchas formas.</h2><p>Gráficas, tablas y experiencias opcionales. Cada ejemplo conserva sus datos, su criterio y su límite en componentes.md.</p><div data-buscador-recetas><div class="buscador-recetas"><label for="buscar-receta">Encuentra una pieza</label><input id="buscar-receta" type="search" placeholder="Tabla, globo, artículo, prototipo…" aria-describedby="buscar-estado"><p id="buscar-estado" role="status"></p></div><nav aria-label="Ejemplos de componentes"><ul class="catalogo-indice"><li data-claves=""><a href="#pieza-tabla-densa">Tabla densa</a></li><li data-claves=""><a href="#pieza-terminal">Terminal</a></li><li data-claves=""><a href="#pieza-manuscrita">Nota manuscrita</a></li><li data-claves=""><a href="#barras-ejemplo">Barras</a></li><li data-claves=""><a href="#lineas-ejemplo">Líneas</a></li><li data-claves=""><a href="#temporal-ejemplo">Serie temporal</a></li><li data-claves=""><a href="#dispersion-ejemplo">Dispersión</a></li><li data-claves=""><a href="#distribucion-ejemplo">Distribución</a></li><li data-claves=""><a href="#calor-ejemplo">Mapa de calor</a></li><li data-claves=""><a href="#pieza-comparacion">Comparación</a></li><li data-claves=""><a href="#pieza-totales">Totales y ordenación</a></li><li data-claves=""><a href="#pieza-sparkline">Tabla con serie</a></li><li data-claves=""><a href="#pieza-sonido">Sonido optativo</a></li><li data-claves=""><a href="#pieza-escritura">Escritura por trazos</a></li><li data-claves=""><a href="#xyz-ejemplo">Three.js · XYZ</a></li><li data-claves=""><a href="#etapas-ejemplo">Three.js · etapas</a></li><li data-claves="tema lectura"><a href="#apariencia-ejemplo">Apariencia y lectura cómoda</a></li><li data-claves="reporte informe"><a href="#decision-ejemplo">Ficha de decisión</a></li><li data-claves="historia fechas"><a href="#cronologia-ejemplo">Cronología anotada</a></li><li data-claves="blog autor fecha"><a href="#articulo-ejemplo">Ficha de artículo</a></li><li data-claves="blog fuentes citas"><a href="#referencias-ejemplo">Referencias con regreso</a></li><li data-claves="blog definiciones"><a href="#glosario-ejemplo">Glosario editorial</a></li><li data-claves="blog informe supuestos"><a href="#metodologia-ejemplo">Metodología desplegable</a></li><li data-claves="blog cambios"><a href="#antes-despues-ejemplo">Antes y después</a></li><li data-claves="reporte balance"><a href="#cascada-ejemplo">Cascada de cantidades</a></li><li data-claves="graficas reporte sedes"><a href="#multiples-ejemplo">Pequeños múltiples</a></li><li data-claves="tabla reporte diferencias"><a href="#conciliacion-ejemplo">Conciliación de registros</a></li><li data-claves="calculadora reporte supuestos"><a href="#escenario-ejemplo">Calculadora de escenarios</a></li><li data-claves="globo three geografia historia"><a href="#recorrido-ejemplo">Globo narrado</a></li><li data-claves="prototipo estados responsive"><a href="#visor-ejemplo">Visor de prototipos</a></li><li data-claves=""><a href="#pestanas-ejemplo">Pestañas de una pieza</a></li><li data-claves=""><a href="#hallazgo-ejemplo">Ficha de hallazgo</a></li><li data-claves=""><a href="#archivo-ejemplo">Archivo de publicaciones</a></li><li data-claves=""><a href="#autor-ejemplo">Ficha de autor</a></li><li data-claves=""><a href="#relacionados-ejemplo">Lecturas relacionadas</a></li><li data-claves=""><a href="#anotaciones-ejemplo">Diagrama anotado</a></li><li data-claves=""><a href="#revisiones-ejemplo">Historial de revisiones</a></li><li data-claves=""><a href="#criterios-ejemplo">Matriz de criterios</a></li><li data-claves=""><a href="#riesgos-ejemplo">Registro de riesgos</a></li><li data-claves=""><a href="#configuracion-ejemplo">Configuración editorial</a></li><li data-claves=""><a href="#explorador-ejemplo">Tabla interactiva</a></li><li data-claves=""><a href="#cards-ejemplo">Familia de cards</a></li><li data-claves=""><a href="#revision-ejemplo">Comentarios sobre el documento</a></li></ul></nav></div></section>
+<h2>La evidencia tiene muchas formas.</h2><p>Gráficas, tablas y experiencias opcionales. Cada ejemplo conserva sus datos, su criterio y su límite en componentes.md.</p><div data-buscador-recetas><div class="buscador-recetas"><label for="buscar-receta">Encuentra una pieza</label><input id="buscar-receta" type="search" placeholder="Tabla, globo, artículo, prototipo…" aria-describedby="buscar-estado"><p id="buscar-estado" role="status"></p></div><nav aria-label="Ejemplos de componentes"><ul class="catalogo-indice"><li data-claves=""><a href="#pieza-tabla-densa">Tabla densa</a></li><li data-claves=""><a href="#pieza-terminal">Terminal</a></li><li data-claves=""><a href="#pieza-manuscrita">Nota manuscrita</a></li><li data-claves=""><a href="#barras-ejemplo">Barras</a></li><li data-claves=""><a href="#lineas-ejemplo">Líneas</a></li><li data-claves=""><a href="#temporal-ejemplo">Serie temporal</a></li><li data-claves=""><a href="#dispersion-ejemplo">Dispersión</a></li><li data-claves=""><a href="#distribucion-ejemplo">Distribución</a></li><li data-claves=""><a href="#calor-ejemplo">Mapa de calor</a></li><li data-claves=""><a href="#pieza-comparacion">Comparación</a></li><li data-claves=""><a href="#pieza-totales">Totales y ordenación</a></li><li data-claves=""><a href="#pieza-sparkline">Tabla con serie</a></li><li data-claves=""><a href="#pieza-sonido">Sonido optativo</a></li><li data-claves=""><a href="#pieza-escritura">Escritura por trazos</a></li><li data-claves=""><a href="#xyz-ejemplo">Three.js · XYZ</a></li><li data-claves=""><a href="#etapas-ejemplo">Three.js · etapas</a></li><li data-claves="tema lectura"><a href="#apariencia-ejemplo">Apariencia y lectura cómoda</a></li><li data-claves="reporte informe"><a href="#decision-ejemplo">Ficha de decisión</a></li><li data-claves="historia fechas"><a href="#cronologia-ejemplo">Cronología anotada</a></li><li data-claves="blog autor fecha"><a href="#articulo-ejemplo">Ficha de artículo</a></li><li data-claves="blog fuentes citas"><a href="#referencias-ejemplo">Referencias con regreso</a></li><li data-claves="blog definiciones"><a href="#glosario-ejemplo">Glosario editorial</a></li><li data-claves="blog informe supuestos"><a href="#metodologia-ejemplo">Metodología desplegable</a></li><li data-claves="blog cambios"><a href="#antes-despues-ejemplo">Antes y después</a></li><li data-claves="reporte balance"><a href="#cascada-ejemplo">Cascada de cantidades</a></li><li data-claves="graficas reporte sedes"><a href="#multiples-ejemplo">Pequeños múltiples</a></li><li data-claves="tabla reporte diferencias"><a href="#conciliacion-ejemplo">Conciliación de registros</a></li><li data-claves="calculadora reporte supuestos"><a href="#escenario-ejemplo">Calculadora de escenarios</a></li><li data-claves="globo three geografia historia"><a href="#recorrido-ejemplo">Globo narrado</a></li><li data-claves="prototipo estados responsive"><a href="#visor-ejemplo">Visor de prototipos</a></li><li data-claves=""><a href="#pestanas-ejemplo">Pestañas de una pieza</a></li><li data-claves=""><a href="#hallazgo-ejemplo">Ficha de hallazgo</a></li><li data-claves=""><a href="#archivo-ejemplo">Archivo de publicaciones</a></li><li data-claves=""><a href="#autor-ejemplo">Ficha de autor</a></li><li data-claves=""><a href="#relacionados-ejemplo">Lecturas relacionadas</a></li><li data-claves=""><a href="#anotaciones-ejemplo">Diagrama anotado</a></li><li data-claves=""><a href="#revisiones-ejemplo">Historial de revisiones</a></li><li data-claves=""><a href="#criterios-ejemplo">Matriz de criterios</a></li><li data-claves=""><a href="#riesgos-ejemplo">Registro de riesgos</a></li><li data-claves=""><a href="#configuracion-ejemplo">Configuración editorial</a></li><li data-claves=""><a href="#explorador-ejemplo">Tabla interactiva</a></li><li data-claves=""><a href="#cards-ejemplo">Familia de cards</a></li><li data-claves=""><a href="#revision-ejemplo">Comentarios sobre el documento</a></li><li data-claves=""><a href="#codigo-poliglota">Código en varios lenguajes</a></li></ul></nav></div></section>
 <figure class="amplio" id="pieza-tabla-densa">
   <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Brechas, desplazable">
     <table><caption>Seguimiento ilustrativo de brechas</caption>
@@ -2088,10 +2168,10 @@ body:has(.revision-barra) { padding-bottom:100px; }
   </div>
   <div class="escritura-controles">
     <button type="button" data-audio-activar aria-pressed="false">Activar sonido</button>
-    <button type="button" data-escribir data-audio="accion" data-mensaje="Repetir escritura con señal breve si el sonido está activado.">Repetir escritura</button>
+    <button type="button" data-escribir data-audio="escritura" data-mensaje="Repetir escritura con señal breve si el sonido está activado.">Repetir escritura</button>
     <button type="button" data-finalizar>Mostrar trazo completo</button>
   </div>
-  <p data-texto-escritura>«a mano»</p>
+  <p data-texto-escritura>«a mano»</p><p class="procedencia">Activa el sonido en Apariencia —o en el control local— y pulsa Repetir para escuchar el trazo.</p>
   <p role="status" aria-live="polite">Trazo completo.</p>
   <figcaption>Gesto ilustrativo original de Nota Tikin. 2400 ms repartidos por la longitud de cada trazo; la frase siempre permanece escrita debajo.</figcaption>
 </figure>
@@ -2108,10 +2188,10 @@ body:has(.revision-barra) { padding-bottom:100px; }
   &lt;/div&gt;
   &lt;div class=&quot;escritura-controles&quot;&gt;
     &lt;button type=&quot;button&quot; data-audio-activar aria-pressed=&quot;false&quot;&gt;Activar sonido&lt;/button&gt;
-    &lt;button type=&quot;button&quot; data-escribir data-audio=&quot;accion&quot; data-mensaje=&quot;Repetir escritura con señal breve si el sonido está activado.&quot;&gt;Repetir escritura&lt;/button&gt;
+    &lt;button type=&quot;button&quot; data-escribir data-audio=&quot;escritura&quot; data-mensaje=&quot;Repetir escritura con señal breve si el sonido está activado.&quot;&gt;Repetir escritura&lt;/button&gt;
     &lt;button type=&quot;button&quot; data-finalizar&gt;Mostrar trazo completo&lt;/button&gt;
   &lt;/div&gt;
-  &lt;p data-texto-escritura&gt;«a mano»&lt;/p&gt;
+  &lt;p data-texto-escritura&gt;«a mano»&lt;/p&gt;&lt;p class=&quot;procedencia&quot;&gt;Activa el sonido en Apariencia —o en el control local— y pulsa Repetir para escuchar el trazo.&lt;/p&gt;
   &lt;p role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;Trazo completo.&lt;/p&gt;
   &lt;figcaption&gt;Gesto ilustrativo original de Nota Tikin. 2400 ms repartidos por la longitud de cada trazo; la frase siempre permanece escrita debajo.&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre></div></details>
@@ -2196,6 +2276,8 @@ body:has(.revision-barra) { padding-bottom:100px; }
     </div></fieldset>
     <div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
+      <button type="button" data-audio-global aria-pressed="false"><span data-audio-etiqueta>Sonidos apagados</span><span class="interruptor" aria-hidden="true"></span></button>
+      <button type="button" data-ver-escritura>Ver escritura animada ↗</button>
       <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
   </div>
@@ -2222,6 +2304,8 @@ body:has(.revision-barra) { padding-bottom:100px; }
     </div></fieldset>
     <div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
+      <button type="button" data-audio-global aria-pressed="false"><span data-audio-etiqueta>Sonidos apagados</span><span class="interruptor" aria-hidden="true"></span></button>
+      <button type="button" data-ver-escritura>Ver escritura animada ↗</button>
       <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
   </div>
@@ -2248,6 +2332,8 @@ body:has(.revision-barra) { padding-bottom:100px; }
     </div></fieldset>
     <div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
+      <button type="button" data-audio-global aria-pressed="false"><span data-audio-etiqueta>Sonidos apagados</span><span class="interruptor" aria-hidden="true"></span></button>
+      <button type="button" data-ver-escritura>Ver escritura animada ↗</button>
       <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
   </div>
@@ -2281,6 +2367,8 @@ body:has(.revision-barra) { padding-bottom:100px; }
     &lt;/div&gt;&lt;/fieldset&gt;
     &lt;div class=&quot;apariencia-ajustes&quot;&gt;
       &lt;button type=&quot;button&quot; data-comodidad aria-pressed=&quot;false&quot;&gt;Lectura cómoda &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
+      &lt;button type=&quot;button&quot; data-audio-global aria-pressed=&quot;false&quot;&gt;&lt;span data-audio-etiqueta&gt;Sonidos apagados&lt;/span&gt;&lt;span class=&quot;interruptor&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+      &lt;button type=&quot;button&quot; data-ver-escritura&gt;Ver escritura animada ↗&lt;/button&gt;
       &lt;button type=&quot;button&quot; data-papel-tramado aria-pressed=&quot;false&quot;&gt;Grano de papel &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -2307,6 +2395,8 @@ body:has(.revision-barra) { padding-bottom:100px; }
     &lt;/div&gt;&lt;/fieldset&gt;
     &lt;div class=&quot;apariencia-ajustes&quot;&gt;
       &lt;button type=&quot;button&quot; data-comodidad aria-pressed=&quot;false&quot;&gt;Lectura cómoda &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
+      &lt;button type=&quot;button&quot; data-audio-global aria-pressed=&quot;false&quot;&gt;&lt;span data-audio-etiqueta&gt;Sonidos apagados&lt;/span&gt;&lt;span class=&quot;interruptor&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+      &lt;button type=&quot;button&quot; data-ver-escritura&gt;Ver escritura animada ↗&lt;/button&gt;
       &lt;button type=&quot;button&quot; data-papel-tramado aria-pressed=&quot;false&quot;&gt;Grano de papel &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -2333,6 +2423,8 @@ body:has(.revision-barra) { padding-bottom:100px; }
     &lt;/div&gt;&lt;/fieldset&gt;
     &lt;div class=&quot;apariencia-ajustes&quot;&gt;
       &lt;button type=&quot;button&quot; data-comodidad aria-pressed=&quot;false&quot;&gt;Lectura cómoda &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
+      &lt;button type=&quot;button&quot; data-audio-global aria-pressed=&quot;false&quot;&gt;&lt;span data-audio-etiqueta&gt;Sonidos apagados&lt;/span&gt;&lt;span class=&quot;interruptor&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+      &lt;button type=&quot;button&quot; data-ver-escritura&gt;Ver escritura animada ↗&lt;/button&gt;
       &lt;button type=&quot;button&quot; data-papel-tramado aria-pressed=&quot;false&quot;&gt;Grano de papel &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -2641,17 +2733,15 @@ body:has(.revision-barra) { padding-bottom:100px; }
   &lt;/ol&gt;
   &lt;figcaption&gt;Relato ficticio. Las coordenadas son geográficas; no representan vuelos, distancias ni actividad real.&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre></div></details>
-<figure class="pieza amplio" id="visor-ejemplo" data-visor>
+<figure class="pieza amplio" id="visor-ejemplo" data-visor data-visor-editor>
   <h3>Una interfaz, varios tamaños</h3>
   <p>Explora los estados vacío, revisión y confirmado de un registro ilustrativo.</p>
-  <div class="acciones" role="group" aria-label="Ancho de la vista del prototipo">
-    <button type="button" data-ancho-visor="320" aria-pressed="false">320 px</button>
-    <button type="button" data-ancho-visor="390" aria-pressed="true">Móvil · 390 px</button>
-    <button type="button" data-ancho-visor="768" aria-pressed="false">768 px</button>
-    <button type="button" data-ancho-visor="1024" aria-pressed="false">Escritorio · 1024 px</button>
-    <button type="button" data-ancho-visor="auto" aria-pressed="false">Ajustar</button>
-    <button type="button" data-reiniciar-visor>Reiniciar ejemplo</button>
-  </div>
+  <div class="visor-herramientas" role="group" aria-label="Vista del prototipo">
+<details class="control-menu"><summary><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 18h4"/></svg><span data-dispositivo-actual>Móvil</span> ⌄</summary><div class="control-panel" tabindex="0" role="region" aria-label="Dispositivo del prototipo"><button type="button" data-ancho-visor="320" data-cerrar-menu aria-pressed="false">Móvil pequeño <small>320 px</small></button><button type="button" data-ancho-visor="390" data-cerrar-menu aria-pressed="true">Móvil <small>390 px</small></button><button type="button" data-ancho-visor="768" data-cerrar-menu aria-pressed="false">Tablet <small>768 px</small></button><button type="button" data-ancho-visor="1024" data-cerrar-menu aria-pressed="false">Escritorio <small>1024 px</small></button><button type="button" data-ancho-visor="auto" data-cerrar-menu aria-pressed="false">Ancho disponible</button></div></details>
+<label class="visor-proporcion"><span class="control-etiqueta">Proporción del marco</span><select data-proporcion-visor aria-label="Proporción del marco"><option value="auto">Altura libre</option><option value="9/16">9:16</option><option value="4/3">4:3</option><option value="16/9">16:9</option><option value="1/1">1:1</option></select></label>
+<button type="button" class="control-icono" data-girar-visor aria-label="Rotar marco" title="Rotar marco" aria-pressed="false"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="6" y="5" width="9" height="14" rx="1"/><path d="M18 4a8 8 0 0 1 3 6m0-6v6h-5"/></svg></button>
+<button type="button" data-ajustar-visor aria-pressed="false">Ajustar</button><button type="button" class="control-icono" data-reiniciar-visor aria-label="Reiniciar prototipo" title="Reiniciar prototipo">↺</button>
+</div>
   <p data-visor-estado role="status">Vista inicial: 390 px CSS.</p>
   <div class="visor-caja" tabindex="0" role="region" aria-label="Prototipo interactivo, desplazable horizontalmente"></div>
   <details class="visor-importar"><summary>Embeber mi HTML</summary><label>HTML y CSS locales<textarea data-html-visor rows="8" spellcheck="false" placeholder="Pega aquí un fragmento HTML sin scripts ni recursos externos"></textarea></label><button type="button" data-cargar-html>Cargar en el visor</button><p data-importar-estado role="status">Tu HTML se muestra sólo en este navegador. Reiniciar recupera la muestra original.</p></details>
@@ -2697,17 +2787,15 @@ body:has(.revision-barra) { padding-bottom:100px; }
   <div class="visor-fuente"><h4>Estados del ejemplo</h4><ol><li>Vacío: crear un borrador de ejemplo.</li><li>Revisión: sesión del 14-sep-2026, 30 minutos, pendiente de confirmar.</li><li>Confirmado: resultado ilustrativo; no se envían datos.</li></ol></div>
   <figcaption>Vista interactiva local. El ancho conserva píxeles CSS reales; en una pantalla pequeña se desplaza la región completa.</figcaption>
 </figure>
-<details class="receta-copia ancho"><summary>HTML y dependencias · Visor de prototipos</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Añade visor.js.</p><div class="codigo"><div class="cab"><span>Visor de prototipos</span><button type="button" data-copiar="receta-fuente-visor" aria-label="Copiar HTML de Visor de prototipos">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Visor de prototipos, desplazable"><code id="receta-fuente-visor">&lt;figure class=&quot;pieza amplio&quot; id=&quot;visor-ejemplo&quot; data-visor&gt;
+<details class="receta-copia ancho"><summary>HTML y dependencias · Visor de prototipos</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Añade visor.js.</p><div class="codigo"><div class="cab"><span>Visor de prototipos</span><button type="button" data-copiar="receta-fuente-visor" aria-label="Copiar HTML de Visor de prototipos">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Visor de prototipos, desplazable"><code id="receta-fuente-visor">&lt;figure class=&quot;pieza amplio&quot; id=&quot;visor-ejemplo&quot; data-visor data-visor-editor&gt;
   &lt;h3&gt;Una interfaz, varios tamaños&lt;/h3&gt;
   &lt;p&gt;Explora los estados vacío, revisión y confirmado de un registro ilustrativo.&lt;/p&gt;
-  &lt;div class=&quot;acciones&quot; role=&quot;group&quot; aria-label=&quot;Ancho de la vista del prototipo&quot;&gt;
-    &lt;button type=&quot;button&quot; data-ancho-visor=&quot;320&quot; aria-pressed=&quot;false&quot;&gt;320 px&lt;/button&gt;
-    &lt;button type=&quot;button&quot; data-ancho-visor=&quot;390&quot; aria-pressed=&quot;true&quot;&gt;Móvil · 390 px&lt;/button&gt;
-    &lt;button type=&quot;button&quot; data-ancho-visor=&quot;768&quot; aria-pressed=&quot;false&quot;&gt;768 px&lt;/button&gt;
-    &lt;button type=&quot;button&quot; data-ancho-visor=&quot;1024&quot; aria-pressed=&quot;false&quot;&gt;Escritorio · 1024 px&lt;/button&gt;
-    &lt;button type=&quot;button&quot; data-ancho-visor=&quot;auto&quot; aria-pressed=&quot;false&quot;&gt;Ajustar&lt;/button&gt;
-    &lt;button type=&quot;button&quot; data-reiniciar-visor&gt;Reiniciar ejemplo&lt;/button&gt;
-  &lt;/div&gt;
+  &lt;div class=&quot;visor-herramientas&quot; role=&quot;group&quot; aria-label=&quot;Vista del prototipo&quot;&gt;
+&lt;details class=&quot;control-menu&quot;&gt;&lt;summary&gt;&lt;svg viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot; aria-hidden=&quot;true&quot;&gt;&lt;rect x=&quot;6&quot; y=&quot;2&quot; width=&quot;12&quot; height=&quot;20&quot; rx=&quot;2&quot;/&gt;&lt;path d=&quot;M10 18h4&quot;/&gt;&lt;/svg&gt;&lt;span data-dispositivo-actual&gt;Móvil&lt;/span&gt; ⌄&lt;/summary&gt;&lt;div class=&quot;control-panel&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Dispositivo del prototipo&quot;&gt;&lt;button type=&quot;button&quot; data-ancho-visor=&quot;320&quot; data-cerrar-menu aria-pressed=&quot;false&quot;&gt;Móvil pequeño &lt;small&gt;320 px&lt;/small&gt;&lt;/button&gt;&lt;button type=&quot;button&quot; data-ancho-visor=&quot;390&quot; data-cerrar-menu aria-pressed=&quot;true&quot;&gt;Móvil &lt;small&gt;390 px&lt;/small&gt;&lt;/button&gt;&lt;button type=&quot;button&quot; data-ancho-visor=&quot;768&quot; data-cerrar-menu aria-pressed=&quot;false&quot;&gt;Tablet &lt;small&gt;768 px&lt;/small&gt;&lt;/button&gt;&lt;button type=&quot;button&quot; data-ancho-visor=&quot;1024&quot; data-cerrar-menu aria-pressed=&quot;false&quot;&gt;Escritorio &lt;small&gt;1024 px&lt;/small&gt;&lt;/button&gt;&lt;button type=&quot;button&quot; data-ancho-visor=&quot;auto&quot; data-cerrar-menu aria-pressed=&quot;false&quot;&gt;Ancho disponible&lt;/button&gt;&lt;/div&gt;&lt;/details&gt;
+&lt;label class=&quot;visor-proporcion&quot;&gt;&lt;span class=&quot;control-etiqueta&quot;&gt;Proporción del marco&lt;/span&gt;&lt;select data-proporcion-visor aria-label=&quot;Proporción del marco&quot;&gt;&lt;option value=&quot;auto&quot;&gt;Altura libre&lt;/option&gt;&lt;option value=&quot;9/16&quot;&gt;9:16&lt;/option&gt;&lt;option value=&quot;4/3&quot;&gt;4:3&lt;/option&gt;&lt;option value=&quot;16/9&quot;&gt;16:9&lt;/option&gt;&lt;option value=&quot;1/1&quot;&gt;1:1&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;
+&lt;button type=&quot;button&quot; class=&quot;control-icono&quot; data-girar-visor aria-label=&quot;Rotar marco&quot; title=&quot;Rotar marco&quot; aria-pressed=&quot;false&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot; aria-hidden=&quot;true&quot;&gt;&lt;rect x=&quot;6&quot; y=&quot;5&quot; width=&quot;9&quot; height=&quot;14&quot; rx=&quot;1&quot;/&gt;&lt;path d=&quot;M18 4a8 8 0 0 1 3 6m0-6v6h-5&quot;/&gt;&lt;/svg&gt;&lt;/button&gt;
+&lt;button type=&quot;button&quot; data-ajustar-visor aria-pressed=&quot;false&quot;&gt;Ajustar&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;control-icono&quot; data-reiniciar-visor aria-label=&quot;Reiniciar prototipo&quot; title=&quot;Reiniciar prototipo&quot;&gt;↺&lt;/button&gt;
+&lt;/div&gt;
   &lt;p data-visor-estado role=&quot;status&quot;&gt;Vista inicial: 390 px CSS.&lt;/p&gt;
   &lt;div class=&quot;visor-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Prototipo interactivo, desplazable horizontalmente&quot;&gt;&lt;/div&gt;
   &lt;details class=&quot;visor-importar&quot;&gt;&lt;summary&gt;Embeber mi HTML&lt;/summary&gt;&lt;label&gt;HTML y CSS locales&lt;textarea data-html-visor rows=&quot;8&quot; spellcheck=&quot;false&quot; placeholder=&quot;Pega aquí un fragmento HTML sin scripts ni recursos externos&quot;&gt;&lt;/textarea&gt;&lt;/label&gt;&lt;button type=&quot;button&quot; data-cargar-html&gt;Cargar en el visor&lt;/button&gt;&lt;p data-importar-estado role=&quot;status&quot;&gt;Tu HTML se muestra sólo en este navegador. Reiniciar recupera la muestra original.&lt;/p&gt;&lt;/details&gt;
@@ -2853,8 +2941,13 @@ body:has(.revision-barra) { padding-bottom:100px; }
 <details class="receta-copia ancho"><summary>HTML y dependencias · Configuración editorial</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Configuración editorial</span><button type="button" data-copiar="receta-fuente-configuracion" aria-label="Copiar HTML de Configuración editorial">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Configuración editorial, desplazable"><code id="receta-fuente-configuracion">&lt;section class=&quot;pieza&quot; id=&quot;configuracion-ejemplo&quot; data-config-editorial&gt;&lt;h3&gt;La misma publicación, otra edición&lt;/h3&gt;&lt;p&gt;Elige cómo se presentan las publicaciones del archivo. Los cambios se aplican en este documento.&lt;/p&gt;&lt;form class=&quot;editorial-controles&quot; aria-label=&quot;Configuración del archivo&quot;&gt;&lt;label&gt;Presentación&lt;select name=&quot;disposicion&quot;&gt;&lt;option value=&quot;rejilla&quot;&gt;Rejilla editorial&lt;/option&gt;&lt;option value=&quot;lista&quot;&gt;Lista de lectura&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;&lt;label class=&quot;editorial-check&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;extractos&quot; checked&gt; Mostrar extractos&lt;/label&gt;&lt;label class=&quot;editorial-check&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;metadatos&quot; checked&gt; Mostrar autoría y formato&lt;/label&gt;&lt;button type=&quot;reset&quot;&gt;Restablecer edición&lt;/button&gt;&lt;/form&gt;&lt;p data-config-estado role=&quot;status&quot;&gt;Rejilla editorial con extractos y metadatos.&lt;/p&gt;&lt;div class=&quot;codigo&quot;&gt;&lt;div class=&quot;cab&quot;&gt;&lt;span&gt;Configuración local · JSON&lt;/span&gt;&lt;button type=&quot;button&quot; data-copiar=&quot;config-editorial-json&quot;&gt;Copiar configuración&lt;/button&gt;&lt;span class=&quot;copia-estado&quot; role=&quot;status&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;pre tabindex=&quot;0&quot; aria-label=&quot;Configuración editorial JSON, desplazable&quot;&gt;&lt;code id=&quot;config-editorial-json&quot; data-config-json&gt;{&quot;version&quot;:1,&quot;disposicion&quot;:&quot;rejilla&quot;,&quot;extractos&quot;:true,&quot;metadatos&quot;:true}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p class=&quot;procedencia&quot;&gt;Configuración de presentación, independiente de la paleta y tipografía del botón de apariencia. No instala un tema de Ghost.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;#archivo-ejemplo&quot;&gt;Ver el archivo con esta configuración →&lt;/a&gt;&lt;/p&gt;&lt;/section&gt;</code></pre></div></details>
 <section class="pieza amplio" id="explorador-ejemplo" data-explorador>
 <h3>Explorar el registro</h3><p>Seis registros ficticios. Ordena por encabezado, filtra y agrupa sin perder el detalle.</p>
-<form class="editorial-controles" aria-label="Explorar registros"><label>Buscar<input type="search" name="buscar" placeholder="Nombre, equipo o estado"></label><label>Estado<select name="estado"><option value="">Todos</option><option>En revisión</option><option>Confirmado</option></select></label><label>Agrupar por<select name="grupo"><option value="">Sin grupos</option><option value="1">Equipo</option><option value="2">Estado</option></select></label><button type="reset">Limpiar vista</button></form>
-<p data-explorador-estado role="status">6 registros de ejemplo.</p><div class="tabla-caja" tabindex="0" role="region" aria-label="Registros ordenables y agrupables, desplazables"><table><caption>Movimientos ilustrativos · importes en COP</caption><thead><tr><th scope="col"><button type="button">Nombre ↕</button></th><th scope="col"><button type="button">Equipo ↕</button></th><th scope="col"><button type="button">Estado ↕</button></th><th scope="col"><button type="button">Importe COP ↕</button></th></tr></thead><tbody>
+<form class="tabla-herramientas" aria-label="Explorar registros">
+<label class="tabla-busqueda"><span class="control-etiqueta">Buscar registros</span><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input type="search" name="buscar" placeholder="Buscar registros…"></label>
+<details class="control-menu"><summary>Filtros <span data-filtros-cuenta></span>⌄</summary><div class="control-panel" tabindex="0" role="region" aria-label="Filtros de registros"><label>Estado<select name="estado"><option value="">Todos los estados</option><option>En revisión</option><option>Confirmado</option></select></label><button type="reset">Limpiar filtros</button></div></details>
+<details class="control-menu"><summary>Agrupar ⌄</summary><div class="control-panel" tabindex="0" role="region" aria-label="Agrupar registros"><label>Agrupar por<select name="grupo"><option value="">Sin grupos</option><option value="1">Equipo</option><option value="2">Estado</option></select></label></div></details>
+<details class="control-menu"><summary>Columnas ⌄</summary><div class="control-panel" tabindex="0" role="region" aria-label="Columnas visibles"><label><input type="checkbox" data-columna="1" checked> Equipo</label><label><input type="checkbox" data-columna="2" checked> Estado</label><label><input type="checkbox" data-columna="3" checked> Importe COP</label></div></details>
+</form>
+<p data-explorador-estado role="status">6 registros de ejemplo.</p><div class="tabla-caja" tabindex="0" role="region" aria-label="Registros ordenables y agrupables, desplazables"><table><caption>Movimientos ilustrativos · importes en COP</caption><thead><tr><th scope="col"><details class="control-menu tabla-orden"><summary>Nombre <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Nombre"><button type="button" data-orden-col="0" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="0" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="0" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th><th scope="col"><details class="control-menu tabla-orden"><summary>Equipo <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Equipo"><button type="button" data-orden-col="1" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="1" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="1" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th><th scope="col"><details class="control-menu tabla-orden"><summary>Estado <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Estado"><button type="button" data-orden-col="2" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="2" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="2" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th><th scope="col"><details class="control-menu tabla-orden"><summary>Importe COP <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Importe COP"><button type="button" data-orden-col="3" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="3" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="3" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th></tr></thead><tbody>
 <tr><th scope="row">Sesión de diseño</th><td>Producto</td><td>En revisión</td><td data-valor="120000">120.000</td></tr>
 <tr><th scope="row">Prueba de lectura</th><td>Investigación</td><td>Confirmado</td><td data-valor="80000">80.000</td></tr>
 <tr><th scope="row">Revisión móvil</th><td>Producto</td><td>Confirmado</td><td data-valor="60000">60.000</td></tr>
@@ -2864,8 +2957,13 @@ body:has(.revision-barra) { padding-bottom:100px; }
 </tbody></table></div></section>
 <details class="receta-copia ancho"><summary>HTML y dependencias · Tabla interactiva</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Tabla interactiva</span><button type="button" data-copiar="receta-fuente-explorador" aria-label="Copiar HTML de Tabla interactiva">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Tabla interactiva, desplazable"><code id="receta-fuente-explorador">&lt;section class=&quot;pieza amplio&quot; id=&quot;explorador-ejemplo&quot; data-explorador&gt;
 &lt;h3&gt;Explorar el registro&lt;/h3&gt;&lt;p&gt;Seis registros ficticios. Ordena por encabezado, filtra y agrupa sin perder el detalle.&lt;/p&gt;
-&lt;form class=&quot;editorial-controles&quot; aria-label=&quot;Explorar registros&quot;&gt;&lt;label&gt;Buscar&lt;input type=&quot;search&quot; name=&quot;buscar&quot; placeholder=&quot;Nombre, equipo o estado&quot;&gt;&lt;/label&gt;&lt;label&gt;Estado&lt;select name=&quot;estado&quot;&gt;&lt;option value=&quot;&quot;&gt;Todos&lt;/option&gt;&lt;option&gt;En revisión&lt;/option&gt;&lt;option&gt;Confirmado&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;&lt;label&gt;Agrupar por&lt;select name=&quot;grupo&quot;&gt;&lt;option value=&quot;&quot;&gt;Sin grupos&lt;/option&gt;&lt;option value=&quot;1&quot;&gt;Equipo&lt;/option&gt;&lt;option value=&quot;2&quot;&gt;Estado&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;&lt;button type=&quot;reset&quot;&gt;Limpiar vista&lt;/button&gt;&lt;/form&gt;
-&lt;p data-explorador-estado role=&quot;status&quot;&gt;6 registros de ejemplo.&lt;/p&gt;&lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Registros ordenables y agrupables, desplazables&quot;&gt;&lt;table&gt;&lt;caption&gt;Movimientos ilustrativos · importes en COP&lt;/caption&gt;&lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;&lt;button type=&quot;button&quot;&gt;Nombre ↕&lt;/button&gt;&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;&lt;button type=&quot;button&quot;&gt;Equipo ↕&lt;/button&gt;&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;&lt;button type=&quot;button&quot;&gt;Estado ↕&lt;/button&gt;&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;&lt;button type=&quot;button&quot;&gt;Importe COP ↕&lt;/button&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
+&lt;form class=&quot;tabla-herramientas&quot; aria-label=&quot;Explorar registros&quot;&gt;
+&lt;label class=&quot;tabla-busqueda&quot;&gt;&lt;span class=&quot;control-etiqueta&quot;&gt;Buscar registros&lt;/span&gt;&lt;svg viewBox=&quot;0 0 24 24&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;10&quot; cy=&quot;10&quot; r=&quot;6&quot;/&gt;&lt;path d=&quot;m15 15 5 5&quot;/&gt;&lt;/svg&gt;&lt;input type=&quot;search&quot; name=&quot;buscar&quot; placeholder=&quot;Buscar registros…&quot;&gt;&lt;/label&gt;
+&lt;details class=&quot;control-menu&quot;&gt;&lt;summary&gt;Filtros &lt;span data-filtros-cuenta&gt;&lt;/span&gt;⌄&lt;/summary&gt;&lt;div class=&quot;control-panel&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Filtros de registros&quot;&gt;&lt;label&gt;Estado&lt;select name=&quot;estado&quot;&gt;&lt;option value=&quot;&quot;&gt;Todos los estados&lt;/option&gt;&lt;option&gt;En revisión&lt;/option&gt;&lt;option&gt;Confirmado&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;&lt;button type=&quot;reset&quot;&gt;Limpiar filtros&lt;/button&gt;&lt;/div&gt;&lt;/details&gt;
+&lt;details class=&quot;control-menu&quot;&gt;&lt;summary&gt;Agrupar ⌄&lt;/summary&gt;&lt;div class=&quot;control-panel&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Agrupar registros&quot;&gt;&lt;label&gt;Agrupar por&lt;select name=&quot;grupo&quot;&gt;&lt;option value=&quot;&quot;&gt;Sin grupos&lt;/option&gt;&lt;option value=&quot;1&quot;&gt;Equipo&lt;/option&gt;&lt;option value=&quot;2&quot;&gt;Estado&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;&lt;/div&gt;&lt;/details&gt;
+&lt;details class=&quot;control-menu&quot;&gt;&lt;summary&gt;Columnas ⌄&lt;/summary&gt;&lt;div class=&quot;control-panel&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Columnas visibles&quot;&gt;&lt;label&gt;&lt;input type=&quot;checkbox&quot; data-columna=&quot;1&quot; checked&gt; Equipo&lt;/label&gt;&lt;label&gt;&lt;input type=&quot;checkbox&quot; data-columna=&quot;2&quot; checked&gt; Estado&lt;/label&gt;&lt;label&gt;&lt;input type=&quot;checkbox&quot; data-columna=&quot;3&quot; checked&gt; Importe COP&lt;/label&gt;&lt;/div&gt;&lt;/details&gt;
+&lt;/form&gt;
+&lt;p data-explorador-estado role=&quot;status&quot;&gt;6 registros de ejemplo.&lt;/p&gt;&lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Registros ordenables y agrupables, desplazables&quot;&gt;&lt;table&gt;&lt;caption&gt;Movimientos ilustrativos · importes en COP&lt;/caption&gt;&lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;&lt;details class=&quot;control-menu tabla-orden&quot;&gt;&lt;summary&gt;Nombre &lt;span data-indicador-orden aria-hidden=&quot;true&quot;&gt;↕&lt;/span&gt;&lt;/summary&gt;&lt;div class=&quot;control-panel&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Ordenar por Nombre&quot;&gt;&lt;button type=&quot;button&quot; data-orden-col=&quot;0&quot; data-direccion=&quot;1&quot; data-cerrar-menu&gt;↑ Ascendente&lt;/button&gt;&lt;button type=&quot;button&quot; data-orden-col=&quot;0&quot; data-direccion=&quot;-1&quot; data-cerrar-menu&gt;↓ Descendente&lt;/button&gt;&lt;button type=&quot;button&quot; data-orden-col=&quot;0&quot; data-direccion=&quot;0&quot; data-cerrar-menu&gt;Restablecer orden&lt;/button&gt;&lt;/div&gt;&lt;/details&gt;&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;&lt;details class=&quot;control-menu tabla-orden&quot;&gt;&lt;summary&gt;Equipo &lt;span data-indicador-orden aria-hidden=&quot;true&quot;&gt;↕&lt;/span&gt;&lt;/summary&gt;&lt;div class=&quot;control-panel&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Ordenar por Equipo&quot;&gt;&lt;button type=&quot;button&quot; data-orden-col=&quot;1&quot; data-direccion=&quot;1&quot; data-cerrar-menu&gt;↑ Ascendente&lt;/button&gt;&lt;button type=&quot;button&quot; data-orden-col=&quot;1&quot; data-direccion=&quot;-1&quot; data-cerrar-menu&gt;↓ Descendente&lt;/button&gt;&lt;button type=&quot;button&quot; data-orden-col=&quot;1&quot; data-direccion=&quot;0&quot; data-cerrar-menu&gt;Restablecer orden&lt;/button&gt;&lt;/div&gt;&lt;/details&gt;&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;&lt;details class=&quot;control-menu tabla-orden&quot;&gt;&lt;summary&gt;Estado &lt;span data-indicador-orden aria-hidden=&quot;true&quot;&gt;↕&lt;/span&gt;&lt;/summary&gt;&lt;div class=&quot;control-panel&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Ordenar por Estado&quot;&gt;&lt;button type=&quot;button&quot; data-orden-col=&quot;2&quot; data-direccion=&quot;1&quot; data-cerrar-menu&gt;↑ Ascendente&lt;/button&gt;&lt;button type=&quot;button&quot; data-orden-col=&quot;2&quot; data-direccion=&quot;-1&quot; data-cerrar-menu&gt;↓ Descendente&lt;/button&gt;&lt;button type=&quot;button&quot; data-orden-col=&quot;2&quot; data-direccion=&quot;0&quot; data-cerrar-menu&gt;Restablecer orden&lt;/button&gt;&lt;/div&gt;&lt;/details&gt;&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;&lt;details class=&quot;control-menu tabla-orden&quot;&gt;&lt;summary&gt;Importe COP &lt;span data-indicador-orden aria-hidden=&quot;true&quot;&gt;↕&lt;/span&gt;&lt;/summary&gt;&lt;div class=&quot;control-panel&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Ordenar por Importe COP&quot;&gt;&lt;button type=&quot;button&quot; data-orden-col=&quot;3&quot; data-direccion=&quot;1&quot; data-cerrar-menu&gt;↑ Ascendente&lt;/button&gt;&lt;button type=&quot;button&quot; data-orden-col=&quot;3&quot; data-direccion=&quot;-1&quot; data-cerrar-menu&gt;↓ Descendente&lt;/button&gt;&lt;button type=&quot;button&quot; data-orden-col=&quot;3&quot; data-direccion=&quot;0&quot; data-cerrar-menu&gt;Restablecer orden&lt;/button&gt;&lt;/div&gt;&lt;/details&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
 &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Sesión de diseño&lt;/th&gt;&lt;td&gt;Producto&lt;/td&gt;&lt;td&gt;En revisión&lt;/td&gt;&lt;td data-valor=&quot;120000&quot;&gt;120.000&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Prueba de lectura&lt;/th&gt;&lt;td&gt;Investigación&lt;/td&gt;&lt;td&gt;Confirmado&lt;/td&gt;&lt;td data-valor=&quot;80000&quot;&gt;80.000&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Revisión móvil&lt;/th&gt;&lt;td&gt;Producto&lt;/td&gt;&lt;td&gt;Confirmado&lt;/td&gt;&lt;td data-valor=&quot;60000&quot;&gt;60.000&lt;/td&gt;&lt;/tr&gt;
@@ -2885,16 +2983,118 @@ body:has(.revision-barra) { padding-bottom:100px; }
 &lt;/div&gt;&lt;/section&gt;</code></pre></div></details>
 <section class="pieza" id="revision-ejemplo" data-revision>
 <h3>Revisar sin perder el contexto</h3><p>Activa Comentar y elige un párrafo, título, figura o card. También puedes seleccionar texto antes de pulsar Comentar.</p><div class="acciones"><button type="button" data-revision-modo aria-pressed="false">Comentar documento</button><button type="button" data-revision-lista>Ver comentarios</button></div><p data-revision-estado role="status">Borrador local de esta pestaña. Copia tus comentarios antes de recargar.</p>
-<dialog class="revision-dialogo revision-ui" data-revision-editor aria-labelledby="revision-editor-titulo"><form><h2 id="revision-editor-titulo">Añadir comentario</h2><p data-revision-contexto></p><label for="revision-texto">Ajuste que propones</label><textarea id="revision-texto" data-revision-texto rows="5" maxlength="4000" required placeholder="Qué cambiarías y por qué"></textarea><div class="acciones"><button type="button" data-revision-guardar>Guardar comentario</button><button type="button" data-revision-cancelar>Cancelar</button></div></form></dialog>
-<dialog class="revision-dialogo revision-ui" data-revision-panel aria-labelledby="revision-panel-titulo"><h2 id="revision-panel-titulo">Comentarios del documento</h2><ol data-revision-notas></ol><div class="codigo"><div class="cab"><span>Prompt de ajustes</span><button type="button" data-copiar="revision-prompt">Copiar prompt</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Prompt con comentarios, desplazable"><code id="revision-prompt" data-revision-prompt>No hay comentarios todavía.</code></pre></div><button type="button" data-revision-cerrar>Cerrar comentarios</button></dialog>
+<dialog class="revision-dialogo revision-ui" data-revision-editor aria-labelledby="revision-editor-titulo"><form><h2 id="revision-editor-titulo">Añadir comentario</h2><details class="revision-contexto"><summary>Contexto del punto</summary><p data-revision-contexto tabindex="0" aria-label="Contexto completo del comentario"></p></details><label for="revision-texto">Ajuste que propones</label><textarea id="revision-texto" data-revision-texto rows="3" maxlength="4000" required placeholder="Qué cambiarías y por qué"></textarea><div class="acciones"><button type="button" data-revision-guardar>Guardar</button><button type="button" data-revision-cancelar>Cerrar</button></div></form></dialog>
+<dialog class="revision-dialogo revision-ui" data-revision-panel aria-labelledby="revision-panel-titulo"><h2 id="revision-panel-titulo">Comentarios del documento</h2><p class="procedencia">Borrador de esta pestaña. Copia el prompt antes de recargar.</p><ol data-revision-notas></ol><div class="codigo"><div class="cab"><span>Prompt de ajustes</span><button type="button" data-copiar="revision-prompt">Copiar prompt</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Prompt con comentarios, desplazable"><code id="revision-prompt" data-revision-prompt>No hay comentarios todavía.</code></pre></div><button type="button" data-revision-cerrar>Cerrar comentarios</button></dialog>
 </section>
 <details class="receta-copia ancho"><summary>HTML y dependencias · Comentarios sobre el documento</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Comentarios sobre el documento</span><button type="button" data-copiar="receta-fuente-revision" aria-label="Copiar HTML de Comentarios sobre el documento">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Comentarios sobre el documento, desplazable"><code id="receta-fuente-revision">&lt;section class=&quot;pieza&quot; id=&quot;revision-ejemplo&quot; data-revision&gt;
 &lt;h3&gt;Revisar sin perder el contexto&lt;/h3&gt;&lt;p&gt;Activa Comentar y elige un párrafo, título, figura o card. También puedes seleccionar texto antes de pulsar Comentar.&lt;/p&gt;&lt;div class=&quot;acciones&quot;&gt;&lt;button type=&quot;button&quot; data-revision-modo aria-pressed=&quot;false&quot;&gt;Comentar documento&lt;/button&gt;&lt;button type=&quot;button&quot; data-revision-lista&gt;Ver comentarios&lt;/button&gt;&lt;/div&gt;&lt;p data-revision-estado role=&quot;status&quot;&gt;Borrador local de esta pestaña. Copia tus comentarios antes de recargar.&lt;/p&gt;
-&lt;dialog class=&quot;revision-dialogo revision-ui&quot; data-revision-editor aria-labelledby=&quot;revision-editor-titulo&quot;&gt;&lt;form&gt;&lt;h2 id=&quot;revision-editor-titulo&quot;&gt;Añadir comentario&lt;/h2&gt;&lt;p data-revision-contexto&gt;&lt;/p&gt;&lt;label for=&quot;revision-texto&quot;&gt;Ajuste que propones&lt;/label&gt;&lt;textarea id=&quot;revision-texto&quot; data-revision-texto rows=&quot;5&quot; maxlength=&quot;4000&quot; required placeholder=&quot;Qué cambiarías y por qué&quot;&gt;&lt;/textarea&gt;&lt;div class=&quot;acciones&quot;&gt;&lt;button type=&quot;button&quot; data-revision-guardar&gt;Guardar comentario&lt;/button&gt;&lt;button type=&quot;button&quot; data-revision-cancelar&gt;Cancelar&lt;/button&gt;&lt;/div&gt;&lt;/form&gt;&lt;/dialog&gt;
-&lt;dialog class=&quot;revision-dialogo revision-ui&quot; data-revision-panel aria-labelledby=&quot;revision-panel-titulo&quot;&gt;&lt;h2 id=&quot;revision-panel-titulo&quot;&gt;Comentarios del documento&lt;/h2&gt;&lt;ol data-revision-notas&gt;&lt;/ol&gt;&lt;div class=&quot;codigo&quot;&gt;&lt;div class=&quot;cab&quot;&gt;&lt;span&gt;Prompt de ajustes&lt;/span&gt;&lt;button type=&quot;button&quot; data-copiar=&quot;revision-prompt&quot;&gt;Copiar prompt&lt;/button&gt;&lt;span class=&quot;copia-estado&quot; role=&quot;status&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;pre tabindex=&quot;0&quot; aria-label=&quot;Prompt con comentarios, desplazable&quot;&gt;&lt;code id=&quot;revision-prompt&quot; data-revision-prompt&gt;No hay comentarios todavía.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;button type=&quot;button&quot; data-revision-cerrar&gt;Cerrar comentarios&lt;/button&gt;&lt;/dialog&gt;
-&lt;/section&gt;</code></pre></div></details><footer class="pie"><p>Nota Tikin · Muestra de todos los componentes. Inspirada en <a href="https://www.cmrg.me">cmrg.me</a>; el tema claro, los ajustes de acceso y Dark Sea están documentados en el informe.</p><button type="button" data-sonido aria-pressed="false">Sonido apagado</button></footer>
+&lt;dialog class=&quot;revision-dialogo revision-ui&quot; data-revision-editor aria-labelledby=&quot;revision-editor-titulo&quot;&gt;&lt;form&gt;&lt;h2 id=&quot;revision-editor-titulo&quot;&gt;Añadir comentario&lt;/h2&gt;&lt;details class=&quot;revision-contexto&quot;&gt;&lt;summary&gt;Contexto del punto&lt;/summary&gt;&lt;p data-revision-contexto tabindex=&quot;0&quot; aria-label=&quot;Contexto completo del comentario&quot;&gt;&lt;/p&gt;&lt;/details&gt;&lt;label for=&quot;revision-texto&quot;&gt;Ajuste que propones&lt;/label&gt;&lt;textarea id=&quot;revision-texto&quot; data-revision-texto rows=&quot;3&quot; maxlength=&quot;4000&quot; required placeholder=&quot;Qué cambiarías y por qué&quot;&gt;&lt;/textarea&gt;&lt;div class=&quot;acciones&quot;&gt;&lt;button type=&quot;button&quot; data-revision-guardar&gt;Guardar&lt;/button&gt;&lt;button type=&quot;button&quot; data-revision-cancelar&gt;Cerrar&lt;/button&gt;&lt;/div&gt;&lt;/form&gt;&lt;/dialog&gt;
+&lt;dialog class=&quot;revision-dialogo revision-ui&quot; data-revision-panel aria-labelledby=&quot;revision-panel-titulo&quot;&gt;&lt;h2 id=&quot;revision-panel-titulo&quot;&gt;Comentarios del documento&lt;/h2&gt;&lt;p class=&quot;procedencia&quot;&gt;Borrador de esta pestaña. Copia el prompt antes de recargar.&lt;/p&gt;&lt;ol data-revision-notas&gt;&lt;/ol&gt;&lt;div class=&quot;codigo&quot;&gt;&lt;div class=&quot;cab&quot;&gt;&lt;span&gt;Prompt de ajustes&lt;/span&gt;&lt;button type=&quot;button&quot; data-copiar=&quot;revision-prompt&quot;&gt;Copiar prompt&lt;/button&gt;&lt;span class=&quot;copia-estado&quot; role=&quot;status&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;pre tabindex=&quot;0&quot; aria-label=&quot;Prompt con comentarios, desplazable&quot;&gt;&lt;code id=&quot;revision-prompt&quot; data-revision-prompt&gt;No hay comentarios todavía.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;button type=&quot;button&quot; data-revision-cerrar&gt;Cerrar comentarios&lt;/button&gt;&lt;/dialog&gt;
+&lt;/section&gt;</code></pre></div></details>
+<section class="pieza ancho" id="codigo-poliglota"><h3>Código que también se puede leer</h3><p>Elige un lenguaje. El coloreado conserva exactamente el texto que copias.</p><div class="pestanas" data-pestanas><div class="pestanas-caja" tabindex="0" role="region" aria-label="Lenguajes de código, desplazables"><div class="pestanas-nav" data-tabs-nav aria-label="Lenguajes"><button type="button" id="codigo-tab-html" data-tab="codigo-panel-html">HTML</button><button type="button" id="codigo-tab-css" data-tab="codigo-panel-css">CSS</button><button type="button" id="codigo-tab-javascript" data-tab="codigo-panel-javascript">JavaScript</button><button type="button" id="codigo-tab-typescript" data-tab="codigo-panel-typescript">TypeScript</button><button type="button" id="codigo-tab-json" data-tab="codigo-panel-json">JSON</button><button type="button" id="codigo-tab-python" data-tab="codigo-panel-python">Python</button><button type="button" id="codigo-tab-sql" data-tab="codigo-panel-sql">SQL</button><button type="button" id="codigo-tab-shell" data-tab="codigo-panel-shell">Shell</button><button type="button" id="codigo-tab-salida" data-tab="codigo-panel-salida">Salida</button></div></div><section id="codigo-panel-html" data-tab-panel><div class="codigo"><div class="cab"><span>HTML</span><button type="button" data-copiar="muestra-html" aria-label="Copiar HTML">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código HTML, desplazable"><code id="muestra-html" data-lenguaje="html">&lt;article class=&quot;nota&quot;&gt;
+  &lt;h2&gt;Una decisión con contexto&lt;/h2&gt;
+  &lt;p&gt;La evidencia se conserva completa.&lt;/p&gt;
+&lt;/article&gt;</code></pre></div></section><section id="codigo-panel-css" data-tab-panel><div class="codigo"><div class="cab"><span>CSS</span><button type="button" data-copiar="muestra-css" aria-label="Copiar CSS">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código CSS, desplazable"><code id="muestra-css" data-lenguaje="css">:root {
+  --espacio: 24px;
+}
+.nota {
+  display: grid;
+  gap: var(--espacio);
+  color: var(--tinta);
+}</code></pre></div></section><section id="codigo-panel-javascript" data-tab-panel><div class="codigo"><div class="cab"><span>JavaScript</span><button type="button" data-copiar="muestra-javascript" aria-label="Copiar JavaScript">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código JavaScript, desplazable"><code id="muestra-javascript" data-lenguaje="javascript">// Datos de ejemplo, sin solicitudes
+const registros = [12, 8, 5];
+const total = registros.reduce((suma, n) =&gt; suma + n, 0);
+console.log(&quot;Total:&quot;, total);</code></pre></div></section><section id="codigo-panel-typescript" data-tab-panel><div class="codigo"><div class="cab"><span>TypeScript</span><button type="button" data-copiar="muestra-typescript" aria-label="Copiar TypeScript">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código TypeScript, desplazable"><code id="muestra-typescript" data-lenguaje="typescript">type Registro = { nombre: string; valor: number };
+const ejemplo: Registro = { nombre: &quot;Diseño&quot;, valor: 12 };
+function leer(r: Registro): number {
+  return r.valor;
+}</code></pre></div></section><section id="codigo-panel-json" data-tab-panel><div class="codigo"><div class="cab"><span>JSON</span><button type="button" data-copiar="muestra-json" aria-label="Copiar JSON">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código JSON, desplazable"><code id="muestra-json" data-lenguaje="json">{
+  &quot;edicion&quot;: &quot;cuaderno&quot;,
+  &quot;paginas&quot;: 9,
+  &quot;sonido&quot;: false,
+  &quot;fuente&quot;: null
+}</code></pre></div></section><section id="codigo-panel-python" data-tab-panel><div class="codigo"><div class="cab"><span>Python</span><button type="button" data-copiar="muestra-python" aria-label="Copiar Python">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código Python, desplazable"><code id="muestra-python" data-lenguaje="python"># Ejemplo local
+registros = [12, 8, 5]
+def total(valores):
+    return sum(valores)
+print(&quot;Total:&quot;, total(registros))</code></pre></div></section><section id="codigo-panel-sql" data-tab-panel><div class="codigo"><div class="cab"><span>SQL</span><button type="button" data-copiar="muestra-sql" aria-label="Copiar SQL">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código SQL, desplazable"><code id="muestra-sql" data-lenguaje="sql">-- Consulta ilustrativa
+SELECT equipo, SUM(importe) AS total
+FROM movimientos
+WHERE estado = &#x27;confirmado&#x27;
+GROUP BY equipo
+ORDER BY total DESC;</code></pre></div></section><section id="codigo-panel-shell" data-tab-panel><div class="codigo"><div class="cab"><span>Shell</span><button type="button" data-copiar="muestra-shell" aria-label="Copiar Shell">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código Shell, desplazable"><code id="muestra-shell" data-lenguaje="shell"># Comprobaciones locales
+python3 scripts/ensamblar.py
+python3 scripts/validar.py
+echo &quot;Listo para revisar&quot;</code></pre></div></section><section id="codigo-panel-salida" data-tab-panel><div class="codigo"><div class="cab"><span>Salida</span><button type="button" data-copiar="muestra-salida" aria-label="Copiar Salida">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código Salida, desplazable"><code id="muestra-salida" data-lenguaje="salida">OK     documento generado     44 recetas
+WARN   fuente pendiente       2 registros
+ERROR  ejemplo rechazado      1 recurso externo</code></pre></div></section></div></section>
+<details class="receta-copia ancho"><summary>HTML y dependencias · Código en varios lenguajes</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Código en varios lenguajes</span><button type="button" data-copiar="receta-fuente-codigo-poliglota" aria-label="Copiar HTML de Código en varios lenguajes">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Código en varios lenguajes, desplazable"><code id="receta-fuente-codigo-poliglota">&lt;section class=&quot;pieza ancho&quot; id=&quot;codigo-poliglota&quot;&gt;&lt;h3&gt;Código que también se puede leer&lt;/h3&gt;&lt;p&gt;Elige un lenguaje. El coloreado conserva exactamente el texto que copias.&lt;/p&gt;&lt;div class=&quot;pestanas&quot; data-pestanas&gt;&lt;div class=&quot;pestanas-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Lenguajes de código, desplazables&quot;&gt;&lt;div class=&quot;pestanas-nav&quot; data-tabs-nav aria-label=&quot;Lenguajes&quot;&gt;&lt;button type=&quot;button&quot; id=&quot;codigo-tab-html&quot; data-tab=&quot;codigo-panel-html&quot;&gt;HTML&lt;/button&gt;&lt;button type=&quot;button&quot; id=&quot;codigo-tab-css&quot; data-tab=&quot;codigo-panel-css&quot;&gt;CSS&lt;/button&gt;&lt;button type=&quot;button&quot; id=&quot;codigo-tab-javascript&quot; data-tab=&quot;codigo-panel-javascript&quot;&gt;JavaScript&lt;/button&gt;&lt;button type=&quot;button&quot; id=&quot;codigo-tab-typescript&quot; data-tab=&quot;codigo-panel-typescript&quot;&gt;TypeScript&lt;/button&gt;&lt;button type=&quot;button&quot; id=&quot;codigo-tab-json&quot; data-tab=&quot;codigo-panel-json&quot;&gt;JSON&lt;/button&gt;&lt;button type=&quot;button&quot; id=&quot;codigo-tab-python&quot; data-tab=&quot;codigo-panel-python&quot;&gt;Python&lt;/button&gt;&lt;button type=&quot;button&quot; id=&quot;codigo-tab-sql&quot; data-tab=&quot;codigo-panel-sql&quot;&gt;SQL&lt;/button&gt;&lt;button type=&quot;button&quot; id=&quot;codigo-tab-shell&quot; data-tab=&quot;codigo-panel-shell&quot;&gt;Shell&lt;/button&gt;&lt;button type=&quot;button&quot; id=&quot;codigo-tab-salida&quot; data-tab=&quot;codigo-panel-salida&quot;&gt;Salida&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;&lt;section id=&quot;codigo-panel-html&quot; data-tab-panel&gt;&lt;div class=&quot;codigo&quot;&gt;&lt;div class=&quot;cab&quot;&gt;&lt;span&gt;HTML&lt;/span&gt;&lt;button type=&quot;button&quot; data-copiar=&quot;muestra-html&quot; aria-label=&quot;Copiar HTML&quot;&gt;Copiar&lt;/button&gt;&lt;span class=&quot;copia-estado&quot; role=&quot;status&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;pre tabindex=&quot;0&quot; aria-label=&quot;Código HTML, desplazable&quot;&gt;&lt;code id=&quot;muestra-html&quot; data-lenguaje=&quot;html&quot;&gt;&amp;lt;article class=&amp;quot;nota&amp;quot;&amp;gt;
+  &amp;lt;h2&amp;gt;Una decisión con contexto&amp;lt;/h2&amp;gt;
+  &amp;lt;p&amp;gt;La evidencia se conserva completa.&amp;lt;/p&amp;gt;
+&amp;lt;/article&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/section&gt;&lt;section id=&quot;codigo-panel-css&quot; data-tab-panel&gt;&lt;div class=&quot;codigo&quot;&gt;&lt;div class=&quot;cab&quot;&gt;&lt;span&gt;CSS&lt;/span&gt;&lt;button type=&quot;button&quot; data-copiar=&quot;muestra-css&quot; aria-label=&quot;Copiar CSS&quot;&gt;Copiar&lt;/button&gt;&lt;span class=&quot;copia-estado&quot; role=&quot;status&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;pre tabindex=&quot;0&quot; aria-label=&quot;Código CSS, desplazable&quot;&gt;&lt;code id=&quot;muestra-css&quot; data-lenguaje=&quot;css&quot;&gt;:root {
+  --espacio: 24px;
+}
+.nota {
+  display: grid;
+  gap: var(--espacio);
+  color: var(--tinta);
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/section&gt;&lt;section id=&quot;codigo-panel-javascript&quot; data-tab-panel&gt;&lt;div class=&quot;codigo&quot;&gt;&lt;div class=&quot;cab&quot;&gt;&lt;span&gt;JavaScript&lt;/span&gt;&lt;button type=&quot;button&quot; data-copiar=&quot;muestra-javascript&quot; aria-label=&quot;Copiar JavaScript&quot;&gt;Copiar&lt;/button&gt;&lt;span class=&quot;copia-estado&quot; role=&quot;status&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;pre tabindex=&quot;0&quot; aria-label=&quot;Código JavaScript, desplazable&quot;&gt;&lt;code id=&quot;muestra-javascript&quot; data-lenguaje=&quot;javascript&quot;&gt;// Datos de ejemplo, sin solicitudes
+const registros = [12, 8, 5];
+const total = registros.reduce((suma, n) =&amp;gt; suma + n, 0);
+console.log(&amp;quot;Total:&amp;quot;, total);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/section&gt;&lt;section id=&quot;codigo-panel-typescript&quot; data-tab-panel&gt;&lt;div class=&quot;codigo&quot;&gt;&lt;div class=&quot;cab&quot;&gt;&lt;span&gt;TypeScript&lt;/span&gt;&lt;button type=&quot;button&quot; data-copiar=&quot;muestra-typescript&quot; aria-label=&quot;Copiar TypeScript&quot;&gt;Copiar&lt;/button&gt;&lt;span class=&quot;copia-estado&quot; role=&quot;status&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;pre tabindex=&quot;0&quot; aria-label=&quot;Código TypeScript, desplazable&quot;&gt;&lt;code id=&quot;muestra-typescript&quot; data-lenguaje=&quot;typescript&quot;&gt;type Registro = { nombre: string; valor: number };
+const ejemplo: Registro = { nombre: &amp;quot;Diseño&amp;quot;, valor: 12 };
+function leer(r: Registro): number {
+  return r.valor;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/section&gt;&lt;section id=&quot;codigo-panel-json&quot; data-tab-panel&gt;&lt;div class=&quot;codigo&quot;&gt;&lt;div class=&quot;cab&quot;&gt;&lt;span&gt;JSON&lt;/span&gt;&lt;button type=&quot;button&quot; data-copiar=&quot;muestra-json&quot; aria-label=&quot;Copiar JSON&quot;&gt;Copiar&lt;/button&gt;&lt;span class=&quot;copia-estado&quot; role=&quot;status&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;pre tabindex=&quot;0&quot; aria-label=&quot;Código JSON, desplazable&quot;&gt;&lt;code id=&quot;muestra-json&quot; data-lenguaje=&quot;json&quot;&gt;{
+  &amp;quot;edicion&amp;quot;: &amp;quot;cuaderno&amp;quot;,
+  &amp;quot;paginas&amp;quot;: 9,
+  &amp;quot;sonido&amp;quot;: false,
+  &amp;quot;fuente&amp;quot;: null
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/section&gt;&lt;section id=&quot;codigo-panel-python&quot; data-tab-panel&gt;&lt;div class=&quot;codigo&quot;&gt;&lt;div class=&quot;cab&quot;&gt;&lt;span&gt;Python&lt;/span&gt;&lt;button type=&quot;button&quot; data-copiar=&quot;muestra-python&quot; aria-label=&quot;Copiar Python&quot;&gt;Copiar&lt;/button&gt;&lt;span class=&quot;copia-estado&quot; role=&quot;status&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;pre tabindex=&quot;0&quot; aria-label=&quot;Código Python, desplazable&quot;&gt;&lt;code id=&quot;muestra-python&quot; data-lenguaje=&quot;python&quot;&gt;# Ejemplo local
+registros = [12, 8, 5]
+def total(valores):
+    return sum(valores)
+print(&amp;quot;Total:&amp;quot;, total(registros))&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/section&gt;&lt;section id=&quot;codigo-panel-sql&quot; data-tab-panel&gt;&lt;div class=&quot;codigo&quot;&gt;&lt;div class=&quot;cab&quot;&gt;&lt;span&gt;SQL&lt;/span&gt;&lt;button type=&quot;button&quot; data-copiar=&quot;muestra-sql&quot; aria-label=&quot;Copiar SQL&quot;&gt;Copiar&lt;/button&gt;&lt;span class=&quot;copia-estado&quot; role=&quot;status&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;pre tabindex=&quot;0&quot; aria-label=&quot;Código SQL, desplazable&quot;&gt;&lt;code id=&quot;muestra-sql&quot; data-lenguaje=&quot;sql&quot;&gt;-- Consulta ilustrativa
+SELECT equipo, SUM(importe) AS total
+FROM movimientos
+WHERE estado = &amp;#x27;confirmado&amp;#x27;
+GROUP BY equipo
+ORDER BY total DESC;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/section&gt;&lt;section id=&quot;codigo-panel-shell&quot; data-tab-panel&gt;&lt;div class=&quot;codigo&quot;&gt;&lt;div class=&quot;cab&quot;&gt;&lt;span&gt;Shell&lt;/span&gt;&lt;button type=&quot;button&quot; data-copiar=&quot;muestra-shell&quot; aria-label=&quot;Copiar Shell&quot;&gt;Copiar&lt;/button&gt;&lt;span class=&quot;copia-estado&quot; role=&quot;status&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;pre tabindex=&quot;0&quot; aria-label=&quot;Código Shell, desplazable&quot;&gt;&lt;code id=&quot;muestra-shell&quot; data-lenguaje=&quot;shell&quot;&gt;# Comprobaciones locales
+python3 scripts/ensamblar.py
+python3 scripts/validar.py
+echo &amp;quot;Listo para revisar&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/section&gt;&lt;section id=&quot;codigo-panel-salida&quot; data-tab-panel&gt;&lt;div class=&quot;codigo&quot;&gt;&lt;div class=&quot;cab&quot;&gt;&lt;span&gt;Salida&lt;/span&gt;&lt;button type=&quot;button&quot; data-copiar=&quot;muestra-salida&quot; aria-label=&quot;Copiar Salida&quot;&gt;Copiar&lt;/button&gt;&lt;span class=&quot;copia-estado&quot; role=&quot;status&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;pre tabindex=&quot;0&quot; aria-label=&quot;Código Salida, desplazable&quot;&gt;&lt;code id=&quot;muestra-salida&quot; data-lenguaje=&quot;salida&quot;&gt;OK     documento generado     44 recetas
+WARN   fuente pendiente       2 registros
+ERROR  ejemplo rechazado      1 recurso externo&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/section&gt;&lt;/div&gt;&lt;/section&gt;</code></pre></div></details><footer class="pie"><p>Nota Tikin · Muestra de todos los componentes. Inspirada en <a href="https://www.cmrg.me">cmrg.me</a>; el tema claro, los ajustes de acceso y Dark Sea están documentados en el informe.</p><button type="button" data-sonido aria-pressed="false">Sonido apagado</button></footer>
 </main>
 <div class="regla" role="slider" tabindex="0" aria-orientation="vertical" aria-label="Progreso de lectura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="ticks"></div><div class="cursor"></div><span class="val">0%</span></div>
+<script>
+/* Sonido central: sólo gestos explícitos, apagado al cargar y al salir de la pestaña. */
+(()=>{'use strict';let enabled=false,context=null,voices=[],epoch=0,plays=0;const toggles=[...document.querySelectorAll('[data-audio-global],[data-sonido]')];
+ if(!toggles.length)return;document.documentElement.dataset.audioCabecera='';
+ const sync=()=>{document.querySelectorAll('[data-canal-sonido] [role="status"]').forEach(s=>s.textContent=enabled?'Sonido activado. Pulsa una acción para escucharla.':'Sonido apagado.');toggles.forEach(b=>{b.setAttribute('aria-pressed',String(enabled));b.querySelector('[data-audio-etiqueta]')?.replaceChildren(document.createTextNode(enabled?'Sonidos activados':'Sonidos apagados'));if(b.hasAttribute('data-sonido'))b.textContent=enabled?'Sonido activado':'Sonido apagado';});};
+ const stop=()=>{voices.forEach(({node,gain})=>{try{node.stop();}catch{}node.disconnect();gain.disconnect();});voices=[];};
+ function disable(){enabled=false;epoch++;stop();context?.suspend().catch(()=>{});document.querySelectorAll('[data-canal-sonido]').forEach(e=>window.NotaSonido?.get(e)?.disable());sync();}
+ async function activate(){const Audio=window.AudioContext||window.webkitAudioContext;if(!Audio)return;const current=++epoch;try{context ||= new Audio();await context.resume();if(current!==epoch||document.hidden)return;enabled=true;sync();}catch{disable();}}
+ function signal(kind){if(!enabled||!context||context.state!=='running'||document.hidden)return;stop();const now=context.currentTime,gain=context.createGain();let node,duration;
+  if(kind==='escritura'){duration=.65;const buffer=context.createBuffer(1,Math.ceil(context.sampleRate*duration),context.sampleRate),data=buffer.getChannelData(0);let last=0;for(let i=0;i<data.length;i++){last=.85*last+.15*(Math.random()*2-1);data[i]=last*(.55+.45*Math.sin(i/context.sampleRate*43)**2);}node=context.createBufferSource();node.buffer=buffer;gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(.045,now+.025);gain.gain.setValueAtTime(.03,now+duration-.07);gain.gain.linearRampToValueAtTime(0,now+duration);
+  }else{duration=.09;node=context.createOscillator();node.type='sine';node.frequency.setValueAtTime(kind==='confirmacion'?740:kind==='atencion'?390:540,now);gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(.018,now+.004);gain.gain.exponentialRampToValueAtTime(.0001,now+duration);}
+  node.connect(gain);gain.connect(context.destination);const voice={node,gain};voices.push(voice);node.onended=()=>{node.disconnect();gain.disconnect();voices=voices.filter(v=>v!==voice);};node.start(now);node.stop(now+duration);plays++;
+ }
+ document.addEventListener('click',async e=>{if(!e.isTrusted)return;const b=e.target.closest('button');if(!b||b.disabled)return;if(b.matches('[data-audio-global],[data-sonido]')){if(enabled)disable();else await activate();return;}if(b.dataset.audio){const status=b.closest('[data-canal-sonido]')?.querySelector('[role="status"]');if(status)status.textContent=b.dataset.mensaje||b.textContent.trim();const local=b.closest('[data-canal-sonido]');if(local&&window.NotaSonido?.get(local)?.enabled)return;signal(b.dataset.audio);}});
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)disable();});addEventListener('pagehide',disable);
+ window.NotaAudio={disable,get enabled(){return enabled;},get activeVoices(){return voices.length;},get plays(){return plays;}};sync();
+})();
+
+</script>
+<script>
+/* Menús compactos de herramientas: disclosure nativo y panel limitado al viewport. */
+(()=>{'use strict';const done=new WeakSet();function init(root=document){root.querySelectorAll('.control-menu').forEach(menu=>{if(done.has(menu))return;const trigger=menu.querySelector('summary'),panel=menu.querySelector('.control-panel');if(!trigger||!panel)return;done.add(menu);menu.dataset.controlListo='';
+ const place=()=>{if(!menu.open)return;const t=trigger.getBoundingClientRect(),w=visualViewport?.width||innerWidth,h=visualViewport?.height||innerHeight;panel.style.width=Math.min(264,w-24)+'px';panel.style.maxHeight=Math.max(80,h-24)+'px';let p=panel.getBoundingClientRect();panel.style.left=Math.max(12,Math.min(t.right-p.width,w-p.width-12))+'px';const below=h-t.bottom-20,above=t.top-20,up=p.height>below&&above>below;panel.style.maxHeight=Math.max(80,up?above:below)+'px';p=panel.getBoundingClientRect();panel.style.top=Math.max(12,Math.min(up?t.top-p.height-8:t.bottom+8,h-p.height-12))+'px';};
+ menu.addEventListener('toggle',()=>{if(menu.open){document.querySelectorAll('.control-menu').forEach(other=>{if(other!==menu)other.open=false;});place();}});menu.addEventListener('click',e=>{if(e.target.closest('[data-cerrar-menu]'))menu.open=false;});menu.addEventListener('change',place);
+ addEventListener('resize',place);document.addEventListener('scroll',e=>{if(menu.open&&!panel.contains(e.target))menu.open=false;},{capture:true,passive:true});document.addEventListener('pointerdown',e=>{if(!menu.contains(e.target))menu.open=false;});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.open){menu.open=false;trigger.focus();}});
+ });}window.NotaControles={init};init();})();
+
+</script>
 <script>
 /* Nota Tikin. Pegar una vez al final del fragmento, dentro de <script>. */
 (() => {
@@ -3070,6 +3270,7 @@ body:has(.revision-barra) { padding-bottom:100px; }
   });
 
   // Reproducir un sonido exige activación explícita; no se descargan MP3.
+  if(!window.NotaAudio){
   const soundButton = document.querySelector('[data-sonido]');
   let soundEnabled = false, audio;
   soundButton?.addEventListener('click',() => {
@@ -3093,6 +3294,25 @@ body:has(.revision-barra) { padding-bottom:100px; }
       oscillator.onended = () => { oscillator.disconnect(); gain.disconnect(); };
     } catch {}
   });
+  }
+  const writingTarget=document.querySelector('[data-escritura]');
+  let writingObserver;
+  document.querySelectorAll('[data-ver-escritura]').forEach(button=>{
+    button.hidden=!writingTarget;
+    button.addEventListener('click',()=>{
+      if(!writingTarget)return;
+      button.closest('details').open=false;
+      const page=writingTarget.closest('.pagina');
+      if(page?.hidden)document.querySelector('[data-ir="'+page.id+'"]').click();
+      writingTarget.scrollIntoView({behavior:'instant',block:'center'});
+      writingObserver?.disconnect();
+      writingObserver=new IntersectionObserver(entries=>{
+        if(entries[0].intersectionRatio>=.3){window.NotaEscritura?.get(writingTarget)?.play();writingObserver.disconnect();}
+      },{threshold:.3});
+      writingObserver.observe(writingTarget.querySelector('.escritura-caja')||writingTarget);
+    });
+  });
+  document.addEventListener('nota:pagina',()=>writingObserver?.disconnect());
   // Imprimir el contenido íntegro de los extractos incluso en motores sin ::details-content.
   let closedForPrint = [];
   addEventListener('beforeprint',() => { closedForPrint=[...document.querySelectorAll('.metodologia:not([open]),.extracto details:not([open]),[data-grafica] details:not([open]),[data-escena] details:not([open])')]; closedForPrint.forEach(e=>e.open=true); });
@@ -3898,7 +4118,7 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
           return;
         }
         const kind=button.dataset.audio;
-        if(!notes[kind])return;
+        if(!notes[kind]&&kind!=='escritura')return;
         // El significado de la acción siempre se escribe, incluso con audio apagado.
         this.status.textContent=button.dataset.mensaje || button.textContent.trim();
         if(!this.enabled)return;
@@ -3909,7 +4129,14 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
           if(!this.enabled||this.dead||document.hidden||epoch!==this.epoch)return;
           this.stopVoices();
           const now=this.audio.currentTime;
-          notes[kind].forEach((frequency,i)=>{
+          if(kind==='escritura'){
+            const duration=.65,buffer=this.audio.createBuffer(1,Math.ceil(this.audio.sampleRate*duration),this.audio.sampleRate),data=buffer.getChannelData(0);
+            let last=0;for(let i=0;i<data.length;i++){last=.85*last+.15*(Math.random()*2-1);data[i]=last*(.55+.45*Math.sin(i/this.audio.sampleRate*43)**2);}
+            const osc=this.audio.createBufferSource(),gain=this.audio.createGain();osc.buffer=buffer;
+            gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(.045,now+.025);gain.gain.setValueAtTime(.03,now+duration-.07);gain.gain.linearRampToValueAtTime(0,now+duration);
+            osc.connect(gain);gain.connect(this.audio.destination);const voice={osc,gain};this.voices.push(voice);
+            osc.onended=()=>{osc.disconnect();gain.disconnect();this.voices=this.voices.filter(v=>v!==voice);};osc.start(now);osc.stop(now+duration);
+          }else notes[kind].forEach((frequency,i)=>{
             const osc=this.audio.createOscillator(),gain=this.audio.createGain(),time=now+i*.065;
             osc.type='sine';osc.frequency.setValueAtTime(frequency,time);
             gain.gain.setValueAtTime(0,time);gain.gain.linearRampToValueAtTime(.025,time+.003);
@@ -4399,13 +4626,16 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
       if(template.content.querySelector('script') || [...template.content.querySelectorAll('*')].some(e=>[...e.attributes].some(a=>/^on/i.test(a.name)))) throw new TypeError('Usa HTML declarativo sin scripts ni manejadores inline.');
       this.host=document.createElement('div');this.host.className='visor-lienzo';this.box.append(this.host);
       this.shadow=this.host.attachShadow({mode:'open'});
-      this.width=390;
+      this.width=390;this.aspect='auto';this.rotated=false;this.fit=false;this.wrapper=document.createElement('div');this.wrapper.className='visor-marco';this.host.before(this.wrapper);this.wrapper.append(this.host);
       this.on(root,'click',e=>{
+        if(e.target.closest('[data-girar-visor]')){this.rotated=!this.rotated;if(this.aspect==='auto')this.aspect='9/16';this.layout();}
+        if(e.target.closest('[data-ajustar-visor]')){this.fit=!this.fit;this.layout();}
         const size=e.target.closest('[data-ancho-visor]');
         if(size&&root.contains(size))this.setWidth(size.dataset.anchoVisor);
         if(e.target.closest('[data-reiniciar-visor]')){this.template=this.initialTemplate;this.reset();}
         if(e.target.closest('[data-cargar-html]')){const input=root.querySelector('[data-html-visor]'),state=root.querySelector('[data-importar-estado]');try{this.loadHTML(input.value);state.textContent='HTML cargado. Cambia entre Móvil y Escritorio para revisarlo.';}catch(error){state.textContent=error.message;}}
       });
+      this.on(root,'change',e=>{if(e.target.matches('[data-proporcion-visor]'))this.setAspect(e.target.value);});
       this.on(this.shadow,'click',e=>{
         const button=e.target.closest('[data-demo-ir]');if(!button)return;
         const panels=[...this.shadow.querySelectorAll('[data-demo-pagina]')];
@@ -4414,7 +4644,7 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
         this.shadow.querySelectorAll('[data-demo-ir]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.demoIr===target.dataset.demoPagina)));
         const heading=target.querySelector('h1,h2,h3');if(heading){heading.tabIndex=-1;heading.focus();}
       });
-      this.resize=new ResizeObserver(()=>this.measure());this.resize.observe(this.box);
+      this.resize=new ResizeObserver(()=>this.layout());this.resize.observe(this.box);this.resize.observe(this.host);
       this.reset();this.setWidth('390');this.source.setAttribute('data-oculta','');instances.set(root,this);
     }
     on(node,type,fn) {node.addEventListener(type,fn,{signal:this.abort.signal});}
@@ -4425,7 +4655,7 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
       this.shadow.querySelectorAll('script').forEach(s=>s.remove());
       const base=document.createElement('style');
       base.textContent=':host{display:block;container-type:inline-size;color:var(--pieza-tinta);font:16px/1.6 var(--sans)}*,*::before,*::after{box-sizing:border-box} [hidden]{display:none!important} :focus-visible{outline:2px dashed var(--foco);outline-offset:3px} @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}';
-      this.shadow.prepend(base);this.measure();
+      this.shadow.prepend(base);if(this.wrapper)this.layout();else this.measure();
     }
     loadHTML(source) {
       if(this.dead)return;
@@ -4443,16 +4673,24 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
     setWidth(raw) {
       const n=raw==='auto'?null:Number(raw);
       if(n!==null&&![320,390,768,1024].includes(n))throw new TypeError('Anchos disponibles: 320, 390, 768, 1024 o auto.');
-      this.width=n;this.host.style.width=n===null?'100%':n+'px';
-      this.buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.anchoVisor===String(raw))));this.measure();
+      this.width=n;this.rotated=false;
+      this.buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.anchoVisor===String(raw))));const label=this.root.querySelector('[data-dispositivo-actual]');if(label)label.textContent=({'320':'Móvil pequeño','390':'Móvil','768':'Tablet','1024':'Escritorio','auto':'Disponible'})[raw];this.layout();
+    }
+    setAspect(value){if(!['auto','9/16','4/3','16/9','1/1'].includes(value))throw new TypeError('Proporción no disponible.');this.aspect=value;this.layout();}
+    layout(){
+      if(this.dead)return;const available=this.box.clientWidth,base=this.width||available,ratio=this.aspect==='auto'?null:this.aspect.split('/').map(Number).reduce((a,b)=>a/b);
+      const width=this.rotated&&ratio?base/ratio:base,height=ratio?(this.rotated?base:base/ratio):null,scale=this.fit&&width?Math.min(1,available/width):1;
+      this.host.style.width=width+'px';this.host.style.height=height===null?'auto':height+'px';this.host.style.overflow=height===null?'visible':'auto';this.host.style.transform=scale<1?'scale('+scale+')':'none';this.host.style.transformOrigin='top left';
+      this.host.tabIndex=0;this.host.setAttribute('role','region');this.host.setAttribute('aria-label','Contenido del prototipo');this.wrapper.toggleAttribute('data-ajustado',scale<1);this.wrapper.style.width=width*scale+'px';this.wrapper.style.height=(height||this.host.offsetHeight)*scale+'px';
+      const aspect=this.root.querySelector('[data-proporcion-visor]');if(aspect)aspect.value=this.aspect;this.root.querySelector('[data-girar-visor]')?.setAttribute('aria-pressed',String(this.rotated));this.root.querySelector('[data-ajustar-visor]')?.setAttribute('aria-pressed',String(this.fit));this.measure();
     }
     measure() {
       if(this.dead)return;
-      const w=Math.round(this.host.getBoundingClientRect().width);
-      this.status.textContent='Vista de '+w+' px CSS'+(this.width===null?' · ajustada al espacio disponible.':'.')+' '+(this.box.scrollWidth>this.box.clientWidth?'Desplaza la región para ver todo el ancho.':'');
+      const w=Math.round(parseFloat(this.host.style.width)),h=parseFloat(this.host.style.height),scale=w?this.host.getBoundingClientRect().width/w:1;
+      this.status.textContent=w+(Number.isFinite(h)?' × '+Math.round(h):'')+' px CSS · '+Math.round(scale*100)+' %'+(this.width===null?' · ancho disponible':'')+(this.box.scrollWidth>this.box.clientWidth?' · Desplaza para ver todo el ancho.':'.');
     }
     destroy() {
-      if(this.dead)return;this.dead=true;this.abort.abort();this.resize.disconnect();this.host.remove();
+      if(this.dead)return;this.dead=true;this.abort.abort();this.resize.disconnect();this.wrapper.remove();
       this.status.textContent=this.originalStatus;this.source.toggleAttribute('data-oculta',this.originalSource);
       this.buttons.forEach((b,i)=>{if(this.originalPressed[i]===null)b.removeAttribute('aria-pressed');else b.setAttribute('aria-pressed',this.originalPressed[i]);});
       instances.delete(this.root);
@@ -4588,19 +4826,25 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
 
 </script>
 <script>
-/* Resaltado HTML local. Construye nodos de texto; nunca interpreta el código copiable. */
-(()=>{'use strict';
- function init(root=document){root.querySelectorAll('.receta-copia code,[data-lenguaje="html"]').forEach(code=>{
-  if(code.dataset.coloreado)return;const source=code.textContent;if(!source.trim().startsWith('<'))return;
-  const frag=document.createDocumentFragment(),add=(s,cls)=>{if(!cls){frag.append(document.createTextNode(s));return;}const span=document.createElement('span');span.className=cls;span.textContent=s;frag.append(span);};
-  const re=/<!--[\s\S]*?-->|<\/?[A-Za-z][^>]*>/g;let end=0;
-  for(const match of source.matchAll(re)){add(source.slice(end,match.index));const token=match[0];if(token.startsWith('<!--'))add(token,'com');else{
-   const parts=/(<\/?[\w:-]+)|("[^"]*"|'[^']*')|([\w:-]+)(?=\s*=)/g;let pos=0;
-   for(const p of token.matchAll(parts)){add(token.slice(pos,p.index));add(p[0],p[1]?'kw':p[2]?'str':'codigo-atributo');pos=p.index+p[0].length;}add(token.slice(pos));
-  }end=match.index+token.length;}add(source.slice(end));code.replaceChildren(frag);code.dataset.coloreado='';
- });}
- window.NotaCodigo={init};init();
-})();
+/* Resaltado local conservador. Nueve lenguajes; todos los tokens son nodos de texto. */
+(()=>{'use strict';const done=new WeakSet();
+ const sets={javascript:'async await break case catch class const continue debugger default delete do else export extends false finally for from function if import in instanceof let new null of return static super switch this throw true try typeof undefined var void while yield',typescript:'abstract any as boolean declare enum implements interface keyof namespace never number private protected public readonly string type unknown',python:'and as assert async await break class continue def del elif else except False finally for from global if import in is lambda None nonlocal not or pass raise return True try while with yield',sql:'SELECT FROM WHERE JOIN LEFT RIGHT INNER OUTER ON GROUP BY ORDER ASC DESC INSERT INTO VALUES UPDATE SET DELETE CREATE TABLE AS AND OR NOT NULL LIMIT COUNT SUM AVG HAVING DISTINCT',shell:'if then else fi for in do done case esac function echo printf cd pwd export source return exit set',css:'important media supports container keyframes root hover focus display grid flex block none minmax repeat var calc color background padding margin width height'};
+ function language(el,text){const declared=el.dataset.lenguaje||el.dataset.language;if(declared)return declared.toLowerCase();if(el.closest('.terminal'))return 'salida';if(el.closest('.receta-copia'))return 'html';const title=el.closest('.codigo')?.querySelector('.cab')?.textContent||'';for(const [re,lang] of [[/\.py\b|python/i,'python'],[/\.tsx?\b|typescript/i,'typescript'],[/\.jsx?\b|javascript/i,'javascript'],[/\.css\b/i,'css'],[/\.sql\b/i,'sql'],[/\.sh\b|shell|bash/i,'shell'],[/\.json\b/i,'json']])if(re.test(title))return lang;if(text.trim().startsWith('<'))return 'html';try{JSON.parse(text);return 'json';}catch{}return 'salida';}
+ function tokens(source,lang){const out=[],add=(text,kind)=>out.push({text,kind});if(lang==='html'){
+   const re=/<!--[\s\S]*?-->|<\/?[A-Za-z][^>]*>/g;let end=0;for(const m of source.matchAll(re)){add(source.slice(end,m.index));const token=m[0];if(token.startsWith('<!--'))add(token,'com');else{let pos=0;for(const p of token.matchAll(/(<\/?[\w:-]+)|("[^"]*"|'[^']*')|([\w:-]+)(?=\s*=)/g)){add(token.slice(pos,p.index));add(p[0],p[1]?'kw':p[2]?'str':'codigo-atributo');pos=p.index+p[0].length;}add(token.slice(pos));}end=m.index+token.length;}add(source.slice(end));return out;
+  }
+  const comments={javascript:/\/\*[\s\S]*?\*\/|\/\/[^\n]*/.source,typescript:/\/\*[\s\S]*?\*\/|\/\/[^\n]*/.source,css:/\/\*[\s\S]*?\*\//.source,python:/#[^\n]*/.source,shell:/#[^\n]*/.source,sql:/--[^\n]*|\/\*[\s\S]*?\*\//.source};
+  const pattern=new RegExp('('+(comments[lang]||'(?!)')+')|'+/("(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|`(?:\\.|[^`\\])*`)|(\b(?:0x[\da-fA-F]+|\d+(?:[.,]\d+)*(?:e[+-]?\d+)?))|([A-Za-z_$][\w$-]*)/.source,'g');let end=0;const words=new Set(((sets[lang]||'')+' '+(lang==='typescript'?sets.javascript:'')).split(' '));
+  for(const m of source.matchAll(pattern)){add(source.slice(end,m.index));let kind;
+   if(m[1])kind='com';
+   else if(m[2])kind=lang==='json'&&/^\s*:/.test(source.slice(m.index+m[0].length))?'codigo-atributo':'str';else if(m[3])kind='codigo-numero';else if(words.has(m[4])||lang==='sql'&&words.has(m[4].toUpperCase())||lang==='json'&&['true','false','null'].includes(m[4]))kind='kw';else if(/^(error|failed|warning|warn|fail)$/i.test(m[4]))kind='codigo-alerta';else if(/^(ok|success|passed|ready)$/i.test(m[4]))kind='str';else if(/^[\s]*\(/.test(source.slice(m.index+m[0].length))&&['javascript','typescript','python','shell'].includes(lang))kind='codigo-atributo';
+   add(m[0],kind);end=m.index+m[0].length;
+  }add(source.slice(end));return out;
+ }
+ function init(root=document){root.querySelectorAll('.codigo pre code,.terminal pre,[data-lenguaje]').forEach(el=>{if(done.has(el))return;done.add(el);const lang=language(el,el.textContent);el.dataset.coloreado=lang;
+  const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+  for(const node of nodes){if(node.parentElement.closest('.kw,.str,.com,.subra,.tenue'))continue;const frag=document.createDocumentFragment();tokens(node.textContent,lang).forEach(({text,kind})=>{if(!text)return;if(!kind){frag.append(document.createTextNode(text));return;}const span=document.createElement('span');span.className=kind;span.textContent=text;frag.append(span);});node.replaceWith(frag);}
+ });}window.NotaCodigo={init};init();})();
 
 </script>
 <script>
@@ -4614,18 +4858,20 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
   function update(){parts.splice(0).forEach(p=>p.remove());initial.remove();
    const words=normal(form.elements.buscar.value).trim().split(/\s+/),state=form.elements.estado.value,group=form.elements.grupo.value;
    const visible=rows.filter(r=>(!state||r.cells[2].textContent.trim()===state)&&words.every(w=>normal(r.textContent).includes(w)));
-   visible.sort((a,b)=>direction*(column===3?Number(a.cells[3].dataset.valor)-Number(b.cells[3].dataset.valor):a.cells[column].textContent.localeCompare(b.cells[column].textContent,'es',{numeric:true,sensitivity:'base'}))||rows.indexOf(a)-rows.indexOf(b));
+   visible.sort((a,b)=>column<0?rows.indexOf(a)-rows.indexOf(b):direction*(column===3?Number(a.cells[3].dataset.valor)-Number(b.cells[3].dataset.valor):a.cells[column].textContent.localeCompare(b.cells[column].textContent,'es',{numeric:true,sensitivity:'base'}))||rows.indexOf(a)-rows.indexOf(b));
    const groups=new Map();visible.forEach(r=>{const key=group?r.cells[Number(group)].textContent.trim():'';if(!groups.has(key))groups.set(key,[]);groups.get(key).push(r);});
    if(!visible.length){const body=document.createElement('tbody'),row=body.insertRow(),cell=row.insertCell();cell.colSpan=4;cell.textContent='No hay filas que coincidan. Limpia los filtros para volver a empezar.';table.append(body);parts.push(body);}
    for(const [name,items] of [...groups].sort(([a],[b])=>a.localeCompare(b,'es'))){const body=document.createElement('tbody');if(group){const tr=body.insertRow(),th=document.createElement('th');th.scope='rowgroup';th.colSpan=4;th.className='tabla-grupo';th.textContent=name+' · '+items.length+' registros';tr.append(th);}items.forEach(r=>body.append(r));table.append(body);parts.push(body);}
    const total=visible.reduce((s,r)=>s+Number(r.cells[3].dataset.valor),0);
    status.textContent=visible.length+' de '+rows.length+' registros · '+total.toLocaleString('es-CO')+' COP en la vista actual.';
-   headers.forEach((h,i)=>h.setAttribute('aria-sort',i===column?(direction===1?'ascending':'descending'):'none'));
+   headers.forEach((h,i)=>{h.setAttribute('aria-sort',i===column?(direction===1?'ascending':'descending'):'none');const hint=h.querySelector('[data-indicador-orden]');if(hint)hint.textContent=i===column?(direction===1?'↑':'↓'):'↕';});
+   const hidden=[...form.querySelectorAll('[data-columna]:not(:checked)')].map(e=>Number(e.dataset.columna));headers.forEach((h,i)=>h.hidden=hidden.includes(i));rows.forEach(r=>[...r.cells].forEach((c,i)=>c.hidden=hidden.includes(i)));table.querySelectorAll('.tabla-grupo').forEach(th=>th.colSpan=4-hidden.length);const count=form.querySelector('[data-filtros-cuenta]');if(count)count.textContent=state?'1 · ':'';
   }
   form.addEventListener('input',update,{signal:abort.signal});form.addEventListener('change',update,{signal:abort.signal});form.addEventListener('submit',e=>e.preventDefault(),{signal:abort.signal});
   form.addEventListener('reset',()=>queueMicrotask(()=>{if(abort.signal.aborted)return;column=0;direction=1;update();}),{signal:abort.signal});
-  headers.forEach((h,i)=>h.querySelector('button')?.addEventListener('click',()=>{direction=column===i?-direction:1;column=i;update();},{signal:abort.signal}));
-  const instance={update,destroy(){abort.abort();parts.forEach(p=>p.remove());rows.forEach(r=>initial.append(r));table.append(initial);headers.forEach((h,i)=>originalSort[i]===null?h.removeAttribute('aria-sort'):h.setAttribute('aria-sort',originalSort[i]));status.textContent=before;instances.delete(el);}};
+  el.querySelectorAll('[data-orden-col]').forEach(b=>b.addEventListener('click',()=>{column=Number(b.dataset.direccion)===0?-1:Number(b.dataset.ordenCol);direction=Number(b.dataset.direccion)||1;update();},{signal:abort.signal}));
+  headers.forEach((h,i)=>(h.querySelector('[data-orden-col]')?null:h.querySelector('button'))?.addEventListener('click',()=>{direction=column===i?-direction:1;column=i;update();},{signal:abort.signal}));
+  const instance={update,destroy(){abort.abort();parts.forEach(p=>p.remove());rows.forEach(r=>initial.append(r));rows.forEach(r=>[...r.cells].forEach(c=>c.hidden=false));headers.forEach(h=>h.hidden=false);table.append(initial);headers.forEach((h,i)=>originalSort[i]===null?h.removeAttribute('aria-sort'):h.setAttribute('aria-sort',originalSort[i]));status.textContent=before;instances.delete(el);}};
   instances.set(el,instance);update();return instance;
  });}
  window.NotaExplorador={init,get:el=>instances.get(el)};init();
@@ -4633,67 +4879,59 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
 
 </script>
 <script>
-/* Revisión local de bloques. Sin red ni almacenamiento; prompt explícito y copiable. */
+/* Comentarios locales: pines flotantes anclados al bloque, sin mutar su geometría. */
 (()=>{'use strict';const instances=new WeakMap();
+ const icon='<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 3V11.5a9 9 0 0 1 18 0Z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';
  function init(root=document){return [...(root.matches?.('[data-revision]')?[root]:[]),...root.querySelectorAll('[data-revision]')].map(el=>{
   if(instances.has(el))return instances.get(el);
   const editor=el.querySelector('[data-revision-editor]'),panel=el.querySelector('[data-revision-panel]'),input=el.querySelector('[data-revision-texto]'),context=el.querySelector('[data-revision-contexto]'),list=el.querySelector('[data-revision-notas]'),prompt=el.querySelector('[data-revision-prompt]'),status=el.querySelector('[data-revision-estado]');
   if(!editor||!panel||!input||!context||!list||!prompt||!status)return null;
-  const abort=new AbortController(),notes=[],addedIDs=new Map(),originalStatus=status.textContent,originalPrompt=prompt.textContent;
-  let mode=false,pending=null,editing=null,serial=0;const focusTargets=new Map();
-  const bar=document.createElement('div');bar.className='revision-barra revision-ui';bar.setAttribute('role','group');bar.setAttribute('aria-label','Revisar este documento');
-  const modeButton=el.querySelector('[data-revision-modo]').cloneNode(true),listButton=el.querySelector('[data-revision-lista]').cloneNode(true);bar.append(modeButton,listButton);document.body.append(bar,editor,panel);
-  function listen(node,type,fn,options={}){node.addEventListener(type,fn,{...options,signal:abort.signal});}
-  function setMode(value){
-   focusTargets.forEach((old,node)=>old===null?node.removeAttribute('tabindex'):node.setAttribute('tabindex',old));focusTargets.clear();
-   if(value)document.querySelectorAll('main .pagina.viva p,main .pagina.viva h1,main .pagina.viva h2,main .pagina.viva h3,main .pagina.viva figure,main:not(.multipagina) p,main:not(.multipagina) figure').forEach(node=>{if(node.closest('.receta-copia,[data-revision],.revision-ui')||!node.getClientRects().length)return;focusTargets.set(node,node.getAttribute('tabindex'));node.tabIndex=0;});
-   mode=value;document.documentElement.toggleAttribute('data-revisando',mode);[modeButton,el.querySelector('[data-revision-modo]')].forEach(b=>{b.setAttribute('aria-pressed',String(mode));b.textContent=mode?'Elige un fragmento · Esc cancela':'Comentar documento';});status.textContent=mode?'Elige un párrafo, título, figura o card. Escape cancela.':notes.length+' comentarios locales. Copia antes de recargar.';}
-  function make(tag,text){const node=document.createElement(tag);node.textContent=text;return node;}
-  function render(){list.replaceChildren();notes.forEach((note,i)=>{
-   note.marker.textContent=String(i+1);note.marker.setAttribute('aria-label','Editar comentario '+(i+1));
-   const li=document.createElement('li'),quote=make('blockquote',note.quote),p=make('p',note.text),actions=document.createElement('div');actions.className='acciones';
-   const link=make('a','Ver fragmento');link.href='#'+note.target.id;listen(link,'click',()=>panel.close());
-   const edit=make('button','Editar'),remove=make('button','Borrar');edit.type=remove.type='button';listen(edit,'click',()=>{panel.close();open(note);});listen(remove,'click',()=>{note.marker.remove();notes.splice(notes.indexOf(note),1);render();panel.querySelector('[data-revision-cerrar]').focus();});
-   actions.append(link,edit,remove);li.append(make('p',note.page+' · '+note.reference),quote,p,actions);list.append(li);
-  });
-  if(!notes.length)list.append(make('li','Todavía no hay comentarios. Cierra esta ventana y elige un fragmento.'));
-  prompt.textContent=notes.length?'Aplica estos ajustes al artefacto «'+document.title+'». Conserva el contenido y comportamiento no señalados.\n\n'+notes.map((n,i)=>(i+1)+'. Capítulo: '+n.page+'\nReferencia: #'+n.reference+'\nFragmento: '+n.quote+'\nAjuste: '+n.text).join('\n\n'):'No hay comentarios todavía.';
-  listButton.textContent='Ver comentarios · '+notes.length;status.textContent=notes.length+' comentarios locales. Copia antes de recargar.';
+  const abort=new AbortController(),notes=[],addedIDs=new Set(),originalStatus=status.textContent,originalPrompt=prompt.textContent,focusTargets=new Map();let rowsAbort=new AbortController(),mode=false,pending=null,editing=null,serial=0;
+  const bar=document.createElement('div'),layer=document.createElement('div');bar.className='revision-barra revision-ui';bar.setAttribute('role','group');bar.setAttribute('aria-label','Comentarios');layer.className='revision-capa revision-ui';
+  const modeButton=el.querySelector('[data-revision-modo]').cloneNode(true),listButton=el.querySelector('[data-revision-lista]').cloneNode(true);modeButton.innerHTML=icon;modeButton.setAttribute('aria-label','Comentar: activar pines');modeButton.title='Comentar';listButton.textContent='0';listButton.title='Ver comentarios';listButton.setAttribute('aria-label','Ver comentarios, 0');bar.append(modeButton,listButton);document.body.append(bar,layer,editor,panel);
+  const listen=(node,type,fn,options={})=>node.addEventListener(type,fn,{...options,signal:abort.signal}),make=(tag,text)=>{const node=document.createElement(tag);node.textContent=text;return node;};
+  function setMode(value){focusTargets.forEach((old,node)=>old===null?node.removeAttribute('tabindex'):node.setAttribute('tabindex',old));focusTargets.clear();
+   if(value)document.querySelectorAll('main .pagina.viva :is(p,h1,h2,h3,figure,pre),main:not(.multipagina) :is(p,h1,h2,h3,figure,pre)').forEach(node=>{if(node.closest('[data-revision],.revision-ui')||!node.getClientRects().length)return;focusTargets.set(node,node.getAttribute('tabindex'));node.tabIndex=0;});
+   mode=value;document.documentElement.toggleAttribute('data-revisando',mode);modeButton.setAttribute('aria-pressed',String(mode));el.querySelector('[data-revision-modo]').setAttribute('aria-pressed',String(mode));modeButton.setAttribute('aria-label',mode?'Comentar: elige un punto. Escape cancela.':'Comentar: activar pines');status.textContent=mode?'Haz clic donde quieras comentar. Tab y Enter también permiten elegir un bloque.':notes.length+' comentarios locales. Copia antes de recargar.';
   }
-  function open(note){editing=notes.includes(note)?note:null;pending=note;setMode(false);context.textContent=note.page+' · '+note.quote;input.value=editing?note.text:'';editor.querySelector('h2').textContent=editing?'Editar comentario':'Añadir comentario';editor.showModal();input.focus();}
-  function choose(target,selection=''){
-   if(!target||!target.closest('main')||target.closest('.revision-ui,.receta-copia,[data-revision]'))return;
-   const page=target.closest('.pagina');let anchor=target;while(anchor&&(!anchor.id||addedIDs.has(anchor)))anchor=anchor.parentElement;const reference=anchor?.id||page?.id||'contenido';
-   const quote=(selection||target.textContent).trim().replace(/\s+/g,' ').slice(0,1000);if(!quote)return;
-   open({target,reference,page:page?.querySelector('h1')?.textContent||document.title,quote,text:''});
+  function point(note){const r=note.target.getBoundingClientRect();return {x:r.left+r.width*note.x,y:r.top+r.height*note.y,r};}
+  function position(){
+   const vw=visualViewport?.width||innerWidth,vh=visualViewport?.height||innerHeight,ox=visualViewport?.offsetLeft||0,oy=visualViewport?.offsetTop||0;
+   notes.forEach(note=>{const p=point(note);let visible=note.target.getClientRects().length>0&&p.x>=ox&&p.x<=ox+vw&&p.y>=oy+54&&p.y<=oy+vh;
+    for(let a=note.target.parentElement;a&&a!==document.body;a=a.parentElement){const s=getComputedStyle(a);if(/auto|scroll|hidden|clip/.test(s.overflowX+' '+s.overflowY)){const r=a.getBoundingClientRect();if(p.x<r.left||p.x>r.right||p.y<r.top||p.y>r.bottom)visible=false;}}
+    note.marker.hidden=!visible;note.marker.style.left=Math.max(ox+4,Math.min(ox+vw-32,p.x-4))+'px';note.marker.style.top=Math.max(oy+4,Math.min(oy+vh-36,p.y-28))+'px';
+   });
+   if(editor.open&&pending){const p=point(pending);editor.style.width=Math.min(304,vw-24)+'px';editor.style.maxHeight=Math.max(160,vh-24)+'px';const r=editor.getBoundingClientRect();editor.style.left=Math.max(ox+12,Math.min(p.x+14,ox+vw-r.width-12))+'px';editor.style.top=Math.max(oy+12,Math.min(p.y+12,oy+vh-r.height-12))+'px';if(!pending.target.getClientRects().length)editor.close();}
   }
-  function toggle(){const selected=getSelection(),text=selected?.toString().trim(),node=selected?.anchorNode;
-   if(text&&node){const element=node.nodeType===1?node:node.parentElement;const target=element.closest('p,h1,h2,h3,h4,figure,.card-editorial,li');if(target?.closest('main')&&!target.closest('.revision-ui,.receta-copia')){choose(target,text);return;}}
-   setMode(!mode);
+  function render(){rowsAbort.abort();rowsAbort=new AbortController();list.replaceChildren();const on=(n,fn)=>n.addEventListener('click',fn,{signal:rowsAbort.signal});
+   notes.forEach((note,i)=>{note.marker.textContent=String(i+1);note.marker.setAttribute('aria-label','Comentario '+(i+1)+': '+note.text.slice(0,80));
+    const li=document.createElement('li'),actions=document.createElement('div');actions.className='acciones';const link=make('a','Ver contexto');link.href='#'+note.target.id;on(link,()=>panel.close());const edit=make('button','Editar'),remove=make('button','Borrar');edit.type=remove.type='button';on(edit,()=>{panel.close();open(note);});on(remove,()=>{note.marker.remove();notes.splice(notes.indexOf(note),1);render();panel.querySelector('[data-revision-cerrar]').focus();});actions.append(link,edit,remove);
+    const details=document.createElement('details');details.append(make('summary',note.page+' · #'+note.reference),make('blockquote',note.quote));li.append(make('p',note.text),details,actions);list.append(li);
+   });
+   if(!notes.length)list.append(make('li','Aún no hay comentarios. Activa el globo y haz clic en un punto del documento.'));
+   prompt.textContent=notes.length?'Aplica estos ajustes al artefacto «'+document.title+'». Conserva el contenido y comportamiento no señalados.\n\n'+notes.map((n,i)=>(i+1)+'. Capítulo: '+n.page+'\nReferencia: #'+n.reference+'\nPunto del bloque: '+Math.round(n.x*100)+'% horizontal, '+Math.round(n.y*100)+'% vertical\nContexto: '+n.quote+'\nAjuste: '+n.text).join('\n\n'):'No hay comentarios todavía.';
+   listButton.textContent=String(notes.length);listButton.setAttribute('aria-label','Ver comentarios, '+notes.length);status.textContent=notes.length+' comentarios locales. Copia antes de recargar.';position();
   }
-  [modeButton,el.querySelector('[data-revision-modo]')].forEach(b=>listen(b,'click',toggle));
-  [listButton,el.querySelector('[data-revision-lista]')].forEach(b=>listen(b,'click',()=>{setMode(false);render();panel.showModal();}));
-  listen(document,'click',event=>{
-   if(!mode||event.target.closest('.revision-ui,button,input,select,textarea,summary,a,.barra,.receta-copia'))return;
-   let target=event.target.closest('figure,table,.card-editorial')||event.target.closest('p,h1,h2,h3,h4,.card-editorial,li');if(!target?.closest('main'))return;
-   event.preventDefault();event.stopPropagation();choose(target);
-  },{capture:true});
-  listen(document,'nota:pagina',()=>{if(mode)setMode(false);});
-  listen(document,'keydown',e=>{if(mode&&e.key==='Enter'&&focusTargets.has(e.target)){e.preventDefault();choose(e.target);return;}if(e.key==='Escape'&&mode){setMode(false);modeButton.focus();}});
-  listen(editor.querySelector('form'),'submit',e=>e.preventDefault());
-  listen(editor.querySelector('[data-revision-guardar]'),'click',()=>{
-   if(!input.value.trim()){input.setCustomValidity('Escribe el ajuste que propones.');input.reportValidity();return;}input.setCustomValidity('');if(!input.reportValidity())return;
-   pending.text=input.value.trim();
-   if(!editing){const note=pending;if(!note.target.id){let id;do{id='nota-revision-bloque-'+(++serial);}while(document.getElementById(id));addedIDs.set(note.target,'');note.target.id=id;}
-    const marker=make('button','');marker.type='button';marker.className='revision-marca';note.marker=marker;note.target.before(marker);notes.push(note);listen(marker,'click',()=>open(note));
-   }render();editor.close();pending=null;editing=null;modeButton.focus();
-  });
-  listen(input,'input',()=>input.setCustomValidity(''));
-  listen(editor.querySelector('[data-revision-cancelar]'),'click',()=>editor.close());listen(panel.querySelector('[data-revision-cerrar]'),'click',()=>panel.close());
-  const instance={get comments(){return notes.map(({text,quote,page,reference})=>({text,quote,page,reference}));},destroy(){setMode(false);abort.abort();editor.close();panel.close();bar.remove();notes.forEach(n=>n.marker.remove());addedIDs.forEach((_,node)=>node.removeAttribute('id'));el.append(editor,panel);status.textContent=originalStatus;prompt.textContent=originalPrompt;list.replaceChildren();instances.delete(el);}};
-  instances.set(el,instance);return instance;
- });}
- window.NotaRevision={init,get:el=>instances.get(el)};init();
+  function open(note){if(editor.open)editor.close();editing=notes.includes(note)?note:null;setMode(false);if(editing){const page=note.target.closest('.pagina');if(page?.hidden)document.querySelector('[data-ir="'+page.id+'"]')?.click();const r=note.target.getBoundingClientRect();if(r.bottom<60||r.top>innerHeight-60)note.target.scrollIntoView({behavior:'instant',block:'center'});}pending=note;context.textContent=note.page+' · #'+note.reference+' · '+note.quote;input.value=editing?note.text:'';editor.querySelector('h2').textContent=editing?'Comentario '+(notes.indexOf(note)+1):'Comentario';editor.show();position();input.focus({preventScroll:true});}
+  function choose(target,selection='',coords){if(!target?.closest('main')||target.closest('.revision-ui,[data-revision]'))return;
+   const page=target.closest('.pagina');let anchor=target;while(anchor&&(!anchor.id||addedIDs.has(anchor)))anchor=anchor.parentElement;
+   const quote=(selection||target.textContent||target.getAttribute('aria-label')||target.labels?.[0]?.textContent||target.tagName).trim().replace(/\s+/g,' ').slice(0,1200),r=target.getBoundingClientRect();
+   open({target,reference:anchor?.id||page?.id||'contenido',page:page?.querySelector('h1')?.textContent||document.title,quote,text:'',x:coords&&r.width?Math.max(0,Math.min(1,(coords.x-r.left)/r.width)):.5,y:coords&&r.height?Math.max(0,Math.min(1,(coords.y-r.top)/r.height)):.5});
+  }
+  function toggle(){if(editor.open)editor.close();const selection=getSelection(),text=selection?.toString().trim(),node=selection?.anchorNode;if(text&&node){const target=(node.nodeType===1?node:node.parentElement).closest('p,h1,h2,h3,h4,figure,pre,li');if(target?.closest('main')){choose(target,text);return;}}setMode(!mode);}
+  [modeButton,el.querySelector('[data-revision-modo]')].forEach(b=>listen(b,'click',toggle));[listButton,el.querySelector('[data-revision-lista]')].forEach(b=>listen(b,'click',()=>{setMode(false);editor.close();render();panel.showModal();}));
+  listen(document,'click',e=>{if(!mode||e.target.closest('.revision-ui,[data-revision],.barra'))return;const target=e.target.closest('button,a,input,select,textarea,p,h1,h2,h3,h4,pre,figure,table,li,.card-editorial,section,.pagina');if(!target?.closest('main'))return;e.preventDefault();e.stopImmediatePropagation();choose(target,'',{x:e.clientX,y:e.clientY});},{capture:true});
+  listen(document,'nota:pagina',()=>{setMode(false);editor.close();position();});listen(window,'scroll',position,{capture:true,passive:true});listen(window,'resize',position);if(window.visualViewport){listen(visualViewport,'resize',position);listen(visualViewport,'scroll',position);}
+  const resize=new ResizeObserver(position);resize.observe(document.querySelector('main')||document.body);resize.observe(editor);
+  listen(document,'keydown',e=>{if(mode&&e.key==='Enter'&&focusTargets.has(e.target)){e.preventDefault();choose(e.target);return;}if(e.key==='Escape'&&(mode||editor.open)){e.preventDefault();setMode(false);editor.close();modeButton.focus();}});
+  listen(editor.querySelector('form'),'submit',e=>{e.preventDefault();save();});
+  function save(){if(!input.value.trim()){input.setCustomValidity('Escribe el comentario.');input.reportValidity();return;}input.setCustomValidity('');if(!input.reportValidity())return;pending.text=input.value.trim();
+   if(!editing){const note=pending;if(!note.target.id){let id;do{id='nota-revision-bloque-'+(++serial);}while(document.getElementById(id));addedIDs.add(note.target);note.target.id=id;}note.marker=make('button','');note.marker.type='button';note.marker.className='revision-marca';layer.append(note.marker);notes.push(note);listen(note.marker,'click',()=>open(note));}
+   render();editor.close();pending=null;editing=null;modeButton.focus({preventScroll:true});
+  }
+  listen(editor.querySelector('[data-revision-guardar]'),'click',save);listen(input,'input',()=>input.setCustomValidity(''));listen(input,'keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='Enter'){e.preventDefault();save();}});listen(editor.querySelector('[data-revision-cancelar]'),'click',()=>{editor.close();modeButton.focus({preventScroll:true});});listen(panel.querySelector('[data-revision-cerrar]'),'click',()=>panel.close());
+  const instance={get comments(){return notes.map(({text,quote,page,reference,x,y})=>({text,quote,page,reference,x,y}));},destroy(){setMode(false);abort.abort();rowsAbort.abort();resize.disconnect();editor.close();panel.close();bar.remove();layer.remove();addedIDs.forEach(n=>n.removeAttribute('id'));el.append(editor,panel);status.textContent=originalStatus;prompt.textContent=originalPrompt;list.replaceChildren();instances.delete(el);}};instances.set(el,instance);return instance;
+ });}window.NotaRevision={init,get:el=>instances.get(el)};init();
 })();
 
 </script>
