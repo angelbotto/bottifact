@@ -36,12 +36,10 @@ def tools():
  return '<div class="herramientas"><a href="#inicio" class="mono">nota / tikin</a>'+appearance()+'</div>'
 
 def appearance():
- return """<div><fieldset class="apariencia"><legend>Apariencia</legend><div class="apariencia-opciones">
-<label><input type="radio" name="papel-principal" value="light" data-elegir-tema><span class="papel-muestra claro" aria-hidden="true"></span>Claro</label>
-<label><input type="radio" name="papel-principal" value="dark" data-elegir-tema><span class="papel-muestra calido" aria-hidden="true"></span>Cálido</label>
-<label><input type="radio" name="papel-principal" value="sea" data-elegir-tema><span class="papel-muestra sea" aria-hidden="true"></span>Sea</label>
-<label><input type="radio" name="papel-principal" value="system" data-elegir-tema checked>Sistema</label>
-</div></fieldset><button type="button" data-comodidad aria-pressed="false">Lectura cómoda</button></div>"""
+ # Fuente única: copiar el control circular documentado, con IDs/nombres de cabecera.
+ text=(ROOT/'componentes.md').read_text()
+ control=re.search(r'<details class="apariencia-menu orbita"[\s\S]*?</details>',text).group(0)
+ return control.replace('apariencia-orbita','apariencia-principal')
 
 def globe():
  return '<figure class="ancho"><div id="globo-rutas"></div><figcaption>Rutas ilustrativas para explorar el componente; no representan vuelos realizados. Máscara terrestre COBE · 15.000 muestras · arrastre, teclado y selección.</figcaption></figure>'

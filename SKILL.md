@@ -237,9 +237,15 @@ calculadora de capacidad, globo narrado y visor de prototipos.
 - [visor.js](visor.js) muestra HTML/CSS local de confianza con estados declarativos,
   Shadow DOM y anchos reales. Usa consultas de contenedor, no media queries de ventana.
   No admite scripts, no usa iframe, no carga apps remotas y no emula hardware.
-- La apariencia nueva usa muestras etiquetadas y radios `data-elegir-tema`; el selector
-  anterior sigue funcionando. Lectura cómoda es optativa por `data-comodidad`, nunca una
-  modificación silenciosa de los documentos existentes.
+- La apariencia de cabecera usa la llave circular sol/luna de la receta `apariencia`.
+  Abre un panel con muestras de color y radios `data-elegir-tema`; conserva los selectores
+  anteriores para artefactos publicados. Las variantes con etiqueta y cápsula son alternativas.
+  No muestres todas las preferencias permanentemente en la cabecera.
+- Color y estilo son independientes: Editorial (original), Sobrio (Geist en títulos),
+  Técnico (Geist Mono en títulos). Se activan por `data-elegir-estilo`; nunca cambies la
+  tipografía original de una nota que no ofrece esa elección. Cuerpo y gráficos conservan
+  sus familias. Lectura cómoda (`data-comodidad`) y trama (`data-papel-tramado`) son optativas.
+  Los tres estilos funcionan en Claro, Cálido y Sea. Comprueba los saltos de títulos al cambiar.
 - La búsqueda del catálogo sólo filtra su índice; cada receta tiene un botón para copiar
   su HTML. [catalogo.js](catalogo.js) no es necesario en artículos normales.
 

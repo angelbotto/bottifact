@@ -21,6 +21,7 @@ class Fragment(HTMLParser):
   if a.get('href','').startswith('#'):self.refs.append(unquote(a['href'][1:]))
   if 'data-copiar' in a:self.refs.append(a['data-copiar'])
   if a.get('aria-labelledby'):self.refs.extend(a['aria-labelledby'].split())
+  if a.get('aria-controls'):self.refs.extend(a['aria-controls'].split())
   if tag=='img' and (not a.get('src','').startswith('data:') or 'alt' not in a):self.errors.append('Imagen sin incrustar o sin alt')
   if tag=='script' and a.get('src'):
    src=a['src'];u=urlparse(src);self.scripts.append(src)
@@ -29,7 +30,7 @@ class Fragment(HTMLParser):
    if 'three' in src.lower() and src!=THREE:self.errors.append('Three sin versión fijada')
   if tag=='link' and a.get('rel')=='stylesheet' and not a.get('href','').startswith('https://fonts.googleapis.com/'):
    self.errors.append('Hoja externa fuera de CSP')
-  if classes & {'tabla-caja','diagrama-caja','grafica-caja','escena-caja','escritura-caja','visor-caja','barra'} or tag=='pre':
+  if classes & {'tabla-caja','diagrama-caja','grafica-caja','escena-caja','escritura-caja','visor-caja','apariencia-panel','barra'} or tag=='pre':
    if a.get('tabindex')!='0' or not (a.get('aria-label') or a.get('aria-labelledby')):self.errors.append('Desplazamiento sin foco/nombre: '+tag+' '+a.get('class',''))
   if classes & {'ancho','amplio'}:
    parent=self.stack[-1][1] if self.stack else set()
@@ -72,6 +73,8 @@ assert len(palettes)==4 and all(p==palettes[0] for p in palettes), 'Faltan token
 extras=css.split('/* 13 — Reportes, artículos y prototipos.')[1]
 extra_palettes=[set(re.findall(r'(--[\w-]+)\s*:',body)) for _,body in re.findall(r'(:root[^{}]*)\{([^{}]*)\}',extras) if '--pieza-papel:' in body]
 assert len(extra_palettes)==4 and all(p==extra_palettes[0] for p in extra_palettes), 'Faltan tokens de piezas en un tema'
+menu_palettes=[set(re.findall(r'(--[\w-]+)\s*:',body)) for _,body in re.findall(r'(:root[^{}]*)\{([^{}]*)\}',css) if '--apariencia-papel:' in body]
+assert len(menu_palettes)==4 and all(p==menu_palettes[0] for p in menu_palettes), 'Faltan tokens de apariencia en un tema'
 for doc in ['SKILL.md','componentes.md','referencia-cmrg.md']:
  for ref in re.findall(r'\]\(([^)]+)\)',(ROOT/doc).read_text()):
   if ref.startswith(('https:','http:','#')):continue

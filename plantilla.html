@@ -1249,16 +1249,126 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   :root[data-lectura-comoda] body { font-size: 11pt; }
 }
 
+/* 14 — Llave de apariencia. Optativa; no modifica controles publicados. */
+:root {
+  --apariencia-papel: var(--papel); --apariencia-tinta: var(--tinta); --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte); --apariencia-suave: var(--panel); --papel-trama: var(--linea);
+  --muestra-claro-tinta: #231e1a; --muestra-claro-acento: #a13f19;
+  --muestra-calido-tinta: #e9dfd7; --muestra-calido-acento: #f1b798;
+  --muestra-sea-tinta: #d6eaff; --muestra-sea-acento: #34febc;
+}
+@media(prefers-color-scheme:dark) {
+  :root:not([data-theme='light']):not([data-theme='sea']) {
+    --apariencia-papel: var(--papel); --apariencia-tinta: var(--tinta); --apariencia-secundaria: var(--tinta-2);
+    --apariencia-linea: var(--linea-fuerte); --apariencia-suave: var(--panel); --papel-trama: var(--linea);
+    --muestra-claro-tinta: #231e1a; --muestra-claro-acento: #a13f19;
+    --muestra-calido-tinta: #e9dfd7; --muestra-calido-acento: #f1b798;
+    --muestra-sea-tinta: #d6eaff; --muestra-sea-acento: #34febc;
+  }
+}
+:root[data-theme='dark'] {
+  --apariencia-papel: var(--papel); --apariencia-tinta: var(--tinta); --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte); --apariencia-suave: var(--panel); --papel-trama: var(--linea);
+  --muestra-claro-tinta: #231e1a; --muestra-claro-acento: #a13f19;
+  --muestra-calido-tinta: #e9dfd7; --muestra-calido-acento: #f1b798;
+  --muestra-sea-tinta: #d6eaff; --muestra-sea-acento: #34febc;
+}
+:root[data-theme='sea'] {
+  --apariencia-papel: var(--papel); --apariencia-tinta: var(--tinta); --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte); --apariencia-suave: var(--panel); --papel-trama: var(--linea);
+  --muestra-claro-tinta: #231e1a; --muestra-claro-acento: #a13f19;
+  --muestra-calido-tinta: #e9dfd7; --muestra-calido-acento: #f1b798;
+  --muestra-sea-tinta: #d6eaff; --muestra-sea-acento: #34febc;
+}
+.apariencia-menu { min-width: 0; color: var(--apariencia-tinta); }
+.apariencia-menu > summary { display: flex; align-items: center; justify-content: center; gap: 9px; list-style: none;
+  width: fit-content; min-width: 44px; min-height: 44px; padding: 10px; border: 1px solid var(--apariencia-linea);
+  border-radius: 50%; font: 14px/1.4 var(--sans); cursor: pointer; background: var(--apariencia-papel); }
+.apariencia-menu > summary::-webkit-details-marker { display: none; }
+.apariencia-menu > summary::marker { content: ''; }
+.apariencia-menu > summary:hover,.apariencia-menu[open] > summary { background: var(--apariencia-suave); }
+.apariencia-menu[open] > summary { border-color: var(--foco); }
+.apariencia-menu :is(summary,button,input):focus-visible { outline: 2px dashed var(--foco); outline-offset: 3px; }
+.apariencia-menu svg { display: block; flex: 0 0 auto; width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.apariencia-icono { display: inline-flex; }
+.apariencia-menu .icono-luna { display: none; }
+.apariencia-menu[data-oscuro='true'] .icono-sol { display: none; }
+.apariencia-menu[data-oscuro='true'] .icono-luna { display: block; }
+.apariencia-menu .icono-flecha { width: 16px; height: 16px; }
+.apariencia-menu.etiqueta > summary { border-radius: 7px; padding-inline: 13px; }
+.apariencia-menu.capsula > summary { border-radius: 24px; padding-inline: 13px; }
+.apariencia-panel { min-width: 0; width: min(324px,100%); max-width: 100%; padding: 18px; border: 1px solid var(--apariencia-linea);
+  border-radius: 12px; background: var(--apariencia-papel); color: var(--apariencia-tinta); overflow: auto; overscroll-behavior: contain;
+  text-align: left; font: 14px/1.5 var(--sans); }
+.apariencia-menu[data-menu-listo] .apariencia-panel { position: fixed; left: 12px; top: 12px; z-index: 100; max-width: calc(100vw - 24px); }
+.apariencia-panel .apariencia-titulo { margin: 0 0 16px; font: 600 16px/1.4 var(--sans); }
+.apariencia-panel fieldset + fieldset { margin-top: 18px; }
+.apariencia-panel legend { font-size: 12px; color: var(--apariencia-secundaria); }
+.apariencia-colores,.apariencia-estilos { display: grid; gap: 3px; }
+.apariencia-panel .apariencia label { display: grid; grid-template-columns: 14px 42px minmax(0,1fr); gap: 10px; padding: 8px; min-height: 48px; }
+.apariencia-panel label small { display: block; color: var(--apariencia-secundaria); font: 12px/1.45 var(--sans); overflow-wrap: anywhere; }
+.apariencia-panel .apariencia-estilos { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 4px; }
+.apariencia-panel .apariencia-estilos label { display: flex; flex-direction: column; gap: 4px; padding: 8px 4px; text-align: center; }
+.apariencia-panel .apariencia-estilos small { font-size: 11px; }
+.paleta-mini { width: 40px; height: 30px; border: 1px solid var(--apariencia-linea); border-radius: 4px; padding: 7px 6px; display: grid; gap: 4px; }
+.paleta-mini i { display: block; width: 100%; height: 2px; }
+.paleta-mini b { display: block; width: 60%; height: 3px; }
+.paleta-mini.claro { background: var(--muestra-claro); }
+.paleta-mini.claro i { background: var(--muestra-claro-tinta); }
+.paleta-mini.claro b { background: var(--muestra-claro-acento); }
+.paleta-mini.calido { background: var(--muestra-calido); }
+.paleta-mini.calido i { background: var(--muestra-calido-tinta); }
+.paleta-mini.calido b { background: var(--muestra-calido-acento); }
+.paleta-mini.sea { background: var(--muestra-sea); }
+.paleta-mini.sea i { background: var(--muestra-sea-tinta); }
+.paleta-mini.sea b { background: var(--muestra-sea-acento); }
+.paleta-mini.sistema { background: linear-gradient(90deg,var(--muestra-claro) 50%,var(--muestra-calido) 50%); }
+.muestra-letra { text-align: center; font: 26px/1.2 var(--serif); }
+.muestra-letra.sobrio { font: 500 22px/1.2 var(--sans); }
+.muestra-letra.tecnico { font: 500 21px/1.2 var(--mono); }
+.apariencia-ajustes { display: grid; gap: 6px; border-top: 1px solid var(--linea); margin-top: 18px; padding-top: 12px; }
+.apariencia-ajustes button { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin: 0;
+  width: 100%; min-height: 44px; padding: 9px; font: 13px/1.5 var(--sans); text-align: left; }
+.apariencia-ajustes button[aria-pressed='false'] span { visibility: hidden; }
+.apariencia-ajustes button[aria-pressed='true'] { background: var(--pieza-suave); border-color: var(--pieza-acento); }
+.apariencia-variantes { display: flex; flex-wrap: wrap; align-items: start; gap: 24px 36px; }
+.apariencia-variantes > div { min-width: 0; }
+.apariencia-variantes .variante-nombre { font: 12px/1.5 var(--mono); color: var(--apariencia-secundaria); margin-bottom: 12px; }
+/* Sólo los documentos con elección explícita reciben estilos de títulos alternativos. */
+:root[data-estilo='sobrio'] :is(h1,h2,h3) { font-family: var(--sans); font-weight: 500; letter-spacing: -.035em; }
+:root[data-estilo='tecnico'] :is(h1,h2,h3) { font-family: var(--mono); font-weight: 400; letter-spacing: -.045em; }
+:root[data-estilo='tecnico'] h1 { font-size: clamp(30px,4vw,44px); line-height: 1.15; }
+:root[data-estilo='tecnico'] h2 { font-size: clamp(25px,3vw,32px); line-height: 1.25; }
+:root[data-estilo='tecnico'] h3 { font-size: 23px; line-height: 1.3; }
+:root[data-estilo] :is(h1,h2,h3) { overflow-wrap: anywhere; }
+:root[data-trama] body { background-image: radial-gradient(circle,color-mix(in srgb,var(--papel-trama) 38%,transparent) .6px,transparent .7px); background-size: 12px 12px; }
+@media print { .apariencia-menu { display: none !important; } :root[data-trama] body { background-image: none; } }
+
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <a class="salto" href="#contenido">Saltar al contenido</a>
 <main class="hoja" id="inicio" data-lectura lang="es">
-<div class="herramientas"><a href="#inicio" class="mono">nota / tikin</a><div><fieldset class="apariencia"><legend>Apariencia</legend><div class="apariencia-opciones">
-<label><input type="radio" name="papel-principal" value="light" data-elegir-tema><span class="papel-muestra claro" aria-hidden="true"></span>Claro</label>
-<label><input type="radio" name="papel-principal" value="dark" data-elegir-tema><span class="papel-muestra calido" aria-hidden="true"></span>Cálido</label>
-<label><input type="radio" name="papel-principal" value="sea" data-elegir-tema><span class="papel-muestra sea" aria-hidden="true"></span>Sea</label>
-<label><input type="radio" name="papel-principal" value="system" data-elegir-tema checked>Sistema</label>
-</div></fieldset><button type="button" data-comodidad aria-pressed="false">Lectura cómoda</button></div></div>
+<div class="herramientas"><a href="#inicio" class="mono">nota / tikin</a><details class="apariencia-menu orbita" data-apariencia-menu>
+  <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-principal"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span></summary>
+  <div class="apariencia-panel" id="panel-apariencia-principal" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
+    <p class="apariencia-titulo">Tu forma de leer</p>
+    <fieldset class="apariencia"><legend>Color</legend><div class="apariencia-colores">
+      <label><input type="radio" name="color-apariencia-principal" value="light" data-elegir-tema><span class="paleta-mini claro" aria-hidden="true"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>
+      <label><input type="radio" name="color-apariencia-principal" value="dark" data-elegir-tema><span class="paleta-mini calido" aria-hidden="true"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>
+      <label><input type="radio" name="color-apariencia-principal" value="sea" data-elegir-tema><span class="paleta-mini sea" aria-hidden="true"><i></i><b></b></span><span>Dark Sea<small>Azul profundo · acento menta</small></span></label>
+      <label><input type="radio" name="color-apariencia-principal" value="system" data-elegir-tema checked><span class="paleta-mini sistema" aria-hidden="true"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>
+    </div></fieldset>
+    <fieldset class="apariencia"><legend>Estilo de títulos</legend><div class="apariencia-estilos">
+      <label><input type="radio" name="estilo-apariencia-principal" value="editorial" data-elegir-estilo checked><span class="muestra-letra editorial" aria-hidden="true">Aa</span><span>Editorial<small>Títulos serif</small></span></label>
+      <label><input type="radio" name="estilo-apariencia-principal" value="sobrio" data-elegir-estilo><span class="muestra-letra sobrio" aria-hidden="true">Aa</span><span>Sobrio<small>Títulos sans</small></span></label>
+      <label><input type="radio" name="estilo-apariencia-principal" value="tecnico" data-elegir-estilo><span class="muestra-letra tecnico" aria-hidden="true">Aa</span><span>Técnico<small>Títulos mono</small></span></label>
+    </div></fieldset>
+    <div class="apariencia-ajustes">
+      <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
+      <button type="button" data-papel-tramado aria-pressed="false">Trama de papel <span aria-hidden="true">✓</span></button>
+    </div>
+  </div>
+</details></div>
 <header class="cabecera" id="contenido" tabindex="-1">
   <p class="ceja">Cuaderno 01 / forma y evidencia / septiembre 2026</p>
   <h1>La forma también<br>explica.</h1>
@@ -1736,32 +1846,156 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   &lt;figcaption&gt;Ejemplo ilustrativo: 210 ms si las cuatro etapas ocurren en serie. Alturas proporcionales al tiempo, orden horizontal secuencial; anchura y profundidad constantes sin significado cuantitativo.&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre></div></details><section class="seccion" id="segunda-tanda"><h2>Historias que se pueden explorar.</h2><p>Más piezas para reportes, artículos y prototipos. Empieza por la apariencia o prueba un escenario y el visor.</p></section>
 <div class="pieza" id="apariencia-ejemplo">
-  <h3>Un papel para cada lectura</h3>
-  <fieldset class="apariencia">
-    <legend>Apariencia del documento</legend>
-    <div class="apariencia-opciones">
-      <label><input type="radio" name="papel-ejemplo" value="light" data-elegir-tema><span class="papel-muestra claro" aria-hidden="true"></span>Claro</label>
-      <label><input type="radio" name="papel-ejemplo" value="dark" data-elegir-tema><span class="papel-muestra calido" aria-hidden="true"></span>Cálido</label>
-      <label><input type="radio" name="papel-ejemplo" value="sea" data-elegir-tema><span class="papel-muestra sea" aria-hidden="true"></span>Sea</label>
-      <label><input type="radio" name="papel-ejemplo" value="system" data-elegir-tema checked>Sistema</label>
+  <h3>Una llave pequeña, distintas formas de leer</h3>
+  <p>Prueba los tres controles. Comparten las preferencias de esta nota.</p>
+  <div class="apariencia-variantes">
+    <div><p class="variante-nombre">01 · Círculo</p>
+<details class="apariencia-menu orbita" data-apariencia-menu>
+  <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-orbita"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span></summary>
+  <div class="apariencia-panel" id="panel-apariencia-orbita" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
+    <p class="apariencia-titulo">Tu forma de leer</p>
+    <fieldset class="apariencia"><legend>Color</legend><div class="apariencia-colores">
+      <label><input type="radio" name="color-apariencia-orbita" value="light" data-elegir-tema><span class="paleta-mini claro" aria-hidden="true"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>
+      <label><input type="radio" name="color-apariencia-orbita" value="dark" data-elegir-tema><span class="paleta-mini calido" aria-hidden="true"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>
+      <label><input type="radio" name="color-apariencia-orbita" value="sea" data-elegir-tema><span class="paleta-mini sea" aria-hidden="true"><i></i><b></b></span><span>Dark Sea<small>Azul profundo · acento menta</small></span></label>
+      <label><input type="radio" name="color-apariencia-orbita" value="system" data-elegir-tema checked><span class="paleta-mini sistema" aria-hidden="true"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>
+    </div></fieldset>
+    <fieldset class="apariencia"><legend>Estilo de títulos</legend><div class="apariencia-estilos">
+      <label><input type="radio" name="estilo-apariencia-orbita" value="editorial" data-elegir-estilo checked><span class="muestra-letra editorial" aria-hidden="true">Aa</span><span>Editorial<small>Títulos serif</small></span></label>
+      <label><input type="radio" name="estilo-apariencia-orbita" value="sobrio" data-elegir-estilo><span class="muestra-letra sobrio" aria-hidden="true">Aa</span><span>Sobrio<small>Títulos sans</small></span></label>
+      <label><input type="radio" name="estilo-apariencia-orbita" value="tecnico" data-elegir-estilo><span class="muestra-letra tecnico" aria-hidden="true">Aa</span><span>Técnico<small>Títulos mono</small></span></label>
+    </div></fieldset>
+    <div class="apariencia-ajustes">
+      <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
+      <button type="button" data-papel-tramado aria-pressed="false">Trama de papel <span aria-hidden="true">✓</span></button>
     </div>
-  </fieldset>
-  <button type="button" data-comodidad aria-pressed="false">Lectura cómoda</button>
-  <p>El color cambia el papel; la lectura cómoda amplía texto y datos secundarios.</p>
+  </div>
+</details>
+    </div>
+    <div><p class="variante-nombre">02 · Con etiqueta</p>
+<details class="apariencia-menu etiqueta" data-apariencia-menu>
+  <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-etiqueta"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span><span>Apariencia</span><svg class="icono-flecha" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></summary>
+  <div class="apariencia-panel" id="panel-apariencia-etiqueta" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
+    <p class="apariencia-titulo">Tu forma de leer</p>
+    <fieldset class="apariencia"><legend>Color</legend><div class="apariencia-colores">
+      <label><input type="radio" name="color-apariencia-etiqueta" value="light" data-elegir-tema><span class="paleta-mini claro" aria-hidden="true"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>
+      <label><input type="radio" name="color-apariencia-etiqueta" value="dark" data-elegir-tema><span class="paleta-mini calido" aria-hidden="true"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>
+      <label><input type="radio" name="color-apariencia-etiqueta" value="sea" data-elegir-tema><span class="paleta-mini sea" aria-hidden="true"><i></i><b></b></span><span>Dark Sea<small>Azul profundo · acento menta</small></span></label>
+      <label><input type="radio" name="color-apariencia-etiqueta" value="system" data-elegir-tema checked><span class="paleta-mini sistema" aria-hidden="true"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>
+    </div></fieldset>
+    <fieldset class="apariencia"><legend>Estilo de títulos</legend><div class="apariencia-estilos">
+      <label><input type="radio" name="estilo-apariencia-etiqueta" value="editorial" data-elegir-estilo checked><span class="muestra-letra editorial" aria-hidden="true">Aa</span><span>Editorial<small>Títulos serif</small></span></label>
+      <label><input type="radio" name="estilo-apariencia-etiqueta" value="sobrio" data-elegir-estilo><span class="muestra-letra sobrio" aria-hidden="true">Aa</span><span>Sobrio<small>Títulos sans</small></span></label>
+      <label><input type="radio" name="estilo-apariencia-etiqueta" value="tecnico" data-elegir-estilo><span class="muestra-letra tecnico" aria-hidden="true">Aa</span><span>Técnico<small>Títulos mono</small></span></label>
+    </div></fieldset>
+    <div class="apariencia-ajustes">
+      <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
+      <button type="button" data-papel-tramado aria-pressed="false">Trama de papel <span aria-hidden="true">✓</span></button>
+    </div>
+  </div>
+</details>
+    </div>
+    <div><p class="variante-nombre">03 · Cápsula</p>
+<details class="apariencia-menu capsula" data-apariencia-menu>
+  <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-capsula"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span><span class="apariencia-actual" data-tema-actual>Sistema</span><svg class="icono-flecha" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></summary>
+  <div class="apariencia-panel" id="panel-apariencia-capsula" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
+    <p class="apariencia-titulo">Tu forma de leer</p>
+    <fieldset class="apariencia"><legend>Color</legend><div class="apariencia-colores">
+      <label><input type="radio" name="color-apariencia-capsula" value="light" data-elegir-tema><span class="paleta-mini claro" aria-hidden="true"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>
+      <label><input type="radio" name="color-apariencia-capsula" value="dark" data-elegir-tema><span class="paleta-mini calido" aria-hidden="true"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>
+      <label><input type="radio" name="color-apariencia-capsula" value="sea" data-elegir-tema><span class="paleta-mini sea" aria-hidden="true"><i></i><b></b></span><span>Dark Sea<small>Azul profundo · acento menta</small></span></label>
+      <label><input type="radio" name="color-apariencia-capsula" value="system" data-elegir-tema checked><span class="paleta-mini sistema" aria-hidden="true"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>
+    </div></fieldset>
+    <fieldset class="apariencia"><legend>Estilo de títulos</legend><div class="apariencia-estilos">
+      <label><input type="radio" name="estilo-apariencia-capsula" value="editorial" data-elegir-estilo checked><span class="muestra-letra editorial" aria-hidden="true">Aa</span><span>Editorial<small>Títulos serif</small></span></label>
+      <label><input type="radio" name="estilo-apariencia-capsula" value="sobrio" data-elegir-estilo><span class="muestra-letra sobrio" aria-hidden="true">Aa</span><span>Sobrio<small>Títulos sans</small></span></label>
+      <label><input type="radio" name="estilo-apariencia-capsula" value="tecnico" data-elegir-estilo><span class="muestra-letra tecnico" aria-hidden="true">Aa</span><span>Técnico<small>Títulos mono</small></span></label>
+    </div></fieldset>
+    <div class="apariencia-ajustes">
+      <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
+      <button type="button" data-papel-tramado aria-pressed="false">Trama de papel <span aria-hidden="true">✓</span></button>
+    </div>
+  </div>
+</details>
+    </div>
+  </div>
+  <p>Color, tipografía, tamaño y trama se pueden combinar. Las tablas y figuras conservan sus anchos.</p>
 </div>
 <details class="receta-copia ancho"><summary>HTML y dependencias · Apariencia y lectura cómoda</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Apariencia y lectura cómoda</span><button type="button" data-copiar="receta-fuente-apariencia" aria-label="Copiar HTML de Apariencia y lectura cómoda">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Apariencia y lectura cómoda, desplazable"><code id="receta-fuente-apariencia">&lt;div class=&quot;pieza&quot; id=&quot;apariencia-ejemplo&quot;&gt;
-  &lt;h3&gt;Un papel para cada lectura&lt;/h3&gt;
-  &lt;fieldset class=&quot;apariencia&quot;&gt;
-    &lt;legend&gt;Apariencia del documento&lt;/legend&gt;
-    &lt;div class=&quot;apariencia-opciones&quot;&gt;
-      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;papel-ejemplo&quot; value=&quot;light&quot; data-elegir-tema&gt;&lt;span class=&quot;papel-muestra claro&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;Claro&lt;/label&gt;
-      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;papel-ejemplo&quot; value=&quot;dark&quot; data-elegir-tema&gt;&lt;span class=&quot;papel-muestra calido&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;Cálido&lt;/label&gt;
-      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;papel-ejemplo&quot; value=&quot;sea&quot; data-elegir-tema&gt;&lt;span class=&quot;papel-muestra sea&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;Sea&lt;/label&gt;
-      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;papel-ejemplo&quot; value=&quot;system&quot; data-elegir-tema checked&gt;Sistema&lt;/label&gt;
+  &lt;h3&gt;Una llave pequeña, distintas formas de leer&lt;/h3&gt;
+  &lt;p&gt;Prueba los tres controles. Comparten las preferencias de esta nota.&lt;/p&gt;
+  &lt;div class=&quot;apariencia-variantes&quot;&gt;
+    &lt;div&gt;&lt;p class=&quot;variante-nombre&quot;&gt;01 · Círculo&lt;/p&gt;
+&lt;details class=&quot;apariencia-menu orbita&quot; data-apariencia-menu&gt;
+  &lt;summary aria-label=&quot;Apariencia del documento&quot; aria-controls=&quot;panel-apariencia-orbita&quot;&gt;&lt;span class=&quot;apariencia-icono&quot;&gt;&lt;svg class=&quot;icono-sol&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;4&quot;/&gt;&lt;path d=&quot;M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5&quot;/&gt;&lt;/svg&gt;&lt;svg class=&quot;icono-luna&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/summary&gt;
+  &lt;div class=&quot;apariencia-panel&quot; id=&quot;panel-apariencia-orbita&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Opciones de apariencia, desplazables&quot;&gt;
+    &lt;p class=&quot;apariencia-titulo&quot;&gt;Tu forma de leer&lt;/p&gt;
+    &lt;fieldset class=&quot;apariencia&quot;&gt;&lt;legend&gt;Color&lt;/legend&gt;&lt;div class=&quot;apariencia-colores&quot;&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;color-apariencia-orbita&quot; value=&quot;light&quot; data-elegir-tema&gt;&lt;span class=&quot;paleta-mini claro&quot; aria-hidden=&quot;true&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;b&gt;&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Claro&lt;small&gt;Papel cálido · tinta oscura&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;color-apariencia-orbita&quot; value=&quot;dark&quot; data-elegir-tema&gt;&lt;span class=&quot;paleta-mini calido&quot; aria-hidden=&quot;true&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;b&gt;&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Cálido&lt;small&gt;Papel oscuro · acento cobre&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;color-apariencia-orbita&quot; value=&quot;sea&quot; data-elegir-tema&gt;&lt;span class=&quot;paleta-mini sea&quot; aria-hidden=&quot;true&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;b&gt;&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Dark Sea&lt;small&gt;Azul profundo · acento menta&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;color-apariencia-orbita&quot; value=&quot;system&quot; data-elegir-tema checked&gt;&lt;span class=&quot;paleta-mini sistema&quot; aria-hidden=&quot;true&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;b&gt;&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Sistema&lt;small&gt;Sigue la apariencia del dispositivo&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+    &lt;/div&gt;&lt;/fieldset&gt;
+    &lt;fieldset class=&quot;apariencia&quot;&gt;&lt;legend&gt;Estilo de títulos&lt;/legend&gt;&lt;div class=&quot;apariencia-estilos&quot;&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;estilo-apariencia-orbita&quot; value=&quot;editorial&quot; data-elegir-estilo checked&gt;&lt;span class=&quot;muestra-letra editorial&quot; aria-hidden=&quot;true&quot;&gt;Aa&lt;/span&gt;&lt;span&gt;Editorial&lt;small&gt;Títulos serif&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;estilo-apariencia-orbita&quot; value=&quot;sobrio&quot; data-elegir-estilo&gt;&lt;span class=&quot;muestra-letra sobrio&quot; aria-hidden=&quot;true&quot;&gt;Aa&lt;/span&gt;&lt;span&gt;Sobrio&lt;small&gt;Títulos sans&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;estilo-apariencia-orbita&quot; value=&quot;tecnico&quot; data-elegir-estilo&gt;&lt;span class=&quot;muestra-letra tecnico&quot; aria-hidden=&quot;true&quot;&gt;Aa&lt;/span&gt;&lt;span&gt;Técnico&lt;small&gt;Títulos mono&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+    &lt;/div&gt;&lt;/fieldset&gt;
+    &lt;div class=&quot;apariencia-ajustes&quot;&gt;
+      &lt;button type=&quot;button&quot; data-comodidad aria-pressed=&quot;false&quot;&gt;Lectura cómoda &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
+      &lt;button type=&quot;button&quot; data-papel-tramado aria-pressed=&quot;false&quot;&gt;Trama de papel &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
     &lt;/div&gt;
-  &lt;/fieldset&gt;
-  &lt;button type=&quot;button&quot; data-comodidad aria-pressed=&quot;false&quot;&gt;Lectura cómoda&lt;/button&gt;
-  &lt;p&gt;El color cambia el papel; la lectura cómoda amplía texto y datos secundarios.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/details&gt;
+    &lt;/div&gt;
+    &lt;div&gt;&lt;p class=&quot;variante-nombre&quot;&gt;02 · Con etiqueta&lt;/p&gt;
+&lt;details class=&quot;apariencia-menu etiqueta&quot; data-apariencia-menu&gt;
+  &lt;summary aria-label=&quot;Apariencia del documento&quot; aria-controls=&quot;panel-apariencia-etiqueta&quot;&gt;&lt;span class=&quot;apariencia-icono&quot;&gt;&lt;svg class=&quot;icono-sol&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;4&quot;/&gt;&lt;path d=&quot;M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5&quot;/&gt;&lt;/svg&gt;&lt;svg class=&quot;icono-luna&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;span&gt;Apariencia&lt;/span&gt;&lt;svg class=&quot;icono-flecha&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m8 10 4 4 4-4&quot;/&gt;&lt;/svg&gt;&lt;/summary&gt;
+  &lt;div class=&quot;apariencia-panel&quot; id=&quot;panel-apariencia-etiqueta&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Opciones de apariencia, desplazables&quot;&gt;
+    &lt;p class=&quot;apariencia-titulo&quot;&gt;Tu forma de leer&lt;/p&gt;
+    &lt;fieldset class=&quot;apariencia&quot;&gt;&lt;legend&gt;Color&lt;/legend&gt;&lt;div class=&quot;apariencia-colores&quot;&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;color-apariencia-etiqueta&quot; value=&quot;light&quot; data-elegir-tema&gt;&lt;span class=&quot;paleta-mini claro&quot; aria-hidden=&quot;true&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;b&gt;&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Claro&lt;small&gt;Papel cálido · tinta oscura&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;color-apariencia-etiqueta&quot; value=&quot;dark&quot; data-elegir-tema&gt;&lt;span class=&quot;paleta-mini calido&quot; aria-hidden=&quot;true&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;b&gt;&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Cálido&lt;small&gt;Papel oscuro · acento cobre&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;color-apariencia-etiqueta&quot; value=&quot;sea&quot; data-elegir-tema&gt;&lt;span class=&quot;paleta-mini sea&quot; aria-hidden=&quot;true&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;b&gt;&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Dark Sea&lt;small&gt;Azul profundo · acento menta&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;color-apariencia-etiqueta&quot; value=&quot;system&quot; data-elegir-tema checked&gt;&lt;span class=&quot;paleta-mini sistema&quot; aria-hidden=&quot;true&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;b&gt;&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Sistema&lt;small&gt;Sigue la apariencia del dispositivo&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+    &lt;/div&gt;&lt;/fieldset&gt;
+    &lt;fieldset class=&quot;apariencia&quot;&gt;&lt;legend&gt;Estilo de títulos&lt;/legend&gt;&lt;div class=&quot;apariencia-estilos&quot;&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;estilo-apariencia-etiqueta&quot; value=&quot;editorial&quot; data-elegir-estilo checked&gt;&lt;span class=&quot;muestra-letra editorial&quot; aria-hidden=&quot;true&quot;&gt;Aa&lt;/span&gt;&lt;span&gt;Editorial&lt;small&gt;Títulos serif&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;estilo-apariencia-etiqueta&quot; value=&quot;sobrio&quot; data-elegir-estilo&gt;&lt;span class=&quot;muestra-letra sobrio&quot; aria-hidden=&quot;true&quot;&gt;Aa&lt;/span&gt;&lt;span&gt;Sobrio&lt;small&gt;Títulos sans&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;estilo-apariencia-etiqueta&quot; value=&quot;tecnico&quot; data-elegir-estilo&gt;&lt;span class=&quot;muestra-letra tecnico&quot; aria-hidden=&quot;true&quot;&gt;Aa&lt;/span&gt;&lt;span&gt;Técnico&lt;small&gt;Títulos mono&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+    &lt;/div&gt;&lt;/fieldset&gt;
+    &lt;div class=&quot;apariencia-ajustes&quot;&gt;
+      &lt;button type=&quot;button&quot; data-comodidad aria-pressed=&quot;false&quot;&gt;Lectura cómoda &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
+      &lt;button type=&quot;button&quot; data-papel-tramado aria-pressed=&quot;false&quot;&gt;Trama de papel &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/details&gt;
+    &lt;/div&gt;
+    &lt;div&gt;&lt;p class=&quot;variante-nombre&quot;&gt;03 · Cápsula&lt;/p&gt;
+&lt;details class=&quot;apariencia-menu capsula&quot; data-apariencia-menu&gt;
+  &lt;summary aria-label=&quot;Apariencia del documento&quot; aria-controls=&quot;panel-apariencia-capsula&quot;&gt;&lt;span class=&quot;apariencia-icono&quot;&gt;&lt;svg class=&quot;icono-sol&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;4&quot;/&gt;&lt;path d=&quot;M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5&quot;/&gt;&lt;/svg&gt;&lt;svg class=&quot;icono-luna&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;span class=&quot;apariencia-actual&quot; data-tema-actual&gt;Sistema&lt;/span&gt;&lt;svg class=&quot;icono-flecha&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m8 10 4 4 4-4&quot;/&gt;&lt;/svg&gt;&lt;/summary&gt;
+  &lt;div class=&quot;apariencia-panel&quot; id=&quot;panel-apariencia-capsula&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Opciones de apariencia, desplazables&quot;&gt;
+    &lt;p class=&quot;apariencia-titulo&quot;&gt;Tu forma de leer&lt;/p&gt;
+    &lt;fieldset class=&quot;apariencia&quot;&gt;&lt;legend&gt;Color&lt;/legend&gt;&lt;div class=&quot;apariencia-colores&quot;&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;color-apariencia-capsula&quot; value=&quot;light&quot; data-elegir-tema&gt;&lt;span class=&quot;paleta-mini claro&quot; aria-hidden=&quot;true&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;b&gt;&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Claro&lt;small&gt;Papel cálido · tinta oscura&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;color-apariencia-capsula&quot; value=&quot;dark&quot; data-elegir-tema&gt;&lt;span class=&quot;paleta-mini calido&quot; aria-hidden=&quot;true&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;b&gt;&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Cálido&lt;small&gt;Papel oscuro · acento cobre&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;color-apariencia-capsula&quot; value=&quot;sea&quot; data-elegir-tema&gt;&lt;span class=&quot;paleta-mini sea&quot; aria-hidden=&quot;true&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;b&gt;&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Dark Sea&lt;small&gt;Azul profundo · acento menta&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;color-apariencia-capsula&quot; value=&quot;system&quot; data-elegir-tema checked&gt;&lt;span class=&quot;paleta-mini sistema&quot; aria-hidden=&quot;true&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;b&gt;&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Sistema&lt;small&gt;Sigue la apariencia del dispositivo&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+    &lt;/div&gt;&lt;/fieldset&gt;
+    &lt;fieldset class=&quot;apariencia&quot;&gt;&lt;legend&gt;Estilo de títulos&lt;/legend&gt;&lt;div class=&quot;apariencia-estilos&quot;&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;estilo-apariencia-capsula&quot; value=&quot;editorial&quot; data-elegir-estilo checked&gt;&lt;span class=&quot;muestra-letra editorial&quot; aria-hidden=&quot;true&quot;&gt;Aa&lt;/span&gt;&lt;span&gt;Editorial&lt;small&gt;Títulos serif&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;estilo-apariencia-capsula&quot; value=&quot;sobrio&quot; data-elegir-estilo&gt;&lt;span class=&quot;muestra-letra sobrio&quot; aria-hidden=&quot;true&quot;&gt;Aa&lt;/span&gt;&lt;span&gt;Sobrio&lt;small&gt;Títulos sans&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;estilo-apariencia-capsula&quot; value=&quot;tecnico&quot; data-elegir-estilo&gt;&lt;span class=&quot;muestra-letra tecnico&quot; aria-hidden=&quot;true&quot;&gt;Aa&lt;/span&gt;&lt;span&gt;Técnico&lt;small&gt;Títulos mono&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+    &lt;/div&gt;&lt;/fieldset&gt;
+    &lt;div class=&quot;apariencia-ajustes&quot;&gt;
+      &lt;button type=&quot;button&quot; data-comodidad aria-pressed=&quot;false&quot;&gt;Lectura cómoda &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
+      &lt;button type=&quot;button&quot; data-papel-tramado aria-pressed=&quot;false&quot;&gt;Trama de papel &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/details&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;p&gt;Color, tipografía, tamaño y trama se pueden combinar. Las tablas y figuras conservan sus anchos.&lt;/p&gt;
 &lt;/div&gt;</code></pre></div></details>
 <aside class="pieza ficha-decision" id="decision-ejemplo" aria-labelledby="decision-titulo">
   <p class="ceja">Decisión 02 · ejemplo</p>
@@ -2182,11 +2416,24 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   const root = document.documentElement;
   const selectors = document.querySelectorAll('[data-tema]');
   const themes = ['system','light','dark','sea'];
+  const scheme = matchMedia('(prefers-color-scheme: dark)');
+  const themeNames = {system:'Sistema',light:'Claro',dark:'Cálido',sea:'Dark Sea'};
+  function syncAppearance() {
+    const value=root.dataset.theme||'system';
+    const dark=value==='dark'||value==='sea'||(value==='system'&&scheme.matches);
+    document.querySelectorAll('[data-apariencia-menu]').forEach(menu=>{
+      menu.dataset.oscuro=String(dark);
+      menu.querySelector('summary').setAttribute('aria-label','Apariencia. '+themeNames[value]+(value==='system'?', '+(dark?'oscuro':'claro'):'')+'.');
+      menu.querySelectorAll('[data-tema-actual]').forEach(label=>label.textContent=themeNames[value]);
+    });
+  }
+  scheme.addEventListener('change',syncAppearance);
   function theme(value) {
     if (!themes.includes(value)) value = 'system';
     if (value === 'system') delete root.dataset.theme; else root.dataset.theme = value;
     selectors.forEach(selector => { selector.value = value; });
     document.querySelectorAll('[data-elegir-tema]').forEach(input => { input.checked = input.value === value; });
+    syncAppearance();
     try { localStorage.setItem('nota-tema',value); } catch {}
     document.dispatchEvent(new CustomEvent('nota:tema'));
   }
@@ -2209,6 +2456,60 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   document.addEventListener('click', e => {
     if (e.target.closest('[data-comodidad]')) comfort(!root.hasAttribute('data-lectura-comoda'));
   });
+
+  // Tipografía y trama son ejes optativos, independientes de la paleta.
+  function readingStyle(value) {
+    if(!['editorial','sobrio','tecnico'].includes(value))value='editorial';
+    if(value==='editorial')delete root.dataset.estilo;else root.dataset.estilo=value;
+    document.querySelectorAll('[data-elegir-estilo]').forEach(input=>input.checked=input.value===value);
+    try{localStorage.setItem('nota-estilo',value);}catch{}
+  }
+  function paper(enabled) {
+    root.toggleAttribute('data-trama',enabled);
+    document.querySelectorAll('[data-papel-tramado]').forEach(b=>b.setAttribute('aria-pressed',String(enabled)));
+    try{localStorage.setItem('nota-trama',String(enabled));}catch{}
+  }
+  let style='editorial',texture=false;
+  try{style=localStorage.getItem('nota-estilo')||style;texture=localStorage.getItem('nota-trama')==='true';}catch{}
+  if(document.querySelector('[data-elegir-estilo]'))readingStyle(style);
+  if(document.querySelector('[data-papel-tramado]'))paper(texture);
+  document.addEventListener('change',e=>{if(e.target.matches('[data-elegir-estilo]'))readingStyle(e.target.value);});
+  document.addEventListener('click',e=>{if(e.target.closest('[data-papel-tramado]'))paper(!root.hasAttribute('data-trama'));});
+
+  // Disclosure nativo; el panel se superpone sólo cuando JS puede mantenerlo en pantalla.
+  const menus=[...document.querySelectorAll('[data-apariencia-menu]')];
+  function place(menu) {
+    if(!menu.open)return;
+    const panel=menu.querySelector('.apariencia-panel'),trigger=menu.querySelector('summary');
+    const viewport=window.visualViewport,w=viewport?.width||innerWidth,h=viewport?.height||innerHeight;
+    const ox=viewport?.offsetLeft||0,oy=viewport?.offsetTop||0,gap=12;
+    panel.style.width=Math.max(1,Math.min(324,w-gap*2))+'px';
+    panel.style.maxHeight=Math.max(1,h-gap*2)+'px';
+    const r=trigger.getBoundingClientRect(),height=panel.getBoundingClientRect().height;
+    if(r.bottom<oy||r.top>oy+h){close(menu);return;}
+    const below=Math.max(0,oy+h-gap-r.bottom-8),above=Math.max(0,r.top-oy-gap-8);
+    const up=height>below&&above>below;
+    panel.style.maxHeight=Math.max(1,up?above:below)+'px';
+    const top=up?r.top-panel.getBoundingClientRect().height-8:r.bottom+8;
+    panel.style.top=top+'px';
+    panel.style.left=Math.max(ox+gap,Math.min(r.right-panel.getBoundingClientRect().width,ox+w-panel.getBoundingClientRect().width-gap))+'px';
+  }
+  function close(menu,returnFocus=false) {menu.open=false;if(returnFocus)menu.querySelector('summary').focus();}
+  menus.forEach(menu=>{
+    menu.dataset.menuListo='';
+    menu.querySelector('summary').addEventListener('click',e=>{
+      e.preventDefault();const opening=!menu.open;menus.forEach(other=>close(other));menu.open=opening;place(menu);
+    });
+    menu.addEventListener('toggle',()=>{if(menu.open){menus.forEach(other=>{if(other!==menu)close(other);});place(menu);}});
+    menu.addEventListener('change',()=>place(menu));
+  });
+  document.addEventListener('pointerdown',e=>menus.forEach(menu=>{if(menu.open&&!menu.contains(e.target))close(menu);}));
+  document.addEventListener('focusin',e=>menus.forEach(menu=>{if(menu.open&&!menu.contains(e.target))close(menu);}));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){const open=menus.find(menu=>menu.open);if(open){e.preventDefault();close(open,true);}}});
+  const placeMenus=()=>menus.forEach(place);
+  addEventListener('resize',placeMenus);addEventListener('scroll',placeMenus,{passive:true});
+  window.visualViewport?.addEventListener('resize',placeMenus);
+  window.visualViewport?.addEventListener('scroll',placeMenus,{passive:true});
 
   // El progreso pertenece al artículo, no al footer del documento envolvente.
   const article = document.querySelector('[data-lectura]');

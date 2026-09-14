@@ -4,11 +4,24 @@
   const root = document.documentElement;
   const selectors = document.querySelectorAll('[data-tema]');
   const themes = ['system','light','dark','sea'];
+  const scheme = matchMedia('(prefers-color-scheme: dark)');
+  const themeNames = {system:'Sistema',light:'Claro',dark:'Cálido',sea:'Dark Sea'};
+  function syncAppearance() {
+    const value=root.dataset.theme||'system';
+    const dark=value==='dark'||value==='sea'||(value==='system'&&scheme.matches);
+    document.querySelectorAll('[data-apariencia-menu]').forEach(menu=>{
+      menu.dataset.oscuro=String(dark);
+      menu.querySelector('summary').setAttribute('aria-label','Apariencia. '+themeNames[value]+(value==='system'?', '+(dark?'oscuro':'claro'):'')+'.');
+      menu.querySelectorAll('[data-tema-actual]').forEach(label=>label.textContent=themeNames[value]);
+    });
+  }
+  scheme.addEventListener('change',syncAppearance);
   function theme(value) {
     if (!themes.includes(value)) value = 'system';
     if (value === 'system') delete root.dataset.theme; else root.dataset.theme = value;
     selectors.forEach(selector => { selector.value = value; });
     document.querySelectorAll('[data-elegir-tema]').forEach(input => { input.checked = input.value === value; });
+    syncAppearance();
     try { localStorage.setItem('nota-tema',value); } catch {}
     document.dispatchEvent(new CustomEvent('nota:tema'));
   }
@@ -31,6 +44,60 @@
   document.addEventListener('click', e => {
     if (e.target.closest('[data-comodidad]')) comfort(!root.hasAttribute('data-lectura-comoda'));
   });
+
+  // Tipografía y trama son ejes optativos, independientes de la paleta.
+  function readingStyle(value) {
+    if(!['editorial','sobrio','tecnico'].includes(value))value='editorial';
+    if(value==='editorial')delete root.dataset.estilo;else root.dataset.estilo=value;
+    document.querySelectorAll('[data-elegir-estilo]').forEach(input=>input.checked=input.value===value);
+    try{localStorage.setItem('nota-estilo',value);}catch{}
+  }
+  function paper(enabled) {
+    root.toggleAttribute('data-trama',enabled);
+    document.querySelectorAll('[data-papel-tramado]').forEach(b=>b.setAttribute('aria-pressed',String(enabled)));
+    try{localStorage.setItem('nota-trama',String(enabled));}catch{}
+  }
+  let style='editorial',texture=false;
+  try{style=localStorage.getItem('nota-estilo')||style;texture=localStorage.getItem('nota-trama')==='true';}catch{}
+  if(document.querySelector('[data-elegir-estilo]'))readingStyle(style);
+  if(document.querySelector('[data-papel-tramado]'))paper(texture);
+  document.addEventListener('change',e=>{if(e.target.matches('[data-elegir-estilo]'))readingStyle(e.target.value);});
+  document.addEventListener('click',e=>{if(e.target.closest('[data-papel-tramado]'))paper(!root.hasAttribute('data-trama'));});
+
+  // Disclosure nativo; el panel se superpone sólo cuando JS puede mantenerlo en pantalla.
+  const menus=[...document.querySelectorAll('[data-apariencia-menu]')];
+  function place(menu) {
+    if(!menu.open)return;
+    const panel=menu.querySelector('.apariencia-panel'),trigger=menu.querySelector('summary');
+    const viewport=window.visualViewport,w=viewport?.width||innerWidth,h=viewport?.height||innerHeight;
+    const ox=viewport?.offsetLeft||0,oy=viewport?.offsetTop||0,gap=12;
+    panel.style.width=Math.max(1,Math.min(324,w-gap*2))+'px';
+    panel.style.maxHeight=Math.max(1,h-gap*2)+'px';
+    const r=trigger.getBoundingClientRect(),height=panel.getBoundingClientRect().height;
+    if(r.bottom<oy||r.top>oy+h){close(menu);return;}
+    const below=Math.max(0,oy+h-gap-r.bottom-8),above=Math.max(0,r.top-oy-gap-8);
+    const up=height>below&&above>below;
+    panel.style.maxHeight=Math.max(1,up?above:below)+'px';
+    const top=up?r.top-panel.getBoundingClientRect().height-8:r.bottom+8;
+    panel.style.top=top+'px';
+    panel.style.left=Math.max(ox+gap,Math.min(r.right-panel.getBoundingClientRect().width,ox+w-panel.getBoundingClientRect().width-gap))+'px';
+  }
+  function close(menu,returnFocus=false) {menu.open=false;if(returnFocus)menu.querySelector('summary').focus();}
+  menus.forEach(menu=>{
+    menu.dataset.menuListo='';
+    menu.querySelector('summary').addEventListener('click',e=>{
+      e.preventDefault();const opening=!menu.open;menus.forEach(other=>close(other));menu.open=opening;place(menu);
+    });
+    menu.addEventListener('toggle',()=>{if(menu.open){menus.forEach(other=>{if(other!==menu)close(other);});place(menu);}});
+    menu.addEventListener('change',()=>place(menu));
+  });
+  document.addEventListener('pointerdown',e=>menus.forEach(menu=>{if(menu.open&&!menu.contains(e.target))close(menu);}));
+  document.addEventListener('focusin',e=>menus.forEach(menu=>{if(menu.open&&!menu.contains(e.target))close(menu);}));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){const open=menus.find(menu=>menu.open);if(open){e.preventDefault();close(open,true);}}});
+  const placeMenus=()=>menus.forEach(place);
+  addEventListener('resize',placeMenus);addEventListener('scroll',placeMenus,{passive:true});
+  window.visualViewport?.addEventListener('resize',placeMenus);
+  window.visualViewport?.addEventListener('scroll',placeMenus,{passive:true});
 
   // El progreso pertenece al artículo, no al footer del documento envolvente.
   const article = document.querySelector('[data-lectura]');

@@ -957,33 +957,109 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
 <!-- nota:ejemplo apariencia -->
 ```html
 <div class="pieza" id="apariencia-ejemplo">
-  <h3>Un papel para cada lectura</h3>
-  <fieldset class="apariencia">
-    <legend>Apariencia del documento</legend>
-    <div class="apariencia-opciones">
-      <label><input type="radio" name="papel-ejemplo" value="light" data-elegir-tema><span class="papel-muestra claro" aria-hidden="true"></span>Claro</label>
-      <label><input type="radio" name="papel-ejemplo" value="dark" data-elegir-tema><span class="papel-muestra calido" aria-hidden="true"></span>Cálido</label>
-      <label><input type="radio" name="papel-ejemplo" value="sea" data-elegir-tema><span class="papel-muestra sea" aria-hidden="true"></span>Sea</label>
-      <label><input type="radio" name="papel-ejemplo" value="system" data-elegir-tema checked>Sistema</label>
+  <h3>Una llave pequeña, distintas formas de leer</h3>
+  <p>Prueba los tres controles. Comparten las preferencias de esta nota.</p>
+  <div class="apariencia-variantes">
+    <div><p class="variante-nombre">01 · Círculo</p>
+<details class="apariencia-menu orbita" data-apariencia-menu>
+  <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-orbita"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span></summary>
+  <div class="apariencia-panel" id="panel-apariencia-orbita" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
+    <p class="apariencia-titulo">Tu forma de leer</p>
+    <fieldset class="apariencia"><legend>Color</legend><div class="apariencia-colores">
+      <label><input type="radio" name="color-apariencia-orbita" value="light" data-elegir-tema><span class="paleta-mini claro" aria-hidden="true"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>
+      <label><input type="radio" name="color-apariencia-orbita" value="dark" data-elegir-tema><span class="paleta-mini calido" aria-hidden="true"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>
+      <label><input type="radio" name="color-apariencia-orbita" value="sea" data-elegir-tema><span class="paleta-mini sea" aria-hidden="true"><i></i><b></b></span><span>Dark Sea<small>Azul profundo · acento menta</small></span></label>
+      <label><input type="radio" name="color-apariencia-orbita" value="system" data-elegir-tema checked><span class="paleta-mini sistema" aria-hidden="true"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>
+    </div></fieldset>
+    <fieldset class="apariencia"><legend>Estilo de títulos</legend><div class="apariencia-estilos">
+      <label><input type="radio" name="estilo-apariencia-orbita" value="editorial" data-elegir-estilo checked><span class="muestra-letra editorial" aria-hidden="true">Aa</span><span>Editorial<small>Títulos serif</small></span></label>
+      <label><input type="radio" name="estilo-apariencia-orbita" value="sobrio" data-elegir-estilo><span class="muestra-letra sobrio" aria-hidden="true">Aa</span><span>Sobrio<small>Títulos sans</small></span></label>
+      <label><input type="radio" name="estilo-apariencia-orbita" value="tecnico" data-elegir-estilo><span class="muestra-letra tecnico" aria-hidden="true">Aa</span><span>Técnico<small>Títulos mono</small></span></label>
+    </div></fieldset>
+    <div class="apariencia-ajustes">
+      <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
+      <button type="button" data-papel-tramado aria-pressed="false">Trama de papel <span aria-hidden="true">✓</span></button>
     </div>
-  </fieldset>
-  <button type="button" data-comodidad aria-pressed="false">Lectura cómoda</button>
-  <p>El color cambia el papel; la lectura cómoda amplía texto y datos secundarios.</p>
+  </div>
+</details>
+    </div>
+    <div><p class="variante-nombre">02 · Con etiqueta</p>
+<details class="apariencia-menu etiqueta" data-apariencia-menu>
+  <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-etiqueta"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span><span>Apariencia</span><svg class="icono-flecha" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></summary>
+  <div class="apariencia-panel" id="panel-apariencia-etiqueta" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
+    <p class="apariencia-titulo">Tu forma de leer</p>
+    <fieldset class="apariencia"><legend>Color</legend><div class="apariencia-colores">
+      <label><input type="radio" name="color-apariencia-etiqueta" value="light" data-elegir-tema><span class="paleta-mini claro" aria-hidden="true"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>
+      <label><input type="radio" name="color-apariencia-etiqueta" value="dark" data-elegir-tema><span class="paleta-mini calido" aria-hidden="true"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>
+      <label><input type="radio" name="color-apariencia-etiqueta" value="sea" data-elegir-tema><span class="paleta-mini sea" aria-hidden="true"><i></i><b></b></span><span>Dark Sea<small>Azul profundo · acento menta</small></span></label>
+      <label><input type="radio" name="color-apariencia-etiqueta" value="system" data-elegir-tema checked><span class="paleta-mini sistema" aria-hidden="true"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>
+    </div></fieldset>
+    <fieldset class="apariencia"><legend>Estilo de títulos</legend><div class="apariencia-estilos">
+      <label><input type="radio" name="estilo-apariencia-etiqueta" value="editorial" data-elegir-estilo checked><span class="muestra-letra editorial" aria-hidden="true">Aa</span><span>Editorial<small>Títulos serif</small></span></label>
+      <label><input type="radio" name="estilo-apariencia-etiqueta" value="sobrio" data-elegir-estilo><span class="muestra-letra sobrio" aria-hidden="true">Aa</span><span>Sobrio<small>Títulos sans</small></span></label>
+      <label><input type="radio" name="estilo-apariencia-etiqueta" value="tecnico" data-elegir-estilo><span class="muestra-letra tecnico" aria-hidden="true">Aa</span><span>Técnico<small>Títulos mono</small></span></label>
+    </div></fieldset>
+    <div class="apariencia-ajustes">
+      <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
+      <button type="button" data-papel-tramado aria-pressed="false">Trama de papel <span aria-hidden="true">✓</span></button>
+    </div>
+  </div>
+</details>
+    </div>
+    <div><p class="variante-nombre">03 · Cápsula</p>
+<details class="apariencia-menu capsula" data-apariencia-menu>
+  <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-capsula"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span><span class="apariencia-actual" data-tema-actual>Sistema</span><svg class="icono-flecha" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></summary>
+  <div class="apariencia-panel" id="panel-apariencia-capsula" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
+    <p class="apariencia-titulo">Tu forma de leer</p>
+    <fieldset class="apariencia"><legend>Color</legend><div class="apariencia-colores">
+      <label><input type="radio" name="color-apariencia-capsula" value="light" data-elegir-tema><span class="paleta-mini claro" aria-hidden="true"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>
+      <label><input type="radio" name="color-apariencia-capsula" value="dark" data-elegir-tema><span class="paleta-mini calido" aria-hidden="true"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>
+      <label><input type="radio" name="color-apariencia-capsula" value="sea" data-elegir-tema><span class="paleta-mini sea" aria-hidden="true"><i></i><b></b></span><span>Dark Sea<small>Azul profundo · acento menta</small></span></label>
+      <label><input type="radio" name="color-apariencia-capsula" value="system" data-elegir-tema checked><span class="paleta-mini sistema" aria-hidden="true"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>
+    </div></fieldset>
+    <fieldset class="apariencia"><legend>Estilo de títulos</legend><div class="apariencia-estilos">
+      <label><input type="radio" name="estilo-apariencia-capsula" value="editorial" data-elegir-estilo checked><span class="muestra-letra editorial" aria-hidden="true">Aa</span><span>Editorial<small>Títulos serif</small></span></label>
+      <label><input type="radio" name="estilo-apariencia-capsula" value="sobrio" data-elegir-estilo><span class="muestra-letra sobrio" aria-hidden="true">Aa</span><span>Sobrio<small>Títulos sans</small></span></label>
+      <label><input type="radio" name="estilo-apariencia-capsula" value="tecnico" data-elegir-estilo><span class="muestra-letra tecnico" aria-hidden="true">Aa</span><span>Técnico<small>Títulos mono</small></span></label>
+    </div></fieldset>
+    <div class="apariencia-ajustes">
+      <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
+      <button type="button" data-papel-tramado aria-pressed="false">Trama de papel <span aria-hidden="true">✓</span></button>
+    </div>
+  </div>
+</details>
+    </div>
+  </div>
+  <p>Color, tipografía, tamaño y trama se pueden combinar. Las tablas y figuras conservan sus anchos.</p>
 </div>
 ```
 
-**Cuándo:** preferencias de lectura de una nota. Muestras, etiquetas y radios nativos ofrecen
-selección y teclado sin un desplegable. Usar una vez en la cabecera; este segundo grupo existe
-sólo como ejemplo del catálogo. Todos los grupos se sincronizan.
+**Cuándo:** un control discreto de lectura en la cabecera. El círculo sol/luna es la opción
+principal; la etiqueta hace explícita su función y la cápsula muestra la preferencia elegida.
+Copia un solo `details` en una nota. El ejemplo reúne tres variantes para compararlas.
+La cabecera del catálogo reutiliza exactamente el primer control con IDs/nombres propios.
 
-**Cuándo no / límite:** no es un selector de variantes del prototipo. `Sistema` sigue la
-preferencia del SO; la elección manual vive en `data-theme`. Cada grupo necesita un `name`
-propio. La lectura cómoda es optativa: cuerpo 18px/1,7, tablas 16px, rótulos secundarios 14px.
-Las gráficas base suben a 13px dentro del SVG para no invadir sus márgenes. Se conserva el
-`select[data-tema]` antiguo. Preferencias locales por origen, sin cookies ni red; si se bloquea
-localStorage, funcionan durante la sesión. Los documentos que no incluyen `data-comodidad`
-conservan su escala original aunque exista una preferencia guardada. Sin JS quedan controles
-sin comportamiento y el contenido sigue legible con el tema del sistema.
+**Interacción:** pulsar abre/cierra; Escape cierra y devuelve foco; pulsar fuera o salir con
+Tab cierra. Un solo panel abierto. Radios nativos para colores y estilo; no es un menú de
+comandos ni un interruptor binario. La selección permanece abierta para comparar ajustes.
+El icono representa el tema efectivo (sol en claro, luna en oscuro/Sea); Sistema sigue al SO.
+El panel se coloca dentro de la ventana y tiene scroll local si falta altura. Sin JavaScript
+`details` se abre en el flujo, pero los ajustes no cambian el documento.
+
+**Cuándo no / límite:** no cambia las variantes del prototipo ni emula preferencias del lector.
+`Editorial` conserva los títulos serif; `Sobrio` usa Geist; `Técnico` usa Geist Mono con una
+escala propia para que los títulos no desborden. Cuerpo y datos conservan su familia.
+La trama añade puntos tenues al papel; no imita un escaneo y se retira al imprimir.
+Lectura cómoda sigue siendo 18px/1,7; nunca se comprimen tablas o SVG para encajarlos.
+Cambiar tipografía puede cambiar saltos de línea y altura: revisa títulos reales largos.
+
+No añade fuentes ni sonidos. Los tres estilos funcionan en los tres colores. Paletas y
+controles anteriores siguen disponibles (`select[data-tema]`, radios `data-elegir-tema`).
+Estilo, trama y lectura cómoda sólo se restauran en documentos con sus respectivos controles;
+no alteran silenciosamente documentos antiguos. Preferencias en localStorage por origen;
+si está bloqueado funcionan durante la sesión. Cada copia necesita IDs y nombres de radio
+únicos; el panel incluye `tabindex="0"` y nombre para su desplazamiento local. Incluir
+`interacciones.js` una sola vez; no incluye API de inserción/destrucción dinámica del menú.
 
 ## Ficha de decisión
 
