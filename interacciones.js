@@ -90,7 +90,7 @@
     if (!soundEnabled) audio?.suspend().catch(()=>{});
   });
   document.addEventListener('click',e => {
-    if (!soundEnabled || !e.target.closest('button') || e.target.closest('[data-sonido]')) return;
+    if (!soundEnabled || !e.target.closest('button') || e.target.closest('[data-sonido],[data-canal-sonido]')) return;
     try {
       const Audio = window.AudioContext || window.webkitAudioContext;
       if (!Audio) return;

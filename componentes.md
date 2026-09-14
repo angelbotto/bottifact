@@ -671,3 +671,79 @@ son segmentos rectos, no observaciones adicionales.
 **Cuándo:** añadir tendencia a una tabla sin apartarse del registro. El texto de la celda nombra cada valor; el SVG es redundante y lleva `aria-hidden`.
 
 **Límite:** X equidistante; todas las filas deben describir los mismos períodos. Exige `data-min`/`data-max` comunes y rechaza dibujar puntos fuera de ellos. No autoescala por fila, no es una gráfica con ejes ni codifica tiempo irregular; para eso usa la serie temporal. El texto sigue disponible si el dibujo no se puede generar.
+
+## Sonido: un canal que empieza apagado
+
+Pega [sonido.js](sonido.js) una vez al final, además del CSS. No necesita `interacciones.js`.
+
+<!-- nota:ejemplo sonido -->
+```html
+<aside class="nota-sonido" data-canal-sonido aria-labelledby="sonido-titulo">
+  <h3 id="sonido-titulo">Una señal breve.</h3>
+  <p>Activa el sonido y prueba una señal. Cada acción también se describe en texto.</p>
+  <div><button type="button" data-audio-activar aria-pressed="false">Activar sonido</button></div>
+  <div>
+    <button type="button" data-audio="accion" data-mensaje="Ejemplo de acción seleccionada.">Acción</button>
+    <button type="button" data-audio="confirmacion" data-mensaje="Ejemplo de confirmación completada.">Confirmación</button>
+    <button type="button" data-audio="atencion" data-mensaje="Ejemplo: revisa el dato antes de continuar.">Atención</button>
+  </div>
+  <p role="status" aria-live="polite">Sonido apagado.</p>
+</aside>
+```
+
+**Cuándo:** confirmar una acción explícita y breve, en una experiencia donde la persona
+ha optado por escuchar. No añade sonido a gráficos, scroll, foco, lectura, cambios de tema
+ni entradas automáticas. El botón de activación no emite una señal. La preferencia no se
+recuerda al recargar y vuelve a apagado al ocultar la pestaña.
+
+**Límite:** Web Audio y gesto real de botón; eventos sintéticos no activan ni reproducen.
+Las señales usan seno, ganancia pico 0,025, ataque 3 ms y caída a 0,0001 en 55 ms;
+acción 660→440 Hz, confirmación 520→780 Hz, atención 440→360→440 Hz. Cada nota dura 60 ms,
+separada por 5 ms; total 125 o 190 ms. Son decisiones de Nota, no mediciones del sitio.
+Una nueva señal interrumpe la anterior. No son alarmas, sonificación de series ni audio de
+fondo, y la ganancia digital no garantiza un nivel acústico en el dispositivo.
+`NotaSonido.get(contenedor).disable()` apaga; `.destroy()` cierra el contexto y listeners.
+`NotaSonido.init(contenedor)` inicializa HTML nuevo. No hay método público de reproducción
+automática. `[data-sonido]` del sistema anterior conserva su comportamiento fuera del canal.
+
+## Escritura: trazo a trazo
+
+Pega [escritura.js](escritura.js) una vez al final. La frase de ejemplo está dibujada con
+paths originales; la animación recorre **su longitud**, no un rectángulo que descubre texto.
+
+<!-- nota:ejemplo escritura -->
+```html
+<figure class="ancho nota-escritura" data-escritura data-duracion="2400">
+  <div class="escritura-caja" tabindex="0" role="region" aria-label="Escritura a mano, desplazable">
+    <svg viewBox="0 0 420 110" aria-hidden="true">
+      <path data-trazo d="M55 51 C43 38 27 51 30 68 C34 83 52 69 54 53 L52 76 Q58 78 65 71"/>
+      <path data-trazo d="M96 77 L101 48 L99 69 Q111 41 120 52 L117 74 Q132 42 142 54 L140 74 Q142 81 151 73"/>
+      <path data-trazo d="M179 53 C167 40 154 55 157 69 C161 84 179 68 180 54 L178 77 Q185 78 193 71"/>
+      <path data-trazo d="M207 77 L212 49 L210 68 Q224 41 235 53 L232 74 Q236 81 246 72"/>
+      <path data-trazo d="M274 50 C259 44 249 59 254 72 C260 85 280 75 281 61 Q279 50 271 51 Q270 58 289 56"/>
+      <path data-trazo d="M28 91 Q123 84 214 91 T293 89"/>
+    </svg>
+  </div>
+  <div class="escritura-controles">
+    <button type="button" data-escribir>Repetir escritura</button>
+    <button type="button" data-finalizar>Mostrar trazo completo</button>
+  </div>
+  <p data-texto-escritura>«a mano»</p>
+  <p role="status" aria-live="polite">Trazo completo.</p>
+  <figcaption>Gesto ilustrativo original de Nota Tikin. 2400 ms repartidos por la longitud de cada trazo; la frase siempre permanece escrita debajo.</figcaption>
+</figure>
+```
+
+**Cuándo:** una anotación corta y secundaria que gana significado con el gesto del trazo.
+Empieza completa; la persona decide repetirla. Conserva `.manuscrita` para texto corriente
+que deba seleccionarse, traducirse o cambiar con datos.
+
+**Límite:** recibe paths SVG ordenados, no transforma automáticamente cualquier fuente
+en escritura cursiva. Cada path es un trazo continuo; separa levantamientos de lápiz en
+paths distintos. No uses contornos de glifos rellenos si esperas un trazo central de pluma.
+Al cambiar la frase, dibuja paths correspondientes y actualiza `data-texto-escritura`.
+El SVG es redundante (`aria-hidden`), el texto equivalente es permanente. Admite 100–10000 ms,
+no música sincronizada. Web Animations se cancela y completa al salir de pantalla, ocultar
+la pestaña o activar movimiento reducido; no hay RAF ni colas que se reanuden al volver.
+`NotaEscritura.get(elemento).play()`, `.finish()` y `.destroy()` controlan la instancia;
+`.play()` respeta movimiento reducido. `NotaEscritura.init(elemento)` admite inserción tardía.
