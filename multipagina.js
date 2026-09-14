@@ -11,10 +11,9 @@
 
    Dos cosas que resuelve y que no son evidentes:
 
-   1. El índice de interacciones.js recorre TODOS los enlaces del documento. Las secciones
-      de las páginas ocultas miden cero, así que las da por pasadas y tacha el temario
-      entero. Aquí se recalcula mirando sólo la página viva, con clases propias
-      (`aqui-visto`, `aqui-actual`) que en la hoja pintan por encima de las suyas.
+   1. El índice de interacciones.js delega aquí cuando ve .multipagina. Se recalcula
+      mirando sólo la página viva, con aria-current y las clases propias
+      `aqui-visto` y `aqui-actual`. Nunca se miden páginas ocultas.
    2. Al cambiar de página cambia la altura del documento; se avisa para que la regla de
       lectura y el índice se recalculen. */
 (function () {
@@ -34,7 +33,7 @@
   var actual = 0;
 
   function pintarNav() {
-    if (!nav) return;
+    if (!nav || !prev || !next) return;
     prev.disabled = actual === 0;
     next.disabled = actual === pags.length - 1;
     var a = prev.querySelector(".tit"), b = next.querySelector(".tit");
@@ -73,7 +72,8 @@
     var pg = pags[actual];
     if (!pg) return;
     Array.prototype.forEach.call(document.querySelectorAll(".indice li"), function (li) {
-      if (!pg.contains(li)) li.classList.remove("aqui-visto", "aqui-actual");
+      li.classList.remove("visto");
+      if (!pg.contains(li)) { li.classList.remove("aqui-visto", "aqui-actual"); li.querySelector('a')?.removeAttribute('aria-current'); }
     });
     var links = Array.prototype.slice.call(pg.querySelectorAll('.indice a[href^="#"]'));
     var act = -1;
@@ -86,15 +86,20 @@
       if (!li) return;
       li.classList.toggle("aqui-visto", i < act);
       li.classList.toggle("aqui-actual", i === act);
+      if(i===act)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');
     });
   }
   var pend = 0;
+  var motion = matchMedia('(prefers-reduced-motion: reduce)');
   function programar() {
+    if(motion.matches){if(pend)cancelAnimationFrame(pend);pend=0;indiceVivo();return;}
     if (!pend) pend = requestAnimationFrame(function () { pend = 0; indiceVivo(); });
   }
+  motion.addEventListener('change',programar);
   addEventListener("scroll", programar, { passive: true });
   addEventListener("resize", programar);
   document.addEventListener("nota:pagina", programar);
+  document.fonts?.ready.then(programar);
 
   var inicial = pags.findIndex(function (p) { return p.id === location.hash.slice(1); });
   if (inicial > 0) ir(inicial, false); else { pintarNav(); programar(); }

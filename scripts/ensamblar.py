@@ -116,4 +116,6 @@ body=body.replace('<li><a href="#guardado">Lo que vale guardar</a></li>','<li><a
 (ROOT/'plantilla.html').write_text(start('Nota Tikin — la forma también explica')+body+script('interacciones.js')+globe_scripts()+script('graficas.js')+script('tablas.js')+script('sonido.js')+script('escritura.js')+script('escena.js'))
 globe_body='<main class="hoja" id="inicio" lang="es">'+tools()+'''<header class="cabecera"><p class="ceja">Nota / geografía</p><h1>Planes, puntos<br>y lugares.</h1><p class="bajada">Un globo de puntos para explorar conexiones. Elige una ruta, gira la Tierra o pausa la vista.</p></header>'''+globe()+'''<footer class="pie">Ejemplo reutilizable · Three.js desde cdnjs · máscara geográfica incrustada · ambos temas y movimiento reducido.</footer></main>'''
 (ROOT/'globo.html').write_text(start('Nota Tikin — globo de rutas')+globe_body+script('interacciones.js')+globe_scripts())
-print('Generados plantilla.html y globo.html')
+from fixture_regresion import build
+build(start,script)
+print('Generados plantilla.html, globo.html y pruebas.html')

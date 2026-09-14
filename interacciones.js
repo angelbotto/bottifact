@@ -21,6 +21,7 @@
   const links = [...document.querySelectorAll('.indice a[href^="#"]')];
   const sections = links.map(a => document.getElementById(a.hash.slice(1)));
   const ruler = document.querySelector('.regla');
+  const motion = matchMedia('(prefers-reduced-motion: reduce)');
   function goToProgress(value) {
     if (!article) return;
     const distance=Math.max(0,article.getBoundingClientRect().height-innerHeight);
@@ -46,6 +47,8 @@
       const value = ruler.querySelector('.val');
       if (value) value.textContent = Math.round(progress * 100) + '%';
     }
+    // En multipágina el índice pertenece a multipagina.js; no medir páginas ocultas.
+    if (article.classList.contains('multipagina')) return;
     let active = -1;
     sections.forEach((section,index) => { if (section?.getBoundingClientRect().top <= 120) active = index; });
     if (progress === 1 && links.length) active = links.length - 1;
@@ -54,9 +57,11 @@
       if (index === active) a.setAttribute('aria-current','location'); else a.removeAttribute('aria-current');
     });
   }
-  const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
+  const schedule = () => { if (motion.matches) { if(frame)cancelAnimationFrame(frame);update(); } else if (!frame) frame = requestAnimationFrame(update); };
+  motion.addEventListener('change',schedule);
   addEventListener('scroll',schedule,{passive:true});
   addEventListener('resize',schedule);
+  document.addEventListener('nota:pagina',schedule);
   if (article && window.ResizeObserver) new ResizeObserver(schedule).observe(article);
   document.fonts?.ready.then(schedule);
   update();
@@ -64,14 +69,13 @@
   document.querySelectorAll('[data-copiar]').forEach(button => {
     button.addEventListener('click',async () => {
       const code = document.getElementById(button.dataset.copiar);
-      const status = button.closest('.codigo')?.querySelector('[role="status"]');
+      const status = button.closest('.codigo,.terminal')?.querySelector('[role="status"]');
       if (!code) return;
       try {
         if (!navigator.clipboard?.writeText) throw new Error('clipboard unavailable');
         await navigator.clipboard.writeText(code.textContent);
         if (status) status.textContent = 'Código copiado.';
-        button.textContent = 'Copiado';
-        setTimeout(() => { button.textContent = 'Copiar'; },1600);
+        // Conservar hijos, icono y nombre accesible; el estado comunica el resultado.
       } catch {
         const range = document.createRange(); range.selectNodeContents(code);
         const selection = getSelection(); selection.removeAllRanges(); selection.addRange(range);
@@ -106,6 +110,6 @@
   });
   // Imprimir el contenido íntegro de los extractos incluso en motores sin ::details-content.
   let closedForPrint = [];
-  addEventListener('beforeprint',() => { closedForPrint=[...document.querySelectorAll('.extracto details:not([open])')]; closedForPrint.forEach(e=>e.open=true); });
+  addEventListener('beforeprint',() => { closedForPrint=[...document.querySelectorAll('.extracto details:not([open]),[data-grafica] details:not([open]),[data-escena] details:not([open])')]; closedForPrint.forEach(e=>e.open=true); });
   addEventListener('afterprint',() => { closedForPrint.forEach(e=>e.open=false); closedForPrint=[]; });
 })();

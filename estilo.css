@@ -328,7 +328,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 .multipagina .indice .visto a { text-decoration: none; }
 .multipagina .indice a[aria-current='location'] { color: inherit; font-weight: 400; }
 .indice li.aqui-visto a { text-decoration: line-through; text-decoration-color: var(--linea-fuerte); }
-.indice li.aqui-actual a { color: var(--tinta); font-weight: 600; }
+.multipagina .indice li.aqui-actual a { color: var(--tinta); font-weight: 600; }
 
 /* ===========================================================
    10c — TERMINAL. Una salida de consola es evidencia: se lee como se vio.
@@ -536,4 +536,16 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   .nota-grafica summary,.nota-escena summary,.nota-sonido,.escena-controles,.escritura-controles { display: none !important; }
   .grafica-leyenda,.calor-leyenda { color: #231e1a; }
   .tabla-calor td { color: #231e1a; background: #f6f0eb !important; }
+  /* Corrección: ni las páginas ocultas ni los mínimos de pantalla pueden omitir datos. */
+  .barra,.paginacion,.terminal button,[data-sonido] { display: none !important; }
+  .hoja.multipagina > .pagina,.hoja.multipagina > .pagina.viva,
+  .hoja.por-seccion > .cabecera,.hoja.por-seccion > .seccion,.hoja.por-seccion > .pie { display: block !important; width: 100%; }
+  .hoja.multipagina > .pagina + .pagina { break-before: page; }
+  .pagina > *,.hoja.por-seccion .seccion > *,
+  .pagina > .ancho,.pagina > .amplio,.hoja.por-seccion .seccion > .ancho,.hoja.por-seccion .seccion > .amplio { width: 100%; margin: 0 0 18pt; }
+  .tabla-caja table,.tabla-caja.densa table,.tabla-caja .tabla-calor { min-width: 0; width: 100%; }
+  th,td { overflow-wrap: anywhere; }
+  .terminal { color: #231e1a; background: #f6f0eb; }
+  .terminal pre { white-space: pre-wrap; overflow: visible; overflow-wrap: anywhere; }
+  .terminal .tenue,.terminal .cab { color: #51473e; }
 }
