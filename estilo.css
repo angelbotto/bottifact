@@ -410,6 +410,19 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 .hoja.por-seccion > .cabecera > *,
 .hoja.por-seccion > .seccion > *,
 .hoja.por-seccion > .pie > *{grid-column:2; min-width:0}
+/* La línea divisoria mide lo que el texto, no el documento entero.
+   En el modo base `.seccion` vive en la columna central y su border-top mide 560 px.
+   Con `por-seccion` la sección pasa a ocupar todo el ancho para poder contener figuras,
+   y ese mismo borde se pintaba de un extremo al otro: cruzaba por debajo del índice fijo
+   y de la regla de lectura. Se pinta como fondo de 1px acotado a la medida del texto, que
+   no toca la rejilla ni los espacios entre filas. */
+.hoja.por-seccion > .seccion,
+.hoja.por-seccion > .pie{
+  border-top:0;
+  background-image:linear-gradient(var(--linea),var(--linea));
+  background-repeat:no-repeat;
+  background-size:min(var(--texto),calc(100% - 2 * var(--gutter))) 1px;
+  background-position:top center}
 .hoja.por-seccion .seccion > .ancho,
 .hoja.por-seccion .seccion > .figura{
   grid-column:1/-1; width:min(var(--ancho),calc(100% - 2 * var(--gutter))); margin-inline:auto}
