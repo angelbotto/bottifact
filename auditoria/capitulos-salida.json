@@ -1,0 +1,15 @@
+{
+  "pages": 7,
+  "activeAtPrint": "prototipo",
+  "required": {
+    "Confirmar sin repetir": true,
+    "Qué sabemos": true,
+    "Recorrer la propuesta": true,
+    "La siguiente prueba": true,
+    "Qué necesitamos observar": true,
+    "Qué no se puede concluir": true,
+    "Estados del ejemplo": true
+  },
+  "restored": true,
+  "reducedTransitions": true
+}

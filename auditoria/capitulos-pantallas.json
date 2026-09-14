@@ -1,0 +1,2702 @@
+[
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      }
+    ],
+    "center": null,
+    "documentWidth": 320,
+    "errors": [],
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "resumen",
+    "text": 280,
+    "theme": "light",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      },
+      {
+        "class": "pestanas-caja",
+        "content": 280,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Vistas de la evidencia, desplazables",
+        "width": 280
+      },
+      {
+        "class": "grafica-caja",
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "name": "Duración supuesta por operación · no medida. Gráfica desplazable; datos completos a continuación.",
+        "width": 280
+      },
+      {
+        "class": "tabla-caja",
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "name": "Supuestos de duración, desplazables",
+        "width": 280
+      }
+    ],
+    "center": 0,
+    "documentWidth": 320,
+    "errors": [],
+    "figure": 280,
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "evidencia",
+    "text": 280,
+    "theme": "light",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      },
+      {
+        "class": "visor-caja",
+        "content": 422,
+        "end": 144,
+        "focus": 0,
+        "inside": true,
+        "name": "Prototipo interactivo, desplazable horizontalmente",
+        "width": 278
+      }
+    ],
+    "center": 0,
+    "documentWidth": 320,
+    "errors": [],
+    "figure": 280,
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "prototipo",
+    "text": 280,
+    "theme": "light",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      }
+    ],
+    "center": null,
+    "documentWidth": 320,
+    "errors": [],
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "siguientes",
+    "text": 280,
+    "theme": "light",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      }
+    ],
+    "center": null,
+    "documentWidth": 320,
+    "errors": [],
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "resumen",
+    "text": 280,
+    "theme": "dark",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      },
+      {
+        "class": "pestanas-caja",
+        "content": 280,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Vistas de la evidencia, desplazables",
+        "width": 280
+      },
+      {
+        "class": "grafica-caja",
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "name": "Duración supuesta por operación · no medida. Gráfica desplazable; datos completos a continuación.",
+        "width": 280
+      },
+      {
+        "class": "tabla-caja",
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "name": "Supuestos de duración, desplazables",
+        "width": 280
+      }
+    ],
+    "center": 0,
+    "documentWidth": 320,
+    "errors": [],
+    "figure": 280,
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "evidencia",
+    "text": 280,
+    "theme": "dark",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      },
+      {
+        "class": "visor-caja",
+        "content": 422,
+        "end": 144,
+        "focus": 0,
+        "inside": true,
+        "name": "Prototipo interactivo, desplazable horizontalmente",
+        "width": 278
+      }
+    ],
+    "center": 0,
+    "documentWidth": 320,
+    "errors": [],
+    "figure": 280,
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "prototipo",
+    "text": 280,
+    "theme": "dark",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      }
+    ],
+    "center": null,
+    "documentWidth": 320,
+    "errors": [],
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "siguientes",
+    "text": 280,
+    "theme": "dark",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      }
+    ],
+    "center": null,
+    "documentWidth": 320,
+    "errors": [],
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "resumen",
+    "text": 280,
+    "theme": "sea",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      },
+      {
+        "class": "pestanas-caja",
+        "content": 280,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Vistas de la evidencia, desplazables",
+        "width": 280
+      },
+      {
+        "class": "grafica-caja",
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "name": "Duración supuesta por operación · no medida. Gráfica desplazable; datos completos a continuación.",
+        "width": 280
+      },
+      {
+        "class": "tabla-caja",
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "name": "Supuestos de duración, desplazables",
+        "width": 280
+      }
+    ],
+    "center": 0,
+    "documentWidth": 320,
+    "errors": [],
+    "figure": 280,
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "evidencia",
+    "text": 280,
+    "theme": "sea",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      },
+      {
+        "class": "visor-caja",
+        "content": 422,
+        "end": 144,
+        "focus": 0,
+        "inside": true,
+        "name": "Prototipo interactivo, desplazable horizontalmente",
+        "width": 278
+      }
+    ],
+    "center": 0,
+    "documentWidth": 320,
+    "errors": [],
+    "figure": 280,
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "prototipo",
+    "text": 280,
+    "theme": "sea",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      }
+    ],
+    "center": null,
+    "documentWidth": 320,
+    "errors": [],
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "siguientes",
+    "text": 280,
+    "theme": "sea",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      }
+    ],
+    "center": null,
+    "documentWidth": 320,
+    "errors": [],
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "resumen",
+    "text": 280,
+    "theme": "oliva",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      },
+      {
+        "class": "pestanas-caja",
+        "content": 280,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Vistas de la evidencia, desplazables",
+        "width": 280
+      },
+      {
+        "class": "grafica-caja",
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "name": "Duración supuesta por operación · no medida. Gráfica desplazable; datos completos a continuación.",
+        "width": 280
+      },
+      {
+        "class": "tabla-caja",
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "name": "Supuestos de duración, desplazables",
+        "width": 280
+      }
+    ],
+    "center": 0,
+    "documentWidth": 320,
+    "errors": [],
+    "figure": 280,
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "evidencia",
+    "text": 280,
+    "theme": "oliva",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      },
+      {
+        "class": "visor-caja",
+        "content": 422,
+        "end": 144,
+        "focus": 0,
+        "inside": true,
+        "name": "Prototipo interactivo, desplazable horizontalmente",
+        "width": 278
+      }
+    ],
+    "center": 0,
+    "documentWidth": 320,
+    "errors": [],
+    "figure": 280,
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "prototipo",
+    "text": 280,
+    "theme": "oliva",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      }
+    ],
+    "center": null,
+    "documentWidth": 320,
+    "errors": [],
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "siguientes",
+    "text": 280,
+    "theme": "oliva",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      }
+    ],
+    "center": null,
+    "documentWidth": 320,
+    "errors": [],
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "resumen",
+    "text": 280,
+    "theme": "arcilla",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      },
+      {
+        "class": "pestanas-caja",
+        "content": 280,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Vistas de la evidencia, desplazables",
+        "width": 280
+      },
+      {
+        "class": "grafica-caja",
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "name": "Duración supuesta por operación · no medida. Gráfica desplazable; datos completos a continuación.",
+        "width": 280
+      },
+      {
+        "class": "tabla-caja",
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "name": "Supuestos de duración, desplazables",
+        "width": 280
+      }
+    ],
+    "center": 0,
+    "documentWidth": 320,
+    "errors": [],
+    "figure": 280,
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "evidencia",
+    "text": 280,
+    "theme": "arcilla",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      },
+      {
+        "class": "visor-caja",
+        "content": 422,
+        "end": 144,
+        "focus": 0,
+        "inside": true,
+        "name": "Prototipo interactivo, desplazable horizontalmente",
+        "width": 278
+      }
+    ],
+    "center": 0,
+    "documentWidth": 320,
+    "errors": [],
+    "figure": 280,
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "prototipo",
+    "text": 280,
+    "theme": "arcilla",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      }
+    ],
+    "center": null,
+    "documentWidth": 320,
+    "errors": [],
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "siguientes",
+    "text": 280,
+    "theme": "arcilla",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      }
+    ],
+    "center": null,
+    "documentWidth": 320,
+    "errors": [],
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "resumen",
+    "text": 280,
+    "theme": "ciruela",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      },
+      {
+        "class": "pestanas-caja",
+        "content": 280,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Vistas de la evidencia, desplazables",
+        "width": 280
+      },
+      {
+        "class": "grafica-caja",
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "name": "Duración supuesta por operación · no medida. Gráfica desplazable; datos completos a continuación.",
+        "width": 280
+      },
+      {
+        "class": "tabla-caja",
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "name": "Supuestos de duración, desplazables",
+        "width": 280
+      }
+    ],
+    "center": 0,
+    "documentWidth": 320,
+    "errors": [],
+    "figure": 280,
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "evidencia",
+    "text": 280,
+    "theme": "ciruela",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      },
+      {
+        "class": "visor-caja",
+        "content": 422,
+        "end": 144,
+        "focus": 0,
+        "inside": true,
+        "name": "Prototipo interactivo, desplazable horizontalmente",
+        "width": 278
+      }
+    ],
+    "center": 0,
+    "documentWidth": 320,
+    "errors": [],
+    "figure": 280,
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "prototipo",
+    "text": 280,
+    "theme": "ciruela",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 139,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 320
+      }
+    ],
+    "center": null,
+    "documentWidth": 320,
+    "errors": [],
+    "menu": {
+      "end": 208,
+      "inside": true,
+      "scroll": 809
+    },
+    "page": "siguientes",
+    "text": 280,
+    "theme": "ciruela",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      }
+    ],
+    "center": null,
+    "documentWidth": 390,
+    "errors": [],
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "resumen",
+    "text": 350,
+    "theme": "light",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      },
+      {
+        "class": "pestanas-caja",
+        "content": 350,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Vistas de la evidencia, desplazables",
+        "width": 350
+      },
+      {
+        "class": "grafica-caja",
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "name": "Duración supuesta por operación · no medida. Gráfica desplazable; datos completos a continuación.",
+        "width": 350
+      },
+      {
+        "class": "tabla-caja",
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "name": "Supuestos de duración, desplazables",
+        "width": 350
+      }
+    ],
+    "center": 0,
+    "documentWidth": 390,
+    "errors": [],
+    "figure": 350,
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "evidencia",
+    "text": 350,
+    "theme": "light",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      },
+      {
+        "class": "visor-caja",
+        "content": 422,
+        "end": 74,
+        "focus": 0,
+        "inside": true,
+        "name": "Prototipo interactivo, desplazable horizontalmente",
+        "width": 348
+      }
+    ],
+    "center": 0,
+    "documentWidth": 390,
+    "errors": [],
+    "figure": 350,
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "prototipo",
+    "text": 350,
+    "theme": "light",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      }
+    ],
+    "center": null,
+    "documentWidth": 390,
+    "errors": [],
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "siguientes",
+    "text": 350,
+    "theme": "light",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      }
+    ],
+    "center": null,
+    "documentWidth": 390,
+    "errors": [],
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "resumen",
+    "text": 350,
+    "theme": "dark",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      },
+      {
+        "class": "pestanas-caja",
+        "content": 350,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Vistas de la evidencia, desplazables",
+        "width": 350
+      },
+      {
+        "class": "grafica-caja",
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "name": "Duración supuesta por operación · no medida. Gráfica desplazable; datos completos a continuación.",
+        "width": 350
+      },
+      {
+        "class": "tabla-caja",
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "name": "Supuestos de duración, desplazables",
+        "width": 350
+      }
+    ],
+    "center": 0,
+    "documentWidth": 390,
+    "errors": [],
+    "figure": 350,
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "evidencia",
+    "text": 350,
+    "theme": "dark",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      },
+      {
+        "class": "visor-caja",
+        "content": 422,
+        "end": 74,
+        "focus": 0,
+        "inside": true,
+        "name": "Prototipo interactivo, desplazable horizontalmente",
+        "width": 348
+      }
+    ],
+    "center": 0,
+    "documentWidth": 390,
+    "errors": [],
+    "figure": 350,
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "prototipo",
+    "text": 350,
+    "theme": "dark",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      }
+    ],
+    "center": null,
+    "documentWidth": 390,
+    "errors": [],
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "siguientes",
+    "text": 350,
+    "theme": "dark",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      }
+    ],
+    "center": null,
+    "documentWidth": 390,
+    "errors": [],
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "resumen",
+    "text": 350,
+    "theme": "sea",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      },
+      {
+        "class": "pestanas-caja",
+        "content": 350,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Vistas de la evidencia, desplazables",
+        "width": 350
+      },
+      {
+        "class": "grafica-caja",
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "name": "Duración supuesta por operación · no medida. Gráfica desplazable; datos completos a continuación.",
+        "width": 350
+      },
+      {
+        "class": "tabla-caja",
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "name": "Supuestos de duración, desplazables",
+        "width": 350
+      }
+    ],
+    "center": 0,
+    "documentWidth": 390,
+    "errors": [],
+    "figure": 350,
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "evidencia",
+    "text": 350,
+    "theme": "sea",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      },
+      {
+        "class": "visor-caja",
+        "content": 422,
+        "end": 74,
+        "focus": 0,
+        "inside": true,
+        "name": "Prototipo interactivo, desplazable horizontalmente",
+        "width": 348
+      }
+    ],
+    "center": 0,
+    "documentWidth": 390,
+    "errors": [],
+    "figure": 350,
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "prototipo",
+    "text": 350,
+    "theme": "sea",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      }
+    ],
+    "center": null,
+    "documentWidth": 390,
+    "errors": [],
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "siguientes",
+    "text": 350,
+    "theme": "sea",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      }
+    ],
+    "center": null,
+    "documentWidth": 390,
+    "errors": [],
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "resumen",
+    "text": 350,
+    "theme": "oliva",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      },
+      {
+        "class": "pestanas-caja",
+        "content": 350,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Vistas de la evidencia, desplazables",
+        "width": 350
+      },
+      {
+        "class": "grafica-caja",
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "name": "Duración supuesta por operación · no medida. Gráfica desplazable; datos completos a continuación.",
+        "width": 350
+      },
+      {
+        "class": "tabla-caja",
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "name": "Supuestos de duración, desplazables",
+        "width": 350
+      }
+    ],
+    "center": 0,
+    "documentWidth": 390,
+    "errors": [],
+    "figure": 350,
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "evidencia",
+    "text": 350,
+    "theme": "oliva",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      },
+      {
+        "class": "visor-caja",
+        "content": 422,
+        "end": 74,
+        "focus": 0,
+        "inside": true,
+        "name": "Prototipo interactivo, desplazable horizontalmente",
+        "width": 348
+      }
+    ],
+    "center": 0,
+    "documentWidth": 390,
+    "errors": [],
+    "figure": 350,
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "prototipo",
+    "text": 350,
+    "theme": "oliva",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      }
+    ],
+    "center": null,
+    "documentWidth": 390,
+    "errors": [],
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "siguientes",
+    "text": 350,
+    "theme": "oliva",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      }
+    ],
+    "center": null,
+    "documentWidth": 390,
+    "errors": [],
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "resumen",
+    "text": 350,
+    "theme": "arcilla",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      },
+      {
+        "class": "pestanas-caja",
+        "content": 350,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Vistas de la evidencia, desplazables",
+        "width": 350
+      },
+      {
+        "class": "grafica-caja",
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "name": "Duración supuesta por operación · no medida. Gráfica desplazable; datos completos a continuación.",
+        "width": 350
+      },
+      {
+        "class": "tabla-caja",
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "name": "Supuestos de duración, desplazables",
+        "width": 350
+      }
+    ],
+    "center": 0,
+    "documentWidth": 390,
+    "errors": [],
+    "figure": 350,
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "evidencia",
+    "text": 350,
+    "theme": "arcilla",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      },
+      {
+        "class": "visor-caja",
+        "content": 422,
+        "end": 74,
+        "focus": 0,
+        "inside": true,
+        "name": "Prototipo interactivo, desplazable horizontalmente",
+        "width": 348
+      }
+    ],
+    "center": 0,
+    "documentWidth": 390,
+    "errors": [],
+    "figure": 350,
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "prototipo",
+    "text": 350,
+    "theme": "arcilla",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      }
+    ],
+    "center": null,
+    "documentWidth": 390,
+    "errors": [],
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "siguientes",
+    "text": 350,
+    "theme": "arcilla",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      }
+    ],
+    "center": null,
+    "documentWidth": 390,
+    "errors": [],
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "resumen",
+    "text": 350,
+    "theme": "ciruela",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      },
+      {
+        "class": "pestanas-caja",
+        "content": 350,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Vistas de la evidencia, desplazables",
+        "width": 350
+      },
+      {
+        "class": "grafica-caja",
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "name": "Duración supuesta por operación · no medida. Gráfica desplazable; datos completos a continuación.",
+        "width": 350
+      },
+      {
+        "class": "tabla-caja",
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "name": "Supuestos de duración, desplazables",
+        "width": 350
+      }
+    ],
+    "center": 0,
+    "documentWidth": 390,
+    "errors": [],
+    "figure": 350,
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "evidencia",
+    "text": 350,
+    "theme": "ciruela",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      },
+      {
+        "class": "visor-caja",
+        "content": 422,
+        "end": 74,
+        "focus": 0,
+        "inside": true,
+        "name": "Prototipo interactivo, desplazable horizontalmente",
+        "width": 348
+      }
+    ],
+    "center": 0,
+    "documentWidth": 390,
+    "errors": [],
+    "figure": 350,
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "prototipo",
+    "text": 350,
+    "theme": "ciruela",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 459,
+        "end": 69,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 390
+      }
+    ],
+    "center": null,
+    "documentWidth": 390,
+    "errors": [],
+    "menu": {
+      "end": 24,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "siguientes",
+    "text": 350,
+    "theme": "ciruela",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      }
+    ],
+    "center": null,
+    "documentWidth": 1639,
+    "errors": [],
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "resumen",
+    "text": 560,
+    "theme": "light",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      },
+      {
+        "class": "pestanas-caja",
+        "content": 560,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Vistas de la evidencia, desplazables",
+        "width": 560
+      },
+      {
+        "class": "grafica-caja",
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Duración supuesta por operación · no medida. Gráfica desplazable; datos completos a continuación.",
+        "width": 992
+      },
+      {
+        "class": "tabla-caja",
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Supuestos de duración, desplazables",
+        "width": 992
+      }
+    ],
+    "center": 0,
+    "documentWidth": 1639,
+    "errors": [],
+    "figure": 992,
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "evidencia",
+    "text": 560,
+    "theme": "light",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      },
+      {
+        "class": "visor-caja",
+        "content": 1214,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Prototipo interactivo, desplazable horizontalmente",
+        "width": 1214
+      }
+    ],
+    "center": 0,
+    "documentWidth": 1639,
+    "errors": [],
+    "figure": 1216,
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "prototipo",
+    "text": 560,
+    "theme": "light",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      }
+    ],
+    "center": null,
+    "documentWidth": 1639,
+    "errors": [],
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "siguientes",
+    "text": 560,
+    "theme": "light",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      }
+    ],
+    "center": null,
+    "documentWidth": 1639,
+    "errors": [],
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "resumen",
+    "text": 560,
+    "theme": "dark",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      },
+      {
+        "class": "pestanas-caja",
+        "content": 560,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Vistas de la evidencia, desplazables",
+        "width": 560
+      },
+      {
+        "class": "grafica-caja",
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Duración supuesta por operación · no medida. Gráfica desplazable; datos completos a continuación.",
+        "width": 992
+      },
+      {
+        "class": "tabla-caja",
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Supuestos de duración, desplazables",
+        "width": 992
+      }
+    ],
+    "center": 0,
+    "documentWidth": 1639,
+    "errors": [],
+    "figure": 992,
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "evidencia",
+    "text": 560,
+    "theme": "dark",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      },
+      {
+        "class": "visor-caja",
+        "content": 1214,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Prototipo interactivo, desplazable horizontalmente",
+        "width": 1214
+      }
+    ],
+    "center": 0,
+    "documentWidth": 1639,
+    "errors": [],
+    "figure": 1216,
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "prototipo",
+    "text": 560,
+    "theme": "dark",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      }
+    ],
+    "center": null,
+    "documentWidth": 1639,
+    "errors": [],
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "siguientes",
+    "text": 560,
+    "theme": "dark",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      }
+    ],
+    "center": null,
+    "documentWidth": 1639,
+    "errors": [],
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "resumen",
+    "text": 560,
+    "theme": "sea",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      },
+      {
+        "class": "pestanas-caja",
+        "content": 560,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Vistas de la evidencia, desplazables",
+        "width": 560
+      },
+      {
+        "class": "grafica-caja",
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Duración supuesta por operación · no medida. Gráfica desplazable; datos completos a continuación.",
+        "width": 992
+      },
+      {
+        "class": "tabla-caja",
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Supuestos de duración, desplazables",
+        "width": 992
+      }
+    ],
+    "center": 0,
+    "documentWidth": 1639,
+    "errors": [],
+    "figure": 992,
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "evidencia",
+    "text": 560,
+    "theme": "sea",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      },
+      {
+        "class": "visor-caja",
+        "content": 1214,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Prototipo interactivo, desplazable horizontalmente",
+        "width": 1214
+      }
+    ],
+    "center": 0,
+    "documentWidth": 1639,
+    "errors": [],
+    "figure": 1216,
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "prototipo",
+    "text": 560,
+    "theme": "sea",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      }
+    ],
+    "center": null,
+    "documentWidth": 1639,
+    "errors": [],
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "siguientes",
+    "text": 560,
+    "theme": "sea",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      }
+    ],
+    "center": null,
+    "documentWidth": 1639,
+    "errors": [],
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "resumen",
+    "text": 560,
+    "theme": "oliva",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      },
+      {
+        "class": "pestanas-caja",
+        "content": 560,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Vistas de la evidencia, desplazables",
+        "width": 560
+      },
+      {
+        "class": "grafica-caja",
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Duración supuesta por operación · no medida. Gráfica desplazable; datos completos a continuación.",
+        "width": 992
+      },
+      {
+        "class": "tabla-caja",
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Supuestos de duración, desplazables",
+        "width": 992
+      }
+    ],
+    "center": 0,
+    "documentWidth": 1639,
+    "errors": [],
+    "figure": 992,
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "evidencia",
+    "text": 560,
+    "theme": "oliva",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      },
+      {
+        "class": "visor-caja",
+        "content": 1214,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Prototipo interactivo, desplazable horizontalmente",
+        "width": 1214
+      }
+    ],
+    "center": 0,
+    "documentWidth": 1639,
+    "errors": [],
+    "figure": 1216,
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "prototipo",
+    "text": 560,
+    "theme": "oliva",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      }
+    ],
+    "center": null,
+    "documentWidth": 1639,
+    "errors": [],
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "siguientes",
+    "text": 560,
+    "theme": "oliva",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      }
+    ],
+    "center": null,
+    "documentWidth": 1639,
+    "errors": [],
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "resumen",
+    "text": 560,
+    "theme": "arcilla",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      },
+      {
+        "class": "pestanas-caja",
+        "content": 560,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Vistas de la evidencia, desplazables",
+        "width": 560
+      },
+      {
+        "class": "grafica-caja",
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Duración supuesta por operación · no medida. Gráfica desplazable; datos completos a continuación.",
+        "width": 992
+      },
+      {
+        "class": "tabla-caja",
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Supuestos de duración, desplazables",
+        "width": 992
+      }
+    ],
+    "center": 0,
+    "documentWidth": 1639,
+    "errors": [],
+    "figure": 992,
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "evidencia",
+    "text": 560,
+    "theme": "arcilla",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      },
+      {
+        "class": "visor-caja",
+        "content": 1214,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Prototipo interactivo, desplazable horizontalmente",
+        "width": 1214
+      }
+    ],
+    "center": 0,
+    "documentWidth": 1639,
+    "errors": [],
+    "figure": 1216,
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "prototipo",
+    "text": 560,
+    "theme": "arcilla",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      }
+    ],
+    "center": null,
+    "documentWidth": 1639,
+    "errors": [],
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "siguientes",
+    "text": 560,
+    "theme": "arcilla",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      }
+    ],
+    "center": null,
+    "documentWidth": 1639,
+    "errors": [],
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "resumen",
+    "text": 560,
+    "theme": "ciruela",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      },
+      {
+        "class": "pestanas-caja",
+        "content": 560,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Vistas de la evidencia, desplazables",
+        "width": 560
+      },
+      {
+        "class": "grafica-caja",
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Duración supuesta por operación · no medida. Gráfica desplazable; datos completos a continuación.",
+        "width": 992
+      },
+      {
+        "class": "tabla-caja",
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Supuestos de duración, desplazables",
+        "width": 992
+      }
+    ],
+    "center": 0,
+    "documentWidth": 1639,
+    "errors": [],
+    "figure": 992,
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "evidencia",
+    "text": 560,
+    "theme": "ciruela",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      },
+      {
+        "class": "visor-caja",
+        "content": 1214,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Prototipo interactivo, desplazable horizontalmente",
+        "width": 1214
+      }
+    ],
+    "center": 0,
+    "documentWidth": 1639,
+    "errors": [],
+    "figure": 1216,
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "prototipo",
+    "text": 560,
+    "theme": "ciruela",
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "boxes": [
+      {
+        "class": "barra capitulos",
+        "content": 1639,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "name": "Capítulos del informe, desplazables",
+        "width": 1639
+      }
+    ],
+    "center": null,
+    "documentWidth": 1639,
+    "errors": [],
+    "menu": {
+      "end": 0,
+      "inside": true,
+      "scroll": 774
+    },
+    "page": "siguientes",
+    "text": 560,
+    "theme": "ciruela",
+    "viewport": [
+      1639,
+      939
+    ]
+  }
+]

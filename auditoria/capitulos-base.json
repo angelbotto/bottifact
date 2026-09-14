@@ -1,0 +1,222 @@
+[
+  {
+    "name": "Barra 320/light",
+    "ok": true,
+    "data": {
+      "barContent": 491,
+      "focus": 0,
+      "name": "Páginas y tema, desplazable",
+      "overlap": false,
+      "width": 320
+    }
+  },
+  {
+    "name": "Barra 320/dark",
+    "ok": true,
+    "data": {
+      "barContent": 491,
+      "focus": 0,
+      "name": "Páginas y tema, desplazable",
+      "overlap": false,
+      "width": 320
+    }
+  },
+  {
+    "name": "Barra 320/sea",
+    "ok": true,
+    "data": {
+      "barContent": 491,
+      "focus": 0,
+      "name": "Páginas y tema, desplazable",
+      "overlap": false,
+      "width": 320
+    }
+  },
+  {
+    "name": "Página y rejilla 320",
+    "ok": true,
+    "data": {
+      "center": 0,
+      "figure": 280,
+      "page": "p2",
+      "text": 280,
+      "visible": 1,
+      "width": 320
+    }
+  },
+  {
+    "name": "Barra 390/light",
+    "ok": true,
+    "data": {
+      "barContent": 491,
+      "focus": 0,
+      "name": "Páginas y tema, desplazable",
+      "overlap": false,
+      "width": 390
+    }
+  },
+  {
+    "name": "Barra 390/dark",
+    "ok": true,
+    "data": {
+      "barContent": 491,
+      "focus": 0,
+      "name": "Páginas y tema, desplazable",
+      "overlap": false,
+      "width": 390
+    }
+  },
+  {
+    "name": "Barra 390/sea",
+    "ok": true,
+    "data": {
+      "barContent": 491,
+      "focus": 0,
+      "name": "Páginas y tema, desplazable",
+      "overlap": false,
+      "width": 390
+    }
+  },
+  {
+    "name": "Página y rejilla 390",
+    "ok": true,
+    "data": {
+      "center": 0,
+      "figure": 350,
+      "page": "p2",
+      "text": 350,
+      "visible": 1,
+      "width": 390
+    }
+  },
+  {
+    "name": "Barra 1639/light",
+    "ok": true,
+    "data": {
+      "barContent": 1639,
+      "focus": 0,
+      "name": "Páginas y tema, desplazable",
+      "overlap": false,
+      "width": 1639
+    }
+  },
+  {
+    "name": "Barra 1639/dark",
+    "ok": true,
+    "data": {
+      "barContent": 1639,
+      "focus": 0,
+      "name": "Páginas y tema, desplazable",
+      "overlap": false,
+      "width": 1639
+    }
+  },
+  {
+    "name": "Barra 1639/sea",
+    "ok": true,
+    "data": {
+      "barContent": 1639,
+      "focus": 0,
+      "name": "Páginas y tema, desplazable",
+      "overlap": false,
+      "width": 1639
+    }
+  },
+  {
+    "name": "Página y rejilla 1639",
+    "ok": true,
+    "data": {
+      "center": 0,
+      "figure": 1216,
+      "page": "p2",
+      "text": 560,
+      "visible": 1,
+      "width": 1639
+    }
+  },
+  {
+    "name": "Índice sólo en la página viva",
+    "ok": true,
+    "data": [
+      {
+        "current": null,
+        "href": "#uno",
+        "visible": true,
+        "weight": "400"
+      },
+      {
+        "current": "location",
+        "href": "#dos",
+        "visible": true,
+        "weight": "600"
+      },
+      {
+        "current": null,
+        "href": "#tres",
+        "visible": false,
+        "weight": "400"
+      },
+      {
+        "current": null,
+        "href": "#cuatro",
+        "visible": false,
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "name": "Copia terminal: éxito y denegación controlados",
+    "ok": true,
+    "data": {
+      "fallback": "Código seleccionado. Usa ⌘C o Ctrl+C para copiar.",
+      "selected": true,
+      "success": {
+        "exact": true,
+        "icon": true,
+        "status": "Código copiado."
+      }
+    }
+  },
+  {
+    "name": "Enlace directo a capítulo",
+    "ok": true,
+    "data": "p2"
+  },
+  {
+    "name": "por-seccion 320",
+    "ok": true,
+    "data": [
+      280,
+      280,
+      280
+    ]
+  },
+  {
+    "name": "por-seccion 390",
+    "ok": true,
+    "data": [
+      350,
+      350,
+      350
+    ]
+  },
+  {
+    "name": "por-seccion 1639",
+    "ok": true,
+    "data": [
+      560,
+      992,
+      1216
+    ]
+  },
+  {
+    "name": "Índice de página única sigue marcando",
+    "ok": true,
+    "data": [
+      {
+        "href": "#evidencia",
+        "weight": "600"
+      }
+    ]
+  }
+]
