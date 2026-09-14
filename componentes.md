@@ -747,3 +747,94 @@ no música sincronizada. Web Animations se cancela y completa al salir de pantal
 la pestaña o activar movimiento reducido; no hay RAF ni colas que se reanuden al volver.
 `NotaEscritura.get(elemento).play()`, `.finish()` y `.destroy()` controlan la instancia;
 `.play()` respeta movimiento reducido. `NotaEscritura.init(elemento)` admite inserción tardía.
+
+## Three.js: dispersión XYZ
+
+Usa **una sola** inclusión externa para toda la nota (compartida con `NotaGlobo`):
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js"></script>
+```
+
+Después pega [escena.js](escena.js) completo dentro de `<script>`, una vez, al final.
+No necesita `globo.js`, `graficas.js`, controles externos ni importaciones adicionales.
+
+<!-- nota:ejemplo xyz -->
+```html
+<figure class="ancho" data-escena="xyz" id="xyz-ejemplo">
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Carga, latencia y memoria, tabla desplazable">
+    <table><caption>Tres variables de una misma prueba</caption>
+      <thead><tr><th scope="col">Prueba</th><th scope="col">Carga (req/s)</th><th scope="col">Latencia (ms)</th><th scope="col">Memoria (MB)</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">A</th><td data-valor="10">10</td><td data-valor="80">80</td><td data-valor="100">100</td></tr>
+        <tr><th scope="row">B</th><td data-valor="20">20</td><td data-valor="95">95</td><td data-valor="120">120</td></tr>
+        <tr><th scope="row">C</th><td data-valor="35">35</td><td data-valor="140">140</td><td data-valor="150">150</td></tr>
+        <tr><th scope="row">D</th><td data-valor="50">50</td><td data-valor="170">170</td><td data-valor="210">210</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Datos ilustrativos. Posiciones X/Y/Z normalizadas por sus dominios, con valores reales en los ejes. Selecciona un registro para identificarlo; proyección ortográfica, sin tamaños por perspectiva.</figcaption>
+</figure>
+```
+
+**Cuándo:** la tercera variable aporta una relación espacial que conviene explorar. Los
+controles giran la vista e identifican registros sin depender de arrastrar ni acertar a un punto.
+Si dos variables bastan, la dispersión SVG es más fácil de leer y comparar.
+
+**Límite:** 1–100 registros finitos; sin ausencias, regresión, jitter ni inferencias de
+correlación. Cada eje tiene dominio propio, por lo que distancia geométrica no equivale
+a una métrica entre variables de unidades distintas. Los puntos pueden ocluirse: elegir
+uno atenúa los demás y escribe su valor. El lienzo conserva 600 px de ancho mínimo con
+scroll local; las etiquetas de ejes deben ser breves, con las unidades en las cabeceras.
+La tabla siempre queda visible, con o sin WebGL. Ningún dato existe sólo en una textura.
+
+## Three.js: etapas con duración
+
+Misma instalación de `escena.js` y la misma inclusión única de Three.js.
+
+<!-- nota:ejemplo etapas -->
+```html
+<figure class="ancho" data-escena="etapas" id="etapas-ejemplo">
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Duración por etapa, tabla desplazable">
+    <table><caption>Dónde tarda una solicitud</caption>
+      <thead><tr><th scope="col">Etapa</th><th scope="col">Tiempo (ms)</th><th scope="col">Qué ocurre</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">1 · Recibir</th><td data-valor="20">20 ms</td><td>Leer la entrada.</td></tr>
+        <tr><th scope="row">2 · Validar</th><td data-valor="40">40 ms</td><td>Comprobar el contrato.</td></tr>
+        <tr><th scope="row">3 · Consultar</th><td data-valor="120">120 ms</td><td>Esperar la fuente de datos.</td></tr>
+        <tr><th scope="row">4 · Responder</th><td data-valor="30">30 ms</td><td>Entregar la salida.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Ejemplo ilustrativo: 210 ms si las cuatro etapas ocurren en serie. Alturas proporcionales al tiempo, orden horizontal secuencial; anchura y profundidad constantes sin significado cuantitativo.</figcaption>
+</figure>
+```
+
+**Cuándo:** explicar etapas de un proceso junto con su duración. Seleccionar una etapa
+conecta su caja con la explicación escrita. Empieza inmóvil; el giro continuo es optativo.
+Usa las barras SVG para comparar muchas categorías o cuando girar no aporte información.
+
+**Límite:** 1–12 etapas en orden, duraciones no negativas. La altura cero no se infla para
+hacer visible una caja. No representa dependencias, paralelismo, un waterfall acumulado
+ni una simulación física. No sumes duraciones como tiempo total si las etapas se solapan.
+Los números 1…N identifican las filas de la tabla. Rotar puede superponer etiquetas; los
+valores exactos permanecen en la tabla y «Vista inicial» devuelve la composición inicial.
+
+### Ciclo de vida de NotaEscena
+
+| Operación | Contrato |
+|---|---|
+| `NotaEscena.init(raíz)` | Inicializa `data-escena` una vez por figura; el segundo llamado devuelve la instancia existente. |
+| `new NotaEscena(figura)` | Alternativa manual; rechaza una segunda instancia para el mismo contenedor. |
+| `NotaEscena.get(figura)` | Recupera la instancia automática. |
+| `select(índice)` / `select(null)` | Selecciona una fila, índice desde cero, o muestra todas. Rechaza índices inexistentes. |
+| `rotate(dx,dy)` | Giro manual inmediato, en radianes. |
+| `pause()` / `resume()` | Desactiva/solicita giro. `resume()` respeta movimiento reducido, visibilidad y estado WebGL. |
+| `destroy()` | Cancela RAF, aborta listeners, desconecta observers, libera geometrías/materiales/texturas/renderer y devuelve la tabla original. Es idempotente. |
+
+El giro es 0,15 rad/s, limitado por tiempo, no por cuadros. Sólo hay RAF mientras la vista
+es visible, la pestaña está activa, se pidió girar y no hay movimiento reducido. Cambiar
+esa preferencia cancela el RAF pendiente; el giro manual sigue siendo instantáneo.
+Colores leídos de los tokens claros/oscuros/Sea; los rótulos son canvas locales. Al retirar
+la figura de una aplicación llama `destroy()`. Para reemplazar datos: destruye, modifica
+la tabla e inicializa otra vez. No hay `fetch`, modelos, mapas ni imágenes externas.
