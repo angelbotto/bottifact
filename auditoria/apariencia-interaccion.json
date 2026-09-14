@@ -1,0 +1,38 @@
+{
+  "failed": 0,
+  "passed": 8,
+  "results": [
+    {
+      "name": "Cuatro controles: cabecera y tres variantes copiables, IDs únicos",
+      "ok": true
+    },
+    {
+      "name": "Pulsar abre/cierra; sólo queda un panel abierto",
+      "ok": true
+    },
+    {
+      "name": "Escape cierra y devuelve foco al disparador",
+      "ok": true
+    },
+    {
+      "name": "Contratos focusin y pointerdown cierran sin robar foco",
+      "ok": true
+    },
+    {
+      "name": "Temas sincronizados, muestras nombradas e iconos efectivos",
+      "ok": true
+    },
+    {
+      "name": "Estilo de títulos cambia familia sin cambiar cuerpo ni datos",
+      "ok": true
+    },
+    {
+      "name": "Lectura cómoda y trama independientes, reversibles y sincronizadas",
+      "ok": true
+    },
+    {
+      "name": "Panel desplazable tiene nombre, foco y no es un menú de comandos",
+      "ok": true
+    }
+  ]
+}

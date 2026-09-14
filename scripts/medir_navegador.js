@@ -1,6 +1,6 @@
 (async () => {
   await document.fonts.ready;
-  const closed=[...document.querySelectorAll('details:not([open])')];closed.forEach(d=>d.open=true);
+  const closed=[...document.querySelectorAll('details:not([open]):not([data-apariencia-menu])')];closed.forEach(d=>d.open=true);
   const css=getComputedStyle(document.documentElement),canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');
   function rgb(color){ctx.clearRect(0,0,1,1);ctx.fillStyle=color;ctx.fillRect(0,0,1,1);return [...ctx.getImageData(0,0,1,1).data].slice(0,3);}
   const lum=color=>rgb(color).map(v=>v/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0);

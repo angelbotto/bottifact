@@ -1,0 +1,3350 @@
+[
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 15.661847512878582,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 13.530017823583568,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 8.584954270876933,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 7.416403729132339,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 320,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 618,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 711.96875,
+        "height": 619.96875,
+        "left": 12,
+        "right": 308,
+        "top": 92,
+        "width": 296,
+        "x": 12,
+        "y": 92
+      },
+      "scroll": 618
+    },
+    "style": "editorial",
+    "textureContrast": 7.345021866309903,
+    "theme": "light",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 256,
+      "right": 300,
+      "top": 40,
+      "width": 44,
+      "x": 256,
+      "y": 40
+    },
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 15.661847512878582,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 13.530017823583568,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 8.584954270876933,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 7.416403729132339,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 320,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 618,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 711.96875,
+        "height": 619.96875,
+        "left": 12,
+        "right": 308,
+        "top": 92,
+        "width": 296,
+        "x": 12,
+        "y": 92
+      },
+      "scroll": 618
+    },
+    "style": "editorial",
+    "textureContrast": 7.345021866309903,
+    "theme": "light",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 256,
+      "right": 300,
+      "top": 40,
+      "width": 44,
+      "x": 256,
+      "y": 40
+    },
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 15.661847512878582,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 13.530017823583568,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 8.584954270876933,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 7.416403729132339,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 320,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 618,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 711.96875,
+        "height": 619.96875,
+        "left": 12,
+        "right": 308,
+        "top": 92,
+        "width": 296,
+        "x": 12,
+        "y": 92
+      },
+      "scroll": 618
+    },
+    "style": "sobrio",
+    "textureContrast": 7.345021866309903,
+    "theme": "light",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 256,
+      "right": 300,
+      "top": 40,
+      "width": 44,
+      "x": 256,
+      "y": 40
+    },
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 15.661847512878582,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 13.530017823583568,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 8.584954270876933,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 7.416403729132339,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 320,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 618,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 711.96875,
+        "height": 619.96875,
+        "left": 12,
+        "right": 308,
+        "top": 92,
+        "width": 296,
+        "x": 12,
+        "y": 92
+      },
+      "scroll": 618
+    },
+    "style": "sobrio",
+    "textureContrast": 7.345021866309903,
+    "theme": "light",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 256,
+      "right": 300,
+      "top": 40,
+      "width": 44,
+      "x": 256,
+      "y": 40
+    },
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 15.661847512878582,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 13.530017823583568,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 8.584954270876933,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 7.416403729132339,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 320,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 618,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 711.96875,
+        "height": 619.96875,
+        "left": 12,
+        "right": 308,
+        "top": 92,
+        "width": 296,
+        "x": 12,
+        "y": 92
+      },
+      "scroll": 618
+    },
+    "style": "tecnico",
+    "textureContrast": 7.345021866309903,
+    "theme": "light",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 256,
+      "right": 300,
+      "top": 40,
+      "width": 44,
+      "x": 256,
+      "y": 40
+    },
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 15.661847512878582,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 13.530017823583568,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 8.584954270876933,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 7.416403729132339,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 320,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 618,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 711.96875,
+        "height": 619.96875,
+        "left": 12,
+        "right": 308,
+        "top": 92,
+        "width": 296,
+        "x": 12,
+        "y": 92
+      },
+      "scroll": 618
+    },
+    "style": "tecnico",
+    "textureContrast": 7.345021866309903,
+    "theme": "light",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 256,
+      "right": 300,
+      "top": 40,
+      "width": 44,
+      "x": 256,
+      "y": 40
+    },
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 14.353725534617888,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 11.892541402615047,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 10.907822353321167,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.037495431857247,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 320,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 618,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 711.96875,
+        "height": 619.96875,
+        "left": 12,
+        "right": 308,
+        "top": 92,
+        "width": 296,
+        "x": 12,
+        "y": 92
+      },
+      "scroll": 618
+    },
+    "style": "editorial",
+    "textureContrast": 9.62214244034368,
+    "theme": "dark",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 256,
+      "right": 300,
+      "top": 40,
+      "width": 44,
+      "x": 256,
+      "y": 40
+    },
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 14.353725534617888,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 11.892541402615047,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 10.907822353321167,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.037495431857247,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 320,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 618,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 711.96875,
+        "height": 619.96875,
+        "left": 12,
+        "right": 308,
+        "top": 92,
+        "width": 296,
+        "x": 12,
+        "y": 92
+      },
+      "scroll": 618
+    },
+    "style": "editorial",
+    "textureContrast": 9.62214244034368,
+    "theme": "dark",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 256,
+      "right": 300,
+      "top": 40,
+      "width": 44,
+      "x": 256,
+      "y": 40
+    },
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 14.353725534617888,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 11.892541402615047,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 10.907822353321167,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.037495431857247,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 320,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 618,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 711.96875,
+        "height": 619.96875,
+        "left": 12,
+        "right": 308,
+        "top": 92,
+        "width": 296,
+        "x": 12,
+        "y": 92
+      },
+      "scroll": 618
+    },
+    "style": "sobrio",
+    "textureContrast": 9.62214244034368,
+    "theme": "dark",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 256,
+      "right": 300,
+      "top": 40,
+      "width": 44,
+      "x": 256,
+      "y": 40
+    },
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 14.353725534617888,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 11.892541402615047,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 10.907822353321167,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.037495431857247,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 320,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 618,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 711.96875,
+        "height": 619.96875,
+        "left": 12,
+        "right": 308,
+        "top": 92,
+        "width": 296,
+        "x": 12,
+        "y": 92
+      },
+      "scroll": 618
+    },
+    "style": "sobrio",
+    "textureContrast": 9.62214244034368,
+    "theme": "dark",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 256,
+      "right": 300,
+      "top": 40,
+      "width": 44,
+      "x": 256,
+      "y": 40
+    },
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 14.353725534617888,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 11.892541402615047,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 10.907822353321167,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.037495431857247,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 320,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 618,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 711.96875,
+        "height": 619.96875,
+        "left": 12,
+        "right": 308,
+        "top": 92,
+        "width": 296,
+        "x": 12,
+        "y": 92
+      },
+      "scroll": 618
+    },
+    "style": "tecnico",
+    "textureContrast": 9.62214244034368,
+    "theme": "dark",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 256,
+      "right": 300,
+      "top": 40,
+      "width": 44,
+      "x": 256,
+      "y": 40
+    },
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 14.353725534617888,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 11.892541402615047,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 10.907822353321167,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.037495431857247,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 320,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 618,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 711.96875,
+        "height": 619.96875,
+        "left": 12,
+        "right": 308,
+        "top": 92,
+        "width": 296,
+        "x": 12,
+        "y": 92
+      },
+      "scroll": 618
+    },
+    "style": "tecnico",
+    "textureContrast": 9.62214244034368,
+    "theme": "dark",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 256,
+      "right": 300,
+      "top": 40,
+      "width": 44,
+      "x": 256,
+      "y": 40
+    },
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 12.373852633248461,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.891734057854446,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 7.098876147850732,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 5.6748853445615195,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 320,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 618,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 711.96875,
+        "height": 619.96875,
+        "left": 12,
+        "right": 308,
+        "top": 92,
+        "width": 296,
+        "x": 12,
+        "y": 92
+      },
+      "scroll": 618
+    },
+    "style": "editorial",
+    "textureContrast": 5.812935215749089,
+    "theme": "sea",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 256,
+      "right": 300,
+      "top": 40,
+      "width": 44,
+      "x": 256,
+      "y": 40
+    },
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 12.373852633248461,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.891734057854446,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 7.098876147850732,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 5.6748853445615195,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 320,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 618,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 711.96875,
+        "height": 619.96875,
+        "left": 12,
+        "right": 308,
+        "top": 92,
+        "width": 296,
+        "x": 12,
+        "y": 92
+      },
+      "scroll": 618
+    },
+    "style": "editorial",
+    "textureContrast": 5.812935215749089,
+    "theme": "sea",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 256,
+      "right": 300,
+      "top": 40,
+      "width": 44,
+      "x": 256,
+      "y": 40
+    },
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 12.373852633248461,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.891734057854446,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 7.098876147850732,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 5.6748853445615195,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 320,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 618,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 711.96875,
+        "height": 619.96875,
+        "left": 12,
+        "right": 308,
+        "top": 92,
+        "width": 296,
+        "x": 12,
+        "y": 92
+      },
+      "scroll": 618
+    },
+    "style": "sobrio",
+    "textureContrast": 5.812935215749089,
+    "theme": "sea",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 256,
+      "right": 300,
+      "top": 40,
+      "width": 44,
+      "x": 256,
+      "y": 40
+    },
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 12.373852633248461,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.891734057854446,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 7.098876147850732,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 5.6748853445615195,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 320,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 618,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 711.96875,
+        "height": 619.96875,
+        "left": 12,
+        "right": 308,
+        "top": 92,
+        "width": 296,
+        "x": 12,
+        "y": 92
+      },
+      "scroll": 618
+    },
+    "style": "sobrio",
+    "textureContrast": 5.812935215749089,
+    "theme": "sea",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 256,
+      "right": 300,
+      "top": 40,
+      "width": 44,
+      "x": 256,
+      "y": 40
+    },
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 12.373852633248461,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.891734057854446,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 7.098876147850732,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 5.6748853445615195,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 320,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 618,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 711.96875,
+        "height": 619.96875,
+        "left": 12,
+        "right": 308,
+        "top": 92,
+        "width": 296,
+        "x": 12,
+        "y": 92
+      },
+      "scroll": 618
+    },
+    "style": "tecnico",
+    "textureContrast": 5.812935215749089,
+    "theme": "sea",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 256,
+      "right": 300,
+      "top": 40,
+      "width": 44,
+      "x": 256,
+      "y": 40
+    },
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 12.373852633248461,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.891734057854446,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 7.098876147850732,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 5.6748853445615195,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 320,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 618,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 711.96875,
+        "height": 619.96875,
+        "left": 12,
+        "right": 308,
+        "top": 92,
+        "width": 296,
+        "x": 12,
+        "y": 92
+      },
+      "scroll": 618
+    },
+    "style": "tecnico",
+    "textureContrast": 5.812935215749089,
+    "theme": "sea",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 256,
+      "right": 300,
+      "top": 40,
+      "width": 44,
+      "x": 256,
+      "y": 40
+    },
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 15.661847512878582,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 13.530017823583568,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 8.584954270876933,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 7.416403729132339,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 390,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 46,
+        "right": 370,
+        "top": 92,
+        "width": 324,
+        "x": 46,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "editorial",
+    "textureContrast": 7.345021866309903,
+    "theme": "light",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 326,
+      "right": 370,
+      "top": 40,
+      "width": 44,
+      "x": 326,
+      "y": 40
+    },
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 15.661847512878582,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 13.530017823583568,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 8.584954270876933,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 7.416403729132339,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 390,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 46,
+        "right": 370,
+        "top": 92,
+        "width": 324,
+        "x": 46,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "editorial",
+    "textureContrast": 7.345021866309903,
+    "theme": "light",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 326,
+      "right": 370,
+      "top": 40,
+      "width": 44,
+      "x": 326,
+      "y": 40
+    },
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 15.661847512878582,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 13.530017823583568,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 8.584954270876933,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 7.416403729132339,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 390,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 46,
+        "right": 370,
+        "top": 92,
+        "width": 324,
+        "x": 46,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "sobrio",
+    "textureContrast": 7.345021866309903,
+    "theme": "light",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 326,
+      "right": 370,
+      "top": 40,
+      "width": 44,
+      "x": 326,
+      "y": 40
+    },
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 15.661847512878582,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 13.530017823583568,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 8.584954270876933,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 7.416403729132339,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 390,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 46,
+        "right": 370,
+        "top": 92,
+        "width": 324,
+        "x": 46,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "sobrio",
+    "textureContrast": 7.345021866309903,
+    "theme": "light",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 326,
+      "right": 370,
+      "top": 40,
+      "width": 44,
+      "x": 326,
+      "y": 40
+    },
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 15.661847512878582,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 13.530017823583568,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 8.584954270876933,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 7.416403729132339,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 390,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 46,
+        "right": 370,
+        "top": 92,
+        "width": 324,
+        "x": 46,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "tecnico",
+    "textureContrast": 7.345021866309903,
+    "theme": "light",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 326,
+      "right": 370,
+      "top": 40,
+      "width": 44,
+      "x": 326,
+      "y": 40
+    },
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 15.661847512878582,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 13.530017823583568,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 8.584954270876933,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 7.416403729132339,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 390,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 46,
+        "right": 370,
+        "top": 92,
+        "width": 324,
+        "x": 46,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "tecnico",
+    "textureContrast": 7.345021866309903,
+    "theme": "light",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 326,
+      "right": 370,
+      "top": 40,
+      "width": 44,
+      "x": 326,
+      "y": 40
+    },
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 14.353725534617888,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 11.892541402615047,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 10.907822353321167,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.037495431857247,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 390,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 46,
+        "right": 370,
+        "top": 92,
+        "width": 324,
+        "x": 46,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "editorial",
+    "textureContrast": 9.62214244034368,
+    "theme": "dark",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 326,
+      "right": 370,
+      "top": 40,
+      "width": 44,
+      "x": 326,
+      "y": 40
+    },
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 14.353725534617888,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 11.892541402615047,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 10.907822353321167,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.037495431857247,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 390,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 46,
+        "right": 370,
+        "top": 92,
+        "width": 324,
+        "x": 46,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "editorial",
+    "textureContrast": 9.62214244034368,
+    "theme": "dark",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 326,
+      "right": 370,
+      "top": 40,
+      "width": 44,
+      "x": 326,
+      "y": 40
+    },
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 14.353725534617888,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 11.892541402615047,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 10.907822353321167,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.037495431857247,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 390,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 46,
+        "right": 370,
+        "top": 92,
+        "width": 324,
+        "x": 46,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "sobrio",
+    "textureContrast": 9.62214244034368,
+    "theme": "dark",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 326,
+      "right": 370,
+      "top": 40,
+      "width": 44,
+      "x": 326,
+      "y": 40
+    },
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 14.353725534617888,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 11.892541402615047,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 10.907822353321167,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.037495431857247,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 390,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 46,
+        "right": 370,
+        "top": 92,
+        "width": 324,
+        "x": 46,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "sobrio",
+    "textureContrast": 9.62214244034368,
+    "theme": "dark",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 326,
+      "right": 370,
+      "top": 40,
+      "width": 44,
+      "x": 326,
+      "y": 40
+    },
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 14.353725534617888,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 11.892541402615047,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 10.907822353321167,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.037495431857247,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 390,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 46,
+        "right": 370,
+        "top": 92,
+        "width": 324,
+        "x": 46,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "tecnico",
+    "textureContrast": 9.62214244034368,
+    "theme": "dark",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 326,
+      "right": 370,
+      "top": 40,
+      "width": 44,
+      "x": 326,
+      "y": 40
+    },
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 14.353725534617888,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 11.892541402615047,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 10.907822353321167,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.037495431857247,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 390,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 46,
+        "right": 370,
+        "top": 92,
+        "width": 324,
+        "x": 46,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "tecnico",
+    "textureContrast": 9.62214244034368,
+    "theme": "dark",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 326,
+      "right": 370,
+      "top": 40,
+      "width": 44,
+      "x": 326,
+      "y": 40
+    },
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 12.373852633248461,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.891734057854446,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 7.098876147850732,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 5.6748853445615195,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 390,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 46,
+        "right": 370,
+        "top": 92,
+        "width": 324,
+        "x": 46,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "editorial",
+    "textureContrast": 5.812935215749089,
+    "theme": "sea",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 326,
+      "right": 370,
+      "top": 40,
+      "width": 44,
+      "x": 326,
+      "y": 40
+    },
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 12.373852633248461,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.891734057854446,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 7.098876147850732,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 5.6748853445615195,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 390,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 46,
+        "right": 370,
+        "top": 92,
+        "width": 324,
+        "x": 46,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "editorial",
+    "textureContrast": 5.812935215749089,
+    "theme": "sea",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 326,
+      "right": 370,
+      "top": 40,
+      "width": 44,
+      "x": 326,
+      "y": 40
+    },
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 12.373852633248461,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.891734057854446,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 7.098876147850732,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 5.6748853445615195,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 390,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 46,
+        "right": 370,
+        "top": 92,
+        "width": 324,
+        "x": 46,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "sobrio",
+    "textureContrast": 5.812935215749089,
+    "theme": "sea",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 326,
+      "right": 370,
+      "top": 40,
+      "width": 44,
+      "x": 326,
+      "y": 40
+    },
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 12.373852633248461,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.891734057854446,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 7.098876147850732,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 5.6748853445615195,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 390,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 46,
+        "right": 370,
+        "top": 92,
+        "width": 324,
+        "x": 46,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "sobrio",
+    "textureContrast": 5.812935215749089,
+    "theme": "sea",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 326,
+      "right": 370,
+      "top": 40,
+      "width": 44,
+      "x": 326,
+      "y": 40
+    },
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 12.373852633248461,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.891734057854446,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 7.098876147850732,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 5.6748853445615195,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 390,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 46,
+        "right": 370,
+        "top": 92,
+        "width": 324,
+        "x": 46,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "tecnico",
+    "textureContrast": 5.812935215749089,
+    "theme": "sea",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 326,
+      "right": 370,
+      "top": 40,
+      "width": 44,
+      "x": 326,
+      "y": 40
+    },
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 12.373852633248461,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.891734057854446,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 7.098876147850732,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 5.6748853445615195,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 390,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 46,
+        "right": 370,
+        "top": 92,
+        "width": 324,
+        "x": 46,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "tecnico",
+    "textureContrast": 5.812935215749089,
+    "theme": "sea",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 326,
+      "right": 370,
+      "top": 40,
+      "width": 44,
+      "x": 326,
+      "y": 40
+    },
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 15.661847512878582,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 13.530017823583568,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 8.584954270876933,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 7.416403729132339,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 1639,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 775.5,
+        "right": 1099.5,
+        "top": 92,
+        "width": 324,
+        "x": 775.5,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "editorial",
+    "textureContrast": 7.345021866309903,
+    "theme": "light",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 1055.5,
+      "right": 1099.5,
+      "top": 40,
+      "width": 44,
+      "x": 1055.5,
+      "y": 40
+    },
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 15.661847512878582,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 13.530017823583568,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 8.584954270876933,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 7.416403729132339,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 1639,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 775.5,
+        "right": 1099.5,
+        "top": 92,
+        "width": 324,
+        "x": 775.5,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "editorial",
+    "textureContrast": 7.345021866309903,
+    "theme": "light",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 1055.5,
+      "right": 1099.5,
+      "top": 40,
+      "width": 44,
+      "x": 1055.5,
+      "y": 40
+    },
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 15.661847512878582,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 13.530017823583568,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 8.584954270876933,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 7.416403729132339,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 1639,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 775.5,
+        "right": 1099.5,
+        "top": 92,
+        "width": 324,
+        "x": 775.5,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "sobrio",
+    "textureContrast": 7.345021866309903,
+    "theme": "light",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 1055.5,
+      "right": 1099.5,
+      "top": 40,
+      "width": 44,
+      "x": 1055.5,
+      "y": 40
+    },
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 15.661847512878582,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 13.530017823583568,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 8.584954270876933,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 7.416403729132339,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 1639,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 775.5,
+        "right": 1099.5,
+        "top": 92,
+        "width": 324,
+        "x": 775.5,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "sobrio",
+    "textureContrast": 7.345021866309903,
+    "theme": "light",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 1055.5,
+      "right": 1099.5,
+      "top": 40,
+      "width": 44,
+      "x": 1055.5,
+      "y": 40
+    },
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 15.661847512878582,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 13.530017823583568,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 8.584954270876933,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 7.416403729132339,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 1639,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 775.5,
+        "right": 1099.5,
+        "top": 92,
+        "width": 324,
+        "x": 775.5,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "tecnico",
+    "textureContrast": 7.345021866309903,
+    "theme": "light",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 1055.5,
+      "right": 1099.5,
+      "top": 40,
+      "width": 44,
+      "x": 1055.5,
+      "y": 40
+    },
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 15.661847512878582,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 13.530017823583568,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 8.584954270876933,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 7.416403729132339,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 1639,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 775.5,
+        "right": 1099.5,
+        "top": 92,
+        "width": 324,
+        "x": 775.5,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "tecnico",
+    "textureContrast": 7.345021866309903,
+    "theme": "light",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 1055.5,
+      "right": 1099.5,
+      "top": 40,
+      "width": 44,
+      "x": 1055.5,
+      "y": 40
+    },
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 14.353725534617888,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 11.892541402615047,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 10.907822353321167,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.037495431857247,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 1639,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 775.5,
+        "right": 1099.5,
+        "top": 92,
+        "width": 324,
+        "x": 775.5,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "editorial",
+    "textureContrast": 9.62214244034368,
+    "theme": "dark",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 1055.5,
+      "right": 1099.5,
+      "top": 40,
+      "width": 44,
+      "x": 1055.5,
+      "y": 40
+    },
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 14.353725534617888,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 11.892541402615047,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 10.907822353321167,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.037495431857247,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 1639,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 775.5,
+        "right": 1099.5,
+        "top": 92,
+        "width": 324,
+        "x": 775.5,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "editorial",
+    "textureContrast": 9.62214244034368,
+    "theme": "dark",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 1055.5,
+      "right": 1099.5,
+      "top": 40,
+      "width": 44,
+      "x": 1055.5,
+      "y": 40
+    },
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 14.353725534617888,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 11.892541402615047,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 10.907822353321167,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.037495431857247,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 1639,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 775.5,
+        "right": 1099.5,
+        "top": 92,
+        "width": 324,
+        "x": 775.5,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "sobrio",
+    "textureContrast": 9.62214244034368,
+    "theme": "dark",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 1055.5,
+      "right": 1099.5,
+      "top": 40,
+      "width": 44,
+      "x": 1055.5,
+      "y": 40
+    },
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 14.353725534617888,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 11.892541402615047,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 10.907822353321167,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.037495431857247,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 1639,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 775.5,
+        "right": 1099.5,
+        "top": 92,
+        "width": 324,
+        "x": 775.5,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "sobrio",
+    "textureContrast": 9.62214244034368,
+    "theme": "dark",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 1055.5,
+      "right": 1099.5,
+      "top": 40,
+      "width": 44,
+      "x": 1055.5,
+      "y": 40
+    },
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 14.353725534617888,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 11.892541402615047,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 10.907822353321167,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.037495431857247,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 1639,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 775.5,
+        "right": 1099.5,
+        "top": 92,
+        "width": 324,
+        "x": 775.5,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "tecnico",
+    "textureContrast": 9.62214244034368,
+    "theme": "dark",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 1055.5,
+      "right": 1099.5,
+      "top": 40,
+      "width": 44,
+      "x": 1055.5,
+      "y": 40
+    },
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 14.353725534617888,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 11.892541402615047,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 10.907822353321167,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.037495431857247,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 1639,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 775.5,
+        "right": 1099.5,
+        "top": 92,
+        "width": 324,
+        "x": 775.5,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "tecnico",
+    "textureContrast": 9.62214244034368,
+    "theme": "dark",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 1055.5,
+      "right": 1099.5,
+      "top": 40,
+      "width": 44,
+      "x": 1055.5,
+      "y": 40
+    },
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 12.373852633248461,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.891734057854446,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 7.098876147850732,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 5.6748853445615195,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 1639,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 775.5,
+        "right": 1099.5,
+        "top": 92,
+        "width": 324,
+        "x": 775.5,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "editorial",
+    "textureContrast": 5.812935215749089,
+    "theme": "sea",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 1055.5,
+      "right": 1099.5,
+      "top": 40,
+      "width": 44,
+      "x": 1055.5,
+      "y": 40
+    },
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 12.373852633248461,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.891734057854446,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 7.098876147850732,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 5.6748853445615195,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 1639,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 775.5,
+        "right": 1099.5,
+        "top": 92,
+        "width": 324,
+        "x": 775.5,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "editorial",
+    "textureContrast": 5.812935215749089,
+    "theme": "sea",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 1055.5,
+      "right": 1099.5,
+      "top": 40,
+      "width": 44,
+      "x": 1055.5,
+      "y": 40
+    },
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 12.373852633248461,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.891734057854446,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 7.098876147850732,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 5.6748853445615195,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 1639,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 775.5,
+        "right": 1099.5,
+        "top": 92,
+        "width": 324,
+        "x": 775.5,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "sobrio",
+    "textureContrast": 5.812935215749089,
+    "theme": "sea",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 1055.5,
+      "right": 1099.5,
+      "top": 40,
+      "width": 44,
+      "x": 1055.5,
+      "y": 40
+    },
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 12.373852633248461,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.891734057854446,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 7.098876147850732,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 5.6748853445615195,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 1639,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 775.5,
+        "right": 1099.5,
+        "top": 92,
+        "width": 324,
+        "x": 775.5,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "sobrio",
+    "textureContrast": 5.812935215749089,
+    "theme": "sea",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 1055.5,
+      "right": 1099.5,
+      "top": 40,
+      "width": 44,
+      "x": 1055.5,
+      "y": 40
+    },
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 12.373852633248461,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.891734057854446,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 7.098876147850732,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 5.6748853445615195,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 1639,
+    "extras": false,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 775.5,
+        "right": 1099.5,
+        "top": 92,
+        "width": 324,
+        "x": 775.5,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "tecnico",
+    "textureContrast": 5.812935215749089,
+    "theme": "sea",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 1055.5,
+      "right": 1099.5,
+      "top": 40,
+      "width": 44,
+      "x": 1055.5,
+      "y": 40
+    },
+    "viewport": [
+      1639,
+      939
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "background": "--apariencia-papel",
+        "ratio": 12.373852633248461,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 9.891734057854446,
+        "token": "--apariencia-tinta"
+      },
+      {
+        "background": "--apariencia-papel",
+        "ratio": 7.098876147850732,
+        "token": "--apariencia-secundaria"
+      },
+      {
+        "background": "--pieza-suave",
+        "ratio": 5.6748853445615195,
+        "token": "--apariencia-secundaria"
+      }
+    ],
+    "documentWidth": 1639,
+    "extras": true,
+    "headings": [],
+    "panel": {
+      "client": 601,
+      "end": 0,
+      "focus": 0,
+      "name": "Opciones de apariencia, desplazables",
+      "overflow": "auto",
+      "rect": {
+        "bottom": 694.578125,
+        "height": 602.578125,
+        "left": 775.5,
+        "right": 1099.5,
+        "top": 92,
+        "width": 324,
+        "x": 775.5,
+        "y": 92
+      },
+      "scroll": 601
+    },
+    "style": "tecnico",
+    "textureContrast": 5.812935215749089,
+    "theme": "sea",
+    "trigger": {
+      "bottom": 84,
+      "height": 44,
+      "left": 1055.5,
+      "right": 1099.5,
+      "top": 40,
+      "width": 44,
+      "x": 1055.5,
+      "y": 40
+    },
+    "viewport": [
+      1639,
+      939
+    ]
+  }
+]
