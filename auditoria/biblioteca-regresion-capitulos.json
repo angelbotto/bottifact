@@ -1,0 +1,38 @@
+{
+  "failed": 0,
+  "passed": 8,
+  "results": [
+    {
+      "name": "Cuatro capítulos, una sola página visible y salto al capítulo activo",
+      "ok": true
+    },
+    {
+      "name": "Anterior y siguiente respetan extremos",
+      "ok": true
+    },
+    {
+      "name": "Historial retrocede y avanza entre capítulos",
+      "ok": true
+    },
+    {
+      "name": "Pestañas: roles, selección y paneles sincronizados",
+      "ok": true
+    },
+    {
+      "name": "Flechas mueven foco sin activar; Inicio/Fin y clic activan a demanda",
+      "ok": true
+    },
+    {
+      "name": "destroy restaura secciones; reintento inválido no altera el contenido",
+      "ok": true
+    },
+    {
+      "name": "Visor se activa en un capítulo inicialmente oculto",
+      "ok": true
+    },
+    {
+      "name": "Las seis paletas se eligen y el icono coincide con su luminosidad",
+      "ok": true
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "checks": [
+    {
+      "name": "40 fuentes copiables sin errores de inicialización",
+      "ok": true
+    },
+    {
+      "name": "Apariencia sincroniza radios y almacenamiento; Sistema retira data-theme",
+      "ok": true
+    },
+    {
+      "name": "Lectura cómoda alterna 18/16px sin alterar el ancho de la columna",
+      "ok": true
+    },
+    {
+      "name": "Cascada: suma, dominio y longitudes desde la misma escala",
+      "ok": true
+    },
+    {
+      "name": "Cascada negativa y cero: ningún valor fuera del dominio ni coordenadas NaN",
+      "ok": true
+    },
+    {
+      "name": "Cascada minúscula conserva etiquetas distintas de cero",
+      "ok": true
+    },
+    {
+      "name": "Cascada con nombres extensos reserva altura para cada rótulo",
+      "ok": true
+    },
+    {
+      "name": "Reporte inválido conserva tabla; reintento limpia error; destroy restaura DOM",
+      "ok": true
+    },
+    {
+      "name": "Múltiples: dominio común y ausencia corta la línea",
+      "ok": true
+    },
+    {
+      "name": "Conciliación calcula diferencias y totales; ausencia no es cero",
+      "ok": true
+    },
+    {
+      "name": "Conciliación rechaza negativos y decimales de conteo",
+      "ok": true
+    },
+    {
+      "name": "Escenario: cero, empeoramiento, vacío, límites y reset",
+      "ok": true
+    },
+    {
+      "name": "Globo narrado empieza pausado; pasos cambian selección y límites",
+      "ok": true
+    },
+    {
+      "name": "Recorrido sin Three conserva pasos y lista; destroy libera el contenedor",
+      "ok": true
+    },
+    {
+      "name": "Visor: cada tamaño es ancho real; auto conserva el espacio disponible",
+      "ok": true
+    },
+    {
+      "name": "Visor: consultas de contenedor, navegación y reset",
+      "ok": true
+    },
+    {
+      "name": "Visor destroy restaura alternativa y reinicialización no duplica lienzos",
+      "ok": true
+    },
+    {
+      "name": "Visor rechaza manejadores inline sin modificar su muestra",
+      "ok": true
+    },
+    {
+      "name": "Búsqueda tolera acentos y no oculta contenido del documento",
+      "ok": true
+    },
+    {
+      "name": "Método se abre al imprimir y recupera su estado",
+      "ok": true
+    },
+    {
+      "name": "Referencias y retorno apuntan a elementos existentes",
+      "ok": true
+    }
+  ],
+  "failed": 0,
+  "passed": 21
+}

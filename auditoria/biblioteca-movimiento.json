@@ -1,0 +1,18 @@
+{
+  "active": {
+    "frame": 189,
+    "frames": 110,
+    "visible": true
+  },
+  "hidden": {
+    "frame": 0,
+    "visible": false
+  },
+  "reduced": {
+    "disabled": true,
+    "frame": 0,
+    "frames": 135,
+    "matches": true
+  },
+  "metodo": "Orca set media, scroll y screenshots para observers; MediaQueryListEvent explícito para listener de reduce. No es cambio físico de preferencia del SO."
+}

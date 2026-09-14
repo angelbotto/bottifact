@@ -1,0 +1,93 @@
+{
+  "combinaciones": [
+    {
+      "icon": "false",
+      "inside": true,
+      "theme": "light",
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "icon": "true",
+      "inside": true,
+      "theme": "dark",
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "icon": "true",
+      "inside": true,
+      "theme": "sea",
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "icon": "false",
+      "inside": true,
+      "theme": "oliva",
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "icon": "false",
+      "inside": true,
+      "theme": "arcilla",
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "icon": "true",
+      "inside": true,
+      "theme": "ciruela",
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "icon": "false",
+      "inside": true,
+      "theme": "light",
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "icon": "true",
+      "inside": true,
+      "theme": "dark",
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "icon": "true",
+      "inside": true,
+      "theme": "sea",
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "icon": "false",
+      "inside": true,
+      "theme": "oliva",
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "icon": "false",
+      "inside": true,
+      "theme": "arcilla",
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "icon": "true",
+      "inside": true,
+      "theme": "ciruela",
+      "viewport": 390,
+      "width": 390
+    }
+  ],
+  "configuracion_enlace": {
+    "columns": "350px",
+    "hash": "#archivo-ejemplo",
+    "page": "publicaciones"
+  }
+}

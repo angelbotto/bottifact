@@ -21,3 +21,15 @@ No se implementan servicios de newsletter, pagos, comentarios, cuentas ni instal
 
 - La documentación junto al visor contenía una llamada larga y las dependencias de Three una URL larga. Al abrir el código, provocaban desbordamiento a 320 px. Se permite partir palabras sólo en la documentación de la biblioteca; el código de los ejemplos sigue desplazándose localmente.
 - El archivo nuevo usaba `data-tema` para la categoría de publicaciones. Ese atributo ya pertenece al `<select>` de apariencia: la inicialización del cuaderno fallaba intentando leer `options` de un artículo. Se cambió **el atributo nuevo** a `data-publicacion-tema`, conservando la API de apariencia existente. El validador ahora detecta reutilizar `data-tema` fuera de un select. Esto es una corrección de esta ampliación, no un cambio silencioso del sistema publicado.
+
+## Verificación ejecutada
+
+- `python3 scripts/ensamblar.py` y `python3 scripts/validar.py`: seis HTML sincronizados, CSP, IDs, regiones, rejilla, seis paletas, sintaxis JS y 40 entradas del registro.
+- `python3 scripts/comprobar_biblioteca.py`: navegador integrado de Orca, UA Chrome 150 en macOS; 162 combinaciones (320×740, 390×844, 1440×960 × seis paletas × nueve capítulos). Medición DOM/CSS de ancho, regiones desplazables, contraste de tokens y rótulos SVG. Abre también la documentación copiable para detectar cortes ocultos.
+- Ocho pruebas de interacción nuevas; ocho regresiones de capítulos y 21 del catálogo anterior, todas pasan. Se ejercitan búsqueda con acentos, filtros combinados, estado vacío, reset, destroy/init, configuración CSS/JSON, enlace profundo, foco DOM e historial Atrás/Adelante.
+- `python3 scripts/comprobar_biblioteca_apariencia.py`: 12 combinaciones reales del control sol/luna a 320/390 px; paleta, luminosidad del icono y límites del panel. El enlace del configurador abre el archivo sin perder su presentación.
+- Exportación PDF desde el capítulo Prototipos: 36 páginas; incluye contenidos de los otros capítulos y recupera el capítulo activo. Capturas inspeccionadas en `capturas/biblioteca-inicio.png`, `biblioteca-archivo.png` y `biblioteca-390.png`.
+
+Evidencia JSON en `biblioteca-*.json`. Los checks de foco usan DOM/eventos programáticos: no acreditan lector de pantalla, teclado físico, audición manual ni hardware móvil. No se ejecutó Ghost/GScan. El fallback sin JS está documentado e incluido; esta ronda no deshabilitó JavaScript en el navegador.
+
+`python3 scripts/comprobar_biblioteca_movimiento.py` también pasó: escena XYZ visible con RAF activo; cambiar a Inicio cancela RAF y el observer marca la escena fuera de pantalla; movimiento reducido detiene RAF y el contador de dibujos. Método: preferencia emulada por Orca y evento MediaQueryListEvent explícito para verificar el listener, porque el host entrega ese cambio de forma intermitente. No se afirma un cambio físico del ajuste del sistema. Evidencia en `biblioteca-movimiento.json`.

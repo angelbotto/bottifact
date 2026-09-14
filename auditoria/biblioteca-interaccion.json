@@ -1,0 +1,37 @@
+{
+  "failed": 0,
+  "results": [
+    {
+      "name": "40 recetas y nueve capítulos",
+      "ok": true
+    },
+    {
+      "name": "búsqueda de recetas y salto entre capítulos",
+      "ok": true
+    },
+    {
+      "name": "Atrás y Adelante con receta profunda",
+      "ok": true
+    },
+    {
+      "name": "archivo combina texto sin acentos y tema",
+      "ok": true
+    },
+    {
+      "name": "reset y ciclo destroy/init del archivo",
+      "ok": true
+    },
+    {
+      "name": "configuración cambia CSS y JSON de forma coherente",
+      "ok": true
+    },
+    {
+      "name": "configuración se restaura y destruye",
+      "ok": true
+    },
+    {
+      "name": "sin sonido activado durante navegación",
+      "ok": true
+    }
+  ]
+}
