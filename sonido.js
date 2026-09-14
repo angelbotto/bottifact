@@ -28,7 +28,7 @@
           return;
         }
         const kind=button.dataset.audio;
-        if(!notes[kind])return;
+        if(!notes[kind]&&kind!=='escritura')return;
         // El significado de la acción siempre se escribe, incluso con audio apagado.
         this.status.textContent=button.dataset.mensaje || button.textContent.trim();
         if(!this.enabled)return;
@@ -39,7 +39,14 @@
           if(!this.enabled||this.dead||document.hidden||epoch!==this.epoch)return;
           this.stopVoices();
           const now=this.audio.currentTime;
-          notes[kind].forEach((frequency,i)=>{
+          if(kind==='escritura'){
+            const duration=.65,buffer=this.audio.createBuffer(1,Math.ceil(this.audio.sampleRate*duration),this.audio.sampleRate),data=buffer.getChannelData(0);
+            let last=0;for(let i=0;i<data.length;i++){last=.85*last+.15*(Math.random()*2-1);data[i]=last*(.55+.45*Math.sin(i/this.audio.sampleRate*43)**2);}
+            const osc=this.audio.createBufferSource(),gain=this.audio.createGain();osc.buffer=buffer;
+            gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(.045,now+.025);gain.gain.setValueAtTime(.03,now+duration-.07);gain.gain.linearRampToValueAtTime(0,now+duration);
+            osc.connect(gain);gain.connect(this.audio.destination);const voice={osc,gain};this.voices.push(voice);
+            osc.onended=()=>{osc.disconnect();gain.disconnect();this.voices=this.voices.filter(v=>v!==voice);};osc.start(now);osc.stop(now+duration);
+          }else notes[kind].forEach((frequency,i)=>{
             const osc=this.audio.createOscillator(),gain=this.audio.createGain(),time=now+i*.065;
             osc.type='sine';osc.frequency.setValueAtTime(frequency,time);
             gain.gain.setValueAtTime(0,time);gain.gain.linearRampToValueAtTime(.025,time+.003);

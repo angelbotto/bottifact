@@ -172,6 +172,7 @@
   });
 
   // Reproducir un sonido exige activación explícita; no se descargan MP3.
+  if(!window.NotaAudio){
   const soundButton = document.querySelector('[data-sonido]');
   let soundEnabled = false, audio;
   soundButton?.addEventListener('click',() => {
@@ -195,6 +196,25 @@
       oscillator.onended = () => { oscillator.disconnect(); gain.disconnect(); };
     } catch {}
   });
+  }
+  const writingTarget=document.querySelector('[data-escritura]');
+  let writingObserver;
+  document.querySelectorAll('[data-ver-escritura]').forEach(button=>{
+    button.hidden=!writingTarget;
+    button.addEventListener('click',()=>{
+      if(!writingTarget)return;
+      button.closest('details').open=false;
+      const page=writingTarget.closest('.pagina');
+      if(page?.hidden)document.querySelector('[data-ir="'+page.id+'"]').click();
+      writingTarget.scrollIntoView({behavior:'instant',block:'center'});
+      writingObserver?.disconnect();
+      writingObserver=new IntersectionObserver(entries=>{
+        if(entries[0].intersectionRatio>=.3){window.NotaEscritura?.get(writingTarget)?.play();writingObserver.disconnect();}
+      },{threshold:.3});
+      writingObserver.observe(writingTarget.querySelector('.escritura-caja')||writingTarget);
+    });
+  });
+  document.addEventListener('nota:pagina',()=>writingObserver?.disconnect());
   // Imprimir el contenido íntegro de los extractos incluso en motores sin ::details-content.
   let closedForPrint = [];
   addEventListener('beforeprint',() => { closedForPrint=[...document.querySelectorAll('.metodologia:not([open]),.extracto details:not([open]),[data-grafica] details:not([open]),[data-escena] details:not([open])')]; closedForPrint.forEach(e=>e.open=true); });
