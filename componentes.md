@@ -1869,3 +1869,6 @@ El visor ofrece **Embeber mi HTML** y `NotaVisores.get(elemento).loadHTML(texto)
 **Cuándo:** dejar observaciones concretas en un artefacto y copiarlas como prompt con capítulo, referencia, fragmento y ajuste. Incluye revision.js después de interacciones.js. La barra fija aparece sólo con JS; los comentarios quedan junto al bloque y en una lista accesible. Escape cancela la elección; los diálogos tienen foco y cierre nativos. Puedes añadir desde una selección de texto, editar o borrar cada comentario.
 
 **Cuándo no / límite:** no es colaboración remota ni revisión simultánea. El borrador vive en memoria hasta recargar/cerrar; copia el prompt antes. No envía datos ni ejecuta los ajustes. No comenta dentro del Shadow DOM del prototipo ni sobre controles; comenta su figura exterior. Las marcas identifican bloques, no coordenadas exactas sobre una imagen. Usa una instancia por documento. `NotaRevision.init/get/destroy` retira marcas, controles y listeners; no elimina contenido original. El prompt es texto, no HTML ejecutable. Al imprimir se ocultan las herramientas y marcas.
+
+En una composición multipágina, añade `data-enlaces-internos` a `.hoja.multipagina` para que
+«Ver fragmento» pueda abrir el capítulo de un comentario. La biblioteca completa ya lo incluye.

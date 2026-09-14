@@ -19,7 +19,7 @@
    const li=document.createElement('li'),quote=make('blockquote',note.quote),p=make('p',note.text),actions=document.createElement('div');actions.className='acciones';
    const link=make('a','Ver fragmento');link.href='#'+note.target.id;listen(link,'click',()=>panel.close());
    const edit=make('button','Editar'),remove=make('button','Borrar');edit.type=remove.type='button';listen(edit,'click',()=>{panel.close();open(note);});listen(remove,'click',()=>{note.marker.remove();notes.splice(notes.indexOf(note),1);render();panel.querySelector('[data-revision-cerrar]').focus();});
-   actions.append(link,edit,remove);li.append(make('p',(i+1)+'. '+note.page+' · '+note.reference),quote,p,actions);list.append(li);
+   actions.append(link,edit,remove);li.append(make('p',note.page+' · '+note.reference),quote,p,actions);list.append(li);
   });
   if(!notes.length)list.append(make('li','Todavía no hay comentarios. Cierra esta ventana y elige un fragmento.'));
   prompt.textContent=notes.length?'Aplica estos ajustes al artefacto «'+document.title+'». Conserva el contenido y comportamiento no señalados.\n\n'+notes.map((n,i)=>(i+1)+'. Capítulo: '+n.page+'\nReferencia: #'+n.reference+'\nFragmento: '+n.quote+'\nAjuste: '+n.text).join('\n\n'):'No hay comentarios todavía.';
@@ -28,7 +28,7 @@
   function open(note){editing=notes.includes(note)?note:null;pending=note;setMode(false);context.textContent=note.page+' · '+note.quote;input.value=editing?note.text:'';editor.querySelector('h2').textContent=editing?'Editar comentario':'Añadir comentario';editor.showModal();input.focus();}
   function choose(target,selection=''){
    if(!target||!target.closest('main')||target.closest('.revision-ui,.receta-copia,[data-revision]'))return;
-   const page=target.closest('.pagina'),reference=target.closest('[id]')?.id||page?.id||'contenido';
+   const page=target.closest('.pagina');let anchor=target;while(anchor&&(!anchor.id||addedIDs.has(anchor)))anchor=anchor.parentElement;const reference=anchor?.id||page?.id||'contenido';
    const quote=(selection||target.textContent).trim().replace(/\s+/g,' ').slice(0,1000);if(!quote)return;
    open({target,reference,page:page?.querySelector('h1')?.textContent||document.title,quote,text:''});
   }
