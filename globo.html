@@ -1001,6 +1001,8 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   --escritura-trazo: #34febb; --escritura-papel: #253342;
 }
 .nota-grafica,.nota-escena,.nota-sonido,.nota-escritura { min-width: 0; }
+.catalogo-indice { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,15rem),1fr)); gap: 8px 20px; list-style: none; padding: 0; font: 13px/1.6 var(--mono); }
+.catalogo-indice li { min-width: 0; margin: 0; }
 .grafica-caja,.escritura-caja,.escena-caja { min-width: 0; max-width: 100%; overflow-x: auto; scrollbar-color: var(--linea-fuerte) var(--panel); }
 .grafica-caja { border-block: 1px dashed var(--grafica-linea); }
 .grafica-titulo { margin-block: 16px 20px; font-size: 28px; }

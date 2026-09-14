@@ -1,0 +1,2981 @@
+[
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 14.607634224489928
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 11.853527319255784
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.74629572310451
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 5.86261764999615
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.852755260043006
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 6.148302182151975
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 6.2782198769046635
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.598240955267573
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 6.038689216886594
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 6.154107318459175
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.734454335904986
+      }
+    ],
+    "documentWidth": 320,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 519,
+        "end": 241,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código de ejemplo",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Comparación de componentes, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 640,
+        "end": 360,
+        "focus": 0,
+        "inside": true,
+        "kind": "diagrama-caja",
+        "name": "Diagrama de observación, explicación y verificación, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Brechas, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 361,
+        "end": 113,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Distribución del saldo",
+        "overflow": "auto",
+        "width": 248
+      },
+      {
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Balance de horas. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Balance de horas, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Tiempo de resolución. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Tiempo de resolución, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Solicitudes por día. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Solicitudes por día, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Carga y latencia. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Carga y latencia, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Duración de 30 sesiones. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Distribución de duración, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 770,
+        "end": 490,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Tiempo por actividad y día, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Comparación de fuentes, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Horas por actividad, tabla ordenable y desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Serie semanal de solicitudes, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 480,
+        "end": 200,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Tres variables de una misma prueba, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Carga, latencia y memoria, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Dónde tarda una solicitud, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Duración por etapa, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      }
+    ],
+    "resources": [
+      {
+        "type": "script",
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js"
+      }
+    ],
+    "svgTextOverflow": [],
+    "theme": "light",
+    "viewport": [
+      320,
+      740
+    ],
+    "widths": [
+      280,
+      280,
+      280
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 15.661847512878582
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 11.405014363272358
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.42475499158132
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.380744691103033
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 5.145578127203766
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 10.734934059021418
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 11.278854825850246
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 9.233517351734147
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 9.599529626682031
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 8.09157753251427
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 9.407309039029018
+      }
+    ],
+    "documentWidth": 320,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 519,
+        "end": 241,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código de ejemplo",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Comparación de componentes, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 640,
+        "end": 360,
+        "focus": 0,
+        "inside": true,
+        "kind": "diagrama-caja",
+        "name": "Diagrama de observación, explicación y verificación, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Brechas, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 361,
+        "end": 113,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Distribución del saldo",
+        "overflow": "auto",
+        "width": 248
+      },
+      {
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Balance de horas. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Balance de horas, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Tiempo de resolución. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Tiempo de resolución, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Solicitudes por día. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Solicitudes por día, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Carga y latencia. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Carga y latencia, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Duración de 30 sesiones. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Distribución de duración, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 770,
+        "end": 490,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Tiempo por actividad y día, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Comparación de fuentes, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Horas por actividad, tabla ordenable y desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Serie semanal de solicitudes, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 480,
+        "end": 200,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Tres variables de una misma prueba, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Carga, latencia y memoria, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Dónde tarda una solicitud, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Duración por etapa, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      }
+    ],
+    "resources": [
+      {
+        "type": "script",
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js"
+      }
+    ],
+    "svgTextOverflow": [],
+    "theme": "dark",
+    "viewport": [
+      320,
+      740
+    ],
+    "widths": [
+      280,
+      280,
+      280
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 11.557684885352561
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 9.36593327022585
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 6.9741645627697695
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 5.464049537061016
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.919034345711879
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 11.689759741860524
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 12.359127851880324
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 7.615540523119387
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 9.83547247347162
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 9.83547247347162
+      }
+    ],
+    "documentWidth": 320,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 519,
+        "end": 241,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código de ejemplo",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Comparación de componentes, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 640,
+        "end": 360,
+        "focus": 0,
+        "inside": true,
+        "kind": "diagrama-caja",
+        "name": "Diagrama de observación, explicación y verificación, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Brechas, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 361,
+        "end": 113,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Distribución del saldo",
+        "overflow": "auto",
+        "width": 248
+      },
+      {
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Balance de horas. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Balance de horas, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Tiempo de resolución. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Tiempo de resolución, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Solicitudes por día. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Solicitudes por día, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Carga y latencia. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Carga y latencia, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 800,
+        "end": 520,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Duración de 30 sesiones. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Distribución de duración, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 770,
+        "end": 490,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Tiempo por actividad y día, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Comparación de fuentes, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Horas por actividad, tabla ordenable y desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Serie semanal de solicitudes, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 480,
+        "end": 200,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Tres variables de una misma prueba, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Carga, latencia y memoria, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Dónde tarda una solicitud, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Duración por etapa, tabla desplazable",
+        "overflow": "auto",
+        "width": 280
+      }
+    ],
+    "resources": [
+      {
+        "type": "script",
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js"
+      }
+    ],
+    "svgTextOverflow": [],
+    "theme": "sea",
+    "viewport": [
+      320,
+      740
+    ],
+    "widths": [
+      280,
+      280,
+      280
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 14.607634224489928
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 11.853527319255784
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.74629572310451
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 5.86261764999615
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.852755260043006
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 6.148302182151975
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 6.2782198769046635
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.598240955267573
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 6.038689216886594
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 6.154107318459175
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.734454335904986
+      }
+    ],
+    "documentWidth": 390,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 519,
+        "end": 171,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código de ejemplo",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Comparación de componentes, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 640,
+        "end": 290,
+        "focus": 0,
+        "inside": true,
+        "kind": "diagrama-caja",
+        "name": "Diagrama de observación, explicación y verificación, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Brechas, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 361,
+        "end": 43,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Distribución del saldo",
+        "overflow": "auto",
+        "width": 318
+      },
+      {
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Balance de horas. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Balance de horas, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Tiempo de resolución. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Tiempo de resolución, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Solicitudes por día. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Solicitudes por día, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Carga y latencia. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Carga y latencia, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Duración de 30 sesiones. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Distribución de duración, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 770,
+        "end": 420,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Tiempo por actividad y día, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Comparación de fuentes, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Horas por actividad, tabla ordenable y desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Serie semanal de solicitudes, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 480,
+        "end": 130,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Tres variables de una misma prueba, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Carga, latencia y memoria, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Dónde tarda una solicitud, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Duración por etapa, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      }
+    ],
+    "resources": [
+      {
+        "type": "script",
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js"
+      }
+    ],
+    "svgTextOverflow": [],
+    "theme": "light",
+    "viewport": [
+      390,
+      844
+    ],
+    "widths": [
+      350,
+      350,
+      350
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 15.661847512878582
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 11.405014363272358
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.42475499158132
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.380744691103033
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 5.145578127203766
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 10.734934059021418
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 11.278854825850246
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 9.233517351734147
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 9.599529626682031
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 8.09157753251427
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 9.407309039029018
+      }
+    ],
+    "documentWidth": 390,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 519,
+        "end": 171,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código de ejemplo",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Comparación de componentes, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 640,
+        "end": 290,
+        "focus": 0,
+        "inside": true,
+        "kind": "diagrama-caja",
+        "name": "Diagrama de observación, explicación y verificación, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Brechas, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 361,
+        "end": 43,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Distribución del saldo",
+        "overflow": "auto",
+        "width": 318
+      },
+      {
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Balance de horas. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Balance de horas, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Tiempo de resolución. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Tiempo de resolución, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Solicitudes por día. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Solicitudes por día, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Carga y latencia. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Carga y latencia, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Duración de 30 sesiones. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Distribución de duración, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 770,
+        "end": 420,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Tiempo por actividad y día, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Comparación de fuentes, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Horas por actividad, tabla ordenable y desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Serie semanal de solicitudes, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 480,
+        "end": 130,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Tres variables de una misma prueba, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Carga, latencia y memoria, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Dónde tarda una solicitud, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Duración por etapa, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      }
+    ],
+    "resources": [
+      {
+        "type": "script",
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js"
+      }
+    ],
+    "svgTextOverflow": [],
+    "theme": "dark",
+    "viewport": [
+      390,
+      844
+    ],
+    "widths": [
+      350,
+      350,
+      350
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 11.557684885352561
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 9.36593327022585
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 6.9741645627697695
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 5.464049537061016
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.919034345711879
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 11.689759741860524
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 12.359127851880324
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 7.615540523119387
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 9.83547247347162
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 9.83547247347162
+      }
+    ],
+    "documentWidth": 390,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 519,
+        "end": 171,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código de ejemplo",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Comparación de componentes, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 640,
+        "end": 290,
+        "focus": 0,
+        "inside": true,
+        "kind": "diagrama-caja",
+        "name": "Diagrama de observación, explicación y verificación, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Brechas, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 361,
+        "end": 43,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Distribución del saldo",
+        "overflow": "auto",
+        "width": 318
+      },
+      {
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Balance de horas. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Balance de horas, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Tiempo de resolución. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Tiempo de resolución, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Solicitudes por día. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Solicitudes por día, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Carga y latencia. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Carga y latencia, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 800,
+        "end": 450,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Duración de 30 sesiones. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Distribución de duración, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 770,
+        "end": 420,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Tiempo por actividad y día, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Comparación de fuentes, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Horas por actividad, tabla ordenable y desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Serie semanal de solicitudes, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 480,
+        "end": 130,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Tres variables de una misma prueba, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Carga, latencia y memoria, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Dónde tarda una solicitud, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Duración por etapa, tabla desplazable",
+        "overflow": "auto",
+        "width": 350
+      }
+    ],
+    "resources": [
+      {
+        "type": "script",
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js"
+      }
+    ],
+    "svgTextOverflow": [],
+    "theme": "sea",
+    "viewport": [
+      390,
+      844
+    ],
+    "widths": [
+      350,
+      350,
+      350
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 14.607634224489928
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 11.853527319255784
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.74629572310451
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 5.86261764999615
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.852755260043006
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 6.148302182151975
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 6.2782198769046635
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.598240955267573
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 6.038689216886594
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 6.154107318459175
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.734454335904986
+      }
+    ],
+    "documentWidth": 1639,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código de ejemplo",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 1216,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Comparación de componentes, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 1216
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "diagrama-caja",
+        "name": "Diagrama de observación, explicación y verificación, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1216,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Brechas, desplazable",
+        "overflow": "auto",
+        "width": 1216
+      },
+      {
+        "content": 960,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Distribución del saldo",
+        "overflow": "auto",
+        "width": 960
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Balance de horas. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Balance de horas, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Tiempo de resolución. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Tiempo de resolución, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Solicitudes por día. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Solicitudes por día, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Carga y latencia. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Carga y latencia, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Duración de 30 sesiones. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Distribución de duración, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Tiempo por actividad y día, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1216,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Comparación de fuentes, desplazable",
+        "overflow": "auto",
+        "width": 1216
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Horas por actividad, tabla ordenable y desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Serie semanal de solicitudes, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Tres variables de una misma prueba, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Carga, latencia y memoria, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Dónde tarda una solicitud, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Duración por etapa, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "resources": [
+      {
+        "type": "script",
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js"
+      }
+    ],
+    "svgTextOverflow": [],
+    "theme": "light",
+    "viewport": [
+      1639,
+      939
+    ],
+    "widths": [
+      560,
+      992,
+      1216
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 15.661847512878582
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 11.405014363272358
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.42475499158132
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.380744691103033
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 5.145578127203766
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 10.734934059021418
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 11.278854825850246
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 9.233517351734147
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 9.599529626682031
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 8.09157753251427
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 9.407309039029018
+      }
+    ],
+    "documentWidth": 1639,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código de ejemplo",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 1216,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Comparación de componentes, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 1216
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "diagrama-caja",
+        "name": "Diagrama de observación, explicación y verificación, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1216,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Brechas, desplazable",
+        "overflow": "auto",
+        "width": 1216
+      },
+      {
+        "content": 960,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Distribución del saldo",
+        "overflow": "auto",
+        "width": 960
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Balance de horas. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Balance de horas, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Tiempo de resolución. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Tiempo de resolución, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Solicitudes por día. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Solicitudes por día, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Carga y latencia. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Carga y latencia, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Duración de 30 sesiones. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Distribución de duración, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Tiempo por actividad y día, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1216,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Comparación de fuentes, desplazable",
+        "overflow": "auto",
+        "width": 1216
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Horas por actividad, tabla ordenable y desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Serie semanal de solicitudes, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Tres variables de una misma prueba, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Carga, latencia y memoria, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Dónde tarda una solicitud, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Duración por etapa, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "resources": [
+      {
+        "type": "script",
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js"
+      }
+    ],
+    "svgTextOverflow": [],
+    "theme": "dark",
+    "viewport": [
+      1639,
+      939
+    ],
+    "widths": [
+      560,
+      992,
+      1216
+    ]
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 11.557684885352561
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 9.36593327022585
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 6.9741645627697695
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 5.464049537061016
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.919034345711879
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 11.689759741860524
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 12.359127851880324
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 7.615540523119387
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 9.83547247347162
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 9.83547247347162
+      }
+    ],
+    "documentWidth": 1639,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código de ejemplo",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 1216,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Comparación de componentes, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 1216
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "diagrama-caja",
+        "name": "Diagrama de observación, explicación y verificación, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1216,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Brechas, desplazable",
+        "overflow": "auto",
+        "width": 1216
+      },
+      {
+        "content": 960,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Distribución del saldo",
+        "overflow": "auto",
+        "width": 960
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Balance de horas. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Balance de horas, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Tiempo de resolución. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Tiempo de resolución, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Solicitudes por día. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Solicitudes por día, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Carga y latencia. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Carga y latencia, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja",
+        "name": "Duración de 30 sesiones. Gráfica desplazable; datos completos a continuación.",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Distribución de duración, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Tiempo por actividad y día, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1216,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Comparación de fuentes, desplazable",
+        "overflow": "auto",
+        "width": 1216
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Horas por actividad, tabla ordenable y desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Serie semanal de solicitudes, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Tres variables de una misma prueba, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Carga, latencia y memoria, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Dónde tarda una solicitud, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Duración por etapa, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "resources": [
+      {
+        "type": "script",
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js"
+      }
+    ],
+    "svgTextOverflow": [],
+    "theme": "sea",
+    "viewport": [
+      1639,
+      939
+    ],
+    "widths": [
+      560,
+      992,
+      1216
+    ]
+  }
+]

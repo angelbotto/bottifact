@@ -1,0 +1,10 @@
+{
+  "viewport": [
+    1639,
+    939
+  ],
+  "media": "orca exec set media reduced-motion; CSS y matches emulados",
+  "cambio": "MediaQueryListEvent explícito para los listeners: el host entregó change de forma intermitente",
+  "visibilidad": "Scroll real y cuadros screenshot para entregar IntersectionObserver",
+  "no_afirma": "Cambio físico de preferencia del sistema operativo"
+}

@@ -1,0 +1,39 @@
+{
+  "method": "Web Audio OfflineAudioContext; manejador con evento unitario, sin audición manual",
+  "results": [
+    {
+      "kind": "accion",
+      "lastAudible": 0.12497916666666667,
+      "maximumDuration": 0.125,
+      "ok": true,
+      "peak": 0.02393479458987713,
+      "plays": 1,
+      "rms": 0.0026719510208769114,
+      "sampleRate": 48000
+    },
+    {
+      "kind": "confirmacion",
+      "lastAudible": 0.12497916666666667,
+      "maximumDuration": 0.125,
+      "ok": true,
+      "peak": 0.024165410548448563,
+      "plays": 1,
+      "rms": 0.0026687719557083435,
+      "sampleRate": 48000
+    },
+    {
+      "kind": "atencion",
+      "lastAudible": 0.18997916666666667,
+      "maximumDuration": 0.19,
+      "ok": true,
+      "peak": 0.024371914565563202,
+      "plays": 1,
+      "rms": 0.003277021487949156,
+      "sampleRate": 48000
+    },
+    {
+      "kind": "resume cancelado",
+      "ok": true
+    }
+  ]
+}

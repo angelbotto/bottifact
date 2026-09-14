@@ -1,0 +1,70 @@
+[
+  {
+    "name": "Globo visible tiene RAF",
+    "ok": true
+  },
+  {
+    "name": "Globo dibuja durante giro",
+    "ok": true
+  },
+  {
+    "name": "Preferencia reduce cancela RAF de globo activo",
+    "ok": true
+  },
+  {
+    "name": "Globo reducido no sigue dibujando",
+    "ok": true
+  },
+  {
+    "name": "Globo fuera de pantalla se detiene",
+    "ok": true
+  },
+  {
+    "name": "Escena visible tiene RAF",
+    "ok": true
+  },
+  {
+    "name": "Escena gira por tiempo",
+    "ok": true
+  },
+  {
+    "name": "Preferencia reduce cancela RAF de escena activa",
+    "ok": true
+  },
+  {
+    "name": "Escena reducida no dibuja continuamente",
+    "ok": true
+  },
+  {
+    "name": "Escena fuera de pantalla sin RAF",
+    "ok": true
+  },
+  {
+    "name": "Escritura usa animaciones de paths",
+    "ok": true
+  },
+  {
+    "name": "Los trazos son secuenciales y el último termina a 10 s",
+    "ok": true
+  },
+  {
+    "name": "Reducir cancela WAAPI y completa los trazos",
+    "ok": true
+  },
+  {
+    "name": "Reducir cancela transiciones CSS",
+    "ok": true
+  },
+  {
+    "name": "play respeta reduce",
+    "ok": true
+  },
+  {
+    "name": "Salir de pantalla cancela escritura",
+    "ok": true
+  },
+  {
+    "name": "destroy cancela animaciones y libera instancia",
+    "ok": true
+  }
+]

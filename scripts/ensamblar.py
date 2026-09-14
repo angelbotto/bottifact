@@ -107,10 +107,18 @@ def recipes():
  return re.findall(r'<!-- nota:ejemplo ([\w-]+) -->\s*```html\n(.*?)\n```',text,re.S)
 
 catalog='''<section class="seccion" id="libreria"><p class="ceja">06 / componentes para copiar</p>
-<h2>La evidencia tiene muchas formas.</h2><p>Gráficas, tablas y experiencias opcionales. Cada ejemplo conserva sus datos, su criterio y su límite en componentes.md.</p></section>'''
+<h2>La evidencia tiene muchas formas.</h2><p>Gráficas, tablas y experiencias opcionales. Cada ejemplo conserva sus datos, su criterio y su límite en componentes.md.</p>NAV_COMPONENTES</section>'''
+labels={'tabla-densa':'Tabla densa','terminal':'Terminal','manuscrita':'Nota manuscrita','barras':'Barras','lineas':'Líneas','temporal':'Serie temporal','dispersion':'Dispersión','distribucion':'Distribución','calor':'Mapa de calor','comparacion':'Comparación','totales':'Totales y ordenación','sparkline':'Tabla con serie','sonido':'Sonido optativo','escritura':'Escritura por trazos','xyz':'Three.js · XYZ','etapas':'Three.js · etapas'}
+links=[]
 for key,html in recipes():
  if key=='multipagina':continue
+ first=re.match(r'<[\w-]+\b[^>]*>',html)
+ existing=re.search(r'\bid="([^"]+)"',first.group(0))
+ anchor=existing.group(1) if existing else 'pieza-'+key
+ if not existing:html=html[:first.end()-1]+' id="'+anchor+'"'+html[first.end()-1:]
+ links.append('<li><a href="#'+anchor+'">'+labels[key]+'</a></li>')
  catalog += '\n' + html + '\n'
+catalog=catalog.replace('NAV_COMPONENTES','<nav aria-label="Ejemplos de componentes"><ul class="catalogo-indice">'+''.join(links)+'</ul></nav>')
 body=body.replace('<footer class="pie">',catalog+'<footer class="pie">')
 body=body.replace('<li><a href="#guardado">Lo que vale guardar</a></li>','<li><a href="#guardado">Lo que vale guardar</a></li><li><a href="#libreria">Librería de evidencia</a></li>')
 (ROOT/'plantilla.html').write_text(start('Nota Tikin — la forma también explica')+body+script('interacciones.js')+globe_scripts()+script('graficas.js')+script('tablas.js')+script('sonido.js')+script('escritura.js')+script('escena.js'))
