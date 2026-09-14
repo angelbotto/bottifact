@@ -432,3 +432,242 @@ El globo no es un mapa político ni una medición de distancias. La máscara de 
 masas terrestres; no añade fronteras. No inventes kilómetros, vuelos o sedes: recibe datos reales
 o identifica el ejemplo como ilustrativo. Los arcos y marcadores se han aclarado frente al
 original, una decisión deliberada para informes, no una afirmación de igualdad píxel a píxel.
+
+
+## Librería de evidencia: instalación por pieza
+
+La fuente de cada visualización es **su tabla HTML**, no una segunda copia de los datos.
+Pega `estilo.css` completo y, al final del documento, los módulos necesarios dentro de
+`<script>`: [graficas.js](graficas.js) para gráficas/calor y [tablas.js](tablas.js) para
+ordenación/sparkline. Son independientes de Three.js. Cada módulo se pega una sola vez.
+Se inicializan al cargar; para HTML insertado después usa `NotaGraficas.init(contenedor)`
+o `NotaTablas.init(contenedor)`. Repetir `init` devuelve la instancia existente.
+`get(elemento).destroy()` devuelve el HTML original; para nuevos datos, destruye la
+instancia, modifica la tabla y vuelve a inicializar. No hay red, almacenamiento ni framework.
+
+Los siguientes bloques son también la fuente del catálogo ejecutable: el ensamblador
+extrae las recetas marcadas `nota:ejemplo`. Las figuras se copian **como hijas de `.hoja`**.
+Para secciones anidadas usa `por-seccion`; para capítulos usa `multipagina` y coloca las
+figuras como hijas de `.pagina`. No envuelvas el bloque en otra sección angosta.
+
+`data-valor` usa punto decimal, sin separadores de miles; su texto visible incluye la
+unidad y el formato humano. Vacío significa ausencia, `0` es un cero medido. Los ejemplos
+son ilustrativos y lo dicen en su pie. Los nombres y los datos se insertan como texto.
+Las gráficas no tienen animación ni tooltip imprescindible: la tabla permite consultar
+cada punto por teclado. Las escalas se calculan con los datos, sin recortar extremos.
+No se suman ni se interpolan registros ausentes. Los intervalos entre puntos de una línea
+son segmentos rectos, no observaciones adicionales.
+
+## Barras: cantidades y diferencias
+
+<!-- nota:ejemplo barras -->
+```html
+<figure class="ancho" id="barras-ejemplo" data-grafica="barras" data-unidad="Horas">
+  <details open><summary>Ver los datos de balance de horas</summary>
+    <div class="tabla-caja" tabindex="0" role="region" aria-label="Balance de horas, tabla desplazable">
+      <table><caption>Balance de horas</caption>
+        <thead><tr><th scope="col">Actividad</th><th scope="col">Horas</th></tr></thead>
+        <tbody><tr><th scope="row">Investigar</th><td data-valor="60">60 h</td></tr>
+<tr><th scope="row">Construir</th><td data-valor="25">25 h</td></tr>
+<tr><th scope="row">Revisar</th><td data-valor="15">15 h</td></tr>
+<tr><th scope="row">Ajuste de registro</th><td data-valor="-10">−10 h</td></tr></tbody>
+      </table>
+    </div>
+  </details>
+  <figcaption>Datos ilustrativos; corte 13-sep-2026.</figcaption>
+</figure>
+```
+
+**Cuándo:** comparar magnitudes en la misma unidad; admite negativos y hasta cuatro series agrupadas. Cero siempre está en la escala. Usa línea si importa la continuidad temporal.
+
+**Límite:** hasta 500 filas y cuatro series. Muchas barras requieren una figura alta: para centenares de registros, prefiere tabla ordenable. El ancho mínimo del dibujo es 800 px con desplazamiento local; las categorías largas saltan de línea. No son barras apiladas ni porcentajes normalizados.
+
+## Líneas: secuencia y datos ausentes
+
+<!-- nota:ejemplo lineas -->
+```html
+<figure class="ancho" id="lineas-ejemplo" data-grafica="lineas" data-unidad="Horas">
+  <details open><summary>Ver los datos de tiempo de resolución</summary>
+    <div class="tabla-caja" tabindex="0" role="region" aria-label="Tiempo de resolución, tabla desplazable">
+      <table><caption>Tiempo de resolución</caption>
+        <thead><tr><th scope="col">Etapa</th><th scope="col">Equipo A</th><th scope="col">Equipo B</th></tr></thead>
+        <tbody><tr><th scope="row">Entrada</th><td data-valor="12">12 h</td><td data-valor="16">16 h</td></tr>
+<tr><th scope="row">Revisión</th><td data-valor="8">8 h</td><td data-valor="11">11 h</td></tr>
+<tr><th scope="row">Validación</th><td data-valor="">Sin dato</td><td data-valor="9">9 h</td></tr>
+<tr><th scope="row">Cierre</th><td data-valor="6">6 h</td><td data-valor="7">7 h</td></tr></tbody>
+      </table>
+    </div>
+  </details>
+  <figcaption>Datos ilustrativos; corte 13-sep-2026.</figcaption>
+</figure>
+```
+
+**Cuándo:** seguir una secuencia ordenada de categorías comparables. Trazo y número en la leyenda distinguen series incluso en Sea. Para fechas con separaciones distintas, usa temporal; para categorías independientes, barras.
+
+**Límite:** los intervalos en X son categóricos y equidistantes. La ausencia corta el trazo, no se convierte en cero. El eje Y muestra el dominio completo observado; no tiene que comenzar en cero porque codifica posición. Hasta cuatro series; no calcula suavizados ni intervalos de confianza.
+
+## Serie temporal con variación
+
+<!-- nota:ejemplo temporal -->
+```html
+<figure class="ancho" id="temporal-ejemplo" data-grafica="temporal" data-unidad="Solicitudes">
+  <details open><summary>Ver los datos de solicitudes por día</summary>
+    <div class="tabla-caja" tabindex="0" role="region" aria-label="Solicitudes por día, tabla desplazable">
+      <table><caption>Solicitudes por día</caption>
+        <thead><tr><th scope="col">Día UTC</th><th scope="col">Solicitudes</th></tr></thead>
+        <tbody><tr><th scope="row"><time datetime="2026-09-01">1 sep</time></th><td data-valor="80">80 solicitudes</td></tr>
+<tr><th scope="row"><time datetime="2026-09-03">3 sep</time></th><td data-valor="100">100 solicitudes</td></tr>
+<tr><th scope="row"><time datetime="2026-09-08">8 sep</time></th><td data-valor="90">90 solicitudes</td></tr>
+<tr><th scope="row"><time datetime="2026-09-13">13 sep</time></th><td data-valor="120">120 solicitudes</td></tr></tbody>
+      </table>
+    </div>
+  </details>
+  <figcaption>Ejemplo: conteos diarios independientes. Último registro frente al registro anterior (13 sep frente a 8 sep), no totales de ventanas de distinta duración.</figcaption>
+</figure>
+```
+
+**Cuándo:** comparar observaciones fechadas. La posición usa milisegundos UTC: dos días y cinco días no ocupan el mismo espacio. El delta compara los dos últimos registros y nombra ambos.
+
+**Límite:** fechas ISO diarias válidas, únicas y crecientes; no agrega días ni corrige zonas horarias. El delta absoluto es actual − anterior y el relativo divide por |anterior|; base 0 indica porcentaje no definido, ausente indica sin comparación. Si tus registros representan ventanas, deben tener duración/composición comparables. No infiere causalidad ni si subir es bueno.
+
+## Dispersión: relación entre dos variables
+
+<!-- nota:ejemplo dispersion -->
+```html
+<figure class="ancho" id="dispersion-ejemplo" data-grafica="dispersion" >
+  <details open><summary>Ver los datos de carga y latencia</summary>
+    <div class="tabla-caja" tabindex="0" role="region" aria-label="Carga y latencia, tabla desplazable">
+      <table><caption>Carga y latencia</caption>
+        <thead><tr><th scope="col">Muestra</th><th scope="col">Carga (solicitudes/s)</th><th scope="col">Latencia (ms)</th></tr></thead>
+        <tbody><tr><th scope="row">A</th><td data-valor="10">10</td><td data-valor="80">80 ms</td></tr>
+<tr><th scope="row">B</th><td data-valor="20">20</td><td data-valor="95">95 ms</td></tr>
+<tr><th scope="row">C</th><td data-valor="35">35</td><td data-valor="140">140 ms</td></tr>
+<tr><th scope="row">D</th><td data-valor="50">50</td><td data-valor="170">170 ms</td></tr>
+<tr><th scope="row">E</th><td data-valor="65">65</td><td data-valor="165">165 ms</td></tr></tbody>
+      </table>
+    </div>
+  </details>
+  <figcaption>Datos ilustrativos; corte 13-sep-2026.</figcaption>
+</figure>
+```
+
+**Cuándo:** explorar pares X/Y medidos en la misma observación. Las dos variables tienen ejes numéricos con unidades. Para una sola secuencia de tiempo usa temporal.
+
+**Límite:** cada punto exige ambos valores finitos. Hasta 500 puntos; coincidentes se superponen y siguen separados en la tabla. No ajusta regresiones, no aplica jitter, no representa incertidumbre ni permite inferir causalidad.
+
+## Distribución: histograma con intervalos reales
+
+<!-- nota:ejemplo distribucion -->
+```html
+<figure class="ancho" id="distribucion-ejemplo" data-grafica="distribucion">
+  <details open><summary>Ver los datos de duración</summary>
+    <div class="tabla-caja" tabindex="0" role="region" aria-label="Distribución de duración, tabla desplazable">
+      <table><caption>Duración de 30 sesiones</caption>
+        <thead><tr><th scope="col">Duración (min)</th><th scope="col">Sesiones</th><th scope="col">Sesiones/min</th></tr></thead>
+        <tbody>
+          <tr><th scope="row" data-desde="0" data-hasta="10">0 a menos de 10 min</th><td data-valor="5">5</td><td data-valor="">0,5</td></tr>
+          <tr><th scope="row" data-desde="10" data-hasta="20">10 a menos de 20 min</th><td data-valor="15">15</td><td data-valor="">1,5</td></tr>
+          <tr><th scope="row" data-desde="20" data-hasta="40">20 a 40 min (incluido)</th><td data-valor="10">10</td><td data-valor="">0,5</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+  <figcaption>Ejemplo de 30 sesiones. Altura = frecuencia / ancho del intervalo; el área representa la frecuencia. El último intervalo tiene el doble de ancho.</figcaption>
+</figure>
+```
+
+**Cuándo:** mostrar la distribución de una variable continua agrupada en intervalos explícitos. Los bordes de las barras corresponden a los bordes del intervalo.
+
+**Límite:** frecuencias enteras no negativas; intervalos crecientes sin solapamientos. La densidad se calcula como frecuencia/ancho; con intervalos desiguales es el área la que representa el conteo. La tabla declara inclusión/exclusión de extremos; el módulo no agrupa muestras individuales ni inventa bins. No es una curva de probabilidad ni un gráfico de categorías.
+
+## Attention map: matriz de intensidad
+
+<!-- nota:ejemplo calor -->
+```html
+<figure class="ancho" id="calor-ejemplo" data-grafica="calor" data-umbrales="0,30,60,90,120,150" data-unidad="Minutos">
+  <details open><summary>Ver los datos de tiempo por actividad y día</summary>
+    <div class="tabla-caja" tabindex="0" role="region" aria-label="Tiempo por actividad y día, tabla desplazable">
+      <table><caption>Tiempo por actividad y día</caption>
+        <thead><tr><th scope="col">Actividad</th><th scope="col">Lun</th><th scope="col">Mar</th><th scope="col">Mié</th><th scope="col">Jue</th><th scope="col">Vie</th></tr></thead>
+        <tbody><tr><th scope="row">Investigar</th><td data-valor="0">0 min</td><td data-valor="30">30 min</td><td data-valor="60">60 min</td><td data-valor="90">90 min</td><td data-valor="120">120 min</td></tr>
+<tr><th scope="row">Construir</th><td data-valor="150">150 min</td><td data-valor="120">120 min</td><td data-valor="90">90 min</td><td data-valor="">Sin dato</td><td data-valor="30">30 min</td></tr>
+<tr><th scope="row">Revisar</th><td data-valor="10">10 min</td><td data-valor="20">20 min</td><td data-valor="40">40 min</td><td data-valor="80">80 min</td><td data-valor="110">110 min</td></tr></tbody>
+      </table>
+    </div>
+  </details>
+  <figcaption>Ejemplo ilustrativo, minutos por día. Límites de clase: [0,30), [30,60), [60,90), [90,120), [120,150]. Ausencia distinta de cero.</figcaption>
+</figure>
+```
+
+**Cuándo:** buscar concentraciones entre dos dimensiones discretas. Cada celda muestra su valor y la leyenda tiene intervalos explícitos. Para partes de un total usa `.mapa`, que conserva el treemap original.
+
+**Límite:** cinco niveles, definidos por seis límites crecientes; máximo incluido en el último nivel. Un valor fuera del dominio produce error visible y conserva la tabla, nunca se satura en secreto. Hasta 31 × 31 celdas con ancho mínimo por columna y scroll local. No usa degradado ni escala implícita por fila. Las cifras mantienen el significado con colores forzados.
+
+## Tabla de comparación
+
+<!-- nota:ejemplo comparacion -->
+```html
+<figure class="amplio">
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Comparación de fuentes, desplazable">
+    <table class="tabla-comparacion"><caption>Fuentes candidatas · ejemplo</caption>
+      <thead><tr><th scope="col">Criterio</th><th scope="col" class="elegida">Registro A · elegido</th><th scope="col">Registro B</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Fecha de corte</th><td class="elegida">13-sep-2026</td><td>10-sep-2026</td></tr>
+        <tr><th scope="row">Trazabilidad</th><td class="elegida">✓ Identificador por movimiento</td><td>≈ Resumen por día</td></tr>
+        <tr><th scope="row">Límite</th><td class="elegida">Falta una sede</td><td>Faltan tres días</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Datos ilustrativos. «Elegido» expresa la decisión, no una puntuación automática.</figcaption>
+</figure>
+```
+
+**Cuándo:** comparar las mismas propiedades de pocas alternativas. Escribe la decisión en la cabecera además de señalarla con color. No uses un ranking si los criterios son cualitativos.
+
+**Límite:** la clase `.elegida` se aplica a cada celda de la columna; no calcula ganadores. Para cinco columnas o más añade `densa`. No vuelve sticky la primera columna, para que el espacio útil del teléfono quede disponible al desplazar.
+
+## Tabla de totales y ordenación
+
+<!-- nota:ejemplo totales -->
+```html
+<figure class="ancho">
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Horas por actividad, tabla ordenable y desplazable">
+    <table class="tabla-totales" data-tabla><caption>Horas registradas · ejemplo</caption>
+      <thead><tr><th scope="col"><button type="button" data-ordenar="texto">Actividad</button></th><th scope="col"><button type="button" data-ordenar="numero">Horas</button></th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Investigar</th><td class="numero" data-valor="60">60 h</td></tr>
+        <tr><th scope="row">Construir</th><td class="numero" data-valor="25">25 h</td></tr>
+        <tr><th scope="row">Revisar</th><td class="numero" data-valor="15">15 h</td></tr>
+      </tbody>
+      <tfoot><tr><th scope="row">Total de horas registradas</th><td class="numero">100 h</td></tr></tfoot>
+    </table>
+  </div>
+  <figcaption>Ejemplo: 60 + 25 + 15 = 100 h. Los botones ordenan sólo las filas de datos; el total permanece al pie.</figcaption>
+</figure>
+```
+
+**Cuándo:** consultar registros y su total aditivo; ofrece ordenación cuando ayuda a encontrar extremos. Sin `data-tabla` funciona como tabla estática.
+
+**Límite:** el total lo calcula quien prepara los datos, no el DOM. No sumar porcentajes, tasas o promedios. Un solo `tbody`, sin celdas combinadas ni filas de subtotal dentro de él; no hay paginación o filtrado. La ordenación numérica requiere `data-valor`; ausencias quedan al final en ambos sentidos. Repetidos conservan su orden, `tfoot` no se mueve.
+
+## Tabla con serie embebida
+
+<!-- nota:ejemplo sparkline -->
+```html
+<figure class="ancho">
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Serie semanal de solicitudes, desplazable">
+    <table data-tabla data-min="0" data-max="120"><caption>Solicitudes de lunes a jueves · ejemplo</caption>
+      <thead><tr><th scope="col">Canal</th><th scope="col">Serie L / M / X / J, dominio común 0–120</th><th scope="col">Último día</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Web</th><td data-sparkline><span class="sparkline-datos"><span data-valor="80">80</span>, <span data-valor="100">100</span>, <span data-valor="90">90</span>, <span data-valor="120">120</span></span></td><td class="numero">120</td></tr>
+        <tr><th scope="row">App</th><td data-sparkline><span class="sparkline-datos"><span data-valor="40">40</span>, <span data-valor="">sin dato</span>, <span data-valor="70">70</span>, <span data-valor="60">60</span></span></td><td class="numero">60</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Valores ilustrativos. Misma escala Y en ambas filas. El dato ausente corta la línea y todos los valores permanecen escritos.</figcaption>
+</figure>
+```
+
+**Cuándo:** añadir tendencia a una tabla sin apartarse del registro. El texto de la celda nombra cada valor; el SVG es redundante y lleva `aria-hidden`.
+
+**Límite:** X equidistante; todas las filas deben describir los mismos períodos. Exige `data-min`/`data-max` comunes y rechaza dibujar puntos fuera de ellos. No autoescala por fila, no es una gráfica con ejes ni codifica tiempo irregular; para eso usa la serie temporal. El texto sigue disponible si el dibujo no se puede generar.

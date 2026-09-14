@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Genera fragmentos autocontenidos desde las fuentes del skill, sin red."""
 from pathlib import Path
-import json, base64, hashlib
+import json, base64, hashlib, re
 ROOT = Path(__file__).resolve().parents[1]
 FONTS = 'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Reenie+Beanie&display=swap'
 THREE = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js'
@@ -103,7 +103,17 @@ GLOBE
 body=body.replace('TOOLS',tools()).replace('GLOBE',globe())
 for i,(title,subtitle,color) in enumerate([('La decisión','CUADERNO DE CRITERIO','#755a42'),('La evidencia','REGISTRO DE MEDIDAS','#516344'),('Lo que sigue','PREGUNTAS ABIERTAS','#56627f')],1):
  body=body.replace('COVER'+str(i),cover(title,subtitle,color,str(i).zfill(2)))
-(ROOT/'plantilla.html').write_text(start('Nota Tikin — la forma también explica')+body+script('interacciones.js')+globe_scripts())
+def recipes():
+ text=(ROOT/'componentes.md').read_text()
+ return re.findall(r'<!-- nota:ejemplo ([\w-]+) -->\s*```html\n(.*?)\n```',text,re.S)
+
+catalog='''<section class="seccion" id="libreria"><p class="ceja">06 / componentes para copiar</p>
+<h2>La evidencia tiene muchas formas.</h2><p>Gráficas, tablas y experiencias opcionales. Cada ejemplo conserva sus datos, su criterio y su límite en componentes.md.</p></section>'''
+for key,html in recipes():
+ catalog += '\n' + html + '\n'
+body=body.replace('<footer class="pie">',catalog+'<footer class="pie">')
+body=body.replace('<li><a href="#guardado">Lo que vale guardar</a></li>','<li><a href="#guardado">Lo que vale guardar</a></li><li><a href="#libreria">Librería de evidencia</a></li>')
+(ROOT/'plantilla.html').write_text(start('Nota Tikin — la forma también explica')+body+script('interacciones.js')+globe_scripts()+script('graficas.js')+script('tablas.js'))
 globe_body='<main class="hoja" id="inicio" lang="es">'+tools()+'''<header class="cabecera"><p class="ceja">Nota / geografía</p><h1>Planes, puntos<br>y lugares.</h1><p class="bajada">Un globo de puntos para explorar conexiones. Elige una ruta, gira la Tierra o pausa la vista.</p></header>'''+globe()+'''<footer class="pie">Ejemplo reutilizable · Three.js desde cdnjs · máscara geográfica incrustada · ambos temas y movimiento reducido.</footer></main>'''
 (ROOT/'globo.html').write_text(start('Nota Tikin — globo de rutas')+globe_body+script('interacciones.js')+globe_scripts())
 print('Generados plantilla.html y globo.html')
