@@ -29,7 +29,7 @@ class Fragment(HTMLParser):
    if 'three' in src.lower() and src!=THREE:self.errors.append('Three sin versión fijada')
   if tag=='link' and a.get('rel')=='stylesheet' and not a.get('href','').startswith('https://fonts.googleapis.com/'):
    self.errors.append('Hoja externa fuera de CSP')
-  if classes & {'tabla-caja','diagrama-caja','grafica-caja','escena-caja','escritura-caja','barra'} or tag=='pre':
+  if classes & {'tabla-caja','diagrama-caja','grafica-caja','escena-caja','escritura-caja','visor-caja','barra'} or tag=='pre':
    if a.get('tabindex')!='0' or not (a.get('aria-label') or a.get('aria-labelledby')):self.errors.append('Desplazamiento sin foco/nombre: '+tag+' '+a.get('class',''))
   if classes & {'ancho','amplio'}:
    parent=self.stack[-1][1] if self.stack else set()
@@ -45,7 +45,7 @@ class Fragment(HTMLParser):
   if tag not in VOID:self.handle_endtag(tag)
 
 MODULES={
- 'plantilla.html':['interacciones.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js'],
+ 'plantilla.html':['interacciones.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','catalogo.js'],
  'globo.html':['interacciones.js','globo.js'],
  'multipagina.html':['interacciones.js','multipagina.js'],
  'pruebas.html':['interacciones.js','multipagina.js'],
@@ -69,6 +69,9 @@ for name,modules in MODULES.items():
 library=css.split('/* 12 — Librería de evidencia.')[1]
 palettes=[set(re.findall(r'(--[\w-]+)\s*:',body)) for _,body in re.findall(r'(:root[^{}]*)\{([^{}]*)\}',library) if '--calor-0:' in body]
 assert len(palettes)==4 and all(p==palettes[0] for p in palettes), 'Faltan tokens en un tema'
+extras=css.split('/* 13 — Reportes, artículos y prototipos.')[1]
+extra_palettes=[set(re.findall(r'(--[\w-]+)\s*:',body)) for _,body in re.findall(r'(:root[^{}]*)\{([^{}]*)\}',extras) if '--pieza-papel:' in body]
+assert len(extra_palettes)==4 and all(p==extra_palettes[0] for p in extra_palettes), 'Faltan tokens de piezas en un tema'
 for doc in ['SKILL.md','componentes.md','referencia-cmrg.md']:
  for ref in re.findall(r'\]\(([^)]+)\)',(ROOT/doc).read_text()):
   if ref.startswith(('https:','http:','#')):continue

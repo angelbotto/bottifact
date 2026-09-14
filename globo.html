@@ -1222,8 +1222,8 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 .visor-caja { max-width: 100%; min-width: 0; overflow: auto; padding: 16px; border: 1px solid var(--pieza-linea); background: var(--pieza-papel); }
 .visor-lienzo { width: 390px; min-width: 0; margin-inline: auto; background: var(--papel); border: 1px solid var(--pieza-linea); }
 [data-visor] button[aria-pressed='true'] { border-color: var(--pieza-acento); background: var(--pieza-suave); }
-.visor-fuente { display: none; }
-.visor-fuente[data-visible] { display: block; }
+.visor-fuente { display: block; }
+.visor-fuente[data-oculta] { display: none; }
 .buscador-recetas { display: grid; gap: 8px; margin-top: 24px; }
 .receta-copia { padding: 12px 0 26px; border-bottom: 1px solid var(--linea); }
 .receta-copia summary { min-height: 44px; padding: 10px 0; cursor: pointer; font: 14px/1.5 var(--sans); color: var(--azul); }
@@ -1244,7 +1244,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   .antes-despues { display: block; }
   .antes-despues > div { margin-bottom: 12pt; }
   .visor-caja { display: none; }
-  .visor-fuente { display: block; }
+  .visor-fuente,.visor-fuente[data-oculta] { display: block; }
   .pieza .tabla-caja { overflow: visible; }
   :root[data-lectura-comoda] body { font-size: 11pt; }
 }
@@ -1385,7 +1385,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   });
   // Imprimir el contenido íntegro de los extractos incluso en motores sin ::details-content.
   let closedForPrint = [];
-  addEventListener('beforeprint',() => { closedForPrint=[...document.querySelectorAll('.extracto details:not([open]),[data-grafica] details:not([open]),[data-escena] details:not([open])')]; closedForPrint.forEach(e=>e.open=true); });
+  addEventListener('beforeprint',() => { closedForPrint=[...document.querySelectorAll('.metodologia:not([open]),.extracto details:not([open]),[data-grafica] details:not([open]),[data-escena] details:not([open])')]; closedForPrint.forEach(e=>e.open=true); });
   addEventListener('afterprint',() => { closedForPrint.forEach(e=>e.open=false); closedForPrint=[]; });
 })();
 

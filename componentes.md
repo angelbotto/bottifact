@@ -941,3 +941,424 @@ un CLI de generación, React, una dependencia de shadcn, un constructor de consu
 streaming, mapas políticos o conversión automática de fuentes a caligrafía. Cualquier pieza
 nueva debe conservar los tres temas, los datos accesibles, los mínimos locales y el ciclo
 de vida documentado. Los ejemplos no se publican ni envían datos.
+
+## Segunda tanda: reportes, artículos y prototipos
+
+Las siguientes recetas amplían el sistema; no cambian los anchos ni los estilos de documentos
+previos. Incluye `fuentes.css`, `estilo.css` e `interacciones.js`. Añade [reportes.js](reportes.js)
+para `data-reporte`, [visor.js](visor.js) para `data-visor`. El recorrido necesita además
+`globo.js` y la única inclusión de Three 0.160.1. Los módulos son independientes de
+`graficas.js`; no cargan red. `NotaReportes.init(raíz)` y `NotaVisores.init(raíz)` se pueden
+repetir; `get(elemento).destroy()` retira la mejora y restaura los datos originales.
+Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador de datos.
+
+## Apariencia y lectura cómoda
+
+<!-- nota:ejemplo apariencia -->
+```html
+<div class="pieza" id="apariencia-ejemplo">
+  <h3>Un papel para cada lectura</h3>
+  <fieldset class="apariencia">
+    <legend>Apariencia del documento</legend>
+    <div class="apariencia-opciones">
+      <label><input type="radio" name="papel-ejemplo" value="light" data-elegir-tema><span class="papel-muestra claro" aria-hidden="true"></span>Claro</label>
+      <label><input type="radio" name="papel-ejemplo" value="dark" data-elegir-tema><span class="papel-muestra calido" aria-hidden="true"></span>Cálido</label>
+      <label><input type="radio" name="papel-ejemplo" value="sea" data-elegir-tema><span class="papel-muestra sea" aria-hidden="true"></span>Sea</label>
+      <label><input type="radio" name="papel-ejemplo" value="system" data-elegir-tema checked>Sistema</label>
+    </div>
+  </fieldset>
+  <button type="button" data-comodidad aria-pressed="false">Lectura cómoda</button>
+  <p>El color cambia el papel; la lectura cómoda amplía texto y datos secundarios.</p>
+</div>
+```
+
+**Cuándo:** preferencias de lectura de una nota. Muestras, etiquetas y radios nativos ofrecen
+selección y teclado sin un desplegable. Usar una vez en la cabecera; este segundo grupo existe
+sólo como ejemplo del catálogo. Todos los grupos se sincronizan.
+
+**Cuándo no / límite:** no es un selector de variantes del prototipo. `Sistema` sigue la
+preferencia del SO; la elección manual vive en `data-theme`. Cada grupo necesita un `name`
+propio. La lectura cómoda es optativa: cuerpo 18px/1,7, tablas 16px, rótulos secundarios 14px.
+Las gráficas base suben a 13px dentro del SVG para no invadir sus márgenes. Se conserva el
+`select[data-tema]` antiguo. Preferencias locales por origen, sin cookies ni red; si se bloquea
+localStorage, funcionan durante la sesión. Los documentos que no incluyen `data-comodidad`
+conservan su escala original aunque exista una preferencia guardada. Sin JS quedan controles
+sin comportamiento y el contenido sigue legible con el tema del sistema.
+
+## Ficha de decisión
+
+<!-- nota:ejemplo decision -->
+```html
+<aside class="pieza ficha-decision" id="decision-ejemplo" aria-labelledby="decision-titulo">
+  <p class="ceja">Decisión 02 · ejemplo</p>
+  <h3 id="decision-titulo">Una revisión al final del registro</h3>
+  <p>Validar la información en un único paso antes de enviarla.</p>
+  <dl>
+    <div><dt>Por qué</dt><dd>Permite detectar omisiones sin pedir a la persona que repita datos.</dd></div>
+    <div><dt>Alternativa considerada</dt><dd>Confirmar cada campo por separado; interrumpe la tarea con demasiada frecuencia.</dd></div>
+    <div><dt>Qué falta comprobar</dt><dd>Que se detecten los errores antes del envío en una prueba de uso.</dd></div>
+    <div><dt>Cuándo revisarla</dt><dd>Si la revisión final se omite o no ayuda a corregir los errores.</dd></div>
+  </dl>
+</aside>
+```
+
+**Cuándo:** conservar el razonamiento de una decisión con sus condiciones de revisión.
+**Cuándo no / límite:** no es un aviso urgente ni un registro de aprobación. El estado,
+responsables y fechas son contenido editorial; no guarda aceptación, firmas ni historial.
+
+## Cronología anotada
+
+<!-- nota:ejemplo cronologia -->
+```html
+<div class="pieza" id="cronologia-ejemplo">
+  <h3>De la observación a la prueba</h3>
+  <ol class="cronologia">
+    <li><time datetime="2026-09-01">01 sep 2026</time><div><h4>Observar</h4><p>Se registran las dudas al completar un formulario.</p></div></li>
+    <li><time datetime="2026-09-04">04 sep 2026</time><div><h4>Prototipar</h4><p>Se reúnen los campos en dos pasos y se añade una revisión final.</p></div></li>
+    <li><time datetime="2026-09-14">14 sep 2026</time><div><h4>Contrastar</h4><p>Se prepara una prueba con tareas, criterios de éxito y observaciones.</p></div></li>
+  </ol>
+  <p class="procedencia">Cronología ilustrativa; no representa una prueba realizada.</p>
+</div>
+```
+
+**Cuándo:** ordenar eventos y explicar qué cambió. En móvil la fecha queda sobre su evento.
+**Cuándo no / límite:** no codifica duración ni distancia temporal; el espacio entre filas no
+representa días. Para comparar duraciones usa etapas. No afirma causalidad por proximidad.
+
+## Ficha de artículo
+
+<!-- nota:ejemplo articulo -->
+```html
+<div class="pieza" id="articulo-ejemplo">
+  <h3>El contexto antes de empezar</h3>
+  <dl class="ficha-articulo">
+    <div><dt>Autoría</dt><dd>Equipo editorial</dd></div>
+    <div><dt>Publicado</dt><dd><time datetime="2026-09-14">14 sep 2026</time></dd></div>
+    <div><dt>Tipo de pieza</dt><dd>Ensayo con ejemplos</dd></div>
+    <div><dt>Revisión</dt><dd>Primera edición</dd></div>
+  </dl>
+  <p>Una propuesta para separar lo observado de lo supuesto al escribir un informe.</p>
+</div>
+```
+
+**Cuándo:** artículos que necesitan autoría, fecha y estado editorial sin ocupar una portada.
+**Cuándo no / límite:** no inventa tiempo de lectura, credenciales ni revisión por pares. Los
+campos son opcionales y no son botones. No genera metadatos SEO ni tarjetas para redes.
+
+## Referencias con regreso al texto
+
+<!-- nota:ejemplo referencias -->
+```html
+<div class="pieza" id="referencias-ejemplo">
+  <h3>La evidencia queda a un paso</h3>
+  <p>Una afirmación debe permitir volver a su origen
+    <a id="llamada-fuente-1" href="#fuente-1" aria-label="Consultar referencia 1">[1]</a>.
+    Cuando una cifra es ilustrativa, debe decirlo
+    <a id="llamada-fuente-2" href="#fuente-2" aria-label="Consultar referencia 2">[2]</a>.</p>
+  <ol class="nota-referencias" aria-label="Referencias del ejemplo">
+    <li id="fuente-1" tabindex="-1">Nota metodológica del ejemplo: acompañar cada afirmación con su procedencia.
+      <a href="#llamada-fuente-1" aria-label="Volver a la llamada de referencia 1">Volver al texto ↑</a></li>
+    <li id="fuente-2" tabindex="-1">Los ejemplos de esta biblioteca no representan datos de producción.
+      <a href="#llamada-fuente-2" aria-label="Volver a la llamada de referencia 2">Volver al texto ↑</a></li>
+  </ol>
+</div>
+```
+
+**Cuándo:** citas, aclaraciones o fuentes extensas que interrumpirían el párrafo. Funcionan sin JS.
+**Cuándo no / límite:** no es una bibliografía automática. IDs únicos por nota y una llamada
+por retorno; si una fuente se cita varias veces, añade retornos distintos y explícitos. Las
+fuentes reales requieren autor, título, fecha y enlace verificable. Estas dos son aclaraciones
+internas, no citas bibliográficas. Mantén llamada y referencia en la misma página multipágina.
+
+## Glosario editorial
+
+<!-- nota:ejemplo glosario -->
+```html
+<div class="pieza" id="glosario-ejemplo">
+  <h3>Palabras que conviene acordar</h3>
+  <dl class="nota-glosario">
+    <div><dt><dfn>Observación</dfn></dt><dd>Lo que se registró directamente, con su contexto y procedencia.</dd></div>
+    <div><dt><dfn>Hipótesis</dfn></dt><dd>Explicación provisional que puede contrastarse con evidencia.</dd></div>
+    <div><dt><dfn>Prototipo</dfn></dt><dd>Representación parcial de una solución para explorar una pregunta.</dd></div>
+  </dl>
+</div>
+```
+
+**Cuándo:** vocabulario propio de un informe o artículo que necesita definiciones compartidas.
+**Cuándo no / límite:** no es una ayuda que aparece sólo al pasar el cursor; las definiciones
+permanecen visibles. No incluye búsqueda ni traduce términos. Las definiciones son editoriales.
+
+## Metodología desplegable
+
+<!-- nota:ejemplo metodologia -->
+```html
+<div class="pieza" id="metodologia-ejemplo">
+  <h3>Cómo leer esta evidencia</h3>
+  <p>El ejemplo compara la duración declarada de una tarea bajo dos supuestos.</p>
+  <details class="metodologia">
+    <summary>Consultar método, supuestos y exclusiones</summary>
+    <dl class="nota-glosario">
+      <div><dt>Unidad</dt><dd>Minutos por operación; volumen mensual constante.</dd></div>
+      <div><dt>Supuesto</dt><dd>Las tareas comparadas tienen el mismo alcance.</dd></div>
+      <div><dt>Exclusión</dt><dd>No incluye capacitación, espera ni fallos de otros sistemas.</dd></div>
+      <div><dt>Límite</dt><dd>El resultado estima capacidad, no demuestra ahorro realizado.</dd></div>
+    </dl>
+  </details>
+</div>
+```
+
+**Cuándo:** explicar detalles del método después de un resumen que ya declara el límite principal.
+**Cuándo no / límite:** no ocultes condiciones que cambian la conclusión. `details` funciona sin
+JS; `interacciones.js` abre y restaura el método al imprimir. No verifica ni ejecuta el método.
+
+## Antes y después editorial
+
+<!-- nota:ejemplo antes-despues -->
+```html
+<figure class="pieza ancho" id="antes-despues-ejemplo">
+  <h3>Un cambio que se puede leer</h3>
+  <div class="antes-despues">
+    <div><h4>Antes · mensaje genérico</h4><p><del>No se pudo completar la acción.</del></p><p>La persona debe adivinar qué falta.</p></div>
+    <div class="despues"><h4>Después · siguiente paso concreto</h4><p><ins>Añade la fecha del registro para continuar.</ins></p><p>El mensaje identifica el campo que necesita atención.</p></div>
+  </div>
+  <figcaption>Ejemplo de redacción. Las dos versiones permanecen completas; en móvil se leen una después de otra.</figcaption>
+</figure>
+```
+
+**Cuándo:** mostrar una corrección de texto, una decisión de interfaz o una revisión de contenido.
+**Cuándo no / límite:** no calcula un diff, ni compara capturas con un deslizador. `del`/`ins`
+identifican cambios editoriales; para alternativas sin relación temporal usa comparación.
+
+## Cascada de cantidades
+
+<!-- nota:ejemplo cascada -->
+```html
+<figure class="pieza ancho" id="cascada-ejemplo" data-reporte="cascada">
+  <h3>Cómo se llega al resultado</h3>
+  <p>Horas disponibles, ajustes y trabajo añadido. Cada tramo empieza donde termina el anterior.</p>
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Balance de capacidad en horas, desplazable">
+    <table><caption>Balance ilustrativo · eje X en horas</caption>
+      <thead><tr><th scope="col">Concepto</th><th scope="col">Cambio (h)</th><th scope="col">Acumulado (h)</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Capacidad inicial</th><td data-valor="120">+120</td><td>120</td></tr>
+        <tr><th scope="row">Mantenimiento</th><td data-valor="-30">−30</td><td>90</td></tr>
+        <tr><th scope="row">Apoyo adicional</th><td data-valor="20">+20</td><td>110</td></tr>
+        <tr><th scope="row">Revisión</th><td data-valor="-15">−15</td><td>95</td></tr>
+      </tbody>
+      <tfoot><tr><th scope="row">Resultado</th><td>Horas netas</td><td>95</td></tr></tfoot>
+    </table>
+  </div>
+  <figcaption>Ejemplo: 120 − 30 + 20 − 15 = 95 h. Signos y tabla distinguen aumentos y reducciones sin depender del color.</figcaption>
+</figure>
+```
+
+**Cuándo:** explicar un total como suma de aportes positivos y negativos en la misma unidad.
+**Cuándo no / límite:** no sumar tasas, porcentajes ni monedas distintas. Tres columnas,
+1–60 filas; valores y acumulados finitos de hasta ±10⁹. La primera fila también es un cambio
+desde cero; no admite subtotales intermedios ni reinicios. El módulo calcula acumulados y
+resultado, nunca toma la tercera columna como entrada. Tabla visible y dibujo de 860px con
+scroll local. Cero y todos los acumulados están en la escala. Sin animación.
+
+## Pequeños múltiples con escala común
+
+<!-- nota:ejemplo multiples -->
+```html
+<figure class="pieza amplio" id="multiples-ejemplo" data-reporte="multiples">
+  <h3>La misma pregunta en tres sedes</h3>
+  <p>Solicitudes por semana. Los tres paneles comparten el eje Y; el eje X corresponde al orden de la tabla.</p>
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Solicitudes por sede y semana, desplazable">
+    <table><caption>Solicitudes semanales · ejemplo · eje Y en solicitudes</caption>
+      <thead><tr><th scope="col">Período</th><th scope="col">Bogotá</th><th scope="col">Medellín</th><th scope="col">Cali</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">1 · Semana 1</th><td data-valor="40">40</td><td data-valor="20">20</td><td data-valor="30">30</td></tr>
+        <tr><th scope="row">2 · Semana 2</th><td data-valor="60">60</td><td data-valor="30">30</td><td data-valor="">Sin dato</td></tr>
+        <tr><th scope="row">3 · Semana 3</th><td data-valor="50">50</td><td data-valor="35">35</td><td data-valor="40">40</td></tr>
+        <tr><th scope="row">4 · Semana 4</th><td data-valor="80">80</td><td data-valor="40">40</td><td data-valor="45">45</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Datos ilustrativos. Escala común de 0 a 80; sin dato corta el trazo. La pendiente no demuestra causalidad.</figcaption>
+</figure>
+```
+
+**Cuándo:** comparar patrones de hasta cuatro grupos sin superponer sus líneas.
+**Cuándo no / límite:** los períodos son equidistantes y deben ser los mismos para todos los
+grupos; no codifica fechas irregulares. Entre 2 y 60 filas. Valores finitos de hasta ±10⁹,
+vacío distinto de cero. Cada panel conserva 360px mínimos dentro de su región desplazable.
+Sin valores, el dominio convencional es 0–1 y no hay puntos; no se inventan observaciones.
+
+## Conciliación de registros
+
+<!-- nota:ejemplo conciliacion -->
+```html
+<figure class="pieza amplio" id="conciliacion-ejemplo" data-reporte="conciliacion">
+  <h3>Una diferencia necesita explicación</h3>
+  <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Conciliación de operaciones, desplazable">
+    <table class="tabla-calculo"><caption>Operaciones esperadas y observadas · ejemplo</caption>
+      <thead><tr><th scope="col">Canal</th><th scope="col">Esperadas</th><th scope="col">Observadas</th><th scope="col">Diferencia</th><th scope="col">Explicación</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Web</th><td data-valor="120">120</td><td data-valor="118">118</td><td>−2</td><td>Dos operaciones siguen en revisión.</td></tr>
+        <tr><th scope="row">App</th><td data-valor="80">80</td><td data-valor="80">80</td><td>0</td><td>Conteos coincidentes.</td></tr>
+        <tr><th scope="row">Asistido</th><td data-valor="30">30</td><td data-valor="33">33</td><td>+3</td><td>Tres registros pendientes de clasificar.</td></tr>
+      </tbody>
+      <tfoot><tr><th scope="row">Total</th><td>230</td><td>231</td><td>1</td><td>El saldo neto no compensa las diferencias por canal.</td></tr></tfoot>
+    </table>
+  </div>
+  <figcaption>Datos ilustrativos. Diferencia = observado − esperado; una diferencia cero no prueba igualdad de los registros individuales.</figcaption>
+</figure>
+```
+
+**Cuándo:** comparar conteos esperados/observados y conservar la explicación por fila.
+**Cuándo no / límite:** requiere conteos enteros no negativos (≤10⁹), no importes monetarios.
+No cruza IDs, no detecta duplicados ni demuestra conciliación contable. Si falta un observado,
+el total indica incompleto y no da un saldo neto. Cinco columnas exactas, hasta 60 filas.
+Las explicaciones son editoriales: el módulo no las infiere de la diferencia.
+
+## Calculadora de escenarios
+
+<!-- nota:ejemplo escenario -->
+```html
+<div class="pieza ancho" id="escenario-ejemplo" data-reporte="escenario">
+  <h3>¿Qué cambia si la tarea toma menos tiempo?</h3>
+  <p>Explora capacidad mensual con un volumen fijo. Los valores iniciales son ilustrativos.</p>
+  <form class="escenario-form" aria-label="Supuestos de capacidad mensual">
+    <label>Operaciones al mes<input name="volumen" type="number" min="0" max="1000000" step="1" value="1200" required></label>
+    <label>Antes, minutos por operación<input name="antes" type="number" min="0" max="1440" step="0.1" value="8" required></label>
+    <label>Después, minutos por operación<input name="despues" type="number" min="0" max="1440" step="0.1" value="5" required></label>
+    <button type="reset">Restablecer supuestos</button>
+  </form>
+  <div class="escenario-resultados">
+    <output data-resultado aria-live="polite">60 h/mes liberadas</output>
+    <p data-formula>1.200 × (8 − 5) ÷ 60 = 60 h/mes. Es capacidad estimada, no ahorro monetario ni una predicción.</p>
+  </div>
+</div>
+```
+
+**Cuándo:** explicar la sensibilidad de un resultado a supuestos explícitos y reversibles.
+**Cuándo no / límite:** modelo lineal de capacidad, sin simulación, predicción ni valoración
+financiera. Minutos no negativos, hasta un día por operación y un millón de operaciones al mes;
+volumen entero y tiempos en décimas. Si después es mayor, muestra horas adicionales. Vacíos y
+entradas fuera de límites invalidan el resultado; no conserva silenciosamente una cifra previa.
+Sin JS se ve el cálculo inicial; no usar los controles como formulario de recolección.
+
+## Globo narrado por etapas
+
+<!-- nota:ejemplo recorrido -->
+```html
+<figure class="pieza ancho" id="recorrido-ejemplo" data-reporte="recorrido">
+  <h3>Seguir el viaje de una idea</h3>
+  <p>Una ruta por etapa, con contexto escrito. Selecciona anterior o siguiente para orientar el globo.</p>
+  <div data-recorrido-globo></div>
+  <div class="acciones">
+    <button type="button" data-paso="prev">← Etapa anterior</button>
+    <button type="button" data-paso="next">Etapa siguiente →</button>
+  </div>
+  <p data-recorrido-estado role="status">Tres etapas ilustrativas; el recorrido empieza inmóvil.</p>
+  <ol class="recorrido-pasos">
+    <li data-ruta="idea-bog-mad"><strong><span data-lugar="BOG" data-lat="4.711" data-lon="-74.0721">Bogotá</span> → <span data-lugar="MAD" data-lat="40.4168" data-lon="-3.7038">Madrid</span></strong><p>Se comparte la primera propuesta para revisión.</p></li>
+    <li data-ruta="idea-mad-hnd"><strong><span data-lugar="MAD" data-lat="40.4168" data-lon="-3.7038">Madrid</span> → <span data-lugar="HND" data-lat="35.5494" data-lon="139.7798">Tokio</span></strong><p>La propuesta se convierte en una prueba de interacción.</p></li>
+    <li data-ruta="idea-hnd-bog"><strong><span data-lugar="HND" data-lat="35.5494" data-lon="139.7798">Tokio</span> → <span data-lugar="BOG" data-lat="4.711" data-lon="-74.0721">Bogotá</span></strong><p>Las observaciones regresan al equipo que decide.</p></li>
+  </ol>
+  <figcaption>Relato ficticio. Las coordenadas son geográficas; no representan vuelos, distancias ni actividad real.</figcaption>
+</figure>
+```
+
+**Cuándo:** la ubicación y el orden de una historia importan. Las etapas escritas siempre están
+visibles; el mapa orienta una ruta a la vez. Incluye Three una sola vez y `globo.js` antes de
+`reportes.js`. Comparte la dependencia con todos los demás globos/escenas del documento.
+
+**Cuándo no / límite:** no convierte etapas abstractas en geografía. `data-lugar` identifica
+un lugar; repetir un ID exige las mismas coordenadas y nombre. Cada ruta necesita un ID único
+y dos lugares. No autoavanza ni añade sonido. Empieza pausado; conserva controles de NotaGlobo,
+reduce, pausa por visibilidad y destroy. Sin Three queda mensaje y relato; sin WebGL queda
+además la lista de rutas. No añade mapas, texturas ni geocodificación remota.
+
+## Visor de prototipos con estados
+
+<!-- nota:ejemplo visor -->
+```html
+<figure class="pieza amplio" id="visor-ejemplo" data-visor>
+  <h3>Una interfaz, varios tamaños</h3>
+  <p>Explora los estados vacío, revisión y confirmado de un registro ilustrativo.</p>
+  <div class="acciones" role="group" aria-label="Ancho de la vista del prototipo">
+    <button type="button" data-ancho-visor="320" aria-pressed="false">320 px</button>
+    <button type="button" data-ancho-visor="390" aria-pressed="true">390 px</button>
+    <button type="button" data-ancho-visor="768" aria-pressed="false">768 px</button>
+    <button type="button" data-ancho-visor="1024" aria-pressed="false">1024 px</button>
+    <button type="button" data-ancho-visor="auto" aria-pressed="false">Ajustar</button>
+    <button type="button" data-reiniciar-visor>Reiniciar ejemplo</button>
+  </div>
+  <p data-visor-estado role="status">Vista inicial: 390 px CSS.</p>
+  <div class="visor-caja" tabindex="0" role="region" aria-label="Prototipo interactivo, desplazable horizontalmente"></div>
+  <template data-prototipo>
+    <style>
+      .demo { padding: 24px; min-width: 0; }
+      .demo nav { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 20px; border-bottom: 1px solid var(--pieza-linea); }
+      .demo button { min-height: 44px; padding: 8px 12px; color: var(--pieza-tinta); background: var(--pieza-papel); border: 1px solid var(--pieza-linea); border-radius: 4px; font: inherit; cursor: pointer; }
+      .demo button[aria-pressed='true'] { background: var(--pieza-suave); border-color: var(--pieza-acento); }
+      .demo h2 { font: 400 32px/1.15 var(--serif); margin: 0 0 16px; }
+      .demo p { margin: 0 0 18px; overflow-wrap: anywhere; }
+      .demo .contexto { margin-top: 24px; font-size: 14px; color: var(--pieza-secundaria); }
+      .demo article { padding-top: 28px; }
+      .demo dl { margin: 0 0 20px; display: grid; gap: 12px; }
+      .demo dt { font-size: 13px; color: var(--pieza-secundaria); }
+      .demo dd { margin: 0; }
+      .demo .estado { padding: 16px; border: 1px dashed var(--pieza-linea); }
+      @container (min-width: 600px) {
+        .demo article { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); gap: 32px; }
+        .demo .contexto { margin-top: 0; padding-top: 4px; }
+      }
+    </style>
+    <div class="demo">
+      <nav aria-label="Estados del prototipo">
+        <button type="button" data-demo-ir="vacio" aria-pressed="true">Vacío</button>
+        <button type="button" data-demo-ir="revision" aria-pressed="false">Revisión</button>
+        <button type="button" data-demo-ir="confirmado" aria-pressed="false">Confirmado</button>
+      </nav>
+      <article data-demo-pagina="vacio">
+        <div><h2>Tu primer registro</h2><p>Todavía no hay registros en este ejemplo.</p><button type="button" data-demo-ir="revision">Crear borrador de ejemplo</button></div>
+        <aside class="contexto"><p>Empieza con un nombre, una fecha y una explicación del movimiento.</p><p class="estado">Estado: sin registros</p></aside>
+      </article>
+      <article data-demo-pagina="revision" hidden>
+        <div><h2>Revisa antes de confirmar</h2><dl><div><dt>Nombre</dt><dd>Sesión de revisión</dd></div><div><dt>Fecha</dt><dd>14 de septiembre de 2026</dd></div><div><dt>Duración</dt><dd>30 minutos</dd></div></dl><button type="button" data-demo-ir="confirmado">Confirmar ejemplo</button></div>
+        <aside class="contexto"><p>Comprueba los datos del borrador. Este prototipo usa un registro fijo para explorar la interacción.</p><p class="estado">Estado: pendiente de confirmar</p></aside>
+      </article>
+      <article data-demo-pagina="confirmado" hidden>
+        <div><h2>Registro confirmado</h2><p>La sesión de revisión aparece en el ejemplo con su fecha y duración.</p><button type="button" data-demo-ir="vacio">Volver al inicio</button></div>
+        <aside class="contexto"><p class="estado">Estado: confirmado en el prototipo</p><p>No se envió ni se guardó información.</p></aside>
+      </article>
+    </div>
+  </template>
+  <div class="visor-fuente"><h4>Estados del ejemplo</h4><ol><li>Vacío: crear un borrador de ejemplo.</li><li>Revisión: sesión del 14-sep-2026, 30 minutos, pendiente de confirmar.</li><li>Confirmado: resultado ilustrativo; no se envían datos.</li></ol></div>
+  <figcaption>Vista interactiva local. El ancho conserva píxeles CSS reales; en una pantalla pequeña se desplaza la región completa.</figcaption>
+</figure>
+```
+
+**Cuándo:** documentar estados de un componente o recorrer un prototipo pequeño dentro de un
+artículo. El lienzo cambia entre 320, 390, 768, 1024 y el espacio disponible. Reiniciar reconstruye
+la muestra original. El texto alternativo aparece sin JS y al imprimir. No carga archivos.
+
+**Cuándo no / límite:** no es un emulador de iPhone, una captura ni un navegador remoto. No
+modifica la densidad de píxeles, el motor o el viewport del documento. Usa **Shadow DOM y
+`@container`**, por eso las reglas responsivas del prototipo deben consultar el contenedor;
+`@media (width)` seguiría midiendo la ventana exterior. No hay iframe porque la CSP lo bloquea.
+El template contiene HTML/CSS de confianza, sin guiones ni manejadores `on…`; no es un sandbox
+para HTML ajeno. Los botones `data-demo-ir` activan un `data-demo-pagina` del mismo visor;
+no envían formularios, calculan datos ni persisten cambios. Los IDs, si se usan, viven dentro
+del shadow. Los estilos del documento no entran, pero sí se heredan sus tokens y fuentes.
+El contenido del prototipo debe respetar reduce; el visor no inicia RAF ni transiciones.
+`NotaVisores.get(figura).setWidth('768')` permite controlar el ancho; `reset()` reinicia y
+`destroy()` devuelve la alternativa textual y retira listeners/observer.
+
+## Elegir y copiar desde el catálogo
+
+`plantilla.html` ofrece búsqueda por nombre/propósito y el HTML exacto de cada receta en un
+`details` junto al ejemplo. La búsqueda filtra **el índice de recetas**, no borra secciones de
+la nota ni altera su progreso. Acentos y mayúsculas no cambian los resultados. El índice
+completo sigue disponible sin JS. El botón usa el mismo contrato de copia y alternativa por
+selección de `interacciones.js`. El módulo [catalogo.js](catalogo.js) sólo hace falta en un
+catálogo que incluya `data-buscador-recetas`; no se necesita en artículos normales.
+
+Las muestras son componentes de documento, no un constructor de aplicaciones. Cada snippet
+requiere las fuentes y módulos indicados arriba; el botón copia el componente, no toda la
+biblioteca. La plantilla y los ejemplos completos sí son autocontenidos.

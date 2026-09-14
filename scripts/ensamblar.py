@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Genera fragmentos autocontenidos desde las fuentes del skill, sin red."""
 from pathlib import Path
-import json, base64, hashlib, re
+import json, base64, hashlib, re, html as html_escape
 ROOT = Path(__file__).resolve().parents[1]
 THREE = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js'
 DATA = {
@@ -117,6 +117,9 @@ def recipes():
 catalog='''<section class="seccion" id="libreria"><p class="ceja">06 / componentes para copiar</p>
 <h2>La evidencia tiene muchas formas.</h2><p>Gráficas, tablas y experiencias opcionales. Cada ejemplo conserva sus datos, su criterio y su límite en componentes.md.</p>NAV_COMPONENTES</section>'''
 labels={'tabla-densa':'Tabla densa','terminal':'Terminal','manuscrita':'Nota manuscrita','barras':'Barras','lineas':'Líneas','temporal':'Serie temporal','dispersion':'Dispersión','distribucion':'Distribución','calor':'Mapa de calor','comparacion':'Comparación','totales':'Totales y ordenación','sparkline':'Tabla con serie','sonido':'Sonido optativo','escritura':'Escritura por trazos','xyz':'Three.js · XYZ','etapas':'Three.js · etapas'}
+labels.update({'apariencia':'Apariencia y lectura cómoda','decision':'Ficha de decisión','cronologia':'Cronología anotada','articulo':'Ficha de artículo','referencias':'Referencias con regreso','glosario':'Glosario editorial','metodologia':'Metodología desplegable','antes-despues':'Antes y después','cascada':'Cascada de cantidades','multiples':'Pequeños múltiples','conciliacion':'Conciliación de registros','escenario':'Calculadora de escenarios','recorrido':'Globo narrado','visor':'Visor de prototipos'})
+new_keys={'apariencia','decision','cronologia','articulo','referencias','glosario','metodologia','antes-despues','cascada','multiples','conciliacion','escenario','recorrido','visor'}
+keywords={'apariencia':'tema lectura','decision':'reporte informe','cronologia':'historia fechas','articulo':'blog autor fecha','referencias':'blog fuentes citas','glosario':'blog definiciones','metodologia':'blog informe supuestos','antes-despues':'blog cambios','cascada':'reporte balance','multiples':'graficas reporte sedes','conciliacion':'tabla reporte diferencias','escenario':'calculadora reporte supuestos','recorrido':'globo three geografia historia','visor':'prototipo estados responsive'}
 links=[]
 for key,html in recipes():
  if key=='multipagina':continue
@@ -124,12 +127,16 @@ for key,html in recipes():
  existing=re.search(r'\bid="([^"]+)"',first.group(0))
  anchor=existing.group(1) if existing else 'pieza-'+key
  if not existing:html=html[:first.end()-1]+' id="'+anchor+'"'+html[first.end()-1:]
- links.append('<li><a href="#'+anchor+'">'+labels[key]+'</a></li>')
+ links.append('<li data-claves="'+keywords.get(key,'')+'"><a href="#'+anchor+'">'+labels[key]+'</a></li>')
+ if key=='apariencia':catalog += '<section class="seccion" id="segunda-tanda"><h2>Historias que se pueden explorar.</h2><p>Más piezas para reportes, artículos y prototipos. Empieza por la apariencia o prueba un escenario y el visor.</p></section>'
  catalog += '\n' + html + '\n'
-catalog=catalog.replace('NAV_COMPONENTES','<nav aria-label="Ejemplos de componentes"><ul class="catalogo-indice">'+''.join(links)+'</ul></nav>')
+ # El código escapado conserva exactamente la receta; los IDs aquí son texto, no elementos.
+ code_id='receta-fuente-'+key
+ catalog += '<details class="receta-copia ancho"><summary>HTML y dependencias · '+labels[key]+'</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. '+('Añade reportes.js; para el recorrido también globo.js y Three 0.160.1.' if key in {'cascada','multiples','conciliacion','escenario','recorrido'} else 'Añade visor.js.' if key=='visor' else 'Consulta los módulos y límites de esta receta en componentes.md.')+'</p><div class="codigo"><div class="cab"><span>'+labels[key]+'</span><button type="button" data-copiar="'+code_id+'" aria-label="Copiar HTML de '+labels[key]+'">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de '+labels[key]+', desplazable"><code id="'+code_id+'">'+html_escape.escape(html)+'</code></pre></div></details>'
+catalog=catalog.replace('NAV_COMPONENTES','<div data-buscador-recetas><div class="buscador-recetas"><label for="buscar-receta">Encuentra una pieza</label><input id="buscar-receta" type="search" placeholder="Tabla, globo, artículo, prototipo…" aria-describedby="buscar-estado"><p id="buscar-estado" role="status"></p></div><nav aria-label="Ejemplos de componentes"><ul class="catalogo-indice">'+''.join(links)+'</ul></nav></div>')
 body=body.replace('<footer class="pie">',catalog+'<footer class="pie">')
-body=body.replace('<li><a href="#guardado">Lo que vale guardar</a></li>','<li><a href="#guardado">Lo que vale guardar</a></li><li><a href="#libreria">Librería de evidencia</a></li>')
-(ROOT/'plantilla.html').write_text(start('Nota Tikin — la forma también explica')+body+script('interacciones.js')+globe_scripts()+script('graficas.js')+script('tablas.js')+script('sonido.js')+script('escritura.js')+script('escena.js'))
+body=body.replace('<li><a href="#guardado">Lo que vale guardar</a></li>','<li><a href="#guardado">Lo que vale guardar</a></li><li><a href="#libreria">Librería de evidencia</a></li><li><a href="#segunda-tanda">Artículos y prototipos</a></li>')
+(ROOT/'plantilla.html').write_text(start('Nota Tikin — la forma también explica')+body+script('interacciones.js')+globe_scripts()+script('graficas.js')+script('tablas.js')+script('sonido.js')+script('escritura.js')+script('escena.js')+script('reportes.js')+script('visor.js')+script('catalogo.js'))
 globe_body='<main class="hoja" id="inicio" lang="es">'+tools()+'''<header class="cabecera"><p class="ceja">Nota / geografía</p><h1>Planes, puntos<br>y lugares.</h1><p class="bajada">Un globo de puntos para explorar conexiones. Elige una ruta, gira la Tierra o pausa la vista.</p></header>'''+globe()+'''<footer class="pie">Ejemplo reutilizable · Three.js desde cdnjs · máscara geográfica incrustada · ambos temas y movimiento reducido.</footer></main>'''
 (ROOT/'globo.html').write_text(start('Nota Tikin — globo de rutas')+globe_body+script('interacciones.js')+globe_scripts())
 (ROOT/'multipagina.html').write_text(start('Nota Tikin — capítulos')+dict(recipes())['multipagina']+script('interacciones.js')+script('multipagina.js'))

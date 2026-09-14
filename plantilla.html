@@ -1222,8 +1222,8 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 .visor-caja { max-width: 100%; min-width: 0; overflow: auto; padding: 16px; border: 1px solid var(--pieza-linea); background: var(--pieza-papel); }
 .visor-lienzo { width: 390px; min-width: 0; margin-inline: auto; background: var(--papel); border: 1px solid var(--pieza-linea); }
 [data-visor] button[aria-pressed='true'] { border-color: var(--pieza-acento); background: var(--pieza-suave); }
-.visor-fuente { display: none; }
-.visor-fuente[data-visible] { display: block; }
+.visor-fuente { display: block; }
+.visor-fuente[data-oculta] { display: none; }
 .buscador-recetas { display: grid; gap: 8px; margin-top: 24px; }
 .receta-copia { padding: 12px 0 26px; border-bottom: 1px solid var(--linea); }
 .receta-copia summary { min-height: 44px; padding: 10px 0; cursor: pointer; font: 14px/1.5 var(--sans); color: var(--azul); }
@@ -1244,7 +1244,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   .antes-despues { display: block; }
   .antes-despues > div { margin-bottom: 12pt; }
   .visor-caja { display: none; }
-  .visor-fuente { display: block; }
+  .visor-fuente,.visor-fuente[data-oculta] { display: block; }
   .pieza .tabla-caja { overflow: visible; }
   :root[data-lectura-comoda] body { font-size: 11pt; }
 }
@@ -1266,7 +1266,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   <p class="secundario mono">Referencia revisada: 16 rutas · 8 artículos</p>
 </header>
 <nav class="indice" aria-label="Índice del documento"><p class="ceja">En esta nota</p><ol>
-  <li><a href="#criterio">Una idea a la vez</a></li><li><a href="#proporcion">El peso de cada cosa</a></li><li><a href="#evidencia">Dejar la evidencia</a></li><li><a href="#rutas">Los lugares se conectan</a></li><li><a href="#guardado">Lo que vale guardar</a></li><li><a href="#libreria">Librería de evidencia</a></li>
+  <li><a href="#criterio">Una idea a la vez</a></li><li><a href="#proporcion">El peso de cada cosa</a></li><li><a href="#evidencia">Dejar la evidencia</a></li><li><a href="#rutas">Los lugares se conectan</a></li><li><a href="#guardado">Lo que vale guardar</a></li><li><a href="#libreria">Librería de evidencia</a></li><li><a href="#segunda-tanda">Artículos y prototipos</a></li>
 </ol></nav>
 <section class="seccion" id="criterio"><p class="ceja">01 / criterio</p><h2>Una idea a la vez.</h2>
 <p>Lo primero que debe verse es <span class="marca">la decisión que importa</span>. Los detalles llegan después, con una jerarquía que permite leer sin perder el hilo.</p>
@@ -1306,7 +1306,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 <div class="extracto"><p class="desvanece" aria-hidden="true">Una nota se termina cuando alguien puede tomar una decisión con ella. La forma prepara el terreno; la evidencia sostiene lo que decimos.</p><details><summary>Leer la nota completa</summary><p>Una nota se termina cuando alguien puede tomar una decisión con ella. La forma prepara el terreno; la evidencia sostiene lo que decimos. Si la pieza necesita una segunda lectura para entender qué propone, todavía queda trabajo editorial.</p></details></div>
 <aside class="aviso cita"><span class="num" aria-hidden="true">↳</span><div><blockquote>Dejar una buena nota es dejarle contexto a quien llega después.</blockquote><p class="secundario">Principio de esta plantilla</p></div></aside>
 <section class="seccion" id="libreria"><p class="ceja">06 / componentes para copiar</p>
-<h2>La evidencia tiene muchas formas.</h2><p>Gráficas, tablas y experiencias opcionales. Cada ejemplo conserva sus datos, su criterio y su límite en componentes.md.</p><nav aria-label="Ejemplos de componentes"><ul class="catalogo-indice"><li><a href="#pieza-tabla-densa">Tabla densa</a></li><li><a href="#pieza-terminal">Terminal</a></li><li><a href="#pieza-manuscrita">Nota manuscrita</a></li><li><a href="#barras-ejemplo">Barras</a></li><li><a href="#lineas-ejemplo">Líneas</a></li><li><a href="#temporal-ejemplo">Serie temporal</a></li><li><a href="#dispersion-ejemplo">Dispersión</a></li><li><a href="#distribucion-ejemplo">Distribución</a></li><li><a href="#calor-ejemplo">Mapa de calor</a></li><li><a href="#pieza-comparacion">Comparación</a></li><li><a href="#pieza-totales">Totales y ordenación</a></li><li><a href="#pieza-sparkline">Tabla con serie</a></li><li><a href="#pieza-sonido">Sonido optativo</a></li><li><a href="#pieza-escritura">Escritura por trazos</a></li><li><a href="#xyz-ejemplo">Three.js · XYZ</a></li><li><a href="#etapas-ejemplo">Three.js · etapas</a></li></ul></nav></section>
+<h2>La evidencia tiene muchas formas.</h2><p>Gráficas, tablas y experiencias opcionales. Cada ejemplo conserva sus datos, su criterio y su límite en componentes.md.</p><div data-buscador-recetas><div class="buscador-recetas"><label for="buscar-receta">Encuentra una pieza</label><input id="buscar-receta" type="search" placeholder="Tabla, globo, artículo, prototipo…" aria-describedby="buscar-estado"><p id="buscar-estado" role="status"></p></div><nav aria-label="Ejemplos de componentes"><ul class="catalogo-indice"><li data-claves=""><a href="#pieza-tabla-densa">Tabla densa</a></li><li data-claves=""><a href="#pieza-terminal">Terminal</a></li><li data-claves=""><a href="#pieza-manuscrita">Nota manuscrita</a></li><li data-claves=""><a href="#barras-ejemplo">Barras</a></li><li data-claves=""><a href="#lineas-ejemplo">Líneas</a></li><li data-claves=""><a href="#temporal-ejemplo">Serie temporal</a></li><li data-claves=""><a href="#dispersion-ejemplo">Dispersión</a></li><li data-claves=""><a href="#distribucion-ejemplo">Distribución</a></li><li data-claves=""><a href="#calor-ejemplo">Mapa de calor</a></li><li data-claves=""><a href="#pieza-comparacion">Comparación</a></li><li data-claves=""><a href="#pieza-totales">Totales y ordenación</a></li><li data-claves=""><a href="#pieza-sparkline">Tabla con serie</a></li><li data-claves=""><a href="#pieza-sonido">Sonido optativo</a></li><li data-claves=""><a href="#pieza-escritura">Escritura por trazos</a></li><li data-claves=""><a href="#xyz-ejemplo">Three.js · XYZ</a></li><li data-claves=""><a href="#etapas-ejemplo">Three.js · etapas</a></li><li data-claves="tema lectura"><a href="#apariencia-ejemplo">Apariencia y lectura cómoda</a></li><li data-claves="reporte informe"><a href="#decision-ejemplo">Ficha de decisión</a></li><li data-claves="historia fechas"><a href="#cronologia-ejemplo">Cronología anotada</a></li><li data-claves="blog autor fecha"><a href="#articulo-ejemplo">Ficha de artículo</a></li><li data-claves="blog fuentes citas"><a href="#referencias-ejemplo">Referencias con regreso</a></li><li data-claves="blog definiciones"><a href="#glosario-ejemplo">Glosario editorial</a></li><li data-claves="blog informe supuestos"><a href="#metodologia-ejemplo">Metodología desplegable</a></li><li data-claves="blog cambios"><a href="#antes-despues-ejemplo">Antes y después</a></li><li data-claves="reporte balance"><a href="#cascada-ejemplo">Cascada de cantidades</a></li><li data-claves="graficas reporte sedes"><a href="#multiples-ejemplo">Pequeños múltiples</a></li><li data-claves="tabla reporte diferencias"><a href="#conciliacion-ejemplo">Conciliación de registros</a></li><li data-claves="calculadora reporte supuestos"><a href="#escenario-ejemplo">Calculadora de escenarios</a></li><li data-claves="globo three geografia historia"><a href="#recorrido-ejemplo">Globo narrado</a></li><li data-claves="prototipo estados responsive"><a href="#visor-ejemplo">Visor de prototipos</a></li></ul></nav></div></section>
 <figure class="amplio" id="pieza-tabla-densa">
   <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Brechas, desplazable">
     <table><caption>Seguimiento ilustrativo de brechas</caption>
@@ -1317,7 +1317,16 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   </div>
   <figcaption>Ejemplo de seis columnas; desplaza la tabla para consultar la última.</figcaption>
 </figure>
-
+<details class="receta-copia ancho"><summary>HTML y dependencias · Tabla densa</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Tabla densa</span><button type="button" data-copiar="receta-fuente-tabla-densa" aria-label="Copiar HTML de Tabla densa">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Tabla densa, desplazable"><code id="receta-fuente-tabla-densa">&lt;figure class=&quot;amplio&quot; id=&quot;pieza-tabla-densa&quot;&gt;
+  &lt;div class=&quot;tabla-caja densa&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Brechas, desplazable&quot;&gt;
+    &lt;table&gt;&lt;caption&gt;Seguimiento ilustrativo de brechas&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Brecha&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Responsable&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Estado&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Inicio&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Revisión&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Evidencia esperada&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Fuente sin fecha de corte&lt;/th&gt;&lt;td&gt;Equipo de datos&lt;/td&gt;&lt;td&gt;Pendiente&lt;/td&gt;&lt;td&gt;&lt;time datetime=&quot;2026-09-13&quot;&gt;13-sep-2026&lt;/time&gt;&lt;/td&gt;&lt;td&gt;&lt;time datetime=&quot;2026-09-18&quot;&gt;18-sep-2026&lt;/time&gt;&lt;/td&gt;&lt;td&gt;Registro con fecha y criterio de inclusión.&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Definición de unidad&lt;/th&gt;&lt;td&gt;Equipo de análisis&lt;/td&gt;&lt;td&gt;En revisión&lt;/td&gt;&lt;td&gt;&lt;time datetime=&quot;2026-09-12&quot;&gt;12-sep-2026&lt;/time&gt;&lt;/td&gt;&lt;td&gt;&lt;time datetime=&quot;2026-09-16&quot;&gt;16-sep-2026&lt;/time&gt;&lt;/td&gt;&lt;td&gt;Diccionario con unidad y denominador.&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Ejemplo de seis columnas; desplaza la tabla para consultar la última.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details>
 <figure class="ancho" id="pieza-terminal">
   <div class="terminal">
     <div class="cab"><span>saldo por bolsillo · ejemplo ilustrativo</span>
@@ -1337,11 +1346,31 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   </div>
   <figcaption>Datos ilustrativos. La columna que importa va señalada, no en negrita.</figcaption>
 </figure>
-
+<details class="receta-copia ancho"><summary>HTML y dependencias · Terminal</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Terminal</span><button type="button" data-copiar="receta-fuente-terminal" aria-label="Copiar HTML de Terminal">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Terminal, desplazable"><code id="receta-fuente-terminal">&lt;figure class=&quot;ancho&quot; id=&quot;pieza-terminal&quot;&gt;
+  &lt;div class=&quot;terminal&quot;&gt;
+    &lt;div class=&quot;cab&quot;&gt;&lt;span&gt;saldo por bolsillo · ejemplo ilustrativo&lt;/span&gt;
+      &lt;button type=&quot;button&quot; data-copiar=&quot;t-saldos&quot; aria-label=&quot;Copiar la salida&quot;&gt;
+        &lt;svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.7&quot; aria-hidden=&quot;true&quot;&gt;
+          &lt;rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;11&quot; height=&quot;11&quot; rx=&quot;2&quot;/&gt;&lt;path d=&quot;M5 15V5a2 2 0 0 1 2-2h10&quot;/&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;span class=&quot;copia-estado&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;cuerpo&quot;&gt;
+      &lt;pre tabindex=&quot;0&quot; aria-label=&quot;Distribución del saldo&quot;&gt;&lt;code id=&quot;t-saldos&quot;&gt;&lt;span class=&quot;tenue&quot;&gt;       rango   bolsillos        total COP&lt;/span&gt;
+&lt;span class=&quot;tenue&quot;&gt;  ------------  ---------  ---------------&lt;/span&gt;
+  menos de $100        349            5.120
+    más de $1M          5    &lt;span class=&quot;subra&quot;&gt;14.434.490&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Datos ilustrativos. La columna que importa va señalada, no en negrita.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details>
 <p class="manuscrita" id="pieza-manuscrita">las fechas dicen cuándo pasó cada cosa. lo que explica cómo una llevó a la
   otra está <span class="senalado">en las brechas</span>, donde dejo de
   hablar de porcentajes</p>
-
+<details class="receta-copia ancho"><summary>HTML y dependencias · Nota manuscrita</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Nota manuscrita</span><button type="button" data-copiar="receta-fuente-manuscrita" aria-label="Copiar HTML de Nota manuscrita">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Nota manuscrita, desplazable"><code id="receta-fuente-manuscrita">&lt;p class=&quot;manuscrita&quot; id=&quot;pieza-manuscrita&quot;&gt;las fechas dicen cuándo pasó cada cosa. lo que explica cómo una llevó a la
+  otra está &lt;span class=&quot;senalado&quot;&gt;en las brechas&lt;/span&gt;, donde dejo de
+  hablar de porcentajes&lt;/p&gt;</code></pre></div></details>
 <figure class="ancho" id="barras-ejemplo" data-grafica="barras" data-unidad="Horas">
   <details open><summary>Ver los datos de balance de horas</summary>
     <div class="tabla-caja" tabindex="0" role="region" aria-label="Balance de horas, tabla desplazable">
@@ -1356,7 +1385,20 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   </details>
   <figcaption>Datos ilustrativos; corte 13-sep-2026.</figcaption>
 </figure>
-
+<details class="receta-copia ancho"><summary>HTML y dependencias · Barras</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Barras</span><button type="button" data-copiar="receta-fuente-barras" aria-label="Copiar HTML de Barras">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Barras, desplazable"><code id="receta-fuente-barras">&lt;figure class=&quot;ancho&quot; id=&quot;barras-ejemplo&quot; data-grafica=&quot;barras&quot; data-unidad=&quot;Horas&quot;&gt;
+  &lt;details open&gt;&lt;summary&gt;Ver los datos de balance de horas&lt;/summary&gt;
+    &lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Balance de horas, tabla desplazable&quot;&gt;
+      &lt;table&gt;&lt;caption&gt;Balance de horas&lt;/caption&gt;
+        &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Actividad&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Horas&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+        &lt;tbody&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Investigar&lt;/th&gt;&lt;td data-valor=&quot;60&quot;&gt;60 h&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Construir&lt;/th&gt;&lt;td data-valor=&quot;25&quot;&gt;25 h&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Revisar&lt;/th&gt;&lt;td data-valor=&quot;15&quot;&gt;15 h&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Ajuste de registro&lt;/th&gt;&lt;td data-valor=&quot;-10&quot;&gt;−10 h&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/details&gt;
+  &lt;figcaption&gt;Datos ilustrativos; corte 13-sep-2026.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details>
 <figure class="ancho" id="lineas-ejemplo" data-grafica="lineas" data-unidad="Horas">
   <details open><summary>Ver los datos de tiempo de resolución</summary>
     <div class="tabla-caja" tabindex="0" role="region" aria-label="Tiempo de resolución, tabla desplazable">
@@ -1371,7 +1413,20 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   </details>
   <figcaption>Datos ilustrativos; corte 13-sep-2026.</figcaption>
 </figure>
-
+<details class="receta-copia ancho"><summary>HTML y dependencias · Líneas</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Líneas</span><button type="button" data-copiar="receta-fuente-lineas" aria-label="Copiar HTML de Líneas">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Líneas, desplazable"><code id="receta-fuente-lineas">&lt;figure class=&quot;ancho&quot; id=&quot;lineas-ejemplo&quot; data-grafica=&quot;lineas&quot; data-unidad=&quot;Horas&quot;&gt;
+  &lt;details open&gt;&lt;summary&gt;Ver los datos de tiempo de resolución&lt;/summary&gt;
+    &lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Tiempo de resolución, tabla desplazable&quot;&gt;
+      &lt;table&gt;&lt;caption&gt;Tiempo de resolución&lt;/caption&gt;
+        &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Etapa&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Equipo A&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Equipo B&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+        &lt;tbody&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Entrada&lt;/th&gt;&lt;td data-valor=&quot;12&quot;&gt;12 h&lt;/td&gt;&lt;td data-valor=&quot;16&quot;&gt;16 h&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Revisión&lt;/th&gt;&lt;td data-valor=&quot;8&quot;&gt;8 h&lt;/td&gt;&lt;td data-valor=&quot;11&quot;&gt;11 h&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Validación&lt;/th&gt;&lt;td data-valor=&quot;&quot;&gt;Sin dato&lt;/td&gt;&lt;td data-valor=&quot;9&quot;&gt;9 h&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Cierre&lt;/th&gt;&lt;td data-valor=&quot;6&quot;&gt;6 h&lt;/td&gt;&lt;td data-valor=&quot;7&quot;&gt;7 h&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/details&gt;
+  &lt;figcaption&gt;Datos ilustrativos; corte 13-sep-2026.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details>
 <figure class="ancho" id="temporal-ejemplo" data-grafica="temporal" data-unidad="Solicitudes">
   <details open><summary>Ver los datos de solicitudes por día</summary>
     <div class="tabla-caja" tabindex="0" role="region" aria-label="Solicitudes por día, tabla desplazable">
@@ -1386,7 +1441,20 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   </details>
   <figcaption>Ejemplo: conteos diarios independientes. Último registro frente al registro anterior (13 sep frente a 8 sep), no totales de ventanas de distinta duración.</figcaption>
 </figure>
-
+<details class="receta-copia ancho"><summary>HTML y dependencias · Serie temporal</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Serie temporal</span><button type="button" data-copiar="receta-fuente-temporal" aria-label="Copiar HTML de Serie temporal">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Serie temporal, desplazable"><code id="receta-fuente-temporal">&lt;figure class=&quot;ancho&quot; id=&quot;temporal-ejemplo&quot; data-grafica=&quot;temporal&quot; data-unidad=&quot;Solicitudes&quot;&gt;
+  &lt;details open&gt;&lt;summary&gt;Ver los datos de solicitudes por día&lt;/summary&gt;
+    &lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Solicitudes por día, tabla desplazable&quot;&gt;
+      &lt;table&gt;&lt;caption&gt;Solicitudes por día&lt;/caption&gt;
+        &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Día UTC&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Solicitudes&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+        &lt;tbody&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;&lt;time datetime=&quot;2026-09-01&quot;&gt;1 sep&lt;/time&gt;&lt;/th&gt;&lt;td data-valor=&quot;80&quot;&gt;80 solicitudes&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;&lt;time datetime=&quot;2026-09-03&quot;&gt;3 sep&lt;/time&gt;&lt;/th&gt;&lt;td data-valor=&quot;100&quot;&gt;100 solicitudes&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;&lt;time datetime=&quot;2026-09-08&quot;&gt;8 sep&lt;/time&gt;&lt;/th&gt;&lt;td data-valor=&quot;90&quot;&gt;90 solicitudes&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;&lt;time datetime=&quot;2026-09-13&quot;&gt;13 sep&lt;/time&gt;&lt;/th&gt;&lt;td data-valor=&quot;120&quot;&gt;120 solicitudes&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/details&gt;
+  &lt;figcaption&gt;Ejemplo: conteos diarios independientes. Último registro frente al registro anterior (13 sep frente a 8 sep), no totales de ventanas de distinta duración.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details>
 <figure class="ancho" id="dispersion-ejemplo" data-grafica="dispersion" >
   <details open><summary>Ver los datos de carga y latencia</summary>
     <div class="tabla-caja" tabindex="0" role="region" aria-label="Carga y latencia, tabla desplazable">
@@ -1402,7 +1470,21 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   </details>
   <figcaption>Datos ilustrativos; corte 13-sep-2026.</figcaption>
 </figure>
-
+<details class="receta-copia ancho"><summary>HTML y dependencias · Dispersión</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Dispersión</span><button type="button" data-copiar="receta-fuente-dispersion" aria-label="Copiar HTML de Dispersión">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Dispersión, desplazable"><code id="receta-fuente-dispersion">&lt;figure class=&quot;ancho&quot; id=&quot;dispersion-ejemplo&quot; data-grafica=&quot;dispersion&quot; &gt;
+  &lt;details open&gt;&lt;summary&gt;Ver los datos de carga y latencia&lt;/summary&gt;
+    &lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Carga y latencia, tabla desplazable&quot;&gt;
+      &lt;table&gt;&lt;caption&gt;Carga y latencia&lt;/caption&gt;
+        &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Muestra&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Carga (solicitudes/s)&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Latencia (ms)&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+        &lt;tbody&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;A&lt;/th&gt;&lt;td data-valor=&quot;10&quot;&gt;10&lt;/td&gt;&lt;td data-valor=&quot;80&quot;&gt;80 ms&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;B&lt;/th&gt;&lt;td data-valor=&quot;20&quot;&gt;20&lt;/td&gt;&lt;td data-valor=&quot;95&quot;&gt;95 ms&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;C&lt;/th&gt;&lt;td data-valor=&quot;35&quot;&gt;35&lt;/td&gt;&lt;td data-valor=&quot;140&quot;&gt;140 ms&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;D&lt;/th&gt;&lt;td data-valor=&quot;50&quot;&gt;50&lt;/td&gt;&lt;td data-valor=&quot;170&quot;&gt;170 ms&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;E&lt;/th&gt;&lt;td data-valor=&quot;65&quot;&gt;65&lt;/td&gt;&lt;td data-valor=&quot;165&quot;&gt;165 ms&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/details&gt;
+  &lt;figcaption&gt;Datos ilustrativos; corte 13-sep-2026.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details>
 <figure class="ancho" id="distribucion-ejemplo" data-grafica="distribucion">
   <details open><summary>Ver los datos de duración</summary>
     <div class="tabla-caja" tabindex="0" role="region" aria-label="Distribución de duración, tabla desplazable">
@@ -1418,7 +1500,21 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   </details>
   <figcaption>Ejemplo de 30 sesiones. Altura = frecuencia / ancho del intervalo; el área representa la frecuencia. El último intervalo tiene el doble de ancho.</figcaption>
 </figure>
-
+<details class="receta-copia ancho"><summary>HTML y dependencias · Distribución</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Distribución</span><button type="button" data-copiar="receta-fuente-distribucion" aria-label="Copiar HTML de Distribución">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Distribución, desplazable"><code id="receta-fuente-distribucion">&lt;figure class=&quot;ancho&quot; id=&quot;distribucion-ejemplo&quot; data-grafica=&quot;distribucion&quot;&gt;
+  &lt;details open&gt;&lt;summary&gt;Ver los datos de duración&lt;/summary&gt;
+    &lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Distribución de duración, tabla desplazable&quot;&gt;
+      &lt;table&gt;&lt;caption&gt;Duración de 30 sesiones&lt;/caption&gt;
+        &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Duración (min)&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Sesiones&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Sesiones/min&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;tr&gt;&lt;th scope=&quot;row&quot; data-desde=&quot;0&quot; data-hasta=&quot;10&quot;&gt;0 a menos de 10 min&lt;/th&gt;&lt;td data-valor=&quot;5&quot;&gt;5&lt;/td&gt;&lt;td data-valor=&quot;&quot;&gt;0,5&lt;/td&gt;&lt;/tr&gt;
+          &lt;tr&gt;&lt;th scope=&quot;row&quot; data-desde=&quot;10&quot; data-hasta=&quot;20&quot;&gt;10 a menos de 20 min&lt;/th&gt;&lt;td data-valor=&quot;15&quot;&gt;15&lt;/td&gt;&lt;td data-valor=&quot;&quot;&gt;1,5&lt;/td&gt;&lt;/tr&gt;
+          &lt;tr&gt;&lt;th scope=&quot;row&quot; data-desde=&quot;20&quot; data-hasta=&quot;40&quot;&gt;20 a 40 min (incluido)&lt;/th&gt;&lt;td data-valor=&quot;10&quot;&gt;10&lt;/td&gt;&lt;td data-valor=&quot;&quot;&gt;0,5&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/details&gt;
+  &lt;figcaption&gt;Ejemplo de 30 sesiones. Altura = frecuencia / ancho del intervalo; el área representa la frecuencia. El último intervalo tiene el doble de ancho.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details>
 <figure class="ancho" id="calor-ejemplo" data-grafica="calor" data-umbrales="0,30,60,90,120,150" data-unidad="Minutos">
   <details open><summary>Ver los datos de tiempo por actividad y día</summary>
     <div class="tabla-caja" tabindex="0" role="region" aria-label="Tiempo por actividad y día, tabla desplazable">
@@ -1432,7 +1528,19 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   </details>
   <figcaption>Ejemplo ilustrativo, minutos por día. Límites de clase: [0,30), [30,60), [60,90), [90,120), [120,150]. Ausencia distinta de cero.</figcaption>
 </figure>
-
+<details class="receta-copia ancho"><summary>HTML y dependencias · Mapa de calor</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Mapa de calor</span><button type="button" data-copiar="receta-fuente-calor" aria-label="Copiar HTML de Mapa de calor">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Mapa de calor, desplazable"><code id="receta-fuente-calor">&lt;figure class=&quot;ancho&quot; id=&quot;calor-ejemplo&quot; data-grafica=&quot;calor&quot; data-umbrales=&quot;0,30,60,90,120,150&quot; data-unidad=&quot;Minutos&quot;&gt;
+  &lt;details open&gt;&lt;summary&gt;Ver los datos de tiempo por actividad y día&lt;/summary&gt;
+    &lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Tiempo por actividad y día, tabla desplazable&quot;&gt;
+      &lt;table&gt;&lt;caption&gt;Tiempo por actividad y día&lt;/caption&gt;
+        &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Actividad&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Lun&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Mar&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Mié&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Jue&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Vie&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+        &lt;tbody&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Investigar&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0 min&lt;/td&gt;&lt;td data-valor=&quot;30&quot;&gt;30 min&lt;/td&gt;&lt;td data-valor=&quot;60&quot;&gt;60 min&lt;/td&gt;&lt;td data-valor=&quot;90&quot;&gt;90 min&lt;/td&gt;&lt;td data-valor=&quot;120&quot;&gt;120 min&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Construir&lt;/th&gt;&lt;td data-valor=&quot;150&quot;&gt;150 min&lt;/td&gt;&lt;td data-valor=&quot;120&quot;&gt;120 min&lt;/td&gt;&lt;td data-valor=&quot;90&quot;&gt;90 min&lt;/td&gt;&lt;td data-valor=&quot;&quot;&gt;Sin dato&lt;/td&gt;&lt;td data-valor=&quot;30&quot;&gt;30 min&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Revisar&lt;/th&gt;&lt;td data-valor=&quot;10&quot;&gt;10 min&lt;/td&gt;&lt;td data-valor=&quot;20&quot;&gt;20 min&lt;/td&gt;&lt;td data-valor=&quot;40&quot;&gt;40 min&lt;/td&gt;&lt;td data-valor=&quot;80&quot;&gt;80 min&lt;/td&gt;&lt;td data-valor=&quot;110&quot;&gt;110 min&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/details&gt;
+  &lt;figcaption&gt;Ejemplo ilustrativo, minutos por día. Límites de clase: [0,30), [30,60), [60,90), [90,120), [120,150]. Ausencia distinta de cero.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details>
 <figure class="amplio" id="pieza-comparacion">
   <div class="tabla-caja" tabindex="0" role="region" aria-label="Comparación de fuentes, desplazable">
     <table class="tabla-comparacion"><caption>Fuentes candidatas · ejemplo</caption>
@@ -1446,7 +1554,19 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   </div>
   <figcaption>Datos ilustrativos. «Elegido» expresa la decisión, no una puntuación automática.</figcaption>
 </figure>
-
+<details class="receta-copia ancho"><summary>HTML y dependencias · Comparación</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Comparación</span><button type="button" data-copiar="receta-fuente-comparacion" aria-label="Copiar HTML de Comparación">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Comparación, desplazable"><code id="receta-fuente-comparacion">&lt;figure class=&quot;amplio&quot; id=&quot;pieza-comparacion&quot;&gt;
+  &lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Comparación de fuentes, desplazable&quot;&gt;
+    &lt;table class=&quot;tabla-comparacion&quot;&gt;&lt;caption&gt;Fuentes candidatas · ejemplo&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Criterio&lt;/th&gt;&lt;th scope=&quot;col&quot; class=&quot;elegida&quot;&gt;Registro A · elegido&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Registro B&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Fecha de corte&lt;/th&gt;&lt;td class=&quot;elegida&quot;&gt;13-sep-2026&lt;/td&gt;&lt;td&gt;10-sep-2026&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Trazabilidad&lt;/th&gt;&lt;td class=&quot;elegida&quot;&gt;✓ Identificador por movimiento&lt;/td&gt;&lt;td&gt;≈ Resumen por día&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Límite&lt;/th&gt;&lt;td class=&quot;elegida&quot;&gt;Falta una sede&lt;/td&gt;&lt;td&gt;Faltan tres días&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Datos ilustrativos. «Elegido» expresa la decisión, no una puntuación automática.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details>
 <figure class="ancho" id="pieza-totales">
   <div class="tabla-caja" tabindex="0" role="region" aria-label="Horas por actividad, tabla ordenable y desplazable">
     <table class="tabla-totales" data-tabla><caption>Horas registradas · ejemplo</caption>
@@ -1461,7 +1581,20 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   </div>
   <figcaption>Ejemplo: 60 + 25 + 15 = 100 h. Los botones ordenan sólo las filas de datos; el total permanece al pie.</figcaption>
 </figure>
-
+<details class="receta-copia ancho"><summary>HTML y dependencias · Totales y ordenación</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Totales y ordenación</span><button type="button" data-copiar="receta-fuente-totales" aria-label="Copiar HTML de Totales y ordenación">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Totales y ordenación, desplazable"><code id="receta-fuente-totales">&lt;figure class=&quot;ancho&quot; id=&quot;pieza-totales&quot;&gt;
+  &lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Horas por actividad, tabla ordenable y desplazable&quot;&gt;
+    &lt;table class=&quot;tabla-totales&quot; data-tabla&gt;&lt;caption&gt;Horas registradas · ejemplo&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;&lt;button type=&quot;button&quot; data-ordenar=&quot;texto&quot;&gt;Actividad&lt;/button&gt;&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;&lt;button type=&quot;button&quot; data-ordenar=&quot;numero&quot;&gt;Horas&lt;/button&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Investigar&lt;/th&gt;&lt;td class=&quot;numero&quot; data-valor=&quot;60&quot;&gt;60 h&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Construir&lt;/th&gt;&lt;td class=&quot;numero&quot; data-valor=&quot;25&quot;&gt;25 h&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Revisar&lt;/th&gt;&lt;td class=&quot;numero&quot; data-valor=&quot;15&quot;&gt;15 h&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+      &lt;tfoot&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Total de horas registradas&lt;/th&gt;&lt;td class=&quot;numero&quot;&gt;100 h&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Ejemplo: 60 + 25 + 15 = 100 h. Los botones ordenan sólo las filas de datos; el total permanece al pie.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details>
 <figure class="ancho" id="pieza-sparkline">
   <div class="tabla-caja" tabindex="0" role="region" aria-label="Serie semanal de solicitudes, desplazable">
     <table data-tabla data-min="0" data-max="120"><caption>Solicitudes de lunes a jueves · ejemplo</caption>
@@ -1474,7 +1607,18 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   </div>
   <figcaption>Valores ilustrativos. Misma escala Y en ambas filas. El dato ausente corta la línea y todos los valores permanecen escritos.</figcaption>
 </figure>
-
+<details class="receta-copia ancho"><summary>HTML y dependencias · Tabla con serie</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Tabla con serie</span><button type="button" data-copiar="receta-fuente-sparkline" aria-label="Copiar HTML de Tabla con serie">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Tabla con serie, desplazable"><code id="receta-fuente-sparkline">&lt;figure class=&quot;ancho&quot; id=&quot;pieza-sparkline&quot;&gt;
+  &lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Serie semanal de solicitudes, desplazable&quot;&gt;
+    &lt;table data-tabla data-min=&quot;0&quot; data-max=&quot;120&quot;&gt;&lt;caption&gt;Solicitudes de lunes a jueves · ejemplo&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Canal&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Serie L / M / X / J, dominio común 0–120&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Último día&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Web&lt;/th&gt;&lt;td data-sparkline&gt;&lt;span class=&quot;sparkline-datos&quot;&gt;&lt;span data-valor=&quot;80&quot;&gt;80&lt;/span&gt;, &lt;span data-valor=&quot;100&quot;&gt;100&lt;/span&gt;, &lt;span data-valor=&quot;90&quot;&gt;90&lt;/span&gt;, &lt;span data-valor=&quot;120&quot;&gt;120&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;numero&quot;&gt;120&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;App&lt;/th&gt;&lt;td data-sparkline&gt;&lt;span class=&quot;sparkline-datos&quot;&gt;&lt;span data-valor=&quot;40&quot;&gt;40&lt;/span&gt;, &lt;span data-valor=&quot;&quot;&gt;sin dato&lt;/span&gt;, &lt;span data-valor=&quot;70&quot;&gt;70&lt;/span&gt;, &lt;span data-valor=&quot;60&quot;&gt;60&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;numero&quot;&gt;60&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Valores ilustrativos. Misma escala Y en ambas filas. El dato ausente corta la línea y todos los valores permanecen escritos.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details>
 <aside class="nota-sonido" data-canal-sonido aria-labelledby="sonido-titulo" id="pieza-sonido">
   <h3 id="sonido-titulo">Una señal breve.</h3>
   <p>Activa el sonido y prueba una señal. Cada acción también se describe en texto.</p>
@@ -1486,7 +1630,17 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   </div>
   <p role="status" aria-live="polite">Sonido apagado.</p>
 </aside>
-
+<details class="receta-copia ancho"><summary>HTML y dependencias · Sonido optativo</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Sonido optativo</span><button type="button" data-copiar="receta-fuente-sonido" aria-label="Copiar HTML de Sonido optativo">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Sonido optativo, desplazable"><code id="receta-fuente-sonido">&lt;aside class=&quot;nota-sonido&quot; data-canal-sonido aria-labelledby=&quot;sonido-titulo&quot; id=&quot;pieza-sonido&quot;&gt;
+  &lt;h3 id=&quot;sonido-titulo&quot;&gt;Una señal breve.&lt;/h3&gt;
+  &lt;p&gt;Activa el sonido y prueba una señal. Cada acción también se describe en texto.&lt;/p&gt;
+  &lt;div&gt;&lt;button type=&quot;button&quot; data-audio-activar aria-pressed=&quot;false&quot;&gt;Activar sonido&lt;/button&gt;&lt;/div&gt;
+  &lt;div&gt;
+    &lt;button type=&quot;button&quot; data-audio=&quot;accion&quot; data-mensaje=&quot;Ejemplo de acción seleccionada.&quot;&gt;Acción&lt;/button&gt;
+    &lt;button type=&quot;button&quot; data-audio=&quot;confirmacion&quot; data-mensaje=&quot;Ejemplo de confirmación completada.&quot;&gt;Confirmación&lt;/button&gt;
+    &lt;button type=&quot;button&quot; data-audio=&quot;atencion&quot; data-mensaje=&quot;Ejemplo: revisa el dato antes de continuar.&quot;&gt;Atención&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;p role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;Sonido apagado.&lt;/p&gt;
+&lt;/aside&gt;</code></pre></div></details>
 <figure class="ancho nota-escritura" data-escritura data-duracion="2400" id="pieza-escritura">
   <div class="escritura-caja" tabindex="0" role="region" aria-label="Escritura a mano, desplazable">
     <svg viewBox="0 0 420 110" aria-hidden="true">
@@ -1506,7 +1660,25 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   <p role="status" aria-live="polite">Trazo completo.</p>
   <figcaption>Gesto ilustrativo original de Nota Tikin. 2400 ms repartidos por la longitud de cada trazo; la frase siempre permanece escrita debajo.</figcaption>
 </figure>
-
+<details class="receta-copia ancho"><summary>HTML y dependencias · Escritura por trazos</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Escritura por trazos</span><button type="button" data-copiar="receta-fuente-escritura" aria-label="Copiar HTML de Escritura por trazos">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Escritura por trazos, desplazable"><code id="receta-fuente-escritura">&lt;figure class=&quot;ancho nota-escritura&quot; data-escritura data-duracion=&quot;2400&quot; id=&quot;pieza-escritura&quot;&gt;
+  &lt;div class=&quot;escritura-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Escritura a mano, desplazable&quot;&gt;
+    &lt;svg viewBox=&quot;0 0 420 110&quot; aria-hidden=&quot;true&quot;&gt;
+      &lt;path data-trazo d=&quot;M55 51 C43 38 27 51 30 68 C34 83 52 69 54 53 L52 76 Q58 78 65 71&quot;/&gt;
+      &lt;path data-trazo d=&quot;M96 77 L101 48 L99 69 Q111 41 120 52 L117 74 Q132 42 142 54 L140 74 Q142 81 151 73&quot;/&gt;
+      &lt;path data-trazo d=&quot;M179 53 C167 40 154 55 157 69 C161 84 179 68 180 54 L178 77 Q185 78 193 71&quot;/&gt;
+      &lt;path data-trazo d=&quot;M207 77 L212 49 L210 68 Q224 41 235 53 L232 74 Q236 81 246 72&quot;/&gt;
+      &lt;path data-trazo d=&quot;M274 50 C259 44 249 59 254 72 C260 85 280 75 281 61 Q279 50 271 51 Q270 58 289 56&quot;/&gt;
+      &lt;path data-trazo d=&quot;M28 91 Q123 84 214 91 T293 89&quot;/&gt;
+    &lt;/svg&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;escritura-controles&quot;&gt;
+    &lt;button type=&quot;button&quot; data-escribir&gt;Repetir escritura&lt;/button&gt;
+    &lt;button type=&quot;button&quot; data-finalizar&gt;Mostrar trazo completo&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;p data-texto-escritura&gt;«a mano»&lt;/p&gt;
+  &lt;p role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;Trazo completo.&lt;/p&gt;
+  &lt;figcaption&gt;Gesto ilustrativo original de Nota Tikin. 2400 ms repartidos por la longitud de cada trazo; la frase siempre permanece escrita debajo.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details>
 <figure class="ancho" data-escena="xyz" id="xyz-ejemplo">
   <div class="tabla-caja" tabindex="0" role="region" aria-label="Carga, latencia y memoria, tabla desplazable">
     <table><caption>Tres variables de una misma prueba</caption>
@@ -1521,7 +1693,20 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   </div>
   <figcaption>Datos ilustrativos. Posiciones X/Y/Z normalizadas por sus dominios, con valores reales en los ejes. Selecciona un registro para identificarlo; proyección ortográfica, sin tamaños por perspectiva.</figcaption>
 </figure>
-
+<details class="receta-copia ancho"><summary>HTML y dependencias · Three.js · XYZ</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Three.js · XYZ</span><button type="button" data-copiar="receta-fuente-xyz" aria-label="Copiar HTML de Three.js · XYZ">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Three.js · XYZ, desplazable"><code id="receta-fuente-xyz">&lt;figure class=&quot;ancho&quot; data-escena=&quot;xyz&quot; id=&quot;xyz-ejemplo&quot;&gt;
+  &lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Carga, latencia y memoria, tabla desplazable&quot;&gt;
+    &lt;table&gt;&lt;caption&gt;Tres variables de una misma prueba&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Prueba&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Carga (req/s)&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Latencia (ms)&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Memoria (MB)&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;A&lt;/th&gt;&lt;td data-valor=&quot;10&quot;&gt;10&lt;/td&gt;&lt;td data-valor=&quot;80&quot;&gt;80&lt;/td&gt;&lt;td data-valor=&quot;100&quot;&gt;100&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;B&lt;/th&gt;&lt;td data-valor=&quot;20&quot;&gt;20&lt;/td&gt;&lt;td data-valor=&quot;95&quot;&gt;95&lt;/td&gt;&lt;td data-valor=&quot;120&quot;&gt;120&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;C&lt;/th&gt;&lt;td data-valor=&quot;35&quot;&gt;35&lt;/td&gt;&lt;td data-valor=&quot;140&quot;&gt;140&lt;/td&gt;&lt;td data-valor=&quot;150&quot;&gt;150&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;D&lt;/th&gt;&lt;td data-valor=&quot;50&quot;&gt;50&lt;/td&gt;&lt;td data-valor=&quot;170&quot;&gt;170&lt;/td&gt;&lt;td data-valor=&quot;210&quot;&gt;210&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Datos ilustrativos. Posiciones X/Y/Z normalizadas por sus dominios, con valores reales en los ejes. Selecciona un registro para identificarlo; proyección ortográfica, sin tamaños por perspectiva.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details>
 <figure class="ancho" data-escena="etapas" id="etapas-ejemplo">
   <div class="tabla-caja" tabindex="0" role="region" aria-label="Duración por etapa, tabla desplazable">
     <table><caption>Dónde tarda una solicitud</caption>
@@ -1536,7 +1721,458 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   </div>
   <figcaption>Ejemplo ilustrativo: 210 ms si las cuatro etapas ocurren en serie. Alturas proporcionales al tiempo, orden horizontal secuencial; anchura y profundidad constantes sin significado cuantitativo.</figcaption>
 </figure>
-<footer class="pie"><p>Nota Tikin · Muestra de todos los componentes. Inspirada en <a href="https://www.cmrg.me">cmrg.me</a>; el tema claro, los ajustes de acceso y Dark Sea están documentados en el informe.</p><button type="button" data-sonido aria-pressed="false">Sonido apagado</button></footer>
+<details class="receta-copia ancho"><summary>HTML y dependencias · Three.js · etapas</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Three.js · etapas</span><button type="button" data-copiar="receta-fuente-etapas" aria-label="Copiar HTML de Three.js · etapas">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Three.js · etapas, desplazable"><code id="receta-fuente-etapas">&lt;figure class=&quot;ancho&quot; data-escena=&quot;etapas&quot; id=&quot;etapas-ejemplo&quot;&gt;
+  &lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Duración por etapa, tabla desplazable&quot;&gt;
+    &lt;table&gt;&lt;caption&gt;Dónde tarda una solicitud&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Etapa&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Tiempo (ms)&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Qué ocurre&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;1 · Recibir&lt;/th&gt;&lt;td data-valor=&quot;20&quot;&gt;20 ms&lt;/td&gt;&lt;td&gt;Leer la entrada.&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2 · Validar&lt;/th&gt;&lt;td data-valor=&quot;40&quot;&gt;40 ms&lt;/td&gt;&lt;td&gt;Comprobar el contrato.&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;3 · Consultar&lt;/th&gt;&lt;td data-valor=&quot;120&quot;&gt;120 ms&lt;/td&gt;&lt;td&gt;Esperar la fuente de datos.&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;4 · Responder&lt;/th&gt;&lt;td data-valor=&quot;30&quot;&gt;30 ms&lt;/td&gt;&lt;td&gt;Entregar la salida.&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Ejemplo ilustrativo: 210 ms si las cuatro etapas ocurren en serie. Alturas proporcionales al tiempo, orden horizontal secuencial; anchura y profundidad constantes sin significado cuantitativo.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details><section class="seccion" id="segunda-tanda"><h2>Historias que se pueden explorar.</h2><p>Más piezas para reportes, artículos y prototipos. Empieza por la apariencia o prueba un escenario y el visor.</p></section>
+<div class="pieza" id="apariencia-ejemplo">
+  <h3>Un papel para cada lectura</h3>
+  <fieldset class="apariencia">
+    <legend>Apariencia del documento</legend>
+    <div class="apariencia-opciones">
+      <label><input type="radio" name="papel-ejemplo" value="light" data-elegir-tema><span class="papel-muestra claro" aria-hidden="true"></span>Claro</label>
+      <label><input type="radio" name="papel-ejemplo" value="dark" data-elegir-tema><span class="papel-muestra calido" aria-hidden="true"></span>Cálido</label>
+      <label><input type="radio" name="papel-ejemplo" value="sea" data-elegir-tema><span class="papel-muestra sea" aria-hidden="true"></span>Sea</label>
+      <label><input type="radio" name="papel-ejemplo" value="system" data-elegir-tema checked>Sistema</label>
+    </div>
+  </fieldset>
+  <button type="button" data-comodidad aria-pressed="false">Lectura cómoda</button>
+  <p>El color cambia el papel; la lectura cómoda amplía texto y datos secundarios.</p>
+</div>
+<details class="receta-copia ancho"><summary>HTML y dependencias · Apariencia y lectura cómoda</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Apariencia y lectura cómoda</span><button type="button" data-copiar="receta-fuente-apariencia" aria-label="Copiar HTML de Apariencia y lectura cómoda">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Apariencia y lectura cómoda, desplazable"><code id="receta-fuente-apariencia">&lt;div class=&quot;pieza&quot; id=&quot;apariencia-ejemplo&quot;&gt;
+  &lt;h3&gt;Un papel para cada lectura&lt;/h3&gt;
+  &lt;fieldset class=&quot;apariencia&quot;&gt;
+    &lt;legend&gt;Apariencia del documento&lt;/legend&gt;
+    &lt;div class=&quot;apariencia-opciones&quot;&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;papel-ejemplo&quot; value=&quot;light&quot; data-elegir-tema&gt;&lt;span class=&quot;papel-muestra claro&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;Claro&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;papel-ejemplo&quot; value=&quot;dark&quot; data-elegir-tema&gt;&lt;span class=&quot;papel-muestra calido&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;Cálido&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;papel-ejemplo&quot; value=&quot;sea&quot; data-elegir-tema&gt;&lt;span class=&quot;papel-muestra sea&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;Sea&lt;/label&gt;
+      &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;papel-ejemplo&quot; value=&quot;system&quot; data-elegir-tema checked&gt;Sistema&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+  &lt;button type=&quot;button&quot; data-comodidad aria-pressed=&quot;false&quot;&gt;Lectura cómoda&lt;/button&gt;
+  &lt;p&gt;El color cambia el papel; la lectura cómoda amplía texto y datos secundarios.&lt;/p&gt;
+&lt;/div&gt;</code></pre></div></details>
+<aside class="pieza ficha-decision" id="decision-ejemplo" aria-labelledby="decision-titulo">
+  <p class="ceja">Decisión 02 · ejemplo</p>
+  <h3 id="decision-titulo">Una revisión al final del registro</h3>
+  <p>Validar la información en un único paso antes de enviarla.</p>
+  <dl>
+    <div><dt>Por qué</dt><dd>Permite detectar omisiones sin pedir a la persona que repita datos.</dd></div>
+    <div><dt>Alternativa considerada</dt><dd>Confirmar cada campo por separado; interrumpe la tarea con demasiada frecuencia.</dd></div>
+    <div><dt>Qué falta comprobar</dt><dd>Que se detecten los errores antes del envío en una prueba de uso.</dd></div>
+    <div><dt>Cuándo revisarla</dt><dd>Si la revisión final se omite o no ayuda a corregir los errores.</dd></div>
+  </dl>
+</aside>
+<details class="receta-copia ancho"><summary>HTML y dependencias · Ficha de decisión</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Ficha de decisión</span><button type="button" data-copiar="receta-fuente-decision" aria-label="Copiar HTML de Ficha de decisión">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Ficha de decisión, desplazable"><code id="receta-fuente-decision">&lt;aside class=&quot;pieza ficha-decision&quot; id=&quot;decision-ejemplo&quot; aria-labelledby=&quot;decision-titulo&quot;&gt;
+  &lt;p class=&quot;ceja&quot;&gt;Decisión 02 · ejemplo&lt;/p&gt;
+  &lt;h3 id=&quot;decision-titulo&quot;&gt;Una revisión al final del registro&lt;/h3&gt;
+  &lt;p&gt;Validar la información en un único paso antes de enviarla.&lt;/p&gt;
+  &lt;dl&gt;
+    &lt;div&gt;&lt;dt&gt;Por qué&lt;/dt&gt;&lt;dd&gt;Permite detectar omisiones sin pedir a la persona que repita datos.&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Alternativa considerada&lt;/dt&gt;&lt;dd&gt;Confirmar cada campo por separado; interrumpe la tarea con demasiada frecuencia.&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Qué falta comprobar&lt;/dt&gt;&lt;dd&gt;Que se detecten los errores antes del envío en una prueba de uso.&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Cuándo revisarla&lt;/dt&gt;&lt;dd&gt;Si la revisión final se omite o no ayuda a corregir los errores.&lt;/dd&gt;&lt;/div&gt;
+  &lt;/dl&gt;
+&lt;/aside&gt;</code></pre></div></details>
+<div class="pieza" id="cronologia-ejemplo">
+  <h3>De la observación a la prueba</h3>
+  <ol class="cronologia">
+    <li><time datetime="2026-09-01">01 sep 2026</time><div><h4>Observar</h4><p>Se registran las dudas al completar un formulario.</p></div></li>
+    <li><time datetime="2026-09-04">04 sep 2026</time><div><h4>Prototipar</h4><p>Se reúnen los campos en dos pasos y se añade una revisión final.</p></div></li>
+    <li><time datetime="2026-09-14">14 sep 2026</time><div><h4>Contrastar</h4><p>Se prepara una prueba con tareas, criterios de éxito y observaciones.</p></div></li>
+  </ol>
+  <p class="procedencia">Cronología ilustrativa; no representa una prueba realizada.</p>
+</div>
+<details class="receta-copia ancho"><summary>HTML y dependencias · Cronología anotada</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Cronología anotada</span><button type="button" data-copiar="receta-fuente-cronologia" aria-label="Copiar HTML de Cronología anotada">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Cronología anotada, desplazable"><code id="receta-fuente-cronologia">&lt;div class=&quot;pieza&quot; id=&quot;cronologia-ejemplo&quot;&gt;
+  &lt;h3&gt;De la observación a la prueba&lt;/h3&gt;
+  &lt;ol class=&quot;cronologia&quot;&gt;
+    &lt;li&gt;&lt;time datetime=&quot;2026-09-01&quot;&gt;01 sep 2026&lt;/time&gt;&lt;div&gt;&lt;h4&gt;Observar&lt;/h4&gt;&lt;p&gt;Se registran las dudas al completar un formulario.&lt;/p&gt;&lt;/div&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;time datetime=&quot;2026-09-04&quot;&gt;04 sep 2026&lt;/time&gt;&lt;div&gt;&lt;h4&gt;Prototipar&lt;/h4&gt;&lt;p&gt;Se reúnen los campos en dos pasos y se añade una revisión final.&lt;/p&gt;&lt;/div&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;time datetime=&quot;2026-09-14&quot;&gt;14 sep 2026&lt;/time&gt;&lt;div&gt;&lt;h4&gt;Contrastar&lt;/h4&gt;&lt;p&gt;Se prepara una prueba con tareas, criterios de éxito y observaciones.&lt;/p&gt;&lt;/div&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p class=&quot;procedencia&quot;&gt;Cronología ilustrativa; no representa una prueba realizada.&lt;/p&gt;
+&lt;/div&gt;</code></pre></div></details>
+<div class="pieza" id="articulo-ejemplo">
+  <h3>El contexto antes de empezar</h3>
+  <dl class="ficha-articulo">
+    <div><dt>Autoría</dt><dd>Equipo editorial</dd></div>
+    <div><dt>Publicado</dt><dd><time datetime="2026-09-14">14 sep 2026</time></dd></div>
+    <div><dt>Tipo de pieza</dt><dd>Ensayo con ejemplos</dd></div>
+    <div><dt>Revisión</dt><dd>Primera edición</dd></div>
+  </dl>
+  <p>Una propuesta para separar lo observado de lo supuesto al escribir un informe.</p>
+</div>
+<details class="receta-copia ancho"><summary>HTML y dependencias · Ficha de artículo</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Ficha de artículo</span><button type="button" data-copiar="receta-fuente-articulo" aria-label="Copiar HTML de Ficha de artículo">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Ficha de artículo, desplazable"><code id="receta-fuente-articulo">&lt;div class=&quot;pieza&quot; id=&quot;articulo-ejemplo&quot;&gt;
+  &lt;h3&gt;El contexto antes de empezar&lt;/h3&gt;
+  &lt;dl class=&quot;ficha-articulo&quot;&gt;
+    &lt;div&gt;&lt;dt&gt;Autoría&lt;/dt&gt;&lt;dd&gt;Equipo editorial&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Publicado&lt;/dt&gt;&lt;dd&gt;&lt;time datetime=&quot;2026-09-14&quot;&gt;14 sep 2026&lt;/time&gt;&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Tipo de pieza&lt;/dt&gt;&lt;dd&gt;Ensayo con ejemplos&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;Revisión&lt;/dt&gt;&lt;dd&gt;Primera edición&lt;/dd&gt;&lt;/div&gt;
+  &lt;/dl&gt;
+  &lt;p&gt;Una propuesta para separar lo observado de lo supuesto al escribir un informe.&lt;/p&gt;
+&lt;/div&gt;</code></pre></div></details>
+<div class="pieza" id="referencias-ejemplo">
+  <h3>La evidencia queda a un paso</h3>
+  <p>Una afirmación debe permitir volver a su origen
+    <a id="llamada-fuente-1" href="#fuente-1" aria-label="Consultar referencia 1">[1]</a>.
+    Cuando una cifra es ilustrativa, debe decirlo
+    <a id="llamada-fuente-2" href="#fuente-2" aria-label="Consultar referencia 2">[2]</a>.</p>
+  <ol class="nota-referencias" aria-label="Referencias del ejemplo">
+    <li id="fuente-1" tabindex="-1">Nota metodológica del ejemplo: acompañar cada afirmación con su procedencia.
+      <a href="#llamada-fuente-1" aria-label="Volver a la llamada de referencia 1">Volver al texto ↑</a></li>
+    <li id="fuente-2" tabindex="-1">Los ejemplos de esta biblioteca no representan datos de producción.
+      <a href="#llamada-fuente-2" aria-label="Volver a la llamada de referencia 2">Volver al texto ↑</a></li>
+  </ol>
+</div>
+<details class="receta-copia ancho"><summary>HTML y dependencias · Referencias con regreso</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Referencias con regreso</span><button type="button" data-copiar="receta-fuente-referencias" aria-label="Copiar HTML de Referencias con regreso">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Referencias con regreso, desplazable"><code id="receta-fuente-referencias">&lt;div class=&quot;pieza&quot; id=&quot;referencias-ejemplo&quot;&gt;
+  &lt;h3&gt;La evidencia queda a un paso&lt;/h3&gt;
+  &lt;p&gt;Una afirmación debe permitir volver a su origen
+    &lt;a id=&quot;llamada-fuente-1&quot; href=&quot;#fuente-1&quot; aria-label=&quot;Consultar referencia 1&quot;&gt;[1]&lt;/a&gt;.
+    Cuando una cifra es ilustrativa, debe decirlo
+    &lt;a id=&quot;llamada-fuente-2&quot; href=&quot;#fuente-2&quot; aria-label=&quot;Consultar referencia 2&quot;&gt;[2]&lt;/a&gt;.&lt;/p&gt;
+  &lt;ol class=&quot;nota-referencias&quot; aria-label=&quot;Referencias del ejemplo&quot;&gt;
+    &lt;li id=&quot;fuente-1&quot; tabindex=&quot;-1&quot;&gt;Nota metodológica del ejemplo: acompañar cada afirmación con su procedencia.
+      &lt;a href=&quot;#llamada-fuente-1&quot; aria-label=&quot;Volver a la llamada de referencia 1&quot;&gt;Volver al texto ↑&lt;/a&gt;&lt;/li&gt;
+    &lt;li id=&quot;fuente-2&quot; tabindex=&quot;-1&quot;&gt;Los ejemplos de esta biblioteca no representan datos de producción.
+      &lt;a href=&quot;#llamada-fuente-2&quot; aria-label=&quot;Volver a la llamada de referencia 2&quot;&gt;Volver al texto ↑&lt;/a&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</code></pre></div></details>
+<div class="pieza" id="glosario-ejemplo">
+  <h3>Palabras que conviene acordar</h3>
+  <dl class="nota-glosario">
+    <div><dt><dfn>Observación</dfn></dt><dd>Lo que se registró directamente, con su contexto y procedencia.</dd></div>
+    <div><dt><dfn>Hipótesis</dfn></dt><dd>Explicación provisional que puede contrastarse con evidencia.</dd></div>
+    <div><dt><dfn>Prototipo</dfn></dt><dd>Representación parcial de una solución para explorar una pregunta.</dd></div>
+  </dl>
+</div>
+<details class="receta-copia ancho"><summary>HTML y dependencias · Glosario editorial</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Glosario editorial</span><button type="button" data-copiar="receta-fuente-glosario" aria-label="Copiar HTML de Glosario editorial">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Glosario editorial, desplazable"><code id="receta-fuente-glosario">&lt;div class=&quot;pieza&quot; id=&quot;glosario-ejemplo&quot;&gt;
+  &lt;h3&gt;Palabras que conviene acordar&lt;/h3&gt;
+  &lt;dl class=&quot;nota-glosario&quot;&gt;
+    &lt;div&gt;&lt;dt&gt;&lt;dfn&gt;Observación&lt;/dfn&gt;&lt;/dt&gt;&lt;dd&gt;Lo que se registró directamente, con su contexto y procedencia.&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;&lt;dfn&gt;Hipótesis&lt;/dfn&gt;&lt;/dt&gt;&lt;dd&gt;Explicación provisional que puede contrastarse con evidencia.&lt;/dd&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;dt&gt;&lt;dfn&gt;Prototipo&lt;/dfn&gt;&lt;/dt&gt;&lt;dd&gt;Representación parcial de una solución para explorar una pregunta.&lt;/dd&gt;&lt;/div&gt;
+  &lt;/dl&gt;
+&lt;/div&gt;</code></pre></div></details>
+<div class="pieza" id="metodologia-ejemplo">
+  <h3>Cómo leer esta evidencia</h3>
+  <p>El ejemplo compara la duración declarada de una tarea bajo dos supuestos.</p>
+  <details class="metodologia">
+    <summary>Consultar método, supuestos y exclusiones</summary>
+    <dl class="nota-glosario">
+      <div><dt>Unidad</dt><dd>Minutos por operación; volumen mensual constante.</dd></div>
+      <div><dt>Supuesto</dt><dd>Las tareas comparadas tienen el mismo alcance.</dd></div>
+      <div><dt>Exclusión</dt><dd>No incluye capacitación, espera ni fallos de otros sistemas.</dd></div>
+      <div><dt>Límite</dt><dd>El resultado estima capacidad, no demuestra ahorro realizado.</dd></div>
+    </dl>
+  </details>
+</div>
+<details class="receta-copia ancho"><summary>HTML y dependencias · Metodología desplegable</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Metodología desplegable</span><button type="button" data-copiar="receta-fuente-metodologia" aria-label="Copiar HTML de Metodología desplegable">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Metodología desplegable, desplazable"><code id="receta-fuente-metodologia">&lt;div class=&quot;pieza&quot; id=&quot;metodologia-ejemplo&quot;&gt;
+  &lt;h3&gt;Cómo leer esta evidencia&lt;/h3&gt;
+  &lt;p&gt;El ejemplo compara la duración declarada de una tarea bajo dos supuestos.&lt;/p&gt;
+  &lt;details class=&quot;metodologia&quot;&gt;
+    &lt;summary&gt;Consultar método, supuestos y exclusiones&lt;/summary&gt;
+    &lt;dl class=&quot;nota-glosario&quot;&gt;
+      &lt;div&gt;&lt;dt&gt;Unidad&lt;/dt&gt;&lt;dd&gt;Minutos por operación; volumen mensual constante.&lt;/dd&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;dt&gt;Supuesto&lt;/dt&gt;&lt;dd&gt;Las tareas comparadas tienen el mismo alcance.&lt;/dd&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;dt&gt;Exclusión&lt;/dt&gt;&lt;dd&gt;No incluye capacitación, espera ni fallos de otros sistemas.&lt;/dd&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;dt&gt;Límite&lt;/dt&gt;&lt;dd&gt;El resultado estima capacidad, no demuestra ahorro realizado.&lt;/dd&gt;&lt;/div&gt;
+    &lt;/dl&gt;
+  &lt;/details&gt;
+&lt;/div&gt;</code></pre></div></details>
+<figure class="pieza ancho" id="antes-despues-ejemplo">
+  <h3>Un cambio que se puede leer</h3>
+  <div class="antes-despues">
+    <div><h4>Antes · mensaje genérico</h4><p><del>No se pudo completar la acción.</del></p><p>La persona debe adivinar qué falta.</p></div>
+    <div class="despues"><h4>Después · siguiente paso concreto</h4><p><ins>Añade la fecha del registro para continuar.</ins></p><p>El mensaje identifica el campo que necesita atención.</p></div>
+  </div>
+  <figcaption>Ejemplo de redacción. Las dos versiones permanecen completas; en móvil se leen una después de otra.</figcaption>
+</figure>
+<details class="receta-copia ancho"><summary>HTML y dependencias · Antes y después</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Antes y después</span><button type="button" data-copiar="receta-fuente-antes-despues" aria-label="Copiar HTML de Antes y después">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Antes y después, desplazable"><code id="receta-fuente-antes-despues">&lt;figure class=&quot;pieza ancho&quot; id=&quot;antes-despues-ejemplo&quot;&gt;
+  &lt;h3&gt;Un cambio que se puede leer&lt;/h3&gt;
+  &lt;div class=&quot;antes-despues&quot;&gt;
+    &lt;div&gt;&lt;h4&gt;Antes · mensaje genérico&lt;/h4&gt;&lt;p&gt;&lt;del&gt;No se pudo completar la acción.&lt;/del&gt;&lt;/p&gt;&lt;p&gt;La persona debe adivinar qué falta.&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;despues&quot;&gt;&lt;h4&gt;Después · siguiente paso concreto&lt;/h4&gt;&lt;p&gt;&lt;ins&gt;Añade la fecha del registro para continuar.&lt;/ins&gt;&lt;/p&gt;&lt;p&gt;El mensaje identifica el campo que necesita atención.&lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Ejemplo de redacción. Las dos versiones permanecen completas; en móvil se leen una después de otra.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details>
+<figure class="pieza ancho" id="cascada-ejemplo" data-reporte="cascada">
+  <h3>Cómo se llega al resultado</h3>
+  <p>Horas disponibles, ajustes y trabajo añadido. Cada tramo empieza donde termina el anterior.</p>
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Balance de capacidad en horas, desplazable">
+    <table><caption>Balance ilustrativo · eje X en horas</caption>
+      <thead><tr><th scope="col">Concepto</th><th scope="col">Cambio (h)</th><th scope="col">Acumulado (h)</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Capacidad inicial</th><td data-valor="120">+120</td><td>120</td></tr>
+        <tr><th scope="row">Mantenimiento</th><td data-valor="-30">−30</td><td>90</td></tr>
+        <tr><th scope="row">Apoyo adicional</th><td data-valor="20">+20</td><td>110</td></tr>
+        <tr><th scope="row">Revisión</th><td data-valor="-15">−15</td><td>95</td></tr>
+      </tbody>
+      <tfoot><tr><th scope="row">Resultado</th><td>Horas netas</td><td>95</td></tr></tfoot>
+    </table>
+  </div>
+  <figcaption>Ejemplo: 120 − 30 + 20 − 15 = 95 h. Signos y tabla distinguen aumentos y reducciones sin depender del color.</figcaption>
+</figure>
+<details class="receta-copia ancho"><summary>HTML y dependencias · Cascada de cantidades</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Añade reportes.js; para el recorrido también globo.js y Three 0.160.1.</p><div class="codigo"><div class="cab"><span>Cascada de cantidades</span><button type="button" data-copiar="receta-fuente-cascada" aria-label="Copiar HTML de Cascada de cantidades">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Cascada de cantidades, desplazable"><code id="receta-fuente-cascada">&lt;figure class=&quot;pieza ancho&quot; id=&quot;cascada-ejemplo&quot; data-reporte=&quot;cascada&quot;&gt;
+  &lt;h3&gt;Cómo se llega al resultado&lt;/h3&gt;
+  &lt;p&gt;Horas disponibles, ajustes y trabajo añadido. Cada tramo empieza donde termina el anterior.&lt;/p&gt;
+  &lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Balance de capacidad en horas, desplazable&quot;&gt;
+    &lt;table&gt;&lt;caption&gt;Balance ilustrativo · eje X en horas&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Concepto&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Cambio (h)&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Acumulado (h)&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Capacidad inicial&lt;/th&gt;&lt;td data-valor=&quot;120&quot;&gt;+120&lt;/td&gt;&lt;td&gt;120&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Mantenimiento&lt;/th&gt;&lt;td data-valor=&quot;-30&quot;&gt;−30&lt;/td&gt;&lt;td&gt;90&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Apoyo adicional&lt;/th&gt;&lt;td data-valor=&quot;20&quot;&gt;+20&lt;/td&gt;&lt;td&gt;110&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Revisión&lt;/th&gt;&lt;td data-valor=&quot;-15&quot;&gt;−15&lt;/td&gt;&lt;td&gt;95&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+      &lt;tfoot&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Resultado&lt;/th&gt;&lt;td&gt;Horas netas&lt;/td&gt;&lt;td&gt;95&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Ejemplo: 120 − 30 + 20 − 15 = 95 h. Signos y tabla distinguen aumentos y reducciones sin depender del color.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details>
+<figure class="pieza amplio" id="multiples-ejemplo" data-reporte="multiples">
+  <h3>La misma pregunta en tres sedes</h3>
+  <p>Solicitudes por semana. Los tres paneles comparten el eje Y; el eje X corresponde al orden de la tabla.</p>
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Solicitudes por sede y semana, desplazable">
+    <table><caption>Solicitudes semanales · ejemplo · eje Y en solicitudes</caption>
+      <thead><tr><th scope="col">Período</th><th scope="col">Bogotá</th><th scope="col">Medellín</th><th scope="col">Cali</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">1 · Semana 1</th><td data-valor="40">40</td><td data-valor="20">20</td><td data-valor="30">30</td></tr>
+        <tr><th scope="row">2 · Semana 2</th><td data-valor="60">60</td><td data-valor="30">30</td><td data-valor="">Sin dato</td></tr>
+        <tr><th scope="row">3 · Semana 3</th><td data-valor="50">50</td><td data-valor="35">35</td><td data-valor="40">40</td></tr>
+        <tr><th scope="row">4 · Semana 4</th><td data-valor="80">80</td><td data-valor="40">40</td><td data-valor="45">45</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Datos ilustrativos. Escala común de 0 a 80; sin dato corta el trazo. La pendiente no demuestra causalidad.</figcaption>
+</figure>
+<details class="receta-copia ancho"><summary>HTML y dependencias · Pequeños múltiples</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Añade reportes.js; para el recorrido también globo.js y Three 0.160.1.</p><div class="codigo"><div class="cab"><span>Pequeños múltiples</span><button type="button" data-copiar="receta-fuente-multiples" aria-label="Copiar HTML de Pequeños múltiples">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Pequeños múltiples, desplazable"><code id="receta-fuente-multiples">&lt;figure class=&quot;pieza amplio&quot; id=&quot;multiples-ejemplo&quot; data-reporte=&quot;multiples&quot;&gt;
+  &lt;h3&gt;La misma pregunta en tres sedes&lt;/h3&gt;
+  &lt;p&gt;Solicitudes por semana. Los tres paneles comparten el eje Y; el eje X corresponde al orden de la tabla.&lt;/p&gt;
+  &lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Solicitudes por sede y semana, desplazable&quot;&gt;
+    &lt;table&gt;&lt;caption&gt;Solicitudes semanales · ejemplo · eje Y en solicitudes&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Período&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Bogotá&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Medellín&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Cali&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;1 · Semana 1&lt;/th&gt;&lt;td data-valor=&quot;40&quot;&gt;40&lt;/td&gt;&lt;td data-valor=&quot;20&quot;&gt;20&lt;/td&gt;&lt;td data-valor=&quot;30&quot;&gt;30&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2 · Semana 2&lt;/th&gt;&lt;td data-valor=&quot;60&quot;&gt;60&lt;/td&gt;&lt;td data-valor=&quot;30&quot;&gt;30&lt;/td&gt;&lt;td data-valor=&quot;&quot;&gt;Sin dato&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;3 · Semana 3&lt;/th&gt;&lt;td data-valor=&quot;50&quot;&gt;50&lt;/td&gt;&lt;td data-valor=&quot;35&quot;&gt;35&lt;/td&gt;&lt;td data-valor=&quot;40&quot;&gt;40&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;4 · Semana 4&lt;/th&gt;&lt;td data-valor=&quot;80&quot;&gt;80&lt;/td&gt;&lt;td data-valor=&quot;40&quot;&gt;40&lt;/td&gt;&lt;td data-valor=&quot;45&quot;&gt;45&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Datos ilustrativos. Escala común de 0 a 80; sin dato corta el trazo. La pendiente no demuestra causalidad.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details>
+<figure class="pieza amplio" id="conciliacion-ejemplo" data-reporte="conciliacion">
+  <h3>Una diferencia necesita explicación</h3>
+  <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Conciliación de operaciones, desplazable">
+    <table class="tabla-calculo"><caption>Operaciones esperadas y observadas · ejemplo</caption>
+      <thead><tr><th scope="col">Canal</th><th scope="col">Esperadas</th><th scope="col">Observadas</th><th scope="col">Diferencia</th><th scope="col">Explicación</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Web</th><td data-valor="120">120</td><td data-valor="118">118</td><td>−2</td><td>Dos operaciones siguen en revisión.</td></tr>
+        <tr><th scope="row">App</th><td data-valor="80">80</td><td data-valor="80">80</td><td>0</td><td>Conteos coincidentes.</td></tr>
+        <tr><th scope="row">Asistido</th><td data-valor="30">30</td><td data-valor="33">33</td><td>+3</td><td>Tres registros pendientes de clasificar.</td></tr>
+      </tbody>
+      <tfoot><tr><th scope="row">Total</th><td>230</td><td>231</td><td>1</td><td>El saldo neto no compensa las diferencias por canal.</td></tr></tfoot>
+    </table>
+  </div>
+  <figcaption>Datos ilustrativos. Diferencia = observado − esperado; una diferencia cero no prueba igualdad de los registros individuales.</figcaption>
+</figure>
+<details class="receta-copia ancho"><summary>HTML y dependencias · Conciliación de registros</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Añade reportes.js; para el recorrido también globo.js y Three 0.160.1.</p><div class="codigo"><div class="cab"><span>Conciliación de registros</span><button type="button" data-copiar="receta-fuente-conciliacion" aria-label="Copiar HTML de Conciliación de registros">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Conciliación de registros, desplazable"><code id="receta-fuente-conciliacion">&lt;figure class=&quot;pieza amplio&quot; id=&quot;conciliacion-ejemplo&quot; data-reporte=&quot;conciliacion&quot;&gt;
+  &lt;h3&gt;Una diferencia necesita explicación&lt;/h3&gt;
+  &lt;div class=&quot;tabla-caja densa&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Conciliación de operaciones, desplazable&quot;&gt;
+    &lt;table class=&quot;tabla-calculo&quot;&gt;&lt;caption&gt;Operaciones esperadas y observadas · ejemplo&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Canal&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Esperadas&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Observadas&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Diferencia&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Explicación&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Web&lt;/th&gt;&lt;td data-valor=&quot;120&quot;&gt;120&lt;/td&gt;&lt;td data-valor=&quot;118&quot;&gt;118&lt;/td&gt;&lt;td&gt;−2&lt;/td&gt;&lt;td&gt;Dos operaciones siguen en revisión.&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;App&lt;/th&gt;&lt;td data-valor=&quot;80&quot;&gt;80&lt;/td&gt;&lt;td data-valor=&quot;80&quot;&gt;80&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;Conteos coincidentes.&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Asistido&lt;/th&gt;&lt;td data-valor=&quot;30&quot;&gt;30&lt;/td&gt;&lt;td data-valor=&quot;33&quot;&gt;33&lt;/td&gt;&lt;td&gt;+3&lt;/td&gt;&lt;td&gt;Tres registros pendientes de clasificar.&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+      &lt;tfoot&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Total&lt;/th&gt;&lt;td&gt;230&lt;/td&gt;&lt;td&gt;231&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;El saldo neto no compensa las diferencias por canal.&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Datos ilustrativos. Diferencia = observado − esperado; una diferencia cero no prueba igualdad de los registros individuales.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details>
+<div class="pieza ancho" id="escenario-ejemplo" data-reporte="escenario">
+  <h3>¿Qué cambia si la tarea toma menos tiempo?</h3>
+  <p>Explora capacidad mensual con un volumen fijo. Los valores iniciales son ilustrativos.</p>
+  <form class="escenario-form" aria-label="Supuestos de capacidad mensual">
+    <label>Operaciones al mes<input name="volumen" type="number" min="0" max="1000000" step="1" value="1200" required></label>
+    <label>Antes, minutos por operación<input name="antes" type="number" min="0" max="1440" step="0.1" value="8" required></label>
+    <label>Después, minutos por operación<input name="despues" type="number" min="0" max="1440" step="0.1" value="5" required></label>
+    <button type="reset">Restablecer supuestos</button>
+  </form>
+  <div class="escenario-resultados">
+    <output data-resultado aria-live="polite">60 h/mes liberadas</output>
+    <p data-formula>1.200 × (8 − 5) ÷ 60 = 60 h/mes. Es capacidad estimada, no ahorro monetario ni una predicción.</p>
+  </div>
+</div>
+<details class="receta-copia ancho"><summary>HTML y dependencias · Calculadora de escenarios</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Añade reportes.js; para el recorrido también globo.js y Three 0.160.1.</p><div class="codigo"><div class="cab"><span>Calculadora de escenarios</span><button type="button" data-copiar="receta-fuente-escenario" aria-label="Copiar HTML de Calculadora de escenarios">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Calculadora de escenarios, desplazable"><code id="receta-fuente-escenario">&lt;div class=&quot;pieza ancho&quot; id=&quot;escenario-ejemplo&quot; data-reporte=&quot;escenario&quot;&gt;
+  &lt;h3&gt;¿Qué cambia si la tarea toma menos tiempo?&lt;/h3&gt;
+  &lt;p&gt;Explora capacidad mensual con un volumen fijo. Los valores iniciales son ilustrativos.&lt;/p&gt;
+  &lt;form class=&quot;escenario-form&quot; aria-label=&quot;Supuestos de capacidad mensual&quot;&gt;
+    &lt;label&gt;Operaciones al mes&lt;input name=&quot;volumen&quot; type=&quot;number&quot; min=&quot;0&quot; max=&quot;1000000&quot; step=&quot;1&quot; value=&quot;1200&quot; required&gt;&lt;/label&gt;
+    &lt;label&gt;Antes, minutos por operación&lt;input name=&quot;antes&quot; type=&quot;number&quot; min=&quot;0&quot; max=&quot;1440&quot; step=&quot;0.1&quot; value=&quot;8&quot; required&gt;&lt;/label&gt;
+    &lt;label&gt;Después, minutos por operación&lt;input name=&quot;despues&quot; type=&quot;number&quot; min=&quot;0&quot; max=&quot;1440&quot; step=&quot;0.1&quot; value=&quot;5&quot; required&gt;&lt;/label&gt;
+    &lt;button type=&quot;reset&quot;&gt;Restablecer supuestos&lt;/button&gt;
+  &lt;/form&gt;
+  &lt;div class=&quot;escenario-resultados&quot;&gt;
+    &lt;output data-resultado aria-live=&quot;polite&quot;&gt;60 h/mes liberadas&lt;/output&gt;
+    &lt;p data-formula&gt;1.200 × (8 − 5) ÷ 60 = 60 h/mes. Es capacidad estimada, no ahorro monetario ni una predicción.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></div></details>
+<figure class="pieza ancho" id="recorrido-ejemplo" data-reporte="recorrido">
+  <h3>Seguir el viaje de una idea</h3>
+  <p>Una ruta por etapa, con contexto escrito. Selecciona anterior o siguiente para orientar el globo.</p>
+  <div data-recorrido-globo></div>
+  <div class="acciones">
+    <button type="button" data-paso="prev">← Etapa anterior</button>
+    <button type="button" data-paso="next">Etapa siguiente →</button>
+  </div>
+  <p data-recorrido-estado role="status">Tres etapas ilustrativas; el recorrido empieza inmóvil.</p>
+  <ol class="recorrido-pasos">
+    <li data-ruta="idea-bog-mad"><strong><span data-lugar="BOG" data-lat="4.711" data-lon="-74.0721">Bogotá</span> → <span data-lugar="MAD" data-lat="40.4168" data-lon="-3.7038">Madrid</span></strong><p>Se comparte la primera propuesta para revisión.</p></li>
+    <li data-ruta="idea-mad-hnd"><strong><span data-lugar="MAD" data-lat="40.4168" data-lon="-3.7038">Madrid</span> → <span data-lugar="HND" data-lat="35.5494" data-lon="139.7798">Tokio</span></strong><p>La propuesta se convierte en una prueba de interacción.</p></li>
+    <li data-ruta="idea-hnd-bog"><strong><span data-lugar="HND" data-lat="35.5494" data-lon="139.7798">Tokio</span> → <span data-lugar="BOG" data-lat="4.711" data-lon="-74.0721">Bogotá</span></strong><p>Las observaciones regresan al equipo que decide.</p></li>
+  </ol>
+  <figcaption>Relato ficticio. Las coordenadas son geográficas; no representan vuelos, distancias ni actividad real.</figcaption>
+</figure>
+<details class="receta-copia ancho"><summary>HTML y dependencias · Globo narrado</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Añade reportes.js; para el recorrido también globo.js y Three 0.160.1.</p><div class="codigo"><div class="cab"><span>Globo narrado</span><button type="button" data-copiar="receta-fuente-recorrido" aria-label="Copiar HTML de Globo narrado">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Globo narrado, desplazable"><code id="receta-fuente-recorrido">&lt;figure class=&quot;pieza ancho&quot; id=&quot;recorrido-ejemplo&quot; data-reporte=&quot;recorrido&quot;&gt;
+  &lt;h3&gt;Seguir el viaje de una idea&lt;/h3&gt;
+  &lt;p&gt;Una ruta por etapa, con contexto escrito. Selecciona anterior o siguiente para orientar el globo.&lt;/p&gt;
+  &lt;div data-recorrido-globo&gt;&lt;/div&gt;
+  &lt;div class=&quot;acciones&quot;&gt;
+    &lt;button type=&quot;button&quot; data-paso=&quot;prev&quot;&gt;← Etapa anterior&lt;/button&gt;
+    &lt;button type=&quot;button&quot; data-paso=&quot;next&quot;&gt;Etapa siguiente →&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;p data-recorrido-estado role=&quot;status&quot;&gt;Tres etapas ilustrativas; el recorrido empieza inmóvil.&lt;/p&gt;
+  &lt;ol class=&quot;recorrido-pasos&quot;&gt;
+    &lt;li data-ruta=&quot;idea-bog-mad&quot;&gt;&lt;strong&gt;&lt;span data-lugar=&quot;BOG&quot; data-lat=&quot;4.711&quot; data-lon=&quot;-74.0721&quot;&gt;Bogotá&lt;/span&gt; → &lt;span data-lugar=&quot;MAD&quot; data-lat=&quot;40.4168&quot; data-lon=&quot;-3.7038&quot;&gt;Madrid&lt;/span&gt;&lt;/strong&gt;&lt;p&gt;Se comparte la primera propuesta para revisión.&lt;/p&gt;&lt;/li&gt;
+    &lt;li data-ruta=&quot;idea-mad-hnd&quot;&gt;&lt;strong&gt;&lt;span data-lugar=&quot;MAD&quot; data-lat=&quot;40.4168&quot; data-lon=&quot;-3.7038&quot;&gt;Madrid&lt;/span&gt; → &lt;span data-lugar=&quot;HND&quot; data-lat=&quot;35.5494&quot; data-lon=&quot;139.7798&quot;&gt;Tokio&lt;/span&gt;&lt;/strong&gt;&lt;p&gt;La propuesta se convierte en una prueba de interacción.&lt;/p&gt;&lt;/li&gt;
+    &lt;li data-ruta=&quot;idea-hnd-bog&quot;&gt;&lt;strong&gt;&lt;span data-lugar=&quot;HND&quot; data-lat=&quot;35.5494&quot; data-lon=&quot;139.7798&quot;&gt;Tokio&lt;/span&gt; → &lt;span data-lugar=&quot;BOG&quot; data-lat=&quot;4.711&quot; data-lon=&quot;-74.0721&quot;&gt;Bogotá&lt;/span&gt;&lt;/strong&gt;&lt;p&gt;Las observaciones regresan al equipo que decide.&lt;/p&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;figcaption&gt;Relato ficticio. Las coordenadas son geográficas; no representan vuelos, distancias ni actividad real.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details>
+<figure class="pieza amplio" id="visor-ejemplo" data-visor>
+  <h3>Una interfaz, varios tamaños</h3>
+  <p>Explora los estados vacío, revisión y confirmado de un registro ilustrativo.</p>
+  <div class="acciones" role="group" aria-label="Ancho de la vista del prototipo">
+    <button type="button" data-ancho-visor="320" aria-pressed="false">320 px</button>
+    <button type="button" data-ancho-visor="390" aria-pressed="true">390 px</button>
+    <button type="button" data-ancho-visor="768" aria-pressed="false">768 px</button>
+    <button type="button" data-ancho-visor="1024" aria-pressed="false">1024 px</button>
+    <button type="button" data-ancho-visor="auto" aria-pressed="false">Ajustar</button>
+    <button type="button" data-reiniciar-visor>Reiniciar ejemplo</button>
+  </div>
+  <p data-visor-estado role="status">Vista inicial: 390 px CSS.</p>
+  <div class="visor-caja" tabindex="0" role="region" aria-label="Prototipo interactivo, desplazable horizontalmente"></div>
+  <template data-prototipo>
+    <style>
+      .demo { padding: 24px; min-width: 0; }
+      .demo nav { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 20px; border-bottom: 1px solid var(--pieza-linea); }
+      .demo button { min-height: 44px; padding: 8px 12px; color: var(--pieza-tinta); background: var(--pieza-papel); border: 1px solid var(--pieza-linea); border-radius: 4px; font: inherit; cursor: pointer; }
+      .demo button[aria-pressed='true'] { background: var(--pieza-suave); border-color: var(--pieza-acento); }
+      .demo h2 { font: 400 32px/1.15 var(--serif); margin: 0 0 16px; }
+      .demo p { margin: 0 0 18px; overflow-wrap: anywhere; }
+      .demo .contexto { margin-top: 24px; font-size: 14px; color: var(--pieza-secundaria); }
+      .demo article { padding-top: 28px; }
+      .demo dl { margin: 0 0 20px; display: grid; gap: 12px; }
+      .demo dt { font-size: 13px; color: var(--pieza-secundaria); }
+      .demo dd { margin: 0; }
+      .demo .estado { padding: 16px; border: 1px dashed var(--pieza-linea); }
+      @container (min-width: 600px) {
+        .demo article { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); gap: 32px; }
+        .demo .contexto { margin-top: 0; padding-top: 4px; }
+      }
+    </style>
+    <div class="demo">
+      <nav aria-label="Estados del prototipo">
+        <button type="button" data-demo-ir="vacio" aria-pressed="true">Vacío</button>
+        <button type="button" data-demo-ir="revision" aria-pressed="false">Revisión</button>
+        <button type="button" data-demo-ir="confirmado" aria-pressed="false">Confirmado</button>
+      </nav>
+      <article data-demo-pagina="vacio">
+        <div><h2>Tu primer registro</h2><p>Todavía no hay registros en este ejemplo.</p><button type="button" data-demo-ir="revision">Crear borrador de ejemplo</button></div>
+        <aside class="contexto"><p>Empieza con un nombre, una fecha y una explicación del movimiento.</p><p class="estado">Estado: sin registros</p></aside>
+      </article>
+      <article data-demo-pagina="revision" hidden>
+        <div><h2>Revisa antes de confirmar</h2><dl><div><dt>Nombre</dt><dd>Sesión de revisión</dd></div><div><dt>Fecha</dt><dd>14 de septiembre de 2026</dd></div><div><dt>Duración</dt><dd>30 minutos</dd></div></dl><button type="button" data-demo-ir="confirmado">Confirmar ejemplo</button></div>
+        <aside class="contexto"><p>Comprueba los datos del borrador. Este prototipo usa un registro fijo para explorar la interacción.</p><p class="estado">Estado: pendiente de confirmar</p></aside>
+      </article>
+      <article data-demo-pagina="confirmado" hidden>
+        <div><h2>Registro confirmado</h2><p>La sesión de revisión aparece en el ejemplo con su fecha y duración.</p><button type="button" data-demo-ir="vacio">Volver al inicio</button></div>
+        <aside class="contexto"><p class="estado">Estado: confirmado en el prototipo</p><p>No se envió ni se guardó información.</p></aside>
+      </article>
+    </div>
+  </template>
+  <div class="visor-fuente"><h4>Estados del ejemplo</h4><ol><li>Vacío: crear un borrador de ejemplo.</li><li>Revisión: sesión del 14-sep-2026, 30 minutos, pendiente de confirmar.</li><li>Confirmado: resultado ilustrativo; no se envían datos.</li></ol></div>
+  <figcaption>Vista interactiva local. El ancho conserva píxeles CSS reales; en una pantalla pequeña se desplaza la región completa.</figcaption>
+</figure>
+<details class="receta-copia ancho"><summary>HTML y dependencias · Visor de prototipos</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Añade visor.js.</p><div class="codigo"><div class="cab"><span>Visor de prototipos</span><button type="button" data-copiar="receta-fuente-visor" aria-label="Copiar HTML de Visor de prototipos">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Visor de prototipos, desplazable"><code id="receta-fuente-visor">&lt;figure class=&quot;pieza amplio&quot; id=&quot;visor-ejemplo&quot; data-visor&gt;
+  &lt;h3&gt;Una interfaz, varios tamaños&lt;/h3&gt;
+  &lt;p&gt;Explora los estados vacío, revisión y confirmado de un registro ilustrativo.&lt;/p&gt;
+  &lt;div class=&quot;acciones&quot; role=&quot;group&quot; aria-label=&quot;Ancho de la vista del prototipo&quot;&gt;
+    &lt;button type=&quot;button&quot; data-ancho-visor=&quot;320&quot; aria-pressed=&quot;false&quot;&gt;320 px&lt;/button&gt;
+    &lt;button type=&quot;button&quot; data-ancho-visor=&quot;390&quot; aria-pressed=&quot;true&quot;&gt;390 px&lt;/button&gt;
+    &lt;button type=&quot;button&quot; data-ancho-visor=&quot;768&quot; aria-pressed=&quot;false&quot;&gt;768 px&lt;/button&gt;
+    &lt;button type=&quot;button&quot; data-ancho-visor=&quot;1024&quot; aria-pressed=&quot;false&quot;&gt;1024 px&lt;/button&gt;
+    &lt;button type=&quot;button&quot; data-ancho-visor=&quot;auto&quot; aria-pressed=&quot;false&quot;&gt;Ajustar&lt;/button&gt;
+    &lt;button type=&quot;button&quot; data-reiniciar-visor&gt;Reiniciar ejemplo&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;p data-visor-estado role=&quot;status&quot;&gt;Vista inicial: 390 px CSS.&lt;/p&gt;
+  &lt;div class=&quot;visor-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Prototipo interactivo, desplazable horizontalmente&quot;&gt;&lt;/div&gt;
+  &lt;template data-prototipo&gt;
+    &lt;style&gt;
+      .demo { padding: 24px; min-width: 0; }
+      .demo nav { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 20px; border-bottom: 1px solid var(--pieza-linea); }
+      .demo button { min-height: 44px; padding: 8px 12px; color: var(--pieza-tinta); background: var(--pieza-papel); border: 1px solid var(--pieza-linea); border-radius: 4px; font: inherit; cursor: pointer; }
+      .demo button[aria-pressed=&#x27;true&#x27;] { background: var(--pieza-suave); border-color: var(--pieza-acento); }
+      .demo h2 { font: 400 32px/1.15 var(--serif); margin: 0 0 16px; }
+      .demo p { margin: 0 0 18px; overflow-wrap: anywhere; }
+      .demo .contexto { margin-top: 24px; font-size: 14px; color: var(--pieza-secundaria); }
+      .demo article { padding-top: 28px; }
+      .demo dl { margin: 0 0 20px; display: grid; gap: 12px; }
+      .demo dt { font-size: 13px; color: var(--pieza-secundaria); }
+      .demo dd { margin: 0; }
+      .demo .estado { padding: 16px; border: 1px dashed var(--pieza-linea); }
+      @container (min-width: 600px) {
+        .demo article { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); gap: 32px; }
+        .demo .contexto { margin-top: 0; padding-top: 4px; }
+      }
+    &lt;/style&gt;
+    &lt;div class=&quot;demo&quot;&gt;
+      &lt;nav aria-label=&quot;Estados del prototipo&quot;&gt;
+        &lt;button type=&quot;button&quot; data-demo-ir=&quot;vacio&quot; aria-pressed=&quot;true&quot;&gt;Vacío&lt;/button&gt;
+        &lt;button type=&quot;button&quot; data-demo-ir=&quot;revision&quot; aria-pressed=&quot;false&quot;&gt;Revisión&lt;/button&gt;
+        &lt;button type=&quot;button&quot; data-demo-ir=&quot;confirmado&quot; aria-pressed=&quot;false&quot;&gt;Confirmado&lt;/button&gt;
+      &lt;/nav&gt;
+      &lt;article data-demo-pagina=&quot;vacio&quot;&gt;
+        &lt;div&gt;&lt;h2&gt;Tu primer registro&lt;/h2&gt;&lt;p&gt;Todavía no hay registros en este ejemplo.&lt;/p&gt;&lt;button type=&quot;button&quot; data-demo-ir=&quot;revision&quot;&gt;Crear borrador de ejemplo&lt;/button&gt;&lt;/div&gt;
+        &lt;aside class=&quot;contexto&quot;&gt;&lt;p&gt;Empieza con un nombre, una fecha y una explicación del movimiento.&lt;/p&gt;&lt;p class=&quot;estado&quot;&gt;Estado: sin registros&lt;/p&gt;&lt;/aside&gt;
+      &lt;/article&gt;
+      &lt;article data-demo-pagina=&quot;revision&quot; hidden&gt;
+        &lt;div&gt;&lt;h2&gt;Revisa antes de confirmar&lt;/h2&gt;&lt;dl&gt;&lt;div&gt;&lt;dt&gt;Nombre&lt;/dt&gt;&lt;dd&gt;Sesión de revisión&lt;/dd&gt;&lt;/div&gt;&lt;div&gt;&lt;dt&gt;Fecha&lt;/dt&gt;&lt;dd&gt;14 de septiembre de 2026&lt;/dd&gt;&lt;/div&gt;&lt;div&gt;&lt;dt&gt;Duración&lt;/dt&gt;&lt;dd&gt;30 minutos&lt;/dd&gt;&lt;/div&gt;&lt;/dl&gt;&lt;button type=&quot;button&quot; data-demo-ir=&quot;confirmado&quot;&gt;Confirmar ejemplo&lt;/button&gt;&lt;/div&gt;
+        &lt;aside class=&quot;contexto&quot;&gt;&lt;p&gt;Comprueba los datos del borrador. Este prototipo usa un registro fijo para explorar la interacción.&lt;/p&gt;&lt;p class=&quot;estado&quot;&gt;Estado: pendiente de confirmar&lt;/p&gt;&lt;/aside&gt;
+      &lt;/article&gt;
+      &lt;article data-demo-pagina=&quot;confirmado&quot; hidden&gt;
+        &lt;div&gt;&lt;h2&gt;Registro confirmado&lt;/h2&gt;&lt;p&gt;La sesión de revisión aparece en el ejemplo con su fecha y duración.&lt;/p&gt;&lt;button type=&quot;button&quot; data-demo-ir=&quot;vacio&quot;&gt;Volver al inicio&lt;/button&gt;&lt;/div&gt;
+        &lt;aside class=&quot;contexto&quot;&gt;&lt;p class=&quot;estado&quot;&gt;Estado: confirmado en el prototipo&lt;/p&gt;&lt;p&gt;No se envió ni se guardó información.&lt;/p&gt;&lt;/aside&gt;
+      &lt;/article&gt;
+    &lt;/div&gt;
+  &lt;/template&gt;
+  &lt;div class=&quot;visor-fuente&quot;&gt;&lt;h4&gt;Estados del ejemplo&lt;/h4&gt;&lt;ol&gt;&lt;li&gt;Vacío: crear un borrador de ejemplo.&lt;/li&gt;&lt;li&gt;Revisión: sesión del 14-sep-2026, 30 minutos, pendiente de confirmar.&lt;/li&gt;&lt;li&gt;Confirmado: resultado ilustrativo; no se envían datos.&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+  &lt;figcaption&gt;Vista interactiva local. El ancho conserva píxeles CSS reales; en una pantalla pequeña se desplaza la región completa.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details><footer class="pie"><p>Nota Tikin · Muestra de todos los componentes. Inspirada en <a href="https://www.cmrg.me">cmrg.me</a>; el tema claro, los ajustes de acceso y Dark Sea están documentados en el informe.</p><button type="button" data-sonido aria-pressed="false">Sonido apagado</button></footer>
 </main>
 <div class="regla" role="slider" tabindex="0" aria-orientation="vertical" aria-label="Progreso de lectura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="ticks"></div><div class="cursor"></div><span class="val">0%</span></div>
 <script>
@@ -1668,7 +2304,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   });
   // Imprimir el contenido íntegro de los extractos incluso en motores sin ::details-content.
   let closedForPrint = [];
-  addEventListener('beforeprint',() => { closedForPrint=[...document.querySelectorAll('.extracto details:not([open]),[data-grafica] details:not([open]),[data-escena] details:not([open])')]; closedForPrint.forEach(e=>e.open=true); });
+  addEventListener('beforeprint',() => { closedForPrint=[...document.querySelectorAll('.metodologia:not([open]),.extracto details:not([open]),[data-grafica] details:not([open]),[data-escena] details:not([open])')]; closedForPrint.forEach(e=>e.open=true); });
   addEventListener('afterprint',() => { closedForPrint.forEach(e=>e.open=false); closedForPrint=[]; });
 })();
 
@@ -2734,6 +3370,306 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
     try{return new NotaEscena(el);}catch(error){let p=el.querySelector('[data-error-escena]');if(!p){p=node('p','grafica-error');p.dataset.errorEscena='';el.prepend(p);}p.textContent='No se pudo construir la escena: '+error.message;return null;}
   });}
   window.NotaEscena=NotaEscena;NotaEscena.init=init;NotaEscena.get=e=>instances.get(e);init();
+})();
+
+</script>
+<script>
+/* Nota Tikin · piezas de reportes. Tablas como fuente, sin red ni animaciones.
+   Incluir tras globo.js si se usa recorrido. init/get/destroy por contenedor. */
+(() => {
+  'use strict';
+  const instances = new WeakMap();
+  const fmt = n => new Intl.NumberFormat('es-CO', {maximumFractionDigits: 2}).format(n);
+  const el = (tag, cls, text) => {
+    const node = document.createElement(tag); if(cls) node.className = cls;
+    if(text !== undefined) node.textContent = text; return node;
+  };
+  const svg = (tag, attrs = {}, text) => {
+    const node = document.createElementNS('http://www.w3.org/2000/svg', tag);
+    Object.entries(attrs).forEach(([k,v]) => node.setAttribute(k, String(v)));
+    if(text !== undefined) node.textContent = text; return node;
+  };
+  function finite(raw, missing = false) {
+    if(raw === null || raw.trim() === '') { if(missing) return null; throw new TypeError('Falta un valor.'); }
+    const n = Number(raw);
+    if(!Number.isFinite(n) || Math.abs(n) > 1e9) throw new TypeError('Se admiten valores finitos de hasta mil millones en magnitud.');
+    return n;
+  }
+  function domain(values) {
+    const lo = Math.min(0,...values), hi = Math.max(0,...values);
+    return lo === hi ? [0,1] : [lo,hi];
+  }
+  const scale = (d,a,b) => v => a + (v-d[0])/(d[1]-d[0])*(b-a);
+  function tableData(root, min, max) {
+    const table = root.querySelector('table');
+    const heads = [...(table?.tHead?.rows[0]?.cells || [])].map(c => c.textContent.trim());
+    const rows = [...(table?.tBodies[0]?.rows || [])];
+    if(heads.length < min || heads.length > max || !rows.length || rows.length > 60) throw new TypeError('Revisa cabeceras; se admiten de 1 a 60 filas.');
+    if(rows.some(r => r.cells.length !== heads.length)) throw new TypeError('Las filas deben tener las mismas columnas.');
+    return {table, heads, rows};
+  }
+  function region(title, width, height) {
+    const box = el('div','grafica-caja'); box.tabIndex = 0; box.setAttribute('role','region');
+    box.setAttribute('aria-label',title+'. Dibujo desplazable; tabla completa a continuación.');
+    const drawing = svg('svg',{viewBox:`0 0 ${width} ${height}`,width,height,role:'img','aria-label':title});
+    drawing.append(svg('title',{},title)); box.append(drawing); return [box,drawing];
+  }
+  function text(root,x,y,value,attrs={}) { const t = svg('text',{x,y,...attrs},value); root.append(t); return t; }
+  function wrapped(root,x,y,value,size=22) {
+    const lines = value.match(new RegExp('.{1,'+size+'}(?:\\s|$)|.{1,'+size+'}', 'g')) || [''];
+    const t = text(root,x,y,''); lines.forEach((line,i)=>t.append(svg('tspan',{x,dy:i?18:0},line.trim())));
+    return lines.length;
+  }
+  class Reporte {
+    constructor(root) {
+      this.root=root; this.parts=[]; this.restore=[]; this.abort=new AbortController(); this.dead=false;
+      try {
+        switch(root.dataset.reporte) {
+          case 'cascada': this.waterfall(); break;
+          case 'multiples': this.multiples(); break;
+          case 'conciliacion': this.reconcile(); break;
+          case 'escenario': this.scenario(); break;
+          case 'recorrido': this.journey(); break;
+          default: throw new TypeError('Tipo de reporte desconocido.');
+        }
+        instances.set(root,this);
+      } catch(error) {this.destroy();throw error;}
+    }
+    add(node,before=this.root.querySelector('.tabla-caja')) {this.root.insertBefore(node,before);this.parts.push(node);return node;}
+    change(node,value) {if(!node)throw new TypeError('Falta una celda de resultado.');const children=[...node.childNodes];this.restore.push(()=>node.replaceChildren(...children));node.textContent=value;}
+    on(node,type,fn) {node.addEventListener(type,fn,{signal:this.abort.signal});}
+    waterfall() {
+      const {table,rows}=tableData(this.root,3,3);
+      let total=0;
+      const data=rows.map(r=>{
+        const value=finite(r.cells[1].getAttribute('data-valor'));
+        const from=total; total+=value;
+        if(Math.abs(total)>1e9)throw new TypeError('El acumulado excede mil millones.');
+        return {row:r,label:r.cells[0].textContent.trim(),value,from,to:total};
+      });
+      const d=domain(data.flatMap(r=>[r.from,r.to]));
+      const layout=data.map(r=>Math.max(64,Math.ceil(r.label.length/20)*18+22));
+      const width=860,height=layout.reduce((a,b)=>a+b,0)+160;
+      const [box,s]=region(table.caption?.textContent||'Cascada',width,height);
+      s.dataset.xMin=d[0];s.dataset.xMax=d[1];const x=scale(d,300,680),bottom=height-52;
+      for(let i=0;i<=4;i++) {
+        const tick=d[0]+(d[1]-d[0])*i/4;
+        s.append(svg('line',{x1:x(tick),x2:x(tick),y1:40,y2:bottom,class:'grafica-rejilla','data-tick-x':tick}));
+        text(s,x(tick),bottom+30,fmt(tick),{'text-anchor':'middle'});
+      }
+      s.append(svg('line',{x1:x(0),x2:x(0),y1:40,y2:bottom,class:'grafica-eje'}));
+      let y=56;
+      data.forEach((r,i)=>{
+        wrapped(s,12,y+17,r.label,20);
+        const bar=svg('rect',{x:Math.min(x(r.from),x(r.to)),y,width:Math.abs(x(r.to)-x(r.from)),height:28,
+          class:r.value<0?'cascada-baja':'cascada-sube','data-from':r.from,'data-to':r.to});
+        bar.append(svg('title',{},r.label+': '+fmt(r.value)+'; acumulado '+fmt(r.to)));s.append(bar);
+        text(s,700,y+18,(r.value>0?'+':'')+fmt(r.value));
+        if(i<data.length-1)s.append(svg('path',{d:`M${x(r.to)} ${y+28}V${y+layout[i]}`,class:'cascada-enlace'}));
+        y+=layout[i];
+      });
+      text(s,12,y+18,'Resultado');text(s,700,y+18,fmt(total));
+      s.append(svg('rect',{x:Math.min(x(0),x(total)),y,width:Math.abs(x(total)-x(0)),height:28,class:'cascada-total','data-total':total}));
+      this.add(box);
+      data.forEach(r=>this.change(r.row.cells[2],fmt(r.to)));
+      if(table.tFoot)this.change(table.tFoot.rows[0].cells[2],fmt(total));
+    }
+    multiples() {
+      const {table,rows,heads}=tableData(this.root,2,5);
+      if(rows.length<2)throw new TypeError('Los múltiples necesitan al menos dos períodos.');
+      const labels=rows.map(r=>r.cells[0].textContent.trim());
+      const values=rows.map(r=>[...r.cells].slice(1).map(c=>finite(c.getAttribute('data-valor'),true)));
+      const d=domain(values.flat().filter(v=>v!==null));
+      const group=el('div','multiples-rejilla');
+      heads.slice(1).forEach((head,index)=>{
+        const panel=el('div');panel.append(el('h4','',head));
+        const [box,s]=region(head+' · '+(table.caption?.textContent||'Serie'),360,290);
+        s.dataset.yMin=d[0];s.dataset.yMax=d[1];const x=scale([0,rows.length-1],80,290),y=scale(d,185,25);
+        [0,.5,1].forEach(f=>{const tick=d[0]+(d[1]-d[0])*f;
+          text(s,68,y(tick)+4,fmt(tick),{'text-anchor':'end'});
+          s.append(svg('line',{x1:80,x2:290,y1:y(tick),y2:y(tick),class:'grafica-rejilla','data-tick-y':tick}));});
+        let path='',pen=false;
+        values.forEach((row,i)=>{
+          const v=row[index];if(v===null){pen=false;return;}
+          path+=(pen?'L':'M')+x(i)+' '+y(v);pen=true;
+          const p=svg('circle',{cx:x(i),cy:y(v),r:4,class:'grafica-punto serie-0','data-value':v});p.append(svg('title',{},labels[i]+': '+fmt(v)));s.append(p);
+        });
+        s.prepend(svg('path',{d:path,class:'grafica-trazo serie-0'}));
+        // Los extremos se identifican por índice; la tabla nombra todos los períodos.
+        text(s,80,220,'1',{'text-anchor':'middle'});text(s,290,220,String(rows.length),{'text-anchor':'middle'});
+        text(s,185,258,'Período de la tabla',{'text-anchor':'middle'});
+        panel.append(box);group.append(panel);
+      });
+      this.add(group);
+    }
+    reconcile() {
+      const {table,rows}=tableData(this.root,5,5);
+      const data=rows.map(row=>{
+        const a=finite(row.cells[1].getAttribute('data-valor')), b=finite(row.cells[2].getAttribute('data-valor'),true);
+        if(!Number.isSafeInteger(a)||a<0||(b!==null&&(!Number.isSafeInteger(b)||b<0))) throw new TypeError('Conciliación requiere conteos enteros no negativos.');
+        return {row,a,b};
+      });
+      let expected=0,observed=0,complete=true;
+      data.forEach(({row,a,b})=>{expected+=a; if(b===null)complete=false;else observed+=b;
+        this.change(row.cells[3],b===null?'Sin dato':(b-a>0?'+':'')+fmt(b-a));});
+      if(table.tFoot) {
+        const cells=table.tFoot.rows[0].cells;
+        this.change(cells[1],fmt(expected));this.change(cells[2],complete?fmt(observed):'Incompleto');
+        this.change(cells[3],complete?fmt(observed-expected):'Sin comparación');
+      }
+    }
+    scenario() {
+      const form=this.root.querySelector('form');
+      const fields=['volumen','antes','despues'].map(n=>form?.elements.namedItem(n));
+      const result=this.root.querySelector('[data-resultado]');const detail=this.root.querySelector('[data-formula]');
+      if(fields.some(f=>!f)||!result||!detail)throw new TypeError('Faltan campos o resultados del escenario.');
+      this.change(result,result.textContent);this.change(detail,detail.textContent);
+      const update=()=>{
+        if(fields.some(f=>!f.validity.valid||f.value==='')) {result.textContent='Completa los tres valores dentro de sus límites.';detail.textContent='No hay una estimación válida.';return;}
+        const [volume,before,after]=fields.map(f=>Number(f.value));
+        const hours=volume*(before-after)/60;
+        result.textContent=fmt(Math.abs(hours))+' h/mes '+(hours>=0?'liberadas':'adicionales');
+        detail.textContent=`${fmt(volume)} operaciones × (${fmt(before)} − ${fmt(after)}) min ÷ 60 = ${fmt(hours)} h/mes. Es capacidad estimada, no ahorro monetario ni una predicción.`;
+      };
+      this.on(form,'submit',e=>e.preventDefault());this.on(form,'input',update);
+      this.on(form,'reset',()=>queueMicrotask(()=>{if(!this.dead)update();}));update();
+    }
+    journey() {
+      const stage=this.root.querySelector('[data-recorrido-globo]');
+      const steps=[...this.root.querySelectorAll('[data-ruta]')];
+      const status=this.root.querySelector('[data-recorrido-estado]');
+      const prev=this.root.querySelector('[data-paso="prev"]'),next=this.root.querySelector('[data-paso="next"]');
+      if(!stage||!steps.length||!status||!prev||!next||!window.NotaGlobo)throw new TypeError('El recorrido necesita pasos, controles y NotaGlobo.');
+      const points=new Map(),ids=new Set();
+      const arcs=steps.map(step=>{
+        const places=[...step.querySelectorAll('[data-lugar]')];const id=step.dataset.ruta;
+        if(!id||ids.has(id)||places.length!==2)throw new TypeError('Cada paso necesita una ruta única y dos lugares.');ids.add(id);
+        places.forEach(place=>{
+          const p={id:place.dataset.lugar,label:place.textContent.trim(),lat:finite(place.getAttribute('data-lat')),lon:finite(place.getAttribute('data-lon'))};
+          if(points.has(p.id)&&JSON.stringify(points.get(p.id))!==JSON.stringify(p))throw new TypeError('Coordenadas o nombre inconsistentes para el mismo lugar.');
+          points.set(p.id,p);
+        });
+        return {id,from:places[0].dataset.lugar,to:places[1].dataset.lugar,label:places.map(p=>p.textContent.trim()).join(' → '),detail:step.querySelector('p')?.textContent.trim()||''};
+      });
+      this.globe=new NotaGlobo(stage,{points:[...points.values()],arcs});this.globe.pause();
+      this.change(status,status.textContent);const prior=[prev.disabled,next.disabled];
+      this.restore.push(()=>{prev.disabled=prior[0];next.disabled=prior[1];});
+      steps.forEach(step=>{const current=step.getAttribute('aria-current');this.restore.push(()=>{if(current===null)step.removeAttribute('aria-current');else step.setAttribute('aria-current',current);});});
+      let index=0;
+      const go=i=>{
+        index=Math.max(0,Math.min(steps.length-1,i));this.globe.select(arcs[index].id);
+        steps.forEach((step,k)=>{if(k===index)step.setAttribute('aria-current','step');else step.removeAttribute('aria-current');});
+        prev.disabled=index===0;next.disabled=index===steps.length-1;
+        status.textContent=`Etapa ${index+1} de ${steps.length}: ${arcs[index].label}. ${arcs[index].detail}`;
+      };
+      this.on(prev,'click',()=>go(index-1));this.on(next,'click',()=>go(index+1));go(0);
+    }
+    destroy() {
+      if(this.dead)return;this.dead=true;this.abort.abort();this.globe?.destroy();
+      this.parts.forEach(p=>p.remove());this.restore.reverse().forEach(fn=>fn());instances.delete(this.root);
+    }
+  }
+  function init(root=document) {
+    return [...(root.matches?.('[data-reporte]')?[root]:[]),...root.querySelectorAll('[data-reporte]')].map(e=>{
+      if(instances.has(e))return instances.get(e);
+      e.querySelector('[data-error-reporte]')?.remove();
+      try {return new Reporte(e);}catch(error){const p=el('p','nota-vacio','No se pudo preparar esta pieza: '+error.message+' El contenido original sigue disponible.');p.dataset.errorReporte='';e.prepend(p);return null;}
+    });
+  }
+  window.NotaReportes={init,get:e=>instances.get(e)};init();
+})();
+
+</script>
+<script>
+/* NotaVisor · prototipos locales con ancho real y Shadow DOM.
+   El HTML de template es de confianza. Sin iframes, red ni ejecución de scripts. */
+(() => {
+  'use strict';
+  const instances=new WeakMap();
+  class NotaVisor {
+    constructor(root) {
+      this.root=root;this.abort=new AbortController();this.dead=false;
+      const template=root.querySelector('template[data-prototipo]');
+      this.status=root.querySelector('[data-visor-estado]');this.box=root.querySelector('.visor-caja');
+      this.source=root.querySelector('.visor-fuente');this.buttons=[...root.querySelectorAll('[data-ancho-visor]')];
+      if(!template||!this.status||!this.box||!this.source||!this.buttons.length)throw new TypeError('Faltan template, alternativa o controles del visor.');
+      this.template=template;this.originalStatus=this.status.textContent;
+      this.originalPressed=this.buttons.map(b=>b.getAttribute('aria-pressed'));
+      this.originalSource=this.source.hasAttribute('data-oculta');
+      if(template.content.querySelector('script') || [...template.content.querySelectorAll('*')].some(e=>[...e.attributes].some(a=>/^on/i.test(a.name)))) throw new TypeError('Usa HTML declarativo sin scripts ni manejadores inline.');
+      this.host=document.createElement('div');this.host.className='visor-lienzo';this.box.append(this.host);
+      this.shadow=this.host.attachShadow({mode:'open'});
+      this.width=390;
+      this.on(root,'click',e=>{
+        const size=e.target.closest('[data-ancho-visor]');
+        if(size&&root.contains(size))this.setWidth(size.dataset.anchoVisor);
+        if(e.target.closest('[data-reiniciar-visor]'))this.reset();
+      });
+      this.on(this.shadow,'click',e=>{
+        const button=e.target.closest('[data-demo-ir]');if(!button)return;
+        const panels=[...this.shadow.querySelectorAll('[data-demo-pagina]')];
+        const target=panels.find(p=>p.dataset.demoPagina===button.dataset.demoIr);if(!target)return;
+        panels.forEach(p=>p.hidden=p!==target);
+        this.shadow.querySelectorAll('[data-demo-ir]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.demoIr===target.dataset.demoPagina)));
+        const heading=target.querySelector('h1,h2,h3');if(heading){heading.tabIndex=-1;heading.focus();}
+      });
+      this.resize=new ResizeObserver(()=>this.measure());this.resize.observe(this.box);
+      this.reset();this.setWidth('390');this.source.setAttribute('data-oculta','');instances.set(root,this);
+    }
+    on(node,type,fn) {node.addEventListener(type,fn,{signal:this.abort.signal});}
+    reset() {
+      if(this.dead)return;
+      this.shadow.replaceChildren(this.template.content.cloneNode(true));
+      // Contrato declarativo: no ejecutar JS copiado desde una muestra.
+      this.shadow.querySelectorAll('script').forEach(s=>s.remove());
+      const base=document.createElement('style');
+      base.textContent=':host{display:block;container-type:inline-size;color:var(--pieza-tinta);font:16px/1.6 var(--sans)}*,*::before,*::after{box-sizing:border-box} [hidden]{display:none!important} :focus-visible{outline:2px dashed var(--foco);outline-offset:3px} @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}';
+      this.shadow.prepend(base);this.measure();
+    }
+    setWidth(raw) {
+      const n=raw==='auto'?null:Number(raw);
+      if(n!==null&&![320,390,768,1024].includes(n))throw new TypeError('Anchos disponibles: 320, 390, 768, 1024 o auto.');
+      this.width=n;this.host.style.width=n===null?'100%':n+'px';
+      this.buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.anchoVisor===String(raw))));this.measure();
+    }
+    measure() {
+      if(this.dead)return;
+      const w=Math.round(this.host.getBoundingClientRect().width);
+      this.status.textContent='Vista de '+w+' px CSS'+(this.width===null?' · ajustada al espacio disponible.':'.')+' '+(this.box.scrollWidth>this.box.clientWidth?'Desplaza la región para ver todo el ancho.':'');
+    }
+    destroy() {
+      if(this.dead)return;this.dead=true;this.abort.abort();this.resize.disconnect();this.host.remove();
+      this.status.textContent=this.originalStatus;this.source.toggleAttribute('data-oculta',this.originalSource);
+      this.buttons.forEach((b,i)=>{if(this.originalPressed[i]===null)b.removeAttribute('aria-pressed');else b.setAttribute('aria-pressed',this.originalPressed[i]);});
+      instances.delete(this.root);
+    }
+  }
+  function init(root=document) {
+    return [...(root.matches?.('[data-visor]')?[root]:[]),...root.querySelectorAll('[data-visor]')].map(e=>{
+      if(instances.has(e))return instances.get(e);
+      e.querySelector('[data-error-visor]')?.remove();
+      try{return new NotaVisor(e);}catch(error){const p=document.createElement('p');p.dataset.errorVisor='';p.textContent='Visor no disponible: '+error.message;e.prepend(p);e.querySelector('.visor-fuente')?.removeAttribute('data-oculta');return null;}
+    });
+  }
+  window.NotaVisores={init,get:e=>instances.get(e)};init();
+})();
+
+</script>
+<script>
+/* Ayudas del catálogo. La búsqueda filtra el índice, conserva las piezas en la página. */
+(() => {
+  'use strict';
+  const normal=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('es');
+  document.querySelectorAll('[data-buscador-recetas]').forEach(root=>{
+    const input=root.querySelector('input'),list=root.querySelector('.catalogo-indice'),status=root.querySelector('[role="status"]');
+    if(!input||!list||!status)return;
+    const items=[...list.children];
+    const update=()=>{const words=normal(input.value).trim().split(/\s+/);let count=0;
+      items.forEach(li=>{li.hidden=!words.every(w=>normal(li.textContent+' '+(li.dataset.claves||'')).includes(w));if(!li.hidden)count++;});
+      status.textContent=count?'Encuentra '+count+' de '+items.length+' recetas.':'Sin coincidencias. Prueba con tabla, artículo, globo o prototipo.';
+    };
+    input.addEventListener('input',update);update();
+  });
 })();
 
 </script>

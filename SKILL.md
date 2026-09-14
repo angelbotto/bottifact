@@ -223,3 +223,25 @@ Para comprobar el navegador con CSP usa `python3 scripts/servir.py` y abre el pu
 8766. Los resultados y las limitaciones de esta revisión se guardan en `auditoria/`.
 El [informe de verificación](auditoria/verificacion.md) explica qué se ejecutó, a qué
 viewport y con qué límites; incluye los comandos para repetir las pruebas del navegador.
+
+
+## Reportes, artículos y prototipos
+
+Para nuevas piezas usa las recetas de la [segunda tanda](componentes.md#segunda-tanda-reportes-artículos-y-prototipos):
+ficha de decisión, cronología, ficha editorial, referencias con retorno, glosario,
+metodología, antes/después, cascada, pequeños múltiples, conciliación de conteos,
+calculadora de capacidad, globo narrado y visor de prototipos.
+
+- [reportes.js](reportes.js) mejora las tablas/escenarios y dirige el recorrido con NotaGlobo.
+  No infiere explicaciones, no convierte capacidad en ahorro y no compara monedas.
+- [visor.js](visor.js) muestra HTML/CSS local de confianza con estados declarativos,
+  Shadow DOM y anchos reales. Usa consultas de contenedor, no media queries de ventana.
+  No admite scripts, no usa iframe, no carga apps remotas y no emula hardware.
+- La apariencia nueva usa muestras etiquetadas y radios `data-elegir-tema`; el selector
+  anterior sigue funcionando. Lectura cómoda es optativa por `data-comodidad`, nunca una
+  modificación silenciosa de los documentos existentes.
+- La búsqueda del catálogo sólo filtra su índice; cada receta tiene un botón para copiar
+  su HTML. [catalogo.js](catalogo.js) no es necesario en artículos normales.
+
+El catálogo se sirve en el Mac mini; Angel lo prueba desde el MacBook. Usa la dirección
+HTTPS de Tailscale Serve que confirme el host, no un enlace localhost para la entrega remota.
