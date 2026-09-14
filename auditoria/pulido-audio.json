@@ -1,0 +1,17 @@
+{
+  "clicks": [
+    {
+      "action": "Sonidos apagados",
+      "trusted": true
+    },
+    {
+      "action": "Repetir escritura",
+      "trusted": true
+    }
+  ],
+  "enabled": true,
+  "plays": 1,
+  "voices": 0,
+  "off": true,
+  "method": "Orca click nativo (isTrusted); apertura/foco del disclosure preparados con DOM. No acredita audición manual."
+}

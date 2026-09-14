@@ -1,0 +1,38 @@
+[
+  {
+    "comments": [],
+    "lang": "css",
+    "same": true,
+    "tokens": 2
+  },
+  {
+    "comments": [
+      "// comentario"
+    ],
+    "lang": "javascript",
+    "same": true,
+    "tokens": 6
+  },
+  {
+    "comments": [
+      "# comentario"
+    ],
+    "lang": "shell",
+    "same": true,
+    "tokens": 3
+  },
+  {
+    "comments": [
+      "-- comentario"
+    ],
+    "lang": "sql",
+    "same": true,
+    "tokens": 5
+  },
+  {
+    "comments": [],
+    "lang": "json",
+    "same": true,
+    "tokens": 4
+  }
+]

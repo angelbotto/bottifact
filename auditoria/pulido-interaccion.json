@@ -1,0 +1,37 @@
+{
+  "failed": 0,
+  "results": [
+    {
+      "name": "Pin flotante y burbuja sin desplazar documento",
+      "ok": true
+    },
+    {
+      "name": "Pines se ocultan entre capítulos y regresan con su contenido",
+      "ok": true
+    },
+    {
+      "name": "Tabla: menú de orden explícito, filtro, grupo y columnas",
+      "ok": true
+    },
+    {
+      "name": "Visor: proporción y orientación reales, ajuste visual",
+      "ok": true
+    },
+    {
+      "name": "Importar y recuperar HTML conserva el visor",
+      "ok": true
+    },
+    {
+      "name": "Sonido central apagado; clic sintético no activa audio",
+      "ok": true
+    },
+    {
+      "name": "Textura coincide entre cuerpo y barra de capítulos",
+      "ok": true
+    },
+    {
+      "name": "Nueve lenguajes coloreados y terminal con tokens",
+      "ok": true
+    }
+  ]
+}

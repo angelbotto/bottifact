@@ -4,10 +4,10 @@
   const results=[],NativeAudio=window.AudioContext,Offline=window.OfflineAudioContext||window.webkitOfflineAudioContext;
   if(!Offline)return {skipped:'OfflineAudioContext no disponible'};
   const source=document.querySelector('[data-canal-sonido]');
-  for(const [kind,duration] of [['accion',.125],['confirmacion',.125],['atencion',.19]]){
-    const f=source.cloneNode(true);f.removeAttribute('id');let handler,context;
+  for(const [kind,duration] of [['accion',.125],['confirmacion',.125],['atencion',.19],['escritura',.65]]){
+    const f=source.cloneNode(true);f.removeAttribute('id');if(!f.querySelector('[data-audio=escritura]')){const pencil=document.createElement('button');pencil.dataset.audio='escritura';pencil.textContent='Escribir';f.append(pencil);}let handler,context;
     const listen=f.addEventListener.bind(f);f.addEventListener=(type,fn,options)=>{if(type==='click')handler=fn;listen(type,fn,options);};
-    window.AudioContext=function(){context=new Offline(1,24000,48000);context.resume=async()=>{};context.suspend=async()=>{};context.close=async()=>{};return context;};
+    window.AudioContext=function(){context=new Offline(1,48000,48000);context.resume=async()=>{};context.suspend=async()=>{};context.close=async()=>{};return context;};
     document.querySelector('main').append(f);
     let e;
     try{
@@ -16,7 +16,7 @@
       await handler({isTrusted:true,target:toggle});if(!e.enabled||e.plays)throw new Error('Activar emite sonido');
       await handler({isTrusted:true,target:button});const audio=await context.startRendering(),samples=audio.getChannelData(0);
       let peak=0,last=-1,energy=0;for(let i=0;i<samples.length;i++){const v=Math.abs(samples[i]);peak=Math.max(peak,v);energy+=v*v;if(v>1e-5)last=i;}
-      if(peak>.026||peak<.018||last/48000>duration+.002||last/48000<duration-.02)throw new Error('Envolvente o duración incorrecta');
+      if(peak>(kind==='escritura'?.046:.026)||peak<(kind==='escritura'?.0001:.018)||last/48000>duration+.002||last/48000<duration-.02)throw new Error('Envolvente o duración incorrecta');
       results.push({kind,ok:true,sampleRate:48000,peak,rms:Math.sqrt(energy/samples.length),lastAudible:last/48000,maximumDuration:duration,plays:e.plays});
       e.disable();if(e.voices.length||e.enabled)throw new Error('Voces no canceladas');
     }catch(error){results.push({kind,ok:false,error:error.message});}

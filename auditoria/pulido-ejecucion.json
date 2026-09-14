@@ -1,0 +1,13 @@
+{
+  "utc": "2026-09-14T19:41:05.189446+00:00",
+  "menus": 144,
+  "viewport": [
+    320,
+    390,
+    1440
+  ],
+  "limitations": [
+    "No audición manual ni lector de pantalla.",
+    "Pruebas de interacción DOM excepto los clics de audio indicados."
+  ]
+}

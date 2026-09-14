@@ -32,10 +32,10 @@ for item in registry['componentes']:
 # La escritura debe esperar al viewport, ejecutarse una vez y respetar reduce.
 fresh();call('exec','--command','set viewport 1440 960');call('exec','--command','set media light');settle()
 r=evaluate('window.writing=NotaEscritura.get(document.querySelector("[data-escritura]"));({played:writing.played,animations:writing.animations.length})');assert not r['played'] and r['animations']==0,r
-evaluate('document.querySelector("[data-ir=expresion]").click();scrollTo({top:document.querySelector(".escritura-caja").getBoundingClientRect().top+scrollY-90,behavior:"instant"});true');settle()
+evaluate('document.querySelector("[data-ir=configuracion]").click();scrollTo({top:document.querySelector(".escritura-caja").getBoundingClientRect().top+scrollY-90,behavior:"instant"});true');settle()
 visible=evaluate('({played:writing.played,visible:writing.visible,animations:writing.animations.length,audio:NotaSonido.get(writing.element).enabled})');assert visible['played'] and visible['visible'] and visible['animations']>0 and not visible['audio'],visible
 call('exec','--command','set media reduced-motion');evaluate('writing.motion.dispatchEvent(new MediaQueryListEvent("change",{matches:writing.motion.matches,media:writing.motion.media}));true');settle();assert evaluate('writing.animations.length')==0
 save('revision-escritura.json',{'before':r,'visible':visible,'reducedAnimations':0,'metodo':'Orca viewport/scroll real; media emulada y evento MQL explícito. Sin gesto de audio.'});call('exec','--command','set media light')
 # Capturas para inspección.
 fresh('#receta-archivo');call('exec','--command','set viewport 1024 900');settle();evaluate('document.querySelector("[data-elegir-tema][value=light]").click();document.querySelector("[data-papel-tramado]").click();const c=document.querySelector("#biblioteca-codigo-archivo").closest("details");c.open=true;c.scrollIntoView({behavior:"instant"});true');settle();Path('auditoria/capturas/revision-codigo.png').write_bytes(base64.b64decode(call('screenshot')['data']))
-print('Revisión: ocho interacciones, 18 combinaciones, 43 fuentes intactas y escritura al entrar/reduce correctas')
+print('Revisión: ocho interacciones, 18 combinaciones, 44 fuentes intactas y escritura al entrar/reduce correctas')

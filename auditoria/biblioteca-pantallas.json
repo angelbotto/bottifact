@@ -1362,18 +1362,18 @@
         "width": 278
       },
       {
-        "content": 544,
-        "end": 264,
+        "content": 620,
+        "end": 342,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 280
+        "width": 278
       },
       {
-        "content": 4147,
-        "end": 3869,
+        "content": 19449,
+        "end": 19171,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -1524,8 +1524,8 @@
         "width": 320
       },
       {
-        "content": 3502,
-        "end": 3224,
+        "content": 7452,
+        "end": 7174,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -1786,26 +1786,6 @@
         "width": 278
       },
       {
-        "content": 480,
-        "end": 200,
-        "focus": 0,
-        "inside": true,
-        "kind": "escritura-caja",
-        "name": "Escritura a mano, desplazable",
-        "overflow": "auto",
-        "width": 280
-      },
-      {
-        "content": 1320,
-        "end": 1042,
-        "focus": 0,
-        "inside": true,
-        "kind": "PRE",
-        "name": "HTML de Escritura por trazos, desplazable",
-        "overflow": "auto",
-        "width": 278
-      },
-      {
         "content": 1014,
         "end": 736,
         "focus": 0,
@@ -1968,6 +1948,26 @@
         "width": 278
       },
       {
+        "content": 480,
+        "end": 200,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1343,
+        "end": 1065,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Escritura por trazos, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
         "content": 278,
         "end": 0,
         "focus": 0,
@@ -1984,6 +1984,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Configuración editorial, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 378,
+        "end": 100,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código HTML, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 12422,
+        "end": 12144,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Código en varios lenguajes, desplazable",
         "overflow": "auto",
         "width": 278
       },
@@ -2008,8 +2028,8 @@
         "width": 278
       },
       {
-        "content": 4986,
-        "end": 4708,
+        "content": 5669,
+        "end": 5391,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -3400,18 +3420,18 @@
         "width": 278
       },
       {
-        "content": 544,
-        "end": 264,
+        "content": 620,
+        "end": 342,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 280
+        "width": 278
       },
       {
-        "content": 4147,
-        "end": 3869,
+        "content": 19449,
+        "end": 19171,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -3562,8 +3582,8 @@
         "width": 320
       },
       {
-        "content": 3502,
-        "end": 3224,
+        "content": 7452,
+        "end": 7174,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -3824,26 +3844,6 @@
         "width": 278
       },
       {
-        "content": 480,
-        "end": 200,
-        "focus": 0,
-        "inside": true,
-        "kind": "escritura-caja",
-        "name": "Escritura a mano, desplazable",
-        "overflow": "auto",
-        "width": 280
-      },
-      {
-        "content": 1320,
-        "end": 1042,
-        "focus": 0,
-        "inside": true,
-        "kind": "PRE",
-        "name": "HTML de Escritura por trazos, desplazable",
-        "overflow": "auto",
-        "width": 278
-      },
-      {
         "content": 1014,
         "end": 736,
         "focus": 0,
@@ -4006,6 +4006,26 @@
         "width": 278
       },
       {
+        "content": 480,
+        "end": 200,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1343,
+        "end": 1065,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Escritura por trazos, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
         "content": 278,
         "end": 0,
         "focus": 0,
@@ -4022,6 +4042,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Configuración editorial, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 378,
+        "end": 100,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código HTML, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 12422,
+        "end": 12144,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Código en varios lenguajes, desplazable",
         "overflow": "auto",
         "width": 278
       },
@@ -4046,8 +4086,8 @@
         "width": 278
       },
       {
-        "content": 4986,
-        "end": 4708,
+        "content": 5669,
+        "end": 5391,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -5438,18 +5478,18 @@
         "width": 278
       },
       {
-        "content": 544,
-        "end": 264,
+        "content": 620,
+        "end": 342,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 280
+        "width": 278
       },
       {
-        "content": 4147,
-        "end": 3869,
+        "content": 19449,
+        "end": 19171,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -5600,8 +5640,8 @@
         "width": 320
       },
       {
-        "content": 3502,
-        "end": 3224,
+        "content": 7452,
+        "end": 7174,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -5862,26 +5902,6 @@
         "width": 278
       },
       {
-        "content": 480,
-        "end": 200,
-        "focus": 0,
-        "inside": true,
-        "kind": "escritura-caja",
-        "name": "Escritura a mano, desplazable",
-        "overflow": "auto",
-        "width": 280
-      },
-      {
-        "content": 1320,
-        "end": 1042,
-        "focus": 0,
-        "inside": true,
-        "kind": "PRE",
-        "name": "HTML de Escritura por trazos, desplazable",
-        "overflow": "auto",
-        "width": 278
-      },
-      {
         "content": 1014,
         "end": 736,
         "focus": 0,
@@ -6044,6 +6064,26 @@
         "width": 278
       },
       {
+        "content": 480,
+        "end": 200,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1343,
+        "end": 1065,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Escritura por trazos, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
         "content": 278,
         "end": 0,
         "focus": 0,
@@ -6060,6 +6100,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Configuración editorial, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 378,
+        "end": 100,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código HTML, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 12422,
+        "end": 12144,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Código en varios lenguajes, desplazable",
         "overflow": "auto",
         "width": 278
       },
@@ -6084,8 +6144,8 @@
         "width": 278
       },
       {
-        "content": 4986,
-        "end": 4708,
+        "content": 5669,
+        "end": 5391,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -7476,18 +7536,18 @@
         "width": 278
       },
       {
-        "content": 544,
-        "end": 264,
+        "content": 620,
+        "end": 342,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 280
+        "width": 278
       },
       {
-        "content": 4147,
-        "end": 3869,
+        "content": 19449,
+        "end": 19171,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -7638,8 +7698,8 @@
         "width": 320
       },
       {
-        "content": 3502,
-        "end": 3224,
+        "content": 7452,
+        "end": 7174,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -7900,26 +7960,6 @@
         "width": 278
       },
       {
-        "content": 480,
-        "end": 200,
-        "focus": 0,
-        "inside": true,
-        "kind": "escritura-caja",
-        "name": "Escritura a mano, desplazable",
-        "overflow": "auto",
-        "width": 280
-      },
-      {
-        "content": 1320,
-        "end": 1042,
-        "focus": 0,
-        "inside": true,
-        "kind": "PRE",
-        "name": "HTML de Escritura por trazos, desplazable",
-        "overflow": "auto",
-        "width": 278
-      },
-      {
         "content": 1014,
         "end": 736,
         "focus": 0,
@@ -8082,6 +8122,26 @@
         "width": 278
       },
       {
+        "content": 480,
+        "end": 200,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1343,
+        "end": 1065,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Escritura por trazos, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
         "content": 278,
         "end": 0,
         "focus": 0,
@@ -8098,6 +8158,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Configuración editorial, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 378,
+        "end": 100,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código HTML, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 12422,
+        "end": 12144,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Código en varios lenguajes, desplazable",
         "overflow": "auto",
         "width": 278
       },
@@ -8122,8 +8202,8 @@
         "width": 278
       },
       {
-        "content": 4986,
-        "end": 4708,
+        "content": 5669,
+        "end": 5391,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -9514,18 +9594,18 @@
         "width": 278
       },
       {
-        "content": 544,
-        "end": 264,
+        "content": 620,
+        "end": 342,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 280
+        "width": 278
       },
       {
-        "content": 4147,
-        "end": 3869,
+        "content": 19449,
+        "end": 19171,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -9676,8 +9756,8 @@
         "width": 320
       },
       {
-        "content": 3502,
-        "end": 3224,
+        "content": 7452,
+        "end": 7174,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -9938,26 +10018,6 @@
         "width": 278
       },
       {
-        "content": 480,
-        "end": 200,
-        "focus": 0,
-        "inside": true,
-        "kind": "escritura-caja",
-        "name": "Escritura a mano, desplazable",
-        "overflow": "auto",
-        "width": 280
-      },
-      {
-        "content": 1320,
-        "end": 1042,
-        "focus": 0,
-        "inside": true,
-        "kind": "PRE",
-        "name": "HTML de Escritura por trazos, desplazable",
-        "overflow": "auto",
-        "width": 278
-      },
-      {
         "content": 1014,
         "end": 736,
         "focus": 0,
@@ -10120,6 +10180,26 @@
         "width": 278
       },
       {
+        "content": 480,
+        "end": 200,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1343,
+        "end": 1065,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Escritura por trazos, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
         "content": 278,
         "end": 0,
         "focus": 0,
@@ -10136,6 +10216,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Configuración editorial, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 378,
+        "end": 100,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código HTML, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 12422,
+        "end": 12144,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Código en varios lenguajes, desplazable",
         "overflow": "auto",
         "width": 278
       },
@@ -10160,8 +10260,8 @@
         "width": 278
       },
       {
-        "content": 4986,
-        "end": 4708,
+        "content": 5669,
+        "end": 5391,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -11552,18 +11652,18 @@
         "width": 278
       },
       {
-        "content": 544,
-        "end": 264,
+        "content": 620,
+        "end": 342,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 280
+        "width": 278
       },
       {
-        "content": 4147,
-        "end": 3869,
+        "content": 19449,
+        "end": 19171,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -11714,8 +11814,8 @@
         "width": 320
       },
       {
-        "content": 3502,
-        "end": 3224,
+        "content": 7452,
+        "end": 7174,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -11976,26 +12076,6 @@
         "width": 278
       },
       {
-        "content": 480,
-        "end": 200,
-        "focus": 0,
-        "inside": true,
-        "kind": "escritura-caja",
-        "name": "Escritura a mano, desplazable",
-        "overflow": "auto",
-        "width": 280
-      },
-      {
-        "content": 1320,
-        "end": 1042,
-        "focus": 0,
-        "inside": true,
-        "kind": "PRE",
-        "name": "HTML de Escritura por trazos, desplazable",
-        "overflow": "auto",
-        "width": 278
-      },
-      {
         "content": 1014,
         "end": 736,
         "focus": 0,
@@ -12158,6 +12238,26 @@
         "width": 278
       },
       {
+        "content": 480,
+        "end": 200,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1343,
+        "end": 1065,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Escritura por trazos, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
         "content": 278,
         "end": 0,
         "focus": 0,
@@ -12174,6 +12274,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Configuración editorial, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 378,
+        "end": 100,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código HTML, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 12422,
+        "end": 12144,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Código en varios lenguajes, desplazable",
         "overflow": "auto",
         "width": 278
       },
@@ -12198,8 +12318,8 @@
         "width": 278
       },
       {
-        "content": 4986,
-        "end": 4708,
+        "content": 5669,
+        "end": 5391,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -13590,18 +13710,18 @@
         "width": 348
       },
       {
-        "content": 544,
-        "end": 194,
+        "content": 620,
+        "end": 272,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 350
+        "width": 348
       },
       {
-        "content": 4147,
-        "end": 3799,
+        "content": 19449,
+        "end": 19101,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -13752,8 +13872,8 @@
         "width": 390
       },
       {
-        "content": 3502,
-        "end": 3154,
+        "content": 7452,
+        "end": 7104,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -14014,26 +14134,6 @@
         "width": 348
       },
       {
-        "content": 480,
-        "end": 130,
-        "focus": 0,
-        "inside": true,
-        "kind": "escritura-caja",
-        "name": "Escritura a mano, desplazable",
-        "overflow": "auto",
-        "width": 350
-      },
-      {
-        "content": 1320,
-        "end": 972,
-        "focus": 0,
-        "inside": true,
-        "kind": "PRE",
-        "name": "HTML de Escritura por trazos, desplazable",
-        "overflow": "auto",
-        "width": 348
-      },
-      {
         "content": 1014,
         "end": 666,
         "focus": 0,
@@ -14196,6 +14296,26 @@
         "width": 348
       },
       {
+        "content": 480,
+        "end": 130,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1343,
+        "end": 995,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Escritura por trazos, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
         "content": 348,
         "end": 0,
         "focus": 0,
@@ -14212,6 +14332,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Configuración editorial, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 378,
+        "end": 30,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código HTML, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 12422,
+        "end": 12074,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Código en varios lenguajes, desplazable",
         "overflow": "auto",
         "width": 348
       },
@@ -14236,8 +14376,8 @@
         "width": 348
       },
       {
-        "content": 4986,
-        "end": 4638,
+        "content": 5669,
+        "end": 5321,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -15628,18 +15768,18 @@
         "width": 348
       },
       {
-        "content": 544,
-        "end": 194,
+        "content": 620,
+        "end": 272,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 350
+        "width": 348
       },
       {
-        "content": 4147,
-        "end": 3799,
+        "content": 19449,
+        "end": 19101,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -15790,8 +15930,8 @@
         "width": 390
       },
       {
-        "content": 3502,
-        "end": 3154,
+        "content": 7452,
+        "end": 7104,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -16052,26 +16192,6 @@
         "width": 348
       },
       {
-        "content": 480,
-        "end": 130,
-        "focus": 0,
-        "inside": true,
-        "kind": "escritura-caja",
-        "name": "Escritura a mano, desplazable",
-        "overflow": "auto",
-        "width": 350
-      },
-      {
-        "content": 1320,
-        "end": 972,
-        "focus": 0,
-        "inside": true,
-        "kind": "PRE",
-        "name": "HTML de Escritura por trazos, desplazable",
-        "overflow": "auto",
-        "width": 348
-      },
-      {
         "content": 1014,
         "end": 666,
         "focus": 0,
@@ -16234,6 +16354,26 @@
         "width": 348
       },
       {
+        "content": 480,
+        "end": 130,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1343,
+        "end": 995,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Escritura por trazos, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
         "content": 348,
         "end": 0,
         "focus": 0,
@@ -16250,6 +16390,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Configuración editorial, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 378,
+        "end": 30,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código HTML, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 12422,
+        "end": 12074,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Código en varios lenguajes, desplazable",
         "overflow": "auto",
         "width": 348
       },
@@ -16274,8 +16434,8 @@
         "width": 348
       },
       {
-        "content": 4986,
-        "end": 4638,
+        "content": 5669,
+        "end": 5321,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -17666,18 +17826,18 @@
         "width": 348
       },
       {
-        "content": 544,
-        "end": 194,
+        "content": 620,
+        "end": 272,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 350
+        "width": 348
       },
       {
-        "content": 4147,
-        "end": 3799,
+        "content": 19449,
+        "end": 19101,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -17828,8 +17988,8 @@
         "width": 390
       },
       {
-        "content": 3502,
-        "end": 3154,
+        "content": 7452,
+        "end": 7104,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -18090,26 +18250,6 @@
         "width": 348
       },
       {
-        "content": 480,
-        "end": 130,
-        "focus": 0,
-        "inside": true,
-        "kind": "escritura-caja",
-        "name": "Escritura a mano, desplazable",
-        "overflow": "auto",
-        "width": 350
-      },
-      {
-        "content": 1320,
-        "end": 972,
-        "focus": 0,
-        "inside": true,
-        "kind": "PRE",
-        "name": "HTML de Escritura por trazos, desplazable",
-        "overflow": "auto",
-        "width": 348
-      },
-      {
         "content": 1014,
         "end": 666,
         "focus": 0,
@@ -18272,6 +18412,26 @@
         "width": 348
       },
       {
+        "content": 480,
+        "end": 130,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1343,
+        "end": 995,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Escritura por trazos, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
         "content": 348,
         "end": 0,
         "focus": 0,
@@ -18288,6 +18448,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Configuración editorial, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 378,
+        "end": 30,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código HTML, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 12422,
+        "end": 12074,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Código en varios lenguajes, desplazable",
         "overflow": "auto",
         "width": 348
       },
@@ -18312,8 +18492,8 @@
         "width": 348
       },
       {
-        "content": 4986,
-        "end": 4638,
+        "content": 5669,
+        "end": 5321,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -19704,18 +19884,18 @@
         "width": 348
       },
       {
-        "content": 544,
-        "end": 194,
+        "content": 620,
+        "end": 272,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 350
+        "width": 348
       },
       {
-        "content": 4147,
-        "end": 3799,
+        "content": 19449,
+        "end": 19101,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -19866,8 +20046,8 @@
         "width": 390
       },
       {
-        "content": 3502,
-        "end": 3154,
+        "content": 7452,
+        "end": 7104,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -20128,26 +20308,6 @@
         "width": 348
       },
       {
-        "content": 480,
-        "end": 130,
-        "focus": 0,
-        "inside": true,
-        "kind": "escritura-caja",
-        "name": "Escritura a mano, desplazable",
-        "overflow": "auto",
-        "width": 350
-      },
-      {
-        "content": 1320,
-        "end": 972,
-        "focus": 0,
-        "inside": true,
-        "kind": "PRE",
-        "name": "HTML de Escritura por trazos, desplazable",
-        "overflow": "auto",
-        "width": 348
-      },
-      {
         "content": 1014,
         "end": 666,
         "focus": 0,
@@ -20310,6 +20470,26 @@
         "width": 348
       },
       {
+        "content": 480,
+        "end": 130,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1343,
+        "end": 995,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Escritura por trazos, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
         "content": 348,
         "end": 0,
         "focus": 0,
@@ -20326,6 +20506,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Configuración editorial, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 378,
+        "end": 30,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código HTML, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 12422,
+        "end": 12074,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Código en varios lenguajes, desplazable",
         "overflow": "auto",
         "width": 348
       },
@@ -20350,8 +20550,8 @@
         "width": 348
       },
       {
-        "content": 4986,
-        "end": 4638,
+        "content": 5669,
+        "end": 5321,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -21742,18 +21942,18 @@
         "width": 348
       },
       {
-        "content": 544,
-        "end": 194,
+        "content": 620,
+        "end": 272,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 350
+        "width": 348
       },
       {
-        "content": 4147,
-        "end": 3799,
+        "content": 19449,
+        "end": 19101,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -21904,8 +22104,8 @@
         "width": 390
       },
       {
-        "content": 3502,
-        "end": 3154,
+        "content": 7452,
+        "end": 7104,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -22166,26 +22366,6 @@
         "width": 348
       },
       {
-        "content": 480,
-        "end": 130,
-        "focus": 0,
-        "inside": true,
-        "kind": "escritura-caja",
-        "name": "Escritura a mano, desplazable",
-        "overflow": "auto",
-        "width": 350
-      },
-      {
-        "content": 1320,
-        "end": 972,
-        "focus": 0,
-        "inside": true,
-        "kind": "PRE",
-        "name": "HTML de Escritura por trazos, desplazable",
-        "overflow": "auto",
-        "width": 348
-      },
-      {
         "content": 1014,
         "end": 666,
         "focus": 0,
@@ -22348,6 +22528,26 @@
         "width": 348
       },
       {
+        "content": 480,
+        "end": 130,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1343,
+        "end": 995,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Escritura por trazos, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
         "content": 348,
         "end": 0,
         "focus": 0,
@@ -22364,6 +22564,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Configuración editorial, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 378,
+        "end": 30,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código HTML, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 12422,
+        "end": 12074,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Código en varios lenguajes, desplazable",
         "overflow": "auto",
         "width": 348
       },
@@ -22388,8 +22608,8 @@
         "width": 348
       },
       {
-        "content": 4986,
-        "end": 4638,
+        "content": 5669,
+        "end": 5321,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -23780,18 +24000,18 @@
         "width": 348
       },
       {
-        "content": 544,
-        "end": 194,
+        "content": 620,
+        "end": 272,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 350
+        "width": 348
       },
       {
-        "content": 4147,
-        "end": 3799,
+        "content": 19449,
+        "end": 19101,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -23942,8 +24162,8 @@
         "width": 390
       },
       {
-        "content": 3502,
-        "end": 3154,
+        "content": 7452,
+        "end": 7104,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -24204,26 +24424,6 @@
         "width": 348
       },
       {
-        "content": 480,
-        "end": 130,
-        "focus": 0,
-        "inside": true,
-        "kind": "escritura-caja",
-        "name": "Escritura a mano, desplazable",
-        "overflow": "auto",
-        "width": 350
-      },
-      {
-        "content": 1320,
-        "end": 972,
-        "focus": 0,
-        "inside": true,
-        "kind": "PRE",
-        "name": "HTML de Escritura por trazos, desplazable",
-        "overflow": "auto",
-        "width": 348
-      },
-      {
         "content": 1014,
         "end": 666,
         "focus": 0,
@@ -24386,6 +24586,26 @@
         "width": 348
       },
       {
+        "content": 480,
+        "end": 130,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1343,
+        "end": 995,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Escritura por trazos, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
         "content": 348,
         "end": 0,
         "focus": 0,
@@ -24402,6 +24622,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Configuración editorial, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 378,
+        "end": 30,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código HTML, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 12422,
+        "end": 12074,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Código en varios lenguajes, desplazable",
         "overflow": "auto",
         "width": 348
       },
@@ -24426,8 +24666,8 @@
         "width": 348
       },
       {
-        "content": 4986,
-        "end": 4638,
+        "content": 5669,
+        "end": 5321,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -25818,18 +26058,18 @@
         "width": 990
       },
       {
-        "content": 1216,
+        "content": 1214,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 1216
+        "width": 1214
       },
       {
-        "content": 4147,
-        "end": 3157,
+        "content": 19449,
+        "end": 18459,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -25980,8 +26220,8 @@
         "width": 1440
       },
       {
-        "content": 3502,
-        "end": 2512,
+        "content": 7452,
+        "end": 6462,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -26242,26 +26482,6 @@
         "width": 990
       },
       {
-        "content": 992,
-        "end": 0,
-        "focus": 0,
-        "inside": true,
-        "kind": "escritura-caja",
-        "name": "Escritura a mano, desplazable",
-        "overflow": "auto",
-        "width": 992
-      },
-      {
-        "content": 1320,
-        "end": 330,
-        "focus": 0,
-        "inside": true,
-        "kind": "PRE",
-        "name": "HTML de Escritura por trazos, desplazable",
-        "overflow": "auto",
-        "width": 990
-      },
-      {
         "content": 1014,
         "end": 24,
         "focus": 0,
@@ -26424,6 +26644,26 @@
         "width": 990
       },
       {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1343,
+        "end": 353,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Escritura por trazos, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
         "content": 558,
         "end": 0,
         "focus": 0,
@@ -26440,6 +26680,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Configuración editorial, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código HTML, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 12422,
+        "end": 11432,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Código en varios lenguajes, desplazable",
         "overflow": "auto",
         "width": 990
       },
@@ -26464,8 +26724,8 @@
         "width": 990
       },
       {
-        "content": 4986,
-        "end": 3996,
+        "content": 5669,
+        "end": 4679,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -27856,18 +28116,18 @@
         "width": 990
       },
       {
-        "content": 1216,
+        "content": 1214,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 1216
+        "width": 1214
       },
       {
-        "content": 4147,
-        "end": 3157,
+        "content": 19449,
+        "end": 18459,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -28018,8 +28278,8 @@
         "width": 1440
       },
       {
-        "content": 3502,
-        "end": 2512,
+        "content": 7452,
+        "end": 6462,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -28280,26 +28540,6 @@
         "width": 990
       },
       {
-        "content": 992,
-        "end": 0,
-        "focus": 0,
-        "inside": true,
-        "kind": "escritura-caja",
-        "name": "Escritura a mano, desplazable",
-        "overflow": "auto",
-        "width": 992
-      },
-      {
-        "content": 1320,
-        "end": 330,
-        "focus": 0,
-        "inside": true,
-        "kind": "PRE",
-        "name": "HTML de Escritura por trazos, desplazable",
-        "overflow": "auto",
-        "width": 990
-      },
-      {
         "content": 1014,
         "end": 24,
         "focus": 0,
@@ -28462,6 +28702,26 @@
         "width": 990
       },
       {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1343,
+        "end": 353,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Escritura por trazos, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
         "content": 558,
         "end": 0,
         "focus": 0,
@@ -28478,6 +28738,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Configuración editorial, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código HTML, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 12422,
+        "end": 11432,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Código en varios lenguajes, desplazable",
         "overflow": "auto",
         "width": 990
       },
@@ -28502,8 +28782,8 @@
         "width": 990
       },
       {
-        "content": 4986,
-        "end": 3996,
+        "content": 5669,
+        "end": 4679,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -29894,18 +30174,18 @@
         "width": 990
       },
       {
-        "content": 1216,
+        "content": 1214,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 1216
+        "width": 1214
       },
       {
-        "content": 4147,
-        "end": 3157,
+        "content": 19449,
+        "end": 18459,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -30056,8 +30336,8 @@
         "width": 1440
       },
       {
-        "content": 3502,
-        "end": 2512,
+        "content": 7452,
+        "end": 6462,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -30318,26 +30598,6 @@
         "width": 990
       },
       {
-        "content": 992,
-        "end": 0,
-        "focus": 0,
-        "inside": true,
-        "kind": "escritura-caja",
-        "name": "Escritura a mano, desplazable",
-        "overflow": "auto",
-        "width": 992
-      },
-      {
-        "content": 1320,
-        "end": 330,
-        "focus": 0,
-        "inside": true,
-        "kind": "PRE",
-        "name": "HTML de Escritura por trazos, desplazable",
-        "overflow": "auto",
-        "width": 990
-      },
-      {
         "content": 1014,
         "end": 24,
         "focus": 0,
@@ -30500,6 +30760,26 @@
         "width": 990
       },
       {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1343,
+        "end": 353,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Escritura por trazos, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
         "content": 558,
         "end": 0,
         "focus": 0,
@@ -30516,6 +30796,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Configuración editorial, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código HTML, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 12422,
+        "end": 11432,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Código en varios lenguajes, desplazable",
         "overflow": "auto",
         "width": 990
       },
@@ -30540,8 +30840,8 @@
         "width": 990
       },
       {
-        "content": 4986,
-        "end": 3996,
+        "content": 5669,
+        "end": 4679,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -31932,18 +32232,18 @@
         "width": 990
       },
       {
-        "content": 1216,
+        "content": 1214,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 1216
+        "width": 1214
       },
       {
-        "content": 4147,
-        "end": 3157,
+        "content": 19449,
+        "end": 18459,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -32094,8 +32394,8 @@
         "width": 1440
       },
       {
-        "content": 3502,
-        "end": 2512,
+        "content": 7452,
+        "end": 6462,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -32356,26 +32656,6 @@
         "width": 990
       },
       {
-        "content": 992,
-        "end": 0,
-        "focus": 0,
-        "inside": true,
-        "kind": "escritura-caja",
-        "name": "Escritura a mano, desplazable",
-        "overflow": "auto",
-        "width": 992
-      },
-      {
-        "content": 1320,
-        "end": 330,
-        "focus": 0,
-        "inside": true,
-        "kind": "PRE",
-        "name": "HTML de Escritura por trazos, desplazable",
-        "overflow": "auto",
-        "width": 990
-      },
-      {
         "content": 1014,
         "end": 24,
         "focus": 0,
@@ -32538,6 +32818,26 @@
         "width": 990
       },
       {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1343,
+        "end": 353,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Escritura por trazos, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
         "content": 558,
         "end": 0,
         "focus": 0,
@@ -32554,6 +32854,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Configuración editorial, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código HTML, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 12422,
+        "end": 11432,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Código en varios lenguajes, desplazable",
         "overflow": "auto",
         "width": 990
       },
@@ -32578,8 +32898,8 @@
         "width": 990
       },
       {
-        "content": 4986,
-        "end": 3996,
+        "content": 5669,
+        "end": 4679,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -33970,18 +34290,18 @@
         "width": 990
       },
       {
-        "content": 1216,
+        "content": 1214,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 1216
+        "width": 1214
       },
       {
-        "content": 4147,
-        "end": 3157,
+        "content": 19449,
+        "end": 18459,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -34132,8 +34452,8 @@
         "width": 1440
       },
       {
-        "content": 3502,
-        "end": 2512,
+        "content": 7452,
+        "end": 6462,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -34394,26 +34714,6 @@
         "width": 990
       },
       {
-        "content": 992,
-        "end": 0,
-        "focus": 0,
-        "inside": true,
-        "kind": "escritura-caja",
-        "name": "Escritura a mano, desplazable",
-        "overflow": "auto",
-        "width": 992
-      },
-      {
-        "content": 1320,
-        "end": 330,
-        "focus": 0,
-        "inside": true,
-        "kind": "PRE",
-        "name": "HTML de Escritura por trazos, desplazable",
-        "overflow": "auto",
-        "width": 990
-      },
-      {
         "content": 1014,
         "end": 24,
         "focus": 0,
@@ -34576,6 +34876,26 @@
         "width": 990
       },
       {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1343,
+        "end": 353,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Escritura por trazos, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
         "content": 558,
         "end": 0,
         "focus": 0,
@@ -34592,6 +34912,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Configuración editorial, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código HTML, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 12422,
+        "end": 11432,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Código en varios lenguajes, desplazable",
         "overflow": "auto",
         "width": 990
       },
@@ -34616,8 +34956,8 @@
         "width": 990
       },
       {
-        "content": 4986,
-        "end": 3996,
+        "content": 5669,
+        "end": 4679,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -36008,18 +36348,18 @@
         "width": 990
       },
       {
-        "content": 1216,
+        "content": 1214,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 1216
+        "width": 1214
       },
       {
-        "content": 4147,
-        "end": 3157,
+        "content": 19449,
+        "end": 18459,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -36170,8 +36510,8 @@
         "width": 1440
       },
       {
-        "content": 3502,
-        "end": 2512,
+        "content": 7452,
+        "end": 6462,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
@@ -36432,26 +36772,6 @@
         "width": 990
       },
       {
-        "content": 992,
-        "end": 0,
-        "focus": 0,
-        "inside": true,
-        "kind": "escritura-caja",
-        "name": "Escritura a mano, desplazable",
-        "overflow": "auto",
-        "width": 992
-      },
-      {
-        "content": 1320,
-        "end": 330,
-        "focus": 0,
-        "inside": true,
-        "kind": "PRE",
-        "name": "HTML de Escritura por trazos, desplazable",
-        "overflow": "auto",
-        "width": 990
-      },
-      {
         "content": 1014,
         "end": 24,
         "focus": 0,
@@ -36614,6 +36934,26 @@
         "width": 990
       },
       {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escritura-caja",
+        "name": "Escritura a mano, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1343,
+        "end": 353,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Escritura por trazos, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
         "content": 558,
         "end": 0,
         "focus": 0,
@@ -36630,6 +36970,26 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Configuración editorial, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código HTML, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 12422,
+        "end": 11432,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Código en varios lenguajes, desplazable",
         "overflow": "auto",
         "width": 990
       },
@@ -36654,8 +37014,8 @@
         "width": 990
       },
       {
-        "content": 4986,
-        "end": 3996,
+        "content": 5669,
+        "end": 4679,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
