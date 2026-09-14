@@ -33,7 +33,15 @@ def start(title):
  return '<title>' + title + '</title>\n<meta charset="utf-8">\n<style>\n' + (ROOT / 'fuentes.css').read_text() + '\n' + (ROOT / 'estilo.css').read_text() + '\n</style>\n<meta name="viewport" content="width=device-width, initial-scale=1">\n'
 
 def tools():
- return '''<div class="herramientas"><a href="#inicio" class="mono">nota / tikin</a><div class="temas"><label for="tema">Papel</label><select id="tema" data-tema><option value="system">Sistema</option><option value="light">Claro</option><option value="dark">Oscuro cálido</option><option value="sea">Dark Sea</option></select></div></div>'''
+ return '<div class="herramientas"><a href="#inicio" class="mono">nota / tikin</a>'+appearance()+'</div>'
+
+def appearance():
+ return """<div><fieldset class="apariencia"><legend>Apariencia</legend><div class="apariencia-opciones">
+<label><input type="radio" name="papel-principal" value="light" data-elegir-tema><span class="papel-muestra claro" aria-hidden="true"></span>Claro</label>
+<label><input type="radio" name="papel-principal" value="dark" data-elegir-tema><span class="papel-muestra calido" aria-hidden="true"></span>Cálido</label>
+<label><input type="radio" name="papel-principal" value="sea" data-elegir-tema><span class="papel-muestra sea" aria-hidden="true"></span>Sea</label>
+<label><input type="radio" name="papel-principal" value="system" data-elegir-tema checked>Sistema</label>
+</div></fieldset><button type="button" data-comodidad aria-pressed="false">Lectura cómoda</button></div>"""
 
 def globe():
  return '<figure class="ancho"><div id="globo-rutas"></div><figcaption>Rutas ilustrativas para explorar el componente; no representan vuelos realizados. Máscara terrestre COBE · 15.000 muestras · arrastre, teclado y selección.</figcaption></figure>'

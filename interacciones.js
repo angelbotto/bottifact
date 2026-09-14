@@ -2,19 +2,35 @@
 (() => {
   'use strict';
   const root = document.documentElement;
-  const selector = document.querySelector('[data-tema]');
+  const selectors = document.querySelectorAll('[data-tema]');
   const themes = ['system','light','dark','sea'];
   function theme(value) {
     if (!themes.includes(value)) value = 'system';
     if (value === 'system') delete root.dataset.theme; else root.dataset.theme = value;
-    if (selector) selector.value = value;
+    selectors.forEach(selector => { selector.value = value; });
+    document.querySelectorAll('[data-elegir-tema]').forEach(input => { input.checked = input.value === value; });
     try { localStorage.setItem('nota-tema',value); } catch {}
     document.dispatchEvent(new CustomEvent('nota:tema'));
   }
   let stored = 'system';
   try { stored = localStorage.getItem('nota-tema') || 'system'; } catch {}
   theme(stored);
-  selector?.addEventListener('change', e => theme(e.target.value));
+  selectors.forEach(selector => selector.addEventListener('change', e => theme(e.target.value)));
+  document.addEventListener('change', e => {
+    if (e.target.matches('[data-elegir-tema]')) theme(e.target.value);
+  });
+  // Variante optativa: las notas antiguas conservan su escala de lectura.
+  function comfort(enabled) {
+    root.toggleAttribute('data-lectura-comoda', enabled);
+    document.querySelectorAll('[data-comodidad]').forEach(button => button.setAttribute('aria-pressed', String(enabled)));
+    try { localStorage.setItem('nota-lectura-comoda', String(enabled)); } catch {}
+  }
+  let comfortable = false;
+  try { comfortable = localStorage.getItem('nota-lectura-comoda') === 'true'; } catch {}
+  if (document.querySelector('[data-comodidad]')) comfort(comfortable);
+  document.addEventListener('click', e => {
+    if (e.target.closest('[data-comodidad]')) comfort(!root.hasAttribute('data-lectura-comoda'));
+  });
 
   // El progreso pertenece al artículo, no al footer del documento envolvente.
   const article = document.querySelector('[data-lectura]');
