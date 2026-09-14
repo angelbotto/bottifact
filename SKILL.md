@@ -221,3 +221,5 @@ y hashes en [auditoria/fuentes.json](auditoria/fuentes.json). El ensamblador no 
 [pruebas.html](pruebas.html) es la fixture de regresiones (índice, copia, anchos e impresión).
 Para comprobar el navegador con CSP usa `python3 scripts/servir.py` y abre el puerto local
 8766. Los resultados y las limitaciones de esta revisión se guardan en `auditoria/`.
+El [informe de verificación](auditoria/verificacion.md) explica qué se ejecutó, a qué
+viewport y con qué límites; incluye los comandos para repetir las pruebas del navegador.

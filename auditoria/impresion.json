@@ -1,0 +1,41 @@
+{
+  "method": "orca pdf; texto extraído con pypdf; rasterización de una página con pypdfium2, ya instalados",
+  "results": [
+    {
+      "file": "plantilla.html",
+      "theme": "sea",
+      "pages": 13,
+      "required": {
+        "Balance de horas": true,
+        "Tiempo de resolución": true,
+        "Dónde tarda una solicitud": true,
+        "14.434.490": true,
+        "Memoria (MB)": true
+      },
+      "detailsRestored": true
+    },
+    {
+      "file": "pruebas.html",
+      "theme": "sea",
+      "pages": 4,
+      "required": {
+        "Primera página.": true,
+        "Segunda página.": true,
+        "Datos de prueba": true,
+        "desplazamiento local": true
+      },
+      "detailsRestored": true
+    },
+    {
+      "file": "multipagina.html",
+      "theme": "sea",
+      "pages": 2,
+      "required": {
+        "A dónde tenemos que ir.": true,
+        "Qué lo sostiene.": true,
+        "fecha: 2026-09-13": true
+      },
+      "detailsRestored": true
+    }
+  ]
+}

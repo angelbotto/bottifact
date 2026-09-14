@@ -1,0 +1,35 @@
+{
+  "method": "Foco programático; modalidad de teclado no activada por los eventos sintéticos de Orca",
+  "css": ":where(a,button,select,input,summary,[tabindex]):focus-visible: 2px dashed var(--foco)",
+  "results": [
+    {
+      "focusVisible": false,
+      "focused": true,
+      "name": "Comparación de componentes, desplazable horizontalmente",
+      "outline": "rgb(35, 30, 26) none 3px",
+      "selector": ".tabla-caja"
+    },
+    {
+      "focusVisible": false,
+      "focused": true,
+      "name": "Código de ejemplo",
+      "outline": "rgb(35, 30, 26) none 3px",
+      "selector": ".codigo pre"
+    },
+    {
+      "focusVisible": false,
+      "focused": true,
+      "name": "Activar sonido",
+      "outline": "rgb(35, 30, 26) none 3px",
+      "selector": "[data-audio-activar]"
+    },
+    {
+      "focusVisible": false,
+      "focused": true,
+      "name": "Balance de horas. Gráfica desplazable; datos completos a continuación.",
+      "outline": "rgb(35, 30, 26) none 3px",
+      "selector": ".grafica-caja"
+    }
+  ],
+  "realKeyboardVerified": false
+}
