@@ -271,7 +271,7 @@ HTTPS de Tailscale Serve que confirme el host, no un enlace localhost para la en
 
 ### Edición completa para explorar y componer
 
-Abre [biblioteca.html](biblioteca.html) para 40 recetas en nueve capítulos, con HTML,
+Abre [biblioteca.html](biblioteca.html) para 43 recetas en nueve capítulos, con HTML,
 dependencias, criterio y límites junto al ejemplo. Incluye archivos de publicaciones,
 autoría, lecturas relacionadas, anotaciones numeradas, revisiones, criterios y riesgos.
 [editorial.js](editorial.js) ofrece búsqueda/filtro local y configuración de lista/rejilla,
@@ -282,3 +282,9 @@ fuentes locales. No es un registro compatible con el CLI de shadcn. Usa sólo la
 indicadas por cada receta, incrustadas; nunca descargues el registro con fetch en un artefacto.
 `data-enlaces-internos` permite URLs a recetas dentro de los capítulos; sin ese atributo
 multipagina conserva el comportamiento de los artefactos anteriores.
+
+### Revisar artefactos con comentarios
+
+La edición completa incorpora [revision.js](revision.js): comentarios numerados sobre bloques y prompt copiable, sin red ni persistencia. Una instancia por documento; copia antes de recargar. [explorador.js](explorador.js) añade filtros, grupos y orden a la tabla de cuatro columnas documentada. Cards editoriales, de indicador y de proyecto están en componentes.md.
+
+El visor permite pegar HTML declarativo local y alternar Móvil/Escritorio; los embeds remotos siguen fuera de CSP. Escritura admite `data-al-ver` para una primera animación al entrar en pantalla; el sonido sólo sale de botones explícitos. [codigo.js](codigo.js) colorea HTML creando nodos de texto seguros y conserva exactamente el contenido copiable. Grano de papel usa SVG de ruido incrustado, no una rejilla de puntos.

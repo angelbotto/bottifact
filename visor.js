@@ -10,7 +10,7 @@
       this.status=root.querySelector('[data-visor-estado]');this.box=root.querySelector('.visor-caja');
       this.source=root.querySelector('.visor-fuente');this.buttons=[...root.querySelectorAll('[data-ancho-visor]')];
       if(!template||!this.status||!this.box||!this.source||!this.buttons.length)throw new TypeError('Faltan template, alternativa o controles del visor.');
-      this.template=template;this.originalStatus=this.status.textContent;
+      this.template=template;this.initialTemplate=template;this.originalStatus=this.status.textContent;
       this.originalPressed=this.buttons.map(b=>b.getAttribute('aria-pressed'));
       this.originalSource=this.source.hasAttribute('data-oculta');
       if(template.content.querySelector('script') || [...template.content.querySelectorAll('*')].some(e=>[...e.attributes].some(a=>/^on/i.test(a.name)))) throw new TypeError('Usa HTML declarativo sin scripts ni manejadores inline.');
@@ -20,7 +20,8 @@
       this.on(root,'click',e=>{
         const size=e.target.closest('[data-ancho-visor]');
         if(size&&root.contains(size))this.setWidth(size.dataset.anchoVisor);
-        if(e.target.closest('[data-reiniciar-visor]'))this.reset();
+        if(e.target.closest('[data-reiniciar-visor]')){this.template=this.initialTemplate;this.reset();}
+        if(e.target.closest('[data-cargar-html]')){const input=root.querySelector('[data-html-visor]'),state=root.querySelector('[data-importar-estado]');try{this.loadHTML(input.value);state.textContent='HTML cargado. Cambia entre Móvil y Escritorio para revisarlo.';}catch(error){state.textContent=error.message;}}
       });
       this.on(this.shadow,'click',e=>{
         const button=e.target.closest('[data-demo-ir]');if(!button)return;
@@ -42,6 +43,19 @@
       const base=document.createElement('style');
       base.textContent=':host{display:block;container-type:inline-size;color:var(--pieza-tinta);font:16px/1.6 var(--sans)}*,*::before,*::after{box-sizing:border-box} [hidden]{display:none!important} :focus-visible{outline:2px dashed var(--foco);outline-offset:3px} @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}';
       this.shadow.prepend(base);this.measure();
+    }
+    loadHTML(source) {
+      if(this.dead)return;
+      if(typeof source!=='string'||!source.trim()||source.length>100000)throw new TypeError('Pega entre 1 y 100.000 caracteres de HTML local.');
+      const template=document.createElement('template');template.innerHTML=source;
+      if(template.content.querySelector('script,iframe,object,embed,link,base,meta,template'))throw new TypeError('El visor admite HTML declarativo sin scripts, iframes ni recursos externos.');
+      for(const node of template.content.querySelectorAll('*'))for(const a of node.attributes){
+        if(/^on/i.test(a.name)||['srcdoc','action','formaction','srcset'].includes(a.name))throw new TypeError('Retira scripts, envíos y recursos externos del HTML.');
+        if(['href','src','poster','xlink:href'].includes(a.name)&&!a.value.startsWith('#')&&!/^data:image\/(png|jpeg|webp|gif);base64,/i.test(a.value))throw new TypeError('Usa enlaces internos e imágenes raster incrustadas como data: URI.');
+      }
+      const styles=[...template.content.querySelectorAll('style')].map(e=>e.textContent).concat([...template.content.querySelectorAll('[style]')].map(e=>e.getAttribute('style'))).join(' ');
+      if(/@import|url\s*\(/i.test(styles))throw new TypeError('Retira @import y url() del CSS pegado; usa los tokens del documento.');
+      this.template=template;this.reset();
     }
     setWidth(raw) {
       const n=raw==='auto'?null:Number(raw);

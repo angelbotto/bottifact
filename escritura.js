@@ -8,7 +8,7 @@
       if(instances.has(element))throw new TypeError('Ya existe una escritura en este contenedor.');
       const paths=[...element.querySelectorAll('path[data-trazo]')];
       if(!paths.length||!element.querySelector('[data-texto-escritura]'))throw new TypeError('Se necesitan paths y texto equivalente.');
-      this.element=element;this.paths=paths;this.dead=false;this.visible=false;this.animations=[];this.epoch=0;
+      this.element=element;this.paths=paths;this.dead=false;this.visible=false;this.played=false;this.animations=[];this.epoch=0;
       this.duration=Number(element.dataset.duracion||2400);
       if(!Number.isFinite(this.duration)||this.duration<100||this.duration>10000)throw new TypeError('Duración entre 100 y 10000 ms.');
       this.lengths=paths.map(p=>p.getTotalLength());
@@ -22,7 +22,7 @@
       },{signal:this.abort.signal});
       this.motion.addEventListener('change',()=>{if(this.motion.matches)this.finish();this.sync();},{signal:this.abort.signal});
       document.addEventListener('visibilitychange',()=>{if(document.hidden)this.finish();},{signal:this.abort.signal});
-      this.intersection=new IntersectionObserver(entries=>{this.visible=entries[0].isIntersecting;if(!this.visible)this.finish();});this.intersection.observe(element);
+      this.intersection=new IntersectionObserver(entries=>{this.visible=entries[0].isIntersecting&&entries[0].intersectionRatio>=.3;if(!this.visible)this.finish();else if(element.hasAttribute('data-al-ver')&&!this.played&&!this.motion.matches){this.played=true;this.play();}},{threshold:[0,.3]});this.intersection.observe(element.querySelector('.escritura-caja')||element);
       this.sync();instances.set(element,this);
     }
     sync(){const button=this.element.querySelector('[data-escribir]');if(button){button.disabled=this.motion.matches;button.textContent=this.motion.matches?'Trazo completo (movimiento reducido)':'Repetir escritura';}}

@@ -871,18 +871,18 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
    Se queda oscura en los dos temas a propósito; una terminal clara no se lee
    como una terminal. El valor que importa va en `.subra`, no en negrita.
    =========================================================== */
-.terminal { --term-papel: #171614; --term-tinta: #cfc6bb; --term-tenue: #7d746a;
+.terminal { --term-papel: #171614; --term-tinta: #cfc6bb; --term-tenue: #998f83;
   --term-linea: #2d2a26; --term-marca: #c98f5a;
   background: var(--term-papel); border: 1px solid var(--term-linea); border-radius: 12px;
   overflow: hidden; font-family: var(--mono); }
 :root[data-theme='sea'] .terminal { --term-papel: hsl(212 24% 12%); --term-tinta: hsl(212 66% 82%);
-  --term-tenue: hsl(212 22% 52%); --term-linea: hsl(212 18% 22%); --term-marca: hsl(160 99% 60%); }
+  --term-tenue: hsl(212 22% 58%); --term-linea: hsl(212 18% 22%); --term-marca: hsl(160 99% 60%); }
 .terminal .cab { display: flex; align-items: center; justify-content: space-between; gap: 12px;
   padding: 14px 18px 12px; font-size: 12.5px; color: var(--term-tenue); letter-spacing: .02em; }
 .terminal .cab button { background: none; border: 0; padding: 4px; min-height: 0; cursor: pointer;
   color: var(--term-tenue); line-height: 0; border-radius: 5px; }
 .terminal .cab button:hover { color: var(--term-tinta); background: rgba(255,255,255,.06); }
-.terminal .cab svg { width: 15px; height: 15px; display: block; }
+.terminal .cab svg { margin-inline:auto; width: 15px; height: 15px; display: block; }
 .terminal .cuerpo { margin: 0 14px 14px; border: 1px dashed var(--term-linea); border-radius: 8px; }
 .terminal pre { margin: 0; padding: 16px 18px; overflow-x: auto; font-size: 12.5px; line-height: 1.85;
   color: var(--term-tinta); scrollbar-width: thin; }
@@ -1341,7 +1341,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 :root[data-estilo='tecnico'] h2 { font-size: clamp(25px,3vw,32px); line-height: 1.25; }
 :root[data-estilo='tecnico'] h3 { font-size: 23px; line-height: 1.3; }
 :root[data-estilo] :is(h1,h2,h3) { overflow-wrap: anywhere; }
-:root[data-trama] body { background-image: radial-gradient(circle,color-mix(in srgb,var(--papel-trama) 38%,transparent) .6px,transparent .7px); background-size: 12px 12px; }
+:root[data-trama] body { background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22180%22%20height%3D%22180%22%3E%3Cfilter%20id%3D%22grano%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%22.78%22%20numOctaves%3D%223%22%20seed%3D%2217%22%20stitchTiles%3D%22stitch%22%2F%3E%3CfeColorMatrix%20type%3D%22saturate%22%20values%3D%220%22%2F%3E%3CfeComponentTransfer%3E%3CfeFuncA%20type%3D%22linear%22%20slope%3D%22.19%22%2F%3E%3C%2FfeComponentTransfer%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url%28%23grano%29%22%20opacity%3D%22.75%22%2F%3E%3C%2Fsvg%3E"); background-size:180px 180px; }
 @media print { .apariencia-menu { display: none !important; } :root[data-trama] body { background-image: none; } }
 
 /* 15 — Oliva, Arcilla y Ciruela. Paletas optativas completas, sin alterar las anteriores. */
@@ -1623,6 +1623,47 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 .biblioteca [id] { scroll-margin-top:85px; }
 @media print { .editorial-controles,[data-config-editorial] { display:none !important; } .publicaciones { display:block; } .publicaciones > article[hidden] { display:block !important; } [data-archivo-vacio],[data-archivo-estado] { display:none !important; } }
 
+/* 18 — Correcciones de foco y copia solicitadas sobre las capturas. */
+.hoja.multipagina > .pagina:focus-visible { outline:0; }
+.hoja.multipagina > .pagina:focus-visible > .cabecera h1 { outline:2px dashed var(--foco); outline-offset:8px; }
+.codigo .cab,.terminal .cab { display:grid; grid-template-columns:minmax(0,1fr) auto; }
+.codigo .cab > button,.terminal .cab > button { grid-column:2; grid-row:1; justify-self:end; min-width:44px; min-height:44px; }
+.codigo .cab > .copia-estado,.terminal .cab > .copia-estado { grid-column:1/-1; }
+.codigo .cab > .copia-estado:empty,.terminal .cab > .copia-estado:empty { display:none; }
+.codigo .codigo-atributo { color:var(--azul); }
+.receta-copia[open] > summary { margin-bottom:16px; }
+.receta-copia > .procedencia { line-height:1.7; overflow-wrap:anywhere; }
+@media print { :root[data-trama] body { background-image:none; } }
+.cards-editoriales { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:20px; }
+.card-editorial { min-width:0; display:flex; flex-direction:column; align-items:start; gap:18px; padding:24px; border:1px solid var(--pieza-linea); border-radius:8px; background:var(--pieza-papel); }
+.card-editorial h4 { font:400 29px/1.15 var(--serif); }
+.card-editorial .card-valor { font:400 48px/1.1 var(--serif); }
+.card-valor span { font:14px var(--sans); color:var(--pieza-secundaria); }
+.card-editorial > :last-child { margin-top:auto; }
+.card-editorial meter { width:100%; accent-color:var(--pieza-acento); }
+.card-editorial dd { margin-left:0; }.card-editorial dt { font-size:13px; color:var(--pieza-secundaria); }
+.tabla-grupo { background:var(--pieza-suave); color:var(--pieza-tinta); }
+[data-explorador] th button { min-height:44px; white-space:normal; }
+.visor-importar label { display:block; margin-block:16px; }
+.visor-importar textarea { display:block; box-sizing:border-box; width:100%; min-width:0; margin-top:10px; padding:14px; background:var(--pieza-papel); color:var(--pieza-tinta); border:1px solid var(--pieza-linea); font:13px/1.6 var(--mono); resize:vertical; }
+@media print { .visor-importar,[data-explorador] .editorial-controles { display:none !important; } }
+.revision-barra { position:fixed; z-index:30; right:16px; bottom:16px; display:flex; flex-wrap:wrap; gap:8px; max-width:calc(100% - 32px); padding:8px; border:1px solid var(--pieza-linea); border-radius:10px; background:var(--pieza-papel); box-shadow:0 5px 20px color-mix(in srgb,var(--pieza-tinta) 12%,transparent); }
+.revision-barra button { min-height:44px; font:13px/1.4 var(--sans); }
+.revision-dialogo { box-sizing:border-box; width:min(620px,calc(100% - 32px)); max-height:calc(100dvh - 40px); padding:24px; border:1px solid var(--pieza-linea); border-radius:12px; background:var(--pieza-papel); color:var(--pieza-tinta); overflow:auto; }
+.revision-dialogo::backdrop { background:color-mix(in srgb,var(--pieza-tinta) 35%,transparent); }
+.revision-dialogo h2 { margin:0 0 20px; font:400 32px/1.15 var(--serif); }
+.revision-dialogo textarea { box-sizing:border-box; display:block; width:100%; margin:10px 0 20px; min-height:130px; padding:12px; color:var(--pieza-tinta); background:var(--pieza-papel); border:1px solid var(--pieza-linea); font:16px/1.6 var(--sans); resize:vertical; }
+.revision-dialogo :is(p,blockquote,code) { overflow-wrap:anywhere; }
+.revision-dialogo .acciones { display:flex; flex-wrap:wrap; gap:12px; margin-block:16px; }
+.revision-dialogo li { padding-block:16px; border-bottom:1px solid var(--pieza-linea); }
+.revision-dialogo blockquote { margin:10px 0; color:var(--pieza-secundaria); font-size:14px; }
+.revision-dialogo pre { white-space:pre-wrap; max-height:300px; }
+.revision-marca { display:block; width:36px; min-height:36px; padding:4px; margin-block:12px; border-radius:50%; justify-self:start; font:14px var(--mono); color:var(--pieza-acento); background:var(--pieza-suave); border:1px solid var(--pieza-acento); }
+[data-revisando] main :is(p,h1,h2,h3,h4,figure,.card-editorial,li):hover { cursor:crosshair; outline:2px dashed var(--foco); outline-offset:4px; }
+body:has(.revision-barra) { padding-bottom:100px; }
+@media(max-width:420px) { .revision-barra { right:8px; bottom:8px; max-width:calc(100% - 16px); } .revision-dialogo { padding:18px; } }
+@media print { .revision-ui,.revision-marca,[data-revision] { display:none !important; } body:has(.revision-barra) { padding-bottom:0; } }
+
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <main class="hoja" id="inicio" lang="es"><div class="herramientas"><a href="#inicio" class="firma-editorial" aria-label="Inicio de la nota"><span>tikin</span><small>Cuadernos</small></a><details class="apariencia-menu orbita" data-apariencia-menu>
@@ -1645,7 +1686,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
     </div></fieldset>
     <div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
-      <button type="button" data-papel-tramado aria-pressed="false">Trama de papel <span aria-hidden="true">✓</span></button>
+      <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
   </div>
 </details></div><header class="cabecera"><p class="ceja">Nota / geografía</p><h1>Planes, puntos<br>y lugares.</h1><p class="bajada">Un globo de puntos para explorar conexiones. Elige una ruta, gira la Tierra o pausa la vista.</p></header><figure class="ancho"><div id="globo-rutas"></div><figcaption>Rutas ilustrativas para explorar el componente; no representan vuelos realizados. Máscara terrestre COBE · 15.000 muestras · arrastre, teclado y selección.</figcaption></figure><footer class="pie">Ejemplo reutilizable · Three.js desde cdnjs · máscara geográfica incrustada · ambos temas y movimiento reducido.</footer></main><script>

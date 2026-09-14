@@ -783,7 +783,7 @@ paths originales; la animación recorre **su longitud**, no un rectángulo que d
 
 <!-- nota:ejemplo escritura -->
 ```html
-<figure class="ancho nota-escritura" data-escritura data-duracion="2400">
+<figure class="ancho nota-escritura" data-escritura data-al-ver data-canal-sonido data-duracion="2400">
   <div class="escritura-caja" tabindex="0" role="region" aria-label="Escritura a mano, desplazable">
     <svg viewBox="0 0 420 110" aria-hidden="true">
       <path data-trazo d="M55 51 C43 38 27 51 30 68 C34 83 52 69 54 53 L52 76 Q58 78 65 71"/>
@@ -795,7 +795,8 @@ paths originales; la animación recorre **su longitud**, no un rectángulo que d
     </svg>
   </div>
   <div class="escritura-controles">
-    <button type="button" data-escribir>Repetir escritura</button>
+    <button type="button" data-audio-activar aria-pressed="false">Activar sonido</button>
+    <button type="button" data-escribir data-audio="accion" data-mensaje="Repetir escritura con señal breve si el sonido está activado.">Repetir escritura</button>
     <button type="button" data-finalizar>Mostrar trazo completo</button>
   </div>
   <p data-texto-escritura>«a mano»</p>
@@ -805,7 +806,7 @@ paths originales; la animación recorre **su longitud**, no un rectángulo que d
 ```
 
 **Cuándo:** una anotación corta y secundaria que gana significado con el gesto del trazo.
-Empieza completa; la persona decide repetirla. Conserva `.manuscrita` para texto corriente
+Con `data-al-ver` se escribe una vez al entrar al menos un 30 % de su caja en pantalla; sin ese atributo empieza completa y la persona decide repetirla. El sonido arranca apagado: pulsa Activar sonido y después Repetir escritura para oír la señal breve. Entrar en pantalla nunca dispara audio. Incluye sonido.js si copias este canal. Conserva `.manuscrita` para texto corriente
 que deba seleccionarse, traducirse o cambiar con datos.
 
 **Límite:** recibe paths SVG ordenados, no transforma automáticamente cualquier fuente
@@ -814,7 +815,7 @@ paths distintos. No uses contornos de glifos rellenos si esperas un trazo centra
 Al cambiar la frase, dibuja paths correspondientes y actualiza `data-texto-escritura`.
 El SVG es redundante (`aria-hidden`), el texto equivalente es permanente. Admite 100–10000 ms,
 no música sincronizada. Web Animations se cancela y completa al salir de pantalla, ocultar
-la pestaña o activar movimiento reducido; no hay RAF ni colas que se reanuden al volver.
+la pestaña o activar movimiento reducido; no hay RAF ni colas que se reanuden al volver. La entrada automática ocurre una sola vez por instancia; Repetir permite verla de nuevo.
 `NotaEscritura.get(elemento).play()`, `.finish()` y `.destroy()` controlan la instancia;
 `.play()` respeta movimiento reducido. `NotaEscritura.init(elemento)` admite inserción tardía.
 
@@ -981,7 +982,7 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
     </div></fieldset>
     <div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
-      <button type="button" data-papel-tramado aria-pressed="false">Trama de papel <span aria-hidden="true">✓</span></button>
+      <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
   </div>
 </details>
@@ -1007,7 +1008,7 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
     </div></fieldset>
     <div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
-      <button type="button" data-papel-tramado aria-pressed="false">Trama de papel <span aria-hidden="true">✓</span></button>
+      <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
   </div>
 </details>
@@ -1033,7 +1034,7 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
     </div></fieldset>
     <div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
-      <button type="button" data-papel-tramado aria-pressed="false">Trama de papel <span aria-hidden="true">✓</span></button>
+      <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
   </div>
 </details>
@@ -1058,7 +1059,7 @@ El panel se coloca dentro de la ventana y tiene scroll local si falta altura. Si
 **Cuándo no / límite:** no cambia las variantes del prototipo ni emula preferencias del lector.
 `Editorial` conserva los títulos serif; `Sobrio` usa Geist; `Técnico` usa Geist Mono con una
 escala propia para que los títulos no desborden. Cuerpo y datos conservan su familia.
-La trama añade puntos tenues al papel; no imita un escaneo y se retira al imprimir.
+El grano de papel añade ruido monocromo de varias escalas mediante un SVG incrustado (feTurbulence, semilla fija 17); no es una rejilla de puntos. Es sutil para conservar legibilidad y se retira al imprimir.
 Lectura cómoda sigue siendo 18px/1,7; nunca se comprimen tablas o SVG para encajarlos.
 Cambiar tipografía puede cambiar saltos de línea y altura: revisa títulos reales largos.
 
@@ -1370,14 +1371,15 @@ a orientar la etapa. No interpreta el giro manual como un cambio de etapa.
   <p>Explora los estados vacío, revisión y confirmado de un registro ilustrativo.</p>
   <div class="acciones" role="group" aria-label="Ancho de la vista del prototipo">
     <button type="button" data-ancho-visor="320" aria-pressed="false">320 px</button>
-    <button type="button" data-ancho-visor="390" aria-pressed="true">390 px</button>
+    <button type="button" data-ancho-visor="390" aria-pressed="true">Móvil · 390 px</button>
     <button type="button" data-ancho-visor="768" aria-pressed="false">768 px</button>
-    <button type="button" data-ancho-visor="1024" aria-pressed="false">1024 px</button>
+    <button type="button" data-ancho-visor="1024" aria-pressed="false">Escritorio · 1024 px</button>
     <button type="button" data-ancho-visor="auto" aria-pressed="false">Ajustar</button>
     <button type="button" data-reiniciar-visor>Reiniciar ejemplo</button>
   </div>
   <p data-visor-estado role="status">Vista inicial: 390 px CSS.</p>
   <div class="visor-caja" tabindex="0" role="region" aria-label="Prototipo interactivo, desplazable horizontalmente"></div>
+  <details class="visor-importar"><summary>Embeber mi HTML</summary><label>HTML y CSS locales<textarea data-html-visor rows="8" spellcheck="false" placeholder="Pega aquí un fragmento HTML sin scripts ni recursos externos"></textarea></label><button type="button" data-cargar-html>Cargar en el visor</button><p data-importar-estado role="status">Tu HTML se muestra sólo en este navegador. Reiniciar recupera la muestra original.</p></details>
   <template data-prototipo>
     <style>
       .demo { padding: 24px; min-width: 0; }
@@ -1783,7 +1785,7 @@ oscura deliberada, como en los papeles originales.
 
 ## Biblioteca completa y registro local
 
-[biblioteca.html](biblioteca.html) reúne **40 recetas en nueve capítulos**: inicio,
+[biblioteca.html](biblioteca.html) reúne **43 recetas en nueve capítulos**: inicio,
 publicaciones, artículos, reportes, gráficas, tablas, prototipos, espacio y gesto, y edición.
 Cada pieza se genera desde el HTML anterior, con su criterio, límites y dependencias al lado.
 El estudio narrativo sigue en [informe.html](informe.html); el cuaderno continuo, en
@@ -1812,3 +1814,58 @@ La configuración de Ghost inspira la separación entre contenido y presentació
 integración necesita plantillas Handlebars, contexto del CMS, `package.json` y validación
 GScan; copiar este HTML no cumple ese contrato. La comparación y sus fuentes están en
 [edicion-completa.md](auditoria/edicion-completa.md).
+
+## Tabla interactiva
+
+<!-- nota:ejemplo explorador -->
+```html
+<section class="pieza amplio" id="explorador-ejemplo" data-explorador>
+<h3>Explorar el registro</h3><p>Seis registros ficticios. Ordena por encabezado, filtra y agrupa sin perder el detalle.</p>
+<form class="editorial-controles" aria-label="Explorar registros"><label>Buscar<input type="search" name="buscar" placeholder="Nombre, equipo o estado"></label><label>Estado<select name="estado"><option value="">Todos</option><option>En revisión</option><option>Confirmado</option></select></label><label>Agrupar por<select name="grupo"><option value="">Sin grupos</option><option value="1">Equipo</option><option value="2">Estado</option></select></label><button type="reset">Limpiar vista</button></form>
+<p data-explorador-estado role="status">6 registros de ejemplo.</p><div class="tabla-caja" tabindex="0" role="region" aria-label="Registros ordenables y agrupables, desplazables"><table><caption>Movimientos ilustrativos · importes en COP</caption><thead><tr><th scope="col"><button type="button">Nombre ↕</button></th><th scope="col"><button type="button">Equipo ↕</button></th><th scope="col"><button type="button">Estado ↕</button></th><th scope="col"><button type="button">Importe COP ↕</button></th></tr></thead><tbody>
+<tr><th scope="row">Sesión de diseño</th><td>Producto</td><td>En revisión</td><td data-valor="120000">120.000</td></tr>
+<tr><th scope="row">Prueba de lectura</th><td>Investigación</td><td>Confirmado</td><td data-valor="80000">80.000</td></tr>
+<tr><th scope="row">Revisión móvil</th><td>Producto</td><td>Confirmado</td><td data-valor="60000">60.000</td></tr>
+<tr><th scope="row">Entrevista inicial</th><td>Investigación</td><td>En revisión</td><td data-valor="95000">95.000</td></tr>
+<tr><th scope="row">Control de calidad</th><td>Ingeniería</td><td>Confirmado</td><td data-valor="140000">140.000</td></tr>
+<tr><th scope="row">Ajuste de interfaz</th><td>Ingeniería</td><td>En revisión</td><td data-valor="75000">75.000</td></tr>
+</tbody></table></div></section>
+```
+
+**Cuándo:** Investigar una tabla corta: buscar, filtrar un estado, agrupar y ordenar dentro de cada grupo. Incluye explorador.js. Los encabezados indican aria-sort; el total corresponde sólo a las filas visibles.
+
+**Cuándo no / límite:** Contrato de cuatro columnas: nombre, equipo, estado e importe COP numérico en data-valor. No mezcla monedas, no pagina ni carga miles de registros, no guarda filtros. Sin JS conserva la tabla completa. No combines data-tabla en esta instancia. init/get/destroy restauran filas y encabezados.
+
+## Familia de cards
+
+<!-- nota:ejemplo cards -->
+```html
+<section class="pieza ancho" id="cards-ejemplo"><h3>Tarjetas con un propósito</h3><div class="cards-editoriales">
+<article class="card-editorial"><p class="ceja">Lectura / 01</p><h4><a href="informe.html#evidencia">De la hipótesis a la evidencia</a></h4><p>Una tarjeta editorial con título, extracto y destino concreto.</p><p class="procedencia">Ensayo de ejemplo · Investigación</p></article>
+<article class="card-editorial card-dato"><p class="ceja">Indicador / 02</p><h4>Sesiones revisadas</h4><p class="card-valor">12 <span>de 20</span></p><meter min="0" max="20" value="12" aria-label="12 de 20 sesiones revisadas">60 %</meter><p class="procedencia">60 % · cifras ficticias para mostrar cobertura, no progreso en tiempo real.</p></article>
+<article class="card-editorial"><p class="ceja">Proyecto / 03</p><h4>Confirmar con contexto</h4><p><span class="pildora p-medio">Propuesta por validar</span></p><dl><dt>Siguiente paso</dt><dd>Observar una tarea completa.</dd></dl><a href="informe.html#prototipo">Probar el prototipo →</a></article>
+</div></section>
+```
+
+**Cuándo:** Agrupar entidades distintas: artículo, indicador y proyecto. La rejilla se adapta al ancho; el enlace está en el título o acción, no en toda la tarjeta.
+
+**Cuándo no / límite:** No uses una tarjeta por párrafo ni escondas una comparación que necesita tabla. Los valores y estados requieren fuente. No hay clics superpuestos, carrusel ni alturas fijas que corten textos. HTML estático con tokens de las seis paletas.
+
+### Pegar un prototipo propio
+
+El visor ofrece **Embeber mi HTML** y `NotaVisores.get(elemento).loadHTML(texto)`. Conserva el ancho elegido y Reiniciar vuelve al template original. Acepta hasta 100.000 caracteres de HTML declarativo con CSS local; rechaza scripts, eventos inline, iframes, envíos, recursos externos y CSS con url()/@import. No es un navegador remoto ni un sanitizador para contenido hostil. Usa HTML de confianza, imágenes raster data: y consultas @container para adaptar el prototipo a su ancho. No modifica ni guarda la fuente del documento.
+
+## Comentarios sobre el documento
+
+<!-- nota:ejemplo revision -->
+```html
+<section class="pieza" id="revision-ejemplo" data-revision>
+<h3>Revisar sin perder el contexto</h3><p>Activa Comentar y elige un párrafo, título, figura o card. También puedes seleccionar texto antes de pulsar Comentar.</p><div class="acciones"><button type="button" data-revision-modo aria-pressed="false">Comentar documento</button><button type="button" data-revision-lista>Ver comentarios</button></div><p data-revision-estado role="status">Borrador local de esta pestaña. Copia tus comentarios antes de recargar.</p>
+<dialog class="revision-dialogo revision-ui" data-revision-editor aria-labelledby="revision-editor-titulo"><form><h2 id="revision-editor-titulo">Añadir comentario</h2><p data-revision-contexto></p><label for="revision-texto">Ajuste que propones</label><textarea id="revision-texto" data-revision-texto rows="5" maxlength="4000" required placeholder="Qué cambiarías y por qué"></textarea><div class="acciones"><button type="button" data-revision-guardar>Guardar comentario</button><button type="button" data-revision-cancelar>Cancelar</button></div></form></dialog>
+<dialog class="revision-dialogo revision-ui" data-revision-panel aria-labelledby="revision-panel-titulo"><h2 id="revision-panel-titulo">Comentarios del documento</h2><ol data-revision-notas></ol><div class="codigo"><div class="cab"><span>Prompt de ajustes</span><button type="button" data-copiar="revision-prompt">Copiar prompt</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Prompt con comentarios, desplazable"><code id="revision-prompt" data-revision-prompt>No hay comentarios todavía.</code></pre></div><button type="button" data-revision-cerrar>Cerrar comentarios</button></dialog>
+</section>
+```
+
+**Cuándo:** dejar observaciones concretas en un artefacto y copiarlas como prompt con capítulo, referencia, fragmento y ajuste. Incluye revision.js después de interacciones.js. La barra fija aparece sólo con JS; los comentarios quedan junto al bloque y en una lista accesible. Escape cancela la elección; los diálogos tienen foco y cierre nativos. Puedes añadir desde una selección de texto, editar o borrar cada comentario.
+
+**Cuándo no / límite:** no es colaboración remota ni revisión simultánea. El borrador vive en memoria hasta recargar/cerrar; copia el prompt antes. No envía datos ni ejecuta los ajustes. No comenta dentro del Shadow DOM del prototipo ni sobre controles; comenta su figura exterior. Las marcas identifican bloques, no coordenadas exactas sobre una imagen. Usa una instancia por documento. `NotaRevision.init/get/destroy` retira marcas, controles y listeners; no elimina contenido original. El prompt es texto, no HTML ejecutable. Al imprimir se ocultan las herramientas y marcas.

@@ -871,18 +871,18 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
    Se queda oscura en los dos temas a propósito; una terminal clara no se lee
    como una terminal. El valor que importa va en `.subra`, no en negrita.
    =========================================================== */
-.terminal { --term-papel: #171614; --term-tinta: #cfc6bb; --term-tenue: #7d746a;
+.terminal { --term-papel: #171614; --term-tinta: #cfc6bb; --term-tenue: #998f83;
   --term-linea: #2d2a26; --term-marca: #c98f5a;
   background: var(--term-papel); border: 1px solid var(--term-linea); border-radius: 12px;
   overflow: hidden; font-family: var(--mono); }
 :root[data-theme='sea'] .terminal { --term-papel: hsl(212 24% 12%); --term-tinta: hsl(212 66% 82%);
-  --term-tenue: hsl(212 22% 52%); --term-linea: hsl(212 18% 22%); --term-marca: hsl(160 99% 60%); }
+  --term-tenue: hsl(212 22% 58%); --term-linea: hsl(212 18% 22%); --term-marca: hsl(160 99% 60%); }
 .terminal .cab { display: flex; align-items: center; justify-content: space-between; gap: 12px;
   padding: 14px 18px 12px; font-size: 12.5px; color: var(--term-tenue); letter-spacing: .02em; }
 .terminal .cab button { background: none; border: 0; padding: 4px; min-height: 0; cursor: pointer;
   color: var(--term-tenue); line-height: 0; border-radius: 5px; }
 .terminal .cab button:hover { color: var(--term-tinta); background: rgba(255,255,255,.06); }
-.terminal .cab svg { width: 15px; height: 15px; display: block; }
+.terminal .cab svg { margin-inline:auto; width: 15px; height: 15px; display: block; }
 .terminal .cuerpo { margin: 0 14px 14px; border: 1px dashed var(--term-linea); border-radius: 8px; }
 .terminal pre { margin: 0; padding: 16px 18px; overflow-x: auto; font-size: 12.5px; line-height: 1.85;
   color: var(--term-tinta); scrollbar-width: thin; }
@@ -1341,7 +1341,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 :root[data-estilo='tecnico'] h2 { font-size: clamp(25px,3vw,32px); line-height: 1.25; }
 :root[data-estilo='tecnico'] h3 { font-size: 23px; line-height: 1.3; }
 :root[data-estilo] :is(h1,h2,h3) { overflow-wrap: anywhere; }
-:root[data-trama] body { background-image: radial-gradient(circle,color-mix(in srgb,var(--papel-trama) 38%,transparent) .6px,transparent .7px); background-size: 12px 12px; }
+:root[data-trama] body { background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22180%22%20height%3D%22180%22%3E%3Cfilter%20id%3D%22grano%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%22.78%22%20numOctaves%3D%223%22%20seed%3D%2217%22%20stitchTiles%3D%22stitch%22%2F%3E%3CfeColorMatrix%20type%3D%22saturate%22%20values%3D%220%22%2F%3E%3CfeComponentTransfer%3E%3CfeFuncA%20type%3D%22linear%22%20slope%3D%22.19%22%2F%3E%3C%2FfeComponentTransfer%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url%28%23grano%29%22%20opacity%3D%22.75%22%2F%3E%3C%2Fsvg%3E"); background-size:180px 180px; }
 @media print { .apariencia-menu { display: none !important; } :root[data-trama] body { background-image: none; } }
 
 /* 15 — Oliva, Arcilla y Ciruela. Paletas optativas completas, sin alterar las anteriores. */
@@ -1623,6 +1623,47 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 .biblioteca [id] { scroll-margin-top:85px; }
 @media print { .editorial-controles,[data-config-editorial] { display:none !important; } .publicaciones { display:block; } .publicaciones > article[hidden] { display:block !important; } [data-archivo-vacio],[data-archivo-estado] { display:none !important; } }
 
+/* 18 — Correcciones de foco y copia solicitadas sobre las capturas. */
+.hoja.multipagina > .pagina:focus-visible { outline:0; }
+.hoja.multipagina > .pagina:focus-visible > .cabecera h1 { outline:2px dashed var(--foco); outline-offset:8px; }
+.codigo .cab,.terminal .cab { display:grid; grid-template-columns:minmax(0,1fr) auto; }
+.codigo .cab > button,.terminal .cab > button { grid-column:2; grid-row:1; justify-self:end; min-width:44px; min-height:44px; }
+.codigo .cab > .copia-estado,.terminal .cab > .copia-estado { grid-column:1/-1; }
+.codigo .cab > .copia-estado:empty,.terminal .cab > .copia-estado:empty { display:none; }
+.codigo .codigo-atributo { color:var(--azul); }
+.receta-copia[open] > summary { margin-bottom:16px; }
+.receta-copia > .procedencia { line-height:1.7; overflow-wrap:anywhere; }
+@media print { :root[data-trama] body { background-image:none; } }
+.cards-editoriales { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:20px; }
+.card-editorial { min-width:0; display:flex; flex-direction:column; align-items:start; gap:18px; padding:24px; border:1px solid var(--pieza-linea); border-radius:8px; background:var(--pieza-papel); }
+.card-editorial h4 { font:400 29px/1.15 var(--serif); }
+.card-editorial .card-valor { font:400 48px/1.1 var(--serif); }
+.card-valor span { font:14px var(--sans); color:var(--pieza-secundaria); }
+.card-editorial > :last-child { margin-top:auto; }
+.card-editorial meter { width:100%; accent-color:var(--pieza-acento); }
+.card-editorial dd { margin-left:0; }.card-editorial dt { font-size:13px; color:var(--pieza-secundaria); }
+.tabla-grupo { background:var(--pieza-suave); color:var(--pieza-tinta); }
+[data-explorador] th button { min-height:44px; white-space:normal; }
+.visor-importar label { display:block; margin-block:16px; }
+.visor-importar textarea { display:block; box-sizing:border-box; width:100%; min-width:0; margin-top:10px; padding:14px; background:var(--pieza-papel); color:var(--pieza-tinta); border:1px solid var(--pieza-linea); font:13px/1.6 var(--mono); resize:vertical; }
+@media print { .visor-importar,[data-explorador] .editorial-controles { display:none !important; } }
+.revision-barra { position:fixed; z-index:30; right:16px; bottom:16px; display:flex; flex-wrap:wrap; gap:8px; max-width:calc(100% - 32px); padding:8px; border:1px solid var(--pieza-linea); border-radius:10px; background:var(--pieza-papel); box-shadow:0 5px 20px color-mix(in srgb,var(--pieza-tinta) 12%,transparent); }
+.revision-barra button { min-height:44px; font:13px/1.4 var(--sans); }
+.revision-dialogo { box-sizing:border-box; width:min(620px,calc(100% - 32px)); max-height:calc(100dvh - 40px); padding:24px; border:1px solid var(--pieza-linea); border-radius:12px; background:var(--pieza-papel); color:var(--pieza-tinta); overflow:auto; }
+.revision-dialogo::backdrop { background:color-mix(in srgb,var(--pieza-tinta) 35%,transparent); }
+.revision-dialogo h2 { margin:0 0 20px; font:400 32px/1.15 var(--serif); }
+.revision-dialogo textarea { box-sizing:border-box; display:block; width:100%; margin:10px 0 20px; min-height:130px; padding:12px; color:var(--pieza-tinta); background:var(--pieza-papel); border:1px solid var(--pieza-linea); font:16px/1.6 var(--sans); resize:vertical; }
+.revision-dialogo :is(p,blockquote,code) { overflow-wrap:anywhere; }
+.revision-dialogo .acciones { display:flex; flex-wrap:wrap; gap:12px; margin-block:16px; }
+.revision-dialogo li { padding-block:16px; border-bottom:1px solid var(--pieza-linea); }
+.revision-dialogo blockquote { margin:10px 0; color:var(--pieza-secundaria); font-size:14px; }
+.revision-dialogo pre { white-space:pre-wrap; max-height:300px; }
+.revision-marca { display:block; width:36px; min-height:36px; padding:4px; margin-block:12px; border-radius:50%; justify-self:start; font:14px var(--mono); color:var(--pieza-acento); background:var(--pieza-suave); border:1px solid var(--pieza-acento); }
+[data-revisando] main :is(p,h1,h2,h3,h4,figure,.card-editorial,li):hover { cursor:crosshair; outline:2px dashed var(--foco); outline-offset:4px; }
+body:has(.revision-barra) { padding-bottom:100px; }
+@media(max-width:420px) { .revision-barra { right:8px; bottom:8px; max-width:calc(100% - 16px); } .revision-dialogo { padding:18px; } }
+@media print { .revision-ui,.revision-marca,[data-revision] { display:none !important; } body:has(.revision-barra) { padding-bottom:0; } }
+
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <a class="salto" href="#contenido">Saltar al contenido</a>
@@ -1647,7 +1688,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
     </div></fieldset>
     <div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
-      <button type="button" data-papel-tramado aria-pressed="false">Trama de papel <span aria-hidden="true">✓</span></button>
+      <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
   </div>
 </details></div>
@@ -1698,7 +1739,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 <div class="extracto"><p class="desvanece" aria-hidden="true">Una nota se termina cuando alguien puede tomar una decisión con ella. La forma prepara el terreno; la evidencia sostiene lo que decimos.</p><details><summary>Leer la nota completa</summary><p>Una nota se termina cuando alguien puede tomar una decisión con ella. La forma prepara el terreno; la evidencia sostiene lo que decimos. Si la pieza necesita una segunda lectura para entender qué propone, todavía queda trabajo editorial.</p></details></div>
 <aside class="aviso cita"><span class="num" aria-hidden="true">↳</span><div><blockquote>Dejar una buena nota es dejarle contexto a quien llega después.</blockquote><p class="secundario">Principio de esta plantilla</p></div></aside>
 <section class="seccion" id="libreria"><p class="ceja">06 / componentes para copiar</p>
-<h2>La evidencia tiene muchas formas.</h2><p>Gráficas, tablas y experiencias opcionales. Cada ejemplo conserva sus datos, su criterio y su límite en componentes.md.</p><div data-buscador-recetas><div class="buscador-recetas"><label for="buscar-receta">Encuentra una pieza</label><input id="buscar-receta" type="search" placeholder="Tabla, globo, artículo, prototipo…" aria-describedby="buscar-estado"><p id="buscar-estado" role="status"></p></div><nav aria-label="Ejemplos de componentes"><ul class="catalogo-indice"><li data-claves=""><a href="#pieza-tabla-densa">Tabla densa</a></li><li data-claves=""><a href="#pieza-terminal">Terminal</a></li><li data-claves=""><a href="#pieza-manuscrita">Nota manuscrita</a></li><li data-claves=""><a href="#barras-ejemplo">Barras</a></li><li data-claves=""><a href="#lineas-ejemplo">Líneas</a></li><li data-claves=""><a href="#temporal-ejemplo">Serie temporal</a></li><li data-claves=""><a href="#dispersion-ejemplo">Dispersión</a></li><li data-claves=""><a href="#distribucion-ejemplo">Distribución</a></li><li data-claves=""><a href="#calor-ejemplo">Mapa de calor</a></li><li data-claves=""><a href="#pieza-comparacion">Comparación</a></li><li data-claves=""><a href="#pieza-totales">Totales y ordenación</a></li><li data-claves=""><a href="#pieza-sparkline">Tabla con serie</a></li><li data-claves=""><a href="#pieza-sonido">Sonido optativo</a></li><li data-claves=""><a href="#pieza-escritura">Escritura por trazos</a></li><li data-claves=""><a href="#xyz-ejemplo">Three.js · XYZ</a></li><li data-claves=""><a href="#etapas-ejemplo">Three.js · etapas</a></li><li data-claves="tema lectura"><a href="#apariencia-ejemplo">Apariencia y lectura cómoda</a></li><li data-claves="reporte informe"><a href="#decision-ejemplo">Ficha de decisión</a></li><li data-claves="historia fechas"><a href="#cronologia-ejemplo">Cronología anotada</a></li><li data-claves="blog autor fecha"><a href="#articulo-ejemplo">Ficha de artículo</a></li><li data-claves="blog fuentes citas"><a href="#referencias-ejemplo">Referencias con regreso</a></li><li data-claves="blog definiciones"><a href="#glosario-ejemplo">Glosario editorial</a></li><li data-claves="blog informe supuestos"><a href="#metodologia-ejemplo">Metodología desplegable</a></li><li data-claves="blog cambios"><a href="#antes-despues-ejemplo">Antes y después</a></li><li data-claves="reporte balance"><a href="#cascada-ejemplo">Cascada de cantidades</a></li><li data-claves="graficas reporte sedes"><a href="#multiples-ejemplo">Pequeños múltiples</a></li><li data-claves="tabla reporte diferencias"><a href="#conciliacion-ejemplo">Conciliación de registros</a></li><li data-claves="calculadora reporte supuestos"><a href="#escenario-ejemplo">Calculadora de escenarios</a></li><li data-claves="globo three geografia historia"><a href="#recorrido-ejemplo">Globo narrado</a></li><li data-claves="prototipo estados responsive"><a href="#visor-ejemplo">Visor de prototipos</a></li><li data-claves=""><a href="#pestanas-ejemplo">Pestañas de una pieza</a></li><li data-claves=""><a href="#hallazgo-ejemplo">Ficha de hallazgo</a></li><li data-claves=""><a href="#archivo-ejemplo">Archivo de publicaciones</a></li><li data-claves=""><a href="#autor-ejemplo">Ficha de autor</a></li><li data-claves=""><a href="#relacionados-ejemplo">Lecturas relacionadas</a></li><li data-claves=""><a href="#anotaciones-ejemplo">Diagrama anotado</a></li><li data-claves=""><a href="#revisiones-ejemplo">Historial de revisiones</a></li><li data-claves=""><a href="#criterios-ejemplo">Matriz de criterios</a></li><li data-claves=""><a href="#riesgos-ejemplo">Registro de riesgos</a></li><li data-claves=""><a href="#configuracion-ejemplo">Configuración editorial</a></li></ul></nav></div></section>
+<h2>La evidencia tiene muchas formas.</h2><p>Gráficas, tablas y experiencias opcionales. Cada ejemplo conserva sus datos, su criterio y su límite en componentes.md.</p><div data-buscador-recetas><div class="buscador-recetas"><label for="buscar-receta">Encuentra una pieza</label><input id="buscar-receta" type="search" placeholder="Tabla, globo, artículo, prototipo…" aria-describedby="buscar-estado"><p id="buscar-estado" role="status"></p></div><nav aria-label="Ejemplos de componentes"><ul class="catalogo-indice"><li data-claves=""><a href="#pieza-tabla-densa">Tabla densa</a></li><li data-claves=""><a href="#pieza-terminal">Terminal</a></li><li data-claves=""><a href="#pieza-manuscrita">Nota manuscrita</a></li><li data-claves=""><a href="#barras-ejemplo">Barras</a></li><li data-claves=""><a href="#lineas-ejemplo">Líneas</a></li><li data-claves=""><a href="#temporal-ejemplo">Serie temporal</a></li><li data-claves=""><a href="#dispersion-ejemplo">Dispersión</a></li><li data-claves=""><a href="#distribucion-ejemplo">Distribución</a></li><li data-claves=""><a href="#calor-ejemplo">Mapa de calor</a></li><li data-claves=""><a href="#pieza-comparacion">Comparación</a></li><li data-claves=""><a href="#pieza-totales">Totales y ordenación</a></li><li data-claves=""><a href="#pieza-sparkline">Tabla con serie</a></li><li data-claves=""><a href="#pieza-sonido">Sonido optativo</a></li><li data-claves=""><a href="#pieza-escritura">Escritura por trazos</a></li><li data-claves=""><a href="#xyz-ejemplo">Three.js · XYZ</a></li><li data-claves=""><a href="#etapas-ejemplo">Three.js · etapas</a></li><li data-claves="tema lectura"><a href="#apariencia-ejemplo">Apariencia y lectura cómoda</a></li><li data-claves="reporte informe"><a href="#decision-ejemplo">Ficha de decisión</a></li><li data-claves="historia fechas"><a href="#cronologia-ejemplo">Cronología anotada</a></li><li data-claves="blog autor fecha"><a href="#articulo-ejemplo">Ficha de artículo</a></li><li data-claves="blog fuentes citas"><a href="#referencias-ejemplo">Referencias con regreso</a></li><li data-claves="blog definiciones"><a href="#glosario-ejemplo">Glosario editorial</a></li><li data-claves="blog informe supuestos"><a href="#metodologia-ejemplo">Metodología desplegable</a></li><li data-claves="blog cambios"><a href="#antes-despues-ejemplo">Antes y después</a></li><li data-claves="reporte balance"><a href="#cascada-ejemplo">Cascada de cantidades</a></li><li data-claves="graficas reporte sedes"><a href="#multiples-ejemplo">Pequeños múltiples</a></li><li data-claves="tabla reporte diferencias"><a href="#conciliacion-ejemplo">Conciliación de registros</a></li><li data-claves="calculadora reporte supuestos"><a href="#escenario-ejemplo">Calculadora de escenarios</a></li><li data-claves="globo three geografia historia"><a href="#recorrido-ejemplo">Globo narrado</a></li><li data-claves="prototipo estados responsive"><a href="#visor-ejemplo">Visor de prototipos</a></li><li data-claves=""><a href="#pestanas-ejemplo">Pestañas de una pieza</a></li><li data-claves=""><a href="#hallazgo-ejemplo">Ficha de hallazgo</a></li><li data-claves=""><a href="#archivo-ejemplo">Archivo de publicaciones</a></li><li data-claves=""><a href="#autor-ejemplo">Ficha de autor</a></li><li data-claves=""><a href="#relacionados-ejemplo">Lecturas relacionadas</a></li><li data-claves=""><a href="#anotaciones-ejemplo">Diagrama anotado</a></li><li data-claves=""><a href="#revisiones-ejemplo">Historial de revisiones</a></li><li data-claves=""><a href="#criterios-ejemplo">Matriz de criterios</a></li><li data-claves=""><a href="#riesgos-ejemplo">Registro de riesgos</a></li><li data-claves=""><a href="#configuracion-ejemplo">Configuración editorial</a></li><li data-claves=""><a href="#explorador-ejemplo">Tabla interactiva</a></li><li data-claves=""><a href="#cards-ejemplo">Familia de cards</a></li><li data-claves=""><a href="#revision-ejemplo">Comentarios sobre el documento</a></li></ul></nav></div></section>
 <figure class="amplio" id="pieza-tabla-densa">
   <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Brechas, desplazable">
     <table><caption>Seguimiento ilustrativo de brechas</caption>
@@ -2033,7 +2074,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   &lt;/div&gt;
   &lt;p role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;Sonido apagado.&lt;/p&gt;
 &lt;/aside&gt;</code></pre></div></details>
-<figure class="ancho nota-escritura" data-escritura data-duracion="2400" id="pieza-escritura">
+<figure class="ancho nota-escritura" data-escritura data-al-ver data-canal-sonido data-duracion="2400" id="pieza-escritura">
   <div class="escritura-caja" tabindex="0" role="region" aria-label="Escritura a mano, desplazable">
     <svg viewBox="0 0 420 110" aria-hidden="true">
       <path data-trazo d="M55 51 C43 38 27 51 30 68 C34 83 52 69 54 53 L52 76 Q58 78 65 71"/>
@@ -2045,14 +2086,15 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
     </svg>
   </div>
   <div class="escritura-controles">
-    <button type="button" data-escribir>Repetir escritura</button>
+    <button type="button" data-audio-activar aria-pressed="false">Activar sonido</button>
+    <button type="button" data-escribir data-audio="accion" data-mensaje="Repetir escritura con señal breve si el sonido está activado.">Repetir escritura</button>
     <button type="button" data-finalizar>Mostrar trazo completo</button>
   </div>
   <p data-texto-escritura>«a mano»</p>
   <p role="status" aria-live="polite">Trazo completo.</p>
   <figcaption>Gesto ilustrativo original de Nota Tikin. 2400 ms repartidos por la longitud de cada trazo; la frase siempre permanece escrita debajo.</figcaption>
 </figure>
-<details class="receta-copia ancho"><summary>HTML y dependencias · Escritura por trazos</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Escritura por trazos</span><button type="button" data-copiar="receta-fuente-escritura" aria-label="Copiar HTML de Escritura por trazos">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Escritura por trazos, desplazable"><code id="receta-fuente-escritura">&lt;figure class=&quot;ancho nota-escritura&quot; data-escritura data-duracion=&quot;2400&quot; id=&quot;pieza-escritura&quot;&gt;
+<details class="receta-copia ancho"><summary>HTML y dependencias · Escritura por trazos</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Escritura por trazos</span><button type="button" data-copiar="receta-fuente-escritura" aria-label="Copiar HTML de Escritura por trazos">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Escritura por trazos, desplazable"><code id="receta-fuente-escritura">&lt;figure class=&quot;ancho nota-escritura&quot; data-escritura data-al-ver data-canal-sonido data-duracion=&quot;2400&quot; id=&quot;pieza-escritura&quot;&gt;
   &lt;div class=&quot;escritura-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Escritura a mano, desplazable&quot;&gt;
     &lt;svg viewBox=&quot;0 0 420 110&quot; aria-hidden=&quot;true&quot;&gt;
       &lt;path data-trazo d=&quot;M55 51 C43 38 27 51 30 68 C34 83 52 69 54 53 L52 76 Q58 78 65 71&quot;/&gt;
@@ -2064,7 +2106,8 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
     &lt;/svg&gt;
   &lt;/div&gt;
   &lt;div class=&quot;escritura-controles&quot;&gt;
-    &lt;button type=&quot;button&quot; data-escribir&gt;Repetir escritura&lt;/button&gt;
+    &lt;button type=&quot;button&quot; data-audio-activar aria-pressed=&quot;false&quot;&gt;Activar sonido&lt;/button&gt;
+    &lt;button type=&quot;button&quot; data-escribir data-audio=&quot;accion&quot; data-mensaje=&quot;Repetir escritura con señal breve si el sonido está activado.&quot;&gt;Repetir escritura&lt;/button&gt;
     &lt;button type=&quot;button&quot; data-finalizar&gt;Mostrar trazo completo&lt;/button&gt;
   &lt;/div&gt;
   &lt;p data-texto-escritura&gt;«a mano»&lt;/p&gt;
@@ -2152,7 +2195,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
     </div></fieldset>
     <div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
-      <button type="button" data-papel-tramado aria-pressed="false">Trama de papel <span aria-hidden="true">✓</span></button>
+      <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
   </div>
 </details>
@@ -2178,7 +2221,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
     </div></fieldset>
     <div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
-      <button type="button" data-papel-tramado aria-pressed="false">Trama de papel <span aria-hidden="true">✓</span></button>
+      <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
   </div>
 </details>
@@ -2204,7 +2247,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
     </div></fieldset>
     <div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
-      <button type="button" data-papel-tramado aria-pressed="false">Trama de papel <span aria-hidden="true">✓</span></button>
+      <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
   </div>
 </details>
@@ -2237,7 +2280,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
     &lt;/div&gt;&lt;/fieldset&gt;
     &lt;div class=&quot;apariencia-ajustes&quot;&gt;
       &lt;button type=&quot;button&quot; data-comodidad aria-pressed=&quot;false&quot;&gt;Lectura cómoda &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
-      &lt;button type=&quot;button&quot; data-papel-tramado aria-pressed=&quot;false&quot;&gt;Trama de papel &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
+      &lt;button type=&quot;button&quot; data-papel-tramado aria-pressed=&quot;false&quot;&gt;Grano de papel &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/details&gt;
@@ -2263,7 +2306,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
     &lt;/div&gt;&lt;/fieldset&gt;
     &lt;div class=&quot;apariencia-ajustes&quot;&gt;
       &lt;button type=&quot;button&quot; data-comodidad aria-pressed=&quot;false&quot;&gt;Lectura cómoda &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
-      &lt;button type=&quot;button&quot; data-papel-tramado aria-pressed=&quot;false&quot;&gt;Trama de papel &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
+      &lt;button type=&quot;button&quot; data-papel-tramado aria-pressed=&quot;false&quot;&gt;Grano de papel &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/details&gt;
@@ -2289,7 +2332,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
     &lt;/div&gt;&lt;/fieldset&gt;
     &lt;div class=&quot;apariencia-ajustes&quot;&gt;
       &lt;button type=&quot;button&quot; data-comodidad aria-pressed=&quot;false&quot;&gt;Lectura cómoda &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
-      &lt;button type=&quot;button&quot; data-papel-tramado aria-pressed=&quot;false&quot;&gt;Trama de papel &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
+      &lt;button type=&quot;button&quot; data-papel-tramado aria-pressed=&quot;false&quot;&gt;Grano de papel &lt;span aria-hidden=&quot;true&quot;&gt;✓&lt;/span&gt;&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/details&gt;
@@ -2602,14 +2645,15 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   <p>Explora los estados vacío, revisión y confirmado de un registro ilustrativo.</p>
   <div class="acciones" role="group" aria-label="Ancho de la vista del prototipo">
     <button type="button" data-ancho-visor="320" aria-pressed="false">320 px</button>
-    <button type="button" data-ancho-visor="390" aria-pressed="true">390 px</button>
+    <button type="button" data-ancho-visor="390" aria-pressed="true">Móvil · 390 px</button>
     <button type="button" data-ancho-visor="768" aria-pressed="false">768 px</button>
-    <button type="button" data-ancho-visor="1024" aria-pressed="false">1024 px</button>
+    <button type="button" data-ancho-visor="1024" aria-pressed="false">Escritorio · 1024 px</button>
     <button type="button" data-ancho-visor="auto" aria-pressed="false">Ajustar</button>
     <button type="button" data-reiniciar-visor>Reiniciar ejemplo</button>
   </div>
   <p data-visor-estado role="status">Vista inicial: 390 px CSS.</p>
   <div class="visor-caja" tabindex="0" role="region" aria-label="Prototipo interactivo, desplazable horizontalmente"></div>
+  <details class="visor-importar"><summary>Embeber mi HTML</summary><label>HTML y CSS locales<textarea data-html-visor rows="8" spellcheck="false" placeholder="Pega aquí un fragmento HTML sin scripts ni recursos externos"></textarea></label><button type="button" data-cargar-html>Cargar en el visor</button><p data-importar-estado role="status">Tu HTML se muestra sólo en este navegador. Reiniciar recupera la muestra original.</p></details>
   <template data-prototipo>
     <style>
       .demo { padding: 24px; min-width: 0; }
@@ -2657,14 +2701,15 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   &lt;p&gt;Explora los estados vacío, revisión y confirmado de un registro ilustrativo.&lt;/p&gt;
   &lt;div class=&quot;acciones&quot; role=&quot;group&quot; aria-label=&quot;Ancho de la vista del prototipo&quot;&gt;
     &lt;button type=&quot;button&quot; data-ancho-visor=&quot;320&quot; aria-pressed=&quot;false&quot;&gt;320 px&lt;/button&gt;
-    &lt;button type=&quot;button&quot; data-ancho-visor=&quot;390&quot; aria-pressed=&quot;true&quot;&gt;390 px&lt;/button&gt;
+    &lt;button type=&quot;button&quot; data-ancho-visor=&quot;390&quot; aria-pressed=&quot;true&quot;&gt;Móvil · 390 px&lt;/button&gt;
     &lt;button type=&quot;button&quot; data-ancho-visor=&quot;768&quot; aria-pressed=&quot;false&quot;&gt;768 px&lt;/button&gt;
-    &lt;button type=&quot;button&quot; data-ancho-visor=&quot;1024&quot; aria-pressed=&quot;false&quot;&gt;1024 px&lt;/button&gt;
+    &lt;button type=&quot;button&quot; data-ancho-visor=&quot;1024&quot; aria-pressed=&quot;false&quot;&gt;Escritorio · 1024 px&lt;/button&gt;
     &lt;button type=&quot;button&quot; data-ancho-visor=&quot;auto&quot; aria-pressed=&quot;false&quot;&gt;Ajustar&lt;/button&gt;
     &lt;button type=&quot;button&quot; data-reiniciar-visor&gt;Reiniciar ejemplo&lt;/button&gt;
   &lt;/div&gt;
   &lt;p data-visor-estado role=&quot;status&quot;&gt;Vista inicial: 390 px CSS.&lt;/p&gt;
   &lt;div class=&quot;visor-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Prototipo interactivo, desplazable horizontalmente&quot;&gt;&lt;/div&gt;
+  &lt;details class=&quot;visor-importar&quot;&gt;&lt;summary&gt;Embeber mi HTML&lt;/summary&gt;&lt;label&gt;HTML y CSS locales&lt;textarea data-html-visor rows=&quot;8&quot; spellcheck=&quot;false&quot; placeholder=&quot;Pega aquí un fragmento HTML sin scripts ni recursos externos&quot;&gt;&lt;/textarea&gt;&lt;/label&gt;&lt;button type=&quot;button&quot; data-cargar-html&gt;Cargar en el visor&lt;/button&gt;&lt;p data-importar-estado role=&quot;status&quot;&gt;Tu HTML se muestra sólo en este navegador. Reiniciar recupera la muestra original.&lt;/p&gt;&lt;/details&gt;
   &lt;template data-prototipo&gt;
     &lt;style&gt;
       .demo { padding: 24px; min-width: 0; }
@@ -2804,7 +2849,49 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 <figure class="pieza amplio" id="riesgos-ejemplo"><h3>Lo que podría salir mal</h3><div class="tabla-caja" tabindex="0" role="region" aria-label="Registro de riesgos, desplazable"><table><caption>Riesgos ilustrativos de un flujo de confirmación</caption><thead><tr><th scope="col">Causa y consecuencia</th><th scope="col">Responsable propuesto</th><th scope="col">Mitigación</th><th scope="col">Señal para revisar</th></tr></thead><tbody><tr><th scope="row">Un resumen incompleto permite confirmar un dato incorrecto</th><td>Diseño de producto</td><td>Mostrar todos los campos críticos y su edición</td><td>Correcciones posteriores a confirmar</td></tr><tr><th scope="row">Un fallo de guardado parece un envío exitoso</th><td>Ingeniería</td><td>Confirmar sólo tras respuesta válida y ofrecer reintento</td><td>Discrepancia entre interfaz y registro</td></tr></tbody></table></div><figcaption>Ejemplo sin probabilidades estimadas. Asigna personas y señales verificables en el proyecto real.</figcaption></figure>
 <details class="receta-copia ancho"><summary>HTML y dependencias · Registro de riesgos</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Registro de riesgos</span><button type="button" data-copiar="receta-fuente-riesgos" aria-label="Copiar HTML de Registro de riesgos">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Registro de riesgos, desplazable"><code id="receta-fuente-riesgos">&lt;figure class=&quot;pieza amplio&quot; id=&quot;riesgos-ejemplo&quot;&gt;&lt;h3&gt;Lo que podría salir mal&lt;/h3&gt;&lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Registro de riesgos, desplazable&quot;&gt;&lt;table&gt;&lt;caption&gt;Riesgos ilustrativos de un flujo de confirmación&lt;/caption&gt;&lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Causa y consecuencia&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Responsable propuesto&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Mitigación&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Señal para revisar&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Un resumen incompleto permite confirmar un dato incorrecto&lt;/th&gt;&lt;td&gt;Diseño de producto&lt;/td&gt;&lt;td&gt;Mostrar todos los campos críticos y su edición&lt;/td&gt;&lt;td&gt;Correcciones posteriores a confirmar&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Un fallo de guardado parece un envío exitoso&lt;/th&gt;&lt;td&gt;Ingeniería&lt;/td&gt;&lt;td&gt;Confirmar sólo tras respuesta válida y ofrecer reintento&lt;/td&gt;&lt;td&gt;Discrepancia entre interfaz y registro&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;figcaption&gt;Ejemplo sin probabilidades estimadas. Asigna personas y señales verificables en el proyecto real.&lt;/figcaption&gt;&lt;/figure&gt;</code></pre></div></details>
 <section class="pieza" id="configuracion-ejemplo" data-config-editorial><h3>La misma publicación, otra edición</h3><p>Elige cómo se presentan las publicaciones del archivo. Los cambios se aplican en este documento.</p><form class="editorial-controles" aria-label="Configuración del archivo"><label>Presentación<select name="disposicion"><option value="rejilla">Rejilla editorial</option><option value="lista">Lista de lectura</option></select></label><label class="editorial-check"><input type="checkbox" name="extractos" checked> Mostrar extractos</label><label class="editorial-check"><input type="checkbox" name="metadatos" checked> Mostrar autoría y formato</label><button type="reset">Restablecer edición</button></form><p data-config-estado role="status">Rejilla editorial con extractos y metadatos.</p><div class="codigo"><div class="cab"><span>Configuración local · JSON</span><button type="button" data-copiar="config-editorial-json">Copiar configuración</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Configuración editorial JSON, desplazable"><code id="config-editorial-json" data-config-json>{"version":1,"disposicion":"rejilla","extractos":true,"metadatos":true}</code></pre></div><p class="procedencia">Configuración de presentación, independiente de la paleta y tipografía del botón de apariencia. No instala un tema de Ghost.</p><p><a href="#archivo-ejemplo">Ver el archivo con esta configuración →</a></p></section>
-<details class="receta-copia ancho"><summary>HTML y dependencias · Configuración editorial</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Configuración editorial</span><button type="button" data-copiar="receta-fuente-configuracion" aria-label="Copiar HTML de Configuración editorial">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Configuración editorial, desplazable"><code id="receta-fuente-configuracion">&lt;section class=&quot;pieza&quot; id=&quot;configuracion-ejemplo&quot; data-config-editorial&gt;&lt;h3&gt;La misma publicación, otra edición&lt;/h3&gt;&lt;p&gt;Elige cómo se presentan las publicaciones del archivo. Los cambios se aplican en este documento.&lt;/p&gt;&lt;form class=&quot;editorial-controles&quot; aria-label=&quot;Configuración del archivo&quot;&gt;&lt;label&gt;Presentación&lt;select name=&quot;disposicion&quot;&gt;&lt;option value=&quot;rejilla&quot;&gt;Rejilla editorial&lt;/option&gt;&lt;option value=&quot;lista&quot;&gt;Lista de lectura&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;&lt;label class=&quot;editorial-check&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;extractos&quot; checked&gt; Mostrar extractos&lt;/label&gt;&lt;label class=&quot;editorial-check&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;metadatos&quot; checked&gt; Mostrar autoría y formato&lt;/label&gt;&lt;button type=&quot;reset&quot;&gt;Restablecer edición&lt;/button&gt;&lt;/form&gt;&lt;p data-config-estado role=&quot;status&quot;&gt;Rejilla editorial con extractos y metadatos.&lt;/p&gt;&lt;div class=&quot;codigo&quot;&gt;&lt;div class=&quot;cab&quot;&gt;&lt;span&gt;Configuración local · JSON&lt;/span&gt;&lt;button type=&quot;button&quot; data-copiar=&quot;config-editorial-json&quot;&gt;Copiar configuración&lt;/button&gt;&lt;span class=&quot;copia-estado&quot; role=&quot;status&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;pre tabindex=&quot;0&quot; aria-label=&quot;Configuración editorial JSON, desplazable&quot;&gt;&lt;code id=&quot;config-editorial-json&quot; data-config-json&gt;{&quot;version&quot;:1,&quot;disposicion&quot;:&quot;rejilla&quot;,&quot;extractos&quot;:true,&quot;metadatos&quot;:true}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p class=&quot;procedencia&quot;&gt;Configuración de presentación, independiente de la paleta y tipografía del botón de apariencia. No instala un tema de Ghost.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;#archivo-ejemplo&quot;&gt;Ver el archivo con esta configuración →&lt;/a&gt;&lt;/p&gt;&lt;/section&gt;</code></pre></div></details><footer class="pie"><p>Nota Tikin · Muestra de todos los componentes. Inspirada en <a href="https://www.cmrg.me">cmrg.me</a>; el tema claro, los ajustes de acceso y Dark Sea están documentados en el informe.</p><button type="button" data-sonido aria-pressed="false">Sonido apagado</button></footer>
+<details class="receta-copia ancho"><summary>HTML y dependencias · Configuración editorial</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Configuración editorial</span><button type="button" data-copiar="receta-fuente-configuracion" aria-label="Copiar HTML de Configuración editorial">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Configuración editorial, desplazable"><code id="receta-fuente-configuracion">&lt;section class=&quot;pieza&quot; id=&quot;configuracion-ejemplo&quot; data-config-editorial&gt;&lt;h3&gt;La misma publicación, otra edición&lt;/h3&gt;&lt;p&gt;Elige cómo se presentan las publicaciones del archivo. Los cambios se aplican en este documento.&lt;/p&gt;&lt;form class=&quot;editorial-controles&quot; aria-label=&quot;Configuración del archivo&quot;&gt;&lt;label&gt;Presentación&lt;select name=&quot;disposicion&quot;&gt;&lt;option value=&quot;rejilla&quot;&gt;Rejilla editorial&lt;/option&gt;&lt;option value=&quot;lista&quot;&gt;Lista de lectura&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;&lt;label class=&quot;editorial-check&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;extractos&quot; checked&gt; Mostrar extractos&lt;/label&gt;&lt;label class=&quot;editorial-check&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;metadatos&quot; checked&gt; Mostrar autoría y formato&lt;/label&gt;&lt;button type=&quot;reset&quot;&gt;Restablecer edición&lt;/button&gt;&lt;/form&gt;&lt;p data-config-estado role=&quot;status&quot;&gt;Rejilla editorial con extractos y metadatos.&lt;/p&gt;&lt;div class=&quot;codigo&quot;&gt;&lt;div class=&quot;cab&quot;&gt;&lt;span&gt;Configuración local · JSON&lt;/span&gt;&lt;button type=&quot;button&quot; data-copiar=&quot;config-editorial-json&quot;&gt;Copiar configuración&lt;/button&gt;&lt;span class=&quot;copia-estado&quot; role=&quot;status&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;pre tabindex=&quot;0&quot; aria-label=&quot;Configuración editorial JSON, desplazable&quot;&gt;&lt;code id=&quot;config-editorial-json&quot; data-config-json&gt;{&quot;version&quot;:1,&quot;disposicion&quot;:&quot;rejilla&quot;,&quot;extractos&quot;:true,&quot;metadatos&quot;:true}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p class=&quot;procedencia&quot;&gt;Configuración de presentación, independiente de la paleta y tipografía del botón de apariencia. No instala un tema de Ghost.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;#archivo-ejemplo&quot;&gt;Ver el archivo con esta configuración →&lt;/a&gt;&lt;/p&gt;&lt;/section&gt;</code></pre></div></details>
+<section class="pieza amplio" id="explorador-ejemplo" data-explorador>
+<h3>Explorar el registro</h3><p>Seis registros ficticios. Ordena por encabezado, filtra y agrupa sin perder el detalle.</p>
+<form class="editorial-controles" aria-label="Explorar registros"><label>Buscar<input type="search" name="buscar" placeholder="Nombre, equipo o estado"></label><label>Estado<select name="estado"><option value="">Todos</option><option>En revisión</option><option>Confirmado</option></select></label><label>Agrupar por<select name="grupo"><option value="">Sin grupos</option><option value="1">Equipo</option><option value="2">Estado</option></select></label><button type="reset">Limpiar vista</button></form>
+<p data-explorador-estado role="status">6 registros de ejemplo.</p><div class="tabla-caja" tabindex="0" role="region" aria-label="Registros ordenables y agrupables, desplazables"><table><caption>Movimientos ilustrativos · importes en COP</caption><thead><tr><th scope="col"><button type="button">Nombre ↕</button></th><th scope="col"><button type="button">Equipo ↕</button></th><th scope="col"><button type="button">Estado ↕</button></th><th scope="col"><button type="button">Importe COP ↕</button></th></tr></thead><tbody>
+<tr><th scope="row">Sesión de diseño</th><td>Producto</td><td>En revisión</td><td data-valor="120000">120.000</td></tr>
+<tr><th scope="row">Prueba de lectura</th><td>Investigación</td><td>Confirmado</td><td data-valor="80000">80.000</td></tr>
+<tr><th scope="row">Revisión móvil</th><td>Producto</td><td>Confirmado</td><td data-valor="60000">60.000</td></tr>
+<tr><th scope="row">Entrevista inicial</th><td>Investigación</td><td>En revisión</td><td data-valor="95000">95.000</td></tr>
+<tr><th scope="row">Control de calidad</th><td>Ingeniería</td><td>Confirmado</td><td data-valor="140000">140.000</td></tr>
+<tr><th scope="row">Ajuste de interfaz</th><td>Ingeniería</td><td>En revisión</td><td data-valor="75000">75.000</td></tr>
+</tbody></table></div></section>
+<details class="receta-copia ancho"><summary>HTML y dependencias · Tabla interactiva</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Tabla interactiva</span><button type="button" data-copiar="receta-fuente-explorador" aria-label="Copiar HTML de Tabla interactiva">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Tabla interactiva, desplazable"><code id="receta-fuente-explorador">&lt;section class=&quot;pieza amplio&quot; id=&quot;explorador-ejemplo&quot; data-explorador&gt;
+&lt;h3&gt;Explorar el registro&lt;/h3&gt;&lt;p&gt;Seis registros ficticios. Ordena por encabezado, filtra y agrupa sin perder el detalle.&lt;/p&gt;
+&lt;form class=&quot;editorial-controles&quot; aria-label=&quot;Explorar registros&quot;&gt;&lt;label&gt;Buscar&lt;input type=&quot;search&quot; name=&quot;buscar&quot; placeholder=&quot;Nombre, equipo o estado&quot;&gt;&lt;/label&gt;&lt;label&gt;Estado&lt;select name=&quot;estado&quot;&gt;&lt;option value=&quot;&quot;&gt;Todos&lt;/option&gt;&lt;option&gt;En revisión&lt;/option&gt;&lt;option&gt;Confirmado&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;&lt;label&gt;Agrupar por&lt;select name=&quot;grupo&quot;&gt;&lt;option value=&quot;&quot;&gt;Sin grupos&lt;/option&gt;&lt;option value=&quot;1&quot;&gt;Equipo&lt;/option&gt;&lt;option value=&quot;2&quot;&gt;Estado&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;&lt;button type=&quot;reset&quot;&gt;Limpiar vista&lt;/button&gt;&lt;/form&gt;
+&lt;p data-explorador-estado role=&quot;status&quot;&gt;6 registros de ejemplo.&lt;/p&gt;&lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Registros ordenables y agrupables, desplazables&quot;&gt;&lt;table&gt;&lt;caption&gt;Movimientos ilustrativos · importes en COP&lt;/caption&gt;&lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;&lt;button type=&quot;button&quot;&gt;Nombre ↕&lt;/button&gt;&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;&lt;button type=&quot;button&quot;&gt;Equipo ↕&lt;/button&gt;&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;&lt;button type=&quot;button&quot;&gt;Estado ↕&lt;/button&gt;&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;&lt;button type=&quot;button&quot;&gt;Importe COP ↕&lt;/button&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Sesión de diseño&lt;/th&gt;&lt;td&gt;Producto&lt;/td&gt;&lt;td&gt;En revisión&lt;/td&gt;&lt;td data-valor=&quot;120000&quot;&gt;120.000&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Prueba de lectura&lt;/th&gt;&lt;td&gt;Investigación&lt;/td&gt;&lt;td&gt;Confirmado&lt;/td&gt;&lt;td data-valor=&quot;80000&quot;&gt;80.000&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Revisión móvil&lt;/th&gt;&lt;td&gt;Producto&lt;/td&gt;&lt;td&gt;Confirmado&lt;/td&gt;&lt;td data-valor=&quot;60000&quot;&gt;60.000&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Entrevista inicial&lt;/th&gt;&lt;td&gt;Investigación&lt;/td&gt;&lt;td&gt;En revisión&lt;/td&gt;&lt;td data-valor=&quot;95000&quot;&gt;95.000&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Control de calidad&lt;/th&gt;&lt;td&gt;Ingeniería&lt;/td&gt;&lt;td&gt;Confirmado&lt;/td&gt;&lt;td data-valor=&quot;140000&quot;&gt;140.000&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Ajuste de interfaz&lt;/th&gt;&lt;td&gt;Ingeniería&lt;/td&gt;&lt;td&gt;En revisión&lt;/td&gt;&lt;td data-valor=&quot;75000&quot;&gt;75.000&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/section&gt;</code></pre></div></details>
+<section class="pieza ancho" id="cards-ejemplo"><h3>Tarjetas con un propósito</h3><div class="cards-editoriales">
+<article class="card-editorial"><p class="ceja">Lectura / 01</p><h4><a href="informe.html#evidencia">De la hipótesis a la evidencia</a></h4><p>Una tarjeta editorial con título, extracto y destino concreto.</p><p class="procedencia">Ensayo de ejemplo · Investigación</p></article>
+<article class="card-editorial card-dato"><p class="ceja">Indicador / 02</p><h4>Sesiones revisadas</h4><p class="card-valor">12 <span>de 20</span></p><meter min="0" max="20" value="12" aria-label="12 de 20 sesiones revisadas">60 %</meter><p class="procedencia">60 % · cifras ficticias para mostrar cobertura, no progreso en tiempo real.</p></article>
+<article class="card-editorial"><p class="ceja">Proyecto / 03</p><h4>Confirmar con contexto</h4><p><span class="pildora p-medio">Propuesta por validar</span></p><dl><dt>Siguiente paso</dt><dd>Observar una tarea completa.</dd></dl><a href="informe.html#prototipo">Probar el prototipo →</a></article>
+</div></section>
+<details class="receta-copia ancho"><summary>HTML y dependencias · Familia de cards</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Familia de cards</span><button type="button" data-copiar="receta-fuente-cards" aria-label="Copiar HTML de Familia de cards">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Familia de cards, desplazable"><code id="receta-fuente-cards">&lt;section class=&quot;pieza ancho&quot; id=&quot;cards-ejemplo&quot;&gt;&lt;h3&gt;Tarjetas con un propósito&lt;/h3&gt;&lt;div class=&quot;cards-editoriales&quot;&gt;
+&lt;article class=&quot;card-editorial&quot;&gt;&lt;p class=&quot;ceja&quot;&gt;Lectura / 01&lt;/p&gt;&lt;h4&gt;&lt;a href=&quot;informe.html#evidencia&quot;&gt;De la hipótesis a la evidencia&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Una tarjeta editorial con título, extracto y destino concreto.&lt;/p&gt;&lt;p class=&quot;procedencia&quot;&gt;Ensayo de ejemplo · Investigación&lt;/p&gt;&lt;/article&gt;
+&lt;article class=&quot;card-editorial card-dato&quot;&gt;&lt;p class=&quot;ceja&quot;&gt;Indicador / 02&lt;/p&gt;&lt;h4&gt;Sesiones revisadas&lt;/h4&gt;&lt;p class=&quot;card-valor&quot;&gt;12 &lt;span&gt;de 20&lt;/span&gt;&lt;/p&gt;&lt;meter min=&quot;0&quot; max=&quot;20&quot; value=&quot;12&quot; aria-label=&quot;12 de 20 sesiones revisadas&quot;&gt;60 %&lt;/meter&gt;&lt;p class=&quot;procedencia&quot;&gt;60 % · cifras ficticias para mostrar cobertura, no progreso en tiempo real.&lt;/p&gt;&lt;/article&gt;
+&lt;article class=&quot;card-editorial&quot;&gt;&lt;p class=&quot;ceja&quot;&gt;Proyecto / 03&lt;/p&gt;&lt;h4&gt;Confirmar con contexto&lt;/h4&gt;&lt;p&gt;&lt;span class=&quot;pildora p-medio&quot;&gt;Propuesta por validar&lt;/span&gt;&lt;/p&gt;&lt;dl&gt;&lt;dt&gt;Siguiente paso&lt;/dt&gt;&lt;dd&gt;Observar una tarea completa.&lt;/dd&gt;&lt;/dl&gt;&lt;a href=&quot;informe.html#prototipo&quot;&gt;Probar el prototipo →&lt;/a&gt;&lt;/article&gt;
+&lt;/div&gt;&lt;/section&gt;</code></pre></div></details>
+<section class="pieza" id="revision-ejemplo" data-revision>
+<h3>Revisar sin perder el contexto</h3><p>Activa Comentar y elige un párrafo, título, figura o card. También puedes seleccionar texto antes de pulsar Comentar.</p><div class="acciones"><button type="button" data-revision-modo aria-pressed="false">Comentar documento</button><button type="button" data-revision-lista>Ver comentarios</button></div><p data-revision-estado role="status">Borrador local de esta pestaña. Copia tus comentarios antes de recargar.</p>
+<dialog class="revision-dialogo revision-ui" data-revision-editor aria-labelledby="revision-editor-titulo"><form><h2 id="revision-editor-titulo">Añadir comentario</h2><p data-revision-contexto></p><label for="revision-texto">Ajuste que propones</label><textarea id="revision-texto" data-revision-texto rows="5" maxlength="4000" required placeholder="Qué cambiarías y por qué"></textarea><div class="acciones"><button type="button" data-revision-guardar>Guardar comentario</button><button type="button" data-revision-cancelar>Cancelar</button></div></form></dialog>
+<dialog class="revision-dialogo revision-ui" data-revision-panel aria-labelledby="revision-panel-titulo"><h2 id="revision-panel-titulo">Comentarios del documento</h2><ol data-revision-notas></ol><div class="codigo"><div class="cab"><span>Prompt de ajustes</span><button type="button" data-copiar="revision-prompt">Copiar prompt</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Prompt con comentarios, desplazable"><code id="revision-prompt" data-revision-prompt>No hay comentarios todavía.</code></pre></div><button type="button" data-revision-cerrar>Cerrar comentarios</button></dialog>
+</section>
+<details class="receta-copia ancho"><summary>HTML y dependencias · Comentarios sobre el documento</summary><p class="procedencia">Requiere fuentes.css, estilo.css e interacciones.js. Consulta los módulos y límites de esta receta en componentes.md.</p><div class="codigo"><div class="cab"><span>Comentarios sobre el documento</span><button type="button" data-copiar="receta-fuente-revision" aria-label="Copiar HTML de Comentarios sobre el documento">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Comentarios sobre el documento, desplazable"><code id="receta-fuente-revision">&lt;section class=&quot;pieza&quot; id=&quot;revision-ejemplo&quot; data-revision&gt;
+&lt;h3&gt;Revisar sin perder el contexto&lt;/h3&gt;&lt;p&gt;Activa Comentar y elige un párrafo, título, figura o card. También puedes seleccionar texto antes de pulsar Comentar.&lt;/p&gt;&lt;div class=&quot;acciones&quot;&gt;&lt;button type=&quot;button&quot; data-revision-modo aria-pressed=&quot;false&quot;&gt;Comentar documento&lt;/button&gt;&lt;button type=&quot;button&quot; data-revision-lista&gt;Ver comentarios&lt;/button&gt;&lt;/div&gt;&lt;p data-revision-estado role=&quot;status&quot;&gt;Borrador local de esta pestaña. Copia tus comentarios antes de recargar.&lt;/p&gt;
+&lt;dialog class=&quot;revision-dialogo revision-ui&quot; data-revision-editor aria-labelledby=&quot;revision-editor-titulo&quot;&gt;&lt;form&gt;&lt;h2 id=&quot;revision-editor-titulo&quot;&gt;Añadir comentario&lt;/h2&gt;&lt;p data-revision-contexto&gt;&lt;/p&gt;&lt;label for=&quot;revision-texto&quot;&gt;Ajuste que propones&lt;/label&gt;&lt;textarea id=&quot;revision-texto&quot; data-revision-texto rows=&quot;5&quot; maxlength=&quot;4000&quot; required placeholder=&quot;Qué cambiarías y por qué&quot;&gt;&lt;/textarea&gt;&lt;div class=&quot;acciones&quot;&gt;&lt;button type=&quot;button&quot; data-revision-guardar&gt;Guardar comentario&lt;/button&gt;&lt;button type=&quot;button&quot; data-revision-cancelar&gt;Cancelar&lt;/button&gt;&lt;/div&gt;&lt;/form&gt;&lt;/dialog&gt;
+&lt;dialog class=&quot;revision-dialogo revision-ui&quot; data-revision-panel aria-labelledby=&quot;revision-panel-titulo&quot;&gt;&lt;h2 id=&quot;revision-panel-titulo&quot;&gt;Comentarios del documento&lt;/h2&gt;&lt;ol data-revision-notas&gt;&lt;/ol&gt;&lt;div class=&quot;codigo&quot;&gt;&lt;div class=&quot;cab&quot;&gt;&lt;span&gt;Prompt de ajustes&lt;/span&gt;&lt;button type=&quot;button&quot; data-copiar=&quot;revision-prompt&quot;&gt;Copiar prompt&lt;/button&gt;&lt;span class=&quot;copia-estado&quot; role=&quot;status&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;pre tabindex=&quot;0&quot; aria-label=&quot;Prompt con comentarios, desplazable&quot;&gt;&lt;code id=&quot;revision-prompt&quot; data-revision-prompt&gt;No hay comentarios todavía.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;button type=&quot;button&quot; data-revision-cerrar&gt;Cerrar comentarios&lt;/button&gt;&lt;/dialog&gt;
+&lt;/section&gt;</code></pre></div></details><footer class="pie"><p>Nota Tikin · Muestra de todos los componentes. Inspirada en <a href="https://www.cmrg.me">cmrg.me</a>; el tema claro, los ajustes de acceso y Dark Sea están documentados en el informe.</p><button type="button" data-sonido aria-pressed="false">Sonido apagado</button></footer>
 </main>
 <div class="regla" role="slider" tabindex="0" aria-orientation="vertical" aria-label="Progreso de lectura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="ticks"></div><div class="cursor"></div><span class="val">0%</span></div>
 <script>
@@ -3859,7 +3946,7 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
       if(instances.has(element))throw new TypeError('Ya existe una escritura en este contenedor.');
       const paths=[...element.querySelectorAll('path[data-trazo]')];
       if(!paths.length||!element.querySelector('[data-texto-escritura]'))throw new TypeError('Se necesitan paths y texto equivalente.');
-      this.element=element;this.paths=paths;this.dead=false;this.visible=false;this.animations=[];this.epoch=0;
+      this.element=element;this.paths=paths;this.dead=false;this.visible=false;this.played=false;this.animations=[];this.epoch=0;
       this.duration=Number(element.dataset.duracion||2400);
       if(!Number.isFinite(this.duration)||this.duration<100||this.duration>10000)throw new TypeError('Duración entre 100 y 10000 ms.');
       this.lengths=paths.map(p=>p.getTotalLength());
@@ -3873,7 +3960,7 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
       },{signal:this.abort.signal});
       this.motion.addEventListener('change',()=>{if(this.motion.matches)this.finish();this.sync();},{signal:this.abort.signal});
       document.addEventListener('visibilitychange',()=>{if(document.hidden)this.finish();},{signal:this.abort.signal});
-      this.intersection=new IntersectionObserver(entries=>{this.visible=entries[0].isIntersecting;if(!this.visible)this.finish();});this.intersection.observe(element);
+      this.intersection=new IntersectionObserver(entries=>{this.visible=entries[0].isIntersecting&&entries[0].intersectionRatio>=.3;if(!this.visible)this.finish();else if(element.hasAttribute('data-al-ver')&&!this.played&&!this.motion.matches){this.played=true;this.play();}},{threshold:[0,.3]});this.intersection.observe(element.querySelector('.escritura-caja')||element);
       this.sync();instances.set(element,this);
     }
     sync(){const button=this.element.querySelector('[data-escribir]');if(button){button.disabled=this.motion.matches;button.textContent=this.motion.matches?'Trazo completo (movimiento reducido)':'Repetir escritura';}}
@@ -4305,7 +4392,7 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
       this.status=root.querySelector('[data-visor-estado]');this.box=root.querySelector('.visor-caja');
       this.source=root.querySelector('.visor-fuente');this.buttons=[...root.querySelectorAll('[data-ancho-visor]')];
       if(!template||!this.status||!this.box||!this.source||!this.buttons.length)throw new TypeError('Faltan template, alternativa o controles del visor.');
-      this.template=template;this.originalStatus=this.status.textContent;
+      this.template=template;this.initialTemplate=template;this.originalStatus=this.status.textContent;
       this.originalPressed=this.buttons.map(b=>b.getAttribute('aria-pressed'));
       this.originalSource=this.source.hasAttribute('data-oculta');
       if(template.content.querySelector('script') || [...template.content.querySelectorAll('*')].some(e=>[...e.attributes].some(a=>/^on/i.test(a.name)))) throw new TypeError('Usa HTML declarativo sin scripts ni manejadores inline.');
@@ -4315,7 +4402,8 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
       this.on(root,'click',e=>{
         const size=e.target.closest('[data-ancho-visor]');
         if(size&&root.contains(size))this.setWidth(size.dataset.anchoVisor);
-        if(e.target.closest('[data-reiniciar-visor]'))this.reset();
+        if(e.target.closest('[data-reiniciar-visor]')){this.template=this.initialTemplate;this.reset();}
+        if(e.target.closest('[data-cargar-html]')){const input=root.querySelector('[data-html-visor]'),state=root.querySelector('[data-importar-estado]');try{this.loadHTML(input.value);state.textContent='HTML cargado. Cambia entre Móvil y Escritorio para revisarlo.';}catch(error){state.textContent=error.message;}}
       });
       this.on(this.shadow,'click',e=>{
         const button=e.target.closest('[data-demo-ir]');if(!button)return;
@@ -4337,6 +4425,19 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
       const base=document.createElement('style');
       base.textContent=':host{display:block;container-type:inline-size;color:var(--pieza-tinta);font:16px/1.6 var(--sans)}*,*::before,*::after{box-sizing:border-box} [hidden]{display:none!important} :focus-visible{outline:2px dashed var(--foco);outline-offset:3px} @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}';
       this.shadow.prepend(base);this.measure();
+    }
+    loadHTML(source) {
+      if(this.dead)return;
+      if(typeof source!=='string'||!source.trim()||source.length>100000)throw new TypeError('Pega entre 1 y 100.000 caracteres de HTML local.');
+      const template=document.createElement('template');template.innerHTML=source;
+      if(template.content.querySelector('script,iframe,object,embed,link,base,meta,template'))throw new TypeError('El visor admite HTML declarativo sin scripts, iframes ni recursos externos.');
+      for(const node of template.content.querySelectorAll('*'))for(const a of node.attributes){
+        if(/^on/i.test(a.name)||['srcdoc','action','formaction','srcset'].includes(a.name))throw new TypeError('Retira scripts, envíos y recursos externos del HTML.');
+        if(['href','src','poster','xlink:href'].includes(a.name)&&!a.value.startsWith('#')&&!/^data:image\/(png|jpeg|webp|gif);base64,/i.test(a.value))throw new TypeError('Usa enlaces internos e imágenes raster incrustadas como data: URI.');
+      }
+      const styles=[...template.content.querySelectorAll('style')].map(e=>e.textContent).concat([...template.content.querySelectorAll('[style]')].map(e=>e.getAttribute('style'))).join(' ');
+      if(/@import|url\s*\(/i.test(styles))throw new TypeError('Retira @import y url() del CSS pegado; usa los tokens del documento.');
+      this.template=template;this.reset();
     }
     setWidth(raw) {
       const n=raw==='auto'?null:Number(raw);
@@ -4482,6 +4583,116 @@ window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
     });
   }
   window.NotaEditorial={init,get:el=>instances.get(el)};init();
+})();
+
+</script>
+<script>
+/* Resaltado HTML local. Construye nodos de texto; nunca interpreta el código copiable. */
+(()=>{'use strict';
+ function init(root=document){root.querySelectorAll('.receta-copia code,[data-lenguaje="html"]').forEach(code=>{
+  if(code.dataset.coloreado)return;const source=code.textContent;if(!source.trim().startsWith('<'))return;
+  const frag=document.createDocumentFragment(),add=(s,cls)=>{if(!cls){frag.append(document.createTextNode(s));return;}const span=document.createElement('span');span.className=cls;span.textContent=s;frag.append(span);};
+  const re=/<!--[\s\S]*?-->|<\/?[A-Za-z][^>]*>/g;let end=0;
+  for(const match of source.matchAll(re)){add(source.slice(end,match.index));const token=match[0];if(token.startsWith('<!--'))add(token,'com');else{
+   const parts=/(<\/?[\w:-]+)|("[^"]*"|'[^']*')|([\w:-]+)(?=\s*=)/g;let pos=0;
+   for(const p of token.matchAll(parts)){add(token.slice(pos,p.index));add(p[0],p[1]?'kw':p[2]?'str':'codigo-atributo');pos=p.index+p[0].length;}add(token.slice(pos));
+  }end=match.index+token.length;}add(source.slice(end));code.replaceChildren(frag);code.dataset.coloreado='';
+ });}
+ window.NotaCodigo={init};init();
+})();
+
+</script>
+<script>
+/* Tabla exploradora: búsqueda, filtro, orden y grupos explícitos. Sin datos remotos. */
+(()=>{'use strict';const instances=new WeakMap(),normal=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+ function init(root=document){return [...(root.matches?.('[data-explorador]')?[root]:[]),...root.querySelectorAll('[data-explorador]')].map(el=>{
+  if(instances.has(el))return instances.get(el);const form=el.querySelector('form'),table=el.querySelector('table'),status=el.querySelector('[data-explorador-estado]'),initial=table?.tBodies[0],rows=[...(initial?.rows||[])];
+  if(!form||!status||!rows.length||rows.some(r=>r.cells.length!==4||!Number.isFinite(Number(r.cells[3].dataset.valor))))return null;
+  const abort=new AbortController(),headers=[...table.tHead.rows[0].cells],originalSort=headers.map(h=>h.getAttribute('aria-sort')),before=status.textContent;
+  let column=0,direction=1;const parts=[];
+  function update(){parts.splice(0).forEach(p=>p.remove());initial.remove();
+   const words=normal(form.elements.buscar.value).trim().split(/\s+/),state=form.elements.estado.value,group=form.elements.grupo.value;
+   const visible=rows.filter(r=>(!state||r.cells[2].textContent.trim()===state)&&words.every(w=>normal(r.textContent).includes(w)));
+   visible.sort((a,b)=>direction*(column===3?Number(a.cells[3].dataset.valor)-Number(b.cells[3].dataset.valor):a.cells[column].textContent.localeCompare(b.cells[column].textContent,'es',{numeric:true,sensitivity:'base'}))||rows.indexOf(a)-rows.indexOf(b));
+   const groups=new Map();visible.forEach(r=>{const key=group?r.cells[Number(group)].textContent.trim():'';if(!groups.has(key))groups.set(key,[]);groups.get(key).push(r);});
+   if(!visible.length){const body=document.createElement('tbody'),row=body.insertRow(),cell=row.insertCell();cell.colSpan=4;cell.textContent='No hay filas que coincidan. Limpia los filtros para volver a empezar.';table.append(body);parts.push(body);}
+   for(const [name,items] of [...groups].sort(([a],[b])=>a.localeCompare(b,'es'))){const body=document.createElement('tbody');if(group){const tr=body.insertRow(),th=document.createElement('th');th.scope='rowgroup';th.colSpan=4;th.className='tabla-grupo';th.textContent=name+' · '+items.length+' registros';tr.append(th);}items.forEach(r=>body.append(r));table.append(body);parts.push(body);}
+   const total=visible.reduce((s,r)=>s+Number(r.cells[3].dataset.valor),0);
+   status.textContent=visible.length+' de '+rows.length+' registros · '+total.toLocaleString('es-CO')+' COP en la vista actual.';
+   headers.forEach((h,i)=>h.setAttribute('aria-sort',i===column?(direction===1?'ascending':'descending'):'none'));
+  }
+  form.addEventListener('input',update,{signal:abort.signal});form.addEventListener('change',update,{signal:abort.signal});form.addEventListener('submit',e=>e.preventDefault(),{signal:abort.signal});
+  form.addEventListener('reset',()=>queueMicrotask(()=>{if(abort.signal.aborted)return;column=0;direction=1;update();}),{signal:abort.signal});
+  headers.forEach((h,i)=>h.querySelector('button')?.addEventListener('click',()=>{direction=column===i?-direction:1;column=i;update();},{signal:abort.signal}));
+  const instance={update,destroy(){abort.abort();parts.forEach(p=>p.remove());rows.forEach(r=>initial.append(r));table.append(initial);headers.forEach((h,i)=>originalSort[i]===null?h.removeAttribute('aria-sort'):h.setAttribute('aria-sort',originalSort[i]));status.textContent=before;instances.delete(el);}};
+  instances.set(el,instance);update();return instance;
+ });}
+ window.NotaExplorador={init,get:el=>instances.get(el)};init();
+})();
+
+</script>
+<script>
+/* Revisión local de bloques. Sin red ni almacenamiento; prompt explícito y copiable. */
+(()=>{'use strict';const instances=new WeakMap();
+ function init(root=document){return [...(root.matches?.('[data-revision]')?[root]:[]),...root.querySelectorAll('[data-revision]')].map(el=>{
+  if(instances.has(el))return instances.get(el);
+  const editor=el.querySelector('[data-revision-editor]'),panel=el.querySelector('[data-revision-panel]'),input=el.querySelector('[data-revision-texto]'),context=el.querySelector('[data-revision-contexto]'),list=el.querySelector('[data-revision-notas]'),prompt=el.querySelector('[data-revision-prompt]'),status=el.querySelector('[data-revision-estado]');
+  if(!editor||!panel||!input||!context||!list||!prompt||!status)return null;
+  const abort=new AbortController(),notes=[],addedIDs=new Map(),originalStatus=status.textContent,originalPrompt=prompt.textContent;
+  let mode=false,pending=null,editing=null,serial=0;const focusTargets=new Map();
+  const bar=document.createElement('div');bar.className='revision-barra revision-ui';bar.setAttribute('role','group');bar.setAttribute('aria-label','Revisar este documento');
+  const modeButton=el.querySelector('[data-revision-modo]').cloneNode(true),listButton=el.querySelector('[data-revision-lista]').cloneNode(true);bar.append(modeButton,listButton);document.body.append(bar,editor,panel);
+  function listen(node,type,fn,options={}){node.addEventListener(type,fn,{...options,signal:abort.signal});}
+  function setMode(value){
+   focusTargets.forEach((old,node)=>old===null?node.removeAttribute('tabindex'):node.setAttribute('tabindex',old));focusTargets.clear();
+   if(value)document.querySelectorAll('main .pagina.viva p,main .pagina.viva h1,main .pagina.viva h2,main .pagina.viva h3,main .pagina.viva figure,main:not(.multipagina) p,main:not(.multipagina) figure').forEach(node=>{if(node.closest('.receta-copia,[data-revision],.revision-ui')||!node.getClientRects().length)return;focusTargets.set(node,node.getAttribute('tabindex'));node.tabIndex=0;});
+   mode=value;document.documentElement.toggleAttribute('data-revisando',mode);[modeButton,el.querySelector('[data-revision-modo]')].forEach(b=>{b.setAttribute('aria-pressed',String(mode));b.textContent=mode?'Elige un fragmento · Esc cancela':'Comentar documento';});status.textContent=mode?'Elige un párrafo, título, figura o card. Escape cancela.':notes.length+' comentarios locales. Copia antes de recargar.';}
+  function make(tag,text){const node=document.createElement(tag);node.textContent=text;return node;}
+  function render(){list.replaceChildren();notes.forEach((note,i)=>{
+   note.marker.textContent=String(i+1);note.marker.setAttribute('aria-label','Editar comentario '+(i+1));
+   const li=document.createElement('li'),quote=make('blockquote',note.quote),p=make('p',note.text),actions=document.createElement('div');actions.className='acciones';
+   const link=make('a','Ver fragmento');link.href='#'+note.target.id;listen(link,'click',()=>panel.close());
+   const edit=make('button','Editar'),remove=make('button','Borrar');edit.type=remove.type='button';listen(edit,'click',()=>{panel.close();open(note);});listen(remove,'click',()=>{note.marker.remove();notes.splice(notes.indexOf(note),1);render();panel.querySelector('[data-revision-cerrar]').focus();});
+   actions.append(link,edit,remove);li.append(make('p',(i+1)+'. '+note.page+' · '+note.reference),quote,p,actions);list.append(li);
+  });
+  if(!notes.length)list.append(make('li','Todavía no hay comentarios. Cierra esta ventana y elige un fragmento.'));
+  prompt.textContent=notes.length?'Aplica estos ajustes al artefacto «'+document.title+'». Conserva el contenido y comportamiento no señalados.\n\n'+notes.map((n,i)=>(i+1)+'. Capítulo: '+n.page+'\nReferencia: #'+n.reference+'\nFragmento: '+n.quote+'\nAjuste: '+n.text).join('\n\n'):'No hay comentarios todavía.';
+  listButton.textContent='Ver comentarios · '+notes.length;status.textContent=notes.length+' comentarios locales. Copia antes de recargar.';
+  }
+  function open(note){editing=notes.includes(note)?note:null;pending=note;setMode(false);context.textContent=note.page+' · '+note.quote;input.value=editing?note.text:'';editor.querySelector('h2').textContent=editing?'Editar comentario':'Añadir comentario';editor.showModal();input.focus();}
+  function choose(target,selection=''){
+   if(!target||!target.closest('main')||target.closest('.revision-ui,.receta-copia,[data-revision]'))return;
+   const page=target.closest('.pagina'),reference=target.closest('[id]')?.id||page?.id||'contenido';
+   const quote=(selection||target.textContent).trim().replace(/\s+/g,' ').slice(0,1000);if(!quote)return;
+   open({target,reference,page:page?.querySelector('h1')?.textContent||document.title,quote,text:''});
+  }
+  function toggle(){const selected=getSelection(),text=selected?.toString().trim(),node=selected?.anchorNode;
+   if(text&&node){const element=node.nodeType===1?node:node.parentElement;const target=element.closest('p,h1,h2,h3,h4,figure,.card-editorial,li');if(target?.closest('main')&&!target.closest('.revision-ui,.receta-copia')){choose(target,text);return;}}
+   setMode(!mode);
+  }
+  [modeButton,el.querySelector('[data-revision-modo]')].forEach(b=>listen(b,'click',toggle));
+  [listButton,el.querySelector('[data-revision-lista]')].forEach(b=>listen(b,'click',()=>{setMode(false);render();panel.showModal();}));
+  listen(document,'click',event=>{
+   if(!mode||event.target.closest('.revision-ui,button,input,select,textarea,summary,a,.barra,.receta-copia'))return;
+   let target=event.target.closest('figure,table,.card-editorial')||event.target.closest('p,h1,h2,h3,h4,.card-editorial,li');if(!target?.closest('main'))return;
+   event.preventDefault();event.stopPropagation();choose(target);
+  },{capture:true});
+  listen(document,'nota:pagina',()=>{if(mode)setMode(false);});
+  listen(document,'keydown',e=>{if(mode&&e.key==='Enter'&&focusTargets.has(e.target)){e.preventDefault();choose(e.target);return;}if(e.key==='Escape'&&mode){setMode(false);modeButton.focus();}});
+  listen(editor.querySelector('form'),'submit',e=>e.preventDefault());
+  listen(editor.querySelector('[data-revision-guardar]'),'click',()=>{
+   if(!input.value.trim()){input.setCustomValidity('Escribe el ajuste que propones.');input.reportValidity();return;}input.setCustomValidity('');if(!input.reportValidity())return;
+   pending.text=input.value.trim();
+   if(!editing){const note=pending;if(!note.target.id){let id;do{id='nota-revision-bloque-'+(++serial);}while(document.getElementById(id));addedIDs.set(note.target,'');note.target.id=id;}
+    const marker=make('button','');marker.type='button';marker.className='revision-marca';note.marker=marker;note.target.before(marker);notes.push(note);listen(marker,'click',()=>open(note));
+   }render();editor.close();pending=null;editing=null;modeButton.focus();
+  });
+  listen(input,'input',()=>input.setCustomValidity(''));
+  listen(editor.querySelector('[data-revision-cancelar]'),'click',()=>editor.close());listen(panel.querySelector('[data-revision-cerrar]'),'click',()=>panel.close());
+  const instance={get comments(){return notes.map(({text,quote,page,reference})=>({text,quote,page,reference}));},destroy(){setMode(false);abort.abort();editor.close();panel.close();bar.remove();notes.forEach(n=>n.marker.remove());addedIDs.forEach((_,node)=>node.removeAttribute('id'));el.append(editor,panel);status.textContent=originalStatus;prompt.textContent=originalPrompt;list.replaceChildren();instances.delete(el);}};
+  instances.set(el,instance);return instance;
+ });}
+ window.NotaRevision={init,get:el=>instances.get(el)};init();
 })();
 
 </script>
