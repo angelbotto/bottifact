@@ -54,6 +54,8 @@ y que el título no quede debajo de la barra fija.
 ## Empezar por la pieza
 
 Lee [estilo.css](estilo.css) y copia la hoja completa dentro de `<style>`; no la recrees de memoria.
+Incluye también [fuentes.css](fuentes.css), con los WOFF2 incrustados y sus avisos OFL.
+Las familias y pesos son los mismos: la incrustación elimina descargas de fuentes durante la lectura.
 Para un informe de varios capítulos, añade [multipagina.js](multipagina.js).
 [componentes.md](componentes.md) contiene el HTML y los criterios de cada componente.
 [plantilla.html](plantilla.html) muestra todos juntos. Usa solo los que expliquen el contenido;
@@ -140,8 +142,9 @@ Escribe un fragmento, **sin `<html>`, `<head>` ni `<body>`**. Empieza por `<titl
 `<meta charset="utf-8">` antes de los primeros 1024 bytes y pega `<style>` con la hoja completa.
 La declaración temprana evita acentos rotos al abrir el mismo archivo fuera del envoltorio.
 
-- Las hojas externas solo pueden venir de `https://fonts.googleapis.com`; sus fuentes de
-  `https://fonts.gstatic.com`. La URL exacta está al inicio de los ejemplos.
+- Las hojas externas sólo pueden venir de `https://fonts.googleapis.com`. Estos ejemplos
+  incluyen sus fuentes como `data:` URI mediante `fuentes.css`, por lo que no necesitan
+  hojas ni fuentes remotas. Conserva las licencias incrustadas al copiar; no añadas `@import`.
 - Guiones externos: `cdnjs.cloudflare.com`, `cdn.jsdelivr.net/npm/`, `cdn.tailwindcss.com`,
   `code.jquery.com`. Three.js está fijado a `0.160.1/three.min.js` en cdnjs: versión clásica sin
   importaciones o complementos externos. No dependas de `latest`.
@@ -211,6 +214,8 @@ Si modificas las fuentes de este skill, ejecuta `python3 scripts/ensamblar.py` p
 los HTML y `python3 scripts/validar.py` para comprobar sus restricciones estructurales.
 El ensamblador es local, no instala dependencias ni publica nada. Los HTML generados contienen
 CSS, JS, portadas y máscara terrestre; no requieren subir archivos relativos.
+Incluyen también los 16 WOFF2 de `fuentes.css` (211.396 bytes antes de base64); procedencia
+y hashes en [auditoria/fuentes.json](auditoria/fuentes.json). El ensamblador no vuelve a descargarlos.
 
 [multipagina.html](multipagina.html) contiene el ejemplo completo de capítulos;
 [pruebas.html](pruebas.html) es la fixture de regresiones (índice, copia, anchos e impresión).

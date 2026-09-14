@@ -3,7 +3,6 @@
 from pathlib import Path
 import json, base64, hashlib, re
 ROOT = Path(__file__).resolve().parents[1]
-FONTS = 'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Reenie+Beanie&display=swap'
 THREE = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js'
 DATA = {
  'points': [
@@ -31,7 +30,7 @@ DATA = {
 def script(file): return '<script>\n' + (ROOT / file).read_text() + '\n</script>\n'
 
 def start(title):
- return '<title>' + title + '</title>\n<meta charset="utf-8">\n<style>\n' + (ROOT / 'estilo.css').read_text() + '\n</style>\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<link rel="stylesheet" href="' + FONTS + '">\n'
+ return '<title>' + title + '</title>\n<meta charset="utf-8">\n<style>\n' + (ROOT / 'fuentes.css').read_text() + '\n' + (ROOT / 'estilo.css').read_text() + '\n</style>\n<meta name="viewport" content="width=device-width, initial-scale=1">\n'
 
 def tools():
  return '''<div class="herramientas"><a href="#inicio" class="mono">nota / tikin</a><div class="temas"><label for="tema">Papel</label><select id="tema" data-tema><option value="system">Sistema</option><option value="light">Claro</option><option value="dark">Oscuro cálido</option><option value="sea">Dark Sea</option></select></div></div>'''

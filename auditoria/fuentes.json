@@ -1,0 +1,133 @@
+{
+  "css_source": "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Reenie+Beanie&display=swap",
+  "entries": [
+    {
+      "family": "Geist",
+      "weight": "400 600",
+      "style": "normal",
+      "source": "https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwRGFWNOITddY4.woff2",
+      "bytes": 7252,
+      "sha256": "b7a545bbb08256bd809f11cfe66d88da3e22d169ea4407737b1ef0ec1ed3d791"
+    },
+    {
+      "family": "Geist",
+      "weight": "400 600",
+      "style": "normal",
+      "source": "https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwYGFWNOITddY4.woff2",
+      "bytes": 14900,
+      "sha256": "6129fc8571c3e0cb0a4c41f5160c974a843b055009dc4ad8858bd808e18a2d86"
+    },
+    {
+      "family": "Geist",
+      "weight": "400 600",
+      "style": "normal",
+      "source": "https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwTGFWNOITddY4.woff2",
+      "bytes": 7968,
+      "sha256": "f689f638f29fff460a2d5749edb5d5c38d7bef0389f32032d871f23fc6ebb008"
+    },
+    {
+      "family": "Geist",
+      "weight": "400 600",
+      "style": "normal",
+      "source": "https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwSGFWNOITddY4.woff2",
+      "bytes": 16540,
+      "sha256": "58a6b173d5ca1dec92166ea3c6cb1a84a4144556d10928ac14e8e6b40e4787bd"
+    },
+    {
+      "family": "Geist",
+      "weight": "400 600",
+      "style": "normal",
+      "source": "https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwcGFWNOITd.woff2",
+      "bytes": 29288,
+      "sha256": "9b6f5ff45b278c744b5f379a2c4ecbaf858a842b8eaf82ac8d21b699ca16c608"
+    },
+    {
+      "family": "Geist Mono",
+      "weight": "400 500",
+      "style": "normal",
+      "source": "https://fonts.gstatic.com/s/geistmono/v6/or3nQ6H-1_WfwkMZI_qYFrodmhHkjkotbA.woff2",
+      "bytes": 6204,
+      "sha256": "e27f657e38d52887baa3b6b2f812bef93dfdd356f0810e40edd4ee284cc7e9f6"
+    },
+    {
+      "family": "Geist Mono",
+      "weight": "400 500",
+      "style": "normal",
+      "source": "https://fonts.gstatic.com/s/geistmono/v6/or3nQ6H-1_WfwkMZI_qYFrMdmhHkjkotbA.woff2",
+      "bytes": 12872,
+      "sha256": "75b3bedbebc35f347c0ae3b416aa871941555357e7b0f83767eb5987875589ed"
+    },
+    {
+      "family": "Geist Mono",
+      "weight": "400 500",
+      "style": "normal",
+      "source": "https://fonts.gstatic.com/s/geistmono/v6/or3nQ6H-1_WfwkMZI_qYFg08vz7MhEIVVeA.woff2",
+      "bytes": 5892,
+      "sha256": "d67e4a94ba498635f764ddca7d1ec4271f5642f032eb24b426764480f66f8497"
+    },
+    {
+      "family": "Geist Mono",
+      "weight": "400 500",
+      "style": "normal",
+      "source": "https://fonts.gstatic.com/s/geistmono/v6/or3nQ6H-1_WfwkMZI_qYFrgdmhHkjkotbA.woff2",
+      "bytes": 7728,
+      "sha256": "16e1d48b6dd29eb240aec5db36184eb182933c082cd43de7f35af686d58087d2"
+    },
+    {
+      "family": "Geist Mono",
+      "weight": "400 500",
+      "style": "normal",
+      "source": "https://fonts.gstatic.com/s/geistmono/v6/or3nQ6H-1_WfwkMZI_qYFrkdmhHkjkotbA.woff2",
+      "bytes": 14712,
+      "sha256": "745994b5cd950ec201b66526375f057d540847cccfc70f4f24f5f571d26d3923"
+    },
+    {
+      "family": "Geist Mono",
+      "weight": "400 500",
+      "style": "normal",
+      "source": "https://fonts.gstatic.com/s/geistmono/v6/or3nQ6H-1_WfwkMZI_qYFrcdmhHkjko.woff2",
+      "bytes": 23108,
+      "sha256": "5f3d6ad60f29d6cb708414ec6887163d63bf197377ef5417d2483ff31ace6c3b"
+    },
+    {
+      "family": "Instrument Serif",
+      "weight": "400",
+      "style": "italic",
+      "source": "https://fonts.gstatic.com/s/instrumentserif/v5/jizHRFtNs2ka5fXjeivQ4LroWlx-6zAjgn7Motmp5r61.woff2",
+      "bytes": 8444,
+      "sha256": "a04fc7ed18a8037149ce0bfda58076709d8e0840e136ed00abbdc196b7992443"
+    },
+    {
+      "family": "Instrument Serif",
+      "weight": "400",
+      "style": "italic",
+      "source": "https://fonts.gstatic.com/s/instrumentserif/v5/jizHRFtNs2ka5fXjeivQ4LroWlx-6zAjjH7Motmp5g.woff2",
+      "bytes": 15684,
+      "sha256": "6ee678c33f388dd7ba59700ebea635deb98821baafd817b09891f7927177f702"
+    },
+    {
+      "family": "Instrument Serif",
+      "weight": "400",
+      "style": "normal",
+      "source": "https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-6zsTjnTLgNuZ5w.woff2",
+      "bytes": 7828,
+      "sha256": "a8c4bd7cd7073180e740d2d83a616b5cb0845579b73207eeafeae8532e70c901"
+    },
+    {
+      "family": "Instrument Serif",
+      "weight": "400",
+      "style": "normal",
+      "source": "https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-6zUTjnTLgNs.woff2",
+      "bytes": 15040,
+      "sha256": "60c06664b5a95c7de6cc3e00d1f9034d78bd1e40b564016b241674449a067d4d"
+    },
+    {
+      "family": "Reenie Beanie",
+      "weight": "400",
+      "style": "normal",
+      "source": "https://fonts.gstatic.com/s/reeniebeanie/v22/z7NSdR76eDkaJKZJFkkjuvWxXPq1q6Gjb_0.woff2",
+      "bytes": 17936,
+      "sha256": "aa3901be682af0f1faac8436a1f25438b0cc541b6ad2ece5668ae4c0ea70594a"
+    }
+  ]
+}

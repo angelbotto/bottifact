@@ -58,6 +58,7 @@ for name,modules in MODULES.items():
  assert not f.errors,(name,f.errors)
  assert all(ref in f.ids for ref in f.refs),(name,'referencias inexistentes',set(f.refs)-f.ids)
  assert css in content,(name,'CSS generado desactualizado')
+ assert (ROOT/'fuentes.css').read_text() in content,(name,'fuentes sin incrustar o desactualizadas')
  for module in modules:assert (ROOT/module).read_text() in content,(name,'módulo desactualizado',module)
  for url in re.findall(r'url\([\'"]?([^\)\'\"]+)',content):
   assert url.startswith('data:'),(name,'recurso CSS externo: '+url)
@@ -66,7 +67,7 @@ for name,modules in MODULES.items():
  print(name+': fuentes sincronizadas, CSP, IDs, rejilla y regiones accesibles correctos')
 
 library=css.split('/* 12 — Librería de evidencia.')[1]
-palettes=[set(re.findall(r'(--[\w-]+)\s*:',body)) for _,body in re.findall(r'(:root[^{}]*)\{([^{}]*)\}',library) if '--grafica-1:' in body]
+palettes=[set(re.findall(r'(--[\w-]+)\s*:',body)) for _,body in re.findall(r'(:root[^{}]*)\{([^{}]*)\}',library) if '--calor-0:' in body]
 assert len(palettes)==4 and all(p==palettes[0] for p in palettes), 'Faltan tokens en un tema'
 for doc in ['SKILL.md','componentes.md','referencia-cmrg.md']:
  for ref in re.findall(r'\]\(([^)]+)\)',(ROOT/doc).read_text()):

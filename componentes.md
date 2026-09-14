@@ -1,7 +1,7 @@
 # Componentes de Nota Tikin
 
 Los bloques siguientes son HTML completo de componente, para copiar dentro de `.hoja`, después
-de pegar `estilo.css` en `<style>`. Los comportamientos se activan pegando `interacciones.js`
+de pegar `fuentes.css` y `estilo.css` en `<style>`. Los comportamientos se activan pegando `interacciones.js`
 una vez al final del documento. No introducen clases de Tailwind ni dependen de React.
 
 Para empezar por una pieza: [gráficas](#recetas-graficas),
@@ -15,9 +15,8 @@ Para empezar por una pieza: [gráficas](#recetas-graficas),
 ```html
 <title>Nota — decisión y evidencia</title>
 <meta charset="utf-8">
-<style>/* Pegar aquí estilo.css completo */</style>
+<style>/* Pegar aquí fuentes.css y estilo.css completos, incluidas las licencias */</style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Reenie+Beanie&display=swap">
 <a class="salto" href="#contenido">Saltar al contenido</a>
 <main class="hoja" data-lectura lang="es">
   <div class="herramientas">
@@ -215,6 +214,31 @@ columna contiene identificadores largos, permite partirlos; si la estructura nec
 ancho, conserva el desplazamiento local. Los diagramas SVG deben tener `viewBox`, título y
 una descripción equivalente en texto. El tamaño del dibujo debe proteger la lectura de sus
 etiquetas; usa una región desplazable para figuras densas, o una composición vertical en móvil.
+
+Diagrama completo, sin dependencias:
+
+```html
+<figure class="ancho">
+  <div class="diagrama-caja" tabindex="0" role="region" aria-label="Proceso de revisión, desplazable">
+    <svg class="diagrama" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 160" role="img" aria-labelledby="proceso-titulo proceso-desc">
+      <title id="proceso-titulo">De la fuente a la decisión</title>
+      <desc id="proceso-desc">Observar la fuente, verificar la evidencia y registrar la decisión.</desc>
+      <g fill="none" stroke="currentColor"><rect x="10" y="40" width="200" height="80" rx="4"/>
+        <rect x="260" y="40" width="200" height="80" rx="4"/><rect x="510" y="40" width="200" height="80" rx="4"/>
+        <path d="M210 80h42m-9-7 9 7-9 7M460 80h42m-9-7 9 7-9 7"/></g>
+      <g fill="currentColor" text-anchor="middle" font-size="17"><text x="110" y="87">Observar</text><text x="360" y="87">Verificar</text><text x="610" y="87">Registrar</text></g>
+    </svg>
+  </div>
+  <figcaption>Fuente → verificación → decisión registrada. Las flechas indican orden, no duración.</figcaption>
+</figure>
+```
+
+**Cuándo:** una relación o secuencia concreta se entiende mejor como dibujo. Para registros
+comparables usa la tabla; para magnitudes, una gráfica a escala.
+
+**Límite:** esta composición contiene tres pasos. Cambiar sólo las etiquetas no añade nodos
+ni rutas; para más pasos ajusta SVG, texto equivalente y viewBox. Conserva los IDs únicos,
+el mínimo de 640 px y su región desplazable. No simula procesos ni calcula tiempos.
 
 ## Texto que se desvanece
 
@@ -471,7 +495,7 @@ original, una decisión deliberada para informes, no una afirmación de igualdad
 ## Librería de evidencia: instalación por pieza
 
 La fuente de cada visualización es **su tabla HTML**, no una segunda copia de los datos.
-Pega `estilo.css` completo y, al final del documento, los módulos necesarios dentro de
+Pega `fuentes.css` y `estilo.css` completos y, al final del documento, los módulos necesarios dentro de
 `<script>`: [graficas.js](graficas.js) para gráficas/calor y [tablas.js](tablas.js) para
 ordenación/sparkline. Son independientes de Three.js. Cada módulo se pega una sola vez.
 Se inicializan al cargar; para HTML insertado después usa `NotaGraficas.init(contenedor)`
@@ -886,3 +910,34 @@ esa preferencia cancela el RAF pendiente; el giro manual sigue siendo instantán
 Colores leídos de los tokens claros/oscuros/Sea; los rótulos son canvas locales. Al retirar
 la figura de una aplicación llama `destroy()`. Para reemplazar datos: destruye, modifica
 la tabla e inicializa otra vez. No hay `fetch`, modelos, mapas ni imágenes externas.
+
+## Límites de las piezas editoriales base
+
+Estas condiciones complementan el HTML y el criterio de cada receta anterior. No cambian
+las clases existentes; ayudan a elegir una pieza antes de copiarla.
+
+| Pieza | Cuándo no usarla / qué no hace / qué puede romperla |
+|---|---|
+| Documento y temas | No reemplaza un formato solicitado distinto de HTML. Un solo selector y `data-theme` en la raíz; mezclar CSS parciales puede dejar tokens sin definir. |
+| `.marca` | No señalar un párrafo entero ni expresar un estado sólo con el trazo. No transforma texto en enlace ni dibuja escritura animada. |
+| `.con-margen` / `.margen` / `.nota` | No esconder una condición crítica al margen. Varias páginas de texto manuscrito desbordan el propósito de la anotación; el bloque base de margen es hijo directo de `.hoja`. |
+| `.aviso` ×4 | No asignar urgencia a todos los párrafos. Una numeración no implica pasos ejecutables; para alertas dinámicas se necesita gestionar el anuncio sin duplicarlo. |
+| `.mapa` | No negativos, ausencias ni datos nuevos con proporciones viejas. Esta receta fija sólo representa 60/25/15; usa barras si no vas a recalcular la rejilla. |
+| `.dato` / `.datos` / `.pildora` | No falsear controles ni eliminar unidades para que quepan. No calculan ni validan datos; el texto debe incluir el estado además del color. |
+| `.medida` | No representar una tarea en ejecución: usa `progress` para eso. `min/max/value`, porcentaje y texto deben describir el mismo denominador. |
+| `.indice` / `.regla` | No en una nota breve. IDs duplicados, destinos inexistentes o falta de `data-lectura` rompen seguimiento; el tachado indica posición, no lectura demostrada. |
+| `.codigo` | No sustituye un editor ni ejecuta código. Portapapeles puede estar denegado; conserva selección manual y estado. Resaltado escrito a mano, no detección automática de sintaxis. |
+| `.tabla-caja` / `.densa` | No grandes bases de datos virtualizadas. Cinco o más columnas usan `densa`; alterar mínimos sin verificar 320/390 puede comprimir las celdas. |
+| `.terminal` | No usar para una tabla analítica que necesite ordenar o cabeceras semánticas. Sólo copia texto, no ejecuta comandos. Las columnas dependen de mono y espacios; el ancho se desplaza dentro del `pre`. |
+| `.extracto` | No degradar datos críticos ni aplicar máscara al único ejemplar del texto. La copia decorativa debe ser `aria-hidden`; la versión completa vive en `details`. |
+| `.kept` | No envoltorio universal para el informe. No carga portadas ni convierte tarjetas en enlaces; añade un `a` real si hay navegación y datos de imagen incrustados. |
+| `.manuscrita` / `.senalado` | No instrucciones críticas ni frases llenas de corchetes. Es tipografía estática y texto seleccionable; la animación exige los paths de `NotaEscritura`. |
+| `NotaGlobo` | No topografía, fronteras políticas ni distancias medidas. Una instancia por contenedor, IDs de puntos/rutas únicos; `destroy()` al retirarlo. Sin Three/WebGL conserva lista y mensaje. |
+
+## Alcance de esta versión
+
+Es una librería de recetas HTML/CSS/JS copiables, sin instalación de framework. No incluye
+un CLI de generación, React, una dependencia de shadcn, un constructor de consultas,
+streaming, mapas políticos o conversión automática de fuentes a caligrafía. Cualquier pieza
+nueva debe conservar los tres temas, los datos accesibles, los mínimos locales y el ciclo
+de vida documentado. Los ejemplos no se publican ni envían datos.

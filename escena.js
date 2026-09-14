@@ -40,6 +40,7 @@
       try {this.init();}
       catch(error){this.error.textContent='La vista 3D no está disponible. La tabla conserva todos los datos.';this.error.hidden=false;this.stage.hidden=true;this.controls.hidden=true;this.releaseRenderer();}
       this.sync();instances.set(element,this);
+      document.fonts?.ready.then(()=>{if(!this.dead)this.theme();});
     }
     listen(target,type,fn){target.addEventListener(type,fn,{signal:this.abort.signal});}
     buildDOM(){

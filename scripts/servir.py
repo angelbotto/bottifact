@@ -7,7 +7,7 @@ import argparse
 ROOT=Path(__file__).resolve().parents[1]
 CSP=("default-src 'none'; script-src 'unsafe-inline' https://cdnjs.cloudflare.com "
      "https://cdn.jsdelivr.net/npm/ https://cdn.tailwindcss.com https://code.jquery.com; "
-     "style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com data:; "
+     "style-src 'unsafe-inline' https://fonts.googleapis.com; font-src data:; "
      "img-src data:; connect-src 'none'; media-src data:; base-uri 'none'; form-action 'none'")
 
 class Handler(SimpleHTTPRequestHandler):

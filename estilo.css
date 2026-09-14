@@ -280,7 +280,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   flex-wrap: nowrap; overflow-x: auto; scrollbar-width: thin; }
 .barra .sello { font: 500 12px/1 var(--mono); color: var(--tinta-3); letter-spacing: .04em;
   white-space: nowrap; padding-right: 6px; border-right: 1px solid var(--linea); }
-.barra nav { display: flex; gap: 2px; flex: 1; min-width: 0; }
+.barra nav { display: flex; gap: 2px; flex: 1 0 auto; min-width: 0; }
 .barra button { font: 500 12.5px/1 var(--sans); color: var(--tinta-3); background: none; border: 0;
   border-radius: 7px; padding: 7px 11px; cursor: pointer; white-space: nowrap;
   transition: background var(--rapido), color var(--rapido); }
@@ -421,7 +421,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 :root {
   --grafica-1: #a13f19; --grafica-2: #485c8a; --grafica-3: #4a6037; --grafica-4: #805070;
   --grafica-papel: #fef8f2; --grafica-tinta: #51473e; --grafica-linea: #d5c9bf;
-  --calor-0: #f6f0eb; --calor-1: #eed6c7; --calor-2: #dfb499; --calor-3: #cd8b60; --calor-4: #b6683e;
+  --calor-0: #f6f0eb; --calor-1: #eed6c7; --calor-2: #dfb499; --calor-3: #cd8b60; --calor-4: #c17a52;
   --calor-tinta: #231e1a; --calor-ausente: #e9dfd7;
   --tabla-total: #eaf0e2; --tabla-elegida: #f8e5da;
   --escena-1: #a13f19; --escena-2: #485c8a; --escena-3: #4a6037;
@@ -456,7 +456,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 :root[data-theme='sea'] {
   --grafica-1: #34febb; --grafica-2: #88b4e7; --grafica-3: #d6e9ff; --grafica-4: #71c5c0;
   --grafica-papel: #1d2630; --grafica-tinta: #88b4e7; --grafica-linea: #445468;
-  --calor-0: #253342; --calor-1: #21463f; --calor-2: #215c4d; --calor-3: #246e59; --calor-4: #297e64;
+  --calor-0: #253342; --calor-1: #21463f; --calor-2: #215c4d; --calor-3: #246e59; --calor-4: #26765d;
   --calor-tinta: #e9f4ff; --calor-ausente: #2e3a48;
   --tabla-total: #203a33; --tabla-elegida: #233246;
   --escena-1: #34febb; --escena-2: #88b4e7; --escena-3: #d6e9ff;
@@ -532,6 +532,17 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   .nota-escritura [data-trazo] { stroke: CanvasText; }
 }
 @media print {
+  /* El papel blanco necesita tinta de impresión aunque la pantalla esté en Sea. */
+  :root {
+    color-scheme: light !important;
+    --papel: #fff !important; --panel: #f6f0eb !important; --panel-2: #e9dfd7 !important;
+    --tinta: #231e1a !important; --tinta-2: #51473e !important; --tinta-3: #51473e !important;
+    --linea: #d5c9bf !important; --linea-fuerte: #948475 !important; --azul: #354b68 !important;
+    --marcador: #754226 !important; --grafica-tinta: #51473e !important;
+    --grafica-1: #231e1a !important; --grafica-2: #354b68 !important;
+    --grafica-3: #4a6037 !important; --grafica-4: #805070 !important;
+    --tabla-total: #eaf0e2 !important; --tabla-elegida: #f8e5da !important;
+  }
   .grafica-caja,.escena-caja,.escritura-caja { display: none; }
   .nota-grafica details,.nota-escena details { display: block; }
   .nota-grafica summary,.nota-escena summary,.nota-sonido,.escena-controles,.escritura-controles { display: none !important; }
@@ -546,7 +557,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   .pagina > .ancho,.pagina > .amplio,.hoja.por-seccion .seccion > .ancho,.hoja.por-seccion .seccion > .amplio { width: 100%; margin: 0 0 18pt; }
   .tabla-caja table,.tabla-caja.densa table,.tabla-caja .tabla-calor { min-width: 0; width: 100%; }
   th,td { overflow-wrap: anywhere; }
-  .terminal { color: #231e1a; background: #f6f0eb; }
+  .terminal { --term-tinta: #231e1a !important; --term-marca: #513721 !important; color: #231e1a; background: #f6f0eb; }
   .terminal pre { white-space: pre-wrap; overflow: visible; overflow-wrap: anywhere; }
   .terminal .tenue,.terminal .cab { color: #51473e; }
 }

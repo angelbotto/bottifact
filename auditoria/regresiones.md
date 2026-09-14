@@ -24,3 +24,16 @@ tablas, permite envolver terminal y abre/restaura detalles de datos. El programa
 
 No cambia el diseño base, sus anchos ni sus paletas. Las correcciones restauran contratos
 documentados de navegación, copia e impresión íntegra.
+
+La exportación del catálogo con Sea activo mostró otro fallo de impresión: terminal,
+anotaciones, captions y unidades retenían la tinta pálida de Sea sobre papel blanco.
+Se comprobó visualmente la página 8 de un PDF de 13 páginas (`orca pdf`, rasterizado con
+`pypdfium2`, ya instalado). Se acotan tokens de tinta/superficie y de terminal a `@media print`;
+las tres paletas de pantalla permanecen intactas. Los colores de la librería se definen
+también en cada tema antes de cualquier regla print.
+
+Barra multipágina a 320 × 740: `nav` se comprimía a 19,91 px mientras sus botones
+ocupaban x=132,84…323,52. El selector empezaba en x=166,75: se superponían. El contenido
+medía sólo 324 px, por lo que casi no existía recorrido para separarlos. `flex-shrink:0`
+en la navegación mantiene su tamaño natural dentro del desplazamiento local de `.barra`;
+no modifica la rejilla del documento.
