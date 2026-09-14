@@ -1,0 +1,109 @@
+#!/usr/bin/env python3
+"""Genera fragmentos autocontenidos desde las fuentes del skill, sin red."""
+from pathlib import Path
+import json, base64, hashlib
+ROOT = Path(__file__).resolve().parents[1]
+FONTS = 'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Reenie+Beanie&display=swap'
+THREE = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js'
+DATA = {
+ 'points': [
+  {'id':'BOG','label':'Bogotá','lat':4.711,'lon':-74.0721},
+  {'id':'MAD','label':'Madrid','lat':40.4168,'lon':-3.7038},
+  {'id':'JFK','label':'Nueva York','lat':40.6413,'lon':-73.7781},
+  {'id':'HND','label':'Tokio','lat':35.5494,'lon':139.7798},
+  {'id':'HKG','label':'Hong Kong','lat':22.308,'lon':113.9185},
+  {'id':'SFO','label':'San Francisco','lat':37.6213,'lon':-122.379},
+  {'id':'GRU','label':'São Paulo','lat':-23.4356,'lon':-46.4731},
+  {'id':'FLN','label':'Florianópolis','lat':-27.672,'lon':-48.548},
+ ],
+ 'arcs': [
+  {'id':'bog-mad','from':'BOG','to':'MAD','label':'BOG → MAD','detail':'Bogotá · Madrid'},
+  {'id':'mad-jfk','from':'MAD','to':'JFK','label':'MAD → JFK','detail':'Madrid · Nueva York'},
+  {'id':'jfk-hnd','from':'JFK','to':'HND','label':'JFK → HND','detail':'Nueva York · Tokio'},
+  {'id':'hnd-hkg','from':'HND','to':'HKG','label':'HND → HKG','detail':'Tokio · Hong Kong'},
+  {'id':'hkg-sfo','from':'HKG','to':'SFO','label':'HKG → SFO','detail':'Hong Kong · San Francisco'},
+  {'id':'sfo-bog','from':'SFO','to':'BOG','label':'SFO → BOG','detail':'San Francisco · Bogotá'},
+  {'id':'bog-gru','from':'BOG','to':'GRU','label':'BOG → GRU','detail':'Bogotá · São Paulo'},
+  {'id':'gru-fln','from':'GRU','to':'FLN','label':'GRU → FLN','detail':'São Paulo · Florianópolis'},
+ ]
+}
+
+def script(file): return '<script>\n' + (ROOT / file).read_text() + '\n</script>\n'
+
+def start(title):
+ return '<title>' + title + '</title>\n<meta charset="utf-8">\n<style>\n' + (ROOT / 'estilo.css').read_text() + '\n</style>\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<link rel="stylesheet" href="' + FONTS + '">\n'
+
+def tools():
+ return '''<div class="herramientas"><a href="#inicio" class="mono">nota / tikin</a><div class="temas"><label for="tema">Papel</label><select id="tema" data-tema><option value="system">Sistema</option><option value="light">Claro</option><option value="dark">Oscuro cálido</option><option value="sea">Dark Sea</option></select></div></div>'''
+
+def globe():
+ return '<figure class="ancho"><div id="globo-rutas"></div><figcaption>Rutas ilustrativas para explorar el componente; no representan vuelos realizados. Máscara terrestre COBE · 15.000 muestras · arrastre, teclado y selección.</figcaption></figure>'
+
+def globe_scripts():
+ data = json.dumps(DATA, ensure_ascii=False, indent=2).replace('<', '\\u003c')
+ return '<script src="' + THREE + '"></script>\n' + script('globo.js') + '<script>\nwindow.globo = new NotaGlobo(document.getElementById("globo-rutas"), ' + data + ');\n</script>\n'
+
+def cover(title,subtitle,color,n):
+ svg=f'''<svg xmlns="http://www.w3.org/2000/svg" width="180" height="220" viewBox="0 0 180 220"><rect x="2" y="2" width="176" height="216" rx="2" fill="{color}"/><path d="M11 2v216" stroke="#fef8f2" opacity=".22"/><circle cx="90" cy="85" r="48" fill="none" stroke="#fef8f2" opacity=".45"/><path d="M42 85h96M90 37v96" stroke="#fef8f2" opacity=".4"/><text x="24" y="48" font-family="Georgia,serif" font-size="36" fill="#fef8f2">{n}</text><text x="24" y="162" font-family="Georgia,serif" font-size="24" fill="#fef8f2">{title}</text><text x="24" y="185" font-family="monospace" font-size="10" fill="#fef8f2">{subtitle}</text></svg>'''
+ return 'data:image/svg+xml;base64,'+base64.b64encode(svg.encode()).decode()
+
+body='''<a class="salto" href="#contenido">Saltar al contenido</a>
+<main class="hoja" id="inicio" data-lectura lang="es">
+TOOLS
+<header class="cabecera" id="contenido" tabindex="-1">
+  <p class="ceja">Cuaderno 01 / forma y evidencia / septiembre 2026</p>
+  <h1>La forma también<br>explica.</h1>
+  <p class="bajada">Una nota puede ser rigurosa y tener carácter. La lectura necesita una medida; la evidencia, espacio para respirar.</p>
+  <p class="secundario mono">10 páginas estudiadas · 4 artículos completos</p>
+</header>
+<nav class="indice" aria-label="Índice del documento"><p class="ceja">En esta nota</p><ol>
+  <li><a href="#criterio">Una idea a la vez</a></li><li><a href="#proporcion">El peso de cada cosa</a></li><li><a href="#evidencia">Dejar la evidencia</a></li><li><a href="#rutas">Los lugares se conectan</a></li><li><a href="#guardado">Lo que vale guardar</a></li>
+</ol></nav>
+<section class="seccion" id="criterio"><p class="ceja">01 / criterio</p><h2>Una idea a la vez.</h2>
+<p>Lo primero que debe verse es <span class="marca">la decisión que importa</span>. Los detalles llegan después, con una jerarquía que permite leer sin perder el hilo.</p>
+<p>Este sistema conserva la voz editorial de cmrg.me: títulos con serif, texto sereno, datos en mono y una anotación humana cuando aporta otra perspectiva.</p></section>
+<div class="con-margen"><p>Un número necesita una fuente y una explicación. Si todavía no se midió, se dice: <span class="dato">pendiente de medir</span>. La precisión también consiste en mostrar los límites.</p><aside class="margen" aria-label="Nota al margen">¿se entiende sin estar en la reunión?</aside></div>
+<aside class="aviso ojo" aria-label="Aviso 1: criterio"><span class="num">1</span><div><p class="titulo">El estilo no sustituye la evidencia.</p><p>Las proporciones del siguiente mapa son ilustrativas. Las medidas del análisis se citan con su página y su CSS.</p></div></aside>
+<section class="seccion" id="proporcion"><p class="ceja">02 / proporción</p><h2>El peso de cada cosa.</h2><p>El área comunica participación. El valor escrito permite verificarla. Tres grupos bastan para mostrar la relación sin convertir la lectura en una búsqueda.</p></section>
+<figure class="ancho"><div class="mapa" role="group" aria-label="Reparto ilustrativo de 100 horas"><div class="bloque destaca"><span class="n">Investigar</span><span class="d">60 h · 60 %</span></div><div class="bloque"><span class="n">Construir</span><span class="d">25 h · 25 %</span></div><div class="bloque"><span class="n">Revisar</span><span class="d">15 h · 15 %</span></div></div><figcaption>01 — Ejemplo de 100 horas. Rejilla 3:2 y 5:3; las áreas incluyen el borde interior de cada celda.</figcaption></figure>
+<dl class="datos"><div><dt>Cobertura del análisis</dt><dd>6 páginas + 4 artículos</dd></div><div><dt>Texto original</dt><dd>15,5 px / 1,55</dd></div><div><dt>Medida de lectura aquí</dt><dd>máximo 35 rem</dd></div><div><dt>Figuras y tablas</dt><dd>hasta 62 / 76 rem</dd></div></dl>
+<div class="medida"><label for="cobertura">Páginas solicitadas revisadas</label><span class="pct">100 %</span><meter id="cobertura" min="0" max="10" value="10">10 de 10 páginas</meter></div>
+<section class="seccion" id="evidencia"><p class="ceja">03 / evidencia</p><h2>Lo importante puede ocupar más.</h2><p>El código, las tablas y los diagramas comparten la rejilla del documento. Una figura puede ser más ancha que el texto y seguir perteneciendo a la misma historia.</p></section>
+<figure class="ancho"><div class="codigo"><div class="cab"><span>reporte.js · JavaScript</span><button type="button" data-copiar="codigo-ejemplo" aria-label="Copiar código de reporte.js">Copiar</button><span class="copia-estado" role="status" aria-live="polite"></span></div><pre tabindex="0" aria-label="Código de ejemplo"><code id="codigo-ejemplo"><span class="com">// Un dato sin fuente aún no es evidencia.</span>
+<span class="kw">const</span> lectura = {
+  fuente: <span class="str">"CSS publicado de cmrg.me"</span>,
+  paginas: 10,
+  cuerpo: <span class="str">"15.5px / 1.55"</span>,
+  observacion: <span class="str">"El tema claro es una adaptación documentada."</span>
+};</code></pre></div><figcaption>02 — Encabezado y copia explícita. El contenido se puede seleccionar también si el portapapeles está bloqueado.</figcaption></figure>
+<figure class="amplio"><div class="tabla-caja" tabindex="0" role="region" aria-label="Comparación de componentes, desplazable horizontalmente"><table><caption>Decisiones de la adaptación</caption><thead><tr><th scope="col">Componente</th><th scope="col">Referencia observada</th><th scope="col">Decisión para las notas</th><th scope="col">Estado</th></tr></thead><tbody>
+<tr><th scope="row">Cuerpo</th><td>15,5 px · interlineado 1,55</td><td>16 px · interlineado 1,65 para informes</td><td><span class="pildora p-si">✓ Aplicado</span></td></tr>
+<tr><th scope="row">Tipografía</th><td>Editorial New 400</td><td>Instrument Serif 400, con comparación visual</td><td><span class="pildora p-medio">≈ Adaptado</span></td></tr>
+<tr><th scope="row">Desvanecido</th><td>Máscaras y blur de lectura</td><td>Solo extracto decorativo, texto íntegro desplegable</td><td><span class="pildora p-si">✓ Accesible</span></td></tr>
+<tr><th scope="row">Imágenes externas</th><td>Recursos de distintos orígenes</td><td>Incrustar como data: URI</td><td><span class="pildora p-no">× No permitido</span></td></tr>
+</tbody></table></div><figcaption>03 — En pantallas pequeñas la tabla conserva todos sus datos y ofrece desplazamiento dentro de su región.</figcaption></figure>
+<figure class="ancho"><div class="diagrama-caja" tabindex="0" role="region" aria-label="Diagrama de observación, explicación y verificación, desplazable"><svg class="diagrama" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 180" role="img" aria-labelledby="flujo-titulo flujo-desc"><title id="flujo-titulo">De observación a informe</title><desc id="flujo-desc">Observar el dato, explicar la decisión y verificar el resultado, en ese orden.</desc><g fill="none" stroke="currentColor"><rect x="15" y="42" width="200" height="94" rx="4"/><rect x="260" y="42" width="200" height="94" rx="4"/><rect x="505" y="42" width="200" height="94" rx="4"/><path d="M215 89h40m-9-7 9 7-9 7M460 89h40m-9-7 9 7-9 7"/></g><g font-size="17" text-anchor="middle"><text x="115" y="83">01 / observar</text><text x="360" y="83">02 / explicar</text><text x="605" y="83">03 / verificar</text><text x="115" y="109" font-size="12">dato + fuente</text><text x="360" y="109" font-size="12">criterio + límite</text><text x="605" y="109" font-size="12">resultado visible</text></g></svg></div><figcaption>04 — Observar el dato y su fuente → explicar el criterio y su límite → verificar el resultado. El gráfico se puede desplazar en pantallas pequeñas.</figcaption></figure>
+<aside class="aviso bien" aria-label="Aviso 2: accesibilidad"><span class="num">2</span><div><p class="titulo">La jerarquía no depende solo del color.</p><p>Los estados tienen palabra y símbolo. El foco es visible, y el texto secundario conserva contraste suficiente.</p></div></aside>
+<aside class="aviso mal" aria-label="Aviso 3: límite"><span class="num">3</span><div><p class="titulo">Lo que falta debe poder verse.</p><p>Un error de carga del globo muestra un mensaje y conserva la lista de rutas. Ningún dato vive solamente en el canvas.</p></div></aside>
+<section class="seccion" id="rutas"><p class="ceja">04 / lugares</p><h2>Los lugares se conectan.</h2><p>La Tierra es una superficie de puntos, con rutas que se elevan sobre ella. La lista permite elegir cada conexión y entenderla sin depender del movimiento.</p></section>
+GLOBE
+<p class="nota">el mapa ayuda a orientarse; la lista cuenta qué hay</p>
+<section class="seccion" id="guardado"><p class="ceja">05 / guardado</p><h2>Lo que vale guardar.</h2><p>Un objeto, una nota breve y una razón para volver. Las tarjetas funcionan cuando cada una guarda algo distinto.</p></section>
+<div class="kept ancho">
+<article><img class="portada" src="COVER1" alt="" width="180" height="220"><h3>La decisión</h3><p>Qué se eligió y por qué. Un registro que permita volver a pensar, con el contexto a mano.</p><p class="meta">NOTA / 01 · ejemplo editorial</p></article>
+<article><img class="portada" src="COVER2" alt="" width="180" height="220"><h3>La evidencia</h3><p>Medidas, fuentes y límites. Lo suficiente para distinguir lo observado de lo supuesto.</p><p class="meta">REGISTRO / 02 · ejemplo editorial</p></article>
+<article><img class="portada" src="COVER3" alt="" width="180" height="220"><h3>La siguiente pregunta</h3><p>Lo que todavía necesita respuesta. Una invitación concreta a seguir, sin fabricar certeza.</p><p class="meta">PENDIENTE / 03 · ejemplo editorial</p></article>
+</div>
+<div class="extracto"><p class="desvanece" aria-hidden="true">Una nota se termina cuando alguien puede tomar una decisión con ella. La forma prepara el terreno; la evidencia sostiene lo que decimos.</p><details><summary>Leer la nota completa</summary><p>Una nota se termina cuando alguien puede tomar una decisión con ella. La forma prepara el terreno; la evidencia sostiene lo que decimos. Si la pieza necesita una segunda lectura para entender qué propone, todavía queda trabajo editorial.</p></details></div>
+<aside class="aviso cita"><span class="num" aria-hidden="true">↳</span><div><blockquote>Dejar una buena nota es dejarle contexto a quien llega después.</blockquote><p class="secundario">Principio de esta plantilla</p></div></aside>
+<footer class="pie"><p>Nota Tikin · Muestra de todos los componentes. Inspirada en <a href="https://www.cmrg.me">cmrg.me</a>; el tema claro, los ajustes de acceso y Dark Sea están documentados en el informe.</p><button type="button" data-sonido aria-pressed="false">Sonido apagado</button></footer>
+</main>
+<div class="regla" role="slider" tabindex="0" aria-orientation="vertical" aria-label="Progreso de lectura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="ticks"></div><div class="cursor"></div><span class="val">0%</span></div>
+'''
+body=body.replace('TOOLS',tools()).replace('GLOBE',globe())
+for i,(title,subtitle,color) in enumerate([('La decisión','CUADERNO DE CRITERIO','#755a42'),('La evidencia','REGISTRO DE MEDIDAS','#516344'),('Lo que sigue','PREGUNTAS ABIERTAS','#56627f')],1):
+ body=body.replace('COVER'+str(i),cover(title,subtitle,color,str(i).zfill(2)))
+(ROOT/'plantilla.html').write_text(start('Nota Tikin — la forma también explica')+body+script('interacciones.js')+globe_scripts())
+globe_body='<main class="hoja" id="inicio" lang="es">'+tools()+'''<header class="cabecera"><p class="ceja">Nota / geografía</p><h1>Planes, puntos<br>y lugares.</h1><p class="bajada">Un globo de puntos para explorar conexiones. Elige una ruta, gira la Tierra o pausa la vista.</p></header>'''+globe()+'''<footer class="pie">Ejemplo reutilizable · Three.js desde cdnjs · máscara geográfica incrustada · ambos temas y movimiento reducido.</footer></main>'''
+(ROOT/'globo.html').write_text(start('Nota Tikin — globo de rutas')+globe_body+script('interacciones.js')+globe_scripts())
+print('Generados plantilla.html y globo.html')

@@ -1,0 +1,971 @@
+<title>Nota Tikin — globo de rutas</title>
+<meta charset="utf-8">
+<style>
+/* NOTA TIKIN · v2 · septiembre 2026
+   Pegar completa en <style>. Fuentes por Google Fonts; sin @import ni assets remotos.
+   La escala cálida procede del CSS auditado de cmrg.me. Claro y Sea son adaptaciones.
+   01 Tokens · 02 Lectura · 03 Rejilla · 04 Anotaciones · 05 Datos · 06 Navegación
+   07 Código · 08 Kept · 09 Globo · 10 Movimiento y acceso · 11 Impresión. */
+
+/* 01 — Papeles y tintas. Los colores de texto tienen al menos 4.5:1 sobre sus superficies. */
+:root {
+  color-scheme: light;
+  --papel: #fef8f2; --panel: #f6f0eb; --panel-2: #e9dfd7;
+  --tinta: #231e1a; --tinta-2: #51473e; --tinta-3: #6c6158;
+  --linea: #d5c9bf; --linea-fuerte: #948475;
+  --naranja: #a13f19; --naranja-suave: #f8e5da;
+  --verde: #4a6037; --verde-suave: #eaf0e2;
+  --rojo: #a3443c; --rojo-suave: #f8e7e4;
+  --azul: #485c8a; --azul-suave: #e8edf5;
+  --marcador: #bc542b; --foco: #a13f19;
+  --globo-base: #8e8479; --globo-arco: #82705c; --globo-punto: #6c6158;
+  --globo-glow: #a39179; --globo-dark: 0; --globo-brillo: 2.4;
+  --texto: 35rem; --ancho: 62rem; --amplio: 76rem; --gutter: clamp(20px, 4vw, 40px);
+  --serif: 'Instrument Serif', Georgia, serif;
+  --sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono: 'Geist Mono', ui-monospace, monospace;
+  --mano: 'Reenie Beanie', cursive;
+  --rapido: 150ms; --suave: 320ms; --curva: cubic-bezier(.16,1,.3,1);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']):not([data-theme='sea']) {
+    color-scheme: dark;
+    --papel: #13110f; --panel: #231e1a; --panel-2: #2e2821;
+    --tinta: #e9dfd7; --tinta-2: #cfc3b9; --tinta-3: #b7a89b;
+    --linea: #3b3229; --linea-fuerte: #948475;
+    --naranja: #f1b798; --naranja-suave: #302018;
+    --verde: #b0b9a0; --verde-suave: #242b1e;
+    --rojo: #e8bdb8; --rojo-suave: #31201e;
+    --azul: #c1c8dd; --azul-suave: #252935;
+    --marcador: #f1733d; --foco: #f1733d;
+    --globo-base: #231e1a; --globo-arco: #6c6158; --globo-punto: #948475;
+    --globo-glow: #3b3229; --globo-dark: .6; --globo-brillo: 10;
+  }
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --papel: #13110f; --panel: #231e1a; --panel-2: #2e2821;
+  --tinta: #e9dfd7; --tinta-2: #cfc3b9; --tinta-3: #b7a89b;
+  --linea: #3b3229; --linea-fuerte: #948475;
+  --naranja: #f1b798; --naranja-suave: #302018;
+  --verde: #b0b9a0; --verde-suave: #242b1e;
+  --rojo: #e8bdb8; --rojo-suave: #31201e;
+  --azul: #c1c8dd; --azul-suave: #252935;
+  --marcador: #f1733d; --foco: #f1733d;
+  --globo-base: #231e1a; --globo-arco: #6c6158; --globo-punto: #948475;
+  --globo-glow: #3b3229; --globo-dark: .6; --globo-brillo: 10;
+}
+/* Sea: 7 tonos seleccionados del original de simurai (se omite duo-3).
+   Fondo y superficies son tonos estructurales adicionales, no colores de sintaxis. */
+:root[data-theme='sea'] {
+  color-scheme: dark;
+  --uno-1: hsl(212 99% 92%); --uno-2: hsl(212 66% 72%);
+  --uno-3: hsl(212 44% 56%); --uno-4: hsl(212 22% 44%); --uno-5: hsl(212 11% 30%);
+  --duo-1: hsl(160 99% 60%); --duo-2: hsl(160 55% 44%);
+  --papel: hsl(212 24% 15%); --panel: hsl(212 24% 19%); --panel-2: hsl(212 22% 23%);
+  --tinta: var(--uno-1); --tinta-2: var(--uno-2); --tinta-3: var(--uno-2);
+  --linea: var(--uno-5); --linea-fuerte: var(--uno-3);
+  --naranja: var(--duo-1); --naranja-suave: #203a33;
+  --verde: var(--duo-1); --verde-suave: #203a33;
+  --rojo: var(--uno-1); --rojo-suave: #2b3848;
+  --azul: var(--uno-2); --azul-suave: #233246;
+  --marcador: var(--duo-1); --foco: var(--duo-1);
+  --globo-base: #202e3e; --globo-arco: #678db6; --globo-punto: #88b4e7;
+  --globo-glow: #233c45; --globo-dark: .6; --globo-brillo: 10;
+}
+
+/* 02 — Una voz editorial, sin convertir el cuerpo en tipografía de exhibición. */
+* { box-sizing: border-box; }
+html { scroll-padding-top: 32px; }
+body { margin: 0; background: var(--papel); color: var(--tinta); font: 400 16px/1.65 var(--sans); letter-spacing: .05px; -webkit-font-smoothing: antialiased; }
+h1,h2,h3,p,figure,blockquote,dl,dd { margin: 0; }
+h1,h2,h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -.02em; text-wrap: balance; }
+h1 { font-size: clamp(38px, 5vw, 54px); line-height: 1.06; }
+h2 { font-size: clamp(30px, 3.4vw, 38px); line-height: 1.15; }
+h3 { font-size: 26px; line-height: 1.2; }
+p + p { margin-top: 1.15em; }
+strong { font-weight: 600; }
+a { color: var(--azul); text-underline-offset: .2em; text-decoration-thickness: 1px; overflow-wrap: anywhere; }
+a:hover { text-decoration-thickness: 2px; }
+button,select,input { font: inherit; color: inherit; }
+button,select { min-height: 44px; border: 1px solid var(--linea-fuerte); border-radius: 5px; padding: 8px 12px; background: var(--papel); }
+button { cursor: pointer; }
+button:hover { background: var(--panel-2); }
+button:disabled { cursor: default; }
+button:active { transform: translateY(1px); }
+img,video,svg,canvas { max-width: 100%; }
+img,video { height: auto; }
+figure > svg { display: block; width: 100%; height: auto; }
+ul,ol { padding-left: 1.25em; }
+li + li { margin-top: .4em; }
+.mono,code,pre,kbd,.ceja,figcaption,.pildora { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.ceja { color: var(--tinta-3); font-size: 12px; line-height: 1.5; letter-spacing: .075em; text-transform: uppercase; }
+.bajada { color: var(--tinta-2); font-size: 17px; line-height: 1.6; }
+.secundario,figcaption { color: var(--tinta-3); }
+figcaption { margin-top: 12px; font-size: 12px; line-height: 1.6; overflow-wrap: anywhere; }
+
+/* 03 — El texto tiene medida; el documento no tiene un ancho único.
+   .ancho y .amplio DEBEN ser hijos de .hoja. Ningún contenido escapa con offsets. */
+.hoja { display: grid; grid-template-columns: 1fr min(var(--texto), calc(100% - 2 * var(--gutter))) 1fr; padding-block: 40px 80px; row-gap: 28px; }
+.hoja > * { grid-column: 2; min-width: 0; }
+.hoja > .ancho,.hoja > .amplio { grid-column: 1 / -1; margin-inline: auto; width: min(var(--ancho), calc(100% - 2 * var(--gutter))); }
+.hoja > .amplio { width: min(var(--amplio), calc(100% - 2 * var(--gutter))); }
+.cabecera { padding-block: 56px 16px; display: grid; gap: 18px; }
+.herramientas { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; }
+.temas { display: flex; gap: 8px; align-items: center; font: 12px var(--mono); }
+.seccion { display: grid; gap: 18px; padding-top: 32px; border-top: 1px solid var(--linea); scroll-margin-top: 32px; }
+.pie { border-top: 1px solid var(--linea); padding-top: 24px; font-size: 13px; color: var(--tinta-3); }
+/* Una nota ocupa una celda real. En móvil vuelve al flujo después de su párrafo. */
+.con-margen { display: grid; gap: 16px; }
+.margen,.nota { font: 400 26px/1.18 var(--mano); color: var(--tinta-3); }
+.margen { border-left: 1px solid var(--linea-fuerte); padding: 8px 0 8px 16px; position: relative; }
+.margen::before,.margen::after { content: ''; position: absolute; left: 0; width: 9px; border-top: 1px solid var(--linea-fuerte); }
+.margen::before { top: 0; transform: rotate(-5deg); }
+.margen::after { bottom: 0; transform: rotate(4deg); }
+@media (min-width: 1184px) {
+  .hoja > .con-margen { grid-column: 1 / -1; width: min(68rem, calc(100% - 2 * var(--gutter))); margin-inline: auto; grid-template-columns: minmax(0,1fr) var(--texto) minmax(0,1fr); gap: 24px; align-items: center; }
+  .con-margen > :first-child { grid-column: 2; }
+  .con-margen > .margen { grid-column: 3; min-width: 0; }
+}
+
+/* 04 — Trazos: una anotación tiene que añadir información. */
+.marca {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8Q36 3 72 7T142 6T218 7M3 10Q70 7 124 9T216 8' fill='none' stroke='%23bc542b' stroke-width='1.7' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: 100% .32em; background-repeat: no-repeat; background-position: 0 100%;
+  padding-bottom: .13em; box-decoration-break: clone; -webkit-box-decoration-break: clone;
+}
+:root[data-theme='sea'] .marca { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8Q36 3 72 7T142 6T218 7M3 10Q70 7 124 9T216 8' fill='none' stroke='%2334febb' stroke-width='1.7' stroke-linecap='round'/%3E%3C/svg%3E"); }
+.sub { text-decoration: underline; text-underline-offset: .2em; }
+.punteado { text-decoration: underline dotted; text-underline-offset: .2em; }
+.tachado { text-decoration: line-through; text-decoration-color: var(--tinta-3); }
+.aviso { --acento: var(--azul); --suave-aviso: var(--azul-suave); display: grid; grid-template-columns: 30px minmax(0,1fr); gap: 12px; border-left: 3px solid var(--acento); padding: 18px 20px 18px 12px; background: var(--suave-aviso); border-radius: 0 4px 4px 0; }
+.aviso .num { border: 1.5px solid var(--acento); color: var(--acento); width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font: 12px var(--mono); }
+.aviso .titulo { color: var(--acento); font-weight: 600; margin-bottom: 6px; }
+.aviso p { font-size: 15px; }
+.aviso.ojo { --acento: var(--naranja); --suave-aviso: var(--naranja-suave); }
+.aviso.mal { --acento: var(--rojo); --suave-aviso: var(--rojo-suave); }
+.aviso.bien { --acento: var(--verde); --suave-aviso: var(--verde-suave); }
+.aviso.cita { --acento: var(--tinta-3); --suave-aviso: var(--panel); }
+.aviso.cita blockquote { font-style: italic; }
+
+/* 05 — Datos: figuras anchas y sus valores siempre completos. */
+.mapa { display: grid; grid-template-columns: minmax(0,3fr) minmax(0,2fr); grid-template-rows: minmax(110px,5fr) minmax(90px,3fr); min-height: 320px; border: 1px dashed var(--linea-fuerte); }
+.mapa .bloque { padding: clamp(12px,2.5vw,28px); display: flex; flex-direction: column; justify-content: space-between; gap: 10px; min-width: 0; border: 2px solid var(--papel); background: var(--panel-2); overflow-wrap: anywhere; }
+.mapa .bloque:first-child { grid-row: 1 / 3; }
+.mapa .destaca { background: var(--verde-suave); }
+.mapa .n { font: 400 clamp(22px,3vw,34px)/1.1 var(--serif); }
+.mapa .d { color: var(--tinta-2); font: 12px/1.5 var(--mono); }
+.datos { font: 13px/1.6 var(--mono); }
+.datos > div { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.4fr); gap: 16px; padding-block: 12px; border-bottom: 1px dashed var(--linea); }
+.datos dt { color: var(--tinta-3); }
+.datos dd { text-align: right; overflow-wrap: anywhere; }
+.dato,.pildora { display: inline; padding: 2px 6px; border-radius: 4px; font: .82em/1.6 var(--mono); background: var(--panel-2); color: var(--tinta-2); box-decoration-break: clone; -webkit-box-decoration-break: clone; overflow-wrap: anywhere; }
+.p-si { background: var(--verde-suave); color: var(--verde); }
+.p-medio { background: var(--naranja-suave); color: var(--naranja); }
+.p-no { background: var(--rojo-suave); color: var(--rojo); }
+.medida { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 12px 20px; padding-block: 16px; border-bottom: 1px solid var(--linea); }
+.medida label { font-size: 15px; }
+.medida .pct { font: 20px var(--mono); }
+.medida meter { width: 100%; height: 8px; grid-column: 1 / -1; appearance: none; border: 0; border-radius: 8px; background: var(--panel-2); }
+meter::-webkit-meter-bar { background: var(--panel-2); border: 0; height: 8px; }
+meter::-webkit-meter-optimum-value { background: var(--verde); }
+meter::-moz-meter-bar { background: var(--verde); }
+.tabla-caja { max-width: 100%; overflow-x: auto; border-block: 1px solid var(--linea-fuerte); scrollbar-color: var(--linea-fuerte) var(--panel); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+caption { padding: 12px; text-align: left; font: 12px/1.6 var(--mono); color: var(--tinta-3); }
+th,td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--linea); vertical-align: top; overflow-wrap: anywhere; }
+th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono); }
+.tabla-caja:focus-visible { outline-offset: 4px; }
+/* Una tabla sin mínimo propio no se desplaza: se comprime. Medido en un teléfono de 390 px,
+   cuatro columnas caían a 350 px con filas de 97 px de alto, y seis columnas a celdas de
+   50 px con filas de 581 px. Es el mismo remedio que ya tenía el diagrama: ancho mínimo y
+   desplazamiento local. `densa` es para cinco columnas o más. */
+.tabla-caja table { min-width: 34rem; }
+.tabla-caja.densa table { min-width: 58rem; }
+.diagrama-caja { max-width: 100%; overflow-x: auto; }
+.diagrama-caja > svg { width: 100%; min-width: 640px; max-width: none; display: block; }
+.diagrama { padding: clamp(12px,3vw,28px); background: var(--panel); border: 1px dashed var(--linea-fuerte); }
+.diagrama text { fill: var(--tinta); font-family: var(--mono); }
+
+/* 06 — El índice nunca desaparece: en móvil es parte del documento. */
+.indice { font: 13px/1.5 var(--sans); color: var(--tinta-3); }
+.indice ol { list-style: none; padding: 0; counter-reset: indice; }
+.indice li { counter-increment: indice; margin: 0; }
+.indice a { display: block; color: inherit; padding-block: 9px; text-decoration: none; }
+.indice a::before { content: counter(indice,decimal-leading-zero) '. '; font: 11px var(--mono); }
+.indice .visto a { text-decoration: line-through; text-decoration-color: var(--linea-fuerte); }
+.indice a[aria-current='location'] { color: var(--tinta); font-weight: 600; }
+.regla { position: fixed; right: 12px; top: 15vh; height: 70vh; width: 44px; cursor: pointer; display: none; }
+.regla .ticks { position: absolute; right: 0; top: 0; bottom: 0; width: 10px; background: repeating-linear-gradient(to bottom,var(--linea-fuerte) 0 1px,transparent 1px 10px); }
+.regla .cursor { position: absolute; right: 0; width: 22px; height: 2px; background: var(--marcador); top: calc(var(--lectura,0) * (100% - 2px)); }
+.regla .val { position: absolute; right: 15px; top: clamp(0px,calc(var(--lectura,0) * 100% - 6px),calc(100% - 14px)); font: 10px/14px var(--mono); color: var(--tinta-2); }
+@media (min-width: 1600px) { .hoja > .indice { position: fixed; left: 24px; top: 128px; width: 144px; max-height: calc(100vh - 160px); overflow-y: auto; z-index: 2; } .regla { display: block; } }
+
+/* 07 — Copia y selección funcionan sin máscaras sobre el código. */
+.codigo { background: var(--panel); border: 1px dashed var(--linea-fuerte); border-radius: 6px; min-width: 0; }
+.codigo .cab { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px dashed var(--linea); color: var(--tinta-3); font: 12px/1.5 var(--mono); }
+.codigo .cab > span { overflow-wrap: anywhere; min-width: 0; }
+.codigo button { font-size: 12px; }
+.codigo pre { margin: 0; padding: 20px; overflow: auto; font: 13px/1.65 var(--mono); tab-size: 2; }
+.codigo code { font: inherit; }
+.codigo .kw { color: var(--naranja); }
+.codigo .str { color: var(--verde); }
+.codigo .com { color: var(--tinta-3); }
+.copia-estado { font: 12px var(--mono); color: var(--tinta-3); }
+
+/* 08 — Kept: objetos y notas, con el título completo visible. */
+.kept { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,240px),1fr)); gap: 24px; padding-block: 24px; border-block: 1px dashed var(--linea-fuerte); }
+.kept article { display: grid; grid-template-rows: auto auto 1fr auto; gap: 12px; min-width: 0; padding: 12px; }
+.kept .portada { width: 100%; height: 180px; object-fit: contain; object-position: left bottom; transform-origin: 20% 90%; }
+.kept h3 { font-size: 25px; }
+.kept p { color: var(--tinta-2); font-size: 14px; line-height: 1.6; }
+.kept .meta { font: 11px/1.5 var(--mono); color: var(--tinta-3); }
+@media (hover:hover) { .kept article:hover .portada { transform: rotate(-2deg) translateY(-3px); } }
+.extracto { border-block: 1px solid var(--linea); padding-block: 18px; }
+.desvanece { color: var(--tinta-3); mask-image: linear-gradient(#000 35%,transparent 100%); -webkit-mask-image: linear-gradient(#000 35%,transparent 100%); }
+.extracto:has(details[open]) .desvanece { display: none; }
+.extracto summary { cursor: pointer; padding-block: 12px; color: var(--azul); font-size: 14px; }
+.extracto details p { padding-top: 8px; }
+
+/* 09 — Globo: el canvas y la lista tienen celdas propias; nunca recortar la esfera. */
+.globo { border-block: 1px dashed var(--linea-fuerte); padding-block: 20px; }
+.globo-layout { display: grid; grid-template-columns: minmax(0,1fr); gap: 24px; }
+.globo-escena { position: relative; width: 100%; aspect-ratio: 1.3; min-width: 0; }
+.globo-escena canvas { display: block; width: 100%; height: 100%; touch-action: pan-y; cursor: grab; }
+.globo-escena canvas:active { cursor: grabbing; }
+.globo-escena:focus-within { outline: 2px dashed var(--foco); outline-offset: 4px; }
+.globo-rutas { display: grid; align-content: start; gap: 4px; }
+.globo-rutas button { background: transparent; border: 0; border-bottom: 1px dashed var(--linea); border-radius: 0; text-align: left; padding: 12px 4px; width: 100%; }
+.globo-rutas button[aria-pressed='true'] { background: var(--naranja-suave); color: var(--naranja); }
+.globo-rutas button span { display: block; font: 12px/1.6 var(--mono); }
+.globo-rutas button small { display: block; color: var(--tinta-3); font-size: 12px; padding-top: 4px; }
+.globo-controles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.globo-controles button { font: 12px var(--mono); }
+.globo-ayuda { font-size: 12px; color: var(--tinta-3); margin-block: 10px; }
+.globo-error { padding: 20px; border: 1px solid var(--linea-fuerte); }
+@media (min-width: 800px) { .globo-layout { grid-template-columns: minmax(0,1fr) minmax(180px,240px); align-items: center; } }
+
+/* 10 — Estados visibles y movimiento optativo, nunca contenido dependiente de animar. */
+:where(a,button,select,input,summary,[tabindex]):focus-visible { outline: 2px dashed var(--foco); outline-offset: 3px; }
+.salto { position: fixed; top: 8px; left: 8px; z-index: 10; padding: 10px; background: var(--papel); transform: translateY(-150%); }
+.salto:focus { transform: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+[hidden] { display: none !important; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  button,a,.kept .portada { transition: color var(--rapido),background-color var(--rapido),transform var(--suave) var(--curva); }
+  .revelar { animation: nota-entrada 375ms var(--curva) both; }
+  @keyframes nota-entrada { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .kept .portada { transform: none !important; } *,*::before,*::after { animation: none !important; transition: none !important; } }
+@media (forced-colors: active) { .marca { text-decoration-color: LinkText; } .aviso,.mapa,.codigo,.pildora { border: 1px solid CanvasText; } .desvanece { mask: none; } }
+
+/* ===========================================================
+   10b — MULTIPÁGINA. Una nota larga se parte en páginas con su propio temario.
+   LA TRAMPA: si las páginas se meten entre `.hoja` y las secciones, la rejilla de
+   `por-seccion` ya no alcanza —usa `>`— y TODO queda del mismo ancho que el párrafo.
+   Por eso cada página vuelve a declarar la rejilla. Medido: sin esto, texto y figura
+   daban 1514 px los dos; con esto, 560 y 992/1216.
+   =========================================================== */
+.hoja.multipagina { display: block; }
+.pagina { display: none; }
+.hoja.multipagina > .pagina.viva {
+  display: grid;
+  grid-template-columns: 1fr min(var(--texto), calc(100% - 2 * var(--gutter))) 1fr;
+  row-gap: 28px; }
+.pagina > * { grid-column: 2; min-width: 0; }
+.pagina > .ancho { grid-column: 1 / -1; width: min(var(--ancho), calc(100% - 2 * var(--gutter))); margin-inline: auto; }
+.pagina > .amplio { grid-column: 1 / -1; width: min(var(--amplio), calc(100% - 2 * var(--gutter))); margin-inline: auto; }
+/* La barra de páginas se desplaza de lado en móvil en vez de desbordar la ventana. */
+.barra { position: sticky; top: 0; z-index: 40; display: flex; gap: 14px; align-items: center;
+  padding: 9px clamp(12px, 3vw, 26px); border-bottom: 1px solid var(--linea);
+  background: color-mix(in srgb, var(--papel) 92%, transparent); backdrop-filter: blur(10px);
+  flex-wrap: nowrap; overflow-x: auto; scrollbar-width: thin; }
+.barra .sello { font: 500 12px/1 var(--mono); color: var(--tinta-3); letter-spacing: .04em;
+  white-space: nowrap; padding-right: 6px; border-right: 1px solid var(--linea); }
+.barra nav { display: flex; gap: 2px; flex: 1; min-width: 0; }
+.barra button { font: 500 12.5px/1 var(--sans); color: var(--tinta-3); background: none; border: 0;
+  border-radius: 7px; padding: 7px 11px; cursor: pointer; white-space: nowrap;
+  transition: background var(--rapido), color var(--rapido); }
+.barra button:hover { background: var(--panel); color: var(--tinta); }
+.barra button[aria-current='page'] { background: var(--panel-2); color: var(--tinta); }
+.barra button .n { font-family: var(--mono); font-size: 10.5px; color: var(--linea-fuerte); margin-right: 5px; }
+.barra button[aria-current='page'] .n { color: var(--marcador); }
+.barra .temas { margin-left: auto; }
+/* Los botones de paso y el pie llevan el peso del final del documento: si se ven
+   desvaídos, el informe termina en nada. Tinta plena, borde firme y una flecha que indica. */
+.paginacion { width: min(var(--ancho), calc(100% - 2 * var(--gutter))); margin-inline: auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 64px; }
+.paginacion button { font: 500 15px/1.35 var(--sans); color: var(--tinta); background: var(--panel);
+  border: 1px solid var(--linea-fuerte); border-radius: 12px; padding: 16px 18px; cursor: pointer;
+  text-align: left; display: grid; gap: 5px; min-height: 0;
+  transition: border-color var(--rapido), background var(--rapido), transform var(--rapido); }
+.paginacion button:last-child { text-align: right; }
+.paginacion button:hover:not(:disabled) { border-color: var(--marcador); background: var(--panel-2); transform: translateY(-1px); }
+.paginacion button:disabled { opacity: .38; cursor: default; border-style: dashed; }
+.paginacion .et { font: 500 10px/1 var(--mono); color: var(--tinta-3);
+  letter-spacing: .11em; text-transform: uppercase; }
+.paginacion button:not(:disabled) .et { color: var(--marcador); }
+.paginacion .tit { font-family: var(--serif); font-size: 21px; line-height: 1.1; letter-spacing: -.01em; }
+@media (max-width: 560px) { .paginacion { grid-template-columns: 1fr } }
+
+.pie { border-top: 2px solid var(--tinta); padding-top: 20px; margin-top: 64px;
+  display: grid; gap: 14px; font-size: 13.5px; line-height: 1.6; color: var(--tinta-3); }
+/* En multipágina la hoja es `display:block`, así que el pie se iría de lado a lado mientras
+   todo lo demás está centrado. Se le da el mismo ancho que a los botones de paso. */
+.hoja.multipagina > .pie { width: min(var(--ancho), calc(100% - 2 * var(--gutter))); margin-inline: auto; }
+.pie .marca-pie { font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase;
+  color: var(--tinta); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.pie .marca-pie::after { content: ""; flex: 1; height: 1px; background: var(--linea); min-width: 20px; }
+.pie .campos { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px 26px; }
+.pie .campos > div { display: grid; gap: 3px; }
+.pie dt, .pie .campos b { font: 500 10px/1.4 var(--mono); letter-spacing: .09em;
+  text-transform: uppercase; color: var(--linea-fuerte); font-weight: 500; }
+.pie .campos span { color: var(--tinta-2); font-size: 13px; }
+/* El script del índice cuenta TODOS los enlaces del documento. En multipágina las secciones
+   de las páginas ocultas miden cero, las cree ya pasadas y tacha el temario entero: ahí sus
+   marcas dejan de pintar y mandan las de `multipagina.js`, que sólo mira la página viva.
+   Las dos primeras reglas van acotadas a `.multipagina` a propósito. Sin ese acotamiento
+   apagaban el marcado en TODA nota de una sola página —donde nadie pone aqui-visto ni
+   aqui-actual—, y el índice se quedaba sin señalar la sección en curso. */
+.multipagina .indice .visto a { text-decoration: none; }
+.multipagina .indice a[aria-current='location'] { color: inherit; font-weight: 400; }
+.indice li.aqui-visto a { text-decoration: line-through; text-decoration-color: var(--linea-fuerte); }
+.indice li.aqui-actual a { color: var(--tinta); font-weight: 600; }
+
+/* ===========================================================
+   10c — TERMINAL. Una salida de consola es evidencia: se lee como se vio.
+   Se queda oscura en los dos temas a propósito; una terminal clara no se lee
+   como una terminal. El valor que importa va en `.subra`, no en negrita.
+   =========================================================== */
+.terminal { --term-papel: #171614; --term-tinta: #cfc6bb; --term-tenue: #7d746a;
+  --term-linea: #2d2a26; --term-marca: #c98f5a;
+  background: var(--term-papel); border: 1px solid var(--term-linea); border-radius: 12px;
+  overflow: hidden; font-family: var(--mono); }
+:root[data-theme='sea'] .terminal { --term-papel: hsl(212 24% 12%); --term-tinta: hsl(212 66% 82%);
+  --term-tenue: hsl(212 22% 52%); --term-linea: hsl(212 18% 22%); --term-marca: hsl(160 99% 60%); }
+.terminal .cab { display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 14px 18px 12px; font-size: 12.5px; color: var(--term-tenue); letter-spacing: .02em; }
+.terminal .cab button { background: none; border: 0; padding: 4px; min-height: 0; cursor: pointer;
+  color: var(--term-tenue); line-height: 0; border-radius: 5px; }
+.terminal .cab button:hover { color: var(--term-tinta); background: rgba(255,255,255,.06); }
+.terminal .cab svg { width: 15px; height: 15px; display: block; }
+.terminal .cuerpo { margin: 0 14px 14px; border: 1px dashed var(--term-linea); border-radius: 8px; }
+.terminal pre { margin: 0; padding: 16px 18px; overflow-x: auto; font-size: 12.5px; line-height: 1.85;
+  color: var(--term-tinta); scrollbar-width: thin; }
+.terminal .tenue { color: var(--term-tenue); }
+.terminal .subra { background: color-mix(in srgb, var(--term-marca) 22%, transparent);
+  color: var(--term-marca); border-radius: 4px; padding: 1px 6px; }
+.terminal .copia-estado { font-size: 11px; color: var(--term-marca); }
+
+/* Nota manuscrita con corchete: una frase señalada a mano dentro del texto escrito a mano. */
+.manuscrita { font-family: var(--mano); font-size: clamp(25px, 3vw, 31px); line-height: 1.3;
+  color: var(--tinta-2); margin: 30px 0; text-align: center; text-wrap: balance; }
+.manuscrita .senalado { position: relative; display: inline-block; padding: 0 .42em;
+  color: var(--tinta); }
+.manuscrita .senalado::before, .manuscrita .senalado::after {
+  position: absolute; top: 50%; transform: translateY(-52%); color: var(--marcador);
+  font-family: var(--serif); font-size: 1.15em; line-height: 0; }
+.manuscrita .senalado::before { content: "["; left: -.05em; }
+.manuscrita .senalado::after { content: "]"; right: -.05em; }
+.manuscrita .senalado a, .manuscrita .senalado .sub {
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
+  text-decoration-color: var(--linea-fuerte); color: inherit; }
+
+/* 11 — Papel real: todo el contenido, incluidos datos largos y notas, queda impreso. */
+@media print {
+  :root { color-scheme: light; }
+  body { background: white !important; color: #231e1a !important; font-size: 10.5pt; }
+  .hoja { display: block; padding: 0; }
+  .hoja > *,.hoja > .ancho,.hoja > .amplio,.hoja > .con-margen { width: 100%; margin: 0 0 18pt; }
+  .herramientas,.indice,.regla,.salto,.codigo button,.globo-controles,.globo-ayuda,.extracto summary { display: none !important; }
+  .con-margen { display: block; }
+  .margen { margin-top: 10pt; }
+  .codigo,.aviso,.tabla-caja,th,.mapa .bloque,.pildora,.dato { color: #231e1a; background: #f6f0eb; }
+  .codigo pre { overflow: visible; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .tabla-caja { overflow: visible; }
+  table { table-layout: fixed; font-size: 9pt; }
+  .bajada,.mapa .d,.secundario,.ceja,figcaption,.margen,.nota,.datos dt,.pie,.codigo .cab,.codigo .com,.codigo .kw,.codigo .str,.aviso .titulo,.aviso .num,.kept p,.kept .meta,.globo-rutas button small { color: #51473e; }
+  .desvanece { display: none; }
+  .extracto details::details-content { content-visibility: visible; }
+  .extracto details > p { display: block !important; }
+  .seccion { break-after: avoid-page; }
+  h1,h2,h3 { break-after: avoid-page; }
+  p { orphans: 3; widows: 3; }
+  .globo-rutas button { color: #231e1a; background: transparent; }
+}
+
+/* ============================================================
+   REJILLA POR SECCIÓN · añadido 12-sep-2026
+   El patrón de arriba exige que .ancho y .amplio sean hijos DIRECTOS de .hoja.
+   Cuando el documento se organiza en <section> semánticas y las figuras viven
+   dentro de ellas, hay que repetir la rejilla en cada sección: si no, la figura
+   queda atrapada en la columna central y termina MÁS ANGOSTA que el párrafo.
+   Medidas de referencia: texto 33rem, figura 48rem (1,44×), concéntricas.
+   ============================================================ */
+.hoja.por-seccion{display:block}
+.hoja.por-seccion > .cabecera,
+.hoja.por-seccion > .seccion,
+.hoja.por-seccion > .pie{
+  display:grid;
+  grid-template-columns:1fr min(var(--texto),calc(100% - 2 * var(--gutter))) 1fr;
+  column-gap:0}
+.hoja.por-seccion > .cabecera > *,
+.hoja.por-seccion > .seccion > *,
+.hoja.por-seccion > .pie > *{grid-column:2; min-width:0}
+.hoja.por-seccion .seccion > .ancho,
+.hoja.por-seccion .seccion > .figura{
+  grid-column:1/-1; width:min(var(--ancho),calc(100% - 2 * var(--gutter))); margin-inline:auto}
+.hoja.por-seccion .seccion > .amplio{
+  grid-column:1/-1; width:min(var(--amplio),calc(100% - 2 * var(--gutter))); margin-inline:auto}
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Reenie+Beanie&display=swap">
+<main class="hoja" id="inicio" lang="es"><div class="herramientas"><a href="#inicio" class="mono">nota / tikin</a><div class="temas"><label for="tema">Papel</label><select id="tema" data-tema><option value="system">Sistema</option><option value="light">Claro</option><option value="dark">Oscuro cálido</option><option value="sea">Dark Sea</option></select></div></div><header class="cabecera"><p class="ceja">Nota / geografía</p><h1>Planes, puntos<br>y lugares.</h1><p class="bajada">Un globo de puntos para explorar conexiones. Elige una ruta, gira la Tierra o pausa la vista.</p></header><figure class="ancho"><div id="globo-rutas"></div><figcaption>Rutas ilustrativas para explorar el componente; no representan vuelos realizados. Máscara terrestre COBE · 15.000 muestras · arrastre, teclado y selección.</figcaption></figure><footer class="pie">Ejemplo reutilizable · Three.js desde cdnjs · máscara geográfica incrustada · ambos temas y movimiento reducido.</footer></main><script>
+/* Nota Tikin. Pegar una vez al final del fragmento, dentro de <script>. */
+(() => {
+  'use strict';
+  const root = document.documentElement;
+  const selector = document.querySelector('[data-tema]');
+  const themes = ['system','light','dark','sea'];
+  function theme(value) {
+    if (!themes.includes(value)) value = 'system';
+    if (value === 'system') delete root.dataset.theme; else root.dataset.theme = value;
+    if (selector) selector.value = value;
+    try { localStorage.setItem('nota-tema',value); } catch {}
+    document.dispatchEvent(new CustomEvent('nota:tema'));
+  }
+  let stored = 'system';
+  try { stored = localStorage.getItem('nota-tema') || 'system'; } catch {}
+  theme(stored);
+  selector?.addEventListener('change', e => theme(e.target.value));
+
+  // El progreso pertenece al artículo, no al footer del documento envolvente.
+  const article = document.querySelector('[data-lectura]');
+  const links = [...document.querySelectorAll('.indice a[href^="#"]')];
+  const sections = links.map(a => document.getElementById(a.hash.slice(1)));
+  const ruler = document.querySelector('.regla');
+  function goToProgress(value) {
+    if (!article) return;
+    const distance=Math.max(0,article.getBoundingClientRect().height-innerHeight);
+    const top=scrollY+article.getBoundingClientRect().top+distance*Math.max(0,Math.min(100,value))/100;
+    scrollTo({top,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+  }
+  ruler?.addEventListener('click',e=>{const r=ruler.getBoundingClientRect();goToProgress((e.clientY-r.top)/r.height*100);});
+  ruler?.addEventListener('keydown',e=>{
+    const current=Number(ruler.getAttribute('aria-valuenow'));
+    const values={ArrowDown:current+1,ArrowRight:current+1,ArrowUp:current-1,ArrowLeft:current-1,PageDown:current+10,PageUp:current-10,Home:0,End:100};
+    if(e.key in values){e.preventDefault();goToProgress(values[e.key]);}
+  });
+  let frame = 0;
+  function update() {
+    frame = 0;
+    if (!article) return;
+    const rect = article.getBoundingClientRect();
+    const available = rect.height - innerHeight;
+    const progress = available <= 0 ? (rect.bottom <= innerHeight ? 1 : 0) : Math.max(0,Math.min(1,-rect.top / available));
+    if (ruler) {
+      ruler.style.setProperty('--lectura',progress);
+      ruler.setAttribute('aria-valuenow',Math.round(progress * 100));
+      const value = ruler.querySelector('.val');
+      if (value) value.textContent = Math.round(progress * 100) + '%';
+    }
+    let active = -1;
+    sections.forEach((section,index) => { if (section?.getBoundingClientRect().top <= 120) active = index; });
+    if (progress === 1 && links.length) active = links.length - 1;
+    links.forEach((a,index) => {
+      a.closest('li')?.classList.toggle('visto',index < active);
+      if (index === active) a.setAttribute('aria-current','location'); else a.removeAttribute('aria-current');
+    });
+  }
+  const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
+  addEventListener('scroll',schedule,{passive:true});
+  addEventListener('resize',schedule);
+  if (article && window.ResizeObserver) new ResizeObserver(schedule).observe(article);
+  document.fonts?.ready.then(schedule);
+  update();
+
+  document.querySelectorAll('[data-copiar]').forEach(button => {
+    button.addEventListener('click',async () => {
+      const code = document.getElementById(button.dataset.copiar);
+      const status = button.closest('.codigo')?.querySelector('[role="status"]');
+      if (!code) return;
+      try {
+        if (!navigator.clipboard?.writeText) throw new Error('clipboard unavailable');
+        await navigator.clipboard.writeText(code.textContent);
+        if (status) status.textContent = 'Código copiado.';
+        button.textContent = 'Copiado';
+        setTimeout(() => { button.textContent = 'Copiar'; },1600);
+      } catch {
+        const range = document.createRange(); range.selectNodeContents(code);
+        const selection = getSelection(); selection.removeAllRanges(); selection.addRange(range);
+        if (status) status.textContent = 'Código seleccionado. Usa ⌘C o Ctrl+C para copiar.';
+      }
+    });
+  });
+
+  // Reproducir un sonido exige activación explícita; no se descargan MP3.
+  const soundButton = document.querySelector('[data-sonido]');
+  let soundEnabled = false, audio;
+  soundButton?.addEventListener('click',() => {
+    soundEnabled = !soundEnabled;
+    soundButton.setAttribute('aria-pressed',String(soundEnabled));
+    soundButton.textContent = soundEnabled ? 'Sonido activado' : 'Sonido apagado';
+    if (!soundEnabled) audio?.suspend().catch(()=>{});
+  });
+  document.addEventListener('click',e => {
+    if (!soundEnabled || !e.target.closest('button') || e.target.closest('[data-sonido]')) return;
+    try {
+      const Audio = window.AudioContext || window.webkitAudioContext;
+      if (!Audio) return;
+      audio ||= new Audio(); audio.resume().catch(()=>{});
+      const oscillator = audio.createOscillator(), gain = audio.createGain(), t = audio.currentTime;
+      oscillator.type = 'sine'; oscillator.frequency.setValueAtTime(680,t);
+      oscillator.frequency.exponentialRampToValueAtTime(420,t+.04);
+      gain.gain.setValueAtTime(.025,t); gain.gain.exponentialRampToValueAtTime(.0001,t+.055);
+      oscillator.connect(gain); gain.connect(audio.destination);
+      oscillator.start(t); oscillator.stop(t+.06);
+      oscillator.onended = () => { oscillator.disconnect(); gain.disconnect(); };
+    } catch {}
+  });
+  // Imprimir el contenido íntegro de los extractos incluso en motores sin ::details-content.
+  let closedForPrint = [];
+  addEventListener('beforeprint',() => { closedForPrint=[...document.querySelectorAll('.extracto details:not([open])')]; closedForPrint.forEach(e=>e.open=true); });
+  addEventListener('afterprint',() => { closedForPrint.forEach(e=>e.open=false); closedForPrint=[]; });
+})();
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js"></script>
+<script>
+/* NotaGlobo — renderizador Three.js con geometría esférica y arcos de rutas.
+ * La máscara terrestre y el shader Fibonacci derivan de COBE, de Shu Ding.
+ * MIT License
+ *
+ * Copyright (c) 2021 Shu Ding
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ * No hay peticiones de imágenes ni fetch: la máscara es un data: URI.
+ */
+(() => {
+  'use strict';
+  const LAND = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAACAAQAAAADMzoqnAAAECklEQVR42u3VsW4jRRzH8d94gzfF4Q0VQaC4vBLTRTp0mze4ggfAPAE5XQEFsGNAVIjwBrmW7h7gJE+giKjyABTZE4g06LKJETdRJvtD65kdz6yduKABiW+TVfzRf2bXYxtcE/59YJCz6YdbgQF6ACSRrwYKYImmh5PbwOewlV3wlQNbAN6SEExjUOO+BU0aCSnxReHABUlK4YFQeJeUT3da8IIkZ6NGoSnFY5KsMoVzMKfECUnqxgPYRArarmUCndHwzIEaQEpg5xVdBXROl8mpAQx5dUgPiHoYAAkg5w3JABR06byGAVgcRGAz5bznj6phBQNRFwyqgdxebH6gshJAesWoFhgYpApAFoG8BIZ/fEhSox5jDjQXmV0Ar5XJfAIrALi3URVs09gHIL4XJCkLC5LH9JWiArABFCSrQjdgkBzRJ0WJeUOSNyQAfJJwUSWUBRlJQ8oGHATACGlBynnzy2kEYLNjrxouigD8BZcgOeVPqh12RtufaCN5wCPVDpvQ9lsIrqndsJtDcWqBCpf4hWN7OdWHBw58FwIaNOU/n1TpMW2DFaD48cmr4185T8NHkpUFX749pQPVdgRKC/DGoQPVeAEKv+WHvY8OOWNTPRp5kHuwSf8wzXtVBKR7YwEH9H3lQUaypUfSATOALyVNu5vZJW31Bnx98nkLfDUWJaz6ixvm+RIQRdl3kmRxxiaDoGnZW4CpPfkaQadlcPim1xOSvETQo7Lv75enVAXJ3xGUlony4KQBBWUM1NiDc6qhyS8RgQs18OCMMtPDaAUIyg0PZkRWDqs+wnKJBTDI1Js6BolegOsKmUxNDBAAKqQyMQmidhegBlLZ+wwKYdv5M/8x1khkb1cgKqP2H+MKyV5vS+whrE8DQDgAlUAoRBX056EElJCjJVACeJBZgNfVp+iCCm4RBWCgKsRxASSA9KgDhDtCiTuMyfHsKXzhC6wNAIjjWb8LKAOA2ctk3FmCOlgKFy8f1N0JJtgsxinYnVAHt4t3gPzZXSCTyCWCQmBT91QE3B5yarSN40dNHYPka4TlDhTUI8zLvl0JSL3vZn6DsCFZOeB2yROEpR68sECQQA++xIGCR2X7DwlEoLRgUrZrqlUg50S1uy43YqDcN6UFBVkhAjWiCV2Q0jgQPdplMKxvBXodcOfAwJYvgdL+1etA1YJJfBcZlQV7sO1i2gHoNiyxtQ5sBsCgWyoxCHiFFd2L5nUTCqMAqGUgsQ9f5kCcCiZgRYkMgMTd5WsB1rTzj0Em14BE4r+QxN1lCEsVur2PoF5Wbg8RJXR4djgvBgauhLywoEZQrt1KKRdVS4CdlJ8qafyP+9KIj/nE/d7kKwH9jgS72e9DV+kvfTWgct4ZyP8Byb8BPG7MaaIIkAQAAAAASUVORK5CYII=';
+  // Shader de COBE: t=viewport, s=ángulos, F=base, w=atmósfera,
+  // n=(brillo,difusión,oscuro,opacidad), k=muestras, x=escala, y=brillo del océano.
+  const PLANET = `precision highp float;uniform vec2 t,v,s;uniform vec3 paper;uniform float lightTheme;uniform vec3 F,w;uniform vec4 n;uniform float k,x,y;uniform sampler2D z;float u;mat3 A(float a,float b){float c=cos(a),d=cos(b),e=sin(a),f=sin(b);return mat3(d,f*e,-f*c,0,c,e,f,d*-e,d*c);}vec3 B(vec3 c,out float G){c=c.xzy;float q=max(2.,floor(log2(2.236068*k*3.141593*(1.-c.z*c.z))*.72021));vec2 g=floor(pow(1.618034,q)/2.236068*vec2(1,1.618034)+.5),d=fract((g+1.)*.618034)*6.283185-3.883222,e=-2.*g,f=vec2(atan(c.y,c.x),c.z-1.),r=floor(vec2(e.y*f.x-d.y*(f.y*k+1.),-e.x*f.x+d.x*(f.y*k+1.))/(d.x*e.y-e.x*d.y));float o=3.141593;vec3 C;for(float h=0.;h<4.;h+=1.){vec2 D=vec2(mod(h,2.),floor(h*.5));float j=dot(g,r+D);if(j>k)continue;float a=j,b=0.;a>=16384.?(a-=16384.,b+=.868872):0.,a>=8192.?(a-=8192.,b+=.934436):0.,a>=4096.?(a-=4096.,b+=.467218):0.,a>=2048.?(a-=2048.,b+=.733609):0.,a>=1024.?(a-=1024.,b+=.866804):0.,a>=512.?(a-=512.,b+=.433402):0.,a>=256.?(a-=256.,b+=.216701):0.,a>=128.?(a-=128.,b+=.108351):0.,a>=64.?(a-=64.,b+=.554175):0.,a>=32.?(a-=32.,b+=.777088):0.,a>=16.?(a-=16.,b+=.888544):0.,a>=8.?(a-=8.,b+=.944272):0.,a>=4.?(a-=4.,b+=.472136):0.,a>=2.?(a-=2.,b+=.236068):0.,a>=1.?(a-=1.,b+=.618034):0.;float l=fract(b)*6.283185,i=1.-2.*j*u,m=sqrt(1.-i*i);vec3 p=vec3(cos(l)*m,sin(l)*m,i);float E=length(c-p);if(E<o)o=E,C=p;}G=o;return C.xzy;}void main(){u=1./k;vec2 c=1./t,b=(gl_FragCoord.xy*c*2.-1.)/x-v*vec2(1,-1)*c;b.x*=t.x*c.y;float a=dot(b,b),f=0.,landShade=0.;vec4 l=vec4(0);if(a<=.64){float g;vec4 m=vec4(0);vec3 h=normalize(vec3(b,sqrt(.64-a)));mat3 o=A(s.y,s.x);float i=h.z;vec3 d=B(h*o,g);float j=asin(d.y),e=acos(-d.x/cos(j));e=d.z<0.?-e:e;float p=max(texture2D(z,vec2(e*.5/3.141593,-(j/3.141593+.5))).x,y),q=p*smoothstep(8e-3,0.,g)*pow(i,n.y)*n.x;landShade=q;m+=vec4(F*(mix((1.-q)*pow(i,.4),q,n.z)+.1)+pow(1.-i,4.)*w,1),l+=m*(1.+n.w)*.5,f=(1.-a)*(1.-a)*smoothstep(0.,1.,.2/(a-.64));}else{float r=sqrt(.2/(a-.64));f=smoothstep(.5,1.,r/(r+1.));}if(lightTheme>.5){if(a<=.64){float ink=clamp(.025+landShade*.30,0.,.50);gl_FragColor=vec4(mix(paper,F,ink),1.);}else{gl_FragColor=vec4(w,f*.15);}}else{gl_FragColor=l+vec4(f*w,f);}}`;
+  const PROJECT = `
+    uniform vec2 viewport, angles;
+    uniform float scale;
+    vec3 rotatePoint(vec3 p) {
+      float cp=cos(angles.x), sp=sin(angles.x), ct=cos(angles.y), st=sin(angles.y);
+      return vec3(cp*p.x+sp*p.z, sp*st*p.x+ct*p.y-cp*st*p.z, -sp*ct*p.x+st*p.y+cp*ct*p.z);
+    }
+    vec2 projectPoint(vec3 p) { return p.xy * vec2(viewport.y/viewport.x,1.) * scale; }
+  `;
+  const ARC_VERTEX = `
+    attribute vec3 position;
+    uniform vec3 fromPoint,toPoint,controlPoint;
+    uniform float width;
+    varying vec3 viewPoint;
+    ${PROJECT}
+    void main() {
+      float t=position.x, u=1.-t;
+      vec3 p=u*u*fromPoint+2.*u*t*controlPoint+t*t*toPoint;
+      viewPoint=rotatePoint(p);
+      vec3 tangent=rotatePoint(2.*u*(controlPoint-fromPoint)+2.*t*(toPoint-controlPoint));
+      vec2 normal=normalize(vec2(-tangent.y,tangent.x)+vec2(.000001));
+      vec2 clip=projectPoint(viewPoint)+normal*position.y*width*vec2(2./viewport.x,2./viewport.y);
+      gl_Position=vec4(clip,0.,1.);
+    }
+  `;
+  const ARC_FRAGMENT = `precision highp float;
+    varying vec3 viewPoint;
+    uniform vec3 color;
+    void main() {
+      if(viewPoint.z<0. && length(viewPoint.xy)<.8) discard;
+      gl_FragColor=vec4(color,1.);
+    }
+  `;
+  const MARKER_VERTEX = `
+    attribute vec3 position;
+    uniform vec3 location;
+    uniform float size;
+    varying vec2 uv;
+    varying vec3 viewPoint;
+    ${PROJECT}
+    void main() {
+      uv=position.xy;
+      viewPoint=rotatePoint(location*.82);
+      vec2 clip=projectPoint(viewPoint)+position.xy*size*vec2(viewport.y/viewport.x,1.)*scale;
+      gl_Position=vec4(clip,0.,1.);
+    }
+  `;
+  const MARKER_FRAGMENT = `precision highp float;
+    varying vec2 uv; varying vec3 viewPoint; uniform vec3 color;
+    void main() {
+      if(viewPoint.z<0. && length(viewPoint.xy)<.8) discard;
+      float alpha=1.-smoothstep(.4,.5,length(uv));
+      if(alpha<=0.) discard;
+      gl_FragColor=vec4(color,alpha);
+    }
+  `;
+  const node = (tag,cls,text) => { const e=document.createElement(tag);if(cls)e.className=cls;if(text)e.textContent=text;return e; };
+  const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+  const wrap=a=>((a+Math.PI)%(2*Math.PI)+2*Math.PI)%(2*Math.PI)-Math.PI;
+  class NotaGlobo {
+    constructor(element, data) {
+      this.element=element; this.frame=0; this.frames=0; this.dead=false;
+      this.visible=true; this.contextLost=false; this.paused=false;
+      this.phi=4.6;this.theta=.18;this.scale=1;this.selected=null;
+      this.motion=matchMedia('(prefers-reduced-motion: reduce)');
+      this.scheme=matchMedia('(prefers-color-scheme: dark)');
+      this.abort=new AbortController();this.cleanups=[];
+      this.points=[];this.arcs=[];this.routeMeshes=[];this.markerMeshes=[];
+      this.buildDOM();
+      this.setData(data);
+      this.listen(this.motion,'change',()=>{this.stop();this.syncPause();this.draw();this.start();});
+      this.listen(this.scheme,'change',()=>this.theme());
+      this.listen(document,'visibilitychange',()=>{this.stop();if(!document.hidden){this.draw();this.start();}});
+      this.listen(document,'nota:tema',()=>this.theme());
+      this.mutation=new MutationObserver(()=>this.theme());
+      this.mutation.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+      this.intersection=new IntersectionObserver(entries=>{this.visible=entries[0].isIntersecting;this.stop();if(this.visible){this.draw();this.start();}},{rootMargin:'80px'});
+      this.intersection.observe(this.element);
+      try { this.init(); }
+      catch(error) { this.error.textContent='El globo 3D no está disponible. Las rutas completas están en la lista.';this.error.hidden=false;this.canvas.hidden=true;this.stage.hidden=true;this.layout.style.gridTemplateColumns='1fr';this.controls.hidden=true;this.error.dataset.reason=error.name; }
+      this.syncPause();
+    }
+    listen(target,type,handler,options={}) { target.addEventListener(type,handler,{...options,signal:this.abort.signal}); }
+    buildDOM() {
+      this.element.classList.add('globo');
+      this.layout=node('div','globo-layout');
+      this.stage=node('div','globo-escena');
+      this.canvas=node('canvas');this.canvas.tabIndex=0;this.canvas.setAttribute('role','img');
+      this.canvas.setAttribute('aria-label','Globo de rutas. Usa las flechas para girar; también puedes elegir una ruta en la lista.');
+      this.stage.append(this.canvas);
+      this.list=node('div','globo-rutas');this.list.setAttribute('aria-label','Rutas del globo');
+      this.layout.append(this.stage,this.list);
+      this.controls=node('div','globo-controles');
+      this.pauseButton=node('button','','Pausar giro');
+      this.pauseButton.type='button';this.pauseButton.setAttribute('aria-pressed','false');
+      const left=node('button','','← Girar'),right=node('button','','Girar →'),reset=node('button','','Vista inicial');
+      for(const button of [left,right,reset])button.type='button';
+      this.controls.append(this.pauseButton,left,right,reset);
+      this.status=node('p','globo-ayuda');this.status.setAttribute('role','status');this.status.setAttribute('aria-live','polite');
+      this.status.textContent='Arrastra horizontalmente o usa las flechas. Selecciona una ruta para verla.';
+      this.error=node('p','globo-error');this.error.hidden=true;
+      this.element.append(this.error,this.layout,this.controls,this.status);
+      this.listen(this.pauseButton,'click',()=>{this.paused=!this.paused;this.stop();this.syncPause();this.start();});
+      this.listen(left,'click',()=>this.rotate(-.25,0));this.listen(right,'click',()=>this.rotate(.25,0));
+      this.listen(reset,'click',()=>{this.select(null);this.phi=4.6;this.theta=.18;this.draw();});
+      this.listen(this.canvas,'keydown',e=>{
+        const directions={ArrowLeft:[-.15,0],ArrowRight:[.15,0],ArrowUp:[0,-.12],ArrowDown:[0,.12]};
+        if(directions[e.key]){e.preventDefault();this.rotate(...directions[e.key]);}
+        if(e.key==='Home'){e.preventDefault();this.select(null);this.phi=4.6;this.theta=.18;this.draw();}
+      });
+      this.listen(this.canvas,'pointerdown',e=>{
+        if(e.button!==0)return;
+        this.drag={id:e.pointerId,x:e.clientX,y:e.clientY,type:e.pointerType};
+        this.canvas.setPointerCapture(e.pointerId);this.target=null;this.stop();
+      });
+      this.listen(this.canvas,'pointermove',e=>{
+        if(!this.drag||this.drag.id!==e.pointerId)return;
+        const dx=e.clientX-this.drag.x,dy=e.clientY-this.drag.y;
+        this.phi+=dx*.005;
+        // Un dedo conserva el scroll vertical de la página. Ratón permite inclinación.
+        if(this.drag.type!=='touch')this.theta=clamp(this.theta+dy*.003,-1.2,1.2);
+        this.drag.x=e.clientX;this.drag.y=e.clientY;this.draw();
+      });
+      const release=e=>{if(this.drag?.id===e.pointerId){this.drag=null;if(this.canvas.hasPointerCapture(e.pointerId))this.canvas.releasePointerCapture(e.pointerId);this.start();}};
+      this.listen(this.canvas,'pointerup',release);this.listen(this.canvas,'pointercancel',release);
+      this.listen(this.canvas,'lostpointercapture',()=>{this.drag=null;this.start();});
+      this.listen(this.canvas,'webglcontextlost',e=>{e.preventDefault();this.contextLost=true;this.stop();this.error.textContent='La vista 3D está suspendida. Las rutas siguen disponibles.';this.error.hidden=false;});
+      // Three reconstruye su estado en otro listener del mismo evento; dibujar después.
+      this.listen(this.canvas,'webglcontextrestored',()=>queueMicrotask(()=>{if(this.dead)return;this.contextLost=false;this.error.hidden=true;this.draw();this.start();}));
+    }
+    setData(data) {
+      if(!data||!Array.isArray(data.points)||!Array.isArray(data.arcs))throw new TypeError('Se esperan points y arcs.');
+      const ids=new Set();
+      const points=data.points.map(p=>{
+        if(!p||typeof p.id!=='string'||!p.id||ids.has(p.id)||!Number.isFinite(p.lat)||!Number.isFinite(p.lon)||Math.abs(p.lat)>90||Math.abs(p.lon)>180)throw new TypeError('Punto inválido o id duplicado.');
+        ids.add(p.id);return {id:p.id,label:String(p.label||p.id),lat:p.lat,lon:p.lon};
+      });
+      const routeIds=new Set();
+      const arcs=data.arcs.map((a,i)=>{
+        const id=String(a.id??'ruta-'+i);
+        if(!ids.has(a.from)||!ids.has(a.to)||routeIds.has(id))throw new TypeError('Ruta inválida o id duplicado.');
+        routeIds.add(id);return {id,from:a.from,to:a.to,label:String(a.label||a.from+' → '+a.to),detail:String(a.detail||'')};
+      });
+      this.points=points;this.arcs=arcs;this.selected=null;this.target=null;
+      this.list.replaceChildren();
+      if(!arcs.length)this.list.append(node('p','secundario','Sin rutas registradas.'));
+      arcs.forEach(a=>{const b=node('button');b.type='button';b.dataset.route=a.id;b.setAttribute('aria-pressed','false');b.append(node('span','',a.label));if(a.detail)b.append(node('small','',a.detail));b.addEventListener('click',()=>this.select(this.selected===a.id?null:a.id));this.list.append(b);});
+      if(this.scene){this.buildRoutes();this.draw();this.start();}
+    }
+    vector(point) {
+      const lat=point.lat*Math.PI/180,lon=point.lon*Math.PI/180;
+      return new THREE.Vector3(Math.cos(lat)*Math.cos(lon),Math.sin(lat),-Math.cos(lat)*Math.sin(lon));
+    }
+    rgb(css) {
+      // El shader de referencia trabaja en sRGB; no convertir a espacio lineal aquí.
+      const context=this.colorContext||(this.colorContext=document.createElement('canvas').getContext('2d'));
+      context.fillStyle='#000';context.fillStyle=css;context.fillRect(0,0,1,1);
+      const c=context.getImageData(0,0,1,1).data;
+      return new THREE.Vector3(c[0]/255,c[1]/255,c[2]/255);
+    }
+    init() {
+      if(!window.THREE)throw new Error('Three.js unavailable');
+      this.renderer=new THREE.WebGLRenderer({canvas:this.canvas,alpha:true,antialias:true,preserveDrawingBuffer:true});
+      this.renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));
+      this.renderer.setClearColor(0,0);
+      this.scene=new THREE.Scene();this.camera=new THREE.Camera();
+      this.shared={viewport:{value:new THREE.Vector2(1,1)},angles:{value:new THREE.Vector2(this.phi,this.theta)},scale:{value:1}};
+      this.planetUniforms={t:{value:new THREE.Vector2(1,1)},v:{value:new THREE.Vector2(0,0)},s:this.shared.angles,F:{value:new THREE.Vector3()},w:{value:new THREE.Vector3()},n:{value:new THREE.Vector4(10,2,.6,1)},k:{value:15000},x:this.shared.scale,y:{value:.05},z:{value:null},paper:{value:new THREE.Vector3()},lightTheme:{value:0}};
+      const material=new THREE.RawShaderMaterial({uniforms:this.planetUniforms,vertexShader:'precision highp float; attribute vec3 position; void main(){gl_Position=vec4(position.xy,0.,1.);}',fragmentShader:PLANET,transparent:true,depthTest:false,depthWrite:false});
+      const plane=new THREE.Mesh(new THREE.PlaneGeometry(2,2),material);plane.frustumCulled=false;plane.renderOrder=0;this.scene.add(plane);
+      // Textura 256 × 128 de COBE, incrustada y con filtrado NEAREST como el original.
+      this.texture=new THREE.TextureLoader().load(LAND,()=>{if(!this.dead){this.draw();this.start();}},undefined,()=>{this.error.textContent='No se pudo decodificar el mapa. Consulta la lista de rutas.';this.error.hidden=false;});
+      this.texture.minFilter=THREE.NearestFilter;this.texture.magFilter=THREE.NearestFilter;
+      // COBE usa UV negativos y los valores por defecto de WebGL: REPEAT y flipY=false.
+      // Los defaults de Three (clamp/flip) borrarían o invertirían los continentes.
+      this.texture.wrapS=THREE.RepeatWrapping;this.texture.wrapT=THREE.RepeatWrapping;this.texture.flipY=false;
+      this.planetUniforms.z.value=this.texture;
+      this.buildRoutes();this.theme();
+      this.resize=new ResizeObserver(()=>this.fit());this.resize.observe(this.stage);
+      this.fit();this.start();
+    }
+    disposeMeshes(list) { for(const mesh of list){this.scene.remove(mesh);mesh.geometry.dispose();mesh.material.dispose();}list.length=0; }
+    buildRoutes() {
+      this.disposeMeshes(this.routeMeshes);this.disposeMeshes(this.markerMeshes);
+      const byId=new Map(this.points.map(p=>[p.id,p]));
+      this.arcs.forEach(a=>{
+        const from=this.vector(byId.get(a.from)),to=this.vector(byId.get(a.to));
+        if(from.distanceTo(to)<.00001)return; // Una ruta a sí misma no produce una curva degenerada.
+        const mid=from.clone().add(to);
+        if(mid.length()<.0001)mid.crossVectors(from,new THREE.Vector3(Math.abs(from.y)<.9?0:1,Math.abs(from.y)<.9?1:0,0));
+        mid.normalize();
+        // Curva cuadrática elevada. Compensar la cuerda evita que rutas largas atraviesen la Tierra.
+        const height=.1+.14*(1-from.dot(to))/2;
+        const control=mid.multiplyScalar(2*(.82+height)-.82*Math.sqrt(Math.max(0,(1+from.dot(to))/2)));
+        const vertices=[];
+        for(let i=0;i<64;i++){const s=i/64,e=(i+1)/64;vertices.push(s,-1,0,e,-1,0,s,1,0,s,1,0,e,-1,0,e,1,0);}
+        const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));
+        const uniforms={...this.shared,fromPoint:{value:from.multiplyScalar(.82)},toPoint:{value:to.multiplyScalar(.82)},controlPoint:{value:control},width:{value:.65},color:{value:new THREE.Vector3()}};
+        const material=new THREE.RawShaderMaterial({uniforms,vertexShader:'precision highp float;\n'+ARC_VERTEX,fragmentShader:ARC_FRAGMENT,transparent:true,depthTest:false,depthWrite:false});
+        const mesh=new THREE.Mesh(geometry,material);mesh.frustumCulled=false;mesh.renderOrder=1;mesh.userData.id=a.id;this.scene.add(mesh);this.routeMeshes.push(mesh);
+      });
+      this.points.forEach(p=>{
+        const geometry=new THREE.PlaneGeometry(1,1);
+        const material=new THREE.RawShaderMaterial({uniforms:{...this.shared,location:{value:this.vector(p)},size:{value:.028},color:{value:new THREE.Vector3()}},vertexShader:'precision highp float;\n'+MARKER_VERTEX,fragmentShader:MARKER_FRAGMENT,transparent:true,depthTest:false,depthWrite:false});
+        const mesh=new THREE.Mesh(geometry,material);mesh.frustumCulled=false;mesh.renderOrder=2;mesh.userData.id=p.id;this.scene.add(mesh);this.markerMeshes.push(mesh);
+      });
+      this.theme();
+    }
+    theme() {
+      if(!this.renderer||this.dead)return;
+      const css=getComputedStyle(this.element),get=name=>css.getPropertyValue(name).trim();
+      this.colors={arc:this.rgb(get('--globo-arco')),point:this.rgb(get('--globo-punto')),selected:this.rgb(get('--marcador'))};
+      const u=this.planetUniforms;
+      u.F.value.copy(this.rgb(get('--globo-base')));u.w.value.copy(this.rgb(get('--globo-glow')));
+      u.paper.value.copy(this.rgb(get('--papel')));u.n.value.x=parseFloat(get('--globo-brillo'))||10;
+      u.n.value.z=parseFloat(get('--globo-dark'))||0;u.lightTheme.value=u.n.value.z===0?1:0;
+      this.colorRoutes();this.draw();
+    }
+    colorRoutes() {
+      if(!this.colors)return;
+      const selected=this.arcs.find(a=>a.id===this.selected);
+      this.routeMeshes.forEach(m=>{const on=m.userData.id===this.selected;m.material.uniforms.color.value.copy(on?this.colors.selected:this.colors.arc);m.material.uniforms.width.value=on?1.15:.65;});
+      this.markerMeshes.forEach(m=>{const on=selected&&(m.userData.id===selected.from||m.userData.id===selected.to);m.material.uniforms.color.value.copy(on?this.colors.selected:this.colors.point);m.material.uniforms.size.value=on?.045:.028;});
+    }
+    select(id) {
+      if(id!==null&&!this.arcs.some(a=>a.id===id))throw new TypeError('Ruta desconocida.');
+      this.selected=id;this.target=null;
+      for(const button of this.list.querySelectorAll('button'))button.setAttribute('aria-pressed',String(button.dataset.route===id));
+      const arc=this.arcs.find(a=>a.id===id);
+      this.status.textContent=arc?arc.label+(arc.detail?' · '+arc.detail:''):'Todas las rutas.';
+      if(arc&&this.scene){
+        const a=this.vector(this.points.find(p=>p.id===arc.from)),b=this.vector(this.points.find(p=>p.id===arc.to));
+        const center=a.add(b);if(center.length()<.0001)center.copy(this.vector(this.points.find(p=>p.id===arc.from)));center.normalize();
+        this.target={phi:Math.atan2(-center.x,center.z),theta:clamp(Math.asin(center.y),-1.2,1.2)};
+        if(this.motion.matches||this.paused){this.phi=this.target.phi;this.theta=this.target.theta;this.target=null;}
+      }
+      this.colorRoutes();this.draw();this.start();
+    }
+    fit() {
+      if(this.dead||!this.renderer)return;
+      const rect=this.stage.getBoundingClientRect(),w=Math.max(1,Math.round(rect.width)),h=Math.max(1,Math.round(rect.height));
+      this.renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));this.renderer.setSize(w,h,false);
+      this.shared.viewport.value.set(w,h);
+      this.planetUniforms.t.value.set(this.canvas.width,this.canvas.height);
+      // La proyección reserva espacio para atmósfera y arcos incluso en un viewport vertical.
+      this.scale=Math.min(1,w/h)*.92;this.shared.scale.value=this.scale;this.draw();
+    }
+    rotate(dx,dy) { this.target=null;this.phi+=dx;this.theta=clamp(this.theta+dy,-1.2,1.2);this.draw(); }
+    syncPause() {
+      this.pauseButton.disabled=this.motion.matches;
+      this.pauseButton.setAttribute('aria-pressed',String(this.paused||this.motion.matches));
+      this.pauseButton.textContent=this.motion.matches?'Giro desactivado por preferencia':this.paused?'Reanudar giro':'Pausar giro';
+    }
+    pause() {this.paused=true;this.stop();this.syncPause();}
+    resume() {this.paused=false;this.syncPause();this.start();}
+    draw() {
+      if(!this.renderer||this.dead||this.contextLost)return;
+      this.shared.angles.value.set(this.phi,this.theta);
+      this.renderer.render(this.scene,this.camera);this.frames++;
+    }
+    stop() {cancelAnimationFrame(this.frame);this.frame=0;this.last=0;}
+    start() {
+      if(this.frame||!this.renderer||this.dead||this.contextLost||this.motion.matches||this.paused||this.drag||!this.visible||document.hidden)return;
+      if(this.selected&&!this.target)return;
+      this.frame=requestAnimationFrame(t=>this.tick(t));
+    }
+    tick(time) {
+      this.frame=0;
+      const dt=this.last?Math.min((time-this.last)/1000,.05):1/60;this.last=time;
+      if(this.target){
+        const factor=1-Math.pow(1-.09,dt*60),delta=wrap(this.target.phi-this.phi);
+        this.phi+=delta*factor;this.theta+=(this.target.theta-this.theta)*factor;
+        if(Math.abs(delta)<.0001&&Math.abs(this.target.theta-this.theta)<.0001)this.target=null;
+      } else if(!this.selected)this.phi+=.072*dt; // .0012 rad/cuadro a 60 Hz, ahora independiente de FPS.
+      this.draw();this.start();
+    }
+    destroy() {
+      if(this.dead)return;this.dead=true;this.stop();this.abort.abort();
+      this.resize?.disconnect();this.intersection?.disconnect();this.mutation?.disconnect();
+      this.scene?.traverse(m=>{m.geometry?.dispose();m.material?.dispose();});
+      this.texture?.dispose();this.renderer?.dispose();this.element.replaceChildren();
+    }
+  }
+  window.NotaGlobo=NotaGlobo;
+})();
+
+</script>
+<script>
+window.globo = new NotaGlobo(document.getElementById("globo-rutas"), {
+  "points": [
+    {
+      "id": "BOG",
+      "label": "Bogotá",
+      "lat": 4.711,
+      "lon": -74.0721
+    },
+    {
+      "id": "MAD",
+      "label": "Madrid",
+      "lat": 40.4168,
+      "lon": -3.7038
+    },
+    {
+      "id": "JFK",
+      "label": "Nueva York",
+      "lat": 40.6413,
+      "lon": -73.7781
+    },
+    {
+      "id": "HND",
+      "label": "Tokio",
+      "lat": 35.5494,
+      "lon": 139.7798
+    },
+    {
+      "id": "HKG",
+      "label": "Hong Kong",
+      "lat": 22.308,
+      "lon": 113.9185
+    },
+    {
+      "id": "SFO",
+      "label": "San Francisco",
+      "lat": 37.6213,
+      "lon": -122.379
+    },
+    {
+      "id": "GRU",
+      "label": "São Paulo",
+      "lat": -23.4356,
+      "lon": -46.4731
+    },
+    {
+      "id": "FLN",
+      "label": "Florianópolis",
+      "lat": -27.672,
+      "lon": -48.548
+    }
+  ],
+  "arcs": [
+    {
+      "id": "bog-mad",
+      "from": "BOG",
+      "to": "MAD",
+      "label": "BOG → MAD",
+      "detail": "Bogotá · Madrid"
+    },
+    {
+      "id": "mad-jfk",
+      "from": "MAD",
+      "to": "JFK",
+      "label": "MAD → JFK",
+      "detail": "Madrid · Nueva York"
+    },
+    {
+      "id": "jfk-hnd",
+      "from": "JFK",
+      "to": "HND",
+      "label": "JFK → HND",
+      "detail": "Nueva York · Tokio"
+    },
+    {
+      "id": "hnd-hkg",
+      "from": "HND",
+      "to": "HKG",
+      "label": "HND → HKG",
+      "detail": "Tokio · Hong Kong"
+    },
+    {
+      "id": "hkg-sfo",
+      "from": "HKG",
+      "to": "SFO",
+      "label": "HKG → SFO",
+      "detail": "Hong Kong · San Francisco"
+    },
+    {
+      "id": "sfo-bog",
+      "from": "SFO",
+      "to": "BOG",
+      "label": "SFO → BOG",
+      "detail": "San Francisco · Bogotá"
+    },
+    {
+      "id": "bog-gru",
+      "from": "BOG",
+      "to": "GRU",
+      "label": "BOG → GRU",
+      "detail": "Bogotá · São Paulo"
+    },
+    {
+      "id": "gru-fln",
+      "from": "GRU",
+      "to": "FLN",
+      "label": "GRU → FLN",
+      "detail": "São Paulo · Florianópolis"
+    }
+  ]
+});
+</script>

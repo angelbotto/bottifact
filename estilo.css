@@ -1,0 +1,417 @@
+/* NOTA TIKIN · v2 · septiembre 2026
+   Pegar completa en <style>. Fuentes por Google Fonts; sin @import ni assets remotos.
+   La escala cálida procede del CSS auditado de cmrg.me. Claro y Sea son adaptaciones.
+   01 Tokens · 02 Lectura · 03 Rejilla · 04 Anotaciones · 05 Datos · 06 Navegación
+   07 Código · 08 Kept · 09 Globo · 10 Movimiento y acceso · 11 Impresión. */
+
+/* 01 — Papeles y tintas. Los colores de texto tienen al menos 4.5:1 sobre sus superficies. */
+:root {
+  color-scheme: light;
+  --papel: #fef8f2; --panel: #f6f0eb; --panel-2: #e9dfd7;
+  --tinta: #231e1a; --tinta-2: #51473e; --tinta-3: #6c6158;
+  --linea: #d5c9bf; --linea-fuerte: #948475;
+  --naranja: #a13f19; --naranja-suave: #f8e5da;
+  --verde: #4a6037; --verde-suave: #eaf0e2;
+  --rojo: #a3443c; --rojo-suave: #f8e7e4;
+  --azul: #485c8a; --azul-suave: #e8edf5;
+  --marcador: #bc542b; --foco: #a13f19;
+  --globo-base: #8e8479; --globo-arco: #82705c; --globo-punto: #6c6158;
+  --globo-glow: #a39179; --globo-dark: 0; --globo-brillo: 2.4;
+  --texto: 35rem; --ancho: 62rem; --amplio: 76rem; --gutter: clamp(20px, 4vw, 40px);
+  --serif: 'Instrument Serif', Georgia, serif;
+  --sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono: 'Geist Mono', ui-monospace, monospace;
+  --mano: 'Reenie Beanie', cursive;
+  --rapido: 150ms; --suave: 320ms; --curva: cubic-bezier(.16,1,.3,1);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']):not([data-theme='sea']) {
+    color-scheme: dark;
+    --papel: #13110f; --panel: #231e1a; --panel-2: #2e2821;
+    --tinta: #e9dfd7; --tinta-2: #cfc3b9; --tinta-3: #b7a89b;
+    --linea: #3b3229; --linea-fuerte: #948475;
+    --naranja: #f1b798; --naranja-suave: #302018;
+    --verde: #b0b9a0; --verde-suave: #242b1e;
+    --rojo: #e8bdb8; --rojo-suave: #31201e;
+    --azul: #c1c8dd; --azul-suave: #252935;
+    --marcador: #f1733d; --foco: #f1733d;
+    --globo-base: #231e1a; --globo-arco: #6c6158; --globo-punto: #948475;
+    --globo-glow: #3b3229; --globo-dark: .6; --globo-brillo: 10;
+  }
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --papel: #13110f; --panel: #231e1a; --panel-2: #2e2821;
+  --tinta: #e9dfd7; --tinta-2: #cfc3b9; --tinta-3: #b7a89b;
+  --linea: #3b3229; --linea-fuerte: #948475;
+  --naranja: #f1b798; --naranja-suave: #302018;
+  --verde: #b0b9a0; --verde-suave: #242b1e;
+  --rojo: #e8bdb8; --rojo-suave: #31201e;
+  --azul: #c1c8dd; --azul-suave: #252935;
+  --marcador: #f1733d; --foco: #f1733d;
+  --globo-base: #231e1a; --globo-arco: #6c6158; --globo-punto: #948475;
+  --globo-glow: #3b3229; --globo-dark: .6; --globo-brillo: 10;
+}
+/* Sea: 7 tonos seleccionados del original de simurai (se omite duo-3).
+   Fondo y superficies son tonos estructurales adicionales, no colores de sintaxis. */
+:root[data-theme='sea'] {
+  color-scheme: dark;
+  --uno-1: hsl(212 99% 92%); --uno-2: hsl(212 66% 72%);
+  --uno-3: hsl(212 44% 56%); --uno-4: hsl(212 22% 44%); --uno-5: hsl(212 11% 30%);
+  --duo-1: hsl(160 99% 60%); --duo-2: hsl(160 55% 44%);
+  --papel: hsl(212 24% 15%); --panel: hsl(212 24% 19%); --panel-2: hsl(212 22% 23%);
+  --tinta: var(--uno-1); --tinta-2: var(--uno-2); --tinta-3: var(--uno-2);
+  --linea: var(--uno-5); --linea-fuerte: var(--uno-3);
+  --naranja: var(--duo-1); --naranja-suave: #203a33;
+  --verde: var(--duo-1); --verde-suave: #203a33;
+  --rojo: var(--uno-1); --rojo-suave: #2b3848;
+  --azul: var(--uno-2); --azul-suave: #233246;
+  --marcador: var(--duo-1); --foco: var(--duo-1);
+  --globo-base: #202e3e; --globo-arco: #678db6; --globo-punto: #88b4e7;
+  --globo-glow: #233c45; --globo-dark: .6; --globo-brillo: 10;
+}
+
+/* 02 — Una voz editorial, sin convertir el cuerpo en tipografía de exhibición. */
+* { box-sizing: border-box; }
+html { scroll-padding-top: 32px; }
+body { margin: 0; background: var(--papel); color: var(--tinta); font: 400 16px/1.65 var(--sans); letter-spacing: .05px; -webkit-font-smoothing: antialiased; }
+h1,h2,h3,p,figure,blockquote,dl,dd { margin: 0; }
+h1,h2,h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -.02em; text-wrap: balance; }
+h1 { font-size: clamp(38px, 5vw, 54px); line-height: 1.06; }
+h2 { font-size: clamp(30px, 3.4vw, 38px); line-height: 1.15; }
+h3 { font-size: 26px; line-height: 1.2; }
+p + p { margin-top: 1.15em; }
+strong { font-weight: 600; }
+a { color: var(--azul); text-underline-offset: .2em; text-decoration-thickness: 1px; overflow-wrap: anywhere; }
+a:hover { text-decoration-thickness: 2px; }
+button,select,input { font: inherit; color: inherit; }
+button,select { min-height: 44px; border: 1px solid var(--linea-fuerte); border-radius: 5px; padding: 8px 12px; background: var(--papel); }
+button { cursor: pointer; }
+button:hover { background: var(--panel-2); }
+button:disabled { cursor: default; }
+button:active { transform: translateY(1px); }
+img,video,svg,canvas { max-width: 100%; }
+img,video { height: auto; }
+figure > svg { display: block; width: 100%; height: auto; }
+ul,ol { padding-left: 1.25em; }
+li + li { margin-top: .4em; }
+.mono,code,pre,kbd,.ceja,figcaption,.pildora { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.ceja { color: var(--tinta-3); font-size: 12px; line-height: 1.5; letter-spacing: .075em; text-transform: uppercase; }
+.bajada { color: var(--tinta-2); font-size: 17px; line-height: 1.6; }
+.secundario,figcaption { color: var(--tinta-3); }
+figcaption { margin-top: 12px; font-size: 12px; line-height: 1.6; overflow-wrap: anywhere; }
+
+/* 03 — El texto tiene medida; el documento no tiene un ancho único.
+   .ancho y .amplio DEBEN ser hijos de .hoja. Ningún contenido escapa con offsets. */
+.hoja { display: grid; grid-template-columns: 1fr min(var(--texto), calc(100% - 2 * var(--gutter))) 1fr; padding-block: 40px 80px; row-gap: 28px; }
+.hoja > * { grid-column: 2; min-width: 0; }
+.hoja > .ancho,.hoja > .amplio { grid-column: 1 / -1; margin-inline: auto; width: min(var(--ancho), calc(100% - 2 * var(--gutter))); }
+.hoja > .amplio { width: min(var(--amplio), calc(100% - 2 * var(--gutter))); }
+.cabecera { padding-block: 56px 16px; display: grid; gap: 18px; }
+.herramientas { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; }
+.temas { display: flex; gap: 8px; align-items: center; font: 12px var(--mono); }
+.seccion { display: grid; gap: 18px; padding-top: 32px; border-top: 1px solid var(--linea); scroll-margin-top: 32px; }
+.pie { border-top: 1px solid var(--linea); padding-top: 24px; font-size: 13px; color: var(--tinta-3); }
+/* Una nota ocupa una celda real. En móvil vuelve al flujo después de su párrafo. */
+.con-margen { display: grid; gap: 16px; }
+.margen,.nota { font: 400 26px/1.18 var(--mano); color: var(--tinta-3); }
+.margen { border-left: 1px solid var(--linea-fuerte); padding: 8px 0 8px 16px; position: relative; }
+.margen::before,.margen::after { content: ''; position: absolute; left: 0; width: 9px; border-top: 1px solid var(--linea-fuerte); }
+.margen::before { top: 0; transform: rotate(-5deg); }
+.margen::after { bottom: 0; transform: rotate(4deg); }
+@media (min-width: 1184px) {
+  .hoja > .con-margen { grid-column: 1 / -1; width: min(68rem, calc(100% - 2 * var(--gutter))); margin-inline: auto; grid-template-columns: minmax(0,1fr) var(--texto) minmax(0,1fr); gap: 24px; align-items: center; }
+  .con-margen > :first-child { grid-column: 2; }
+  .con-margen > .margen { grid-column: 3; min-width: 0; }
+}
+
+/* 04 — Trazos: una anotación tiene que añadir información. */
+.marca {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8Q36 3 72 7T142 6T218 7M3 10Q70 7 124 9T216 8' fill='none' stroke='%23bc542b' stroke-width='1.7' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: 100% .32em; background-repeat: no-repeat; background-position: 0 100%;
+  padding-bottom: .13em; box-decoration-break: clone; -webkit-box-decoration-break: clone;
+}
+:root[data-theme='sea'] .marca { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8Q36 3 72 7T142 6T218 7M3 10Q70 7 124 9T216 8' fill='none' stroke='%2334febb' stroke-width='1.7' stroke-linecap='round'/%3E%3C/svg%3E"); }
+.sub { text-decoration: underline; text-underline-offset: .2em; }
+.punteado { text-decoration: underline dotted; text-underline-offset: .2em; }
+.tachado { text-decoration: line-through; text-decoration-color: var(--tinta-3); }
+.aviso { --acento: var(--azul); --suave-aviso: var(--azul-suave); display: grid; grid-template-columns: 30px minmax(0,1fr); gap: 12px; border-left: 3px solid var(--acento); padding: 18px 20px 18px 12px; background: var(--suave-aviso); border-radius: 0 4px 4px 0; }
+.aviso .num { border: 1.5px solid var(--acento); color: var(--acento); width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font: 12px var(--mono); }
+.aviso .titulo { color: var(--acento); font-weight: 600; margin-bottom: 6px; }
+.aviso p { font-size: 15px; }
+.aviso.ojo { --acento: var(--naranja); --suave-aviso: var(--naranja-suave); }
+.aviso.mal { --acento: var(--rojo); --suave-aviso: var(--rojo-suave); }
+.aviso.bien { --acento: var(--verde); --suave-aviso: var(--verde-suave); }
+.aviso.cita { --acento: var(--tinta-3); --suave-aviso: var(--panel); }
+.aviso.cita blockquote { font-style: italic; }
+
+/* 05 — Datos: figuras anchas y sus valores siempre completos. */
+.mapa { display: grid; grid-template-columns: minmax(0,3fr) minmax(0,2fr); grid-template-rows: minmax(110px,5fr) minmax(90px,3fr); min-height: 320px; border: 1px dashed var(--linea-fuerte); }
+.mapa .bloque { padding: clamp(12px,2.5vw,28px); display: flex; flex-direction: column; justify-content: space-between; gap: 10px; min-width: 0; border: 2px solid var(--papel); background: var(--panel-2); overflow-wrap: anywhere; }
+.mapa .bloque:first-child { grid-row: 1 / 3; }
+.mapa .destaca { background: var(--verde-suave); }
+.mapa .n { font: 400 clamp(22px,3vw,34px)/1.1 var(--serif); }
+.mapa .d { color: var(--tinta-2); font: 12px/1.5 var(--mono); }
+.datos { font: 13px/1.6 var(--mono); }
+.datos > div { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.4fr); gap: 16px; padding-block: 12px; border-bottom: 1px dashed var(--linea); }
+.datos dt { color: var(--tinta-3); }
+.datos dd { text-align: right; overflow-wrap: anywhere; }
+.dato,.pildora { display: inline; padding: 2px 6px; border-radius: 4px; font: .82em/1.6 var(--mono); background: var(--panel-2); color: var(--tinta-2); box-decoration-break: clone; -webkit-box-decoration-break: clone; overflow-wrap: anywhere; }
+.p-si { background: var(--verde-suave); color: var(--verde); }
+.p-medio { background: var(--naranja-suave); color: var(--naranja); }
+.p-no { background: var(--rojo-suave); color: var(--rojo); }
+.medida { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 12px 20px; padding-block: 16px; border-bottom: 1px solid var(--linea); }
+.medida label { font-size: 15px; }
+.medida .pct { font: 20px var(--mono); }
+.medida meter { width: 100%; height: 8px; grid-column: 1 / -1; appearance: none; border: 0; border-radius: 8px; background: var(--panel-2); }
+meter::-webkit-meter-bar { background: var(--panel-2); border: 0; height: 8px; }
+meter::-webkit-meter-optimum-value { background: var(--verde); }
+meter::-moz-meter-bar { background: var(--verde); }
+.tabla-caja { max-width: 100%; overflow-x: auto; border-block: 1px solid var(--linea-fuerte); scrollbar-color: var(--linea-fuerte) var(--panel); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+caption { padding: 12px; text-align: left; font: 12px/1.6 var(--mono); color: var(--tinta-3); }
+th,td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--linea); vertical-align: top; overflow-wrap: anywhere; }
+th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono); }
+.tabla-caja:focus-visible { outline-offset: 4px; }
+/* Una tabla sin mínimo propio no se desplaza: se comprime. Medido en un teléfono de 390 px,
+   cuatro columnas caían a 350 px con filas de 97 px de alto, y seis columnas a celdas de
+   50 px con filas de 581 px. Es el mismo remedio que ya tenía el diagrama: ancho mínimo y
+   desplazamiento local. `densa` es para cinco columnas o más. */
+.tabla-caja table { min-width: 34rem; }
+.tabla-caja.densa table { min-width: 58rem; }
+.diagrama-caja { max-width: 100%; overflow-x: auto; }
+.diagrama-caja > svg { width: 100%; min-width: 640px; max-width: none; display: block; }
+.diagrama { padding: clamp(12px,3vw,28px); background: var(--panel); border: 1px dashed var(--linea-fuerte); }
+.diagrama text { fill: var(--tinta); font-family: var(--mono); }
+
+/* 06 — El índice nunca desaparece: en móvil es parte del documento. */
+.indice { font: 13px/1.5 var(--sans); color: var(--tinta-3); }
+.indice ol { list-style: none; padding: 0; counter-reset: indice; }
+.indice li { counter-increment: indice; margin: 0; }
+.indice a { display: block; color: inherit; padding-block: 9px; text-decoration: none; }
+.indice a::before { content: counter(indice,decimal-leading-zero) '. '; font: 11px var(--mono); }
+.indice .visto a { text-decoration: line-through; text-decoration-color: var(--linea-fuerte); }
+.indice a[aria-current='location'] { color: var(--tinta); font-weight: 600; }
+.regla { position: fixed; right: 12px; top: 15vh; height: 70vh; width: 44px; cursor: pointer; display: none; }
+.regla .ticks { position: absolute; right: 0; top: 0; bottom: 0; width: 10px; background: repeating-linear-gradient(to bottom,var(--linea-fuerte) 0 1px,transparent 1px 10px); }
+.regla .cursor { position: absolute; right: 0; width: 22px; height: 2px; background: var(--marcador); top: calc(var(--lectura,0) * (100% - 2px)); }
+.regla .val { position: absolute; right: 15px; top: clamp(0px,calc(var(--lectura,0) * 100% - 6px),calc(100% - 14px)); font: 10px/14px var(--mono); color: var(--tinta-2); }
+@media (min-width: 1600px) { .hoja > .indice { position: fixed; left: 24px; top: 128px; width: 144px; max-height: calc(100vh - 160px); overflow-y: auto; z-index: 2; } .regla { display: block; } }
+
+/* 07 — Copia y selección funcionan sin máscaras sobre el código. */
+.codigo { background: var(--panel); border: 1px dashed var(--linea-fuerte); border-radius: 6px; min-width: 0; }
+.codigo .cab { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px dashed var(--linea); color: var(--tinta-3); font: 12px/1.5 var(--mono); }
+.codigo .cab > span { overflow-wrap: anywhere; min-width: 0; }
+.codigo button { font-size: 12px; }
+.codigo pre { margin: 0; padding: 20px; overflow: auto; font: 13px/1.65 var(--mono); tab-size: 2; }
+.codigo code { font: inherit; }
+.codigo .kw { color: var(--naranja); }
+.codigo .str { color: var(--verde); }
+.codigo .com { color: var(--tinta-3); }
+.copia-estado { font: 12px var(--mono); color: var(--tinta-3); }
+
+/* 08 — Kept: objetos y notas, con el título completo visible. */
+.kept { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,240px),1fr)); gap: 24px; padding-block: 24px; border-block: 1px dashed var(--linea-fuerte); }
+.kept article { display: grid; grid-template-rows: auto auto 1fr auto; gap: 12px; min-width: 0; padding: 12px; }
+.kept .portada { width: 100%; height: 180px; object-fit: contain; object-position: left bottom; transform-origin: 20% 90%; }
+.kept h3 { font-size: 25px; }
+.kept p { color: var(--tinta-2); font-size: 14px; line-height: 1.6; }
+.kept .meta { font: 11px/1.5 var(--mono); color: var(--tinta-3); }
+@media (hover:hover) { .kept article:hover .portada { transform: rotate(-2deg) translateY(-3px); } }
+.extracto { border-block: 1px solid var(--linea); padding-block: 18px; }
+.desvanece { color: var(--tinta-3); mask-image: linear-gradient(#000 35%,transparent 100%); -webkit-mask-image: linear-gradient(#000 35%,transparent 100%); }
+.extracto:has(details[open]) .desvanece { display: none; }
+.extracto summary { cursor: pointer; padding-block: 12px; color: var(--azul); font-size: 14px; }
+.extracto details p { padding-top: 8px; }
+
+/* 09 — Globo: el canvas y la lista tienen celdas propias; nunca recortar la esfera. */
+.globo { border-block: 1px dashed var(--linea-fuerte); padding-block: 20px; }
+.globo-layout { display: grid; grid-template-columns: minmax(0,1fr); gap: 24px; }
+.globo-escena { position: relative; width: 100%; aspect-ratio: 1.3; min-width: 0; }
+.globo-escena canvas { display: block; width: 100%; height: 100%; touch-action: pan-y; cursor: grab; }
+.globo-escena canvas:active { cursor: grabbing; }
+.globo-escena:focus-within { outline: 2px dashed var(--foco); outline-offset: 4px; }
+.globo-rutas { display: grid; align-content: start; gap: 4px; }
+.globo-rutas button { background: transparent; border: 0; border-bottom: 1px dashed var(--linea); border-radius: 0; text-align: left; padding: 12px 4px; width: 100%; }
+.globo-rutas button[aria-pressed='true'] { background: var(--naranja-suave); color: var(--naranja); }
+.globo-rutas button span { display: block; font: 12px/1.6 var(--mono); }
+.globo-rutas button small { display: block; color: var(--tinta-3); font-size: 12px; padding-top: 4px; }
+.globo-controles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.globo-controles button { font: 12px var(--mono); }
+.globo-ayuda { font-size: 12px; color: var(--tinta-3); margin-block: 10px; }
+.globo-error { padding: 20px; border: 1px solid var(--linea-fuerte); }
+@media (min-width: 800px) { .globo-layout { grid-template-columns: minmax(0,1fr) minmax(180px,240px); align-items: center; } }
+
+/* 10 — Estados visibles y movimiento optativo, nunca contenido dependiente de animar. */
+:where(a,button,select,input,summary,[tabindex]):focus-visible { outline: 2px dashed var(--foco); outline-offset: 3px; }
+.salto { position: fixed; top: 8px; left: 8px; z-index: 10; padding: 10px; background: var(--papel); transform: translateY(-150%); }
+.salto:focus { transform: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+[hidden] { display: none !important; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  button,a,.kept .portada { transition: color var(--rapido),background-color var(--rapido),transform var(--suave) var(--curva); }
+  .revelar { animation: nota-entrada 375ms var(--curva) both; }
+  @keyframes nota-entrada { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .kept .portada { transform: none !important; } *,*::before,*::after { animation: none !important; transition: none !important; } }
+@media (forced-colors: active) { .marca { text-decoration-color: LinkText; } .aviso,.mapa,.codigo,.pildora { border: 1px solid CanvasText; } .desvanece { mask: none; } }
+
+/* ===========================================================
+   10b — MULTIPÁGINA. Una nota larga se parte en páginas con su propio temario.
+   LA TRAMPA: si las páginas se meten entre `.hoja` y las secciones, la rejilla de
+   `por-seccion` ya no alcanza —usa `>`— y TODO queda del mismo ancho que el párrafo.
+   Por eso cada página vuelve a declarar la rejilla. Medido: sin esto, texto y figura
+   daban 1514 px los dos; con esto, 560 y 992/1216.
+   =========================================================== */
+.hoja.multipagina { display: block; }
+.pagina { display: none; }
+.hoja.multipagina > .pagina.viva {
+  display: grid;
+  grid-template-columns: 1fr min(var(--texto), calc(100% - 2 * var(--gutter))) 1fr;
+  row-gap: 28px; }
+.pagina > * { grid-column: 2; min-width: 0; }
+.pagina > .ancho { grid-column: 1 / -1; width: min(var(--ancho), calc(100% - 2 * var(--gutter))); margin-inline: auto; }
+.pagina > .amplio { grid-column: 1 / -1; width: min(var(--amplio), calc(100% - 2 * var(--gutter))); margin-inline: auto; }
+/* La barra de páginas se desplaza de lado en móvil en vez de desbordar la ventana. */
+.barra { position: sticky; top: 0; z-index: 40; display: flex; gap: 14px; align-items: center;
+  padding: 9px clamp(12px, 3vw, 26px); border-bottom: 1px solid var(--linea);
+  background: color-mix(in srgb, var(--papel) 92%, transparent); backdrop-filter: blur(10px);
+  flex-wrap: nowrap; overflow-x: auto; scrollbar-width: thin; }
+.barra .sello { font: 500 12px/1 var(--mono); color: var(--tinta-3); letter-spacing: .04em;
+  white-space: nowrap; padding-right: 6px; border-right: 1px solid var(--linea); }
+.barra nav { display: flex; gap: 2px; flex: 1; min-width: 0; }
+.barra button { font: 500 12.5px/1 var(--sans); color: var(--tinta-3); background: none; border: 0;
+  border-radius: 7px; padding: 7px 11px; cursor: pointer; white-space: nowrap;
+  transition: background var(--rapido), color var(--rapido); }
+.barra button:hover { background: var(--panel); color: var(--tinta); }
+.barra button[aria-current='page'] { background: var(--panel-2); color: var(--tinta); }
+.barra button .n { font-family: var(--mono); font-size: 10.5px; color: var(--linea-fuerte); margin-right: 5px; }
+.barra button[aria-current='page'] .n { color: var(--marcador); }
+.barra .temas { margin-left: auto; }
+/* Los botones de paso y el pie llevan el peso del final del documento: si se ven
+   desvaídos, el informe termina en nada. Tinta plena, borde firme y una flecha que indica. */
+.paginacion { width: min(var(--ancho), calc(100% - 2 * var(--gutter))); margin-inline: auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 64px; }
+.paginacion button { font: 500 15px/1.35 var(--sans); color: var(--tinta); background: var(--panel);
+  border: 1px solid var(--linea-fuerte); border-radius: 12px; padding: 16px 18px; cursor: pointer;
+  text-align: left; display: grid; gap: 5px; min-height: 0;
+  transition: border-color var(--rapido), background var(--rapido), transform var(--rapido); }
+.paginacion button:last-child { text-align: right; }
+.paginacion button:hover:not(:disabled) { border-color: var(--marcador); background: var(--panel-2); transform: translateY(-1px); }
+.paginacion button:disabled { opacity: .38; cursor: default; border-style: dashed; }
+.paginacion .et { font: 500 10px/1 var(--mono); color: var(--tinta-3);
+  letter-spacing: .11em; text-transform: uppercase; }
+.paginacion button:not(:disabled) .et { color: var(--marcador); }
+.paginacion .tit { font-family: var(--serif); font-size: 21px; line-height: 1.1; letter-spacing: -.01em; }
+@media (max-width: 560px) { .paginacion { grid-template-columns: 1fr } }
+
+.pie { border-top: 2px solid var(--tinta); padding-top: 20px; margin-top: 64px;
+  display: grid; gap: 14px; font-size: 13.5px; line-height: 1.6; color: var(--tinta-3); }
+/* En multipágina la hoja es `display:block`, así que el pie se iría de lado a lado mientras
+   todo lo demás está centrado. Se le da el mismo ancho que a los botones de paso. */
+.hoja.multipagina > .pie { width: min(var(--ancho), calc(100% - 2 * var(--gutter))); margin-inline: auto; }
+.pie .marca-pie { font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase;
+  color: var(--tinta); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.pie .marca-pie::after { content: ""; flex: 1; height: 1px; background: var(--linea); min-width: 20px; }
+.pie .campos { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px 26px; }
+.pie .campos > div { display: grid; gap: 3px; }
+.pie dt, .pie .campos b { font: 500 10px/1.4 var(--mono); letter-spacing: .09em;
+  text-transform: uppercase; color: var(--linea-fuerte); font-weight: 500; }
+.pie .campos span { color: var(--tinta-2); font-size: 13px; }
+/* El script del índice cuenta TODOS los enlaces del documento. En multipágina las secciones
+   de las páginas ocultas miden cero, las cree ya pasadas y tacha el temario entero: ahí sus
+   marcas dejan de pintar y mandan las de `multipagina.js`, que sólo mira la página viva.
+   Las dos primeras reglas van acotadas a `.multipagina` a propósito. Sin ese acotamiento
+   apagaban el marcado en TODA nota de una sola página —donde nadie pone aqui-visto ni
+   aqui-actual—, y el índice se quedaba sin señalar la sección en curso. */
+.multipagina .indice .visto a { text-decoration: none; }
+.multipagina .indice a[aria-current='location'] { color: inherit; font-weight: 400; }
+.indice li.aqui-visto a { text-decoration: line-through; text-decoration-color: var(--linea-fuerte); }
+.indice li.aqui-actual a { color: var(--tinta); font-weight: 600; }
+
+/* ===========================================================
+   10c — TERMINAL. Una salida de consola es evidencia: se lee como se vio.
+   Se queda oscura en los dos temas a propósito; una terminal clara no se lee
+   como una terminal. El valor que importa va en `.subra`, no en negrita.
+   =========================================================== */
+.terminal { --term-papel: #171614; --term-tinta: #cfc6bb; --term-tenue: #7d746a;
+  --term-linea: #2d2a26; --term-marca: #c98f5a;
+  background: var(--term-papel); border: 1px solid var(--term-linea); border-radius: 12px;
+  overflow: hidden; font-family: var(--mono); }
+:root[data-theme='sea'] .terminal { --term-papel: hsl(212 24% 12%); --term-tinta: hsl(212 66% 82%);
+  --term-tenue: hsl(212 22% 52%); --term-linea: hsl(212 18% 22%); --term-marca: hsl(160 99% 60%); }
+.terminal .cab { display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 14px 18px 12px; font-size: 12.5px; color: var(--term-tenue); letter-spacing: .02em; }
+.terminal .cab button { background: none; border: 0; padding: 4px; min-height: 0; cursor: pointer;
+  color: var(--term-tenue); line-height: 0; border-radius: 5px; }
+.terminal .cab button:hover { color: var(--term-tinta); background: rgba(255,255,255,.06); }
+.terminal .cab svg { width: 15px; height: 15px; display: block; }
+.terminal .cuerpo { margin: 0 14px 14px; border: 1px dashed var(--term-linea); border-radius: 8px; }
+.terminal pre { margin: 0; padding: 16px 18px; overflow-x: auto; font-size: 12.5px; line-height: 1.85;
+  color: var(--term-tinta); scrollbar-width: thin; }
+.terminal .tenue { color: var(--term-tenue); }
+.terminal .subra { background: color-mix(in srgb, var(--term-marca) 22%, transparent);
+  color: var(--term-marca); border-radius: 4px; padding: 1px 6px; }
+.terminal .copia-estado { font-size: 11px; color: var(--term-marca); }
+
+/* Nota manuscrita con corchete: una frase señalada a mano dentro del texto escrito a mano. */
+.manuscrita { font-family: var(--mano); font-size: clamp(25px, 3vw, 31px); line-height: 1.3;
+  color: var(--tinta-2); margin: 30px 0; text-align: center; text-wrap: balance; }
+.manuscrita .senalado { position: relative; display: inline-block; padding: 0 .42em;
+  color: var(--tinta); }
+.manuscrita .senalado::before, .manuscrita .senalado::after {
+  position: absolute; top: 50%; transform: translateY(-52%); color: var(--marcador);
+  font-family: var(--serif); font-size: 1.15em; line-height: 0; }
+.manuscrita .senalado::before { content: "["; left: -.05em; }
+.manuscrita .senalado::after { content: "]"; right: -.05em; }
+.manuscrita .senalado a, .manuscrita .senalado .sub {
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
+  text-decoration-color: var(--linea-fuerte); color: inherit; }
+
+/* 11 — Papel real: todo el contenido, incluidos datos largos y notas, queda impreso. */
+@media print {
+  :root { color-scheme: light; }
+  body { background: white !important; color: #231e1a !important; font-size: 10.5pt; }
+  .hoja { display: block; padding: 0; }
+  .hoja > *,.hoja > .ancho,.hoja > .amplio,.hoja > .con-margen { width: 100%; margin: 0 0 18pt; }
+  .herramientas,.indice,.regla,.salto,.codigo button,.globo-controles,.globo-ayuda,.extracto summary { display: none !important; }
+  .con-margen { display: block; }
+  .margen { margin-top: 10pt; }
+  .codigo,.aviso,.tabla-caja,th,.mapa .bloque,.pildora,.dato { color: #231e1a; background: #f6f0eb; }
+  .codigo pre { overflow: visible; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .tabla-caja { overflow: visible; }
+  table { table-layout: fixed; font-size: 9pt; }
+  .bajada,.mapa .d,.secundario,.ceja,figcaption,.margen,.nota,.datos dt,.pie,.codigo .cab,.codigo .com,.codigo .kw,.codigo .str,.aviso .titulo,.aviso .num,.kept p,.kept .meta,.globo-rutas button small { color: #51473e; }
+  .desvanece { display: none; }
+  .extracto details::details-content { content-visibility: visible; }
+  .extracto details > p { display: block !important; }
+  .seccion { break-after: avoid-page; }
+  h1,h2,h3 { break-after: avoid-page; }
+  p { orphans: 3; widows: 3; }
+  .globo-rutas button { color: #231e1a; background: transparent; }
+}
+
+/* ============================================================
+   REJILLA POR SECCIÓN · añadido 12-sep-2026
+   El patrón de arriba exige que .ancho y .amplio sean hijos DIRECTOS de .hoja.
+   Cuando el documento se organiza en <section> semánticas y las figuras viven
+   dentro de ellas, hay que repetir la rejilla en cada sección: si no, la figura
+   queda atrapada en la columna central y termina MÁS ANGOSTA que el párrafo.
+   Medidas de referencia: texto 33rem, figura 48rem (1,44×), concéntricas.
+   ============================================================ */
+.hoja.por-seccion{display:block}
+.hoja.por-seccion > .cabecera,
+.hoja.por-seccion > .seccion,
+.hoja.por-seccion > .pie{
+  display:grid;
+  grid-template-columns:1fr min(var(--texto),calc(100% - 2 * var(--gutter))) 1fr;
+  column-gap:0}
+.hoja.por-seccion > .cabecera > *,
+.hoja.por-seccion > .seccion > *,
+.hoja.por-seccion > .pie > *{grid-column:2; min-width:0}
+.hoja.por-seccion .seccion > .ancho,
+.hoja.por-seccion .seccion > .figura{
+  grid-column:1/-1; width:min(var(--ancho),calc(100% - 2 * var(--gutter))); margin-inline:auto}
+.hoja.por-seccion .seccion > .amplio{
+  grid-column:1/-1; width:min(var(--amplio),calc(100% - 2 * var(--gutter))); margin-inline:auto}
