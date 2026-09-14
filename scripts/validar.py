@@ -3,7 +3,7 @@
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlparse, unquote
-import re, subprocess, shutil
+import re, subprocess, shutil, json
 
 ROOT=Path(__file__).resolve().parents[1]
 THREE='https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js'
@@ -22,6 +22,7 @@ class Fragment(HTMLParser):
   if 'data-copiar' in a:self.refs.append(a['data-copiar'])
   if a.get('aria-labelledby'):self.refs.extend(a['aria-labelledby'].split())
   if a.get('aria-controls'):self.refs.extend(a['aria-controls'].split())
+  if 'data-tema' in a and tag!='select':self.errors.append('data-tema está reservado al selector de apariencia')
   if tag=='img' and (not a.get('src','').startswith('data:') or 'alt' not in a):self.errors.append('Imagen sin incrustar o sin alt')
   if tag=='script' and a.get('src'):
    src=a['src'];u=urlparse(src);self.scripts.append(src)
@@ -88,4 +89,13 @@ for file in ROOT.glob('*.js'):
  assert not re.search(r'\b(fetch|XMLHttpRequest)\s*\(',file.read_text()),(file.name,'red en tiempo de ejecución')
  if shutil.which('node'):subprocess.run(['node','--check',str(file)],check=True,capture_output=True)
 print('Tokens de seis paletas y preferencia del sistema completos; enlaces, ausencia de fetch y sintaxis JS correctos' if shutil.which('node') else 'Tokens, enlaces y ausencia de fetch correctos; Node no disponible: sintaxis JS no ejecutada')
+registry=json.loads((ROOT/'registro.json').read_text())
+recipes=dict(re.findall(r'<!-- nota:ejemplo ([\w-]+) -->\s*```html\n(.*?)\n```',(ROOT/'componentes.md').read_text(),re.S))
+expected=set(recipes)-{'informe','multipagina'}
+assert {item['id'] for item in registry['componentes']}==expected, 'Registro incompleto'
+assert len(registry['componentes'])==len(expected), 'Registro duplicado'
+for item in registry['componentes']:
+ assert item['html']==recipes[item['id']] and item['criterio_y_limites'], ('Fuente de registro distinta',item['id'])
+ assert all(dep==THREE or (ROOT/dep).is_file() for dep in item['dependencias']), ('Dependencia inexistente',item['id'])
+print('Registro local: '+str(len(expected))+' recetas con HTML original, documentación y dependencias existentes')
 print('Esto NO comprueba píxeles, audio, WebGL, foco real ni comportamiento del navegador.')

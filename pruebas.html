@@ -1618,10 +1618,10 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 .biblioteca-rutas a { display:block; border-top:1px solid var(--pieza-linea); padding:22px 0; text-decoration:none; color:var(--pieza-tinta); min-width:0; }
 .biblioteca-rutas strong { display:block; font:400 30px/1.15 var(--serif); margin-block:10px; }
 .biblioteca-rutas small { display:block; color:var(--pieza-secundaria); font:14px/1.6 var(--sans); }
-.biblioteca .receta-copia { margin-bottom:52px; }
-.biblioteca .receta-guia { margin-top:16px; font:14px/1.65 var(--sans); color:var(--pieza-secundaria); }
+.biblioteca .receta-copia { margin-bottom:52px; overflow-wrap:anywhere; }
+.biblioteca .receta-guia { overflow-wrap:anywhere; margin-top:16px; font:14px/1.65 var(--sans); color:var(--pieza-secundaria); }
 .biblioteca [id] { scroll-margin-top:85px; }
-@media print { .editorial-controles,[data-config-editorial] { display:none !important; } .publicaciones { display:block; } .publicaciones > article[hidden] { display:block !important; } [data-archivo-vacio] { display:none !important; } }
+@media print { .editorial-controles,[data-config-editorial] { display:none !important; } .publicaciones { display:block; } .publicaciones > article[hidden] { display:block !important; } [data-archivo-vacio],[data-archivo-estado] { display:none !important; } }
 
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">

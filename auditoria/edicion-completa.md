@@ -16,3 +16,8 @@ Nueve capítulos y 40 recetas documentadas; ocho nuevas: archivo buscable, autor
 Los tamaños añadidos son decisiones propias: archivo min 250 px por columna; plano SVG 720 × 210; controles min 44 px; titular de ficha 28 px / 1.2; tarjeta de navegación 30 px / 1.15. Fuente de estos números: sección 17 de estilo.css y HTML de la receta anotaciones, no medidas de una web externa. Todos los colores se resuelven desde --pieza-* existentes en las seis paletas.
 
 No se implementan servicios de newsletter, pagos, comentarios, cuentas ni instalación Ghost. No hay nuevas dependencias de ejecución. Sonido y WebGL conservan sus contratos previos; editorial.js no usa RAF, transiciones, red ni almacenamiento.
+
+## Correcciones encontradas durante esta ampliación
+
+- La documentación junto al visor contenía una llamada larga y las dependencias de Three una URL larga. Al abrir el código, provocaban desbordamiento a 320 px. Se permite partir palabras sólo en la documentación de la biblioteca; el código de los ejemplos sigue desplazándose localmente.
+- El archivo nuevo usaba `data-tema` para la categoría de publicaciones. Ese atributo ya pertenece al `<select>` de apariencia: la inicialización del cuaderno fallaba intentando leer `options` de un artículo. Se cambió **el atributo nuevo** a `data-publicacion-tema`, conservando la API de apariencia existente. El validador ahora detecta reutilizar `data-tema` fuera de un select. Esto es una corrección de esta ampliación, no un cambio silencioso del sistema publicado.

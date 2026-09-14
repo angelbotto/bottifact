@@ -9,7 +9,7 @@
       if(!form?.elements.buscar||!form.elements.tema||!status||!empty)return;
       const abort=new AbortController(),original=items.map(e=>e.hidden),originalStatus=status.textContent,emptyHidden=empty.hidden;
       const update=()=>{const words=normal(form.elements.buscar.value).trim().split(/\s+/),tema=form.elements.tema.value;let count=0;
-        items.forEach(e=>{e.hidden=!!(tema&&e.dataset.tema!==tema)||!words.every(w=>normal(e.textContent).includes(w));if(!e.hidden)count++;});
+        items.forEach(e=>{e.hidden=!!(tema&&e.dataset.publicacionTema!==tema)||!words.every(w=>normal(e.textContent).includes(w));if(!e.hidden)count++;});
         empty.hidden=count>0;status.textContent=count+' de '+items.length+' publicaciones.';
       };
       form.addEventListener('input',update,{signal:abort.signal});form.addEventListener('change',update,{signal:abort.signal});
