@@ -11,7 +11,10 @@
     {pair:'etiquetas',ratio:contrast('--grafica-tinta','--grafica-papel'),minimum:4.5},
     {pair:'escena',ratio:contrast('--escena-tinta','--grafica-papel'),minimum:4.5},
     {pair:'sonido',ratio:contrast('--sonido-activo','--sonido-papel'),minimum:4.5},
-    {pair:'escritura',ratio:contrast('--escritura-trazo','--escritura-papel'),minimum:3}];
+    {pair:'escritura',ratio:contrast('--escritura-trazo','--escritura-papel'),minimum:3},
+    ...[['tinta','papel'],['tinta','suave'],['secundaria','papel']].map(([a,b])=>({pair:'pieza-'+a+'/'+b,ratio:contrast('--pieza-'+a,'--pieza-'+b),minimum:4.5})),
+    ...['tinta','secundaria'].map(a=>({pair:'pieza-'+a+'/documento',ratio:contrast('--pieza-'+a,'--papel'),minimum:4.5})),
+    ...['sube','baja','acento'].map(a=>({pair:'cascada-'+a,ratio:contrast('--pieza-'+a,'--papel'),minimum:3}))];
   const regions=[...document.querySelectorAll('.tabla-caja,.diagrama-caja,.grafica-caja,.escena-caja,.escritura-caja,pre,.barra')].filter(e=>e.getClientRects().length).map(e=>{
     const before=e.scrollLeft;e.scrollLeft=e.scrollWidth;const end=e.scrollLeft;e.scrollLeft=before;
     const r=e.getBoundingClientRect(),style=getComputedStyle(e);

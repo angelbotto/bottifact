@@ -1,0 +1,11 @@
+{
+  "viewport": [
+    1639,
+    939
+  ],
+  "motion": "Orca set media reduced-motion; MediaQueryListEvent explícito para listener, como en primera tanda",
+  "visibility": "Scroll real e IntersectionObserver, entrega de cuadros mediante screenshot",
+  "focus": "focus() y CSS calculado; no teclado físico ni lector de pantalla",
+  "pdf": "Orca PDF y texto extraído; no acredita impresión física",
+  "deepLink": "Después de fonts.ready y entrega de cuadro de navegador"
+}

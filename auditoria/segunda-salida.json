@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Enlace inicial queda en destino tras construir gráficas y cargar fuentes",
+    "ok": true
+  },
+  {
+    "name": "Globo narrado arranca sin RAF",
+    "ok": true
+  },
+  {
+    "name": "Globo narrado reanudado visible dibuja",
+    "ok": true
+  },
+  {
+    "name": "Reduce cancela RAF y desactiva giro",
+    "ok": true
+  },
+  {
+    "name": "No dibuja continuamente en reduce",
+    "ok": true
+  },
+  {
+    "name": "Controles y visor sin transiciones en reduce",
+    "ok": true
+  },
+  {
+    "name": "Globo narrado fuera de pantalla cancela RAF",
+    "ok": true
+  },
+  {
+    "name": "Foco programático llega al visor y controles; regla focus-visible presente",
+    "ok": true
+  },
+  {
+    "name": "PDF conserva tablas, alternativa de visor, metodología y relato",
+    "ok": true
+  },
+  {
+    "name": "Impresión restaura detalles",
+    "ok": true
+  }
+]

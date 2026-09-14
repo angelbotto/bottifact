@@ -1,0 +1,18 @@
+{
+  "method": "orca pdf; extracción pypdf",
+  "theme": "sea",
+  "pages": 20,
+  "required": {
+    "Estados del ejemplo": true,
+    "Capacidad inicial": true,
+    "Resultado": true,
+    "Operaciones esperadas y observadas": true,
+    "Cómo leer esta evidencia": true,
+    "No incluye capacitación": true,
+    "60 h/mes": true,
+    "Bogotá": true,
+    "Madrid": true,
+    "Observación": true
+  },
+  "detailsRestored": true
+}

@@ -14,7 +14,7 @@
   };
   const dispose=f=>{NotaGraficas.get(f)?.destroy();f.remove();};
   await test('Cinco gráficas SVG, calor y dos escenas inicializados',()=>{
-    assert(document.querySelectorAll('.grafica-caja svg').length===5,'Número de gráficas');
+    assert(document.querySelectorAll('[data-grafica] .grafica-caja svg').length===5,'Número de gráficas');
     assert(document.querySelectorAll('.tabla-calor').length===1,'Mapa ausente');
     document.querySelectorAll('[data-escena]').forEach(e=>assert(NotaEscena.get(e)?.renderer,'WebGL no disponible'));
   });
