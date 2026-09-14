@@ -1674,3 +1674,141 @@ de gráficas/calor, estados y tonos de WebGL; los tres papeles anteriores perman
 Una paleta no comunica por sí sola estado, certeza o calidad. Mantén palabras y símbolos.
 El color y el estilo tipográfico se eligen por separado. El terminal conserva su superficie
 oscura deliberada, como en los papeles originales.
+
+## Archivo de publicaciones
+
+<!-- nota:ejemplo archivo -->
+```html
+<section class="pieza ancho" id="archivo-ejemplo" data-archivo>
+  <h3>El cuaderno abierto</h3><p>Artículos de ejemplo sobre cómo investigar, explicar y construir.</p>
+  <form class="editorial-controles" role="search" aria-label="Buscar publicaciones locales">
+    <label>Buscar<input type="search" name="buscar" placeholder="Título o descripción"></label>
+    <label>Tema<select name="tema"><option value="">Todos los temas</option><option>Diseño</option><option>Investigación</option><option>Producto</option></select></label>
+    <button type="reset">Limpiar filtros</button>
+  </form><p data-archivo-estado role="status">3 publicaciones disponibles.</p>
+  <div class="publicaciones" data-publicaciones>
+    <article data-publicacion data-tema="Diseño"><p class="ceja">Diseño · <time datetime="2026-09-14">14 sep 2026</time></p><h4><a href="informe.html#resumen">Una revisión antes de confirmar</a></h4><p data-extracto>El recorrido desde una hipótesis hasta una propuesta que se puede probar.</p><p class="procedencia" data-meta>Equipo editorial · Estudio de ejemplo</p></article>
+    <article data-publicacion data-tema="Investigación"><p class="ceja">Investigación · <time datetime="2026-09-12">12 sep 2026</time></p><h4><a href="informe.html#evidencia">Lo que una cifra todavía no demuestra</a></h4><p data-extracto>Separar el dato observado, el supuesto y la siguiente pregunta.</p><p class="procedencia" data-meta>Equipo editorial · Ensayo de ejemplo</p></article>
+    <article data-publicacion data-tema="Producto"><p class="ceja">Producto · <time datetime="2026-09-10">10 sep 2026</time></p><h4><a href="informe.html#prototipo">Probar antes de publicar</a></h4><p data-extracto>Una interfaz local con estados explícitos y varios anchos de lectura.</p><p class="procedencia" data-meta>Equipo editorial · Guía de ejemplo</p></article>
+  </div><p data-archivo-vacio hidden>No encontramos publicaciones. Borra la búsqueda o elige otro tema.</p>
+</section>
+```
+
+**Cuándo:** Una portada o archivo corto de artículos ya incluidos en el documento. Requiere editorial.js; combina texto y tema, ignora acentos y permite limpiar filtros.
+
+**Cuándo no / límite:** No sustituye búsqueda de un CMS, paginación de servidor ni índice de miles de entradas. Sólo filtra el HTML local; sin JS muestra todo. Los enlaces del ejemplo llevan a capítulos reales de informe.html; reemplázalos al copiar. No inventa fechas ni tiempos de lectura.
+
+## Ficha de autor
+
+<!-- nota:ejemplo autor -->
+```html
+<aside class="pieza autor-editorial" id="autor-ejemplo" aria-labelledby="autor-nombre">
+  <span class="autor-inicial" aria-hidden="true">t</span><div><p class="ceja">Acerca de esta edición</p><h3 id="autor-nombre">Equipo editorial</h3><p>Investigación, producto y documentación. Esta identidad ilustra la ficha; reemplázala por la autoría real del artículo.</p><a href="informe.html">Leer el estudio completo →</a></div>
+</aside>
+```
+
+**Cuándo:** Cerrar un artículo con autoría y contexto, o abrir una página de autor. HTML estático.
+
+**Cuándo no / límite:** No acredita identidad ni contribuciones. La inicial es decorativa porque el nombre ya está escrito; una foto deberá ir incrustada como data: con el alt adecuado.
+
+## Lecturas relacionadas
+
+<!-- nota:ejemplo relacionados -->
+```html
+<nav class="pieza" id="relacionados-ejemplo" aria-labelledby="relacionados-titulo"><h3 id="relacionados-titulo">Seguir el hilo</h3><ol class="lecturas-relacionadas"><li><span class="ceja">01 · Evidencia</span><a href="informe.html#evidencia">Qué sabemos y qué falta medir</a><p>Los supuestos que sostienen la propuesta.</p></li><li><span class="ceja">02 · Práctica</span><a href="informe.html#prototipo">Recorrer el prototipo</a><p>Explorar los estados de una tarea.</p></li></ol></nav>
+```
+
+**Cuándo:** Proponer siguientes lecturas seleccionadas por su relación con el argumento.
+
+**Cuándo no / límite:** No recomienda automáticamente ni personaliza. Usa destinos existentes y descripciones específicas; no sirve para esconder la navegación principal.
+
+## Diagrama anotado
+
+<!-- nota:ejemplo anotaciones -->
+```html
+<figure class="pieza ancho" id="anotaciones-ejemplo">
+<h3>Tres momentos de una confirmación</h3><div class="diagrama-caja" tabindex="0" role="region" aria-label="Flujo anotado de 720 píxeles, desplazable">
+<svg class="plano-anotado" viewBox="0 0 720 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="anotaciones-titulo anotaciones-desc"><title id="anotaciones-titulo">Crear, revisar y confirmar</title><desc id="anotaciones-desc">Uno: crear borrador. Dos: revisar datos. Tres: confirmar. Las tres notas siguientes explican cada paso.</desc><g fill="none" stroke="currentColor"><rect x="10" y="45" width="200" height="110" rx="6"/><rect x="260" y="45" width="200" height="110" rx="6"/><rect x="510" y="45" width="200" height="110" rx="6"/><path d="M210 100h45m-9-7 9 7-9 7M460 100h45m-9-7 9 7-9 7"/></g><g text-anchor="middle" fill="currentColor"><text x="110" y="85">01</text><text x="110" y="120">Crear borrador</text><text x="360" y="85">02</text><text x="360" y="120">Revisar datos</text><text x="610" y="85">03</text><text x="610" y="120">Confirmar</text></g></svg></div>
+<ol class="notas-anotadas"><li><strong>Crear.</strong> Los datos permanecen editables; todavía no hay envío.</li><li><strong>Revisar.</strong> Se presenta fecha, duración y nombre en un resumen.</li><li><strong>Confirmar.</strong> La interfaz debe explicar qué se guardó y ofrecer un siguiente paso.</li></ol><figcaption>Flujo conceptual; las distancias no representan tiempo ni cantidad. Las notas contienen toda la explicación del dibujo.</figcaption>
+</figure>
+```
+
+**Cuándo:** Explicar partes numeradas de un flujo o una captura incrustada sin depender de hover.
+
+**Cuándo no / límite:** No mide atención ni registra clics. Las notas deben mantener numeración y orden del dibujo. Un diagrama ancho conserva escala con desplazamiento local, no se comprime para caber.
+
+## Historial de revisiones
+
+<!-- nota:ejemplo revisiones -->
+```html
+<section class="pieza" id="revisiones-ejemplo"><h3>Qué cambió en el documento</h3><p class="procedencia">Historial ficticio para mostrar el formato; no describe commits del repositorio.</p><ol class="revisiones-editoriales"><li><p class="ceja"><time datetime="2026-09-14">14 sep 2026</time> · v0.2 · Equipo editorial</p><h4>Se explican las exclusiones</h4><p>El cálculo ahora distingue capacidad estimada de ahorro realizado.</p></li><li><p class="ceja"><time datetime="2026-09-12">12 sep 2026</time> · v0.1 · Equipo editorial</p><h4>Primera propuesta</h4><p>Hipótesis, prototipo y preguntas por observar.</p></li></ol></section>
+```
+
+**Cuándo:** Reportes que cambian tras una revisión y artículos con correcciones materiales.
+
+**Cuándo no / límite:** No es auditoría automática, control de versiones ni firma verificable. Escribe cambios reales y responsables reales; no uses la fecha de compilación como fecha de publicación.
+
+## Matriz de criterios
+
+<!-- nota:ejemplo criterios -->
+```html
+<figure class="pieza amplio" id="criterios-ejemplo"><h3>Comparar sin esconder el criterio</h3><div class="tabla-caja" tabindex="0" role="region" aria-label="Matriz de criterios, desplazable"><table class="matriz-criterios"><caption>Opciones de revisión · comparación conceptual</caption><thead><tr><th scope="col">Criterio</th><th scope="col">Resumen final</th><th scope="col">Revisión por paso</th><th scope="col">Cómo comprobarlo</th></tr></thead><tbody><tr><th scope="row">Ver todo en contexto</th><td>Reúne los campos</td><td>Los reparte entre pantallas</td><td>Observar errores detectados</td></tr><tr><th scope="row">Editar cerca del dato</th><td>Requiere acceso desde el resumen</td><td>Edición dentro de cada paso</td><td>Contar pasos de corrección</td></tr><tr><th scope="row">Tiempo total</th><td>Pendiente de medir</td><td>Pendiente de medir</td><td>Misma tarea, alcance comparable</td></tr></tbody></table></div><figcaption>No hay puntuación agregada: las compensaciones y los datos faltantes quedan visibles.</figcaption></figure>
+```
+
+**Cuándo:** Decisiones entre opciones con criterios explícitos y evidencia comparable.
+
+**Cuándo no / límite:** No inventa pesos, puntuaciones ni ganador. Si un criterio no se observó, marca pendiente; no conviertas etiquetas ordinales en precisión numérica.
+
+## Registro de riesgos
+
+<!-- nota:ejemplo riesgos -->
+```html
+<figure class="pieza amplio" id="riesgos-ejemplo"><h3>Lo que podría salir mal</h3><div class="tabla-caja" tabindex="0" role="region" aria-label="Registro de riesgos, desplazable"><table><caption>Riesgos ilustrativos de un flujo de confirmación</caption><thead><tr><th scope="col">Causa y consecuencia</th><th scope="col">Responsable propuesto</th><th scope="col">Mitigación</th><th scope="col">Señal para revisar</th></tr></thead><tbody><tr><th scope="row">Un resumen incompleto permite confirmar un dato incorrecto</th><td>Diseño de producto</td><td>Mostrar todos los campos críticos y su edición</td><td>Correcciones posteriores a confirmar</td></tr><tr><th scope="row">Un fallo de guardado parece un envío exitoso</th><td>Ingeniería</td><td>Confirmar sólo tras respuesta válida y ofrecer reintento</td><td>Discrepancia entre interfaz y registro</td></tr></tbody></table></div><figcaption>Ejemplo sin probabilidades estimadas. Asigna personas y señales verificables en el proyecto real.</figcaption></figure>
+```
+
+**Cuándo:** Acompañar decisiones con causa, impacto, dueño, mitigación y señal observable.
+
+**Cuándo no / límite:** No estima probabilidad ni severidad automáticamente, y no multiplica escalas ordinales. No sustituye seguimiento operativo ni asigna trabajo a personas reales.
+
+## Configuración editorial
+
+<!-- nota:ejemplo configuracion -->
+```html
+<section class="pieza" id="configuracion-ejemplo" data-config-editorial><h3>La misma publicación, otra edición</h3><p>Elige cómo se presentan las publicaciones del archivo. Los cambios se aplican en este documento.</p><form class="editorial-controles" aria-label="Configuración del archivo"><label>Presentación<select name="disposicion"><option value="rejilla">Rejilla editorial</option><option value="lista">Lista de lectura</option></select></label><label class="editorial-check"><input type="checkbox" name="extractos" checked> Mostrar extractos</label><label class="editorial-check"><input type="checkbox" name="metadatos" checked> Mostrar autoría y formato</label><button type="reset">Restablecer edición</button></form><p data-config-estado role="status">Rejilla editorial con extractos y metadatos.</p><div class="codigo"><div class="cab"><span>Configuración local · JSON</span><button type="button" data-copiar="config-editorial-json">Copiar configuración</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Configuración editorial JSON, desplazable"><code id="config-editorial-json" data-config-json>{"version":1,"disposicion":"rejilla","extractos":true,"metadatos":true}</code></pre></div><p class="procedencia">Configuración de presentación, independiente de la paleta y tipografía del botón de apariencia. No instala un tema de Ghost.</p></section>
+```
+
+**Cuándo:** Variar lista/rejilla y cantidad de información sin cambiar el contenido. Requiere editorial.js; actualiza los archivos [data-archivo] del mismo documento y genera JSON copiable.
+
+**Cuándo no / límite:** No guarda preferencias ni importa JSON, no cambia el contenido y no conecta Ghost. El alcance es todo el documento; usa un solo configurador. Sin JS conserva el estado inicial. La paleta, tipografía y lectura cómoda siguen en apariencia.
+
+## Biblioteca completa y registro local
+
+[biblioteca.html](biblioteca.html) reúne **40 recetas en nueve capítulos**: inicio,
+publicaciones, artículos, reportes, gráficas, tablas, prototipos, espacio y gesto, y edición.
+Cada pieza se genera desde el HTML anterior, con su criterio, límites y dependencias al lado.
+El estudio narrativo sigue en [informe.html](informe.html); el cuaderno continuo, en
+[plantilla.html](plantilla.html). Son tres composiciones del mismo sistema.
+
+**Cuándo:** explorar y copiar piezas, evaluar temas con contenidos distintos o compartir
+un componente concreto. `data-enlaces-internos` en `.hoja.multipagina` habilita enlaces a
+IDs descendientes y su historial, por ejemplo `biblioteca.html#receta-calor`. Es optativo:
+las notas anteriores conservan su contrato. La barra navega capítulos, no es un tablist.
+El destino se muestra, recibe foco al navegar y queda fuera de la barra fija. Para enlazar
+vistas de pestañas usa el ID de la receta, no un panel oculto de la pieza.
+
+**Límite:** es una biblioteca HTML local, no un CMS ni un tema Ghost instalable. No crea
+usuarios, comentarios, pagos o suscripciones. La búsqueda encuentra recetas locales y el
+archivo filtra las publicaciones que ya contiene. Al imprimir se incluyen todos los capítulos;
+la búsqueda y la configuración son controles de pantalla. Sin JS se muestran todos los
+capítulos de esta edición, con los datos originales y las alternativas de cada componente.
+
+[registro.json](registro.json) contiene HTML, capítulo, dependencias y documentación de cada
+receta. Es un formato local versionado, **no el esquema de instalación de shadcn**. No lo
+cargues por fetch dentro de un artefacto. El ensamblador lo construye junto al HTML, sin red.
+`NotaEditorial.init(raíz)` y `get(elemento).destroy()` permiten inicializar y desmontar archivo
+/configurador. No anides archivos ni dupliques configuradores; los IDs de copiado son únicos.
+
+La configuración de Ghost inspira la separación entre contenido y presentación. Una futura
+integración necesita plantillas Handlebars, contexto del CMS, `package.json` y validación
+GScan; copiar este HTML no cumple ese contrato. La comparación y sus fuentes están en
+[edicion-completa.md](auditoria/edicion-completa.md).

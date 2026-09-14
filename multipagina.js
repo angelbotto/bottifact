@@ -32,6 +32,18 @@
   var next = nav && nav.querySelector('[data-nav="next"]');
   var actual = 0;
   var historial = hoja.hasAttribute('data-historial');
+  var profundos = hoja.hasAttribute('data-enlaces-internos');
+  function destinoHash() {
+    var id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return null;}
+    var target=document.getElementById(id);
+    return target && (pags.includes(target)||profundos&&pags.some(p=>p.contains(target))) ? target : null;
+  }
+  function revelar(target,conFoco) {
+    // Los destinos dentro de details también deben ser alcanzables.
+    for(var p=target.parentElement;p&&p!==hoja;p=p.parentElement)if(p.tagName==='DETAILS')p.open=true;
+    if(conFoco){target.tabIndex=-1;target.focus({preventScroll:true});}
+    target.scrollIntoView({behavior:'instant',block:'start'});
+  }
 
   function pintarNav() {
     if (!nav || !prev || !next) return;
@@ -42,7 +54,7 @@
     if (b) b.textContent = actual < pags.length - 1 ? titulos[actual + 1] : "—";
   }
 
-  function ir(i, conFoco, desdeHistorial) {
+  function ir(i, conFoco, desdeHistorial, destino) {
     if (i < 0 || i >= pags.length) return;
     actual = i;
     pags.forEach(function (p, k) { p.hidden = k !== i; p.classList.toggle("viva", k === i); });
@@ -50,7 +62,7 @@
       if (k === i) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
     });
     pintarNav();
-    if (location.hash.slice(1) !== pags[i].id) history[historial && conFoco && !desdeHistorial ? 'pushState' : 'replaceState'](null, "", "#" + pags[i].id);
+    if (!destino && location.hash.slice(1) !== pags[i].id) history[historial && conFoco && !desdeHistorial ? 'pushState' : 'replaceState'](null, "", "#" + pags[i].id);
     if(historial){
       var salto=document.querySelector('a.salto');if(salto)salto.setAttribute('href','#'+pags[i].id);
       pags[i].tabIndex=-1;
@@ -64,15 +76,22 @@
       if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); }
     }
     document.dispatchEvent(new CustomEvent("nota:pagina", { detail: { indice: i, id: pags[i].id } }));
+    if(destino && destino!==pags[i])revelar(destino,conFoco);
   }
 
   botones.forEach(function (b, k) { b.addEventListener("click", function () { ir(k, true); }); });
   if (prev) prev.addEventListener("click", function () { ir(actual - 1, true); });
   if (next) next.addEventListener("click", function () { ir(actual + 1, true); });
   function desdeHash() {
-    var i = pags.findIndex(function (p) { return p.id === location.hash.slice(1); });
-    if (i >= 0 && i !== actual) ir(i, true, true);
+    var target=destinoHash(),i=pags.findIndex(p=>p===target||profundos&&p.contains(target));
+    if(i>=0 && (i!==actual||profundos))ir(i,true,true,profundos?target:null);
   }
+  if(profundos)document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]');if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+    var target;try{target=document.getElementById(decodeURIComponent(a.hash.slice(1)));}catch{return;}
+    var i=pags.findIndex(p=>p===target||p.contains(target));if(i<0)return;
+    e.preventDefault();if(location.hash!==a.hash)history.pushState(null,'',a.hash);ir(i,true,true,target);
+  });
   addEventListener("hashchange", desdeHash);
   if(historial)addEventListener('popstate',desdeHash);
 
@@ -110,8 +129,9 @@
   document.addEventListener("nota:pagina", programar);
   document.fonts?.ready.then(programar);
 
-  var inicial = pags.findIndex(function (p) { return p.id === location.hash.slice(1); });
-  if (inicial > 0 || historial) ir(Math.max(0,inicial), false); else { pintarNav(); programar(); }
+  var targetInicial=destinoHash();
+  var inicial = pags.findIndex(p=>p===targetInicial||profundos&&p.contains(targetInicial));
+  if (inicial > 0 || historial) ir(Math.max(0,inicial), false, false, profundos?targetInicial:null); else { pintarNav(); programar(); }
   // En la edición nueva, el fragmento identifica el capítulo, pero se abre con su cabecera común.
-  if(historial&&document.readyState!=='complete')addEventListener('load',function(){scrollTo({top:0,behavior:'instant'});},{once:true});
+  if(historial&&document.readyState!=='complete')addEventListener('load',function(){if(profundos&&targetInicial&&!pags.includes(targetInicial))revelar(targetInicial,false);else scrollTo({top:0,behavior:'instant'});},{once:true});
 })();

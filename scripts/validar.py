@@ -46,7 +46,8 @@ class Fragment(HTMLParser):
   if tag not in VOID:self.handle_endtag(tag)
 
 MODULES={
- 'plantilla.html':['interacciones.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js'],
+ 'biblioteca.html':['interacciones.js','multipagina.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js','editorial.js'],
+ 'plantilla.html':['editorial.js','interacciones.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js'],
  'informe.html':['interacciones.js','multipagina.js','graficas.js','reportes.js','visor.js','pestanas.js'],
  'globo.html':['interacciones.js','globo.js'],
  'multipagina.html':['interacciones.js','multipagina.js'],
@@ -86,5 +87,5 @@ for doc in ['SKILL.md','componentes.md','referencia-cmrg.md']:
 for file in ROOT.glob('*.js'):
  assert not re.search(r'\b(fetch|XMLHttpRequest)\s*\(',file.read_text()),(file.name,'red en tiempo de ejecución')
  if shutil.which('node'):subprocess.run(['node','--check',str(file)],check=True,capture_output=True)
-print('Tokens completos en cuatro selectores; enlaces, ausencia de fetch y sintaxis JS correctos' if shutil.which('node') else 'Tokens, enlaces y ausencia de fetch correctos; Node no disponible: sintaxis JS no ejecutada')
+print('Tokens de seis paletas y preferencia del sistema completos; enlaces, ausencia de fetch y sintaxis JS correctos' if shutil.which('node') else 'Tokens, enlaces y ausencia de fetch correctos; Node no disponible: sintaxis JS no ejecutada')
 print('Esto NO comprueba píxeles, audio, WebGL, foco real ni comportamiento del navegador.')

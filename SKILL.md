@@ -268,3 +268,17 @@ calculadora de capacidad, globo narrado y visor de prototipos.
 
 El catálogo se sirve en el Mac mini; Angel lo prueba desde el MacBook. Usa la dirección
 HTTPS de Tailscale Serve que confirme el host, no un enlace localhost para la entrega remota.
+
+### Edición completa para explorar y componer
+
+Abre [biblioteca.html](biblioteca.html) para 40 recetas en nueve capítulos, con HTML,
+dependencias, criterio y límites junto al ejemplo. Incluye archivos de publicaciones,
+autoría, lecturas relacionadas, anotaciones numeradas, revisiones, criterios y riesgos.
+[editorial.js](editorial.js) ofrece búsqueda/filtro local y configuración de lista/rejilla,
+extractos y metadatos. No conecta un CMS ni envía información.
+
+[registro.json](registro.json) es el inventario generado para componer artefactos desde
+fuentes locales. No es un registro compatible con el CLI de shadcn. Usa sólo las dependencias
+indicadas por cada receta, incrustadas; nunca descargues el registro con fetch en un artefacto.
+`data-enlaces-internos` permite URLs a recetas dentro de los capítulos; sin ese atributo
+multipagina conserva el comportamiento de los artefactos anteriores.

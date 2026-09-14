@@ -1591,6 +1591,38 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   .pestanas > [data-tab-panel] { border-top: 1px solid var(--linea); }
 }
 
+/* 17 — Biblioteca editorial. Reutiliza --pieza-* definidos en claro y todos los papeles. */
+.publicaciones { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr)); gap:28px; }
+.publicaciones > article { min-width:0; border-top:1px solid var(--pieza-linea); padding-top:20px; }
+.publicaciones > article > * + * { margin-top:12px; }
+.publicaciones h4 { font:400 28px/1.2 var(--serif); }
+.publicaciones a { color:var(--pieza-tinta); text-decoration-thickness:1px; text-underline-offset:4px; }
+.editorial-controles { display:flex; flex-wrap:wrap; gap:18px; align-items:end; }
+.editorial-controles label { display:grid; gap:8px; min-width:0; flex:1 1 180px; font:14px/1.5 var(--sans); }
+.editorial-controles :is(input,select) { box-sizing:border-box; width:100%; min-width:0; min-height:44px; border:1px solid var(--pieza-linea); border-radius:4px; padding:9px; font:inherit; background:var(--pieza-papel); color:var(--pieza-tinta); }
+.editorial-controles .editorial-check { display:flex; align-items:center; }
+.editorial-check input { width:20px; height:20px; min-height:20px; accent-color:var(--pieza-acento); flex:0 0 auto; }
+[data-editorial-lista] .publicaciones { grid-template-columns:minmax(0,1fr); }
+[data-editorial-sin-extractos] [data-archivo] [data-extracto], [data-editorial-sin-meta] [data-archivo] [data-meta] { display:none; }
+.autor-editorial { display:grid; grid-template-columns:44px minmax(0,1fr); gap:20px; border-block:1px solid var(--pieza-linea); padding-block:24px; }
+.autor-editorial > div { margin:0; }
+.autor-editorial p { margin-block:10px; }
+.autor-inicial { display:grid; place-items:center; width:44px; height:44px; border-radius:50%; font:30px var(--serif); color:var(--pieza-acento); background:var(--pieza-suave); }
+.lecturas-relacionadas,.revisiones-editoriales { list-style:none; padding:0; }
+.lecturas-relacionadas li,.revisiones-editoriales li { border-top:1px solid var(--pieza-linea); padding-block:20px; }
+.lecturas-relacionadas a { display:block; font:26px/1.25 var(--serif); margin-block:8px; }
+.plano-anotado { display:block; min-width:720px; width:100%; color:var(--pieza-tinta); font:16px var(--sans); }
+.notas-anotadas { padding-left:24px; }
+.notas-anotadas li { padding-left:6px; margin-top:12px; }
+.biblioteca-rutas { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); gap:0 36px; }
+.biblioteca-rutas a { display:block; border-top:1px solid var(--pieza-linea); padding:22px 0; text-decoration:none; color:var(--pieza-tinta); min-width:0; }
+.biblioteca-rutas strong { display:block; font:400 30px/1.15 var(--serif); margin-block:10px; }
+.biblioteca-rutas small { display:block; color:var(--pieza-secundaria); font:14px/1.6 var(--sans); }
+.biblioteca .receta-copia { margin-bottom:52px; }
+.biblioteca .receta-guia { margin-top:16px; font:14px/1.65 var(--sans); color:var(--pieza-secundaria); }
+.biblioteca [id] { scroll-margin-top:85px; }
+@media print { .editorial-controles,[data-config-editorial] { display:none !important; } .publicaciones { display:block; } .publicaciones > article[hidden] { display:block !important; } [data-archivo-vacio] { display:none !important; } }
+
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <a class="salto" href="#contenido">Saltar al contenido</a>
@@ -1990,6 +2022,18 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   var next = nav && nav.querySelector('[data-nav="next"]');
   var actual = 0;
   var historial = hoja.hasAttribute('data-historial');
+  var profundos = hoja.hasAttribute('data-enlaces-internos');
+  function destinoHash() {
+    var id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return null;}
+    var target=document.getElementById(id);
+    return target && (pags.includes(target)||profundos&&pags.some(p=>p.contains(target))) ? target : null;
+  }
+  function revelar(target,conFoco) {
+    // Los destinos dentro de details también deben ser alcanzables.
+    for(var p=target.parentElement;p&&p!==hoja;p=p.parentElement)if(p.tagName==='DETAILS')p.open=true;
+    if(conFoco){target.tabIndex=-1;target.focus({preventScroll:true});}
+    target.scrollIntoView({behavior:'instant',block:'start'});
+  }
 
   function pintarNav() {
     if (!nav || !prev || !next) return;
@@ -2000,7 +2044,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
     if (b) b.textContent = actual < pags.length - 1 ? titulos[actual + 1] : "—";
   }
 
-  function ir(i, conFoco, desdeHistorial) {
+  function ir(i, conFoco, desdeHistorial, destino) {
     if (i < 0 || i >= pags.length) return;
     actual = i;
     pags.forEach(function (p, k) { p.hidden = k !== i; p.classList.toggle("viva", k === i); });
@@ -2008,7 +2052,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
       if (k === i) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
     });
     pintarNav();
-    if (location.hash.slice(1) !== pags[i].id) history[historial && conFoco && !desdeHistorial ? 'pushState' : 'replaceState'](null, "", "#" + pags[i].id);
+    if (!destino && location.hash.slice(1) !== pags[i].id) history[historial && conFoco && !desdeHistorial ? 'pushState' : 'replaceState'](null, "", "#" + pags[i].id);
     if(historial){
       var salto=document.querySelector('a.salto');if(salto)salto.setAttribute('href','#'+pags[i].id);
       pags[i].tabIndex=-1;
@@ -2022,15 +2066,22 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
       if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); }
     }
     document.dispatchEvent(new CustomEvent("nota:pagina", { detail: { indice: i, id: pags[i].id } }));
+    if(destino && destino!==pags[i])revelar(destino,conFoco);
   }
 
   botones.forEach(function (b, k) { b.addEventListener("click", function () { ir(k, true); }); });
   if (prev) prev.addEventListener("click", function () { ir(actual - 1, true); });
   if (next) next.addEventListener("click", function () { ir(actual + 1, true); });
   function desdeHash() {
-    var i = pags.findIndex(function (p) { return p.id === location.hash.slice(1); });
-    if (i >= 0 && i !== actual) ir(i, true, true);
+    var target=destinoHash(),i=pags.findIndex(p=>p===target||profundos&&p.contains(target));
+    if(i>=0 && (i!==actual||profundos))ir(i,true,true,profundos?target:null);
   }
+  if(profundos)document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]');if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+    var target;try{target=document.getElementById(decodeURIComponent(a.hash.slice(1)));}catch{return;}
+    var i=pags.findIndex(p=>p===target||p.contains(target));if(i<0)return;
+    e.preventDefault();if(location.hash!==a.hash)history.pushState(null,'',a.hash);ir(i,true,true,target);
+  });
   addEventListener("hashchange", desdeHash);
   if(historial)addEventListener('popstate',desdeHash);
 
@@ -2068,10 +2119,11 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   document.addEventListener("nota:pagina", programar);
   document.fonts?.ready.then(programar);
 
-  var inicial = pags.findIndex(function (p) { return p.id === location.hash.slice(1); });
-  if (inicial > 0 || historial) ir(Math.max(0,inicial), false); else { pintarNav(); programar(); }
+  var targetInicial=destinoHash();
+  var inicial = pags.findIndex(p=>p===targetInicial||profundos&&p.contains(targetInicial));
+  if (inicial > 0 || historial) ir(Math.max(0,inicial), false, false, profundos?targetInicial:null); else { pintarNav(); programar(); }
   // En la edición nueva, el fragmento identifica el capítulo, pero se abre con su cabecera común.
-  if(historial&&document.readyState!=='complete')addEventListener('load',function(){scrollTo({top:0,behavior:'instant'});},{once:true});
+  if(historial&&document.readyState!=='complete')addEventListener('load',function(){if(profundos&&targetInicial&&!pags.includes(targetInicial))revelar(targetInicial,false);else scrollTo({top:0,behavior:'instant'});},{once:true});
 })();
 
 </script>

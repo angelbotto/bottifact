@@ -1,0 +1,552 @@
+{
+  "version": 1,
+  "formato": "nota-tikin-local",
+  "componentes": [
+    {
+      "id": "archivo",
+      "nombre": "Archivo de publicaciones",
+      "capitulo": "publicaciones",
+      "href": "biblioteca.html#receta-archivo",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "editorial.js"
+      ],
+      "html": "<section class=\"pieza ancho\" id=\"archivo-ejemplo\" data-archivo>\n  <h3>El cuaderno abierto</h3><p>Artículos de ejemplo sobre cómo investigar, explicar y construir.</p>\n  <form class=\"editorial-controles\" role=\"search\" aria-label=\"Buscar publicaciones locales\">\n    <label>Buscar<input type=\"search\" name=\"buscar\" placeholder=\"Título o descripción\"></label>\n    <label>Tema<select name=\"tema\"><option value=\"\">Todos los temas</option><option>Diseño</option><option>Investigación</option><option>Producto</option></select></label>\n    <button type=\"reset\">Limpiar filtros</button>\n  </form><p data-archivo-estado role=\"status\">3 publicaciones disponibles.</p>\n  <div class=\"publicaciones\" data-publicaciones>\n    <article data-publicacion data-tema=\"Diseño\"><p class=\"ceja\">Diseño · <time datetime=\"2026-09-14\">14 sep 2026</time></p><h4><a href=\"informe.html#resumen\">Una revisión antes de confirmar</a></h4><p data-extracto>El recorrido desde una hipótesis hasta una propuesta que se puede probar.</p><p class=\"procedencia\" data-meta>Equipo editorial · Estudio de ejemplo</p></article>\n    <article data-publicacion data-tema=\"Investigación\"><p class=\"ceja\">Investigación · <time datetime=\"2026-09-12\">12 sep 2026</time></p><h4><a href=\"informe.html#evidencia\">Lo que una cifra todavía no demuestra</a></h4><p data-extracto>Separar el dato observado, el supuesto y la siguiente pregunta.</p><p class=\"procedencia\" data-meta>Equipo editorial · Ensayo de ejemplo</p></article>\n    <article data-publicacion data-tema=\"Producto\"><p class=\"ceja\">Producto · <time datetime=\"2026-09-10\">10 sep 2026</time></p><h4><a href=\"informe.html#prototipo\">Probar antes de publicar</a></h4><p data-extracto>Una interfaz local con estados explícitos y varios anchos de lectura.</p><p class=\"procedencia\" data-meta>Equipo editorial · Guía de ejemplo</p></article>\n  </div><p data-archivo-vacio hidden>No encontramos publicaciones. Borra la búsqueda o elige otro tema.</p>\n</section>",
+      "criterio_y_limites": "**Cuándo:** Una portada o archivo corto de artículos ya incluidos en el documento. Requiere editorial.js; combina texto y tema, ignora acentos y permite limpiar filtros.\n\n**Cuándo no / límite:** No sustituye búsqueda de un CMS, paginación de servidor ni índice de miles de entradas. Sólo filtra el HTML local; sin JS muestra todo. Los enlaces del ejemplo llevan a capítulos reales de informe.html; reemplázalos al copiar. No inventa fechas ni tiempos de lectura."
+    },
+    {
+      "id": "autor",
+      "nombre": "Ficha de autor",
+      "capitulo": "publicaciones",
+      "href": "biblioteca.html#receta-autor",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js"
+      ],
+      "html": "<aside class=\"pieza autor-editorial\" id=\"autor-ejemplo\" aria-labelledby=\"autor-nombre\">\n  <span class=\"autor-inicial\" aria-hidden=\"true\">t</span><div><p class=\"ceja\">Acerca de esta edición</p><h3 id=\"autor-nombre\">Equipo editorial</h3><p>Investigación, producto y documentación. Esta identidad ilustra la ficha; reemplázala por la autoría real del artículo.</p><a href=\"informe.html\">Leer el estudio completo →</a></div>\n</aside>",
+      "criterio_y_limites": "**Cuándo:** Cerrar un artículo con autoría y contexto, o abrir una página de autor. HTML estático.\n\n**Cuándo no / límite:** No acredita identidad ni contribuciones. La inicial es decorativa porque el nombre ya está escrito; una foto deberá ir incrustada como data: con el alt adecuado."
+    },
+    {
+      "id": "relacionados",
+      "nombre": "Lecturas relacionadas",
+      "capitulo": "publicaciones",
+      "href": "biblioteca.html#receta-relacionados",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js"
+      ],
+      "html": "<nav class=\"pieza\" id=\"relacionados-ejemplo\" aria-labelledby=\"relacionados-titulo\"><h3 id=\"relacionados-titulo\">Seguir el hilo</h3><ol class=\"lecturas-relacionadas\"><li><span class=\"ceja\">01 · Evidencia</span><a href=\"informe.html#evidencia\">Qué sabemos y qué falta medir</a><p>Los supuestos que sostienen la propuesta.</p></li><li><span class=\"ceja\">02 · Práctica</span><a href=\"informe.html#prototipo\">Recorrer el prototipo</a><p>Explorar los estados de una tarea.</p></li></ol></nav>",
+      "criterio_y_limites": "**Cuándo:** Proponer siguientes lecturas seleccionadas por su relación con el argumento.\n\n**Cuándo no / límite:** No recomienda automáticamente ni personaliza. Usa destinos existentes y descripciones específicas; no sirve para esconder la navegación principal."
+    },
+    {
+      "id": "articulo",
+      "nombre": "Ficha de artículo",
+      "capitulo": "lectura",
+      "href": "biblioteca.html#receta-articulo",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js"
+      ],
+      "html": "<div class=\"pieza\" id=\"articulo-ejemplo\">\n  <h3>El contexto antes de empezar</h3>\n  <dl class=\"ficha-articulo\">\n    <div><dt>Autoría</dt><dd>Equipo editorial</dd></div>\n    <div><dt>Publicado</dt><dd><time datetime=\"2026-09-14\">14 sep 2026</time></dd></div>\n    <div><dt>Tipo de pieza</dt><dd>Ensayo con ejemplos</dd></div>\n    <div><dt>Revisión</dt><dd>Primera edición</dd></div>\n  </dl>\n  <p>Una propuesta para separar lo observado de lo supuesto al escribir un informe.</p>\n</div>",
+      "criterio_y_limites": "**Cuándo:** artículos que necesitan autoría, fecha y estado editorial sin ocupar una portada.\n**Cuándo no / límite:** no inventa tiempo de lectura, credenciales ni revisión por pares. Los\ncampos son opcionales y no son botones. No genera metadatos SEO ni tarjetas para redes."
+    },
+    {
+      "id": "referencias",
+      "nombre": "Referencias con regreso",
+      "capitulo": "lectura",
+      "href": "biblioteca.html#receta-referencias",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js"
+      ],
+      "html": "<div class=\"pieza\" id=\"referencias-ejemplo\">\n  <h3>La evidencia queda a un paso</h3>\n  <p>Una afirmación debe permitir volver a su origen\n    <a id=\"llamada-fuente-1\" href=\"#fuente-1\" aria-label=\"Consultar referencia 1\">[1]</a>.\n    Cuando una cifra es ilustrativa, debe decirlo\n    <a id=\"llamada-fuente-2\" href=\"#fuente-2\" aria-label=\"Consultar referencia 2\">[2]</a>.</p>\n  <ol class=\"nota-referencias\" aria-label=\"Referencias del ejemplo\">\n    <li id=\"fuente-1\" tabindex=\"-1\">Nota metodológica del ejemplo: acompañar cada afirmación con su procedencia.\n      <a href=\"#llamada-fuente-1\" aria-label=\"Volver a la llamada de referencia 1\">Volver al texto ↑</a></li>\n    <li id=\"fuente-2\" tabindex=\"-1\">Los ejemplos de esta biblioteca no representan datos de producción.\n      <a href=\"#llamada-fuente-2\" aria-label=\"Volver a la llamada de referencia 2\">Volver al texto ↑</a></li>\n  </ol>\n</div>",
+      "criterio_y_limites": "**Cuándo:** citas, aclaraciones o fuentes extensas que interrumpirían el párrafo. Funcionan sin JS.\n**Cuándo no / límite:** no es una bibliografía automática. IDs únicos por nota y una llamada\npor retorno; si una fuente se cita varias veces, añade retornos distintos y explícitos. Las\nfuentes reales requieren autor, título, fecha y enlace verificable. Estas dos son aclaraciones\ninternas, no citas bibliográficas. Mantén llamada y referencia en la misma página multipágina."
+    },
+    {
+      "id": "glosario",
+      "nombre": "Glosario editorial",
+      "capitulo": "lectura",
+      "href": "biblioteca.html#receta-glosario",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js"
+      ],
+      "html": "<div class=\"pieza\" id=\"glosario-ejemplo\">\n  <h3>Palabras que conviene acordar</h3>\n  <dl class=\"nota-glosario\">\n    <div><dt><dfn>Observación</dfn></dt><dd>Lo que se registró directamente, con su contexto y procedencia.</dd></div>\n    <div><dt><dfn>Hipótesis</dfn></dt><dd>Explicación provisional que puede contrastarse con evidencia.</dd></div>\n    <div><dt><dfn>Prototipo</dfn></dt><dd>Representación parcial de una solución para explorar una pregunta.</dd></div>\n  </dl>\n</div>",
+      "criterio_y_limites": "**Cuándo:** vocabulario propio de un informe o artículo que necesita definiciones compartidas.\n**Cuándo no / límite:** no es una ayuda que aparece sólo al pasar el cursor; las definiciones\npermanecen visibles. No incluye búsqueda ni traduce términos. Las definiciones son editoriales."
+    },
+    {
+      "id": "metodologia",
+      "nombre": "Metodología desplegable",
+      "capitulo": "lectura",
+      "href": "biblioteca.html#receta-metodologia",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js"
+      ],
+      "html": "<div class=\"pieza\" id=\"metodologia-ejemplo\">\n  <h3>Cómo leer esta evidencia</h3>\n  <p>El ejemplo compara la duración declarada de una tarea bajo dos supuestos.</p>\n  <details class=\"metodologia\">\n    <summary>Consultar método, supuestos y exclusiones</summary>\n    <dl class=\"nota-glosario\">\n      <div><dt>Unidad</dt><dd>Minutos por operación; volumen mensual constante.</dd></div>\n      <div><dt>Supuesto</dt><dd>Las tareas comparadas tienen el mismo alcance.</dd></div>\n      <div><dt>Exclusión</dt><dd>No incluye capacitación, espera ni fallos de otros sistemas.</dd></div>\n      <div><dt>Límite</dt><dd>El resultado estima capacidad, no demuestra ahorro realizado.</dd></div>\n    </dl>\n  </details>\n</div>",
+      "criterio_y_limites": "**Cuándo:** explicar detalles del método después de un resumen que ya declara el límite principal.\n**Cuándo no / límite:** no ocultes condiciones que cambian la conclusión. `details` funciona sin\nJS; `interacciones.js` abre y restaura el método al imprimir. No verifica ni ejecuta el método."
+    },
+    {
+      "id": "revisiones",
+      "nombre": "Historial de revisiones",
+      "capitulo": "lectura",
+      "href": "biblioteca.html#receta-revisiones",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js"
+      ],
+      "html": "<section class=\"pieza\" id=\"revisiones-ejemplo\"><h3>Qué cambió en el documento</h3><p class=\"procedencia\">Historial ficticio para mostrar el formato; no describe commits del repositorio.</p><ol class=\"revisiones-editoriales\"><li><p class=\"ceja\"><time datetime=\"2026-09-14\">14 sep 2026</time> · v0.2 · Equipo editorial</p><h4>Se explican las exclusiones</h4><p>El cálculo ahora distingue capacidad estimada de ahorro realizado.</p></li><li><p class=\"ceja\"><time datetime=\"2026-09-12\">12 sep 2026</time> · v0.1 · Equipo editorial</p><h4>Primera propuesta</h4><p>Hipótesis, prototipo y preguntas por observar.</p></li></ol></section>",
+      "criterio_y_limites": "**Cuándo:** Reportes que cambian tras una revisión y artículos con correcciones materiales.\n\n**Cuándo no / límite:** No es auditoría automática, control de versiones ni firma verificable. Escribe cambios reales y responsables reales; no uses la fecha de compilación como fecha de publicación."
+    },
+    {
+      "id": "manuscrita",
+      "nombre": "Nota manuscrita",
+      "capitulo": "lectura",
+      "href": "biblioteca.html#receta-manuscrita",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js"
+      ],
+      "html": "<p class=\"manuscrita\">las fechas dicen cuándo pasó cada cosa. lo que explica cómo una llevó a la\n  otra está <span class=\"senalado\">en las brechas</span>, donde dejo de\n  hablar de porcentajes</p>",
+      "criterio_y_limites": "**Cuándo:** una frase en primera persona que comenta el documento desde afuera —una duda, una\nadvertencia, un apunte—. El corchete señala **una** cosa: el enlace o la idea que importa. Dos\ncorchetes en la misma frase anulan el gesto.\n\nNo la uses para información crítica: la manuscrita es difícil de leer en pantallas pequeñas y no\ntodos los lectores de pantalla la anuncian distinto del resto. Lo que no se puede perder va en\nprosa normal o en un `.aviso`."
+    },
+    {
+      "id": "hallazgo",
+      "nombre": "Ficha de hallazgo",
+      "capitulo": "reportes",
+      "href": "biblioteca.html#receta-hallazgo",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js"
+      ],
+      "html": "<aside class=\"pieza hallazgo\" id=\"hallazgo-ejemplo\" aria-labelledby=\"hallazgo-titulo\">\n  <p class=\"ceja\">Ficha 01 · hipótesis pendiente</p>\n  <h3 id=\"hallazgo-titulo\">Revisar todo antes de confirmar</h3>\n  <dl>\n    <div><dt>Afirmación</dt><dd>Un resumen final podría facilitar la revisión de los datos antes del envío.</dd></div>\n    <div><dt>Evidencia disponible</dt><dd>Existe un prototipo navegable. Todavía no hay sesiones observadas que prueben la hipótesis.</dd></div>\n    <div><dt>Límite</dt><dd>La existencia del prototipo no acredita usabilidad ni ahorro de tiempo.</dd></div>\n    <div><dt>Siguiente prueba</dt><dd>Observar tareas comparables y registrar duración, errores y correcciones sin cambiar el alcance.</dd></div>\n  </dl>\n</aside>",
+      "criterio_y_limites": "**Cuándo:** separar una afirmación de la evidencia que la sostiene y de lo que aún falta\ncomprobar. Sirve para investigación, reportes, revisiones de prototipo y artículos técnicos.\n**Cuándo no / límite:** no genera conclusiones ni grados de confianza. Una hipótesis pendiente\nno se vuelve un hallazgo confirmado por presentarla aquí. Reemplaza las frases de ejemplo\npor datos, fuentes y límites verificables; no repitas la ficha por cada párrafo del informe.\nHTML estático, sin estado ni eventos; funciona con todos los papeles y al imprimir."
+    },
+    {
+      "id": "decision",
+      "nombre": "Ficha de decisión",
+      "capitulo": "reportes",
+      "href": "biblioteca.html#receta-decision",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js"
+      ],
+      "html": "<aside class=\"pieza ficha-decision\" id=\"decision-ejemplo\" aria-labelledby=\"decision-titulo\">\n  <p class=\"ceja\">Decisión 02 · ejemplo</p>\n  <h3 id=\"decision-titulo\">Una revisión al final del registro</h3>\n  <p>Validar la información en un único paso antes de enviarla.</p>\n  <dl>\n    <div><dt>Por qué</dt><dd>Permite detectar omisiones sin pedir a la persona que repita datos.</dd></div>\n    <div><dt>Alternativa considerada</dt><dd>Confirmar cada campo por separado; interrumpe la tarea con demasiada frecuencia.</dd></div>\n    <div><dt>Qué falta comprobar</dt><dd>Que se detecten los errores antes del envío en una prueba de uso.</dd></div>\n    <div><dt>Cuándo revisarla</dt><dd>Si la revisión final se omite o no ayuda a corregir los errores.</dd></div>\n  </dl>\n</aside>",
+      "criterio_y_limites": "**Cuándo:** conservar el razonamiento de una decisión con sus condiciones de revisión.\n**Cuándo no / límite:** no es un aviso urgente ni un registro de aprobación. El estado,\nresponsables y fechas son contenido editorial; no guarda aceptación, firmas ni historial."
+    },
+    {
+      "id": "cronologia",
+      "nombre": "Cronología anotada",
+      "capitulo": "reportes",
+      "href": "biblioteca.html#receta-cronologia",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js"
+      ],
+      "html": "<div class=\"pieza\" id=\"cronologia-ejemplo\">\n  <h3>De la observación a la prueba</h3>\n  <ol class=\"cronologia\">\n    <li><time datetime=\"2026-09-01\">01 sep 2026</time><div><h4>Observar</h4><p>Se registran las dudas al completar un formulario.</p></div></li>\n    <li><time datetime=\"2026-09-04\">04 sep 2026</time><div><h4>Prototipar</h4><p>Se reúnen los campos en dos pasos y se añade una revisión final.</p></div></li>\n    <li><time datetime=\"2026-09-14\">14 sep 2026</time><div><h4>Contrastar</h4><p>Se prepara una prueba con tareas, criterios de éxito y observaciones.</p></div></li>\n  </ol>\n  <p class=\"procedencia\">Cronología ilustrativa; no representa una prueba realizada.</p>\n</div>",
+      "criterio_y_limites": "**Cuándo:** ordenar eventos y explicar qué cambió. En móvil la fecha queda sobre su evento.\n**Cuándo no / límite:** no codifica duración ni distancia temporal; el espacio entre filas no\nrepresenta días. Para comparar duraciones usa etapas. No afirma causalidad por proximidad."
+    },
+    {
+      "id": "criterios",
+      "nombre": "Matriz de criterios",
+      "capitulo": "reportes",
+      "href": "biblioteca.html#receta-criterios",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js"
+      ],
+      "html": "<figure class=\"pieza amplio\" id=\"criterios-ejemplo\"><h3>Comparar sin esconder el criterio</h3><div class=\"tabla-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Matriz de criterios, desplazable\"><table class=\"matriz-criterios\"><caption>Opciones de revisión · comparación conceptual</caption><thead><tr><th scope=\"col\">Criterio</th><th scope=\"col\">Resumen final</th><th scope=\"col\">Revisión por paso</th><th scope=\"col\">Cómo comprobarlo</th></tr></thead><tbody><tr><th scope=\"row\">Ver todo en contexto</th><td>Reúne los campos</td><td>Los reparte entre pantallas</td><td>Observar errores detectados</td></tr><tr><th scope=\"row\">Editar cerca del dato</th><td>Requiere acceso desde el resumen</td><td>Edición dentro de cada paso</td><td>Contar pasos de corrección</td></tr><tr><th scope=\"row\">Tiempo total</th><td>Pendiente de medir</td><td>Pendiente de medir</td><td>Misma tarea, alcance comparable</td></tr></tbody></table></div><figcaption>No hay puntuación agregada: las compensaciones y los datos faltantes quedan visibles.</figcaption></figure>",
+      "criterio_y_limites": "**Cuándo:** Decisiones entre opciones con criterios explícitos y evidencia comparable.\n\n**Cuándo no / límite:** No inventa pesos, puntuaciones ni ganador. Si un criterio no se observó, marca pendiente; no conviertas etiquetas ordinales en precisión numérica."
+    },
+    {
+      "id": "riesgos",
+      "nombre": "Registro de riesgos",
+      "capitulo": "reportes",
+      "href": "biblioteca.html#receta-riesgos",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js"
+      ],
+      "html": "<figure class=\"pieza amplio\" id=\"riesgos-ejemplo\"><h3>Lo que podría salir mal</h3><div class=\"tabla-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Registro de riesgos, desplazable\"><table><caption>Riesgos ilustrativos de un flujo de confirmación</caption><thead><tr><th scope=\"col\">Causa y consecuencia</th><th scope=\"col\">Responsable propuesto</th><th scope=\"col\">Mitigación</th><th scope=\"col\">Señal para revisar</th></tr></thead><tbody><tr><th scope=\"row\">Un resumen incompleto permite confirmar un dato incorrecto</th><td>Diseño de producto</td><td>Mostrar todos los campos críticos y su edición</td><td>Correcciones posteriores a confirmar</td></tr><tr><th scope=\"row\">Un fallo de guardado parece un envío exitoso</th><td>Ingeniería</td><td>Confirmar sólo tras respuesta válida y ofrecer reintento</td><td>Discrepancia entre interfaz y registro</td></tr></tbody></table></div><figcaption>Ejemplo sin probabilidades estimadas. Asigna personas y señales verificables en el proyecto real.</figcaption></figure>",
+      "criterio_y_limites": "**Cuándo:** Acompañar decisiones con causa, impacto, dueño, mitigación y señal observable.\n\n**Cuándo no / límite:** No estima probabilidad ni severidad automáticamente, y no multiplica escalas ordinales. No sustituye seguimiento operativo ni asigna trabajo a personas reales."
+    },
+    {
+      "id": "escenario",
+      "nombre": "Calculadora de escenarios",
+      "capitulo": "reportes",
+      "href": "biblioteca.html#receta-escenario",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "reportes.js"
+      ],
+      "html": "<div class=\"pieza ancho\" id=\"escenario-ejemplo\" data-reporte=\"escenario\">\n  <h3>¿Qué cambia si la tarea toma menos tiempo?</h3>\n  <p>Explora capacidad mensual con un volumen fijo. Los valores iniciales son ilustrativos.</p>\n  <form class=\"escenario-form\" aria-label=\"Supuestos de capacidad mensual\">\n    <label>Operaciones al mes<input name=\"volumen\" type=\"number\" min=\"0\" max=\"1000000\" step=\"1\" value=\"1200\" required></label>\n    <label>Antes, minutos por operación<input name=\"antes\" type=\"number\" min=\"0\" max=\"1440\" step=\"0.1\" value=\"8\" required></label>\n    <label>Después, minutos por operación<input name=\"despues\" type=\"number\" min=\"0\" max=\"1440\" step=\"0.1\" value=\"5\" required></label>\n    <button type=\"reset\">Restablecer supuestos</button>\n  </form>\n  <div class=\"escenario-resultados\">\n    <output data-resultado aria-live=\"polite\">60 h/mes liberadas</output>\n    <p data-formula>1.200 × (8 − 5) ÷ 60 = 60 h/mes. Es capacidad estimada, no ahorro monetario ni una predicción.</p>\n  </div>\n</div>",
+      "criterio_y_limites": "**Cuándo:** explicar la sensibilidad de un resultado a supuestos explícitos y reversibles.\n**Cuándo no / límite:** modelo lineal de capacidad, sin simulación, predicción ni valoración\nfinanciera. Minutos no negativos, hasta un día por operación y un millón de operaciones al mes;\nvolumen entero y tiempos en décimas. Si después es mayor, muestra horas adicionales. Vacíos y\nentradas fuera de límites invalidan el resultado; no conserva silenciosamente una cifra previa.\nSin JS se ve el cálculo inicial; no usar los controles como formulario de recolección."
+    },
+    {
+      "id": "conciliacion",
+      "nombre": "Conciliación de registros",
+      "capitulo": "reportes",
+      "href": "biblioteca.html#receta-conciliacion",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "reportes.js"
+      ],
+      "html": "<figure class=\"pieza amplio\" id=\"conciliacion-ejemplo\" data-reporte=\"conciliacion\">\n  <h3>Una diferencia necesita explicación</h3>\n  <div class=\"tabla-caja densa\" tabindex=\"0\" role=\"region\" aria-label=\"Conciliación de operaciones, desplazable\">\n    <table class=\"tabla-calculo\"><caption>Operaciones esperadas y observadas · ejemplo</caption>\n      <thead><tr><th scope=\"col\">Canal</th><th scope=\"col\">Esperadas</th><th scope=\"col\">Observadas</th><th scope=\"col\">Diferencia</th><th scope=\"col\">Explicación</th></tr></thead>\n      <tbody>\n        <tr><th scope=\"row\">Web</th><td data-valor=\"120\">120</td><td data-valor=\"118\">118</td><td>−2</td><td>Dos operaciones siguen en revisión.</td></tr>\n        <tr><th scope=\"row\">App</th><td data-valor=\"80\">80</td><td data-valor=\"80\">80</td><td>0</td><td>Conteos coincidentes.</td></tr>\n        <tr><th scope=\"row\">Asistido</th><td data-valor=\"30\">30</td><td data-valor=\"33\">33</td><td>+3</td><td>Tres registros pendientes de clasificar.</td></tr>\n      </tbody>\n      <tfoot><tr><th scope=\"row\">Total</th><td>230</td><td>231</td><td>1</td><td>El saldo neto no compensa las diferencias por canal.</td></tr></tfoot>\n    </table>\n  </div>\n  <figcaption>Datos ilustrativos. Diferencia = observado − esperado; una diferencia cero no prueba igualdad de los registros individuales.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** comparar conteos esperados/observados y conservar la explicación por fila.\n**Cuándo no / límite:** requiere conteos enteros no negativos (≤10⁹), no importes monetarios.\nNo cruza IDs, no detecta duplicados ni demuestra conciliación contable. Si falta un observado,\nel total indica incompleto y no da un saldo neto. Cinco columnas exactas, hasta 60 filas.\nLas explicaciones son editoriales: el módulo no las infiere de la diferencia."
+    },
+    {
+      "id": "barras",
+      "nombre": "Barras",
+      "capitulo": "graficas",
+      "href": "biblioteca.html#receta-barras",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "graficas.js"
+      ],
+      "html": "<figure class=\"ancho\" id=\"barras-ejemplo\" data-grafica=\"barras\" data-unidad=\"Horas\">\n  <details open><summary>Ver los datos de balance de horas</summary>\n    <div class=\"tabla-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Balance de horas, tabla desplazable\">\n      <table><caption>Balance de horas</caption>\n        <thead><tr><th scope=\"col\">Actividad</th><th scope=\"col\">Horas</th></tr></thead>\n        <tbody><tr><th scope=\"row\">Investigar</th><td data-valor=\"60\">60 h</td></tr>\n<tr><th scope=\"row\">Construir</th><td data-valor=\"25\">25 h</td></tr>\n<tr><th scope=\"row\">Revisar</th><td data-valor=\"15\">15 h</td></tr>\n<tr><th scope=\"row\">Ajuste de registro</th><td data-valor=\"-10\">−10 h</td></tr></tbody>\n      </table>\n    </div>\n  </details>\n  <figcaption>Datos ilustrativos; corte 13-sep-2026.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** comparar magnitudes en la misma unidad; admite negativos y hasta cuatro series agrupadas. Cero siempre está en la escala. Usa línea si importa la continuidad temporal.\n\n**Límite:** hasta 500 filas y cuatro series. Muchas barras requieren una figura alta: para centenares de registros, prefiere tabla ordenable. El ancho mínimo del dibujo es 800 px con desplazamiento local; las categorías largas saltan de línea. No son barras apiladas ni porcentajes normalizados."
+    },
+    {
+      "id": "lineas",
+      "nombre": "Líneas",
+      "capitulo": "graficas",
+      "href": "biblioteca.html#receta-lineas",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "graficas.js"
+      ],
+      "html": "<figure class=\"ancho\" id=\"lineas-ejemplo\" data-grafica=\"lineas\" data-unidad=\"Horas\">\n  <details open><summary>Ver los datos de tiempo de resolución</summary>\n    <div class=\"tabla-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Tiempo de resolución, tabla desplazable\">\n      <table><caption>Tiempo de resolución</caption>\n        <thead><tr><th scope=\"col\">Etapa</th><th scope=\"col\">Equipo A</th><th scope=\"col\">Equipo B</th></tr></thead>\n        <tbody><tr><th scope=\"row\">Entrada</th><td data-valor=\"12\">12 h</td><td data-valor=\"16\">16 h</td></tr>\n<tr><th scope=\"row\">Revisión</th><td data-valor=\"8\">8 h</td><td data-valor=\"11\">11 h</td></tr>\n<tr><th scope=\"row\">Validación</th><td data-valor=\"\">Sin dato</td><td data-valor=\"9\">9 h</td></tr>\n<tr><th scope=\"row\">Cierre</th><td data-valor=\"6\">6 h</td><td data-valor=\"7\">7 h</td></tr></tbody>\n      </table>\n    </div>\n  </details>\n  <figcaption>Datos ilustrativos; corte 13-sep-2026.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** seguir una secuencia ordenada de categorías comparables. Trazo y número en la leyenda distinguen series incluso en Sea. Para fechas con separaciones distintas, usa temporal; para categorías independientes, barras.\n\n**Límite:** los intervalos en X son categóricos y equidistantes. La ausencia corta el trazo, no se convierte en cero. El eje Y muestra el dominio completo observado; no tiene que comenzar en cero porque codifica posición. Hasta cuatro series; no calcula suavizados ni intervalos de confianza."
+    },
+    {
+      "id": "temporal",
+      "nombre": "Serie temporal",
+      "capitulo": "graficas",
+      "href": "biblioteca.html#receta-temporal",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "graficas.js"
+      ],
+      "html": "<figure class=\"ancho\" id=\"temporal-ejemplo\" data-grafica=\"temporal\" data-unidad=\"Solicitudes\">\n  <details open><summary>Ver los datos de solicitudes por día</summary>\n    <div class=\"tabla-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Solicitudes por día, tabla desplazable\">\n      <table><caption>Solicitudes por día</caption>\n        <thead><tr><th scope=\"col\">Día UTC</th><th scope=\"col\">Solicitudes</th></tr></thead>\n        <tbody><tr><th scope=\"row\"><time datetime=\"2026-09-01\">1 sep</time></th><td data-valor=\"80\">80 solicitudes</td></tr>\n<tr><th scope=\"row\"><time datetime=\"2026-09-03\">3 sep</time></th><td data-valor=\"100\">100 solicitudes</td></tr>\n<tr><th scope=\"row\"><time datetime=\"2026-09-08\">8 sep</time></th><td data-valor=\"90\">90 solicitudes</td></tr>\n<tr><th scope=\"row\"><time datetime=\"2026-09-13\">13 sep</time></th><td data-valor=\"120\">120 solicitudes</td></tr></tbody>\n      </table>\n    </div>\n  </details>\n  <figcaption>Ejemplo: conteos diarios independientes. Último registro frente al registro anterior (13 sep frente a 8 sep), no totales de ventanas de distinta duración.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** comparar observaciones fechadas. La posición usa milisegundos UTC: dos días y cinco días no ocupan el mismo espacio. El delta compara los dos últimos registros y nombra ambos.\n\n**Límite:** fechas ISO diarias válidas, únicas y crecientes; no agrega días ni corrige zonas horarias. El delta absoluto es actual − anterior y el relativo divide por |anterior|; base 0 indica porcentaje no definido, ausente indica sin comparación. Si tus registros representan ventanas, deben tener duración/composición comparables. No infiere causalidad ni si subir es bueno."
+    },
+    {
+      "id": "dispersion",
+      "nombre": "Dispersión",
+      "capitulo": "graficas",
+      "href": "biblioteca.html#receta-dispersion",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "graficas.js"
+      ],
+      "html": "<figure class=\"ancho\" id=\"dispersion-ejemplo\" data-grafica=\"dispersion\" >\n  <details open><summary>Ver los datos de carga y latencia</summary>\n    <div class=\"tabla-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Carga y latencia, tabla desplazable\">\n      <table><caption>Carga y latencia</caption>\n        <thead><tr><th scope=\"col\">Muestra</th><th scope=\"col\">Carga (solicitudes/s)</th><th scope=\"col\">Latencia (ms)</th></tr></thead>\n        <tbody><tr><th scope=\"row\">A</th><td data-valor=\"10\">10</td><td data-valor=\"80\">80 ms</td></tr>\n<tr><th scope=\"row\">B</th><td data-valor=\"20\">20</td><td data-valor=\"95\">95 ms</td></tr>\n<tr><th scope=\"row\">C</th><td data-valor=\"35\">35</td><td data-valor=\"140\">140 ms</td></tr>\n<tr><th scope=\"row\">D</th><td data-valor=\"50\">50</td><td data-valor=\"170\">170 ms</td></tr>\n<tr><th scope=\"row\">E</th><td data-valor=\"65\">65</td><td data-valor=\"165\">165 ms</td></tr></tbody>\n      </table>\n    </div>\n  </details>\n  <figcaption>Datos ilustrativos; corte 13-sep-2026.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** explorar pares X/Y medidos en la misma observación. Las dos variables tienen ejes numéricos con unidades. Para una sola secuencia de tiempo usa temporal.\n\n**Límite:** cada punto exige ambos valores finitos. Hasta 500 puntos; coincidentes se superponen y siguen separados en la tabla. No ajusta regresiones, no aplica jitter, no representa incertidumbre ni permite inferir causalidad."
+    },
+    {
+      "id": "distribucion",
+      "nombre": "Distribución",
+      "capitulo": "graficas",
+      "href": "biblioteca.html#receta-distribucion",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "graficas.js"
+      ],
+      "html": "<figure class=\"ancho\" id=\"distribucion-ejemplo\" data-grafica=\"distribucion\">\n  <details open><summary>Ver los datos de duración</summary>\n    <div class=\"tabla-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Distribución de duración, tabla desplazable\">\n      <table><caption>Duración de 30 sesiones</caption>\n        <thead><tr><th scope=\"col\">Duración (min)</th><th scope=\"col\">Sesiones</th><th scope=\"col\">Sesiones/min</th></tr></thead>\n        <tbody>\n          <tr><th scope=\"row\" data-desde=\"0\" data-hasta=\"10\">0 a menos de 10 min</th><td data-valor=\"5\">5</td><td data-valor=\"\">0,5</td></tr>\n          <tr><th scope=\"row\" data-desde=\"10\" data-hasta=\"20\">10 a menos de 20 min</th><td data-valor=\"15\">15</td><td data-valor=\"\">1,5</td></tr>\n          <tr><th scope=\"row\" data-desde=\"20\" data-hasta=\"40\">20 a 40 min (incluido)</th><td data-valor=\"10\">10</td><td data-valor=\"\">0,5</td></tr>\n        </tbody>\n      </table>\n    </div>\n  </details>\n  <figcaption>Ejemplo de 30 sesiones. Altura = frecuencia / ancho del intervalo; el área representa la frecuencia. El último intervalo tiene el doble de ancho.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** mostrar la distribución de una variable continua agrupada en intervalos explícitos. Los bordes de las barras corresponden a los bordes del intervalo.\n\n**Límite:** frecuencias enteras no negativas; intervalos crecientes sin solapamientos. La densidad se calcula como frecuencia/ancho; con intervalos desiguales es el área la que representa el conteo. La tabla declara inclusión/exclusión de extremos; el módulo no agrupa muestras individuales ni inventa bins. No es una curva de probabilidad ni un gráfico de categorías.\n\n<a id=\"recetas-calor\"></a>"
+    },
+    {
+      "id": "calor",
+      "nombre": "Mapa de calor",
+      "capitulo": "graficas",
+      "href": "biblioteca.html#receta-calor",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "graficas.js"
+      ],
+      "html": "<figure class=\"ancho\" id=\"calor-ejemplo\" data-grafica=\"calor\" data-umbrales=\"0,30,60,90,120,150\" data-unidad=\"Minutos\">\n  <details open><summary>Ver los datos de tiempo por actividad y día</summary>\n    <div class=\"tabla-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Tiempo por actividad y día, tabla desplazable\">\n      <table><caption>Tiempo por actividad y día</caption>\n        <thead><tr><th scope=\"col\">Actividad</th><th scope=\"col\">Lun</th><th scope=\"col\">Mar</th><th scope=\"col\">Mié</th><th scope=\"col\">Jue</th><th scope=\"col\">Vie</th></tr></thead>\n        <tbody><tr><th scope=\"row\">Investigar</th><td data-valor=\"0\">0 min</td><td data-valor=\"30\">30 min</td><td data-valor=\"60\">60 min</td><td data-valor=\"90\">90 min</td><td data-valor=\"120\">120 min</td></tr>\n<tr><th scope=\"row\">Construir</th><td data-valor=\"150\">150 min</td><td data-valor=\"120\">120 min</td><td data-valor=\"90\">90 min</td><td data-valor=\"\">Sin dato</td><td data-valor=\"30\">30 min</td></tr>\n<tr><th scope=\"row\">Revisar</th><td data-valor=\"10\">10 min</td><td data-valor=\"20\">20 min</td><td data-valor=\"40\">40 min</td><td data-valor=\"80\">80 min</td><td data-valor=\"110\">110 min</td></tr></tbody>\n      </table>\n    </div>\n  </details>\n  <figcaption>Ejemplo ilustrativo, minutos por día. Límites de clase: [0,30), [30,60), [60,90), [90,120), [120,150]. Ausencia distinta de cero.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** buscar concentraciones entre dos dimensiones discretas. Cada celda muestra su valor y la leyenda tiene intervalos explícitos. Para partes de un total usa `.mapa`, que conserva el treemap original.\n\n**Límite:** cinco niveles, definidos por seis límites crecientes; máximo incluido en el último nivel. Un valor fuera del dominio produce error visible y conserva la tabla, nunca se satura en secreto. Hasta 31 × 31 celdas con ancho mínimo por columna y scroll local. No usa degradado ni escala implícita por fila. Las cifras mantienen el significado con colores forzados.\n\n<a id=\"recetas-tablas\"></a>"
+    },
+    {
+      "id": "cascada",
+      "nombre": "Cascada de cantidades",
+      "capitulo": "graficas",
+      "href": "biblioteca.html#receta-cascada",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "reportes.js"
+      ],
+      "html": "<figure class=\"pieza ancho\" id=\"cascada-ejemplo\" data-reporte=\"cascada\">\n  <h3>Cómo se llega al resultado</h3>\n  <p>Horas disponibles, ajustes y trabajo añadido. Cada tramo empieza donde termina el anterior.</p>\n  <div class=\"tabla-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Balance de capacidad en horas, desplazable\">\n    <table><caption>Balance ilustrativo · eje X en horas</caption>\n      <thead><tr><th scope=\"col\">Concepto</th><th scope=\"col\">Cambio (h)</th><th scope=\"col\">Acumulado (h)</th></tr></thead>\n      <tbody>\n        <tr><th scope=\"row\">Capacidad inicial</th><td data-valor=\"120\">+120</td><td>120</td></tr>\n        <tr><th scope=\"row\">Mantenimiento</th><td data-valor=\"-30\">−30</td><td>90</td></tr>\n        <tr><th scope=\"row\">Apoyo adicional</th><td data-valor=\"20\">+20</td><td>110</td></tr>\n        <tr><th scope=\"row\">Revisión</th><td data-valor=\"-15\">−15</td><td>95</td></tr>\n      </tbody>\n      <tfoot><tr><th scope=\"row\">Resultado</th><td>Horas netas</td><td>95</td></tr></tfoot>\n    </table>\n  </div>\n  <figcaption>Ejemplo: 120 − 30 + 20 − 15 = 95 h. Signos y tabla distinguen aumentos y reducciones sin depender del color.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** explicar un total como suma de aportes positivos y negativos en la misma unidad.\n**Cuándo no / límite:** no sumar tasas, porcentajes ni monedas distintas. Tres columnas,\n1–60 filas; valores y acumulados finitos de hasta ±10⁹. La primera fila también es un cambio\ndesde cero; no admite subtotales intermedios ni reinicios. El módulo calcula acumulados y\nresultado, nunca toma la tercera columna como entrada. Tabla visible y dibujo de 860px con\nscroll local. Cero y todos los acumulados están en la escala. Sin animación."
+    },
+    {
+      "id": "multiples",
+      "nombre": "Pequeños múltiples",
+      "capitulo": "graficas",
+      "href": "biblioteca.html#receta-multiples",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "reportes.js"
+      ],
+      "html": "<figure class=\"pieza amplio\" id=\"multiples-ejemplo\" data-reporte=\"multiples\">\n  <h3>La misma pregunta en tres sedes</h3>\n  <p>Solicitudes por semana. Los tres paneles comparten el eje Y; el eje X corresponde al orden de la tabla.</p>\n  <div class=\"tabla-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Solicitudes por sede y semana, desplazable\">\n    <table><caption>Solicitudes semanales · ejemplo · eje Y en solicitudes</caption>\n      <thead><tr><th scope=\"col\">Período</th><th scope=\"col\">Bogotá</th><th scope=\"col\">Medellín</th><th scope=\"col\">Cali</th></tr></thead>\n      <tbody>\n        <tr><th scope=\"row\">1 · Semana 1</th><td data-valor=\"40\">40</td><td data-valor=\"20\">20</td><td data-valor=\"30\">30</td></tr>\n        <tr><th scope=\"row\">2 · Semana 2</th><td data-valor=\"60\">60</td><td data-valor=\"30\">30</td><td data-valor=\"\">Sin dato</td></tr>\n        <tr><th scope=\"row\">3 · Semana 3</th><td data-valor=\"50\">50</td><td data-valor=\"35\">35</td><td data-valor=\"40\">40</td></tr>\n        <tr><th scope=\"row\">4 · Semana 4</th><td data-valor=\"80\">80</td><td data-valor=\"40\">40</td><td data-valor=\"45\">45</td></tr>\n      </tbody>\n    </table>\n  </div>\n  <figcaption>Datos ilustrativos. Escala común de 0 a 80; sin dato corta el trazo. La pendiente no demuestra causalidad.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** comparar patrones de hasta cuatro grupos sin superponer sus líneas.\n**Cuándo no / límite:** los períodos son equidistantes y deben ser los mismos para todos los\ngrupos; no codifica fechas irregulares. Entre 2 y 60 filas. Valores finitos de hasta ±10⁹,\nvacío distinto de cero. Cada panel conserva 360px mínimos dentro de su región desplazable.\nSin valores, el dominio convencional es 0–1 y no hay puntos; no se inventan observaciones."
+    },
+    {
+      "id": "tabla-densa",
+      "nombre": "Tabla densa",
+      "capitulo": "tablas",
+      "href": "biblioteca.html#receta-tabla-densa",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js"
+      ],
+      "html": "<figure class=\"amplio\">\n  <div class=\"tabla-caja densa\" tabindex=\"0\" role=\"region\" aria-label=\"Brechas, desplazable\">\n    <table><caption>Seguimiento ilustrativo de brechas</caption>\n      <thead><tr><th scope=\"col\">Brecha</th><th scope=\"col\">Responsable</th><th scope=\"col\">Estado</th><th scope=\"col\">Inicio</th><th scope=\"col\">Revisión</th><th scope=\"col\">Evidencia esperada</th></tr></thead>\n      <tbody><tr><th scope=\"row\">Fuente sin fecha de corte</th><td>Equipo de datos</td><td>Pendiente</td><td><time datetime=\"2026-09-13\">13-sep-2026</time></td><td><time datetime=\"2026-09-18\">18-sep-2026</time></td><td>Registro con fecha y criterio de inclusión.</td></tr>\n        <tr><th scope=\"row\">Definición de unidad</th><td>Equipo de análisis</td><td>En revisión</td><td><time datetime=\"2026-09-12\">12-sep-2026</time></td><td><time datetime=\"2026-09-16\">16-sep-2026</time></td><td>Diccionario con unidad y denominador.</td></tr></tbody>\n    </table>\n  </div>\n  <figcaption>Ejemplo de seis columnas; desplaza la tabla para consultar la última.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** desde cinco columnas. `.tabla-caja table` ya trae `min-width: 34rem`; `densa` lo sube a\n`58rem`. Sin ese mínimo la tabla no se desplaza, se comprime: medido a 390 px, seis columnas daban\nceldas de 50 px y filas de **581 px de alto**. Con `densa`, celdas de 139–285 px y filas de 140 px.\nEl desplazamiento es local —la página nunca se mueve de lado— y la caja es alcanzable por teclado."
+    },
+    {
+      "id": "comparacion",
+      "nombre": "Comparación",
+      "capitulo": "tablas",
+      "href": "biblioteca.html#receta-comparacion",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "tablas.js"
+      ],
+      "html": "<figure class=\"amplio\">\n  <div class=\"tabla-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Comparación de fuentes, desplazable\">\n    <table class=\"tabla-comparacion\"><caption>Fuentes candidatas · ejemplo</caption>\n      <thead><tr><th scope=\"col\">Criterio</th><th scope=\"col\" class=\"elegida\">Registro A · elegido</th><th scope=\"col\">Registro B</th></tr></thead>\n      <tbody>\n        <tr><th scope=\"row\">Fecha de corte</th><td class=\"elegida\">13-sep-2026</td><td>10-sep-2026</td></tr>\n        <tr><th scope=\"row\">Trazabilidad</th><td class=\"elegida\">✓ Identificador por movimiento</td><td>≈ Resumen por día</td></tr>\n        <tr><th scope=\"row\">Límite</th><td class=\"elegida\">Falta una sede</td><td>Faltan tres días</td></tr>\n      </tbody>\n    </table>\n  </div>\n  <figcaption>Datos ilustrativos. «Elegido» expresa la decisión, no una puntuación automática.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** comparar las mismas propiedades de pocas alternativas. Escribe la decisión en la cabecera además de señalarla con color. No uses un ranking si los criterios son cualitativos.\n\n**Límite:** la clase `.elegida` se aplica a cada celda de la columna; no calcula ganadores. Para cinco columnas o más añade `densa`. No vuelve sticky la primera columna, para que el espacio útil del teléfono quede disponible al desplazar."
+    },
+    {
+      "id": "totales",
+      "nombre": "Totales y ordenación",
+      "capitulo": "tablas",
+      "href": "biblioteca.html#receta-totales",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "tablas.js"
+      ],
+      "html": "<figure class=\"ancho\">\n  <div class=\"tabla-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Horas por actividad, tabla ordenable y desplazable\">\n    <table class=\"tabla-totales\" data-tabla><caption>Horas registradas · ejemplo</caption>\n      <thead><tr><th scope=\"col\"><button type=\"button\" data-ordenar=\"texto\">Actividad</button></th><th scope=\"col\"><button type=\"button\" data-ordenar=\"numero\">Horas</button></th></tr></thead>\n      <tbody>\n        <tr><th scope=\"row\">Investigar</th><td class=\"numero\" data-valor=\"60\">60 h</td></tr>\n        <tr><th scope=\"row\">Construir</th><td class=\"numero\" data-valor=\"25\">25 h</td></tr>\n        <tr><th scope=\"row\">Revisar</th><td class=\"numero\" data-valor=\"15\">15 h</td></tr>\n      </tbody>\n      <tfoot><tr><th scope=\"row\">Total de horas registradas</th><td class=\"numero\">100 h</td></tr></tfoot>\n    </table>\n  </div>\n  <figcaption>Ejemplo: 60 + 25 + 15 = 100 h. Los botones ordenan sólo las filas de datos; el total permanece al pie.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** consultar registros y su total aditivo; ofrece ordenación cuando ayuda a encontrar extremos. Sin `data-tabla` funciona como tabla estática.\n\n**Límite:** el total lo calcula quien prepara los datos, no el DOM. No sumar porcentajes, tasas o promedios. Un solo `tbody`, sin celdas combinadas ni filas de subtotal dentro de él; no hay paginación o filtrado. La ordenación numérica requiere `data-valor`; ausencias quedan al final en ambos sentidos. Repetidos conservan su orden, `tfoot` no se mueve."
+    },
+    {
+      "id": "sparkline",
+      "nombre": "Tabla con serie",
+      "capitulo": "tablas",
+      "href": "biblioteca.html#receta-sparkline",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "tablas.js"
+      ],
+      "html": "<figure class=\"ancho\">\n  <div class=\"tabla-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Serie semanal de solicitudes, desplazable\">\n    <table data-tabla data-min=\"0\" data-max=\"120\"><caption>Solicitudes de lunes a jueves · ejemplo</caption>\n      <thead><tr><th scope=\"col\">Canal</th><th scope=\"col\">Serie L / M / X / J, dominio común 0–120</th><th scope=\"col\">Último día</th></tr></thead>\n      <tbody>\n        <tr><th scope=\"row\">Web</th><td data-sparkline><span class=\"sparkline-datos\"><span data-valor=\"80\">80</span>, <span data-valor=\"100\">100</span>, <span data-valor=\"90\">90</span>, <span data-valor=\"120\">120</span></span></td><td class=\"numero\">120</td></tr>\n        <tr><th scope=\"row\">App</th><td data-sparkline><span class=\"sparkline-datos\"><span data-valor=\"40\">40</span>, <span data-valor=\"\">sin dato</span>, <span data-valor=\"70\">70</span>, <span data-valor=\"60\">60</span></span></td><td class=\"numero\">60</td></tr>\n      </tbody>\n    </table>\n  </div>\n  <figcaption>Valores ilustrativos. Misma escala Y en ambas filas. El dato ausente corta la línea y todos los valores permanecen escritos.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** añadir tendencia a una tabla sin apartarse del registro. El texto de la celda nombra cada valor; el SVG es redundante y lleva `aria-hidden`.\n\n**Límite:** X equidistante; todas las filas deben describir los mismos períodos. Exige `data-min`/`data-max` comunes y rechaza dibujar puntos fuera de ellos. No autoescala por fila, no es una gráfica con ejes ni codifica tiempo irregular; para eso usa la serie temporal. El texto sigue disponible si el dibujo no se puede generar.\n\n<a id=\"recetas-sonido\"></a>"
+    },
+    {
+      "id": "visor",
+      "nombre": "Visor de prototipos",
+      "capitulo": "prototipos",
+      "href": "biblioteca.html#receta-visor",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "visor.js"
+      ],
+      "html": "<figure class=\"pieza amplio\" id=\"visor-ejemplo\" data-visor>\n  <h3>Una interfaz, varios tamaños</h3>\n  <p>Explora los estados vacío, revisión y confirmado de un registro ilustrativo.</p>\n  <div class=\"acciones\" role=\"group\" aria-label=\"Ancho de la vista del prototipo\">\n    <button type=\"button\" data-ancho-visor=\"320\" aria-pressed=\"false\">320 px</button>\n    <button type=\"button\" data-ancho-visor=\"390\" aria-pressed=\"true\">390 px</button>\n    <button type=\"button\" data-ancho-visor=\"768\" aria-pressed=\"false\">768 px</button>\n    <button type=\"button\" data-ancho-visor=\"1024\" aria-pressed=\"false\">1024 px</button>\n    <button type=\"button\" data-ancho-visor=\"auto\" aria-pressed=\"false\">Ajustar</button>\n    <button type=\"button\" data-reiniciar-visor>Reiniciar ejemplo</button>\n  </div>\n  <p data-visor-estado role=\"status\">Vista inicial: 390 px CSS.</p>\n  <div class=\"visor-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Prototipo interactivo, desplazable horizontalmente\"></div>\n  <template data-prototipo>\n    <style>\n      .demo { padding: 24px; min-width: 0; }\n      .demo nav { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 20px; border-bottom: 1px solid var(--pieza-linea); }\n      .demo button { min-height: 44px; padding: 8px 12px; color: var(--pieza-tinta); background: var(--pieza-papel); border: 1px solid var(--pieza-linea); border-radius: 4px; font: inherit; cursor: pointer; }\n      .demo button[aria-pressed='true'] { background: var(--pieza-suave); border-color: var(--pieza-acento); }\n      .demo h2 { font: 400 32px/1.15 var(--serif); margin: 0 0 16px; }\n      .demo p { margin: 0 0 18px; overflow-wrap: anywhere; }\n      .demo .contexto { margin-top: 24px; font-size: 14px; color: var(--pieza-secundaria); }\n      .demo article { padding-top: 28px; }\n      .demo dl { margin: 0 0 20px; display: grid; gap: 12px; }\n      .demo dt { font-size: 13px; color: var(--pieza-secundaria); }\n      .demo dd { margin: 0; }\n      .demo .estado { padding: 16px; border: 1px dashed var(--pieza-linea); }\n      @container (min-width: 600px) {\n        .demo article { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); gap: 32px; }\n        .demo .contexto { margin-top: 0; padding-top: 4px; }\n      }\n    </style>\n    <div class=\"demo\">\n      <nav aria-label=\"Estados del prototipo\">\n        <button type=\"button\" data-demo-ir=\"vacio\" aria-pressed=\"true\">Vacío</button>\n        <button type=\"button\" data-demo-ir=\"revision\" aria-pressed=\"false\">Revisión</button>\n        <button type=\"button\" data-demo-ir=\"confirmado\" aria-pressed=\"false\">Confirmado</button>\n      </nav>\n      <article data-demo-pagina=\"vacio\">\n        <div><h2>Tu primer registro</h2><p>Todavía no hay registros en este ejemplo.</p><button type=\"button\" data-demo-ir=\"revision\">Crear borrador de ejemplo</button></div>\n        <aside class=\"contexto\"><p>Empieza con un nombre, una fecha y una explicación del movimiento.</p><p class=\"estado\">Estado: sin registros</p></aside>\n      </article>\n      <article data-demo-pagina=\"revision\" hidden>\n        <div><h2>Revisa antes de confirmar</h2><dl><div><dt>Nombre</dt><dd>Sesión de revisión</dd></div><div><dt>Fecha</dt><dd>14 de septiembre de 2026</dd></div><div><dt>Duración</dt><dd>30 minutos</dd></div></dl><button type=\"button\" data-demo-ir=\"confirmado\">Confirmar ejemplo</button></div>\n        <aside class=\"contexto\"><p>Comprueba los datos del borrador. Este prototipo usa un registro fijo para explorar la interacción.</p><p class=\"estado\">Estado: pendiente de confirmar</p></aside>\n      </article>\n      <article data-demo-pagina=\"confirmado\" hidden>\n        <div><h2>Registro confirmado</h2><p>La sesión de revisión aparece en el ejemplo con su fecha y duración.</p><button type=\"button\" data-demo-ir=\"vacio\">Volver al inicio</button></div>\n        <aside class=\"contexto\"><p class=\"estado\">Estado: confirmado en el prototipo</p><p>No se envió ni se guardó información.</p></aside>\n      </article>\n    </div>\n  </template>\n  <div class=\"visor-fuente\"><h4>Estados del ejemplo</h4><ol><li>Vacío: crear un borrador de ejemplo.</li><li>Revisión: sesión del 14-sep-2026, 30 minutos, pendiente de confirmar.</li><li>Confirmado: resultado ilustrativo; no se envían datos.</li></ol></div>\n  <figcaption>Vista interactiva local. El ancho conserva píxeles CSS reales; en una pantalla pequeña se desplaza la región completa.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** documentar estados de un componente o recorrer un prototipo pequeño dentro de un\nartículo. El lienzo cambia entre 320, 390, 768, 1024 y el espacio disponible. Reiniciar reconstruye\nla muestra original. El texto alternativo aparece sin JS y al imprimir. No carga archivos.\n\n**Cuándo no / límite:** no es un emulador de iPhone, una captura ni un navegador remoto. No\nmodifica la densidad de píxeles, el motor o el viewport del documento. Usa **Shadow DOM y\n`@container`**, por eso las reglas responsivas del prototipo deben consultar el contenedor;\n`@media (width)` seguiría midiendo la ventana exterior. No hay iframe porque la CSP lo bloquea.\nEl template contiene HTML/CSS de confianza, sin guiones ni manejadores `on…`; no es un sandbox\npara HTML ajeno. Los botones `data-demo-ir` activan un `data-demo-pagina` del mismo visor;\nno envían formularios, calculan datos ni persisten cambios. Los IDs, si se usan, viven dentro\ndel shadow. Los estilos del documento no entran, pero sí se heredan sus tokens y fuentes.\nEl contenido del prototipo debe respetar reduce; el visor no inicia RAF ni transiciones.\n`NotaVisores.get(figura).setWidth('768')` permite controlar el ancho; `reset()` reinicia y\n`destroy()` devuelve la alternativa textual y retira listeners/observer."
+    },
+    {
+      "id": "pestanas",
+      "nombre": "Pestañas de una pieza",
+      "capitulo": "prototipos",
+      "href": "biblioteca.html#receta-pestanas",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "pestanas.js"
+      ],
+      "html": "<div class=\"pieza pestanas\" id=\"pestanas-ejemplo\" data-pestanas>\n  <h3>La afirmación, sus datos y su límite</h3>\n  <div class=\"pestanas-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Vistas de la evidencia, desplazables\">\n    <div class=\"pestanas-nav\" data-tabs-nav aria-label=\"Vistas de la evidencia\">\n      <button type=\"button\" id=\"tab-hallazgo\" data-tab=\"panel-hallazgo\">Hallazgo</button>\n      <button type=\"button\" id=\"tab-datos\" data-tab=\"panel-datos\">Evidencia</button>\n      <button type=\"button\" id=\"tab-limites\" data-tab=\"panel-limites\">Límites</button>\n    </div>\n  </div>\n  <section id=\"panel-hallazgo\" data-tab-panel><h4>Una hipótesis para probar</h4><p>Un resumen antes de confirmar podría reducir las correcciones posteriores.</p><p>Esta es una hipótesis de diseño, no un resultado medido.</p></section>\n  <section id=\"panel-datos\" data-tab-panel><h4>Qué necesitamos observar</h4><p>Tiempo hasta confirmar, correcciones posteriores y errores detectados antes del envío.</p><p>Comparar tareas del mismo alcance y conservar los registros de cada sesión.</p></section>\n  <section id=\"panel-limites\" data-tab-panel><h4>Qué no se puede concluir</h4><p>Una mejora en velocidad no demuestra menor tasa de error ni ahorro económico.</p><p>El ejemplo no contiene observaciones de personas reales.</p></section>\n</div>",
+      "criterio_y_limites": "**Cuándo:** alternar vistas cortas de una misma pregunta: hallazgo/evidencia/límite, diseño/datos\nu otras vistas relacionadas. Incluye `pestanas.js` después de `interacciones.js`.\nFlechas, Inicio y Fin mueven el foco; Enter o Espacio activan (comportamiento nativo del botón).\nEl ratón activa al pulsar. Hay un solo tabulador activo; cada panel tiene nombre y foco.\n\n**Cuándo no / límite:** no uses pestañas para ocultar pasos obligatorios o avisos esenciales.\nPara capítulos largos usa navegación multipágina. No carga datos, no sincroniza la URL, no\nofrece pestañas deshabilitadas ni persistencia. Mantén botones y paneles en el mismo orden,\ncon IDs únicos. No anides instancias. Sin JS se ven todas las secciones; al imprimir también.\n`NotaPestanas.init(raíz)`, `get(elemento).select(índice)` y `destroy()` siguen el ciclo habitual.\n`select` no mueve foco; se emite `nota:pestana` al cambiar para que otras piezas puedan medir."
+    },
+    {
+      "id": "antes-despues",
+      "nombre": "Antes y después",
+      "capitulo": "prototipos",
+      "href": "biblioteca.html#receta-antes-despues",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js"
+      ],
+      "html": "<figure class=\"pieza ancho\" id=\"antes-despues-ejemplo\">\n  <h3>Un cambio que se puede leer</h3>\n  <div class=\"antes-despues\">\n    <div><h4>Antes · mensaje genérico</h4><p><del>No se pudo completar la acción.</del></p><p>La persona debe adivinar qué falta.</p></div>\n    <div class=\"despues\"><h4>Después · siguiente paso concreto</h4><p><ins>Añade la fecha del registro para continuar.</ins></p><p>El mensaje identifica el campo que necesita atención.</p></div>\n  </div>\n  <figcaption>Ejemplo de redacción. Las dos versiones permanecen completas; en móvil se leen una después de otra.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** mostrar una corrección de texto, una decisión de interfaz o una revisión de contenido.\n**Cuándo no / límite:** no calcula un diff, ni compara capturas con un deslizador. `del`/`ins`\nidentifican cambios editoriales; para alternativas sin relación temporal usa comparación."
+    },
+    {
+      "id": "anotaciones",
+      "nombre": "Diagrama anotado",
+      "capitulo": "prototipos",
+      "href": "biblioteca.html#receta-anotaciones",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js"
+      ],
+      "html": "<figure class=\"pieza ancho\" id=\"anotaciones-ejemplo\">\n<h3>Tres momentos de una confirmación</h3><div class=\"diagrama-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Flujo anotado de 720 píxeles, desplazable\">\n<svg class=\"plano-anotado\" viewBox=\"0 0 720 210\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-labelledby=\"anotaciones-titulo anotaciones-desc\"><title id=\"anotaciones-titulo\">Crear, revisar y confirmar</title><desc id=\"anotaciones-desc\">Uno: crear borrador. Dos: revisar datos. Tres: confirmar. Las tres notas siguientes explican cada paso.</desc><g fill=\"none\" stroke=\"currentColor\"><rect x=\"10\" y=\"45\" width=\"200\" height=\"110\" rx=\"6\"/><rect x=\"260\" y=\"45\" width=\"200\" height=\"110\" rx=\"6\"/><rect x=\"510\" y=\"45\" width=\"200\" height=\"110\" rx=\"6\"/><path d=\"M210 100h45m-9-7 9 7-9 7M460 100h45m-9-7 9 7-9 7\"/></g><g text-anchor=\"middle\" fill=\"currentColor\"><text x=\"110\" y=\"85\">01</text><text x=\"110\" y=\"120\">Crear borrador</text><text x=\"360\" y=\"85\">02</text><text x=\"360\" y=\"120\">Revisar datos</text><text x=\"610\" y=\"85\">03</text><text x=\"610\" y=\"120\">Confirmar</text></g></svg></div>\n<ol class=\"notas-anotadas\"><li><strong>Crear.</strong> Los datos permanecen editables; todavía no hay envío.</li><li><strong>Revisar.</strong> Se presenta fecha, duración y nombre en un resumen.</li><li><strong>Confirmar.</strong> La interfaz debe explicar qué se guardó y ofrecer un siguiente paso.</li></ol><figcaption>Flujo conceptual; las distancias no representan tiempo ni cantidad. Las notas contienen toda la explicación del dibujo.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** Explicar partes numeradas de un flujo o una captura incrustada sin depender de hover.\n\n**Cuándo no / límite:** No mide atención ni registra clics. Las notas deben mantener numeración y orden del dibujo. Un diagrama ancho conserva escala con desplazamiento local, no se comprime para caber."
+    },
+    {
+      "id": "recorrido",
+      "nombre": "Globo narrado",
+      "capitulo": "expresion",
+      "href": "biblioteca.html#receta-recorrido",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js",
+        "globo.js",
+        "reportes.js"
+      ],
+      "html": "<figure class=\"pieza ancho\" id=\"recorrido-ejemplo\" data-reporte=\"recorrido\">\n  <h3>Seguir el viaje de una idea</h3>\n  <p>Una ruta por etapa, con contexto escrito. Selecciona anterior o siguiente para orientar el globo.</p>\n  <div data-recorrido-globo></div>\n  <div class=\"acciones\">\n    <button type=\"button\" data-paso=\"prev\">← Etapa anterior</button>\n    <button type=\"button\" data-paso=\"next\">Etapa siguiente →</button>\n  </div>\n  <p data-recorrido-estado role=\"status\">Tres etapas ilustrativas; el recorrido empieza inmóvil.</p>\n  <ol class=\"recorrido-pasos\">\n    <li data-ruta=\"idea-bog-mad\"><strong><span data-lugar=\"BOG\" data-lat=\"4.711\" data-lon=\"-74.0721\">Bogotá</span> → <span data-lugar=\"MAD\" data-lat=\"40.4168\" data-lon=\"-3.7038\">Madrid</span></strong><p>Se comparte la primera propuesta para revisión.</p></li>\n    <li data-ruta=\"idea-mad-hnd\"><strong><span data-lugar=\"MAD\" data-lat=\"40.4168\" data-lon=\"-3.7038\">Madrid</span> → <span data-lugar=\"HND\" data-lat=\"35.5494\" data-lon=\"139.7798\">Tokio</span></strong><p>La propuesta se convierte en una prueba de interacción.</p></li>\n    <li data-ruta=\"idea-hnd-bog\"><strong><span data-lugar=\"HND\" data-lat=\"35.5494\" data-lon=\"139.7798\">Tokio</span> → <span data-lugar=\"BOG\" data-lat=\"4.711\" data-lon=\"-74.0721\">Bogotá</span></strong><p>Las observaciones regresan al equipo que decide.</p></li>\n  </ol>\n  <figcaption>Relato ficticio. Las coordenadas son geográficas; no representan vuelos, distancias ni actividad real.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** la ubicación y el orden de una historia importan. Las etapas escritas siempre están\nvisibles; el mapa orienta una ruta a la vez. Incluye Three una sola vez y `globo.js` antes de\n`reportes.js`. Comparte la dependencia con todos los demás globos/escenas del documento.\n\n**Cuándo no / límite:** no convierte etapas abstractas en geografía. `data-lugar` identifica\nun lugar; repetir un ID exige las mismas coordenadas y nombre. Cada ruta necesita un ID único\ny dos lugares. No autoavanza ni añade sonido. Empieza pausado; conserva controles de NotaGlobo,\nreduce, pausa por visibilidad y destroy. Sin Three queda mensaje y relato; sin WebGL queda\nademás la lista de rutas. No añade mapas, texturas ni geocodificación remota.\nLa lista del globo también cambia la etapa del relato. Una ruta seleccionada mantiene su\norientación: para giro libre usa «Vista inicial» y «Reanudar giro»; anterior/siguiente vuelve\na orientar la etapa. No interpreta el giro manual como un cambio de etapa."
+    },
+    {
+      "id": "xyz",
+      "nombre": "Three.js · XYZ",
+      "capitulo": "expresion",
+      "href": "biblioteca.html#receta-xyz",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js",
+        "escena.js"
+      ],
+      "html": "<figure class=\"ancho\" data-escena=\"xyz\" id=\"xyz-ejemplo\">\n  <div class=\"tabla-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Carga, latencia y memoria, tabla desplazable\">\n    <table><caption>Tres variables de una misma prueba</caption>\n      <thead><tr><th scope=\"col\">Prueba</th><th scope=\"col\">Carga (req/s)</th><th scope=\"col\">Latencia (ms)</th><th scope=\"col\">Memoria (MB)</th></tr></thead>\n      <tbody>\n        <tr><th scope=\"row\">A</th><td data-valor=\"10\">10</td><td data-valor=\"80\">80</td><td data-valor=\"100\">100</td></tr>\n        <tr><th scope=\"row\">B</th><td data-valor=\"20\">20</td><td data-valor=\"95\">95</td><td data-valor=\"120\">120</td></tr>\n        <tr><th scope=\"row\">C</th><td data-valor=\"35\">35</td><td data-valor=\"140\">140</td><td data-valor=\"150\">150</td></tr>\n        <tr><th scope=\"row\">D</th><td data-valor=\"50\">50</td><td data-valor=\"170\">170</td><td data-valor=\"210\">210</td></tr>\n      </tbody>\n    </table>\n  </div>\n  <figcaption>Datos ilustrativos. Posiciones X/Y/Z normalizadas por sus dominios, con valores reales en los ejes. Selecciona un registro para identificarlo; proyección ortográfica, sin tamaños por perspectiva.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** la tercera variable aporta una relación espacial que conviene explorar. Los\ncontroles giran la vista e identifican registros sin depender de arrastrar ni acertar a un punto.\nSi dos variables bastan, la dispersión SVG es más fácil de leer y comparar.\n\n**Límite:** 1–100 registros finitos; sin ausencias, regresión, jitter ni inferencias de\ncorrelación. Cada eje tiene dominio propio, por lo que distancia geométrica no equivale\na una métrica entre variables de unidades distintas. Los puntos pueden ocluirse: elegir\nuno atenúa los demás y escribe su valor. El lienzo conserva 600 px de ancho mínimo con\nscroll local; las etiquetas de ejes deben ser breves, con las unidades en las cabeceras.\nLa tabla siempre queda visible, con o sin WebGL. Ningún dato existe sólo en una textura."
+    },
+    {
+      "id": "etapas",
+      "nombre": "Three.js · etapas",
+      "capitulo": "expresion",
+      "href": "biblioteca.html#receta-etapas",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js",
+        "escena.js"
+      ],
+      "html": "<figure class=\"ancho\" data-escena=\"etapas\" id=\"etapas-ejemplo\">\n  <div class=\"tabla-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Duración por etapa, tabla desplazable\">\n    <table><caption>Dónde tarda una solicitud</caption>\n      <thead><tr><th scope=\"col\">Etapa</th><th scope=\"col\">Tiempo (ms)</th><th scope=\"col\">Qué ocurre</th></tr></thead>\n      <tbody>\n        <tr><th scope=\"row\">1 · Recibir</th><td data-valor=\"20\">20 ms</td><td>Leer la entrada.</td></tr>\n        <tr><th scope=\"row\">2 · Validar</th><td data-valor=\"40\">40 ms</td><td>Comprobar el contrato.</td></tr>\n        <tr><th scope=\"row\">3 · Consultar</th><td data-valor=\"120\">120 ms</td><td>Esperar la fuente de datos.</td></tr>\n        <tr><th scope=\"row\">4 · Responder</th><td data-valor=\"30\">30 ms</td><td>Entregar la salida.</td></tr>\n      </tbody>\n    </table>\n  </div>\n  <figcaption>Ejemplo ilustrativo: 210 ms si las cuatro etapas ocurren en serie. Alturas proporcionales al tiempo, orden horizontal secuencial; anchura y profundidad constantes sin significado cuantitativo.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** explicar etapas de un proceso junto con su duración. Seleccionar una etapa\nconecta su caja con la explicación escrita. Empieza inmóvil; el giro continuo es optativo.\nUsa las barras SVG para comparar muchas categorías o cuando girar no aporte información.\n\n**Límite:** 1–12 etapas en orden, duraciones no negativas. La altura cero no se infla para\nhacer visible una caja. No representa dependencias, paralelismo, un waterfall acumulado\nni una simulación física. No sumes duraciones como tiempo total si las etapas se solapan.\nLos números 1…N identifican las filas de la tabla. Rotar puede superponer etiquetas; los\nvalores exactos permanecen en la tabla y «Vista inicial» devuelve la composición inicial.\n\n### Ciclo de vida de NotaEscena\n\n| Operación | Contrato |\n|---|---|\n| `NotaEscena.init(raíz)` | Inicializa `data-escena` una vez por figura; el segundo llamado devuelve la instancia existente. |\n| `new NotaEscena(figura)` | Alternativa manual; rechaza una segunda instancia para el mismo contenedor. |\n| `NotaEscena.get(figura)` | Recupera la instancia automática. |\n| `select(índice)` / `select(null)` | Selecciona una fila, índice desde cero, o muestra todas. Rechaza índices inexistentes. |\n| `rotate(dx,dy)` | Giro manual inmediato, en radianes. |\n| `pause()` / `resume()` | Desactiva/solicita giro. `resume()` respeta movimiento reducido, visibilidad y estado WebGL. |\n| `destroy()` | Cancela RAF, aborta listeners, desconecta observers, libera geometrías/materiales/texturas/renderer y devuelve la tabla original. Es idempotente. |\n\nEl giro es 0,15 rad/s, limitado por tiempo, no por cuadros. Sólo hay RAF mientras la vista\nes visible, la pestaña está activa, se pidió girar y no hay movimiento reducido. Cambiar\nesa preferencia cancela el RAF pendiente; el giro manual sigue siendo instantáneo.\nColores leídos de los tokens claros/oscuros/Sea; los rótulos son canvas locales. Al retirar\nla figura de una aplicación llama `destroy()`. Para reemplazar datos: destruye, modifica\nla tabla e inicializa otra vez. No hay `fetch`, modelos, mapas ni imágenes externas."
+    },
+    {
+      "id": "escritura",
+      "nombre": "Escritura por trazos",
+      "capitulo": "expresion",
+      "href": "biblioteca.html#receta-escritura",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "escritura.js"
+      ],
+      "html": "<figure class=\"ancho nota-escritura\" data-escritura data-duracion=\"2400\">\n  <div class=\"escritura-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Escritura a mano, desplazable\">\n    <svg viewBox=\"0 0 420 110\" aria-hidden=\"true\">\n      <path data-trazo d=\"M55 51 C43 38 27 51 30 68 C34 83 52 69 54 53 L52 76 Q58 78 65 71\"/>\n      <path data-trazo d=\"M96 77 L101 48 L99 69 Q111 41 120 52 L117 74 Q132 42 142 54 L140 74 Q142 81 151 73\"/>\n      <path data-trazo d=\"M179 53 C167 40 154 55 157 69 C161 84 179 68 180 54 L178 77 Q185 78 193 71\"/>\n      <path data-trazo d=\"M207 77 L212 49 L210 68 Q224 41 235 53 L232 74 Q236 81 246 72\"/>\n      <path data-trazo d=\"M274 50 C259 44 249 59 254 72 C260 85 280 75 281 61 Q279 50 271 51 Q270 58 289 56\"/>\n      <path data-trazo d=\"M28 91 Q123 84 214 91 T293 89\"/>\n    </svg>\n  </div>\n  <div class=\"escritura-controles\">\n    <button type=\"button\" data-escribir>Repetir escritura</button>\n    <button type=\"button\" data-finalizar>Mostrar trazo completo</button>\n  </div>\n  <p data-texto-escritura>«a mano»</p>\n  <p role=\"status\" aria-live=\"polite\">Trazo completo.</p>\n  <figcaption>Gesto ilustrativo original de Nota Tikin. 2400 ms repartidos por la longitud de cada trazo; la frase siempre permanece escrita debajo.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** una anotación corta y secundaria que gana significado con el gesto del trazo.\nEmpieza completa; la persona decide repetirla. Conserva `.manuscrita` para texto corriente\nque deba seleccionarse, traducirse o cambiar con datos.\n\n**Límite:** recibe paths SVG ordenados, no transforma automáticamente cualquier fuente\nen escritura cursiva. Cada path es un trazo continuo; separa levantamientos de lápiz en\npaths distintos. No uses contornos de glifos rellenos si esperas un trazo central de pluma.\nAl cambiar la frase, dibuja paths correspondientes y actualiza `data-texto-escritura`.\nEl SVG es redundante (`aria-hidden`), el texto equivalente es permanente. Admite 100–10000 ms,\nno música sincronizada. Web Animations se cancela y completa al salir de pantalla, ocultar\nla pestaña o activar movimiento reducido; no hay RAF ni colas que se reanuden al volver.\n`NotaEscritura.get(elemento).play()`, `.finish()` y `.destroy()` controlan la instancia;\n`.play()` respeta movimiento reducido. `NotaEscritura.init(elemento)` admite inserción tardía.\n\n<a id=\"recetas-three\"></a>"
+    },
+    {
+      "id": "sonido",
+      "nombre": "Sonido optativo",
+      "capitulo": "expresion",
+      "href": "biblioteca.html#receta-sonido",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "sonido.js"
+      ],
+      "html": "<aside class=\"nota-sonido\" data-canal-sonido aria-labelledby=\"sonido-titulo\">\n  <h3 id=\"sonido-titulo\">Una señal breve.</h3>\n  <p>Activa el sonido y prueba una señal. Cada acción también se describe en texto.</p>\n  <div><button type=\"button\" data-audio-activar aria-pressed=\"false\">Activar sonido</button></div>\n  <div>\n    <button type=\"button\" data-audio=\"accion\" data-mensaje=\"Ejemplo de acción seleccionada.\">Acción</button>\n    <button type=\"button\" data-audio=\"confirmacion\" data-mensaje=\"Ejemplo de confirmación completada.\">Confirmación</button>\n    <button type=\"button\" data-audio=\"atencion\" data-mensaje=\"Ejemplo: revisa el dato antes de continuar.\">Atención</button>\n  </div>\n  <p role=\"status\" aria-live=\"polite\">Sonido apagado.</p>\n</aside>",
+      "criterio_y_limites": "**Cuándo:** confirmar una acción explícita y breve, en una experiencia donde la persona\nha optado por escuchar. No añade sonido a gráficos, scroll, foco, lectura, cambios de tema\nni entradas automáticas. El botón de activación no emite una señal. La preferencia no se\nrecuerda al recargar y vuelve a apagado al ocultar la pestaña.\n\n**Límite:** Web Audio y gesto real de botón; eventos sintéticos no activan ni reproducen.\nLas señales usan seno, ganancia pico 0,025, ataque 3 ms y caída a 0,0001 en 55 ms;\nacción 660→440 Hz, confirmación 520→780 Hz, atención 440→360→440 Hz. Cada nota dura 60 ms,\nseparada por 5 ms; total 125 o 190 ms. Son decisiones de Nota, no mediciones del sitio.\nUna nueva señal interrumpe la anterior. No son alarmas, sonificación de series ni audio de\nfondo, y la ganancia digital no garantiza un nivel acústico en el dispositivo.\n`NotaSonido.get(contenedor).disable()` apaga; `.destroy()` cierra el contexto y listeners.\n`NotaSonido.init(contenedor)` inicializa HTML nuevo. No hay método público de reproducción\nautomática. `[data-sonido]` del sistema anterior conserva su comportamiento fuera del canal.\n\n<a id=\"recetas-escritura\"></a>"
+    },
+    {
+      "id": "apariencia",
+      "nombre": "Apariencia y lectura cómoda",
+      "capitulo": "configuracion",
+      "href": "biblioteca.html#receta-apariencia",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js"
+      ],
+      "html": "<div class=\"pieza\" id=\"apariencia-ejemplo\">\n  <h3>Una llave pequeña, distintas formas de leer</h3>\n  <p>Prueba los tres controles. Comparten las preferencias de esta nota.</p>\n  <div class=\"apariencia-variantes\">\n    <div><p class=\"variante-nombre\">01 · Círculo</p>\n<details class=\"apariencia-menu orbita\" data-apariencia-menu>\n  <summary aria-label=\"Apariencia del documento\" aria-controls=\"panel-apariencia-orbita\"><span class=\"apariencia-icono\"><svg class=\"icono-sol\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5\"/></svg><svg class=\"icono-luna\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z\"/></svg></span></summary>\n  <div class=\"apariencia-panel\" id=\"panel-apariencia-orbita\" tabindex=\"0\" role=\"region\" aria-label=\"Opciones de apariencia, desplazables\">\n    <p class=\"apariencia-titulo\">Tu forma de leer</p>\n    <fieldset class=\"apariencia\"><legend>Color</legend><div class=\"apariencia-colores\">\n      <label><input type=\"radio\" name=\"color-apariencia-orbita\" value=\"light\" data-elegir-tema><span class=\"paleta-mini claro\" aria-hidden=\"true\"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>\n      <label><input type=\"radio\" name=\"color-apariencia-orbita\" value=\"dark\" data-elegir-tema><span class=\"paleta-mini calido\" aria-hidden=\"true\"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>\n      <label><input type=\"radio\" name=\"color-apariencia-orbita\" value=\"sea\" data-elegir-tema><span class=\"paleta-mini sea\" aria-hidden=\"true\"><i></i><b></b></span><span>Dark Sea<small>Azul profundo · acento menta</small></span></label>\n      <label><input type=\"radio\" name=\"color-apariencia-orbita\" value=\"oliva\" data-elegir-tema><span class=\"paleta-mini oliva\" aria-hidden=\"true\"><i></i><b></b></span><span>Oliva<small>Papel verde · tinta botánica</small></span></label>\n      <label><input type=\"radio\" name=\"color-apariencia-orbita\" value=\"arcilla\" data-elegir-tema><span class=\"paleta-mini arcilla\" aria-hidden=\"true\"><i></i><b></b></span><span>Arcilla<small>Papel durazno · acento terracota</small></span></label>\n      <label><input type=\"radio\" name=\"color-apariencia-orbita\" value=\"ciruela\" data-elegir-tema><span class=\"paleta-mini ciruela\" aria-hidden=\"true\"><i></i><b></b></span><span>Ciruela<small>Papel oscuro · acento malva</small></span></label>\n      <label><input type=\"radio\" name=\"color-apariencia-orbita\" value=\"system\" data-elegir-tema checked><span class=\"paleta-mini sistema\" aria-hidden=\"true\"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>\n    </div></fieldset>\n    <fieldset class=\"apariencia\"><legend>Estilo de títulos</legend><div class=\"apariencia-estilos\">\n      <label><input type=\"radio\" name=\"estilo-apariencia-orbita\" value=\"editorial\" data-elegir-estilo checked><span class=\"muestra-letra editorial\" aria-hidden=\"true\">Aa</span><span>Editorial<small>Títulos serif</small></span></label>\n      <label><input type=\"radio\" name=\"estilo-apariencia-orbita\" value=\"sobrio\" data-elegir-estilo><span class=\"muestra-letra sobrio\" aria-hidden=\"true\">Aa</span><span>Sobrio<small>Títulos sans</small></span></label>\n      <label><input type=\"radio\" name=\"estilo-apariencia-orbita\" value=\"tecnico\" data-elegir-estilo><span class=\"muestra-letra tecnico\" aria-hidden=\"true\">Aa</span><span>Técnico<small>Títulos mono</small></span></label>\n    </div></fieldset>\n    <div class=\"apariencia-ajustes\">\n      <button type=\"button\" data-comodidad aria-pressed=\"false\">Lectura cómoda <span aria-hidden=\"true\">✓</span></button>\n      <button type=\"button\" data-papel-tramado aria-pressed=\"false\">Trama de papel <span aria-hidden=\"true\">✓</span></button>\n    </div>\n  </div>\n</details>\n    </div>\n    <div><p class=\"variante-nombre\">02 · Con etiqueta</p>\n<details class=\"apariencia-menu etiqueta\" data-apariencia-menu>\n  <summary aria-label=\"Apariencia del documento\" aria-controls=\"panel-apariencia-etiqueta\"><span class=\"apariencia-icono\"><svg class=\"icono-sol\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5\"/></svg><svg class=\"icono-luna\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z\"/></svg></span><span>Apariencia</span><svg class=\"icono-flecha\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m8 10 4 4 4-4\"/></svg></summary>\n  <div class=\"apariencia-panel\" id=\"panel-apariencia-etiqueta\" tabindex=\"0\" role=\"region\" aria-label=\"Opciones de apariencia, desplazables\">\n    <p class=\"apariencia-titulo\">Tu forma de leer</p>\n    <fieldset class=\"apariencia\"><legend>Color</legend><div class=\"apariencia-colores\">\n      <label><input type=\"radio\" name=\"color-apariencia-etiqueta\" value=\"light\" data-elegir-tema><span class=\"paleta-mini claro\" aria-hidden=\"true\"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>\n      <label><input type=\"radio\" name=\"color-apariencia-etiqueta\" value=\"dark\" data-elegir-tema><span class=\"paleta-mini calido\" aria-hidden=\"true\"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>\n      <label><input type=\"radio\" name=\"color-apariencia-etiqueta\" value=\"sea\" data-elegir-tema><span class=\"paleta-mini sea\" aria-hidden=\"true\"><i></i><b></b></span><span>Dark Sea<small>Azul profundo · acento menta</small></span></label>\n      <label><input type=\"radio\" name=\"color-apariencia-etiqueta\" value=\"oliva\" data-elegir-tema><span class=\"paleta-mini oliva\" aria-hidden=\"true\"><i></i><b></b></span><span>Oliva<small>Papel verde · tinta botánica</small></span></label>\n      <label><input type=\"radio\" name=\"color-apariencia-etiqueta\" value=\"arcilla\" data-elegir-tema><span class=\"paleta-mini arcilla\" aria-hidden=\"true\"><i></i><b></b></span><span>Arcilla<small>Papel durazno · acento terracota</small></span></label>\n      <label><input type=\"radio\" name=\"color-apariencia-etiqueta\" value=\"ciruela\" data-elegir-tema><span class=\"paleta-mini ciruela\" aria-hidden=\"true\"><i></i><b></b></span><span>Ciruela<small>Papel oscuro · acento malva</small></span></label>\n      <label><input type=\"radio\" name=\"color-apariencia-etiqueta\" value=\"system\" data-elegir-tema checked><span class=\"paleta-mini sistema\" aria-hidden=\"true\"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>\n    </div></fieldset>\n    <fieldset class=\"apariencia\"><legend>Estilo de títulos</legend><div class=\"apariencia-estilos\">\n      <label><input type=\"radio\" name=\"estilo-apariencia-etiqueta\" value=\"editorial\" data-elegir-estilo checked><span class=\"muestra-letra editorial\" aria-hidden=\"true\">Aa</span><span>Editorial<small>Títulos serif</small></span></label>\n      <label><input type=\"radio\" name=\"estilo-apariencia-etiqueta\" value=\"sobrio\" data-elegir-estilo><span class=\"muestra-letra sobrio\" aria-hidden=\"true\">Aa</span><span>Sobrio<small>Títulos sans</small></span></label>\n      <label><input type=\"radio\" name=\"estilo-apariencia-etiqueta\" value=\"tecnico\" data-elegir-estilo><span class=\"muestra-letra tecnico\" aria-hidden=\"true\">Aa</span><span>Técnico<small>Títulos mono</small></span></label>\n    </div></fieldset>\n    <div class=\"apariencia-ajustes\">\n      <button type=\"button\" data-comodidad aria-pressed=\"false\">Lectura cómoda <span aria-hidden=\"true\">✓</span></button>\n      <button type=\"button\" data-papel-tramado aria-pressed=\"false\">Trama de papel <span aria-hidden=\"true\">✓</span></button>\n    </div>\n  </div>\n</details>\n    </div>\n    <div><p class=\"variante-nombre\">03 · Cápsula</p>\n<details class=\"apariencia-menu capsula\" data-apariencia-menu>\n  <summary aria-label=\"Apariencia del documento\" aria-controls=\"panel-apariencia-capsula\"><span class=\"apariencia-icono\"><svg class=\"icono-sol\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5\"/></svg><svg class=\"icono-luna\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z\"/></svg></span><span class=\"apariencia-actual\" data-tema-actual>Sistema</span><svg class=\"icono-flecha\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m8 10 4 4 4-4\"/></svg></summary>\n  <div class=\"apariencia-panel\" id=\"panel-apariencia-capsula\" tabindex=\"0\" role=\"region\" aria-label=\"Opciones de apariencia, desplazables\">\n    <p class=\"apariencia-titulo\">Tu forma de leer</p>\n    <fieldset class=\"apariencia\"><legend>Color</legend><div class=\"apariencia-colores\">\n      <label><input type=\"radio\" name=\"color-apariencia-capsula\" value=\"light\" data-elegir-tema><span class=\"paleta-mini claro\" aria-hidden=\"true\"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>\n      <label><input type=\"radio\" name=\"color-apariencia-capsula\" value=\"dark\" data-elegir-tema><span class=\"paleta-mini calido\" aria-hidden=\"true\"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>\n      <label><input type=\"radio\" name=\"color-apariencia-capsula\" value=\"sea\" data-elegir-tema><span class=\"paleta-mini sea\" aria-hidden=\"true\"><i></i><b></b></span><span>Dark Sea<small>Azul profundo · acento menta</small></span></label>\n      <label><input type=\"radio\" name=\"color-apariencia-capsula\" value=\"oliva\" data-elegir-tema><span class=\"paleta-mini oliva\" aria-hidden=\"true\"><i></i><b></b></span><span>Oliva<small>Papel verde · tinta botánica</small></span></label>\n      <label><input type=\"radio\" name=\"color-apariencia-capsula\" value=\"arcilla\" data-elegir-tema><span class=\"paleta-mini arcilla\" aria-hidden=\"true\"><i></i><b></b></span><span>Arcilla<small>Papel durazno · acento terracota</small></span></label>\n      <label><input type=\"radio\" name=\"color-apariencia-capsula\" value=\"ciruela\" data-elegir-tema><span class=\"paleta-mini ciruela\" aria-hidden=\"true\"><i></i><b></b></span><span>Ciruela<small>Papel oscuro · acento malva</small></span></label>\n      <label><input type=\"radio\" name=\"color-apariencia-capsula\" value=\"system\" data-elegir-tema checked><span class=\"paleta-mini sistema\" aria-hidden=\"true\"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>\n    </div></fieldset>\n    <fieldset class=\"apariencia\"><legend>Estilo de títulos</legend><div class=\"apariencia-estilos\">\n      <label><input type=\"radio\" name=\"estilo-apariencia-capsula\" value=\"editorial\" data-elegir-estilo checked><span class=\"muestra-letra editorial\" aria-hidden=\"true\">Aa</span><span>Editorial<small>Títulos serif</small></span></label>\n      <label><input type=\"radio\" name=\"estilo-apariencia-capsula\" value=\"sobrio\" data-elegir-estilo><span class=\"muestra-letra sobrio\" aria-hidden=\"true\">Aa</span><span>Sobrio<small>Títulos sans</small></span></label>\n      <label><input type=\"radio\" name=\"estilo-apariencia-capsula\" value=\"tecnico\" data-elegir-estilo><span class=\"muestra-letra tecnico\" aria-hidden=\"true\">Aa</span><span>Técnico<small>Títulos mono</small></span></label>\n    </div></fieldset>\n    <div class=\"apariencia-ajustes\">\n      <button type=\"button\" data-comodidad aria-pressed=\"false\">Lectura cómoda <span aria-hidden=\"true\">✓</span></button>\n      <button type=\"button\" data-papel-tramado aria-pressed=\"false\">Trama de papel <span aria-hidden=\"true\">✓</span></button>\n    </div>\n  </div>\n</details>\n    </div>\n  </div>\n  <p>Color, tipografía, tamaño y trama se pueden combinar. Las tablas y figuras conservan sus anchos.</p>\n</div>",
+      "criterio_y_limites": "**Cuándo:** un control discreto de lectura en la cabecera. El círculo sol/luna es la opción\nprincipal; la etiqueta hace explícita su función y la cápsula muestra la preferencia elegida.\nCopia un solo `details` en una nota. El ejemplo reúne tres variantes para compararlas.\nLa cabecera del catálogo reutiliza exactamente el primer control con IDs/nombres propios.\n\n**Interacción:** pulsar abre/cierra; Escape cierra y devuelve foco; pulsar fuera o salir con\nTab cierra. Un solo panel abierto. Radios nativos para colores y estilo; no es un menú de\ncomandos ni un interruptor binario. La selección permanece abierta para comparar ajustes.\nEl icono representa el tema efectivo (sol en Claro/Oliva/Arcilla, luna en Cálido/Sea/Ciruela); Sistema sigue al SO.\nEl panel se coloca dentro de la ventana y tiene scroll local si falta altura. Sin JavaScript\n`details` se abre en el flujo, pero los ajustes no cambian el documento.\n\n**Cuándo no / límite:** no cambia las variantes del prototipo ni emula preferencias del lector.\n`Editorial` conserva los títulos serif; `Sobrio` usa Geist; `Técnico` usa Geist Mono con una\nescala propia para que los títulos no desborden. Cuerpo y datos conservan su familia.\nLa trama añade puntos tenues al papel; no imita un escaneo y se retira al imprimir.\nLectura cómoda sigue siendo 18px/1,7; nunca se comprimen tablas o SVG para encajarlos.\nCambiar tipografía puede cambiar saltos de línea y altura: revisa títulos reales largos.\n\nNo añade fuentes ni sonidos. Los tres estilos funcionan en los tres colores. Paletas y\ncontroles anteriores siguen disponibles (`select[data-tema]`, radios `data-elegir-tema`).\nEstilo, trama y lectura cómoda sólo se restauran en documentos con sus respectivos controles;\nno alteran silenciosamente documentos antiguos. Preferencias en localStorage por origen;\nsi está bloqueado funcionan durante la sesión. Cada copia necesita IDs y nombres de radio\núnicos; el panel incluye `tabindex=\"0\"` y nombre para su desplazamiento local. Incluir\n`interacciones.js` una sola vez; no incluye API de inserción/destrucción dinámica del menú."
+    },
+    {
+      "id": "configuracion",
+      "nombre": "Configuración editorial",
+      "capitulo": "configuracion",
+      "href": "biblioteca.html#receta-configuracion",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js",
+        "editorial.js"
+      ],
+      "html": "<section class=\"pieza\" id=\"configuracion-ejemplo\" data-config-editorial><h3>La misma publicación, otra edición</h3><p>Elige cómo se presentan las publicaciones del archivo. Los cambios se aplican en este documento.</p><form class=\"editorial-controles\" aria-label=\"Configuración del archivo\"><label>Presentación<select name=\"disposicion\"><option value=\"rejilla\">Rejilla editorial</option><option value=\"lista\">Lista de lectura</option></select></label><label class=\"editorial-check\"><input type=\"checkbox\" name=\"extractos\" checked> Mostrar extractos</label><label class=\"editorial-check\"><input type=\"checkbox\" name=\"metadatos\" checked> Mostrar autoría y formato</label><button type=\"reset\">Restablecer edición</button></form><p data-config-estado role=\"status\">Rejilla editorial con extractos y metadatos.</p><div class=\"codigo\"><div class=\"cab\"><span>Configuración local · JSON</span><button type=\"button\" data-copiar=\"config-editorial-json\">Copiar configuración</button><span class=\"copia-estado\" role=\"status\"></span></div><pre tabindex=\"0\" aria-label=\"Configuración editorial JSON, desplazable\"><code id=\"config-editorial-json\" data-config-json>{\"version\":1,\"disposicion\":\"rejilla\",\"extractos\":true,\"metadatos\":true}</code></pre></div><p class=\"procedencia\">Configuración de presentación, independiente de la paleta y tipografía del botón de apariencia. No instala un tema de Ghost.</p></section>",
+      "criterio_y_limites": "**Cuándo:** Variar lista/rejilla y cantidad de información sin cambiar el contenido. Requiere editorial.js; actualiza los archivos [data-archivo] del mismo documento y genera JSON copiable.\n\n**Cuándo no / límite:** No guarda preferencias ni importa JSON, no cambia el contenido y no conecta Ghost. El alcance es todo el documento; usa un solo configurador. Sin JS conserva el estado inicial. La paleta, tipografía y lectura cómoda siguen en apariencia."
+    },
+    {
+      "id": "terminal",
+      "nombre": "Terminal",
+      "capitulo": "configuracion",
+      "href": "biblioteca.html#receta-terminal",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "interacciones.js"
+      ],
+      "html": "<figure class=\"ancho\">\n  <div class=\"terminal\">\n    <div class=\"cab\"><span>saldo por bolsillo · ejemplo ilustrativo</span>\n      <button type=\"button\" data-copiar=\"t-saldos\" aria-label=\"Copiar la salida\">\n        <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" aria-hidden=\"true\">\n          <rect x=\"9\" y=\"9\" width=\"11\" height=\"11\" rx=\"2\"/><path d=\"M5 15V5a2 2 0 0 1 2-2h10\"/>\n        </svg>\n      </button>\n      <span class=\"copia-estado\" role=\"status\" aria-live=\"polite\"></span>\n    </div>\n    <div class=\"cuerpo\">\n      <pre tabindex=\"0\" aria-label=\"Distribución del saldo\"><code id=\"t-saldos\"><span class=\"tenue\">       rango   bolsillos        total COP</span>\n<span class=\"tenue\">  ------------  ---------  ---------------</span>\n  menos de $100        349            5.120\n    más de $1M          5    <span class=\"subra\">14.434.490</span></code></pre>\n    </div>\n  </div>\n  <figcaption>Datos ilustrativos. La columna que importa va señalada, no en negrita.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** una salida de consola, una consulta y su resultado, un volcado — cuando la evidencia\n*es* el texto tal como se vio. No para código fuente de ejemplo: para eso está `.codigo`.\n\nSe queda **oscura en los dos temas** a propósito: una terminal clara no se lee como una terminal.\nLa variante Sea sí cambia sus tonos, porque ahí el documento entero es oscuro y una caja con otro\nnegro se vería sucia. El botón de copia usa el mismo `data-copiar` del sistema. Alinea las columnas\ncon espacios dentro del `<pre>`; no uses una tabla disfrazada."
+    }
+  ]
+}
