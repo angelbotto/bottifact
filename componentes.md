@@ -742,7 +742,7 @@ son segmentos rectos, no observaciones adicionales.
 
 ## Sonido: un canal que empieza apagado
 
-Pega [sonido.js](sonido.js) una vez al final, además del CSS. No necesita `interacciones.js`.
+En la biblioteca, Apariencia controla todo el audio con [audio.js](audio.js), incluido antes de `interacciones.js`. Para copiar sólo un canal independiente usa [sonido.js](sonido.js). Ambos empiezan apagados; el control central oculta los interruptores locales cuando está presente.
 
 <!-- nota:ejemplo sonido -->
 ```html
@@ -765,14 +765,22 @@ ni entradas automáticas. El botón de activación no emite una señal. La prefe
 recuerda al recargar y vuelve a apagado al ocultar la pestaña.
 
 **Límite:** Web Audio y gesto real de botón; eventos sintéticos no activan ni reproducen.
-Las señales usan seno, ganancia pico 0,025, ataque 3 ms y caída a 0,0001 en 55 ms;
+El canal independiente de `sonido.js` usa seno, ganancia pico 0,025, ataque 3 ms y caída a 0,0001 en 55 ms;
 acción 660→440 Hz, confirmación 520→780 Hz, atención 440→360→440 Hz. Cada nota dura 60 ms,
 separada por 5 ms; total 125 o 190 ms. Son decisiones de Nota, no mediciones del sitio.
 Una nueva señal interrumpe la anterior. No son alarmas, sonificación de series ni audio de
 fondo, y la ganancia digital no garantiza un nivel acústico en el dispositivo.
 `NotaSonido.get(contenedor).disable()` apaga; `.destroy()` cierra el contexto y listeners.
 `NotaSonido.init(contenedor)` inicializa HTML nuevo. No hay método público de reproducción
-automática. `[data-sonido]` del sistema anterior conserva su comportamiento fuera del canal.
+automática. Sin `audio.js`, `[data-sonido]` conserva el comportamiento anterior.
+
+Con control central, `audio.js` sintetiza una señal senoidal de 90 ms, ganancia pico 0,018
+(acción 540 Hz, confirmación 740 Hz, atención 390 Hz); escritura usa ruido suavizado de 650 ms,
+ganancia pico 0,045. Son decisiones locales, no medidas de una referencia. `NotaAudio.enabled`,
+`activeVoices` y `plays` permiten inspeccionar el estado; `NotaAudio.disable()` apaga y cancela
+las voces. No ofrece reproducción programática. Usa `data-audio="accion|confirmacion|atencion|escritura"`
+en botones de acciones y conserva un resultado textual. Al copiar el control de Apariencia,
+incluye `audio.js`; no añadas un segundo interruptor global.
 
 <a id="recetas-escritura"></a>
 
@@ -796,17 +804,17 @@ paths originales; la animación recorre **su longitud**, no un rectángulo que d
   </div>
   <div class="escritura-controles">
     <button type="button" data-audio-activar aria-pressed="false">Activar sonido</button>
-    <button type="button" data-escribir data-audio="accion" data-mensaje="Repetir escritura con señal breve si el sonido está activado.">Repetir escritura</button>
+    <button type="button" data-escribir data-audio="escritura" data-mensaje="Repetir escritura con señal breve si el sonido está activado.">Repetir escritura</button>
     <button type="button" data-finalizar>Mostrar trazo completo</button>
   </div>
-  <p data-texto-escritura>«a mano»</p>
+  <p data-texto-escritura>«a mano»</p><p class="procedencia">Activa el sonido en Apariencia —o en el control local— y pulsa Repetir para escuchar el trazo.</p>
   <p role="status" aria-live="polite">Trazo completo.</p>
   <figcaption>Gesto ilustrativo original de Nota Tikin. 2400 ms repartidos por la longitud de cada trazo; la frase siempre permanece escrita debajo.</figcaption>
 </figure>
 ```
 
 **Cuándo:** una anotación corta y secundaria que gana significado con el gesto del trazo.
-Con `data-al-ver` se escribe una vez al entrar al menos un 30 % de su caja en pantalla; sin ese atributo empieza completa y la persona decide repetirla. El sonido arranca apagado: pulsa Activar sonido y después Repetir escritura para oír la señal breve. Entrar en pantalla nunca dispara audio. Incluye sonido.js si copias este canal. Conserva `.manuscrita` para texto corriente
+Con `data-al-ver` se escribe una vez al entrar al menos un 30 % de su caja en pantalla; sin ese atributo empieza completa y la persona decide repetirla. El sonido arranca apagado: pulsa Activar sonido y después Repetir escritura para oír la señal breve. Entrar en pantalla nunca dispara audio. Incluye `audio.js` con Apariencia para el sonido de lápiz; si copias la escritura sola, `sonido.js` ofrece el mismo gesto de lápiz desde su botón local. El acceso «Ver escritura animada» aparece sólo en documentos que incluyen un trazo. Conserva `.manuscrita` para texto corriente
 que deba seleccionarse, traducirse o cambiar con datos.
 
 **Límite:** recibe paths SVG ordenados, no transforma automáticamente cualquier fuente
@@ -982,6 +990,8 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
     </div></fieldset>
     <div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
+      <button type="button" data-audio-global aria-pressed="false"><span data-audio-etiqueta>Sonidos apagados</span><span class="interruptor" aria-hidden="true"></span></button>
+      <button type="button" data-ver-escritura>Ver escritura animada ↗</button>
       <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
   </div>
@@ -1008,6 +1018,8 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
     </div></fieldset>
     <div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
+      <button type="button" data-audio-global aria-pressed="false"><span data-audio-etiqueta>Sonidos apagados</span><span class="interruptor" aria-hidden="true"></span></button>
+      <button type="button" data-ver-escritura>Ver escritura animada ↗</button>
       <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
   </div>
@@ -1034,6 +1046,8 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
     </div></fieldset>
     <div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
+      <button type="button" data-audio-global aria-pressed="false"><span data-audio-etiqueta>Sonidos apagados</span><span class="interruptor" aria-hidden="true"></span></button>
+      <button type="button" data-ver-escritura>Ver escritura animada ↗</button>
       <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
   </div>
@@ -1366,17 +1380,15 @@ a orientar la etapa. No interpreta el giro manual como un cambio de etapa.
 
 <!-- nota:ejemplo visor -->
 ```html
-<figure class="pieza amplio" id="visor-ejemplo" data-visor>
+<figure class="pieza amplio" id="visor-ejemplo" data-visor data-visor-editor>
   <h3>Una interfaz, varios tamaños</h3>
   <p>Explora los estados vacío, revisión y confirmado de un registro ilustrativo.</p>
-  <div class="acciones" role="group" aria-label="Ancho de la vista del prototipo">
-    <button type="button" data-ancho-visor="320" aria-pressed="false">320 px</button>
-    <button type="button" data-ancho-visor="390" aria-pressed="true">Móvil · 390 px</button>
-    <button type="button" data-ancho-visor="768" aria-pressed="false">768 px</button>
-    <button type="button" data-ancho-visor="1024" aria-pressed="false">Escritorio · 1024 px</button>
-    <button type="button" data-ancho-visor="auto" aria-pressed="false">Ajustar</button>
-    <button type="button" data-reiniciar-visor>Reiniciar ejemplo</button>
-  </div>
+  <div class="visor-herramientas" role="group" aria-label="Vista del prototipo">
+<details class="control-menu"><summary><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 18h4"/></svg><span data-dispositivo-actual>Móvil</span> ⌄</summary><div class="control-panel" tabindex="0" role="region" aria-label="Dispositivo del prototipo"><button type="button" data-ancho-visor="320" data-cerrar-menu aria-pressed="false">Móvil pequeño <small>320 px</small></button><button type="button" data-ancho-visor="390" data-cerrar-menu aria-pressed="true">Móvil <small>390 px</small></button><button type="button" data-ancho-visor="768" data-cerrar-menu aria-pressed="false">Tablet <small>768 px</small></button><button type="button" data-ancho-visor="1024" data-cerrar-menu aria-pressed="false">Escritorio <small>1024 px</small></button><button type="button" data-ancho-visor="auto" data-cerrar-menu aria-pressed="false">Ancho disponible</button></div></details>
+<label class="visor-proporcion"><span class="control-etiqueta">Proporción del marco</span><select data-proporcion-visor aria-label="Proporción del marco"><option value="auto">Altura libre</option><option value="9/16">9:16</option><option value="4/3">4:3</option><option value="16/9">16:9</option><option value="1/1">1:1</option></select></label>
+<button type="button" class="control-icono" data-girar-visor aria-label="Rotar marco" title="Rotar marco" aria-pressed="false"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="6" y="5" width="9" height="14" rx="1"/><path d="M18 4a8 8 0 0 1 3 6m0-6v6h-5"/></svg></button>
+<button type="button" data-ajustar-visor aria-pressed="false">Ajustar</button><button type="button" class="control-icono" data-reiniciar-visor aria-label="Reiniciar prototipo" title="Reiniciar prototipo">↺</button>
+</div>
   <p data-visor-estado role="status">Vista inicial: 390 px CSS.</p>
   <div class="visor-caja" tabindex="0" role="region" aria-label="Prototipo interactivo, desplazable horizontalmente"></div>
   <details class="visor-importar"><summary>Embeber mi HTML</summary><label>HTML y CSS locales<textarea data-html-visor rows="8" spellcheck="false" placeholder="Pega aquí un fragmento HTML sin scripts ni recursos externos"></textarea></label><button type="button" data-cargar-html>Cargar en el visor</button><p data-importar-estado role="status">Tu HTML se muestra sólo en este navegador. Reiniciar recupera la muestra original.</p></details>
@@ -1426,7 +1438,7 @@ a orientar la etapa. No interpreta el giro manual como un cambio de etapa.
 
 **Cuándo:** documentar estados de un componente o recorrer un prototipo pequeño dentro de un
 artículo. El lienzo cambia entre 320, 390, 768, 1024 y el espacio disponible. Reiniciar reconstruye
-la muestra original. El texto alternativo aparece sin JS y al imprimir. No carga archivos.
+la muestra original. El menú de dispositivo elige el ancho; la proporción fija la altura del marco, Rotar intercambia sus dimensiones y Ajustar escala la vista para caber. El estado muestra dimensiones CSS y porcentaje visual. Incluye `controles.js` y `visor.js`. El texto alternativo aparece sin JS y al imprimir. No carga archivos.
 
 **Cuándo no / límite:** no es un emulador de iPhone, una captura ni un navegador remoto. No
 modifica la densidad de píxeles, el motor o el viewport del documento. Usa **Shadow DOM y
@@ -1437,7 +1449,7 @@ para HTML ajeno. Los botones `data-demo-ir` activan un `data-demo-pagina` del mi
 no envían formularios, calculan datos ni persisten cambios. Los IDs, si se usan, viven dentro
 del shadow. Los estilos del documento no entran, pero sí se heredan sus tokens y fuentes.
 El contenido del prototipo debe respetar reduce; el visor no inicia RAF ni transiciones.
-`NotaVisores.get(figura).setWidth('768')` permite controlar el ancho; `reset()` reinicia y
+`NotaVisores.get(figura).setWidth('768')` permite controlar el ancho; `setAspect('9/16')` fija la proporción (`auto`, `9/16`, `4/3`, `16/9`, `1/1`). Ajustar reduce visualmente también los textos: usa 100 % para valorar legibilidad. `reset()` reinicia y
 `destroy()` devuelve la alternativa textual y retira listeners/observer.
 
 ## Elegir y copiar desde el catálogo
@@ -1575,17 +1587,15 @@ las pestañas locales de Evidencia sí son un tablist. Cada capítulo sigue la r
 </article>
 <article class="pagina" id="prototipo" data-pagina hidden>
   <header class="cabecera"><p class="ceja">Capítulo 03 / 04</p><h1>Recorrer la propuesta.</h1><p class="bajada">Prueba vacío, revisión y confirmación. El visor cambia de ancho sin salir del informe.</p></header>
-<figure class="pieza amplio" id="visor-ejemplo" data-visor>
+<figure class="pieza amplio" id="visor-ejemplo" data-visor data-visor-editor>
   <h3>Una interfaz, varios tamaños</h3>
   <p>Explora los estados vacío, revisión y confirmado de un registro ilustrativo.</p>
-  <div class="acciones" role="group" aria-label="Ancho de la vista del prototipo">
-    <button type="button" data-ancho-visor="320" aria-pressed="false">320 px</button>
-    <button type="button" data-ancho-visor="390" aria-pressed="true">390 px</button>
-    <button type="button" data-ancho-visor="768" aria-pressed="false">768 px</button>
-    <button type="button" data-ancho-visor="1024" aria-pressed="false">1024 px</button>
-    <button type="button" data-ancho-visor="auto" aria-pressed="false">Ajustar</button>
-    <button type="button" data-reiniciar-visor>Reiniciar ejemplo</button>
-  </div>
+  <div class="visor-herramientas" role="group" aria-label="Vista del prototipo">
+<details class="control-menu"><summary><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 18h4"/></svg><span data-dispositivo-actual>Móvil</span> ⌄</summary><div class="control-panel" tabindex="0" role="region" aria-label="Dispositivo del prototipo"><button type="button" data-ancho-visor="320" data-cerrar-menu aria-pressed="false">Móvil pequeño <small>320 px</small></button><button type="button" data-ancho-visor="390" data-cerrar-menu aria-pressed="true">Móvil <small>390 px</small></button><button type="button" data-ancho-visor="768" data-cerrar-menu aria-pressed="false">Tablet <small>768 px</small></button><button type="button" data-ancho-visor="1024" data-cerrar-menu aria-pressed="false">Escritorio <small>1024 px</small></button><button type="button" data-ancho-visor="auto" data-cerrar-menu aria-pressed="false">Ancho disponible</button></div></details>
+<label class="visor-proporcion"><span class="control-etiqueta">Proporción del marco</span><select data-proporcion-visor aria-label="Proporción del marco"><option value="auto">Altura libre</option><option value="9/16">9:16</option><option value="4/3">4:3</option><option value="16/9">16:9</option><option value="1/1">1:1</option></select></label>
+<button type="button" class="control-icono" data-girar-visor aria-label="Rotar marco" title="Rotar marco" aria-pressed="false"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="6" y="5" width="9" height="14" rx="1"/><path d="M18 4a8 8 0 0 1 3 6m0-6v6h-5"/></svg></button>
+<button type="button" data-ajustar-visor aria-pressed="false">Ajustar</button><button type="button" class="control-icono" data-reiniciar-visor aria-label="Reiniciar prototipo" title="Reiniciar prototipo">↺</button>
+</div>
   <p data-visor-estado role="status">Vista inicial: 390 px CSS.</p>
   <div class="visor-caja" tabindex="0" role="region" aria-label="Prototipo interactivo, desplazable horizontalmente"></div>
   <template data-prototipo>
@@ -1785,7 +1795,7 @@ oscura deliberada, como en los papeles originales.
 
 ## Biblioteca completa y registro local
 
-[biblioteca.html](biblioteca.html) reúne **43 recetas en nueve capítulos**: inicio,
+[biblioteca.html](biblioteca.html) reúne **44 recetas en nueve capítulos**: inicio,
 publicaciones, artículos, reportes, gráficas, tablas, prototipos, espacio y gesto, y edición.
 Cada pieza se genera desde el HTML anterior, con su criterio, límites y dependencias al lado.
 El estudio narrativo sigue en [informe.html](informe.html); el cuaderno continuo, en
@@ -1821,8 +1831,13 @@ GScan; copiar este HTML no cumple ese contrato. La comparación y sus fuentes es
 ```html
 <section class="pieza amplio" id="explorador-ejemplo" data-explorador>
 <h3>Explorar el registro</h3><p>Seis registros ficticios. Ordena por encabezado, filtra y agrupa sin perder el detalle.</p>
-<form class="editorial-controles" aria-label="Explorar registros"><label>Buscar<input type="search" name="buscar" placeholder="Nombre, equipo o estado"></label><label>Estado<select name="estado"><option value="">Todos</option><option>En revisión</option><option>Confirmado</option></select></label><label>Agrupar por<select name="grupo"><option value="">Sin grupos</option><option value="1">Equipo</option><option value="2">Estado</option></select></label><button type="reset">Limpiar vista</button></form>
-<p data-explorador-estado role="status">6 registros de ejemplo.</p><div class="tabla-caja" tabindex="0" role="region" aria-label="Registros ordenables y agrupables, desplazables"><table><caption>Movimientos ilustrativos · importes en COP</caption><thead><tr><th scope="col"><button type="button">Nombre ↕</button></th><th scope="col"><button type="button">Equipo ↕</button></th><th scope="col"><button type="button">Estado ↕</button></th><th scope="col"><button type="button">Importe COP ↕</button></th></tr></thead><tbody>
+<form class="tabla-herramientas" aria-label="Explorar registros">
+<label class="tabla-busqueda"><span class="control-etiqueta">Buscar registros</span><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input type="search" name="buscar" placeholder="Buscar registros…"></label>
+<details class="control-menu"><summary>Filtros <span data-filtros-cuenta></span>⌄</summary><div class="control-panel" tabindex="0" role="region" aria-label="Filtros de registros"><label>Estado<select name="estado"><option value="">Todos los estados</option><option>En revisión</option><option>Confirmado</option></select></label><button type="reset">Limpiar filtros</button></div></details>
+<details class="control-menu"><summary>Agrupar ⌄</summary><div class="control-panel" tabindex="0" role="region" aria-label="Agrupar registros"><label>Agrupar por<select name="grupo"><option value="">Sin grupos</option><option value="1">Equipo</option><option value="2">Estado</option></select></label></div></details>
+<details class="control-menu"><summary>Columnas ⌄</summary><div class="control-panel" tabindex="0" role="region" aria-label="Columnas visibles"><label><input type="checkbox" data-columna="1" checked> Equipo</label><label><input type="checkbox" data-columna="2" checked> Estado</label><label><input type="checkbox" data-columna="3" checked> Importe COP</label></div></details>
+</form>
+<p data-explorador-estado role="status">6 registros de ejemplo.</p><div class="tabla-caja" tabindex="0" role="region" aria-label="Registros ordenables y agrupables, desplazables"><table><caption>Movimientos ilustrativos · importes en COP</caption><thead><tr><th scope="col"><details class="control-menu tabla-orden"><summary>Nombre <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Nombre"><button type="button" data-orden-col="0" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="0" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="0" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th><th scope="col"><details class="control-menu tabla-orden"><summary>Equipo <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Equipo"><button type="button" data-orden-col="1" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="1" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="1" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th><th scope="col"><details class="control-menu tabla-orden"><summary>Estado <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Estado"><button type="button" data-orden-col="2" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="2" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="2" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th><th scope="col"><details class="control-menu tabla-orden"><summary>Importe COP <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Importe COP"><button type="button" data-orden-col="3" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="3" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="3" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th></tr></thead><tbody>
 <tr><th scope="row">Sesión de diseño</th><td>Producto</td><td>En revisión</td><td data-valor="120000">120.000</td></tr>
 <tr><th scope="row">Prueba de lectura</th><td>Investigación</td><td>Confirmado</td><td data-valor="80000">80.000</td></tr>
 <tr><th scope="row">Revisión móvil</th><td>Producto</td><td>Confirmado</td><td data-valor="60000">60.000</td></tr>
@@ -1832,7 +1847,7 @@ GScan; copiar este HTML no cumple ese contrato. La comparación y sus fuentes es
 </tbody></table></div></section>
 ```
 
-**Cuándo:** Investigar una tabla corta: buscar, filtrar un estado, agrupar y ordenar dentro de cada grupo. Incluye explorador.js. Los encabezados indican aria-sort; el total corresponde sólo a las filas visibles.
+**Cuándo:** Investigar una tabla corta: buscar, filtrar un estado, agrupar y ordenar dentro de cada grupo. Incluye `controles.js` y `explorador.js`. Buscar queda visible; Filtros, Agrupar y Columnas abren paneles compactos. Cada encabezado ofrece ascendente, descendente y restablecer. Escape cierra el menú y devuelve el foco. Las columnas ocultas se pueden recuperar; Nombre permanece. Los encabezados indican `aria-sort`; el total corresponde sólo a las filas visibles.
 
 **Cuándo no / límite:** Contrato de cuatro columnas: nombre, equipo, estado e importe COP numérico en data-valor. No mezcla monedas, no pagina ni carga miles de registros, no guarda filtros. Sin JS conserva la tabla completa. No combines data-tabla en esta instancia. init/get/destroy restauran filas y encabezados.
 
@@ -1861,14 +1876,61 @@ El visor ofrece **Embeber mi HTML** y `NotaVisores.get(elemento).loadHTML(texto)
 ```html
 <section class="pieza" id="revision-ejemplo" data-revision>
 <h3>Revisar sin perder el contexto</h3><p>Activa Comentar y elige un párrafo, título, figura o card. También puedes seleccionar texto antes de pulsar Comentar.</p><div class="acciones"><button type="button" data-revision-modo aria-pressed="false">Comentar documento</button><button type="button" data-revision-lista>Ver comentarios</button></div><p data-revision-estado role="status">Borrador local de esta pestaña. Copia tus comentarios antes de recargar.</p>
-<dialog class="revision-dialogo revision-ui" data-revision-editor aria-labelledby="revision-editor-titulo"><form><h2 id="revision-editor-titulo">Añadir comentario</h2><p data-revision-contexto></p><label for="revision-texto">Ajuste que propones</label><textarea id="revision-texto" data-revision-texto rows="5" maxlength="4000" required placeholder="Qué cambiarías y por qué"></textarea><div class="acciones"><button type="button" data-revision-guardar>Guardar comentario</button><button type="button" data-revision-cancelar>Cancelar</button></div></form></dialog>
-<dialog class="revision-dialogo revision-ui" data-revision-panel aria-labelledby="revision-panel-titulo"><h2 id="revision-panel-titulo">Comentarios del documento</h2><ol data-revision-notas></ol><div class="codigo"><div class="cab"><span>Prompt de ajustes</span><button type="button" data-copiar="revision-prompt">Copiar prompt</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Prompt con comentarios, desplazable"><code id="revision-prompt" data-revision-prompt>No hay comentarios todavía.</code></pre></div><button type="button" data-revision-cerrar>Cerrar comentarios</button></dialog>
+<dialog class="revision-dialogo revision-ui" data-revision-editor aria-labelledby="revision-editor-titulo"><form><h2 id="revision-editor-titulo">Añadir comentario</h2><details class="revision-contexto"><summary>Contexto del punto</summary><p data-revision-contexto tabindex="0" aria-label="Contexto completo del comentario"></p></details><label for="revision-texto">Ajuste que propones</label><textarea id="revision-texto" data-revision-texto rows="3" maxlength="4000" required placeholder="Qué cambiarías y por qué"></textarea><div class="acciones"><button type="button" data-revision-guardar>Guardar</button><button type="button" data-revision-cancelar>Cerrar</button></div></form></dialog>
+<dialog class="revision-dialogo revision-ui" data-revision-panel aria-labelledby="revision-panel-titulo"><h2 id="revision-panel-titulo">Comentarios del documento</h2><p class="procedencia">Borrador de esta pestaña. Copia el prompt antes de recargar.</p><ol data-revision-notas></ol><div class="codigo"><div class="cab"><span>Prompt de ajustes</span><button type="button" data-copiar="revision-prompt">Copiar prompt</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Prompt con comentarios, desplazable"><code id="revision-prompt" data-revision-prompt>No hay comentarios todavía.</code></pre></div><button type="button" data-revision-cerrar>Cerrar comentarios</button></dialog>
 </section>
 ```
 
-**Cuándo:** dejar observaciones concretas en un artefacto y copiarlas como prompt con capítulo, referencia, fragmento y ajuste. Incluye revision.js después de interacciones.js. La barra fija aparece sólo con JS; los comentarios quedan junto al bloque y en una lista accesible. Escape cancela la elección; los diálogos tienen foco y cierre nativos. Puedes añadir desde una selección de texto, editar o borrar cada comentario.
+**Cuándo:** dejar observaciones concretas en un artefacto y copiarlas como prompt con capítulo, referencia, fragmento y ajuste. Incluye revision.js después de interacciones.js. La herramienta es una burbuja fija con icono y contador. Activa Comentar y pulsa el punto del documento: el editor pequeño se abre al lado, sin bloquear la página. Guardar añade un pin flotante fuera del flujo, sin desplazar ni reservar espacio. Tab y Enter permiten elegir un bloque por teclado; Escape cierra o cancela y ⌘/Ctrl+Enter guarda. Ver comentarios abre una lista con contexto y prompt copiable. Puedes seleccionar texto, editar o borrar cada comentario.
 
-**Cuándo no / límite:** no es colaboración remota ni revisión simultánea. El borrador vive en memoria hasta recargar/cerrar; copia el prompt antes. No envía datos ni ejecuta los ajustes. No comenta dentro del Shadow DOM del prototipo ni sobre controles; comenta su figura exterior. Las marcas identifican bloques, no coordenadas exactas sobre una imagen. Usa una instancia por documento. `NotaRevision.init/get/destroy` retira marcas, controles y listeners; no elimina contenido original. El prompt es texto, no HTML ejecutable. Al imprimir se ocultan las herramientas y marcas.
+**Cuándo no / límite:** no es colaboración remota ni revisión simultánea. El borrador vive en memoria hasta recargar/cerrar; copia el prompt antes. No envía datos ni ejecuta los ajustes. Mientras Comentar está activo, pulsar enlaces y controles dentro del documento añade una nota en vez de ejecutar la acción. No entra en el Shadow DOM del prototipo: comenta su figura exterior. Guarda el punto relativo al bloque (porcentajes), capítulo, referencia y fragmento; los pines siguen scroll y cambios de ancho, y desaparecen con su capítulo. El punto puede cambiar respecto a una palabra si el texto se redistribuye; el fragmento exportado conserva el contexto. Los pines fuera de pantalla o recortados se consultan desde la lista. Usa una instancia por documento. `NotaRevision.init/get/destroy` retira marcas, controles y listeners; no elimina contenido original. El prompt es texto, no HTML ejecutable. Al imprimir se ocultan las herramientas y marcas.
 
 En una composición multipágina, añade `data-enlaces-internos` a `.hoja.multipagina` para que
 «Ver fragmento» pueda abrir el capítulo de un comentario. La biblioteca completa ya lo incluye.
+
+## Código en varios lenguajes
+
+<!-- nota:ejemplo codigo-poliglota -->
+```html
+<section class="pieza ancho" id="codigo-poliglota"><h3>Código que también se puede leer</h3><p>Elige un lenguaje. El coloreado conserva exactamente el texto que copias.</p><div class="pestanas" data-pestanas><div class="pestanas-caja" tabindex="0" role="region" aria-label="Lenguajes de código, desplazables"><div class="pestanas-nav" data-tabs-nav aria-label="Lenguajes"><button type="button" id="codigo-tab-html" data-tab="codigo-panel-html">HTML</button><button type="button" id="codigo-tab-css" data-tab="codigo-panel-css">CSS</button><button type="button" id="codigo-tab-javascript" data-tab="codigo-panel-javascript">JavaScript</button><button type="button" id="codigo-tab-typescript" data-tab="codigo-panel-typescript">TypeScript</button><button type="button" id="codigo-tab-json" data-tab="codigo-panel-json">JSON</button><button type="button" id="codigo-tab-python" data-tab="codigo-panel-python">Python</button><button type="button" id="codigo-tab-sql" data-tab="codigo-panel-sql">SQL</button><button type="button" id="codigo-tab-shell" data-tab="codigo-panel-shell">Shell</button><button type="button" id="codigo-tab-salida" data-tab="codigo-panel-salida">Salida</button></div></div><section id="codigo-panel-html" data-tab-panel><div class="codigo"><div class="cab"><span>HTML</span><button type="button" data-copiar="muestra-html" aria-label="Copiar HTML">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código HTML, desplazable"><code id="muestra-html" data-lenguaje="html">&lt;article class=&quot;nota&quot;&gt;
+  &lt;h2&gt;Una decisión con contexto&lt;/h2&gt;
+  &lt;p&gt;La evidencia se conserva completa.&lt;/p&gt;
+&lt;/article&gt;</code></pre></div></section><section id="codigo-panel-css" data-tab-panel><div class="codigo"><div class="cab"><span>CSS</span><button type="button" data-copiar="muestra-css" aria-label="Copiar CSS">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código CSS, desplazable"><code id="muestra-css" data-lenguaje="css">:root {
+  --espacio: 24px;
+}
+.nota {
+  display: grid;
+  gap: var(--espacio);
+  color: var(--tinta);
+}</code></pre></div></section><section id="codigo-panel-javascript" data-tab-panel><div class="codigo"><div class="cab"><span>JavaScript</span><button type="button" data-copiar="muestra-javascript" aria-label="Copiar JavaScript">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código JavaScript, desplazable"><code id="muestra-javascript" data-lenguaje="javascript">// Datos de ejemplo, sin solicitudes
+const registros = [12, 8, 5];
+const total = registros.reduce((suma, n) =&gt; suma + n, 0);
+console.log(&quot;Total:&quot;, total);</code></pre></div></section><section id="codigo-panel-typescript" data-tab-panel><div class="codigo"><div class="cab"><span>TypeScript</span><button type="button" data-copiar="muestra-typescript" aria-label="Copiar TypeScript">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código TypeScript, desplazable"><code id="muestra-typescript" data-lenguaje="typescript">type Registro = { nombre: string; valor: number };
+const ejemplo: Registro = { nombre: &quot;Diseño&quot;, valor: 12 };
+function leer(r: Registro): number {
+  return r.valor;
+}</code></pre></div></section><section id="codigo-panel-json" data-tab-panel><div class="codigo"><div class="cab"><span>JSON</span><button type="button" data-copiar="muestra-json" aria-label="Copiar JSON">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código JSON, desplazable"><code id="muestra-json" data-lenguaje="json">{
+  &quot;edicion&quot;: &quot;cuaderno&quot;,
+  &quot;paginas&quot;: 9,
+  &quot;sonido&quot;: false,
+  &quot;fuente&quot;: null
+}</code></pre></div></section><section id="codigo-panel-python" data-tab-panel><div class="codigo"><div class="cab"><span>Python</span><button type="button" data-copiar="muestra-python" aria-label="Copiar Python">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código Python, desplazable"><code id="muestra-python" data-lenguaje="python"># Ejemplo local
+registros = [12, 8, 5]
+def total(valores):
+    return sum(valores)
+print(&quot;Total:&quot;, total(registros))</code></pre></div></section><section id="codigo-panel-sql" data-tab-panel><div class="codigo"><div class="cab"><span>SQL</span><button type="button" data-copiar="muestra-sql" aria-label="Copiar SQL">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código SQL, desplazable"><code id="muestra-sql" data-lenguaje="sql">-- Consulta ilustrativa
+SELECT equipo, SUM(importe) AS total
+FROM movimientos
+WHERE estado = &#x27;confirmado&#x27;
+GROUP BY equipo
+ORDER BY total DESC;</code></pre></div></section><section id="codigo-panel-shell" data-tab-panel><div class="codigo"><div class="cab"><span>Shell</span><button type="button" data-copiar="muestra-shell" aria-label="Copiar Shell">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código Shell, desplazable"><code id="muestra-shell" data-lenguaje="shell"># Comprobaciones locales
+python3 scripts/ensamblar.py
+python3 scripts/validar.py
+echo &quot;Listo para revisar&quot;</code></pre></div></section><section id="codigo-panel-salida" data-tab-panel><div class="codigo"><div class="cab"><span>Salida</span><button type="button" data-copiar="muestra-salida" aria-label="Copiar Salida">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código Salida, desplazable"><code id="muestra-salida" data-lenguaje="salida">OK     documento generado     44 recetas
+WARN   fuente pendiente       2 registros
+ERROR  ejemplo rechazado      1 recurso externo</code></pre></div></section></div></section>
+```
+
+**Cuándo:** documentación con HTML, CSS, JavaScript, TypeScript, JSON, Python, SQL, shell o salidas de terminal. Usa `data-lenguaje` para declararlo. Incluye codigo.js y pestanas.js para esta muestra. El módulo usa nodos de texto; no ejecuta ni modifica los ejemplos.
+
+**Cuándo no / límite:** resaltador ligero, no compilador ni parser completo; no valida código, no carga gramáticas y no colorea todos los lenguajes posibles. Conserva spans editoriales .subra/.tenue y el texto de copia. Los números, cadenas, palabras clave y comentarios siguen tokens de cada tema; el terminal mantiene sus tonos propios.

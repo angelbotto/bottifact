@@ -54,6 +54,7 @@ MODULES={
  'multipagina.html':['interacciones.js','multipagina.js'],
  'pruebas.html':['interacciones.js','multipagina.js'],
 }
+for modules in MODULES.values():modules.extend(['audio.js','controles.js'])
 css=(ROOT/'estilo.css').read_text()
 for name,modules in MODULES.items():
  content=(ROOT/name).read_text();f=Fragment();f.feed(content)

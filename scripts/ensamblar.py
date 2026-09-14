@@ -27,7 +27,7 @@ DATA = {
  ]
 }
 
-def script(file): return '<script>\n' + (ROOT / file).read_text() + '\n</script>\n'
+def script(file): return (script('audio.js')+script('controles.js') if file=='interacciones.js' else '')+'<script>\n' + (ROOT / file).read_text() + '\n</script>\n'
 
 def start(title):
  return '<title>' + title + '</title>\n<meta charset="utf-8">\n<style>\n' + (ROOT / 'fuentes.css').read_text() + '\n' + (ROOT / 'estilo.css').read_text() + '\n</style>\n<meta name="viewport" content="width=device-width, initial-scale=1">\n'
