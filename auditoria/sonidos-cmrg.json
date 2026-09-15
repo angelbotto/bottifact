@@ -1,0 +1,44 @@
+[
+  {
+    "name": "pencil-1",
+    "url": "https://www.cmrg.me/sounds/pencil-1.mp3",
+    "bytes": 33429,
+    "sha256": "7bada27fcb6874746baaef079278eb1336df88c16fc2e3434b95d4387f70ec42"
+  },
+  {
+    "name": "pencil-2",
+    "url": "https://www.cmrg.me/sounds/pencil-2.mp3",
+    "bytes": 40235,
+    "sha256": "6b2fe538e783e2ee50b32994a4a2a07374a2a182290f33c002d2506ce46e58a1"
+  },
+  {
+    "name": "pencil-3",
+    "url": "https://www.cmrg.me/sounds/pencil-3.mp3",
+    "bytes": 45875,
+    "sha256": "13b756c16a3dca3b2a62e62333ab433ed134634b475727054154bc15edaa334b"
+  },
+  {
+    "name": "hover",
+    "url": "https://www.cmrg.me/sounds/hover.mp3",
+    "bytes": 2109,
+    "sha256": "c1374f75c45d1b59d6e1223a5b8406452529de2d46ae94fb8568932bf681cb1d"
+  },
+  {
+    "name": "click",
+    "url": "https://www.cmrg.me/sounds/click.mp3",
+    "bytes": 2865,
+    "sha256": "86dd37de41e38dc620c825de251fa7d9bf25fe707188a87b4838abe795d88922"
+  },
+  {
+    "name": "positive",
+    "url": "https://www.cmrg.me/sounds/positive.mp3",
+    "bytes": 12693,
+    "sha256": "5b8da0d1617f2635ae565b49b8172b080634510fc94eba17d02d363e2513afc2"
+  },
+  {
+    "name": "negative",
+    "url": "https://www.cmrg.me/sounds/negative.mp3",
+    "bytes": 15895,
+    "sha256": "c7a5984fc4158e4fa038995421c532008ee127ff4ccdb3a176c8b00bef25258d"
+  }
+]

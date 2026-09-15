@@ -13,6 +13,8 @@
       this.audio=null;this.voices=[];this.epoch=0;this.plays=0;this.abort=new AbortController();
       this.sync();
       element.addEventListener('click',async event=>{
+        // La base estándar usa las grabaciones y el interruptor común de audio.js.
+        if(window.NotaAudio)return;
         const button=event.target.closest('button');
         if(!event.isTrusted||!button||button.disabled||button.closest('[data-canal-sonido]')!==element||this.dead)return;
         if(button===toggle){
