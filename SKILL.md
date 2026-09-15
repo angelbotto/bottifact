@@ -14,7 +14,7 @@ una hoja de cálculo u otro medio.
 ## Base obligatoria para nuevos artefactos de Angel
 
 Angel pidió estandarizar la experiencia. En cada nuevo entregable HTML usa el generador de
-[estandar.md](estandar.md): **llave circular sol/luna con seis paletas y Sistema, comentarios
+[estandar.md](estandar.md): **llave circular sol/luna con nueve paletas y Sistema, comentarios
 flotantes, sonido apagado con prueba y volumen, índice y progreso de lectura**. Los capítulos
 conservan estas piezas. No omitas los comentarios por no aparecer en el contenido del informe.
 Una petición explícita de Angel de omitir o cambiar una pieza prevalece; indica esa excepción.
@@ -43,6 +43,25 @@ Orca sirve para revisar/publicar cuando está disponible; si no lo está, usa el
 de entrega disponibles y declara qué verificaciones faltan. No omitas por ello los controles comunes.
 En este Mac, Claude conserva la copia canónica; Codex y Hermes la leen mediante enlaces al mismo
 directorio. Una conversación ya iniciada puede requerir volver a cargar el skill para ver cambios.
+
+## Componer, no sólo colocar componentes
+
+Lee [guia-uso.md](guia-uso.md) al crear un nuevo documento: explica cómo combinar las piezas
+para decisiones, finanzas, logística, artículos, documentación técnica y prototipos. La guía visual
+[guia.html](guia.html) reúne todos los ejemplos, su HTML y sus límites. [casos-uso.json](casos-uso.json)
+relaciona preguntas con IDs de recetas para explorar combinaciones sin reducir el inventario.
+
+Antes de redactar identifica lector, pregunta, evidencia y siguiente acción. Selecciona las piezas
+que cumplan una función en ese argumento. Considera notas izquierda/derecha cuando añadan un matiz,
+texto animado para una segunda voz breve, avisos para límites y tablas/gráficas para evidencia.
+No llenes una cuota de componentes ni inventes cifras para usar uno. En una muestra completa sí
+comprueba cobertura de todos los IDs del registro. El generador conserva ayudas, temas y comentarios.
+
+Liftit (`liftit`), Blueprint (`blueprint`) y Hacker (`hacker`) amplían las paletas. Usa `--tema` y
+`--estilo` del generador para una presentación inicial reproducible; `tema` y `estilo` también se
+admiten en el JSON. Liftit + Sobrio acompaña logística; Blueprint + Técnico, planos conceptuales;
+Hacker + Técnico, código y runbooks. No cambies silenciosamente el tema de un artefacto existente.
+Para instalar la misma biblioteca en otro equipo o en Hermes consulta [instalacion.md](instalacion.md).
 
 ## Subrayar y anotar con intención
 

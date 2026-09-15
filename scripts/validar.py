@@ -71,17 +71,20 @@ for name,modules in MODULES.items():
  assert len(f.scripts)==len(set(f.scripts)),(name,'guiones externos duplicados')
  print(name+': fuentes sincronizadas, CSP, IDs, rejilla y regiones accesibles correctos')
 
-library=css.split('/* 12 — Librería de evidencia.')[1].split('/* 15 —')[0]
+legacy_css=css.split('/* 28 —')[0]
+library=legacy_css.split('/* 12 — Librería de evidencia.')[1].split('/* 15 —')[0]
 palettes=[set(re.findall(r'(--[\w-]+)\s*:',body)) for _,body in re.findall(r'(:root[^{}]*)\{([^{}]*)\}',library) if '--calor-0:' in body]
 assert len(palettes)==4 and all(p==palettes[0] for p in palettes), 'Faltan tokens en un tema'
-extras=css.split('/* 13 — Reportes, artículos y prototipos.')[1]
+extras=legacy_css.split('/* 13 — Reportes, artículos y prototipos.')[1]
 extra_palettes=[set(re.findall(r'(--[\w-]+)\s*:',body)) for _,body in re.findall(r'(:root[^{}]*)\{([^{}]*)\}',extras) if '--pieza-papel:' in body]
 assert len(extra_palettes)==4 and all(p==extra_palettes[0] for p in extra_palettes), 'Faltan tokens de piezas en un tema'
-menu_palettes=[set(re.findall(r'(--[\w-]+)\s*:',body)) for _,body in re.findall(r'(:root[^{}]*)\{([^{}]*)\}',css) if '--apariencia-papel:' in body]
+menu_palettes=[set(re.findall(r'(--[\w-]+)\s*:',body)) for _,body in re.findall(r'(:root[^{}]*)\{([^{}]*)\}',legacy_css) if '--apariencia-papel:' in body]
 assert len(menu_palettes)==4 and all(p==menu_palettes[0] for p in menu_palettes), 'Faltan tokens de apariencia en un tema'
-new_palettes=[set(re.findall(r'(--[\w-]+)\s*:',body)) for _,body in re.findall(r'(:root[^{}]*)\{([^{}]*)\}',css.split('/* 15 —')[1]) if '--calor-0:' in body]
+new_palettes=[set(re.findall(r'(--[\w-]+)\s*:',body)) for _,body in re.findall(r'(:root[^{}]*)\{([^{}]*)\}',legacy_css.split('/* 15 —')[1]) if '--calor-0:' in body]
 base_colors=set(re.findall(r'(--[\w-]+)\s*:',css.split('/* 01 —')[1].split('--texto:')[0]))
 assert len(new_palettes)==3 and all(p==new_palettes[0] and p>=base_colors|palettes[0] for p in new_palettes), 'Paleta adicional incompleta'
+new_themes=[set(re.findall(r'(--[\w-]+)\s*:',body)) for selector,body in re.findall(r'(:root[^{}]*)\{([^{}]*)\}',css.split('/* 28 —')[1]) if '--calor-0:' in body]
+assert len(new_themes)==3 and all(p==new_themes[0] and p>=new_palettes[0] for p in new_themes),'Tema nuevo incompleto'
 for doc in ['SKILL.md','componentes.md','referencia-cmrg.md']:
  for ref in re.findall(r'\]\(([^)]+)\)',(ROOT/doc).read_text()):
   if ref.startswith(('https:','http:','#')):continue
@@ -89,7 +92,7 @@ for doc in ['SKILL.md','componentes.md','referencia-cmrg.md']:
 for file in ROOT.glob('*.js'):
  assert not re.search(r'\b(fetch|XMLHttpRequest)\s*\(',file.read_text()),(file.name,'red en tiempo de ejecución')
  if shutil.which('node'):subprocess.run(['node','--check',str(file)],check=True,capture_output=True)
-print('Tokens de seis paletas y preferencia del sistema completos; enlaces, ausencia de fetch y sintaxis JS correctos' if shutil.which('node') else 'Tokens, enlaces y ausencia de fetch correctos; Node no disponible: sintaxis JS no ejecutada')
+print('Tokens de nueve paletas y preferencia del sistema completos; enlaces, ausencia de fetch y sintaxis JS correctos' if shutil.which('node') else 'Tokens, enlaces y ausencia de fetch correctos; Node no disponible: sintaxis JS no ejecutada')
 registry=json.loads((ROOT/'registro.json').read_text())
 recipes=dict(re.findall(r'<!-- nota:ejemplo ([\w-]+) -->\s*```html\n(.*?)\n```',(ROOT/'componentes.md').read_text(),re.S))
 expected=set(recipes)-{'informe','multipagina'}
@@ -102,6 +105,15 @@ print('Registro local: '+str(len(expected))+' recetas con HTML original, documen
 print('Esto NO comprueba píxeles, audio, WebGL, foco real ni comportamiento del navegador.')
 
 from contrato_artefacto import validate
-for name in ['estandar.html','estandar-capitulos.html','prioridades.html']:
+for name in ['estandar.html','estandar-capitulos.html','prioridades.html','guia.html','liftit.html','blueprint.html','hacker.html']:
  errors=validate((ROOT/name).read_text());assert not errors,(name,errors)
  print(name+': contrato estándar de artefacto correcto')
+
+from contrato_artefacto import Document,THEMES
+guide=Document((ROOT/'guia.html').read_text())
+represented=[n.attrs['data-guia-componente'] for n in guide.live if 'data-guia-componente' in n.attrs]
+assert set(represented)==expected and len(represented)==len(expected),'Guía incompleta o duplicada'
+for case in json.loads((ROOT/'casos-uso.json').read_text())['casos']:
+ assert set(case['componentes'])<=expected,('Caso con componente inexistente',case['id'])
+assert set(json.loads((ROOT/'VERSION.json').read_text())['temas'])==set(THEMES)-{'system'}
+print('Guía: inventario completo y casos de uso con destinos vigentes')

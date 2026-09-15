@@ -163,3 +163,7 @@ config=json.loads((ROOT/'ejemplos/prioridades.json').read_text())
 pages=[{**p,'html':(ROOT/'ejemplos'/p['contenido']).read_text()} for p in config['paginas']]
 (ROOT/'prioridades.html').write_text(build_estandar(config['titulo'],pages,config['descripcion']))
 print('Generado prioridades.html: propuesta y nuevas piezas editoriales')
+from ejemplos_temas import generate as build_temas
+build_temas()
+from guia import generate as build_guia
+build_guia()
