@@ -16,6 +16,12 @@ Escribe una breve justificación de composición en tus notas de trabajo: pregun
 dato o texto que lo alimenta → límite. No conviertas esa justificación en instrucciones técnicas
 para el lector del informe. Si falta una fuente, muestra el vacío o pide el dato; no inventes cifras.
 
+También existe un vocabulario mínimo, documentado al inicio de componentes.md: `.marca` para
+un énfasis estático, `.dato`/`.datos` para valor y procedencia, `.pildora` para estado, `.medida`
+para una magnitud acotada y `.aviso` para condiciones. No conviertas un dato sencillo en una
+card sólo para usar una receta. Los patrones `.con-margen`, `.extracto` y `.kept` se conservan
+para documentos existentes; para nuevas anotaciones animadas consulta `apuntes`.
+
 ## Recorridos que se pueden adaptar
 
 | Entregable | Hilo editorial | Piezas que conviene consultar | Evita |

@@ -26,7 +26,7 @@ Abre una conversación nueva de Hermes y pide:
 > este contenido. Genera el HTML con scripts/crear_artefacto.py y valida el archivo final. Conserva
 > la llave de apariencia, los comentarios flotantes y las ayudas de lectura. No inventes datos.
 
-Hermes descubre carpetas con `SKILL.md` bajo `~/.hermes/skills`. Si tienes un perfil o un
+Hermes descubre carpetas con `SKILL.md` bajo `~/.hermes/skills`, según su [documentación oficial de skills](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills). Si tienes un perfil o un
 `HERMES_HOME` personalizado, usa su directorio de skills como `--destino`. La carga automática
 depende de tu configuración de Hermes; una copia instalada no garantiza que una sesión ya abierta
 haya recargado sus instrucciones. La instalación en el MacBook debe comprobarse allí.

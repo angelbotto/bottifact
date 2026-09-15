@@ -1,8 +1,10 @@
 # Componentes de Nota Tikin
 
-Los bloques siguientes son HTML completo de componente, para copiar dentro de `.hoja`, después
-de pegar `fuentes.css` y `estilo.css` en `<style>`. Los comportamientos se activan pegando `interacciones.js`
-una vez al final del documento. No introducen clases de Tailwind ni dependen de React.
+Para **nuevos artefactos**, escribe contenido con estas recetas y usa el generador de
+[estandar.md](estandar.md): incorpora la llave sol/luna, comentarios, sonido y ayudas de lectura.
+No reconstruyas esa base copiando el esqueleto histórico de abajo. Cada receta indica sus
+módulos; el generador los detecta e incrusta junto con `fuentes.css` y `estilo.css` completos.
+Las piezas no requieren React ni clases de Tailwind.
 
 Para empezar por una pieza: [gráficas](#recetas-graficas),
 [calor](#recetas-calor), [tablas](#recetas-tablas),
@@ -10,7 +12,12 @@ Para empezar por una pieza: [gráficas](#recetas-graficas),
 [Three.js](#recetas-three). `plantilla.html` es el catálogo ejecutable;
 `multipagina.html` muestra capítulos completos. Las recetas marcadas son sus fuentes.
 
-## Documento y temas
+## Documento y temas — compatibilidad histórica
+
+Este esqueleto explica documentos anteriores con selector simple. **No es la base de nuevos
+artefactos**: omite los controles que Angel pidió estandarizar. Para crear uno consulta
+[estandar.md](estandar.md); la receta `apariencia` documenta la llave vigente con nueve paletas.
+
 
 ```html
 <title>Nota — decisión y evidencia</title>
