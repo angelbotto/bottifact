@@ -47,8 +47,8 @@ class Fragment(HTMLParser):
   if tag not in VOID:self.handle_endtag(tag)
 
 MODULES={
- 'biblioteca.html':['invitacion.js','mano.js','atencion.js','geografia.js','analitica.js','codigo.js','explorador.js','revision.js','interacciones.js','multipagina.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js','editorial.js'],
- 'plantilla.html':['invitacion.js','mano.js','atencion.js','geografia.js','analitica.js','codigo.js','explorador.js','revision.js','editorial.js','interacciones.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js'],
+ 'biblioteca.html':['flota.js','invitacion.js','mano.js','atencion.js','geografia.js','analitica.js','codigo.js','explorador.js','revision.js','interacciones.js','multipagina.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js','editorial.js'],
+ 'plantilla.html':['flota.js','invitacion.js','mano.js','atencion.js','geografia.js','analitica.js','codigo.js','explorador.js','revision.js','editorial.js','interacciones.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js'],
  'informe.html':['interacciones.js','multipagina.js','graficas.js','reportes.js','visor.js','pestanas.js','revision.js'],
  'globo.html':['interacciones.js','globo.js'],
  'multipagina.html':['interacciones.js','multipagina.js'],

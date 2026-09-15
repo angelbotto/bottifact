@@ -2771,3 +2771,68 @@ sus valores declarados. Sin parámetros se conserva la preferencia global origin
 
 Los ejemplos completos están en [liftit.html](liftit.html), [blueprint.html](blueprint.html) y
 [hacker.html](hacker.html). La guía con todas las recetas y combinaciones está en [guia.html](guia.html).
+
+
+## Globo operativo de Colombia
+
+<!-- nota:ejemplo globo-flota -->
+```html
+<figure class="amplio" id="flota-colombia" data-flota>
+  <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Corte de flota de ejemplo, desplazable">
+    <table><caption>Flota ficticia · 15 septiembre 2026, 08:00 COT · posiciones iniciales de demostración</caption>
+      <thead><tr><th scope="col">Vehículo</th><th scope="col">Origen</th><th scope="col">Destino</th><th scope="col">Avance ilustrativo %</th><th scope="col">Pedidos</th><th scope="col">Estado al corte</th><th scope="col">Actualización</th><th scope="col">Contexto</th><th scope="col">Siguiente acción</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">LFT-021</th><td data-lat="4.711" data-lon="-74.072">Bogotá</td><td data-lat="6.244" data-lon="-75.582">Medellín</td><td data-valor="35">35</td><td data-valor="18">18</td><td>En ruta</td><td><time datetime="2026-09-15T08:00:00-05:00">08:00 COT</time></td><td>Salida confirmada; sin novedades reportadas en este ejemplo.</td><td>Próximo hito: llegada al punto de distribución.</td></tr>
+        <tr><th scope="row">LFT-034</th><td data-lat="4.711" data-lon="-74.072">Bogotá</td><td data-lat="3.452" data-lon="-76.532">Cali</td><td data-valor="62">62</td><td data-valor="12">12</td><td>Con novedad</td><td><time datetime="2026-09-15T07:58:00-05:00">07:58 COT</time></td><td>Congestión reportada. La demo no estima cuánto retrasará la llegada.</td><td>Acción: confirmar situación con el transportista antes de informar una nueva hora.</td></tr>
+        <tr><th scope="row">LFT-056</th><td data-lat="4.711" data-lon="-74.072">Bogotá</td><td data-lat="10.969" data-lon="-74.781">Barranquilla</td><td data-valor="18">18</td><td data-valor="9">9</td><td>En ruta</td><td><time datetime="2026-09-15T07:59:00-05:00">07:59 COT</time></td><td>Documentos verificados; nueve pedidos asociados al vehículo de ejemplo.</td><td>Próximo hito: confirmar recepción en destino.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Ejemplo ficticio, no una operación real de Liftit. Coordenadas urbanas aproximadas WGS84. Colombia: Natural Earth 1:110m, dominio público; máscara terrestre COBE. Los arcos no son vías terrestres.</figcaption>
+</figure>
+```
+
+**Cuándo:** Comparar ciudades, seleccionar vehículos y explicar un corte de operación con movimiento demostrativo. Alterna Colombia/Globo o Acercar ruta; seleccionar un vehículo centra sólo su conexión. Usa la lista para detalle y la tabla para valores exactos.
+
+**Límite:** Incluye Three 0.160.1 una vez, geografia.js, globo.js y flota.js. Una instancia por figura. 1–12 vehículos, IDs únicos, origen/destino distintos, coordenadas en la vista de Colombia, avance 0–100, pedidos enteros no negativos y fecha ISO con zona. Las rutas son arcos esquemáticos; no carreteras, GPS, ETA ni distancias. El contorno continental generalizado no incluye detalle de islas. Colombia empieza centrada; la vista Acercar ruta amplía la conexión elegida y oculta las otras. El contorno nacional puede continuar fuera de ese acercamiento, pero ambos extremos de la ruta permanecen visibles. En móvil hay desplazamiento horizontal local, centrado al abrir. El globo general oculta los rótulos de ciudades y camiones para no superponerlos. Si los rótulos no caben sin colisiones en Colombia, se consultan en Acercar ruta y la lista; no se recortan con elipsis. Reproducir mueve posiciones durante 45 s, sin sonido ni cambios de estado; al llegar al final no confirma entregas. Pausa fuera de pantalla/documento oculto, cancela RAF con movimiento reducido y permite avance manual. Sin WebGL conserva lista, detalle y tabla. NotaFlota.init(raíz) es idempotente; get(figura).seek(0…100), select(id) y destroy(). Para otro corte, destruye, actualiza la tabla e inicializa; no consulta ni conecta servicios en vivo. No presenta una hora antigua como «ahora». Sólo usa datos autorizados en integraciones futuras.
+
+
+## Ficha de entrega e hitos
+
+<!-- nota:ejemplo ficha-entrega -->
+```html
+<section class="pieza" id="ficha-entrega-ejemplo">
+  <p class="ceja">Pedido de ejemplo / DEMO-018</p><h3>Estar cerca no es haber entregado.</h3>
+  <p>Vehículo LFT-021 · Bogotá → Medellín. Estado ilustrativo: en tránsito.</p>
+  <ol class="cronologia cronologia-vertical">
+    <li><h3>Recogida confirmada</h3><p class="periodo"><time datetime="2026-09-15T06:30:00-05:00">06:30 COT</time></p><p>18 pedidos asociados al vehículo. La cantidad pertenece al corte de ejemplo.</p></li>
+    <li class="actual"><h3>En tránsito</h3><p class="periodo"><time datetime="2026-09-15T08:00:00-05:00">08:00 COT</time> · último evento conocido</p><p>El movimiento en el mapa no confirma recepción ni prueba de entrega.</p></li>
+    <li><h3>Recepción pendiente</h3><p>Sin hora confirmada. No se fabrica una estimación a partir de la animación.</p></li>
+    <li><h3>Evidencia pendiente</h3><p>Registrar fecha, receptor y prueba autorizada de entrega cuando existan. No se incluyen firmas ni fotos ficticias como si fueran evidencia real.</p></li>
+  </ol>
+</section>
+```
+
+**Cuándo:** Explicar último evento conocido y evidencia pendiente de un pedido. Complementa el mapa con recepción y prueba de entrega.
+
+**Límite:** HTML estático. Copia IDs únicos, fechas reales con zona y estado escrito. No hace seguimiento, carga archivos ni almacena firmas. No confundir cercanía del vehículo con pedido entregado. Si no hay un evento, escribir pendiente; no inventar hora o receptor. Usa pocos hitos y conserva un solo estado actual.
+
+
+## Cola de despacho y novedades
+
+<!-- nota:ejemplo cola-novedades -->
+```html
+<section class="pieza amplio" id="cola-novedades-ejemplo" data-explorador>
+<h3>Despacho y novedades</h3><p>Tres vehículos ficticios del corte. Filtra Con novedad, agrupa por ciudad y ordena los pedidos para revisar a quién contactar.</p>
+<form class="tabla-herramientas" aria-label="Explorar registros">
+<label class="tabla-busqueda"><span class="control-etiqueta">Buscar registros</span><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input type="search" name="buscar" placeholder="Buscar registros…"></label>
+<details class="control-menu"><summary>Filtros <span data-filtros-cuenta></span>⌄</summary><div class="control-panel" tabindex="0" role="region" aria-label="Filtros de registros"><label>Estado<select name="estado"><option value="">Todos los estados</option><option>Con novedad</option><option>En ruta</option></select></label><button type="reset">Limpiar filtros</button></div></details>
+<details class="control-menu"><summary>Agrupar ⌄</summary><div class="control-panel" tabindex="0" role="region" aria-label="Agrupar registros"><label>Agrupar por<select name="grupo"><option value="">Sin grupos</option><option value="1">Ciudad</option><option value="2">Estado</option></select></label></div></details>
+<details class="control-menu"><summary>Columnas ⌄</summary><div class="control-panel" tabindex="0" role="region" aria-label="Columnas visibles"><label><input type="checkbox" data-columna="1" checked> Ciudad</label><label><input type="checkbox" data-columna="2" checked> Estado</label><label><input type="checkbox" data-columna="3" checked> Pedidos</label></div></details>
+</form>
+<p data-explorador-estado role="status">3 vehículos de ejemplo.</p><div class="tabla-caja" tabindex="0" role="region" aria-label="Registros ordenables y agrupables, desplazables"><table><caption>Vehículos de ejemplo · pedidos asociados al corte</caption><thead><tr><th scope="col"><details class="control-menu tabla-orden"><summary>Vehículo <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Vehículo"><button type="button" data-orden-col="0" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="0" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="0" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th><th scope="col"><details class="control-menu tabla-orden"><summary>Ciudad <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Ciudad"><button type="button" data-orden-col="1" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="1" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="1" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th><th scope="col"><details class="control-menu tabla-orden"><summary>Estado <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Estado"><button type="button" data-orden-col="2" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="2" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="2" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th><th scope="col"><details class="control-menu tabla-orden"><summary>Pedidos <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Pedidos"><button type="button" data-orden-col="3" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="3" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="3" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th></tr></thead><tbody><tr><th scope="row">LFT-021</th><td>Medellín</td><td>En ruta</td><td data-valor="18">18</td></tr><tr><th scope="row">LFT-034</th><td>Cali</td><td>Con novedad</td><td data-valor="12">12</td></tr><tr><th scope="row">LFT-056</th><td>Barranquilla</td><td>En ruta</td><td data-valor="9">9</td></tr></tbody></table></div></section>
+```
+
+**Cuándo:** Filtrar vehículos con novedad, agrupar por ciudad y ordenar pedidos para revisar la operación. Reutiliza el explorador tabular, con datos de logística.
+
+**Límite:** Incluye controles.js y explorador.js además de la base. Corte estático con las mismas cifras iniciales del ejemplo de flota; la simulación no modifica esta tabla. Buscar/filtrar/agrupar no asigna conductores ni envía mensajes. No calcula prioridad automáticamente. Identificar novedad, responsable y siguiente acción en una implementación operativa real. destroy/init del explorador permite sustituir el corte; no hay suscripción en vivo.
