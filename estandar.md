@@ -1,6 +1,6 @@
 # Contrato de nuevos artefactos de Angel
 
-El contrato 2 incorpora marcos punteados difusos en las figuras anchas. La base incluye **una llave sol/luna**, seis paletas con muestras y Sistema, controles de sonido,
+El contrato 3 incorpora marcos punteados difusos en las figuras anchas. La base incluye **una llave sol/luna**, nueve paletas con muestras y Sistema, controles de sonido,
 comentarios flotantes, índice por página y regla de lectura. Es la composición predeterminada de
 los nuevos HTML de Angel. No exige llenar cada artículo con todos los componentes; selecciona
 las piezas a partir de las 71 recetas vigentes. Una excepción explícita de Angel prevalece.
@@ -36,7 +36,7 @@ La salida reemplaza el archivo indicado; el generador rechaza sobrescribir el co
 
 ## Crear capítulos
 
-Usa un JSON con `titulo`, `descripcion` opcional y `paginas`. Cada página tiene `id`, `titulo`
+Usa un JSON con `tema` y `estilo` optativos, `titulo`, `descripcion` opcional y `paginas`. Cada página tiene `id`, `titulo`
 y `contenido`, una ruta relativa al JSON. Los IDs son únicos, minúsculos, con números y guiones.
 
 ```json
@@ -63,7 +63,7 @@ La receta `configuracion` referencia el archivo editorial: incluye también `arc
 
 ## Qué comprueba y qué no
 
-El verificador exige controles, módulos, seis paletas, referencias internas, rejilla y regiones
+El verificador exige controles, módulos, nueve paletas, referencias internas, rejilla y regiones
 con foco/nombre. Comprueba CSS y JS contra las fuentes instaladas y registra sus hashes en un
 manifiesto. Detecta una copia vieja al compararla con el skill actual; no migra documentos ni
 promete compatibilidad binaria entre versiones. No modifica artefactos publicados.
@@ -75,16 +75,15 @@ sus dependencias y su verificación; no desactives el control para conseguir un 
 Los ejemplos antiguos conservan su compatibilidad, pero no todos cumplen este contrato nuevo.
 
 La comprobación estructural no acredita accesibilidad completa ni comportamiento: abre el
-resultado a 320, 390 y 1440 px, prueba las seis paletas, foco, desplazamiento local, capítulos,
+resultado a 320, 390 y 1440 px, prueba las nueve paletas, foco, desplazamiento local, capítulos,
 pines, exportación del prompt y movimiento reducido. Usa un clic real para Probar sonido.
 En capítulos, sin JavaScript se ofrece lectura continua; los controles interactivos necesitan JS.
 
 ## Sonido que se puede comprobar
 
 Apariencia abre con Sonido: interruptor, **Probar sonido**, volumen y estado. El botón de prueba
-activa el audio y emite un tono de 450 ms. El interruptor solo activa/desactiva; activarlo no
-reproduce nada. El volumen inicial es 65 %, independiente del volumen del dispositivo. El lápiz
-sigue la duración de la escritura; no es una grabación de la referencia.
+activa el audio y reproduce la muestra original de clic de cmrg.me. El interruptor solo activa/desactiva; activarlo no
+reproduce nada. El volumen inicial es 65 %, independiente del volumen del dispositivo. El lápiz usa las tres grabaciones originales incrustadas de cmrg.me, sin bucles ni amplificación adicional, sincronizadas con la escritura. Su procedencia está en assets/sonidos-cmrg/PROCEDENCIA.md.
 
 Empieza apagado en cada carga y se apaga al ocultar la pestaña. `data-escritura-sonora` permite
 acompañar el trazo visible una vez habilitado; `data-audio-hover` requiere movimiento real del
@@ -105,3 +104,14 @@ ni persistencia: copia el prompt antes de cerrar o recargar. Una nueva sesión e
 
 El diagnóstico, las pruebas ejecutadas y las prioridades que aún faltan están en
 [auditoría de estandarización](auditoria/estandarizacion.md).
+
+## Presentación inicial
+
+```bash
+python3 scripts/crear_artefacto.py --contenido contenido.html --titulo 'Operación' --tema liftit --estilo sobrio --salida operacion.html
+```
+
+Temas: `system`, `light`, `dark`, `sea`, `oliva`, `arcilla`, `ciruela`, `liftit`, `blueprint`, `hacker`.
+Estilos: `editorial`, `sobrio`, `tecnico`. El lector puede cambiarlos con la misma llave circular.
+Una presentación declarada conserva la elección posterior por ruta del archivo, independiente del
+tema global de otros artefactos. Sin valores declarados se conserva la preferencia global anterior.

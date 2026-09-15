@@ -4,7 +4,9 @@ from html.parser import HTMLParser
 from html import escape
 import hashlib,json,re
 ROOT=Path(__file__).resolve().parents[1]
-VERSION='2'
+VERSION='3'
+THEMES=('system','light','dark','sea','oliva','arcilla','ciruela','liftit','blueprint','hacker')
+STYLES=('editorial','sobrio','tecnico')
 NOSCRIPT='.nota-estandar > .pagina { display:grid!important; grid-template-columns:1fr min(var(--texto),calc(100% - 2 * var(--gutter))) 1fr; row-gap:28px; }.nota-estandar .indice,.nota-estandar ~ .regla,.navegacion-editorial,.nota-estandar .paginacion { display:none!important; }'
 THREE='https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js'
 CORE=['audio.js','controles.js','piezas-editoriales.js','interacciones.js','codigo.js','revision.js']
@@ -58,7 +60,9 @@ def toc(content):
   items.append((anchor.attrs['id'],n.text().strip()))
  return items
 
-def build(title,pages,description='',brand='tikin'):
+def build(title,pages,description='',brand='tikin',theme=None,style=None):
+ if theme is not None and theme not in THEMES:raise ValueError('Tema desconocido: '+str(theme))
+ if style is not None and style not in STYLES:raise ValueError('Estilo desconocido: '+str(style))
  if not isinstance(title,str) or not title.strip() or not isinstance(pages,list) or not pages:raise ValueError('Faltan título o páginas.')
  if not isinstance(description,str) or any(not isinstance(p,dict) or any(not isinstance(p.get(k),str) for k in ['id','titulo','html']) for p in pages):raise ValueError('Cada página requiere id, titulo y html de texto.')
  ids=[p['id'] for p in pages]
@@ -87,6 +91,8 @@ def build(title,pages,description='',brand='tikin'):
  files=['fuentes.css','estilo.css',*modules]
  manifest={'version':VERSION,'paginas':ids,'modulos':modules,'fuentes':{f:hashlib.sha256((ROOT/f).read_text().encode('utf-8')).hexdigest() for f in files}}
  result='<title>'+escape(title)+'</title>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="nota-tikin-version" content="'+VERSION+'">\n'
+ for name,value in [('nota-tema-inicial',theme),('nota-estilo-inicial',style)]:
+  if value is not None:result+='<meta name="'+name+'" content="'+value+'">\n'
  for file in files[:2]:result+='<style data-nota-fuente="'+file+'">\n'+(ROOT/file).read_text()+'\n</style>\n'
  result+=header+main+ruler+revision()
  if multi:result+='<noscript><style data-nota-sin-js>'+NOSCRIPT+'</style><p>JavaScript está desactivado: se muestran todos los capítulos para lectura.</p></noscript>'
@@ -105,11 +111,14 @@ def validate(html):
  def classes(cls):return [n for n in nodes if cls in n.classes]
  require(html.startswith('<title>') and '<meta charset="utf-8">' in html[:1024],'Faltan título o charset temprano.')
  require(not any(n.tag in {'html','head','body','iframe'} for n in nodes),'El artefacto debe ser un fragmento sin iframe.')
+ for name,allowed in [('nota-tema-inicial',THEMES),('nota-estilo-inicial',STYLES)]:
+  settings=[n for n in nodes if n.tag=='meta' and n.attrs.get('name')==name]
+  require(len(settings)<=1 and all(n.attrs.get('content') in allowed for n in settings),'Preferencia inicial inválida: '+name)
  ids=[n.attrs['id'] for n in nodes if n.attrs.get('id')];require(len(ids)==len(set(ids)),'Hay IDs duplicados.')
  menus=has('data-apariencia-menu');require(len(menus)==1 and 'orbita' in menus[0].classes,'Debe existir una sola llave circular sol/luna de Apariencia.')
  if menus:
   children=menus[0].descendants()
-  require({'light','dark','sea','oliva','arcilla','ciruela','system'}<={n.attrs.get('value') for n in children if 'data-elegir-tema' in n.attrs},'Apariencia debe ofrecer las seis paletas y Sistema.')
+  require(set(THEMES)<={n.attrs.get('value') for n in children if 'data-elegir-tema' in n.attrs},'Apariencia debe ofrecer las nueve paletas y Sistema.')
   require(all(any(c in n.classes for n in children) for c in ['icono-sol','icono-luna','paleta-mini']),'Faltan iconos sol/luna o muestras de color.')
  for attr in ['data-audio-global','data-audio-prueba','data-audio-volumen','data-audio-estado','data-comodidad','data-papel-tramado']:
   require(bool(has(attr)),'Falta el control estándar '+attr+'.')

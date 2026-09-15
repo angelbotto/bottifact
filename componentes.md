@@ -1021,6 +1021,9 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
       <label><input type="radio" name="color-apariencia-orbita" value="oliva" data-elegir-tema><span class="paleta-mini oliva" aria-hidden="true"><i></i><b></b></span><span>Oliva<small>Papel verde · tinta botánica</small></span></label>
       <label><input type="radio" name="color-apariencia-orbita" value="arcilla" data-elegir-tema><span class="paleta-mini arcilla" aria-hidden="true"><i></i><b></b></span><span>Arcilla<small>Papel durazno · acento terracota</small></span></label>
       <label><input type="radio" name="color-apariencia-orbita" value="ciruela" data-elegir-tema><span class="paleta-mini ciruela" aria-hidden="true"><i></i><b></b></span><span>Ciruela<small>Papel oscuro · acento malva</small></span></label>
+      <label><input type="radio" name="color-apariencia-orbita" value="liftit" data-elegir-tema><span class="paleta-mini liftit" aria-hidden="true"><i></i><b></b></span><span>Liftit<small>Azul logístico · papel claro</small></span></label>
+      <label><input type="radio" name="color-apariencia-orbita" value="blueprint" data-elegir-tema><span class="paleta-mini blueprint" aria-hidden="true"><i></i><b></b></span><span>Blueprint<small>Plano azul · cuadrícula blanca</small></span></label>
+      <label><input type="radio" name="color-apariencia-orbita" value="hacker" data-elegir-tema><span class="paleta-mini hacker" aria-hidden="true"><i></i><b></b></span><span>Hacker<small>Oscuro técnico · acento verde</small></span></label>
       <label><input type="radio" name="color-apariencia-orbita" value="system" data-elegir-tema checked><span class="paleta-mini sistema" aria-hidden="true"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>
     </div></fieldset>
     <fieldset class="apariencia"><legend>Estilo de títulos</legend><div class="apariencia-estilos">
@@ -1054,6 +1057,9 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
       <label><input type="radio" name="color-apariencia-etiqueta" value="oliva" data-elegir-tema><span class="paleta-mini oliva" aria-hidden="true"><i></i><b></b></span><span>Oliva<small>Papel verde · tinta botánica</small></span></label>
       <label><input type="radio" name="color-apariencia-etiqueta" value="arcilla" data-elegir-tema><span class="paleta-mini arcilla" aria-hidden="true"><i></i><b></b></span><span>Arcilla<small>Papel durazno · acento terracota</small></span></label>
       <label><input type="radio" name="color-apariencia-etiqueta" value="ciruela" data-elegir-tema><span class="paleta-mini ciruela" aria-hidden="true"><i></i><b></b></span><span>Ciruela<small>Papel oscuro · acento malva</small></span></label>
+      <label><input type="radio" name="color-apariencia-etiqueta" value="liftit" data-elegir-tema><span class="paleta-mini liftit" aria-hidden="true"><i></i><b></b></span><span>Liftit<small>Azul logístico · papel claro</small></span></label>
+      <label><input type="radio" name="color-apariencia-etiqueta" value="blueprint" data-elegir-tema><span class="paleta-mini blueprint" aria-hidden="true"><i></i><b></b></span><span>Blueprint<small>Plano azul · cuadrícula blanca</small></span></label>
+      <label><input type="radio" name="color-apariencia-etiqueta" value="hacker" data-elegir-tema><span class="paleta-mini hacker" aria-hidden="true"><i></i><b></b></span><span>Hacker<small>Oscuro técnico · acento verde</small></span></label>
       <label><input type="radio" name="color-apariencia-etiqueta" value="system" data-elegir-tema checked><span class="paleta-mini sistema" aria-hidden="true"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>
     </div></fieldset>
     <fieldset class="apariencia"><legend>Estilo de títulos</legend><div class="apariencia-estilos">
@@ -1087,6 +1093,9 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
       <label><input type="radio" name="color-apariencia-capsula" value="oliva" data-elegir-tema><span class="paleta-mini oliva" aria-hidden="true"><i></i><b></b></span><span>Oliva<small>Papel verde · tinta botánica</small></span></label>
       <label><input type="radio" name="color-apariencia-capsula" value="arcilla" data-elegir-tema><span class="paleta-mini arcilla" aria-hidden="true"><i></i><b></b></span><span>Arcilla<small>Papel durazno · acento terracota</small></span></label>
       <label><input type="radio" name="color-apariencia-capsula" value="ciruela" data-elegir-tema><span class="paleta-mini ciruela" aria-hidden="true"><i></i><b></b></span><span>Ciruela<small>Papel oscuro · acento malva</small></span></label>
+      <label><input type="radio" name="color-apariencia-capsula" value="liftit" data-elegir-tema><span class="paleta-mini liftit" aria-hidden="true"><i></i><b></b></span><span>Liftit<small>Azul logístico · papel claro</small></span></label>
+      <label><input type="radio" name="color-apariencia-capsula" value="blueprint" data-elegir-tema><span class="paleta-mini blueprint" aria-hidden="true"><i></i><b></b></span><span>Blueprint<small>Plano azul · cuadrícula blanca</small></span></label>
+      <label><input type="radio" name="color-apariencia-capsula" value="hacker" data-elegir-tema><span class="paleta-mini hacker" aria-hidden="true"><i></i><b></b></span><span>Hacker<small>Oscuro técnico · acento verde</small></span></label>
       <label><input type="radio" name="color-apariencia-capsula" value="system" data-elegir-tema checked><span class="paleta-mini sistema" aria-hidden="true"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>
     </div></fieldset>
     <fieldset class="apariencia"><legend>Estilo de títulos</legend><div class="apariencia-estilos">
@@ -2711,3 +2720,45 @@ actualiza HTML publicado. Sonido apagado tras recargar/ocultar y comentarios en 
 **Cuándo:** mostrar fotografías, capturas, evidencia de campo o etapas visuales. La variante `galeria-fotografica` usa desplazamiento nativo con ratón/trackpad, tacto o flechas del teclado tras enfocar la región. Sin encabezado interno, botones ni avance automático; pies breves dentro de la imagen, degradado completo, contorno tenue y sombra. Ratón: cursor grab y arrastre con captura de puntero; tacto conserva scroll nativo. Las esquinas usan superellipse(1.6) con radio 28px, como /work; si el navegador no admite esa curva, el radio circular baja a 18px. piezas-editoriales.js anuncia la posición; sin JS se puede recorrer igualmente. Las galerías anteriores con controles siguen funcionando.
 
 **Límite:** no autoavanza, no amplía imágenes ni emula un visor 360°. Las muestras son ilustraciones, no fotografías reales de Angel. Imágenes data: URI y alt; no enlazar carátulas o fotos remotas. Recorta visualmente con object-fit:cover: para capturas cuyo borde importa usa contain. Los pies breves se superponen en una fila de rejilla y pueden crecer sin recortarse; una explicación extensa pertenece fuera de la imagen. El degradado ocupa la imagen completa, no una banda negra detrás del pie. No hay movimiento programado en esta variante. Movimiento reducido cancela el desplazamiento suave de los controles antiguos. init/get/destroy permite añadir o retirar el componente.
+
+## Presentaciones Liftit, Blueprint y Hacker
+
+La receta `apariencia` ya ofrece las nueve paletas con muestras y el estado Sistema. Los
+componentes de todas las familias usan sus tokens; no hace falta copiar una variante de cada tabla.
+Para empezar un documento con una presentación concreta usa el generador estándar:
+
+```bash
+python3 scripts/crear_artefacto.py --contenido operacion.html --titulo 'Lectura de operación' --tema liftit --estilo sobrio --salida informe.html
+python3 scripts/crear_artefacto.py --contenido especificacion.html --titulo 'Plano del sistema' --tema blueprint --estilo tecnico --salida plano.html
+python3 scripts/crear_artefacto.py --contenido runbook.html --titulo 'Diagnóstico y recuperación' --tema hacker --estilo tecnico --salida diagnostico.html
+```
+
+En capítulos, la configuración completa es:
+
+```json
+{
+  "titulo": "Plano del sistema",
+  "tema": "blueprint",
+  "estilo": "tecnico",
+  "paginas": [
+    {"id": "contrato", "titulo": "Contrato", "contenido": "contrato.html"},
+    {"id": "evidencia", "titulo": "Evidencia", "contenido": "evidencia.html"}
+  ]
+}
+```
+
+**Cuándo:** Liftit para operación/logística; Blueprint para arquitectura, planos conceptuales y
+especificaciones; Hacker para código, terminal, runbooks e incidentes. El color no impone una
+estructura ni reemplaza las palabras de estado. Se pueden elegir desde Apariencia en cualquier pieza.
+
+**Cuándo no:** no uses el verde de Hacker como única prueba de éxito, la cuadrícula de Blueprint
+como escala de una gráfica ni el nombre Liftit para atribuir datos ficticios a la empresa.
+
+**Límites:** Liftit es una adaptación editorial de #0051F4 y #2A2D46 medidos en su web, sin sustituir
+las fuentes incrustadas por fuentes propietarias. Blueprint dibuja una cuadrícula estática de 24/120 px
+que se omite en impresión. Hacker no simula una terminal ejecutable ni incluye parpadeos. La
+presentación inicial guarda cambios posteriores por ruta del archivo; al renombrarlo se inicia con
+sus valores declarados. Sin parámetros se conserva la preferencia global original.
+
+Los ejemplos completos están en [liftit.html](liftit.html), [blueprint.html](blueprint.html) y
+[hacker.html](hacker.html). La guía con todas las recetas y combinaciones está en [guia.html](guia.html).

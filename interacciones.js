@@ -3,12 +3,15 @@
   'use strict';
   const root = document.documentElement;
   const selectors = document.querySelectorAll('[data-tema]');
-  const themes = ['system','light','dark','sea','oliva','arcilla','ciruela'];
+  const themes = ['system','light','dark','sea','oliva','arcilla','ciruela','liftit','blueprint','hacker'];
+  const initialTheme=document.querySelector('meta[name="nota-tema-inicial"]')?.content;
+  const initialStyle=document.querySelector('meta[name="nota-estilo-inicial"]')?.content;
+  const preferenceKey=key=>((initialTheme||initialStyle)?key+':'+location.pathname:key);
   const scheme = matchMedia('(prefers-color-scheme: dark)');
-  const themeNames = {system:'Sistema',light:'Claro',dark:'Cálido',sea:'Dark Sea',oliva:'Oliva',arcilla:'Arcilla',ciruela:'Ciruela'};
+  const themeNames = {system:'Sistema',light:'Claro',dark:'Cálido',sea:'Dark Sea',oliva:'Oliva',arcilla:'Arcilla',ciruela:'Ciruela',liftit:'Liftit',blueprint:'Blueprint',hacker:'Hacker'};
   function syncAppearance() {
     const value=root.dataset.theme||'system';
-    const dark=['dark','sea','ciruela'].includes(value)||(value==='system'&&scheme.matches);
+    const dark=['dark','sea','ciruela','blueprint','hacker'].includes(value)||(value==='system'&&scheme.matches);
     document.querySelectorAll('[data-apariencia-menu]').forEach(menu=>{
       menu.dataset.oscuro=String(dark);
       menu.querySelector('summary').setAttribute('aria-label','Apariencia. '+themeNames[value]+(value==='system'?', '+(dark?'oscuro':'claro'):'')+'.');
@@ -26,11 +29,11 @@
     });
     document.querySelectorAll('[data-elegir-tema]').forEach(input => { input.checked = input.value === value; });
     syncAppearance();
-    try { localStorage.setItem('nota-tema',value); } catch {}
+    try { localStorage.setItem(preferenceKey('nota-tema'),value); } catch {}
     document.dispatchEvent(new CustomEvent('nota:tema'));
   }
-  let stored = 'system';
-  try { stored = localStorage.getItem('nota-tema') || 'system'; } catch {}
+  let stored = initialTheme || 'system';
+  try { stored = localStorage.getItem(preferenceKey('nota-tema')) || stored; } catch {}
   theme(stored);
   selectors.forEach(selector => selector.addEventListener('change', e => theme(e.target.value)));
   document.addEventListener('change', e => {
@@ -54,15 +57,15 @@
     if(!['editorial','sobrio','tecnico'].includes(value))value='editorial';
     if(value==='editorial')delete root.dataset.estilo;else root.dataset.estilo=value;
     document.querySelectorAll('[data-elegir-estilo]').forEach(input=>input.checked=input.value===value);
-    try{localStorage.setItem('nota-estilo',value);}catch{}
+    try{localStorage.setItem(preferenceKey('nota-estilo'),value);}catch{}
   }
   function paper(enabled) {
     root.toggleAttribute('data-trama',enabled);
     document.querySelectorAll('[data-papel-tramado]').forEach(b=>b.setAttribute('aria-pressed',String(enabled)));
     try{localStorage.setItem('nota-trama',String(enabled));}catch{}
   }
-  let style='editorial',texture=false;
-  try{style=localStorage.getItem('nota-estilo')||style;texture=localStorage.getItem('nota-trama')==='true';}catch{}
+  let style=initialStyle||'editorial',texture=false;
+  try{style=localStorage.getItem(preferenceKey('nota-estilo'))||style;texture=localStorage.getItem('nota-trama')==='true';}catch{}
   if(document.querySelector('[data-elegir-estilo]'))readingStyle(style);
   if(document.querySelector('[data-papel-tramado]'))paper(texture);
   document.addEventListener('change',e=>{if(e.target.matches('[data-elegir-estilo]'))readingStyle(e.target.value);});
