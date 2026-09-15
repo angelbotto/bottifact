@@ -1,0 +1,563 @@
+[
+  {
+    "url": "https://www.cmrg.me/blog/react-19-part-2-the-code",
+    "viewport": [
+      1440,
+      960
+    ],
+    "data": {
+      "code": [
+        {
+          "line": {
+            "animation": "none",
+            "bg": "rgba(0, 0, 0, 0)",
+            "cls": null,
+            "color": "lab(89.549 2.159 5.23597)",
+            "duration": "0s",
+            "font": "\"Geist Mono\", \"Geist Mono Fallback\"",
+            "gap": "normal",
+            "height": 38,
+            "iterations": "1",
+            "line": "22px",
+            "padding": "16px 16px 0px 0px",
+            "radius": "0px",
+            "size": "13.7px",
+            "tag": "SPAN",
+            "width": 775.28125
+          },
+          "pre": {
+            "animation": "none",
+            "bg": "oklab(0.24 0.00422361 0.00906822 / 0.25)",
+            "cls": "relative z-50 flex w-full bg-gray-900/25 backdrop-blur-md xl:w-3xl xl:pb-0",
+            "color": "lab(89.549 2.159 5.23597)",
+            "duration": "0s",
+            "font": "\"Geist Mono\", \"Geist Mono Fallback\"",
+            "gap": "normal",
+            "height": 120,
+            "iterations": "1",
+            "line": "23.25px",
+            "padding": "0px",
+            "radius": "0px",
+            "size": "15.5px",
+            "tag": "PRE",
+            "width": 768
+          }
+        }
+      ],
+      "found": [
+        {
+          "items": [],
+          "word": "what has your attention"
+        },
+        {
+          "items": [],
+          "word": "chronology"
+        },
+        {
+          "items": [],
+          "word": "been up to"
+        }
+      ],
+      "gallery": [],
+      "icons": [
+        {
+          "animation": "none",
+          "bg": "rgba(0, 0, 0, 0)",
+          "cls": "blockquote-mask-icon",
+          "color": "lab(89.549 2.159 5.23597)",
+          "duration": "0s",
+          "font": "Geist, \"Geist Fallback\"",
+          "gap": "normal",
+          "height": 32,
+          "iterations": "1",
+          "line": "23.25px",
+          "padding": "0px",
+          "radius": "0px",
+          "size": "15.5px",
+          "tag": "svg",
+          "width": 32
+        },
+        {
+          "animation": "none",
+          "bg": "rgba(0, 0, 0, 0)",
+          "cls": "blockquote-mask-icon",
+          "color": "lab(89.549 2.159 5.23597)",
+          "duration": "0s",
+          "font": "Geist, \"Geist Fallback\"",
+          "gap": "normal",
+          "height": 32,
+          "iterations": "1",
+          "line": "23.25px",
+          "padding": "0px",
+          "radius": "0px",
+          "size": "15.5px",
+          "tag": "svg",
+          "width": 32
+        },
+        {
+          "animation": "none",
+          "bg": "rgba(0, 0, 0, 0)",
+          "cls": "blockquote-mask-icon",
+          "color": "lab(89.549 2.159 5.23597)",
+          "duration": "0s",
+          "font": "Geist, \"Geist Fallback\"",
+          "gap": "normal",
+          "height": 32,
+          "iterations": "1",
+          "line": "23.25px",
+          "padding": "0px",
+          "radius": "0px",
+          "size": "15.5px",
+          "tag": "svg",
+          "width": 32
+        },
+        {
+          "animation": "none",
+          "bg": "rgba(0, 0, 0, 0)",
+          "cls": "blockquote-mask-icon z-20",
+          "color": "lab(89.549 2.159 5.23597)",
+          "duration": "0s",
+          "font": "Geist, \"Geist Fallback\"",
+          "gap": "normal",
+          "height": 32,
+          "iterations": "1",
+          "line": "23.25px",
+          "padding": "0px",
+          "radius": "0px",
+          "size": "15.5px",
+          "tag": "svg",
+          "width": 32
+        }
+      ],
+      "lines": [
+        {
+          "animation": "none",
+          "bg": "rgba(0, 0, 0, 0)",
+          "cls": "absolute inset-x-(--faded-border-mobile-horizontal-inset) top-0 h-px border-t border-dashed border-gray-700/80 mask-[linear-gradient(90deg,transparent,black_15%,black_85%,transparent)] sm:inset-x-(--faded-border-horizontal-inset)",
+          "color": "lab(89.549 2.159 5.23597)",
+          "duration": "0s",
+          "font": "\"Geist Mono\", \"Geist Mono Fallback\"",
+          "gap": "normal",
+          "height": 1,
+          "iterations": "1",
+          "line": "22px",
+          "padding": "0px",
+          "radius": "0px",
+          "size": "13.7px",
+          "tag": "SPAN",
+          "width": 85.359375
+        },
+        {
+          "animation": "none",
+          "bg": "rgba(0, 0, 0, 0)",
+          "cls": "absolute inset-x-(--faded-border-mobile-horizontal-inset) bottom-0 h-px border-t border-dashed border-gray-700/80 mask-[linear-gradient(90deg,transparent,black_15%,black_85%,transparent)] sm:inset-x-(--faded-border-horizontal-inset)",
+          "color": "lab(89.549 2.159 5.23597)",
+          "duration": "0s",
+          "font": "\"Geist Mono\", \"Geist Mono Fallback\"",
+          "gap": "normal",
+          "height": 1,
+          "iterations": "1",
+          "line": "22px",
+          "padding": "0px",
+          "radius": "0px",
+          "size": "13.7px",
+          "tag": "SPAN",
+          "width": 85.359375
+        },
+        {
+          "animation": "none",
+          "bg": "rgba(0, 0, 0, 0)",
+          "cls": "absolute inset-y-(--faded-border-mobile-vertical-inset) left-0 w-px border-l border-dashed border-gray-700/80 mask-(--faded-border-mobile-vertical-mask) sm:inset-y-(--faded-border-vertical-inset) sm:mask-(--faded-border-vertical-mask)",
+          "color": "lab(89.549 2.159 5.23597)",
+          "duration": "0s",
+          "font": "\"Geist Mono\", \"Geist Mono Fallback\"",
+          "gap": "normal",
+          "height": 38,
+          "iterations": "1",
+          "line": "22px",
+          "padding": "0px",
+          "radius": "0px",
+          "size": "13.7px",
+          "tag": "SPAN",
+          "width": 1
+        }
+      ],
+      "pulse": [
+        {
+          "frames": [
+            {
+              "composite": "replace",
+              "computedOffset": 0,
+              "easing": "cubic-bezier(0, 0, 0.2, 1)",
+              "offset": 0,
+              "opacity": "0.5",
+              "transform": "none"
+            },
+            {
+              "composite": "auto",
+              "computedOffset": 0.75,
+              "easing": "cubic-bezier(0, 0, 0.2, 1)",
+              "offset": 0.75,
+              "opacity": "0",
+              "transform": "scale(2)"
+            },
+            {
+              "composite": "auto",
+              "computedOffset": 1,
+              "easing": "cubic-bezier(0, 0, 0.2, 1)",
+              "offset": 1,
+              "opacity": "0",
+              "transform": "scale(2)"
+            }
+          ],
+          "timing": {
+            "delay": 0,
+            "direction": "normal",
+            "duration": 1000,
+            "easing": "linear",
+            "endDelay": 0,
+            "fill": "none",
+            "iterationStart": 0,
+            "iterations": null
+          }
+        }
+      ]
+    }
+  },
+  {
+    "url": "https://www.cmrg.me/now",
+    "viewport": [
+      1440,
+      960
+    ],
+    "data": {
+      "code": [],
+      "found": [
+        {
+          "items": [
+            {
+              "animation": "none",
+              "bg": "oklab(0.24 0.00422361 0.00906822 / 0.6)",
+              "cls": "mr-auto w-fit max-w-md rounded-2xl rounded-bl-xs bg-gray-900/60 px-4 py-3 text-sm text-gray-300",
+              "color": "lab(79.6832 2.91914 7.00948)",
+              "duration": "0s",
+              "font": "Geist, \"Geist Fallback\"",
+              "gap": "normal",
+              "height": 43.5625,
+              "iterations": "1",
+              "line": "19.5714px",
+              "padding": "12px 16px",
+              "radius": "16px 16px 16px 2px",
+              "size": "13.7px",
+              "tag": "LI",
+              "width": 250.875
+            },
+            {
+              "animation": "none",
+              "bg": "rgba(0, 0, 0, 0)",
+              "cls": "flex flex-col gap-2",
+              "color": "lab(89.549 2.159 5.23597)",
+              "duration": "0s",
+              "font": "Geist, \"Geist Fallback\"",
+              "gap": "8px",
+              "height": 198.25,
+              "iterations": "1",
+              "line": "23.25px",
+              "padding": "0px",
+              "radius": "0px",
+              "size": "15.5px",
+              "tag": "OL",
+              "width": 528
+            },
+            {
+              "animation": "none",
+              "bg": "rgba(0, 0, 0, 0)",
+              "cls": "flex flex-col gap-4",
+              "color": "lab(89.549 2.159 5.23597)",
+              "duration": "0s",
+              "font": "Geist, \"Geist Fallback\"",
+              "gap": "16px",
+              "height": 398.484375,
+              "iterations": "1",
+              "line": "23.25px",
+              "padding": "0px",
+              "radius": "0px",
+              "size": "15.5px",
+              "tag": "DIV",
+              "width": 528
+            }
+          ],
+          "word": "what has your attention"
+        },
+        {
+          "items": [],
+          "word": "chronology"
+        },
+        {
+          "items": [
+            {
+              "animation": "none",
+              "bg": "rgba(0, 0, 0, 0)",
+              "cls": "text-3xl text-pretty",
+              "color": "lab(89.549 2.159 5.23597)",
+              "duration": "0s",
+              "font": "\"serif\", \"serif Fallback\"",
+              "gap": "normal",
+              "height": 87.375,
+              "iterations": "1",
+              "line": "43.68px",
+              "padding": "0px",
+              "radius": "0px",
+              "size": "36.4px",
+              "tag": "H2",
+              "width": 348.796875
+            },
+            {
+              "animation": "none",
+              "bg": "rgba(0, 0, 0, 0)",
+              "cls": "flex flex-col gap-2",
+              "color": "lab(89.549 2.159 5.23597)",
+              "duration": "0s",
+              "font": "Geist, \"Geist Fallback\"",
+              "gap": "8px",
+              "height": 159.078125,
+              "iterations": "1",
+              "line": "23.25px",
+              "padding": "0px",
+              "radius": "0px",
+              "size": "15.5px",
+              "tag": "DIV",
+              "width": 348.796875
+            },
+            {
+              "animation": "none",
+              "bg": "rgba(0, 0, 0, 0)",
+              "cls": "flex flex-col items-start gap-6 px-6 py-4 lg:py-0",
+              "color": "lab(89.549 2.159 5.23597)",
+              "duration": "0s",
+              "font": "Geist, \"Geist Fallback\"",
+              "gap": "24px",
+              "height": 215.078125,
+              "iterations": "1",
+              "line": "23.25px",
+              "padding": "0px 24px",
+              "radius": "0px",
+              "size": "15.5px",
+              "tag": "DIV",
+              "width": 396.796875
+            }
+          ],
+          "word": "been up to"
+        }
+      ],
+      "icons": [],
+      "lines": [
+        {
+          "animation": "none",
+          "bg": "rgba(0, 0, 0, 0)",
+          "cls": "absolute inset-x-(--faded-border-mobile-horizontal-inset) top-0 h-px border-t border-dashed border-gray-700/80 mask-[linear-gradient(90deg,transparent,black_15%,black_85%,transparent)] sm:inset-x-(--faded-border-horizontal-inset)",
+          "color": "lab(89.549 2.159 5.23597)",
+          "duration": "0s",
+          "font": "Geist, \"Geist Fallback\"",
+          "gap": "normal",
+          "height": 1,
+          "iterations": "1",
+          "line": "23.25px",
+          "padding": "0px",
+          "radius": "0px",
+          "size": "15.5px",
+          "tag": "SPAN",
+          "width": 1152
+        },
+        {
+          "animation": "none",
+          "bg": "rgba(0, 0, 0, 0)",
+          "cls": "absolute inset-x-(--faded-border-mobile-horizontal-inset) bottom-0 h-px border-t border-dashed border-gray-700/80 mask-[linear-gradient(90deg,transparent,black_15%,black_85%,transparent)] sm:inset-x-(--faded-border-horizontal-inset)",
+          "color": "lab(89.549 2.159 5.23597)",
+          "duration": "0s",
+          "font": "Geist, \"Geist Fallback\"",
+          "gap": "normal",
+          "height": 1,
+          "iterations": "1",
+          "line": "23.25px",
+          "padding": "0px",
+          "radius": "0px",
+          "size": "15.5px",
+          "tag": "SPAN",
+          "width": 1152
+        },
+        {
+          "animation": "none",
+          "bg": "rgba(0, 0, 0, 0)",
+          "cls": "absolute inset-y-(--faded-border-mobile-vertical-inset) left-0 w-px border-l border-dashed border-gray-700/80 mask-(--faded-border-mobile-vertical-mask) sm:inset-y-(--faded-border-vertical-inset) sm:mask-(--faded-border-vertical-mask)",
+          "color": "lab(89.549 2.159 5.23597)",
+          "duration": "0s",
+          "font": "Geist, \"Geist Fallback\"",
+          "gap": "normal",
+          "height": 484.125,
+          "iterations": "1",
+          "line": "23.25px",
+          "padding": "0px",
+          "radius": "0px",
+          "size": "15.5px",
+          "tag": "SPAN",
+          "width": 1
+        }
+      ],
+      "pulse": []
+    }
+  },
+  {
+    "url": "https://www.cmrg.me/about",
+    "viewport": [
+      1440,
+      960
+    ],
+    "data": {
+      "code": [],
+      "found": [
+        {
+          "items": [],
+          "word": "what has your attention"
+        },
+        {
+          "items": [],
+          "word": "chronology"
+        },
+        {
+          "items": [],
+          "word": "been up to"
+        }
+      ],
+      "gallery": [
+        {
+          "image": {
+            "animation": "none",
+            "bg": "rgba(0, 0, 0, 0)",
+            "cls": "h-full w-auto max-w-none",
+            "color": "rgba(0, 0, 0, 0)",
+            "duration": "0s",
+            "font": "Geist, \"Geist Fallback\"",
+            "gap": "normal",
+            "height": 232,
+            "iterations": "1",
+            "line": "23.25px",
+            "padding": "0px",
+            "radius": "0px",
+            "size": "15.5px",
+            "tag": "IMG",
+            "width": 232
+          },
+          "parent": {
+            "animation": "none",
+            "bg": "lab(11.8292 1.50421 3.53895)",
+            "cls": "relative h-full w-max overflow-hidden rounded-(--image-radius) bg-gray-900 shadow-[3px_4px_10px] shadow-gray-950/20 [--image-radius:28px] corner-squircle",
+            "color": "lab(89.549 2.159 5.23597)",
+            "duration": "0s",
+            "font": "Geist, \"Geist Fallback\"",
+            "gap": "normal",
+            "height": 232,
+            "iterations": "1",
+            "line": "23.25px",
+            "padding": "0px",
+            "radius": "28px",
+            "size": "15.5px",
+            "tag": "FIGURE",
+            "width": 232
+          }
+        },
+        {
+          "image": {
+            "animation": "none",
+            "bg": "rgba(0, 0, 0, 0)",
+            "cls": "h-full w-auto max-w-none",
+            "color": "rgba(0, 0, 0, 0)",
+            "duration": "0s",
+            "font": "Geist, \"Geist Fallback\"",
+            "gap": "normal",
+            "height": 232,
+            "iterations": "1",
+            "line": "23.25px",
+            "padding": "0px",
+            "radius": "0px",
+            "size": "15.5px",
+            "tag": "IMG",
+            "width": 348.125
+          },
+          "parent": {
+            "animation": "none",
+            "bg": "lab(11.8292 1.50421 3.53895)",
+            "cls": "relative h-full w-max overflow-hidden rounded-(--image-radius) bg-gray-900 shadow-[3px_4px_10px] shadow-gray-950/20 [--image-radius:28px] corner-squircle",
+            "color": "lab(89.549 2.159 5.23597)",
+            "duration": "0s",
+            "font": "Geist, \"Geist Fallback\"",
+            "gap": "normal",
+            "height": 232,
+            "iterations": "1",
+            "line": "23.25px",
+            "padding": "0px",
+            "radius": "28px",
+            "size": "15.5px",
+            "tag": "FIGURE",
+            "width": 348.125
+          }
+        }
+      ],
+      "icons": [],
+      "lines": [
+        {
+          "animation": "none",
+          "bg": "rgba(0, 0, 0, 0)",
+          "cls": "absolute inset-x-(--faded-border-mobile-horizontal-inset) top-0 h-px border-t border-dashed border-gray-700/80 mask-[linear-gradient(90deg,transparent,black_15%,black_85%,transparent)] sm:inset-x-(--faded-border-horizontal-inset)",
+          "color": "lab(89.549 2.159 5.23597)",
+          "duration": "0s",
+          "font": "Geist, \"Geist Fallback\"",
+          "gap": "normal",
+          "height": 1,
+          "iterations": "1",
+          "line": "23.25px",
+          "padding": "0px",
+          "radius": "0px",
+          "size": "15.5px",
+          "tag": "SPAN",
+          "width": 1152
+        },
+        {
+          "animation": "none",
+          "bg": "rgba(0, 0, 0, 0)",
+          "cls": "absolute inset-x-(--faded-border-mobile-horizontal-inset) bottom-0 h-px border-t border-dashed border-gray-700/80 mask-[linear-gradient(90deg,transparent,black_15%,black_85%,transparent)] sm:inset-x-(--faded-border-horizontal-inset)",
+          "color": "lab(89.549 2.159 5.23597)",
+          "duration": "0s",
+          "font": "Geist, \"Geist Fallback\"",
+          "gap": "normal",
+          "height": 1,
+          "iterations": "1",
+          "line": "23.25px",
+          "padding": "0px",
+          "radius": "0px",
+          "size": "15.5px",
+          "tag": "SPAN",
+          "width": 1152
+        },
+        {
+          "animation": "none",
+          "bg": "rgba(0, 0, 0, 0)",
+          "cls": "absolute inset-y-(--faded-border-mobile-vertical-inset) left-0 w-px border-l border-dashed border-gray-700/80 mask-(--faded-border-mobile-vertical-mask) sm:inset-y-(--faded-border-vertical-inset) sm:mask-(--faded-border-vertical-mask)",
+          "color": "lab(89.549 2.159 5.23597)",
+          "duration": "0s",
+          "font": "Geist, \"Geist Fallback\"",
+          "gap": "normal",
+          "height": 688,
+          "iterations": "1",
+          "line": "23.25px",
+          "padding": "0px",
+          "radius": "0px",
+          "size": "15.5px",
+          "tag": "SPAN",
+          "width": 1
+        }
+      ],
+      "pulse": []
+    }
+  }
+]

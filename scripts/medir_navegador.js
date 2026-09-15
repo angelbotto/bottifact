@@ -15,7 +15,7 @@
     ...[['tinta','papel'],['tinta','suave'],['secundaria','papel']].map(([a,b])=>({pair:'pieza-'+a+'/'+b,ratio:contrast('--pieza-'+a,'--pieza-'+b),minimum:4.5})),
     ...['tinta','secundaria'].map(a=>({pair:'pieza-'+a+'/documento',ratio:contrast('--pieza-'+a,'--papel'),minimum:4.5})),
     ...['sube','baja','acento'].map(a=>({pair:'cascada-'+a,ratio:contrast('--pieza-'+a,'--papel'),minimum:3}))];
-  const regions=[...document.querySelectorAll('.tabla-caja,.diagrama-caja,.grafica-caja,.escena-caja,.escritura-caja,pre,.barra:not(.navegacion-editorial),.navegacion-scroll')].filter(e=>e.getClientRects().length).map(e=>{
+  const regions=[...document.querySelectorAll('.tabla-caja,.diagrama-caja,.grafica-caja,.escena-caja,.escritura-caja,pre,.barra:not(.navegacion-editorial),.navegacion-scroll,.galeria-pista')].filter(e=>e.getClientRects().length).map(e=>{
     const before=e.scrollLeft;e.scrollLeft=e.scrollWidth;const end=e.scrollLeft;e.scrollLeft=before;
     const r=e.getBoundingClientRect(),style=getComputedStyle(e);
     return {kind:e.className||e.tagName,width:e.clientWidth,content:e.scrollWidth,end,overflow:style.overflowX,focus:e.tabIndex,name:e.getAttribute('aria-label'),inside:r.left>=-.5&&r.right<=innerWidth+.5};

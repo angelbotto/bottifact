@@ -1,0 +1,8 @@
+{
+  "method": "Orca scroll, frames presentados y API de repetición. Reducción mediante evento MQL explícito.",
+  "result": {
+    "one": true,
+    "removed": true,
+    "stopped": true
+  }
+}

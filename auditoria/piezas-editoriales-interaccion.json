@@ -1,0 +1,21 @@
+{
+  "failed": 0,
+  "results": [
+    {
+      "name": "código numerado conserva fuente, saltos y selección",
+      "ok": true
+    },
+    {
+      "name": "actividad alcanza su escala y explica valor, total y porcentaje",
+      "ok": true
+    },
+    {
+      "name": "actividad cero y dato inválido preservan la tabla",
+      "ok": true
+    },
+    {
+      "name": "marcos no pisan decoración ni alteran contenido",
+      "ok": true
+    }
+  ]
+}

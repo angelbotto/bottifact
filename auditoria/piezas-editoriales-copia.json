@@ -1,0 +1,8 @@
+{
+  "method": "Clic nativo de Orca y writeText sustituido para capturar el texto, no lectura del portapapeles físico.",
+  "result": {
+    "same": true,
+    "status": "Código copiado.",
+    "trusted": true
+  }
+}

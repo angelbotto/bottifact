@@ -1,0 +1,64 @@
+{
+  "url": "https://www.cmrg.me/work",
+  "viewport": [
+    1440,
+    960
+  ],
+  "data": {
+    "found": true,
+    "heading": {
+      "line": "38px",
+      "size": "28.5px"
+    },
+    "items": [
+      {
+        "cls": "relative pb-10",
+        "gap": "normal",
+        "line": "23.25px",
+        "padding": "0px 0px 40px",
+        "size": "15.5px",
+        "tag": "LI"
+      },
+      {
+        "cls": "text-lg text-gray-300 transition-colors duration-150 group-hover/resume:text-gray-150",
+        "gap": "normal",
+        "line": "28.7778px",
+        "padding": "0px",
+        "size": "18.5px",
+        "tag": "H3"
+      },
+      {
+        "cls": "",
+        "gap": "normal",
+        "line": "18.755px",
+        "padding": "0px",
+        "size": "12.1px",
+        "tag": "TIME"
+      },
+      {
+        "cls": "relative pb-10",
+        "gap": "normal",
+        "line": "23.25px",
+        "padding": "0px 0px 40px",
+        "size": "15.5px",
+        "tag": "LI"
+      },
+      {
+        "cls": "text-lg text-gray-300 transition-colors duration-150 group-hover/resume:text-gray-150",
+        "gap": "normal",
+        "line": "28.7778px",
+        "padding": "0px",
+        "size": "18.5px",
+        "tag": "H3"
+      },
+      {
+        "cls": "",
+        "gap": "normal",
+        "line": "18.755px",
+        "padding": "0px",
+        "size": "12.1px",
+        "tag": "TIME"
+      }
+    ]
+  }
+}

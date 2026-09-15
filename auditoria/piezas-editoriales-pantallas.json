@@ -1,0 +1,5654 @@
+[
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 14.607634224489928
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 11.853527319255784
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.74629572310451
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 5.86261764999615
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.852755260043006
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 6.148302182151975
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 6.2782198769046635
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.598240955267573
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 6.038689216886594
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 6.154107318459175
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.734454335904986
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 14.607634224489928
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 13.530017823583568
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 8.007093142735737
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 15.661847512878582
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 6.598240955267573
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 6.2782198769046635
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 6.148302182151975
+      }
+    ],
+    "documentWidth": 320,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 280,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 308,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Prioridades propuestas, tabla desplazable",
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "light",
+    "viewport": [
+      320,
+      740
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "prioridades"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 14.607634224489928
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 11.853527319255784
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.74629572310451
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 5.86261764999615
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.852755260043006
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 6.148302182151975
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 6.2782198769046635
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.598240955267573
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 6.038689216886594
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 6.154107318459175
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.734454335904986
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 14.607634224489928
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 13.530017823583568
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 8.007093142735737
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 15.661847512878582
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 6.598240955267573
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 6.2782198769046635
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 6.148302182151975
+      }
+    ],
+    "documentWidth": 320,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 280,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 308,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Actividad semanal, desplazable",
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 576,
+        "end": 340,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código Python con líneas 3 y 6 destacadas, desplazable",
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 958,
+        "end": 722,
+        "focus": 0,
+        "inside": true,
+        "kind": "galeria-pista",
+        "name": "Galería de cuatro ilustraciones, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "light",
+    "viewport": [
+      320,
+      740
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "piezas"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 15.661847512878582
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 11.405014363272358
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.42475499158132
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.380744691103033
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 5.145578127203766
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 10.734934059021418
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 11.278854825850246
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 9.233517351734147
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 9.599529626682031
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 8.09157753251427
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 9.407309039029018
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 12.57855252981979
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 11.892541402615047
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 9.55881566261573
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 14.353725534617888
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 9.233517351734147
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 11.278854825850246
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 10.734934059021418
+      }
+    ],
+    "documentWidth": 320,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 280,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 308,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Prioridades propuestas, tabla desplazable",
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "dark",
+    "viewport": [
+      320,
+      740
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "prioridades"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 15.661847512878582
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 11.405014363272358
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.42475499158132
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.380744691103033
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 5.145578127203766
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 10.734934059021418
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 11.278854825850246
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 9.233517351734147
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 9.599529626682031
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 8.09157753251427
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 9.407309039029018
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 12.57855252981979
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 11.892541402615047
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 9.55881566261573
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 14.353725534617888
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 9.233517351734147
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 11.278854825850246
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 10.734934059021418
+      }
+    ],
+    "documentWidth": 320,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 280,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 308,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Actividad semanal, desplazable",
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 576,
+        "end": 340,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código Python con líneas 3 y 6 destacadas, desplazable",
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 958,
+        "end": 722,
+        "focus": 0,
+        "inside": true,
+        "kind": "galeria-pista",
+        "name": "Galería de cuatro ilustraciones, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "dark",
+    "viewport": [
+      320,
+      740
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "piezas"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 11.557684885352561
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 9.36593327022585
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 6.9741645627697695
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 5.464049537061016
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.919034345711879
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 11.689759741860524
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 12.359127851880324
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 7.615540523119387
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 9.83547247347162
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 9.83547247347162
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 10.824581528602149
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 9.891734057854446
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 6.210059704233464
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 12.373852633248461
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 7.098876147850732
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 11.703687031755722
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 7.098876147850732
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 11.703687031755722
+      }
+    ],
+    "documentWidth": 320,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 280,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 308,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Prioridades propuestas, tabla desplazable",
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "sea",
+    "viewport": [
+      320,
+      740
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "prioridades"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 11.557684885352561
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 9.36593327022585
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 6.9741645627697695
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 5.464049537061016
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.919034345711879
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 11.689759741860524
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 12.359127851880324
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 7.615540523119387
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 9.83547247347162
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 9.83547247347162
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 10.824581528602149
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 9.891734057854446
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 6.210059704233464
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 12.373852633248461
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 7.098876147850732
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 11.703687031755722
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 7.098876147850732
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 11.703687031755722
+      }
+    ],
+    "documentWidth": 320,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 280,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 308,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Actividad semanal, desplazable",
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 576,
+        "end": 340,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código Python con líneas 3 y 6 destacadas, desplazable",
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 958,
+        "end": 722,
+        "focus": 0,
+        "inside": true,
+        "kind": "galeria-pista",
+        "name": "Galería de cuatro ilustraciones, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "sea",
+    "viewport": [
+      320,
+      740
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "piezas"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 12.003233006101395
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 10.79612944067532
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 9.32111730311078
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 7.898228544492502
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 6.5018320506019025
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 6.404653507497501
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 6.279178580167143
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.3866513041626
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 5.874137072800625
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.476849486325199
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.476849486325199
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 5.9455067697437824
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.9622655086666665
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 11.77510292252061
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 11.227676227467
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 6.960401800600642
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 12.648791658848944
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 7.476849486325199
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 6.3866513041626
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 6.279178580167143
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 6.404653507497501
+      }
+    ],
+    "documentWidth": 320,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 280,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 308,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Prioridades propuestas, tabla desplazable",
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "oliva",
+    "viewport": [
+      320,
+      740
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "prioridades"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 12.003233006101395
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 10.79612944067532
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 9.32111730311078
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 7.898228544492502
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 6.5018320506019025
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 6.404653507497501
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 6.279178580167143
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.3866513041626
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 5.874137072800625
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.476849486325199
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.476849486325199
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 5.9455067697437824
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.9622655086666665
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 11.77510292252061
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 11.227676227467
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 6.960401800600642
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 12.648791658848944
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 7.476849486325199
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 6.3866513041626
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 6.279178580167143
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 6.404653507497501
+      }
+    ],
+    "documentWidth": 320,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 280,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 308,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Actividad semanal, desplazable",
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 576,
+        "end": 340,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código Python con líneas 3 y 6 destacadas, desplazable",
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 958,
+        "end": 722,
+        "focus": 0,
+        "inside": true,
+        "kind": "galeria-pista",
+        "name": "Galería de cuatro ilustraciones, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "oliva",
+    "viewport": [
+      320,
+      740
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "piezas"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 11.946849740891619
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 10.391466119552772
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.535292623141972
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.858110381012121
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 5.415301796679387
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 5.6526657114347785
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 5.876191661317325
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.101031605486959
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 5.887269321836438
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.340589255192381
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.340589255192381
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 5.4970120825279665
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.093035690276254
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 11.761095928428842
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 10.858996550456329
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 6.613849990938837
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 13.053421913074956
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 7.340589255192381
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 6.101031605486959
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 5.876191661317325
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 5.6526657114347785
+      }
+    ],
+    "documentWidth": 320,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 280,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 308,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Prioridades propuestas, tabla desplazable",
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "arcilla",
+    "viewport": [
+      320,
+      740
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "prioridades"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 11.946849740891619
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 10.391466119552772
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.535292623141972
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.858110381012121
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 5.415301796679387
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 5.6526657114347785
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 5.876191661317325
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.101031605486959
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 5.887269321836438
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.340589255192381
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.340589255192381
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 5.4970120825279665
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.093035690276254
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 11.761095928428842
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 10.858996550456329
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 6.613849990938837
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 13.053421913074956
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 7.340589255192381
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 6.101031605486959
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 5.876191661317325
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 5.6526657114347785
+      }
+    ],
+    "documentWidth": 320,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 280,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 308,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Actividad semanal, desplazable",
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 576,
+        "end": 340,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código Python con líneas 3 y 6 destacadas, desplazable",
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 958,
+        "end": 722,
+        "focus": 0,
+        "inside": true,
+        "kind": "galeria-pista",
+        "name": "Galería de cuatro ilustraciones, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "arcilla",
+    "viewport": [
+      320,
+      740
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "piezas"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 12.28893004054052
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 9.694950739317242
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 7.731490144269273
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.0653777949717345
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.920128980068853
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 9.443480706174388
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 9.985503946009635
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 9.959157262643602
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 9.540461213422361
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 8.948294793134568
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 8.948294793134568
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 8.765500771140962
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 8.311630716257387
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 12.28893004054052
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 10.474934007523752
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 7.875795395241831
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 13.962395310751617
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 8.948294793134568
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 9.959157262643602
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 9.985503946009635
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 9.443480706174388
+      }
+    ],
+    "documentWidth": 320,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 280,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 308,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Prioridades propuestas, tabla desplazable",
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "ciruela",
+    "viewport": [
+      320,
+      740
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "prioridades"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 12.28893004054052
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 9.694950739317242
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 7.731490144269273
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.0653777949717345
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.920128980068853
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 9.443480706174388
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 9.985503946009635
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 9.959157262643602
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 9.540461213422361
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 8.948294793134568
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 8.948294793134568
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 8.765500771140962
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 8.311630716257387
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 12.28893004054052
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 10.474934007523752
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 7.875795395241831
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 13.962395310751617
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 8.948294793134568
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 9.959157262643602
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 9.985503946009635
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 9.443480706174388
+      }
+    ],
+    "documentWidth": 320,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 280,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 308,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Actividad semanal, desplazable",
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 576,
+        "end": 340,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código Python con líneas 3 y 6 destacadas, desplazable",
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 958,
+        "end": 722,
+        "focus": 0,
+        "inside": true,
+        "kind": "galeria-pista",
+        "name": "Galería de cuatro ilustraciones, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "ciruela",
+    "viewport": [
+      320,
+      740
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "piezas"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 14.607634224489928
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 11.853527319255784
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.74629572310451
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 5.86261764999615
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.852755260043006
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 6.148302182151975
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 6.2782198769046635
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.598240955267573
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 6.038689216886594
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 6.154107318459175
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.734454335904986
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 14.607634224489928
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 13.530017823583568
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 8.007093142735737
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 15.661847512878582
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 6.598240955267573
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 6.2782198769046635
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 6.148302182151975
+      }
+    ],
+    "documentWidth": 390,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 350,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 238,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Prioridades propuestas, tabla desplazable",
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "light",
+    "viewport": [
+      390,
+      844
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "prioridades"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 14.607634224489928
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 11.853527319255784
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.74629572310451
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 5.86261764999615
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.852755260043006
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 6.148302182151975
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 6.2782198769046635
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.598240955267573
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 6.038689216886594
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 6.154107318459175
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.734454335904986
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 14.607634224489928
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 13.530017823583568
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 8.007093142735737
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 15.661847512878582
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 6.598240955267573
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 6.2782198769046635
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 6.148302182151975
+      }
+    ],
+    "documentWidth": 390,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 350,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 238,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Actividad semanal, desplazable",
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 576,
+        "end": 270,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código Python con líneas 3 y 6 destacadas, desplazable",
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 1159,
+        "end": 853,
+        "focus": 0,
+        "inside": true,
+        "kind": "galeria-pista",
+        "name": "Galería de cuatro ilustraciones, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "light",
+    "viewport": [
+      390,
+      844
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "piezas"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 15.661847512878582
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 11.405014363272358
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.42475499158132
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.380744691103033
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 5.145578127203766
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 10.734934059021418
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 11.278854825850246
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 9.233517351734147
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 9.599529626682031
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 8.09157753251427
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 9.407309039029018
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 12.57855252981979
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 11.892541402615047
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 9.55881566261573
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 14.353725534617888
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 9.233517351734147
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 11.278854825850246
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 10.734934059021418
+      }
+    ],
+    "documentWidth": 390,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 350,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 238,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Prioridades propuestas, tabla desplazable",
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "dark",
+    "viewport": [
+      390,
+      844
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "prioridades"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 15.661847512878582
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 11.405014363272358
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.42475499158132
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.380744691103033
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 5.145578127203766
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 10.734934059021418
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 11.278854825850246
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 9.233517351734147
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 9.599529626682031
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 8.09157753251427
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 9.407309039029018
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 12.57855252981979
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 11.892541402615047
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 9.55881566261573
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 14.353725534617888
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 9.233517351734147
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 11.278854825850246
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 10.734934059021418
+      }
+    ],
+    "documentWidth": 390,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 350,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 238,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Actividad semanal, desplazable",
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 576,
+        "end": 270,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código Python con líneas 3 y 6 destacadas, desplazable",
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 1159,
+        "end": 853,
+        "focus": 0,
+        "inside": true,
+        "kind": "galeria-pista",
+        "name": "Galería de cuatro ilustraciones, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "dark",
+    "viewport": [
+      390,
+      844
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "piezas"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 11.557684885352561
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 9.36593327022585
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 6.9741645627697695
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 5.464049537061016
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.919034345711879
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 11.689759741860524
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 12.359127851880324
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 7.615540523119387
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 9.83547247347162
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 9.83547247347162
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 10.824581528602149
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 9.891734057854446
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 6.210059704233464
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 12.373852633248461
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 7.098876147850732
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 11.703687031755722
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 7.098876147850732
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 11.703687031755722
+      }
+    ],
+    "documentWidth": 390,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 350,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 238,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Prioridades propuestas, tabla desplazable",
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "sea",
+    "viewport": [
+      390,
+      844
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "prioridades"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 11.557684885352561
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 9.36593327022585
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 6.9741645627697695
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 5.464049537061016
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.919034345711879
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 11.689759741860524
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 12.359127851880324
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 7.615540523119387
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 9.83547247347162
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 9.83547247347162
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 10.824581528602149
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 9.891734057854446
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 6.210059704233464
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 12.373852633248461
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 7.098876147850732
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 11.703687031755722
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 7.098876147850732
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 11.703687031755722
+      }
+    ],
+    "documentWidth": 390,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 350,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 238,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Actividad semanal, desplazable",
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 576,
+        "end": 270,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código Python con líneas 3 y 6 destacadas, desplazable",
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 1159,
+        "end": 853,
+        "focus": 0,
+        "inside": true,
+        "kind": "galeria-pista",
+        "name": "Galería de cuatro ilustraciones, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "sea",
+    "viewport": [
+      390,
+      844
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "piezas"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 12.003233006101395
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 10.79612944067532
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 9.32111730311078
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 7.898228544492502
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 6.5018320506019025
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 6.404653507497501
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 6.279178580167143
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.3866513041626
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 5.874137072800625
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.476849486325199
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.476849486325199
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 5.9455067697437824
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.9622655086666665
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 11.77510292252061
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 11.227676227467
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 6.960401800600642
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 12.648791658848944
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 7.476849486325199
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 6.3866513041626
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 6.279178580167143
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 6.404653507497501
+      }
+    ],
+    "documentWidth": 390,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 350,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 238,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Prioridades propuestas, tabla desplazable",
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "oliva",
+    "viewport": [
+      390,
+      844
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "prioridades"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 12.003233006101395
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 10.79612944067532
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 9.32111730311078
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 7.898228544492502
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 6.5018320506019025
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 6.404653507497501
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 6.279178580167143
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.3866513041626
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 5.874137072800625
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.476849486325199
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.476849486325199
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 5.9455067697437824
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.9622655086666665
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 11.77510292252061
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 11.227676227467
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 6.960401800600642
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 12.648791658848944
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 7.476849486325199
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 6.3866513041626
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 6.279178580167143
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 6.404653507497501
+      }
+    ],
+    "documentWidth": 390,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 350,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 238,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Actividad semanal, desplazable",
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 576,
+        "end": 270,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código Python con líneas 3 y 6 destacadas, desplazable",
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 1159,
+        "end": 853,
+        "focus": 0,
+        "inside": true,
+        "kind": "galeria-pista",
+        "name": "Galería de cuatro ilustraciones, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "oliva",
+    "viewport": [
+      390,
+      844
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "piezas"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 11.946849740891619
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 10.391466119552772
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.535292623141972
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.858110381012121
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 5.415301796679387
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 5.6526657114347785
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 5.876191661317325
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.101031605486959
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 5.887269321836438
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.340589255192381
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.340589255192381
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 5.4970120825279665
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.093035690276254
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 11.761095928428842
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 10.858996550456329
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 6.613849990938837
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 13.053421913074956
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 7.340589255192381
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 6.101031605486959
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 5.876191661317325
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 5.6526657114347785
+      }
+    ],
+    "documentWidth": 390,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 350,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 238,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Prioridades propuestas, tabla desplazable",
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "arcilla",
+    "viewport": [
+      390,
+      844
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "prioridades"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 11.946849740891619
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 10.391466119552772
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.535292623141972
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.858110381012121
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 5.415301796679387
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 5.6526657114347785
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 5.876191661317325
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.101031605486959
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 5.887269321836438
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.340589255192381
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.340589255192381
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 5.4970120825279665
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.093035690276254
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 11.761095928428842
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 10.858996550456329
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 6.613849990938837
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 13.053421913074956
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 7.340589255192381
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 6.101031605486959
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 5.876191661317325
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 5.6526657114347785
+      }
+    ],
+    "documentWidth": 390,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 350,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 238,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Actividad semanal, desplazable",
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 576,
+        "end": 270,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código Python con líneas 3 y 6 destacadas, desplazable",
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 1159,
+        "end": 853,
+        "focus": 0,
+        "inside": true,
+        "kind": "galeria-pista",
+        "name": "Galería de cuatro ilustraciones, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "arcilla",
+    "viewport": [
+      390,
+      844
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "piezas"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 12.28893004054052
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 9.694950739317242
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 7.731490144269273
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.0653777949717345
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.920128980068853
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 9.443480706174388
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 9.985503946009635
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 9.959157262643602
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 9.540461213422361
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 8.948294793134568
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 8.948294793134568
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 8.765500771140962
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 8.311630716257387
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 12.28893004054052
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 10.474934007523752
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 7.875795395241831
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 13.962395310751617
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 8.948294793134568
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 9.959157262643602
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 9.985503946009635
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 9.443480706174388
+      }
+    ],
+    "documentWidth": 390,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 350,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 238,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Prioridades propuestas, tabla desplazable",
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "ciruela",
+    "viewport": [
+      390,
+      844
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "prioridades"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 12.28893004054052
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 9.694950739317242
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 7.731490144269273
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.0653777949717345
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.920128980068853
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 9.443480706174388
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 9.985503946009635
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 9.959157262643602
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 9.540461213422361
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 8.948294793134568
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 8.948294793134568
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 8.765500771140962
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 8.311630716257387
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 12.28893004054052
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 10.474934007523752
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 7.875795395241831
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 13.962395310751617
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 8.948294793134568
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 9.959157262643602
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 9.985503946009635
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 9.443480706174388
+      }
+    ],
+    "documentWidth": 390,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 350,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 238,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Actividad semanal, desplazable",
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 576,
+        "end": 270,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código Python con líneas 3 y 6 destacadas, desplazable",
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 1159,
+        "end": 853,
+        "focus": 0,
+        "inside": true,
+        "kind": "galeria-pista",
+        "name": "Galería de cuatro ilustraciones, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "ciruela",
+    "viewport": [
+      390,
+      844
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "piezas"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 14.607634224489928
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 11.853527319255784
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.74629572310451
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 5.86261764999615
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.852755260043006
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 6.148302182151975
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 6.2782198769046635
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.598240955267573
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 6.038689216886594
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 6.154107318459175
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.734454335904986
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 14.607634224489928
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 13.530017823583568
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 8.007093142735737
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 15.661847512878582
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 6.598240955267573
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 6.2782198769046635
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 6.148302182151975
+      }
+    ],
+    "documentWidth": 1440,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 858,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 858
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Prioridades propuestas, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "light",
+    "viewport": [
+      1440,
+      960
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "prioridades"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 14.607634224489928
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 11.853527319255784
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.74629572310451
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 5.86261764999615
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.852755260043006
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 6.148302182151975
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 6.2782198769046635
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.598240955267573
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 6.038689216886594
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 6.154107318459175
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.734454335904986
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 14.607634224489928
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 13.530017823583568
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 8.007093142735737
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 15.661847512878582
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 8.584954270876933
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 6.598240955267573
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 6.2782198769046635
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 6.148302182151975
+      }
+    ],
+    "documentWidth": 1440,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 858,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 858
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Actividad semanal, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 920,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código Python con líneas 3 y 6 destacadas, desplazable",
+        "overflow": "auto",
+        "width": 920
+      },
+      {
+        "content": 1476,
+        "end": 484,
+        "focus": 0,
+        "inside": true,
+        "kind": "galeria-pista",
+        "name": "Galería de cuatro ilustraciones, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "light",
+    "viewport": [
+      1440,
+      960
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "piezas"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 15.661847512878582
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 11.405014363272358
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.42475499158132
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.380744691103033
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 5.145578127203766
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 10.734934059021418
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 11.278854825850246
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 9.233517351734147
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 9.599529626682031
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 8.09157753251427
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 9.407309039029018
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 12.57855252981979
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 11.892541402615047
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 9.55881566261573
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 14.353725534617888
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 9.233517351734147
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 11.278854825850246
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 10.734934059021418
+      }
+    ],
+    "documentWidth": 1440,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 858,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 858
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Prioridades propuestas, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "dark",
+    "viewport": [
+      1440,
+      960
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "prioridades"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 15.661847512878582
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 11.405014363272358
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.42475499158132
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.380744691103033
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 5.145578127203766
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 10.734934059021418
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 11.278854825850246
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 9.233517351734147
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 9.599529626682031
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 8.09157753251427
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 9.407309039029018
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 12.57855252981979
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 11.892541402615047
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 9.55881566261573
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 14.353725534617888
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 10.907822353321167
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 9.233517351734147
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 11.278854825850246
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 10.734934059021418
+      }
+    ],
+    "documentWidth": 1440,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 858,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 858
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Actividad semanal, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 920,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código Python con líneas 3 y 6 destacadas, desplazable",
+        "overflow": "auto",
+        "width": 920
+      },
+      {
+        "content": 1476,
+        "end": 484,
+        "focus": 0,
+        "inside": true,
+        "kind": "galeria-pista",
+        "name": "Galería de cuatro ilustraciones, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "dark",
+    "viewport": [
+      1440,
+      960
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "piezas"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 11.557684885352561
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 9.36593327022585
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 6.9741645627697695
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 5.464049537061016
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.919034345711879
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 11.689759741860524
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 12.359127851880324
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 7.615540523119387
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 9.83547247347162
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 9.83547247347162
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 10.824581528602149
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 9.891734057854446
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 6.210059704233464
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 12.373852633248461
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 7.098876147850732
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 11.703687031755722
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 7.098876147850732
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 11.703687031755722
+      }
+    ],
+    "documentWidth": 1440,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 858,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 858
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Prioridades propuestas, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "sea",
+    "viewport": [
+      1440,
+      960
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "prioridades"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 11.557684885352561
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 9.36593327022585
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 6.9741645627697695
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 5.464049537061016
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.919034345711879
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 11.689759741860524
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 12.359127851880324
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 7.615540523119387
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.09042854447814
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 9.83547247347162
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 9.83547247347162
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 10.824581528602149
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 9.891734057854446
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 6.210059704233464
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 12.373852633248461
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 7.098876147850732
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 11.703687031755722
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 7.098876147850732
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 11.703687031755722
+      }
+    ],
+    "documentWidth": 1440,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 858,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 858
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Actividad semanal, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 920,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código Python con líneas 3 y 6 destacadas, desplazable",
+        "overflow": "auto",
+        "width": 920
+      },
+      {
+        "content": 1476,
+        "end": 484,
+        "focus": 0,
+        "inside": true,
+        "kind": "galeria-pista",
+        "name": "Galería de cuatro ilustraciones, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "sea",
+    "viewport": [
+      1440,
+      960
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "piezas"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 12.003233006101395
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 10.79612944067532
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 9.32111730311078
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 7.898228544492502
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 6.5018320506019025
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 6.404653507497501
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 6.279178580167143
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.3866513041626
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 5.874137072800625
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.476849486325199
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.476849486325199
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 5.9455067697437824
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.9622655086666665
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 11.77510292252061
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 11.227676227467
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 6.960401800600642
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 12.648791658848944
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 7.476849486325199
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 6.3866513041626
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 6.279178580167143
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 6.404653507497501
+      }
+    ],
+    "documentWidth": 1440,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 858,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 858
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Prioridades propuestas, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "oliva",
+    "viewport": [
+      1440,
+      960
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "prioridades"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 12.003233006101395
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 10.79612944067532
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 9.32111730311078
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 7.898228544492502
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 6.5018320506019025
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 6.404653507497501
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 6.279178580167143
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.3866513041626
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 5.874137072800625
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.476849486325199
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.476849486325199
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 5.9455067697437824
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.9622655086666665
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 11.77510292252061
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 11.227676227467
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 6.960401800600642
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 12.648791658848944
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 7.476849486325199
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 6.3866513041626
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 6.279178580167143
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 6.404653507497501
+      }
+    ],
+    "documentWidth": 1440,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 858,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 858
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Actividad semanal, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 920,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código Python con líneas 3 y 6 destacadas, desplazable",
+        "overflow": "auto",
+        "width": 920
+      },
+      {
+        "content": 1476,
+        "end": 484,
+        "focus": 0,
+        "inside": true,
+        "kind": "galeria-pista",
+        "name": "Galería de cuatro ilustraciones, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "oliva",
+    "viewport": [
+      1440,
+      960
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "piezas"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 11.946849740891619
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 10.391466119552772
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.535292623141972
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.858110381012121
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 5.415301796679387
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 5.6526657114347785
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 5.876191661317325
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.101031605486959
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 5.887269321836438
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.340589255192381
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.340589255192381
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 5.4970120825279665
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.093035690276254
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 11.761095928428842
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 10.858996550456329
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 6.613849990938837
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 13.053421913074956
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 7.340589255192381
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 6.101031605486959
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 5.876191661317325
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 5.6526657114347785
+      }
+    ],
+    "documentWidth": 1440,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 858,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 858
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Prioridades propuestas, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "arcilla",
+    "viewport": [
+      1440,
+      960
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "prioridades"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 11.946849740891619
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 10.391466119552772
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 8.535292623141972
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.858110381012121
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 5.415301796679387
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 5.6526657114347785
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 5.876191661317325
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 6.101031605486959
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 5.887269321836438
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 7.340589255192381
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 7.340589255192381
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 5.4970120825279665
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 5.093035690276254
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 11.761095928428842
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 10.858996550456329
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 6.613849990938837
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 13.053421913074956
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 7.340589255192381
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 6.101031605486959
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 5.876191661317325
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 5.6526657114347785
+      }
+    ],
+    "documentWidth": 1440,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 858,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 858
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Actividad semanal, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 920,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código Python con líneas 3 y 6 destacadas, desplazable",
+        "overflow": "auto",
+        "width": 920
+      },
+      {
+        "content": 1476,
+        "end": 484,
+        "focus": 0,
+        "inside": true,
+        "kind": "galeria-pista",
+        "name": "Galería de cuatro ilustraciones, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "arcilla",
+    "viewport": [
+      1440,
+      960
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "piezas"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 12.28893004054052
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 9.694950739317242
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 7.731490144269273
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.0653777949717345
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.920128980068853
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 9.443480706174388
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 9.985503946009635
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 9.959157262643602
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 9.540461213422361
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 8.948294793134568
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 8.948294793134568
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 8.765500771140962
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 8.311630716257387
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 12.28893004054052
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 10.474934007523752
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 7.875795395241831
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 13.962395310751617
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 8.948294793134568
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 9.959157262643602
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 9.985503946009635
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 9.443480706174388
+      }
+    ],
+    "documentWidth": 1440,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 858,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 858
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Prioridades propuestas, tabla desplazable",
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "ciruela",
+    "viewport": [
+      1440,
+      960
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "prioridades"
+  },
+  {
+    "contrasts": [
+      {
+        "minimum": 4.5,
+        "pair": "calor-0",
+        "ratio": 12.28893004054052
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-1",
+        "ratio": 9.694950739317242
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-2",
+        "ratio": 7.731490144269273
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-3",
+        "ratio": 6.0653777949717345
+      },
+      {
+        "minimum": 4.5,
+        "pair": "calor-4",
+        "ratio": 4.920128980068853
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-1",
+        "ratio": 9.443480706174388
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-2",
+        "ratio": 9.985503946009635
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-3",
+        "ratio": 9.959157262643602
+      },
+      {
+        "minimum": 3,
+        "pair": "serie-4",
+        "ratio": 9.540461213422361
+      },
+      {
+        "minimum": 4.5,
+        "pair": "etiquetas",
+        "ratio": 8.948294793134568
+      },
+      {
+        "minimum": 4.5,
+        "pair": "escena",
+        "ratio": 8.948294793134568
+      },
+      {
+        "minimum": 4.5,
+        "pair": "sonido",
+        "ratio": 8.765500771140962
+      },
+      {
+        "minimum": 3,
+        "pair": "escritura",
+        "ratio": 8.311630716257387
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/papel",
+        "ratio": 12.28893004054052
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/suave",
+        "ratio": 10.474934007523752
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/papel",
+        "ratio": 7.875795395241831
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-tinta/documento",
+        "ratio": 13.962395310751617
+      },
+      {
+        "minimum": 4.5,
+        "pair": "pieza-secundaria/documento",
+        "ratio": 8.948294793134568
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-sube",
+        "ratio": 9.959157262643602
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-baja",
+        "ratio": 9.985503946009635
+      },
+      {
+        "minimum": 3,
+        "pair": "cascada-acento",
+        "ratio": 9.443480706174388
+      }
+    ],
+    "documentWidth": 1440,
+    "errors": [],
+    "reduced": false,
+    "regions": [
+      {
+        "content": 858,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "navegacion-scroll",
+        "name": "Capítulos, desplazables",
+        "overflow": "auto",
+        "width": 858
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Actividad semanal, desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 920,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "Código Python con líneas 3 y 6 destacadas, desplazable",
+        "overflow": "auto",
+        "width": 920
+      },
+      {
+        "content": 1476,
+        "end": 484,
+        "focus": 0,
+        "inside": true,
+        "kind": "galeria-pista",
+        "name": "Galería de cuatro ilustraciones, desplazable horizontalmente",
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "resources": [],
+    "svgTextOverflow": [],
+    "theme": "ciruela",
+    "viewport": [
+      1440,
+      960
+    ],
+    "widths": [
+      null,
+      null,
+      null
+    ],
+    "page": "piezas"
+  }
+]

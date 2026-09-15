@@ -1,0 +1,9 @@
+{
+  "method": "Clics DOM entre frames de Orca; desplazamiento real. Límite y regreso con MQL reducido explícito.",
+  "end": {
+    "disabled": true,
+    "left": 484,
+    "max": 484
+  },
+  "return": true
+}

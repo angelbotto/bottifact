@@ -38,4 +38,4 @@ call('exec','--command','set media reduced-motion');evaluate('writing.motion.dis
 save('revision-escritura.json',{'before':r,'visible':visible,'reducedAnimations':0,'metodo':'Orca viewport/scroll real; media emulada y evento MQL explícito. Sin gesto de audio.'});call('exec','--command','set media light')
 # Capturas para inspección.
 fresh('#receta-archivo');call('exec','--command','set viewport 1024 900');settle();evaluate('document.querySelector("[data-elegir-tema][value=light]").click();document.querySelector("[data-papel-tramado]").click();const c=document.querySelector("#biblioteca-codigo-archivo").closest("details");c.open=true;c.scrollIntoView({behavior:"instant"});true');settle();Path('auditoria/capturas/revision-codigo.png').write_bytes(base64.b64decode(call('screenshot')['data']))
-print('Revisión: ocho interacciones, 18 combinaciones, 65 fuentes intactas y escritura al entrar/reduce correctas')
+print('Revisión: ocho interacciones, 18 combinaciones, 71 fuentes intactas y escritura al entrar/reduce correctas')
