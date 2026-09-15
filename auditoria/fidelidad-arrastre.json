@@ -1,0 +1,12 @@
+{
+  "cursor": "grab",
+  "events": [
+    {
+      "trusted": true,
+      "type": "mouse"
+    }
+  ],
+  "headings": 0,
+  "left": 180,
+  "released": true
+}

@@ -1,0 +1,13 @@
+{
+  "entry": true,
+  "progress": true,
+  "exit": true,
+  "one_entry": true,
+  "reduced_and_destroy": {
+    "buttons": true,
+    "cancelled": true,
+    "complete": true,
+    "restored": true
+  },
+  "method": "Frames de Orca; reducción por evento MQL explícito, sin lector de pantalla."
+}

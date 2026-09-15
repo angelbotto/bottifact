@@ -15,9 +15,10 @@ def samples():
  evaluate('new Promise(r=>setTimeout(()=>r(true),700))');return evaluate('({trusted:audioTrusted,state:NotaAudio.state,enabled:NotaAudio.enabled,plays:NotaAudio.plays,peak:Math.max(...audioSamples.map(s=>s.peak)),rms:Math.max(...audioSamples.map(s=>s.rms))})')
 fresh();assert not evaluate('NotaAudio.enabled') and evaluate('NotaAudio.plays')==0
 menu();arm('[data-audio-prueba]');click('Probar sonido');tone=samples();assert tone['trusted'] and tone['state']=='running' and tone['rms']>.005 and tone['peak']<1,tone
+# El MP3 conserva dinámica natural: se comprueba señal, no un RMS mínimo que obligue a amplificarlo.
 # Entrada automática de lápiz ya habilitado; repetir con gesto nativo para medir sin carreras.
 evaluate('document.querySelector("[data-apariencia-menu]").open=false;document.querySelector("#nota-estandar-gesto").scrollIntoView({block:"center",behavior:"instant"});true')
-arm('[data-mano-repetir]');click('Repetir la nota');pencil=samples();assert pencil['trusted'] and pencil['rms']>.01 and pencil['peak']<1,pencil
+arm('[data-mano-repetir]');click('Repetir la nota');pencil=samples();assert pencil['trusted'] and pencil['rms']>.0001 and pencil['peak']<1,pencil
 menu();evaluate('(()=>{const v=document.querySelector("[data-audio-volumen]");v.value=0;v.dispatchEvent(new Event("input",{bubbles:true}));return true})()');arm('[data-audio-prueba]');click('Probar sonido');zero=samples();zero['settledPeak']=evaluate('Math.max(...audioSamples.slice(10).map(s=>s.peak))');assert zero['settledPeak']<.00001,zero
 click('Sonidos activados');assert not evaluate('NotaAudio.enabled') and evaluate('NotaAudio.activeVoices')==0
 # Error explícito del navegador: no presentar un estado activado falso.

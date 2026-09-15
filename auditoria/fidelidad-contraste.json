@@ -1,0 +1,38 @@
+[
+  {
+    "color": "rgb(148, 132, 117)",
+    "ratio": 3.425271965614757,
+    "size": "28.5px",
+    "theme": "light"
+  },
+  {
+    "color": "rgb(148, 132, 117)",
+    "ratio": 5.2177335918105845,
+    "size": "28.5px",
+    "theme": "dark"
+  },
+  {
+    "color": "rgb(93, 140, 192)",
+    "ratio": 4.361669281229136,
+    "size": "28.5px",
+    "theme": "sea"
+  },
+  {
+    "color": "rgb(119, 132, 101)",
+    "ratio": 3.6557407983839365,
+    "size": "28.5px",
+    "theme": "oliva"
+  },
+  {
+    "color": "rgb(158, 126, 107)",
+    "ratio": 3.3424563878808726,
+    "size": "28.5px",
+    "theme": "arcilla"
+  },
+  {
+    "color": "rgb(157, 128, 159)",
+    "ratio": 4.9216210153622555,
+    "size": "28.5px",
+    "theme": "ciruela"
+  }
+]

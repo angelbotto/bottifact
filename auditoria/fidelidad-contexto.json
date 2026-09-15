@@ -1,0 +1,5 @@
+{
+  "context": "Lo que sigue. · #nota-contexto · ¿y si cambia el texto?",
+  "expected": "¿y si cambia el texto?",
+  "open": true
+}

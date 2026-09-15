@@ -1,0 +1,48 @@
+{
+  "networkSounds": 0,
+  "playing": {
+    "animations": 40,
+    "voices": 1
+  },
+  "samples": {
+    "click": {
+      "channels": 2,
+      "duration": 0.0478125,
+      "sampleRate": 48000
+    },
+    "hover": {
+      "channels": 2,
+      "duration": 0.10714583333333333,
+      "sampleRate": 48000
+    },
+    "negative": {
+      "channels": 2,
+      "duration": 1.8202916666666666,
+      "sampleRate": 48000
+    },
+    "pencil-1": {
+      "channels": 2,
+      "duration": 2.1813333333333333,
+      "sampleRate": 48000
+    },
+    "pencil-2": {
+      "channels": 2,
+      "duration": 2.5653333333333332,
+      "sampleRate": 48000
+    },
+    "pencil-3": {
+      "channels": 2,
+      "duration": 3.034666666666667,
+      "sampleRate": 48000
+    },
+    "positive": {
+      "channels": 2,
+      "duration": 0.8571458333333334,
+      "sampleRate": 48000
+    }
+  },
+  "stopped": {
+    "animations": 0,
+    "voices": 0
+  }
+}
