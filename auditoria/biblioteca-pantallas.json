@@ -345,13 +345,13 @@
       },
       {
         "content": 544,
-        "end": 308,
+        "end": 264,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Actividad semanal, desplazable",
         "overflow": "auto",
-        "width": 236
+        "width": 280
       },
       {
         "content": 4225,
@@ -364,8 +364,8 @@
         "width": 234
       },
       {
-        "content": 958,
-        "end": 722,
+        "content": 1058,
+        "end": 822,
         "focus": 0,
         "inside": true,
         "kind": "galeria-pista",
@@ -2923,13 +2923,13 @@
       },
       {
         "content": 544,
-        "end": 308,
+        "end": 264,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Actividad semanal, desplazable",
         "overflow": "auto",
-        "width": 236
+        "width": 280
       },
       {
         "content": 4225,
@@ -2942,8 +2942,8 @@
         "width": 234
       },
       {
-        "content": 958,
-        "end": 722,
+        "content": 1058,
+        "end": 822,
         "focus": 0,
         "inside": true,
         "kind": "galeria-pista",
@@ -5501,13 +5501,13 @@
       },
       {
         "content": 544,
-        "end": 308,
+        "end": 264,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Actividad semanal, desplazable",
         "overflow": "auto",
-        "width": 236
+        "width": 280
       },
       {
         "content": 4225,
@@ -5520,8 +5520,8 @@
         "width": 234
       },
       {
-        "content": 958,
-        "end": 722,
+        "content": 1058,
+        "end": 822,
         "focus": 0,
         "inside": true,
         "kind": "galeria-pista",
@@ -8079,13 +8079,13 @@
       },
       {
         "content": 544,
-        "end": 308,
+        "end": 264,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Actividad semanal, desplazable",
         "overflow": "auto",
-        "width": 236
+        "width": 280
       },
       {
         "content": 4225,
@@ -8098,8 +8098,8 @@
         "width": 234
       },
       {
-        "content": 958,
-        "end": 722,
+        "content": 1058,
+        "end": 822,
         "focus": 0,
         "inside": true,
         "kind": "galeria-pista",
@@ -10657,13 +10657,13 @@
       },
       {
         "content": 544,
-        "end": 308,
+        "end": 264,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Actividad semanal, desplazable",
         "overflow": "auto",
-        "width": 236
+        "width": 280
       },
       {
         "content": 4225,
@@ -10676,8 +10676,8 @@
         "width": 234
       },
       {
-        "content": 958,
-        "end": 722,
+        "content": 1058,
+        "end": 822,
         "focus": 0,
         "inside": true,
         "kind": "galeria-pista",
@@ -13235,13 +13235,13 @@
       },
       {
         "content": 544,
-        "end": 308,
+        "end": 264,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Actividad semanal, desplazable",
         "overflow": "auto",
-        "width": 236
+        "width": 280
       },
       {
         "content": 4225,
@@ -13254,8 +13254,8 @@
         "width": 234
       },
       {
-        "content": 958,
-        "end": 722,
+        "content": 1058,
+        "end": 822,
         "focus": 0,
         "inside": true,
         "kind": "galeria-pista",
@@ -15813,13 +15813,13 @@
       },
       {
         "content": 544,
-        "end": 238,
+        "end": 194,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Actividad semanal, desplazable",
         "overflow": "auto",
-        "width": 306
+        "width": 350
       },
       {
         "content": 4225,
@@ -15832,8 +15832,8 @@
         "width": 304
       },
       {
-        "content": 1159,
-        "end": 853,
+        "content": 1277,
+        "end": 971,
         "focus": 0,
         "inside": true,
         "kind": "galeria-pista",
@@ -18391,13 +18391,13 @@
       },
       {
         "content": 544,
-        "end": 238,
+        "end": 194,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Actividad semanal, desplazable",
         "overflow": "auto",
-        "width": 306
+        "width": 350
       },
       {
         "content": 4225,
@@ -18410,8 +18410,8 @@
         "width": 304
       },
       {
-        "content": 1159,
-        "end": 853,
+        "content": 1277,
+        "end": 971,
         "focus": 0,
         "inside": true,
         "kind": "galeria-pista",
@@ -20969,13 +20969,13 @@
       },
       {
         "content": 544,
-        "end": 238,
+        "end": 194,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Actividad semanal, desplazable",
         "overflow": "auto",
-        "width": 306
+        "width": 350
       },
       {
         "content": 4225,
@@ -20988,8 +20988,8 @@
         "width": 304
       },
       {
-        "content": 1159,
-        "end": 853,
+        "content": 1277,
+        "end": 971,
         "focus": 0,
         "inside": true,
         "kind": "galeria-pista",
@@ -23547,13 +23547,13 @@
       },
       {
         "content": 544,
-        "end": 238,
+        "end": 194,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Actividad semanal, desplazable",
         "overflow": "auto",
-        "width": 306
+        "width": 350
       },
       {
         "content": 4225,
@@ -23566,8 +23566,8 @@
         "width": 304
       },
       {
-        "content": 1159,
-        "end": 853,
+        "content": 1277,
+        "end": 971,
         "focus": 0,
         "inside": true,
         "kind": "galeria-pista",
@@ -26125,13 +26125,13 @@
       },
       {
         "content": 544,
-        "end": 238,
+        "end": 194,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Actividad semanal, desplazable",
         "overflow": "auto",
-        "width": 306
+        "width": 350
       },
       {
         "content": 4225,
@@ -26144,8 +26144,8 @@
         "width": 304
       },
       {
-        "content": 1159,
-        "end": 853,
+        "content": 1277,
+        "end": 971,
         "focus": 0,
         "inside": true,
         "kind": "galeria-pista",
@@ -28703,13 +28703,13 @@
       },
       {
         "content": 544,
-        "end": 238,
+        "end": 194,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Actividad semanal, desplazable",
         "overflow": "auto",
-        "width": 306
+        "width": 350
       },
       {
         "content": 4225,
@@ -28722,8 +28722,8 @@
         "width": 304
       },
       {
-        "content": 1159,
-        "end": 853,
+        "content": 1277,
+        "end": 971,
         "focus": 0,
         "inside": true,
         "kind": "galeria-pista",
@@ -31280,14 +31280,14 @@
         "width": 918
       },
       {
-        "content": 992,
+        "content": 560,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Actividad semanal, desplazable",
         "overflow": "auto",
-        "width": 992
+        "width": 560
       },
       {
         "content": 4225,
@@ -31300,8 +31300,8 @@
         "width": 918
       },
       {
-        "content": 1476,
-        "end": 484,
+        "content": 1452,
+        "end": 460,
         "focus": 0,
         "inside": true,
         "kind": "galeria-pista",
@@ -33858,14 +33858,14 @@
         "width": 918
       },
       {
-        "content": 992,
+        "content": 560,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Actividad semanal, desplazable",
         "overflow": "auto",
-        "width": 992
+        "width": 560
       },
       {
         "content": 4225,
@@ -33878,8 +33878,8 @@
         "width": 918
       },
       {
-        "content": 1476,
-        "end": 484,
+        "content": 1452,
+        "end": 460,
         "focus": 0,
         "inside": true,
         "kind": "galeria-pista",
@@ -36436,14 +36436,14 @@
         "width": 918
       },
       {
-        "content": 992,
+        "content": 560,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Actividad semanal, desplazable",
         "overflow": "auto",
-        "width": 992
+        "width": 560
       },
       {
         "content": 4225,
@@ -36456,8 +36456,8 @@
         "width": 918
       },
       {
-        "content": 1476,
-        "end": 484,
+        "content": 1452,
+        "end": 460,
         "focus": 0,
         "inside": true,
         "kind": "galeria-pista",
@@ -39014,14 +39014,14 @@
         "width": 918
       },
       {
-        "content": 992,
+        "content": 560,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Actividad semanal, desplazable",
         "overflow": "auto",
-        "width": 992
+        "width": 560
       },
       {
         "content": 4225,
@@ -39034,8 +39034,8 @@
         "width": 918
       },
       {
-        "content": 1476,
-        "end": 484,
+        "content": 1452,
+        "end": 460,
         "focus": 0,
         "inside": true,
         "kind": "galeria-pista",
@@ -41592,14 +41592,14 @@
         "width": 918
       },
       {
-        "content": 992,
+        "content": 560,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Actividad semanal, desplazable",
         "overflow": "auto",
-        "width": 992
+        "width": 560
       },
       {
         "content": 4225,
@@ -41612,8 +41612,8 @@
         "width": 918
       },
       {
-        "content": 1476,
-        "end": 484,
+        "content": 1452,
+        "end": 460,
         "focus": 0,
         "inside": true,
         "kind": "galeria-pista",
@@ -44170,14 +44170,14 @@
         "width": 918
       },
       {
-        "content": 992,
+        "content": 560,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Actividad semanal, desplazable",
         "overflow": "auto",
-        "width": 992
+        "width": 560
       },
       {
         "content": 4225,
@@ -44190,8 +44190,8 @@
         "width": 918
       },
       {
-        "content": 1476,
-        "end": 484,
+        "content": 1452,
+        "end": 460,
         "focus": 0,
         "inside": true,
         "kind": "galeria-pista",

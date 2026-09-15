@@ -14,12 +14,17 @@ evaluate('document.querySelector("[data-aviso-animado]").scrollIntoView({block:"
 r=evaluate('(()=>{const e=document.querySelector("[data-aviso-animado]"),a=NotaPiezasEditoriales.get(e);a.play();Object.defineProperty(a.motion,"matches",{configurable:true,value:true});a.motion.dispatchEvent(new Event("change"));a.play();const stopped=!a.animating;delete a.motion.matches;a.destroy();const removed=!e.querySelector(".aviso-pulso");NotaPiezasEditoriales.init(e);return {stopped,removed,one:e.querySelectorAll(".aviso-pulso").length===1}})()');assert all(r.values()),r
 save('piezas-editoriales-pulso.json',{'method':'Orca scroll, frames presentados y API de repetición. Reducción mediante evento MQL explícito.','result':r})
 evaluate('document.querySelector("[data-galeria]").scrollIntoView({block:"center",behavior:"instant"});true');settle()
-evaluate('document.querySelector("[data-galeria-siguiente]").click();true');settle();evaluate('new Promise(r=>setTimeout(()=>r(true),800))');assert evaluate('document.querySelector("[data-galeria-pista]").scrollLeft')>0
-# En los límites usamos movimiento reducido para comprobar la posición sin depender de una transición.
-evaluate('(()=>{const e=document.querySelector("[data-galeria]"),a=NotaPiezasEditoriales.get(e),t=e.querySelector("[data-galeria-pista]");Object.defineProperty(a.motion,"matches",{configurable:true,value:true});a.motion.dispatchEvent(new Event("change"));t.scrollTo({left:t.scrollWidth,behavior:"instant"});return true})()');settle()
-r=evaluate('({disabled:document.querySelector("[data-galeria-siguiente]").disabled,left:document.querySelector("[data-galeria-pista]").scrollLeft,max:document.querySelector("[data-galeria-pista]").scrollWidth-document.querySelector("[data-galeria-pista]").clientWidth})');assert r['disabled'] and abs(r['left']-r['max'])<2,r
-evaluate('document.querySelector("[data-galeria-anterior]").click();true');settle();assert evaluate('document.querySelector("[data-galeria-pista]").scrollLeft')<r['max']-1
-evaluate('(()=>{const e=document.querySelector("[data-galeria]"),a=NotaPiezasEditoriales.get(e);delete a.motion.matches;a.destroy();NotaPiezasEditoriales.init(e);return true})()');save('piezas-editoriales-galeria.json',{'method':'Clics DOM entre frames de Orca; desplazamiento real. Límite y regreso con MQL reducido explícito.','end':r,'return':True})
+# Galería nativa: foco y desplazamiento local; Orca keypress no entrega keydown en esta sesión.
+evaluate('document.querySelector("[data-galeria-pista]").focus();true')
+evaluate('document.querySelector("[data-galeria-pista]").scrollBy({left:80,behavior:"instant"});true');settle()
+assert evaluate('document.querySelector("[data-galeria-pista]").scrollLeft')>0
+assert not evaluate('document.querySelector("[data-galeria] button")!==null')
+evaluate('(()=>{const t=document.querySelector("[data-galeria-pista]");t.scrollTo({left:t.scrollWidth,behavior:"instant"});return true})()');settle()
+r=evaluate('({left:document.querySelector("[data-galeria-pista]").scrollLeft,max:document.querySelector("[data-galeria-pista]").scrollWidth-document.querySelector("[data-galeria-pista]").clientWidth,status:document.querySelector("[data-galeria-estado]").textContent})');assert abs(r['left']-r['max'])<2,r
+evaluate('document.querySelector("[data-galeria-pista]").scrollBy({left:-80,behavior:"instant"});true');settle();assert evaluate('document.querySelector("[data-galeria-pista]").scrollLeft')<r['max']-1
+# Compatibilidad: los controles anteriores siguen siendo opcionales y funcionales.
+r2=evaluate('''(()=>{const e=document.querySelector("[data-galeria]"),a=NotaPiezasEditoriales.get(e);a.destroy();e.insertAdjacentHTML("beforeend",'<button data-galeria-anterior>Anterior</button><button data-galeria-siguiente>Siguiente</button>');NotaPiezasEditoriales.init(e);const api=NotaPiezasEditoriales.get(e);Object.defineProperty(api.motion,"matches",{configurable:true,value:true});e.querySelector("[data-galeria-pista]").scrollLeft=0;e.querySelector("[data-galeria-siguiente]").click();const advanced=e.querySelector("[data-galeria-pista]").scrollLeft>0;api.destroy();e.querySelectorAll("button").forEach(b=>b.remove());NotaPiezasEditoriales.init(e);return {advanced}})()''');assert r2['advanced'],r2
+save('piezas-editoriales-galeria.json',{'method':'Región enfocada; desplazamiento por scrollBy/scrollTo. Orca keypress no produjo keydown: no acredita teclado físico. Variante anterior con clic DOM y MQL reducido explícito.','end':r,'legacy':r2})
 print('Pulso y galería: frames, entrada/salida, reducción, avance/final/regreso y ciclo correctos.',flush=True)
 fresh();records=[]
 for w,h in [(320,740),(390,844),(1440,960)]:

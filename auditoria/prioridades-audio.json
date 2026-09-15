@@ -1,0 +1,32 @@
+{
+  "method": "Orca click nativo; AnalyserNode después de gain maestro, 30 muestras cada 20 ms. Error con constructor simulado. No audición manual ni prueba de salida del MacBook.",
+  "tone": {
+    "enabled": true,
+    "peak": 0.07704111933708191,
+    "plays": 1,
+    "rms": 0.03898667284734376,
+    "state": "running",
+    "trusted": true
+  },
+  "pencil": {
+    "enabled": true,
+    "peak": 0.10529999434947968,
+    "plays": 3,
+    "rms": 0.05772663189256321,
+    "state": "running",
+    "trusted": true
+  },
+  "zero": {
+    "enabled": true,
+    "peak": 0.036066822707653046,
+    "plays": 4,
+    "rms": 0.00974054016662899,
+    "state": "running",
+    "trusted": true,
+    "settledPeak": 0
+  },
+  "blocked": {
+    "enabled": false,
+    "status": "No se pudo activar el audio. Pulsa Probar sonido; revisa si esta pestaña está silenciada."
+  }
+}

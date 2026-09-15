@@ -1,9 +1,11 @@
 {
-  "method": "Clics DOM entre frames de Orca; desplazamiento real. Límite y regreso con MQL reducido explícito.",
+  "method": "Región enfocada; desplazamiento por scrollBy/scrollTo. Orca keypress no produjo keydown: no acredita teclado físico. Variante anterior con clic DOM y MQL reducido explícito.",
   "end": {
-    "disabled": true,
-    "left": 484,
-    "max": 484
+    "left": 460,
+    "max": 460,
+    "status": "Vista 2 de 4. Desliza para recorrer."
   },
-  "return": true
+  "legacy": {
+    "advanced": true
+  }
 }
