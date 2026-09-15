@@ -13,7 +13,7 @@
    if(!visible.length){const body=document.createElement('tbody'),row=body.insertRow(),cell=row.insertCell();cell.colSpan=4;cell.textContent='No hay filas que coincidan. Limpia los filtros para volver a empezar.';table.append(body);parts.push(body);}
    for(const [name,items] of [...groups].sort(([a],[b])=>a.localeCompare(b,'es'))){const body=document.createElement('tbody');if(group){const tr=body.insertRow(),th=document.createElement('th');th.scope='rowgroup';th.colSpan=4;th.className='tabla-grupo';th.textContent=name+' · '+items.length+' registros';tr.append(th);}items.forEach(r=>body.append(r));table.append(body);parts.push(body);}
    const total=visible.reduce((s,r)=>s+Number(r.cells[3].dataset.valor),0);
-   status.textContent=visible.length+' de '+rows.length+' registros · '+total.toLocaleString('es-CO')+' COP en la vista actual.';
+   status.textContent=visible.length+' de '+rows.length+' registros · '+total.toLocaleString('es-CO')+' '+(el.dataset.unidad?.trim()||'COP')+' en la vista actual.';
    headers.forEach((h,i)=>{h.setAttribute('aria-sort',i===column?(direction===1?'ascending':'descending'):'none');const hint=h.querySelector('[data-indicador-orden]');if(hint)hint.textContent=i===column?(direction===1?'↑':'↓'):'↕';});
    const hidden=[...form.querySelectorAll('[data-columna]:not(:checked)')].map(e=>Number(e.dataset.columna));headers.forEach((h,i)=>h.hidden=hidden.includes(i));rows.forEach(r=>[...r.cells].forEach((c,i)=>c.hidden=hidden.includes(i)));table.querySelectorAll('.tabla-grupo').forEach(th=>th.colSpan=4-hidden.length);const count=form.querySelector('[data-filtros-cuenta]');if(count)count.textContent=state?'1 · ':'';
   }
