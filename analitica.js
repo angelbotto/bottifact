@@ -3,7 +3,7 @@
 (() => {
   'use strict';
   const instances=new WeakMap(),NS='http://www.w3.org/2000/svg',DAY=86400000;
-  const fmt=n=>new Intl.NumberFormat('es-CO',{maximumFractionDigits:2}).format(n);
+  const fmt=n=>new Intl.NumberFormat('es-CO',Math.abs(n)>=1e6||(n!==0&&Math.abs(n)<.001)?{maximumSignificantDigits:4,notation:'scientific'}:{maximumSignificantDigits:6}).format(n);
   const el=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e;};
   const svg=(tag,attrs={},text)=>{const e=document.createElementNS(NS,tag);for(const [k,v]of Object.entries(attrs))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;return e;};
   const date=s=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(s))throw Error('Fecha ISO requerida.');const n=Date.parse(s+'T00:00:00Z');if(!Number.isFinite(n)||new Date(n).toISOString().slice(0,10)!==s)throw Error('Fecha inválida.');return n;};
@@ -116,14 +116,14 @@
       this.key('Hueca: cierre ≥ apertura',2);this.key('Rellena: cierre < apertura',0);this.text(360,369,'Fecha · distancia temporal real','middle');
     }
     mapBase(){
-      this.chart.setAttribute('viewBox','0 0 720 480');const project=([lon,lat])=>[180+(lon+80)*25,435-(lat+5)*25];
+      this.chart.setAttribute('viewBox','0 0 720 480');const project=([lon,lat])=>[180+(lon+80)*21,440-(lat+5)*21];
       for(const ring of NotaGeografia.colombia.coordinates)this.add('path',{d:'M'+ring.map(project).map(p=>p.join(',')).join(' L')+' Z',fill:'var(--calor-0)',stroke:'var(--escena-linea)','stroke-width':1.5});
       this.text(580,50,'N ↑','middle');this.text(100,470,'Colombia · coordenadas WGS84 · proyección equirectangular');return project;
     }
     rutas(){
       const project=this.mapBase(),max=Math.max(...this.model.rows.map(r=>r.values[4]))||1;this.max=max;
       this.model.rows.forEach((r,i)=>{const[a,b,c,d,v]=r.values,p=project([b,a]),q=project([d,c]);if(v>0){const n=this.add('path',{d:`M${p} Q${(p[0]+q[0])/2+35},${(p[1]+q[1])/2} ${q}`,fill:'none',stroke:this.color(i),'stroke-width':v/max*8});this.mark(n,i);} [p,q].forEach(pt=>this.add('circle',{cx:pt[0],cy:pt[1],r:4,fill:this.color(i)}));this.key(`${i+1}. ${r.label} · ${fmt(v)} ${this.model.unit}`,i);this.text(q[0]+9,q[1],String(i+1));});
-      this.text(100,25,`Grosor 0–8 px = 0–${fmt(max)} ${this.model.unit}`);
+      this.text(100,25,`Grosor proporcional · máximo ${fmt(max)} ${this.model.unit}`);
     }
     burbujas(){
       const project=this.mapBase(),max=Math.max(...this.model.rows.map(r=>r.values[2]))||1;this.max=max;

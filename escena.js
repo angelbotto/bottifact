@@ -160,7 +160,9 @@
       }else{
         const xd=extent(data.map(r=>r.values[0])),zd=extent(data.map(r=>r.values[1]));
         this.positionDomains=[xd,zd];
-        const sx=v=>-1.2+(v-xd[0])/(xd[1]-xd[0])*2.4,sz=v=>-1.2+(v-zd[0])/(zd[1]-zd[0])*2.4;
+        // X y Z comparten metros: conservar la proporción física de la planta.
+        const span=Math.max(xd[1]-xd[0],zd[1]-zd[0]);
+        const sx=v=>(v-(xd[0]+xd[1])/2)/span*2.4,sz=v=>(v-(zd[0]+zd[1])/2)/span*2.4;
         data.forEach((r,i)=>{
           const [x,z,used,capacity]=r.values,h=sy(used),ch=sy(capacity);
           mesh(new THREE.BoxGeometry(.28,h,.28),[sx(x),base+h/2,sz(z)],i);
@@ -168,8 +170,8 @@
           const outline=new THREE.LineSegments(edges,this.keep(new THREE.LineBasicMaterial()));outline.position.set(sx(x),base+ch/2,sz(z));this.group.add(outline);this.lines.push(outline);
           this.text(String(i+1),[sx(x),base-.25,sz(z)],.24);
         });
-        this.line([-1.2,base,1.7],[1.2,base,1.7]);this.text('X '+format(xd[0])+'–'+format(xd[1])+' m',[0,base-.55,1.7],.23);
-        this.line([1.7,base,-1.2],[1.7,base,1.2]);this.text('Z '+format(zd[0])+'–'+format(zd[1])+' m',[1.7,base-.55,0],.23);
+        this.line([sx(xd[0]),base,sz(zd[1])+.5],[sx(xd[1]),base,sz(zd[1])+.5]);this.text('X '+format(xd[0])+'–'+format(xd[1])+' m',[0,base-.55,1.7],.23);
+        this.line([sx(xd[1])+.5,base,sz(zd[0])],[sx(xd[1])+.5,base,sz(zd[1])]);this.text('Z '+format(zd[0])+'–'+format(zd[1])+' m',[1.7,base-.55,0],.23);
       }
       this.line([-1.9,base,0],[-1.9,base+1.8,0]);
       [0,.5,1].forEach(t=>this.text(format(t*max),[-2.15,base+t*1.8,0],.24));

@@ -3072,7 +3072,7 @@ body:has(.revision-barra) { padding-bottom:0; }
     </table>
   </div>
   <figcaption>Almacén ficticio. Coordenadas en planta; sólido = posiciones ocupadas, contorno = capacidad total.</figcaption>
-</figure><div class="receta-guia"><p><strong>Cuándo:</strong> ver dónde queda espacio dentro de una distribución de almacén. No para decidir seguridad estructural, altura real de estibas o rutas de evacuación.</p><p><strong>Límite:</strong> Incluye Three 0.160.1 y escena.js. 1–12 ubicaciones con X/Z finitos en metros, capacidad positiva y 0 ≤ ocupados ≤ capacidad. La altura representa cantidad de posiciones, no metros. No evita superposición si duplicas coordenadas; usa ubicaciones distintas y separadas. Comparte ciclo de vida de NotaEscena y tabla permanente; no es un gemelo digital conectado.</p></div><details class="receta-copia ancho"><summary>Copiar HTML · Capacidad de almacén 3D</summary><p class="procedencia">Dependencias: fuentes.css, estilo.css, audio.js, controles.js, interacciones.js, https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js, escena.js</p><div class="codigo"><div class="cab"><span>Capacidad de almacén 3D</span><button type="button" data-copiar="biblioteca-codigo-almacen" aria-label="Copiar HTML de Capacidad de almacén 3D">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Capacidad de almacén 3D, desplazable"><code id="biblioteca-codigo-almacen">&lt;figure class=&quot;ancho&quot; id=&quot;analitica-almacen&quot; data-escena=&quot;almacen&quot; data-unidad=&quot;posiciones&quot;&gt;
+</figure><div class="receta-guia"><p><strong>Cuándo:</strong> ver dónde queda espacio dentro de una distribución de almacén. No para decidir seguridad estructural, altura real de estibas o rutas de evacuación.</p><p><strong>Límite:</strong> Incluye Three 0.160.1 y escena.js. 1–12 ubicaciones con X/Z finitos en metros, capacidad positiva y 0 ≤ ocupados ≤ capacidad. X/Z comparten escala en metros; la huella de cada caja es constante, no mide la estantería. La altura representa cantidad de posiciones, no metros. No evita superposición si duplicas coordenadas; usa ubicaciones distintas y separadas. Comparte ciclo de vida de NotaEscena y tabla permanente; no es un gemelo digital conectado.</p></div><details class="receta-copia ancho"><summary>Copiar HTML · Capacidad de almacén 3D</summary><p class="procedencia">Dependencias: fuentes.css, estilo.css, audio.js, controles.js, interacciones.js, https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js, escena.js</p><div class="codigo"><div class="cab"><span>Capacidad de almacén 3D</span><button type="button" data-copiar="biblioteca-codigo-almacen" aria-label="Copiar HTML de Capacidad de almacén 3D">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Capacidad de almacén 3D, desplazable"><code id="biblioteca-codigo-almacen">&lt;figure class=&quot;ancho&quot; id=&quot;analitica-almacen&quot; data-escena=&quot;almacen&quot; data-unidad=&quot;posiciones&quot;&gt;
   &lt;div class=&quot;tabla-caja densa&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Datos de Capacidad de almacén 3D, desplazables&quot;&gt;
     &lt;table&gt;&lt;caption&gt;Capacidad de almacén 3D&lt;/caption&gt;
       &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Ubicación&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;X (m)&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Z (m)&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Ocupados&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Capacidad&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
@@ -3458,7 +3458,7 @@ window.NotaGeografia=Object.freeze({
 (() => {
   'use strict';
   const instances=new WeakMap(),NS='http://www.w3.org/2000/svg',DAY=86400000;
-  const fmt=n=>new Intl.NumberFormat('es-CO',{maximumFractionDigits:2}).format(n);
+  const fmt=n=>new Intl.NumberFormat('es-CO',Math.abs(n)>=1e6||(n!==0&&Math.abs(n)<.001)?{maximumSignificantDigits:4,notation:'scientific'}:{maximumSignificantDigits:6}).format(n);
   const el=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e;};
   const svg=(tag,attrs={},text)=>{const e=document.createElementNS(NS,tag);for(const [k,v]of Object.entries(attrs))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;return e;};
   const date=s=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(s))throw Error('Fecha ISO requerida.');const n=Date.parse(s+'T00:00:00Z');if(!Number.isFinite(n)||new Date(n).toISOString().slice(0,10)!==s)throw Error('Fecha inválida.');return n;};
@@ -3571,14 +3571,14 @@ window.NotaGeografia=Object.freeze({
       this.key('Hueca: cierre ≥ apertura',2);this.key('Rellena: cierre < apertura',0);this.text(360,369,'Fecha · distancia temporal real','middle');
     }
     mapBase(){
-      this.chart.setAttribute('viewBox','0 0 720 480');const project=([lon,lat])=>[180+(lon+80)*25,435-(lat+5)*25];
+      this.chart.setAttribute('viewBox','0 0 720 480');const project=([lon,lat])=>[180+(lon+80)*21,440-(lat+5)*21];
       for(const ring of NotaGeografia.colombia.coordinates)this.add('path',{d:'M'+ring.map(project).map(p=>p.join(',')).join(' L')+' Z',fill:'var(--calor-0)',stroke:'var(--escena-linea)','stroke-width':1.5});
       this.text(580,50,'N ↑','middle');this.text(100,470,'Colombia · coordenadas WGS84 · proyección equirectangular');return project;
     }
     rutas(){
       const project=this.mapBase(),max=Math.max(...this.model.rows.map(r=>r.values[4]))||1;this.max=max;
       this.model.rows.forEach((r,i)=>{const[a,b,c,d,v]=r.values,p=project([b,a]),q=project([d,c]);if(v>0){const n=this.add('path',{d:`M${p} Q${(p[0]+q[0])/2+35},${(p[1]+q[1])/2} ${q}`,fill:'none',stroke:this.color(i),'stroke-width':v/max*8});this.mark(n,i);} [p,q].forEach(pt=>this.add('circle',{cx:pt[0],cy:pt[1],r:4,fill:this.color(i)}));this.key(`${i+1}. ${r.label} · ${fmt(v)} ${this.model.unit}`,i);this.text(q[0]+9,q[1],String(i+1));});
-      this.text(100,25,`Grosor 0–8 px = 0–${fmt(max)} ${this.model.unit}`);
+      this.text(100,25,`Grosor proporcional · máximo ${fmt(max)} ${this.model.unit}`);
     }
     burbujas(){
       const project=this.mapBase(),max=Math.max(...this.model.rows.map(r=>r.values[2]))||1;this.max=max;
@@ -4952,7 +4952,9 @@ window.NotaGeografia=Object.freeze({
       }else{
         const xd=extent(data.map(r=>r.values[0])),zd=extent(data.map(r=>r.values[1]));
         this.positionDomains=[xd,zd];
-        const sx=v=>-1.2+(v-xd[0])/(xd[1]-xd[0])*2.4,sz=v=>-1.2+(v-zd[0])/(zd[1]-zd[0])*2.4;
+        // X y Z comparten metros: conservar la proporción física de la planta.
+        const span=Math.max(xd[1]-xd[0],zd[1]-zd[0]);
+        const sx=v=>(v-(xd[0]+xd[1])/2)/span*2.4,sz=v=>(v-(zd[0]+zd[1])/2)/span*2.4;
         data.forEach((r,i)=>{
           const [x,z,used,capacity]=r.values,h=sy(used),ch=sy(capacity);
           mesh(new THREE.BoxGeometry(.28,h,.28),[sx(x),base+h/2,sz(z)],i);
@@ -4960,8 +4962,8 @@ window.NotaGeografia=Object.freeze({
           const outline=new THREE.LineSegments(edges,this.keep(new THREE.LineBasicMaterial()));outline.position.set(sx(x),base+ch/2,sz(z));this.group.add(outline);this.lines.push(outline);
           this.text(String(i+1),[sx(x),base-.25,sz(z)],.24);
         });
-        this.line([-1.2,base,1.7],[1.2,base,1.7]);this.text('X '+format(xd[0])+'–'+format(xd[1])+' m',[0,base-.55,1.7],.23);
-        this.line([1.7,base,-1.2],[1.7,base,1.2]);this.text('Z '+format(zd[0])+'–'+format(zd[1])+' m',[1.7,base-.55,0],.23);
+        this.line([sx(xd[0]),base,sz(zd[1])+.5],[sx(xd[1]),base,sz(zd[1])+.5]);this.text('X '+format(xd[0])+'–'+format(xd[1])+' m',[0,base-.55,1.7],.23);
+        this.line([sx(xd[1])+.5,base,sz(zd[0])],[sx(xd[1])+.5,base,sz(zd[1])]);this.text('Z '+format(zd[0])+'–'+format(zd[1])+' m',[1.7,base-.55,0],.23);
       }
       this.line([-1.9,base,0],[-1.9,base+1.8,0]);
       [0,.5,1].forEach(t=>this.text(format(t*max),[-2.15,base+t*1.8,0],.24));
