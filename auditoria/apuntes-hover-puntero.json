@@ -1,0 +1,19 @@
+{
+  "before": {
+    "fine": true,
+    "focus": false,
+    "height": 88,
+    "hover": false,
+    "opacity": "0",
+    "width": 1639
+  },
+  "after": {
+    "fine": true,
+    "focus": false,
+    "height": 88,
+    "hover": false,
+    "opacity": "1",
+    "width": 1639
+  },
+  "tool": "orca hover con referencias de snapshot; viewport real informado por DOM"
+}

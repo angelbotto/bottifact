@@ -523,6 +523,12 @@ accesible específico (izquierdo/derecho) y title. Copiar código/terminal usa d
 cabecera sólo dice CSS/HTML/etc., se integra el icono en la esquina y se conserva el lenguaje
 para accesibilidad. Los nombres de archivo útiles permanecen visibles.
 
+En apuntes laterales, la repetición flota sobre el extremo superior del corchete, sin fila debajo.
+Se revela con hover o foco de teclado; en pantallas táctiles permanece disponible. Escritura,
+subrayado y la variante `<del data-subrayar="tachado">texto corregido</del>` se animan al entrar
+por primera vez un 30 % de su caja en pantalla. Al salir se completan y detienen; no se repiten
+en cada ida y vuelta del scroll. Mantén el contenido legible con movimiento reducido.
+
 El visor ofrece iconos directos Móvil/Tablet/Escritorio, proporción y otros tamaños en un menú,
 rotar, ajustar y reiniciar. No añadas rótulos visibles a esos controles. El comentario es una
 burbuja de una línea que crece, contexto plegable y acciones de guardar/cerrar con iconos;

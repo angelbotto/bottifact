@@ -3,7 +3,7 @@
   <h2>Hacer que la calidad se repita.</h2>
   <p>Nota Tikin ya tiene una identidad reconocible: lectura editorial, evidencia ancha, anotaciones con otra voz, controles discretos y escenas que se pueden explorar. El siguiente avance es que esa calidad se conserve al cambiar de documento, de agente y de equipo.</p>
   <p>Mi recomendación es dedicar la siguiente etapa a <strong>consistencia, composición y distribución</strong>. Después, ampliar las piezas que conectan evidencia con decisiones. Las 74 recetas actuales ofrecen una base suficiente para trabajar esas tres cosas con casos reales.</p>
-  <p class="secundario">Este documento es un plan propuesto. Las mejoras descritas todavía no están implementadas. La revisión parte de la versión 2026.09.15-controles.1, contrato 4, commit 0ff6d8c.</p>
+  <p class="secundario">Este documento es un plan propuesto. La revisión parte de la versión 2026.09.15-controles.1, contrato 4, commit 0ff6d8c. Después se ajustó la repetición flotante de apuntes, se aclaró la instrucción de sonido en la guía y se añadió el tachado animado. Las demás mejoras siguen propuestas.</p>
 </section>
 
 <div class="apuntes ancho" id="criterio-margen">
@@ -20,7 +20,7 @@
 <figure class="ancho" id="evidencia-revision">
   <div class="tabla-caja densa" role="region" tabindex="0" aria-label="Hallazgos de revisión y evidencia, desplazable">
     <table><caption>Hallazgos comprobados y su efecto práctico</caption><thead><tr><th scope="col">Hallazgo</th><th scope="col">Evidencia actual</th><th scope="col">Qué mejoraría</th></tr></thead><tbody>
-    <tr><th scope="row">Instrucciones acumuladas</th><td>SKILL.md tiene 536 líneas y 40.980 bytes. guia-uso.md exige en un pasaje activar sonido desde Apariencia, mientras otro ya documenta habilitación inicial y primer clic real.</td><td>Una regla vigente por comportamiento. Separar claramente el canal de sonido independiente y la base estándar; mover historia y auditorías fuera de las instrucciones de uso.</td></tr>
+    <tr><th scope="row">Instrucciones acumuladas</th><td>En el corte revisado, SKILL.md tenía 536 líneas y 40.980 bytes. guia-uso.md mezclaba activación desde Apariencia con habilitación inicial; ese pasaje ya se aclaró.</td><td>Una regla vigente por comportamiento. Separar claramente el canal de sonido independiente y la base estándar; mover historia y auditorías fuera de las instrucciones de uso.</td></tr>
     <tr><th scope="row">Descubrimiento desigual</th><td>biblioteca.html monta data-buscador-recetas; guia.html presenta los 74 enlaces sin montar ese buscador. catalogo.js ya contiene el filtro reutilizable.</td><td>El mismo buscador en ambas entradas, con etiquetas por intención, datos requeridos y alternativas relacionadas.</td></tr>
     <tr><th scope="row">Comentarios temporales</th><td>revision.js mantiene notes en memoria. Permite editar, borrar y copiar contexto; no guarda ni importa revisiones.</td><td>Borrador recuperable, exportar/importar JSON y anclas vinculadas a una versión del documento.</td></tr>
     <tr><th scope="row">Navegación extensa</th><td>La guía tiene 13 capítulos. En 320 px, la región de capítulos mide 280 px y su contenido 1.172 px; desplaza localmente sin desbordar el documento.</td><td>Conservar la navegación con barras / y añadir acceso directo a «Todos los capítulos», manteniendo visible el capítulo actual.</td></tr>
@@ -72,11 +72,27 @@
   </ol>
 </section>
 
+<section class="seccion" id="mas-posibilidades">
+  <h2>Otra tanda para explorar.</h2>
+  <p>Estas ampliaciones siguen propuestas. Empezaría por relato por pasos, sensibilidad y Gantt, según el próximo documento real que necesitemos construir.</p>
+  <ul>
+    <li><strong>Relato con una figura por pasos.</strong> Al avanzar por el artículo, una gráfica o mapa señala la evidencia del párrafo actual. Cada paso tiene título y alternativa estática; en móvil se puede recorrer sin una zona fija enorme.</li>
+    <li><strong>Flujos Sankey.</strong> Explicar cómo se reparte una cantidad entre etapas: ingresos y destinos del gasto, o pedidos y estados. Exige una unidad común, valores conservados y pérdidas explícitas.</li>
+    <li><strong>Cohortes.</strong> Comparar retención o recurrencia de grupos que empezaron en fechas distintas. Cada celda muestra base y denominador; un período todavía no observado no es un cero.</li>
+    <li><strong>Sensibilidad de escenarios.</strong> Mostrar qué supuesto mueve más el resultado. Un gráfico de tornado compara cambios frente a una misma base y permite restablecer parámetros; no atribuye probabilidades.</li>
+    <li><strong>Gantt editorial.</strong> Fechas, solapamientos, responsables y dependencias para una hoja de ruta. Debe distinguir plan y observación; una dependencia dibujada no implica un cálculo de ruta crítica.</li>
+    <li><strong>Imagen de evidencia ampliable.</strong> Zoom, zonas numeradas y notas contextuales sobre una captura, factura o prototipo. El original conserva resolución y descripción; los puntos deben poder recorrerse con teclado.</li>
+    <li><strong>Embudo con explicación.</strong> Volumen y conversión entre etapas, con abandonos y definición de cada paso. Sin base comparable entre etapas, usar una tabla de estados en vez de calcular conversión.</li>
+    <li><strong>Rangos de incertidumbre.</strong> Serie con intervalo y escenarios declarados para proyecciones. Debe explicar cómo se construyó el rango; no dibujar una banda que aparente confianza estadística sin sustento.</li>
+  </ul>
+</section>
+
 <section class="seccion" id="composicion">
   <h2>Enseñar a componer artículos y reportes.</h2>
   <p>La guía ya incluye ocho recorridos. Los ampliaría con ejemplos completos y comentados: por qué el componente aparece ahí, qué pregunta resuelve y cómo cambia en móvil. La evaluación debe premiar pertinencia, legibilidad y evidencia.</p>
   <p>Para un artículo: pregunta → argumento → ejemplo → matiz lateral → contrapunto → fuentes. Para un informe: conclusión provisional → comparación → explicación → límite → decisión. Para logística: corte → territorio → excepción → responsable → siguiente acción.</p>
   <p>Ejemplo de nota útil: el párrafo afirma «bajó el costo por entrega completada»; el subrayado señala el denominador y el margen pregunta «¿incluye devoluciones?». Si no hay cifras verificadas, el texto explica qué falta medir. Alternar izquierda y derecha acompaña el ritmo cuando ese matiz aporta.</p>
+  <p>Ejemplo ilustrativo de corrección visible: «La revisión tarda <del data-subrayar="tachado">cinco días</del> <ins>tres días</ins>». El tachado se dibuja al entrar en pantalla; el motivo del cambio debe explicarse en texto normal.</p>
   <p>Para blogs agregaría recetas de publicación con autoría, fecha, actualización, descripción, URL canónica y metadatos para compartir cuando exista una URL pública. Ghost, un sitio estático y un HTML de revisión necesitan instrucciones de salida distintas; el contenido y los componentes pueden compartir la misma base.</p>
 </section>
 

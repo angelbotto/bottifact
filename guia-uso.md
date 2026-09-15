@@ -50,8 +50,12 @@ y anota «¿incluye devoluciones?». Así la nota mejora la interpretación en l
    El contenedor `.apuntes.ancho` es hijo directo de la hoja o página. La nota cae después en móvil.
 4. Usa `data-mano="fuente" data-escritura-sonora`, Reenie Beanie incrustada, ID único y botón
    `data-mano-repetir="ese-id"`. No sustituyas por una fuente cursiva del sistema ni el alfabeto SVG antiguo.
-5. La escritura entra al verla; no empieza durante la carga fuera de pantalla. Sonidos requiere
-   clic explícito en Apariencia. Movimiento reducido muestra el texto completo y cancela audio/animación.
+5. La escritura y el subrayado entran al ver al menos un 30 % de su caja por primera vez;
+   no empiezan durante la carga fuera de pantalla. El sonido habilitado espera el primer clic real
+   y respeta el silencio guardado. Movimiento reducido muestra el texto completo y cancela audio/animación.
+6. El icono de repetición flota sobre el corchete y aparece con hover o foco; en táctil queda visible.
+   No añadas una fila de controles bajo el apunte. Para una corrección editorial breve usa
+   `<del data-subrayar="tachado">texto anterior</del>` y escribe la sustitución y su motivo.
 
 Alterna lados sólo cuando el argumento se beneficie de una segunda voz. Para una precisión formal,
 una definición larga o la única advertencia de seguridad usa `glosario`, `referencias` o `avisos-animados`.

@@ -1,0 +1,240 @@
+{
+  "initial": {
+    "right": false,
+    "strike": false
+  },
+  "scroll": [
+    {
+      "calls": 1,
+      "played": true,
+      "scrollY": 4952,
+      "selector": "[data-subrayar=tachado]",
+      "visible": true
+    },
+    {
+      "calls": 18,
+      "played": true,
+      "scrollY": 5316,
+      "selector": "#plan-nota-derecha",
+      "visible": true
+    }
+  ],
+  "geometry": [
+    {
+      "before": 56,
+      "boxes": [
+        {
+          "absolute": true,
+          "inside": true,
+          "name": true
+        },
+        {
+          "absolute": true,
+          "inside": true,
+          "name": true
+        }
+      ],
+      "margin": "0px",
+      "overflow": false,
+      "theme": "light",
+      "width": 320,
+      "without": 56
+    },
+    {
+      "before": 56,
+      "boxes": [
+        {
+          "absolute": true,
+          "inside": true,
+          "name": true
+        },
+        {
+          "absolute": true,
+          "inside": true,
+          "name": true
+        }
+      ],
+      "margin": "0px",
+      "overflow": false,
+      "theme": "dark",
+      "width": 320,
+      "without": 56
+    },
+    {
+      "before": 56,
+      "boxes": [
+        {
+          "absolute": true,
+          "inside": true,
+          "name": true
+        },
+        {
+          "absolute": true,
+          "inside": true,
+          "name": true
+        }
+      ],
+      "margin": "0px",
+      "overflow": false,
+      "theme": "sea",
+      "width": 320,
+      "without": 56
+    },
+    {
+      "before": 56,
+      "boxes": [
+        {
+          "absolute": true,
+          "inside": true,
+          "name": true
+        },
+        {
+          "absolute": true,
+          "inside": true,
+          "name": true
+        }
+      ],
+      "margin": "0px",
+      "overflow": false,
+      "theme": "light",
+      "width": 390,
+      "without": 56
+    },
+    {
+      "before": 56,
+      "boxes": [
+        {
+          "absolute": true,
+          "inside": true,
+          "name": true
+        },
+        {
+          "absolute": true,
+          "inside": true,
+          "name": true
+        }
+      ],
+      "margin": "0px",
+      "overflow": false,
+      "theme": "dark",
+      "width": 390,
+      "without": 56
+    },
+    {
+      "before": 56,
+      "boxes": [
+        {
+          "absolute": true,
+          "inside": true,
+          "name": true
+        },
+        {
+          "absolute": true,
+          "inside": true,
+          "name": true
+        }
+      ],
+      "margin": "0px",
+      "overflow": false,
+      "theme": "sea",
+      "width": 390,
+      "without": 56
+    },
+    {
+      "before": 88,
+      "boxes": [
+        {
+          "absolute": true,
+          "inside": true,
+          "name": true
+        },
+        {
+          "absolute": true,
+          "inside": true,
+          "name": true
+        }
+      ],
+      "margin": "0px",
+      "overflow": false,
+      "theme": "light",
+      "width": 1440,
+      "without": 88
+    },
+    {
+      "before": 88,
+      "boxes": [
+        {
+          "absolute": true,
+          "inside": true,
+          "name": true
+        },
+        {
+          "absolute": true,
+          "inside": true,
+          "name": true
+        }
+      ],
+      "margin": "0px",
+      "overflow": false,
+      "theme": "dark",
+      "width": 1440,
+      "without": 88
+    },
+    {
+      "before": 88,
+      "boxes": [
+        {
+          "absolute": true,
+          "inside": true,
+          "name": true
+        },
+        {
+          "absolute": true,
+          "inside": true,
+          "name": true
+        }
+      ],
+      "margin": "0px",
+      "overflow": false,
+      "theme": "sea",
+      "width": 1440,
+      "without": 88
+    }
+  ],
+  "focus": {
+    "active": true,
+    "opacity": "1",
+    "outline": "none"
+  },
+  "reduced": [
+    {
+      "animations": 0,
+      "disabled": true,
+      "reduced": true
+    },
+    {
+      "animations": 0,
+      "disabled": true,
+      "reduced": true
+    },
+    {
+      "animations": 0,
+      "disabled": true,
+      "reduced": true
+    },
+    {
+      "animations": 0,
+      "disabled": true,
+      "reduced": true
+    },
+    {
+      "animations": 0,
+      "disabled": true,
+      "reduced": true
+    }
+  ],
+  "limits": [
+    "Scroll por CLI y observadores reales; foco por DOM, no teclado físico.",
+    "Viewports emulados; no se acredita tacto físico ni audición humana."
+  ]
+}
