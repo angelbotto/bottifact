@@ -78,7 +78,7 @@
     const panel=menu.querySelector('.apariencia-panel'),trigger=menu.querySelector('summary');
     const viewport=window.visualViewport,w=viewport?.width||innerWidth,h=viewport?.height||innerHeight;
     const ox=viewport?.offsetLeft||0,oy=viewport?.offsetTop||0,gap=12;
-    panel.style.width=Math.max(1,Math.min(menu.querySelector('.apariencia-explorador')?360:324,w-gap*2))+'px';
+    panel.style.width=Math.max(1,Math.min(menu.querySelector('.apariencia-explorador')?560:324,w-gap*2))+'px';
     panel.style.maxHeight=Math.max(1,h-gap*2)+'px';
     const r=trigger.getBoundingClientRect(),height=panel.getBoundingClientRect().height;
     if(r.bottom<oy||r.top>oy+h){close(menu);return;}
@@ -203,6 +203,9 @@
   update();
 
   document.querySelectorAll('[data-copiar]').forEach(button => {
+    if(button.closest('.codigo,.terminal')){button.classList.add('nota-icono');button.setAttribute('aria-label',button.getAttribute('aria-label')||'Copiar código');button.title=button.getAttribute('aria-label');button.innerHTML='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V3H4v13h4"/></svg>';
+      const block=button.closest('.codigo,.terminal'),heading=block.querySelector('.cab > span:not(.copia-estado)');block.classList.add('codigo-compacto');if(heading&&/^(CSS|HTML|JavaScript|TypeScript|JSON|Python|SQL|Shell|Bash|Terminal)$/i.test(heading.textContent.trim()))block.classList.add('codigo-sin-titulo');
+    }
     button.addEventListener('click',async () => {
       const code = document.getElementById(button.dataset.copiar);
       const status = button.closest('.codigo,.terminal')?.querySelector('[role="status"]');
