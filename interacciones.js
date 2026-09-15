@@ -211,7 +211,7 @@
     } catch {}
   });
   }
-  const writingTarget=document.querySelector('[data-escritura]');
+  const writingTarget=document.querySelector('[data-mano]')||document.querySelector('[data-escritura]');
   let writingObserver;
   document.querySelectorAll('[data-ver-escritura]').forEach(button=>{
     button.hidden=!writingTarget;
@@ -223,7 +223,7 @@
       writingTarget.scrollIntoView({behavior:'instant',block:'center'});
       writingObserver?.disconnect();
       writingObserver=new IntersectionObserver(entries=>{
-        if(entries[0].intersectionRatio>=.3){window.NotaEscritura?.get(writingTarget)?.play();writingObserver.disconnect();}
+        if(entries[0].intersectionRatio>=.3){(window.NotaMano?.get(writingTarget)||window.NotaEscritura?.get(writingTarget))?.play();writingObserver.disconnect();}
       },{threshold:.3});
       writingObserver.observe(writingTarget.querySelector('.escritura-caja')||writingTarget);
     });

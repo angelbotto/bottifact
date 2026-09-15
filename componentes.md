@@ -445,18 +445,25 @@ con espacios dentro del `<pre>`; no uses una tabla disfrazada.
 
 <!-- nota:ejemplo manuscrita -->
 ```html
-<p class="manuscrita">las fechas dicen cuándo pasó cada cosa. lo que explica cómo una llevó a la
-  otra está <span class="senalado">en las brechas</span>, donde dejo de
-  hablar de porcentajes</p>
+<div class="gesto-escrito">
+  <p class="manuscrita" data-mano id="nota-decision">de doce frentes, siete están en producción. el cuello de botella ya no es construir: es decidir.</p>
+  <button class="gesto-repetir" type="button" data-mano-repetir="nota-decision" data-audio="escritura">Volver a escribir la nota</button>
+</div>
 ```
 
-**Cuándo:** una frase en primera persona que comenta el documento desde afuera —una duda, una
-advertencia, un apunte—. El corchete señala **una** cosa: el enlace o la idea que importa. Dos
-corchetes en la misma frase anulan el gesto.
+**Cuándo:** destacar una observación breve con escritura que aparece al llegar a ella. Incluye
+mano.js: dibuja un alfabeto monolineal original con paths, a velocidad proporcional a cada trazo.
+El ejemplo se anima una vez al entrar un 30 %; el botón permite repetirlo. Para párrafos corrientes
+conserva `.manuscrita` sin `data-mano`: sigue usando Reenie Beanie estática, como antes.
 
-No la uses para información crítica: la manuscrita es difícil de leer en pantallas pequeñas y no
-todos los lectores de pantalla la anuncian distinto del resto. Lo que no se puede perder va en
-prosa normal o en un `.aviso`.
+**Límite:** minúsculas latinas, acentos, ñ, dígitos y puntuación sencilla; hasta 240 caracteres.
+No reproduce la caligrafía exacta de Reenie ni convierte cualquier tipografía. Si una palabra supera 160 px al tamaño elegido, conserva texto estático que puede partirse; no comprime glifos para hacerla caber. Una frase con
+caracteres no compatibles conserva su texto original estático. La alternativa textual completa
+permanece en el DOM para lectores de pantalla y comentarios; la escritura SVG no permite
+seleccionar letra por letra con el ratón. No uses el gesto para información crítica. Al salir de
+pantalla, cambiar de pestaña o activar movimiento reducido se cancelan las animaciones y se
+completa el texto. No hay RAF. La entrada es silenciosa; repetir sólo suena si activaste Sonidos.
+`NotaMano.init/get/destroy` permite insertar o retirar la mejora preservando los nodos originales.
 
 ## Globo de rutas
 
@@ -2321,3 +2328,90 @@ Comparte una sola inclusión de Three con el globo. Las escenas arrancan sin gir
 manuales funcionan con movimiento reducido y `resume()` no puede saltarse esa preferencia.
 Cada color procede de tokens ya definidos en las seis paletas. Ninguna vista nueva usa audio,
 red, shaders externos ni mapas de terceros en tiempo de lectura.
+
+
+## Apuntes a izquierda y derecha
+
+<!-- nota:ejemplo apuntes -->
+```html
+<div class="apuntes ancho" id="apuntes-ejemplo">
+  <section class="apunte izquierda">
+    <div class="apunte-cuerpo"><h3>Una decisión necesita contexto.</h3><p>La evidencia sirve cuando nos ayuda a <span data-subrayar>decidir mejor</span>. Un reporte puede dejar una pregunta breve al margen sin interrumpir el argumento.</p></div>
+    <aside class="apunte-nota" aria-label="Apunte a la izquierda"><p class="manuscrita" data-mano id="apunte-izquierdo">menos ruido, más criterio.</p><button class="gesto-repetir" type="button" data-mano-repetir="apunte-izquierdo" data-audio="escritura">Repetir apunte izquierdo</button></aside>
+  </section>
+  <section class="apunte">
+    <div class="apunte-cuerpo"><h3>Explicar también es editar.</h3><p>Antes de agregar otra gráfica, prueba a <span data-subrayar>quitar lo que sobra</span>. La anotación acompaña al párrafo; el subrayado se dibuja cuando aparece.</p></div>
+    <aside class="apunte-nota" aria-label="Apunte a la derecha"><p class="manuscrita" data-mano id="apunte-derecho">¿se entiende sin explicarlo?</p><button class="gesto-repetir" type="button" data-mano-repetir="apunte-derecho" data-audio="escritura">Repetir apunte derecho</button></aside>
+  </section>
+</div>
+```
+
+**Cuándo:** preguntas o comentarios editoriales secundarios junto al argumento. Incluye mano.js.
+La variante izquierda sitúa el apunte antes del texto en el espacio; el orden de lectura mantiene
+primero el argumento. El subrayado usa un path propio y comparte entrada y cancelación.
+
+**Límite:** se reserva una rejilla real dentro de la figura ancha; no son offsets negativos ni
+notas fijas que invadan el índice. Bajo 1000 px, los apuntes caen después del párrafo. Frases cortas
+y subrayados que quepan en una línea; no para anotaciones largas ni contenido obligatorio. El
+alfabeto admite la puntuación española; el texto equivalente siempre se conserva. Sonido sólo
+al repetir con Sonidos activado. La API y los límites de mano.js son los de la receta manuscrita.
+
+## Cards delineadas de publicaciones
+
+<!-- nota:ejemplo cards-trazadas -->
+```html
+<section class="ancho" id="cards-trazadas-ejemplo">
+  <h3>Escrito recientemente</h3><p>Lecturas de ejemplo para volver sobre una idea.</p>
+  <div class="cards-trazadas">
+    <a href="informe.html#resumen" data-audio-hover><h4>Una revisión antes de confirmar</h4><p>La pregunta, la evidencia disponible y la decisión que sigue.</p><span class="procedencia">ENSAYO · 8 min · ejemplo</span></a>
+    <a href="informe.html#evidencia" data-audio-hover><h4>La escala también cuenta una historia</h4><p>Qué podemos afirmar con los datos y qué necesita otra prueba.</p><span class="procedencia">INVESTIGACIÓN · 6 min · ejemplo</span></a>
+    <a href="informe.html#prototipo" data-audio-hover><h4>Del documento a una experiencia que se puede probar</h4><p>Una propuesta local con estados, dispositivo y contexto.</p><span class="procedencia">PROTOTIPO · 4 min · ejemplo</span></a>
+    <a href="informe.html#siguientes" data-audio-hover><h4>Hacer visibles los supuestos</h4><p>Una calculadora pequeña para discutir capacidad sin inventar certezas.</p><span class="procedencia">REPORTE · 5 min · ejemplo</span></a>
+    <a href="informe.html#resumen" data-audio-hover><h4>Lo que una buena nota deja claro</h4><p>Una conclusión que conserve la pregunta y sus límites.</p><span class="procedencia">CUADERNO · 3 min · ejemplo</span></a>
+    <a href="informe.html#siguientes" data-audio-hover><h4>La siguiente pregunta también importa</h4><p>Cómo cerrar un informe dejando una prueba concreta por hacer.</p><span class="procedencia">MÉTODO · 5 min · ejemplo</span></a>
+  </div>
+  <p class="procedencia">El hover tiene una señal breve sólo si activas Sonidos en Apariencia. Sin sonido también se ve la selección.</p>
+</section>
+```
+
+**Cuándo:** una rejilla editorial de artículos o documentos con bordes compartidos, fondo suave y
+sombra breve al pasar el puntero. Cada card es un único enlace, también accesible por teclado.
+Incluye audio.js y Apariencia si quieres el hover sonoro optativo; el estilo no necesita JS.
+
+**Límite:** títulos y extractos completos, sin elipsis ni alturas fijas. No mezcles botones dentro
+del enlace. Hover sólo con ratón moviéndose realmente sobre `data-audio-hover`, después de activar
+Sonidos; nunca al enfocar, desplazar o cargar. Señal propia de 60 ms y separación mínima de 160 ms;
+no reproduce el MP3 de la referencia. En móvil basta el enlace; sin sonido no se pierde información.
+
+## Attention map de áreas
+
+<!-- nota:ejemplo atencion -->
+```html
+<figure class="ancho" id="atencion-ejemplo" data-atencion data-unidad="horas">
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Datos del attention map, desplazables">
+    <table><caption>Dónde se fue la atención</caption><thead><tr><th scope="col">Actividad</th><th scope="col">Horas</th></tr></thead><tbody>
+      <tr><th scope="row">Investigar</th><td data-valor="125">125</td></tr>
+      <tr><th scope="row">Construir</th><td data-valor="34">34</td></tr>
+      <tr><th scope="row">Conversar</th><td data-valor="20">20</td></tr>
+      <tr><th scope="row">Documentar</th><td data-valor="12">12</td></tr>
+      <tr><th scope="row">Revisar</th><td data-valor="8">8</td></tr>
+      <tr><th scope="row">Planear</th><td data-valor="6">6</td></tr>
+      <tr><th scope="row">Administrar</th><td data-valor="4">4</td></tr>
+      <tr><th scope="row">Otros</th><td data-valor="3">3</td></tr>
+    </tbody></table>
+  </div>
+  <figcaption>212 horas ficticias. El área representa la proporción del total; no es un registro real de actividad. Selecciona una celda o una categoría para consultar su valor.</figcaption>
+</figure>
+```
+
+**Cuándo:** ver cómo se reparte atención, tiempo o gasto entre partes de un total. Incluye atencion.js;
+audio.js ofrece hover optativo con el interruptor general. Este treemap recupera el tipo de mapa
+de la referencia; `data-grafica="calor"` sigue disponible para intensidades en una matriz.
+
+**Límite:** 1–40 categorías únicas, valores finitos no negativos de hasta 10⁹ y total positivo. Área
+calculada con una partición binaria; no imita posiciones fijas ni soporta jerarquías. Cero no ocupa
+área, pero sigue en la tabla y controles. Las celdas pequeñas muestran un número o sólo su área;
+los nombres y valores completos se conservan fuera del mapa, sin elipsis. Para diferencias
+pequeñas o un ranking preciso, usa barras. ViewBox de 1000×380, mínimo legible de 900 px con
+scroll local. No mide productividad ni conecta aplicaciones. `NotaAtencion.init/get/destroy`
+conserva la tabla original; destruye y reinicia tras cambiar sus datos.

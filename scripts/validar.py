@@ -47,8 +47,8 @@ class Fragment(HTMLParser):
   if tag not in VOID:self.handle_endtag(tag)
 
 MODULES={
- 'biblioteca.html':['geografia.js','analitica.js','codigo.js','explorador.js','revision.js','interacciones.js','multipagina.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js','editorial.js'],
- 'plantilla.html':['geografia.js','analitica.js','codigo.js','explorador.js','revision.js','editorial.js','interacciones.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js'],
+ 'biblioteca.html':['mano.js','atencion.js','geografia.js','analitica.js','codigo.js','explorador.js','revision.js','interacciones.js','multipagina.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js','editorial.js'],
+ 'plantilla.html':['mano.js','atencion.js','geografia.js','analitica.js','codigo.js','explorador.js','revision.js','editorial.js','interacciones.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js'],
  'informe.html':['interacciones.js','multipagina.js','graficas.js','reportes.js','visor.js','pestanas.js'],
  'globo.html':['interacciones.js','globo.js'],
  'multipagina.html':['interacciones.js','multipagina.js'],

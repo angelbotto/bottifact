@@ -288,7 +288,7 @@ HTTPS de Tailscale Serve que confirme el host, no un enlace localhost para la en
 
 ### Edición completa para explorar y componer
 
-Abre [biblioteca.html](biblioteca.html) para 54 recetas en nueve capítulos, con HTML,
+Abre [biblioteca.html](biblioteca.html) para 57 recetas en nueve capítulos, con HTML,
 dependencias, criterio y límites junto al ejemplo. Incluye archivos de publicaciones,
 autoría, lecturas relacionadas, anotaciones numeradas, revisiones, criterios y riesgos.
 [editorial.js](editorial.js) ofrece búsqueda/filtro local y configuración de lista/rejilla,
@@ -306,7 +306,7 @@ La edición completa incorpora [revision.js](revision.js): pines flotantes en el
 
 El visor permite pegar HTML declarativo local y alternar Móvil/Escritorio; los embeds remotos siguen fuera de CSP. Escritura admite `data-al-ver` para una primera animación al entrar en pantalla; el sonido sólo sale de botones explícitos. [codigo.js](codigo.js) colorea HTML, CSS, JavaScript, TypeScript, JSON, Python, SQL, Shell y salida de terminal creando nodos de texto seguros y conserva exactamente el contenido copiable. Grano de papel usa SVG de ruido incrustado, no una rejilla de puntos.
 
-[controles.js](controles.js) coloca los menús de tabla y visor dentro del viewport; se incluye antes de interacciones.js. [audio.js](audio.js), antes de interacciones.js, centraliza el audio en Apariencia: empieza apagado, requiere gesto real y no suena al desplazar. «Ver escritura animada» lleva al trazo en Edición. El visor ofrece dispositivo, proporción, rotación y escala visual; conserva píxeles CSS para las consultas de contenedor. La trama se aplica también a la barra de capítulos.
+[controles.js](controles.js) coloca los menús de tabla y visor dentro del viewport; se incluye antes de interacciones.js. [audio.js](audio.js), antes de interacciones.js, centraliza el audio en Apariencia: empieza apagado, requiere gesto real y no suena al desplazar. «Ver escritura animada» lleva a la nota manuscrita animada, o al SVG de Edición si no hay nota. El visor ofrece dispositivo, proporción, rotación y escala visual; conserva píxeles CSS para las consultas de contenedor. La trama se aplica también a la barra de capítulos.
 
 
 ### Analítica financiera y logística
@@ -329,3 +329,25 @@ vienen de la tabla y las fechas son ISO UTC. No son conectores a Superset ni a G
 Comprueba los laterales también **al inicio** de la página: la cabecera aún no está pegada al
 borde y tiene otra altura. La lectura guiada mide su borde inferior; no reemplaces ese cálculo
 por `top:100px`. La regla separa porcentaje y cursor, y colorea las marcas ya recorridas.
+
+
+### Gesto manuscrito, cards delineadas y attention map
+
+Incluye [mano.js](mano.js) para una nota breve con `data-mano`: alfabeto SVG monolineal original,
+texto equivalente permanente y entrada una sola vez al verse. El HTML exacto está en la receta
+manuscrita; no dejes sólo `.manuscrita` estática si Angel pidió animación. El módulo admite
+minúsculas, acentos, ñ, números y puntuación sencilla; caracteres o palabras no compatibles
+conservan texto normal. Las notas al margen izquierdo/derecho usan la receta `apuntes`: su
+rejilla reserva espacio, se vuelve vertical en móvil y no pisa el índice. `data-subrayar` añade
+un subrayado por trazo a una frase corta. Todos cancelan animación con movimiento reducido.
+
+El **attention map de áreas** está en `atencion`, con [atencion.js](atencion.js). No lo omitas del
+catálogo ni lo sustituyas por el mapa de calor: son preguntas distintas. El área se calcula desde
+una tabla no negativa; categorías pequeñas mantienen nombres y cifras en controles y tabla.
+`.mapa` y `.con-margen/.margen` continúan disponibles en documentos antiguos.
+
+La receta `cards-trazadas` ofrece rejilla delineada, sombra suave y títulos completos. El atributo
+`data-audio-hover` usa la síntesis de [audio.js](audio.js) sólo después de activar Sonidos en
+Apariencia y mover realmente el ratón. El usuario autorizó hover sonoro: sigue apagado al cargar,
+no suena al hacer scroll, recibir foco ni entrar una escritura en pantalla. Repetir escritura
+puede emitir el lápiz si el audio está activado; una animación automática nunca lo hace.

@@ -64,6 +64,21 @@
       "criterio_y_limites": "**Cuándo:** Agrupar entidades distintas: artículo, indicador y proyecto. La rejilla se adapta al ancho; el enlace está en el título o acción, no en toda la tarjeta.\n\n**Cuándo no / límite:** No uses una tarjeta por párrafo ni escondas una comparación que necesita tabla. Los valores y estados requieren fuente. No hay clics superpuestos, carrusel ni alturas fijas que corten textos. HTML estático con tokens de las seis paletas.\n\n### Pegar un prototipo propio\n\nEl visor ofrece **Embeber mi HTML** y `NotaVisores.get(elemento).loadHTML(texto)`. Conserva el ancho elegido y Reiniciar vuelve al template original. Acepta hasta 100.000 caracteres de HTML declarativo con CSS local; rechaza scripts, eventos inline, iframes, envíos, recursos externos y CSS con url()/@import. No es un navegador remoto ni un sanitizador para contenido hostil. Usa HTML de confianza, imágenes raster data: y consultas @container para adaptar el prototipo a su ancho. No modifica ni guarda la fuente del documento."
     },
     {
+      "id": "cards-trazadas",
+      "nombre": "Cards delineadas",
+      "capitulo": "publicaciones",
+      "href": "biblioteca.html#receta-cards-trazadas",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "audio.js",
+        "controles.js",
+        "interacciones.js"
+      ],
+      "html": "<section class=\"ancho\" id=\"cards-trazadas-ejemplo\">\n  <h3>Escrito recientemente</h3><p>Lecturas de ejemplo para volver sobre una idea.</p>\n  <div class=\"cards-trazadas\">\n    <a href=\"informe.html#resumen\" data-audio-hover><h4>Una revisión antes de confirmar</h4><p>La pregunta, la evidencia disponible y la decisión que sigue.</p><span class=\"procedencia\">ENSAYO · 8 min · ejemplo</span></a>\n    <a href=\"informe.html#evidencia\" data-audio-hover><h4>La escala también cuenta una historia</h4><p>Qué podemos afirmar con los datos y qué necesita otra prueba.</p><span class=\"procedencia\">INVESTIGACIÓN · 6 min · ejemplo</span></a>\n    <a href=\"informe.html#prototipo\" data-audio-hover><h4>Del documento a una experiencia que se puede probar</h4><p>Una propuesta local con estados, dispositivo y contexto.</p><span class=\"procedencia\">PROTOTIPO · 4 min · ejemplo</span></a>\n    <a href=\"informe.html#siguientes\" data-audio-hover><h4>Hacer visibles los supuestos</h4><p>Una calculadora pequeña para discutir capacidad sin inventar certezas.</p><span class=\"procedencia\">REPORTE · 5 min · ejemplo</span></a>\n    <a href=\"informe.html#resumen\" data-audio-hover><h4>Lo que una buena nota deja claro</h4><p>Una conclusión que conserve la pregunta y sus límites.</p><span class=\"procedencia\">CUADERNO · 3 min · ejemplo</span></a>\n    <a href=\"informe.html#siguientes\" data-audio-hover><h4>La siguiente pregunta también importa</h4><p>Cómo cerrar un informe dejando una prueba concreta por hacer.</p><span class=\"procedencia\">MÉTODO · 5 min · ejemplo</span></a>\n  </div>\n  <p class=\"procedencia\">El hover tiene una señal breve sólo si activas Sonidos en Apariencia. Sin sonido también se ve la selección.</p>\n</section>",
+      "criterio_y_limites": "**Cuándo:** una rejilla editorial de artículos o documentos con bordes compartidos, fondo suave y\nsombra breve al pasar el puntero. Cada card es un único enlace, también accesible por teclado.\nIncluye audio.js y Apariencia si quieres el hover sonoro optativo; el estilo no necesita JS.\n\n**Límite:** títulos y extractos completos, sin elipsis ni alturas fijas. No mezcles botones dentro\ndel enlace. Hover sólo con ratón moviéndose realmente sobre `data-audio-hover`, después de activar\nSonidos; nunca al enfocar, desplazar o cargar. Señal propia de 60 ms y separación mínima de 160 ms;\nno reproduce el MP3 de la referencia. En móvil basta el enlace; sin sonido no se pierde información."
+    },
+    {
       "id": "articulo",
       "nombre": "Ficha de artículo",
       "capitulo": "lectura",
@@ -148,10 +163,27 @@
         "estilo.css",
         "audio.js",
         "controles.js",
-        "interacciones.js"
+        "interacciones.js",
+        "mano.js"
       ],
-      "html": "<p class=\"manuscrita\">las fechas dicen cuándo pasó cada cosa. lo que explica cómo una llevó a la\n  otra está <span class=\"senalado\">en las brechas</span>, donde dejo de\n  hablar de porcentajes</p>",
-      "criterio_y_limites": "**Cuándo:** una frase en primera persona que comenta el documento desde afuera —una duda, una\nadvertencia, un apunte—. El corchete señala **una** cosa: el enlace o la idea que importa. Dos\ncorchetes en la misma frase anulan el gesto.\n\nNo la uses para información crítica: la manuscrita es difícil de leer en pantallas pequeñas y no\ntodos los lectores de pantalla la anuncian distinto del resto. Lo que no se puede perder va en\nprosa normal o en un `.aviso`."
+      "html": "<div class=\"gesto-escrito\">\n  <p class=\"manuscrita\" data-mano id=\"nota-decision\">de doce frentes, siete están en producción. el cuello de botella ya no es construir: es decidir.</p>\n  <button class=\"gesto-repetir\" type=\"button\" data-mano-repetir=\"nota-decision\" data-audio=\"escritura\">Volver a escribir la nota</button>\n</div>",
+      "criterio_y_limites": "**Cuándo:** destacar una observación breve con escritura que aparece al llegar a ella. Incluye\nmano.js: dibuja un alfabeto monolineal original con paths, a velocidad proporcional a cada trazo.\nEl ejemplo se anima una vez al entrar un 30 %; el botón permite repetirlo. Para párrafos corrientes\nconserva `.manuscrita` sin `data-mano`: sigue usando Reenie Beanie estática, como antes.\n\n**Límite:** minúsculas latinas, acentos, ñ, dígitos y puntuación sencilla; hasta 240 caracteres.\nNo reproduce la caligrafía exacta de Reenie ni convierte cualquier tipografía. Si una palabra supera 160 px al tamaño elegido, conserva texto estático que puede partirse; no comprime glifos para hacerla caber. Una frase con\ncaracteres no compatibles conserva su texto original estático. La alternativa textual completa\npermanece en el DOM para lectores de pantalla y comentarios; la escritura SVG no permite\nseleccionar letra por letra con el ratón. No uses el gesto para información crítica. Al salir de\npantalla, cambiar de pestaña o activar movimiento reducido se cancelan las animaciones y se\ncompleta el texto. No hay RAF. La entrada es silenciosa; repetir sólo suena si activaste Sonidos.\n`NotaMano.init/get/destroy` permite insertar o retirar la mejora preservando los nodos originales."
+    },
+    {
+      "id": "apuntes",
+      "nombre": "Apuntes manuscritos al margen",
+      "capitulo": "lectura",
+      "href": "biblioteca.html#receta-apuntes",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "audio.js",
+        "controles.js",
+        "interacciones.js",
+        "mano.js"
+      ],
+      "html": "<div class=\"apuntes ancho\" id=\"apuntes-ejemplo\">\n  <section class=\"apunte izquierda\">\n    <div class=\"apunte-cuerpo\"><h3>Una decisión necesita contexto.</h3><p>La evidencia sirve cuando nos ayuda a <span data-subrayar>decidir mejor</span>. Un reporte puede dejar una pregunta breve al margen sin interrumpir el argumento.</p></div>\n    <aside class=\"apunte-nota\" aria-label=\"Apunte a la izquierda\"><p class=\"manuscrita\" data-mano id=\"apunte-izquierdo\">menos ruido, más criterio.</p><button class=\"gesto-repetir\" type=\"button\" data-mano-repetir=\"apunte-izquierdo\" data-audio=\"escritura\">Repetir apunte izquierdo</button></aside>\n  </section>\n  <section class=\"apunte\">\n    <div class=\"apunte-cuerpo\"><h3>Explicar también es editar.</h3><p>Antes de agregar otra gráfica, prueba a <span data-subrayar>quitar lo que sobra</span>. La anotación acompaña al párrafo; el subrayado se dibuja cuando aparece.</p></div>\n    <aside class=\"apunte-nota\" aria-label=\"Apunte a la derecha\"><p class=\"manuscrita\" data-mano id=\"apunte-derecho\">¿se entiende sin explicarlo?</p><button class=\"gesto-repetir\" type=\"button\" data-mano-repetir=\"apunte-derecho\" data-audio=\"escritura\">Repetir apunte derecho</button></aside>\n  </section>\n</div>",
+      "criterio_y_limites": "**Cuándo:** preguntas o comentarios editoriales secundarios junto al argumento. Incluye mano.js.\nLa variante izquierda sitúa el apunte antes del texto en el espacio; el orden de lectura mantiene\nprimero el argumento. El subrayado usa un path propio y comparte entrada y cancelación.\n\n**Límite:** se reserva una rejilla real dentro de la figura ancha; no son offsets negativos ni\nnotas fijas que invadan el índice. Bajo 1000 px, los apuntes caen después del párrafo. Frases cortas\ny subrayados que quepan en una línea; no para anotaciones largas ni contenido obligatorio. El\nalfabeto admite la puntuación española; el texto equivalente siempre se conserva. Sonido sólo\nal repetir con Sonidos activado. La API y los límites de mano.js son los de la receta manuscrita."
     },
     {
       "id": "hallazgo",
@@ -501,6 +533,22 @@
       ],
       "html": "<figure class=\"ancho\" id=\"analitica-mapa-burbujas\" data-analitica=\"burbujas\" data-unidad=\"entregas\">\n  <div class=\"tabla-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Datos de Mapa de volumen por sede, desplazables\">\n    <table><caption>Mapa de volumen por sede</caption>\n      <thead><tr><th scope=\"col\">Sede</th><th scope=\"col\">Latitud</th><th scope=\"col\">Longitud</th><th scope=\"col\">Entregas</th></tr></thead>\n      <tbody>\n        <tr><th scope=\"row\">Bogotá</th><td data-valor=\"4.711\">4.711</td><td data-valor=\"-74.072\">-74.072</td><td data-valor=\"240\">240</td></tr>\n        <tr><th scope=\"row\">Medellín</th><td data-valor=\"6.244\">6.244</td><td data-valor=\"-75.582\">-75.582</td><td data-valor=\"180\">180</td></tr>\n        <tr><th scope=\"row\">Cali</th><td data-valor=\"3.452\">3.452</td><td data-valor=\"-76.532\">-76.532</td><td data-valor=\"120\">120</td></tr>\n        <tr><th scope=\"row\">Barranquilla</th><td data-valor=\"10.969\">10.969</td><td data-valor=\"-74.781\">-74.781</td><td data-valor=\"60\">60</td></tr>\n      </tbody>\n    </table>\n  </div>\n  <figcaption>Datos ficticios de logística; no son operaciones de Liftit. Ubicaciones urbanas aproximadas. Contorno: <a href=\"https://www.naturalearthdata.com/about/terms-of-use/\">Natural Earth</a>, dominio público, escala 1:110m.</figcaption>\n</figure>",
       "criterio_y_limites": "**Cuándo:** comparar cantidades absolutas por ubicación. El área, no el radio, representa volumen. Para tasas sobre población, explicita denominadores antes de elegir este mapa.\n\n**Límite:** Incluye geografia.js y analitica.js. Hasta 24 puntos en la vista de Colombia, sin valores negativos. Radio = raíz de la proporción al máximo; cero tiene área cero. No agrupa puntos cercanos: si hay solapamiento, usa el selector y la tabla o un mapa más específico. No representa cobertura territorial ni una coropleta."
+    },
+    {
+      "id": "atencion",
+      "nombre": "Attention map de áreas",
+      "capitulo": "graficas",
+      "href": "biblioteca.html#receta-atencion",
+      "dependencias": [
+        "fuentes.css",
+        "estilo.css",
+        "audio.js",
+        "controles.js",
+        "interacciones.js",
+        "atencion.js"
+      ],
+      "html": "<figure class=\"ancho\" id=\"atencion-ejemplo\" data-atencion data-unidad=\"horas\">\n  <div class=\"tabla-caja\" tabindex=\"0\" role=\"region\" aria-label=\"Datos del attention map, desplazables\">\n    <table><caption>Dónde se fue la atención</caption><thead><tr><th scope=\"col\">Actividad</th><th scope=\"col\">Horas</th></tr></thead><tbody>\n      <tr><th scope=\"row\">Investigar</th><td data-valor=\"125\">125</td></tr>\n      <tr><th scope=\"row\">Construir</th><td data-valor=\"34\">34</td></tr>\n      <tr><th scope=\"row\">Conversar</th><td data-valor=\"20\">20</td></tr>\n      <tr><th scope=\"row\">Documentar</th><td data-valor=\"12\">12</td></tr>\n      <tr><th scope=\"row\">Revisar</th><td data-valor=\"8\">8</td></tr>\n      <tr><th scope=\"row\">Planear</th><td data-valor=\"6\">6</td></tr>\n      <tr><th scope=\"row\">Administrar</th><td data-valor=\"4\">4</td></tr>\n      <tr><th scope=\"row\">Otros</th><td data-valor=\"3\">3</td></tr>\n    </tbody></table>\n  </div>\n  <figcaption>212 horas ficticias. El área representa la proporción del total; no es un registro real de actividad. Selecciona una celda o una categoría para consultar su valor.</figcaption>\n</figure>",
+      "criterio_y_limites": "**Cuándo:** ver cómo se reparte atención, tiempo o gasto entre partes de un total. Incluye atencion.js;\naudio.js ofrece hover optativo con el interruptor general. Este treemap recupera el tipo de mapa\nde la referencia; `data-grafica=\"calor\"` sigue disponible para intensidades en una matriz.\n\n**Límite:** 1–40 categorías únicas, valores finitos no negativos de hasta 10⁹ y total positivo. Área\ncalculada con una partición binaria; no imita posiciones fijas ni soporta jerarquías. Cero no ocupa\nárea, pero sigue en la tabla y controles. Las celdas pequeñas muestran un número o sólo su área;\nlos nombres y valores completos se conservan fuera del mapa, sin elipsis. Para diferencias\npequeñas o un ranking preciso, usa barras. ViewBox de 1000×380, mínimo legible de 900 px con\nscroll local. No mide productividad ni conecta aplicaciones. `NotaAtencion.init/get/destroy`\nconserva la tabla original; destruye y reinicia tras cambiar sus datos."
     },
     {
       "id": "tabla-densa",

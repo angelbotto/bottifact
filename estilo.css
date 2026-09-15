@@ -1280,7 +1280,7 @@ body:has(.revision-barra) { padding-bottom:0; }
 .atencion-area { fill:var(--panel); stroke:var(--linea-fuerte); stroke-width:2; }
 .atencion-caja g:nth-child(even) .atencion-area { fill:var(--panel-2); }
 .atencion-caja g { cursor:pointer; }
-.atencion-caja g:hover .atencion-area,.atencion-caja .atencion-elegida .atencion-area { fill:var(--tabla-elegida); stroke:var(--marcador); }
+.atencion-caja g:hover .atencion-area,.atencion-caja g.atencion-elegida .atencion-area { fill:var(--tabla-elegida); stroke:var(--marcador); }
 .atencion-etiqueta { color:var(--tinta); overflow-wrap:anywhere; }
 .atencion-etiqueta strong { display:block; font:400 23px/1.2 var(--serif); margin-bottom:6px; }
 .atencion-etiqueta span { display:block; font:12px/1.5 var(--mono); color:var(--tinta-2); }
