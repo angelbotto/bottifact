@@ -8,10 +8,10 @@
   const extent=values=>{let min=Math.min(...values),max=Math.max(...values);if(min===max){const p=Math.abs(min)*.1||1;min-=p;max+=p;}if(!Number.isFinite(max-min))throw new TypeError('Dominio fuera de precisión.');return [min,max];};
   function read(element){
     const type=element.dataset.escena,table=element.querySelector('table');
-    if(!['xyz','etapas','columnas','arcos','almacen'].includes(type)||!table?.tHead||!table.tBodies[0])throw new TypeError('Se necesita una tabla para xyz o etapas.');
+    if(!['xyz','etapas','columnas','arcos','almacen'].includes(type)||!table?.tHead||!table.tBodies[0])throw new TypeError('Se necesita una tabla y un tipo de escena válido.');
     const heads=[...table.tHead.rows[0].cells].map(c=>c.textContent.trim());
     const columns={xyz:4,etapas:3,columnas:4,arcos:6,almacen:5};
-    if(heads.length!==columns[type])throw new TypeError('XYZ necesita nombre/X/Y/Z; etapas necesita nombre/duración/explicación.');
+    if(heads.length!==columns[type])throw new TypeError('La escena '+type+' necesita '+columns[type]+' columnas, incluida la etiqueta.');
     const data=[...table.tBodies[0].rows].map(row=>{
       if(row.cells.length!==heads.length)throw new TypeError('Fila incompleta.');
       const values=[...row.cells].slice(1,type==='etapas'?2:columns[type]).map(c=>{
@@ -26,7 +26,7 @@
       data.forEach(r=>{NotaGeografia.check(r.values[0],r.values[1]);if(type==='arcos')NotaGeografia.check(r.values[2],r.values[3]);if(r.values.at(-1)<0)throw new TypeError('Volumen negativo.');});
     }
     if(type==='almacen'&&data.some(r=>r.values[2]<0||r.values[3]<=0||r.values[2]>r.values[3]))throw new TypeError('Ocupación entre cero y capacidad positiva.');
-    if(!data.length||data.length>(type==='xyz'?100:12))throw new TypeError('XYZ admite 1–100 puntos; etapas, 1–12.');
+    if(!data.length||data.length>(type==='xyz'?100:12))throw new TypeError('XYZ admite 1–100 puntos; las demás escenas, 1–12 registros.');
     return {type,table,heads,data,title:table.caption?.textContent||'Vista espacial'};
   }
   class NotaEscena {
@@ -142,7 +142,9 @@
       const mesh=(geometry,position,i)=>{const m=new THREE.Mesh(this.keep(geometry),this.keep(new THREE.MeshBasicMaterial()));m.position.set(...position);m.userData.index=i;this.group.add(m);this.items.push(m);return m;};
       if(type!=='almacen'){
         NotaGeografia.colombia.coordinates.forEach(ring=>{const points=ring.map(([lon,lat])=>{const[x,z]=NotaGeografia.project(lat,lon);return new THREE.Vector3(x,base,z);});const l=new THREE.Line(this.keep(new THREE.BufferGeometry().setFromPoints(points)),this.keep(new THREE.LineBasicMaterial()));this.group.add(l);this.lines.push(l);});
-        this.text('N ↑',[1.35,base,-1.8],.25);
+        this.text('N',[1.35,base,-2.02],.25);
+        this.line([1.35,base,-1.1],[1.35,base,-1.8]);
+        this.line([1.23,base,-1.6],[1.35,base,-1.8]);this.line([1.47,base,-1.6],[1.35,base,-1.8]);
         data.forEach((r,i)=>{
           const [lat,lon]=r.values,[x,z]=NotaGeografia.project(lat,lon),value=r.values.at(-1);
           if(type==='columnas'){

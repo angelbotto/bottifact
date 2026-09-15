@@ -33,5 +33,5 @@ geografia.js. Vista continental generalizada 1:110m; no mapa vial o cartografía
 
 El offset fijo ignoraba el borde inferior de la barra antes de quedar sticky. Su z-index tapaba
 el índice y la regla. Ahora ambos reservan espacio bajo la barra medida; el porcentaje tiene
-un canal separado del cursor y el tramo recorrido se colorea. No se cambió el patrón legado
-sin lectura-guiada. Se ensayó el inicio, no sólo un enlace profundo con la cabecera ya pegada.
+un canal separado del cursor y el tramo recorrido se colorea. El patrón legado sin lectura-guiada conserva su umbral y composición; también recibe
+la separación del porcentaje y el color del tramo leído. Se ensayó el inicio, no sólo un enlace profundo con la cabecera ya pegada.
