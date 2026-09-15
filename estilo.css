@@ -1428,3 +1428,22 @@ body:has(.revision-barra) { padding-bottom:0; }
 .actividad-editorial > * { margin-block:0; }
 .actividad-datos { margin-block:8px 32px; }
 @media print { .actividad-datos > :not(summary) { display:block!important; }.actividad-datos::details-content { display:block; content-visibility:visible; }.galeria-fotografica .galeria-pista > figure { min-height:0; }.galeria-fotografica .galeria-pista figcaption { color:var(--tinta); background:var(--papel); } }
+
+/* 27 — Reenie Beanie real: misma fuente incrustada que /work, revelada por caracteres. */
+[data-mano=fuente] { font-family:var(--mano); letter-spacing:-.025em; line-height:1.123; }
+.apunte-nota [data-mano=fuente] { color:var(--linea-fuerte); font-size:28.5px; line-height:32px; }
+.mano-fuente { display:inline; overflow-wrap:anywhere; }
+.mano-grupo { display:inline; }.mano-caracter { opacity:1; }.mano-espacio { white-space:pre-wrap; }
+.mano-subrayado.referencia path { opacity:.25; stroke-width:2; }
+/* El velo recorre toda la imagen; el pie no es una banda opaca. */
+.galeria-fotografica .galeria-pista > figure { border-radius:18px; }
+.galeria-fotografica .galeria-pista img { border-radius:inherit; }
+.galeria-fotografica .galeria-pista figure::before { content:''; grid-area:1/1/3/2; align-self:stretch; z-index:1; border-radius:inherit; pointer-events:none; background:linear-gradient(to top,var(--foto-fondo),color-mix(in srgb,var(--foto-fondo) 40%,transparent) 45%,transparent); }
+.galeria-fotografica .galeria-pista figcaption { z-index:2; padding:0 16px 10px; font-size:12.1px; line-height:1.33333; background:none; border-radius:0; text-shadow:0 1px 2px var(--foto-fondo),0 0 4px var(--foto-fondo); }
+.galeria-fotografica .galeria-pista figure::after { z-index:3; border-color:color-mix(in srgb,var(--foto-tinta) 5%,transparent); }
+@supports(corner-shape:superellipse(1.6)) { .galeria-fotografica .galeria-pista > figure { border-radius:28px; corner-shape:superellipse(1.6); }.galeria-fotografica .galeria-pista img,.galeria-fotografica .galeria-pista figure::before,.galeria-fotografica .galeria-pista figure::after { corner-shape:superellipse(1.6); } }
+@media(hover:hover) and (pointer:fine) { .galeria-fotografica .galeria-pista { cursor:grab; }.galeria-fotografica .galeria-pista.arrastrando { cursor:grabbing; user-select:none; } }
+@media print { .galeria-fotografica .galeria-pista figure::before { display:none; }.galeria-fotografica .galeria-pista figcaption { grid-area:auto; color:var(--tinta); text-shadow:none; } }
+
+.gesto-escrito [data-mano=fuente] { color:var(--linea-fuerte); font-size:28.5px; line-height:32px; }
+@media(min-width:1280px) { .gesto-escrito [data-mano=fuente] { font-size:36.4px; line-height:40px; } }

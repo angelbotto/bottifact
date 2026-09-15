@@ -34,6 +34,14 @@
   }
   if(el.hasAttribute('data-galeria')){
    const track=el.querySelector('[data-galeria-pista]'),prev=el.querySelector('[data-galeria-anterior]'),next=el.querySelector('[data-galeria-siguiente]'),status=el.querySelector('[data-galeria-estado]');if(!track||!status)return;
+   // Arrastre directo sólo con ratón; tacto y teclado conservan el desplazamiento nativo.
+   if(el.classList.contains('galeria-fotografica')){
+    let drag=null;
+    const end=()=>{if(!drag)return;const id=drag.id;drag=null;track.classList.remove('arrastrando');if(track.hasPointerCapture(id))track.releasePointerCapture(id);};
+    on(track,'pointerdown',e=>{if(e.pointerType!=='mouse'||e.button!==0||e.target.closest('a,button,input,textarea,select'))return;drag={id:e.pointerId,x:e.clientX,left:track.scrollLeft};track.setPointerCapture(e.pointerId);});
+    on(track,'pointermove',e=>{if(!drag||e.pointerId!==drag.id||Math.abs(e.clientX-drag.x)<4)return;e.preventDefault();track.classList.add('arrastrando');track.scrollLeft=drag.left-(e.clientX-drag.x);});
+    on(track,'pointerup',end);on(track,'pointercancel',end);on(track,'lostpointercapture',end);on(track,'dragstart',e=>e.preventDefault());clean.push(end);
+   }
    const items=[...track.children],original={prev:prev?.disabled,next:next?.disabled,text:status.textContent};let timer;
    const update=()=>{const r=track.getBoundingClientRect(),index=items.reduce((best,e,i)=>Math.abs(e.getBoundingClientRect().left-r.left)<Math.abs(items[best].getBoundingClientRect().left-r.left)?i:best,0);if(prev)prev.disabled=track.scrollLeft<=1;if(next)next.disabled=track.scrollLeft>=track.scrollWidth-track.clientWidth-1;status.textContent=items.length?'Vista '+(index+1)+' de '+items.length+'. Desliza para recorrer.':'No hay imágenes en esta galería.';};
    const move=direction=>{const r=track.getBoundingClientRect(),current=track.scrollLeft,positions=items.map(e=>current+e.getBoundingClientRect().left-r.left),target=direction>0?positions.find(x=>x>current+2):positions.reverse().find(x=>x<current-2);track.scrollTo({left:target??(direction>0?track.scrollWidth:0),behavior:motion.matches?'instant':'smooth'});};

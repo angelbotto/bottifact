@@ -1,4 +1,4 @@
-/* Nota Tikin · alfabeto monolineal original, dibujado como trazos SVG.
+/* Nota Tikin · fuente Reenie Beanie revelada por caracteres y alfabeto SVG anterior.
    Minúsculas latinas, acentos, números y puntuación; otros glifos conservan texto.
    No usa fuentes remotas, temporizadores de escritura ni RAF. */
 (()=>{'use strict';
@@ -47,15 +47,20 @@
  function glyph(c){const parts=c.normalize('NFD'),g=letters[parts[0]];if(!g)return null;let d=g[1];for(const accent of [...parts].slice(1)){if(accent==='\u0301')d+=' M7 7 L11 3';else if(accent==='\u0303')d+=' M3 7 Q6 2 9 6 T15 5';else if(accent==='\u0308')d+=' M5 7 L5.5 7.5 M12 7 L12.5 7.5';else return null;}return [g[0],d];}
  class Mano{
   constructor(e){this.element=e;this.original=[...e.childNodes];this.text=e.textContent;this.paths=[];this.animations=[];this.played=false;this.visible=false;this.dead=false;this.epoch=0;this.abort=new AbortController();this.motion=matchMedia('(prefers-reduced-motion: reduce)');
-   this.underline=e.hasAttribute('data-subrayar');
-   if(!this.underline&&(this.text.length>240||[...this.text].some(c=>!(/\s/u.test(c))&&!glyph(c))))throw Error('Frase no compatible; se conserva el texto original.');
-   if(!this.underline&&this.text.split(/\s+/u).some(word=>([...word].reduce((sum,c)=>sum+glyph(c)[0],5)/34)*parseFloat(getComputedStyle(e).fontSize)>160))throw Error('Palabra demasiado ancha; se conserva el texto.');
-   if(this.underline){const s=svg('svg',{viewBox:'0 0 300 14',preserveAspectRatio:'none','aria-hidden':'true',class:'mano-subrayado'});s.append(svg('path',{d:'M3 9 Q98 3 172 8 T297 7'}));e.append(s);this.extra=s;}
+   this.underline=e.hasAttribute('data-subrayar');this.font=e.dataset.mano==='fuente'&&!this.underline;this.rough=e.dataset.subrayar==='referencia';this.characters=[];this.sample='pencil-'+(1+Math.floor(Math.random()*3));
+   if(!this.underline&&!this.font&&(this.text.length>240||[...this.text].some(c=>!(/\s/u.test(c))&&!glyph(c))))throw Error('Frase no compatible; se conserva el texto original.');
+   if(!this.underline&&!this.font&&this.text.split(/\s+/u).some(word=>([...word].reduce((sum,c)=>sum+glyph(c)[0],5)/34)*parseFloat(getComputedStyle(e).fontSize)>160))throw Error('Palabra demasiado ancha; se conserva el texto.');
+   if(this.underline){const s=svg('svg',{viewBox:'0 0 300 14',preserveAspectRatio:'none','aria-hidden':'true',class:'mano-subrayado'});const strokes=this.rough?['M3 4 C106 6 183 4 295 7','M297 9 C215 6 164 7 18 5','M6 5 C72 6 137 3 297 8']:['M3 9 Q98 3 172 8 T297 7'];strokes.forEach(d=>s.append(svg('path',{d})));if(this.rough)s.classList.add('referencia');e.append(s);this.extra=s;}
+   else if(this.font){
+    const visual=document.createElement('span');visual.className='mano-fuente';visual.setAttribute('aria-hidden','true');
+    this.text.split(/(\s+)/u).filter(Boolean).forEach(word=>{const group=document.createElement('span');group.className=/^\s+$/u.test(word)?'mano-espacio':'mano-grupo';for(const char of Array.from(word)){const letter=document.createElement('span');letter.textContent=char;letter.className='mano-caracter';group.append(letter);this.characters.push(letter);}visual.append(group);});
+    const text=document.createElement('span');text.className='sr-only';text.textContent=this.text;e.replaceChildren(visual,text);this.extra=visual;
+   }
    else {const visual=document.createElement('span');visual.className='mano-visual';visual.setAttribute('aria-hidden','true');
     this.text.split(/(\s+)/u).filter(Boolean).forEach(word=>{if(/^\s+$/u.test(word)){visual.append(document.createTextNode(word));return;}const gs=[...word].map(glyph),width=gs.reduce((s,g)=>s+g[0],0)+5,s=svg('svg',{viewBox:`0 0 ${width} 42`,class:'mano-palabra',width:(width/34)+'em',height:'1.24em'});let x=2;gs.forEach(g=>{s.append(svg('path',{d:g[1],transform:`translate(${x} 2)`}));x+=g[0];});visual.append(s);});
     const text=document.createElement('span');text.className='sr-only';text.textContent=this.text;e.replaceChildren(visual,text);this.extra=visual;
    }
-   this.paths=[...this.extra.querySelectorAll('path')];this.lengths=this.paths.map(p=>p.getTotalLength());this.duration=Math.max(1400,Math.min(6500,this.text.length*45));if(this.underline)this.duration=650;
+   this.paths=[...this.extra.querySelectorAll('path')];this.lengths=this.paths.map(p=>p.getTotalLength());this.duration=Math.max(1400,Math.min(6500,this.text.length*45));if(this.underline)this.duration=this.rough?1000:650;if(this.font)this.duration=({'pencil-1':2181.333,'pencil-2':2565.333,'pencil-3':3034.667})[this.sample];
    e.classList.add('mano-lista');
    this.buttons=[...document.querySelectorAll('[data-mano-repetir]')].filter(b=>b.dataset.manoRepetir===e.id).map(b=>({b,text:b.dataset.manoEtiqueta||b.textContent}));this.sync();
    this.motion.addEventListener('change',()=>{if(this.motion.matches)this.finish();this.sync();},{signal:this.abort.signal});document.addEventListener('visibilitychange',()=>{if(document.hidden)this.finish();},{signal:this.abort.signal});
@@ -63,7 +68,7 @@
   }
   sync(){this.buttons.forEach(({b,text})=>{b.disabled=this.motion.matches;b.textContent=this.motion.matches?'Escritura completa · movimiento reducido':text;});}
   finish(){this.stopSound?.();this.stopSound=null;this.epoch++;this.animations.forEach(a=>a.cancel());this.animations=[];this.paths.forEach(p=>{p.style.strokeDasharray='none';p.style.strokeDashoffset='0';});}
-  play(){if(this.dead)return;this.finish();if(!this.visible||this.motion.matches||document.hidden)return;this.played=true;this.stopSound=window.NotaAudio?.writing(this.element,this.duration);const epoch=this.epoch,total=this.lengths.reduce((a,b)=>a+b,0);let delay=0;this.paths.forEach((p,i)=>{const length=this.lengths[i],duration=this.duration*length/total;p.style.strokeDasharray=length;p.style.strokeDashoffset=length;this.animations.push(p.animate([{strokeDashoffset:length},{strokeDashoffset:0}],{duration,delay,fill:'forwards',easing:'linear'}));delay+=duration;});Promise.all(this.animations.map(a=>a.finished)).then(()=>{if(!this.dead&&epoch===this.epoch)this.finish();}).catch(()=>{});}
+  play(){if(this.dead)return;this.finish();if(!this.visible||this.motion.matches||document.hidden)return;this.played=true;this.stopSound=window.NotaAudio?.writing(this.element,this.duration,this.sample);const epoch=this.epoch,total=this.lengths.reduce((a,b)=>a+b,0);let delay=0;if(this.font){const step=this.characters.length>1?(this.duration-375)/(this.characters.length-1):0;this.characters.forEach((c,i)=>this.animations.push(c.animate([{opacity:0},{opacity:1}],{duration:375,delay:i*step,fill:'both',easing:'ease-out'})));}this.paths.forEach((p,i)=>{const length=this.lengths[i],duration=this.duration*length/total;p.style.strokeDasharray=length;p.style.strokeDashoffset=length;this.animations.push(p.animate([{strokeDashoffset:length},{strokeDashoffset:0}],{duration,delay,fill:'forwards',easing:this.rough?'ease-out':'linear'}));delay+=duration;});Promise.all(this.animations.map(a=>a.finished)).then(()=>{if(!this.dead&&epoch===this.epoch)this.finish();}).catch(()=>{});}
   destroy(){this.finish();this.dead=true;this.observer.disconnect();this.abort.abort();this.element.replaceChildren(...this.original);this.element.classList.remove('mano-lista');this.buttons.forEach(({b,text})=>{b.disabled=false;b.textContent=text;});instances.delete(this.element);}
  }
  function init(root=document){return [...(root.matches?.('[data-mano],[data-subrayar]')?[root]:[]),...root.querySelectorAll('[data-mano],[data-subrayar]')].map(e=>{if(instances.has(e))return instances.get(e);try{return new Mano(e);}catch{document.querySelectorAll('[data-mano-repetir]').forEach(b=>{if(b.dataset.manoRepetir===e.id){b.dataset.manoEtiqueta ||= b.textContent;b.disabled=true;b.textContent='Texto sin animación';}});return null;}});}

@@ -446,23 +446,25 @@ con espacios dentro del `<pre>`; no uses una tabla disfrazada.
 <!-- nota:ejemplo manuscrita -->
 ```html
 <div class="gesto-escrito">
-  <p class="manuscrita" data-mano data-escritura-sonora id="nota-decision">de doce frentes, siete están en producción. el cuello de botella ya no es construir: es decidir.</p>
+  <p class="manuscrita" data-mano="fuente" data-escritura-sonora id="nota-decision">de doce frentes, siete están en producción. el cuello de botella ya no es construir: es decidir.</p>
   <button class="gesto-repetir" type="button" data-mano-repetir="nota-decision" data-audio="escritura">Volver a escribir la nota</button>
 </div>
 ```
 
 **Cuándo:** destacar una observación breve con escritura que aparece al llegar a ella. Incluye
-mano.js: dibuja un alfabeto monolineal original con paths, a velocidad proporcional a cada trazo.
-El ejemplo se anima una vez al entrar un 30 %; el botón permite repetirlo. Para párrafos corrientes
-conserva `.manuscrita` sin `data-mano`: sigue usando Reenie Beanie estática, como antes.
+mano.js: `data-mano="fuente"` revela Reenie Beanie por caracteres, como cmrg.me; no sustituye
+sus glifos por dibujos. Cada carácter aparece en 375 ms, escalonado para terminar con una
+muestra original de lápiz de aproximadamente 2,18–3,03 s. El ejemplo se anima una vez al
+entrar un 30 %; el botón permite repetirlo. `.manuscrita` sin atributo conserva texto estático.
 
-**Límite:** minúsculas latinas, acentos, ñ, dígitos y puntuación sencilla; hasta 240 caracteres.
-No reproduce la caligrafía exacta de Reenie ni convierte cualquier tipografía. Si una palabra supera 160 px al tamaño elegido, conserva texto estático que puede partirse; no comprime glifos para hacerla caber. Una frase con
-caracteres no compatibles conserva su texto original estático. La alternativa textual completa
-permanece en el DOM para lectores de pantalla y comentarios; la escritura SVG no permite
-seleccionar letra por letra con el ratón. No uses el gesto para información crítica. Al salir de
-pantalla, cambiar de pestaña o activar movimiento reducido se cancelan las animaciones y se
-completa el texto. No hay RAF. Con `data-escritura-sonora`, el lápiz acompaña el trazo tras activar Sonidos y se corta al salir. Sin ese atributo, la entrada permanece silenciosa.
+**Límite:** notas breves, con fuente incrustada; no animar párrafos extensos ni información
+crítica. Admite mayúsculas y puntuación de la fuente; palabras largas pueden partirse sin
+comprimir letras. Texto equivalente completo para lectores y comentarios. Sin JS se lee completo.
+Al salir, ocultar la pestaña o reducir movimiento se cancela la animación y se completa el texto.
+No hay RAF. `data-escritura-sonora` reproduce una grabación original sólo tras activar Sonidos;
+se corta al salir. No se normaliza, estira ni repite el audio. Sin el atributo permanece silenciosa.
+La variante anterior `data-mano` sin valor sigue disponible con su alfabeto SVG y sus límites
+(minúsculas, 240 caracteres, palabras de hasta 160 px). Para nuevas notas elige `fuente`.
 `NotaMano.init/get/destroy` permite insertar o retirar la mejora preservando los nodos originales.
 
 ## Globo de rutas
@@ -802,13 +804,17 @@ fondo, y la ganancia digital no garantiza un nivel acústico en el dispositivo.
 `NotaSonido.init(contenedor)` inicializa HTML nuevo. No hay método público de reproducción
 automática. Sin `audio.js`, `[data-sonido]` conserva el comportamiento anterior.
 
-Con control central, `audio.js` sintetiza una señal senoidal de 90 ms, ganancia pico 0,018
-(acción 540 Hz, confirmación 740 Hz, atención 390 Hz); escritura usa ruido suavizado de 650 ms,
-ganancia pico 0,045. Son decisiones locales, no medidas de una referencia. `NotaAudio.enabled`,
-`activeVoices` y `plays` permiten inspeccionar el estado; `NotaAudio.disable()` apaga y cancela
-las voces. No ofrece reproducción programática. Usa `data-audio="accion|confirmacion|atencion|escritura"`
-en botones de acciones y conserva un resultado textual. Al copiar el control de Apariencia,
-incluye `audio.js`; no añadas un segundo interruptor global.
+Con la base estándar, `audio.js` usa los MP3 originales de cmrg.me, incrustados en base64 y
+decodificados por Web Audio al activar Sonidos. Clic, hover, confirmación, atención y tres
+lápices; sin descargas durante la lectura. Conserva los niveles de la referencia (clic .9,
+hover .4, lápiz .6, positivo/negativo .8) multiplicados por el volumen maestro inicial .65.
+Hover usa playbackRate .9; el lápiz mantiene su tono y duración original, sin bucle ni normalización.
+El canal independiente anterior se conserva sólo cuando falta `audio.js`; con él, sus botones
+usan las mismas grabaciones y el mismo interruptor de la cabecera.
+`NotaAudio.enabled`, `activeVoices`, `plays` y `samples` permiten inspeccionar el estado;
+`NotaAudio.disable()` apaga y cancela las voces. `data-audio="accion|confirmacion|atencion|escritura"`
+en botones conserva su resultado textual. Procedencia y hashes en `assets/sonidos-cmrg/PROCEDENCIA.md`
+y `auditoria/sonidos-cmrg.json`. La sustitución de síntesis por grabaciones fue pedida por Angel.
 
 <a id="recetas-escritura"></a>
 
@@ -2351,12 +2357,12 @@ red, shaders externos ni mapas de terceros en tiempo de lectura.
 ```html
 <div class="apuntes ancho" id="apuntes-ejemplo">
   <section class="apunte izquierda">
-    <div class="apunte-cuerpo"><h3>Una decisión necesita contexto.</h3><p>La evidencia sirve cuando nos ayuda a <span data-subrayar>decidir mejor</span>. Un reporte puede dejar una pregunta breve al margen sin interrumpir el argumento.</p></div>
-    <aside class="apunte-nota" aria-label="Apunte a la izquierda"><p class="manuscrita" data-mano data-escritura-sonora id="apunte-izquierdo">menos ruido, más criterio.</p><button class="gesto-repetir" type="button" data-mano-repetir="apunte-izquierdo" data-audio="escritura">Repetir apunte izquierdo</button></aside>
+    <div class="apunte-cuerpo"><h3>Una decisión necesita contexto.</h3><p>La evidencia sirve cuando nos ayuda a <span data-subrayar="referencia">decidir mejor</span>. Un reporte puede dejar una pregunta breve al margen sin interrumpir el argumento.</p></div>
+    <aside class="apunte-nota" aria-label="Apunte a la izquierda"><p class="manuscrita" data-mano="fuente" data-escritura-sonora id="apunte-izquierdo">menos ruido, más criterio.</p><button class="gesto-repetir" type="button" data-mano-repetir="apunte-izquierdo" data-audio="escritura">Repetir apunte izquierdo</button></aside>
   </section>
   <section class="apunte">
-    <div class="apunte-cuerpo"><h3>Explicar también es editar.</h3><p>Antes de agregar otra gráfica, prueba a <span data-subrayar>quitar lo que sobra</span>. La anotación acompaña al párrafo; el subrayado se dibuja cuando aparece.</p></div>
-    <aside class="apunte-nota" aria-label="Apunte a la derecha"><p class="manuscrita" data-mano data-escritura-sonora id="apunte-derecho">¿se entiende sin explicarlo?</p><button class="gesto-repetir" type="button" data-mano-repetir="apunte-derecho" data-audio="escritura">Repetir apunte derecho</button></aside>
+    <div class="apunte-cuerpo"><h3>Explicar también es editar.</h3><p>Antes de agregar otra gráfica, prueba a <span data-subrayar="referencia">quitar lo que sobra</span>. La anotación acompaña al párrafo; el subrayado se dibuja cuando aparece.</p></div>
+    <aside class="apunte-nota" aria-label="Apunte a la derecha"><p class="manuscrita" data-mano="fuente" data-escritura-sonora id="apunte-derecho">¿se entiende sin explicarlo?</p><button class="gesto-repetir" type="button" data-mano-repetir="apunte-derecho" data-audio="escritura">Repetir apunte derecho</button></aside>
   </section>
 </div>
 ```
@@ -2395,7 +2401,7 @@ Incluye audio.js y Apariencia si quieres el hover sonoro optativo; el estilo no 
 **Límite:** títulos y extractos completos, sin elipsis ni alturas fijas. No mezcles botones dentro
 del enlace. Hover sólo con ratón moviéndose realmente sobre `data-audio-hover`, después de activar
 Sonidos; nunca al enfocar, desplazar o cargar. Señal propia de 60 ms y separación mínima de 160 ms;
-no reproduce el MP3 de la referencia. En móvil basta el enlace; sin sonido no se pierde información.
+reproduce el MP3 hover original incrustado, al nivel de referencia y con el volumen maestro. En móvil basta el enlace; sin sonido no se pierde información.
 
 ## Attention map de áreas
 
@@ -2694,14 +2700,14 @@ actualiza HTML publicado. Sonido apagado tras recargar/ocultar y comentarios en 
 
 <!-- nota:ejemplo galeria -->
 ```html
-<section class="pieza amplio galeria-fotografica" id="galeria-ejemplo" data-galeria><h3>Una secuencia para mirar de cerca.</h3><p class="procedencia">Ilustraciones de demostración. Sustituye cada imagen por tu fotografía o captura incrustada y su contexto.</p><div class="galeria-pista" data-galeria-pista tabindex="0" role="region" aria-label="Galería de cuatro ilustraciones, desplazable horizontalmente">
-<figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzI2M2IzNyIvPjxjaXJjbGUgY3g9IjEzMCIgY3k9IjEwMCIgcj0iNjIiIGZpbGw9IiNkOGI5ODgiLz48cGF0aCBkPSJNMCAzMzAgMTYwIDE0MCAzMTAgMzAwIDQ1NSAxMzAgNjAwIDI3MFY0MDBIMFoiIGZpbGw9IiNhY2MzYTQiLz48cGF0aCBkPSJNMCAzNzUgMTgwIDMwMCAzNDAgMzcwIDUwMCAyNjUgNjAwIDMxMFY0MDBIMFoiIGZpbGw9IiMyNjNiMzciIG9wYWNpdHk9Ii42Ii8+PC9zdmc+" alt="Relieve: ilustración geométrica de paisaje" width="600" height="400" loading="lazy"><figcaption>01 / Relieve · ilustración original de muestra.</figcaption></figure>
-<figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzIwMzU0NyIvPjxjaXJjbGUgY3g9IjIxMCIgY3k9IjEwMCIgcj0iNjIiIGZpbGw9IiNlZWQzYTUiLz48cGF0aCBkPSJNMCAzMzAgMTYwIDE0MCAzMTAgMzAwIDQ1NSAxMzAgNjAwIDI3MFY0MDBIMFoiIGZpbGw9IiM4MGE2YWIiLz48cGF0aCBkPSJNMCAzNzUgMTgwIDMwMCAzNDAgMzcwIDUwMCAyNjUgNjAwIDMxMFY0MDBIMFoiIGZpbGw9IiMyMDM1NDciIG9wYWNpdHk9Ii42Ii8+PC9zdmc+" alt="Horizonte: ilustración geométrica de paisaje" width="600" height="400" loading="lazy"><figcaption>02 / Horizonte · ilustración original de muestra.</figcaption></figure>
-<figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzM5MzQ0MyIvPjxjaXJjbGUgY3g9IjI5MCIgY3k9IjEwMCIgcj0iNjIiIGZpbGw9IiNlYWQ4YmQiLz48cGF0aCBkPSJNMCAzMzAgMTYwIDE0MCAzMTAgMzAwIDQ1NSAxMzAgNjAwIDI3MFY0MDBIMFoiIGZpbGw9IiNhZTk3YTciLz48cGF0aCBkPSJNMCAzNzUgMTgwIDMwMCAzNDAgMzcwIDUwMCAyNjUgNjAwIDMxMFY0MDBIMFoiIGZpbGw9IiMzOTM0NDMiIG9wYWNpdHk9Ii42Ii8+PC9zdmc+" alt="Ciudad: ilustración geométrica de paisaje" width="600" height="400" loading="lazy"><figcaption>03 / Ciudad · ilustración original de muestra.</figcaption></figure>
-<figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzQ0MzkyZCIvPjxjaXJjbGUgY3g9IjM3MCIgY3k9IjEwMCIgcj0iNjIiIGZpbGw9IiNlMGM5YTQiLz48cGF0aCBkPSJNMCAzMzAgMTYwIDE0MCAzMTAgMzAwIDQ1NSAxMzAgNjAwIDI3MFY0MDBIMFoiIGZpbGw9IiNiOWFkODgiLz48cGF0aCBkPSJNMCAzNzUgMTgwIDMwMCAzNDAgMzcwIDUwMCAyNjUgNjAwIDMxMFY0MDBIMFoiIGZpbGw9IiM0NDM5MmQiIG9wYWNpdHk9Ii42Ii8+PC9zdmc+" alt="Sendero: ilustración geométrica de paisaje" width="600" height="400" loading="lazy"><figcaption>04 / Sendero · ilustración original de muestra.</figcaption></figure>
+<section class="pieza amplio galeria-fotografica" id="galeria-ejemplo" data-galeria><div class="galeria-pista" data-galeria-pista tabindex="0" role="region" aria-label="Galería de cuatro ilustraciones, desplazable horizontalmente">
+<figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzI2M2IzNyIvPjxjaXJjbGUgY3g9IjEzMCIgY3k9IjEwMCIgcj0iNjIiIGZpbGw9IiNkOGI5ODgiLz48cGF0aCBkPSJNMCAzMzAgMTYwIDE0MCAzMTAgMzAwIDQ1NSAxMzAgNjAwIDI3MFY0MDBIMFoiIGZpbGw9IiNhY2MzYTQiLz48cGF0aCBkPSJNMCAzNzUgMTgwIDMwMCAzNDAgMzcwIDUwMCAyNjUgNjAwIDMxMFY0MDBIMFoiIGZpbGw9IiMyNjNiMzciIG9wYWNpdHk9Ii42Ii8+PC9zdmc+" alt="Relieve: ilustración geométrica de paisaje" width="600" height="400" loading="lazy"><figcaption>Relieve · ilustración, 2026</figcaption></figure>
+<figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzIwMzU0NyIvPjxjaXJjbGUgY3g9IjIxMCIgY3k9IjEwMCIgcj0iNjIiIGZpbGw9IiNlZWQzYTUiLz48cGF0aCBkPSJNMCAzMzAgMTYwIDE0MCAzMTAgMzAwIDQ1NSAxMzAgNjAwIDI3MFY0MDBIMFoiIGZpbGw9IiM4MGE2YWIiLz48cGF0aCBkPSJNMCAzNzUgMTgwIDMwMCAzNDAgMzcwIDUwMCAyNjUgNjAwIDMxMFY0MDBIMFoiIGZpbGw9IiMyMDM1NDciIG9wYWNpdHk9Ii42Ii8+PC9zdmc+" alt="Horizonte: ilustración geométrica de paisaje" width="600" height="400" loading="lazy"><figcaption>Horizonte · ilustración, 2026</figcaption></figure>
+<figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzM5MzQ0MyIvPjxjaXJjbGUgY3g9IjI5MCIgY3k9IjEwMCIgcj0iNjIiIGZpbGw9IiNlYWQ4YmQiLz48cGF0aCBkPSJNMCAzMzAgMTYwIDE0MCAzMTAgMzAwIDQ1NSAxMzAgNjAwIDI3MFY0MDBIMFoiIGZpbGw9IiNhZTk3YTciLz48cGF0aCBkPSJNMCAzNzUgMTgwIDMwMCAzNDAgMzcwIDUwMCAyNjUgNjAwIDMxMFY0MDBIMFoiIGZpbGw9IiMzOTM0NDMiIG9wYWNpdHk9Ii42Ii8+PC9zdmc+" alt="Ciudad: ilustración geométrica de paisaje" width="600" height="400" loading="lazy"><figcaption>Ciudad · ilustración, 2026</figcaption></figure>
+<figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzQ0MzkyZCIvPjxjaXJjbGUgY3g9IjM3MCIgY3k9IjEwMCIgcj0iNjIiIGZpbGw9IiNlMGM5YTQiLz48cGF0aCBkPSJNMCAzMzAgMTYwIDE0MCAzMTAgMzAwIDQ1NSAxMzAgNjAwIDI3MFY0MDBIMFoiIGZpbGw9IiNiOWFkODgiLz48cGF0aCBkPSJNMCAzNzUgMTgwIDMwMCAzNDAgMzcwIDUwMCAyNjUgNjAwIDMxMFY0MDBIMFoiIGZpbGw9IiM0NDM5MmQiIG9wYWNpdHk9Ii42Ii8+PC9zdmc+" alt="Sendero: ilustración geométrica de paisaje" width="600" height="400" loading="lazy"><figcaption>Sendero · ilustración, 2026</figcaption></figure>
 </div><p class="sr-only" data-galeria-estado role="status">Desliza para recorrer las cuatro ilustraciones.</p></section>
 ```
 
-**Cuándo:** mostrar fotografías, capturas, evidencia de campo o etapas visuales. La variante `galeria-fotografica` usa desplazamiento nativo con ratón/trackpad, tacto o flechas del teclado tras enfocar la región. Sin botones ni avance automático; pies sobre la imagen, borde fino y sombra. piezas-editoriales.js anuncia la posición; sin JS se puede recorrer igualmente. Las galerías anteriores con controles siguen funcionando.
+**Cuándo:** mostrar fotografías, capturas, evidencia de campo o etapas visuales. La variante `galeria-fotografica` usa desplazamiento nativo con ratón/trackpad, tacto o flechas del teclado tras enfocar la región. Sin encabezado interno, botones ni avance automático; pies breves dentro de la imagen, degradado completo, contorno tenue y sombra. Ratón: cursor grab y arrastre con captura de puntero; tacto conserva scroll nativo. Las esquinas usan superellipse(1.6) con radio 28px, como /work; si el navegador no admite esa curva, el radio circular baja a 18px. piezas-editoriales.js anuncia la posición; sin JS se puede recorrer igualmente. Las galerías anteriores con controles siguen funcionando.
 
-**Límite:** no autoavanza, no amplía imágenes ni emula un visor 360°. Las muestras son ilustraciones, no fotografías reales de Angel. Imágenes data: URI y alt; no enlazar carátulas o fotos remotas. Recorta visualmente con object-fit:cover: para capturas cuyo borde importa usa contain. Los pies breves se superponen en una fila de rejilla y pueden crecer sin recortarse; una explicación extensa pertenece fuera de la imagen. No hay movimiento programado en esta variante. Movimiento reducido cancela el desplazamiento suave de los controles antiguos. init/get/destroy permite añadir o retirar el componente.
+**Límite:** no autoavanza, no amplía imágenes ni emula un visor 360°. Las muestras son ilustraciones, no fotografías reales de Angel. Imágenes data: URI y alt; no enlazar carátulas o fotos remotas. Recorta visualmente con object-fit:cover: para capturas cuyo borde importa usa contain. Los pies breves se superponen en una fila de rejilla y pueden crecer sin recortarse; una explicación extensa pertenece fuera de la imagen. El degradado ocupa la imagen completa, no una banda negra detrás del pie. No hay movimiento programado en esta variante. Movimiento reducido cancela el desplazamiento suave de los controles antiguos. init/get/destroy permite añadir o retirar el componente.

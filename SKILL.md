@@ -57,7 +57,7 @@ segunda lectura. Considera la receta `apuntes` si una observación lateral añad
   completa de `apuntes`; no saques notas del documento con offsets. En móvil van después del párrafo.
 - La información crítica y las fuentes se escriben en texto normal. La manuscrita es una segunda
   voz breve, no el lugar único de una fecha, advertencia o decisión. Si no añade contexto, omítela.
-- Conserva `data-mano data-escritura-sonora`, IDs únicos y el botón de repetición. El gesto arranca
+- Conserva `data-mano="fuente" data-escritura-sonora`, IDs únicos y el botón de repetición. El gesto arranca
   cuando se ve; Sonidos requiere activación explícita en la llave sol/luna. Con movimiento reducido
   se muestra completo. Comprueba entrando desde otra sección, no sólo recargando en la anotación.
 
@@ -257,8 +257,8 @@ La declaración temprana evita acentos rotos al abrir el mismo archivo fuera del
 - El generador incorpora [audio.js](audio.js), [controles.js](controles.js) e
   [interacciones.js](interacciones.js) en orden. Interacciones gestiona temas, índice, regla y copia;
   audio.js gestiona el sonido global. Copiar interacciones.js solo no basta para el audio.
-- El sonido empieza **apagado** y solo se activa con un botón. Es una síntesis Web Audio breve,
-  no una copia de los MP3 del sitio. No sonorices scroll ni foco. La escritura optativa `data-escritura-sonora` puede acompañar el trazo visible tras activar Sonidos; el resto de lectura automática permanece silencioso.
+- El sonido empieza **apagado** y solo se activa con un botón. Usa las grabaciones originales de cmrg.me incrustadas,
+  decodificadas con Web Audio; Angel pidió sustituir la síntesis anterior. No sonorices scroll ni foco. La escritura optativa `data-escritura-sonora` puede acompañar el trazo visible tras activar Sonidos; el resto de lectura automática permanece silencioso.
 - `prefers-reduced-motion` debe cancelar RAF y transiciones. No basta con esconder el canvas.
 
 ## Globo de rutas
@@ -416,13 +416,12 @@ por `top:100px`. La regla separa porcentaje y cursor, y colorea las marcas ya re
 
 ### Gesto manuscrito, cards delineadas y attention map
 
-Incluye [mano.js](mano.js) para una nota breve con `data-mano`: alfabeto SVG monolineal original,
-texto equivalente permanente y entrada una sola vez al verse. El HTML exacto está en la receta
-manuscrita; no dejes sólo `.manuscrita` estática si Angel pidió animación. El módulo admite
-minúsculas, acentos, ñ, números y puntuación sencilla; caracteres o palabras no compatibles
-conservan texto normal. Las notas al margen izquierdo/derecho usan la receta `apuntes`: su
-rejilla reserva espacio, se vuelve vertical en móvil y no pisa el índice. `data-subrayar` añade
-un subrayado por trazo a una frase corta. Todos cancelan animación con movimiento reducido.
+Incluye [mano.js](mano.js) y `data-mano="fuente"`: la Reenie Beanie incrustada coincide byte
+por byte con la de cmrg.me. Revela caracteres de esa fuente en 375 ms cada uno, escalonados
+sobre la duración original del lápiz. No reconstruyas glifos ni uses el alfabeto SVG anterior
+para las nuevas notas. La receta manuscrita conserva texto equivalente y repetición. Los apuntes
+izquierdo/derecho reservan espacio con rejilla y pasan al flujo en móvil. `data-subrayar="referencia"`
+añade tres pasadas irregulares y tenues en un segundo. Movimiento reducido cancela animaciones.
 
 El **attention map de áreas** está en `atencion`, con [atencion.js](atencion.js). No lo omitas del
 catálogo ni lo sustituyas por el mapa de calor: son preguntas distintas. El área se calcula desde
@@ -430,7 +429,7 @@ una tabla no negativa; categorías pequeñas mantienen nombres y cifras en contr
 `.mapa` y `.con-margen/.margen` continúan disponibles en documentos antiguos.
 
 La receta `cards-trazadas` ofrece rejilla delineada, sombra suave y títulos completos. El atributo
-`data-audio-hover` usa la síntesis de [audio.js](audio.js) sólo después de activar Sonidos en
+`data-audio-hover` usa el MP3 original incrustado en [audio.js](audio.js) sólo después de activar Sonidos en
 Apariencia y mover realmente el ratón. El usuario autorizó hover sonoro: sigue apagado al cargar,
 no suena al hacer scroll ni recibir foco. Angel pidió además lápiz durante la escritura visible:
 `data-escritura-sonora` permite acompañar esa animación, únicamente tras activar Sonidos.
@@ -467,3 +466,9 @@ un pulso acotado, cancelado fuera de pantalla y con movimiento reducido. Nunca a
 
 [prioridades.html](prioridades.html) reúne las prioridades propuestas y estas muestras en dos
 páginas. Las propuestas de persistencia, migraciones y nuevos estados no se presentan como hechas.
+
+Para la galería fiel a /work copia `galeria-fotografica`: sin encabezado ni introducción dentro
+de la pieza, sólo imágenes con pies breves superpuestos, velo sobre toda la foto y contorno tenue.
+No añadas una banda negra al pie. Mantén la curva superellipse y el arrastre con cursor grab;
+en móvil se desliza de forma nativa. La muestra lleva ilustraciones rotuladas como tales:
+para evidencia fotográfica incrusta las fotos proporcionadas y conserva su contexto.

@@ -80,7 +80,7 @@ es `isMuted:false`; Nota mantiene **apagado**. Se midieron duraciones mediante
 `AudioContext.decodeAudioData` (sin reproducirlas): click 47,8125 ms, hover 107,1458 ms,
 swoosh 160,7292 ms, positive 857,1458 ms y lápices 2181,3333–3034,6667 ms. La tabla completa
 está en el JSON con cada URL `/sounds/*.mp3`, canales y frecuencia de decodificación.
-No se afirma una evaluación auditiva; no se copiarán los MP3.
+No se afirma una evaluación auditiva. La decisión inicial de sintetizar se sustituyó el 15 de septiembre por petición explícita de Angel: audio.js incrusta ahora las grabaciones originales; véase auditoria/sonidos-cmrg.json.
 
 ## Propuesta publicada antes de construir
 
