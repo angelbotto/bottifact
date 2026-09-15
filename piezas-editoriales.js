@@ -9,7 +9,8 @@
   if(el.hasAttribute('data-actividad')){
    const map=el.querySelector('[data-actividad-mapa]'),legend=el.querySelector('[data-actividad-escala]'),status=el.querySelector('[data-actividad-estado]');if(!map||!legend||!status)return;
    const original=[map.innerHTML,legend.innerHTML,status.textContent];
-   const rows=[...el.querySelectorAll('tbody tr')].map(tr=>({label:tr.querySelector('th')?.textContent.trim(),raw:tr.querySelector('[data-valor]')?.getAttribute('data-valor')}));
+   const source=el.hasAttribute('data-actividad-tabla')?document.getElementById(el.dataset.actividadTabla):el;
+   const rows=[...(source?.querySelectorAll('tbody tr')||[])].map(tr=>({label:tr.querySelector('th')?.textContent.trim(),raw:tr.querySelector('[data-valor]')?.getAttribute('data-valor')}));
    if(!rows.length||rows.length>52||rows.some(r=>!r.label||r.raw===null||r.raw===undefined||r.raw.trim()===''||!Number.isInteger(Number(r.raw))||Number(r.raw)<0||Number(r.raw)>1e6)){
     status.textContent='No se puede dibujar la actividad: revisa los conteos enteros no negativos de la tabla.';
    }else{
@@ -32,14 +33,14 @@
    clean.push(()=>{observer.disconnect();stop();halo.remove();});api.play=play;Object.defineProperty(api,'animating',{get:()=>!!animation});
   }
   if(el.hasAttribute('data-galeria')){
-   const track=el.querySelector('[data-galeria-pista]'),prev=el.querySelector('[data-galeria-anterior]'),next=el.querySelector('[data-galeria-siguiente]'),status=el.querySelector('[data-galeria-estado]');if(!track||!prev||!next||!status)return;
-   const items=[...track.children],original={prev:prev.disabled,next:next.disabled,text:status.textContent};let timer;
-   const update=()=>{const r=track.getBoundingClientRect(),index=items.reduce((best,e,i)=>Math.abs(e.getBoundingClientRect().left-r.left)<Math.abs(items[best].getBoundingClientRect().left-r.left)?i:best,0);prev.disabled=track.scrollLeft<=1;next.disabled=track.scrollLeft>=track.scrollWidth-track.clientWidth-1;status.textContent=items.length?'Vista '+(index+1)+' de '+items.length+'. Desliza para recorrer.':'No hay imágenes en esta galería.';};
+   const track=el.querySelector('[data-galeria-pista]'),prev=el.querySelector('[data-galeria-anterior]'),next=el.querySelector('[data-galeria-siguiente]'),status=el.querySelector('[data-galeria-estado]');if(!track||!status)return;
+   const items=[...track.children],original={prev:prev?.disabled,next:next?.disabled,text:status.textContent};let timer;
+   const update=()=>{const r=track.getBoundingClientRect(),index=items.reduce((best,e,i)=>Math.abs(e.getBoundingClientRect().left-r.left)<Math.abs(items[best].getBoundingClientRect().left-r.left)?i:best,0);if(prev)prev.disabled=track.scrollLeft<=1;if(next)next.disabled=track.scrollLeft>=track.scrollWidth-track.clientWidth-1;status.textContent=items.length?'Vista '+(index+1)+' de '+items.length+'. Desliza para recorrer.':'No hay imágenes en esta galería.';};
    const move=direction=>{const r=track.getBoundingClientRect(),current=track.scrollLeft,positions=items.map(e=>current+e.getBoundingClientRect().left-r.left),target=direction>0?positions.find(x=>x>current+2):positions.reverse().find(x=>x<current-2);track.scrollTo({left:target??(direction>0?track.scrollWidth:0),behavior:motion.matches?'instant':'smooth'});};
-   on(prev,'click',()=>move(-1));on(next,'click',()=>move(1));on(track,'scroll',()=>{clearTimeout(timer);timer=setTimeout(update,90);},{passive:true});
+   if(prev)on(prev,'click',()=>move(-1));if(next)on(next,'click',()=>move(1));on(track,'scroll',()=>{clearTimeout(timer);timer=setTimeout(update,90);},{passive:true});
    on(motion,'change',()=>{if(motion.matches)track.scrollTo({left:track.scrollLeft,behavior:'instant'});update();});
    const observer=new ResizeObserver(update);observer.observe(track);update();
-   clean.push(()=>{clearTimeout(timer);observer.disconnect();track.scrollTo({left:track.scrollLeft,behavior:'instant'});prev.disabled=original.prev;next.disabled=original.next;status.textContent=original.text;});
+   clean.push(()=>{clearTimeout(timer);observer.disconnect();track.scrollTo({left:track.scrollLeft,behavior:'instant'});if(prev)prev.disabled=original.prev;if(next)next.disabled=original.next;status.textContent=original.text;});
   }
   instances.set(el,api);
  }

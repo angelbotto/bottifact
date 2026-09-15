@@ -968,7 +968,7 @@ las clases existentes; ayudan a elegir una pieza antes de copiarla.
 | `.terminal` | No usar para una tabla analítica que necesite ordenar o cabeceras semánticas. Sólo copia texto, no ejecuta comandos. Las columnas dependen de mono y espacios; el ancho se desplaza dentro del `pre`. |
 | `.extracto` | No degradar datos críticos ni aplicar máscara al único ejemplar del texto. La copia decorativa debe ser `aria-hidden`; la versión completa vive en `details`. |
 | `.kept` | No envoltorio universal para el informe. No carga portadas ni convierte tarjetas en enlaces; añade un `a` real si hay navegación y datos de imagen incrustados. |
-| `.manuscrita` / `.senalado` | No instrucciones críticas ni frases llenas de corchetes. Es tipografía estática y texto seleccionable; la animación exige los paths de `NotaEscritura`. |
+| `.manuscrita` / `.senalado` | No instrucciones críticas ni frases llenas de corchetes. Sin atributos es tipografía estática y seleccionable. Para texto breve animado usa `data-mano` con `mano.js`; para paths propios usa `NotaEscritura`. |
 | `NotaGlobo` | No topografía, fronteras políticas ni distancias medidas. Una instancia por contenedor, IDs de puntos/rutas únicos; `destroy()` al retirarlo. Sin Three/WebGL conserva lista y mensaje. |
 
 ## Alcance de esta versión
@@ -2368,8 +2368,7 @@ primero el argumento. El subrayado usa un path propio y comparte entrada y cance
 **Límite:** se reserva una rejilla real dentro de la figura ancha; no son offsets negativos ni
 notas fijas que invadan el índice. Bajo 1000 px, los apuntes caen después del párrafo. Frases cortas
 y subrayados que quepan en una línea; no para anotaciones largas ni contenido obligatorio. El
-alfabeto admite la puntuación española; el texto equivalente siempre se conserva. Sonido sólo
-al repetir con Sonidos activado. La API y los límites de mano.js son los de la receta manuscrita.
+alfabeto admite la puntuación española; el texto equivalente siempre se conserva. Sonido optativo sincronizado con el trazo visible tras activar Sonidos; también al repetir. La API y los límites de mano.js son los de la receta manuscrita.
 
 ## Cards delineadas de publicaciones
 
@@ -2617,18 +2616,18 @@ actualiza HTML publicado. Sonido apagado tras recargar/ocultar y comentarios en 
 
 <!-- nota:ejemplo actividad-editorial -->
 ```html
-<section class="pieza amplio actividad-editorial" id="actividad-editorial-ejemplo" data-actividad>
+<section class="pieza amplio actividad-editorial" id="actividad-editorial-ejemplo" data-actividad data-actividad-tabla="actividad-editorial-datos">
   <div><p class="ceja">Actividad de ejemplo / ocho semanas</p><h3>Pequeños avances,<br>una historia visible.</h3><p>Cada cuadrado representa una semana. La intensidad indica cuántas acciones se registraron; no mide calidad ni productividad.</p><a class="enlace-icono" href="https://www.cmrg.me/now">Ver la referencia editorial ↗</a></div>
   <div><div class="actividad-mosaico" data-actividad-mapa role="group" aria-label="Acciones por semana"></div><div class="actividad-escala" data-actividad-escala aria-label="Escala de acciones"></div><p data-actividad-estado role="status">Los conteos completos están en la tabla.</p></div>
-  <details><summary>Datos ilustrativos completos</summary><div class="tabla-caja" tabindex="0" role="region" aria-label="Actividad semanal, desplazable"><table><caption>Acciones de ejemplo, no actividad real de GitHub</caption><thead><tr><th scope="col">Semana</th><th scope="col">Acciones</th></tr></thead><tbody>
+</section>
+<details class="actividad-datos" id="actividad-editorial-datos"><summary>Datos ilustrativos completos</summary><div class="tabla-caja" tabindex="0" role="region" aria-label="Actividad semanal, desplazable"><table><caption>Acciones de ejemplo, no actividad real de GitHub</caption><thead><tr><th scope="col">Semana</th><th scope="col">Acciones</th></tr></thead><tbody>
     <tr><th scope="row">1–7 junio</th><td data-valor="0">0</td></tr><tr><th scope="row">8–14 junio</th><td data-valor="2">2</td></tr><tr><th scope="row">15–21 junio</th><td data-valor="3">3</td></tr><tr><th scope="row">22–28 junio</th><td data-valor="5">5</td></tr><tr><th scope="row">29 junio–5 julio</th><td data-valor="1">1</td></tr><tr><th scope="row">6–12 julio</th><td data-valor="7">7</td></tr><tr><th scope="row">13–19 julio</th><td data-valor="4">4</td></tr><tr><th scope="row">20–26 julio</th><td data-valor="8">8</td></tr>
   </tbody></table></div></details>
-</section>
 ```
 
 **Cuándo:** introducir actividad reciente con relato y conteos consultables. piezas-editoriales.js deriva las celdas, suma y escala desde la tabla; ratón, foco y clic muestran el contexto.
 
-**Límite:** 1–52 períodos, conteos enteros 0–1.000.000. Tamaño igual por período, intensidad por cantidad; no área proporcional, ni mapa de calor de dos variables. No conecta GitHub ni atribuye productividad. Los intervalos positivos se calculan desde el máximo y se recortan al valor alcanzado; el cero tiene su propia muestra. Conserva tabla, unidad y fechas reales al adaptar.
+**Límite:** 1–52 períodos, conteos enteros 0–1.000.000. Tamaño igual por período, intensidad por cantidad; no área proporcional, ni mapa de calor de dos variables. No conecta GitHub ni atribuye productividad. Los intervalos positivos se calculan desde el máximo y se recortan al valor alcanzado; el cero tiene su propia muestra. Conserva tabla, unidad y fechas reales al adaptar. `data-actividad-tabla` nombra el ID de los datos, hermanos del marco: copia ambos bloques y cambia ambos IDs juntos. La tabla queda fuera de la figura y visible al imprimir. Sin ese atributo se conserva la compatibilidad con tablas dentro de la pieza. Un destino ausente muestra un error, nunca datos inventados.
 
 
 ## Código numerado y líneas destacadas
@@ -2688,21 +2687,21 @@ actualiza HTML publicado. Sonido apagado tras recargar/ocultar y comentarios en 
 
 **Cuándo:** contar una trayectoria profesional, decisiones o hitos de un proyecto. Fecha, título y explicación siguen el mismo eje; el punto de la etapa actual se distingue por color y texto.
 
-**Límite:** el espacio entre hitos es editorial, no proporcional al tiempo. Para medir duración, usa una serie temporal o una gráfica de etapas. No oculta los hitos antiguos con blur. La cronología anotada anterior sigue disponible; esta es una variante vertical estática.
+**Límite:** el espacio entre hitos es editorial, no proporcional al tiempo. Para medir duración, usa una serie temporal o una gráfica de etapas. La línea continua pasa de acento a tinta secundaria y se desvanece al final; el degradado sólo afecta la línea, nunca la evidencia. No oculta los hitos antiguos con blur. La cronología anotada anterior sigue disponible; esta es una variante vertical estática.
 
 
 ## Galería deslizable
 
 <!-- nota:ejemplo galeria -->
 ```html
-<section class="pieza amplio" id="galeria-ejemplo" data-galeria><h3>Una secuencia para mirar de cerca.</h3><p class="procedencia">Ilustraciones de demostración. Sustituye cada imagen por tu fotografía o captura incrustada y su contexto.</p><div class="galeria-pista" data-galeria-pista tabindex="0" role="region" aria-label="Galería de cuatro ilustraciones, desplazable horizontalmente">
+<section class="pieza amplio galeria-fotografica" id="galeria-ejemplo" data-galeria><h3>Una secuencia para mirar de cerca.</h3><p class="procedencia">Ilustraciones de demostración. Sustituye cada imagen por tu fotografía o captura incrustada y su contexto.</p><div class="galeria-pista" data-galeria-pista tabindex="0" role="region" aria-label="Galería de cuatro ilustraciones, desplazable horizontalmente">
 <figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzI2M2IzNyIvPjxjaXJjbGUgY3g9IjEzMCIgY3k9IjEwMCIgcj0iNjIiIGZpbGw9IiNkOGI5ODgiLz48cGF0aCBkPSJNMCAzMzAgMTYwIDE0MCAzMTAgMzAwIDQ1NSAxMzAgNjAwIDI3MFY0MDBIMFoiIGZpbGw9IiNhY2MzYTQiLz48cGF0aCBkPSJNMCAzNzUgMTgwIDMwMCAzNDAgMzcwIDUwMCAyNjUgNjAwIDMxMFY0MDBIMFoiIGZpbGw9IiMyNjNiMzciIG9wYWNpdHk9Ii42Ii8+PC9zdmc+" alt="Relieve: ilustración geométrica de paisaje" width="600" height="400" loading="lazy"><figcaption>01 / Relieve · ilustración original de muestra.</figcaption></figure>
 <figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzIwMzU0NyIvPjxjaXJjbGUgY3g9IjIxMCIgY3k9IjEwMCIgcj0iNjIiIGZpbGw9IiNlZWQzYTUiLz48cGF0aCBkPSJNMCAzMzAgMTYwIDE0MCAzMTAgMzAwIDQ1NSAxMzAgNjAwIDI3MFY0MDBIMFoiIGZpbGw9IiM4MGE2YWIiLz48cGF0aCBkPSJNMCAzNzUgMTgwIDMwMCAzNDAgMzcwIDUwMCAyNjUgNjAwIDMxMFY0MDBIMFoiIGZpbGw9IiMyMDM1NDciIG9wYWNpdHk9Ii42Ii8+PC9zdmc+" alt="Horizonte: ilustración geométrica de paisaje" width="600" height="400" loading="lazy"><figcaption>02 / Horizonte · ilustración original de muestra.</figcaption></figure>
 <figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzM5MzQ0MyIvPjxjaXJjbGUgY3g9IjI5MCIgY3k9IjEwMCIgcj0iNjIiIGZpbGw9IiNlYWQ4YmQiLz48cGF0aCBkPSJNMCAzMzAgMTYwIDE0MCAzMTAgMzAwIDQ1NSAxMzAgNjAwIDI3MFY0MDBIMFoiIGZpbGw9IiNhZTk3YTciLz48cGF0aCBkPSJNMCAzNzUgMTgwIDMwMCAzNDAgMzcwIDUwMCAyNjUgNjAwIDMxMFY0MDBIMFoiIGZpbGw9IiMzOTM0NDMiIG9wYWNpdHk9Ii42Ii8+PC9zdmc+" alt="Ciudad: ilustración geométrica de paisaje" width="600" height="400" loading="lazy"><figcaption>03 / Ciudad · ilustración original de muestra.</figcaption></figure>
 <figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzQ0MzkyZCIvPjxjaXJjbGUgY3g9IjM3MCIgY3k9IjEwMCIgcj0iNjIiIGZpbGw9IiNlMGM5YTQiLz48cGF0aCBkPSJNMCAzMzAgMTYwIDE0MCAzMTAgMzAwIDQ1NSAxMzAgNjAwIDI3MFY0MDBIMFoiIGZpbGw9IiNiOWFkODgiLz48cGF0aCBkPSJNMCAzNzUgMTgwIDMwMCAzNDAgMzcwIDUwMCAyNjUgNjAwIDMxMFY0MDBIMFoiIGZpbGw9IiM0NDM5MmQiIG9wYWNpdHk9Ii42Ii8+PC9zdmc+" alt="Sendero: ilustración geométrica de paisaje" width="600" height="400" loading="lazy"><figcaption>04 / Sendero · ilustración original de muestra.</figcaption></figure>
-</div><div class="galeria-controles"><button type="button" data-galeria-anterior aria-label="Imagen anterior" disabled>←</button><p data-galeria-estado role="status">Desliza para recorrer las cuatro ilustraciones.</p><button type="button" data-galeria-siguiente aria-label="Imagen siguiente">→</button></div></section>
+</div><p class="sr-only" data-galeria-estado role="status">Desliza para recorrer las cuatro ilustraciones.</p></section>
 ```
 
-**Cuándo:** mostrar fotografías, capturas, evidencia de campo o etapas visuales. Deslizamiento nativo, ajuste suave, controles anterior/siguiente y pies de imagen. piezas-editoriales.js mantiene botones y posición; sin JS se puede desplazar la región.
+**Cuándo:** mostrar fotografías, capturas, evidencia de campo o etapas visuales. La variante `galeria-fotografica` usa desplazamiento nativo con ratón/trackpad, tacto o flechas del teclado tras enfocar la región. Sin botones ni avance automático; pies sobre la imagen, borde fino y sombra. piezas-editoriales.js anuncia la posición; sin JS se puede recorrer igualmente. Las galerías anteriores con controles siguen funcionando.
 
-**Límite:** no autoavanza, no amplía imágenes ni emula un visor 360°. Las muestras son ilustraciones, no fotografías reales de Angel. Imágenes data: URI y alt; no enlazar carátulas o fotos remotas. Recorta visualmente con object-fit:cover: para capturas cuyo borde importa usa contain. Movimiento reducido cancela desplazamiento suave. init/get/destroy permite añadir o retirar el componente.
+**Límite:** no autoavanza, no amplía imágenes ni emula un visor 360°. Las muestras son ilustraciones, no fotografías reales de Angel. Imágenes data: URI y alt; no enlazar carátulas o fotos remotas. Recorta visualmente con object-fit:cover: para capturas cuyo borde importa usa contain. Los pies breves se superponen en una fila de rejilla y pueden crecer sin recortarse; una explicación extensa pertenece fuera de la imagen. No hay movimiento programado en esta variante. Movimiento reducido cancela el desplazamiento suave de los controles antiguos. init/get/destroy permite añadir o retirar el componente.

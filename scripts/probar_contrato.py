@@ -22,7 +22,7 @@ class ContractTests(unittest.TestCase):
   broken=re.sub(r'(<article class="pagina"[^>]*>.*?)(<nav class="indice".*?</nav>)',r'\1',multi,count=1,flags=re.S)
   self.assertNotEqual(multi,broken);self.assertTrue(validate(broken))
  def test_refs_and_grid(self):
-  for html in ['<section><h2>Sin ID</h2></section>','<section id="x"><h2>Figura</h2><figure class="ancho">Atrapada</figure></section>','<p id="x">Uno</p><p id="x">Dos</p>','<a href="#fantasma">Ir</a>']:
+  for html in ['<section><h2>Sin ID</h2></section>','<section id="x"><h2>Figura</h2><figure class="ancho">Atrapada</figure></section>','<p id="x">Uno</p><p id="x">Dos</p>','<a href="#fantasma">Ir</a>','<section data-actividad data-actividad-tabla="ausente"></section>']:
    with self.subTest(html=html),self.assertRaises(ValueError):build('Mal',[{**self.pages[0],'html':html}])
  def test_registry_can_be_composed(self):
   items=json.loads((ROOT/'registro.json').read_text())['componentes']

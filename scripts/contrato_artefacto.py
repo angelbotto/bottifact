@@ -133,7 +133,7 @@ def validate(html):
    require([n.attrs.get('href') for n in indices[0].descendants() if n.tag=='a']==anchors,'El índice no corresponde a los h2 de '+page.attrs.get('id','hoja')+'.')
  for n in nodes:
   if n.attrs.get('href','').startswith('#'):require(n.attrs['href'][1:] in ids,'Enlace sin destino: '+n.attrs['href'])
-  for attr in ['aria-controls','aria-labelledby','aria-describedby','data-copiar','data-ir']:
+  for attr in ['aria-controls','aria-labelledby','aria-describedby','data-copiar','data-ir','data-actividad-tabla']:
    if n.attrs.get(attr):require(all(x in ids for x in n.attrs[attr].split()),'Referencia sin destino: '+n.attrs[attr])
   if n.classes & {'ancho','amplio'}:require(bool(n.parent and ('hoja' in n.parent.classes or 'pagina' in n.parent.classes)),'Figura ancha fuera de la rejilla: '+n.attrs.get('id',n.tag))
   if n.classes & {'tabla-caja','grafica-caja','diagrama-caja','escena-caja','escritura-caja','visor-caja','apariencia-panel','navegacion-scroll','galeria-pista'} or n.tag=='pre':require(n.attrs.get('tabindex')=='0' and bool(n.attrs.get('aria-label') or n.attrs.get('aria-labelledby')),'Desplazamiento sin foco o nombre: '+n.tag)
