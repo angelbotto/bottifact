@@ -85,7 +85,7 @@ def build(title,pages,description='',brand='tikin'):
  main='<main class="hoja lectura-guiada nota-estandar'+(' multipagina edicion' if multi else '')+'" data-lectura'+(' data-progreso-pagina data-historial data-enlaces-internos' if multi else '')+' lang="es">'+''.join(pieces)+pag+'<footer class="pie"><p>'+escape(brand)+' · '+escape(title)+'</p></footer></main>'
  ruler='<div class="regla regla-guiada" role="slider" tabindex="0" aria-orientation="horizontal" aria-label="Progreso de lectura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="ticks"></div><div class="cursor"></div><span class="val">0%</span></div>'
  files=['fuentes.css','estilo.css',*modules]
- manifest={'version':VERSION,'paginas':ids,'modulos':modules,'fuentes':{f:hashlib.sha256((ROOT/f).read_bytes()).hexdigest() for f in files}}
+ manifest={'version':VERSION,'paginas':ids,'modulos':modules,'fuentes':{f:hashlib.sha256((ROOT/f).read_text().encode('utf-8')).hexdigest() for f in files}}
  result='<title>'+escape(title)+'</title>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="nota-tikin-version" content="'+VERSION+'">\n'
  for file in files[:2]:result+='<style data-nota-fuente="'+file+'">\n'+(ROOT/file).read_text()+'\n</style>\n'
  result+=header+main+ruler+revision()
@@ -163,6 +163,6 @@ def validate(html):
   try:
    m=json.loads(manifests[0].text());require(m.get('version')==VERSION and m.get('modulos')==names,'Manifiesto incompatible con los módulos.')
    for name in ['fuentes.css','estilo.css',*names]:
-    if name in ['fuentes.css','estilo.css',*ORDER]:require(m.get('fuentes',{}).get(name)==hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),'Hash desactualizado: '+name)
+    if name in ['fuentes.css','estilo.css',*ORDER]:require(m.get('fuentes',{}).get(name)==hashlib.sha256((ROOT/name).read_text().encode('utf-8')).hexdigest(),'Hash desactualizado: '+name)
   except (ValueError,TypeError,AttributeError):errors.append('Manifiesto inválido.')
  return list(dict.fromkeys(errors))
