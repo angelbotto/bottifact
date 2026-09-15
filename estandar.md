@@ -102,3 +102,6 @@ Una sola instancia de `revision.js`, con su montaje oculto de la receta, crea lo
 flotantes. No pongas una caja grande en el flujo. El contador abre los comentarios y el prompt
 con referencia y fragmento; los pines se anclan al contenido. No hay envío, colaboración remota
 ni persistencia: copia el prompt antes de cerrar o recargar. Una nueva sesión empieza sin notas.
+
+El diagnóstico, las pruebas ejecutadas y las prioridades que aún faltan están en
+[auditoría de estandarización](auditoria/estandarizacion.md).
