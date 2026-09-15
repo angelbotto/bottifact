@@ -175,7 +175,7 @@ La declaración temprana evita acentos rotos al abrir el mismo archivo fuera del
 - Pega [interacciones.js](interacciones.js) al final, dentro de un `<script>`. Contiene temas,
   índice, regla, copia, impresión de extractos y sonido opcional. No requiere bibliotecas.
 - El sonido empieza **apagado** y solo se activa con un botón. Es una síntesis Web Audio breve,
-  no una copia de los MP3 del sitio. No pongas sonido sobre scroll, foco ni lectura automática.
+  no una copia de los MP3 del sitio. No sonorices scroll ni foco. La escritura optativa `data-escritura-sonora` puede acompañar el trazo visible tras activar Sonidos; el resto de lectura automática permanece silencioso.
 - `prefers-reduced-motion` debe cancelar RAF y transiciones. No basta con esconder el canvas.
 
 ## Globo de rutas
@@ -288,7 +288,7 @@ HTTPS de Tailscale Serve que confirme el host, no un enlace localhost para la en
 
 ### Edición completa para explorar y componer
 
-Abre [biblioteca.html](biblioteca.html) para 57 recetas en nueve capítulos, con HTML,
+Abre [biblioteca.html](biblioteca.html) para 65 recetas en nueve capítulos, con HTML,
 dependencias, criterio y límites junto al ejemplo. Incluye archivos de publicaciones,
 autoría, lecturas relacionadas, anotaciones numeradas, revisiones, criterios y riesgos.
 [editorial.js](editorial.js) ofrece búsqueda/filtro local y configuración de lista/rejilla,
@@ -304,7 +304,7 @@ multipagina conserva el comportamiento de los artefactos anteriores.
 
 La edición completa incorpora [revision.js](revision.js): pines flotantes en el punto elegido, editor pequeño y prompt copiable con capítulo, referencia, fragmento y coordenadas relativas, sin red ni persistencia. Una instancia por documento; copia antes de recargar. [explorador.js](explorador.js) añade búsqueda y menús compactos de filtros, grupos, columnas y orden a la tabla de cuatro columnas documentada. Cards editoriales, de indicador y de proyecto están en componentes.md.
 
-El visor permite pegar HTML declarativo local y alternar Móvil/Escritorio; los embeds remotos siguen fuera de CSP. Escritura admite `data-al-ver` para una primera animación al entrar en pantalla; el sonido sólo sale de botones explícitos. [codigo.js](codigo.js) colorea HTML, CSS, JavaScript, TypeScript, JSON, Python, SQL, Shell y salida de terminal creando nodos de texto seguros y conserva exactamente el contenido copiable. Grano de papel usa SVG de ruido incrustado, no una rejilla de puntos.
+El visor permite pegar HTML declarativo local y alternar Móvil/Escritorio; los embeds remotos siguen fuera de CSP. Escritura admite `data-al-ver` para una primera animación al entrar en pantalla; el sonido se activa con un botón explícito. [codigo.js](codigo.js) colorea HTML, CSS, JavaScript, TypeScript, JSON, Python, SQL, Shell y salida de terminal creando nodos de texto seguros y conserva exactamente el contenido copiable. Grano de papel usa SVG de ruido incrustado, no una rejilla de puntos.
 
 [controles.js](controles.js) coloca los menús de tabla y visor dentro del viewport; se incluye antes de interacciones.js. [audio.js](audio.js), antes de interacciones.js, centraliza el audio en Apariencia: empieza apagado, requiere gesto real y no suena al desplazar. «Ver escritura animada» lleva a la nota manuscrita animada, o al SVG de Edición si no hay nota. El visor ofrece dispositivo, proporción, rotación y escala visual; conserva píxeles CSS para las consultas de contenedor. La trama se aplica también a la barra de capítulos.
 
@@ -349,5 +349,20 @@ una tabla no negativa; categorías pequeñas mantienen nombres y cifras en contr
 La receta `cards-trazadas` ofrece rejilla delineada, sombra suave y títulos completos. El atributo
 `data-audio-hover` usa la síntesis de [audio.js](audio.js) sólo después de activar Sonidos en
 Apariencia y mover realmente el ratón. El usuario autorizó hover sonoro: sigue apagado al cargar,
-no suena al hacer scroll, recibir foco ni entrar una escritura en pantalla. Repetir escritura
-puede emitir el lápiz si el audio está activado; una animación automática nunca lo hace.
+no suena al hacer scroll ni recibir foco. Angel pidió además lápiz durante la escritura visible:
+`data-escritura-sonora` permite acompañar esa animación, únicamente tras activar Sonidos.
+Se cancela al salir, finalizar, ocultar el documento o reducir movimiento; sin el atributo sigue silenciosa.
+
+
+### Composición editorial ampliada
+
+La biblioteca ofrece marcos de líneas discontinuas con extremos desvanecidos (`marco-difuso`),
+estantería, invitación tramada, listas de estados/proyectos/conversación, navegación con `/` y
+footer editorial. Copia las recetas completas de componentes.md; el marco reserva su espacio,
+no necesita márgenes negativos y nunca enmascara texto. La navegación discreta conserva índice,
+regla y capítulos; en móvil sólo su fila de enlaces tiene desplazamiento local.
+
+El attention map tiene tooltip con nombre, valor, porcentaje y total; `data-contexto` en un texto visible de la fila
+permite explicar el dato. Ratón, foco y toque dan acceso; Escape cierra. Mantén tabla y controles.
+La invitación requiere invitacion.js y copia un borrador con contexto: no promete enviar, guardar
+ni conectar un formulario a un servicio. Las cubiertas y los datos de ejemplo son ficticios.

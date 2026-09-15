@@ -31,7 +31,7 @@ class Fragment(HTMLParser):
    if 'three' in src.lower() and src!=THREE:self.errors.append('Three sin versión fijada')
   if tag=='link' and a.get('rel')=='stylesheet' and not a.get('href','').startswith('https://fonts.googleapis.com/'):
    self.errors.append('Hoja externa fuera de CSP')
-  if classes & {'tabla-caja','diagrama-caja','grafica-caja','escena-caja','escritura-caja','visor-caja','apariencia-panel','pestanas-caja','barra'} or tag=='pre':
+  if classes & {'tabla-caja','diagrama-caja','grafica-caja','escena-caja','escritura-caja','visor-caja','apariencia-panel','pestanas-caja','navegacion-scroll'} or ('barra' in classes and 'navegacion-editorial' not in classes) or tag=='pre':
    if a.get('tabindex')!='0' or not (a.get('aria-label') or a.get('aria-labelledby')):self.errors.append('Desplazamiento sin foco/nombre: '+tag+' '+a.get('class',''))
   if classes & {'ancho','amplio'}:
    parent=self.stack[-1][1] if self.stack else set()
@@ -47,8 +47,8 @@ class Fragment(HTMLParser):
   if tag not in VOID:self.handle_endtag(tag)
 
 MODULES={
- 'biblioteca.html':['mano.js','atencion.js','geografia.js','analitica.js','codigo.js','explorador.js','revision.js','interacciones.js','multipagina.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js','editorial.js'],
- 'plantilla.html':['mano.js','atencion.js','geografia.js','analitica.js','codigo.js','explorador.js','revision.js','editorial.js','interacciones.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js'],
+ 'biblioteca.html':['invitacion.js','mano.js','atencion.js','geografia.js','analitica.js','codigo.js','explorador.js','revision.js','interacciones.js','multipagina.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js','editorial.js'],
+ 'plantilla.html':['invitacion.js','mano.js','atencion.js','geografia.js','analitica.js','codigo.js','explorador.js','revision.js','editorial.js','interacciones.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js'],
  'informe.html':['interacciones.js','multipagina.js','graficas.js','reportes.js','visor.js','pestanas.js'],
  'globo.html':['interacciones.js','globo.js'],
  'multipagina.html':['interacciones.js','multipagina.js'],

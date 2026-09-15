@@ -446,7 +446,7 @@ con espacios dentro del `<pre>`; no uses una tabla disfrazada.
 <!-- nota:ejemplo manuscrita -->
 ```html
 <div class="gesto-escrito">
-  <p class="manuscrita" data-mano id="nota-decision">de doce frentes, siete están en producción. el cuello de botella ya no es construir: es decidir.</p>
+  <p class="manuscrita" data-mano data-escritura-sonora id="nota-decision">de doce frentes, siete están en producción. el cuello de botella ya no es construir: es decidir.</p>
   <button class="gesto-repetir" type="button" data-mano-repetir="nota-decision" data-audio="escritura">Volver a escribir la nota</button>
 </div>
 ```
@@ -462,7 +462,7 @@ caracteres no compatibles conserva su texto original estático. La alternativa t
 permanece en el DOM para lectores de pantalla y comentarios; la escritura SVG no permite
 seleccionar letra por letra con el ratón. No uses el gesto para información crítica. Al salir de
 pantalla, cambiar de pestaña o activar movimiento reducido se cancelan las animaciones y se
-completa el texto. No hay RAF. La entrada es silenciosa; repetir sólo suena si activaste Sonidos.
+completa el texto. No hay RAF. Con `data-escritura-sonora`, el lápiz acompaña el trazo tras activar Sonidos y se corta al salir. Sin ese atributo, la entrada permanece silenciosa.
 `NotaMano.init/get/destroy` permite insertar o retirar la mejora preservando los nodos originales.
 
 ## Globo de rutas
@@ -819,7 +819,7 @@ paths originales; la animación recorre **su longitud**, no un rectángulo que d
 
 <!-- nota:ejemplo escritura -->
 ```html
-<figure class="ancho nota-escritura" data-escritura data-al-ver data-canal-sonido data-duracion="2400">
+<figure class="ancho nota-escritura" data-escritura data-escritura-sonora data-al-ver data-canal-sonido data-duracion="2400">
   <div class="escritura-caja" tabindex="0" role="region" aria-label="Escritura a mano, desplazable">
     <svg viewBox="0 0 420 110" aria-hidden="true">
       <path data-trazo d="M55 51 C43 38 27 51 30 68 C34 83 52 69 54 53 L52 76 Q58 78 65 71"/>
@@ -842,7 +842,7 @@ paths originales; la animación recorre **su longitud**, no un rectángulo que d
 ```
 
 **Cuándo:** una anotación corta y secundaria que gana significado con el gesto del trazo.
-Con `data-al-ver` se escribe una vez al entrar al menos un 30 % de su caja en pantalla; sin ese atributo empieza completa y la persona decide repetirla. El sonido arranca apagado: pulsa Activar sonido y después Repetir escritura para oír la señal breve. Entrar en pantalla nunca dispara audio. Incluye `audio.js` con Apariencia para el sonido de lápiz; si copias la escritura sola, `sonido.js` ofrece el mismo gesto de lápiz desde su botón local. El acceso «Ver escritura animada» aparece sólo en documentos que incluyen un trazo. Conserva `.manuscrita` para texto corriente
+Con `data-al-ver` se escribe una vez al entrar al menos un 30 % de su caja en pantalla; sin ese atributo empieza completa y la persona decide repetirla. El sonido arranca apagado: pulsa Activar sonido y después Repetir escritura para oír la señal breve. Con `data-escritura-sonora`, y sólo después de activar Sonidos, el lápiz acompaña la animación al entrar y se detiene al salir. Sin el atributo la entrada es silenciosa. Incluye `audio.js` con Apariencia para el sonido de lápiz; si copias la escritura sola, `sonido.js` ofrece el mismo gesto de lápiz desde su botón local. El acceso «Ver escritura animada» aparece sólo en documentos que incluyen un trazo. Conserva `.manuscrita` para texto corriente
 que deba seleccionarse, traducirse o cambiar con datos.
 
 **Límite:** recibe paths SVG ordenados, no transforma automáticamente cualquier fuente
@@ -2337,11 +2337,11 @@ red, shaders externos ni mapas de terceros en tiempo de lectura.
 <div class="apuntes ancho" id="apuntes-ejemplo">
   <section class="apunte izquierda">
     <div class="apunte-cuerpo"><h3>Una decisión necesita contexto.</h3><p>La evidencia sirve cuando nos ayuda a <span data-subrayar>decidir mejor</span>. Un reporte puede dejar una pregunta breve al margen sin interrumpir el argumento.</p></div>
-    <aside class="apunte-nota" aria-label="Apunte a la izquierda"><p class="manuscrita" data-mano id="apunte-izquierdo">menos ruido, más criterio.</p><button class="gesto-repetir" type="button" data-mano-repetir="apunte-izquierdo" data-audio="escritura">Repetir apunte izquierdo</button></aside>
+    <aside class="apunte-nota" aria-label="Apunte a la izquierda"><p class="manuscrita" data-mano data-escritura-sonora id="apunte-izquierdo">menos ruido, más criterio.</p><button class="gesto-repetir" type="button" data-mano-repetir="apunte-izquierdo" data-audio="escritura">Repetir apunte izquierdo</button></aside>
   </section>
   <section class="apunte">
     <div class="apunte-cuerpo"><h3>Explicar también es editar.</h3><p>Antes de agregar otra gráfica, prueba a <span data-subrayar>quitar lo que sobra</span>. La anotación acompaña al párrafo; el subrayado se dibuja cuando aparece.</p></div>
-    <aside class="apunte-nota" aria-label="Apunte a la derecha"><p class="manuscrita" data-mano id="apunte-derecho">¿se entiende sin explicarlo?</p><button class="gesto-repetir" type="button" data-mano-repetir="apunte-derecho" data-audio="escritura">Repetir apunte derecho</button></aside>
+    <aside class="apunte-nota" aria-label="Apunte a la derecha"><p class="manuscrita" data-mano data-escritura-sonora id="apunte-derecho">¿se entiende sin explicarlo?</p><button class="gesto-repetir" type="button" data-mano-repetir="apunte-derecho" data-audio="escritura">Repetir apunte derecho</button></aside>
   </section>
 </div>
 ```
@@ -2362,7 +2362,7 @@ al repetir con Sonidos activado. La API y los límites de mano.js son los de la 
 ```html
 <section class="ancho" id="cards-trazadas-ejemplo">
   <h3>Escrito recientemente</h3><p>Lecturas de ejemplo para volver sobre una idea.</p>
-  <div class="cards-trazadas">
+  <div class="cards-trazadas cards-abiertas marco-difuso">
     <a href="informe.html#resumen" data-audio-hover><h4>Una revisión antes de confirmar</h4><p>La pregunta, la evidencia disponible y la decisión que sigue.</p><span class="procedencia">ENSAYO · 8 min · ejemplo</span></a>
     <a href="informe.html#evidencia" data-audio-hover><h4>La escala también cuenta una historia</h4><p>Qué podemos afirmar con los datos y qué necesita otra prueba.</p><span class="procedencia">INVESTIGACIÓN · 6 min · ejemplo</span></a>
     <a href="informe.html#prototipo" data-audio-hover><h4>Del documento a una experiencia que se puede probar</h4><p>Una propuesta local con estados, dispositivo y contexto.</p><span class="procedencia">PROTOTIPO · 4 min · ejemplo</span></a>
@@ -2390,7 +2390,7 @@ no reproduce el MP3 de la referencia. En móvil basta el enlace; sin sonido no s
 <figure class="ancho" id="atencion-ejemplo" data-atencion data-unidad="horas">
   <div class="tabla-caja" tabindex="0" role="region" aria-label="Datos del attention map, desplazables">
     <table><caption>Dónde se fue la atención</caption><thead><tr><th scope="col">Actividad</th><th scope="col">Horas</th></tr></thead><tbody>
-      <tr><th scope="row">Investigar</th><td data-valor="125">125</td></tr>
+      <tr><th scope="row">Investigar</th><td data-valor="125">125<small data-contexto>Entrevistas y revisión de fuentes durante cuatro semanas ficticias.</small></td></tr>
       <tr><th scope="row">Construir</th><td data-valor="34">34</td></tr>
       <tr><th scope="row">Conversar</th><td data-valor="20">20</td></tr>
       <tr><th scope="row">Documentar</th><td data-valor="12">12</td></tr>
@@ -2414,4 +2414,164 @@ calculada con una partición binaria; no imita posiciones fijas ni soporta jerar
 los nombres y valores completos se conservan fuera del mapa, sin elipsis. Para diferencias
 pequeñas o un ranking preciso, usa barras. ViewBox de 1000×380, mínimo legible de 900 px con
 scroll local. No mide productividad ni conecta aplicaciones. `NotaAtencion.init/get/destroy`
-conserva la tabla original; destruye y reinicia tras cambiar sus datos.
+conserva la tabla original; destruye y reinicia tras cambiar sus datos. Tooltip al pasar el ratón,
+al enfocar un control o al tocar una celda: valor, porcentaje, total y `data-contexto` optativo en
+un texto de la fila (también visible en la tabla). Se puede mantener el puntero sobre el tooltip; Escape lo cierra. Los mismos datos
+siguen disponibles en la tabla y selección. No añadas HTML ni información exclusiva al contexto.
+
+## Marco de líneas desvanecidas
+
+<!-- nota:ejemplo marco -->
+```html
+<aside class="ancho marco-difuso" id="marco-ejemplo">
+  <div class="marco-contenido"><h3>Una pausa para mirar la evidencia.</h3><p>Las líneas se cruzan en las esquinas y se pierden hacia los extremos. El contenido permanece completo.</p></div>
+</aside>
+```
+
+**Cuándo:** enmarcar una composición de cards, una estantería o una invitación. `marco-difuso`
+reserva entre 12 y 32 px dentro de su caja para prolongar las líneas sin desbordar la página.
+Puedes añadirlo a una rejilla existente como `cards-trazadas cards-abiertas marco-difuso`.
+
+**Límite:** el desvanecido sólo afecta a dos pseudoelementos decorativos. No borra texto, no
+reemplaza foco ni bordes que comuniquen estado. No combinar con componentes que ya usen ambos
+pseudoelementos; envuélvelos dentro de la caja. Sin máscaras se conserva el marco discontinuo.
+Es una adaptación con espacio reservado, no los márgenes negativos de la referencia.
+
+## Estantería editorial
+
+<!-- nota:ejemplo estanteria -->
+```html
+<section class="ancho marco-difuso" id="estanteria-ejemplo" aria-label="Lecturas guardadas">
+  <ul class="estanteria">
+    <li><div class="estante-portada" aria-hidden="true"><small>CUADERNO / 01</small><span>Observar antes de medir</span><small>ESTUDIO EDITORIAL</small></div><div><span class="estante-estado">Por leer</span><h3>Observar antes de medir</h3><p class="procedencia">Cuaderno de campo · Edición ilustrativa · 2026</p><p>Una colección de preguntas para registrar el contexto de una cifra antes de compararla. Lo guardamos para preparar la siguiente investigación.</p><p><a href="informe.html#evidencia">Ver el ejemplo de evidencia →</a></p></div></li>
+    <li><div class="estante-portada" aria-hidden="true"><small>CUADERNO / 02</small><span>El oficio de quitar</span><small>NOTAS DE PRODUCTO</small></div><div><span class="estante-estado">En lectura</span><h3>El oficio de quitar</h3><p class="procedencia">Ensayo · Edición ilustrativa · 2026</p><p>Sobre decisiones que hacen una interfaz más clara. Nos interesa porque una pantalla puede crecer sin que la tarea se vuelva más fácil.</p><p><a href="informe.html#prototipo">Recorrer la propuesta →</a></p></div></li>
+    <li><div class="estante-portada" aria-hidden="true"><small>CUADERNO / 03</small><span>Volver a preguntar</span><small>CONVERSACIONES</small></div><div><span class="estante-estado">Consultado</span><h3>Volver a preguntar</h3><p class="procedencia">Entrevistas · Edición ilustrativa · 2026</p><p>Una referencia para separar lo que sabemos de lo que suponemos. Cada lectura conserva la razón para volver a ella.</p><p><a href="informe.html#siguientes">Leer las preguntas pendientes →</a></p></div></li>
+  </ul>
+</section>
+```
+
+**Cuándo:** curar libros, documentos, prototipos o recursos con título, estado y razón para
+conservarlos. Las cubiertas de ejemplo son composiciones CSS originales; todos los títulos
+son ficticios. Puedes sustituirlas por una imagen `data:` con dimensiones y alternativa correcta.
+
+**Límite:** no catálogo comercial, enlaces a libros inventados ni carátulas remotas. Las cubiertas
+no llevan información exclusiva; el título se repite como texto accesible. En móvil cada fila
+se apila y conserva una cubierta de 120 px. No gira ni se anima al leer.
+
+## Invitación editorial tramada
+
+<!-- nota:ejemplo invitacion -->
+```html
+<section class="ancho marco-difuso" id="invitacion-ejemplo">
+  <div class="invitacion" data-invitacion id="invitacion-idea">
+    <div><h3>¿Qué sumarías?</h3><p>Una lectura, una pregunta o una idea que merezca entrar en la siguiente versión.</p></div>
+    <form aria-label="Preparar una recomendación"><label for="invitacion-texto">Tu idea</label><textarea id="invitacion-texto" name="idea" maxlength="1000" required placeholder="Un título, un enlace o una nota…" aria-describedby="invitacion-estado"></textarea><button type="button" data-invitacion-copiar>Copiar mi idea ↗</button><p role="status" id="invitacion-estado">Borrador local; copia antes de cerrar.</p></form>
+  </div>
+</section>
+```
+
+**Cuándo:** cerrar una lectura con una invitación concreta. Incluye invitacion.js; al copiar se
+añaden título del documento y referencia del bloque. La trama de puntos y curvas es CSS estático,
+un tratamiento de semitono independiente del grano de papel de Apariencia.
+
+**Límite:** no envía, guarda ni sincroniza mensajes. El botón dice copiar porque no hay backend.
+Hasta 1000 caracteres; vacío no se copia. Si el portapapeles falla, selecciona el texto para copia
+manual y lo explica. `NotaInvitacion.init/get/destroy` permite montar y retirar la mejora. Sin JS
+queda un espacio para escribir, sin envío. No usar la trama para información ni para simular una gráfica.
+
+## Listas de estado
+
+<!-- nota:ejemplo lista-estados -->
+```html
+<section id="lista-estados-ejemplo">
+  <h3>En qué estamos</h3><p class="procedencia">Instantánea ilustrativa · <time datetime="2026-09-14">14 sep 2026</time></p>
+  <ul class="lista-estados" aria-label="Estado de los frentes">
+    <li class="hecho"><span class="estado-signo" aria-hidden="true">[x]</span><span class="estado-texto"><span class="sr-only">Completado: </span>Definir la pregunta del informe</span></li>
+    <li><span class="estado-signo" aria-hidden="true">[-]</span><span class="estado-texto"><span class="sr-only">En curso: </span>Contrastar las cifras con su fuente</span></li>
+    <li><span class="estado-signo" aria-hidden="true">[ ]</span><span class="estado-texto"><span class="sr-only">Pendiente: </span>Probar la propuesta con lectores</span></li>
+    <li><span class="estado-signo" aria-hidden="true">[ ]</span><span class="estado-texto"><span class="sr-only">Pendiente: </span>Publicar lo que cambió y por qué</span></li>
+  </ul>
+</section>
+```
+
+**Cuándo:** una página «ahora», avance editorial o lista de pendientes a una fecha. Estado por
+símbolo, texto accesible y tachado sólo para lo completado; los pendientes siguen siendo legibles.
+
+**Límite:** instantánea de lectura, no checkboxes editables ni gestor de tareas. No asigna progreso
+porcentual a estados cualitativos. Actualiza fecha y contenido juntos; el color nunca es la única señal.
+
+## Lista de proyectos con contexto
+
+<!-- nota:ejemplo lista-proyectos -->
+```html
+<section id="lista-proyectos-ejemplo"><h3>Tres preguntas abiertas</h3>
+  <ul class="lista-proyectos">
+    <li><h4>Qué vale la pena medir</h4><p>Elegir indicadores que respondan a la decisión del equipo y explicitar qué queda fuera.</p></li>
+    <li><h4>Cómo se entiende la propuesta</h4><p>Recorrer el prototipo con una tarea concreta antes de añadir otra pantalla.</p></li>
+    <li><h4>Cuándo volver a revisar</h4><p>Acordar una fecha y una señal para retomar la decisión con evidencia nueva.</p></li>
+  </ul>
+</section>
+```
+
+**Cuándo:** describir frentes paralelos, proyectos o líneas de investigación. Título breve y un
+párrafo por elemento; separación de 24 px inspirada en la lista de proyectos de `/now`.
+
+**Límite:** no reemplaza una tabla cuando se comparan atributos. No numera para sugerir prioridad
+si no existe un orden. Conserva enlaces reales y nombres completos al adaptar el contenido.
+
+## Conversación en el artículo
+
+<!-- nota:ejemplo conversacion -->
+```html
+<section id="conversacion-ejemplo"><h3>Aclarar la pregunta</h3>
+  <ol class="conversacion" aria-label="Diálogo ilustrativo">
+    <li><strong>Investigación</strong>¿Qué queremos aprender con este informe?</li>
+    <li class="respuesta"><strong>Producto</strong>Si la propuesta ayuda a decidir con menos dudas.</li>
+    <li><strong>Investigación</strong>Entonces necesitamos observar una decisión, además de contar clics.</li>
+    <li class="respuesta"><strong>Producto</strong>Dejemos esa pregunta al comienzo.</li>
+  </ol>
+</section>
+```
+
+**Cuándo:** mostrar un diálogo, intercambio o pregunta y respuesta que ayude a entender una idea.
+Participantes escritos y orden de lectura natural; no depende de la alineación para identificar voces.
+
+**Límite:** ejemplo ficticio, no atribuir citas sin fuente. No chat conectado ni animación de mensajes;
+no falsifica presencia, escritura o respuestas de una persona. Para citas reales añade procedencia.
+
+## Navegación editorial con separadores
+
+<!-- nota:ejemplo navegacion -->
+```html
+<div class="ancho navegacion-muestra" id="navegacion-ejemplo">
+  <a class="firma-editorial" href="informe.html#resumen"><span>tikin</span></a>
+  <nav aria-label="Recorrer el informe"><a href="informe.html#resumen">inicio</a><span class="nav-separador" aria-hidden="true">/</span><a href="informe.html#evidencia">evidencia</a><span class="nav-separador" aria-hidden="true">/</span><a href="informe.html#prototipo">propuesta</a><span class="nav-separador" aria-hidden="true">/</span><a href="informe.html#siguientes">siguiente</a></nav>
+</div>
+```
+
+**Cuándo:** cabecera discreta para un blog o informe. Enlaces ordinarios para documentos; para
+capítulos dinámicos la biblioteca usa `barra capitulos navegacion-editorial`, botones `data-ir`
+y una región `data-capitulos-scroll` para desplazar sólo la navegación. Apariencia queda fuera.
+
+**Límite:** conservar índice y regla de lectura en documentos largos. No mezclar múltiples barras
+`data-ir` en un mismo documento. El separador es decorativo; cada enlace tiene un nombre propio.
+La variante no modifica las barras antiguas. Bajo 700 px, los capítulos pasan a una segunda fila.
+
+## Footer editorial
+
+<!-- nota:ejemplo pie-editorial -->
+```html
+<footer class="ancho pie-editorial" id="pie-editorial-ejemplo">
+  <div><h3>tikin</h3><nav aria-label="Más del cuaderno"><a href="informe.html#resumen">El informe</a><a href="informe.html#evidencia">Las fuentes y sus límites</a><a href="informe.html#siguientes">Lo que sigue</a></nav></div>
+  <div class="pie-carta"><h3>Una nota para quien viene después.</h3><p>Dejamos las preguntas, las fuentes y las decisiones a la vista. Que la siguiente versión pueda comenzar desde aquí.</p><p><em>Este cuaderno sigue abierto.</em></p></div>
+  <div class="pie-colofon"><span>Edición ilustrativa · <time datetime="2026-09-14">14 sep 2026</time></span><span>Lectura · evidencia · conversación</span></div>
+</footer>
+```
+
+**Cuándo:** cerrar con identidad, enlaces útiles, una nota editorial y fecha. Dos columnas en
+escritorio, apiladas en móvil. También admite un botón `data-audio-global` si el artefacto no tiene
+otro control de Sonidos; su estado lo gestiona audio.js.
+
+**Límite:** sin direcciones, estadísticas de commits ni licencia inventadas. Usa fecha, responsable
+y licencia reales cuando existan. Esta receta dentro de un capítulo es una muestra; el footer
+principal debe quedar después del contenido. No queda pegado detrás del documento ni tapa el final.
