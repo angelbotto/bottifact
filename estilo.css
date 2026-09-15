@@ -1341,3 +1341,14 @@ body:has(.revision-barra) { padding-bottom:0; }
 .biblioteca [id] { scroll-margin-top:max(85px,var(--lectura-cabecera,85px)); }
 .marco-contenido { padding:20px; }
 [data-atencion] td [data-contexto] { display:block; max-width:36em; margin-top:6px; font:12px/1.5 var(--sans); color:var(--tinta-2); }
+
+/* 24 — Audio a la vista; el control circular y los colores conservan su contrato. */
+.apariencia-audio { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px; margin:0 0 20px; padding:0 0 16px; border:0; border-bottom:1px solid var(--linea); min-width:0; }
+.apariencia-audio legend { font:12px/1.6 var(--sans); margin-bottom:10px; color:var(--tinta-2); }
+.apariencia-audio button,.barra.capitulos .apariencia-audio button { min-width:0; min-height:44px; padding:8px 10px; border:1px solid var(--linea-fuerte); border-radius:5px; background:var(--panel); color:var(--tinta); font:12px/1.4 var(--sans); white-space:normal; cursor:pointer; }
+.apariencia-audio label { grid-column:1/-1; display:flex; flex-wrap:wrap; justify-content:space-between; font:12px/1.6 var(--sans); color:var(--tinta-2); }
+.apariencia-audio input { width:100%; min-width:0; accent-color:var(--marcador); margin:4px 0; min-height:24px; }
+.apariencia-audio [role=status] { grid-column:1/-1; margin:0; color:var(--tinta-2); font:12px/1.5 var(--sans); }
+.nota-estandar [id] { scroll-margin-top:max(85px,var(--lectura-cabecera,85px)); }
+
+.navegacion-editorial > .procedencia { min-width:0; font:12px/1.5 var(--sans); color:var(--tinta-2); text-align:right; }
