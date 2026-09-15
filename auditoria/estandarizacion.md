@@ -82,3 +82,9 @@ reducción mediante evento MQL, apagado y tooltip con puntero nativo), `comproba
 nueve capítulos × seis temas × 320/390/1440 px; regiones, rótulos y contraste, navegación y PDF).
 La cabecera del skill también pasó `quick_validate.py`. No equivale a una sesión ejecutada por
 Claude ni a una prueba con lector de pantalla.
+
+La sincronización detectó distintos finales de línea en `fuentes.css` entre los dos checkouts.
+Los hashes ahora se calculan sobre el texto UTF-8 normalizado que realmente se incrusta. Se
+regeneraron y validaron ambos; la salida coincide byte por byte. La URL HTTPS de Tailscale
+respondió 200 para las dos bases, biblioteca y SKILL.md, idénticos a los archivos instalados.
+Claude y Codex resuelven el mismo directorio del skill mediante el enlace existente.
