@@ -51,6 +51,23 @@ const f=document.querySelector('.amplio').getBoundingClientRect();
 Comprobar también que el índice lateral no pise las figuras anchas, que la regla derecha tampoco,
 y que el título no quede debajo de la barra fija.
 
+## Navegación de lectura que debe acompañar el artefacto
+
+Para los artefactos HTML de Angel con varias secciones, incluye por defecto **índice izquierdo
+con seguimiento y regla de progreso**. Las pestañas de capítulos no los sustituyen.
+Usa `.hoja.lectura-guiada`, un `nav.indice` con enlaces a IDs reales y una sola `.regla.regla-guiada`
+fuera de `main`; el HTML completo está en [componentes.md](componentes.md#índice-lateral-y-regla-de-lectura).
+En multipágina, cada `.pagina` lleva su propio índice y `main` añade `data-progreso-pagina`:
+la regla mide el capítulo visible, se reinicia al cambiar y llega a 100 % antes de la paginación.
+Incluye `interacciones.js` y, para capítulos, `multipagina.js` después.
+
+Desde 1200 px, esta variante reserva espacio real para ambos laterales; mantiene texto y
+figuras en su rejilla. Debajo, el índice vuelve al flujo y la regla se vuelve un control compacto
+con porcentaje. No escondas ambos por trabajar en portátil ni tapes las figuras con ellos.
+Comprueba sección actual, anteriores, cambio de capítulo, Home/End y tamaños 320/390/1440 px.
+Una pieza aislada sin secciones no necesita un índice vacío. El patrón anterior sin estas clases
+conserva su umbral de 1600 px y sus anchos originales.
+
 ## Empezar por la pieza
 
 Lee [estilo.css](estilo.css) y copia la hoja completa dentro de `<style>`; no la recrees de memoria.
@@ -208,7 +225,7 @@ Un informe largo —capítulos, cada uno con su temario— se arma con `multipag
 3. Cada página abre con su `header.cabecera` y su `nav.indice`. El hash guarda la página, así que
    un enlace directo a un capítulo funciona.
 
-En capítulos cortos, como la muestra de informe, puede omitirse el temario lateral.
+En nuevas composiciones con varias secciones conserva índice y regla incluso si hay pestañas. Los ejemplos mínimos anteriores pueden conservar su estructura; no los uses para justificar omitir la navegación en un artefacto completo.
 `data-historial` en `.hoja.multipagina` añade Atrás/Adelante para capítulos; sin él se conserva
 el comportamiento anterior. `.barra.capitulos` es la variante editorial de navegación.
 Para vistas breves dentro de una pieza usa [pestanas.js](pestanas.js), nunca mezcles los roles
