@@ -9,23 +9,24 @@ pages=evaluate('[...document.querySelectorAll("main > .pagina")].map(x=>x.id)')
 assert len(pages)==13,pages
 assert evaluate('document.querySelectorAll("[data-guia-componente]").length')==71
 rows=[];errors=[]
+measurement=(ROOT/'scripts/medir_navegador.js').read_text().replace("closed.forEach(d=>d.open=true)","closed.splice(0,closed.length,...closed.filter(d=>!d.closest('.pagina')||d.closest('.pagina').classList.contains('viva')));closed.forEach(d=>d.open=true)")
 for w,h in [(320,740),(390,844),(1440,960)]:
  call('exec','--command',f'set viewport {w} {h}')
- for theme in THEMES[1:]:
-  evaluate('(()=>{const input=document.querySelector(\'[data-elegir-tema][value="'+theme+'"]\');input.checked=true;input.dispatchEvent(new Event("change",{bubbles:true}));return true})()')
-  for page in pages:
-   evaluate('document.querySelector(\'[data-ir="'+page+'"]\').click();true');call('screenshot')
-   d=evaluate((ROOT/'scripts/medir_navegador.js').read_text().replace("closed.forEach(d=>d.open=true)","closed.splice(0,closed.length,...closed.filter(d=>!d.closest('.pagina')||d.closest('.pagina').classList.contains('viva')));closed.forEach(d=>d.open=true)"))
-   issues=[]
-   if d['documentWidth']!=w:issues.append('Desborde de documento: '+str(d['documentWidth']))
-   issues+=d['errors']+d['svgTextOverflow']
-   issues+=[c for c in d['contrasts'] if c['ratio']<c['minimum']]
-   for r in d['regions']:
-    if not(r['inside'] and r['focus']==0 and r['name'] and (r['content']<=r['width']+1 or r['end']>0)):issues.append(r)
-   row={'viewport':[w,h],'theme':theme,'page':page,'documentWidth':d['documentWidth'],'regions':len(d['regions']),'errors':issues};rows.append(row)
-   if issues:errors.append(row)
-  save('guia-navegador.json',rows)
-  print(w,theme,len(pages),'páginas;',len(errors),'fallos acumulados',flush=True)
+ for page in pages:
+  evaluate('document.querySelector(\'[data-ir="'+page+'"]\').click();true');call('screenshot')
+  # Un frame de entrada por página. Cada paleta fuerza layout y espera sus observers;
+  # agrupar nueve mediciones evita nueve transportes de captura sin cambiar las comprobaciones.
+  batch=evaluate("""(async()=>{const results=[];for(const theme of """+json.dumps(THEMES[1:])+"""){
+   const input=document.querySelector('[data-elegir-tema][value="'+theme+'"]');input.checked=true;input.dispatchEvent(new Event('change',{bubbles:true}));
+   await new Promise(r=>setTimeout(r,50));const d=await """+measurement.rstrip().rstrip(';')+""";
+   const errors=[...d.errors,...d.svgTextOverflow,...d.contrasts.filter(c=>c.ratio<c.minimum)];
+   if(d.documentWidth!==innerWidth)errors.push('Desborde: '+d.documentWidth);
+   for(const r of d.regions)if(!(r.inside&&r.focus===0&&r.name&&(r.content<=r.width+1||r.end>0)))errors.push(r);
+   results.push({viewport:[innerWidth,innerHeight],theme:d.theme,page:"""+json.dumps(page)+""",documentWidth:d.documentWidth,regions:d.regions.length,errors});
+  }return results})()""")
+  assert len(batch)==9,batch
+  rows+=batch;errors+=[row for row in batch if row['errors']];save('guia-navegador.json',rows)
+  print(w,page,'nueve temas;',len(errors),'fallos acumulados',flush=True)
 # Presets por archivo y persistencia aislada de la preferencia global.
 for name,style in [('liftit','sobrio'),('blueprint','tecnico'),('hacker','tecnico')]:
  call('goto','--url',URL+name+'.html');evaluate('localStorage.removeItem("nota-tema:"+location.pathname);localStorage.removeItem("nota-estilo:"+location.pathname);true');call('reload');call('exec','--command','set viewport 1440 960');call('screenshot')

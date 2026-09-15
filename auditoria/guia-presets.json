@@ -1,0 +1,10 @@
+{
+  "default": true,
+  "style": true,
+  "reload_preference": true,
+  "viewports": [
+    320,
+    390,
+    1440
+  ]
+}
