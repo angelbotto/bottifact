@@ -4,9 +4,9 @@ from html.parser import HTMLParser
 from html import escape
 import hashlib,json,re
 ROOT=Path(__file__).resolve().parents[1]
-VERSION='3'
+VERSION='4'
 THEMES=('system','light','dark','sea','oliva','arcilla','ciruela','liftit','blueprint','hacker')
-STYLES=('editorial','sobrio','tecnico')
+STYLES=('editorial','sobrio','tecnico','libro','revista','bitacora')
 NOSCRIPT='.nota-estandar > .pagina { display:grid!important; grid-template-columns:1fr min(var(--texto),calc(100% - 2 * var(--gutter))) 1fr; row-gap:28px; }.nota-estandar .indice,.nota-estandar ~ .regla,.navegacion-editorial,.nota-estandar .paginacion { display:none!important; }'
 THREE='https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js'
 CORE=['audio.js','controles.js','piezas-editoriales.js','interacciones.js','codigo.js','revision.js']
@@ -120,9 +120,13 @@ def validate(html):
   children=menus[0].descendants()
   require(set(THEMES)<={n.attrs.get('value') for n in children if 'data-elegir-tema' in n.attrs},'Apariencia debe ofrecer las nueve paletas y Sistema.')
   require(all(any(c in n.classes for n in children) for c in ['icono-sol','icono-luna','paleta-mini']),'Faltan iconos sol/luna o muestras de color.')
+ require(set(STYLES)<={n.attrs.get('value') for n in has('data-elegir-estilo')},'Apariencia debe ofrecer las seis combinaciones tipográficas.')
+ require({n.attrs.get('data-preferencia-tab') for n in has('data-preferencia-tab')}=={'temas','letras','sonido'},'Apariencia necesita pestañas Temas, Letras y Sonido.')
+ for attr in ['data-buscar-tema','data-familia-tema','data-temas-resultados']:
+  require(bool(has(attr)),'Falta exploración de temas: '+attr)
  for attr in ['data-audio-global','data-audio-prueba','data-audio-volumen','data-audio-estado','data-comodidad','data-papel-tramado']:
   require(bool(has(attr)),'Falta el control estándar '+attr+'.')
- require(all(n.attrs.get('aria-pressed')=='false' for n in has('data-audio-global')),'El audio debe comenzar apagado.')
+ require(all(n.attrs.get('aria-pressed')=='true' for n in has('data-audio-global')),'La preferencia inicial de sonido debe estar habilitada; el contexto espera el primer clic.')
  require(len(has('data-revision'))==1,'Falta el montaje único de comentarios flotantes.')
  for attr in ['data-revision-editor','data-revision-panel','data-revision-texto','data-revision-contexto','data-revision-notas','data-revision-prompt','data-revision-estado','data-revision-modo','data-revision-lista','data-revision-guardar','data-revision-cancelar','data-revision-cerrar']:
   require(len(has(attr))==1,'Falta o se duplica '+attr+'.')

@@ -54,7 +54,7 @@
 
   // Tipografía y trama son ejes optativos, independientes de la paleta.
   function readingStyle(value) {
-    if(!['editorial','sobrio','tecnico'].includes(value))value='editorial';
+    if(!['editorial','sobrio','tecnico','libro','revista','bitacora'].includes(value))value='editorial';
     if(value==='editorial')delete root.dataset.estilo;else root.dataset.estilo=value;
     document.querySelectorAll('[data-elegir-estilo]').forEach(input=>input.checked=input.value===value);
     try{localStorage.setItem(preferenceKey('nota-estilo'),value);}catch{}
@@ -78,7 +78,7 @@
     const panel=menu.querySelector('.apariencia-panel'),trigger=menu.querySelector('summary');
     const viewport=window.visualViewport,w=viewport?.width||innerWidth,h=viewport?.height||innerHeight;
     const ox=viewport?.offsetLeft||0,oy=viewport?.offsetTop||0,gap=12;
-    panel.style.width=Math.max(1,Math.min(324,w-gap*2))+'px';
+    panel.style.width=Math.max(1,Math.min(menu.querySelector('.apariencia-explorador')?360:324,w-gap*2))+'px';
     panel.style.maxHeight=Math.max(1,h-gap*2)+'px';
     const r=trigger.getBoundingClientRect(),height=panel.getBoundingClientRect().height;
     if(r.bottom<oy||r.top>oy+h){close(menu);return;}
@@ -92,10 +92,42 @@
   function close(menu,returnFocus=false) {menu.open=false;if(returnFocus)menu.querySelector('summary').focus();}
   menus.forEach(menu=>{
     menu.dataset.menuListo='';
+    // Los controles antiguos conservan el disclosure; la receta nueva añade exploración local.
+    const tabs=[...menu.querySelectorAll('[data-preferencia-tab]')];
+    const showTab=(tab,focus=false)=>{
+      tabs.forEach(t=>{const active=t===tab;t.setAttribute('aria-selected',String(active));t.tabIndex=active?0:-1;});
+      menu.querySelectorAll('[data-preferencia-panel]').forEach(p=>p.hidden=p.dataset.preferenciaPanel!==tab.dataset.preferenciaTab);
+      if(focus)tab.focus();place(menu);
+    };
+    tabs.forEach((tab,index)=>{
+      tab.addEventListener('click',()=>showTab(tab));
+      tab.addEventListener('keydown',e=>{
+        const next=e.key==='ArrowRight'?(index+1)%tabs.length:e.key==='ArrowLeft'?(index+tabs.length-1)%tabs.length:e.key==='Home'?0:e.key==='End'?tabs.length-1:null;
+        if(next!==null){e.preventDefault();showTab(tabs[next],true);}
+      });
+    });
+    const search=menu.querySelector('[data-buscar-tema]'),family=menu.querySelector('[data-familia-tema]');
+    const normalize=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+    const filterThemes=()=>{
+      const query=normalize(search?.value||''),group=family?.value||'';
+      const labels=[...menu.querySelectorAll('[data-tema-familia]')];let count=0;
+      labels.forEach(label=>{label.hidden=!!((group&&label.dataset.temaFamilia!==group)||(query&&!normalize(label.textContent).includes(query)));if(!label.hidden)count++;});
+      const status=menu.querySelector('[data-temas-resultados]');if(status)status.textContent=count?count+' de '+labels.length+' temas':'No encontramos ese tema.';
+      const clear=menu.querySelector('[data-limpiar-temas]');if(clear)clear.hidden=!query&&!group;
+      place(menu);
+    };
+    search?.addEventListener('input',filterThemes);family?.addEventListener('change',filterThemes);
+    menu.querySelector('[data-limpiar-temas]')?.addEventListener('click',()=>{search.value='';family.value='';filterThemes();search.focus();});
+    if(tabs.length)filterThemes();
+
     menu.querySelector('summary').addEventListener('click',e=>{
       e.preventDefault();const opening=!menu.open;menus.forEach(other=>close(other));menu.open=opening;place(menu);
     });
-    menu.addEventListener('toggle',()=>{if(menu.open){menus.forEach(other=>{if(other!==menu)close(other);});place(menu);}});
+    menu.addEventListener('toggle',()=>{if(menu.open){
+      menus.forEach(other=>{if(other!==menu)close(other);});place(menu);
+      const selected=menu.querySelector('[data-elegir-tema]:checked')?.closest('label'),grid=menu.querySelector('.apariencia-colores');
+      if(selected&&grid&&selected.getClientRects().length){const r=selected.getBoundingClientRect(),g=grid.getBoundingClientRect();if(r.bottom>g.bottom)grid.scrollTop+=r.bottom-g.bottom+4;else if(r.top<g.top)grid.scrollTop+=r.top-g.top-4;}
+    }});
     menu.addEventListener('change',()=>place(menu));
   });
   document.addEventListener('pointerdown',e=>menus.forEach(menu=>{if(menu.open&&!menu.contains(e.target))close(menu);}));

@@ -777,9 +777,9 @@ son segmentos rectos, no observaciones adicionales.
 
 <a id="recetas-sonido"></a>
 
-## Sonido: un canal que empieza apagado
+## Sonido: control central y canal independiente
 
-En la biblioteca, Apariencia controla todo el audio con [audio.js](audio.js), incluido antes de `interacciones.js`. Para copiar sólo un canal independiente usa [sonido.js](sonido.js). Ambos empiezan apagados; el control central oculta los interruptores locales cuando está presente.
+En la biblioteca, Apariencia controla todo el audio con [audio.js](audio.js), incluido antes de `interacciones.js`. Para copiar sólo un canal independiente usa [sonido.js](sonido.js). En nuevos artefactos, el control central empieza habilitado y espera el primer clic real para abrir Web Audio; recuerda el silencio elegido. El canal independiente conserva su inicio apagado y su botón de activación. El control central oculta los interruptores locales cuando está presente.
 
 <!-- nota:ejemplo sonido -->
 ```html
@@ -797,9 +797,7 @@ En la biblioteca, Apariencia controla todo el audio con [audio.js](audio.js), in
 ```
 
 **Cuándo:** confirmar una acción explícita y breve, en una experiencia donde la persona
-ha optado por escuchar. No añade sonido a gráficos, scroll, foco, lectura, cambios de tema
-ni entradas automáticas. El botón de activación no emite una señal. La preferencia no se
-recuerda al recargar y vuelve a apagado al ocultar la pestaña.
+puede apagarlo siempre. No añade sonido a gráficos, scroll genérico, foco ni cambios de tema. El botón de activación no emite una señal. El canal independiente no recuerda la preferencia y vuelve a apagado al ocultar la pestaña; la base central recuerda el silencio y pausa al ocultarse. Sólo los elementos con atributos de escritura o hover autorizan esos gestos sonoros.
 
 **Límite:** Web Audio y gesto real de botón; eventos sintéticos no activan ni reproducen.
 El canal independiente de `sonido.js` usa seno, ganancia pico 0,025, ataque 3 ms y caída a 0,0001 en 55 ms;
@@ -855,7 +853,7 @@ paths originales; la animación recorre **su longitud**, no un rectángulo que d
 ```
 
 **Cuándo:** una anotación corta y secundaria que gana significado con el gesto del trazo.
-Con `data-al-ver` se escribe una vez al entrar al menos un 30 % de su caja en pantalla; sin ese atributo empieza completa y la persona decide repetirla. El sonido arranca apagado: pulsa Activar sonido y después Repetir escritura para oír la señal breve. Con `data-escritura-sonora`, y sólo después de activar Sonidos, el lápiz acompaña la animación al entrar y se detiene al salir. Sin el atributo la entrada es silenciosa. Incluye `audio.js` con Apariencia para el sonido de lápiz; si copias la escritura sola, `sonido.js` ofrece el mismo gesto de lápiz desde su botón local. El acceso «Ver escritura animada» aparece sólo en documentos que incluyen un trazo. Conserva `.manuscrita` para texto corriente
+Con `data-al-ver` se escribe una vez al entrar al menos un 30 % de su caja en pantalla; sin ese atributo empieza completa y la persona decide repetirla. En la base estándar el sonido está habilitado y espera un primer clic real; si estaba silenciado, actívalo en Apariencia. En un canal independiente pulsa Activar sonido y después Repetir escritura. Con `data-escritura-sonora`, y sólo después de que un clic habilite el contexto de audio, el lápiz acompaña la animación al entrar y se detiene al salir. Sin el atributo la entrada es silenciosa. Incluye `audio.js` con Apariencia para el sonido de lápiz; si copias la escritura sola, `sonido.js` ofrece el mismo gesto de lápiz desde su botón local. El acceso «Ver escritura animada» aparece sólo en documentos que incluyen un trazo. Conserva `.manuscrita` para texto corriente
 que deba seleccionarse, traducirse o cambiar con datos.
 
 **Límite:** recibe paths SVG ordenados, no transforma automáticamente cualquier fuente
@@ -1013,108 +1011,108 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
     <div><p class="variante-nombre">01 · Círculo</p>
 <details class="apariencia-menu orbita" data-apariencia-menu>
   <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-orbita"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span></summary>
-  <div class="apariencia-panel" id="panel-apariencia-orbita" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
-    <p class="apariencia-titulo">Tu forma de leer</p>
-    <fieldset class="apariencia-audio"><legend>Sonido</legend>
-      <button type="button" data-audio-global aria-pressed="false"><span data-audio-etiqueta>Sonidos apagados</span><span class="interruptor" aria-hidden="true"></span></button>
-      <button type="button" data-audio-prueba>Probar sonido</button>
-      <label>Volumen <output data-audio-volumen-valor>65 %</output><input type="range" min="0" max="100" value="65" step="5" aria-label="Volumen del sonido" data-audio-volumen></label>
-      <p role="status" data-audio-estado>Sonido apagado. Pulsa Probar sonido para escuchar una muestra.</p>
-    </fieldset>
-    <fieldset class="apariencia"><legend>Color</legend><div class="apariencia-colores">
-      <label><input type="radio" name="color-apariencia-orbita" value="light" data-elegir-tema><span class="paleta-mini claro" aria-hidden="true"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>
-      <label><input type="radio" name="color-apariencia-orbita" value="dark" data-elegir-tema><span class="paleta-mini calido" aria-hidden="true"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>
-      <label><input type="radio" name="color-apariencia-orbita" value="sea" data-elegir-tema><span class="paleta-mini sea" aria-hidden="true"><i></i><b></b></span><span>Dark Sea<small>Azul profundo · acento menta</small></span></label>
-      <label><input type="radio" name="color-apariencia-orbita" value="oliva" data-elegir-tema><span class="paleta-mini oliva" aria-hidden="true"><i></i><b></b></span><span>Oliva<small>Papel verde · tinta botánica</small></span></label>
-      <label><input type="radio" name="color-apariencia-orbita" value="arcilla" data-elegir-tema><span class="paleta-mini arcilla" aria-hidden="true"><i></i><b></b></span><span>Arcilla<small>Papel durazno · acento terracota</small></span></label>
-      <label><input type="radio" name="color-apariencia-orbita" value="ciruela" data-elegir-tema><span class="paleta-mini ciruela" aria-hidden="true"><i></i><b></b></span><span>Ciruela<small>Papel oscuro · acento malva</small></span></label>
-      <label><input type="radio" name="color-apariencia-orbita" value="liftit" data-elegir-tema><span class="paleta-mini liftit" aria-hidden="true"><i></i><b></b></span><span>Liftit<small>Azul logístico · papel claro</small></span></label>
-      <label><input type="radio" name="color-apariencia-orbita" value="blueprint" data-elegir-tema><span class="paleta-mini blueprint" aria-hidden="true"><i></i><b></b></span><span>Blueprint<small>Plano azul · cuadrícula blanca</small></span></label>
-      <label><input type="radio" name="color-apariencia-orbita" value="hacker" data-elegir-tema><span class="paleta-mini hacker" aria-hidden="true"><i></i><b></b></span><span>Hacker<small>Oscuro técnico · acento verde</small></span></label>
-      <label><input type="radio" name="color-apariencia-orbita" value="system" data-elegir-tema checked><span class="paleta-mini sistema" aria-hidden="true"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>
-    </div></fieldset>
-    <fieldset class="apariencia"><legend>Estilo de títulos</legend><div class="apariencia-estilos">
-      <label><input type="radio" name="estilo-apariencia-orbita" value="editorial" data-elegir-estilo checked><span class="muestra-letra editorial" aria-hidden="true">Aa</span><span>Editorial<small>Títulos serif</small></span></label>
-      <label><input type="radio" name="estilo-apariencia-orbita" value="sobrio" data-elegir-estilo><span class="muestra-letra sobrio" aria-hidden="true">Aa</span><span>Sobrio<small>Títulos sans</small></span></label>
-      <label><input type="radio" name="estilo-apariencia-orbita" value="tecnico" data-elegir-estilo><span class="muestra-letra tecnico" aria-hidden="true">Aa</span><span>Técnico<small>Títulos mono</small></span></label>
-    </div></fieldset>
-    <div class="apariencia-ajustes">
+  <div class="apariencia-panel apariencia-explorador" id="panel-apariencia-orbita" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
+    <div class="apariencia-encabezado"><p class="apariencia-titulo">Tu espacio</p><span data-tema-actual>Sistema</span></div>
+<div class="apariencia-pestanas" role="tablist" aria-label="Preferencias del documento"><button type="button" role="tab" id="preferencia-apariencia-orbita-temas" aria-controls="preferencia-panel-apariencia-orbita-temas" aria-selected="true" tabindex="0" data-preferencia-tab="temas">Temas</button><button type="button" role="tab" id="preferencia-apariencia-orbita-letras" aria-controls="preferencia-panel-apariencia-orbita-letras" aria-selected="false" tabindex="-1" data-preferencia-tab="letras">Letras</button><button type="button" role="tab" id="preferencia-apariencia-orbita-sonido" aria-controls="preferencia-panel-apariencia-orbita-sonido" aria-selected="false" tabindex="-1" data-preferencia-tab="sonido">Sonido</button></div><section role="tabpanel" tabindex="0" id="preferencia-panel-apariencia-orbita-temas" aria-labelledby="preferencia-apariencia-orbita-temas" data-preferencia-panel="temas"><div class="apariencia-filtros"><label>Buscar tema<input type="search" data-buscar-tema placeholder="Nombre o color" autocomplete="off"></label><label>Familia<select data-familia-tema><option value="">Todas</option><option value="editorial">Editoriales</option><option value="marca">Marcas</option><option value="tecnico">Técnicos</option><option value="sistema">Sistema</option></select></label></div><fieldset class="apariencia"><legend class="sr-only">Paleta del documento</legend><div class="apariencia-colores" tabindex="0" role="region" aria-label="Temas disponibles, desplazables">
+      <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-orbita" value="light" data-elegir-tema><span class="paleta-mini claro" aria-hidden="true"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>
+      <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-orbita" value="dark" data-elegir-tema><span class="paleta-mini calido" aria-hidden="true"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>
+      <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-orbita" value="sea" data-elegir-tema><span class="paleta-mini sea" aria-hidden="true"><i></i><b></b></span><span>Dark Sea<small>Azul profundo · acento menta</small></span></label>
+      <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-orbita" value="oliva" data-elegir-tema><span class="paleta-mini oliva" aria-hidden="true"><i></i><b></b></span><span>Oliva<small>Papel verde · tinta botánica</small></span></label>
+      <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-orbita" value="arcilla" data-elegir-tema><span class="paleta-mini arcilla" aria-hidden="true"><i></i><b></b></span><span>Arcilla<small>Papel durazno · acento terracota</small></span></label>
+      <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-orbita" value="ciruela" data-elegir-tema><span class="paleta-mini ciruela" aria-hidden="true"><i></i><b></b></span><span>Ciruela<small>Papel oscuro · acento malva</small></span></label>
+      <label data-tema-familia="marca"><input type="radio" name="color-apariencia-orbita" value="liftit" data-elegir-tema><span class="paleta-mini liftit" aria-hidden="true"><i></i><b></b></span><span>Liftit<small>Azul logístico · papel claro</small></span></label>
+      <label data-tema-familia="tecnico"><input type="radio" name="color-apariencia-orbita" value="blueprint" data-elegir-tema><span class="paleta-mini blueprint" aria-hidden="true"><i></i><b></b></span><span>Blueprint<small>Plano azul · cuadrícula blanca</small></span></label>
+      <label data-tema-familia="tecnico"><input type="radio" name="color-apariencia-orbita" value="hacker" data-elegir-tema><span class="paleta-mini hacker" aria-hidden="true"><i></i><b></b></span><span>Hacker<small>Oscuro técnico · acento verde</small></span></label>
+      <label data-tema-familia="sistema"><input type="radio" name="color-apariencia-orbita" value="system" data-elegir-tema checked><span class="paleta-mini sistema" aria-hidden="true"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>
+    </div></fieldset><p class="apariencia-resultados" data-temas-resultados role="status">10 temas disponibles</p><button type="button" data-limpiar-temas hidden>Limpiar búsqueda y filtros</button></section><section role="tabpanel" tabindex="0" id="preferencia-panel-apariencia-orbita-letras" aria-labelledby="preferencia-apariencia-orbita-letras" data-preferencia-panel="letras" hidden><fieldset class="apariencia"><legend>Combinaciones de lectura</legend><div class="apariencia-estilos" tabindex="0" role="region" aria-label="Combinaciones tipográficas, desplazables">
+      <label><input type="radio" name="estilo-apariencia-orbita" value="editorial" data-elegir-estilo checked><span class="muestra-letra editorial" aria-hidden="true">Aa</span><span>Editorial<small>Instrument · Geist</small></span></label>
+      <label><input type="radio" name="estilo-apariencia-orbita" value="sobrio" data-elegir-estilo><span class="muestra-letra sobrio" aria-hidden="true">Aa</span><span>Sobrio<small>Geist · Geist</small></span></label>
+      <label><input type="radio" name="estilo-apariencia-orbita" value="tecnico" data-elegir-estilo><span class="muestra-letra tecnico" aria-hidden="true">Aa</span><span>Técnico<small>Mono · Geist</small></span></label>
+    <label><input type="radio" name="estilo-apariencia-orbita" value="libro" data-elegir-estilo><span class="muestra-letra libro" aria-hidden="true">Aa</span><span>Libro<small>Literata · Literata</small></span></label>
+    <label><input type="radio" name="estilo-apariencia-orbita" value="revista" data-elegir-estilo><span class="muestra-letra revista" aria-hidden="true">Aa</span><span>Revista<small>Instrument · Literata</small></span></label>
+    <label><input type="radio" name="estilo-apariencia-orbita" value="bitacora" data-elegir-estilo><span class="muestra-letra bitacora" aria-hidden="true">Aa</span><span>Bitácora<small>Mono · Literata</small></span></label>
+    </div></fieldset><div class="apariencia-muestra" aria-label="Vista previa tipográfica"><strong>Una idea merece espacio.</strong><p>Leer, comparar y decidir. El detalle también cuenta: 1.250,50.</p></div><div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
       <button type="button" data-ver-escritura>Ver escritura animada ↗</button>
       <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
-    </div>
+    </div></section><section role="tabpanel" tabindex="0" id="preferencia-panel-apariencia-orbita-sonido" aria-labelledby="preferencia-apariencia-orbita-sonido" data-preferencia-panel="sonido" hidden><fieldset class="apariencia-audio"><legend>Sonido</legend>
+
+      <button type="button" data-audio-prueba>Probar sonido</button>
+      <label>Volumen <output data-audio-volumen-valor>65 %</output><input type="range" min="0" max="100" value="65" step="5" aria-label="Volumen del sonido" data-audio-volumen></label>
+      <p role="status" data-audio-estado>Sonido habilitado. Se activa después del primer clic. Puedes apagarlo abajo.</p>
+    </fieldset><p class="apariencia-nota">Clics, lápiz y pequeños gestos. Sin música de fondo. Tu elección de silencio se recuerda en este navegador.</p></section><div class="apariencia-pie"><button type="button" data-audio-global aria-pressed="true"><span data-audio-etiqueta>Sonidos activados</span><span class="interruptor" aria-hidden="true"></span></button></div>
   </div>
 </details>
     </div>
     <div><p class="variante-nombre">02 · Con etiqueta</p>
 <details class="apariencia-menu etiqueta" data-apariencia-menu>
   <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-etiqueta"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span><span>Apariencia</span><svg class="icono-flecha" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></summary>
-  <div class="apariencia-panel" id="panel-apariencia-etiqueta" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
-    <p class="apariencia-titulo">Tu forma de leer</p>
-    <fieldset class="apariencia-audio"><legend>Sonido</legend>
-      <button type="button" data-audio-global aria-pressed="false"><span data-audio-etiqueta>Sonidos apagados</span><span class="interruptor" aria-hidden="true"></span></button>
-      <button type="button" data-audio-prueba>Probar sonido</button>
-      <label>Volumen <output data-audio-volumen-valor>65 %</output><input type="range" min="0" max="100" value="65" step="5" aria-label="Volumen del sonido" data-audio-volumen></label>
-      <p role="status" data-audio-estado>Sonido apagado. Pulsa Probar sonido para escuchar una muestra.</p>
-    </fieldset>
-    <fieldset class="apariencia"><legend>Color</legend><div class="apariencia-colores">
-      <label><input type="radio" name="color-apariencia-etiqueta" value="light" data-elegir-tema><span class="paleta-mini claro" aria-hidden="true"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>
-      <label><input type="radio" name="color-apariencia-etiqueta" value="dark" data-elegir-tema><span class="paleta-mini calido" aria-hidden="true"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>
-      <label><input type="radio" name="color-apariencia-etiqueta" value="sea" data-elegir-tema><span class="paleta-mini sea" aria-hidden="true"><i></i><b></b></span><span>Dark Sea<small>Azul profundo · acento menta</small></span></label>
-      <label><input type="radio" name="color-apariencia-etiqueta" value="oliva" data-elegir-tema><span class="paleta-mini oliva" aria-hidden="true"><i></i><b></b></span><span>Oliva<small>Papel verde · tinta botánica</small></span></label>
-      <label><input type="radio" name="color-apariencia-etiqueta" value="arcilla" data-elegir-tema><span class="paleta-mini arcilla" aria-hidden="true"><i></i><b></b></span><span>Arcilla<small>Papel durazno · acento terracota</small></span></label>
-      <label><input type="radio" name="color-apariencia-etiqueta" value="ciruela" data-elegir-tema><span class="paleta-mini ciruela" aria-hidden="true"><i></i><b></b></span><span>Ciruela<small>Papel oscuro · acento malva</small></span></label>
-      <label><input type="radio" name="color-apariencia-etiqueta" value="liftit" data-elegir-tema><span class="paleta-mini liftit" aria-hidden="true"><i></i><b></b></span><span>Liftit<small>Azul logístico · papel claro</small></span></label>
-      <label><input type="radio" name="color-apariencia-etiqueta" value="blueprint" data-elegir-tema><span class="paleta-mini blueprint" aria-hidden="true"><i></i><b></b></span><span>Blueprint<small>Plano azul · cuadrícula blanca</small></span></label>
-      <label><input type="radio" name="color-apariencia-etiqueta" value="hacker" data-elegir-tema><span class="paleta-mini hacker" aria-hidden="true"><i></i><b></b></span><span>Hacker<small>Oscuro técnico · acento verde</small></span></label>
-      <label><input type="radio" name="color-apariencia-etiqueta" value="system" data-elegir-tema checked><span class="paleta-mini sistema" aria-hidden="true"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>
-    </div></fieldset>
-    <fieldset class="apariencia"><legend>Estilo de títulos</legend><div class="apariencia-estilos">
-      <label><input type="radio" name="estilo-apariencia-etiqueta" value="editorial" data-elegir-estilo checked><span class="muestra-letra editorial" aria-hidden="true">Aa</span><span>Editorial<small>Títulos serif</small></span></label>
-      <label><input type="radio" name="estilo-apariencia-etiqueta" value="sobrio" data-elegir-estilo><span class="muestra-letra sobrio" aria-hidden="true">Aa</span><span>Sobrio<small>Títulos sans</small></span></label>
-      <label><input type="radio" name="estilo-apariencia-etiqueta" value="tecnico" data-elegir-estilo><span class="muestra-letra tecnico" aria-hidden="true">Aa</span><span>Técnico<small>Títulos mono</small></span></label>
-    </div></fieldset>
-    <div class="apariencia-ajustes">
+  <div class="apariencia-panel apariencia-explorador" id="panel-apariencia-etiqueta" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
+    <div class="apariencia-encabezado"><p class="apariencia-titulo">Tu espacio</p><span data-tema-actual>Sistema</span></div>
+<div class="apariencia-pestanas" role="tablist" aria-label="Preferencias del documento"><button type="button" role="tab" id="preferencia-apariencia-etiqueta-temas" aria-controls="preferencia-panel-apariencia-etiqueta-temas" aria-selected="true" tabindex="0" data-preferencia-tab="temas">Temas</button><button type="button" role="tab" id="preferencia-apariencia-etiqueta-letras" aria-controls="preferencia-panel-apariencia-etiqueta-letras" aria-selected="false" tabindex="-1" data-preferencia-tab="letras">Letras</button><button type="button" role="tab" id="preferencia-apariencia-etiqueta-sonido" aria-controls="preferencia-panel-apariencia-etiqueta-sonido" aria-selected="false" tabindex="-1" data-preferencia-tab="sonido">Sonido</button></div><section role="tabpanel" tabindex="0" id="preferencia-panel-apariencia-etiqueta-temas" aria-labelledby="preferencia-apariencia-etiqueta-temas" data-preferencia-panel="temas"><div class="apariencia-filtros"><label>Buscar tema<input type="search" data-buscar-tema placeholder="Nombre o color" autocomplete="off"></label><label>Familia<select data-familia-tema><option value="">Todas</option><option value="editorial">Editoriales</option><option value="marca">Marcas</option><option value="tecnico">Técnicos</option><option value="sistema">Sistema</option></select></label></div><fieldset class="apariencia"><legend class="sr-only">Paleta del documento</legend><div class="apariencia-colores" tabindex="0" role="region" aria-label="Temas disponibles, desplazables">
+      <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-etiqueta" value="light" data-elegir-tema><span class="paleta-mini claro" aria-hidden="true"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>
+      <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-etiqueta" value="dark" data-elegir-tema><span class="paleta-mini calido" aria-hidden="true"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>
+      <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-etiqueta" value="sea" data-elegir-tema><span class="paleta-mini sea" aria-hidden="true"><i></i><b></b></span><span>Dark Sea<small>Azul profundo · acento menta</small></span></label>
+      <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-etiqueta" value="oliva" data-elegir-tema><span class="paleta-mini oliva" aria-hidden="true"><i></i><b></b></span><span>Oliva<small>Papel verde · tinta botánica</small></span></label>
+      <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-etiqueta" value="arcilla" data-elegir-tema><span class="paleta-mini arcilla" aria-hidden="true"><i></i><b></b></span><span>Arcilla<small>Papel durazno · acento terracota</small></span></label>
+      <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-etiqueta" value="ciruela" data-elegir-tema><span class="paleta-mini ciruela" aria-hidden="true"><i></i><b></b></span><span>Ciruela<small>Papel oscuro · acento malva</small></span></label>
+      <label data-tema-familia="marca"><input type="radio" name="color-apariencia-etiqueta" value="liftit" data-elegir-tema><span class="paleta-mini liftit" aria-hidden="true"><i></i><b></b></span><span>Liftit<small>Azul logístico · papel claro</small></span></label>
+      <label data-tema-familia="tecnico"><input type="radio" name="color-apariencia-etiqueta" value="blueprint" data-elegir-tema><span class="paleta-mini blueprint" aria-hidden="true"><i></i><b></b></span><span>Blueprint<small>Plano azul · cuadrícula blanca</small></span></label>
+      <label data-tema-familia="tecnico"><input type="radio" name="color-apariencia-etiqueta" value="hacker" data-elegir-tema><span class="paleta-mini hacker" aria-hidden="true"><i></i><b></b></span><span>Hacker<small>Oscuro técnico · acento verde</small></span></label>
+      <label data-tema-familia="sistema"><input type="radio" name="color-apariencia-etiqueta" value="system" data-elegir-tema checked><span class="paleta-mini sistema" aria-hidden="true"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>
+    </div></fieldset><p class="apariencia-resultados" data-temas-resultados role="status">10 temas disponibles</p><button type="button" data-limpiar-temas hidden>Limpiar búsqueda y filtros</button></section><section role="tabpanel" tabindex="0" id="preferencia-panel-apariencia-etiqueta-letras" aria-labelledby="preferencia-apariencia-etiqueta-letras" data-preferencia-panel="letras" hidden><fieldset class="apariencia"><legend>Combinaciones de lectura</legend><div class="apariencia-estilos" tabindex="0" role="region" aria-label="Combinaciones tipográficas, desplazables">
+      <label><input type="radio" name="estilo-apariencia-etiqueta" value="editorial" data-elegir-estilo checked><span class="muestra-letra editorial" aria-hidden="true">Aa</span><span>Editorial<small>Instrument · Geist</small></span></label>
+      <label><input type="radio" name="estilo-apariencia-etiqueta" value="sobrio" data-elegir-estilo><span class="muestra-letra sobrio" aria-hidden="true">Aa</span><span>Sobrio<small>Geist · Geist</small></span></label>
+      <label><input type="radio" name="estilo-apariencia-etiqueta" value="tecnico" data-elegir-estilo><span class="muestra-letra tecnico" aria-hidden="true">Aa</span><span>Técnico<small>Mono · Geist</small></span></label>
+    <label><input type="radio" name="estilo-apariencia-etiqueta" value="libro" data-elegir-estilo><span class="muestra-letra libro" aria-hidden="true">Aa</span><span>Libro<small>Literata · Literata</small></span></label>
+    <label><input type="radio" name="estilo-apariencia-etiqueta" value="revista" data-elegir-estilo><span class="muestra-letra revista" aria-hidden="true">Aa</span><span>Revista<small>Instrument · Literata</small></span></label>
+    <label><input type="radio" name="estilo-apariencia-etiqueta" value="bitacora" data-elegir-estilo><span class="muestra-letra bitacora" aria-hidden="true">Aa</span><span>Bitácora<small>Mono · Literata</small></span></label>
+    </div></fieldset><div class="apariencia-muestra" aria-label="Vista previa tipográfica"><strong>Una idea merece espacio.</strong><p>Leer, comparar y decidir. El detalle también cuenta: 1.250,50.</p></div><div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
       <button type="button" data-ver-escritura>Ver escritura animada ↗</button>
       <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
-    </div>
+    </div></section><section role="tabpanel" tabindex="0" id="preferencia-panel-apariencia-etiqueta-sonido" aria-labelledby="preferencia-apariencia-etiqueta-sonido" data-preferencia-panel="sonido" hidden><fieldset class="apariencia-audio"><legend>Sonido</legend>
+
+      <button type="button" data-audio-prueba>Probar sonido</button>
+      <label>Volumen <output data-audio-volumen-valor>65 %</output><input type="range" min="0" max="100" value="65" step="5" aria-label="Volumen del sonido" data-audio-volumen></label>
+      <p role="status" data-audio-estado>Sonido habilitado. Se activa después del primer clic. Puedes apagarlo abajo.</p>
+    </fieldset><p class="apariencia-nota">Clics, lápiz y pequeños gestos. Sin música de fondo. Tu elección de silencio se recuerda en este navegador.</p></section><div class="apariencia-pie"><button type="button" data-audio-global aria-pressed="true"><span data-audio-etiqueta>Sonidos activados</span><span class="interruptor" aria-hidden="true"></span></button></div>
   </div>
 </details>
     </div>
     <div><p class="variante-nombre">03 · Cápsula</p>
 <details class="apariencia-menu capsula" data-apariencia-menu>
   <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-capsula"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span><span class="apariencia-actual" data-tema-actual>Sistema</span><svg class="icono-flecha" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></summary>
-  <div class="apariencia-panel" id="panel-apariencia-capsula" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
-    <p class="apariencia-titulo">Tu forma de leer</p>
-    <fieldset class="apariencia-audio"><legend>Sonido</legend>
-      <button type="button" data-audio-global aria-pressed="false"><span data-audio-etiqueta>Sonidos apagados</span><span class="interruptor" aria-hidden="true"></span></button>
-      <button type="button" data-audio-prueba>Probar sonido</button>
-      <label>Volumen <output data-audio-volumen-valor>65 %</output><input type="range" min="0" max="100" value="65" step="5" aria-label="Volumen del sonido" data-audio-volumen></label>
-      <p role="status" data-audio-estado>Sonido apagado. Pulsa Probar sonido para escuchar una muestra.</p>
-    </fieldset>
-    <fieldset class="apariencia"><legend>Color</legend><div class="apariencia-colores">
-      <label><input type="radio" name="color-apariencia-capsula" value="light" data-elegir-tema><span class="paleta-mini claro" aria-hidden="true"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>
-      <label><input type="radio" name="color-apariencia-capsula" value="dark" data-elegir-tema><span class="paleta-mini calido" aria-hidden="true"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>
-      <label><input type="radio" name="color-apariencia-capsula" value="sea" data-elegir-tema><span class="paleta-mini sea" aria-hidden="true"><i></i><b></b></span><span>Dark Sea<small>Azul profundo · acento menta</small></span></label>
-      <label><input type="radio" name="color-apariencia-capsula" value="oliva" data-elegir-tema><span class="paleta-mini oliva" aria-hidden="true"><i></i><b></b></span><span>Oliva<small>Papel verde · tinta botánica</small></span></label>
-      <label><input type="radio" name="color-apariencia-capsula" value="arcilla" data-elegir-tema><span class="paleta-mini arcilla" aria-hidden="true"><i></i><b></b></span><span>Arcilla<small>Papel durazno · acento terracota</small></span></label>
-      <label><input type="radio" name="color-apariencia-capsula" value="ciruela" data-elegir-tema><span class="paleta-mini ciruela" aria-hidden="true"><i></i><b></b></span><span>Ciruela<small>Papel oscuro · acento malva</small></span></label>
-      <label><input type="radio" name="color-apariencia-capsula" value="liftit" data-elegir-tema><span class="paleta-mini liftit" aria-hidden="true"><i></i><b></b></span><span>Liftit<small>Azul logístico · papel claro</small></span></label>
-      <label><input type="radio" name="color-apariencia-capsula" value="blueprint" data-elegir-tema><span class="paleta-mini blueprint" aria-hidden="true"><i></i><b></b></span><span>Blueprint<small>Plano azul · cuadrícula blanca</small></span></label>
-      <label><input type="radio" name="color-apariencia-capsula" value="hacker" data-elegir-tema><span class="paleta-mini hacker" aria-hidden="true"><i></i><b></b></span><span>Hacker<small>Oscuro técnico · acento verde</small></span></label>
-      <label><input type="radio" name="color-apariencia-capsula" value="system" data-elegir-tema checked><span class="paleta-mini sistema" aria-hidden="true"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>
-    </div></fieldset>
-    <fieldset class="apariencia"><legend>Estilo de títulos</legend><div class="apariencia-estilos">
-      <label><input type="radio" name="estilo-apariencia-capsula" value="editorial" data-elegir-estilo checked><span class="muestra-letra editorial" aria-hidden="true">Aa</span><span>Editorial<small>Títulos serif</small></span></label>
-      <label><input type="radio" name="estilo-apariencia-capsula" value="sobrio" data-elegir-estilo><span class="muestra-letra sobrio" aria-hidden="true">Aa</span><span>Sobrio<small>Títulos sans</small></span></label>
-      <label><input type="radio" name="estilo-apariencia-capsula" value="tecnico" data-elegir-estilo><span class="muestra-letra tecnico" aria-hidden="true">Aa</span><span>Técnico<small>Títulos mono</small></span></label>
-    </div></fieldset>
-    <div class="apariencia-ajustes">
+  <div class="apariencia-panel apariencia-explorador" id="panel-apariencia-capsula" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
+    <div class="apariencia-encabezado"><p class="apariencia-titulo">Tu espacio</p><span data-tema-actual>Sistema</span></div>
+<div class="apariencia-pestanas" role="tablist" aria-label="Preferencias del documento"><button type="button" role="tab" id="preferencia-apariencia-capsula-temas" aria-controls="preferencia-panel-apariencia-capsula-temas" aria-selected="true" tabindex="0" data-preferencia-tab="temas">Temas</button><button type="button" role="tab" id="preferencia-apariencia-capsula-letras" aria-controls="preferencia-panel-apariencia-capsula-letras" aria-selected="false" tabindex="-1" data-preferencia-tab="letras">Letras</button><button type="button" role="tab" id="preferencia-apariencia-capsula-sonido" aria-controls="preferencia-panel-apariencia-capsula-sonido" aria-selected="false" tabindex="-1" data-preferencia-tab="sonido">Sonido</button></div><section role="tabpanel" tabindex="0" id="preferencia-panel-apariencia-capsula-temas" aria-labelledby="preferencia-apariencia-capsula-temas" data-preferencia-panel="temas"><div class="apariencia-filtros"><label>Buscar tema<input type="search" data-buscar-tema placeholder="Nombre o color" autocomplete="off"></label><label>Familia<select data-familia-tema><option value="">Todas</option><option value="editorial">Editoriales</option><option value="marca">Marcas</option><option value="tecnico">Técnicos</option><option value="sistema">Sistema</option></select></label></div><fieldset class="apariencia"><legend class="sr-only">Paleta del documento</legend><div class="apariencia-colores" tabindex="0" role="region" aria-label="Temas disponibles, desplazables">
+      <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-capsula" value="light" data-elegir-tema><span class="paleta-mini claro" aria-hidden="true"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>
+      <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-capsula" value="dark" data-elegir-tema><span class="paleta-mini calido" aria-hidden="true"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>
+      <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-capsula" value="sea" data-elegir-tema><span class="paleta-mini sea" aria-hidden="true"><i></i><b></b></span><span>Dark Sea<small>Azul profundo · acento menta</small></span></label>
+      <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-capsula" value="oliva" data-elegir-tema><span class="paleta-mini oliva" aria-hidden="true"><i></i><b></b></span><span>Oliva<small>Papel verde · tinta botánica</small></span></label>
+      <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-capsula" value="arcilla" data-elegir-tema><span class="paleta-mini arcilla" aria-hidden="true"><i></i><b></b></span><span>Arcilla<small>Papel durazno · acento terracota</small></span></label>
+      <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-capsula" value="ciruela" data-elegir-tema><span class="paleta-mini ciruela" aria-hidden="true"><i></i><b></b></span><span>Ciruela<small>Papel oscuro · acento malva</small></span></label>
+      <label data-tema-familia="marca"><input type="radio" name="color-apariencia-capsula" value="liftit" data-elegir-tema><span class="paleta-mini liftit" aria-hidden="true"><i></i><b></b></span><span>Liftit<small>Azul logístico · papel claro</small></span></label>
+      <label data-tema-familia="tecnico"><input type="radio" name="color-apariencia-capsula" value="blueprint" data-elegir-tema><span class="paleta-mini blueprint" aria-hidden="true"><i></i><b></b></span><span>Blueprint<small>Plano azul · cuadrícula blanca</small></span></label>
+      <label data-tema-familia="tecnico"><input type="radio" name="color-apariencia-capsula" value="hacker" data-elegir-tema><span class="paleta-mini hacker" aria-hidden="true"><i></i><b></b></span><span>Hacker<small>Oscuro técnico · acento verde</small></span></label>
+      <label data-tema-familia="sistema"><input type="radio" name="color-apariencia-capsula" value="system" data-elegir-tema checked><span class="paleta-mini sistema" aria-hidden="true"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>
+    </div></fieldset><p class="apariencia-resultados" data-temas-resultados role="status">10 temas disponibles</p><button type="button" data-limpiar-temas hidden>Limpiar búsqueda y filtros</button></section><section role="tabpanel" tabindex="0" id="preferencia-panel-apariencia-capsula-letras" aria-labelledby="preferencia-apariencia-capsula-letras" data-preferencia-panel="letras" hidden><fieldset class="apariencia"><legend>Combinaciones de lectura</legend><div class="apariencia-estilos" tabindex="0" role="region" aria-label="Combinaciones tipográficas, desplazables">
+      <label><input type="radio" name="estilo-apariencia-capsula" value="editorial" data-elegir-estilo checked><span class="muestra-letra editorial" aria-hidden="true">Aa</span><span>Editorial<small>Instrument · Geist</small></span></label>
+      <label><input type="radio" name="estilo-apariencia-capsula" value="sobrio" data-elegir-estilo><span class="muestra-letra sobrio" aria-hidden="true">Aa</span><span>Sobrio<small>Geist · Geist</small></span></label>
+      <label><input type="radio" name="estilo-apariencia-capsula" value="tecnico" data-elegir-estilo><span class="muestra-letra tecnico" aria-hidden="true">Aa</span><span>Técnico<small>Mono · Geist</small></span></label>
+    <label><input type="radio" name="estilo-apariencia-capsula" value="libro" data-elegir-estilo><span class="muestra-letra libro" aria-hidden="true">Aa</span><span>Libro<small>Literata · Literata</small></span></label>
+    <label><input type="radio" name="estilo-apariencia-capsula" value="revista" data-elegir-estilo><span class="muestra-letra revista" aria-hidden="true">Aa</span><span>Revista<small>Instrument · Literata</small></span></label>
+    <label><input type="radio" name="estilo-apariencia-capsula" value="bitacora" data-elegir-estilo><span class="muestra-letra bitacora" aria-hidden="true">Aa</span><span>Bitácora<small>Mono · Literata</small></span></label>
+    </div></fieldset><div class="apariencia-muestra" aria-label="Vista previa tipográfica"><strong>Una idea merece espacio.</strong><p>Leer, comparar y decidir. El detalle también cuenta: 1.250,50.</p></div><div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
       <button type="button" data-ver-escritura>Ver escritura animada ↗</button>
       <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
-    </div>
+    </div></section><section role="tabpanel" tabindex="0" id="preferencia-panel-apariencia-capsula-sonido" aria-labelledby="preferencia-apariencia-capsula-sonido" data-preferencia-panel="sonido" hidden><fieldset class="apariencia-audio"><legend>Sonido</legend>
+
+      <button type="button" data-audio-prueba>Probar sonido</button>
+      <label>Volumen <output data-audio-volumen-valor>65 %</output><input type="range" min="0" max="100" value="65" step="5" aria-label="Volumen del sonido" data-audio-volumen></label>
+      <p role="status" data-audio-estado>Sonido habilitado. Se activa después del primer clic. Puedes apagarlo abajo.</p>
+    </fieldset><p class="apariencia-nota">Clics, lápiz y pequeños gestos. Sin música de fondo. Tu elección de silencio se recuerda en este navegador.</p></section><div class="apariencia-pie"><button type="button" data-audio-global aria-pressed="true"><span data-audio-etiqueta>Sonidos activados</span><span class="interruptor" aria-hidden="true"></span></button></div>
   </div>
 </details>
     </div>
@@ -1128,27 +1126,31 @@ principal; la etiqueta hace explícita su función y la cápsula muestra la pref
 Copia un solo `details` en una nota. El ejemplo reúne tres variantes para compararlas.
 La cabecera del catálogo reutiliza exactamente el primer control con IDs/nombres propios.
 
-**Interacción:** pulsar abre/cierra; Escape cierra y devuelve foco; pulsar fuera o salir con
-Tab cierra. Un solo panel abierto. Radios nativos para colores y estilo; no es un menú de
-comandos ni un interruptor binario. La selección permanece abierta para comparar ajustes.
-El icono representa el tema efectivo (sol en Claro/Oliva/Arcilla, luna en Cálido/Sea/Ciruela); Sistema sigue al SO.
-El panel se coloca dentro de la ventana y tiene scroll local si falta altura. Sin JavaScript
-`details` se abre en el flujo, pero los ajustes no cambian el documento.
+**Interacción:** Temas, Letras y Sonido son pestañas con flechas izquierda/derecha, Home y End.
+Escape cierra y devuelve el foco a la llave; pulsar o enfocar fuera cierra. Un solo panel abierto.
+Los radios conservan la selección; elegir una paleta no cierra el panel para poder comparar.
+El tema actual se nombra arriba aunque un filtro lo oculte. Búsqueda sin tildes por nombre o
+ descripción, familia, contador y restablecimiento. Las muestras tienen scroll local con foco y nombre.
+El silencio está disponible al pie de las tres pestañas. Sin JS el disclosure abre, pero los ajustes
+no cambian el documento: no es una configuración persistida en el propio HTML.
 
-**Cuándo no / límite:** no cambia las variantes del prototipo ni emula preferencias del lector.
-`Editorial` conserva los títulos serif; `Sobrio` usa Geist; `Técnico` usa Geist Mono con una
-escala propia para que los títulos no desborden. Cuerpo y datos conservan su familia.
-El grano de papel añade ruido monocromo de varias escalas mediante un SVG incrustado (feTurbulence, semilla fija 17); no es una rejilla de puntos. Es sutil para conservar legibilidad y se retira al imprimir.
-Lectura cómoda sigue siendo 18px/1,7; nunca se comprimen tablas o SVG para encajarlos.
-Cambiar tipografía puede cambiar saltos de línea y altura: revisa títulos reales largos.
+**Tipografía:** seis combinaciones, independientes de los colores. Editorial: Instrument Serif / Geist;
+Sobrio: Geist / Geist; Técnico: Geist Mono / Geist. Libro: Literata / Literata; Revista: Instrument Serif /
+Literata; Bitácora: Geist Mono / Literata. El primer nombre corresponde a títulos y el segundo a lectura.
+Literata normal e itálica, pesos 400–700, latín y latín extendido, están incrustados; OFL y procedencia en
+`licencias/literata-OFL.txt` y `auditoria/literata-fuentes.json`. Reenie Beanie sigue reservada a notas;
+código y controles conservan sus familias. Instrument Serif es de títulos, no se usa como cuerpo largo.
 
-No añade fuentes ni sonidos. Los tres estilos funcionan en los tres colores. Paletas y
-controles anteriores siguen disponibles (`select[data-tema]`, radios `data-elegir-tema`).
-Estilo, trama y lectura cómoda sólo se restauran en documentos con sus respectivos controles;
-no alteran silenciosamente documentos antiguos. Preferencias en localStorage por origen;
-si está bloqueado funcionan durante la sesión. Cada copia necesita IDs y nombres de radio
-únicos; el panel incluye `tabindex="0"` y nombre para su desplazamiento local. Incluir
-`interacciones.js` una sola vez; no incluye API de inserción/destrucción dinámica del menú.
+**Cuándo no / límite:** no modifica prototipos ni emula preferencias del sistema. Los temas son opciones
+predefinidas, no un editor de tokens ni una descarga de temas. Para ampliar, copia una etiqueta con radio,
+muestra y `data-tema-familia`; define todos los tokens, registra su clave en interacciones.js/contrato y
+actualiza validación. La búsqueda descubre las etiquetas disponibles sin una lista de resultados duplicada.
+No inserta controles dinámicamente. Cada copia necesita IDs, aria-controls, aria-labelledby y nombres de
+radio únicos. Incluir interacciones.js una vez. Tipografía puede cambiar altura y saltos: revisar contenido real.
+Las preferencias se guardan por origen, o por archivo cuando hay presentación inicial; el silencio se comparte
+por origen. Sin localStorage funcionan durante la sesión. Sin Web Audio se explica el fallo; habilitado no
+significa que el navegador o dispositivo ya esté reproduciendo. El grano incrustado es independiente de la
+paleta; se retira al imprimir. Lectura cómoda sigue siendo 18 px/1,7, sin comprimir datos.
 
 ## Ficha de decisión
 
@@ -2622,16 +2624,16 @@ el sonido optativo y los comentarios flotantes se incorporan una sola vez autom�
 El índice se deriva de los h2 y la regla acompaña cada página. No insertes otra receta de
 apariencia o revisión dentro del contenido de esa base.
 
-Apariencia ofrece ahora Sonido al principio del panel: interruptor, Probar sonido, volumen
-inicial 65 % y estado. Probar sonido activa y emite un tono de 450 ms; el interruptor por sí solo
-no emite audio. Un error al iniciar Web Audio deja el interruptor apagado y explica el reintento.
+Apariencia organiza Temas / Letras / Sonido y conserva el interruptor al pie. Sonido ofrece Probar sonido, volumen
+inicial 65 % y estado. Probar sonido activa y reproduce el clic original de cmrg.me; el interruptor por sí solo
+no emite audio. Un error al iniciar Web Audio mantiene el contexto inactivo y explica el reintento; la preferencia habilitada no equivale a salida audible.
 La señal de lápiz dura lo que el trazo y se cancela con él. Estos controles están en el HTML
 completo de la receta `apariencia`, en sus tres variantes; la llave circular es la predeterminada.
 
 **Cuándo:** artículos, informes y prototipos entregados como artefactos HTML de Angel. Selecciona
 las piezas de contenido por utilidad; los controles comunes deben estar presentes en cada entrega.
 **Límite:** el validador estructural no prueba audición, lector de pantalla ni layout. Tampoco
-actualiza HTML publicado. Sonido apagado tras recargar/ocultar y comentarios en memoria solamente.
+actualiza HTML publicado. Sonido habilitado inicialmente, silencio persistido, pausa al ocultar y comentarios en memoria solamente.
 
 
 ## Actividad con contexto editorial

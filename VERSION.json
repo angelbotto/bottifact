@@ -1,6 +1,6 @@
 {
-  "version": "2026.09.15-guia.1",
-  "contrato": "3",
+  "version": "2026.09.15-apariencia.2",
+  "contrato": "4",
   "componentes": 71,
   "temas": ["light", "dark", "sea", "oliva", "arcilla", "ciruela", "liftit", "blueprint", "hacker"],
   "generacion": "Python 3, biblioteca estándar",

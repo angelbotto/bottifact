@@ -1822,3 +1822,56 @@ body:has(.revision-barra) { padding-bottom:0; }
  :root:is([data-theme=liftit],[data-theme=blueprint],[data-theme=hacker]) .codigo .codigo-numero { color:var(--sintaxis-numero); }
  :root:is([data-theme=liftit],[data-theme=blueprint],[data-theme=hacker]) .codigo .codigo-funcion { color:var(--sintaxis-funcion); }
 }
+
+/* 29 — Explorador de apariencia. Sólo la receta nueva; paletas heredadas de cada tema. */
+.apariencia-explorador { padding:16px; font:13px/1.45 var(--sans); }
+.apariencia-explorador [hidden] { display:none !important; }
+.apariencia-encabezado { display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:14px; }
+.apariencia-explorador .apariencia-titulo { margin:0; }
+.apariencia-encabezado > span { font:12px/1.4 var(--sans); color:var(--tinta-2); overflow-wrap:anywhere; }
+.apariencia-pestanas { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4px; padding:4px; background:var(--panel); border-radius:8px; margin-bottom:16px; }
+.apariencia-explorador .apariencia-pestanas button { min-width:0; min-height:40px; padding:8px 4px; border:1px solid transparent; border-radius:5px; font:500 13px/1.3 var(--sans); color:var(--tinta-2); background:transparent; }
+.apariencia-explorador .apariencia-pestanas button[aria-selected='true'] { color:var(--tinta); background:var(--papel); border-color:var(--linea-fuerte); }
+.apariencia-explorador [role='tabpanel'] { min-width:0; }
+.apariencia-filtros { display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); gap:8px; margin-bottom:12px; }
+.apariencia-filtros label { display:grid; gap:5px; min-width:0; color:var(--tinta-2); font:12px/1.4 var(--sans); }
+.apariencia-filtros :is(input,select) { width:100%; min-width:0; min-height:40px; padding:8px; border:1px solid var(--linea-fuerte); border-radius:5px; background:var(--papel); color:var(--tinta); font:13px/1.4 var(--sans); }
+.apariencia-explorador :is(.apariencia-colores,.apariencia-estilos) { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; max-height:282px; overflow:auto; overscroll-behavior:contain; padding:4px; scrollbar-gutter:stable; }
+.apariencia-explorador .apariencia-colores label { grid-template-columns:minmax(0,1fr) 16px; grid-template-rows:auto auto; gap:7px; padding:9px; align-content:start; border:1px solid var(--linea); border-radius:7px; }
+.apariencia-explorador .apariencia-colores input { grid-column:2; grid-row:1; align-self:center; }
+.apariencia-explorador .paleta-mini { grid-column:1; grid-row:1; width:48px; height:32px; }
+.apariencia-explorador .apariencia-colores label > span:last-child { grid-column:1/-1; font-size:13px; }
+.apariencia-explorador .apariencia-colores label small { font-size:11px; line-height:1.4; }
+.apariencia-explorador .apariencia label:has(:checked) { border-color:var(--pieza-acento); background:var(--pieza-suave); }
+.apariencia-explorador .apariencia-resultados { margin:8px 4px 0; font:12px/1.5 var(--sans); color:var(--tinta-2); }
+.apariencia-explorador [data-limpiar-temas] { margin-top:8px; width:100%; font:13px/1.4 var(--sans); }
+.apariencia-explorador .apariencia-estilos label { border:1px solid var(--linea); border-radius:7px; gap:6px; }
+.apariencia-muestra { border-block:1px dotted var(--linea-fuerte); padding:14px 2px; margin-top:14px; }
+.apariencia-muestra strong { display:block; font:400 25px/1.15 var(--serif); }
+.apariencia-muestra p { font:14px/1.65 var(--sans); margin:8px 0 0; }
+.apariencia-explorador .apariencia-ajustes { margin-top:12px; padding-top:0; border:0; }
+.apariencia-pie { border-top:1px solid var(--linea); margin-top:14px; padding-top:12px; }
+.apariencia-explorador .apariencia-pie button { display:flex; align-items:center; justify-content:space-between; gap:10px; width:100%; min-height:42px; padding:8px 10px; border:1px solid var(--linea-fuerte); border-radius:6px; font:13px/1.4 var(--sans); background:var(--panel); color:var(--tinta); }
+.apariencia-explorador .apariencia-audio { margin-bottom:12px; padding:0; border:0; }
+.apariencia-explorador .apariencia-audio [data-audio-prueba] { grid-column:1/-1; }
+.apariencia-explorador .apariencia-nota { font:13px/1.6 var(--sans); color:var(--tinta-2); }
+/* Eje tipográfico optativo: controles/datos siguen sans/mono, la nota mantiene Reenie. */
+:root { --lectura-serif:'Literata',Georgia,serif; }
+:root[data-estilo='libro'] :is(h1,h2,h3),.muestra-letra.libro { font-family:var(--lectura-serif); font-weight:400; letter-spacing:-.025em; }
+:root[data-estilo='libro'] h1 { font-size:clamp(32px,4vw,48px); line-height:1.2; }
+:root[data-estilo='libro'] h2 { font-size:clamp(27px,3vw,34px); line-height:1.25; }
+:root[data-estilo='libro'] h3 { font-size:25px; line-height:1.3; }
+:root[data-estilo='bitacora'] :is(h1,h2,h3),.muestra-letra.bitacora { font-family:var(--mono); font-weight:400; letter-spacing:-.035em; }
+:root[data-estilo='bitacora'] h1 { font-size:clamp(30px,4vw,44px); line-height:1.2; }
+:root[data-estilo='bitacora'] h2 { font-size:clamp(25px,3vw,32px); line-height:1.25; }
+:root[data-estilo='bitacora'] h3 { font-size:23px; line-height:1.3; }
+:root:is([data-estilo='libro'],[data-estilo='revista'],[data-estilo='bitacora']) .hoja { font-family:var(--lectura-serif); line-height:1.8; font-optical-sizing:auto; }
+:root:is([data-estilo='libro'],[data-estilo='revista'],[data-estilo='bitacora']) .hoja :is(button,input,select,textarea,table) { font-family:var(--sans); }
+:root:is([data-estilo='libro'],[data-estilo='revista'],[data-estilo='bitacora']) .apariencia-muestra p { font-family:var(--lectura-serif); line-height:1.8; }
+:root[data-estilo='libro'] .apariencia-muestra strong { font-family:var(--lectura-serif); }
+:root:is([data-estilo='tecnico'],[data-estilo='bitacora']) .apariencia-muestra strong { font-family:var(--mono); font-size:20px; }
+:root[data-estilo='sobrio'] .apariencia-muestra strong { font-family:var(--sans); }
+/* Conserva el silencio visible incluso cuando Letras necesita más altura en un teléfono. */
+.apariencia-explorador { display:flex; flex-direction:column; }
+.apariencia-explorador > :is(.apariencia-encabezado,.apariencia-pestanas,.apariencia-pie) { flex-shrink:0; }
+.apariencia-explorador > [role='tabpanel'] { min-height:0; overflow:auto; overscroll-behavior:contain; padding:3px; }
