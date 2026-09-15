@@ -11,6 +11,35 @@ cuaderno editorial: una idea principal, lectura tranquila y evidencia que puede 
 espacio. Aplica este lenguaje a los entregables HTML; conserva el formato si se pidió Markdown,
 una hoja de cálculo u otro medio.
 
+## Consultar la biblioteca completa
+
+Antes de componer un artefacto, revisa **todo el inventario vigente** de [registro.json](registro.json),
+incluidos sus capítulos y dependencias. Las tablas de orientación de este skill son parciales;
+no limites la selección a esos ejemplos ni a componentes recordados de una versión anterior.
+También están disponibles las piezas base documentadas en [componentes.md](componentes.md).
+
+Para recorrer las recetas sin cargar todo su HTML, ejecuta desde el directorio de este skill:
+
+```bash
+python3 - <<'PY'
+import json
+from pathlib import Path
+for pieza in json.loads(Path('registro.json').read_text())['componentes']:
+    print(pieza['capitulo'], '|', pieza['id'], '|', pieza['nombre'], '|', ', '.join(pieza['dependencias']))
+PY
+```
+
+Para cada pieza elegida, lee su receta completa en `componentes.md` o los campos `html`,
+`criterio_y_limites` y `dependencias` del registro. Copia la implementación actual e incrusta
+sus módulos; conserva sus interacciones, accesibilidad, temas y alternativas textuales.
+Tablas interactivas, mapas con tooltip, escritura sonora optativa, comentarios, prototipos,
+marcos, listas y composiciones editoriales forman parte de la biblioteca utilizable.
+
+Si Angel pide una biblioteca o muestra con **todos los componentes**, parte de
+[biblioteca.html](biblioteca.html) y comprueba que estén representados todos los IDs del registro,
+además de las piezas base solicitadas. Para artículos e informes, selecciona del inventario
+completo las piezas que expliquen su contenido. No inventes datos para llenar componentes.
+
 ## ⚠️ La trampa de los anchos
 
 El sistema base exige que `.ancho` y `.amplio` sean **hijos directos de `.hoja`**. Si el documento
