@@ -8,18 +8,24 @@
   const extent=values=>{let min=Math.min(...values),max=Math.max(...values);if(min===max){const p=Math.abs(min)*.1||1;min-=p;max+=p;}if(!Number.isFinite(max-min))throw new TypeError('Dominio fuera de precisión.');return [min,max];};
   function read(element){
     const type=element.dataset.escena,table=element.querySelector('table');
-    if(!['xyz','etapas'].includes(type)||!table?.tHead||!table.tBodies[0])throw new TypeError('Se necesita una tabla para xyz o etapas.');
+    if(!['xyz','etapas','columnas','arcos','almacen'].includes(type)||!table?.tHead||!table.tBodies[0])throw new TypeError('Se necesita una tabla para xyz o etapas.');
     const heads=[...table.tHead.rows[0].cells].map(c=>c.textContent.trim());
-    if(heads.length!==(type==='xyz'?4:3))throw new TypeError('XYZ necesita nombre/X/Y/Z; etapas necesita nombre/duración/explicación.');
+    const columns={xyz:4,etapas:3,columnas:4,arcos:6,almacen:5};
+    if(heads.length!==columns[type])throw new TypeError('XYZ necesita nombre/X/Y/Z; etapas necesita nombre/duración/explicación.');
     const data=[...table.tBodies[0].rows].map(row=>{
       if(row.cells.length!==heads.length)throw new TypeError('Fila incompleta.');
-      const values=[...row.cells].slice(1,type==='xyz'?4:2).map(c=>{
+      const values=[...row.cells].slice(1,type==='etapas'?2:columns[type]).map(c=>{
         const raw=c.getAttribute('data-valor'),n=Number(raw);
         if(raw===null||raw.trim()===''||!Number.isFinite(n))throw new TypeError('Coordenada o duración inválida.');return n;
       });
       if(type==='etapas'&&values[0]<0)throw new TypeError('La duración no puede ser negativa.');
       return {label:row.cells[0].textContent.trim(),values,detail:type==='etapas'?row.cells[2].textContent.trim():''};
     });
+    if(['columnas','arcos'].includes(type)){
+      if(!window.NotaGeografia)throw new TypeError('Incluye geografia.js antes de escena.js.');
+      data.forEach(r=>{NotaGeografia.check(r.values[0],r.values[1]);if(type==='arcos')NotaGeografia.check(r.values[2],r.values[3]);if(r.values.at(-1)<0)throw new TypeError('Volumen negativo.');});
+    }
+    if(type==='almacen'&&data.some(r=>r.values[2]<0||r.values[3]<=0||r.values[2]>r.values[3]))throw new TypeError('Ocupación entre cero y capacidad positiva.');
     if(!data.length||data.length>(type==='xyz'?100:12))throw new TypeError('XYZ admite 1–100 puntos; etapas, 1–12.');
     return {type,table,heads,data,title:table.caption?.textContent||'Vista espacial'};
   }
@@ -57,10 +63,10 @@
       this.listen(up,'click',()=>{this.theta=this.theta>.8?.2:this.theta+.2;this.draw();});
       this.listen(reset,'click',()=>{this.phi=0;this.theta=0;this.draw();});
       this.listen(this.pauseButton,'click',()=>{this.rotating=!this.rotating;this.stop();this.sync();this.start();});
-      this.status=node('p','',this.model.type==='xyz'?'Tres variables, tres ejes. La tabla permite consultar cada punto.':'La altura representa duración; el orden horizontal representa la secuencia.');this.status.setAttribute('role','status');
+      this.status=node('p','',this.model.type==='xyz'?'Tres variables, tres ejes. La tabla permite consultar cada punto.':this.model.type==='etapas'?'La altura representa duración; el orden horizontal representa la secuencia.':'Elige una ubicación o conexión; sus valores completos aparecen aquí.');this.status.setAttribute('role','status');
       this.selection=node('div','escena-controles');this.selection.setAttribute('role','group');this.selection.setAttribute('aria-label','Seleccionar registro');
-      this.model.data.forEach((row,i)=>{const b=node('button','',row.label);b.type='button';b.dataset.registro=i;b.setAttribute('aria-pressed','false');this.listen(b,'click',()=>this.select(this.selected===i?null:i));this.selection.append(b);});
-      const axes=node('p','secundario',this.model.type==='xyz'?this.model.heads.slice(1).map((h,i)=>['X','Y','Z'][i]+': '+h).join(' · '):'Altura: '+this.model.heads[1]);
+      this.model.data.forEach((row,i)=>{const b=node('button','',(['columnas','arcos','almacen'].includes(this.model.type)?(i+1)+'. ':'')+row.label);b.type='button';b.dataset.registro=i;b.setAttribute('aria-pressed','false');this.listen(b,'click',()=>this.select(this.selected===i?null:i));this.selection.append(b);});
+      const axes=node('p','secundario',this.model.type==='xyz'?this.model.heads.slice(1).map((h,i)=>['X','Y','Z'][i]+': '+h).join(' · '):this.model.type==='etapas'?'Altura: '+this.model.heads[1]:this.model.type==='arcos'?'Arcos: conexión directa, no vía terrestre. Sección del tubo proporcional a viajes; elevación constante para separar rutas.':this.model.type==='columnas'?'X/Z: longitud/latitud. Altura: '+this.model.heads[3]+'. Contorno Natural Earth 1:110m.':'X/Z: posición en metros. Altura sólida: ocupación. Contorno: capacidad en la misma escala.');
       this.parts=[title,this.error,this.stage,axes,this.controls,this.status,this.selection];
       const before=this.element.firstChild;this.parts.forEach(e=>this.element.insertBefore(e,before));
       this.listen(this.canvas,'webglcontextlost',e=>{e.preventDefault();this.lost=true;this.stop();this.error.hidden=false;this.error.textContent='Vista 3D suspendida. Consulta la tabla.';});
@@ -90,6 +96,7 @@
     }
     buildGeometry(){
       const {type,data,heads}=this.model;
+      if(['columnas','arcos','almacen'].includes(type)){this.buildSpatial();return;}
       if(type==='xyz'){
         this.domains=[0,1,2].map(i=>extent(data.map(r=>r.values[i])));
         const map=(v,i)=>-1+(v-this.domains[i][0])/(this.domains[i][1]-this.domains[i][0])*2;
@@ -126,6 +133,45 @@
         });
         this.text('Etapas en orden →',[0,-1.8,0],.32);
       }
+    }
+    buildSpatial(){
+      const {type,data,heads}=this.model;
+      const max=Math.max(...data.map(r=>r.values.at(-1)))||1;
+      this.domains=[[0,max]];
+      const base=-1.1,sy=v=>v/max*1.8;
+      const mesh=(geometry,position,i)=>{const m=new THREE.Mesh(this.keep(geometry),this.keep(new THREE.MeshBasicMaterial()));m.position.set(...position);m.userData.index=i;this.group.add(m);this.items.push(m);return m;};
+      if(type!=='almacen'){
+        NotaGeografia.colombia.coordinates.forEach(ring=>{const points=ring.map(([lon,lat])=>{const[x,z]=NotaGeografia.project(lat,lon);return new THREE.Vector3(x,base,z);});const l=new THREE.Line(this.keep(new THREE.BufferGeometry().setFromPoints(points)),this.keep(new THREE.LineBasicMaterial()));this.group.add(l);this.lines.push(l);});
+        this.text('N ↑',[1.35,base,-1.8],.25);
+        data.forEach((r,i)=>{
+          const [lat,lon]=r.values,[x,z]=NotaGeografia.project(lat,lon),value=r.values.at(-1);
+          if(type==='columnas'){
+            const h=sy(value);mesh(new THREE.BoxGeometry(.11,h,.11),[x,base+h/2,z],i);this.text(String(i+1),[x,base+h+.2,z],.24);
+          }else{
+            const [x2,z2]=NotaGeografia.project(r.values[2],r.values[3]);
+            const curve=new THREE.QuadraticBezierCurve3(new THREE.Vector3(x,base,z),new THREE.Vector3((x+x2)/2,1,(z+z2)/2),new THREE.Vector3(x2,base,z2));
+            mesh(new THREE.TubeGeometry(curve,40,Math.sqrt(value/max)*.035,8,false),[0,0,0],i);
+            this.text(String(i+1),[x2,base+.2,z2],.24);
+          }
+        });
+        if(type==='arcos'){this.text('Volumen máximo: '+format(max),[0,-1.9,0],.26);return;}
+      }else{
+        const xd=extent(data.map(r=>r.values[0])),zd=extent(data.map(r=>r.values[1]));
+        this.positionDomains=[xd,zd];
+        const sx=v=>-1.2+(v-xd[0])/(xd[1]-xd[0])*2.4,sz=v=>-1.2+(v-zd[0])/(zd[1]-zd[0])*2.4;
+        data.forEach((r,i)=>{
+          const [x,z,used,capacity]=r.values,h=sy(used),ch=sy(capacity);
+          mesh(new THREE.BoxGeometry(.28,h,.28),[sx(x),base+h/2,sz(z)],i);
+          const box=this.keep(new THREE.BoxGeometry(.29,ch,.29)),edges=this.keep(new THREE.EdgesGeometry(box));
+          const outline=new THREE.LineSegments(edges,this.keep(new THREE.LineBasicMaterial()));outline.position.set(sx(x),base+ch/2,sz(z));this.group.add(outline);this.lines.push(outline);
+          this.text(String(i+1),[sx(x),base-.25,sz(z)],.24);
+        });
+        this.line([-1.2,base,1.7],[1.2,base,1.7]);this.text('X '+format(xd[0])+'–'+format(xd[1])+' m',[0,base-.55,1.7],.23);
+        this.line([1.7,base,-1.2],[1.7,base,1.2]);this.text('Z '+format(zd[0])+'–'+format(zd[1])+' m',[1.7,base-.55,0],.23);
+      }
+      this.line([-1.9,base,0],[-1.9,base+1.8,0]);
+      [0,.5,1].forEach(t=>this.text(format(t*max),[-2.15,base+t*1.8,0],.24));
+      this.text(type==='columnas'?heads[3]:heads[4],[-1.6,1.25,0],.25);
     }
     color(raw){const c=document.createElement('canvas').getContext('2d');c.fillStyle=raw;c.fillRect(0,0,1,1);const [r,g,b]=c.getImageData(0,0,1,1).data;return new THREE.Color().setRGB(r/255,g/255,b/255,THREE.SRGBColorSpace);}
     theme(){
