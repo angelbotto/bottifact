@@ -2488,6 +2488,58 @@ body:has(.revision-barra) { padding-bottom:0; }
 .flota-ciudad { z-index:2; }
 .flota-vistas { flex-wrap:wrap; }
 
+/* 31 — Herramientas compactas. Icono visible, nombre accesible y superficie de toque. */
+.nota-icono,.gesto-repetir { display:inline-grid; place-items:center; flex:none; width:32px; height:32px; min-width:32px; min-height:32px; padding:6px; border:1px solid transparent; border-radius:6px; background:transparent; color:var(--tinta-2); cursor:pointer; vertical-align:middle; }
+.nota-icono svg,.gesto-repetir svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.6; }
+.nota-icono:hover,.gesto-repetir:hover { background:var(--panel-2); color:var(--tinta); }
+.nota-icono[aria-pressed='true'] { background:var(--pieza-suave); border-color:var(--pieza-acento); color:var(--pieza-acento); }
+.nota-icono:focus-visible,.gesto-repetir:focus-visible { outline:2px solid var(--foco); outline-offset:2px; }
+.gesto-repetir:disabled { opacity:.55; cursor:default; }
+.apunte-nota .gesto-repetir { margin-top:4px; }
+.codigo-compacto { position:relative; }
+.codigo.codigo-compacto .cab,.terminal.codigo-compacto .cab { min-height:36px; padding:2px 10px 2px 16px; gap:4px; }
+.codigo.codigo-compacto .cab > button,.terminal.codigo-compacto .cab > button { min-width:32px; min-height:32px; width:32px; height:32px; padding:6px; border:0; background:transparent; color:inherit; }
+.codigo-compacto .copia-estado { position:absolute; width:1px; height:1px; clip-path:inset(50%); overflow:clip; }
+.codigo.codigo-sin-titulo .cab { position:absolute; top:4px; right:4px; z-index:1; border:0; padding:0; min-height:32px; }
+.codigo-sin-titulo .cab > span:not(.copia-estado) { position:absolute; width:1px; height:1px; clip-path:inset(50%); }
+.codigo.codigo-sin-titulo pre { padding-top:20px; padding-right:52px; }
+.visor-iconos { gap:4px; padding:6px; width:fit-content; max-width:100%; margin:16px auto 8px; }
+.visor-iconos .visor-dispositivos { display:flex; gap:2px; padding-right:6px; margin-right:2px; border-right:1px solid var(--pieza-linea); }
+.visor-iconos > button,.visor-iconos .visor-dispositivos button,.visor-iconos > .control-menu > summary { display:grid; place-items:center; width:36px; height:36px; min-width:36px; min-height:36px; padding:7px; border:1px solid transparent; background:transparent; color:var(--pieza-tinta); }
+.visor-iconos > .control-menu { margin:0; }
+.visor-iconos [aria-pressed='true'] { background:var(--pieza-suave); border-color:var(--pieza-acento); color:var(--pieza-acento); }
+.visor-iconos summary::marker { content:''; }.visor-iconos summary::-webkit-details-marker { display:none; }
+.apariencia-explorador .apariencia-colores { max-height:min(500px,calc(100dvh - 250px)); }
+@media(min-width:600px) { .apariencia-explorador .apariencia-colores { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+.apariencia-explorador .apariencia-colores label { min-height:102px; }
+.apariencia-explorador .apariencia-pie { margin-top:16px; }
+[data-revision-editor].revision-dialogo { padding:10px; border-radius:12px; }
+[data-revision-editor] form { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:4px; }
+[data-revision-editor] h2.sr-only { position:absolute; margin:0; }
+[data-revision-editor] textarea { grid-column:1/-1; grid-row:1; min-height:44px; max-height:160px; margin:0; padding:10px 8px; border:0; background:transparent; resize:none; overflow-y:auto; font:16px/1.45 var(--sans); }
+[data-revision-editor] textarea:focus-visible { outline:2px solid var(--foco); outline-offset:0; }
+[data-revision-editor] .revision-contexto { grid-column:1; grid-row:2; margin:0; align-self:center; min-width:0; }
+[data-revision-editor] .revision-contexto summary { display:grid; place-items:center; width:32px; height:32px; padding:6px; cursor:pointer; border-radius:6px; color:var(--tinta-2); }
+[data-revision-editor] .revision-contexto[open] { grid-column:1/-1; grid-row:3; }
+[data-revision-editor] .revision-contexto p { max-height:120px; overflow:auto; font:12px/1.5 var(--sans); }
+[data-revision-editor] .acciones { grid-column:2; grid-row:2; margin:0; gap:4px; }
+[data-revision-editor] button.nota-icono { min-height:32px; padding:6px; }
+[data-revision-editor] [data-revision-guardar] { background:var(--pieza-acento); color:var(--papel); border-radius:50%; }
+[data-revision-editor] [data-revision-guardar]:disabled { background:var(--panel-2); color:var(--tinta-3); cursor:default; }
+@media(pointer:coarse) { .nota-icono,.gesto-repetir,.visor-iconos > button,.visor-iconos .visor-dispositivos button,.visor-iconos > .control-menu > summary { width:44px; height:44px; min-width:44px; min-height:44px; } }
+.flota-navegacion { display:flex; gap:3px; border-left:1px solid var(--linea); padding-left:8px; }
+.flota-navegacion button { border:0; background:transparent; }
+.flota-navegacion svg { fill:none; stroke:currentColor; stroke-width:1.6; width:18px; height:18px; }
+.flota-superficie canvas { cursor:grab; }.flota-superficie canvas.arrastrando { cursor:grabbing; }
+.flota-ayuda { font:12px/1.5 var(--sans); color:var(--tinta-2); }
+
+[data-revision-editor] [data-revision-guardar] { order:2; }
+@media(max-width:400px) {
+ .visor-iconos { display:grid; grid-template-columns:repeat(4,36px); justify-content:center; }
+ .visor-iconos .visor-dispositivos { grid-column:1/-1; justify-self:center; border-right:0; border-bottom:1px solid var(--pieza-linea); margin:0 0 3px; padding:0 0 5px; }
+}
+@media(max-width:400px) and (pointer:coarse) { .visor-iconos { grid-template-columns:repeat(4,44px); } }
+
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <a class="salto" href="#contenido">Saltar al contenido</a>
@@ -2817,7 +2869,7 @@ estado: pendiente de medir</code></pre></div><figcaption>Datos de ejemplo, sin u
     const panel=menu.querySelector('.apariencia-panel'),trigger=menu.querySelector('summary');
     const viewport=window.visualViewport,w=viewport?.width||innerWidth,h=viewport?.height||innerHeight;
     const ox=viewport?.offsetLeft||0,oy=viewport?.offsetTop||0,gap=12;
-    panel.style.width=Math.max(1,Math.min(menu.querySelector('.apariencia-explorador')?360:324,w-gap*2))+'px';
+    panel.style.width=Math.max(1,Math.min(menu.querySelector('.apariencia-explorador')?560:324,w-gap*2))+'px';
     panel.style.maxHeight=Math.max(1,h-gap*2)+'px';
     const r=trigger.getBoundingClientRect(),height=panel.getBoundingClientRect().height;
     if(r.bottom<oy||r.top>oy+h){close(menu);return;}
@@ -2942,6 +2994,9 @@ estado: pendiente de medir</code></pre></div><figcaption>Datos de ejemplo, sin u
   update();
 
   document.querySelectorAll('[data-copiar]').forEach(button => {
+    if(button.closest('.codigo,.terminal')){button.classList.add('nota-icono');button.setAttribute('aria-label',button.getAttribute('aria-label')||'Copiar código');button.title=button.getAttribute('aria-label');button.innerHTML='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V3H4v13h4"/></svg>';
+      const block=button.closest('.codigo,.terminal'),heading=block.querySelector('.cab > span:not(.copia-estado)');block.classList.add('codigo-compacto');if(heading&&/^(CSS|HTML|JavaScript|TypeScript|JSON|Python|SQL|Shell|Bash|Terminal)$/i.test(heading.textContent.trim()))block.classList.add('codigo-sin-titulo');
+    }
     button.addEventListener('click',async () => {
       const code = document.getElementById(button.dataset.copiar);
       const status = button.closest('.codigo,.terminal')?.querySelector('[role="status"]');
