@@ -9,10 +9,10 @@ def package():
  files=[]
  for p in ROOT.iterdir():
   if p.is_file() and not p.is_symlink() and p.suffix in {'.md','.css','.js','.json','.html'}:files.append(p)
- for folder in ['scripts','ejemplos','assets','agents']:
+ for folder in ['scripts','ejemplos','assets','agents','licencias']:
   if not (ROOT/folder).exists():continue
   for p in (ROOT/folder).rglob('*'):
-   if p.is_file() and not p.is_symlink() and '__pycache__' not in p.parts and p.suffix in {'.py','.js','.html','.json','.md','.yaml','.woff2','.mp3','.svg'}:files.append(p)
+   if p.is_file() and not p.is_symlink() and '__pycache__' not in p.parts and p.suffix in {'.py','.js','.html','.json','.md','.yaml','.woff2','.mp3','.svg','.txt'}:files.append(p)
  # Procedencia y resultados textuales, sin imágenes de sesiones ni vídeos.
  for p in (ROOT/'auditoria').iterdir():
   if p.is_file() and p.suffix in {'.md','.json'}:files.append(p)
