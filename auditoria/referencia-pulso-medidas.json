@@ -1,0 +1,14 @@
+{
+  "url": "https://www.cmrg.me/blog/react-19-part-2-the-code",
+  "viewport": [
+    1440,
+    960
+  ],
+  "computed": {
+    "duration": "1s",
+    "height": 64,
+    "iterations": "infinite",
+    "name": "ping",
+    "width": 64
+  }
+}

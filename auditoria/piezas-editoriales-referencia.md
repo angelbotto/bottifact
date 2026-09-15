@@ -43,3 +43,7 @@ La inspección visual detectó que `.pieza > * + *` daba margen superior a la nu
 Se fijó su margen a cero y la prueba ahora comprueba la coincidencia de sus bordes con la figura.
 Los botones de galería usan una rejilla de tres columnas para mantenerse alineados en móvil.
 El texto de las piezas no recibe máscara ni desenfoque.
+
+`referencia-pulso-medidas.json` confirma también por estilo calculado `ping`, duración `1s` e
+iteraciones `infinite`. Su bounding box durante la expansión llegó a 64 px; el icono base medido
+por separado es de 32 px. No se confundió la caja transformada con el tamaño tipográfico original.
