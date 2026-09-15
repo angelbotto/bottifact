@@ -302,6 +302,16 @@
         "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 278
+      },
+      {
+        "content": 1932,
+        "end": 1654,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Cards delineadas, desplazable",
+        "overflow": "auto",
+        "width": 278
       }
     ],
     "resources": [
@@ -496,12 +506,22 @@
         "width": 278
       },
       {
-        "content": 794,
-        "end": 516,
+        "content": 1241,
+        "end": 963,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Nota manuscrita, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 2356,
+        "end": 2078,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Apuntes manuscritos al margen, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -1346,6 +1366,36 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 900,
+        "end": 620,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja atencion-caja",
+        "name": "Mapa de áreas desplazable; valores completos en la tabla",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos del attention map, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1532,
+        "end": 1254,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Attention map de áreas, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -2660,6 +2710,16 @@
         "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 278
+      },
+      {
+        "content": 1932,
+        "end": 1654,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Cards delineadas, desplazable",
+        "overflow": "auto",
+        "width": 278
       }
     ],
     "resources": [
@@ -2854,12 +2914,22 @@
         "width": 278
       },
       {
-        "content": 794,
-        "end": 516,
+        "content": 1241,
+        "end": 963,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Nota manuscrita, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 2356,
+        "end": 2078,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Apuntes manuscritos al margen, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -3704,6 +3774,36 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 900,
+        "end": 620,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja atencion-caja",
+        "name": "Mapa de áreas desplazable; valores completos en la tabla",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos del attention map, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1532,
+        "end": 1254,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Attention map de áreas, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -5018,6 +5118,16 @@
         "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 278
+      },
+      {
+        "content": 1932,
+        "end": 1654,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Cards delineadas, desplazable",
+        "overflow": "auto",
+        "width": 278
       }
     ],
     "resources": [
@@ -5212,12 +5322,22 @@
         "width": 278
       },
       {
-        "content": 794,
-        "end": 516,
+        "content": 1241,
+        "end": 963,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Nota manuscrita, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 2356,
+        "end": 2078,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Apuntes manuscritos al margen, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -6062,6 +6182,36 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 900,
+        "end": 620,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja atencion-caja",
+        "name": "Mapa de áreas desplazable; valores completos en la tabla",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos del attention map, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1532,
+        "end": 1254,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Attention map de áreas, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -7376,6 +7526,16 @@
         "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 278
+      },
+      {
+        "content": 1932,
+        "end": 1654,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Cards delineadas, desplazable",
+        "overflow": "auto",
+        "width": 278
       }
     ],
     "resources": [
@@ -7570,12 +7730,22 @@
         "width": 278
       },
       {
-        "content": 794,
-        "end": 516,
+        "content": 1241,
+        "end": 963,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Nota manuscrita, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 2356,
+        "end": 2078,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Apuntes manuscritos al margen, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -8420,6 +8590,36 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 900,
+        "end": 620,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja atencion-caja",
+        "name": "Mapa de áreas desplazable; valores completos en la tabla",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos del attention map, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1532,
+        "end": 1254,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Attention map de áreas, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -9734,6 +9934,16 @@
         "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 278
+      },
+      {
+        "content": 1932,
+        "end": 1654,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Cards delineadas, desplazable",
+        "overflow": "auto",
+        "width": 278
       }
     ],
     "resources": [
@@ -9928,12 +10138,22 @@
         "width": 278
       },
       {
-        "content": 794,
-        "end": 516,
+        "content": 1241,
+        "end": 963,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Nota manuscrita, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 2356,
+        "end": 2078,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Apuntes manuscritos al margen, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -10778,6 +10998,36 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 900,
+        "end": 620,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja atencion-caja",
+        "name": "Mapa de áreas desplazable; valores completos en la tabla",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos del attention map, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1532,
+        "end": 1254,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Attention map de áreas, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -12092,6 +12342,16 @@
         "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 278
+      },
+      {
+        "content": 1932,
+        "end": 1654,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Cards delineadas, desplazable",
+        "overflow": "auto",
+        "width": 278
       }
     ],
     "resources": [
@@ -12286,12 +12546,22 @@
         "width": 278
       },
       {
-        "content": 794,
-        "end": 516,
+        "content": 1241,
+        "end": 963,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Nota manuscrita, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 2356,
+        "end": 2078,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Apuntes manuscritos al margen, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -13136,6 +13406,36 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 900,
+        "end": 620,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja atencion-caja",
+        "name": "Mapa de áreas desplazable; valores completos en la tabla",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos del attention map, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1532,
+        "end": 1254,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Attention map de áreas, desplazable",
         "overflow": "auto",
         "width": 278
       }
@@ -14450,6 +14750,16 @@
         "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 348
+      },
+      {
+        "content": 1932,
+        "end": 1584,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Cards delineadas, desplazable",
+        "overflow": "auto",
+        "width": 348
       }
     ],
     "resources": [
@@ -14644,12 +14954,22 @@
         "width": 348
       },
       {
-        "content": 794,
-        "end": 446,
+        "content": 1241,
+        "end": 893,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Nota manuscrita, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 2356,
+        "end": 2008,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Apuntes manuscritos al margen, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -15494,6 +15814,36 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 900,
+        "end": 550,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja atencion-caja",
+        "name": "Mapa de áreas desplazable; valores completos en la tabla",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos del attention map, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1532,
+        "end": 1184,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Attention map de áreas, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -16808,6 +17158,16 @@
         "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 348
+      },
+      {
+        "content": 1932,
+        "end": 1584,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Cards delineadas, desplazable",
+        "overflow": "auto",
+        "width": 348
       }
     ],
     "resources": [
@@ -17002,12 +17362,22 @@
         "width": 348
       },
       {
-        "content": 794,
-        "end": 446,
+        "content": 1241,
+        "end": 893,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Nota manuscrita, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 2356,
+        "end": 2008,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Apuntes manuscritos al margen, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -17852,6 +18222,36 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 900,
+        "end": 550,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja atencion-caja",
+        "name": "Mapa de áreas desplazable; valores completos en la tabla",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos del attention map, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1532,
+        "end": 1184,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Attention map de áreas, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -19166,6 +19566,16 @@
         "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 348
+      },
+      {
+        "content": 1932,
+        "end": 1584,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Cards delineadas, desplazable",
+        "overflow": "auto",
+        "width": 348
       }
     ],
     "resources": [
@@ -19360,12 +19770,22 @@
         "width": 348
       },
       {
-        "content": 794,
-        "end": 446,
+        "content": 1241,
+        "end": 893,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Nota manuscrita, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 2356,
+        "end": 2008,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Apuntes manuscritos al margen, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -20210,6 +20630,36 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 900,
+        "end": 550,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja atencion-caja",
+        "name": "Mapa de áreas desplazable; valores completos en la tabla",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos del attention map, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1532,
+        "end": 1184,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Attention map de áreas, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -21524,6 +21974,16 @@
         "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 348
+      },
+      {
+        "content": 1932,
+        "end": 1584,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Cards delineadas, desplazable",
+        "overflow": "auto",
+        "width": 348
       }
     ],
     "resources": [
@@ -21718,12 +22178,22 @@
         "width": 348
       },
       {
-        "content": 794,
-        "end": 446,
+        "content": 1241,
+        "end": 893,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Nota manuscrita, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 2356,
+        "end": 2008,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Apuntes manuscritos al margen, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -22568,6 +23038,36 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 900,
+        "end": 550,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja atencion-caja",
+        "name": "Mapa de áreas desplazable; valores completos en la tabla",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos del attention map, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1532,
+        "end": 1184,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Attention map de áreas, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -23882,6 +24382,16 @@
         "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 348
+      },
+      {
+        "content": 1932,
+        "end": 1584,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Cards delineadas, desplazable",
+        "overflow": "auto",
+        "width": 348
       }
     ],
     "resources": [
@@ -24076,12 +24586,22 @@
         "width": 348
       },
       {
-        "content": 794,
-        "end": 446,
+        "content": 1241,
+        "end": 893,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Nota manuscrita, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 2356,
+        "end": 2008,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Apuntes manuscritos al margen, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -24926,6 +25446,36 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 900,
+        "end": 550,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja atencion-caja",
+        "name": "Mapa de áreas desplazable; valores completos en la tabla",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos del attention map, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1532,
+        "end": 1184,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Attention map de áreas, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -26240,6 +26790,16 @@
         "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 348
+      },
+      {
+        "content": 1932,
+        "end": 1584,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Cards delineadas, desplazable",
+        "overflow": "auto",
+        "width": 348
       }
     ],
     "resources": [
@@ -26434,12 +26994,22 @@
         "width": 348
       },
       {
-        "content": 794,
-        "end": 446,
+        "content": 1241,
+        "end": 893,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Nota manuscrita, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 2356,
+        "end": 2008,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Apuntes manuscritos al margen, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -27284,6 +27854,36 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 900,
+        "end": 550,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja atencion-caja",
+        "name": "Mapa de áreas desplazable; valores completos en la tabla",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos del attention map, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1532,
+        "end": 1184,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Attention map de áreas, desplazable",
         "overflow": "auto",
         "width": 348
       }
@@ -28598,6 +29198,16 @@
         "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 990
+      },
+      {
+        "content": 1932,
+        "end": 942,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Cards delineadas, desplazable",
+        "overflow": "auto",
+        "width": 990
       }
     ],
     "resources": [
@@ -28792,12 +29402,22 @@
         "width": 990
       },
       {
-        "content": 990,
-        "end": 0,
+        "content": 1241,
+        "end": 251,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Nota manuscrita, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 2356,
+        "end": 1366,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Apuntes manuscritos al margen, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -29642,6 +30262,36 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja atencion-caja",
+        "name": "Mapa de áreas desplazable; valores completos en la tabla",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos del attention map, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1532,
+        "end": 542,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Attention map de áreas, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -30956,6 +31606,16 @@
         "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 990
+      },
+      {
+        "content": 1932,
+        "end": 942,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Cards delineadas, desplazable",
+        "overflow": "auto",
+        "width": 990
       }
     ],
     "resources": [
@@ -31150,12 +31810,22 @@
         "width": 990
       },
       {
-        "content": 990,
-        "end": 0,
+        "content": 1241,
+        "end": 251,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Nota manuscrita, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 2356,
+        "end": 1366,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Apuntes manuscritos al margen, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -32000,6 +32670,36 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja atencion-caja",
+        "name": "Mapa de áreas desplazable; valores completos en la tabla",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos del attention map, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1532,
+        "end": 542,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Attention map de áreas, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -33314,6 +34014,16 @@
         "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 990
+      },
+      {
+        "content": 1932,
+        "end": 942,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Cards delineadas, desplazable",
+        "overflow": "auto",
+        "width": 990
       }
     ],
     "resources": [
@@ -33508,12 +34218,22 @@
         "width": 990
       },
       {
-        "content": 990,
-        "end": 0,
+        "content": 1241,
+        "end": 251,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Nota manuscrita, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 2356,
+        "end": 1366,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Apuntes manuscritos al margen, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -34358,6 +35078,36 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja atencion-caja",
+        "name": "Mapa de áreas desplazable; valores completos en la tabla",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos del attention map, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1532,
+        "end": 542,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Attention map de áreas, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -35672,6 +36422,16 @@
         "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 990
+      },
+      {
+        "content": 1932,
+        "end": 942,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Cards delineadas, desplazable",
+        "overflow": "auto",
+        "width": 990
       }
     ],
     "resources": [
@@ -35866,12 +36626,22 @@
         "width": 990
       },
       {
-        "content": 990,
-        "end": 0,
+        "content": 1241,
+        "end": 251,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Nota manuscrita, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 2356,
+        "end": 1366,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Apuntes manuscritos al margen, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -36716,6 +37486,36 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja atencion-caja",
+        "name": "Mapa de áreas desplazable; valores completos en la tabla",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos del attention map, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1532,
+        "end": 542,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Attention map de áreas, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -38030,6 +38830,16 @@
         "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 990
+      },
+      {
+        "content": 1932,
+        "end": 942,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Cards delineadas, desplazable",
+        "overflow": "auto",
+        "width": 990
       }
     ],
     "resources": [
@@ -38224,12 +39034,22 @@
         "width": 990
       },
       {
-        "content": 990,
-        "end": 0,
+        "content": 1241,
+        "end": 251,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Nota manuscrita, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 2356,
+        "end": 1366,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Apuntes manuscritos al margen, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -39074,6 +39894,36 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja atencion-caja",
+        "name": "Mapa de áreas desplazable; valores completos en la tabla",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos del attention map, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1532,
+        "end": 542,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Attention map de áreas, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -40388,6 +41238,16 @@
         "name": "HTML de Familia de cards, desplazable",
         "overflow": "auto",
         "width": 990
+      },
+      {
+        "content": 1932,
+        "end": 942,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Cards delineadas, desplazable",
+        "overflow": "auto",
+        "width": 990
       }
     ],
     "resources": [
@@ -40582,12 +41442,22 @@
         "width": 990
       },
       {
-        "content": 990,
-        "end": 0,
+        "content": 1241,
+        "end": 251,
         "focus": 0,
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Nota manuscrita, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 2356,
+        "end": 1366,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Apuntes manuscritos al margen, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -41432,6 +42302,36 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja atencion-caja",
+        "name": "Mapa de áreas desplazable; valores completos en la tabla",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos del attention map, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1532,
+        "end": 542,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Attention map de áreas, desplazable",
         "overflow": "auto",
         "width": 990
       }

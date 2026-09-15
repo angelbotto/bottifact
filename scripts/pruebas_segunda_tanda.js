@@ -8,9 +8,9 @@
     const root=template.content.firstElementChild;root.removeAttribute('id');document.querySelector('main').append(root);return root;
   }
   async function fixture(key,fn) {const root=sample(key);try{await fn(root);}finally{NotaReportes.get(root)?.destroy();NotaVisores.get(root)?.destroy();root.remove();}}
-  await test('54 fuentes copiables sin errores de inicialización',()=>{
-    assert(document.querySelectorAll('.catalogo-indice a').length===54,'Índice incompleto');
-    assert(document.querySelectorAll('.receta-copia code').length===54,'Código de recetas incompleto');
+  await test('57 fuentes copiables sin errores de inicialización',()=>{
+    assert(document.querySelectorAll('.catalogo-indice a').length===57,'Índice incompleto');
+    assert(document.querySelectorAll('.receta-copia code').length===57,'Código de recetas incompleto');
     assert(!document.querySelector('[data-error-reporte],[data-error-visor]'),'Error visible');
   });
   await test('Apariencia sincroniza radios y almacenamiento; Sistema retira data-theme',()=>{

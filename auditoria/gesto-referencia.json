@@ -1,0 +1,20 @@
+{
+  "source": "https://www.cmrg.me/#top",
+  "method": "Orca eval: getComputedStyle/getBoundingClientRect",
+  "viewport": [
+    1639,
+    939
+  ],
+  "cards": {
+    "computedTransition": "0.15s",
+    "computedBorder": "0px solid lab(89.549 2.159 5.23597)",
+    "computedBackground": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box"
+  },
+  "attention": {
+    "width": 1008,
+    "height": 380,
+    "x": 315.5,
+    "y": 1307.96875
+  },
+  "handwriting": "Capturas aportadas por Angel; sin nuevas medidas de su tipografía."
+}

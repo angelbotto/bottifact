@@ -1,0 +1,62 @@
+{
+  "enabled": false,
+  "events": [
+    {
+      "trusted": true,
+      "type": "mouse",
+      "x": 10,
+      "y": 200
+    },
+    {
+      "trusted": true,
+      "type": "mouse",
+      "x": 307,
+      "y": 356
+    },
+    {
+      "trusted": true,
+      "type": "mouse",
+      "x": 1054,
+      "y": 815.25
+    },
+    {
+      "trusted": true,
+      "type": "mouse",
+      "x": 10,
+      "y": 200
+    },
+    {
+      "trusted": true,
+      "type": "mouse",
+      "x": 307,
+      "y": 356
+    },
+    {
+      "trusted": true,
+      "type": "mouse",
+      "x": 322,
+      "y": 356
+    },
+    {
+      "trusted": true,
+      "type": "mouse",
+      "x": 637,
+      "y": 356
+    },
+    {
+      "trusted": true,
+      "type": "mouse",
+      "x": 593,
+      "y": 456.953125
+    },
+    {
+      "trusted": true,
+      "type": "mouse",
+      "x": 1054,
+      "y": 815.25
+    }
+  ],
+  "plays": 3,
+  "voices": 0,
+  "method": "Orca click/mouse move/mouse wheel nativos. Apertura, foco y navegación preparados con DOM; no audición manual."
+}

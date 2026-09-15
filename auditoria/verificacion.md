@@ -113,3 +113,6 @@ envían mensajes. La emulación es de viewport CSS, no una prueba en hardware iP
 
 La ampliación de diez gráficas, la regla coloreada y el recorte de laterales se verificaron
 en [analitica-verificacion.md](analitica-verificacion.md), con 54 recetas y capturas nuevas.
+
+La recuperación de notas manuscritas, cards delineadas y attention map está documentada en
+[gesto-verificacion.md](gesto-verificacion.md).

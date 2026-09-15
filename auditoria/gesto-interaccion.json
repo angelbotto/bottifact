@@ -1,0 +1,41 @@
+{
+  "failed": 0,
+  "results": [
+    {
+      "name": "57 recetas; mapa y márgenes incorporados al catálogo",
+      "ok": true
+    },
+    {
+      "name": "La nota empieza a trazarse al entrar, después se puede repetir",
+      "ok": true
+    },
+    {
+      "name": "Repetir enlace al mismo destino no devuelve a cabecera",
+      "ok": true
+    },
+    {
+      "name": "Salir cancela animaciones y volver no las reinicia",
+      "ok": true
+    },
+    {
+      "name": "Subrayados y apuntes son paths; destroy restaura los nodos",
+      "ok": true
+    },
+    {
+      "name": "Texto fuera del alfabeto y palabras largas no se comprimen",
+      "ok": true
+    },
+    {
+      "name": "Áreas exactas, suma total y particiones sin superposición",
+      "ok": true
+    },
+    {
+      "name": "Mapa conserva tabla al destruir y rechaza negativos",
+      "ok": true
+    },
+    {
+      "name": "Audio comienza apagado y no admite activación ni hover sintéticos",
+      "ok": true
+    }
+  ]
+}

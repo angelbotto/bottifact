@@ -1,0 +1,4742 @@
+[
+  {
+    "documentWidth": 320,
+    "glyphs": [
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 50,
+        "expected": 50
+      },
+      {
+        "actual": 81.609375,
+        "expected": 81.61764705882352
+      },
+      {
+        "actual": 51.46875,
+        "expected": 51.470588235294116
+      },
+      {
+        "actual": 58.078125,
+        "expected": 58.08823529411765
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 121.3125,
+        "expected": 121.3235294117647
+      },
+      {
+        "actual": 22.046875,
+        "expected": 22.058823529411764
+      },
+      {
+        "actual": 64.703125,
+        "expected": 64.70588235294117
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 73.515625,
+        "expected": 73.52941176470588
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 27.9375,
+        "expected": 27.941176470588236
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 102.9375,
+        "expected": 102.94117647058823
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 79.40625,
+        "expected": 79.41176470588235
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "light",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "light",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "light",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 900,
+        "w": 280
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 544,
+        "w": 280
+      }
+    ],
+    "theme": "light",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 50,
+        "expected": 50
+      },
+      {
+        "actual": 81.609375,
+        "expected": 81.61764705882352
+      },
+      {
+        "actual": 51.46875,
+        "expected": 51.470588235294116
+      },
+      {
+        "actual": 58.078125,
+        "expected": 58.08823529411765
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 121.3125,
+        "expected": 121.3235294117647
+      },
+      {
+        "actual": 22.046875,
+        "expected": 22.058823529411764
+      },
+      {
+        "actual": 64.703125,
+        "expected": 64.70588235294117
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 73.515625,
+        "expected": 73.52941176470588
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 27.9375,
+        "expected": 27.941176470588236
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 102.9375,
+        "expected": 102.94117647058823
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 79.40625,
+        "expected": 79.41176470588235
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "dark",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "dark",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "dark",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 900,
+        "w": 280
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 544,
+        "w": 280
+      }
+    ],
+    "theme": "dark",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 50,
+        "expected": 50
+      },
+      {
+        "actual": 81.609375,
+        "expected": 81.61764705882352
+      },
+      {
+        "actual": 51.46875,
+        "expected": 51.470588235294116
+      },
+      {
+        "actual": 58.078125,
+        "expected": 58.08823529411765
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 121.3125,
+        "expected": 121.3235294117647
+      },
+      {
+        "actual": 22.046875,
+        "expected": 22.058823529411764
+      },
+      {
+        "actual": 64.703125,
+        "expected": 64.70588235294117
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 73.515625,
+        "expected": 73.52941176470588
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 27.9375,
+        "expected": 27.941176470588236
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 102.9375,
+        "expected": 102.94117647058823
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 79.40625,
+        "expected": 79.41176470588235
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "sea",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "sea",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "sea",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 900,
+        "w": 280
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 544,
+        "w": 280
+      }
+    ],
+    "theme": "sea",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 50,
+        "expected": 50
+      },
+      {
+        "actual": 81.609375,
+        "expected": 81.61764705882352
+      },
+      {
+        "actual": 51.46875,
+        "expected": 51.470588235294116
+      },
+      {
+        "actual": 58.078125,
+        "expected": 58.08823529411765
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 121.3125,
+        "expected": 121.3235294117647
+      },
+      {
+        "actual": 22.046875,
+        "expected": 22.058823529411764
+      },
+      {
+        "actual": 64.703125,
+        "expected": 64.70588235294117
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 73.515625,
+        "expected": 73.52941176470588
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 27.9375,
+        "expected": 27.941176470588236
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 102.9375,
+        "expected": 102.94117647058823
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 79.40625,
+        "expected": 79.41176470588235
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "oliva",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "oliva",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "oliva",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 900,
+        "w": 280
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 544,
+        "w": 280
+      }
+    ],
+    "theme": "oliva",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 50,
+        "expected": 50
+      },
+      {
+        "actual": 81.609375,
+        "expected": 81.61764705882352
+      },
+      {
+        "actual": 51.46875,
+        "expected": 51.470588235294116
+      },
+      {
+        "actual": 58.078125,
+        "expected": 58.08823529411765
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 121.3125,
+        "expected": 121.3235294117647
+      },
+      {
+        "actual": 22.046875,
+        "expected": 22.058823529411764
+      },
+      {
+        "actual": 64.703125,
+        "expected": 64.70588235294117
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 73.515625,
+        "expected": 73.52941176470588
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 27.9375,
+        "expected": 27.941176470588236
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 102.9375,
+        "expected": 102.94117647058823
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 79.40625,
+        "expected": 79.41176470588235
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "arcilla",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "arcilla",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "arcilla",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 900,
+        "w": 280
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 544,
+        "w": 280
+      }
+    ],
+    "theme": "arcilla",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 50,
+        "expected": 50
+      },
+      {
+        "actual": 81.609375,
+        "expected": 81.61764705882352
+      },
+      {
+        "actual": 51.46875,
+        "expected": 51.470588235294116
+      },
+      {
+        "actual": 58.078125,
+        "expected": 58.08823529411765
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 121.3125,
+        "expected": 121.3235294117647
+      },
+      {
+        "actual": 22.046875,
+        "expected": 22.058823529411764
+      },
+      {
+        "actual": 64.703125,
+        "expected": 64.70588235294117
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 73.515625,
+        "expected": 73.52941176470588
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 27.9375,
+        "expected": 27.941176470588236
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 102.9375,
+        "expected": 102.94117647058823
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 79.40625,
+        "expected": 79.41176470588235
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "ciruela",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "ciruela",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "ciruela",
+    "w": 320
+  },
+  {
+    "documentWidth": 320,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 900,
+        "w": 280
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 544,
+        "w": 280
+      }
+    ],
+    "theme": "ciruela",
+    "w": 320
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 50,
+        "expected": 50
+      },
+      {
+        "actual": 81.609375,
+        "expected": 81.61764705882352
+      },
+      {
+        "actual": 51.46875,
+        "expected": 51.470588235294116
+      },
+      {
+        "actual": 58.078125,
+        "expected": 58.08823529411765
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 121.3125,
+        "expected": 121.3235294117647
+      },
+      {
+        "actual": 22.046875,
+        "expected": 22.058823529411764
+      },
+      {
+        "actual": 64.703125,
+        "expected": 64.70588235294117
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 73.515625,
+        "expected": 73.52941176470588
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 27.9375,
+        "expected": 27.941176470588236
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 102.9375,
+        "expected": 102.94117647058823
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 79.40625,
+        "expected": 79.41176470588235
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "light",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "light",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "light",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 900,
+        "w": 350
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 544,
+        "w": 350
+      }
+    ],
+    "theme": "light",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 50,
+        "expected": 50
+      },
+      {
+        "actual": 81.609375,
+        "expected": 81.61764705882352
+      },
+      {
+        "actual": 51.46875,
+        "expected": 51.470588235294116
+      },
+      {
+        "actual": 58.078125,
+        "expected": 58.08823529411765
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 121.3125,
+        "expected": 121.3235294117647
+      },
+      {
+        "actual": 22.046875,
+        "expected": 22.058823529411764
+      },
+      {
+        "actual": 64.703125,
+        "expected": 64.70588235294117
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 73.515625,
+        "expected": 73.52941176470588
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 27.9375,
+        "expected": 27.941176470588236
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 102.9375,
+        "expected": 102.94117647058823
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 79.40625,
+        "expected": 79.41176470588235
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "dark",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "dark",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "dark",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 900,
+        "w": 350
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 544,
+        "w": 350
+      }
+    ],
+    "theme": "dark",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 50,
+        "expected": 50
+      },
+      {
+        "actual": 81.609375,
+        "expected": 81.61764705882352
+      },
+      {
+        "actual": 51.46875,
+        "expected": 51.470588235294116
+      },
+      {
+        "actual": 58.078125,
+        "expected": 58.08823529411765
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 121.3125,
+        "expected": 121.3235294117647
+      },
+      {
+        "actual": 22.046875,
+        "expected": 22.058823529411764
+      },
+      {
+        "actual": 64.703125,
+        "expected": 64.70588235294117
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 73.515625,
+        "expected": 73.52941176470588
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 27.9375,
+        "expected": 27.941176470588236
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 102.9375,
+        "expected": 102.94117647058823
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 79.40625,
+        "expected": 79.41176470588235
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "sea",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "sea",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "sea",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 900,
+        "w": 350
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 544,
+        "w": 350
+      }
+    ],
+    "theme": "sea",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 50,
+        "expected": 50
+      },
+      {
+        "actual": 81.609375,
+        "expected": 81.61764705882352
+      },
+      {
+        "actual": 51.46875,
+        "expected": 51.470588235294116
+      },
+      {
+        "actual": 58.078125,
+        "expected": 58.08823529411765
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 121.3125,
+        "expected": 121.3235294117647
+      },
+      {
+        "actual": 22.046875,
+        "expected": 22.058823529411764
+      },
+      {
+        "actual": 64.703125,
+        "expected": 64.70588235294117
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 73.515625,
+        "expected": 73.52941176470588
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 27.9375,
+        "expected": 27.941176470588236
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 102.9375,
+        "expected": 102.94117647058823
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 79.40625,
+        "expected": 79.41176470588235
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "oliva",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "oliva",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "oliva",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 900,
+        "w": 350
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 544,
+        "w": 350
+      }
+    ],
+    "theme": "oliva",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 50,
+        "expected": 50
+      },
+      {
+        "actual": 81.609375,
+        "expected": 81.61764705882352
+      },
+      {
+        "actual": 51.46875,
+        "expected": 51.470588235294116
+      },
+      {
+        "actual": 58.078125,
+        "expected": 58.08823529411765
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 121.3125,
+        "expected": 121.3235294117647
+      },
+      {
+        "actual": 22.046875,
+        "expected": 22.058823529411764
+      },
+      {
+        "actual": 64.703125,
+        "expected": 64.70588235294117
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 73.515625,
+        "expected": 73.52941176470588
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 27.9375,
+        "expected": 27.941176470588236
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 102.9375,
+        "expected": 102.94117647058823
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 79.40625,
+        "expected": 79.41176470588235
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "arcilla",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "arcilla",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "arcilla",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 900,
+        "w": 350
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 544,
+        "w": 350
+      }
+    ],
+    "theme": "arcilla",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 50,
+        "expected": 50
+      },
+      {
+        "actual": 81.609375,
+        "expected": 81.61764705882352
+      },
+      {
+        "actual": 51.46875,
+        "expected": 51.470588235294116
+      },
+      {
+        "actual": 58.078125,
+        "expected": 58.08823529411765
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 121.3125,
+        "expected": 121.3235294117647
+      },
+      {
+        "actual": 22.046875,
+        "expected": 22.058823529411764
+      },
+      {
+        "actual": 64.703125,
+        "expected": 64.70588235294117
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 73.515625,
+        "expected": 73.52941176470588
+      },
+      {
+        "actual": 27.203125,
+        "expected": 27.205882352941174
+      },
+      {
+        "actual": 27.9375,
+        "expected": 27.941176470588236
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 102.9375,
+        "expected": 102.94117647058823
+      },
+      {
+        "actual": 25,
+        "expected": 25
+      },
+      {
+        "actual": 79.40625,
+        "expected": 79.41176470588235
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "ciruela",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "ciruela",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "ciruela",
+    "w": 390
+  },
+  {
+    "documentWidth": 390,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 900,
+        "w": 350
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 544,
+        "w": 350
+      }
+    ],
+    "theme": "ciruela",
+    "w": 390
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 60,
+        "expected": 60
+      },
+      {
+        "actual": 97.9375,
+        "expected": 97.94117647058823
+      },
+      {
+        "actual": 61.75,
+        "expected": 61.764705882352935
+      },
+      {
+        "actual": 69.703125,
+        "expected": 69.70588235294119
+      },
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 145.578125,
+        "expected": 145.58823529411762
+      },
+      {
+        "actual": 26.46875,
+        "expected": 26.470588235294116
+      },
+      {
+        "actual": 77.640625,
+        "expected": 77.64705882352942
+      },
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 88.234375,
+        "expected": 88.23529411764707
+      },
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 33.515625,
+        "expected": 33.529411764705884
+      },
+      {
+        "actual": 30,
+        "expected": 30
+      },
+      {
+        "actual": 123.515625,
+        "expected": 123.52941176470587
+      },
+      {
+        "actual": 30,
+        "expected": 30
+      },
+      {
+        "actual": 95.28125,
+        "expected": 95.29411764705881
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "light",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "light",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "light",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 920,
+        "w": 920
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 920,
+        "w": 920
+      }
+    ],
+    "theme": "light",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 60,
+        "expected": 60
+      },
+      {
+        "actual": 97.9375,
+        "expected": 97.94117647058823
+      },
+      {
+        "actual": 61.75,
+        "expected": 61.764705882352935
+      },
+      {
+        "actual": 69.703125,
+        "expected": 69.70588235294119
+      },
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 145.578125,
+        "expected": 145.58823529411762
+      },
+      {
+        "actual": 26.46875,
+        "expected": 26.470588235294116
+      },
+      {
+        "actual": 77.640625,
+        "expected": 77.64705882352942
+      },
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 88.234375,
+        "expected": 88.23529411764707
+      },
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 33.515625,
+        "expected": 33.529411764705884
+      },
+      {
+        "actual": 30,
+        "expected": 30
+      },
+      {
+        "actual": 123.515625,
+        "expected": 123.52941176470587
+      },
+      {
+        "actual": 30,
+        "expected": 30
+      },
+      {
+        "actual": 95.28125,
+        "expected": 95.29411764705881
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "dark",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "dark",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "dark",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 920,
+        "w": 920
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 920,
+        "w": 920
+      }
+    ],
+    "theme": "dark",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 60,
+        "expected": 60
+      },
+      {
+        "actual": 97.9375,
+        "expected": 97.94117647058823
+      },
+      {
+        "actual": 61.75,
+        "expected": 61.764705882352935
+      },
+      {
+        "actual": 69.703125,
+        "expected": 69.70588235294119
+      },
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 145.578125,
+        "expected": 145.58823529411762
+      },
+      {
+        "actual": 26.46875,
+        "expected": 26.470588235294116
+      },
+      {
+        "actual": 77.640625,
+        "expected": 77.64705882352942
+      },
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 88.234375,
+        "expected": 88.23529411764707
+      },
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 33.515625,
+        "expected": 33.529411764705884
+      },
+      {
+        "actual": 30,
+        "expected": 30
+      },
+      {
+        "actual": 123.515625,
+        "expected": 123.52941176470587
+      },
+      {
+        "actual": 30,
+        "expected": 30
+      },
+      {
+        "actual": 95.28125,
+        "expected": 95.29411764705881
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "sea",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "sea",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "sea",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 920,
+        "w": 920
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 920,
+        "w": 920
+      }
+    ],
+    "theme": "sea",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 60,
+        "expected": 60
+      },
+      {
+        "actual": 97.9375,
+        "expected": 97.94117647058823
+      },
+      {
+        "actual": 61.75,
+        "expected": 61.764705882352935
+      },
+      {
+        "actual": 69.703125,
+        "expected": 69.70588235294119
+      },
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 145.578125,
+        "expected": 145.58823529411762
+      },
+      {
+        "actual": 26.46875,
+        "expected": 26.470588235294116
+      },
+      {
+        "actual": 77.640625,
+        "expected": 77.64705882352942
+      },
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 88.234375,
+        "expected": 88.23529411764707
+      },
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 33.515625,
+        "expected": 33.529411764705884
+      },
+      {
+        "actual": 30,
+        "expected": 30
+      },
+      {
+        "actual": 123.515625,
+        "expected": 123.52941176470587
+      },
+      {
+        "actual": 30,
+        "expected": 30
+      },
+      {
+        "actual": 95.28125,
+        "expected": 95.29411764705881
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "oliva",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "oliva",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "oliva",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 920,
+        "w": 920
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 920,
+        "w": 920
+      }
+    ],
+    "theme": "oliva",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 60,
+        "expected": 60
+      },
+      {
+        "actual": 97.9375,
+        "expected": 97.94117647058823
+      },
+      {
+        "actual": 61.75,
+        "expected": 61.764705882352935
+      },
+      {
+        "actual": 69.703125,
+        "expected": 69.70588235294119
+      },
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 145.578125,
+        "expected": 145.58823529411762
+      },
+      {
+        "actual": 26.46875,
+        "expected": 26.470588235294116
+      },
+      {
+        "actual": 77.640625,
+        "expected": 77.64705882352942
+      },
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 88.234375,
+        "expected": 88.23529411764707
+      },
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 33.515625,
+        "expected": 33.529411764705884
+      },
+      {
+        "actual": 30,
+        "expected": 30
+      },
+      {
+        "actual": 123.515625,
+        "expected": 123.52941176470587
+      },
+      {
+        "actual": 30,
+        "expected": 30
+      },
+      {
+        "actual": 95.28125,
+        "expected": 95.29411764705881
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "arcilla",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "arcilla",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "arcilla",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 920,
+        "w": 920
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 920,
+        "w": 920
+      }
+    ],
+    "theme": "arcilla",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 60,
+        "expected": 60
+      },
+      {
+        "actual": 97.9375,
+        "expected": 97.94117647058823
+      },
+      {
+        "actual": 61.75,
+        "expected": 61.764705882352935
+      },
+      {
+        "actual": 69.703125,
+        "expected": 69.70588235294119
+      },
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 145.578125,
+        "expected": 145.58823529411762
+      },
+      {
+        "actual": 26.46875,
+        "expected": 26.470588235294116
+      },
+      {
+        "actual": 77.640625,
+        "expected": 77.64705882352942
+      },
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 88.234375,
+        "expected": 88.23529411764707
+      },
+      {
+        "actual": 32.640625,
+        "expected": 32.647058823529406
+      },
+      {
+        "actual": 33.515625,
+        "expected": 33.529411764705884
+      },
+      {
+        "actual": 30,
+        "expected": 30
+      },
+      {
+        "actual": 123.515625,
+        "expected": 123.52941176470587
+      },
+      {
+        "actual": 30,
+        "expected": 30
+      },
+      {
+        "actual": 95.28125,
+        "expected": 95.29411764705881
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "ciruela",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "ciruela",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "ciruela",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1000,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 920,
+        "w": 920
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 920,
+        "w": 920
+      }
+    ],
+    "theme": "ciruela",
+    "w": 1000
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 62,
+        "expected": 62
+      },
+      {
+        "actual": 101.203125,
+        "expected": 101.20588235294117
+      },
+      {
+        "actual": 63.8125,
+        "expected": 63.823529411764696
+      },
+      {
+        "actual": 72.015625,
+        "expected": 72.02941176470588
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 150.4375,
+        "expected": 150.44117647058823
+      },
+      {
+        "actual": 27.34375,
+        "expected": 27.352941176470587
+      },
+      {
+        "actual": 80.234375,
+        "expected": 80.23529411764706
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 91.171875,
+        "expected": 91.1764705882353
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 34.640625,
+        "expected": 34.64705882352941
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 127.640625,
+        "expected": 127.64705882352939
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 98.46875,
+        "expected": 98.47058823529412
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "light",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "light",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "light",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 900,
+        "w": 824
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 824,
+        "w": 824
+      }
+    ],
+    "theme": "light",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 62,
+        "expected": 62
+      },
+      {
+        "actual": 101.203125,
+        "expected": 101.20588235294117
+      },
+      {
+        "actual": 63.8125,
+        "expected": 63.823529411764696
+      },
+      {
+        "actual": 72.015625,
+        "expected": 72.02941176470588
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 150.4375,
+        "expected": 150.44117647058823
+      },
+      {
+        "actual": 27.34375,
+        "expected": 27.352941176470587
+      },
+      {
+        "actual": 80.234375,
+        "expected": 80.23529411764706
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 91.171875,
+        "expected": 91.1764705882353
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 34.640625,
+        "expected": 34.64705882352941
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 127.640625,
+        "expected": 127.64705882352939
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 98.46875,
+        "expected": 98.47058823529412
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "dark",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "dark",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "dark",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 900,
+        "w": 824
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 824,
+        "w": 824
+      }
+    ],
+    "theme": "dark",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 62,
+        "expected": 62
+      },
+      {
+        "actual": 101.203125,
+        "expected": 101.20588235294117
+      },
+      {
+        "actual": 63.8125,
+        "expected": 63.823529411764696
+      },
+      {
+        "actual": 72.015625,
+        "expected": 72.02941176470588
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 150.4375,
+        "expected": 150.44117647058823
+      },
+      {
+        "actual": 27.34375,
+        "expected": 27.352941176470587
+      },
+      {
+        "actual": 80.234375,
+        "expected": 80.23529411764706
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 91.171875,
+        "expected": 91.1764705882353
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 34.640625,
+        "expected": 34.64705882352941
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 127.640625,
+        "expected": 127.64705882352939
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 98.46875,
+        "expected": 98.47058823529412
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "sea",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "sea",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "sea",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 900,
+        "w": 824
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 824,
+        "w": 824
+      }
+    ],
+    "theme": "sea",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 62,
+        "expected": 62
+      },
+      {
+        "actual": 101.203125,
+        "expected": 101.20588235294117
+      },
+      {
+        "actual": 63.8125,
+        "expected": 63.823529411764696
+      },
+      {
+        "actual": 72.015625,
+        "expected": 72.02941176470588
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 150.4375,
+        "expected": 150.44117647058823
+      },
+      {
+        "actual": 27.34375,
+        "expected": 27.352941176470587
+      },
+      {
+        "actual": 80.234375,
+        "expected": 80.23529411764706
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 91.171875,
+        "expected": 91.1764705882353
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 34.640625,
+        "expected": 34.64705882352941
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 127.640625,
+        "expected": 127.64705882352939
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 98.46875,
+        "expected": 98.47058823529412
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "oliva",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "oliva",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "oliva",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 900,
+        "w": 824
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 824,
+        "w": 824
+      }
+    ],
+    "theme": "oliva",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 62,
+        "expected": 62
+      },
+      {
+        "actual": 101.203125,
+        "expected": 101.20588235294117
+      },
+      {
+        "actual": 63.8125,
+        "expected": 63.823529411764696
+      },
+      {
+        "actual": 72.015625,
+        "expected": 72.02941176470588
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 150.4375,
+        "expected": 150.44117647058823
+      },
+      {
+        "actual": 27.34375,
+        "expected": 27.352941176470587
+      },
+      {
+        "actual": 80.234375,
+        "expected": 80.23529411764706
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 91.171875,
+        "expected": 91.1764705882353
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 34.640625,
+        "expected": 34.64705882352941
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 127.640625,
+        "expected": 127.64705882352939
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 98.46875,
+        "expected": 98.47058823529412
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "arcilla",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "arcilla",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "arcilla",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 900,
+        "w": 824
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 824,
+        "w": 824
+      }
+    ],
+    "theme": "arcilla",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 62,
+        "expected": 62
+      },
+      {
+        "actual": 101.203125,
+        "expected": 101.20588235294117
+      },
+      {
+        "actual": 63.8125,
+        "expected": 63.823529411764696
+      },
+      {
+        "actual": 72.015625,
+        "expected": 72.02941176470588
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 150.4375,
+        "expected": 150.44117647058823
+      },
+      {
+        "actual": 27.34375,
+        "expected": 27.352941176470587
+      },
+      {
+        "actual": 80.234375,
+        "expected": 80.23529411764706
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 91.171875,
+        "expected": 91.1764705882353
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 34.640625,
+        "expected": 34.64705882352941
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 127.640625,
+        "expected": 127.64705882352939
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 98.46875,
+        "expected": 98.47058823529412
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "ciruela",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "ciruela",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "ciruela",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1200,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 900,
+        "w": 824
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 824,
+        "w": 824
+      }
+    ],
+    "theme": "ciruela",
+    "w": 1200
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 62,
+        "expected": 62
+      },
+      {
+        "actual": 101.203125,
+        "expected": 101.20588235294117
+      },
+      {
+        "actual": 63.8125,
+        "expected": 63.823529411764696
+      },
+      {
+        "actual": 72.015625,
+        "expected": 72.02941176470588
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 150.4375,
+        "expected": 150.44117647058823
+      },
+      {
+        "actual": 27.34375,
+        "expected": 27.352941176470587
+      },
+      {
+        "actual": 80.234375,
+        "expected": 80.23529411764706
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 91.171875,
+        "expected": 91.1764705882353
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 34.640625,
+        "expected": 34.64705882352941
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 127.640625,
+        "expected": 127.64705882352939
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 98.46875,
+        "expected": 98.47058823529412
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "light",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "light",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "light",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 992,
+        "w": 992
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 992,
+        "w": 992
+      }
+    ],
+    "theme": "light",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 62,
+        "expected": 62
+      },
+      {
+        "actual": 101.203125,
+        "expected": 101.20588235294117
+      },
+      {
+        "actual": 63.8125,
+        "expected": 63.823529411764696
+      },
+      {
+        "actual": 72.015625,
+        "expected": 72.02941176470588
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 150.4375,
+        "expected": 150.44117647058823
+      },
+      {
+        "actual": 27.34375,
+        "expected": 27.352941176470587
+      },
+      {
+        "actual": 80.234375,
+        "expected": 80.23529411764706
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 91.171875,
+        "expected": 91.1764705882353
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 34.640625,
+        "expected": 34.64705882352941
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 127.640625,
+        "expected": 127.64705882352939
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 98.46875,
+        "expected": 98.47058823529412
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "dark",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "dark",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "dark",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 992,
+        "w": 992
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 992,
+        "w": 992
+      }
+    ],
+    "theme": "dark",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 62,
+        "expected": 62
+      },
+      {
+        "actual": 101.203125,
+        "expected": 101.20588235294117
+      },
+      {
+        "actual": 63.8125,
+        "expected": 63.823529411764696
+      },
+      {
+        "actual": 72.015625,
+        "expected": 72.02941176470588
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 150.4375,
+        "expected": 150.44117647058823
+      },
+      {
+        "actual": 27.34375,
+        "expected": 27.352941176470587
+      },
+      {
+        "actual": 80.234375,
+        "expected": 80.23529411764706
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 91.171875,
+        "expected": 91.1764705882353
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 34.640625,
+        "expected": 34.64705882352941
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 127.640625,
+        "expected": 127.64705882352939
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 98.46875,
+        "expected": 98.47058823529412
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "sea",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "sea",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "sea",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 992,
+        "w": 992
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 992,
+        "w": 992
+      }
+    ],
+    "theme": "sea",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 62,
+        "expected": 62
+      },
+      {
+        "actual": 101.203125,
+        "expected": 101.20588235294117
+      },
+      {
+        "actual": 63.8125,
+        "expected": 63.823529411764696
+      },
+      {
+        "actual": 72.015625,
+        "expected": 72.02941176470588
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 150.4375,
+        "expected": 150.44117647058823
+      },
+      {
+        "actual": 27.34375,
+        "expected": 27.352941176470587
+      },
+      {
+        "actual": 80.234375,
+        "expected": 80.23529411764706
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 91.171875,
+        "expected": 91.1764705882353
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 34.640625,
+        "expected": 34.64705882352941
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 127.640625,
+        "expected": 127.64705882352939
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 98.46875,
+        "expected": 98.47058823529412
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "oliva",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "oliva",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "oliva",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 992,
+        "w": 992
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 992,
+        "w": 992
+      }
+    ],
+    "theme": "oliva",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 62,
+        "expected": 62
+      },
+      {
+        "actual": 101.203125,
+        "expected": 101.20588235294117
+      },
+      {
+        "actual": 63.8125,
+        "expected": 63.823529411764696
+      },
+      {
+        "actual": 72.015625,
+        "expected": 72.02941176470588
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 150.4375,
+        "expected": 150.44117647058823
+      },
+      {
+        "actual": 27.34375,
+        "expected": 27.352941176470587
+      },
+      {
+        "actual": 80.234375,
+        "expected": 80.23529411764706
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 91.171875,
+        "expected": 91.1764705882353
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 34.640625,
+        "expected": 34.64705882352941
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 127.640625,
+        "expected": 127.64705882352939
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 98.46875,
+        "expected": 98.47058823529412
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "arcilla",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "arcilla",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "arcilla",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 992,
+        "w": 992
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 992,
+        "w": 992
+      }
+    ],
+    "theme": "arcilla",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 62,
+        "expected": 62
+      },
+      {
+        "actual": 101.203125,
+        "expected": 101.20588235294117
+      },
+      {
+        "actual": 63.8125,
+        "expected": 63.823529411764696
+      },
+      {
+        "actual": 72.015625,
+        "expected": 72.02941176470588
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 150.4375,
+        "expected": 150.44117647058823
+      },
+      {
+        "actual": 27.34375,
+        "expected": 27.352941176470587
+      },
+      {
+        "actual": 80.234375,
+        "expected": 80.23529411764706
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 91.171875,
+        "expected": 91.1764705882353
+      },
+      {
+        "actual": 33.734375,
+        "expected": 33.73529411764706
+      },
+      {
+        "actual": 34.640625,
+        "expected": 34.64705882352941
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 127.640625,
+        "expected": 127.64705882352939
+      },
+      {
+        "actual": 31,
+        "expected": 31
+      },
+      {
+        "actual": 98.46875,
+        "expected": 98.47058823529412
+      }
+    ],
+    "inside": true,
+    "key": "manuscrita",
+    "notes": [],
+    "regions": [],
+    "theme": "ciruela",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [
+      {
+        "actual": 70.34375,
+        "expected": 70.3529411764706
+      },
+      {
+        "actual": 65,
+        "expected": 65
+      },
+      {
+        "actual": 45.875,
+        "expected": 45.88235294117647
+      },
+      {
+        "actual": 88.703125,
+        "expected": 88.70588235294117
+      },
+      {
+        "actual": 38.234375,
+        "expected": 38.23529411764706
+      },
+      {
+        "actual": 93.28125,
+        "expected": 93.29411764705883
+      },
+      {
+        "actual": 34.40625,
+        "expected": 34.411764705882355
+      },
+      {
+        "actual": 121.578125,
+        "expected": 121.58823529411765
+      }
+    ],
+    "inside": true,
+    "key": "apuntes",
+    "notes": [
+      true,
+      true
+    ],
+    "regions": [],
+    "theme": "ciruela",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [],
+    "inside": true,
+    "key": "cards-trazadas",
+    "notes": [],
+    "regions": [],
+    "theme": "ciruela",
+    "w": 1440
+  },
+  {
+    "documentWidth": 1440,
+    "glyphs": [],
+    "inside": true,
+    "key": "atencion",
+    "notes": [],
+    "regions": [
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 992,
+        "w": 992
+      },
+      {
+        "focus": true,
+        "named": true,
+        "scroll": 992,
+        "w": 992
+      }
+    ],
+    "theme": "ciruela",
+    "w": 1440
+  }
+]
