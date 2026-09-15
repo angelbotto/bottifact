@@ -69,8 +69,8 @@
       var caja=botones[i].closest('.barra'),r=botones[i].getBoundingClientRect(),c=caja.getBoundingClientRect();
       if(r.left<c.left)caja.scrollLeft+=r.left-c.left-12;else if(r.right>c.right)caja.scrollLeft+=r.right-c.right+12;
     }
-    var suave = conFoco && !matchMedia("(prefers-reduced-motion: reduce)").matches;
-    scrollTo({ top: 0, behavior: suave ? "smooth" : "auto" });
+    var suave = conFoco && !destino && !matchMedia("(prefers-reduced-motion: reduce)").matches;
+    scrollTo({ top: 0, behavior: suave ? "smooth" : "instant" });
     if (conFoco) {
       var h = pags[i].querySelector("h1");
       if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); }
