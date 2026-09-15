@@ -102,7 +102,7 @@ anchas tienen foco, nombre y desplazamiento propio; nunca reduzcas etiquetas has
 
 La llave sol/luna organiza Temas, Letras y Sonido. Busca por nombre/color y filtra Editoriales,
 Marcas o Técnicos; el nombre del tema actual permanece arriba aunque no coincida con el filtro.
-El interruptor de sonido siempre está al pie. Está habilitado inicialmente, espera un clic real
+El interruptor de sonido está sólo en la pestaña Sonido. Está habilitado inicialmente, espera un clic real
 y respeta el silencio guardado; Probar sonido permite comprobar la salida del dispositivo.
 
 | Combinación | Títulos / lectura | Úsala para |

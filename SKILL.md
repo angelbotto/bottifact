@@ -37,7 +37,7 @@ siguen sirviendo para consultar piezas y para mantener documentos ya publicados.
 La llave organiza **Temas / Letras / Sonido**: busca por nombre/color, filtra familias y mantiene
 el tema actual visible. No vuelvas a crear una lista vertical con todos los ajustes. Las combinaciones
 Libro/Revista/Bitácora añaden Literata incrustada; lee los usos en guia-uso.md. El interruptor de silencio
-permanece accesible en todas las pestañas. Nunca crees Web Audio antes de una interacción real.
+está en la pestaña Sonido. Nunca crees Web Audio antes de una interacción real.
 
 ## La misma base en Claude, Codex y Hermes
 
@@ -414,7 +414,7 @@ La edición completa incorpora [revision.js](revision.js): pines flotantes en el
 
 El visor permite pegar HTML declarativo local y alternar Móvil/Escritorio; los embeds remotos siguen fuera de CSP. Escritura admite `data-al-ver` para una primera animación al entrar en pantalla; el sonido se activa con un botón explícito. [codigo.js](codigo.js) colorea HTML, CSS, JavaScript, TypeScript, JSON, Python, SQL, Shell y salida de terminal creando nodos de texto seguros y conserva exactamente el contenido copiable. Grano de papel usa SVG de ruido incrustado, no una rejilla de puntos.
 
-[controles.js](controles.js) coloca los menús de tabla y visor dentro del viewport; se incluye antes de interacciones.js. [audio.js](audio.js), antes de interacciones.js, centraliza el audio en la pestaña Sonido y mantiene el interruptor al pie de todas las pestañas: habilitado inicialmente, espera el primer clic, botón Probar sonido, volumen y estado. Requiere gesto real; no suena por scroll genérico. «Ver escritura animada» lleva a la nota manuscrita animada, o al SVG de Edición si no hay nota. El visor ofrece dispositivo, proporción, rotación y escala visual; conserva píxeles CSS para las consultas de contenedor. La trama se aplica también a la barra de capítulos.
+[controles.js](controles.js) coloca los menús de tabla y visor dentro del viewport; se incluye antes de interacciones.js. [audio.js](audio.js), antes de interacciones.js, centraliza el audio y el interruptor en la pestaña Sonido: habilitado inicialmente, espera el primer clic, botón Probar sonido, volumen y estado. Requiere gesto real; no suena por scroll genérico. «Ver escritura animada» lleva a la nota manuscrita animada, o al SVG de Edición si no hay nota. El visor ofrece dispositivo, proporción, rotación y escala visual; conserva píxeles CSS para las consultas de contenedor. La trama se aplica también a la barra de capítulos.
 
 
 ### Analítica financiera y logística
@@ -514,3 +514,23 @@ límite por vehículo; costo por parada necesita costos reales y denominador; un
 hora del último mensaje y umbral definido; la prueba de entrega necesita evidencia autorizada.
 No deduzcas calles ni velocidad desde un arco entre ciudades. El mapa plano `mapa-rutas` sigue
 disponible para volumen agregado y ahora dibuja los nodos después de todas las rutas.
+
+
+### Controles discretos y navegación espacial
+
+Repetir una nota usa el icono de flecha circular, no un botón con una frase. Conserva el nombre
+accesible específico (izquierdo/derecho) y title. Copiar código/terminal usa dos hojas; si la
+cabecera sólo dice CSS/HTML/etc., se integra el icono en la esquina y se conserva el lenguaje
+para accesibilidad. Los nombres de archivo útiles permanecen visibles.
+
+El visor ofrece iconos directos Móvil/Tablet/Escritorio, proporción y otros tamaños en un menú,
+rotar, ajustar y reiniciar. No añadas rótulos visibles a esos controles. El comentario es una
+burbuja de una línea que crece, contexto plegable y acciones de guardar/cerrar con iconos;
+Ctrl/Cmd+Enter guarda. No pierde referencia ni fragmento al copiar el prompt.
+
+Temas tiene más espacio (hasta 560 px, tres columnas en escritorio y dos en móvil); **el sonido
+sólo se controla en Sonido**, por petición explícita de Angel. No restaures un interruptor común.
+El globo de flota admite arrastre, desplazamiento con Mayús, zoom con botones/rueda tras enfocarlo,
+pellizco y teclado. Home/restablecer recupera el encuadre; los presets mantienen los extremos de
+las rutas dentro del mapa, pero una exploración manual puede sacarlos de la vista. No añade
+inercia ni RAF para la cámara. Mantén los datos accesibles en la lista y la tabla.
