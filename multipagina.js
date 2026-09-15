@@ -66,7 +66,7 @@
     if(historial){
       var salto=document.querySelector('a.salto');if(salto)salto.setAttribute('href','#'+pags[i].id);
       pags[i].tabIndex=-1;
-      var caja=botones[i].closest('.barra'),r=botones[i].getBoundingClientRect(),c=caja.getBoundingClientRect();
+      var caja=botones[i].closest('[data-capitulos-scroll]')||botones[i].closest('.barra'),r=botones[i].getBoundingClientRect(),c=caja.getBoundingClientRect();
       if(r.left<c.left)caja.scrollLeft+=r.left-c.left-12;else if(r.right>c.right)caja.scrollLeft+=r.right-c.right+12;
     }
     var suave = conFoco && !destino && !matchMedia("(prefers-reduced-motion: reduce)").matches;
