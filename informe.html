@@ -1878,6 +1878,17 @@ body:has(.revision-barra) { padding-bottom:0; }
 .marco-contenido { padding:20px; }
 [data-atencion] td [data-contexto] { display:block; max-width:36em; margin-top:6px; font:12px/1.5 var(--sans); color:var(--tinta-2); }
 
+/* 24 — Audio a la vista; el control circular y los colores conservan su contrato. */
+.apariencia-audio { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px; margin:0 0 20px; padding:0 0 16px; border:0; border-bottom:1px solid var(--linea); min-width:0; }
+.apariencia-audio legend { font:12px/1.6 var(--sans); margin-bottom:10px; color:var(--tinta-2); }
+.apariencia-audio button,.barra.capitulos .apariencia-audio button { min-width:0; min-height:44px; padding:8px 10px; border:1px solid var(--linea-fuerte); border-radius:5px; background:var(--panel); color:var(--tinta); font:12px/1.4 var(--sans); white-space:normal; cursor:pointer; }
+.apariencia-audio label { grid-column:1/-1; display:flex; flex-wrap:wrap; justify-content:space-between; font:12px/1.6 var(--sans); color:var(--tinta-2); }
+.apariencia-audio input { width:100%; min-width:0; accent-color:var(--marcador); margin:4px 0; min-height:24px; }
+.apariencia-audio [role=status] { grid-column:1/-1; margin:0; color:var(--tinta-2); font:12px/1.5 var(--sans); }
+.nota-estandar [id] { scroll-margin-top:max(85px,var(--lectura-cabecera,85px)); }
+
+.navegacion-editorial > .procedencia { min-width:0; font:12px/1.5 var(--sans); color:var(--tinta-2); text-align:right; }
+
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <a class="salto" href="#contenido">Saltar al contenido</a>
@@ -1886,6 +1897,12 @@ body:has(.revision-barra) { padding-bottom:0; }
   <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-principal"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span></summary>
   <div class="apariencia-panel" id="panel-apariencia-principal" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
     <p class="apariencia-titulo">Tu forma de leer</p>
+    <fieldset class="apariencia-audio"><legend>Sonido</legend>
+      <button type="button" data-audio-global aria-pressed="false"><span data-audio-etiqueta>Sonidos apagados</span><span class="interruptor" aria-hidden="true"></span></button>
+      <button type="button" data-audio-prueba>Probar sonido</button>
+      <label>Volumen <output data-audio-volumen-valor>65 %</output><input type="range" min="0" max="100" value="65" step="5" aria-label="Volumen del sonido" data-audio-volumen></label>
+      <p role="status" data-audio-estado>Sonido apagado. Pulsa Probar sonido para escuchar una muestra.</p>
+    </fieldset>
     <fieldset class="apariencia"><legend>Color</legend><div class="apariencia-colores">
       <label><input type="radio" name="color-apariencia-principal" value="light" data-elegir-tema><span class="paleta-mini claro" aria-hidden="true"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>
       <label><input type="radio" name="color-apariencia-principal" value="dark" data-elegir-tema><span class="paleta-mini calido" aria-hidden="true"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>
@@ -1902,7 +1919,6 @@ body:has(.revision-barra) { padding-bottom:0; }
     </div></fieldset>
     <div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
-      <button type="button" data-audio-global aria-pressed="false"><span data-audio-etiqueta>Sonidos apagados</span><span class="interruptor" aria-hidden="true"></span></button>
       <button type="button" data-ver-escritura>Ver escritura animada ↗</button>
       <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
@@ -2038,31 +2054,110 @@ body:has(.revision-barra) { padding-bottom:0; }
 </article>
 <div class="paginacion" data-paginacion><button type="button" data-nav="prev"><span class="et">Anterior</span><span class="tit"></span></button><button type="button" data-nav="next"><span class="et">Siguiente</span><span class="tit"></span></button></div>
 <footer class="pie"><span>tikin · Estudios de producto</span><p>Cuatro capítulos, una pregunta. Datos ilustrativos, sin solicitudes ni registros reales.</p></footer>
-</main><script>
-/* Sonido central: activación explícita; hover optativo sólo al mover el puntero. */
-(()=>{'use strict';let enabled=false,context=null,voices=[],epoch=0,plays=0;const toggles=[...document.querySelectorAll('[data-audio-global],[data-sonido]')];
- if(!toggles.length)return;document.documentElement.dataset.audioCabecera='';
- const sync=()=>{document.querySelectorAll('[data-canal-sonido] [role="status"]').forEach(s=>s.textContent=enabled?'Sonido activado. Pulsa una acción para escucharla.':'Sonido apagado.');toggles.forEach(b=>{b.setAttribute('aria-pressed',String(enabled));b.querySelector('[data-audio-etiqueta]')?.replaceChildren(document.createTextNode(enabled?'Sonidos activados':'Sonidos apagados'));if(b.hasAttribute('data-sonido'))b.textContent=enabled?'Sonido activado':'Sonido apagado';});};
+</main><div id="revision-base" data-revision hidden>
+<h3>Revisar sin perder el contexto</h3><p>Activa Comentar y elige un párrafo, título, figura o card. También puedes seleccionar texto antes de pulsar Comentar.</p><div class="acciones"><button type="button" data-revision-modo aria-pressed="false">Comentar documento</button><button type="button" data-revision-lista>Ver comentarios</button></div><p data-revision-estado role="status">Borrador local de esta pestaña. Copia tus comentarios antes de recargar.</p>
+<dialog class="revision-dialogo revision-ui" data-revision-editor aria-labelledby="revision-editor-titulo"><form><h2 id="revision-editor-titulo">Añadir comentario</h2><details class="revision-contexto"><summary>Contexto del punto</summary><p data-revision-contexto tabindex="0" aria-label="Contexto completo del comentario"></p></details><label for="revision-texto">Ajuste que propones</label><textarea id="revision-texto" data-revision-texto rows="3" maxlength="4000" required placeholder="Qué cambiarías y por qué"></textarea><div class="acciones"><button type="button" data-revision-guardar>Guardar</button><button type="button" data-revision-cancelar>Cerrar</button></div></form></dialog>
+<dialog class="revision-dialogo revision-ui" data-revision-panel aria-labelledby="revision-panel-titulo"><h2 id="revision-panel-titulo">Comentarios del documento</h2><p class="procedencia">Borrador de esta pestaña. Copia el prompt antes de recargar.</p><ol data-revision-notas></ol><div class="codigo"><div class="cab"><span>Prompt de ajustes</span><button type="button" data-copiar="revision-prompt">Copiar prompt</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Prompt con comentarios, desplazable"><code id="revision-prompt" data-revision-prompt>No hay comentarios todavía.</code></pre></div><button type="button" data-revision-cerrar>Cerrar comentarios</button></dialog>
+</div><script>
+/* Sonido central: apagado al cargar, prueba explícita y salida comprobable. */
+(()=>{
+ 'use strict';
+ let enabled=false,context=null,master=null,analyser=null,voices=[],epoch=0,plays=0,volume=.65,activating=false;
+ let message='Sonido apagado. Pulsa Probar sonido para escuchar una muestra.';
+ const toggles=[...document.querySelectorAll('[data-audio-global],[data-sonido]')];
+ if(!toggles.length)return;
+ document.documentElement.dataset.audioCabecera='';
+ const sync=()=>{
+  toggles.forEach(b=>{
+   b.setAttribute('aria-pressed',String(enabled));b.setAttribute('aria-busy',String(activating));
+   const label=activating?'Cancelar activación':enabled?'Sonidos activados':'Sonidos apagados';
+   b.querySelector('[data-audio-etiqueta]')?.replaceChildren(document.createTextNode(label));
+   if(b.hasAttribute('data-sonido'))b.textContent=enabled?'Sonido activado':'Sonido apagado';
+  });
+  document.querySelectorAll('[data-audio-estado]').forEach(s=>s.textContent=message);
+  document.querySelectorAll('[data-audio-volumen]').forEach(input=>input.value=String(Math.round(volume*100)));
+  document.querySelectorAll('[data-audio-volumen-valor]').forEach(s=>s.textContent=Math.round(volume*100)+' %');
+  document.querySelectorAll('[data-canal-sonido] [role="status"]').forEach(s=>s.textContent=enabled?'Sonido activado. Pulsa una acción para escucharla.':'Sonido apagado.');
+ };
  const stop=()=>{voices.forEach(({node,gain})=>{try{node.stop();}catch{}node.disconnect();gain.disconnect();});voices=[];};
- function disable(){enabled=false;epoch++;stop();context?.suspend().catch(()=>{});document.querySelectorAll('[data-canal-sonido]').forEach(e=>window.NotaSonido?.get(e)?.disable());sync();}
- async function activate(){const Audio=window.AudioContext||window.webkitAudioContext;if(!Audio)return;const current=++epoch;try{context ||= new Audio();await context.resume();if(current!==epoch||document.hidden)return;enabled=true;sync();}catch{disable();}}
- function signal(kind,writingDuration){if(!enabled||!context||context.state!=='running'||document.hidden)return;if(kind==='hover'&&voices.some(v=>v.kind==='escritura'))return;stop();const now=context.currentTime,gain=context.createGain();let node,duration;
-  if(kind==='escritura'){duration=writingDuration||.65;const buffer=context.createBuffer(1,Math.ceil(context.sampleRate*duration),context.sampleRate),data=buffer.getChannelData(0);let last=0;for(let i=0;i<data.length;i++){last=.85*last+.15*(Math.random()*2-1);data[i]=last*(.55+.45*Math.sin(i/context.sampleRate*19)**4);}node=context.createBufferSource();node.buffer=buffer;gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(.10,now+.025);gain.gain.setValueAtTime(.075,now+duration-.07);gain.gain.linearRampToValueAtTime(0,now+duration);
-  }else{duration=kind==='hover'?.06:.09;node=context.createOscillator();node.type='sine';node.frequency.setValueAtTime(kind==='confirmacion'?740:kind==='atencion'?390:540,now);gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(kind==='hover'?.006:.018,now+.004);gain.gain.exponentialRampToValueAtTime(.0001,now+duration);}
-  node.connect(gain);gain.connect(context.destination);const voice={node,gain,kind};voices.push(voice);node.onended=()=>{node.disconnect();gain.disconnect();voices=voices.filter(v=>v!==voice);};node.start(now);node.stop(now+duration);plays++;return ()=>{try{node.stop();}catch{}node.disconnect();gain.disconnect();voices=voices.filter(v=>v!==voice);};
+ function disable(reason='Sonido apagado. Pulsa Probar sonido para escuchar una muestra.'){
+  enabled=false;activating=false;epoch++;stop();context?.suspend().catch(()=>{});message=reason;
+  document.querySelectorAll('[data-canal-sonido]').forEach(e=>window.NotaSonido?.get(e)?.disable());sync();
  }
- document.addEventListener('click',async e=>{if(!e.isTrusted)return;const b=e.target.closest('button');if(!b||b.disabled)return;if(b.matches('[data-audio-global],[data-sonido]')){if(enabled)disable();else await activate();return;}if(b.dataset.audio){const written=b.dataset.manoRepetir?document.getElementById(b.dataset.manoRepetir):b.closest('[data-escritura]');if(b.dataset.audio==='escritura'&&written?.hasAttribute('data-escritura-sonora'))return;const status=b.closest('[data-canal-sonido]')?.querySelector('[role="status"]');if(status)status.textContent=b.dataset.mensaje||b.textContent.trim();const local=b.closest('[data-canal-sonido]');if(local&&window.NotaSonido?.get(local)?.enabled)return;signal(b.dataset.audio);}});
+ async function activate(){
+  const Audio=window.AudioContext||window.webkitAudioContext;
+  if(!Audio){message='Este navegador no ofrece sonido Web Audio.';sync();return false;}
+  const current=++epoch;activating=true;message='Activando sonido…';sync();let timer;
+  try{
+   if(!context||context.state==='closed'){
+    context=new Audio();master=context.createGain();master.gain.value=volume;analyser=context.createAnalyser();analyser.fftSize=2048;
+    master.connect(analyser);analyser.connect(context.destination);
+    context.addEventListener('statechange',()=>{
+     if(enabled&&context.state!=='running')disable('El navegador pausó el audio. Pulsa Probar sonido para reactivarlo.');
+    });
+   }
+   await Promise.race([context.resume(),new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('timeout')),3500);})]);
+   if(current!==epoch||document.hidden)return false;
+   if(context.state!=='running')throw Error('suspended');
+   enabled=true;activating=false;message='Sonidos activados. Puedes probar el tono o la escritura.';sync();return true;
+  }catch{if(current===epoch)disable('No se pudo activar el audio. Pulsa Probar sonido; revisa si esta pestaña está silenciada.');return false;}
+  finally{clearTimeout(timer);}
+ }
+ function signal(kind,writingDuration){
+  if(!enabled||!context||context.state!=='running'||document.hidden)return;
+  if(kind==='hover'&&voices.some(v=>v.kind==='escritura'))return;
+  stop();const now=context.currentTime,gain=context.createGain();let node,duration;
+  if(kind==='escritura'){
+   duration=writingDuration||.65;
+   const buffer=context.createBuffer(1,Math.ceil(context.sampleRate*duration),context.sampleRate),data=buffer.getChannelData(0);let last=0,energy=0;
+   for(let i=0;i<data.length;i++){last=.78*last+.22*(Math.random()*2-1);data[i]=last*(.35+.65*Math.sin(i/context.sampleRate*19)**4);energy+=data[i]**2;}
+   const scale=.35/Math.max(.001,Math.sqrt(energy/data.length));
+   for(let i=0;i<data.length;i++)data[i]=Math.max(-.9,Math.min(.9,data[i]*scale));
+   node=context.createBufferSource();node.buffer=buffer;
+   gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(.18,now+.025);gain.gain.setValueAtTime(.14,now+duration-.07);gain.gain.linearRampToValueAtTime(0,now+duration);
+  }else{
+   duration=kind==='prueba'?.45:kind==='hover'?.06:.09;node=context.createOscillator();node.type='sine';
+   node.frequency.setValueAtTime(kind==='confirmacion'?740:kind==='atencion'?390:540,now);
+   if(kind==='prueba')node.frequency.exponentialRampToValueAtTime(720,now+duration);
+   gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(kind==='prueba'?.12:kind==='hover'?.012:.035,now+.008);gain.gain.exponentialRampToValueAtTime(.0001,now+duration);
+  }
+  node.connect(gain);gain.connect(master);const voice={node,gain,kind};voices.push(voice);
+  const release=()=>{node.disconnect();gain.disconnect();voices=voices.filter(v=>v!==voice);};node.onended=release;
+  node.start(now);node.stop(now+duration);plays++;
+  return ()=>{try{node.stop();}catch{}release();};
+ }
+ document.addEventListener('click',async e=>{
+  if(!e.isTrusted)return;const b=e.target.closest('button');if(!b||b.disabled)return;
+  if(b.matches('[data-audio-prueba]')){
+   if(!enabled||context?.state!=='running'){if(!await activate())return;}
+   signal('prueba');message='Muestra reproducida al '+Math.round(volume*100)+' %. Si no la oyes, revisa el volumen y el silencio de la pestaña.';sync();return;
+  }
+  if(b.matches('[data-audio-global],[data-sonido]')){if(enabled||activating)disable();else await activate();return;}
+  if(b.dataset.audio){
+   const written=b.dataset.manoRepetir?document.getElementById(b.dataset.manoRepetir):b.closest('[data-escritura]');
+   if(b.dataset.audio==='escritura'&&written?.hasAttribute('data-escritura-sonora'))return;
+   const status=b.closest('[data-canal-sonido]')?.querySelector('[role="status"]');if(status)status.textContent=b.dataset.mensaje||b.textContent.trim();
+   const local=b.closest('[data-canal-sonido]');if(local&&window.NotaSonido?.get(local)?.enabled)return;
+   signal(b.dataset.audio);
+  }
+ });
+ document.addEventListener('input',e=>{if(!e.target.matches('[data-audio-volumen]'))return;const n=Number(e.target.value);if(!Number.isFinite(n))return;volume=Math.max(0,Math.min(1,n/100));if(master)master.gain.setTargetAtTime(volume,context.currentTime,.015);sync();});
  let lastPointer=null,lastTarget=null,lastHover=-Infinity;
  document.addEventListener('pointermove',e=>{
   if(!e.isTrusted||e.pointerType!=='mouse')return;
   const moved=lastPointer&&Math.hypot(e.clientX-lastPointer.x,e.clientY-lastPointer.y)>1;
-  lastPointer={x:e.clientX,y:e.clientY};const target=e.target.closest('[data-audio-hover]');
-  if(!moved)return;
+  lastPointer={x:e.clientX,y:e.clientY};const target=e.target.closest('[data-audio-hover]');if(!moved)return;
   if(target!==lastTarget&&target&&performance.now()-lastHover>=160&&enabled){signal('hover');lastHover=performance.now();}
   lastTarget=target;
  },{passive:true});
- document.addEventListener('visibilitychange',()=>{if(document.hidden)disable();});addEventListener('pagehide',disable);
- window.NotaAudio={disable,writing(element,duration){const r=element.getBoundingClientRect();if(!element.hasAttribute('data-escritura-sonora')||!Number.isFinite(duration)||duration<100||duration>10000||r.bottom<=0||r.top>=innerHeight||matchMedia('(prefers-reduced-motion: reduce)').matches)return;return signal('escritura',duration/1000);},get enabled(){return enabled;},get activeVoices(){return voices.length;},get plays(){return plays;}};sync();
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)disable('Audio apagado al salir de la pestaña. Pulsa Probar sonido para volver a escucharlo.');});
+ addEventListener('pagehide',()=>disable());
+ window.NotaAudio={disable,writing(element,duration){
+  const r=element.getBoundingClientRect();
+  if(!element.hasAttribute('data-escritura-sonora')||!Number.isFinite(duration)||duration<100||duration>10000||r.bottom<=0||r.top>=innerHeight||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  return signal('escritura',duration/1000);
+ },sampleLevel(){if(!analyser)return {peak:0,rms:0};const data=new Float32Array(analyser.fftSize);analyser.getFloatTimeDomainData(data);return {peak:Math.max(...data.map(Math.abs)),rms:Math.sqrt(data.reduce((sum,v)=>sum+v*v,0)/data.length)};},get state(){return context?.state||'uninitialized';},get volume(){return volume;},get enabled(){return enabled;},get activeVoices(){return voices.length;},get plays(){return plays;}};
+ sync();
 })();
 
 </script>
@@ -3106,6 +3201,63 @@ body:has(.revision-barra) { padding-bottom:0; }
     });
   }
   window.NotaPestanas={init,get:e=>instances.get(e)};init();
+})();
+
+</script>
+<script>
+/* Comentarios locales: pines flotantes anclados al bloque, sin mutar su geometría. */
+(()=>{'use strict';const instances=new WeakMap();
+ const icon='<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 3V11.5a9 9 0 0 1 18 0Z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';
+ function init(root=document){return [...(root.matches?.('[data-revision]')?[root]:[]),...root.querySelectorAll('[data-revision]')].map(el=>{
+  if(instances.has(el))return instances.get(el);
+  const editor=el.querySelector('[data-revision-editor]'),panel=el.querySelector('[data-revision-panel]'),input=el.querySelector('[data-revision-texto]'),context=el.querySelector('[data-revision-contexto]'),list=el.querySelector('[data-revision-notas]'),prompt=el.querySelector('[data-revision-prompt]'),status=el.querySelector('[data-revision-estado]');
+  if(!editor||!panel||!input||!context||!list||!prompt||!status)return null;
+  const abort=new AbortController(),notes=[],addedIDs=new Set(),originalStatus=status.textContent,originalPrompt=prompt.textContent,focusTargets=new Map();let rowsAbort=new AbortController(),mode=false,pending=null,editing=null,serial=0;
+  const bar=document.createElement('div'),layer=document.createElement('div');bar.className='revision-barra revision-ui';bar.setAttribute('role','group');bar.setAttribute('aria-label','Comentarios');layer.className='revision-capa revision-ui';
+  const modeButton=el.querySelector('[data-revision-modo]').cloneNode(true),listButton=el.querySelector('[data-revision-lista]').cloneNode(true);modeButton.innerHTML=icon;modeButton.setAttribute('aria-label','Comentar: activar pines');modeButton.title='Comentar';listButton.textContent='0';listButton.title='Ver comentarios';listButton.setAttribute('aria-label','Ver comentarios, 0');bar.append(modeButton,listButton);document.body.append(bar,layer,editor,panel);
+  const listen=(node,type,fn,options={})=>node.addEventListener(type,fn,{...options,signal:abort.signal}),make=(tag,text)=>{const node=document.createElement(tag);node.textContent=text;return node;};
+  function setMode(value){focusTargets.forEach((old,node)=>old===null?node.removeAttribute('tabindex'):node.setAttribute('tabindex',old));focusTargets.clear();
+   if(value)document.querySelectorAll('main .pagina.viva :is(p,h1,h2,h3,figure,pre),main:not(.multipagina) :is(p,h1,h2,h3,figure,pre)').forEach(node=>{if(node.closest('[data-revision],.revision-ui')||!node.getClientRects().length)return;focusTargets.set(node,node.getAttribute('tabindex'));node.tabIndex=0;});
+   mode=value;document.documentElement.toggleAttribute('data-revisando',mode);modeButton.setAttribute('aria-pressed',String(mode));el.querySelector('[data-revision-modo]').setAttribute('aria-pressed',String(mode));modeButton.setAttribute('aria-label',mode?'Comentar: elige un punto. Escape cancela.':'Comentar: activar pines');status.textContent=mode?'Haz clic donde quieras comentar. Tab y Enter también permiten elegir un bloque.':notes.length+' comentarios locales. Copia antes de recargar.';
+  }
+  function point(note){const r=note.target.getBoundingClientRect();return {x:r.left+r.width*note.x,y:r.top+r.height*note.y,r};}
+  function position(){
+   const vw=visualViewport?.width||innerWidth,vh=visualViewport?.height||innerHeight,ox=visualViewport?.offsetLeft||0,oy=visualViewport?.offsetTop||0;
+   notes.forEach(note=>{const p=point(note);let visible=note.target.getClientRects().length>0&&p.x>=ox&&p.x<=ox+vw&&p.y>=oy+54&&p.y<=oy+vh;
+    for(let a=note.target.parentElement;a&&a!==document.body;a=a.parentElement){const s=getComputedStyle(a);if(/auto|scroll|hidden|clip/.test(s.overflowX+' '+s.overflowY)){const r=a.getBoundingClientRect();if(p.x<r.left||p.x>r.right||p.y<r.top||p.y>r.bottom)visible=false;}}
+    note.marker.hidden=!visible;note.marker.style.left=Math.max(ox+4,Math.min(ox+vw-32,p.x-4))+'px';note.marker.style.top=Math.max(oy+4,Math.min(oy+vh-36,p.y-28))+'px';
+   });
+   if(editor.open&&pending){const p=point(pending);editor.style.width=Math.min(304,vw-24)+'px';editor.style.maxHeight=Math.max(160,vh-24)+'px';const r=editor.getBoundingClientRect();editor.style.left=Math.max(ox+12,Math.min(p.x+14,ox+vw-r.width-12))+'px';editor.style.top=Math.max(oy+12,Math.min(p.y+12,oy+vh-r.height-12))+'px';if(!pending.target.getClientRects().length)editor.close();}
+  }
+  function render(){rowsAbort.abort();rowsAbort=new AbortController();list.replaceChildren();const on=(n,fn)=>n.addEventListener('click',fn,{signal:rowsAbort.signal});
+   notes.forEach((note,i)=>{note.marker.textContent=String(i+1);note.marker.setAttribute('aria-label','Comentario '+(i+1)+': '+note.text.slice(0,80));
+    const li=document.createElement('li'),actions=document.createElement('div');actions.className='acciones';const link=make('a','Ver contexto');link.href='#'+note.target.id;on(link,()=>panel.close());const edit=make('button','Editar'),remove=make('button','Borrar');edit.type=remove.type='button';on(edit,()=>{panel.close();open(note);});on(remove,()=>{note.marker.remove();notes.splice(notes.indexOf(note),1);render();panel.querySelector('[data-revision-cerrar]').focus();});actions.append(link,edit,remove);
+    const details=document.createElement('details');details.append(make('summary',note.page+' · #'+note.reference),make('blockquote',note.quote));li.append(make('p',note.text),details,actions);list.append(li);
+   });
+   if(!notes.length)list.append(make('li','Aún no hay comentarios. Activa el globo y haz clic en un punto del documento.'));
+   prompt.textContent=notes.length?'Aplica estos ajustes al artefacto «'+document.title+'». Conserva el contenido y comportamiento no señalados.\n\n'+notes.map((n,i)=>(i+1)+'. Capítulo: '+n.page+'\nReferencia: #'+n.reference+'\nPunto del bloque: '+Math.round(n.x*100)+'% horizontal, '+Math.round(n.y*100)+'% vertical\nContexto: '+n.quote+'\nAjuste: '+n.text).join('\n\n'):'No hay comentarios todavía.';
+   listButton.textContent=String(notes.length);listButton.setAttribute('aria-label','Ver comentarios, '+notes.length);status.textContent=notes.length+' comentarios locales. Copia antes de recargar.';position();
+  }
+  function open(note){if(editor.open)editor.close();editing=notes.includes(note)?note:null;setMode(false);if(editing){const page=note.target.closest('.pagina');if(page?.hidden)document.querySelector('[data-ir="'+page.id+'"]')?.click();const r=note.target.getBoundingClientRect();if(r.bottom<60||r.top>innerHeight-60)note.target.scrollIntoView({behavior:'instant',block:'center'});}pending=note;context.textContent=note.page+' · #'+note.reference+' · '+note.quote;input.value=editing?note.text:'';editor.querySelector('h2').textContent=editing?'Comentario '+(notes.indexOf(note)+1):'Comentario';editor.show();position();input.focus({preventScroll:true});}
+  function choose(target,selection='',coords){if(!target?.closest('main')||target.closest('.revision-ui,[data-revision]'))return;
+   const page=target.closest('.pagina');let anchor=target;while(anchor&&(!anchor.id||addedIDs.has(anchor)))anchor=anchor.parentElement;
+   const quote=(selection||target.textContent||target.getAttribute('aria-label')||target.labels?.[0]?.textContent||target.tagName).trim().replace(/\s+/g,' ').slice(0,1200),r=target.getBoundingClientRect();
+   open({target,reference:anchor?.id||page?.id||'contenido',page:page?.querySelector('h1')?.textContent||document.title,quote,text:'',x:coords&&r.width?Math.max(0,Math.min(1,(coords.x-r.left)/r.width)):.5,y:coords&&r.height?Math.max(0,Math.min(1,(coords.y-r.top)/r.height)):.5});
+  }
+  function toggle(){if(editor.open)editor.close();const selection=getSelection(),text=selection?.toString().trim(),node=selection?.anchorNode;if(text&&node){const target=(node.nodeType===1?node:node.parentElement).closest('p,h1,h2,h3,h4,figure,pre,li');if(target?.closest('main')){choose(target,text);return;}}setMode(!mode);}
+  [modeButton,el.querySelector('[data-revision-modo]')].forEach(b=>listen(b,'click',toggle));[listButton,el.querySelector('[data-revision-lista]')].forEach(b=>listen(b,'click',()=>{setMode(false);editor.close();render();panel.showModal();}));
+  listen(document,'click',e=>{if(!mode||e.target.closest('.revision-ui,[data-revision],.barra'))return;const target=e.target.closest('button,a,input,select,textarea,p,h1,h2,h3,h4,pre,figure,table,li,.card-editorial,section,.pagina');if(!target?.closest('main'))return;e.preventDefault();e.stopImmediatePropagation();choose(target,'',{x:e.clientX,y:e.clientY});},{capture:true});
+  listen(document,'nota:pagina',()=>{setMode(false);editor.close();position();});listen(window,'scroll',position,{capture:true,passive:true});listen(window,'resize',position);if(window.visualViewport){listen(visualViewport,'resize',position);listen(visualViewport,'scroll',position);}
+  const resize=new ResizeObserver(position);resize.observe(document.querySelector('main')||document.body);resize.observe(editor);
+  listen(document,'keydown',e=>{if(mode&&e.key==='Enter'&&focusTargets.has(e.target)){e.preventDefault();choose(e.target);return;}if(e.key==='Escape'&&(mode||editor.open)){e.preventDefault();setMode(false);editor.close();modeButton.focus();}});
+  listen(editor.querySelector('form'),'submit',e=>{e.preventDefault();save();});
+  function save(){if(!input.value.trim()){input.setCustomValidity('Escribe el comentario.');input.reportValidity();return;}input.setCustomValidity('');if(!input.reportValidity())return;pending.text=input.value.trim();
+   if(!editing){const note=pending;if(!note.target.id){let id;do{id='nota-revision-bloque-'+(++serial);}while(document.getElementById(id));addedIDs.add(note.target);note.target.id=id;}note.marker=make('button','');note.marker.type='button';note.marker.className='revision-marca';layer.append(note.marker);notes.push(note);listen(note.marker,'click',()=>open(note));}
+   render();editor.close();pending=null;editing=null;modeButton.focus({preventScroll:true});
+  }
+  listen(editor.querySelector('[data-revision-guardar]'),'click',save);listen(input,'input',()=>input.setCustomValidity(''));listen(input,'keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='Enter'){e.preventDefault();save();}});listen(editor.querySelector('[data-revision-cancelar]'),'click',()=>{editor.close();modeButton.focus({preventScroll:true});});listen(panel.querySelector('[data-revision-cerrar]'),'click',()=>panel.close());
+  const instance={get comments(){return notes.map(({text,quote,page,reference,x,y})=>({text,quote,page,reference,x,y}));},destroy(){setMode(false);abort.abort();rowsAbort.abort();resize.disconnect();editor.close();panel.close();bar.remove();layer.remove();addedIDs.forEach(n=>n.removeAttribute('id'));el.append(editor,panel);status.textContent=originalStatus;prompt.textContent=originalPrompt;list.replaceChildren();instances.delete(el);}};instances.set(el,instance);return instance;
+ });}window.NotaRevision={init,get:el=>instances.get(el)};init();
 })();
 
 </script>
