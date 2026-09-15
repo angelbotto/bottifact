@@ -116,3 +116,5 @@ en [analitica-verificacion.md](analitica-verificacion.md), con 54 recetas y capt
 
 La recuperación de notas manuscritas, cards delineadas y attention map está documentada en
 [gesto-verificacion.md](gesto-verificacion.md).
+
+Ampliación editorial (65 recetas): [tooltip, lápiz y composiciones](editorial-verificacion.md).

@@ -1,0 +1,31 @@
+{
+  "method": "Clics y movimiento nativos de Orca; navegación preparada por DOM. Reducción mediante evento MQL explícito. No audición manual.",
+  "checks": [
+    {
+      "entrada": {
+        "animations": 80,
+        "plays": 1,
+        "voices": 1
+      }
+    },
+    {
+      "salida": true
+    },
+    {
+      "reduce_MQL_explicito": {
+        "animations": 0,
+        "disabled": true,
+        "voices": 0
+      }
+    },
+    {
+      "apagado": true
+    },
+    {
+      "tooltip_puntero_nativo": {
+        "hidden": false,
+        "text": "Investigar125 horas · 58,9623 % de 212 horas.Entrevistas y revisión de fuentes durante cuatro semanas ficticias."
+      }
+    }
+  ]
+}

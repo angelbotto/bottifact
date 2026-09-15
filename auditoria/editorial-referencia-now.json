@@ -1,0 +1,303 @@
+{
+  "footer": {
+    "after": "none",
+    "background": "none",
+    "before": "none",
+    "border": "0px solid lab(89.549 2.159 5.23597)",
+    "cls": "min-h-64 w-full overflow-hidden pb-[calc(4rem+env(safe-area-inset-bottom,0px))] sm:pb-0 sticky bottom-0 z-0",
+    "color": "lab(89.549 2.159 5.23597)",
+    "font": "",
+    "fontSize": "15.5px",
+    "gap": "normal",
+    "lineHeight": "23.25px",
+    "padding": "0px",
+    "rect": {
+      "h": 314.421875,
+      "w": 1440
+    },
+    "tag": "FOOTER"
+  },
+  "lists": [
+    {
+      "html": "<ol aria-label=\"defining now\" class=\"flex flex-col gap-2\"><li class=\"mr-auto w-fit max-w-md rounded-2xl rounded-bl-xs bg-gray-900/60 px-4 py-3 text-sm text-gray-300\" style=\"filter: blur(0px); opacity: 1; transform: translateY(0px);\">what has your attention right now?</li><li class=\"ml-auto w-fit max-w-md rounded-2xl rounded-br-xs bg-gray-700/60 px-4 py-3 text-sm text-gray-200\" style=\"filter: blur(0px); opacity: 1; transform: translateY(0px);\">right now right now?</li><li class=\"mr-auto w-fit max-w-md rounded-2xl rounded-bl-xs bg-gray-900/60 px-4 py-3 text-sm text-gray-300\" style=\"filter: blur(0px); opacity: 1; transform: translateY(0px);\">let's say these days</li><li class=\"ml-auto w-fit max-w-md rounded-2xl rounded-br-xs bg-gray-700/60 px-4 py-3 text-sm text-gray-200\" style=\"filter: blur(0px); opacity: 1; transform: translateY(0px);\">much better</li></ol>",
+      "item": {
+        "after": "none",
+        "background": "none",
+        "before": "none",
+        "border": "0px solid lab(79.6832 2.91914 7.00948)",
+        "cls": "mr-auto w-fit max-w-md rounded-2xl rounded-bl-xs bg-gray-900/60 px-4 py-3 text-sm text-gray-300",
+        "color": "lab(79.6832 2.91914 7.00948)",
+        "font": "",
+        "fontSize": "13.7px",
+        "gap": "normal",
+        "lineHeight": "19.5714px",
+        "padding": "12px 16px",
+        "rect": {
+          "h": 43.5625,
+          "w": 250.875
+        },
+        "tag": "LI"
+      },
+      "label": "defining now",
+      "style": {
+        "after": "none",
+        "background": "none",
+        "before": "none",
+        "border": "0px solid lab(89.549 2.159 5.23597)",
+        "cls": "flex flex-col gap-2",
+        "color": "lab(89.549 2.159 5.23597)",
+        "font": "",
+        "fontSize": "15.5px",
+        "gap": "8px",
+        "lineHeight": "23.25px",
+        "padding": "0px",
+        "rect": {
+          "h": 198.25,
+          "w": 528
+        },
+        "tag": "OL"
+      }
+    },
+    {
+      "html": "<ul class=\"flex flex-col gap-6\"><li class=\"flex flex-col gap-2\"><h3 class=\"text-xl text-gray-300\"><a class=\"active:brightness-75 underline\" rel=\"noopener noreferrer\" target=\"_blank\" href=\"https://www.cmrg.me\">cmrg.me</a></h3><p>you are looking at it. after years of rewriting this website, the talk has finally given me a deadline i cannot move. much of its argument comes from what i built and learned here, so this version needs to be finished and released before i can call the slides done</p></li><li class=\"flex flex-col gap-2\"><h3 class=\"text-xl text-gray-300\"><span aria-hidden=\"true\" class=\"font-mono tracking-tighter text-gray-500 blur-sm brightness-150 contrast-150\">redacted</span><span class=\"sr-only\">an upcoming talk</span></h3><p>an upcoming talk for a conference here in Brazil. every change to the site either gives me another example or ruins a slide i thought was done, and every new idea for the slides gives Metope something else to support. the title stays hidden until i can change the site without reopening the slides</p></li><li class=\"flex flex-col gap-2\"><h3 class=\"text-xl text-gray-300\">Metope</h3><p>the talk only works if Metope does. it remains private for a few more weeks. once the talk and site are done, i need a little time to recover from both and finish the structure i have in mind before releasing it. until then, its first serious test is powering that talk at a conference with more than 2,000 people. almost no pressure at all</p></li></ul>",
+      "item": {
+        "after": "none",
+        "background": "none",
+        "before": "none",
+        "border": "0px solid lab(89.549 2.159 5.23597)",
+        "cls": "flex flex-col gap-2",
+        "color": "lab(89.549 2.159 5.23597)",
+        "font": "",
+        "fontSize": "15.5px",
+        "gap": "8px",
+        "lineHeight": "23.25px",
+        "padding": "0px",
+        "rect": {
+          "h": 135.421875,
+          "w": 528
+        },
+        "tag": "LI"
+      },
+      "label": null,
+      "style": {
+        "after": "none",
+        "background": "none",
+        "before": "none",
+        "border": "0px solid lab(89.549 2.159 5.23597)",
+        "cls": "flex flex-col gap-6",
+        "color": "lab(89.549 2.159 5.23597)",
+        "font": "",
+        "fontSize": "15.5px",
+        "gap": "24px",
+        "lineHeight": "23.25px",
+        "padding": "0px",
+        "rect": {
+          "h": 479.28125,
+          "w": 528
+        },
+        "tag": "UL"
+      }
+    },
+    {
+      "html": "<ol aria-label=\"github contributions from aug 20 through sep 14, followed by sep 15 still running\" class=\"relative grid grid-cols-7\"><li class=\"grid aspect-square\"><span aria-label=\"2 contributions on aug 20\" class=\"block size-full cursor-help\" role=\"img\" style=\"background:color-mix(in srgb, var(--color-green-500) 20%, transparent);filter:drop-shadow(0 0 1.6px color-mix(in srgb, var(--color-green-500) 5%, transparent)) saturate(0.35)\" tabindex=\"-1\"></span></li><li class=\"grid aspect-square\"><span aria-label=\"2 contributions on aug 21\" class=\"block size-full cursor-help\" role=\"img\" style=\"background:color-mix(in srgb, var(--color-green-500) 20%, transparent);filter:drop-shadow(0 0 1.6px color-mix(in srgb, var(--color-green-500) 5%, transparent)) saturate(0.35)\" tabindex=\"-1\"></span></li><li class=\"grid aspect-square\"><span aria-label=\"1 contribution on aug 22\" class=\"block size-full cursor-help\" role=\"img\" style=\"background:color-mix(in srgb, var(--color-green-500) 15.000000000000002%, transparent);filter:drop-shadow(0 0 0.8px color-mix(in srgb, var(--color-green-500) 2.5%, transparent)) saturate(0.3)\" tabindex=\"-1\"></span></li><li class=\"grid aspect-square\"><span aria-label=\"1 contribution on aug 23\" class=\"block size-full cursor-help\" role=\"img\" style=\"background:color-mix(in srgb, var(--color-green-500) 15.000000000000002%, transparent);filter:drop-shadow(0 0 0.8px color-mix(in srgb, var(--color-green-500) 2.5%, transparent)) saturate(0.3)\" tabindex=\"-1\"></span></li><li cla",
+      "item": {
+        "after": "none",
+        "background": "none",
+        "before": "none",
+        "border": "0px solid lab(89.549 2.159 5.23597)",
+        "cls": "grid aspect-square",
+        "color": "lab(89.549 2.159 5.23597)",
+        "font": "",
+        "fontSize": "15.5px",
+        "gap": "normal",
+        "lineHeight": "23.25px",
+        "padding": "0px",
+        "rect": {
+          "h": 85.015625,
+          "w": 85.015625
+        },
+        "tag": "LI"
+      },
+      "label": "github contributions from aug 20 through sep 14, followed by sep 15 still running",
+      "style": {
+        "after": "none",
+        "background": "none",
+        "before": "none",
+        "border": "0px solid lab(89.549 2.159 5.23597)",
+        "cls": "relative grid grid-cols-7",
+        "color": "lab(89.549 2.159 5.23597)",
+        "font": "",
+        "fontSize": "15.5px",
+        "gap": "normal",
+        "lineHeight": "23.25px",
+        "padding": "0px",
+        "rect": {
+          "h": 340.125,
+          "w": 595.1875
+        },
+        "tag": "OL"
+      }
+    },
+    {
+      "html": "<ul aria-label=\"things moving slowly\" class=\"flex flex-col gap-0\"><li class=\"flex items-start gap-1 text-gray-600\"><span aria-hidden=\"true\" class=\"shrink-0 font-mono text-base/6\">[-]</span><span class=\"text-sm/6\"><span class=\"sr-only\">in progress<!-- -->: </span>watch every Wong Kar-wai movie</span></li><li class=\"flex items-start gap-1 text-gray-600\"><span aria-hidden=\"true\" class=\"shrink-0 font-mono text-base/6\">[-]</span><span class=\"text-sm/6\"><span class=\"sr-only\">in progress<!-- -->: </span>have a full conversation in Mandarin without translating first</span></li><li class=\"flex items-start gap-1 text-gray-600\"><span aria-hidden=\"true\" class=\"shrink-0 font-mono text-base/6\">[ ]</span><span class=\"text-sm/6\"><span class=\"sr-only\">not started<!-- -->: </span>make and print a photo book documenting a place i care about</span></li></ul>",
+      "item": {
+        "after": "none",
+        "background": "none",
+        "before": "none",
+        "border": "0px solid lab(41.9789 2.99999 7.07102)",
+        "cls": "flex items-start gap-1 text-gray-600",
+        "color": "lab(41.9789 2.99999 7.07102)",
+        "font": "",
+        "fontSize": "15.5px",
+        "gap": "4px",
+        "lineHeight": "23.25px",
+        "padding": "0px",
+        "rect": {
+          "h": 24,
+          "w": 528
+        },
+        "tag": "LI"
+      },
+      "label": "things moving slowly",
+      "style": {
+        "after": "none",
+        "background": "none",
+        "before": "none",
+        "border": "0px solid lab(89.549 2.159 5.23597)",
+        "cls": "flex flex-col gap-0",
+        "color": "lab(89.549 2.159 5.23597)",
+        "font": "",
+        "fontSize": "15.5px",
+        "gap": "0px",
+        "lineHeight": "23.25px",
+        "padding": "0px",
+        "rect": {
+          "h": 72,
+          "w": 528
+        },
+        "tag": "UL"
+      }
+    },
+    {
+      "html": "<ol class=\"grid w-full lg:grid-cols-3 lg:gap-2\"><li class=\"relative z-(--track-z) grid min-w-0 lg:z-auto\" style=\"--track-z: 6;\"><a class=\"active:brightness-75 group -mx-2 flex min-w-0 items-center gap-3 rounded-xs py-4 pr-1 pl-3 duration-150 [--focus-outline-color:var(--color-gray-500)] hover:-translate-y-px hover:border-gray-700 active:translate-y-px lg:-m-2 lg:h-32 lg:w-full lg:gap-4 lg:py-2 lg:pl-2 min-h-30 pt-2\" rel=\"noopener noreferrer\" target=\"_blank\" href=\"https://open.spotify.com/track/1WOwGVtrVWtV3WW7X4TZoB\"><span class=\"group/album-art relative flex size-20 shrink-0 items-center justify-center sm:size-24\"><img alt=\"\" aria-hidden=\"true\" crossorigin=\"anonymous\" fetchpriority=\"low\" loading=\"lazy\" width=\"96\" height=\"96\" decoding=\"async\" data-nimg=\"1\" class=\"pointer-events-none absolute inset-0 z-0 size-full rounded-xs object-cover opacity-(--glow-opacity) blur-lg brightness-75 saturate-125 transition-opacity duration-300 lg:opacity-0 lg:group-hover:opacity-50\" src=\"/_next/image?url=https%3A%2F%2Fi.scdn.co%2Fimage%2Fab67616d00001e02c528802c308a1e0e4d9945dd&amp;w=192&amp;q=90\" style=\"color: transparent; --glow-opacity: 0.5;\"><span class=\"relative z-1 size-full origin-center transition-transform duration-200 ease-out lg:group-hover:scale-[1.02]\"><span aria-hidden=\"true\" class=\"skeleton skeleton-block absolute inset-0 z-1 size-full rounded-xs transition-opacity duration-150 group-has-data-paper-shader/album-art:animate-none group-has-data-paper-shader/album-art:opacity-0 gr",
+      "item": {
+        "after": "none",
+        "background": "none",
+        "before": "none",
+        "border": "0px solid lab(89.549 2.159 5.23597)",
+        "cls": "relative z-(--track-z) grid min-w-0 lg:z-auto",
+        "color": "lab(89.549 2.159 5.23597)",
+        "font": "",
+        "fontSize": "15.5px",
+        "gap": "normal",
+        "lineHeight": "23.25px",
+        "padding": "0px",
+        "rect": {
+          "h": 112,
+          "w": 330.65625
+        },
+        "tag": "LI"
+      },
+      "label": null,
+      "style": {
+        "after": "none",
+        "background": "none",
+        "before": "none",
+        "border": "0px solid lab(89.549 2.159 5.23597)",
+        "cls": "grid w-full lg:grid-cols-3 lg:gap-2",
+        "color": "lab(89.549 2.159 5.23597)",
+        "font": "",
+        "fontSize": "15.5px",
+        "gap": "8px",
+        "lineHeight": "23.25px",
+        "padding": "0px",
+        "rect": {
+          "h": 232,
+          "w": 1008
+        },
+        "tag": "OL"
+      }
+    },
+    {
+      "html": "<ul aria-label=\"things completed and not in progress\" class=\"flex flex-col gap-0\"><li class=\"flex items-start gap-1 text-orange-500\"><span aria-hidden=\"true\" class=\"shrink-0 font-mono text-base/6\">[x]</span><span class=\"text-sm/6 line-through decoration-current\"><span class=\"sr-only\">complete<!-- -->: </span>spend months building a framework from scratch</span></li><li class=\"flex items-start gap-1 text-orange-500\"><span aria-hidden=\"true\" class=\"shrink-0 font-mono text-base/6\">[x]</span><span class=\"text-sm/6 line-through decoration-current\"><span class=\"sr-only\">complete<!-- -->: </span>turn a joke into a real project</span></li><li class=\"flex items-start gap-1 text-gray-600\"><span aria-hidden=\"true\" class=\"shrink-0 font-mono text-base/6\">[ ]</span><span class=\"text-sm/6\"><span class=\"sr-only\">not started<!-- -->: </span>make something<!-- --> <a class=\"active:brightness-75 underline\" rel=\"noopener noreferrer\" target=\"_blank\" href=\"https://www.workingtheorys.com/p/make-something-heavy\">heavy</a></span></li><li class=\"flex items-start gap-1 text-gray-600\"><span aria-hidden=\"true\" class=\"shrink-0 font-mono text-base/6\">[ ]</span><span class=\"text-sm/6\"><span class=\"sr-only\">not started<!-- -->: </span>play one song on piano from beginning to end</span></li><li class=\"flex items-start gap-1 text-gray-600\"><span aria-hidden=\"true\" class=\"shrink-0 font-mono text-base/6\">[ ]</span><span class=\"text-sm/6\"><span class=\"sr-only\">not started<!-- -->: </span>build something hardware ",
+      "item": {
+        "after": "none",
+        "background": "none",
+        "before": "none",
+        "border": "0px solid lab(63.4033 47.3534 52.5525)",
+        "cls": "flex items-start gap-1 text-orange-500",
+        "color": "lab(63.4033 47.3534 52.5525)",
+        "font": "",
+        "fontSize": "15.5px",
+        "gap": "4px",
+        "lineHeight": "23.25px",
+        "padding": "0px",
+        "rect": {
+          "h": 24,
+          "w": 528
+        },
+        "tag": "LI"
+      },
+      "label": "things completed and not in progress",
+      "style": {
+        "after": "none",
+        "background": "none",
+        "before": "none",
+        "border": "0px solid lab(89.549 2.159 5.23597)",
+        "cls": "flex flex-col gap-0",
+        "color": "lab(89.549 2.159 5.23597)",
+        "font": "",
+        "fontSize": "15.5px",
+        "gap": "0px",
+        "lineHeight": "23.25px",
+        "padding": "0px",
+        "rect": {
+          "h": 120,
+          "w": 528
+        },
+        "tag": "UL"
+      }
+    }
+  ],
+  "nav": {
+    "after": "none",
+    "background": "none",
+    "before": "none",
+    "border": "0px solid lab(89.549 2.159 5.23597)",
+    "cls": "flex w-full items-center justify-between",
+    "color": "lab(89.549 2.159 5.23597)",
+    "font": "",
+    "fontSize": "15.5px",
+    "gap": "normal",
+    "lineHeight": "23.25px",
+    "padding": "0px",
+    "rect": {
+      "h": 32,
+      "w": 1024
+    },
+    "tag": "NAV"
+  },
+  "navLink": {
+    "after": "none",
+    "background": "none",
+    "before": "none",
+    "border": "0px none lab(94.0731 2.15632 5.23418)",
+    "cls": "transform-origin-center relative inline-flex shrink-0 transform-gpu items-center justify-center overflow-hidden text-sm font-medium select-none [--focus-outline-color:var(--button-outline-color,var(--button-border-color,var(--button-bg-color)))] backface-hidden corner-squircle focus-outline-default motion-safe:data-[pressed]:will-change-transform transition-[transform,box-shadow,background-color,color,outline-color] duration-150 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[pending]:cursor-not-allowed data-[pending]:opacity-100 border-none bg-transparent text-(--button-text-color,var(--color-gray-400)) data-hovered:text-(--button-text-color-hover,var(--color-gray-200)) data-pending:hover:text-(--button-text-color-hover,var(--color-gray-200)) data-pressed:scale-[0.975] rounded-lg px-3 [--button-outline-color:var(--color-gray-500)] [--button-text-color-hover:var(--color-gray-200)] [--button-text-color:var(--color-gray-400)] h-12 pr-0 pl-1.5 sm:h-8 sm:pl-3",
+    "color": "lab(94.0731 2.15632 5.23418)",
+    "font": "",
+    "fontSize": "13.7px",
+    "gap": "normal",
+    "lineHeight": "19.5714px",
+    "padding": "0px 0px 0px 12px",
+    "rect": {
+      "h": 32,
+      "w": 39.140625
+    },
+    "tag": "A"
+  },
+  "url": "https://www.cmrg.me/now",
+  "viewport": [
+    1440,
+    960
+  ]
+}

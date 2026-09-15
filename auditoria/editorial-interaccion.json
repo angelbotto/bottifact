@@ -1,0 +1,33 @@
+{
+  "failed": 0,
+  "results": [
+    {
+      "name": "65 recetas, ocho piezas nuevas y navegación con nueve destinos",
+      "ok": true
+    },
+    {
+      "name": "tooltip muestra valor, proporción, total y contexto de la tabla",
+      "ok": true
+    },
+    {
+      "name": "Escape descarta tooltip sin reabrirlo en el mismo objetivo",
+      "ok": true
+    },
+    {
+      "name": "foco y permanencia sobre tooltip",
+      "ok": true
+    },
+    {
+      "name": "destroy retira tooltip y permite reiniciar sin duplicar",
+      "ok": true
+    },
+    {
+      "name": "borrador valida vacío y copia exactamente texto con contexto",
+      "ok": true
+    },
+    {
+      "name": "listas conservan voces y estados semánticos",
+      "ok": true
+    }
+  ]
+}

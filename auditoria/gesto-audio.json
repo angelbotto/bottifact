@@ -10,14 +10,14 @@
     {
       "trusted": true,
       "type": "mouse",
-      "x": 307,
-      "y": 356
+      "x": 338,
+      "y": 394
     },
     {
       "trusted": true,
       "type": "mouse",
       "x": 1054,
-      "y": 815.25
+      "y": 806.75
     },
     {
       "trusted": true,
@@ -28,32 +28,32 @@
     {
       "trusted": true,
       "type": "mouse",
-      "x": 307,
-      "y": 356
+      "x": 338,
+      "y": 394
     },
     {
       "trusted": true,
       "type": "mouse",
-      "x": 322,
-      "y": 356
+      "x": 353,
+      "y": 394
     },
     {
       "trusted": true,
       "type": "mouse",
-      "x": 637,
-      "y": 356
+      "x": 647,
+      "y": 394
     },
     {
       "trusted": true,
       "type": "mouse",
       "x": 593,
-      "y": 456.953125
+      "y": 463.953125
     },
     {
       "trusted": true,
       "type": "mouse",
       "x": 1054,
-      "y": 815.25
+      "y": 806.75
     }
   ],
   "plays": 3,

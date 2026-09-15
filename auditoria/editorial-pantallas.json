@@ -1,0 +1,5114 @@
+[
+  {
+    "width": 320,
+    "theme": "light",
+    "piece": "atencion",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": {
+      "bottom": 732,
+      "hidden": false,
+      "left": 83.78125,
+      "right": 312,
+      "top": 651.703125
+    }
+  },
+  {
+    "width": 320,
+    "theme": "light",
+    "piece": "cards-trazadas",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "light",
+    "piece": "estanteria",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "light",
+    "piece": "invitacion",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "light",
+    "piece": "lista-estados",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "light",
+    "piece": "lista-proyectos",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "light",
+    "piece": "conversacion",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "light",
+    "piece": "navegacion",
+    "cover": [],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "light",
+    "piece": "pie-editorial",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "light",
+    "piece": "marco",
+    "cover": [],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "piece": "atencion",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": {
+      "bottom": 732,
+      "hidden": false,
+      "left": 83.78125,
+      "right": 312,
+      "top": 651.703125
+    }
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "piece": "cards-trazadas",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "piece": "estanteria",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "piece": "invitacion",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "piece": "lista-estados",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "piece": "lista-proyectos",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "piece": "conversacion",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "piece": "navegacion",
+    "cover": [],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "piece": "pie-editorial",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "dark",
+    "piece": "marco",
+    "cover": [],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "sea",
+    "piece": "atencion",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": {
+      "bottom": 732,
+      "hidden": false,
+      "left": 83.78125,
+      "right": 312,
+      "top": 651.703125
+    }
+  },
+  {
+    "width": 320,
+    "theme": "sea",
+    "piece": "cards-trazadas",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "sea",
+    "piece": "estanteria",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "sea",
+    "piece": "invitacion",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "sea",
+    "piece": "lista-estados",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "sea",
+    "piece": "lista-proyectos",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "sea",
+    "piece": "conversacion",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "sea",
+    "piece": "navegacion",
+    "cover": [],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "sea",
+    "piece": "pie-editorial",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "sea",
+    "piece": "marco",
+    "cover": [],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "oliva",
+    "piece": "atencion",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": {
+      "bottom": 732,
+      "hidden": false,
+      "left": 83.78125,
+      "right": 312,
+      "top": 651.703125
+    }
+  },
+  {
+    "width": 320,
+    "theme": "oliva",
+    "piece": "cards-trazadas",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "oliva",
+    "piece": "estanteria",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "oliva",
+    "piece": "invitacion",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "oliva",
+    "piece": "lista-estados",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "oliva",
+    "piece": "lista-proyectos",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "oliva",
+    "piece": "conversacion",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "oliva",
+    "piece": "navegacion",
+    "cover": [],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "oliva",
+    "piece": "pie-editorial",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "oliva",
+    "piece": "marco",
+    "cover": [],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "arcilla",
+    "piece": "atencion",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": {
+      "bottom": 732,
+      "hidden": false,
+      "left": 83.78125,
+      "right": 312,
+      "top": 651.703125
+    }
+  },
+  {
+    "width": 320,
+    "theme": "arcilla",
+    "piece": "cards-trazadas",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "arcilla",
+    "piece": "estanteria",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "arcilla",
+    "piece": "invitacion",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "arcilla",
+    "piece": "lista-estados",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "arcilla",
+    "piece": "lista-proyectos",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "arcilla",
+    "piece": "conversacion",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "arcilla",
+    "piece": "navegacion",
+    "cover": [],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "arcilla",
+    "piece": "pie-editorial",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "arcilla",
+    "piece": "marco",
+    "cover": [],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "ciruela",
+    "piece": "atencion",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": {
+      "bottom": 732,
+      "hidden": false,
+      "left": 83.78125,
+      "right": 312,
+      "top": 651.703125
+    }
+  },
+  {
+    "width": 320,
+    "theme": "ciruela",
+    "piece": "cards-trazadas",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "ciruela",
+    "piece": "estanteria",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "ciruela",
+    "piece": "invitacion",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "ciruela",
+    "piece": "lista-estados",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "ciruela",
+    "piece": "lista-proyectos",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "ciruela",
+    "piece": "conversacion",
+    "cover": [],
+    "document": 320,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "ciruela",
+    "piece": "navegacion",
+    "cover": [],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "ciruela",
+    "piece": "pie-editorial",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 320,
+    "theme": "ciruela",
+    "piece": "marco",
+    "cover": [],
+    "document": 320,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 300
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 280
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "piece": "atencion",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": {
+      "bottom": 836,
+      "hidden": false,
+      "left": 153.78125,
+      "right": 382,
+      "top": 755.703125
+    }
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "piece": "cards-trazadas",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "piece": "estanteria",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "piece": "invitacion",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "piece": "lista-estados",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "piece": "lista-proyectos",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "piece": "conversacion",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "piece": "navegacion",
+    "cover": [],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "piece": "pie-editorial",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "piece": "marco",
+    "cover": [],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "piece": "atencion",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": {
+      "bottom": 836,
+      "hidden": false,
+      "left": 153.78125,
+      "right": 382,
+      "top": 755.703125
+    }
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "piece": "cards-trazadas",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "piece": "estanteria",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "piece": "invitacion",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "piece": "lista-estados",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "piece": "lista-proyectos",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "piece": "conversacion",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "piece": "navegacion",
+    "cover": [],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "piece": "pie-editorial",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "piece": "marco",
+    "cover": [],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "sea",
+    "piece": "atencion",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": {
+      "bottom": 836,
+      "hidden": false,
+      "left": 153.78125,
+      "right": 382,
+      "top": 755.703125
+    }
+  },
+  {
+    "width": 390,
+    "theme": "sea",
+    "piece": "cards-trazadas",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "sea",
+    "piece": "estanteria",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "sea",
+    "piece": "invitacion",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "sea",
+    "piece": "lista-estados",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "sea",
+    "piece": "lista-proyectos",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "sea",
+    "piece": "conversacion",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "sea",
+    "piece": "navegacion",
+    "cover": [],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "sea",
+    "piece": "pie-editorial",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "sea",
+    "piece": "marco",
+    "cover": [],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "oliva",
+    "piece": "atencion",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": {
+      "bottom": 836,
+      "hidden": false,
+      "left": 153.78125,
+      "right": 382,
+      "top": 755.703125
+    }
+  },
+  {
+    "width": 390,
+    "theme": "oliva",
+    "piece": "cards-trazadas",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "oliva",
+    "piece": "estanteria",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "oliva",
+    "piece": "invitacion",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "oliva",
+    "piece": "lista-estados",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "oliva",
+    "piece": "lista-proyectos",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "oliva",
+    "piece": "conversacion",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "oliva",
+    "piece": "navegacion",
+    "cover": [],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "oliva",
+    "piece": "pie-editorial",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "oliva",
+    "piece": "marco",
+    "cover": [],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "arcilla",
+    "piece": "atencion",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": {
+      "bottom": 836,
+      "hidden": false,
+      "left": 153.78125,
+      "right": 382,
+      "top": 755.703125
+    }
+  },
+  {
+    "width": 390,
+    "theme": "arcilla",
+    "piece": "cards-trazadas",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "arcilla",
+    "piece": "estanteria",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "arcilla",
+    "piece": "invitacion",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "arcilla",
+    "piece": "lista-estados",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "arcilla",
+    "piece": "lista-proyectos",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "arcilla",
+    "piece": "conversacion",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "arcilla",
+    "piece": "navegacion",
+    "cover": [],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "arcilla",
+    "piece": "pie-editorial",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "arcilla",
+    "piece": "marco",
+    "cover": [],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "ciruela",
+    "piece": "atencion",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": {
+      "bottom": 836,
+      "hidden": false,
+      "left": 153.78125,
+      "right": 382,
+      "top": 755.703125
+    }
+  },
+  {
+    "width": 390,
+    "theme": "ciruela",
+    "piece": "cards-trazadas",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "ciruela",
+    "piece": "estanteria",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "ciruela",
+    "piece": "invitacion",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "ciruela",
+    "piece": "lista-estados",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "ciruela",
+    "piece": "lista-proyectos",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "ciruela",
+    "piece": "conversacion",
+    "cover": [],
+    "document": 390,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "ciruela",
+    "piece": "navegacion",
+    "cover": [],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "ciruela",
+    "piece": "pie-editorial",
+    "cover": [
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      },
+      {
+        "scroll": 118,
+        "width": 118
+      }
+    ],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      },
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 390,
+    "theme": "ciruela",
+    "piece": "marco",
+    "cover": [],
+    "document": 390,
+    "frames": [
+      {
+        "left": 20,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 370
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 733,
+      "width": 350
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "piece": "atencion",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": {
+      "bottom": 952,
+      "hidden": false,
+      "left": 451.609375,
+      "right": 679.828125,
+      "top": 871.703125
+    }
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "piece": "cards-trazadas",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "piece": "estanteria",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "piece": "invitacion",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "piece": "lista-estados",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "piece": "lista-proyectos",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "piece": "conversacion",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "piece": "navegacion",
+    "cover": [],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "piece": "pie-editorial",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "piece": "marco",
+    "cover": [],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "piece": "atencion",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": {
+      "bottom": 917.84375,
+      "hidden": false,
+      "left": 451.609375,
+      "right": 679.828125,
+      "top": 837.546875
+    }
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "piece": "cards-trazadas",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "piece": "estanteria",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "piece": "invitacion",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "piece": "lista-estados",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "piece": "lista-proyectos",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "piece": "conversacion",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "piece": "navegacion",
+    "cover": [],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "piece": "pie-editorial",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "piece": "marco",
+    "cover": [],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "sea",
+    "piece": "atencion",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": {
+      "bottom": 917.84375,
+      "hidden": false,
+      "left": 451.609375,
+      "right": 679.828125,
+      "top": 837.546875
+    }
+  },
+  {
+    "width": 1440,
+    "theme": "sea",
+    "piece": "cards-trazadas",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "sea",
+    "piece": "estanteria",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "sea",
+    "piece": "invitacion",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "sea",
+    "piece": "lista-estados",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "sea",
+    "piece": "lista-proyectos",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "sea",
+    "piece": "conversacion",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "sea",
+    "piece": "navegacion",
+    "cover": [],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "sea",
+    "piece": "pie-editorial",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "sea",
+    "piece": "marco",
+    "cover": [],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "oliva",
+    "piece": "atencion",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": {
+      "bottom": 917.84375,
+      "hidden": false,
+      "left": 451.609375,
+      "right": 679.828125,
+      "top": 837.546875
+    }
+  },
+  {
+    "width": 1440,
+    "theme": "oliva",
+    "piece": "cards-trazadas",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "oliva",
+    "piece": "estanteria",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "oliva",
+    "piece": "invitacion",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "oliva",
+    "piece": "lista-estados",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "oliva",
+    "piece": "lista-proyectos",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "oliva",
+    "piece": "conversacion",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "oliva",
+    "piece": "navegacion",
+    "cover": [],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "oliva",
+    "piece": "pie-editorial",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "oliva",
+    "piece": "marco",
+    "cover": [],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "arcilla",
+    "piece": "atencion",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": {
+      "bottom": 917.84375,
+      "hidden": false,
+      "left": 451.609375,
+      "right": 679.828125,
+      "top": 837.546875
+    }
+  },
+  {
+    "width": 1440,
+    "theme": "arcilla",
+    "piece": "cards-trazadas",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "arcilla",
+    "piece": "estanteria",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "arcilla",
+    "piece": "invitacion",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "arcilla",
+    "piece": "lista-estados",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "arcilla",
+    "piece": "lista-proyectos",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "arcilla",
+    "piece": "conversacion",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "arcilla",
+    "piece": "navegacion",
+    "cover": [],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "arcilla",
+    "piece": "pie-editorial",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "arcilla",
+    "piece": "marco",
+    "cover": [],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "ciruela",
+    "piece": "atencion",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": {
+      "bottom": 917.84375,
+      "hidden": false,
+      "left": 451.609375,
+      "right": 679.828125,
+      "top": 837.546875
+    }
+  },
+  {
+    "width": 1440,
+    "theme": "ciruela",
+    "piece": "cards-trazadas",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "ciruela",
+    "piece": "estanteria",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "ciruela",
+    "piece": "invitacion",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "ciruela",
+    "piece": "lista-estados",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "ciruela",
+    "piece": "lista-proyectos",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "ciruela",
+    "piece": "conversacion",
+    "cover": [],
+    "document": 1440,
+    "frames": [],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "ciruela",
+    "piece": "navegacion",
+    "cover": [],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "ciruela",
+    "piece": "pie-editorial",
+    "cover": [
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      },
+      {
+        "scroll": 142,
+        "width": 142
+      }
+    ],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      },
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  },
+  {
+    "width": 1440,
+    "theme": "ciruela",
+    "piece": "marco",
+    "cover": [],
+    "document": 1440,
+    "frames": [
+      {
+        "left": 276,
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 15%, rgb(0, 0, 0) 85%, rgba(0, 0, 0, 0))",
+        "right": 1268
+      }
+    ],
+    "nav": {
+      "focus": 0,
+      "name": "Nueve capítulos, desplazables",
+      "scroll": 858,
+      "width": 858
+    },
+    "tip": null
+  }
+]

@@ -1,0 +1,135 @@
+{
+  "ancestors": [
+    {
+      "cls": "active:brightness-75 group h-32 min-w-0 rounded-xs duration-150 hover:-translate-y-px active:translate-y-px w-full",
+      "html": "<a class=\"active:brightness-75 group h-32 min-w-0 rounded-xs duration-150 hover:-translate-y-px active:translate-y-px w-full\" href=\"/blog/react-19-part-2-the-code\"><div class=\"flex h-full min-w-0 flex-col justify-between gap-2 p-4\"><div class=\"flex min-w-0 flex-col gap-2\"><h3 class=\"line-clamp-1 min-w-0 text-lg text-gray-300 transition-colors duration-150 group-hover:text-gray-150\" title=\"React 19 - Part 2: The Code; How it works under the hood!\" vt-name=\"react-19-part-2-the-code-how-it-works-under-the-hood\" vt-update=\"none\" vt-share=\"title-morph\">React 19 - Part 2: The Code; How it works under the hood!</h3><span class=\"-mt-1 line-clamp-2 text-sm text-gray-600\">a tour through the build step, module references, two-server runtime, and the small pile of code that made my React 19 framework actually work</span></div><span class=\"flex min-w-0 flex-row items-center justify-between gap-2 font-mono\"><span class=\"flex shrink-0 items-center gap-2 text-xs\"><time class=\"text-gray-600\" datetime=\"2024-04-08T00:00:00.000Z\">apr 8, 2024</time></span><span class=\"line-clamp-1 flex w-full items-center justify-end gap-2 mask-l-from-50% mask-l-to-100% text-nowrap\"><span class=\"font-mono text-xs text-gray-600/60\">React<!-- -->, </span><span class=\"font-mono text-xs text-gray-600/60\">React Server Components<!-- -->, </span><span class=\"font-mono text-xs text-gray-600/60\">Server Actions<!-- -->, </span><span class=\"font-mono text-xs text-gray-600/60\">frameworks</span></span></span></div></a>",
+      "tag": "A"
+    },
+    {
+      "cls": "relative -m-2 grid min-w-0",
+      "html": "<div class=\"relative -m-2 grid min-w-0\"><a class=\"active:brightness-75 group h-32 min-w-0 rounded-xs duration-150 hover:-translate-y-px active:translate-y-px w-full\" href=\"/blog/react-19-part-2-the-code\"><div class=\"flex h-full min-w-0 flex-col justify-between gap-2 p-4\"><div class=\"flex min-w-0 flex-col gap-2\"><h3 class=\"line-clamp-1 min-w-0 text-lg text-gray-300 transition-colors duration-150 group-hover:text-gray-150\" title=\"React 19 - Part 2: The Code; How it works under the hood!\" vt-name=\"react-19-part-2-the-code-how-it-works-under-the-hood\" vt-update=\"none\" vt-share=\"title-morph\">React 19 - Part 2: The Code; How it works under the hood!</h3><span class=\"-mt-1 line-clamp-2 text-sm text-gray-600\">a tour through the build step, module references, two-server runtime, and the small pile of code that made my React 19 framework actually work</span></div><span class=\"flex min-w-0 flex-row items-center justify-between gap-2 font-mono\"><span class=\"flex shrink-0 items-center gap-2 text-xs\"><time class=\"text-gray-600\" datetime=\"2024-04-08T00:00:00.000Z\">apr 8, 2024</time></span><span class=\"line-clamp-1 flex w-full items-center justify-end gap-2 mask-l-from-50% mask-l-to-100% text-nowrap\"><span class=\"font-mono text-xs text-gray-600/60\">React<!-- -->, </span><span class=\"font-mono text-xs text-gray-600/60\">React Server Components<!-- -->, </span><span class=\"font-mono text-xs text-gray-600/60\">Server Actions<!-- -->, </span><span class=\"font-mono text-xs text-gray-600/60\">frameworks</span></span></span></div></a></div>",
+      "tag": "DIV"
+    },
+    {
+      "cls": "grid min-w-0",
+      "html": "<li class=\"grid min-w-0\"><div class=\"relative -m-2 grid min-w-0\"><a class=\"active:brightness-75 group h-32 min-w-0 rounded-xs duration-150 hover:-translate-y-px active:translate-y-px w-full\" href=\"/blog/react-19-part-2-the-code\"><div class=\"flex h-full min-w-0 flex-col justify-between gap-2 p-4\"><div class=\"flex min-w-0 flex-col gap-2\"><h3 class=\"line-clamp-1 min-w-0 text-lg text-gray-300 transition-colors duration-150 group-hover:text-gray-150\" title=\"React 19 - Part 2: The Code; How it works under the hood!\" vt-name=\"react-19-part-2-the-code-how-it-works-under-the-hood\" vt-update=\"none\" vt-share=\"title-morph\">React 19 - Part 2: The Code; How it works under the hood!</h3><span class=\"-mt-1 line-clamp-2 text-sm text-gray-600\">a tour through the build step, module references, two-server runtime, and the small pile of code that made my React 19 framework actually work</span></div><span class=\"flex min-w-0 flex-row items-center justify-between gap-2 font-mono\"><span class=\"flex shrink-0 items-center gap-2 text-xs\"><time class=\"text-gray-600\" datetime=\"2024-04-08T00:00:00.000Z\">apr 8, 2024</time></span><span class=\"line-clamp-1 flex w-full items-center justify-end gap-2 mask-l-from-50% mask-l-to-100% text-nowrap\"><span class=\"font-mono text-xs text-gray-600/60\">React<!-- -->, </span><span class=\"font-mono text-xs text-gray-600/60\">React Server Components<!-- -->, </span><span class=\"font-mono text-xs text-gray-600/60\">Server Actions<!-- -->, </span><span class=\"font-mono text-xs text-gray-600/60\">frameworks</span></span></span></div></a></div></li>",
+      "tag": "LI"
+    },
+    {
+      "cls": "grid gap-2 lg:grid-cols-3",
+      "html": "<ul class=\"grid gap-2 lg:grid-cols-3\"><li class=\"grid min-w-0\"><div class=\"relative -m-2 grid min-w-0\"><a class=\"active:brightness-75 group h-32 min-w-0 rounded-xs duration-150 hover:-translate-y-px active:translate-y-px w-full\" href=\"/blog/programar-e-uma-merda\"><div class=\"flex h-full min-w-0 flex-col justify-between gap-2 p-4\"><div class=\"flex min-w-0 flex-col gap-2\"><h3 class=\"line-clamp-1 min-w-0 text-lg text-gray-300 transition-colors duration-150 group-hover:text-gray-150\" lang=\"pt-BR\" title=\"programar é uma merda\" vt-name=\"programar-e-uma-merda\" vt-update=\"none\" vt-share=\"title-morph\">programar é uma merda</h3><span class=\"-mt-1 line-clamp-2 text-sm text-gray-600\" lang=\"pt-BR\">uma tradução brasileira do ensaio de Peter Welch sobre o caos, a exaustão e o absurdo de trabalhar com programação</span></div><span class=\"flex min-w-0 flex-row items-center justify-between gap-2 font-mono\"><span class=\"flex shrink-0 items-center gap-2 text-xs\"><span aria-label=\"brazilian portuguese translation\" class=\"relative -mt-0.5 inline-flex size-5 shrink-0 items-center justify-center self-center\" role=\"img\" tabindex=\"-1\"><svg viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" class=\"size-5\"><rect fill=\"#459a45\" height=\"24\" rx=\"4\" ry=\"4\" width=\"30\" x=\"1\" y=\"4\"></rect><path d=\"M27,4H5c-2.209,0-4,1.791-4,4V24c0,2.209,1.791,4,4,4H27c2.209,0,4-1.791,4-4V8c0-2.209-1.791-4-4-4Zm3,20c0,1.654-1.346,3-3,3H5c-1.654,0-3-1.346-3-3V8c0-1.654,1.346-3,3-3H27c1.654,0,3,1.346,3,3V24Z\" opacity=\".15\"></path><path d=\"M3.472,16l12.528,8,12.528-8-12.528-8L3.472,16Z\" fill=\"#fedf00\"></path><circle cx=\"16\" cy=\"16\" fill=\"#0a2172\" r=\"5\"></circle><path d=\"M14,14.5c-.997,0-1.958,.149-2.873,.409-.078,.35-.126,.71-.127,1.083,.944-.315,1.951-.493,2.999-.493,2.524,0,4.816,.996,6.519,2.608,.152-.326,.276-.666,.356-1.026-1.844-1.604-4.245-2.583-6.875-2.583Z\" fill=\"#fff\"></path><path d=\"M27,5H5c-1.657,0-3,1.343-3,3v1c0-1.657,1.343-3,3-3H27c1.657,0,3,1.343,3,3v-1c0-1.657-1.343-3-3-3Z\" fill=\"#fff\" opacity=\".2\"></path></svg></span><span aria-hidden=\"true\" class=\"font-fancy text-gray-600\">/</span><time class=\"text-gray-600\" datetime=\"2026-08-11T00:00:00.000Z\">aug 11, 2026</time></span><span ",
+      "tag": "UL"
+    },
+    {
+      "cls": "relative -mx-1 w-[calc(100%+0.5rem)] p-2 sm:-mx-2 sm:w-[calc(100%+1rem)] lg:mx-[calc((100%-min(calc(100vw-3rem),64rem))/2)] lg:w-[min(calc(100vw-3rem),64rem)] lg:max-w-none",
+      "html": "<div class=\"relative -mx-1 w-[calc(100%+0.5rem)] p-2 sm:-mx-2 sm:w-[calc(100%+1rem)] lg:mx-[calc((100%-min(calc(100vw-3rem),64rem))/2)] lg:w-[min(calc(100vw-3rem),64rem)] lg:max-w-none\"><span aria-hidden=\"true\" class=\"absolute inset-x-(--faded-border-mobile-horizontal-inset) top-0 h-px border-t border-dashed border-gray-700/80 mask-[linear-gradient(90deg,transparent,black_15%,black_85%,transparent)] sm:inset-x-(--faded-border-horizontal-inset)\" data-print-decoration=\"\" style=\"--faded-border-horizontal-inset:-4rem;--faded-border-mobile-horizontal-inset:max(-4rem, calc(50% - 50dvw))\"></span><span aria-hidden=\"true\" class=\"absolute inset-x-(--faded-border-mobile-horizontal-inset) bottom-0 h-px border-t border-dashed border-gray-700/80 mask-[linear-gradient(90deg,transparent,black_15%,black_85%,transparent)] sm:inset-x-(--faded-border-horizontal-inset)\" data-print-decoration=\"\" style=\"--faded-border-horizontal-inset:-4rem;--faded-border-mobile-horizontal-inset:max(-4rem, calc(50% - 50dvw))\"></span><span aria-hidden=\"true\" class=\"absolute inset-y-(--faded-border-mobile-vertical-inset) left-0 w-px border-l border-dashed border-gray-700/80 mask-(--faded-border-mobile-vertical-mask) sm:inset-y-(--faded-border-vertical-inset) sm:mask-(--faded-border-vertical-mask)\" data-print-decoration=\"\" style=\"--faded-border-mobile-vertical-inset:-1rem;--faded-border-mobile-vertical-mask:linear-gradient(transparent, black 1rem, black calc(100% - 1rem), transparent);--faded-border-vertical-inset:-4rem;--faded-border-vertical-mask:linear-gradient(transparent, black 35%, black 65%, transparent)\"></span><span aria-hidden=\"true\" class=\"absolute inset-y-(--faded-border-mobile-vertical-inset) right-0 w-px border-l border-dashed border-gray-700/80 mask-(--faded-border-mobile-vertical-mask) sm:inset-y-(--faded-border-vertical-inset) sm:mask-(--faded-border-vertical-mask)\" data-print-decoration=\"\" style=\"--faded-border-mobile-vertical-inset:-1rem;--faded-border-mobile-vertical-mask:linear-gradient(transparent, black 1rem, black calc(100% - 1rem), transparent);--faded-border-vertical-inset:-4rem;--faded-border-vertical-mask:linear-gradient(transparent, black 35%, black 65%, transparent)\"></span>",
+      "tag": "DIV"
+    }
+  ],
+  "borders": [
+    {
+      "cls": "absolute inset-x-(--faded-border-mobile-horizontal-inset) top-0 h-px border-t border-dashed border-gray-700/80 mask-[linear-gradient(90deg,transparent,black_15%,black_85%,transparent)] sm:inset-x-(--faded-border-horizontal-inset)",
+      "html": "<span aria-hidden=\"true\" class=\"absolute inset-x-(--faded-border-mobile-horizontal-inset) top-0 h-px border-t border-dashed border-gray-700/80 mask-[linear-gradient(90deg,transparent,black_15%,black_85%,transparent)] sm:inset-x-(--faded-border-horizontal-inset)\" data-print-decoration=\"\" style=\"--faded-border-horizontal-inset:-4rem;--faded-border-mobile-horizontal-inset:max(-4rem, calc(50% - 50dvw))\"></span>",
+      "style": "--faded-border-horizontal-inset:-4rem;--faded-border-mobile-horizontal-inset:max(-4rem, calc(50% - 50dvw))",
+      "tag": "SPAN"
+    },
+    {
+      "cls": "absolute inset-x-(--faded-border-mobile-horizontal-inset) bottom-0 h-px border-t border-dashed border-gray-700/80 mask-[linear-gradient(90deg,transparent,black_15%,black_85%,transparent)] sm:inset-x-(--faded-border-horizontal-inset)",
+      "html": "<span aria-hidden=\"true\" class=\"absolute inset-x-(--faded-border-mobile-horizontal-inset) bottom-0 h-px border-t border-dashed border-gray-700/80 mask-[linear-gradient(90deg,transparent,black_15%,black_85%,transparent)] sm:inset-x-(--faded-border-horizontal-inset)\" data-print-decoration=\"\" style=\"--faded-border-horizontal-inset:-4rem;--faded-border-mobile-horizontal-inset:max(-4rem, calc(50% - 50dvw))\"></span>",
+      "style": "--faded-border-horizontal-inset:-4rem;--faded-border-mobile-horizontal-inset:max(-4rem, calc(50% - 50dvw))",
+      "tag": "SPAN"
+    },
+    {
+      "cls": "absolute inset-y-(--faded-border-mobile-vertical-inset) left-0 w-px border-l border-dashed border-gray-700/80 mask-(--faded-border-mobile-vertical-mask) sm:inset-y-(--faded-border-vertical-inset) sm:mask-(--faded-border-vertical-mask)",
+      "html": "<span aria-hidden=\"true\" class=\"absolute inset-y-(--faded-border-mobile-vertical-inset) left-0 w-px border-l border-dashed border-gray-700/80 mask-(--faded-border-mobile-vertical-mask) sm:inset-y-(--faded-border-vertical-inset) sm:mask-(--faded-border-vertical-mask)\" data-print-decoration=\"\" style=\"--faded-border-mobile-vertical-inset:-1rem;--faded-border-mobile-vertical-mask:linear-gradient(transparent, black 1rem, black calc(100% - 1rem), transparent);--faded-border-vertical-inset:-4rem;--faded-border-vertical-mask:linear-gradient(transparent, black 35%, black 65%, transparent)\"></span>",
+      "style": "--faded-border-mobile-vertical-inset:-1rem;--faded-border-mobile-vertical-mask:linear-gradient(transparent, black 1rem, black calc(100% - 1rem), transparent);--faded-border-vertical-inset:-4rem;--faded-border-vertical-mask:linear-gradient(transparent, black 35%, black 65%, transparent)",
+      "tag": "SPAN"
+    },
+    {
+      "cls": "absolute inset-y-(--faded-border-mobile-vertical-inset) right-0 w-px border-l border-dashed border-gray-700/80 mask-(--faded-border-mobile-vertical-mask) sm:inset-y-(--faded-border-vertical-inset) sm:mask-(--faded-border-vertical-mask)",
+      "html": "<span aria-hidden=\"true\" class=\"absolute inset-y-(--faded-border-mobile-vertical-inset) right-0 w-px border-l border-dashed border-gray-700/80 mask-(--faded-border-mobile-vertical-mask) sm:inset-y-(--faded-border-vertical-inset) sm:mask-(--faded-border-vertical-mask)\" data-print-decoration=\"\" style=\"--faded-border-mobile-vertical-inset:-1rem;--faded-border-mobile-vertical-mask:linear-gradient(transparent, black 1rem, black calc(100% - 1rem), transparent);--faded-border-vertical-inset:-4rem;--faded-border-vertical-mask:linear-gradient(transparent, black 35%, black 65%, transparent)\"></span>",
+      "style": "--faded-border-mobile-vertical-inset:-1rem;--faded-border-mobile-vertical-mask:linear-gradient(transparent, black 1rem, black calc(100% - 1rem), transparent);--faded-border-vertical-inset:-4rem;--faded-border-vertical-mask:linear-gradient(transparent, black 35%, black 65%, transparent)",
+      "tag": "SPAN"
+    },
+    {
+      "cls": "absolute inset-x-(--faded-border-mobile-horizontal-inset) top-0 h-px border-t border-dashed border-gray-700/80 mask-[linear-gradient(90deg,transparent,black_15%,black_85%,transparent)] sm:inset-x-(--faded-border-horizontal-inset)",
+      "html": "<span aria-hidden=\"true\" class=\"absolute inset-x-(--faded-border-mobile-horizontal-inset) top-0 h-px border-t border-dashed border-gray-700/80 mask-[linear-gradient(90deg,transparent,black_15%,black_85%,transparent)] sm:inset-x-(--faded-border-horizontal-inset)\" data-print-decoration=\"\" style=\"--faded-border-horizontal-inset:-4rem;--faded-border-mobile-horizontal-inset:max(-4rem, calc(50% - 50dvw))\"></span>",
+      "style": "--faded-border-horizontal-inset:-4rem;--faded-border-mobile-horizontal-inset:max(-4rem, calc(50% - 50dvw))",
+      "tag": "SPAN"
+    },
+    {
+      "cls": "absolute inset-x-(--faded-border-mobile-horizontal-inset) bottom-0 h-px border-t border-dashed border-gray-700/80 mask-[linear-gradient(90deg,transparent,black_15%,black_85%,transparent)] sm:inset-x-(--faded-border-horizontal-inset)",
+      "html": "<span aria-hidden=\"true\" class=\"absolute inset-x-(--faded-border-mobile-horizontal-inset) bottom-0 h-px border-t border-dashed border-gray-700/80 mask-[linear-gradient(90deg,transparent,black_15%,black_85%,transparent)] sm:inset-x-(--faded-border-horizontal-inset)\" data-print-decoration=\"\" style=\"--faded-border-horizontal-inset:-4rem;--faded-border-mobile-horizontal-inset:max(-4rem, calc(50% - 50dvw))\"></span>",
+      "style": "--faded-border-horizontal-inset:-4rem;--faded-border-mobile-horizontal-inset:max(-4rem, calc(50% - 50dvw))",
+      "tag": "SPAN"
+    },
+    {
+      "cls": "absolute inset-y-(--faded-border-mobile-vertical-inset) left-0 w-px border-l border-dashed border-gray-700/80 mask-(--faded-border-mobile-vertical-mask) sm:inset-y-(--faded-border-vertical-inset) sm:mask-(--faded-border-vertical-mask)",
+      "html": "<span aria-hidden=\"true\" class=\"absolute inset-y-(--faded-border-mobile-vertical-inset) left-0 w-px border-l border-dashed border-gray-700/80 mask-(--faded-border-mobile-vertical-mask) sm:inset-y-(--faded-border-vertical-inset) sm:mask-(--faded-border-vertical-mask)\" data-print-decoration=\"\" style=\"--faded-border-mobile-vertical-inset:-1rem;--faded-border-mobile-vertical-mask:linear-gradient(transparent, black 1rem, black calc(100% - 1rem), transparent);--faded-border-vertical-inset:-4rem;--faded-border-vertical-mask:linear-gradient(transparent, black 35%, black 65%, transparent)\"></span>",
+      "style": "--faded-border-mobile-vertical-inset:-1rem;--faded-border-mobile-vertical-mask:linear-gradient(transparent, black 1rem, black calc(100% - 1rem), transparent);--faded-border-vertical-inset:-4rem;--faded-border-vertical-mask:linear-gradient(transparent, black 35%, black 65%, transparent)",
+      "tag": "SPAN"
+    },
+    {
+      "cls": "absolute inset-y-(--faded-border-mobile-vertical-inset) right-0 w-px border-l border-dashed border-gray-700/80 mask-(--faded-border-mobile-vertical-mask) sm:inset-y-(--faded-border-vertical-inset) sm:mask-(--faded-border-vertical-mask)",
+      "html": "<span aria-hidden=\"true\" class=\"absolute inset-y-(--faded-border-mobile-vertical-inset) right-0 w-px border-l border-dashed border-gray-700/80 mask-(--faded-border-mobile-vertical-mask) sm:inset-y-(--faded-border-vertical-inset) sm:mask-(--faded-border-vertical-mask)\" data-print-decoration=\"\" style=\"--faded-border-mobile-vertical-inset:-1rem;--faded-border-mobile-vertical-mask:linear-gradient(transparent, black 1rem, black calc(100% - 1rem), transparent);--faded-border-vertical-inset:-4rem;--faded-border-vertical-mask:linear-gradient(transparent, black 35%, black 65%, transparent)\"></span>",
+      "style": "--faded-border-mobile-vertical-inset:-1rem;--faded-border-mobile-vertical-mask:linear-gradient(transparent, black 1rem, black calc(100% - 1rem), transparent);--faded-border-vertical-inset:-4rem;--faded-border-vertical-mask:linear-gradient(transparent, black 35%, black 65%, transparent)",
+      "tag": "SPAN"
+    },
+    {
+      "cls": "absolute inset-x-(--faded-border-mobile-horizontal-inset) top-0 h-px border-t border-dashed border-gray-700/80 mask-[linear-gradient(90deg,transparent,black_15%,black_85%,transparent)] sm:inset-x-(--faded-border-horizontal-inset)",
+      "html": "<span aria-hidden=\"true\" class=\"absolute inset-x-(--faded-border-mobile-horizontal-inset) top-0 h-px border-t border-dashed border-gray-700/80 mask-[linear-gradient(90deg,transparent,black_15%,black_85%,transparent)] sm:inset-x-(--faded-border-horizontal-inset)\" data-print-decoration=\"\" style=\"--faded-border-horizontal-inset:-4rem;--faded-border-mobile-horizontal-inset:max(-4rem, calc(50% - 50dvw))\"></span>",
+      "style": "--faded-border-horizontal-inset:-4rem;--faded-border-mobile-horizontal-inset:max(-4rem, calc(50% - 50dvw))",
+      "tag": "SPAN"
+    },
+    {
+      "cls": "absolute inset-x-(--faded-border-mobile-horizontal-inset) bottom-0 h-px border-t border-dashed border-gray-700/80 mask-[linear-gradient(90deg,transparent,black_15%,black_85%,transparent)] sm:inset-x-(--faded-border-horizontal-inset)",
+      "html": "<span aria-hidden=\"true\" class=\"absolute inset-x-(--faded-border-mobile-horizontal-inset) bottom-0 h-px border-t border-dashed border-gray-700/80 mask-[linear-gradient(90deg,transparent,black_15%,black_85%,transparent)] sm:inset-x-(--faded-border-horizontal-inset)\" data-print-decoration=\"\" style=\"--faded-border-horizontal-inset:-4rem;--faded-border-mobile-horizontal-inset:max(-4rem, calc(50% - 50dvw))\"></span>",
+      "style": "--faded-border-horizontal-inset:-4rem;--faded-border-mobile-horizontal-inset:max(-4rem, calc(50% - 50dvw))",
+      "tag": "SPAN"
+    },
+    {
+      "cls": "absolute inset-y-(--faded-border-mobile-vertical-inset) left-0 w-px border-l border-dashed border-gray-700/80 mask-(--faded-border-mobile-vertical-mask) sm:inset-y-(--faded-border-vertical-inset) sm:mask-(--faded-border-vertical-mask)",
+      "html": "<span aria-hidden=\"true\" class=\"absolute inset-y-(--faded-border-mobile-vertical-inset) left-0 w-px border-l border-dashed border-gray-700/80 mask-(--faded-border-mobile-vertical-mask) sm:inset-y-(--faded-border-vertical-inset) sm:mask-(--faded-border-vertical-mask)\" data-print-decoration=\"\" style=\"--faded-border-mobile-vertical-inset:-1rem;--faded-border-mobile-vertical-mask:linear-gradient(transparent, black 1rem, black calc(100% - 1rem), transparent);--faded-border-vertical-inset:-4rem;--faded-border-vertical-mask:linear-gradient(transparent, black 35%, black 65%, transparent)\"></span>",
+      "style": "--faded-border-mobile-vertical-inset:-1rem;--faded-border-mobile-vertical-mask:linear-gradient(transparent, black 1rem, black calc(100% - 1rem), transparent);--faded-border-vertical-inset:-4rem;--faded-border-vertical-mask:linear-gradient(transparent, black 35%, black 65%, transparent)",
+      "tag": "SPAN"
+    },
+    {
+      "cls": "absolute inset-y-(--faded-border-mobile-vertical-inset) right-0 w-px border-l border-dashed border-gray-700/80 mask-(--faded-border-mobile-vertical-mask) sm:inset-y-(--faded-border-vertical-inset) sm:mask-(--faded-border-vertical-mask)",
+      "html": "<span aria-hidden=\"true\" class=\"absolute inset-y-(--faded-border-mobile-vertical-inset) right-0 w-px border-l border-dashed border-gray-700/80 mask-(--faded-border-mobile-vertical-mask) sm:inset-y-(--faded-border-vertical-inset) sm:mask-(--faded-border-vertical-mask)\" data-print-decoration=\"\" style=\"--faded-border-mobile-vertical-inset:-1rem;--faded-border-mobile-vertical-mask:linear-gradient(transparent, black 1rem, black calc(100% - 1rem), transparent);--faded-border-vertical-inset:-4rem;--faded-border-vertical-mask:linear-gradient(transparent, black 35%, black 65%, transparent)\"></span>",
+      "style": "--faded-border-mobile-vertical-inset:-1rem;--faded-border-mobile-vertical-mask:linear-gradient(transparent, black 1rem, black calc(100% - 1rem), transparent);--faded-border-vertical-inset:-4rem;--faded-border-vertical-mask:linear-gradient(transparent, black 35%, black 65%, transparent)",
+      "tag": "SPAN"
+    },
+    {
+      "cls": "flex w-full flex-wrap justify-between gap-4 border-t border-dashed border-gray-800 pt-6 text-gray-500 xl:border-none xl:pt-0",
+      "html": "<div class=\"flex w-full flex-wrap justify-between gap-4 border-t border-dashed border-gray-800 pt-6 text-gray-500 xl:border-none xl:pt-0\"><!--$--><p class=\"text-sm text-gray-600\"><svg fill=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" class=\"-mt-0.5 inline-flex size-4\"><path d=\"M20 20H4v-2h16v2ZM4 18H2V6h2v12Zm18 0h-2V6h2v12ZM8 16H6v-2h2v2Zm2-2H8v-2h2v2Zm-2-2H6v-2h2v2Zm12-6H4V4h16v2Z\"></path></svg> <!-- -->latest commit<!-- --> <time datetime=\"2026-09-13T02:32:55Z\" title=\"sep 13, 2026, 2:32 AM GMT+0\">2 days ago</time>:<!-- --> <span class=\"font-mono text-green-500\"><span aria-hidden=\"true\">+<!-- -->1</span><span class=\"sr-only\">1<!-- --> <!-- -->addition</span></span> <span class=\"font-mono text-red-500\"><span aria-hidden=\"true\">-<!-- -->1</span><span class=\"sr-only\">1<!-- --> <!-- -->deletion</span></span></p><!--/$--><small class=\"flex items-c",
+      "style": null,
+      "tag": "DIV"
+    }
+  ],
+  "links": [
+    {
+      "href": "/#top",
+      "t": "cmrg"
+    },
+    {
+      "href": "/blog",
+      "t": "wrote"
+    },
+    {
+      "href": "/work",
+      "t": "built"
+    },
+    {
+      "href": "/shelf",
+      "t": "kept"
+    },
+    {
+      "href": "/about",
+      "t": "am"
+    },
+    {
+      "href": "/now",
+      "t": "now"
+    }
+  ]
+}
