@@ -288,7 +288,7 @@ HTTPS de Tailscale Serve que confirme el host, no un enlace localhost para la en
 
 ### Edición completa para explorar y componer
 
-Abre [biblioteca.html](biblioteca.html) para 44 recetas en nueve capítulos, con HTML,
+Abre [biblioteca.html](biblioteca.html) para 54 recetas en nueve capítulos, con HTML,
 dependencias, criterio y límites junto al ejemplo. Incluye archivos de publicaciones,
 autoría, lecturas relacionadas, anotaciones numeradas, revisiones, criterios y riesgos.
 [editorial.js](editorial.js) ofrece búsqueda/filtro local y configuración de lista/rejilla,
@@ -307,3 +307,25 @@ La edición completa incorpora [revision.js](revision.js): pines flotantes en el
 El visor permite pegar HTML declarativo local y alternar Móvil/Escritorio; los embeds remotos siguen fuera de CSP. Escritura admite `data-al-ver` para una primera animación al entrar en pantalla; el sonido sólo sale de botones explícitos. [codigo.js](codigo.js) colorea HTML, CSS, JavaScript, TypeScript, JSON, Python, SQL, Shell y salida de terminal creando nodos de texto seguros y conserva exactamente el contenido copiable. Grano de papel usa SVG de ruido incrustado, no una rejilla de puntos.
 
 [controles.js](controles.js) coloca los menús de tabla y visor dentro del viewport; se incluye antes de interacciones.js. [audio.js](audio.js), antes de interacciones.js, centraliza el audio en Apariencia: empieza apagado, requiere gesto real y no suena al desplazar. «Ver escritura animada» lleva al trazo en Edición. El visor ofrece dispositivo, proporción, rotación y escala visual; conserva píxeles CSS para las consultas de contenedor. La trama se aplica también a la barra de capítulos.
+
+
+### Analítica financiera y logística
+
+Hay diez recetas adicionales en [componentes.md](componentes.md#calendario-de-actividad):
+calendario, torta/donut, áreas apiladas, caja y bigotes, velas OHLC, mapas de rutas y volumen,
+columnas geográficas, arcos logísticos y capacidad de almacén. Usa [analitica.js](analitica.js)
+para las siete vistas SVG; [escena.js](escena.js) incorpora las tres nuevas vistas 3D.
+Los mapas requieren [geografia.js](geografia.js) antes del módulo de dibujo: Colombia de
+Natural Earth incrustada, sin tiles ni conexión externa. No atribuyas los datos ficticios de
+estas recetas a Tikin o Liftit. Los límites territoriales generalizados no sirven para navegar.
+
+Elige según la pregunta: calendario para frecuencia diaria; torta para pocas partes de un total;
+áreas para total y mezcla temporal; caja para dispersión; velas para apertura/extremos/cierre;
+mapas cuando importe la ubicación. Los bigotes documentados son mínimo/máximo, no 1,5 IQR.
+Los controles permiten consultar un registro sin depender de hover. `NotaAnalitica.init(raíz)`
+y `NotaAnalitica.get(elemento).destroy()` permiten insertar y retirar componentes; las cifras
+vienen de la tabla y las fechas son ISO UTC. No son conectores a Superset ni a GitHub.
+
+Comprueba los laterales también **al inicio** de la página: la cabecera aún no está pegada al
+borde y tiene otra altura. La lectura guiada mide su borde inferior; no reemplaces ese cálculo
+por `top:100px`. La regla separa porcentaje y cursor, y colorea las marcas ya recorridas.

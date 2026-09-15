@@ -1955,3 +1955,369 @@ ERROR  ejemplo rechazado      1 recurso externo</code></pre></div></section></di
 **Cuándo:** documentación con HTML, CSS, JavaScript, TypeScript, JSON, Python, SQL, shell o salidas de terminal. Usa `data-lenguaje` para declararlo. Incluye codigo.js y pestanas.js para esta muestra. El módulo usa nodos de texto; no ejecuta ni modifica los ejemplos.
 
 **Cuándo no / límite:** resaltador ligero, no compilador ni parser completo; no valida código, no carga gramáticas y no colorea todos los lenguajes posibles. Conserva spans editoriales .subra/.tenue y el texto de copia. Los números, cadenas, palabras clave y comentarios siguen tokens de cada tema; el terminal mantiene sus tonos propios.
+
+## Calendario de actividad
+
+<!-- nota:ejemplo calendario -->
+```html
+<figure class="ancho" id="analitica-calendario" data-analitica="calendario" data-unidad="conciliaciones">
+  <details><summary>Consultar los 109 días registrados</summary>
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Datos de Calendario de actividad, desplazables">
+    <table><caption>Calendario de actividad</caption>
+      <thead><tr><th scope="col">Fecha UTC</th><th scope="col">Conciliaciones</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">2026-05-25</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-05-26</th><td data-valor="7">7</td></tr>
+        <tr><th scope="row">2026-05-27</th><td data-valor="14">14</td></tr>
+        <tr><th scope="row">2026-05-28</th><td data-valor="21">21</td></tr>
+        <tr><th scope="row">2026-05-29</th><td data-valor="3">3</td></tr>
+        <tr><th scope="row">2026-05-30</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-05-31</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-06-01</th><td data-valor="2">2</td></tr>
+        <tr><th scope="row">2026-06-02</th><td data-valor="9">9</td></tr>
+        <tr><th scope="row">2026-06-03</th><td data-valor="16">16</td></tr>
+        <tr><th scope="row">2026-06-04</th><td data-valor="23">23</td></tr>
+        <tr><th scope="row">2026-06-05</th><td data-valor="5">5</td></tr>
+        <tr><th scope="row">2026-06-06</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-06-07</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-06-08</th><td data-valor="4">4</td></tr>
+        <tr><th scope="row">2026-06-09</th><td data-valor="11">11</td></tr>
+        <tr><th scope="row">2026-06-10</th><td data-valor="18">18</td></tr>
+        <tr><th scope="row">2026-06-11</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-06-12</th><td data-valor="7">7</td></tr>
+        <tr><th scope="row">2026-06-13</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-06-14</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-06-15</th><td data-valor="6">6</td></tr>
+        <tr><th scope="row">2026-06-16</th><td data-valor="13">13</td></tr>
+        <tr><th scope="row">2026-06-17</th><td data-valor="20">20</td></tr>
+        <tr><th scope="row">2026-06-18</th><td data-valor="2">2</td></tr>
+        <tr><th scope="row">2026-06-19</th><td data-valor="9">9</td></tr>
+        <tr><th scope="row">2026-06-20</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-06-21</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-06-22</th><td data-valor="8">8</td></tr>
+        <tr><th scope="row">2026-06-23</th><td data-valor="15">15</td></tr>
+        <tr><th scope="row">2026-06-24</th><td data-valor="22">22</td></tr>
+        <tr><th scope="row">2026-06-27</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-06-28</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-06-29</th><td data-valor="10">10</td></tr>
+        <tr><th scope="row">2026-06-30</th><td data-valor="17">17</td></tr>
+        <tr><th scope="row">2026-07-01</th><td data-valor="24">24</td></tr>
+        <tr><th scope="row">2026-07-02</th><td data-valor="6">6</td></tr>
+        <tr><th scope="row">2026-07-03</th><td data-valor="13">13</td></tr>
+        <tr><th scope="row">2026-07-04</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-07-05</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-07-06</th><td data-valor="12">12</td></tr>
+        <tr><th scope="row">2026-07-07</th><td data-valor="19">19</td></tr>
+        <tr><th scope="row">2026-07-08</th><td data-valor="1">1</td></tr>
+        <tr><th scope="row">2026-07-09</th><td data-valor="8">8</td></tr>
+        <tr><th scope="row">2026-07-10</th><td data-valor="15">15</td></tr>
+        <tr><th scope="row">2026-07-11</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-07-12</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-07-13</th><td data-valor="14">14</td></tr>
+        <tr><th scope="row">2026-07-14</th><td data-valor="21">21</td></tr>
+        <tr><th scope="row">2026-07-15</th><td data-valor="3">3</td></tr>
+        <tr><th scope="row">2026-07-16</th><td data-valor="10">10</td></tr>
+        <tr><th scope="row">2026-07-17</th><td data-valor="17">17</td></tr>
+        <tr><th scope="row">2026-07-18</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-07-19</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-07-20</th><td data-valor="16">16</td></tr>
+        <tr><th scope="row">2026-07-21</th><td data-valor="23">23</td></tr>
+        <tr><th scope="row">2026-07-22</th><td data-valor="5">5</td></tr>
+        <tr><th scope="row">2026-07-23</th><td data-valor="12">12</td></tr>
+        <tr><th scope="row">2026-07-24</th><td data-valor="19">19</td></tr>
+        <tr><th scope="row">2026-07-25</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-07-26</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-07-27</th><td data-valor="18">18</td></tr>
+        <tr><th scope="row">2026-07-28</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-07-29</th><td data-valor="7">7</td></tr>
+        <tr><th scope="row">2026-07-30</th><td data-valor="14">14</td></tr>
+        <tr><th scope="row">2026-07-31</th><td data-valor="21">21</td></tr>
+        <tr><th scope="row">2026-08-01</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-02</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-03</th><td data-valor="20">20</td></tr>
+        <tr><th scope="row">2026-08-04</th><td data-valor="2">2</td></tr>
+        <tr><th scope="row">2026-08-05</th><td data-valor="9">9</td></tr>
+        <tr><th scope="row">2026-08-06</th><td data-valor="16">16</td></tr>
+        <tr><th scope="row">2026-08-07</th><td data-valor="23">23</td></tr>
+        <tr><th scope="row">2026-08-08</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-09</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-10</th><td data-valor="22">22</td></tr>
+        <tr><th scope="row">2026-08-11</th><td data-valor="4">4</td></tr>
+        <tr><th scope="row">2026-08-12</th><td data-valor="11">11</td></tr>
+        <tr><th scope="row">2026-08-14</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-15</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-16</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-17</th><td data-valor="24">24</td></tr>
+        <tr><th scope="row">2026-08-18</th><td data-valor="6">6</td></tr>
+        <tr><th scope="row">2026-08-19</th><td data-valor="13">13</td></tr>
+        <tr><th scope="row">2026-08-20</th><td data-valor="20">20</td></tr>
+        <tr><th scope="row">2026-08-21</th><td data-valor="2">2</td></tr>
+        <tr><th scope="row">2026-08-22</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-23</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-24</th><td data-valor="1">1</td></tr>
+        <tr><th scope="row">2026-08-25</th><td data-valor="8">8</td></tr>
+        <tr><th scope="row">2026-08-26</th><td data-valor="15">15</td></tr>
+        <tr><th scope="row">2026-08-27</th><td data-valor="22">22</td></tr>
+        <tr><th scope="row">2026-08-28</th><td data-valor="4">4</td></tr>
+        <tr><th scope="row">2026-08-29</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-30</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-31</th><td data-valor="3">3</td></tr>
+        <tr><th scope="row">2026-09-01</th><td data-valor="10">10</td></tr>
+        <tr><th scope="row">2026-09-02</th><td data-valor="17">17</td></tr>
+        <tr><th scope="row">2026-09-03</th><td data-valor="24">24</td></tr>
+        <tr><th scope="row">2026-09-04</th><td data-valor="6">6</td></tr>
+        <tr><th scope="row">2026-09-05</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-09-06</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-09-07</th><td data-valor="5">5</td></tr>
+        <tr><th scope="row">2026-09-08</th><td data-valor="12">12</td></tr>
+        <tr><th scope="row">2026-09-09</th><td data-valor="19">19</td></tr>
+        <tr><th scope="row">2026-09-10</th><td data-valor="1">1</td></tr>
+        <tr><th scope="row">2026-09-11</th><td data-valor="8">8</td></tr>
+        <tr><th scope="row">2026-09-12</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-09-13</th><td data-valor="0">0</td></tr>
+      </tbody>
+    </table>
+  </div>
+  </details>
+  <figcaption>Datos ficticios, 25 may–13 sep 2026. Intensidad diaria, cero distinto de ausencia.</figcaption>
+</figure>
+```
+
+**Cuándo:** ver continuidad, pausas o carga diaria al estilo del calendario de GitHub. No para comparar importes exactos entre meses de distinta duración.
+
+**Límite:** Incluye analitica.js. De 1 a 366 registros, máximo 366 días consecutivos de rango; fechas ISO UTC únicas, conteos enteros no negativos. No infiere cero donde falta una fila: dibuja una diagonal. Semana comienza el lunes. No consulta GitHub ni un repositorio; umbrales calculados del máximo observado, no percentiles. Selector accesible para el detalle de cada día.
+
+## Torta y donut de composición
+
+<!-- nota:ejemplo torta -->
+```html
+<figure class="ancho" id="analitica-torta" data-analitica="torta" data-unidad="millones COP">
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Datos de Torta y donut de composición, desplazables">
+    <table><caption>Torta y donut de composición</caption>
+      <thead><tr><th scope="col">Destino</th><th scope="col">Millones COP</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Operación</th><td data-valor="48">48</td></tr>
+        <tr><th scope="row">Reserva</th><td data-valor="24">24</td></tr>
+        <tr><th scope="row">Tecnología</th><td data-valor="18">18</td></tr>
+        <tr><th scope="row">Comisiones</th><td data-valor="10">10</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Distribución ficticia de 100 millones COP. El botón cambia torta ↔ donut sin cambiar cifras.</figcaption>
+</figure>
+```
+
+**Cuándo:** explicar de qué se compone un total positivo con pocas partes. Para comparaciones cercanas o muchas categorías, usa barras.
+
+**Límite:** Incluye analitica.js. Entre 1 y 6 categorías únicas, no negativas; total mayor que cero. No admite negativos ni doble conteo; porcentaje calculado del total de filas, no de un denominador externo. Ceros permanecen en leyenda/tabla sin inventar un sector. Colores pueden repetirse desde la quinta categoría: nombres y cifras son la referencia.
+
+## Áreas apiladas de ingresos
+
+<!-- nota:ejemplo areas -->
+```html
+<figure class="ancho" id="analitica-areas" data-analitica="areas" data-unidad="millones COP">
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Datos de Áreas apiladas de ingresos, desplazables">
+    <table><caption>Áreas apiladas de ingresos</caption>
+      <thead><tr><th scope="col">Fecha UTC</th><th scope="col">Servicios</th><th scope="col">Suscripciones</th><th scope="col">Comisiones</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">2026-04-01</th><td data-valor="24">24</td><td data-valor="12">12</td><td data-valor="4">4</td></tr>
+        <tr><th scope="row">2026-05-01</th><td data-valor="28">28</td><td data-valor="16">16</td><td data-valor="6">6</td></tr>
+        <tr><th scope="row">2026-06-01</th><td data-valor="26">26</td><td data-valor="20">20</td><td data-valor="7">7</td></tr>
+        <tr><th scope="row">2026-07-01</th><td data-valor="35">35</td><td data-valor="24">24</td><td data-valor="9">9</td></tr>
+        <tr><th scope="row">2026-08-01</th><td data-valor="40">40</td><td data-valor="28">28</td><td data-valor="12">12</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Ingresos ficticios en millones COP; cada banda suma al total. No representan utilidades.</figcaption>
+</figure>
+```
+
+**Cuándo:** ver el total y su composición a lo largo del tiempo. Para comparar el crecimiento exacto de una banda intermedia, usa líneas o pequeños múltiples.
+
+**Límite:** Incluye analitica.js. Exactamente tres series aditivas en la misma unidad, 2–60 fechas ISO únicas, valores no negativos. Une observaciones por interpolación lineal; no agrega transacciones ni inventa días faltantes. Las fechas usan distancia real; no mezcla monedas. Un total constantemente cero usa dominio auxiliar 0–1 explícito.
+
+## Caja y bigotes de entrega
+
+<!-- nota:ejemplo caja -->
+```html
+<figure class="ancho" id="analitica-caja" data-analitica="caja" data-unidad="minutos">
+  <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Datos de Caja y bigotes de entrega, desplazables">
+    <table><caption>Caja y bigotes de entrega</caption>
+      <thead><tr><th scope="col">Zona</th><th scope="col">Mínimo</th><th scope="col">Q1</th><th scope="col">Mediana</th><th scope="col">Q3</th><th scope="col">Máximo</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Norte</th><td data-valor="20">20</td><td data-valor="32">32</td><td data-valor="40">40</td><td data-valor="55">55</td><td data-valor="90">90</td></tr>
+        <tr><th scope="row">Centro</th><td data-valor="15">15</td><td data-valor="25">25</td><td data-valor="32">32</td><td data-valor="45">45</td><td data-valor="72">72</td></tr>
+        <tr><th scope="row">Sur</th><td data-valor="25">25</td><td data-valor="42">42</td><td data-valor="55">55</td><td data-valor="68">68</td><td data-valor="110">110</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Resumen ficticio de tiempos de entrega. Bigotes = mínimo y máximo, no 1,5 IQR.</figcaption>
+</figure>
+```
+
+**Cuándo:** comparar dispersión y mediana por zona, sin dejar que el promedio esconda colas largas. Para conteos por intervalo, usa distribución.
+
+**Límite:** Incluye analitica.js. Recibe cinco estadísticas ordenadas por fila; no calcula cuartiles desde datos crudos ni identifica atípicos. Hasta 24 grupos. Misma unidad y método de cálculo; si mínimo = máximo, amplía el dominio un punto a cada lado para hacer visible el caso constante.
+
+## Velas financieras OHLC
+
+<!-- nota:ejemplo velas -->
+```html
+<figure class="ancho" id="analitica-velas" data-analitica="velas" data-unidad="índice base 100">
+  <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Datos de Velas financieras OHLC, desplazables">
+    <table><caption>Velas financieras OHLC</caption>
+      <thead><tr><th scope="col">Fecha UTC</th><th scope="col">Apertura</th><th scope="col">Máximo</th><th scope="col">Mínimo</th><th scope="col">Cierre</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">2026-09-07</th><td data-valor="100">100</td><td data-valor="112">112</td><td data-valor="96">96</td><td data-valor="108">108</td></tr>
+        <tr><th scope="row">2026-09-08</th><td data-valor="108">108</td><td data-valor="115">115</td><td data-valor="101">101</td><td data-valor="103">103</td></tr>
+        <tr><th scope="row">2026-09-09</th><td data-valor="103">103</td><td data-valor="111">111</td><td data-valor="99">99</td><td data-valor="109">109</td></tr>
+        <tr><th scope="row">2026-09-10</th><td data-valor="109">109</td><td data-valor="118">118</td><td data-valor="106">106</td><td data-valor="115">115</td></tr>
+        <tr><th scope="row">2026-09-11</th><td data-valor="115">115</td><td data-valor="119">119</td><td data-valor="108">108</td><td data-valor="111">111</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Serie sintética, no cotización de un activo. Hueca = sube o no cambia; rellena = baja.</figcaption>
+</figure>
+```
+
+**Cuándo:** mostrar apertura, extremos y cierre de un mismo período. No para saldos que no tengan apertura/cierre definidos ni para mezclar unidades.
+
+**Límite:** Incluye analitica.js. 1–60 fechas ISO únicas; mínimo ≤ apertura y cierre ≤ máximo. No calcula indicadores técnicos ni conecta mercados. Posiciones temporales reales; limita el número de observaciones para conservar cuerpos legibles. Si todo es constante, muestra un dominio auxiliar ±10 % o ±1 alrededor del valor.
+
+## Mapa de rutas y volumen
+
+<!-- nota:ejemplo mapa-rutas -->
+```html
+<figure class="ancho" id="analitica-mapa-rutas" data-analitica="rutas" data-unidad="viajes">
+  <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Datos de Mapa de rutas y volumen, desplazables">
+    <table><caption>Mapa de rutas y volumen</caption>
+      <thead><tr><th scope="col">Conexión</th><th scope="col">Lat. origen</th><th scope="col">Lon. origen</th><th scope="col">Lat. destino</th><th scope="col">Lon. destino</th><th scope="col">Viajes</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Bogotá → Medellín</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="6.244">6.244</td><td data-valor="-75.582">-75.582</td><td data-valor="80">80</td></tr>
+        <tr><th scope="row">Bogotá → Cali</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="3.452">3.452</td><td data-valor="-76.532">-76.532</td><td data-valor="50">50</td></tr>
+        <tr><th scope="row">Bogotá → Barranquilla</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="10.969">10.969</td><td data-valor="-74.781">-74.781</td><td data-valor="30">30</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Datos ficticios de logística; no son operaciones de Liftit. Ubicaciones urbanas aproximadas. Contorno: <a href="https://www.naturalearthdata.com/about/terms-of-use/">Natural Earth</a>, dominio público, escala 1:110m.</figcaption>
+</figure>
+```
+
+**Cuándo:** comparar corredores entre sedes y el volumen de viajes; el grosor comparte una escala lineal. No para orientar a un conductor ni estimar tiempo de viaje.
+
+**Límite:** Incluye geografia.js y analitica.js, en ese orden. Hasta 24 conexiones, cantidades no negativas; vista acotada a Colombia (lat. −5…14, lon. −80…−66). Proyección equirectangular; líneas curvas esquemáticas, no carreteras ni geodésicas. 0 viajes no dibuja una ruta. No obtiene datos, distancias ni rutas de un proveedor.
+
+## Mapa de volumen por sede
+
+<!-- nota:ejemplo mapa-burbujas -->
+```html
+<figure class="ancho" id="analitica-mapa-burbujas" data-analitica="burbujas" data-unidad="entregas">
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Datos de Mapa de volumen por sede, desplazables">
+    <table><caption>Mapa de volumen por sede</caption>
+      <thead><tr><th scope="col">Sede</th><th scope="col">Latitud</th><th scope="col">Longitud</th><th scope="col">Entregas</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Bogotá</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="240">240</td></tr>
+        <tr><th scope="row">Medellín</th><td data-valor="6.244">6.244</td><td data-valor="-75.582">-75.582</td><td data-valor="180">180</td></tr>
+        <tr><th scope="row">Cali</th><td data-valor="3.452">3.452</td><td data-valor="-76.532">-76.532</td><td data-valor="120">120</td></tr>
+        <tr><th scope="row">Barranquilla</th><td data-valor="10.969">10.969</td><td data-valor="-74.781">-74.781</td><td data-valor="60">60</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Datos ficticios de logística; no son operaciones de Liftit. Ubicaciones urbanas aproximadas. Contorno: <a href="https://www.naturalearthdata.com/about/terms-of-use/">Natural Earth</a>, dominio público, escala 1:110m.</figcaption>
+</figure>
+```
+
+**Cuándo:** comparar cantidades absolutas por ubicación. El área, no el radio, representa volumen. Para tasas sobre población, explicita denominadores antes de elegir este mapa.
+
+**Límite:** Incluye geografia.js y analitica.js. Hasta 24 puntos en la vista de Colombia, sin valores negativos. Radio = raíz de la proporción al máximo; cero tiene área cero. No agrupa puntos cercanos: si hay solapamiento, usa el selector y la tabla o un mapa más específico. No representa cobertura territorial ni una coropleta.
+
+## Columnas geográficas 3D
+
+<!-- nota:ejemplo columnas-mapa -->
+```html
+<figure class="ancho" id="analitica-columnas-mapa" data-escena="columnas" data-unidad="entregas">
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Datos de Columnas geográficas 3D, desplazables">
+    <table><caption>Columnas geográficas 3D</caption>
+      <thead><tr><th scope="col">Sede</th><th scope="col">Latitud</th><th scope="col">Longitud</th><th scope="col">Entregas</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Bogotá</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="240">240</td></tr>
+        <tr><th scope="row">Medellín</th><td data-valor="6.244">6.244</td><td data-valor="-75.582">-75.582</td><td data-valor="180">180</td></tr>
+        <tr><th scope="row">Cali</th><td data-valor="3.452">3.452</td><td data-valor="-76.532">-76.532</td><td data-valor="120">120</td></tr>
+        <tr><th scope="row">Barranquilla</th><td data-valor="10.969">10.969</td><td data-valor="-74.781">-74.781</td><td data-valor="60">60</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Datos ficticios de logística; no son operaciones de Liftit. Ubicaciones urbanas aproximadas. Contorno: <a href="https://www.naturalearthdata.com/about/terms-of-use/">Natural Earth</a>, dominio público, escala 1:110m.</figcaption>
+</figure>
+```
+
+**Cuándo:** explorar la relación entre ubicación y volumen desde distintos ángulos. Si sólo interesa un ranking, usa barras; la perspectiva dificulta comparar alturas cercanas.
+
+**Límite:** Incluye Three 0.160.1 una sola vez, geografia.js y escena.js. Hasta 12 ubicaciones en Colombia, cantidades no negativas; eje de altura común desde cero. Huella de columna constante, proyección equirectangular. No incluye elevación del terreno. Giro apagado inicialmente; cancela RAF fuera de pantalla y con movimiento reducido; destroy libera recursos. Tabla permanente.
+
+## Arcos logísticos 3D
+
+<!-- nota:ejemplo arcos-mapa -->
+```html
+<figure class="ancho" id="analitica-arcos-mapa" data-escena="arcos" data-unidad="viajes">
+  <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Datos de Arcos logísticos 3D, desplazables">
+    <table><caption>Arcos logísticos 3D</caption>
+      <thead><tr><th scope="col">Conexión</th><th scope="col">Lat. origen</th><th scope="col">Lon. origen</th><th scope="col">Lat. destino</th><th scope="col">Lon. destino</th><th scope="col">Viajes</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Bogotá → Medellín</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="6.244">6.244</td><td data-valor="-75.582">-75.582</td><td data-valor="80">80</td></tr>
+        <tr><th scope="row">Bogotá → Cali</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="3.452">3.452</td><td data-valor="-76.532">-76.532</td><td data-valor="50">50</td></tr>
+        <tr><th scope="row">Bogotá → Barranquilla</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="10.969">10.969</td><td data-valor="-74.781">-74.781</td><td data-valor="30">30</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Datos ficticios de logística; no son operaciones de Liftit. Ubicaciones urbanas aproximadas. Contorno: <a href="https://www.naturalearthdata.com/about/terms-of-use/">Natural Earth</a>, dominio público, escala 1:110m.</figcaption>
+</figure>
+```
+
+**Cuándo:** explicar conexiones de origen/destino que se cruzan en una vista plana; selecciona una para aislarla. No para rutas viales o tiempos estimados.
+
+**Límite:** Incluye Three 0.160.1, geografia.js y escena.js. Hasta 12 rutas en Colombia. La sección del tubo es proporcional a viajes; altura del arco constante, sólo separación visual, no altitud ni duración. Cero genera sección cero. No anima vehículos ni sugiere seguimiento en vivo. Comparte pausa, reducción de movimiento y destroy de NotaEscena; lista y tabla dan el detalle exacto.
+
+## Capacidad de almacén 3D
+
+<!-- nota:ejemplo almacen -->
+```html
+<figure class="ancho" id="analitica-almacen" data-escena="almacen" data-unidad="posiciones">
+  <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Datos de Capacidad de almacén 3D, desplazables">
+    <table><caption>Capacidad de almacén 3D</caption>
+      <thead><tr><th scope="col">Ubicación</th><th scope="col">X (m)</th><th scope="col">Z (m)</th><th scope="col">Ocupados</th><th scope="col">Capacidad</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">A1</th><td data-valor="0">0</td><td data-valor="0">0</td><td data-valor="8">8</td><td data-valor="12">12</td></tr>
+        <tr><th scope="row">A2</th><td data-valor="4">4</td><td data-valor="0">0</td><td data-valor="11">11</td><td data-valor="12">12</td></tr>
+        <tr><th scope="row">B1</th><td data-valor="0">0</td><td data-valor="6">6</td><td data-valor="5">5</td><td data-valor="10">10</td></tr>
+        <tr><th scope="row">B2</th><td data-valor="4">4</td><td data-valor="6">6</td><td data-valor="9">9</td><td data-valor="10">10</td></tr>
+        <tr><th scope="row">C1</th><td data-valor="0">0</td><td data-valor="12">12</td><td data-valor="2">2</td><td data-valor="8">8</td></tr>
+        <tr><th scope="row">C2</th><td data-valor="4">4</td><td data-valor="12">12</td><td data-valor="6">6</td><td data-valor="8">8</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Almacén ficticio. Coordenadas en planta; sólido = posiciones ocupadas, contorno = capacidad total.</figcaption>
+</figure>
+```
+
+**Cuándo:** ver dónde queda espacio dentro de una distribución de almacén. No para decidir seguridad estructural, altura real de estibas o rutas de evacuación.
+
+**Límite:** Incluye Three 0.160.1 y escena.js. 1–12 ubicaciones con X/Z finitos en metros, capacidad positiva y 0 ≤ ocupados ≤ capacidad. La altura representa cantidad de posiciones, no metros. No evita superposición si duplicas coordenadas; usa ubicaciones distintas y separadas. Comparte ciclo de vida de NotaEscena y tabla permanente; no es un gemelo digital conectado.
+
+## Contrato común de la ampliación analítica
+
+Copia las dependencias indicadas en el registro, incrustadas en un `<script>` cada una. Las
+recetas completas anteriores son la fuente de datos; no necesitan objetos JS paralelos.
+`NotaAnalitica.init(raíz)` devuelve las instancias nuevas o existentes y
+`NotaAnalitica.get(figura).destroy()` retira controles y SVG conservando la tabla original.
+Si corriges una entrada inválida, vuelve a llamar `init`; el aviso anterior se elimina.
+No modifica una instancia al editar su tabla: destrúyela y vuelve a inicializar para actualizar.
+Las etiquetas de ejes deben ser breves; las explicaciones largas pertenecen a caption/figcaption.
+La selección permite consultar valores exactos; no filtra ni recalcula series o totales.
+El calendario puede plegar su tabla con `details`: se despliega completa al imprimir.
+
+`NotaEscena` conserva su contrato para XYZ y etapas y añade `columnas`, `arcos` y `almacen`.
+Comparte una sola inclusión de Three con el globo. Las escenas arrancan sin giro; los controles
+manuales funcionan con movimiento reducido y `resume()` no puede saltarse esa preferencia.
+Cada color procede de tokens ya definidos en las seis paletas. Ninguna vista nueva usa audio,
+red, shaders externos ni mapas de terceros en tiempo de lectura.

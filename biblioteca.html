@@ -1761,9 +1761,26 @@ body:has(.revision-barra) { padding-bottom:0; }
   .regla-guiada .ticks::after { content:''; position:absolute; inset:0;
     background:repeating-linear-gradient(to bottom,var(--marcador) 0 2px,transparent 2px 10px);
     clip-path:inset(0 0 calc((1 - var(--lectura,0)) * 100%) 0); }
-  .regla-guiada .val { color:var(--marcador); }
+  .regla-guiada .val { color:var(--marcador); font:12px/18px var(--mono); top:clamp(0px,calc(var(--lectura,0) * 100% - 9px),calc(100% - 18px)); }
 }
 @media print { .hoja.lectura-guiada { margin-inline:0; } }
+
+/* 21 — Analítica: tokens compartidos por las seis paletas, datos nunca truncados. */
+.nota-analitica { min-width:0; }
+.analitica-caja > svg { min-width:720px; }
+.analitica-controles { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-block:16px; }
+.analitica-controles label { display:flex; flex-wrap:wrap; align-items:center; gap:8px; min-width:0; font-size:13px; }
+.analitica-controles select,.analitica-controles button { min-height:44px; max-width:100%; min-width:0; padding:8px 12px; border:1px solid var(--linea-fuerte); border-radius:6px; background:var(--papel); color:var(--tinta); font:13px var(--sans); }
+.analitica-controles button { cursor:pointer; }
+.analitica-estado { min-height:3.2em; font:13px/1.6 var(--mono); overflow-wrap:anywhere; }
+.analitica-leyenda { display:flex; flex-wrap:wrap; gap:12px 24px; padding:16px 0; list-style:none; font:12px/1.7 var(--mono); }
+.analitica-leyenda li { display:flex; align-items:center; gap:8px; min-width:0; margin:0; overflow-wrap:anywhere; }
+.analitica-muestra { width:14px; height:14px; border:1px solid var(--linea-fuerte); border-radius:3px; flex:none; }
+.analitica-atenuada { opacity:.28; }
+.analitica-ausente { stroke:var(--grafica-tinta); stroke-width:1; }
+@media print { .analitica-controles { display:none; }.analitica-atenuada { opacity:1; } }
+
+.nota-analitica summary { min-height:44px; padding:10px 0; cursor:pointer; color:var(--azul); font-size:13px; }
 
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -1792,7 +1809,7 @@ body:has(.revision-barra) { padding-bottom:0; }
       <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
   </div>
-</details></div></div><div class="edicion-contexto"><span>Artículos · reportes · prototipos</span><span>Una colección para construir</span></div></header><div class="barra capitulos" tabindex="0" role="region" aria-label="Nueve capítulos, desplazables"><nav aria-label="Capítulos"><button type="button" data-ir="portada" aria-current="page"><span class="n">01</span>Inicio</button><button type="button" data-ir="publicaciones"><span class="n">02</span>Publicaciones</button><button type="button" data-ir="lectura"><span class="n">03</span>Artículos</button><button type="button" data-ir="reportes"><span class="n">04</span>Reportes</button><button type="button" data-ir="graficas"><span class="n">05</span>Gráficas</button><button type="button" data-ir="tablas"><span class="n">06</span>Tablas</button><button type="button" data-ir="prototipos"><span class="n">07</span>Prototipos</button><button type="button" data-ir="expresion"><span class="n">08</span>Espacio y gesto</button><button type="button" data-ir="configuracion"><span class="n">09</span>Edición</button></nav></div><main class="hoja multipagina edicion biblioteca lectura-guiada" data-progreso-pagina data-historial data-enlaces-internos data-lectura lang="es"><article class="pagina viva" id="portada" data-pagina><header class="cabecera"><p class="ceja">Edición 03 / Biblioteca editorial</p><h1>Todo lo que una buena idea puede llegar a ser.</h1><p class="bajada">Un artículo que se lee con calma. Un informe que se puede comprobar. Un prototipo que invita a probar.</p><p class="secundario">44 recetas · 9 capítulos · 6 papeles</p></header><nav class="indice" tabindex="0" aria-label="Índice de inicio"><p class="ceja">En esta página</p><ol><li><a href="#rutas-biblioteca">Explorar capítulos</a></li><li><a href="#buscar-biblioteca">Buscar componentes</a></li><li><a href="#componer-biblioteca">Componer una historia</a></li></ol></nav><nav class="biblioteca-rutas ancho" id="rutas-biblioteca" aria-label="Explorar la biblioteca"><a href="#publicaciones"><span class="ceja">02 / 4 piezas</span><strong>Publicaciones</strong><small>Portada, archivo, autoría y siguientes lecturas.</small></a><a href="#lectura"><span class="ceja">03 / 6 piezas</span><strong>Artículos</strong><small>Anotaciones, fuentes, definiciones y cambios editoriales.</small></a><a href="#reportes"><span class="ceja">04 / 7 piezas</span><strong>Reportes</strong><small>Afirmaciones, compensaciones, riesgos y escenarios explícitos.</small></a><a href="#graficas"><span class="ceja">05 / 8 piezas</span><strong>Gráficas</strong><small>Valores alcanzables, fuentes visibles y alternativas en tabla.</small></a><a href="#tablas"><span class="ceja">06 / 5 piezas</span><strong>Tablas</strong><small>Comparación, totales, series y densidad sin cortar información.</small></a><a href="#prototipos"><span class="ceja">07 / 4 piezas</span><strong>Prototipos</strong><small>Interfaz local, estados, vistas alternativas y explicaciones.</small></a><a href="#expresion"><span class="ceja">08 / 4 piezas</span><strong>Espacio y gesto</strong><small>Geografía, composiciones con Three y sonido optativo.</small></a><a href="#configuracion"><span class="ceja">09 / 6 piezas</span><strong>Edición</strong><small>Seis papeles, escritura animada, sonido, código y comentarios.</small></a></nav><section class="seccion" id="buscar-biblioteca"><h2>Encuentra la pieza que necesitas.</h2><p>Cada ejemplo incluye HTML completo, dependencias, criterio de uso y límites. Las cifras y publicaciones de demostración están identificadas como ejemplos.</p><div data-buscador-recetas><div class="buscador-recetas"><label for="biblioteca-buscar">Buscar componentes</label><input id="biblioteca-buscar" type="search" placeholder="Globo, tabla, autor, escenario…" aria-describedby="biblioteca-resultados"><p id="biblioteca-resultados" role="status"></p></div><nav aria-label="Recetas de la biblioteca"><ul class="catalogo-indice"><li data-claves="publicaciones"><a href="#receta-archivo">Archivo de publicaciones</a></li><li data-claves="publicaciones"><a href="#receta-autor">Ficha de autor</a></li><li data-claves="publicaciones"><a href="#receta-relacionados">Lecturas relacionadas</a></li><li data-claves="publicaciones"><a href="#receta-cards">Familia de cards</a></li><li data-claves="lectura"><a href="#receta-articulo">Ficha de artículo</a></li><li data-claves="lectura"><a href="#receta-referencias">Referencias con regreso</a></li><li data-claves="lectura"><a href="#receta-glosario">Glosario editorial</a></li><li data-claves="lectura"><a href="#receta-metodologia">Metodología desplegable</a></li><li data-claves="lectura"><a href="#receta-revisiones">Historial de revisiones</a></li><li data-claves="lectura"><a href="#receta-manuscrita">Nota manuscrita</a></li><li data-claves="reportes"><a href="#receta-hallazgo">Ficha de hallazgo</a></li><li data-claves="reportes"><a href="#receta-decision">Ficha de decisión</a></li><li data-claves="reportes"><a href="#receta-cronologia">Cronología anotada</a></li><li data-claves="reportes"><a href="#receta-criterios">Matriz de criterios</a></li><li data-claves="reportes"><a href="#receta-riesgos">Registro de riesgos</a></li><li data-claves="reportes"><a href="#receta-escenario">Calculadora de escenarios</a></li><li data-claves="reportes"><a href="#receta-conciliacion">Conciliación de registros</a></li><li data-claves="graficas"><a href="#receta-barras">Barras</a></li><li data-claves="graficas"><a href="#receta-lineas">Líneas</a></li><li data-claves="graficas"><a href="#receta-temporal">Serie temporal</a></li><li data-claves="graficas"><a href="#receta-dispersion">Dispersión</a></li><li data-claves="graficas"><a href="#receta-distribucion">Distribución</a></li><li data-claves="graficas"><a href="#receta-calor">Mapa de calor</a></li><li data-claves="graficas"><a href="#receta-cascada">Cascada de cantidades</a></li><li data-claves="graficas"><a href="#receta-multiples">Pequeños múltiples</a></li><li data-claves="tablas"><a href="#receta-tabla-densa">Tabla densa</a></li><li data-claves="tablas"><a href="#receta-comparacion">Comparación</a></li><li data-claves="tablas"><a href="#receta-totales">Totales y ordenación</a></li><li data-claves="tablas"><a href="#receta-sparkline">Tabla con serie</a></li><li data-claves="tablas"><a href="#receta-explorador">Tabla interactiva</a></li><li data-claves="prototipos"><a href="#receta-visor">Visor de prototipos</a></li><li data-claves="prototipos"><a href="#receta-pestanas">Pestañas de una pieza</a></li><li data-claves="prototipos"><a href="#receta-antes-despues">Antes y después</a></li><li data-claves="prototipos"><a href="#receta-anotaciones">Diagrama anotado</a></li><li data-claves="expresion"><a href="#receta-recorrido">Globo narrado</a></li><li data-claves="expresion"><a href="#receta-xyz">Three.js · XYZ</a></li><li data-claves="expresion"><a href="#receta-etapas">Three.js · etapas</a></li><li data-claves="expresion"><a href="#receta-sonido">Sonido optativo</a></li><li data-claves="configuracion"><a href="#receta-apariencia">Apariencia y lectura cómoda</a></li><li data-claves="configuracion"><a href="#receta-escritura">Escritura por trazos</a></li><li data-claves="configuracion"><a href="#receta-configuracion">Configuración editorial</a></li><li data-claves="configuracion"><a href="#receta-codigo-poliglota">Código en varios lenguajes</a></li><li data-claves="configuracion"><a href="#receta-terminal">Terminal</a></li><li data-claves="configuracion"><a href="#receta-revision">Comentarios sobre el documento</a></li></ul></nav></div></section><aside class="aviso bien" id="componer-biblioteca"><span class="num">↳</span><div><p class="titulo">Ver las piezas en una historia completa</p><p><a href="informe.html">Recorrer el informe de cuatro capítulos →</a></p><p><a href="plantilla.html">Abrir el cuaderno de una sola página →</a></p></div></aside></article><article class="pagina" id="publicaciones" data-pagina hidden><header class="cabecera"><p class="ceja">Capítulo 02 / 09</p><h1>Un cuaderno que invita a volver.</h1><p class="bajada">Portada, archivo, autoría y siguientes lecturas.</p></header><nav class="indice" tabindex="0" aria-label="Índice de Publicaciones"><p class="ceja">En esta página</p><ol><li><a href="#receta-archivo">Archivo de publicaciones</a></li><li><a href="#receta-autor">Ficha de autor</a></li><li><a href="#receta-relacionados">Lecturas relacionadas</a></li><li><a href="#receta-cards">Familia de cards</a></li></ol></nav><section class="seccion" id="receta-archivo" tabindex="-1"><p class="ceja">Componente / Archivo de publicaciones</p><h2>Archivo de publicaciones</h2></section><section class="pieza ancho" id="archivo-ejemplo" data-archivo>
+</details></div></div><div class="edicion-contexto"><span>Artículos · reportes · prototipos</span><span>Una colección para construir</span></div></header><div class="barra capitulos" tabindex="0" role="region" aria-label="Nueve capítulos, desplazables"><nav aria-label="Capítulos"><button type="button" data-ir="portada" aria-current="page"><span class="n">01</span>Inicio</button><button type="button" data-ir="publicaciones"><span class="n">02</span>Publicaciones</button><button type="button" data-ir="lectura"><span class="n">03</span>Artículos</button><button type="button" data-ir="reportes"><span class="n">04</span>Reportes</button><button type="button" data-ir="graficas"><span class="n">05</span>Gráficas</button><button type="button" data-ir="tablas"><span class="n">06</span>Tablas</button><button type="button" data-ir="prototipos"><span class="n">07</span>Prototipos</button><button type="button" data-ir="expresion"><span class="n">08</span>Espacio y gesto</button><button type="button" data-ir="configuracion"><span class="n">09</span>Edición</button></nav></div><main class="hoja multipagina edicion biblioteca lectura-guiada" data-progreso-pagina data-historial data-enlaces-internos data-lectura lang="es"><article class="pagina viva" id="portada" data-pagina><header class="cabecera"><p class="ceja">Edición 03 / Biblioteca editorial</p><h1>Todo lo que una buena idea puede llegar a ser.</h1><p class="bajada">Un artículo que se lee con calma. Un informe que se puede comprobar. Un prototipo que invita a probar.</p><p class="secundario">54 recetas · 9 capítulos · 6 papeles</p></header><nav class="indice" tabindex="0" aria-label="Índice de inicio"><p class="ceja">En esta página</p><ol><li><a href="#rutas-biblioteca">Explorar capítulos</a></li><li><a href="#buscar-biblioteca">Buscar componentes</a></li><li><a href="#componer-biblioteca">Componer una historia</a></li></ol></nav><nav class="biblioteca-rutas ancho" id="rutas-biblioteca" aria-label="Explorar la biblioteca"><a href="#publicaciones"><span class="ceja">02 / 4 piezas</span><strong>Publicaciones</strong><small>Portada, archivo, autoría y siguientes lecturas.</small></a><a href="#lectura"><span class="ceja">03 / 6 piezas</span><strong>Artículos</strong><small>Anotaciones, fuentes, definiciones y cambios editoriales.</small></a><a href="#reportes"><span class="ceja">04 / 7 piezas</span><strong>Reportes</strong><small>Afirmaciones, compensaciones, riesgos y escenarios explícitos.</small></a><a href="#graficas"><span class="ceja">05 / 15 piezas</span><strong>Gráficas</strong><small>Valores alcanzables, fuentes visibles y alternativas en tabla.</small></a><a href="#tablas"><span class="ceja">06 / 5 piezas</span><strong>Tablas</strong><small>Comparación, totales, series y densidad sin cortar información.</small></a><a href="#prototipos"><span class="ceja">07 / 4 piezas</span><strong>Prototipos</strong><small>Interfaz local, estados, vistas alternativas y explicaciones.</small></a><a href="#expresion"><span class="ceja">08 / 7 piezas</span><strong>Espacio y gesto</strong><small>Geografía, composiciones con Three y sonido optativo.</small></a><a href="#configuracion"><span class="ceja">09 / 6 piezas</span><strong>Edición</strong><small>Seis papeles, escritura animada, sonido, código y comentarios.</small></a></nav><section class="seccion" id="buscar-biblioteca"><h2>Encuentra la pieza que necesitas.</h2><p>Cada ejemplo incluye HTML completo, dependencias, criterio de uso y límites. Las cifras y publicaciones de demostración están identificadas como ejemplos.</p><div data-buscador-recetas><div class="buscador-recetas"><label for="biblioteca-buscar">Buscar componentes</label><input id="biblioteca-buscar" type="search" placeholder="Globo, tabla, autor, escenario…" aria-describedby="biblioteca-resultados"><p id="biblioteca-resultados" role="status"></p></div><nav aria-label="Recetas de la biblioteca"><ul class="catalogo-indice"><li data-claves="publicaciones"><a href="#receta-archivo">Archivo de publicaciones</a></li><li data-claves="publicaciones"><a href="#receta-autor">Ficha de autor</a></li><li data-claves="publicaciones"><a href="#receta-relacionados">Lecturas relacionadas</a></li><li data-claves="publicaciones"><a href="#receta-cards">Familia de cards</a></li><li data-claves="lectura"><a href="#receta-articulo">Ficha de artículo</a></li><li data-claves="lectura"><a href="#receta-referencias">Referencias con regreso</a></li><li data-claves="lectura"><a href="#receta-glosario">Glosario editorial</a></li><li data-claves="lectura"><a href="#receta-metodologia">Metodología desplegable</a></li><li data-claves="lectura"><a href="#receta-revisiones">Historial de revisiones</a></li><li data-claves="lectura"><a href="#receta-manuscrita">Nota manuscrita</a></li><li data-claves="reportes"><a href="#receta-hallazgo">Ficha de hallazgo</a></li><li data-claves="reportes"><a href="#receta-decision">Ficha de decisión</a></li><li data-claves="reportes"><a href="#receta-cronologia">Cronología anotada</a></li><li data-claves="reportes"><a href="#receta-criterios">Matriz de criterios</a></li><li data-claves="reportes"><a href="#receta-riesgos">Registro de riesgos</a></li><li data-claves="reportes"><a href="#receta-escenario">Calculadora de escenarios</a></li><li data-claves="reportes"><a href="#receta-conciliacion">Conciliación de registros</a></li><li data-claves="graficas"><a href="#receta-barras">Barras</a></li><li data-claves="graficas"><a href="#receta-lineas">Líneas</a></li><li data-claves="graficas"><a href="#receta-temporal">Serie temporal</a></li><li data-claves="graficas"><a href="#receta-dispersion">Dispersión</a></li><li data-claves="graficas"><a href="#receta-distribucion">Distribución</a></li><li data-claves="graficas"><a href="#receta-calor">Mapa de calor</a></li><li data-claves="graficas"><a href="#receta-cascada">Cascada de cantidades</a></li><li data-claves="graficas"><a href="#receta-multiples">Pequeños múltiples</a></li><li data-claves="graficas"><a href="#receta-calendario">Calendario de actividad</a></li><li data-claves="graficas"><a href="#receta-torta">Torta y donut</a></li><li data-claves="graficas"><a href="#receta-areas">Áreas apiladas</a></li><li data-claves="graficas"><a href="#receta-caja">Caja y bigotes</a></li><li data-claves="graficas"><a href="#receta-velas">Velas OHLC</a></li><li data-claves="graficas"><a href="#receta-mapa-rutas">Mapa de rutas</a></li><li data-claves="graficas"><a href="#receta-mapa-burbujas">Mapa de volumen</a></li><li data-claves="tablas"><a href="#receta-tabla-densa">Tabla densa</a></li><li data-claves="tablas"><a href="#receta-comparacion">Comparación</a></li><li data-claves="tablas"><a href="#receta-totales">Totales y ordenación</a></li><li data-claves="tablas"><a href="#receta-sparkline">Tabla con serie</a></li><li data-claves="tablas"><a href="#receta-explorador">Tabla interactiva</a></li><li data-claves="prototipos"><a href="#receta-visor">Visor de prototipos</a></li><li data-claves="prototipos"><a href="#receta-pestanas">Pestañas de una pieza</a></li><li data-claves="prototipos"><a href="#receta-antes-despues">Antes y después</a></li><li data-claves="prototipos"><a href="#receta-anotaciones">Diagrama anotado</a></li><li data-claves="expresion"><a href="#receta-recorrido">Globo narrado</a></li><li data-claves="expresion"><a href="#receta-xyz">Three.js · XYZ</a></li><li data-claves="expresion"><a href="#receta-etapas">Three.js · etapas</a></li><li data-claves="expresion"><a href="#receta-columnas-mapa">Columnas geográficas 3D</a></li><li data-claves="expresion"><a href="#receta-arcos-mapa">Arcos logísticos 3D</a></li><li data-claves="expresion"><a href="#receta-almacen">Capacidad de almacén 3D</a></li><li data-claves="expresion"><a href="#receta-sonido">Sonido optativo</a></li><li data-claves="configuracion"><a href="#receta-apariencia">Apariencia y lectura cómoda</a></li><li data-claves="configuracion"><a href="#receta-escritura">Escritura por trazos</a></li><li data-claves="configuracion"><a href="#receta-configuracion">Configuración editorial</a></li><li data-claves="configuracion"><a href="#receta-codigo-poliglota">Código en varios lenguajes</a></li><li data-claves="configuracion"><a href="#receta-terminal">Terminal</a></li><li data-claves="configuracion"><a href="#receta-revision">Comentarios sobre el documento</a></li></ul></nav></div></section><aside class="aviso bien" id="componer-biblioteca"><span class="num">↳</span><div><p class="titulo">Ver las piezas en una historia completa</p><p><a href="informe.html">Recorrer el informe de cuatro capítulos →</a></p><p><a href="plantilla.html">Abrir el cuaderno de una sola página →</a></p></div></aside></article><article class="pagina" id="publicaciones" data-pagina hidden><header class="cabecera"><p class="ceja">Capítulo 02 / 09</p><h1>Un cuaderno que invita a volver.</h1><p class="bajada">Portada, archivo, autoría y siguientes lecturas.</p></header><nav class="indice" tabindex="0" aria-label="Índice de Publicaciones"><p class="ceja">En esta página</p><ol><li><a href="#receta-archivo">Archivo de publicaciones</a></li><li><a href="#receta-autor">Ficha de autor</a></li><li><a href="#receta-relacionados">Lecturas relacionadas</a></li><li><a href="#receta-cards">Familia de cards</a></li></ol></nav><section class="seccion" id="receta-archivo" tabindex="-1"><p class="ceja">Componente / Archivo de publicaciones</p><h2>Archivo de publicaciones</h2></section><section class="pieza ancho" id="archivo-ejemplo" data-archivo>
   <h3>El cuaderno abierto</h3><p>Artículos de ejemplo sobre cómo investigar, explicar y construir.</p>
   <form class="editorial-controles" role="search" aria-label="Buscar publicaciones locales">
     <label>Buscar<input type="search" name="buscar" placeholder="Título o descripción"></label>
@@ -2020,7 +2037,7 @@ body:has(.revision-barra) { padding-bottom:0; }
     &lt;/table&gt;
   &lt;/div&gt;
   &lt;figcaption&gt;Datos ilustrativos. Diferencia = observado − esperado; una diferencia cero no prueba igualdad de los registros individuales.&lt;/figcaption&gt;
-&lt;/figure&gt;</code></pre></div></details></article><article class="pagina" id="graficas" data-pagina hidden><header class="cabecera"><p class="ceja">Capítulo 05 / 09</p><h1>La escala también es una afirmación.</h1><p class="bajada">Valores alcanzables, fuentes visibles y alternativas en tabla.</p></header><nav class="indice" tabindex="0" aria-label="Índice de Gráficas"><p class="ceja">En esta página</p><ol><li><a href="#receta-barras">Barras</a></li><li><a href="#receta-lineas">Líneas</a></li><li><a href="#receta-temporal">Serie temporal</a></li><li><a href="#receta-dispersion">Dispersión</a></li><li><a href="#receta-distribucion">Distribución</a></li><li><a href="#receta-calor">Mapa de calor</a></li><li><a href="#receta-cascada">Cascada de cantidades</a></li><li><a href="#receta-multiples">Pequeños múltiples</a></li></ol></nav><section class="seccion" id="receta-barras" tabindex="-1"><p class="ceja">Componente / Barras</p><h2>Barras</h2></section><figure class="ancho" id="barras-ejemplo" data-grafica="barras" data-unidad="Horas">
+&lt;/figure&gt;</code></pre></div></details></article><article class="pagina" id="graficas" data-pagina hidden><header class="cabecera"><p class="ceja">Capítulo 05 / 09</p><h1>La escala también es una afirmación.</h1><p class="bajada">Valores alcanzables, fuentes visibles y alternativas en tabla.</p></header><nav class="indice" tabindex="0" aria-label="Índice de Gráficas"><p class="ceja">En esta página</p><ol><li><a href="#receta-barras">Barras</a></li><li><a href="#receta-lineas">Líneas</a></li><li><a href="#receta-temporal">Serie temporal</a></li><li><a href="#receta-dispersion">Dispersión</a></li><li><a href="#receta-distribucion">Distribución</a></li><li><a href="#receta-calor">Mapa de calor</a></li><li><a href="#receta-cascada">Cascada de cantidades</a></li><li><a href="#receta-multiples">Pequeños múltiples</a></li><li><a href="#receta-calendario">Calendario de actividad</a></li><li><a href="#receta-torta">Torta y donut</a></li><li><a href="#receta-areas">Áreas apiladas</a></li><li><a href="#receta-caja">Caja y bigotes</a></li><li><a href="#receta-velas">Velas OHLC</a></li><li><a href="#receta-mapa-rutas">Mapa de rutas</a></li><li><a href="#receta-mapa-burbujas">Mapa de volumen</a></li></ol></nav><section class="seccion" id="receta-barras" tabindex="-1"><p class="ceja">Componente / Barras</p><h2>Barras</h2></section><figure class="ancho" id="barras-ejemplo" data-grafica="barras" data-unidad="Horas">
   <details open><summary>Ver los datos de balance de horas</summary>
     <div class="tabla-caja" tabindex="0" role="region" aria-label="Balance de horas, tabla desplazable">
       <table><caption>Balance de horas</caption>
@@ -2240,6 +2257,402 @@ body:has(.revision-barra) { padding-bottom:0; }
     &lt;/table&gt;
   &lt;/div&gt;
   &lt;figcaption&gt;Datos ilustrativos. Escala común de 0 a 80; sin dato corta el trazo. La pendiente no demuestra causalidad.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details><section class="seccion" id="receta-calendario" tabindex="-1"><p class="ceja">Componente / Calendario de actividad</p><h2>Calendario de actividad</h2></section><figure class="ancho" id="analitica-calendario" data-analitica="calendario" data-unidad="conciliaciones">
+  <details><summary>Consultar los 109 días registrados</summary>
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Datos de Calendario de actividad, desplazables">
+    <table><caption>Calendario de actividad</caption>
+      <thead><tr><th scope="col">Fecha UTC</th><th scope="col">Conciliaciones</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">2026-05-25</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-05-26</th><td data-valor="7">7</td></tr>
+        <tr><th scope="row">2026-05-27</th><td data-valor="14">14</td></tr>
+        <tr><th scope="row">2026-05-28</th><td data-valor="21">21</td></tr>
+        <tr><th scope="row">2026-05-29</th><td data-valor="3">3</td></tr>
+        <tr><th scope="row">2026-05-30</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-05-31</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-06-01</th><td data-valor="2">2</td></tr>
+        <tr><th scope="row">2026-06-02</th><td data-valor="9">9</td></tr>
+        <tr><th scope="row">2026-06-03</th><td data-valor="16">16</td></tr>
+        <tr><th scope="row">2026-06-04</th><td data-valor="23">23</td></tr>
+        <tr><th scope="row">2026-06-05</th><td data-valor="5">5</td></tr>
+        <tr><th scope="row">2026-06-06</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-06-07</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-06-08</th><td data-valor="4">4</td></tr>
+        <tr><th scope="row">2026-06-09</th><td data-valor="11">11</td></tr>
+        <tr><th scope="row">2026-06-10</th><td data-valor="18">18</td></tr>
+        <tr><th scope="row">2026-06-11</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-06-12</th><td data-valor="7">7</td></tr>
+        <tr><th scope="row">2026-06-13</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-06-14</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-06-15</th><td data-valor="6">6</td></tr>
+        <tr><th scope="row">2026-06-16</th><td data-valor="13">13</td></tr>
+        <tr><th scope="row">2026-06-17</th><td data-valor="20">20</td></tr>
+        <tr><th scope="row">2026-06-18</th><td data-valor="2">2</td></tr>
+        <tr><th scope="row">2026-06-19</th><td data-valor="9">9</td></tr>
+        <tr><th scope="row">2026-06-20</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-06-21</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-06-22</th><td data-valor="8">8</td></tr>
+        <tr><th scope="row">2026-06-23</th><td data-valor="15">15</td></tr>
+        <tr><th scope="row">2026-06-24</th><td data-valor="22">22</td></tr>
+        <tr><th scope="row">2026-06-27</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-06-28</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-06-29</th><td data-valor="10">10</td></tr>
+        <tr><th scope="row">2026-06-30</th><td data-valor="17">17</td></tr>
+        <tr><th scope="row">2026-07-01</th><td data-valor="24">24</td></tr>
+        <tr><th scope="row">2026-07-02</th><td data-valor="6">6</td></tr>
+        <tr><th scope="row">2026-07-03</th><td data-valor="13">13</td></tr>
+        <tr><th scope="row">2026-07-04</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-07-05</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-07-06</th><td data-valor="12">12</td></tr>
+        <tr><th scope="row">2026-07-07</th><td data-valor="19">19</td></tr>
+        <tr><th scope="row">2026-07-08</th><td data-valor="1">1</td></tr>
+        <tr><th scope="row">2026-07-09</th><td data-valor="8">8</td></tr>
+        <tr><th scope="row">2026-07-10</th><td data-valor="15">15</td></tr>
+        <tr><th scope="row">2026-07-11</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-07-12</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-07-13</th><td data-valor="14">14</td></tr>
+        <tr><th scope="row">2026-07-14</th><td data-valor="21">21</td></tr>
+        <tr><th scope="row">2026-07-15</th><td data-valor="3">3</td></tr>
+        <tr><th scope="row">2026-07-16</th><td data-valor="10">10</td></tr>
+        <tr><th scope="row">2026-07-17</th><td data-valor="17">17</td></tr>
+        <tr><th scope="row">2026-07-18</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-07-19</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-07-20</th><td data-valor="16">16</td></tr>
+        <tr><th scope="row">2026-07-21</th><td data-valor="23">23</td></tr>
+        <tr><th scope="row">2026-07-22</th><td data-valor="5">5</td></tr>
+        <tr><th scope="row">2026-07-23</th><td data-valor="12">12</td></tr>
+        <tr><th scope="row">2026-07-24</th><td data-valor="19">19</td></tr>
+        <tr><th scope="row">2026-07-25</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-07-26</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-07-27</th><td data-valor="18">18</td></tr>
+        <tr><th scope="row">2026-07-28</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-07-29</th><td data-valor="7">7</td></tr>
+        <tr><th scope="row">2026-07-30</th><td data-valor="14">14</td></tr>
+        <tr><th scope="row">2026-07-31</th><td data-valor="21">21</td></tr>
+        <tr><th scope="row">2026-08-01</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-02</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-03</th><td data-valor="20">20</td></tr>
+        <tr><th scope="row">2026-08-04</th><td data-valor="2">2</td></tr>
+        <tr><th scope="row">2026-08-05</th><td data-valor="9">9</td></tr>
+        <tr><th scope="row">2026-08-06</th><td data-valor="16">16</td></tr>
+        <tr><th scope="row">2026-08-07</th><td data-valor="23">23</td></tr>
+        <tr><th scope="row">2026-08-08</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-09</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-10</th><td data-valor="22">22</td></tr>
+        <tr><th scope="row">2026-08-11</th><td data-valor="4">4</td></tr>
+        <tr><th scope="row">2026-08-12</th><td data-valor="11">11</td></tr>
+        <tr><th scope="row">2026-08-14</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-15</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-16</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-17</th><td data-valor="24">24</td></tr>
+        <tr><th scope="row">2026-08-18</th><td data-valor="6">6</td></tr>
+        <tr><th scope="row">2026-08-19</th><td data-valor="13">13</td></tr>
+        <tr><th scope="row">2026-08-20</th><td data-valor="20">20</td></tr>
+        <tr><th scope="row">2026-08-21</th><td data-valor="2">2</td></tr>
+        <tr><th scope="row">2026-08-22</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-23</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-24</th><td data-valor="1">1</td></tr>
+        <tr><th scope="row">2026-08-25</th><td data-valor="8">8</td></tr>
+        <tr><th scope="row">2026-08-26</th><td data-valor="15">15</td></tr>
+        <tr><th scope="row">2026-08-27</th><td data-valor="22">22</td></tr>
+        <tr><th scope="row">2026-08-28</th><td data-valor="4">4</td></tr>
+        <tr><th scope="row">2026-08-29</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-30</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-08-31</th><td data-valor="3">3</td></tr>
+        <tr><th scope="row">2026-09-01</th><td data-valor="10">10</td></tr>
+        <tr><th scope="row">2026-09-02</th><td data-valor="17">17</td></tr>
+        <tr><th scope="row">2026-09-03</th><td data-valor="24">24</td></tr>
+        <tr><th scope="row">2026-09-04</th><td data-valor="6">6</td></tr>
+        <tr><th scope="row">2026-09-05</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-09-06</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-09-07</th><td data-valor="5">5</td></tr>
+        <tr><th scope="row">2026-09-08</th><td data-valor="12">12</td></tr>
+        <tr><th scope="row">2026-09-09</th><td data-valor="19">19</td></tr>
+        <tr><th scope="row">2026-09-10</th><td data-valor="1">1</td></tr>
+        <tr><th scope="row">2026-09-11</th><td data-valor="8">8</td></tr>
+        <tr><th scope="row">2026-09-12</th><td data-valor="0">0</td></tr>
+        <tr><th scope="row">2026-09-13</th><td data-valor="0">0</td></tr>
+      </tbody>
+    </table>
+  </div>
+  </details>
+  <figcaption>Datos ficticios, 25 may–13 sep 2026. Intensidad diaria, cero distinto de ausencia.</figcaption>
+</figure><div class="receta-guia"><p><strong>Cuándo:</strong> ver continuidad, pausas o carga diaria al estilo del calendario de GitHub. No para comparar importes exactos entre meses de distinta duración.</p><p><strong>Límite:</strong> Incluye analitica.js. De 1 a 366 registros, máximo 366 días consecutivos de rango; fechas ISO UTC únicas, conteos enteros no negativos. No infiere cero donde falta una fila: dibuja una diagonal. Semana comienza el lunes. No consulta GitHub ni un repositorio; umbrales calculados del máximo observado, no percentiles. Selector accesible para el detalle de cada día.</p></div><details class="receta-copia ancho"><summary>Copiar HTML · Calendario de actividad</summary><p class="procedencia">Dependencias: fuentes.css, estilo.css, audio.js, controles.js, interacciones.js, analitica.js</p><div class="codigo"><div class="cab"><span>Calendario de actividad</span><button type="button" data-copiar="biblioteca-codigo-calendario" aria-label="Copiar HTML de Calendario de actividad">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Calendario de actividad, desplazable"><code id="biblioteca-codigo-calendario">&lt;figure class=&quot;ancho&quot; id=&quot;analitica-calendario&quot; data-analitica=&quot;calendario&quot; data-unidad=&quot;conciliaciones&quot;&gt;
+  &lt;details&gt;&lt;summary&gt;Consultar los 109 días registrados&lt;/summary&gt;
+  &lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Datos de Calendario de actividad, desplazables&quot;&gt;
+    &lt;table&gt;&lt;caption&gt;Calendario de actividad&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Fecha UTC&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Conciliaciones&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-05-25&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-05-26&lt;/th&gt;&lt;td data-valor=&quot;7&quot;&gt;7&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-05-27&lt;/th&gt;&lt;td data-valor=&quot;14&quot;&gt;14&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-05-28&lt;/th&gt;&lt;td data-valor=&quot;21&quot;&gt;21&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-05-29&lt;/th&gt;&lt;td data-valor=&quot;3&quot;&gt;3&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-05-30&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-05-31&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-01&lt;/th&gt;&lt;td data-valor=&quot;2&quot;&gt;2&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-02&lt;/th&gt;&lt;td data-valor=&quot;9&quot;&gt;9&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-03&lt;/th&gt;&lt;td data-valor=&quot;16&quot;&gt;16&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-04&lt;/th&gt;&lt;td data-valor=&quot;23&quot;&gt;23&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-05&lt;/th&gt;&lt;td data-valor=&quot;5&quot;&gt;5&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-06&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-07&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-08&lt;/th&gt;&lt;td data-valor=&quot;4&quot;&gt;4&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-09&lt;/th&gt;&lt;td data-valor=&quot;11&quot;&gt;11&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-10&lt;/th&gt;&lt;td data-valor=&quot;18&quot;&gt;18&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-11&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-12&lt;/th&gt;&lt;td data-valor=&quot;7&quot;&gt;7&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-13&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-14&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-15&lt;/th&gt;&lt;td data-valor=&quot;6&quot;&gt;6&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-16&lt;/th&gt;&lt;td data-valor=&quot;13&quot;&gt;13&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-17&lt;/th&gt;&lt;td data-valor=&quot;20&quot;&gt;20&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-18&lt;/th&gt;&lt;td data-valor=&quot;2&quot;&gt;2&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-19&lt;/th&gt;&lt;td data-valor=&quot;9&quot;&gt;9&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-20&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-21&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-22&lt;/th&gt;&lt;td data-valor=&quot;8&quot;&gt;8&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-23&lt;/th&gt;&lt;td data-valor=&quot;15&quot;&gt;15&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-24&lt;/th&gt;&lt;td data-valor=&quot;22&quot;&gt;22&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-27&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-28&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-29&lt;/th&gt;&lt;td data-valor=&quot;10&quot;&gt;10&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-30&lt;/th&gt;&lt;td data-valor=&quot;17&quot;&gt;17&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-01&lt;/th&gt;&lt;td data-valor=&quot;24&quot;&gt;24&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-02&lt;/th&gt;&lt;td data-valor=&quot;6&quot;&gt;6&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-03&lt;/th&gt;&lt;td data-valor=&quot;13&quot;&gt;13&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-04&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-05&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-06&lt;/th&gt;&lt;td data-valor=&quot;12&quot;&gt;12&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-07&lt;/th&gt;&lt;td data-valor=&quot;19&quot;&gt;19&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-08&lt;/th&gt;&lt;td data-valor=&quot;1&quot;&gt;1&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-09&lt;/th&gt;&lt;td data-valor=&quot;8&quot;&gt;8&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-10&lt;/th&gt;&lt;td data-valor=&quot;15&quot;&gt;15&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-11&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-12&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-13&lt;/th&gt;&lt;td data-valor=&quot;14&quot;&gt;14&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-14&lt;/th&gt;&lt;td data-valor=&quot;21&quot;&gt;21&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-15&lt;/th&gt;&lt;td data-valor=&quot;3&quot;&gt;3&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-16&lt;/th&gt;&lt;td data-valor=&quot;10&quot;&gt;10&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-17&lt;/th&gt;&lt;td data-valor=&quot;17&quot;&gt;17&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-18&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-19&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-20&lt;/th&gt;&lt;td data-valor=&quot;16&quot;&gt;16&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-21&lt;/th&gt;&lt;td data-valor=&quot;23&quot;&gt;23&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-22&lt;/th&gt;&lt;td data-valor=&quot;5&quot;&gt;5&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-23&lt;/th&gt;&lt;td data-valor=&quot;12&quot;&gt;12&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-24&lt;/th&gt;&lt;td data-valor=&quot;19&quot;&gt;19&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-25&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-26&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-27&lt;/th&gt;&lt;td data-valor=&quot;18&quot;&gt;18&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-28&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-29&lt;/th&gt;&lt;td data-valor=&quot;7&quot;&gt;7&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-30&lt;/th&gt;&lt;td data-valor=&quot;14&quot;&gt;14&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-31&lt;/th&gt;&lt;td data-valor=&quot;21&quot;&gt;21&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-01&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-02&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-03&lt;/th&gt;&lt;td data-valor=&quot;20&quot;&gt;20&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-04&lt;/th&gt;&lt;td data-valor=&quot;2&quot;&gt;2&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-05&lt;/th&gt;&lt;td data-valor=&quot;9&quot;&gt;9&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-06&lt;/th&gt;&lt;td data-valor=&quot;16&quot;&gt;16&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-07&lt;/th&gt;&lt;td data-valor=&quot;23&quot;&gt;23&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-08&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-09&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-10&lt;/th&gt;&lt;td data-valor=&quot;22&quot;&gt;22&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-11&lt;/th&gt;&lt;td data-valor=&quot;4&quot;&gt;4&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-12&lt;/th&gt;&lt;td data-valor=&quot;11&quot;&gt;11&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-14&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-15&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-16&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-17&lt;/th&gt;&lt;td data-valor=&quot;24&quot;&gt;24&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-18&lt;/th&gt;&lt;td data-valor=&quot;6&quot;&gt;6&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-19&lt;/th&gt;&lt;td data-valor=&quot;13&quot;&gt;13&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-20&lt;/th&gt;&lt;td data-valor=&quot;20&quot;&gt;20&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-21&lt;/th&gt;&lt;td data-valor=&quot;2&quot;&gt;2&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-22&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-23&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-24&lt;/th&gt;&lt;td data-valor=&quot;1&quot;&gt;1&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-25&lt;/th&gt;&lt;td data-valor=&quot;8&quot;&gt;8&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-26&lt;/th&gt;&lt;td data-valor=&quot;15&quot;&gt;15&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-27&lt;/th&gt;&lt;td data-valor=&quot;22&quot;&gt;22&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-28&lt;/th&gt;&lt;td data-valor=&quot;4&quot;&gt;4&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-29&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-30&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-31&lt;/th&gt;&lt;td data-valor=&quot;3&quot;&gt;3&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-09-01&lt;/th&gt;&lt;td data-valor=&quot;10&quot;&gt;10&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-09-02&lt;/th&gt;&lt;td data-valor=&quot;17&quot;&gt;17&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-09-03&lt;/th&gt;&lt;td data-valor=&quot;24&quot;&gt;24&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-09-04&lt;/th&gt;&lt;td data-valor=&quot;6&quot;&gt;6&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-09-05&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-09-06&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-09-07&lt;/th&gt;&lt;td data-valor=&quot;5&quot;&gt;5&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-09-08&lt;/th&gt;&lt;td data-valor=&quot;12&quot;&gt;12&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-09-09&lt;/th&gt;&lt;td data-valor=&quot;19&quot;&gt;19&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-09-10&lt;/th&gt;&lt;td data-valor=&quot;1&quot;&gt;1&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-09-11&lt;/th&gt;&lt;td data-valor=&quot;8&quot;&gt;8&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-09-12&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-09-13&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;/details&gt;
+  &lt;figcaption&gt;Datos ficticios, 25 may–13 sep 2026. Intensidad diaria, cero distinto de ausencia.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details><section class="seccion" id="receta-torta" tabindex="-1"><p class="ceja">Componente / Torta y donut</p><h2>Torta y donut</h2></section><figure class="ancho" id="analitica-torta" data-analitica="torta" data-unidad="millones COP">
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Datos de Torta y donut de composición, desplazables">
+    <table><caption>Torta y donut de composición</caption>
+      <thead><tr><th scope="col">Destino</th><th scope="col">Millones COP</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Operación</th><td data-valor="48">48</td></tr>
+        <tr><th scope="row">Reserva</th><td data-valor="24">24</td></tr>
+        <tr><th scope="row">Tecnología</th><td data-valor="18">18</td></tr>
+        <tr><th scope="row">Comisiones</th><td data-valor="10">10</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Distribución ficticia de 100 millones COP. El botón cambia torta ↔ donut sin cambiar cifras.</figcaption>
+</figure><div class="receta-guia"><p><strong>Cuándo:</strong> explicar de qué se compone un total positivo con pocas partes. Para comparaciones cercanas o muchas categorías, usa barras.</p><p><strong>Límite:</strong> Incluye analitica.js. Entre 1 y 6 categorías únicas, no negativas; total mayor que cero. No admite negativos ni doble conteo; porcentaje calculado del total de filas, no de un denominador externo. Ceros permanecen en leyenda/tabla sin inventar un sector. Colores pueden repetirse desde la quinta categoría: nombres y cifras son la referencia.</p></div><details class="receta-copia ancho"><summary>Copiar HTML · Torta y donut</summary><p class="procedencia">Dependencias: fuentes.css, estilo.css, audio.js, controles.js, interacciones.js, analitica.js</p><div class="codigo"><div class="cab"><span>Torta y donut</span><button type="button" data-copiar="biblioteca-codigo-torta" aria-label="Copiar HTML de Torta y donut">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Torta y donut, desplazable"><code id="biblioteca-codigo-torta">&lt;figure class=&quot;ancho&quot; id=&quot;analitica-torta&quot; data-analitica=&quot;torta&quot; data-unidad=&quot;millones COP&quot;&gt;
+  &lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Datos de Torta y donut de composición, desplazables&quot;&gt;
+    &lt;table&gt;&lt;caption&gt;Torta y donut de composición&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Destino&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Millones COP&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Operación&lt;/th&gt;&lt;td data-valor=&quot;48&quot;&gt;48&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Reserva&lt;/th&gt;&lt;td data-valor=&quot;24&quot;&gt;24&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Tecnología&lt;/th&gt;&lt;td data-valor=&quot;18&quot;&gt;18&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Comisiones&lt;/th&gt;&lt;td data-valor=&quot;10&quot;&gt;10&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Distribución ficticia de 100 millones COP. El botón cambia torta ↔ donut sin cambiar cifras.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details><section class="seccion" id="receta-areas" tabindex="-1"><p class="ceja">Componente / Áreas apiladas</p><h2>Áreas apiladas</h2></section><figure class="ancho" id="analitica-areas" data-analitica="areas" data-unidad="millones COP">
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Datos de Áreas apiladas de ingresos, desplazables">
+    <table><caption>Áreas apiladas de ingresos</caption>
+      <thead><tr><th scope="col">Fecha UTC</th><th scope="col">Servicios</th><th scope="col">Suscripciones</th><th scope="col">Comisiones</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">2026-04-01</th><td data-valor="24">24</td><td data-valor="12">12</td><td data-valor="4">4</td></tr>
+        <tr><th scope="row">2026-05-01</th><td data-valor="28">28</td><td data-valor="16">16</td><td data-valor="6">6</td></tr>
+        <tr><th scope="row">2026-06-01</th><td data-valor="26">26</td><td data-valor="20">20</td><td data-valor="7">7</td></tr>
+        <tr><th scope="row">2026-07-01</th><td data-valor="35">35</td><td data-valor="24">24</td><td data-valor="9">9</td></tr>
+        <tr><th scope="row">2026-08-01</th><td data-valor="40">40</td><td data-valor="28">28</td><td data-valor="12">12</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Ingresos ficticios en millones COP; cada banda suma al total. No representan utilidades.</figcaption>
+</figure><div class="receta-guia"><p><strong>Cuándo:</strong> ver el total y su composición a lo largo del tiempo. Para comparar el crecimiento exacto de una banda intermedia, usa líneas o pequeños múltiples.</p><p><strong>Límite:</strong> Incluye analitica.js. Exactamente tres series aditivas en la misma unidad, 2–60 fechas ISO únicas, valores no negativos. Une observaciones por interpolación lineal; no agrega transacciones ni inventa días faltantes. Las fechas usan distancia real; no mezcla monedas. Un total constantemente cero usa dominio auxiliar 0–1 explícito.</p></div><details class="receta-copia ancho"><summary>Copiar HTML · Áreas apiladas</summary><p class="procedencia">Dependencias: fuentes.css, estilo.css, audio.js, controles.js, interacciones.js, analitica.js</p><div class="codigo"><div class="cab"><span>Áreas apiladas</span><button type="button" data-copiar="biblioteca-codigo-areas" aria-label="Copiar HTML de Áreas apiladas">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Áreas apiladas, desplazable"><code id="biblioteca-codigo-areas">&lt;figure class=&quot;ancho&quot; id=&quot;analitica-areas&quot; data-analitica=&quot;areas&quot; data-unidad=&quot;millones COP&quot;&gt;
+  &lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Datos de Áreas apiladas de ingresos, desplazables&quot;&gt;
+    &lt;table&gt;&lt;caption&gt;Áreas apiladas de ingresos&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Fecha UTC&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Servicios&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Suscripciones&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Comisiones&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-04-01&lt;/th&gt;&lt;td data-valor=&quot;24&quot;&gt;24&lt;/td&gt;&lt;td data-valor=&quot;12&quot;&gt;12&lt;/td&gt;&lt;td data-valor=&quot;4&quot;&gt;4&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-05-01&lt;/th&gt;&lt;td data-valor=&quot;28&quot;&gt;28&lt;/td&gt;&lt;td data-valor=&quot;16&quot;&gt;16&lt;/td&gt;&lt;td data-valor=&quot;6&quot;&gt;6&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-06-01&lt;/th&gt;&lt;td data-valor=&quot;26&quot;&gt;26&lt;/td&gt;&lt;td data-valor=&quot;20&quot;&gt;20&lt;/td&gt;&lt;td data-valor=&quot;7&quot;&gt;7&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-07-01&lt;/th&gt;&lt;td data-valor=&quot;35&quot;&gt;35&lt;/td&gt;&lt;td data-valor=&quot;24&quot;&gt;24&lt;/td&gt;&lt;td data-valor=&quot;9&quot;&gt;9&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-08-01&lt;/th&gt;&lt;td data-valor=&quot;40&quot;&gt;40&lt;/td&gt;&lt;td data-valor=&quot;28&quot;&gt;28&lt;/td&gt;&lt;td data-valor=&quot;12&quot;&gt;12&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Ingresos ficticios en millones COP; cada banda suma al total. No representan utilidades.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details><section class="seccion" id="receta-caja" tabindex="-1"><p class="ceja">Componente / Caja y bigotes</p><h2>Caja y bigotes</h2></section><figure class="ancho" id="analitica-caja" data-analitica="caja" data-unidad="minutos">
+  <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Datos de Caja y bigotes de entrega, desplazables">
+    <table><caption>Caja y bigotes de entrega</caption>
+      <thead><tr><th scope="col">Zona</th><th scope="col">Mínimo</th><th scope="col">Q1</th><th scope="col">Mediana</th><th scope="col">Q3</th><th scope="col">Máximo</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Norte</th><td data-valor="20">20</td><td data-valor="32">32</td><td data-valor="40">40</td><td data-valor="55">55</td><td data-valor="90">90</td></tr>
+        <tr><th scope="row">Centro</th><td data-valor="15">15</td><td data-valor="25">25</td><td data-valor="32">32</td><td data-valor="45">45</td><td data-valor="72">72</td></tr>
+        <tr><th scope="row">Sur</th><td data-valor="25">25</td><td data-valor="42">42</td><td data-valor="55">55</td><td data-valor="68">68</td><td data-valor="110">110</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Resumen ficticio de tiempos de entrega. Bigotes = mínimo y máximo, no 1,5 IQR.</figcaption>
+</figure><div class="receta-guia"><p><strong>Cuándo:</strong> comparar dispersión y mediana por zona, sin dejar que el promedio esconda colas largas. Para conteos por intervalo, usa distribución.</p><p><strong>Límite:</strong> Incluye analitica.js. Recibe cinco estadísticas ordenadas por fila; no calcula cuartiles desde datos crudos ni identifica atípicos. Hasta 24 grupos. Misma unidad y método de cálculo; si mínimo = máximo, amplía el dominio un punto a cada lado para hacer visible el caso constante.</p></div><details class="receta-copia ancho"><summary>Copiar HTML · Caja y bigotes</summary><p class="procedencia">Dependencias: fuentes.css, estilo.css, audio.js, controles.js, interacciones.js, analitica.js</p><div class="codigo"><div class="cab"><span>Caja y bigotes</span><button type="button" data-copiar="biblioteca-codigo-caja" aria-label="Copiar HTML de Caja y bigotes">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Caja y bigotes, desplazable"><code id="biblioteca-codigo-caja">&lt;figure class=&quot;ancho&quot; id=&quot;analitica-caja&quot; data-analitica=&quot;caja&quot; data-unidad=&quot;minutos&quot;&gt;
+  &lt;div class=&quot;tabla-caja densa&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Datos de Caja y bigotes de entrega, desplazables&quot;&gt;
+    &lt;table&gt;&lt;caption&gt;Caja y bigotes de entrega&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Zona&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Mínimo&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Q1&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Mediana&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Q3&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Máximo&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Norte&lt;/th&gt;&lt;td data-valor=&quot;20&quot;&gt;20&lt;/td&gt;&lt;td data-valor=&quot;32&quot;&gt;32&lt;/td&gt;&lt;td data-valor=&quot;40&quot;&gt;40&lt;/td&gt;&lt;td data-valor=&quot;55&quot;&gt;55&lt;/td&gt;&lt;td data-valor=&quot;90&quot;&gt;90&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Centro&lt;/th&gt;&lt;td data-valor=&quot;15&quot;&gt;15&lt;/td&gt;&lt;td data-valor=&quot;25&quot;&gt;25&lt;/td&gt;&lt;td data-valor=&quot;32&quot;&gt;32&lt;/td&gt;&lt;td data-valor=&quot;45&quot;&gt;45&lt;/td&gt;&lt;td data-valor=&quot;72&quot;&gt;72&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Sur&lt;/th&gt;&lt;td data-valor=&quot;25&quot;&gt;25&lt;/td&gt;&lt;td data-valor=&quot;42&quot;&gt;42&lt;/td&gt;&lt;td data-valor=&quot;55&quot;&gt;55&lt;/td&gt;&lt;td data-valor=&quot;68&quot;&gt;68&lt;/td&gt;&lt;td data-valor=&quot;110&quot;&gt;110&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Resumen ficticio de tiempos de entrega. Bigotes = mínimo y máximo, no 1,5 IQR.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details><section class="seccion" id="receta-velas" tabindex="-1"><p class="ceja">Componente / Velas OHLC</p><h2>Velas OHLC</h2></section><figure class="ancho" id="analitica-velas" data-analitica="velas" data-unidad="índice base 100">
+  <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Datos de Velas financieras OHLC, desplazables">
+    <table><caption>Velas financieras OHLC</caption>
+      <thead><tr><th scope="col">Fecha UTC</th><th scope="col">Apertura</th><th scope="col">Máximo</th><th scope="col">Mínimo</th><th scope="col">Cierre</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">2026-09-07</th><td data-valor="100">100</td><td data-valor="112">112</td><td data-valor="96">96</td><td data-valor="108">108</td></tr>
+        <tr><th scope="row">2026-09-08</th><td data-valor="108">108</td><td data-valor="115">115</td><td data-valor="101">101</td><td data-valor="103">103</td></tr>
+        <tr><th scope="row">2026-09-09</th><td data-valor="103">103</td><td data-valor="111">111</td><td data-valor="99">99</td><td data-valor="109">109</td></tr>
+        <tr><th scope="row">2026-09-10</th><td data-valor="109">109</td><td data-valor="118">118</td><td data-valor="106">106</td><td data-valor="115">115</td></tr>
+        <tr><th scope="row">2026-09-11</th><td data-valor="115">115</td><td data-valor="119">119</td><td data-valor="108">108</td><td data-valor="111">111</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Serie sintética, no cotización de un activo. Hueca = sube o no cambia; rellena = baja.</figcaption>
+</figure><div class="receta-guia"><p><strong>Cuándo:</strong> mostrar apertura, extremos y cierre de un mismo período. No para saldos que no tengan apertura/cierre definidos ni para mezclar unidades.</p><p><strong>Límite:</strong> Incluye analitica.js. 1–60 fechas ISO únicas; mínimo ≤ apertura y cierre ≤ máximo. No calcula indicadores técnicos ni conecta mercados. Posiciones temporales reales; limita el número de observaciones para conservar cuerpos legibles. Si todo es constante, muestra un dominio auxiliar ±10 % o ±1 alrededor del valor.</p></div><details class="receta-copia ancho"><summary>Copiar HTML · Velas OHLC</summary><p class="procedencia">Dependencias: fuentes.css, estilo.css, audio.js, controles.js, interacciones.js, analitica.js</p><div class="codigo"><div class="cab"><span>Velas OHLC</span><button type="button" data-copiar="biblioteca-codigo-velas" aria-label="Copiar HTML de Velas OHLC">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Velas OHLC, desplazable"><code id="biblioteca-codigo-velas">&lt;figure class=&quot;ancho&quot; id=&quot;analitica-velas&quot; data-analitica=&quot;velas&quot; data-unidad=&quot;índice base 100&quot;&gt;
+  &lt;div class=&quot;tabla-caja densa&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Datos de Velas financieras OHLC, desplazables&quot;&gt;
+    &lt;table&gt;&lt;caption&gt;Velas financieras OHLC&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Fecha UTC&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Apertura&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Máximo&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Mínimo&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Cierre&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-09-07&lt;/th&gt;&lt;td data-valor=&quot;100&quot;&gt;100&lt;/td&gt;&lt;td data-valor=&quot;112&quot;&gt;112&lt;/td&gt;&lt;td data-valor=&quot;96&quot;&gt;96&lt;/td&gt;&lt;td data-valor=&quot;108&quot;&gt;108&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-09-08&lt;/th&gt;&lt;td data-valor=&quot;108&quot;&gt;108&lt;/td&gt;&lt;td data-valor=&quot;115&quot;&gt;115&lt;/td&gt;&lt;td data-valor=&quot;101&quot;&gt;101&lt;/td&gt;&lt;td data-valor=&quot;103&quot;&gt;103&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-09-09&lt;/th&gt;&lt;td data-valor=&quot;103&quot;&gt;103&lt;/td&gt;&lt;td data-valor=&quot;111&quot;&gt;111&lt;/td&gt;&lt;td data-valor=&quot;99&quot;&gt;99&lt;/td&gt;&lt;td data-valor=&quot;109&quot;&gt;109&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-09-10&lt;/th&gt;&lt;td data-valor=&quot;109&quot;&gt;109&lt;/td&gt;&lt;td data-valor=&quot;118&quot;&gt;118&lt;/td&gt;&lt;td data-valor=&quot;106&quot;&gt;106&lt;/td&gt;&lt;td data-valor=&quot;115&quot;&gt;115&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;2026-09-11&lt;/th&gt;&lt;td data-valor=&quot;115&quot;&gt;115&lt;/td&gt;&lt;td data-valor=&quot;119&quot;&gt;119&lt;/td&gt;&lt;td data-valor=&quot;108&quot;&gt;108&lt;/td&gt;&lt;td data-valor=&quot;111&quot;&gt;111&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Serie sintética, no cotización de un activo. Hueca = sube o no cambia; rellena = baja.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details><section class="seccion" id="receta-mapa-rutas" tabindex="-1"><p class="ceja">Componente / Mapa de rutas</p><h2>Mapa de rutas</h2></section><figure class="ancho" id="analitica-mapa-rutas" data-analitica="rutas" data-unidad="viajes">
+  <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Datos de Mapa de rutas y volumen, desplazables">
+    <table><caption>Mapa de rutas y volumen</caption>
+      <thead><tr><th scope="col">Conexión</th><th scope="col">Lat. origen</th><th scope="col">Lon. origen</th><th scope="col">Lat. destino</th><th scope="col">Lon. destino</th><th scope="col">Viajes</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Bogotá → Medellín</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="6.244">6.244</td><td data-valor="-75.582">-75.582</td><td data-valor="80">80</td></tr>
+        <tr><th scope="row">Bogotá → Cali</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="3.452">3.452</td><td data-valor="-76.532">-76.532</td><td data-valor="50">50</td></tr>
+        <tr><th scope="row">Bogotá → Barranquilla</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="10.969">10.969</td><td data-valor="-74.781">-74.781</td><td data-valor="30">30</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Datos ficticios de logística; no son operaciones de Liftit. Ubicaciones urbanas aproximadas. Contorno: <a href="https://www.naturalearthdata.com/about/terms-of-use/">Natural Earth</a>, dominio público, escala 1:110m.</figcaption>
+</figure><div class="receta-guia"><p><strong>Cuándo:</strong> comparar corredores entre sedes y el volumen de viajes; el grosor comparte una escala lineal. No para orientar a un conductor ni estimar tiempo de viaje.</p><p><strong>Límite:</strong> Incluye geografia.js y analitica.js, en ese orden. Hasta 24 conexiones, cantidades no negativas; vista acotada a Colombia (lat. −5…14, lon. −80…−66). Proyección equirectangular; líneas curvas esquemáticas, no carreteras ni geodésicas. 0 viajes no dibuja una ruta. No obtiene datos, distancias ni rutas de un proveedor.</p></div><details class="receta-copia ancho"><summary>Copiar HTML · Mapa de rutas</summary><p class="procedencia">Dependencias: fuentes.css, estilo.css, audio.js, controles.js, interacciones.js, geografia.js, analitica.js</p><div class="codigo"><div class="cab"><span>Mapa de rutas</span><button type="button" data-copiar="biblioteca-codigo-mapa-rutas" aria-label="Copiar HTML de Mapa de rutas">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Mapa de rutas, desplazable"><code id="biblioteca-codigo-mapa-rutas">&lt;figure class=&quot;ancho&quot; id=&quot;analitica-mapa-rutas&quot; data-analitica=&quot;rutas&quot; data-unidad=&quot;viajes&quot;&gt;
+  &lt;div class=&quot;tabla-caja densa&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Datos de Mapa de rutas y volumen, desplazables&quot;&gt;
+    &lt;table&gt;&lt;caption&gt;Mapa de rutas y volumen&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Conexión&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Lat. origen&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Lon. origen&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Lat. destino&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Lon. destino&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Viajes&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Bogotá → Medellín&lt;/th&gt;&lt;td data-valor=&quot;4.711&quot;&gt;4.711&lt;/td&gt;&lt;td data-valor=&quot;-74.072&quot;&gt;-74.072&lt;/td&gt;&lt;td data-valor=&quot;6.244&quot;&gt;6.244&lt;/td&gt;&lt;td data-valor=&quot;-75.582&quot;&gt;-75.582&lt;/td&gt;&lt;td data-valor=&quot;80&quot;&gt;80&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Bogotá → Cali&lt;/th&gt;&lt;td data-valor=&quot;4.711&quot;&gt;4.711&lt;/td&gt;&lt;td data-valor=&quot;-74.072&quot;&gt;-74.072&lt;/td&gt;&lt;td data-valor=&quot;3.452&quot;&gt;3.452&lt;/td&gt;&lt;td data-valor=&quot;-76.532&quot;&gt;-76.532&lt;/td&gt;&lt;td data-valor=&quot;50&quot;&gt;50&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Bogotá → Barranquilla&lt;/th&gt;&lt;td data-valor=&quot;4.711&quot;&gt;4.711&lt;/td&gt;&lt;td data-valor=&quot;-74.072&quot;&gt;-74.072&lt;/td&gt;&lt;td data-valor=&quot;10.969&quot;&gt;10.969&lt;/td&gt;&lt;td data-valor=&quot;-74.781&quot;&gt;-74.781&lt;/td&gt;&lt;td data-valor=&quot;30&quot;&gt;30&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Datos ficticios de logística; no son operaciones de Liftit. Ubicaciones urbanas aproximadas. Contorno: &lt;a href=&quot;https://www.naturalearthdata.com/about/terms-of-use/&quot;&gt;Natural Earth&lt;/a&gt;, dominio público, escala 1:110m.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details><section class="seccion" id="receta-mapa-burbujas" tabindex="-1"><p class="ceja">Componente / Mapa de volumen</p><h2>Mapa de volumen</h2></section><figure class="ancho" id="analitica-mapa-burbujas" data-analitica="burbujas" data-unidad="entregas">
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Datos de Mapa de volumen por sede, desplazables">
+    <table><caption>Mapa de volumen por sede</caption>
+      <thead><tr><th scope="col">Sede</th><th scope="col">Latitud</th><th scope="col">Longitud</th><th scope="col">Entregas</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Bogotá</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="240">240</td></tr>
+        <tr><th scope="row">Medellín</th><td data-valor="6.244">6.244</td><td data-valor="-75.582">-75.582</td><td data-valor="180">180</td></tr>
+        <tr><th scope="row">Cali</th><td data-valor="3.452">3.452</td><td data-valor="-76.532">-76.532</td><td data-valor="120">120</td></tr>
+        <tr><th scope="row">Barranquilla</th><td data-valor="10.969">10.969</td><td data-valor="-74.781">-74.781</td><td data-valor="60">60</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Datos ficticios de logística; no son operaciones de Liftit. Ubicaciones urbanas aproximadas. Contorno: <a href="https://www.naturalearthdata.com/about/terms-of-use/">Natural Earth</a>, dominio público, escala 1:110m.</figcaption>
+</figure><div class="receta-guia"><p><strong>Cuándo:</strong> comparar cantidades absolutas por ubicación. El área, no el radio, representa volumen. Para tasas sobre población, explicita denominadores antes de elegir este mapa.</p><p><strong>Límite:</strong> Incluye geografia.js y analitica.js. Hasta 24 puntos en la vista de Colombia, sin valores negativos. Radio = raíz de la proporción al máximo; cero tiene área cero. No agrupa puntos cercanos: si hay solapamiento, usa el selector y la tabla o un mapa más específico. No representa cobertura territorial ni una coropleta.</p></div><details class="receta-copia ancho"><summary>Copiar HTML · Mapa de volumen</summary><p class="procedencia">Dependencias: fuentes.css, estilo.css, audio.js, controles.js, interacciones.js, geografia.js, analitica.js</p><div class="codigo"><div class="cab"><span>Mapa de volumen</span><button type="button" data-copiar="biblioteca-codigo-mapa-burbujas" aria-label="Copiar HTML de Mapa de volumen">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Mapa de volumen, desplazable"><code id="biblioteca-codigo-mapa-burbujas">&lt;figure class=&quot;ancho&quot; id=&quot;analitica-mapa-burbujas&quot; data-analitica=&quot;burbujas&quot; data-unidad=&quot;entregas&quot;&gt;
+  &lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Datos de Mapa de volumen por sede, desplazables&quot;&gt;
+    &lt;table&gt;&lt;caption&gt;Mapa de volumen por sede&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Sede&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Latitud&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Longitud&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Entregas&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Bogotá&lt;/th&gt;&lt;td data-valor=&quot;4.711&quot;&gt;4.711&lt;/td&gt;&lt;td data-valor=&quot;-74.072&quot;&gt;-74.072&lt;/td&gt;&lt;td data-valor=&quot;240&quot;&gt;240&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Medellín&lt;/th&gt;&lt;td data-valor=&quot;6.244&quot;&gt;6.244&lt;/td&gt;&lt;td data-valor=&quot;-75.582&quot;&gt;-75.582&lt;/td&gt;&lt;td data-valor=&quot;180&quot;&gt;180&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Cali&lt;/th&gt;&lt;td data-valor=&quot;3.452&quot;&gt;3.452&lt;/td&gt;&lt;td data-valor=&quot;-76.532&quot;&gt;-76.532&lt;/td&gt;&lt;td data-valor=&quot;120&quot;&gt;120&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Barranquilla&lt;/th&gt;&lt;td data-valor=&quot;10.969&quot;&gt;10.969&lt;/td&gt;&lt;td data-valor=&quot;-74.781&quot;&gt;-74.781&lt;/td&gt;&lt;td data-valor=&quot;60&quot;&gt;60&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Datos ficticios de logística; no son operaciones de Liftit. Ubicaciones urbanas aproximadas. Contorno: &lt;a href=&quot;https://www.naturalearthdata.com/about/terms-of-use/&quot;&gt;Natural Earth&lt;/a&gt;, dominio público, escala 1:110m.&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre></div></details></article><article class="pagina" id="tablas" data-pagina hidden><header class="cabecera"><p class="ceja">Capítulo 06 / 09</p><h1>Cada dato conserva su lugar.</h1><p class="bajada">Comparación, totales, series y densidad sin cortar información.</p></header><nav class="indice" tabindex="0" aria-label="Índice de Tablas"><p class="ceja">En esta página</p><ol><li><a href="#receta-tabla-densa">Tabla densa</a></li><li><a href="#receta-comparacion">Comparación</a></li><li><a href="#receta-totales">Totales y ordenación</a></li><li><a href="#receta-sparkline">Tabla con serie</a></li><li><a href="#receta-explorador">Tabla interactiva</a></li></ol></nav><section class="seccion" id="receta-tabla-densa" tabindex="-1"><p class="ceja">Componente / Tabla densa</p><h2>Tabla densa</h2></section><figure class="amplio">
   <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Brechas, desplazable">
     <table><caption>Seguimiento ilustrativo de brechas</caption>
@@ -2512,7 +2925,7 @@ body:has(.revision-barra) { padding-bottom:0; }
 &lt;h3&gt;Tres momentos de una confirmación&lt;/h3&gt;&lt;div class=&quot;diagrama-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Flujo anotado de 720 píxeles, desplazable&quot;&gt;
 &lt;svg class=&quot;plano-anotado&quot; viewBox=&quot;0 0 720 210&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; role=&quot;img&quot; aria-labelledby=&quot;anotaciones-titulo anotaciones-desc&quot;&gt;&lt;title id=&quot;anotaciones-titulo&quot;&gt;Crear, revisar y confirmar&lt;/title&gt;&lt;desc id=&quot;anotaciones-desc&quot;&gt;Uno: crear borrador. Dos: revisar datos. Tres: confirmar. Las tres notas siguientes explican cada paso.&lt;/desc&gt;&lt;g fill=&quot;none&quot; stroke=&quot;currentColor&quot;&gt;&lt;rect x=&quot;10&quot; y=&quot;45&quot; width=&quot;200&quot; height=&quot;110&quot; rx=&quot;6&quot;/&gt;&lt;rect x=&quot;260&quot; y=&quot;45&quot; width=&quot;200&quot; height=&quot;110&quot; rx=&quot;6&quot;/&gt;&lt;rect x=&quot;510&quot; y=&quot;45&quot; width=&quot;200&quot; height=&quot;110&quot; rx=&quot;6&quot;/&gt;&lt;path d=&quot;M210 100h45m-9-7 9 7-9 7M460 100h45m-9-7 9 7-9 7&quot;/&gt;&lt;/g&gt;&lt;g text-anchor=&quot;middle&quot; fill=&quot;currentColor&quot;&gt;&lt;text x=&quot;110&quot; y=&quot;85&quot;&gt;01&lt;/text&gt;&lt;text x=&quot;110&quot; y=&quot;120&quot;&gt;Crear borrador&lt;/text&gt;&lt;text x=&quot;360&quot; y=&quot;85&quot;&gt;02&lt;/text&gt;&lt;text x=&quot;360&quot; y=&quot;120&quot;&gt;Revisar datos&lt;/text&gt;&lt;text x=&quot;610&quot; y=&quot;85&quot;&gt;03&lt;/text&gt;&lt;text x=&quot;610&quot; y=&quot;120&quot;&gt;Confirmar&lt;/text&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/div&gt;
 &lt;ol class=&quot;notas-anotadas&quot;&gt;&lt;li&gt;&lt;strong&gt;Crear.&lt;/strong&gt; Los datos permanecen editables; todavía no hay envío.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Revisar.&lt;/strong&gt; Se presenta fecha, duración y nombre en un resumen.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Confirmar.&lt;/strong&gt; La interfaz debe explicar qué se guardó y ofrecer un siguiente paso.&lt;/li&gt;&lt;/ol&gt;&lt;figcaption&gt;Flujo conceptual; las distancias no representan tiempo ni cantidad. Las notas contienen toda la explicación del dibujo.&lt;/figcaption&gt;
-&lt;/figure&gt;</code></pre></div></details></article><article class="pagina" id="expresion" data-pagina hidden><header class="cabecera"><p class="ceja">Capítulo 08 / 09</p><h1>Hay ideas que necesitan otra dimensión.</h1><p class="bajada">Geografía, composiciones con Three y sonido optativo.</p></header><nav class="indice" tabindex="0" aria-label="Índice de Espacio y gesto"><p class="ceja">En esta página</p><ol><li><a href="#receta-recorrido">Globo narrado</a></li><li><a href="#receta-xyz">Three.js · XYZ</a></li><li><a href="#receta-etapas">Three.js · etapas</a></li><li><a href="#receta-sonido">Sonido optativo</a></li></ol></nav><section class="seccion" id="receta-recorrido" tabindex="-1"><p class="ceja">Componente / Globo narrado</p><h2>Globo narrado</h2></section><figure class="pieza ancho" id="recorrido-ejemplo" data-reporte="recorrido">
+&lt;/figure&gt;</code></pre></div></details></article><article class="pagina" id="expresion" data-pagina hidden><header class="cabecera"><p class="ceja">Capítulo 08 / 09</p><h1>Hay ideas que necesitan otra dimensión.</h1><p class="bajada">Geografía, composiciones con Three y sonido optativo.</p></header><nav class="indice" tabindex="0" aria-label="Índice de Espacio y gesto"><p class="ceja">En esta página</p><ol><li><a href="#receta-recorrido">Globo narrado</a></li><li><a href="#receta-xyz">Three.js · XYZ</a></li><li><a href="#receta-etapas">Three.js · etapas</a></li><li><a href="#receta-columnas-mapa">Columnas geográficas 3D</a></li><li><a href="#receta-arcos-mapa">Arcos logísticos 3D</a></li><li><a href="#receta-almacen">Capacidad de almacén 3D</a></li><li><a href="#receta-sonido">Sonido optativo</a></li></ol></nav><section class="seccion" id="receta-recorrido" tabindex="-1"><p class="ceja">Componente / Globo narrado</p><h2>Globo narrado</h2></section><figure class="pieza ancho" id="recorrido-ejemplo" data-reporte="recorrido">
   <h3>Seguir el viaje de una idea</h3>
   <p>Una ruta por etapa, con contexto escrito. Selecciona anterior o siguiente para orientar el globo.</p>
   <div data-recorrido-globo></div>
@@ -2594,6 +3007,86 @@ body:has(.revision-barra) { padding-bottom:0; }
     &lt;/table&gt;
   &lt;/div&gt;
   &lt;figcaption&gt;Ejemplo ilustrativo: 210 ms si las cuatro etapas ocurren en serie. Alturas proporcionales al tiempo, orden horizontal secuencial; anchura y profundidad constantes sin significado cuantitativo.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details><section class="seccion" id="receta-columnas-mapa" tabindex="-1"><p class="ceja">Componente / Columnas geográficas 3D</p><h2>Columnas geográficas 3D</h2></section><figure class="ancho" id="analitica-columnas-mapa" data-escena="columnas" data-unidad="entregas">
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Datos de Columnas geográficas 3D, desplazables">
+    <table><caption>Columnas geográficas 3D</caption>
+      <thead><tr><th scope="col">Sede</th><th scope="col">Latitud</th><th scope="col">Longitud</th><th scope="col">Entregas</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Bogotá</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="240">240</td></tr>
+        <tr><th scope="row">Medellín</th><td data-valor="6.244">6.244</td><td data-valor="-75.582">-75.582</td><td data-valor="180">180</td></tr>
+        <tr><th scope="row">Cali</th><td data-valor="3.452">3.452</td><td data-valor="-76.532">-76.532</td><td data-valor="120">120</td></tr>
+        <tr><th scope="row">Barranquilla</th><td data-valor="10.969">10.969</td><td data-valor="-74.781">-74.781</td><td data-valor="60">60</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Datos ficticios de logística; no son operaciones de Liftit. Ubicaciones urbanas aproximadas. Contorno: <a href="https://www.naturalearthdata.com/about/terms-of-use/">Natural Earth</a>, dominio público, escala 1:110m.</figcaption>
+</figure><div class="receta-guia"><p><strong>Cuándo:</strong> explorar la relación entre ubicación y volumen desde distintos ángulos. Si sólo interesa un ranking, usa barras; la perspectiva dificulta comparar alturas cercanas.</p><p><strong>Límite:</strong> Incluye Three 0.160.1 una sola vez, geografia.js y escena.js. Hasta 12 ubicaciones en Colombia, cantidades no negativas; eje de altura común desde cero. Huella de columna constante, proyección equirectangular. No incluye elevación del terreno. Giro apagado inicialmente; cancela RAF fuera de pantalla y con movimiento reducido; destroy libera recursos. Tabla permanente.</p></div><details class="receta-copia ancho"><summary>Copiar HTML · Columnas geográficas 3D</summary><p class="procedencia">Dependencias: fuentes.css, estilo.css, audio.js, controles.js, interacciones.js, https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js, geografia.js, escena.js</p><div class="codigo"><div class="cab"><span>Columnas geográficas 3D</span><button type="button" data-copiar="biblioteca-codigo-columnas-mapa" aria-label="Copiar HTML de Columnas geográficas 3D">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Columnas geográficas 3D, desplazable"><code id="biblioteca-codigo-columnas-mapa">&lt;figure class=&quot;ancho&quot; id=&quot;analitica-columnas-mapa&quot; data-escena=&quot;columnas&quot; data-unidad=&quot;entregas&quot;&gt;
+  &lt;div class=&quot;tabla-caja&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Datos de Columnas geográficas 3D, desplazables&quot;&gt;
+    &lt;table&gt;&lt;caption&gt;Columnas geográficas 3D&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Sede&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Latitud&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Longitud&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Entregas&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Bogotá&lt;/th&gt;&lt;td data-valor=&quot;4.711&quot;&gt;4.711&lt;/td&gt;&lt;td data-valor=&quot;-74.072&quot;&gt;-74.072&lt;/td&gt;&lt;td data-valor=&quot;240&quot;&gt;240&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Medellín&lt;/th&gt;&lt;td data-valor=&quot;6.244&quot;&gt;6.244&lt;/td&gt;&lt;td data-valor=&quot;-75.582&quot;&gt;-75.582&lt;/td&gt;&lt;td data-valor=&quot;180&quot;&gt;180&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Cali&lt;/th&gt;&lt;td data-valor=&quot;3.452&quot;&gt;3.452&lt;/td&gt;&lt;td data-valor=&quot;-76.532&quot;&gt;-76.532&lt;/td&gt;&lt;td data-valor=&quot;120&quot;&gt;120&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Barranquilla&lt;/th&gt;&lt;td data-valor=&quot;10.969&quot;&gt;10.969&lt;/td&gt;&lt;td data-valor=&quot;-74.781&quot;&gt;-74.781&lt;/td&gt;&lt;td data-valor=&quot;60&quot;&gt;60&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Datos ficticios de logística; no son operaciones de Liftit. Ubicaciones urbanas aproximadas. Contorno: &lt;a href=&quot;https://www.naturalearthdata.com/about/terms-of-use/&quot;&gt;Natural Earth&lt;/a&gt;, dominio público, escala 1:110m.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details><section class="seccion" id="receta-arcos-mapa" tabindex="-1"><p class="ceja">Componente / Arcos logísticos 3D</p><h2>Arcos logísticos 3D</h2></section><figure class="ancho" id="analitica-arcos-mapa" data-escena="arcos" data-unidad="viajes">
+  <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Datos de Arcos logísticos 3D, desplazables">
+    <table><caption>Arcos logísticos 3D</caption>
+      <thead><tr><th scope="col">Conexión</th><th scope="col">Lat. origen</th><th scope="col">Lon. origen</th><th scope="col">Lat. destino</th><th scope="col">Lon. destino</th><th scope="col">Viajes</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Bogotá → Medellín</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="6.244">6.244</td><td data-valor="-75.582">-75.582</td><td data-valor="80">80</td></tr>
+        <tr><th scope="row">Bogotá → Cali</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="3.452">3.452</td><td data-valor="-76.532">-76.532</td><td data-valor="50">50</td></tr>
+        <tr><th scope="row">Bogotá → Barranquilla</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="10.969">10.969</td><td data-valor="-74.781">-74.781</td><td data-valor="30">30</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Datos ficticios de logística; no son operaciones de Liftit. Ubicaciones urbanas aproximadas. Contorno: <a href="https://www.naturalearthdata.com/about/terms-of-use/">Natural Earth</a>, dominio público, escala 1:110m.</figcaption>
+</figure><div class="receta-guia"><p><strong>Cuándo:</strong> explicar conexiones de origen/destino que se cruzan en una vista plana; selecciona una para aislarla. No para rutas viales o tiempos estimados.</p><p><strong>Límite:</strong> Incluye Three 0.160.1, geografia.js y escena.js. Hasta 12 rutas en Colombia. La sección del tubo es proporcional a viajes; altura del arco constante, sólo separación visual, no altitud ni duración. Cero genera sección cero. No anima vehículos ni sugiere seguimiento en vivo. Comparte pausa, reducción de movimiento y destroy de NotaEscena; lista y tabla dan el detalle exacto.</p></div><details class="receta-copia ancho"><summary>Copiar HTML · Arcos logísticos 3D</summary><p class="procedencia">Dependencias: fuentes.css, estilo.css, audio.js, controles.js, interacciones.js, https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js, geografia.js, escena.js</p><div class="codigo"><div class="cab"><span>Arcos logísticos 3D</span><button type="button" data-copiar="biblioteca-codigo-arcos-mapa" aria-label="Copiar HTML de Arcos logísticos 3D">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Arcos logísticos 3D, desplazable"><code id="biblioteca-codigo-arcos-mapa">&lt;figure class=&quot;ancho&quot; id=&quot;analitica-arcos-mapa&quot; data-escena=&quot;arcos&quot; data-unidad=&quot;viajes&quot;&gt;
+  &lt;div class=&quot;tabla-caja densa&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Datos de Arcos logísticos 3D, desplazables&quot;&gt;
+    &lt;table&gt;&lt;caption&gt;Arcos logísticos 3D&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Conexión&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Lat. origen&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Lon. origen&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Lat. destino&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Lon. destino&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Viajes&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Bogotá → Medellín&lt;/th&gt;&lt;td data-valor=&quot;4.711&quot;&gt;4.711&lt;/td&gt;&lt;td data-valor=&quot;-74.072&quot;&gt;-74.072&lt;/td&gt;&lt;td data-valor=&quot;6.244&quot;&gt;6.244&lt;/td&gt;&lt;td data-valor=&quot;-75.582&quot;&gt;-75.582&lt;/td&gt;&lt;td data-valor=&quot;80&quot;&gt;80&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Bogotá → Cali&lt;/th&gt;&lt;td data-valor=&quot;4.711&quot;&gt;4.711&lt;/td&gt;&lt;td data-valor=&quot;-74.072&quot;&gt;-74.072&lt;/td&gt;&lt;td data-valor=&quot;3.452&quot;&gt;3.452&lt;/td&gt;&lt;td data-valor=&quot;-76.532&quot;&gt;-76.532&lt;/td&gt;&lt;td data-valor=&quot;50&quot;&gt;50&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Bogotá → Barranquilla&lt;/th&gt;&lt;td data-valor=&quot;4.711&quot;&gt;4.711&lt;/td&gt;&lt;td data-valor=&quot;-74.072&quot;&gt;-74.072&lt;/td&gt;&lt;td data-valor=&quot;10.969&quot;&gt;10.969&lt;/td&gt;&lt;td data-valor=&quot;-74.781&quot;&gt;-74.781&lt;/td&gt;&lt;td data-valor=&quot;30&quot;&gt;30&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Datos ficticios de logística; no son operaciones de Liftit. Ubicaciones urbanas aproximadas. Contorno: &lt;a href=&quot;https://www.naturalearthdata.com/about/terms-of-use/&quot;&gt;Natural Earth&lt;/a&gt;, dominio público, escala 1:110m.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre></div></details><section class="seccion" id="receta-almacen" tabindex="-1"><p class="ceja">Componente / Capacidad de almacén 3D</p><h2>Capacidad de almacén 3D</h2></section><figure class="ancho" id="analitica-almacen" data-escena="almacen" data-unidad="posiciones">
+  <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Datos de Capacidad de almacén 3D, desplazables">
+    <table><caption>Capacidad de almacén 3D</caption>
+      <thead><tr><th scope="col">Ubicación</th><th scope="col">X (m)</th><th scope="col">Z (m)</th><th scope="col">Ocupados</th><th scope="col">Capacidad</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">A1</th><td data-valor="0">0</td><td data-valor="0">0</td><td data-valor="8">8</td><td data-valor="12">12</td></tr>
+        <tr><th scope="row">A2</th><td data-valor="4">4</td><td data-valor="0">0</td><td data-valor="11">11</td><td data-valor="12">12</td></tr>
+        <tr><th scope="row">B1</th><td data-valor="0">0</td><td data-valor="6">6</td><td data-valor="5">5</td><td data-valor="10">10</td></tr>
+        <tr><th scope="row">B2</th><td data-valor="4">4</td><td data-valor="6">6</td><td data-valor="9">9</td><td data-valor="10">10</td></tr>
+        <tr><th scope="row">C1</th><td data-valor="0">0</td><td data-valor="12">12</td><td data-valor="2">2</td><td data-valor="8">8</td></tr>
+        <tr><th scope="row">C2</th><td data-valor="4">4</td><td data-valor="12">12</td><td data-valor="6">6</td><td data-valor="8">8</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Almacén ficticio. Coordenadas en planta; sólido = posiciones ocupadas, contorno = capacidad total.</figcaption>
+</figure><div class="receta-guia"><p><strong>Cuándo:</strong> ver dónde queda espacio dentro de una distribución de almacén. No para decidir seguridad estructural, altura real de estibas o rutas de evacuación.</p><p><strong>Límite:</strong> Incluye Three 0.160.1 y escena.js. 1–12 ubicaciones con X/Z finitos en metros, capacidad positiva y 0 ≤ ocupados ≤ capacidad. La altura representa cantidad de posiciones, no metros. No evita superposición si duplicas coordenadas; usa ubicaciones distintas y separadas. Comparte ciclo de vida de NotaEscena y tabla permanente; no es un gemelo digital conectado.</p></div><details class="receta-copia ancho"><summary>Copiar HTML · Capacidad de almacén 3D</summary><p class="procedencia">Dependencias: fuentes.css, estilo.css, audio.js, controles.js, interacciones.js, https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js, escena.js</p><div class="codigo"><div class="cab"><span>Capacidad de almacén 3D</span><button type="button" data-copiar="biblioteca-codigo-almacen" aria-label="Copiar HTML de Capacidad de almacén 3D">Copiar HTML</button><span role="status" class="copia-estado"></span></div><pre tabindex="0" aria-label="HTML de Capacidad de almacén 3D, desplazable"><code id="biblioteca-codigo-almacen">&lt;figure class=&quot;ancho&quot; id=&quot;analitica-almacen&quot; data-escena=&quot;almacen&quot; data-unidad=&quot;posiciones&quot;&gt;
+  &lt;div class=&quot;tabla-caja densa&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;Datos de Capacidad de almacén 3D, desplazables&quot;&gt;
+    &lt;table&gt;&lt;caption&gt;Capacidad de almacén 3D&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Ubicación&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;X (m)&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Z (m)&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Ocupados&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Capacidad&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;A1&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;td data-valor=&quot;8&quot;&gt;8&lt;/td&gt;&lt;td data-valor=&quot;12&quot;&gt;12&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;A2&lt;/th&gt;&lt;td data-valor=&quot;4&quot;&gt;4&lt;/td&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;td data-valor=&quot;11&quot;&gt;11&lt;/td&gt;&lt;td data-valor=&quot;12&quot;&gt;12&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;B1&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;td data-valor=&quot;6&quot;&gt;6&lt;/td&gt;&lt;td data-valor=&quot;5&quot;&gt;5&lt;/td&gt;&lt;td data-valor=&quot;10&quot;&gt;10&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;B2&lt;/th&gt;&lt;td data-valor=&quot;4&quot;&gt;4&lt;/td&gt;&lt;td data-valor=&quot;6&quot;&gt;6&lt;/td&gt;&lt;td data-valor=&quot;9&quot;&gt;9&lt;/td&gt;&lt;td data-valor=&quot;10&quot;&gt;10&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;C1&lt;/th&gt;&lt;td data-valor=&quot;0&quot;&gt;0&lt;/td&gt;&lt;td data-valor=&quot;12&quot;&gt;12&lt;/td&gt;&lt;td data-valor=&quot;2&quot;&gt;2&lt;/td&gt;&lt;td data-valor=&quot;8&quot;&gt;8&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;C2&lt;/th&gt;&lt;td data-valor=&quot;4&quot;&gt;4&lt;/td&gt;&lt;td data-valor=&quot;12&quot;&gt;12&lt;/td&gt;&lt;td data-valor=&quot;6&quot;&gt;6&lt;/td&gt;&lt;td data-valor=&quot;8&quot;&gt;8&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;figcaption&gt;Almacén ficticio. Coordenadas en planta; sólido = posiciones ocupadas, contorno = capacidad total.&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre></div></details><section class="seccion" id="receta-sonido" tabindex="-1"><p class="ceja">Componente / Sonido optativo</p><h2>Sonido optativo</h2></section><aside class="nota-sonido" data-canal-sonido aria-labelledby="sonido-titulo">
   <h3 id="sonido-titulo">Una señal breve.</h3>
   <p>Activa el sonido y prueba una señal. Cada acción también se describe en texto.</p>
@@ -2949,6 +3442,157 @@ ERROR  ejemplo rechazado      1 recurso externo&lt;/code&gt;&lt;/pre&gt;&lt;/div
 &lt;dialog class=&quot;revision-dialogo revision-ui&quot; data-revision-editor aria-labelledby=&quot;revision-editor-titulo&quot;&gt;&lt;form&gt;&lt;h2 id=&quot;revision-editor-titulo&quot;&gt;Añadir comentario&lt;/h2&gt;&lt;details class=&quot;revision-contexto&quot;&gt;&lt;summary&gt;Contexto del punto&lt;/summary&gt;&lt;p data-revision-contexto tabindex=&quot;0&quot; aria-label=&quot;Contexto completo del comentario&quot;&gt;&lt;/p&gt;&lt;/details&gt;&lt;label for=&quot;revision-texto&quot;&gt;Ajuste que propones&lt;/label&gt;&lt;textarea id=&quot;revision-texto&quot; data-revision-texto rows=&quot;3&quot; maxlength=&quot;4000&quot; required placeholder=&quot;Qué cambiarías y por qué&quot;&gt;&lt;/textarea&gt;&lt;div class=&quot;acciones&quot;&gt;&lt;button type=&quot;button&quot; data-revision-guardar&gt;Guardar&lt;/button&gt;&lt;button type=&quot;button&quot; data-revision-cancelar&gt;Cerrar&lt;/button&gt;&lt;/div&gt;&lt;/form&gt;&lt;/dialog&gt;
 &lt;dialog class=&quot;revision-dialogo revision-ui&quot; data-revision-panel aria-labelledby=&quot;revision-panel-titulo&quot;&gt;&lt;h2 id=&quot;revision-panel-titulo&quot;&gt;Comentarios del documento&lt;/h2&gt;&lt;p class=&quot;procedencia&quot;&gt;Borrador de esta pestaña. Copia el prompt antes de recargar.&lt;/p&gt;&lt;ol data-revision-notas&gt;&lt;/ol&gt;&lt;div class=&quot;codigo&quot;&gt;&lt;div class=&quot;cab&quot;&gt;&lt;span&gt;Prompt de ajustes&lt;/span&gt;&lt;button type=&quot;button&quot; data-copiar=&quot;revision-prompt&quot;&gt;Copiar prompt&lt;/button&gt;&lt;span class=&quot;copia-estado&quot; role=&quot;status&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;pre tabindex=&quot;0&quot; aria-label=&quot;Prompt con comentarios, desplazable&quot;&gt;&lt;code id=&quot;revision-prompt&quot; data-revision-prompt&gt;No hay comentarios todavía.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;button type=&quot;button&quot; data-revision-cerrar&gt;Cerrar comentarios&lt;/button&gt;&lt;/dialog&gt;
 &lt;/section&gt;</code></pre></div></details></article><div class="paginacion" data-paginacion><button type="button" data-nav="prev"><span class="et">Anterior</span><span class="tit"></span></button><button type="button" data-nav="next"><span class="et">Siguiente</span><span class="tit"></span></button></div><footer class="pie"><p>tikin · Una biblioteca para explicar mejor.</p><a href="#portada">Volver al inicio</a></footer></main><div class="regla regla-guiada" role="slider" tabindex="0" aria-orientation="horizontal" aria-label="Progreso de lectura de esta página" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="ticks"></div><div class="cursor"></div><span class="val">0%</span></div><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js"></script><script>
+/* Natural Earth, dominio público. Colombia 1:110m, contorno generalizado.
+   Fuente: natural-earth-vector/ne_110m_admin_0_countries.geojson (ADM0_A3 COL).
+   No apto para navegación vial, límites jurídicos ni detalle de barrios. */
+window.NotaGeografia=Object.freeze({
+  colombia: {"type":"Polygon","coordinates":[[[-66.87633,1.25336],[-67.06505,1.13011],[-67.26,1.72],[-67.53781,2.03716],[-67.86857,1.69246],[-69.81697,1.7148],[-69.8046,1.08908],[-69.21864,0.98568],[-69.25243,0.60265],[-69.4524,0.70616],[-70.01557,0.54141],[-70.02066,-0.18516],[-69.57707,-0.54999],[-69.42049,-1.12262],[-69.4441,-1.55629],[-69.89364,-4.29819],[-70.39404,-3.76659],[-70.69268,-3.74287],[-70.04771,-2.72516],[-70.81348,-2.25686],[-71.41365,-2.3428],[-71.77476,-2.16979],[-72.32579,-2.43422],[-73.07039,-2.30895],[-73.6595,-1.26049],[-74.12239,-1.00283],[-74.4416,-0.53082],[-75.10662,-0.0572],[-75.37322,-0.15203],[-75.80147,0.0848],[-76.29231,0.41605],[-76.57638,0.25694],[-77.42498,0.39569],[-77.66861,0.82589],[-77.85506,0.80993],[-78.85526,1.38092],[-78.99093,1.69137],[-78.61783,1.7664],[-78.66212,2.26735],[-78.42761,2.62956],[-77.93154,2.69661],[-77.51043,3.32502],[-77.12769,3.84964],[-77.49627,4.08761],[-77.3076,4.66798],[-77.53322,5.58281],[-77.31882,5.84535],[-77.47666,6.69112],[-77.88157,7.22377],[-77.75341,7.70984],[-77.43111,7.63806],[-77.24257,7.93528],[-77.47472,8.52429],[-77.35336,8.67051],[-76.83667,8.63875],[-76.08638,9.33682],[-75.6746,9.44325],[-75.6647,9.774],[-75.48043,10.61899],[-74.9069,11.08305],[-74.27675,11.10204],[-74.19722,11.31047],[-73.41476,11.22701],[-72.62784,11.73197],[-72.2382,11.95555],[-71.75409,12.4373],[-71.39982,12.37604],[-71.13746,12.11298],[-71.33158,11.77628],[-71.97392,11.60867],[-72.22758,11.1087],[-72.61466,10.82198],[-72.90529,10.45034],[-73.0276,9.73677],[-73.30495,9.152],[-72.78873,9.08503],[-72.66049,8.62529],[-72.43986,8.40527],[-72.3609,8.00264],[-72.47968,7.63251],[-72.44449,7.42378],[-72.19835,7.34043],[-71.96018,6.99162],[-70.67423,7.08779],[-70.09331,6.96038],[-69.38948,6.09986],[-68.98532,6.20681],[-68.26505,6.15327],[-67.69509,6.26732],[-67.34144,6.09547],[-67.52153,5.55687],[-67.7447,5.22113],[-67.82301,4.50394],[-67.62184,3.83948],[-67.33756,3.54234],[-67.30317,3.31845],[-67.80994,2.82065],[-67.44709,2.60028],[-67.18129,2.25064],[-66.87633,1.25336]]]},
+  check(lat,lon){if(!Number.isFinite(lat)||!Number.isFinite(lon)||lat < -5||lat > 14||lon < -80||lon > -66)throw Error('Coordenadas fuera de la vista de Colombia.');},
+  project(lat,lon){this.check(lat,lon);return [(lon+73)*.22,(4.5-lat)*.22];}
+});
+
+</script>
+<script>
+/* Nota Tikin · analítica local. La tabla es la única fuente de cifras.
+   Sin red, sin animación automática, SVG accesible y selección por teclado. */
+(() => {
+  'use strict';
+  const instances=new WeakMap(),NS='http://www.w3.org/2000/svg',DAY=86400000;
+  const fmt=n=>new Intl.NumberFormat('es-CO',{maximumFractionDigits:2}).format(n);
+  const el=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e;};
+  const svg=(tag,attrs={},text)=>{const e=document.createElementNS(NS,tag);for(const [k,v]of Object.entries(attrs))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;return e;};
+  const date=s=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(s))throw Error('Fecha ISO requerida.');const n=Date.parse(s+'T00:00:00Z');if(!Number.isFinite(n)||new Date(n).toISOString().slice(0,10)!==s)throw Error('Fecha inválida.');return n;};
+  const iso=n=>new Date(n).toISOString().slice(0,10);
+  const positive=values=>{if(values.some(v=>v<0))throw Error('No se admiten cantidades negativas.');};
+  function read(e){
+    const type=e.dataset.analitica,counts={calendario:2,torta:2,areas:4,caja:6,velas:5,rutas:6,burbujas:4};
+    const table=e.querySelector('table'),heads=[...(table?.tHead?.rows[0]?.cells||[])].map(c=>c.textContent.trim());
+    if(!counts[type]||heads.length!==counts[type]||!table.tBodies[0])throw Error('Tipo o cabecera incorrectos.');
+    const rows=[...table.tBodies[0].rows].map(r=>{
+      if(r.cells.length!==heads.length)throw Error('Fila incompleta.');
+      const label=r.cells[0].textContent.trim(),values=[...r.cells].slice(1).map(c=>{
+        const raw=c.getAttribute('data-valor'),v=Number(raw);if(raw===null||!raw.trim()||!Number.isFinite(v)||Math.abs(v)>1e12)throw Error('Valor inválido o fuera de precisión.');return v;
+      });return {label,values};
+    });
+    if(!rows.length||rows.length>(type==='calendario'?366:type==='areas'||type==='velas'?60:24))throw Error('Cantidad de registros fuera de límite.');
+    if(new Set(rows.map(r=>r.label)).size!==rows.length)throw Error('Etiquetas duplicadas.');
+    if(['calendario','areas','velas'].includes(type)){rows.forEach(r=>r.time=date(r.label));rows.sort((a,b)=>a.time-b.time);}
+    if(['calendario','torta','areas'].includes(type))positive(rows.flatMap(r=>r.values));
+    if(type==='torta'&&(rows.length>6||rows.reduce((s,r)=>s+r.values[0],0)<=0))throw Error('Torta: 1–6 categorías y total positivo.');
+    if(type==='calendario'&&((rows.at(-1).time-rows[0].time)/DAY>365||rows.some(r=>!Number.isInteger(r.values[0]))))throw Error('Calendario: conteos enteros y hasta 366 días.');
+    if(type==='areas'&&rows.length<2)throw Error('Áreas requieren al menos dos fechas.');
+    if(type==='caja'&&rows.some(r=>r.values.some((v,i,a)=>i&&v<a[i-1])))throw Error('Orden esperado: mínimo ≤ Q1 ≤ mediana ≤ Q3 ≤ máximo.');
+    if(type==='velas'&&rows.some(r=>{const[o,h,l,c]=r.values;return l>Math.min(o,c)||h<Math.max(o,c)||l>h;}))throw Error('OHLC: mínimo ≤ apertura/cierre ≤ máximo.');
+    if(['rutas','burbujas'].includes(type)){
+      if(!window.NotaGeografia)throw Error('Incluye geografia.js.');
+      rows.forEach(r=>{const v=r.values;NotaGeografia.check(v[0],v[1]);if(type==='rutas')NotaGeografia.check(v[2],v[3]);positive([v.at(-1)]);});
+    }
+    return {type,heads,rows,title:table.caption?.textContent.trim()||'Gráfica',unit:e.dataset.unidad||heads.at(-1)};
+  }
+  class Chart {
+    constructor(element){
+      this.model=read(element);this.element=element;this.abort=new AbortController();this.parts=[];this.donut=true;this.selected=null;
+      this.heading=el('h3',this.model.title);this.heading.className='grafica-titulo';
+      this.stage=el('div');this.stage.className='grafica-caja analitica-caja';this.stage.tabIndex=0;this.stage.setAttribute('role','region');this.stage.setAttribute('aria-label',this.model.title+', gráfica desplazable');
+      this.controls=el('div');this.controls.className='analitica-controles';
+      this.status=el('p','Elige un registro para consultar sus valores.');this.status.className='analitica-estado';this.status.setAttribute('role','status');
+      const label=el('label','Consultar registro ');this.select=el('select');this.select.setAttribute('aria-label','Registro de '+this.model.title);this.select.append(new Option('Todos los registros',''));
+      this.model.rows.forEach((r,i)=>this.select.append(new Option(r.label,String(i))));label.append(this.select);this.controls.append(label);
+      this.select.addEventListener('change',()=>this.choose(this.select.value===''?null:Number(this.select.value)),{signal:this.abort.signal});
+      if(this.model.type==='torta'){
+        this.toggle=el('button','Ver como torta');this.toggle.type='button';this.toggle.setAttribute('aria-pressed','false');
+        this.toggle.addEventListener('click',()=>{this.donut=!this.donut;this.toggle.textContent=this.donut?'Ver como torta':'Ver como donut';this.toggle.setAttribute('aria-pressed',String(!this.donut));this.draw();},{signal:this.abort.signal});this.controls.append(this.toggle);
+      }
+      this.legend=el('ul');this.legend.className='analitica-leyenda';
+      this.parts=[this.heading,this.controls,this.stage,this.legend,this.status];const before=element.firstChild;this.parts.forEach(p=>element.insertBefore(p,before));element.classList.add('nota-analitica');
+      try{this.draw();}catch(error){this.parts.forEach(p=>p.remove());element.classList.remove('nota-analitica');this.abort.abort();throw error;}
+      instances.set(element,this);
+    }
+    add(tag,attrs,text){const n=svg(tag,attrs,text);this.chart.append(n);return n;}
+    text(x,y,text,anchor='start'){return this.add('text',{x,y,'text-anchor':anchor},text);}
+    line(x1,y1,x2,y2,cls='grafica-rejilla'){return this.add('line',{x1,y1,x2,y2,class:cls});}
+    color(i){return 'var(--grafica-'+(i%4+1)+')';}
+    mark(n,i){n.dataset.registro=i;n.append(svg('title',{},this.describe(i)));return n;}
+    describe(i){const r=this.model.rows[i];return r.label+' · '+r.values.map((v,k)=>this.model.heads[k+1]+': '+fmt(v)).join(' · ');}
+    choose(i){this.selected=i;this.select.value=i===null?'':String(i);this.status.textContent=i===null?'Todos los registros.':this.describe(i);this.chart.querySelectorAll('[data-registro]').forEach(n=>n.classList.toggle('analitica-atenuada',i!==null&&Number(n.dataset.registro)!==i));}
+    key(text,i){const li=el('li'),swatch=el('span');swatch.className='analitica-muestra';swatch.style.background=this.color(i);li.append(swatch,document.createTextNode(text));this.legend.append(li);}
+    axis(min,max,label){
+      if(min===max){const d=Math.abs(min)*.1||1;min-=d;max+=d;}
+      const y=v=>310-(v-min)/(max-min)*250;this.domain=[min,max];
+      for(let t=0;t<=4;t++){const v=min+(max-min)*t/4;this.line(84,y(v),660,y(v));this.text(72,y(v)+4,fmt(v),'end');}
+      this.text(84,28,label);return y;
+    }
+    draw(){
+      this.legend.replaceChildren();this.chart=svg('svg',{viewBox:'0 0 720 380',role:'img','aria-label':this.model.title+'. Valores completos en la tabla.'});this.chart.append(svg('title',{},this.model.title));this.stage.replaceChildren(this.chart);
+      this[this.model.type]();this.choose(this.selected);
+      this.chart.addEventListener('click',e=>{const mark=e.target.closest('[data-registro]');if(mark)this.choose(Number(mark.dataset.registro));});
+    }
+    calendario(){
+      const {rows}=this.model,start=rows[0].time,end=rows.at(-1).time,max=Math.max(...rows.map(r=>r.values[0]));
+      const offset=(new Date(start).getUTCDay()+6)%7,weeks=Math.ceil(((end-start)/DAY+1+offset)/7),size=Math.min(28,560/weeks),x0=84;
+      this.chart.setAttribute('viewBox',`0 0 720 ${Math.max(285,size*7+100)}`);
+      ['L','M','X','J','V','S','D'].forEach((d,i)=>this.text(64,66+i*size,d,'end'));
+      const byDate=new Map(rows.map((r,i)=>[r.time,{r,i}]));this.max=max;
+      let month=-1;
+      for(let d=start;d<=end;d+=DAY){const index=(d-start)/DAY+offset,col=Math.floor(index/7),day=index%7,x=x0+col*size,y=50+day*size,entry=byDate.get(d),m=new Date(d).getUTCMonth();
+        if(m!==month){this.text(x,32,new Intl.DateTimeFormat('es',{month:'short',timeZone:'UTC'}).format(d));month=m;}
+        const v=entry?.r.values[0],level=v===undefined?null:v===0?0:Math.min(4,Math.ceil(v/Math.max(1,max)*4));
+        const cell=this.add('rect',{x,y,width:size-3,height:size-3,rx:3,fill:`var(--calor-${level===null?'ausente':level})`,stroke:'var(--grafica-linea)','data-fecha':iso(d),'data-valor':v??'ausente'});
+        if(entry)this.mark(cell,entry.i);else{cell.append(svg('title',{},iso(d)+': sin dato'));this.line(x+3,y+size-6,x+size-6,y+3,'analitica-ausente');}
+      }
+      const li=el('li',`0 · ${[1,2,3,4].map(i=>fmt(max*i/4)).join(' · ')} ${this.model.unit}. Intervalos (anterior, límite]; cero aparte. Diagonal: sin dato.`);this.legend.append(li);
+      for(let i=0;i<=4;i++){const li=el('li'),s=el('span');s.className='analitica-muestra';s.style.background=`var(--calor-${i})`;li.append(s,document.createTextNode(i===0?'0':`≤ ${fmt(max*i/4)}`));this.legend.append(li);}
+    }
+    torta(){
+      const {rows}=this.model,total=rows.reduce((s,r)=>s+r.values[0],0),cx=360,cy=185,r=140,inner=this.donut?86:0;let a=-Math.PI/2;this.total=total;
+      rows.forEach((row,i)=>{const fraction=row.values[0]/total,b=a+fraction*Math.PI*2,p=t=>[cx+r*Math.cos(t),cy+r*Math.sin(t)],q=t=>[cx+inner*Math.cos(t),cy+inner*Math.sin(t)];
+        if(fraction>0){let n;if(fraction===1)n=this.add('circle',{cx,cy,r:(r+inner)/2,fill:'none',stroke:this.color(i),'stroke-width':r-inner});else n=this.add('path',{d:`M${p(a)} A${r},${r} 0 ${fraction>.5?1:0},1 ${p(b)} L${q(b)} ${inner?`A${inner},${inner} 0 ${fraction>.5?1:0},0 ${q(a)}`:`L${cx},${cy}`} Z`,fill:this.color(i),stroke:'var(--grafica-papel)','stroke-width':2});this.mark(n,i);}
+        this.key(`${i+1}. ${row.label} · ${fmt(row.values[0])} · ${fmt(fraction*100)} %`,i);a=b;
+      });if(this.donut){this.text(cx,183,fmt(total),'middle');this.text(cx,205,this.model.unit,'middle');}else this.text(cx,360,'Total: '+fmt(total)+' '+this.model.unit,'middle');
+    }
+    areas(){
+      const {rows,heads}=this.model,totals=rows.map(r=>r.values.reduce((s,v)=>s+v,0)),max=Math.max(...totals)||1,y=this.axis(0,max,this.model.unit),x=t=>84+(t-rows[0].time)/(rows.at(-1).time-rows[0].time)*576;
+      for(let k=2;k>=0;k--){const top=rows.map(r=>[x(r.time),y(r.values.slice(0,k+1).reduce((s,v)=>s+v,0))]),bottom=rows.map(r=>[x(r.time),y(r.values.slice(0,k).reduce((s,v)=>s+v,0))]).reverse();this.add('path',{d:'M'+[...top,...bottom].map(p=>p.join(',')).join(' L')+' Z',fill:this.color(k),'fill-opacity':.4,stroke:this.color(k)});}
+      heads.slice(1).forEach((h,i)=>this.key(h,i));rows.forEach((r,i)=>{this.mark(this.add('circle',{cx:x(r.time),cy:y(totals[i]),r:4,fill:'var(--grafica-tinta)'}),i);if(i===0||i===rows.length-1||rows.length<=6){this.text(x(r.time),340,r.label.slice(5),'middle');this.text(x(r.time),y(totals[i])-10,fmt(totals[i]),'middle');}});this.text(360,369,'Fecha · distancia temporal real','middle');
+    }
+    caja(){
+      const {rows}=this.model,min=Math.min(...rows.map(r=>r.values[0])),max=Math.max(...rows.map(r=>r.values[4])),low=min===max?min-1:min,high=min===max?max+1:max,x=v=>160+(v-low)/(high-low)*480;this.domain=[low,high];
+      this.chart.setAttribute('viewBox',`0 0 720 ${100+rows.length*60}`);
+      for(let t=0;t<=4;t++){const v=low+(high-low)*t/4;this.text(x(v),32,fmt(v),'middle');this.line(x(v),45,x(v),60+rows.length*60);}
+      rows.forEach((r,i)=>{const [min,q1,med,q3,max]=r.values,y=75+i*60,g=this.add('g',{});this.mark(g,i);
+        g.append(svg('line',{x1:x(min),y1:y,x2:x(max),y2:y,stroke:this.color(i),'stroke-width':2}),svg('rect',{x:x(q1),y:y-14,width:x(q3)-x(q1),height:28,fill:this.color(i),'fill-opacity':.25,stroke:this.color(i)}));
+        [min,med,max].forEach((v,k)=>g.append(svg('line',{x1:x(v),x2:x(v),y1:y-(k===1?14:8),y2:y+(k===1?14:8),stroke:this.color(i),'stroke-width':2})));this.text(145,y+4,r.label,'end');
+      });this.text(160,88+rows.length*60,this.model.unit+' · bigotes = mínimo y máximo');
+    }
+    velas(){
+      const {rows}=this.model,min=Math.min(...rows.map(r=>r.values[2])),max=Math.max(...rows.map(r=>r.values[1])),y=this.axis(min,max,this.model.unit),span=rows.at(-1).time-rows[0].time,x=t=>span?112+(t-rows[0].time)/span*520:380;
+      const gap=rows.length>1?Math.min(...rows.slice(1).map((r,i)=>x(r.time)-x(rows[i].time))):60,width=Math.max(1,Math.min(32,gap*.6));
+      rows.forEach((r,i)=>{const[o,h,l,c]=r.values,g=this.add('g',{});this.mark(g,i);const color=this.color(c>=o?2:0);g.append(svg('line',{x1:x(r.time),x2:x(r.time),y1:y(h),y2:y(l),stroke:color,'stroke-width':2}),svg('rect',{x:x(r.time)-width/2,y:y(Math.max(o,c)),width,height:Math.abs(y(o)-y(c)),fill:c>=o?'var(--grafica-papel)':color,stroke:color,'stroke-width':2}));if(c===o)g.append(svg('line',{x1:x(r.time)-width/2,x2:x(r.time)+width/2,y1:y(c),y2:y(c),stroke:color,'stroke-width':2}));if(rows.length<=8||i===0||i===rows.length-1)this.text(x(r.time),338,r.label.slice(5),'middle');});
+      this.key('Hueca: cierre ≥ apertura',2);this.key('Rellena: cierre < apertura',0);this.text(360,369,'Fecha · distancia temporal real','middle');
+    }
+    mapBase(){
+      this.chart.setAttribute('viewBox','0 0 720 480');const project=([lon,lat])=>[180+(lon+80)*25,435-(lat+5)*25];
+      for(const ring of NotaGeografia.colombia.coordinates)this.add('path',{d:'M'+ring.map(project).map(p=>p.join(',')).join(' L')+' Z',fill:'var(--calor-0)',stroke:'var(--escena-linea)','stroke-width':1.5});
+      this.text(580,50,'N ↑','middle');this.text(100,470,'Colombia · coordenadas WGS84 · proyección equirectangular');return project;
+    }
+    rutas(){
+      const project=this.mapBase(),max=Math.max(...this.model.rows.map(r=>r.values[4]))||1;this.max=max;
+      this.model.rows.forEach((r,i)=>{const[a,b,c,d,v]=r.values,p=project([b,a]),q=project([d,c]);if(v>0){const n=this.add('path',{d:`M${p} Q${(p[0]+q[0])/2+35},${(p[1]+q[1])/2} ${q}`,fill:'none',stroke:this.color(i),'stroke-width':v/max*8});this.mark(n,i);} [p,q].forEach(pt=>this.add('circle',{cx:pt[0],cy:pt[1],r:4,fill:this.color(i)}));this.key(`${i+1}. ${r.label} · ${fmt(v)} ${this.model.unit}`,i);this.text(q[0]+9,q[1],String(i+1));});
+      this.text(100,25,`Grosor 0–8 px = 0–${fmt(max)} ${this.model.unit}`);
+    }
+    burbujas(){
+      const project=this.mapBase(),max=Math.max(...this.model.rows.map(r=>r.values[2]))||1;this.max=max;
+      this.model.rows.forEach((r,i)=>{const[lat,lon,value]=r.values,p=project([lon,lat]),radius=Math.sqrt(value/max)*28;const n=this.add('circle',{cx:p[0],cy:p[1],r:radius,fill:this.color(i),'fill-opacity':.35,stroke:this.color(i),'stroke-width':value?2:0});this.mark(n,i);this.text(p[0]+radius+7,p[1]+4,String(i+1));this.key(`${i+1}. ${r.label} · ${fmt(value)} ${this.model.unit}`,i);});
+      this.text(100,25,`Área proporcional al volumen · máximo ${fmt(max)} ${this.model.unit}`);
+    }
+    destroy(){this.abort.abort();this.parts.forEach(p=>p.remove());this.element.classList.remove('nota-analitica');instances.delete(this.element);}
+  }
+  function init(root=document){return [...(root.matches?.('[data-analitica]')?[root]:[]),...root.querySelectorAll('[data-analitica]')].map(e=>{if(instances.has(e))return instances.get(e);e.querySelector('[data-error-analitica]')?.remove();try{return new Chart(e);}catch(error){const p=el('p','No se pudo construir la gráfica: '+error.message);p.dataset.errorAnalitica='';p.className='grafica-error';e.prepend(p);return null;}});}
+  window.NotaAnalitica={init,get:e=>instances.get(e)};init();
+})();
+
+</script>
+<script>
 /* Sonido central: sólo gestos explícitos, apagado al cargar y al salir de la pestaña. */
 (()=>{'use strict';let enabled=false,context=null,voices=[],epoch=0,plays=0;const toggles=[...document.querySelectorAll('[data-audio-global],[data-sonido]')];
  if(!toggles.length)return;document.documentElement.dataset.audioCabecera='';
@@ -3210,7 +3854,7 @@ ERROR  ejemplo rechazado      1 recurso externo&lt;/code&gt;&lt;/pre&gt;&lt;/div
   document.addEventListener('nota:pagina',()=>writingObserver?.disconnect());
   // Imprimir el contenido íntegro de los extractos incluso en motores sin ::details-content.
   let closedForPrint = [];
-  addEventListener('beforeprint',() => { closedForPrint=[...document.querySelectorAll('.metodologia:not([open]),.extracto details:not([open]),[data-grafica] details:not([open]),[data-escena] details:not([open])')]; closedForPrint.forEach(e=>e.open=true); });
+  addEventListener('beforeprint',() => { closedForPrint=[...document.querySelectorAll('.metodologia:not([open]),.extracto details:not([open]),[data-grafica] details:not([open]),[data-analitica] details:not([open]),[data-escena] details:not([open])')]; closedForPrint.forEach(e=>e.open=true); });
   addEventListener('afterprint',() => { closedForPrint.forEach(e=>e.open=false); closedForPrint=[]; });
 })();
 
@@ -4156,18 +4800,24 @@ ERROR  ejemplo rechazado      1 recurso externo&lt;/code&gt;&lt;/pre&gt;&lt;/div
   const extent=values=>{let min=Math.min(...values),max=Math.max(...values);if(min===max){const p=Math.abs(min)*.1||1;min-=p;max+=p;}if(!Number.isFinite(max-min))throw new TypeError('Dominio fuera de precisión.');return [min,max];};
   function read(element){
     const type=element.dataset.escena,table=element.querySelector('table');
-    if(!['xyz','etapas'].includes(type)||!table?.tHead||!table.tBodies[0])throw new TypeError('Se necesita una tabla para xyz o etapas.');
+    if(!['xyz','etapas','columnas','arcos','almacen'].includes(type)||!table?.tHead||!table.tBodies[0])throw new TypeError('Se necesita una tabla para xyz o etapas.');
     const heads=[...table.tHead.rows[0].cells].map(c=>c.textContent.trim());
-    if(heads.length!==(type==='xyz'?4:3))throw new TypeError('XYZ necesita nombre/X/Y/Z; etapas necesita nombre/duración/explicación.');
+    const columns={xyz:4,etapas:3,columnas:4,arcos:6,almacen:5};
+    if(heads.length!==columns[type])throw new TypeError('XYZ necesita nombre/X/Y/Z; etapas necesita nombre/duración/explicación.');
     const data=[...table.tBodies[0].rows].map(row=>{
       if(row.cells.length!==heads.length)throw new TypeError('Fila incompleta.');
-      const values=[...row.cells].slice(1,type==='xyz'?4:2).map(c=>{
+      const values=[...row.cells].slice(1,type==='etapas'?2:columns[type]).map(c=>{
         const raw=c.getAttribute('data-valor'),n=Number(raw);
         if(raw===null||raw.trim()===''||!Number.isFinite(n))throw new TypeError('Coordenada o duración inválida.');return n;
       });
       if(type==='etapas'&&values[0]<0)throw new TypeError('La duración no puede ser negativa.');
       return {label:row.cells[0].textContent.trim(),values,detail:type==='etapas'?row.cells[2].textContent.trim():''};
     });
+    if(['columnas','arcos'].includes(type)){
+      if(!window.NotaGeografia)throw new TypeError('Incluye geografia.js antes de escena.js.');
+      data.forEach(r=>{NotaGeografia.check(r.values[0],r.values[1]);if(type==='arcos')NotaGeografia.check(r.values[2],r.values[3]);if(r.values.at(-1)<0)throw new TypeError('Volumen negativo.');});
+    }
+    if(type==='almacen'&&data.some(r=>r.values[2]<0||r.values[3]<=0||r.values[2]>r.values[3]))throw new TypeError('Ocupación entre cero y capacidad positiva.');
     if(!data.length||data.length>(type==='xyz'?100:12))throw new TypeError('XYZ admite 1–100 puntos; etapas, 1–12.');
     return {type,table,heads,data,title:table.caption?.textContent||'Vista espacial'};
   }
@@ -4205,10 +4855,10 @@ ERROR  ejemplo rechazado      1 recurso externo&lt;/code&gt;&lt;/pre&gt;&lt;/div
       this.listen(up,'click',()=>{this.theta=this.theta>.8?.2:this.theta+.2;this.draw();});
       this.listen(reset,'click',()=>{this.phi=0;this.theta=0;this.draw();});
       this.listen(this.pauseButton,'click',()=>{this.rotating=!this.rotating;this.stop();this.sync();this.start();});
-      this.status=node('p','',this.model.type==='xyz'?'Tres variables, tres ejes. La tabla permite consultar cada punto.':'La altura representa duración; el orden horizontal representa la secuencia.');this.status.setAttribute('role','status');
+      this.status=node('p','',this.model.type==='xyz'?'Tres variables, tres ejes. La tabla permite consultar cada punto.':this.model.type==='etapas'?'La altura representa duración; el orden horizontal representa la secuencia.':'Elige una ubicación o conexión; sus valores completos aparecen aquí.');this.status.setAttribute('role','status');
       this.selection=node('div','escena-controles');this.selection.setAttribute('role','group');this.selection.setAttribute('aria-label','Seleccionar registro');
-      this.model.data.forEach((row,i)=>{const b=node('button','',row.label);b.type='button';b.dataset.registro=i;b.setAttribute('aria-pressed','false');this.listen(b,'click',()=>this.select(this.selected===i?null:i));this.selection.append(b);});
-      const axes=node('p','secundario',this.model.type==='xyz'?this.model.heads.slice(1).map((h,i)=>['X','Y','Z'][i]+': '+h).join(' · '):'Altura: '+this.model.heads[1]);
+      this.model.data.forEach((row,i)=>{const b=node('button','',(['columnas','arcos','almacen'].includes(this.model.type)?(i+1)+'. ':'')+row.label);b.type='button';b.dataset.registro=i;b.setAttribute('aria-pressed','false');this.listen(b,'click',()=>this.select(this.selected===i?null:i));this.selection.append(b);});
+      const axes=node('p','secundario',this.model.type==='xyz'?this.model.heads.slice(1).map((h,i)=>['X','Y','Z'][i]+': '+h).join(' · '):this.model.type==='etapas'?'Altura: '+this.model.heads[1]:this.model.type==='arcos'?'Arcos: conexión directa, no vía terrestre. Sección del tubo proporcional a viajes; elevación constante para separar rutas.':this.model.type==='columnas'?'X/Z: longitud/latitud. Altura: '+this.model.heads[3]+'. Contorno Natural Earth 1:110m.':'X/Z: posición en metros. Altura sólida: ocupación. Contorno: capacidad en la misma escala.');
       this.parts=[title,this.error,this.stage,axes,this.controls,this.status,this.selection];
       const before=this.element.firstChild;this.parts.forEach(e=>this.element.insertBefore(e,before));
       this.listen(this.canvas,'webglcontextlost',e=>{e.preventDefault();this.lost=true;this.stop();this.error.hidden=false;this.error.textContent='Vista 3D suspendida. Consulta la tabla.';});
@@ -4238,6 +4888,7 @@ ERROR  ejemplo rechazado      1 recurso externo&lt;/code&gt;&lt;/pre&gt;&lt;/div
     }
     buildGeometry(){
       const {type,data,heads}=this.model;
+      if(['columnas','arcos','almacen'].includes(type)){this.buildSpatial();return;}
       if(type==='xyz'){
         this.domains=[0,1,2].map(i=>extent(data.map(r=>r.values[i])));
         const map=(v,i)=>-1+(v-this.domains[i][0])/(this.domains[i][1]-this.domains[i][0])*2;
@@ -4274,6 +4925,45 @@ ERROR  ejemplo rechazado      1 recurso externo&lt;/code&gt;&lt;/pre&gt;&lt;/div
         });
         this.text('Etapas en orden →',[0,-1.8,0],.32);
       }
+    }
+    buildSpatial(){
+      const {type,data,heads}=this.model;
+      const max=Math.max(...data.map(r=>r.values.at(-1)))||1;
+      this.domains=[[0,max]];
+      const base=-1.1,sy=v=>v/max*1.8;
+      const mesh=(geometry,position,i)=>{const m=new THREE.Mesh(this.keep(geometry),this.keep(new THREE.MeshBasicMaterial()));m.position.set(...position);m.userData.index=i;this.group.add(m);this.items.push(m);return m;};
+      if(type!=='almacen'){
+        NotaGeografia.colombia.coordinates.forEach(ring=>{const points=ring.map(([lon,lat])=>{const[x,z]=NotaGeografia.project(lat,lon);return new THREE.Vector3(x,base,z);});const l=new THREE.Line(this.keep(new THREE.BufferGeometry().setFromPoints(points)),this.keep(new THREE.LineBasicMaterial()));this.group.add(l);this.lines.push(l);});
+        this.text('N ↑',[1.35,base,-1.8],.25);
+        data.forEach((r,i)=>{
+          const [lat,lon]=r.values,[x,z]=NotaGeografia.project(lat,lon),value=r.values.at(-1);
+          if(type==='columnas'){
+            const h=sy(value);mesh(new THREE.BoxGeometry(.11,h,.11),[x,base+h/2,z],i);this.text(String(i+1),[x,base+h+.2,z],.24);
+          }else{
+            const [x2,z2]=NotaGeografia.project(r.values[2],r.values[3]);
+            const curve=new THREE.QuadraticBezierCurve3(new THREE.Vector3(x,base,z),new THREE.Vector3((x+x2)/2,1,(z+z2)/2),new THREE.Vector3(x2,base,z2));
+            mesh(new THREE.TubeGeometry(curve,40,Math.sqrt(value/max)*.035,8,false),[0,0,0],i);
+            this.text(String(i+1),[x2,base+.2,z2],.24);
+          }
+        });
+        if(type==='arcos'){this.text('Volumen máximo: '+format(max),[0,-1.9,0],.26);return;}
+      }else{
+        const xd=extent(data.map(r=>r.values[0])),zd=extent(data.map(r=>r.values[1]));
+        this.positionDomains=[xd,zd];
+        const sx=v=>-1.2+(v-xd[0])/(xd[1]-xd[0])*2.4,sz=v=>-1.2+(v-zd[0])/(zd[1]-zd[0])*2.4;
+        data.forEach((r,i)=>{
+          const [x,z,used,capacity]=r.values,h=sy(used),ch=sy(capacity);
+          mesh(new THREE.BoxGeometry(.28,h,.28),[sx(x),base+h/2,sz(z)],i);
+          const box=this.keep(new THREE.BoxGeometry(.29,ch,.29)),edges=this.keep(new THREE.EdgesGeometry(box));
+          const outline=new THREE.LineSegments(edges,this.keep(new THREE.LineBasicMaterial()));outline.position.set(sx(x),base+ch/2,sz(z));this.group.add(outline);this.lines.push(outline);
+          this.text(String(i+1),[sx(x),base-.25,sz(z)],.24);
+        });
+        this.line([-1.2,base,1.7],[1.2,base,1.7]);this.text('X '+format(xd[0])+'–'+format(xd[1])+' m',[0,base-.55,1.7],.23);
+        this.line([1.7,base,-1.2],[1.7,base,1.2]);this.text('Z '+format(zd[0])+'–'+format(zd[1])+' m',[1.7,base-.55,0],.23);
+      }
+      this.line([-1.9,base,0],[-1.9,base+1.8,0]);
+      [0,.5,1].forEach(t=>this.text(format(t*max),[-2.15,base+t*1.8,0],.24));
+      this.text(type==='columnas'?heads[3]:heads[4],[-1.6,1.25,0],.25);
     }
     color(raw){const c=document.createElement('canvas').getContext('2d');c.fillStyle=raw;c.fillRect(0,0,1,1);const [r,g,b]=c.getImageData(0,0,1,1).data;return new THREE.Color().setRGB(r/255,g/255,b/255,THREE.SRGBColorSpace);}
     theme(){

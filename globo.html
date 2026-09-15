@@ -1761,9 +1761,26 @@ body:has(.revision-barra) { padding-bottom:0; }
   .regla-guiada .ticks::after { content:''; position:absolute; inset:0;
     background:repeating-linear-gradient(to bottom,var(--marcador) 0 2px,transparent 2px 10px);
     clip-path:inset(0 0 calc((1 - var(--lectura,0)) * 100%) 0); }
-  .regla-guiada .val { color:var(--marcador); }
+  .regla-guiada .val { color:var(--marcador); font:12px/18px var(--mono); top:clamp(0px,calc(var(--lectura,0) * 100% - 9px),calc(100% - 18px)); }
 }
 @media print { .hoja.lectura-guiada { margin-inline:0; } }
+
+/* 21 — Analítica: tokens compartidos por las seis paletas, datos nunca truncados. */
+.nota-analitica { min-width:0; }
+.analitica-caja > svg { min-width:720px; }
+.analitica-controles { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-block:16px; }
+.analitica-controles label { display:flex; flex-wrap:wrap; align-items:center; gap:8px; min-width:0; font-size:13px; }
+.analitica-controles select,.analitica-controles button { min-height:44px; max-width:100%; min-width:0; padding:8px 12px; border:1px solid var(--linea-fuerte); border-radius:6px; background:var(--papel); color:var(--tinta); font:13px var(--sans); }
+.analitica-controles button { cursor:pointer; }
+.analitica-estado { min-height:3.2em; font:13px/1.6 var(--mono); overflow-wrap:anywhere; }
+.analitica-leyenda { display:flex; flex-wrap:wrap; gap:12px 24px; padding:16px 0; list-style:none; font:12px/1.7 var(--mono); }
+.analitica-leyenda li { display:flex; align-items:center; gap:8px; min-width:0; margin:0; overflow-wrap:anywhere; }
+.analitica-muestra { width:14px; height:14px; border:1px solid var(--linea-fuerte); border-radius:3px; flex:none; }
+.analitica-atenuada { opacity:.28; }
+.analitica-ausente { stroke:var(--grafica-tinta); stroke-width:1; }
+@media print { .analitica-controles { display:none; }.analitica-atenuada { opacity:1; } }
+
+.nota-analitica summary { min-height:44px; padding:10px 0; cursor:pointer; color:var(--azul); font-size:13px; }
 
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -2054,7 +2071,7 @@ body:has(.revision-barra) { padding-bottom:0; }
   document.addEventListener('nota:pagina',()=>writingObserver?.disconnect());
   // Imprimir el contenido íntegro de los extractos incluso en motores sin ::details-content.
   let closedForPrint = [];
-  addEventListener('beforeprint',() => { closedForPrint=[...document.querySelectorAll('.metodologia:not([open]),.extracto details:not([open]),[data-grafica] details:not([open]),[data-escena] details:not([open])')]; closedForPrint.forEach(e=>e.open=true); });
+  addEventListener('beforeprint',() => { closedForPrint=[...document.querySelectorAll('.metodologia:not([open]),.extracto details:not([open]),[data-grafica] details:not([open]),[data-analitica] details:not([open]),[data-escena] details:not([open])')]; closedForPrint.forEach(e=>e.open=true); });
   addEventListener('afterprint',() => { closedForPrint.forEach(e=>e.open=false); closedForPrint=[]; });
 })();
 
