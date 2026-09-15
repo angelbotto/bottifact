@@ -26,12 +26,13 @@
       this.sync();instances.set(element,this);
     }
     sync(){const button=this.element.querySelector('[data-escribir]');if(button){button.disabled=this.motion.matches;button.textContent=this.motion.matches?'Trazo completo (movimiento reducido)':'Repetir escritura';}}
-    cancel(){this.epoch++;this.animations.forEach(a=>a.cancel());this.animations=[];}
+    cancel(){this.stopSound?.();this.stopSound=null;this.epoch++;this.animations.forEach(a=>a.cancel());this.animations=[];}
     finish(){this.cancel();this.paths.forEach(p=>{p.style.strokeDasharray='none';p.style.strokeDashoffset='0';});if(this.status)this.status.textContent='Trazo completo.';}
     play(){
       if(this.dead)return;this.finish();
       if(this.motion.matches||document.hidden||!this.visible||!this.paths[0].animate)return;
       const rect=this.element.getBoundingClientRect();if(rect.bottom<=0||rect.top>=innerHeight)return;
+      this.stopSound=window.NotaAudio?.writing(this.element,this.duration);
       const epoch=this.epoch,total=this.lengths.reduce((a,b)=>a+b,0);let delay=0;
       this.paths.forEach((path,i)=>{
         const length=this.lengths[i],duration=this.duration*length/total;
