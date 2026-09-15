@@ -122,7 +122,13 @@
     }
     rutas(){
       const project=this.mapBase(),max=Math.max(...this.model.rows.map(r=>r.values[4]))||1;this.max=max;
-      this.model.rows.forEach((r,i)=>{const[a,b,c,d,v]=r.values,p=project([b,a]),q=project([d,c]);if(v>0){const n=this.add('path',{d:`M${p} Q${(p[0]+q[0])/2+35},${(p[1]+q[1])/2} ${q}`,fill:'none',stroke:this.color(i),'stroke-width':v/max*8});this.mark(n,i);} [p,q].forEach(pt=>this.add('circle',{cx:pt[0],cy:pt[1],r:4,fill:this.color(i)}));this.key(`${i+1}. ${r.label} · ${fmt(v)} ${this.model.unit}`,i);this.text(q[0]+9,q[1],String(i+1));});
+      const cities=new Map();
+      this.model.rows.forEach((r,i)=>{const[a,b,c,d,v]=r.values,p=project([b,a]),q=project([d,c]),dx=q[0]-p[0],dy=q[1]-p[1],distance=Math.hypot(dx,dy)||1,bend=Math.min(22,distance*.2);
+        if(v>0){const n=this.add('path',{d:`M${p} Q${(p[0]+q[0])/2-dy/distance*bend},${(p[1]+q[1])/2+dx/distance*bend} ${q}`,fill:'none',stroke:this.color(i),'stroke-width':v/max*8,'stroke-linecap':'round','stroke-linejoin':'round'});this.mark(n,i);}
+        const names=r.label.split(/\s*→\s*/);[[p,names[0]],[q,names[1]]].forEach(([pt,name])=>{const key=pt.join(',');if(!cities.has(key))cities.set(key,{pt,name:name||'Ciudad '+(cities.size+1)});});this.key(`${i+1}. ${r.label} · ${fmt(v)} ${this.model.unit}`,i);
+      });
+      // Los nodos se dibujan al final: ninguna ruta posterior corta o repinta su centro.
+      cities.forEach(({pt,name})=>{this.add('circle',{cx:pt[0],cy:pt[1],r:5,fill:'var(--grafica-papel)',stroke:'var(--grafica-tinta)','stroke-width':2});const label=this.text(pt[0]+11,pt[1]-9,name);label.setAttribute('paint-order','stroke');label.setAttribute('stroke','var(--grafica-papel)');label.setAttribute('stroke-width',4);label.setAttribute('stroke-linejoin','round');});
       this.text(100,25,`Grosor proporcional · máximo ${fmt(max)} ${this.model.unit}`);
     }
     burbujas(){
