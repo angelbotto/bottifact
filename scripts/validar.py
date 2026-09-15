@@ -49,7 +49,7 @@ class Fragment(HTMLParser):
 MODULES={
  'biblioteca.html':['invitacion.js','mano.js','atencion.js','geografia.js','analitica.js','codigo.js','explorador.js','revision.js','interacciones.js','multipagina.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js','editorial.js'],
  'plantilla.html':['invitacion.js','mano.js','atencion.js','geografia.js','analitica.js','codigo.js','explorador.js','revision.js','editorial.js','interacciones.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js'],
- 'informe.html':['interacciones.js','multipagina.js','graficas.js','reportes.js','visor.js','pestanas.js'],
+ 'informe.html':['interacciones.js','multipagina.js','graficas.js','reportes.js','visor.js','pestanas.js','revision.js'],
  'globo.html':['interacciones.js','globo.js'],
  'multipagina.html':['interacciones.js','multipagina.js'],
  'pruebas.html':['interacciones.js','multipagina.js'],
@@ -100,3 +100,8 @@ for item in registry['componentes']:
  assert all(dep==THREE or (ROOT/dep).is_file() for dep in item['dependencias']), ('Dependencia inexistente',item['id'])
 print('Registro local: '+str(len(expected))+' recetas con HTML original, documentación y dependencias existentes')
 print('Esto NO comprueba píxeles, audio, WebGL, foco real ni comportamiento del navegador.')
+
+from contrato_artefacto import validate
+for name in ['estandar.html','estandar-capitulos.html']:
+ errors=validate((ROOT/name).read_text());assert not errors,(name,errors)
+ print(name+': contrato estándar de artefacto correcto')

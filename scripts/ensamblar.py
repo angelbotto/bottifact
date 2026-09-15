@@ -144,9 +144,16 @@ globe_body='<main class="hoja" id="inicio" lang="es">'+tools()+'''<header class=
 (ROOT/'multipagina.html').write_text(start('Nota Tikin — capítulos')+dict(recipes())['multipagina']+script('interacciones.js')+script('multipagina.js'))
 informe=dict(recipes())['informe'].replace('<div class="edicion-acciones"><span>Edición 02</span></div>','<div class="edicion-acciones"><span>Edición 02</span>'+appearance()+'</div>')
 informe=re.sub(r'<figure class="pieza amplio" id="visor-ejemplo"[\s\S]*?</figure>',lambda _:dict(recipes())['visor'],informe,count=1)
-(ROOT/'informe.html').write_text(start('tikin · Una revisión antes de confirmar')+informe+''.join(script(file) for file in ['interacciones.js','multipagina.js','graficas.js','reportes.js','visor.js','pestanas.js']))
+from contrato_artefacto import revision, build as build_estandar
+(ROOT/'informe.html').write_text(start('tikin · Una revisión antes de confirmar')+informe+revision()+''.join(script(file) for file in ['interacciones.js','multipagina.js','graficas.js','reportes.js','visor.js','pestanas.js','revision.js']))
 from biblioteca import build as build_biblioteca
 build_biblioteca(ROOT,start,script,appearance,recipes,labels,THREE)
 from fixture_regresion import build
 build(start,script)
 print('Generados biblioteca.html, registro.json, plantilla.html, globo.html, multipagina.html, informe.html y pruebas.html')
+
+config=json.loads((ROOT/'ejemplos/estandar-capitulos.json').read_text())
+pages=[{**p,'html':(ROOT/'ejemplos'/p['contenido']).read_text()} for p in config['paginas']]
+(ROOT/'estandar.html').write_text(build_estandar(config['titulo'],[pages[0]],config['descripcion']))
+(ROOT/'estandar-capitulos.html').write_text(build_estandar(config['titulo'],pages,config['descripcion']))
+print('Generados estandar.html y estandar-capitulos.html con contrato verificable')

@@ -1,7 +1,7 @@
 ---
 name: nota-tikin
 description: >-
-  Diseña los artefactos e informes HTML de Angel y Tikin con una librería editorial de componentes copiables: lectura serif/sans, figuras anchas, tablas, gráficas a escala, mapas de calor, anotaciones, escritura por trazos, sonido optativo y escenas Three.js con alternativa textual. Siempre en claro, oscuro cálido y Dark Sea, autocontenidos y compatibles con la CSP de artefactos.
+  Genera y valida los artefactos e informes HTML de Angel y Tikin con una base estándar de temas sol/luna, comentarios flotantes y sonido optativo, más una librería editorial de componentes copiables: lectura serif/sans, figuras anchas, tablas, gráficas a escala, mapas de calor, anotaciones, escritura por trazos, sonido optativo y escenas Three.js con alternativa textual. Siempre en claro, oscuro cálido y Dark Sea, autocontenidos y compatibles con la CSP de artefactos.
 ---
 
 # Nota Tikin
@@ -10,6 +10,29 @@ Angel eligió cmrg.me como referencia para sus artefactos. El resultado debe sen
 cuaderno editorial: una idea principal, lectura tranquila y evidencia que puede ocupar más
 espacio. Aplica este lenguaje a los entregables HTML; conserva el formato si se pidió Markdown,
 una hoja de cálculo u otro medio.
+
+## Base obligatoria para nuevos artefactos de Angel
+
+Angel pidió estandarizar la experiencia. En cada nuevo entregable HTML usa el generador de
+[estandar.md](estandar.md): **llave circular sol/luna con seis paletas y Sistema, comentarios
+flotantes, sonido apagado con prueba y volumen, índice y progreso de lectura**. Los capítulos
+conservan estas piezas. No omitas los comentarios por no aparecer en el contenido del informe.
+Una petición explícita de Angel de omitir o cambiar una pieza prevalece; indica esa excepción.
+
+1. Consulta el inventario completo y lee las recetas elegidas como se explica abajo.
+2. Escribe sólo el contenido editorial en un archivo; cada `h2` necesita un ID propio o en su
+   sección. Las figuras anchas son hermanas de las secciones dentro de la hoja o página.
+3. Ejecuta `python3 scripts/crear_artefacto.py --contenido /ruta/contenido.html --titulo 'Título' --salida /ruta/artefacto.html`
+   desde el skill, o usa la ruta absoluta del script. Para capítulos, usa `--config` según estandar.md.
+4. Ejecuta **`python3 scripts/validar_artefacto.py /ruta/artefacto.html` sobre la salida final**.
+   `scripts/validar.py` comprueba la biblioteca; no reemplaza la revisión del artefacto entregado.
+5. Comprueba en navegador 320/390 px y escritorio, temas, comentarios y sonido. No anuncies
+   audición si sólo comprobaste actividad de Web Audio.
+
+La base incrusta las fuentes actuales y detecta dependencias. No reconstruyas los controles de
+memoria ni copies un informe viejo para comenzar. [estandar.html](estandar.html) y
+[estandar-capitulos.html](estandar-capitulos.html) son las bases reproducibles. Los ejemplos previos
+siguen sirviendo para consultar piezas y para mantener documentos ya publicados.
 
 ## Consultar la biblioteca completa
 
@@ -97,9 +120,9 @@ Comprueba sección actual, anteriores, cambio de capítulo, Home/End y tamaños 
 Una pieza aislada sin secciones no necesita un índice vacío. El patrón anterior sin estas clases
 conserva su umbral de 1600 px y sus anchos originales.
 
-## Empezar por la pieza
+## Fuentes y compatibilidad de las piezas
 
-Lee [estilo.css](estilo.css) y copia la hoja completa dentro de `<style>`; no la recrees de memoria.
+El generador incrusta [estilo.css](estilo.css) completa; no la recrees de memoria. Para mantener un artefacto anterior, lee y conserva sus fuentes antes de editarlo.
 Incluye también [fuentes.css](fuentes.css), con los WOFF2 incrustados y sus avisos OFL.
 Las familias y pesos son los mismos: la incrustación elimina descargas de fuentes durante la lectura.
 Para un informe de varios capítulos, añade [multipagina.js](multipagina.js).
@@ -201,8 +224,9 @@ La declaración temprana evita acentos rotos al abrir el mismo archivo fuera del
   importaciones o complementos externos. No dependas de `latest`.
 - Todas las imágenes deben ir en `data:` URI. SVG inline también sirve. No cargues capturas,
   carátulas, texturas ni mapas desde otros dominios, tampoco con `fetch`.
-- Pega [interacciones.js](interacciones.js) al final, dentro de un `<script>`. Contiene temas,
-  índice, regla, copia, impresión de extractos y sonido opcional. No requiere bibliotecas.
+- El generador incorpora [audio.js](audio.js), [controles.js](controles.js) e
+  [interacciones.js](interacciones.js) en orden. Interacciones gestiona temas, índice, regla y copia;
+  audio.js gestiona el sonido global. Copiar interacciones.js solo no basta para el audio.
 - El sonido empieza **apagado** y solo se activa con un botón. Es una síntesis Web Audio breve,
   no una copia de los MP3 del sitio. No sonorices scroll ni foco. La escritura optativa `data-escritura-sonora` puede acompañar el trazo visible tras activar Sonidos; el resto de lectura automática permanece silencioso.
 - `prefers-reduced-motion` debe cancelar RAF y transiciones. No basta con esconder el canvas.
@@ -297,7 +321,7 @@ calculadora de capacidad, globo narrado y visor de prototipos.
   No admite scripts, no usa iframe, no carga apps remotas y no emula hardware.
 - La apariencia de cabecera usa la llave circular sol/luna de la receta `apariencia`.
   Abre un panel con muestras de color y radios `data-elegir-tema`; conserva los selectores
-  anteriores para artefactos publicados. Las variantes con etiqueta y cápsula son alternativas.
+  anteriores para artefactos publicados. Las variantes con etiqueta y cápsula se conservan para ejemplos y documentos anteriores; los nuevos entregables usan la llave circular.
   No muestres todas las preferencias permanentemente en la cabecera.
 - Color y estilo son independientes: Editorial (original), Sobrio (Geist en títulos),
   Técnico (Geist Mono en títulos). Se activan por `data-elegir-estilo`; nunca cambies la
@@ -335,7 +359,7 @@ La edición completa incorpora [revision.js](revision.js): pines flotantes en el
 
 El visor permite pegar HTML declarativo local y alternar Móvil/Escritorio; los embeds remotos siguen fuera de CSP. Escritura admite `data-al-ver` para una primera animación al entrar en pantalla; el sonido se activa con un botón explícito. [codigo.js](codigo.js) colorea HTML, CSS, JavaScript, TypeScript, JSON, Python, SQL, Shell y salida de terminal creando nodos de texto seguros y conserva exactamente el contenido copiable. Grano de papel usa SVG de ruido incrustado, no una rejilla de puntos.
 
-[controles.js](controles.js) coloca los menús de tabla y visor dentro del viewport; se incluye antes de interacciones.js. [audio.js](audio.js), antes de interacciones.js, centraliza el audio en Apariencia: empieza apagado, requiere gesto real y no suena al desplazar. «Ver escritura animada» lleva a la nota manuscrita animada, o al SVG de Edición si no hay nota. El visor ofrece dispositivo, proporción, rotación y escala visual; conserva píxeles CSS para las consultas de contenedor. La trama se aplica también a la barra de capítulos.
+[controles.js](controles.js) coloca los menús de tabla y visor dentro del viewport; se incluye antes de interacciones.js. [audio.js](audio.js), antes de interacciones.js, centraliza el audio al principio de Apariencia: apagado al cargar, botón Probar sonido, volumen y estado. Requiere gesto real; no suena por scroll genérico. «Ver escritura animada» lleva a la nota manuscrita animada, o al SVG de Edición si no hay nota. El visor ofrece dispositivo, proporción, rotación y escala visual; conserva píxeles CSS para las consultas de contenedor. La trama se aplica también a la barra de capítulos.
 
 
 ### Analítica financiera y logística

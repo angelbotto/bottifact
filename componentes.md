@@ -1002,6 +1002,12 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
   <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-orbita"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span></summary>
   <div class="apariencia-panel" id="panel-apariencia-orbita" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
     <p class="apariencia-titulo">Tu forma de leer</p>
+    <fieldset class="apariencia-audio"><legend>Sonido</legend>
+      <button type="button" data-audio-global aria-pressed="false"><span data-audio-etiqueta>Sonidos apagados</span><span class="interruptor" aria-hidden="true"></span></button>
+      <button type="button" data-audio-prueba>Probar sonido</button>
+      <label>Volumen <output data-audio-volumen-valor>65 %</output><input type="range" min="0" max="100" value="65" step="5" aria-label="Volumen del sonido" data-audio-volumen></label>
+      <p role="status" data-audio-estado>Sonido apagado. Pulsa Probar sonido para escuchar una muestra.</p>
+    </fieldset>
     <fieldset class="apariencia"><legend>Color</legend><div class="apariencia-colores">
       <label><input type="radio" name="color-apariencia-orbita" value="light" data-elegir-tema><span class="paleta-mini claro" aria-hidden="true"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>
       <label><input type="radio" name="color-apariencia-orbita" value="dark" data-elegir-tema><span class="paleta-mini calido" aria-hidden="true"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>
@@ -1018,7 +1024,6 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
     </div></fieldset>
     <div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
-      <button type="button" data-audio-global aria-pressed="false"><span data-audio-etiqueta>Sonidos apagados</span><span class="interruptor" aria-hidden="true"></span></button>
       <button type="button" data-ver-escritura>Ver escritura animada ↗</button>
       <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
@@ -1030,6 +1035,12 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
   <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-etiqueta"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span><span>Apariencia</span><svg class="icono-flecha" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></summary>
   <div class="apariencia-panel" id="panel-apariencia-etiqueta" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
     <p class="apariencia-titulo">Tu forma de leer</p>
+    <fieldset class="apariencia-audio"><legend>Sonido</legend>
+      <button type="button" data-audio-global aria-pressed="false"><span data-audio-etiqueta>Sonidos apagados</span><span class="interruptor" aria-hidden="true"></span></button>
+      <button type="button" data-audio-prueba>Probar sonido</button>
+      <label>Volumen <output data-audio-volumen-valor>65 %</output><input type="range" min="0" max="100" value="65" step="5" aria-label="Volumen del sonido" data-audio-volumen></label>
+      <p role="status" data-audio-estado>Sonido apagado. Pulsa Probar sonido para escuchar una muestra.</p>
+    </fieldset>
     <fieldset class="apariencia"><legend>Color</legend><div class="apariencia-colores">
       <label><input type="radio" name="color-apariencia-etiqueta" value="light" data-elegir-tema><span class="paleta-mini claro" aria-hidden="true"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>
       <label><input type="radio" name="color-apariencia-etiqueta" value="dark" data-elegir-tema><span class="paleta-mini calido" aria-hidden="true"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>
@@ -1046,7 +1057,6 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
     </div></fieldset>
     <div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
-      <button type="button" data-audio-global aria-pressed="false"><span data-audio-etiqueta>Sonidos apagados</span><span class="interruptor" aria-hidden="true"></span></button>
       <button type="button" data-ver-escritura>Ver escritura animada ↗</button>
       <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
@@ -1058,6 +1068,12 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
   <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-capsula"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span><span class="apariencia-actual" data-tema-actual>Sistema</span><svg class="icono-flecha" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></summary>
   <div class="apariencia-panel" id="panel-apariencia-capsula" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
     <p class="apariencia-titulo">Tu forma de leer</p>
+    <fieldset class="apariencia-audio"><legend>Sonido</legend>
+      <button type="button" data-audio-global aria-pressed="false"><span data-audio-etiqueta>Sonidos apagados</span><span class="interruptor" aria-hidden="true"></span></button>
+      <button type="button" data-audio-prueba>Probar sonido</button>
+      <label>Volumen <output data-audio-volumen-valor>65 %</output><input type="range" min="0" max="100" value="65" step="5" aria-label="Volumen del sonido" data-audio-volumen></label>
+      <p role="status" data-audio-estado>Sonido apagado. Pulsa Probar sonido para escuchar una muestra.</p>
+    </fieldset>
     <fieldset class="apariencia"><legend>Color</legend><div class="apariencia-colores">
       <label><input type="radio" name="color-apariencia-capsula" value="light" data-elegir-tema><span class="paleta-mini claro" aria-hidden="true"><i></i><b></b></span><span>Claro<small>Papel cálido · tinta oscura</small></span></label>
       <label><input type="radio" name="color-apariencia-capsula" value="dark" data-elegir-tema><span class="paleta-mini calido" aria-hidden="true"><i></i><b></b></span><span>Cálido<small>Papel oscuro · acento cobre</small></span></label>
@@ -1074,7 +1090,6 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
     </div></fieldset>
     <div class="apariencia-ajustes">
       <button type="button" data-comodidad aria-pressed="false">Lectura cómoda <span aria-hidden="true">✓</span></button>
-      <button type="button" data-audio-global aria-pressed="false"><span data-audio-etiqueta>Sonidos apagados</span><span class="interruptor" aria-hidden="true"></span></button>
       <button type="button" data-ver-escritura>Ver escritura animada ↗</button>
       <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
@@ -2575,3 +2590,24 @@ otro control de Sonidos; su estado lo gestiona audio.js.
 **Límite:** sin direcciones, estadísticas de commits ni licencia inventadas. Usa fecha, responsable
 y licencia reales cuando existan. Esta receta dentro de un capítulo es una muestra; el footer
 principal debe quedar después del contenido. No queda pegado detrás del documento ni tapa el final.
+
+
+## Componer un artefacto estándar
+
+Las recetas anteriores son piezas de contenido. Para un nuevo artefacto completo de Angel,
+usa [el contrato de composición](estandar.md): incluye HTML mínimo completo para copiar,
+comandos de una página y capítulos, criterio y límites del generador. La apariencia circular,
+el sonido optativo y los comentarios flotantes se incorporan una sola vez automáticamente.
+El índice se deriva de los h2 y la regla acompaña cada página. No insertes otra receta de
+apariencia o revisión dentro del contenido de esa base.
+
+Apariencia ofrece ahora Sonido al principio del panel: interruptor, Probar sonido, volumen
+inicial 65 % y estado. Probar sonido activa y emite un tono de 450 ms; el interruptor por sí solo
+no emite audio. Un error al iniciar Web Audio deja el interruptor apagado y explica el reintento.
+La señal de lápiz dura lo que el trazo y se cancela con él. Estos controles están en el HTML
+completo de la receta `apariencia`, en sus tres variantes; la llave circular es la predeterminada.
+
+**Cuándo:** artículos, informes y prototipos entregados como artefactos HTML de Angel. Selecciona
+las piezas de contenido por utilidad; los controles comunes deben estar presentes en cada entrega.
+**Límite:** el validador estructural no prueba audición, lector de pantalla ni layout. Tampoco
+actualiza HTML publicado. Sonido apagado tras recargar/ocultar y comentarios en memoria solamente.
