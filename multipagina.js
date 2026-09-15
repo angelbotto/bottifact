@@ -109,12 +109,20 @@
       var s = document.getElementById(a.hash.slice(1));
       if (s && s.getBoundingClientRect().top <= 120) act = i;
     });
+    if(hoja.hasAttribute('data-progreso-pagina')&&pg.getBoundingClientRect().bottom<=innerHeight)act=links.length-1;
     links.forEach(function (a, i) {
       var li = a.closest("li");
       if (!li) return;
+      var changed=i===act&&!li.classList.contains('aqui-actual');
       li.classList.toggle("aqui-visto", i < act);
       li.classList.toggle("aqui-actual", i === act);
       if(i===act)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');
+      var index=a.closest('.indice');
+      if(changed&&hoja.classList.contains('lectura-guiada')&&getComputedStyle(index).position==='fixed'){
+        var linkRect=a.getBoundingClientRect(),indexRect=index.getBoundingClientRect();
+        if(linkRect.top<indexRect.top)index.scrollTop+=linkRect.top-indexRect.top;
+        else if(linkRect.bottom>indexRect.bottom)index.scrollTop+=linkRect.bottom-indexRect.bottom;
+      }
     });
   }
   var pend = 0;

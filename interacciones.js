@@ -109,13 +109,20 @@
   const sections = links.map(a => document.getElementById(a.hash.slice(1)));
   const ruler = document.querySelector('.regla');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  function readingMetrics() {
+    const perPage=article.hasAttribute('data-progreso-pagina');
+    const target=perPage?article.querySelector('.pagina.viva')||article:article;
+    const rect=target.getBoundingClientRect();
+    const offset=perPage?document.querySelector('.barra')?.getBoundingClientRect().height||0:0;
+    return {target,rect,start:scrollY+rect.top-offset,distance:Math.max(0,rect.height-innerHeight+offset)};
+  }
   function goToProgress(value) {
     if (!article) return;
-    const distance=Math.max(0,article.getBoundingClientRect().height-innerHeight);
-    const top=scrollY+article.getBoundingClientRect().top+distance*Math.max(0,Math.min(100,value))/100;
+    const {start,distance}=readingMetrics();
+    const top=start+distance*Math.max(0,Math.min(100,value))/100;
     scrollTo({top,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
   }
-  ruler?.addEventListener('click',e=>{const r=ruler.getBoundingClientRect();goToProgress((e.clientY-r.top)/r.height*100);});
+  ruler?.addEventListener('click',e=>{const r=ruler.getBoundingClientRect();goToProgress(ruler.getAttribute('aria-orientation')==='horizontal'?(e.clientX-r.left)/r.width*100:(e.clientY-r.top)/r.height*100);});
   ruler?.addEventListener('keydown',e=>{
     const current=Number(ruler.getAttribute('aria-valuenow'));
     const values={ArrowDown:current+1,ArrowRight:current+1,ArrowUp:current-1,ArrowLeft:current-1,PageDown:current+10,PageUp:current-10,Home:0,End:100};
@@ -125,10 +132,14 @@
   function update() {
     frame = 0;
     if (!article) return;
-    const rect = article.getBoundingClientRect();
-    const available = rect.height - innerHeight;
-    const progress = available <= 0 ? (rect.bottom <= innerHeight ? 1 : 0) : Math.max(0,Math.min(1,-rect.top / available));
+    const {target,rect,start,distance}=readingMetrics();
+    const progress=distance<=0?(rect.bottom<=innerHeight?1:0):Math.max(0,Math.min(1,(scrollY-start)/distance));
     if (ruler) {
+      if(ruler.classList.contains('regla-guiada'))ruler.setAttribute('aria-orientation',matchMedia('(min-width:1200px)').matches?'vertical':'horizontal');
+      if(article.hasAttribute('data-progreso-pagina')){
+        ruler.setAttribute('aria-controls',target.id);
+        ruler.setAttribute('aria-label','Progreso de lectura: '+(target.querySelector('h1')?.textContent||'esta página'));
+      }
       ruler.style.setProperty('--lectura',progress);
       ruler.setAttribute('aria-valuenow',Math.round(progress * 100));
       const value = ruler.querySelector('.val');
