@@ -1,6 +1,6 @@
 # La misma biblioteca en otro equipo
 
-Nota Tikin incluye un skill (`SKILL.md`), 74 recetas con HTML, criterio y límites, CSS, fuentes,
+Nota Tikin incluye un skill (`SKILL.md`), 82 recetas con HTML, criterio y límites, CSS, fuentes,
 sonidos y módulos, más scripts Python para generar y validar. Claude, Codex y Hermes pueden leer
 exactamente ese directorio. Los artefactos generados son HTML; no dependen de que el lector tenga
 instalado un agente. Three.js requiere su CDN permitido; los demás recursos van incrustados.

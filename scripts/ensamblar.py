@@ -120,6 +120,7 @@ labels.update({'pestanas':'Pestañas de una pieza','hallazgo':'Ficha de hallazgo
 from editorial_metadatos import ETIQUETAS
 labels.update(ETIQUETAS)
 new_keys={'apariencia','decision','cronologia','articulo','referencias','glosario','metodologia','antes-despues','cascada','multiples','conciliacion','escenario','recorrido','visor'}
+labels.update({'relato-visual': 'Relato visual por pasos', 'sankey': 'Flujos Sankey', 'cohortes': 'Cohortes de recurrencia', 'sensibilidad': 'Sensibilidad de escenarios', 'gantt': 'Gantt editorial', 'embudo': 'Embudo explicado', 'incertidumbre': 'Rangos de incertidumbre', 'evidencia-ampliable': 'Evidencia ampliable'})
 keywords={'apariencia':'tema lectura','decision':'reporte informe','cronologia':'historia fechas','articulo':'blog autor fecha','referencias':'blog fuentes citas','glosario':'blog definiciones','metodologia':'blog informe supuestos','antes-despues':'blog cambios','cascada':'reporte balance','multiples':'graficas reporte sedes','conciliacion':'tabla reporte diferencias','escenario':'calculadora reporte supuestos','recorrido':'globo three geografia historia','visor':'prototipo estados responsive'}
 links=[]
 for key,html in recipes():
@@ -138,7 +139,7 @@ catalog=catalog.replace('NAV_COMPONENTES','<div data-buscador-recetas><div class
 body=body.replace('<footer class="pie">',catalog+'<footer class="pie">')
 body=body.replace('<li><a href="#guardado">Lo que vale guardar</a></li>','<li><a href="#guardado">Lo que vale guardar</a></li><li><a href="#libreria">Librería de evidencia</a></li><li><a href="#segunda-tanda">Artículos y prototipos</a></li>')
 body=re.sub(r'(<p class="bajada">.*?</p>)',r'\1<p class="enlace-edicion"><a href="informe.html">Explorar el informe con capítulos →</a> · <a href="biblioteca.html">Abrir la biblioteca completa →</a></p>',body,count=1)
-(ROOT/'plantilla.html').write_text(start('Nota Tikin — la forma también explica')+body+script('interacciones.js')+globe_scripts()+script('invitacion.js')+script('mano.js')+script('atencion.js')+script('geografia.js')+script('flota.js')+script('analitica.js')+script('graficas.js')+script('tablas.js')+script('sonido.js')+script('escritura.js')+script('escena.js')+script('reportes.js')+script('visor.js')+script('pestanas.js')+script('catalogo.js')+script('editorial.js')+script('codigo.js')+script('explorador.js')+script('revision.js'))
+(ROOT/'plantilla.html').write_text(start('Nota Tikin — la forma también explica')+body+script('interacciones.js')+globe_scripts()+script('invitacion.js')+script('mano.js')+script('atencion.js')+script('geografia.js')+script('flota.js')+script('analitica.js')+script('graficas.js')+script('tablas.js')+script('sonido.js')+script('escritura.js')+script('escena.js')+script('reportes.js')+script('visor.js')+script('pestanas.js')+script('catalogo.js')+script('editorial.js')+script('codigo.js')+script('explorador.js')+script('evidencia.js')+script('revision.js'))
 globe_body='<main class="hoja" id="inicio" lang="es">'+tools()+'''<header class="cabecera"><p class="ceja">Nota / geografía</p><h1>Planes, puntos<br>y lugares.</h1><p class="bajada">Un globo de puntos para explorar conexiones. Elige una ruta, gira la Tierra o pausa la vista.</p></header>'''+globe()+'''<footer class="pie">Ejemplo reutilizable · Three.js desde cdnjs · máscara geográfica incrustada · ambos temas y movimiento reducido.</footer></main>'''
 (ROOT/'globo.html').write_text(start('Nota Tikin — globo de rutas')+globe_body+script('interacciones.js')+globe_scripts())
 (ROOT/'multipagina.html').write_text(start('Nota Tikin — capítulos')+dict(recipes())['multipagina']+script('interacciones.js')+script('multipagina.js'))
@@ -167,3 +168,15 @@ from ejemplos_temas import generate as build_temas
 build_temas()
 from guia import generate as build_guia
 build_guia()
+
+# La muestra nueva se regenera desde las mismas recetas del registro.
+from guia import prose,code_box
+new_ids=['relato-visual','sankey','cohortes','sensibilidad','gantt','embudo','incertidumbre','evidencia-ampliable']
+new_registry={r['id']:r for r in json.loads((ROOT/'registro.json').read_text())['componentes']}
+new_body='<section id="ocho-piezas"><p class="ceja">Ocho componentes · datos ilustrativos</p><h2>Una pregunta, una forma de verla.</h2><p>Relatos, escenarios y evidencia que se pueden recorrer. Cada vista conserva sus datos y explica su alcance.</p></section>'
+for key in new_ids:
+ r=new_registry[key]
+ new_body+='<section id="ver-'+key+'"><h2>'+r['nombre']+'</h2></section>'+r['html']+'<div class="receta-guia">'+prose(r['criterio_y_limites'])+'</div>'+code_box(r['html'],'nuevo-'+key,r['nombre'])
+(ROOT/'ejemplos/evidencia-contenido.html').write_text(new_body)
+(ROOT/'evidencia.html').write_text(build_estandar('Nota Tikin · Ocho formas de explicar',[{'id':'evidencia','titulo':'Ocho formas de explicar','html':(ROOT/'ejemplos/evidencia-contenido.html').read_text()}],'Lectura guiada, escenarios y revisión visual. Datos ilustrativos.',theme='dark'))
+print('Generado evidencia.html: ocho piezas nuevas')

@@ -1,13 +1,129 @@
 {
   "version": 1,
   "casos": [
-    {"id":"decision","nombre":"Decidir con evidencia","pregunta":"¿Qué decisión permite tomar la evidencia disponible?","componentes":["hallazgo","decision","criterios","comparacion","riesgos","apuntes"]},
-    {"id":"finanzas","nombre":"Explicar un período financiero","pregunta":"¿Qué cambió, cuánto y por qué?","componentes":["temporal","cascada","totales","sparkline","torta","conciliacion","metodologia"]},
-    {"id":"logistica","nombre":"Entender una operación logística","pregunta":"¿Dónde está la restricción y qué servicio podemos cumplir?","componentes":["globo-flota","ficha-entrega","cola-novedades","mapa-rutas","mapa-burbujas","explorador","caja","almacen","arcos-mapa","recorrido"]},
-    {"id":"articulo","nombre":"Desarrollar un argumento","pregunta":"¿Qué debe comprender el lector y con qué respaldo?","componentes":["articulo","autor","apuntes","conversacion","codigo-lineas","referencias","relacionados"]},
-    {"id":"tecnico","nombre":"Documentar un sistema","pregunta":"¿Cómo funciona y cómo se comprueba o recupera?","componentes":["anotaciones","codigo-poliglota","codigo-lineas","terminal","avisos-animados","pestanas"]},
-    {"id":"prototipo","nombre":"Revisar una interacción","pregunta":"¿Qué tarea se puede probar y qué ajuste hace falta?","componentes":["visor","antes-despues","anotaciones","hallazgo","revision"]},
-    {"id":"publicacion","nombre":"Presentar trabajo y contexto","pregunta":"¿Qué merece atención y dónde se puede profundizar?","componentes":["cards-trazadas","archivo","lista-proyectos","trayectoria","galeria","invitacion","pie-editorial"]},
-    {"id":"prioridades","nombre":"Compartir estado y prioridades","pregunta":"¿Qué está activo, qué bloquea y qué decidimos después?","componentes":["lista-estados","cronologia","actividad-editorial","calendario","riesgos"]}
+    {
+      "id": "decision",
+      "nombre": "Decidir con evidencia",
+      "pregunta": "¿Qué decisión permite tomar la evidencia disponible?",
+      "componentes": [
+        "hallazgo",
+        "decision",
+        "criterios",
+        "comparacion",
+        "riesgos",
+        "apuntes",
+        "sensibilidad",
+        "incertidumbre"
+      ]
+    },
+    {
+      "id": "finanzas",
+      "nombre": "Explicar un período financiero",
+      "pregunta": "¿Qué cambió, cuánto y por qué?",
+      "componentes": [
+        "temporal",
+        "cascada",
+        "totales",
+        "sparkline",
+        "torta",
+        "conciliacion",
+        "metodologia",
+        "sankey",
+        "sensibilidad",
+        "incertidumbre",
+        "cohortes"
+      ]
+    },
+    {
+      "id": "logistica",
+      "nombre": "Entender una operación logística",
+      "pregunta": "¿Dónde está la restricción y qué servicio podemos cumplir?",
+      "componentes": [
+        "globo-flota",
+        "ficha-entrega",
+        "cola-novedades",
+        "mapa-rutas",
+        "mapa-burbujas",
+        "explorador",
+        "caja",
+        "almacen",
+        "arcos-mapa",
+        "recorrido",
+        "gantt",
+        "embudo"
+      ]
+    },
+    {
+      "id": "articulo",
+      "nombre": "Desarrollar un argumento",
+      "pregunta": "¿Qué debe comprender el lector y con qué respaldo?",
+      "componentes": [
+        "articulo",
+        "autor",
+        "apuntes",
+        "conversacion",
+        "codigo-lineas",
+        "referencias",
+        "relacionados",
+        "relato-visual",
+        "evidencia-ampliable"
+      ]
+    },
+    {
+      "id": "tecnico",
+      "nombre": "Documentar un sistema",
+      "pregunta": "¿Cómo funciona y cómo se comprueba o recupera?",
+      "componentes": [
+        "anotaciones",
+        "codigo-poliglota",
+        "codigo-lineas",
+        "terminal",
+        "avisos-animados",
+        "pestanas",
+        "evidencia-ampliable"
+      ]
+    },
+    {
+      "id": "prototipo",
+      "nombre": "Revisar una interacción",
+      "pregunta": "¿Qué tarea se puede probar y qué ajuste hace falta?",
+      "componentes": [
+        "visor",
+        "antes-despues",
+        "anotaciones",
+        "hallazgo",
+        "revision",
+        "evidencia-ampliable",
+        "embudo"
+      ]
+    },
+    {
+      "id": "publicacion",
+      "nombre": "Presentar trabajo y contexto",
+      "pregunta": "¿Qué merece atención y dónde se puede profundizar?",
+      "componentes": [
+        "cards-trazadas",
+        "archivo",
+        "lista-proyectos",
+        "trayectoria",
+        "galeria",
+        "invitacion",
+        "pie-editorial",
+        "relato-visual"
+      ]
+    },
+    {
+      "id": "prioridades",
+      "nombre": "Compartir estado y prioridades",
+      "pregunta": "¿Qué está activo, qué bloquea y qué decidimos después?",
+      "componentes": [
+        "lista-estados",
+        "cronologia",
+        "actividad-editorial",
+        "calendario",
+        "riesgos",
+        "gantt"
+      ]
+    }
   ]
 }

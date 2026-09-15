@@ -68,6 +68,24 @@ admiten en el JSON. Liftit + Sobrio acompaña logística; Blueprint + Técnico, 
 Hacker + Técnico, código y runbooks. No cambies silenciosamente el tema de un artefacto existente.
 Para instalar la misma biblioteca en otro equipo o en Hermes consulta [instalacion.md](instalacion.md).
 
+## Ocho piezas de evidencia para nuevos documentos
+
+[evidencia.html](evidencia.html) reúne `relato-visual`, `sankey`, `cohortes`, `sensibilidad`,
+`gantt`, `embudo`, `incertidumbre` y `evidencia-ampliable`. Consulta las recetas completas del
+registro; el generador detecta `data-evidencia` e incrusta evidencia.js una sola vez.
+
+Usa el relato para acompañar un argumento con una figura y pasos seleccionables; Sankey para
+distribuciones entre dos columnas; cohortes para recurrencia con base y períodos pendientes;
+sensibilidad para extremos declarados de un supuesto; Gantt para intervalos y dependencias;
+embudo para etapas de la misma población; incertidumbre para límites con metodología explícita;
+imagen ampliable para inspeccionar una evidencia con zonas numeradas. No cambies la definición
+de los datos para hacerlos caber en la gráfica. Las tablas y la lista de zonas son la alternativa.
+
+Las demostraciones usan datos ficticios. El módulo no calcula probabilidades, rutas críticas,
+modelos financieros ni cohortes desde eventos, y no recibe datos en vivo. Conserva estos límites
+al describir el artefacto. `NotaEvidencia.get(elemento).destroy()` retira controles y observadores;
+actualiza la fuente e inicializa de nuevo si cambia el contenido.
+
 ## Subrayar y anotar con intención
 
 Al componer un informe o artículo, busca la decisión, la tensión o el límite que más merece una
@@ -396,7 +414,7 @@ HTTPS de Tailscale Serve que confirme el host, no un enlace localhost para la en
 
 ### Edición completa para explorar y componer
 
-Abre [biblioteca.html](biblioteca.html) para 74 recetas en nueve capítulos, con HTML,
+Abre [biblioteca.html](biblioteca.html) para 82 recetas en nueve capítulos, con HTML,
 dependencias, criterio y límites junto al ejemplo. Incluye archivos de publicaciones,
 autoría, lecturas relacionadas, anotaciones numeradas, revisiones, criterios y riesgos.
 [editorial.js](editorial.js) ofrece búsqueda/filtro local y configuración de lista/rejilla,

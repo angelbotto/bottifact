@@ -149,6 +149,18 @@ frescura del último GPS y costo por parada. Cada uno necesita fuente, unidad y 
 
 ## Copiar, componer y comprobar
 
+Consulta también [evidencia.html](evidencia.html), con ocho ejemplos completos. Para un artículo,
+combina `relato-visual` con fuentes y un apunte que cuestione el denominador. Para escenarios,
+compara `sensibilidad` e `incertidumbre`: la primera cambia un supuesto a la vez; la segunda
+representa límites ya declarados, sin probabilidad implícita. `sankey` reparte magnitudes entre
+dos columnas y `embudo` exige la misma población en etapas sucesivas. `cohortes` compara grupos
+con su propia base, separando cero de un período no observado. `gantt` explica fechas y dependencias
+fin→inicio; `evidencia-ampliable` permite revisar una captura sin perder la lista de zonas.
+
+Cada una conserva sus datos y controles fuera del SVG. En el relato, elegir manualmente un paso
+detiene la selección por scroll; en móvil la figura vuelve al flujo y los pasos incluyen el valor.
+La imagen ampliable admite 100–400 % y desplazamiento local; no aumenta la resolución original.
+
 1. Consulta el inventario; lee HTML completo, criterio y límites de las piezas elegidas.
 2. Escribe contenido en UTF-8 con IDs únicos y figuras anchas hermanas de los bloques de texto.
    Cuando copies una receta varias veces, cambia IDs y todas sus referencias. La base añade controles.

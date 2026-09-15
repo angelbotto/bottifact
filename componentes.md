@@ -2847,3 +2847,213 @@ se compactan con el icono superpuesto y espacio reservado. El texto copiado no c
 editor de comentarios crece hasta 160 px de entrada y después tiene scroll local; su contexto
 se abre voluntariamente. Apariencia reserva Temas a paletas: sonido, prueba y volumen están
 sólo en Sonido. No interpretes esos cambios como permiso para quitar nombres accesibles.
+
+
+## Relato visual por pasos
+
+<!-- nota:ejemplo relato-visual -->
+```html
+<figure class="amplio" id="evidencia-relato" data-evidencia="relato" data-unidad="horas">
+<div class="tabla-caja densa" role="region" tabindex="0" aria-label="Cien horas de trabajo, datos desplazables">
+<table data-evidencia-datos><caption>Cien horas de trabajo</caption><thead><tr><th scope="col">Paso</th><th scope="col">Horas</th><th scope="col">Lectura</th></tr></thead><tbody>
+<tr><th scope="row">Investigar</th><td data-valor="60">60</td><td>La mayor parte del tiempo se dedicó a comprender el problema.</td></tr>
+<tr><th scope="row">Construir</th><td data-valor="25">25</td><td>La implementación parte de lo aprendido durante la investigación.</td></tr>
+<tr><th scope="row">Revisar</th><td data-valor="15">15</td><td>La revisión reserva tiempo para contrastar el resultado con la pregunta.</td></tr>
+</tbody></table>
+</div>
+<figcaption>Datos ilustrativos: distribución de 100 horas, no productividad medida.</figcaption>
+</figure>
+```
+
+**Cuándo:** Acompañar un argumento con una figura compartida. El scroll selecciona el paso en escritorio; los botones y el selector permiten fijarlo manualmente.
+
+**Cuándo no y límite:** 2–8 filas: nombre, magnitud no negativa y explicación breve (hasta 100 caracteres cada texto). Escala común con cero. En móvil la figura vuelve al flujo; cada paso conserva su dato escrito. No cambia cifras ni altera el scroll del lector. Sin JavaScript queda la tabla. No hace transiciones ni RAF; usa IntersectionObserver, que se desconecta al destruir la instancia.
+
+**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
+
+**Dependencia:** evidencia.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
+
+
+## Flujos Sankey
+
+<!-- nota:ejemplo sankey -->
+```html
+<figure class="amplio" id="evidencia-sankey" data-evidencia="sankey" data-unidad="millones COP">
+<div class="tabla-caja densa" role="region" tabindex="0" aria-label="Destino de ingresos de ejemplo, datos desplazables">
+<table data-evidencia-datos><caption>Destino de ingresos de ejemplo</caption><thead><tr><th scope="col">Origen</th><th scope="col">Destino</th><th scope="col">Millones COP</th></tr></thead><tbody>
+<tr><th scope="row">Carga urbana</th><td>Operación</td><td data-valor="65">65</td></tr>
+<tr><th scope="row">Carga urbana</th><td>Soporte</td><td data-valor="10">10</td></tr>
+<tr><th scope="row">Carga urbana</th><td>Margen</td><td data-valor="15">15</td></tr>
+<tr><th scope="row">Última milla</th><td>Operación</td><td data-valor="20">20</td></tr>
+<tr><th scope="row">Última milla</th><td>Soporte</td><td data-valor="5">5</td></tr>
+<tr><th scope="row">Última milla</th><td>Margen</td><td data-valor="5">5</td></tr>
+</tbody></table>
+</div>
+<figcaption>Datos ficticios, total 120 millones COP. No representan estados financieros de Liftit o Tikin.</figcaption>
+</figure>
+```
+
+**Cuándo:** Comparar cómo se distribuye una magnitud entre orígenes y destinos. El grosor representa el valor con una escala compartida; el selector revela valor y participación.
+
+**Cuándo no y límite:** 1–24 conexiones, hasta ocho nodos por columna, valores no negativos y total positivo. Esta versión es de dos columnas: no admite etapas intermedias, ciclos, cantidades negativas o monedas mezcladas. Nodos calculados desde sus conexiones, cero sin grosor. No ordena para minimizar cruces; usa la tabla cuando haya demasiados. Referencia conceptual: https://github.com/d3/d3-sankey ; implementación local sin D3 ni descarga.
+
+**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
+
+**Dependencia:** evidencia.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
+
+
+## Cohortes de recurrencia
+
+<!-- nota:ejemplo cohortes -->
+```html
+<figure class="amplio" id="evidencia-cohortes" data-evidencia="cohortes" data-unidad="clientes">
+<div class="tabla-caja densa" role="region" tabindex="0" aria-label="Clientes activos por cohorte, datos desplazables">
+<table data-evidencia-datos><caption>Clientes activos por cohorte</caption><thead><tr><th scope="col">Cohorte</th><th scope="col">Base</th><th scope="col">Mes 0</th><th scope="col">Mes 1</th><th scope="col">Mes 2</th><th scope="col">Mes 3</th></tr></thead><tbody>
+<tr><th scope="row">Marzo</th><td data-valor="120">120</td><td data-valor="120">120</td><td data-valor="96">96</td><td data-valor="84">84</td><td data-valor="72">72</td></tr>
+<tr><th scope="row">Abril</th><td data-valor="100">100</td><td data-valor="100">100</td><td data-valor="83">83</td><td data-valor="70">70</td><td data-estado="pendiente">Pendiente de observar</td></tr>
+<tr><th scope="row">Mayo</th><td data-valor="80">80</td><td data-valor="80">80</td><td data-valor="60">60</td><td data-estado="pendiente">Pendiente de observar</td><td data-estado="pendiente">Pendiente de observar</td></tr>
+<tr><th scope="row">Junio</th><td data-valor="60">60</td><td data-valor="60">60</td><td data-estado="pendiente">Pendiente de observar</td><td data-estado="pendiente">Pendiente de observar</td><td data-estado="pendiente">Pendiente de observar</td></tr>
+</tbody></table>
+</div>
+<figcaption>Datos ficticios. Corte: 30 junio 2026. Cada celda cuenta personas activas ese mes; pueden regresar.</figcaption>
+</figure>
+```
+
+**Cuándo:** Comparar recurrencia de grupos con distintas fechas de entrada. Cada celda muestra recuento, base y porcentaje; no convierte lo pendiente en cero.
+
+**Cuándo no y límite:** 1–20 cohortes y 1–12 períodos con cabeceras de hasta 24 caracteres. Base entera positiva, recuentos enteros entre cero y la base. Las celdas con data-estado="pendiente" deben quedar al final de cada fila. No calcula cohortes desde eventos, ni compara meses de distinta definición. Cinco intensidades: [0,20), [20,40), [40,60), [60,80), [80,100] %. Los porcentajes exactos siempre se escriben.
+
+**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
+
+**Dependencia:** evidencia.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
+
+
+## Sensibilidad de escenarios
+
+<!-- nota:ejemplo sensibilidad -->
+```html
+<figure class="amplio" id="evidencia-sensibilidad" data-evidencia="sensibilidad" data-unidad="millones COP">
+<p>Resultado base: <strong data-evidencia-base data-valor="100">100</strong> millones COP.</p>
+<div class="tabla-caja densa" role="region" tabindex="0" aria-label="Resultado ante cambios de un supuesto, datos desplazables">
+<table data-evidencia-datos><caption>Resultado ante cambios de un supuesto</caption><thead><tr><th scope="col">Supuesto</th><th scope="col">Escenario A</th><th scope="col">Resultado A</th><th scope="col">Escenario B</th><th scope="col">Resultado B</th></tr></thead><tbody>
+<tr><th scope="row">Volumen</th><td>−10 %</td><td data-valor="91">91</td><td>+10 %</td><td data-valor="109">109</td></tr>
+<tr><th scope="row">Precio</th><td>−5 %</td><td data-valor="92">92</td><td>+5 %</td><td data-valor="108">108</td></tr>
+<tr><th scope="row">Combustible</th><td>−10 %</td><td data-valor="106">106</td><td>+10 %</td><td data-valor="94">94</td></tr>
+</tbody></table>
+</div>
+<figcaption>Escenarios ilustrativos independientes. No son una proyección financiera ni combinan efectos.</figcaption>
+</figure>
+```
+
+**Cuándo:** Ver qué supuesto modifica más el resultado, con una base común y extremos A/B identificados por círculo/cuadrado. Seleccionar un supuesto muestra sus cambios absolutos.
+
+**Cuándo no y límite:** 1–16 filas, un resultado base visible y dos resultados declarados por supuesto. Ordena por amplitud absoluta B−A; no presupone que A sea el menor resultado. No calcula un modelo financiero, probabilidades, interpolaciones o efectos conjuntos. El botón restablece la consulta, no modifica la tabla fuente.
+
+**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
+
+**Dependencia:** evidencia.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
+
+
+## Gantt editorial
+
+<!-- nota:ejemplo gantt -->
+```html
+<figure class="amplio" id="evidencia-gantt" data-evidencia="gantt" data-unidad="días">
+<div class="tabla-caja densa" role="region" tabindex="0" aria-label="Hoja de ruta de una revisión, datos desplazables">
+<table data-evidencia-datos><caption>Hoja de ruta de una revisión</caption><thead><tr><th scope="col">ID</th><th scope="col">Tarea</th><th scope="col">Inicio</th><th scope="col">Fin</th><th scope="col">Responsable</th><th scope="col">Estado</th><th scope="col">Depende de</th></tr></thead><tbody>
+<tr><th scope="row">A</th><td>Diagnóstico</td><td>2026-09-01</td><td>2026-09-03</td><td>Operación</td><td>Completada</td><td>—</td></tr>
+<tr><th scope="row">B</th><td>Ensayo</td><td>2026-09-03</td><td>2026-09-08</td><td>Producto</td><td>En curso</td><td>A</td></tr>
+<tr><th scope="row">C</th><td>Revisión</td><td>2026-09-08</td><td>2026-09-10</td><td>Diseño</td><td>Plan</td><td>B</td></tr>
+<tr><th scope="row">D</th><td>Evidencia</td><td>2026-09-03</td><td>2026-09-06</td><td>Operación</td><td>Completada</td><td>A</td></tr>
+<tr><th scope="row">E</th><td>Decisión</td><td>2026-09-10</td><td>2026-09-10</td><td>Equipo</td><td>Plan</td><td>C, D</td></tr>
+</tbody></table>
+</div>
+<figcaption>Calendario ficticio. Fechas UTC. Las barras representan intervalos inicio→fin; igualdad indica un hito.</figcaption>
+</figure>
+```
+
+**Cuándo:** Explicar fechas, trabajo simultáneo, responsables y dependencias fin→inicio. El estado se escribe y lleva símbolo; nunca se infiere del día actual.
+
+**Cuándo no y límite:** 1–24 tareas, IDs únicos ASCII de hasta 12 caracteres, fechas ISO válidas y rango máximo de diez años. Dependencias separadas por comas, «—» para ninguna. Rechaza ciclos, IDs inexistentes y dependencias cuyo fin supera el inicio dependiente. No es un planificador, no excluye festivos ni calcula ruta crítica. La duración es tiempo transcurrido, no conteo inclusivo de días laborables.
+
+**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
+
+**Dependencia:** evidencia.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
+
+
+## Embudo explicado
+
+<!-- nota:ejemplo embudo -->
+```html
+<figure class="amplio" id="evidencia-embudo" data-evidencia="embudo" data-unidad="pedidos">
+<div class="tabla-caja densa" role="region" tabindex="0" aria-label="Del pedido a la entrega, datos desplazables">
+<table data-evidencia-datos><caption>Del pedido a la entrega</caption><thead><tr><th scope="col">Etapa</th><th scope="col">Pedidos</th><th scope="col">Definición</th></tr></thead><tbody>
+<tr><th scope="row">Solicitudes</th><td data-valor="1000">1000</td><td>Pedidos de una misma cohorte de ejemplo.</td></tr>
+<tr><th scope="row">Validadas</th><td data-valor="800">800</td><td>Solicitudes con datos completos.</td></tr>
+<tr><th scope="row">Programadas</th><td data-valor="500">500</td><td>Solicitudes validadas con programación.</td></tr>
+<tr><th scope="row">Completadas</th><td data-valor="450">450</td><td>Programadas con recepción registrada.</td></tr>
+</tbody></table>
+</div>
+<figcaption>Datos ilustrativos: misma cohorte y ventana de seguimiento para las cuatro etapas.</figcaption>
+</figure>
+```
+
+**Cuándo:** Mostrar volumen, conversión y abandono entre etapas de una misma población. Barras desde cero permiten comparar recuentos; el selector explica denominadores.
+
+**Cuándo no y límite:** 2–12 etapas, recuentos enteros no crecientes y primera etapa positiva. Desde una etapa con cero, la conversión siguiente no se define. No acepta poblaciones distintas, reingresos o valores negativos; en esos casos usa estados o flujos. No atribuye la caída a una causa que no esté medida.
+
+**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
+
+**Dependencia:** evidencia.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
+
+
+## Rangos de incertidumbre
+
+<!-- nota:ejemplo incertidumbre -->
+```html
+<figure class="amplio" id="evidencia-incertidumbre" data-evidencia="incertidumbre" data-unidad="pedidos">
+<p data-evidencia-metodo>Los límites son escenarios declarados por el equipo de ejemplo. No hay un nivel de confianza ni una probabilidad asignada.</p>
+<div class="tabla-caja densa" role="region" tabindex="0" aria-label="Escenarios de demanda, datos desplazables">
+<table data-evidencia-datos><caption>Escenarios de demanda</caption><thead><tr><th scope="col">Fecha</th><th scope="col">Inferior</th><th scope="col">Central</th><th scope="col">Superior</th></tr></thead><tbody>
+<tr><th scope="row">2026-10-01</th><td data-valor="80">80</td><td data-valor="100">100</td><td data-valor="125">125</td></tr>
+<tr><th scope="row">2026-11-01</th><td data-valor="85">85</td><td data-valor="112">112</td><td data-valor="145">145</td></tr>
+<tr><th scope="row">2026-12-01</th><td data-valor="90">90</td><td data-valor="120">120</td><td data-valor="160">160</td></tr>
+<tr><th scope="row">2027-01-01</th><td data-valor="100">100</td><td data-valor="132">132</td><td data-valor="180">180</td></tr>
+</tbody></table>
+</div>
+<figcaption>Datos ficticios de escenarios; no constituyen previsión de Liftit ni intervalo estadístico.</figcaption>
+</figure>
+```
+
+**Cuándo:** Mostrar una trayectoria central junto con límites explícitos. La banda acompaña los datos; los bordes discontinuos y la línea central se distinguen también por trazo.
+
+**Cuándo no y límite:** 2–48 fechas ISO estrictamente crecientes; inferior ≤ central ≤ superior, todos finitos. Exige un texto visible data-evidencia-metodo. El dominio vertical alcanza los extremos reales; no requiere cero porque representa una serie. No estima confianza, imputa huecos ni genera escenarios: recibe valores ya justificados por el autor.
+
+**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
+
+**Dependencia:** evidencia.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
+
+
+## Evidencia ampliable
+
+<!-- nota:ejemplo evidencia-ampliable -->
+```html
+<figure class="amplio" id="evidencia-imagen" data-evidencia="imagen">
+<h3>Revisar una evidencia en detalle</h3>
+<div data-evidencia-imagen><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjcyMCIgdmlld0JveD0iMCAwIDEyMDAgNzIwIj48cmVjdCB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI3MjAiIGZpbGw9IiNmYWY1ZWQiLz48ZyBmaWxsPSIjMjgyYjM2IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiI+PHRleHQgeD0iNzIiIHk9IjkwIiBmb250LXNpemU9IjM4Ij5SZWdpc3RybyBkZSB1bmEgcmV2aXNpw7NuPC90ZXh0Pjx0ZXh0IHg9IjcyIiB5PSIxMzYiIGZvbnQtc2l6ZT0iMjIiPklMVVNUUkFDScOTTiDCtyBOTyBFUyBVTkEgRkFDVFVSQSBOSSBVTiBSRUdJU1RSTyBSRUFMPC90ZXh0PjxwYXRoIGQ9Ik03MiAxNzJIMTEyOE03MiA1MDBIMTEyOCIgc3Ryb2tlPSIjOWE4YzdkIi8+PHRleHQgeD0iNzIiIHk9IjIzMCIgZm9udC1zaXplPSIyNCI+RG9jdW1lbnRvPC90ZXh0Pjx0ZXh0IHg9IjY2MCIgeT0iMjMwIiBmb250LXNpemU9IjI0Ij5SRVYtMDQyIMK3IDE1IHNlcHRpZW1icmUgMjAyNjwvdGV4dD48dGV4dCB4PSI3MiIgeT0iMzA2IiBmb250LXNpemU9IjI0Ij5FbnRyZWdhcyByZXZpc2FkYXM8L3RleHQ+PHRleHQgeD0iOTcwIiB5PSIzMDYiIGZvbnQtc2l6ZT0iMzIiPjI0PC90ZXh0Pjx0ZXh0IHg9IjcyIiB5PSIzODIiIGZvbnQtc2l6ZT0iMjQiPlBlbmRpZW50ZXMgZGUgZXZpZGVuY2lhPC90ZXh0Pjx0ZXh0IHg9Ijk3MCIgeT0iMzgyIiBmb250LXNpemU9IjMyIj4zPC90ZXh0Pjx0ZXh0IHg9IjcyIiB5PSI1NzIiIGZvbnQtc2l6ZT0iMjQiPlNpZ3VpZW50ZSBwYXNvPC90ZXh0Pjx0ZXh0IHg9IjcyIiB5PSI2MjAiIGZvbnQtc2l6ZT0iMjgiPlJldmlzYXIgbG9zIHRyZXMgc29wb3J0ZXMgYW50ZXMgZGUgY2VycmFyLjwvdGV4dD48L2c+PC9zdmc+" width="1200" height="720" alt="Ilustración de REV-042: 24 entregas revisadas, tres pendientes de evidencia. Se propone revisar soportes antes de cerrar."></div>
+<ol data-evidencia-zonas>
+  <li data-x="92" data-y="26">Fecha y referencia: REV-042, 15 septiembre 2026.</li>
+  <li data-x="91" data-y="52">Tres entregas todavía requieren evidencia.</li>
+  <li data-x="89" data-y="86">Siguiente acción: revisar los tres soportes antes de cerrar.</li>
+</ol>
+<figcaption>Ilustración creada para esta receta; reemplazar por una captura o imagen autorizada.</figcaption>
+</figure>
+```
+
+**Cuándo:** Examinar una captura con zoom y puntos numerados. Los controles +/−/ajustar amplían de 100 a 400 %, y cada punto puede seleccionarse con teclado o desde el selector.
+
+**Cuándo no y límite:** Una imagen data: y 1–12 zonas con data-x/data-y porcentuales de 0 a 100, texto de hasta 100 caracteres. La lista conserva el contexto y el original se imprime. Desplazamiento local en ambos ejes; no cambia la resolución del archivo ni aplica reconocimiento de texto. Las zonas cercanas pueden solaparse: el selector y la lista permiten consultar todas. Coloca los puntos junto al dato para no taparlo. No sustituye comentarios: las zonas son anotaciones del autor, la burbuja común recoge la revisión del lector.
+
+**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
+
+**Dependencia:** evidencia.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.

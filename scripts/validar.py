@@ -47,8 +47,8 @@ class Fragment(HTMLParser):
   if tag not in VOID:self.handle_endtag(tag)
 
 MODULES={
- 'biblioteca.html':['flota.js','invitacion.js','mano.js','atencion.js','geografia.js','analitica.js','codigo.js','explorador.js','revision.js','interacciones.js','multipagina.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js','editorial.js'],
- 'plantilla.html':['flota.js','invitacion.js','mano.js','atencion.js','geografia.js','analitica.js','codigo.js','explorador.js','revision.js','editorial.js','interacciones.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js'],
+ 'biblioteca.html':['evidencia.js','flota.js','invitacion.js','mano.js','atencion.js','geografia.js','analitica.js','codigo.js','explorador.js','revision.js','interacciones.js','multipagina.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js','editorial.js'],
+ 'plantilla.html':['evidencia.js','flota.js','invitacion.js','mano.js','atencion.js','geografia.js','analitica.js','codigo.js','explorador.js','revision.js','editorial.js','interacciones.js','globo.js','graficas.js','tablas.js','sonido.js','escritura.js','escena.js','reportes.js','visor.js','pestanas.js','catalogo.js'],
  'informe.html':['interacciones.js','multipagina.js','graficas.js','reportes.js','visor.js','pestanas.js','revision.js'],
  'globo.html':['interacciones.js','globo.js'],
  'multipagina.html':['interacciones.js','multipagina.js'],
@@ -105,7 +105,7 @@ print('Registro local: '+str(len(expected))+' recetas con HTML original, documen
 print('Esto NO comprueba píxeles, audio, WebGL, foco real ni comportamiento del navegador.')
 
 from contrato_artefacto import validate
-for name in ['estandar.html','estandar-capitulos.html','prioridades.html','guia.html','liftit.html','blueprint.html','hacker.html']:
+for name in ['estandar.html','estandar-capitulos.html','prioridades.html','guia.html','liftit.html','blueprint.html','hacker.html','evidencia.html']:
  errors=validate((ROOT/name).read_text());assert not errors,(name,errors)
  print(name+': contrato estándar de artefacto correcto')
 
