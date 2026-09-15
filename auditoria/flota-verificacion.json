@@ -1,0 +1,1811 @@
+{
+  "views": [
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "light",
+      "truckCount": 3,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "light",
+      "truckCount": 0,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "light",
+      "truckCount": 1,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "dark",
+      "truckCount": 3,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "dark",
+      "truckCount": 0,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "dark",
+      "truckCount": 1,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "sea",
+      "truckCount": 3,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "sea",
+      "truckCount": 0,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "sea",
+      "truckCount": 1,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "oliva",
+      "truckCount": 3,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "oliva",
+      "truckCount": 0,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "oliva",
+      "truckCount": 1,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "arcilla",
+      "truckCount": 3,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "arcilla",
+      "truckCount": 0,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "arcilla",
+      "truckCount": 1,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "ciruela",
+      "truckCount": 3,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "ciruela",
+      "truckCount": 0,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "ciruela",
+      "truckCount": 1,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "liftit",
+      "truckCount": 3,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "liftit",
+      "truckCount": 0,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "liftit",
+      "truckCount": 1,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "blueprint",
+      "truckCount": 3,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "blueprint",
+      "truckCount": 0,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "blueprint",
+      "truckCount": 1,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "hacker",
+      "truckCount": 3,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "hacker",
+      "truckCount": 0,
+      "width": 320
+    },
+    {
+      "documentWidth": 320,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "hacker",
+      "truckCount": 1,
+      "width": 320
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "light",
+      "truckCount": 3,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "light",
+      "truckCount": 0,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "light",
+      "truckCount": 1,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "dark",
+      "truckCount": 3,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "dark",
+      "truckCount": 0,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "dark",
+      "truckCount": 1,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "sea",
+      "truckCount": 3,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "sea",
+      "truckCount": 0,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "sea",
+      "truckCount": 1,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "oliva",
+      "truckCount": 3,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "oliva",
+      "truckCount": 0,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "oliva",
+      "truckCount": 1,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "arcilla",
+      "truckCount": 3,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "arcilla",
+      "truckCount": 0,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "arcilla",
+      "truckCount": 1,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "ciruela",
+      "truckCount": 3,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "ciruela",
+      "truckCount": 0,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "ciruela",
+      "truckCount": 1,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "liftit",
+      "truckCount": 3,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "liftit",
+      "truckCount": 0,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "liftit",
+      "truckCount": 1,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "blueprint",
+      "truckCount": 3,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "blueprint",
+      "truckCount": 0,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "blueprint",
+      "truckCount": 1,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "hacker",
+      "truckCount": 3,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "hacker",
+      "truckCount": 0,
+      "width": 390
+    },
+    {
+      "documentWidth": 390,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": {
+        "end": 680,
+        "focus": 0,
+        "name": "Globo operativo de Colombia, desplazable horizontalmente",
+        "overflow": "auto"
+      },
+      "theme": "hacker",
+      "truckCount": 1,
+      "width": 390
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": null,
+      "theme": "light",
+      "truckCount": 3,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": null,
+      "theme": "light",
+      "truckCount": 0,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": null,
+      "theme": "light",
+      "truckCount": 1,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": null,
+      "theme": "dark",
+      "truckCount": 3,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": null,
+      "theme": "dark",
+      "truckCount": 0,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": null,
+      "theme": "dark",
+      "truckCount": 1,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": null,
+      "theme": "sea",
+      "truckCount": 3,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": null,
+      "theme": "sea",
+      "truckCount": 0,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": null,
+      "theme": "sea",
+      "truckCount": 1,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": null,
+      "theme": "oliva",
+      "truckCount": 3,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": null,
+      "theme": "oliva",
+      "truckCount": 0,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": null,
+      "theme": "oliva",
+      "truckCount": 1,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": null,
+      "theme": "arcilla",
+      "truckCount": 3,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": null,
+      "theme": "arcilla",
+      "truckCount": 0,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": null,
+      "theme": "arcilla",
+      "truckCount": 1,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": null,
+      "theme": "ciruela",
+      "truckCount": 3,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": null,
+      "theme": "ciruela",
+      "truckCount": 0,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": null,
+      "theme": "ciruela",
+      "truckCount": 1,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": null,
+      "theme": "liftit",
+      "truckCount": 3,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": null,
+      "theme": "liftit",
+      "truckCount": 0,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": null,
+      "theme": "liftit",
+      "truckCount": 1,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": null,
+      "theme": "blueprint",
+      "truckCount": 3,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": null,
+      "theme": "blueprint",
+      "truckCount": 0,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": null,
+      "theme": "blueprint",
+      "truckCount": 1,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        },
+        {
+          "city": "Cali",
+          "inside": true
+        },
+        {
+          "city": "Barranquilla",
+          "inside": true
+        }
+      ],
+      "mode": "region",
+      "scroll": null,
+      "theme": "hacker",
+      "truckCount": 3,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [],
+      "mode": "world",
+      "scroll": null,
+      "theme": "hacker",
+      "truckCount": 0,
+      "width": 1440
+    },
+    {
+      "documentWidth": 1440,
+      "endpointsInside": true,
+      "labels": [
+        {
+          "city": "Bogotá",
+          "inside": true
+        },
+        {
+          "city": "Medellín",
+          "inside": true
+        }
+      ],
+      "mode": "route",
+      "scroll": null,
+      "theme": "hacker",
+      "truckCount": 1,
+      "width": 1440
+    }
+  ],
+  "lifecycle": {
+    "destroy": true,
+    "end": true,
+    "fallback": true,
+    "fallbackSelection": true,
+    "idempotent": true,
+    "manual": true,
+    "offscreen": true,
+    "play": true,
+    "reduced": true,
+    "selection": true
+  },
+  "invalidData": true,
+  "plainMap": {
+    "cities": 4,
+    "layers": true,
+    "names": true,
+    "paths": 3,
+    "round": true
+  },
+  "limits": [
+    "Orca embedded browser, no MacBook hardware test.",
+    "Reduced motion checked with an explicit MQL override; lifecycle uses a visible stage and explicit stop.",
+    "No GPS source connected. Demo does not represent real roads, speed, ETA or delivery confirmation."
+  ]
+}

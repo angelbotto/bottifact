@@ -5,7 +5,7 @@ from comprobar_navegador import call,evaluate,save,ROOT
 def fresh():
  call('goto','--url','about:blank');call('goto','--url','http://127.0.0.1:8768/guia.html');call('exec','--command','set viewport 390 844');evaluate('document.fonts.ready.then(()=>true)');call('screenshot')
 fresh()
-js=(ROOT/'scripts/pruebas_revision.js').read_text().replace('biblioteca-codigo-','guia-fuente-').replace('length===71','length===72').replace("go('tablas')","go('piezas-tablas')").replace("go('prototipos')","go('piezas-prototipos')").replace("go('portada')","go('manual')").replace("document.querySelectorAll('.card-editorial').length===3","document.querySelectorAll('.card-editorial').length>=3")
+js=(ROOT/'scripts/pruebas_revision.js').read_text().replace('biblioteca-codigo-','guia-fuente-').replace("length===Number(document.querySelector('.pie-colofon span').textContent.match(/\\d+/)[0])",'length===document.querySelectorAll("[data-guia-componente]").length+1').replace("go('tablas')","go('piezas-tablas')").replace("go('prototipos')","go('piezas-prototipos')").replace("go('portada')","go('manual')").replace("document.querySelectorAll('.card-editorial').length===3","document.querySelectorAll('.card-editorial').length>=3")
 r=evaluate(js);save('guia-interacciones.json',r);assert not r['failed'],r
 sources=evaluate('Object.fromEntries([...document.querySelectorAll("code[id^=guia-fuente-]")].map(x=>[x.id.slice(12),x.textContent]))')
 for item in json.loads((ROOT/'registro.json').read_text())['componentes']:assert sources.get(item['id'])==item['html'],item['id']
@@ -29,4 +29,4 @@ save('guia-audio.json',{'audio':audio,'reduced':reduced,'method':'Orca clic nati
 evaluate('NotaAudio.disable();document.querySelectorAll("[data-mano],[data-subrayar]").forEach(x=>NotaMano.get(x)?.finish());true')
 for w,h in [(320,740),(390,844),(1440,960)]:
  call('exec','--command',f'set viewport {w} {h}');evaluate('document.getElementById("guia-demo-apuntes-ejemplo").scrollIntoView({block:"center",behavior:"instant"});true');(ROOT/'auditoria/capturas'/f'guia-notas-{w}.png').write_bytes(base64.b64decode(call('screenshot')['data']))
-print('Ocho interacciones, 71 fuentes exactas, entrada de escritura, clic nativo y cancelación de sonido correctos.',flush=True)
+print('Ocho interacciones, fuentes exactas del inventario, entrada de escritura, clic nativo y cancelación de sonido correctos.',flush=True)

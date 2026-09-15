@@ -1,0 +1,961 @@
+{
+  "lifecycleRealScroll": {
+    "running": true,
+    "outside": true,
+    "resume": true,
+    "pause": true
+  },
+  "contrasts": [
+    {
+      "labels": 15.661847513780497,
+      "mutation": true,
+      "point": 8.746295723478752,
+      "routes": [
+        3.4334946140597387,
+        5.7344543361492075,
+        3.5060466279681406,
+        5.85562715204638,
+        3.68476111148715,
+        6.1541073187988475,
+        3.3722816946968432,
+        5.632219519926834
+      ],
+      "theme": "light"
+    },
+    {
+      "labels": 14.353725535141905,
+      "mutation": true,
+      "point": 6.7662019523104995,
+      "routes": [
+        5.060340021995117,
+        9.407309039453684,
+        5.316738804706305,
+        9.883961314956881,
+        4.3525872764225495,
+        8.09157753283885,
+        4.525121784165325,
+        8.412323851712967
+      ],
+      "theme": "dark"
+    },
+    {
+      "labels": 12.373852633968754,
+      "mutation": true,
+      "point": 6.274784401818651,
+      "routes": [
+        5.934943223219189,
+        10.238324168199302,
+        3.599842235282152,
+        6.210059704531175,
+        6.274784401818651,
+        10.824581529279316,
+        3.86644393180605,
+        6.669972207505889
+      ],
+      "theme": "sea"
+    },
+    {
+      "labels": 12.648791659671504,
+      "mutation": true,
+      "point": 9.321117303646473,
+      "routes": [
+        4.719701947992352,
+        5.962265508986604,
+        4.627237264574375,
+        5.8454574989009505,
+        4.706435807357143,
+        5.945506770062355,
+        4.32875504549037,
+        5.468393383518123
+      ],
+      "theme": "oliva"
+    },
+    {
+      "labels": 13.053421913889142,
+      "mutation": true,
+      "point": 8.535292623582603,
+      "routes": [
+        3.696130889717231,
+        5.093035690479712,
+        3.8422886868373514,
+        5.294431934115342,
+        3.989305670569313,
+        5.497012082815334,
+        3.8495320805420494,
+        5.304412874660725
+      ],
+      "theme": "arcilla"
+    },
+    {
+      "labels": 13.96239531145356,
+      "mutation": true,
+      "point": 7.731490144736468,
+      "routes": [
+        5.229201464798612,
+        8.311630716666512,
+        5.5293396032612145,
+        8.788689668722963,
+        5.514750478811852,
+        8.76550077158085,
+        5.282903126965053,
+        8.396987608689763
+      ],
+      "theme": "ciruela"
+    },
+    {
+      "labels": 12.769536311315132,
+      "mutation": true,
+      "point": 9.365512117188263,
+      "routes": [
+        4.200380149660142,
+        5.370596391310869,
+        4.863838731286619,
+        6.21889300669119,
+        4.311428391457926,
+        5.512582417672995,
+        4.957843828108358,
+        6.339087707115272
+      ],
+      "theme": "liftit"
+    },
+    {
+      "labels": 12.825680720942724,
+      "mutation": true,
+      "point": 6.8771782072996395,
+      "routes": [
+        7.278944023520432,
+        12.143920183519764,
+        5.563020538694508,
+        9.281137096657272,
+        5.770097655609042,
+        9.626616876625034,
+        5.277578339719609,
+        8.804915920871524
+      ],
+      "theme": "blueprint"
+    },
+    {
+      "labels": 16.948630078233304,
+      "mutation": true,
+      "point": 9.394234052996325,
+      "routes": [
+        7.43295805443518,
+        11.913770174597351,
+        6.613133510879866,
+        10.59973057907129,
+        7.564373671146185,
+        12.124407103177038,
+        6.230438024617095,
+        9.9863346690177
+      ],
+      "theme": "hacker"
+    }
+  ],
+  "routes": [
+    {
+      "endpoints": true,
+      "id": "LFT-021",
+      "names": true,
+      "pinPixels": 10
+    },
+    {
+      "endpoints": true,
+      "id": "LFT-034",
+      "names": true,
+      "pinPixels": 10
+    },
+    {
+      "endpoints": true,
+      "id": "LFT-056",
+      "names": true,
+      "pinPixels": 9.999999999999998
+    }
+  ],
+  "queue": {
+    "id": true,
+    "orders": true,
+    "row": true
+  },
+  "layouts": [
+    {
+      "page": "liftit",
+      "chapter": "documento",
+      "width": 320,
+      "checks": [
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "light"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "dark"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "sea"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "oliva"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "arcilla"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "ciruela"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "liftit"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "blueprint"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "hacker"
+        }
+      ]
+    },
+    {
+      "page": "liftit",
+      "chapter": "documento",
+      "width": 390,
+      "checks": [
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "light"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "dark"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "sea"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "oliva"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "arcilla"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "ciruela"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "liftit"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "blueprint"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "hacker"
+        }
+      ]
+    },
+    {
+      "page": "liftit",
+      "chapter": "documento",
+      "width": 1440,
+      "checks": [
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "light"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "dark"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "sea"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "oliva"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "arcilla"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "ciruela"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "liftit"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "blueprint"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "hacker"
+        }
+      ]
+    },
+    {
+      "page": "guia",
+      "chapter": "piezas-reportes",
+      "width": 320,
+      "checks": [
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "light"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "dark"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "sea"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "oliva"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "arcilla"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "ciruela"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "liftit"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "blueprint"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "hacker"
+        }
+      ]
+    },
+    {
+      "page": "guia",
+      "chapter": "piezas-tablas",
+      "width": 320,
+      "checks": [
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "light"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "dark"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "sea"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "oliva"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "arcilla"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "ciruela"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "liftit"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "blueprint"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "hacker"
+        }
+      ]
+    },
+    {
+      "page": "guia",
+      "chapter": "piezas-expresion",
+      "width": 320,
+      "checks": [
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "light"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "dark"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "sea"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "oliva"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "arcilla"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "ciruela"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "liftit"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "blueprint"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "hacker"
+        }
+      ]
+    },
+    {
+      "page": "guia",
+      "chapter": "componer",
+      "width": 320,
+      "checks": [
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "light"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "dark"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "sea"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "oliva"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "arcilla"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "ciruela"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "liftit"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "blueprint"
+        },
+        {
+          "documentWidth": 320,
+          "errors": [],
+          "theme": "hacker"
+        }
+      ]
+    },
+    {
+      "page": "guia",
+      "chapter": "piezas-reportes",
+      "width": 390,
+      "checks": [
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "light"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "dark"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "sea"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "oliva"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "arcilla"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "ciruela"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "liftit"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "blueprint"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "hacker"
+        }
+      ]
+    },
+    {
+      "page": "guia",
+      "chapter": "piezas-tablas",
+      "width": 390,
+      "checks": [
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "light"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "dark"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "sea"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "oliva"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "arcilla"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "ciruela"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "liftit"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "blueprint"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "hacker"
+        }
+      ]
+    },
+    {
+      "page": "guia",
+      "chapter": "piezas-expresion",
+      "width": 390,
+      "checks": [
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "light"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "dark"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "sea"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "oliva"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "arcilla"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "ciruela"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "liftit"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "blueprint"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "hacker"
+        }
+      ]
+    },
+    {
+      "page": "guia",
+      "chapter": "componer",
+      "width": 390,
+      "checks": [
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "light"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "dark"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "sea"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "oliva"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "arcilla"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "ciruela"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "liftit"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "blueprint"
+        },
+        {
+          "documentWidth": 390,
+          "errors": [],
+          "theme": "hacker"
+        }
+      ]
+    },
+    {
+      "page": "guia",
+      "chapter": "piezas-reportes",
+      "width": 1440,
+      "checks": [
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "light"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "dark"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "sea"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "oliva"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "arcilla"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "ciruela"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "liftit"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "blueprint"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "hacker"
+        }
+      ]
+    },
+    {
+      "page": "guia",
+      "chapter": "piezas-tablas",
+      "width": 1440,
+      "checks": [
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "light"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "dark"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "sea"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "oliva"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "arcilla"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "ciruela"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "liftit"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "blueprint"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "hacker"
+        }
+      ]
+    },
+    {
+      "page": "guia",
+      "chapter": "piezas-expresion",
+      "width": 1440,
+      "checks": [
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "light"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "dark"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "sea"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "oliva"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "arcilla"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "ciruela"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "liftit"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "blueprint"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "hacker"
+        }
+      ]
+    },
+    {
+      "page": "guia",
+      "chapter": "componer",
+      "width": 1440,
+      "checks": [
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "light"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "dark"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "sea"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "oliva"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "arcilla"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "ciruela"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "liftit"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "blueprint"
+        },
+        {
+          "documentWidth": 1440,
+          "errors": [],
+          "theme": "hacker"
+        }
+      ]
+    }
+  ]
+}

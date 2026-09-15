@@ -7,7 +7,7 @@ URL='http://127.0.0.1:8768/'
 call('goto','--url',URL+'guia.html');call('exec','--command','set viewport 1440 960');evaluate('document.fonts.ready.then(()=>true)')
 pages=evaluate('[...document.querySelectorAll("main > .pagina")].map(x=>x.id)')
 assert len(pages)==13,pages
-assert evaluate('document.querySelectorAll("[data-guia-componente]").length')==71
+assert evaluate('document.querySelectorAll("[data-guia-componente]").length')==len(json.loads((ROOT/'registro.json').read_text())['componentes'])
 rows=[];errors=[]
 measurement=(ROOT/'scripts/medir_navegador.js').read_text().replace("closed.forEach(d=>d.open=true)","closed.splice(0,closed.length,...closed.filter(d=>!d.closest('.pagina')||d.closest('.pagina').classList.contains('viva')));closed.forEach(d=>d.open=true)")
 for w,h in [(320,740),(390,844),(1440,960)]:
