@@ -1877,9 +1877,9 @@ body:has(.revision-barra) { padding-bottom:0; }
 .apariencia-explorador > [role='tabpanel'] { min-height:0; overflow:auto; overscroll-behavior:contain; padding:3px; }
 
 /* 30 — Operación logística. Alias semánticos completos: cada paleta resuelve sus colores. */
-:root { --flota-oceano:var(--panel); --flota-tierra:var(--linea-fuerte); --flota-territorio:var(--calor-3); --flota-borde:var(--marcador); --flota-punto:var(--tinta); }
-@media(prefers-color-scheme:dark) { :root:not([data-theme]) { --flota-oceano:var(--panel); --flota-tierra:var(--linea-fuerte); --flota-territorio:var(--calor-3); --flota-borde:var(--marcador); --flota-punto:var(--tinta); } }
-:root[data-theme='dark'],:root[data-theme='sea'] { --flota-oceano:var(--panel); --flota-tierra:var(--linea-fuerte); --flota-territorio:var(--calor-3); --flota-borde:var(--marcador); --flota-punto:var(--tinta); }
+:root { --flota-oceano:var(--panel); --flota-tierra:var(--linea-fuerte); --flota-territorio:var(--calor-2); --flota-borde:var(--marcador); --flota-punto:var(--tinta); }
+@media(prefers-color-scheme:dark) { :root:not([data-theme]) { --flota-oceano:var(--panel); --flota-tierra:var(--linea-fuerte); --flota-territorio:var(--calor-2); --flota-borde:var(--marcador); --flota-punto:var(--tinta); } }
+:root[data-theme='dark'],:root[data-theme='sea'] { --flota-oceano:var(--panel); --flota-tierra:var(--linea-fuerte); --flota-territorio:var(--calor-2); --flota-borde:var(--marcador); --flota-punto:var(--tinta); }
 .nota-flota { min-width:0; }
 .flota-cabecera { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; margin-bottom:20px; }
 .flota-cabecera h3 { margin-top:8px; }
@@ -1898,9 +1898,9 @@ body:has(.revision-barra) { padding-bottom:0; }
 .flota-ciudad,.flota-pais { position:absolute; max-width:160px; padding:3px 6px; border:1px solid var(--linea); border-radius:4px; background:var(--papel); color:var(--tinta); font:500 12px/1.4 var(--sans); overflow-wrap:anywhere; }
 .flota-pais { color:var(--azul); border-color:var(--azul); }
 .flota-camion { pointer-events:auto; position:absolute; transform:translate(-50%,-50%); display:grid; place-items:center; width:44px; height:44px; min-height:44px; padding:4px; background:transparent; border:0; color:var(--grafica-1); }
-.flota-camion svg { width:32px; height:25px; overflow:visible; fill:currentColor; stroke:var(--papel); stroke-width:1.5; filter:drop-shadow(0 1px 2px var(--linea-fuerte)); }
+.flota-camion svg { width:23px; height:20px; overflow:visible; fill:currentColor; stroke:var(--papel); stroke-width:1.5; filter:drop-shadow(0 1px 2px var(--linea-fuerte)); }
 .flota-camion .flota-ventana { fill:var(--papel); stroke:none; }
-.flota-camion[aria-pressed='true'] { border:1px solid currentColor; border-radius:50%; background:var(--papel); }
+.flota-camion[aria-pressed='true'] { border:0; background:transparent; }
 .flota-camion:active { transform:translate(-50%,-50%); }
 .flota-camion[data-serie='2'] { color:var(--grafica-2); }.flota-camion[data-serie='3'] { color:var(--grafica-3); }.flota-camion[data-serie='4'] { color:var(--grafica-4); }
 .flota-despacho { min-width:0; }
@@ -1914,8 +1914,6 @@ body:has(.revision-barra) { padding-bottom:0; }
 .flota-nota,.flota-resumen { font:12px/1.6 var(--mono); color:var(--tinta-2); margin-block:12px; }
 @media(min-width:1400px) { .flota-layout { grid-template-columns:minmax(0,2.5fr) minmax(230px,1fr); align-items:start; }.flota-vehiculos { grid-template-columns:minmax(0,1fr); } }
 @media print { .flota-herramientas,.flota-mapa-caja,.flota-layout,.flota-resumen { display:none!important; } }
-.flota-camion svg { width:23px; height:20px; }
-.flota-camion[aria-pressed='true'] { border:0; background:transparent; }
 .flota-camion[aria-pressed='true']::before { content:''; position:absolute; inset:7px; border:1px solid currentColor; border-radius:50%; background:var(--papel); z-index:-1; }
 .flota-ciudad { z-index:2; }
 .flota-vistas { flex-wrap:wrap; }
