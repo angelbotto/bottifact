@@ -1,7 +1,7 @@
 <title>Una base que sí acompaña cada documento</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="nota-tikin-version" content="1">
+<meta name="nota-tikin-version" content="2">
 <style data-nota-fuente="fuentes.css">
 /* Nota Tikin · Fuentes incrustadas. Google Fonts CSS2, 13-sep-2026.
 No hay solicitudes de fuentes en tiempo de ejecución. Conservar estos avisos OFL. */
@@ -1893,6 +1893,62 @@ body:has(.revision-barra) { padding-bottom:0; }
 
 .navegacion-editorial > .procedencia { min-width:0; font:12px/1.5 var(--sans); color:var(--tinta-2); text-align:right; }
 
+/* 25 — Acabado punteado en composiciones nuevas; sólo se difuminan líneas decorativas. */
+.marcos-editoriales :is(.ancho,.amplio),.marco-punteado { --aire-marco:clamp(14px,2vw,28px); position:relative; padding:calc(var(--aire-marco) + 8px); min-width:0; }
+.marco-lineas::before,.marco-lineas::after { content:''; position:absolute; pointer-events:none; }
+.marco-lineas::before { inset:var(--aire-marco) 0; border-block:1px dotted var(--linea-fuerte); mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent); }
+.marco-lineas::after { inset:0 var(--aire-marco); border-inline:1px dotted var(--linea-fuerte); mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent); }
+.codigo-editorial { border:0; border-radius:0; background:var(--panel); }
+.codigo-editorial .cab { border-bottom:1px dotted var(--linea-fuerte); }
+.codigo-editorial pre { padding:16px 0; }
+.codigo-editorial code[data-lineas] { display:block; min-width:100%; width:max-content; }
+.codigo-linea { position:relative; display:inline-block; min-width:100%; padding-inline:52px 20px; border-left:2px solid transparent; }
+.codigo-linea::before { content:attr(data-numero); position:absolute; left:12px; width:24px; text-align:right; color:var(--tinta-2); font:inherit; }
+.codigo-linea.destacada { background:var(--naranja-suave); border-left-color:var(--naranja); }
+.codigo-linea.destacada::before { color:var(--naranja); }
+.boton-icono-copia { display:inline-grid; place-items:center; min-width:44px; min-height:44px; padding:10px; border:0!important; background:transparent; color:var(--tinta-2); cursor:pointer; }
+.boton-icono-copia svg { width:17px; height:17px; }
+.enlace-icono { text-decoration:underline; text-decoration-color:var(--linea-fuerte); text-underline-offset:3px; overflow-wrap:anywhere; }
+.enlace-icono svg { width:1em; height:1em; vertical-align:-.12em; margin-inline-end:.25em; color:var(--tinta); }
+.codigo-en-linea { padding:1px 5px; border:1px dotted var(--linea-fuerte); background:var(--panel); font:.88em var(--mono); box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+.aviso.aviso-esquina { position:relative; display:block; padding:14px 0 0 14px; border:0; background:transparent; }
+.aviso-esquina > div { padding:18px 16px; border:1px solid color-mix(in srgb,var(--acento) 25%,transparent); border-left:3px solid var(--acento); border-radius:4px; background:var(--suave-aviso); }
+.aviso-esquina > .num { position:absolute; top:0; left:0; background:var(--papel); z-index:1; }
+.aviso-esquina .num svg { width:16px; height:16px; }
+.aviso-pulso { position:absolute; inset:0; border:1px solid currentColor; border-radius:50%; opacity:0; pointer-events:none; }
+.cronologia.cronologia-vertical { padding:0; }
+.cronologia.cronologia-vertical li { position:relative; display:block; padding:0 0 32px 32px; border:0; }
+.cronologia-vertical li::before { content:''; position:absolute; left:6px; top:14px; bottom:0; width:1px; background:var(--linea-fuerte); }
+.cronologia-vertical li:last-child::before { mask-image:linear-gradient(#000,transparent); }
+.cronologia-vertical li::after { content:''; position:absolute; left:2px; top:9px; width:9px; height:9px; border-radius:50%; background:var(--tinta-2); }
+.cronologia-vertical li.actual::after { background:var(--marcador); box-shadow:0 0 0 4px color-mix(in srgb,var(--marcador) 16%,transparent); }
+.cronologia-vertical h3 { font:26px/1.2 var(--serif); margin:0 0 5px; }
+.cronologia-vertical .periodo { font:12px/1.6 var(--mono); color:var(--tinta-2); }
+.cronologia-vertical p { font-size:14px; color:var(--tinta-2); }
+.conversacion.suelta { gap:8px; }.conversacion.suelta li { border:0; border-radius:18px 18px 18px 0; }.conversacion.suelta .respuesta { border-radius:18px 18px 0 18px; }
+.actividad-editorial { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.4fr); gap:32px; align-items:center; }
+.actividad-editorial > * { min-width:0; }.actividad-editorial h3 { font:clamp(30px,3vw,42px)/1.1 var(--serif); margin:0 0 14px; }
+.actividad-editorial p { color:var(--tinta-2); font-size:14px; }.actividad-editorial details { grid-column:1/-1; }
+.actividad-mosaico { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:3px; }
+.actividad-celda { aspect-ratio:1; min-width:0; min-height:44px; border:1px solid var(--linea); border-radius:0; font:14px var(--mono); color:var(--tinta); cursor:pointer; }
+.actividad-nivel-0 { background:var(--calor-0); }.actividad-nivel-1 { background:var(--calor-1); }.actividad-nivel-2 { background:var(--calor-2); }.actividad-nivel-3 { background:var(--calor-3); }.actividad-nivel-4 { background:var(--calor-4); }
+.actividad-celda { color:var(--calor-tinta); }.actividad-celda:hover { box-shadow:inset 0 0 0 2px var(--marcador); }
+.actividad-escala { display:flex; flex-wrap:wrap; gap:8px 12px; margin-top:16px; font:11px/1.5 var(--mono); color:var(--tinta-2); }
+.actividad-escala span { display:flex; align-items:center; gap:5px; }.actividad-escala i { display:inline-block; width:12px; height:12px; border:1px solid var(--linea-fuerte); }
+[data-actividad-estado] { min-height:3.2em; }
+.galeria-pista { display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x proximity; list-style:none; padding:0 0 12px; margin:0; min-width:0; scrollbar-width:thin; }
+.galeria-pista > figure { flex:0 0 min(72vw,360px); min-width:0; scroll-snap-align:start; }
+.galeria-pista figure { margin:0; }.galeria-pista img { display:block; width:100%; height:240px; object-fit:cover; border-radius:18px; border:1px solid var(--linea); background:var(--panel); }
+.galeria-pista figcaption { padding:10px 2px; font:12px/1.6 var(--sans); color:var(--tinta-2); }
+.galeria-controles { display:grid; grid-template-columns:44px minmax(0,1fr) 44px; align-items:center; gap:8px; margin-top:12px; }
+.galeria-controles button { min-width:44px; min-height:44px; border:1px solid var(--linea-fuerte); border-radius:50%; background:var(--panel); color:var(--tinta); cursor:pointer; }
+.galeria-controles button:disabled { opacity:.45; cursor:default; }.galeria-controles [role=status] { flex:1 1 170px; margin:0; color:var(--tinta-2); font:12px/1.6 var(--sans); }
+@media(max-width:650px) { .actividad-editorial { grid-template-columns:minmax(0,1fr); gap:20px; }.galeria-pista img { height:190px; } }
+@media print { .marco-lineas::before,.marco-lineas::after { display:none; }.galeria-pista { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); overflow:visible; }.galeria-controles { display:none; }.codigo-editorial code[data-lineas] { width:auto; }.codigo-linea { white-space:pre-wrap; overflow-wrap:anywhere; } }
+
+.marco-lineas { position:absolute; inset:0; margin:0; pointer-events:none; }
+.marcos-editoriales .marco-difuso::before { border-block-style:dotted; }.marcos-editoriales .marco-difuso::after { border-inline-style:dotted; }
+
 </style>
 <a class="salto" href="#experiencia">Saltar al contenido</a><header class="barra capitulos navegacion-editorial" id="nota-inicio"><a class="firma-editorial" href="#experiencia"><span>tikin</span></a><div class="navegacion-scroll" data-capitulos-scroll tabindex="0" role="region" aria-label="Capítulos, desplazables"><nav aria-label="Capítulos"><button type="button" data-ir="experiencia">La experiencia</button><span class="nav-separador" aria-hidden="true">/</span><button type="button" data-ir="evidencia">El contrato</button></nav></div><details class="apariencia-menu orbita" data-apariencia-menu>
   <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-principal"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span></summary>
@@ -1924,10 +1980,10 @@ body:has(.revision-barra) { padding-bottom:0; }
       <button type="button" data-papel-tramado aria-pressed="false">Grano de papel <span aria-hidden="true">✓</span></button>
     </div>
   </div>
-</details></header><main class="hoja lectura-guiada nota-estandar multipagina edicion" data-lectura data-progreso-pagina data-historial data-enlaces-internos lang="es"><article class="pagina viva" id="experiencia" data-pagina><header class="cabecera"><h1>La experiencia</h1><p class="bajada">Apariencia, sonido, comentarios y lectura en una composición reproducible.</p></header><nav class="indice" tabindex="0" aria-label="En esta página"><p class="ceja">En esta página</p><ol><li><a href="#una-base">La misma base en cada entrega.</a></li><li><a href="#escuchar">Escucha una muestra.</a></li><li><a href="#revisar">Comenta donde haga falta.</a></li><li><a href="#siguiente">Qué mejoraría después.</a></li></ol></nav><section id="una-base"><h2>La misma base en cada entrega.</h2>
+</details></header><main class="hoja lectura-guiada nota-estandar marcos-editoriales multipagina edicion" data-lectura data-progreso-pagina data-historial data-enlaces-internos lang="es"><article class="pagina viva" id="experiencia" data-pagina><header class="cabecera"><h1>La experiencia</h1><p class="bajada">Apariencia, sonido, comentarios y lectura en una composición reproducible.</p></header><nav class="indice" tabindex="0" aria-label="En esta página"><p class="ceja">En esta página</p><ol><li><a href="#una-base">La misma base en cada entrega.</a></li><li><a href="#escuchar">Escucha una muestra.</a></li><li><a href="#revisar">Comenta donde haga falta.</a></li><li><a href="#siguiente">Qué mejoraría después.</a></li></ol></nav><section id="una-base"><h2>La misma base en cada entrega.</h2>
 <p>El catálogo ofrecía comentarios y temas, pero el ejemplo de informe no cargaba los comentarios. Consultar el inventario tampoco garantizaba que Claude incluyera los controles.</p>
 <p>La nueva base incorpora la llave sol/luna con seis paletas, lectura cómoda, textura, índice, progreso y comentarios flotantes. El generador incorpora las dependencias de las piezas elegidas y el verificador revisa el archivo final.</p>
-<p><a href="biblioteca.html">Explorar las 65 recetas</a> · <a href="estandar-capitulos.html">Ver la misma base con capítulos</a></p></section>
+<p><a href="biblioteca.html">Explorar las 71 recetas</a> · <a href="estandar-capitulos.html">Ver la misma base con capítulos</a></p></section>
 <section id="escuchar"><h2>Escucha una muestra.</h2>
 <p>Pulsa <strong>Probar sonido</strong>: activa el audio y reproduce un tono breve. También está al principio del panel de Apariencia, junto al volumen. El audio empieza apagado en cada carga.</p>
 <p><button type="button" class="gesto-repetir" data-audio-prueba>Probar sonido</button></p>
@@ -1938,7 +1994,7 @@ body:has(.revision-barra) { padding-bottom:0; }
 <p>Los comentarios viven en esta pestaña: copia el prompt antes de recargar. El documento no los envía ni sincroniza.</p></section>
 <section id="siguiente"><h2>Qué mejoraría después.</h2>
 <ol><li><strong>Conservar revisiones.</strong> Exportar e importar comentarios para retomar una revisión sin depender de la pestaña abierta.</li><li><strong>Estados completos.</strong> Mostrar vacío, carga, error y dato faltante junto a cada componente interactivo.</li><li><strong>Versiones y migraciones.</strong> Identificar qué versión generó un informe y ofrecer una actualización revisable de sus controles.</li><li><strong>Pruebas de lectura.</strong> Revisión con teclado y lector de pantalla, impresión y contraste de componentes concretos con datos reales.</li></ol>
-<p>La prioridad es que los mismos controles funcionen en cada entrega. Las 65 recetas siguen disponibles para elegir según lo que haya que explicar.</p></section>
+<p>La prioridad es que los mismos controles funcionen en cada entrega. Las 71 recetas siguen disponibles para elegir según lo que haya que explicar.</p></section>
 </article><article class="pagina" id="evidencia" data-pagina hidden><header class="cabecera"><h1>El contrato</h1></header><nav class="indice" tabindex="0" aria-label="En esta página"><p class="ceja">En esta página</p><ol><li><a href="#evidencia-base">De la preferencia al resultado.</a></li><li><a href="#pruebas-entrega">Dos clases de comprobación.</a></li></ol></nav><section id="evidencia-base"><h2>De la preferencia al resultado.</h2><p>Un componente disponible en el catálogo no garantiza que aparezca en un artefacto nuevo. El contrato ahora se comprueba sobre el HTML que se va a compartir.</p></section>
 <figure class="ancho"><div class="tabla-caja" tabindex="0" role="region" aria-label="Contrato de entrega, tabla desplazable"><table><caption>Qué debe acompañar cada nuevo documento de Angel</caption><thead><tr><th scope="col">Necesidad</th><th scope="col">Comportamiento</th><th scope="col">Límite</th></tr></thead><tbody><tr><th scope="row">Apariencia</th><td>Llave sol/luna y seis paletas con muestras.</td><td>La preferencia del navegador no reemplaza el control visible.</td></tr><tr><th scope="row">Comentarios</th><td>Pines flotantes y prompt con contexto.</td><td>Hay que copiar antes de recargar.</td></tr><tr><th scope="row">Sonido</th><td>Apagado, prueba explícita, volumen y estado.</td><td>La señal del navegador no prueba lo que se oye en otro equipo.</td></tr><tr><th scope="row">Lectura</th><td>Índice por página y regla de avance.</td><td>Los capítulos no sustituyen el índice.</td></tr></tbody></table></div><figcaption>Contrato de Nota Tikin, revisión del 14 de septiembre de 2026. Describe comportamiento del sistema, no métricas de negocio.</figcaption></figure>
 <section id="pruebas-entrega"><h2>Dos clases de comprobación.</h2><p>El verificador local detecta controles ausentes, módulos desactualizados, referencias rotas y figuras atrapadas fuera de la rejilla. Después se prueba el comportamiento en navegador a 320 y 390 px y en escritorio.</p><p>Para comprobar sonido se necesita un clic real: los navegadores pueden suspender Web Audio hasta que el usuario lo active. <a href="https://developer.chrome.com/blog/web-audio-autoplay">Política de Web Audio de Chrome</a>.</p><p><a href="estandar.html">Volver a la versión de una página</a></p></section>
@@ -2056,6 +2112,60 @@ body:has(.revision-barra) { padding-bottom:0; }
  menu.addEventListener('toggle',()=>{if(menu.open){document.querySelectorAll('.control-menu').forEach(other=>{if(other!==menu)other.open=false;});place();}});menu.addEventListener('click',e=>{if(e.target.closest('[data-cerrar-menu]'))menu.open=false;});menu.addEventListener('change',place);
  addEventListener('resize',place);document.addEventListener('scroll',e=>{if(menu.open&&!panel.contains(e.target))menu.open=false;},{capture:true,passive:true});document.addEventListener('pointerdown',e=>{if(!menu.contains(e.target))menu.open=false;});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.open){menu.open=false;trigger.focus();}});
  });}window.NotaControles={init};init();})();
+
+</script>
+<script data-nota-modulo="piezas-editoriales.js">
+/* Actividad, avisos y galería: mejoras locales, sin red ni reproducción automática. */
+(()=>{'use strict';
+ const instances=new WeakMap(),selector='[data-actividad],[data-aviso-animado],[data-galeria]';
+ function mount(el){
+  if(instances.has(el))return;
+  const clean=[],motion=matchMedia('(prefers-reduced-motion: reduce)');
+  const on=(node,type,fn,opts)=>{node.addEventListener(type,fn,opts);clean.push(()=>node.removeEventListener(type,fn,opts));};
+  let api={motion,destroy(){clean.splice(0).forEach(fn=>fn());instances.delete(el);}};
+  if(el.hasAttribute('data-actividad')){
+   const map=el.querySelector('[data-actividad-mapa]'),legend=el.querySelector('[data-actividad-escala]'),status=el.querySelector('[data-actividad-estado]');if(!map||!legend||!status)return;
+   const original=[map.innerHTML,legend.innerHTML,status.textContent];
+   const rows=[...el.querySelectorAll('tbody tr')].map(tr=>({label:tr.querySelector('th')?.textContent.trim(),raw:tr.querySelector('[data-valor]')?.getAttribute('data-valor')}));
+   if(!rows.length||rows.length>52||rows.some(r=>!r.label||r.raw===null||r.raw===undefined||r.raw.trim()===''||!Number.isInteger(Number(r.raw))||Number(r.raw)<0||Number(r.raw)>1e6)){
+    status.textContent='No se puede dibujar la actividad: revisa los conteos enteros no negativos de la tabla.';
+   }else{
+    const values=rows.map(r=>Number(r.raw)),maximum=Math.max(...values),step=Math.max(1,Math.ceil(maximum/4)),total=values.reduce((a,b)=>a+b,0);
+    const labels=[{label:'0',level:0},...Array.from({length:4},(_,i)=>({from:i*step+1,to:Math.min(maximum,(i+1)*step),level:i+1})).filter(r=>r.from<=r.to).map(r=>({...r,label:r.from===r.to?String(r.from):r.from+'–'+r.to}))];
+    legend.replaceChildren();labels.forEach(({label,level})=>{const span=document.createElement('span'),swatch=document.createElement('i');swatch.className='actividad-nivel-'+level;swatch.setAttribute('aria-hidden','true');span.append(swatch,document.createTextNode(label));legend.append(span);});
+    map.replaceChildren();rows.forEach((row,i)=>{const value=values[i],b=document.createElement('button');b.type='button';b.className='actividad-celda actividad-nivel-'+(value?Math.min(4,Math.ceil(value/step)):0);b.setAttribute('aria-label',row.label+': '+value+' acciones de '+total+' en total.');b.textContent=String(value);b.title=row.label+': '+value+' acciones';const select=()=>{status.textContent=row.label+': '+value+' acciones. '+(total?(100*value/total).toFixed(1):'0')+' % de las '+total+' del período.';};on(b,'click',select);on(b,'focus',select);on(b,'pointerenter',select);map.append(b);});
+    status.textContent=total+' acciones en '+rows.length+' períodos. Consulta una celda para ver su contexto.';
+   }
+   clean.push(()=>{map.innerHTML=original[0];legend.innerHTML=original[1];status.textContent=original[2];});
+  }
+  if(el.hasAttribute('data-aviso-animado')){
+   const icon=el.querySelector('.num');if(!icon)return;
+   const halo=document.createElement('span');halo.className='aviso-pulso';halo.setAttribute('aria-hidden','true');icon.append(halo);
+   let animation=null,visible=false,played=false;
+   const stop=()=>{animation?.cancel();animation=null;};
+   const play=()=>{stop();if(!visible||motion.matches||document.hidden)return;animation=halo.animate([{transform:'scale(1)',opacity:.55},{transform:'scale(1.65)',opacity:0}],{duration:1000,iterations:2,easing:'cubic-bezier(0,0,.2,1)'});animation.onfinish=stop;};
+   const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting&&entries[0].intersectionRatio>=.25;if(!visible)stop();else if(!played){played=true;play();}},{threshold:.25});observer.observe(el);
+   on(el,'pointerenter',play);on(el,'focusin',play);on(motion,'change',stop);on(document,'visibilitychange',()=>{if(document.hidden)stop();});
+   clean.push(()=>{observer.disconnect();stop();halo.remove();});api.play=play;Object.defineProperty(api,'animating',{get:()=>!!animation});
+  }
+  if(el.hasAttribute('data-galeria')){
+   const track=el.querySelector('[data-galeria-pista]'),prev=el.querySelector('[data-galeria-anterior]'),next=el.querySelector('[data-galeria-siguiente]'),status=el.querySelector('[data-galeria-estado]');if(!track||!prev||!next||!status)return;
+   const items=[...track.children],original={prev:prev.disabled,next:next.disabled,text:status.textContent};let timer;
+   const update=()=>{const r=track.getBoundingClientRect(),index=items.reduce((best,e,i)=>Math.abs(e.getBoundingClientRect().left-r.left)<Math.abs(items[best].getBoundingClientRect().left-r.left)?i:best,0);prev.disabled=track.scrollLeft<=1;next.disabled=track.scrollLeft>=track.scrollWidth-track.clientWidth-1;status.textContent=items.length?'Vista '+(index+1)+' de '+items.length+'. Desliza para recorrer.':'No hay imágenes en esta galería.';};
+   const move=direction=>{const r=track.getBoundingClientRect(),current=track.scrollLeft,positions=items.map(e=>current+e.getBoundingClientRect().left-r.left),target=direction>0?positions.find(x=>x>current+2):positions.reverse().find(x=>x<current-2);track.scrollTo({left:target??(direction>0?track.scrollWidth:0),behavior:motion.matches?'instant':'smooth'});};
+   on(prev,'click',()=>move(-1));on(next,'click',()=>move(1));on(track,'scroll',()=>{clearTimeout(timer);timer=setTimeout(update,90);},{passive:true});
+   on(motion,'change',()=>{if(motion.matches)track.scrollTo({left:track.scrollLeft,behavior:'instant'});update();});
+   const observer=new ResizeObserver(update);observer.observe(track);update();
+   clean.push(()=>{clearTimeout(timer);observer.disconnect();track.scrollTo({left:track.scrollLeft,behavior:'instant'});prev.disabled=original.prev;next.disabled=original.next;status.textContent=original.text;});
+  }
+  instances.set(el,api);
+ }
+ function init(root=document){
+  const framed='.marcos-editoriales :is(.ancho,.amplio):not(.marco-difuso),.marco-punteado';
+  [...(root.matches?.(framed)?[root]:[]),...root.querySelectorAll(framed)].forEach(el=>{if(el.querySelector(':scope > .marco-lineas'))return;const lines=document.createElement('span');lines.className='marco-lineas';lines.setAttribute('aria-hidden','true');el.append(lines);});
+  [...(root.matches?.(selector)?[root]:[]),...root.querySelectorAll(selector)].forEach(mount);}
+ window.NotaPiezasEditoriales={init,get:el=>instances.get(el)};init();
+})();
 
 </script>
 <script data-nota-modulo="interacciones.js">
@@ -2537,6 +2647,14 @@ body:has(.revision-barra) { padding-bottom:0; }
   }add(source.slice(end));return out;
  }
  function init(root=document){root.querySelectorAll('.codigo pre code,.terminal pre,[data-lenguaje]').forEach(el=>{if(done.has(el))return;done.add(el);const lang=language(el,el.textContent);el.dataset.coloreado=lang;
+  if(el.hasAttribute('data-lineas')){
+   const source=el.textContent,selected=new Set();
+   for(const part of (el.dataset.destacar||'').split(',')){const m=part.trim().match(/^(\d+)(?:-(\d+))?$/);if(!m)continue;const from=Number(m[1]),to=Number(m[2]||m[1]);for(let i=from;i<=Math.min(to,10000);i++)selected.add(i);}
+   const frag=document.createDocumentFragment();let number=1,line;
+   const next=()=>{line=document.createElement('span');line.className='codigo-linea'+(selected.has(number)?' destacada':'');line.dataset.numero=String(number++);frag.append(line);};next();
+   tokens(source,lang).forEach(({text,kind})=>text.split('\n').forEach((part,i)=>{if(i){frag.append(document.createTextNode('\n'));next();}if(!part)return;const span=document.createElement('span');if(kind)span.className=kind;span.textContent=part;line.append(span);}));
+   el.replaceChildren(frag);return;
+  }
   const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
   for(const node of nodes){if(node.parentElement.closest('.kw,.str,.com,.subra,.tenue'))continue;const frag=document.createDocumentFragment();tokens(node.textContent,lang).forEach(({text,kind})=>{if(!text)return;if(!kind){frag.append(document.createTextNode(text));return;}const span=document.createElement('span');span.className=kind;span.textContent=text;frag.append(span);});node.replaceWith(frag);}
  });}window.NotaCodigo={init};init();})();
@@ -2599,4 +2717,4 @@ body:has(.revision-barra) { padding-bottom:0; }
 })();
 
 </script>
-<script type="application/json" data-nota-manifiesto>{"version": "1", "paginas": ["experiencia", "evidencia"], "modulos": ["audio.js", "controles.js", "interacciones.js", "multipagina.js", "mano.js", "codigo.js", "revision.js"], "fuentes": {"fuentes.css": "30fae908fc4d4764051b4fdc8dfb63696e212475cb13e5330fe13c0d1eeca462", "estilo.css": "cd046328e441eeb6767a891f5e09e5c850a8dd5b9326932b4c682ce970430576", "audio.js": "162b0aa8d00078c3c7409a488f00f86ad575cda6c7c7ab96bd08203e3cbbbb04", "controles.js": "362f4824f82cc3aa895c6b303dd46eb60a6449b1f1392f405bbcf9113c225fc0", "interacciones.js": "14a5e128c93e6ecf0cc3122fb68b97085a84c1b79c378fd61c8c6004a0f487f4", "multipagina.js": "c87fa056fbc2e389b173dfcee809927b669376435b41a129069a620bc1c747fc", "mano.js": "c7e02c6afed806b2db2b3273fd29b943ae72ea51e7f764a00263b7a0d3cbe816", "codigo.js": "4ea29aace54c87e76d94187e66938597183441f4c206687311a608e28f2e82bc", "revision.js": "c49720838c2a8ba1a2729d7e2866a8379d17b84306bca6c0d384430735e2c1c1"}}</script>
+<script type="application/json" data-nota-manifiesto>{"version": "2", "paginas": ["experiencia", "evidencia"], "modulos": ["audio.js", "controles.js", "piezas-editoriales.js", "interacciones.js", "multipagina.js", "mano.js", "codigo.js", "revision.js"], "fuentes": {"fuentes.css": "30fae908fc4d4764051b4fdc8dfb63696e212475cb13e5330fe13c0d1eeca462", "estilo.css": "134d240d436a0c1d427bfbb51e2d17f8ba6e92c096e89e644228be8164aab12e", "audio.js": "162b0aa8d00078c3c7409a488f00f86ad575cda6c7c7ab96bd08203e3cbbbb04", "controles.js": "362f4824f82cc3aa895c6b303dd46eb60a6449b1f1392f405bbcf9113c225fc0", "piezas-editoriales.js": "e29d1a8fda8b08c4e063d1a7e73b21d313122712725ab64425a28e9a37d9314a", "interacciones.js": "14a5e128c93e6ecf0cc3122fb68b97085a84c1b79c378fd61c8c6004a0f487f4", "multipagina.js": "c87fa056fbc2e389b173dfcee809927b669376435b41a129069a620bc1c747fc", "mano.js": "c7e02c6afed806b2db2b3273fd29b943ae72ea51e7f764a00263b7a0d3cbe816", "codigo.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "revision.js": "c49720838c2a8ba1a2729d7e2866a8379d17b84306bca6c0d384430735e2c1c1"}}</script>
