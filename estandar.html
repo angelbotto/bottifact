@@ -2499,7 +2499,22 @@ body:has(.revision-barra) { padding-bottom:0; }
 .nota-icono[aria-pressed='true'] { background:var(--pieza-suave); border-color:var(--pieza-acento); color:var(--pieza-acento); }
 .nota-icono:focus-visible,.gesto-repetir:focus-visible { outline:2px solid var(--foco); outline-offset:2px; }
 .gesto-repetir:disabled { opacity:.55; cursor:default; }
-.apunte-nota .gesto-repetir { margin-top:4px; }
+/* La repetición vive sobre el corchete: no añade una fila ni desplaza el texto. */
+.apunte-nota:has(.gesto-repetir) .manuscrita { margin-bottom:0; }
+.apunte-nota .gesto-repetir { position:absolute; top:0; left:0; margin:0; transform:translate(-50%,-50%); z-index:1; border-radius:50%; background:var(--papel); }
+.apunte-nota .gesto-repetir:hover { background:var(--panel-2); }
+@media(min-width:1000px) {
+ .apunte.izquierda .apunte-nota .gesto-repetir { left:auto; right:0; transform:translate(50%,-50%); }
+}
+@media(hover:hover) and (pointer:fine) {
+ .apunte-nota .gesto-repetir { opacity:0; pointer-events:none; }
+ .apunte-nota:hover .gesto-repetir,.apunte-nota:focus-within .gesto-repetir { opacity:1; pointer-events:auto; }
+ .apunte-nota:hover .gesto-repetir:disabled { opacity:.55; }
+}
+/* Variante optativa: el del conserva significado y tachado cuando no hay JavaScript. */
+[data-subrayar=tachado] { text-decoration-line:line-through; }
+[data-subrayar=tachado].mano-lista .mano-subrayado { top:50%; bottom:auto; transform:translateY(-50%); }
+@media print { .apunte-nota .gesto-repetir { display:none; } }
 .codigo-compacto { position:relative; }
 .codigo.codigo-compacto .cab,.terminal.codigo-compacto .cab { min-height:36px; padding:2px 10px 2px 16px; gap:4px; }
 .codigo.codigo-compacto .cab > button,.terminal.codigo-compacto .cab > button { min-width:32px; min-height:32px; width:32px; height:32px; padding:6px; border:0; background:transparent; color:inherit; }
@@ -3235,4 +3250,4 @@ body:has(.revision-barra) { padding-bottom:0; }
 })();
 
 </script>
-<script type="application/json" data-nota-manifiesto>{"version": "4", "paginas": ["experiencia"], "modulos": ["audio.js", "controles.js", "piezas-editoriales.js", "interacciones.js", "mano.js", "codigo.js", "revision.js"], "fuentes": {"fuentes.css": "03ac4b770dd47f79468c01c6b0f8b0ce44ae865331d6d5b46472c80bb41fe1d4", "estilo.css": "e969b684bd046b8760f7dc640be9089a04da5899da3fc1d685b9717b880997fc", "audio.js": "9247e4e95f65d44339316ba4f6941f06039b04b5e9c247ff6749314240a06713", "controles.js": "362f4824f82cc3aa895c6b303dd46eb60a6449b1f1392f405bbcf9113c225fc0", "piezas-editoriales.js": "120e3fc49ce4d14b8710721eb8645334f7898e2b2229fb2926ecf710cfa9f720", "interacciones.js": "6e749d4d3657a721f7be31df897571612b8922da78ce380c81d70825ba767c71", "mano.js": "6713f3e8fe5d068a3684ee496c91fb6babdee918cd9502df3d910e3e73f69556", "codigo.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "revision.js": "3befd4355d9b5f2104f7d49ed2ae66c7e1b62b694c04c76ca19fbcbd60a5c796"}}</script>
+<script type="application/json" data-nota-manifiesto>{"version": "4", "paginas": ["experiencia"], "modulos": ["audio.js", "controles.js", "piezas-editoriales.js", "interacciones.js", "mano.js", "codigo.js", "revision.js"], "fuentes": {"fuentes.css": "03ac4b770dd47f79468c01c6b0f8b0ce44ae865331d6d5b46472c80bb41fe1d4", "estilo.css": "b7641171010a14a3eef0baf59b367a03ebf3efca6a19996c978d14f872deda05", "audio.js": "9247e4e95f65d44339316ba4f6941f06039b04b5e9c247ff6749314240a06713", "controles.js": "362f4824f82cc3aa895c6b303dd46eb60a6449b1f1392f405bbcf9113c225fc0", "piezas-editoriales.js": "120e3fc49ce4d14b8710721eb8645334f7898e2b2229fb2926ecf710cfa9f720", "interacciones.js": "6e749d4d3657a721f7be31df897571612b8922da78ce380c81d70825ba767c71", "mano.js": "6713f3e8fe5d068a3684ee496c91fb6babdee918cd9502df3d910e3e73f69556", "codigo.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "revision.js": "3befd4355d9b5f2104f7d49ed2ae66c7e1b62b694c04c76ca19fbcbd60a5c796"}}</script>
