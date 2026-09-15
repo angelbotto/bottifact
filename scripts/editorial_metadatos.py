@@ -9,3 +9,5 @@ ETIQUETAS.update({'calendario': 'Calendario de actividad', 'torta': 'Torta y don
 ETIQUETAS.update({'apuntes':'Apuntes manuscritos al margen','cards-trazadas':'Cards delineadas','atencion':'Attention map de áreas'})
 
 ETIQUETAS.update({'marco':'Marco de líneas desvanecidas','estanteria':'Estantería editorial','invitacion':'Invitación editorial','lista-estados':'Listas de estado','lista-proyectos':'Lista de proyectos','conversacion':'Conversación en el artículo','navegacion':'Navegación editorial','pie-editorial':'Footer editorial'})
+
+ETIQUETAS.update({'actividad-editorial':'Actividad con contexto editorial','codigo-lineas':'Código numerado y destacado','enlaces-icono':'Enlaces con icono','avisos-animados':'Avisos con icono animado','trayectoria':'Cronología vertical','galeria':'Galería deslizable'})

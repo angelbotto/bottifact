@@ -31,7 +31,7 @@ class Fragment(HTMLParser):
    if 'three' in src.lower() and src!=THREE:self.errors.append('Three sin versión fijada')
   if tag=='link' and a.get('rel')=='stylesheet' and not a.get('href','').startswith('https://fonts.googleapis.com/'):
    self.errors.append('Hoja externa fuera de CSP')
-  if classes & {'tabla-caja','diagrama-caja','grafica-caja','escena-caja','escritura-caja','visor-caja','apariencia-panel','pestanas-caja','navegacion-scroll'} or ('barra' in classes and 'navegacion-editorial' not in classes) or tag=='pre':
+  if classes & {'tabla-caja','diagrama-caja','grafica-caja','escena-caja','escritura-caja','visor-caja','apariencia-panel','pestanas-caja','navegacion-scroll','galeria-pista'} or ('barra' in classes and 'navegacion-editorial' not in classes) or tag=='pre':
    if a.get('tabindex')!='0' or not (a.get('aria-label') or a.get('aria-labelledby')):self.errors.append('Desplazamiento sin foco/nombre: '+tag+' '+a.get('class',''))
   if classes & {'ancho','amplio'}:
    parent=self.stack[-1][1] if self.stack else set()
@@ -54,7 +54,7 @@ MODULES={
  'multipagina.html':['interacciones.js','multipagina.js'],
  'pruebas.html':['interacciones.js','multipagina.js'],
 }
-for modules in MODULES.values():modules.extend(['audio.js','controles.js'])
+for modules in MODULES.values():modules.extend(['audio.js','controles.js','piezas-editoriales.js'])
 css=(ROOT/'estilo.css').read_text()
 for name,modules in MODULES.items():
  content=(ROOT/name).read_text();f=Fragment();f.feed(content)
@@ -102,6 +102,6 @@ print('Registro local: '+str(len(expected))+' recetas con HTML original, documen
 print('Esto NO comprueba píxeles, audio, WebGL, foco real ni comportamiento del navegador.')
 
 from contrato_artefacto import validate
-for name in ['estandar.html','estandar-capitulos.html']:
+for name in ['estandar.html','estandar-capitulos.html','prioridades.html']:
  errors=validate((ROOT/name).read_text());assert not errors,(name,errors)
  print(name+': contrato estándar de artefacto correcto')

@@ -27,7 +27,7 @@ DATA = {
  ]
 }
 
-def script(file): return (script('audio.js')+script('controles.js') if file=='interacciones.js' else '')+'<script>\n' + (ROOT / file).read_text() + '\n</script>\n'
+def script(file): return (script('audio.js')+script('controles.js')+script('piezas-editoriales.js') if file=='interacciones.js' else '')+'<script>\n' + (ROOT / file).read_text() + '\n</script>\n'
 
 def start(title):
  return '<title>' + title + '</title>\n<meta charset="utf-8">\n<style>\n' + (ROOT / 'fuentes.css').read_text() + '\n' + (ROOT / 'estilo.css').read_text() + '\n</style>\n<meta name="viewport" content="width=device-width, initial-scale=1">\n'
@@ -157,3 +157,9 @@ pages=[{**p,'html':(ROOT/'ejemplos'/p['contenido']).read_text()} for p in config
 (ROOT/'estandar.html').write_text(build_estandar(config['titulo'],[pages[0]],config['descripcion']))
 (ROOT/'estandar-capitulos.html').write_text(build_estandar(config['titulo'],pages,config['descripcion']))
 print('Generados estandar.html y estandar-capitulos.html con contrato verificable')
+piece_ids=['actividad-editorial','codigo-lineas','enlaces-icono','avisos-animados','trayectoria','galeria']
+(ROOT/'ejemplos/prioridades-piezas.html').write_text(''.join('<section id="ver-'+key+'"><h2>'+labels[key]+'</h2></section>\n'+dict(recipes())[key]+'\n' for key in piece_ids))
+config=json.loads((ROOT/'ejemplos/prioridades.json').read_text())
+pages=[{**p,'html':(ROOT/'ejemplos'/p['contenido']).read_text()} for p in config['paginas']]
+(ROOT/'prioridades.html').write_text(build_estandar(config['titulo'],pages,config['descripcion']))
+print('Generado prioridades.html: propuesta y nuevas piezas editoriales')

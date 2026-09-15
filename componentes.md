@@ -2611,3 +2611,98 @@ completo de la receta `apariencia`, en sus tres variantes; la llave circular es 
 las piezas de contenido por utilidad; los controles comunes deben estar presentes en cada entrega.
 **Límite:** el validador estructural no prueba audición, lector de pantalla ni layout. Tampoco
 actualiza HTML publicado. Sonido apagado tras recargar/ocultar y comentarios en memoria solamente.
+
+
+## Actividad con contexto editorial
+
+<!-- nota:ejemplo actividad-editorial -->
+```html
+<section class="pieza amplio actividad-editorial" id="actividad-editorial-ejemplo" data-actividad>
+  <div><p class="ceja">Actividad de ejemplo / ocho semanas</p><h3>Pequeños avances,<br>una historia visible.</h3><p>Cada cuadrado representa una semana. La intensidad indica cuántas acciones se registraron; no mide calidad ni productividad.</p><a class="enlace-icono" href="https://www.cmrg.me/now">Ver la referencia editorial ↗</a></div>
+  <div><div class="actividad-mosaico" data-actividad-mapa role="group" aria-label="Acciones por semana"></div><div class="actividad-escala" data-actividad-escala aria-label="Escala de acciones"></div><p data-actividad-estado role="status">Los conteos completos están en la tabla.</p></div>
+  <details><summary>Datos ilustrativos completos</summary><div class="tabla-caja" tabindex="0" role="region" aria-label="Actividad semanal, desplazable"><table><caption>Acciones de ejemplo, no actividad real de GitHub</caption><thead><tr><th scope="col">Semana</th><th scope="col">Acciones</th></tr></thead><tbody>
+    <tr><th scope="row">1–7 junio</th><td data-valor="0">0</td></tr><tr><th scope="row">8–14 junio</th><td data-valor="2">2</td></tr><tr><th scope="row">15–21 junio</th><td data-valor="3">3</td></tr><tr><th scope="row">22–28 junio</th><td data-valor="5">5</td></tr><tr><th scope="row">29 junio–5 julio</th><td data-valor="1">1</td></tr><tr><th scope="row">6–12 julio</th><td data-valor="7">7</td></tr><tr><th scope="row">13–19 julio</th><td data-valor="4">4</td></tr><tr><th scope="row">20–26 julio</th><td data-valor="8">8</td></tr>
+  </tbody></table></div></details>
+</section>
+```
+
+**Cuándo:** introducir actividad reciente con relato y conteos consultables. piezas-editoriales.js deriva las celdas, suma y escala desde la tabla; ratón, foco y clic muestran el contexto.
+
+**Límite:** 1–52 períodos, conteos enteros 0–1.000.000. Tamaño igual por período, intensidad por cantidad; no área proporcional, ni mapa de calor de dos variables. No conecta GitHub ni atribuye productividad. Los intervalos positivos se calculan desde el máximo y se recortan al valor alcanzado; el cero tiene su propia muestra. Conserva tabla, unidad y fechas reales al adaptar.
+
+
+## Código numerado y líneas destacadas
+
+<!-- nota:ejemplo codigo-lineas -->
+```html
+<figure class="ancho" id="codigo-lineas-ejemplo"><div class="codigo codigo-editorial"><div class="cab"><span>preparar_resumen.py · Python</span><button class="boton-icono-copia" type="button" data-copiar="codigo-lineas-fuente" aria-label="Copiar código Python" title="Copiar código"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 8h12v13H8zM16 8V3H4v13h4"/></svg></button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código Python con líneas 3 y 6 destacadas, desplazable"><code id="codigo-lineas-fuente" data-lenguaje="python" data-lineas data-destacar="3,6">def resumir(registros):
+    cantidades = [fila["cantidad"] for fila in registros]
+    total = sum(cantidades)
+    if not cantidades:
+        return {"total": 0, "promedio": None}
+    return {"total": total, "promedio": total / len(cantidades)}</code></pre></div><figcaption>Ejemplo ilustrativo. Las líneas 3 y 6 explican el cálculo; el botón copia el código sin números de línea.</figcaption></figure>
+```
+
+**Cuándo:** explicar una sección precisa de código, manteniendo lectura completa. codigo.js colorea el bloque y data-destacar admite números o intervalos, por ejemplo 3,6-8. El icono usa data-copiar y conserva nombre accesible y estado de resultado.
+
+**Límite:** resaltado léxico, no un compilador ni editor. Esta variante parte de texto plano dentro de code: no añadas marcado manual a data-lineas. La numeración se dibuja con CSS y no entra en textContent ni en la copia. No atenúa las líneas no destacadas; todas conservan contraste. Código ancho se desplaza localmente.
+
+
+## Enlaces con icono y código en línea
+
+<!-- nota:ejemplo enlaces-icono -->
+```html
+<section class="pieza" id="enlaces-icono-ejemplo"><h3>Una referencia en medio del argumento.</h3><p>Consulta <a class="enlace-icono" href="https://www.cmrg.me/blog/react-19-part-2-the-code"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 4H4v16h16v-4M13 3h8v8M21 3 10 14"/></svg>el artículo de referencia</a> antes de interpretar <code class="codigo-en-linea">data-lineas</code>. Para una ruta local, <code class="codigo-en-linea">scripts/validar.py</code> nombra exactamente qué ejecutar.</p></section>
+```
+
+**Cuándo:** integrar una fuente, repositorio o archivo en el párrafo. Iconos SVG pequeños acompañan una etiqueta completa; código en línea queda delimitado con puntos.
+
+**Límite:** el icono no sustituye el nombre del enlace ni promete una acción distinta del destino. No descarga logotipos externos. No fuerces nowrap: URLs y rutas largas pueden partirse. Un bloque de varias líneas pertenece al componente de código, no a un chip.
+
+
+## Avisos con icono animado
+
+<!-- nota:ejemplo avisos-animados -->
+```html
+<div class="pieza" id="avisos-animados-ejemplo">
+  <aside class="aviso aviso-esquina mal" data-aviso-animado aria-labelledby="aviso-cuidado-titulo"><span class="num" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 4v10M12 17v2"/></svg></span><div><p class="titulo" id="aviso-cuidado-titulo">Cuidado</p><p>Estos conteos son ilustrativos. Antes de tomar una decisión, reemplázalos por una fuente verificable.</p></div></aside>
+  <aside class="aviso aviso-esquina" data-aviso-animado aria-labelledby="aviso-nota-titulo"><span class="num" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 3h11v16H7zM4 6v16h11"/></svg></span><div><p class="titulo" id="aviso-nota-titulo">Nota</p><p>Los comentarios de revisión se conservan mientras esta pestaña permanezca abierta. Copia el prompt antes de recargar.</p></div></aside>
+</div>
+```
+
+**Cuándo:** señalar una precaución o contexto breve dentro de un artículo. La variante aviso-esquina reserva espacio al icono; piezas-editoriales.js añade dos pulsos al entrar, y permite repetir al pasar el ratón o enfocar contenido interior. También admite las variantes ojo y bien existentes.
+
+**Límite:** la lectura no depende del pulso. Son 2 ciclos de 1000 ms; se cancela al salir, ocultar la pestaña, reducir movimiento o destruir la instancia. No usa RAF ni sonido. No uses role=alert para avisos estáticos: evita anuncios automáticos innecesarios. El componente original aviso conserva su forma.
+
+
+## Cronología vertical
+
+<!-- nota:ejemplo trayectoria -->
+```html
+<section class="pieza" id="trayectoria-ejemplo"><h3>La trayectoria de una idea.</h3><p class="procedencia">Proyecto ficticio · hitos de ejemplo, del más reciente al más antiguo.</p><ol class="cronologia cronologia-vertical">
+<li class="actual"><h3>Una prueba con lectores</h3><p class="periodo"><time datetime="2026-09">Septiembre de 2026</time> · etapa actual</p><p>Observar dónde se pierde el contexto y qué hace falta para decidir con confianza.</p></li>
+<li><h3>Un prototipo que se puede recorrer</h3><p class="periodo"><time datetime="2026-08">Agosto de 2026</time></p><p>Dar forma a las preguntas y mantener visibles las limitaciones de cada alternativa.</p></li>
+<li><h3>Las primeras preguntas</h3><p class="periodo"><time datetime="2026-07">Julio de 2026</time></p><p>Definir el problema, su evidencia disponible y la siguiente observación necesaria.</p></li>
+</ol></section>
+```
+
+**Cuándo:** contar una trayectoria profesional, decisiones o hitos de un proyecto. Fecha, título y explicación siguen el mismo eje; el punto de la etapa actual se distingue por color y texto.
+
+**Límite:** el espacio entre hitos es editorial, no proporcional al tiempo. Para medir duración, usa una serie temporal o una gráfica de etapas. No oculta los hitos antiguos con blur. La cronología anotada anterior sigue disponible; esta es una variante vertical estática.
+
+
+## Galería deslizable
+
+<!-- nota:ejemplo galeria -->
+```html
+<section class="pieza amplio" id="galeria-ejemplo" data-galeria><h3>Una secuencia para mirar de cerca.</h3><p class="procedencia">Ilustraciones de demostración. Sustituye cada imagen por tu fotografía o captura incrustada y su contexto.</p><div class="galeria-pista" data-galeria-pista tabindex="0" role="region" aria-label="Galería de cuatro ilustraciones, desplazable horizontalmente">
+<figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzI2M2IzNyIvPjxjaXJjbGUgY3g9IjEzMCIgY3k9IjEwMCIgcj0iNjIiIGZpbGw9IiNkOGI5ODgiLz48cGF0aCBkPSJNMCAzMzAgMTYwIDE0MCAzMTAgMzAwIDQ1NSAxMzAgNjAwIDI3MFY0MDBIMFoiIGZpbGw9IiNhY2MzYTQiLz48cGF0aCBkPSJNMCAzNzUgMTgwIDMwMCAzNDAgMzcwIDUwMCAyNjUgNjAwIDMxMFY0MDBIMFoiIGZpbGw9IiMyNjNiMzciIG9wYWNpdHk9Ii42Ii8+PC9zdmc+" alt="Relieve: ilustración geométrica de paisaje" width="600" height="400" loading="lazy"><figcaption>01 / Relieve · ilustración original de muestra.</figcaption></figure>
+<figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzIwMzU0NyIvPjxjaXJjbGUgY3g9IjIxMCIgY3k9IjEwMCIgcj0iNjIiIGZpbGw9IiNlZWQzYTUiLz48cGF0aCBkPSJNMCAzMzAgMTYwIDE0MCAzMTAgMzAwIDQ1NSAxMzAgNjAwIDI3MFY0MDBIMFoiIGZpbGw9IiM4MGE2YWIiLz48cGF0aCBkPSJNMCAzNzUgMTgwIDMwMCAzNDAgMzcwIDUwMCAyNjUgNjAwIDMxMFY0MDBIMFoiIGZpbGw9IiMyMDM1NDciIG9wYWNpdHk9Ii42Ii8+PC9zdmc+" alt="Horizonte: ilustración geométrica de paisaje" width="600" height="400" loading="lazy"><figcaption>02 / Horizonte · ilustración original de muestra.</figcaption></figure>
+<figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzM5MzQ0MyIvPjxjaXJjbGUgY3g9IjI5MCIgY3k9IjEwMCIgcj0iNjIiIGZpbGw9IiNlYWQ4YmQiLz48cGF0aCBkPSJNMCAzMzAgMTYwIDE0MCAzMTAgMzAwIDQ1NSAxMzAgNjAwIDI3MFY0MDBIMFoiIGZpbGw9IiNhZTk3YTciLz48cGF0aCBkPSJNMCAzNzUgMTgwIDMwMCAzNDAgMzcwIDUwMCAyNjUgNjAwIDMxMFY0MDBIMFoiIGZpbGw9IiMzOTM0NDMiIG9wYWNpdHk9Ii42Ii8+PC9zdmc+" alt="Ciudad: ilustración geométrica de paisaje" width="600" height="400" loading="lazy"><figcaption>03 / Ciudad · ilustración original de muestra.</figcaption></figure>
+<figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzQ0MzkyZCIvPjxjaXJjbGUgY3g9IjM3MCIgY3k9IjEwMCIgcj0iNjIiIGZpbGw9IiNlMGM5YTQiLz48cGF0aCBkPSJNMCAzMzAgMTYwIDE0MCAzMTAgMzAwIDQ1NSAxMzAgNjAwIDI3MFY0MDBIMFoiIGZpbGw9IiNiOWFkODgiLz48cGF0aCBkPSJNMCAzNzUgMTgwIDMwMCAzNDAgMzcwIDUwMCAyNjUgNjAwIDMxMFY0MDBIMFoiIGZpbGw9IiM0NDM5MmQiIG9wYWNpdHk9Ii42Ii8+PC9zdmc+" alt="Sendero: ilustración geométrica de paisaje" width="600" height="400" loading="lazy"><figcaption>04 / Sendero · ilustración original de muestra.</figcaption></figure>
+</div><div class="galeria-controles"><button type="button" data-galeria-anterior aria-label="Imagen anterior" disabled>←</button><p data-galeria-estado role="status">Desliza para recorrer las cuatro ilustraciones.</p><button type="button" data-galeria-siguiente aria-label="Imagen siguiente">→</button></div></section>
+```
+
+**Cuándo:** mostrar fotografías, capturas, evidencia de campo o etapas visuales. Deslizamiento nativo, ajuste suave, controles anterior/siguiente y pies de imagen. piezas-editoriales.js mantiene botones y posición; sin JS se puede desplazar la región.
+
+**Límite:** no autoavanza, no amplía imágenes ni emula un visor 360°. Las muestras son ilustraciones, no fotografías reales de Angel. Imágenes data: URI y alt; no enlazar carátulas o fotos remotas. Recorta visualmente con object-fit:cover: para capturas cuyo borde importa usa contain. Movimiento reducido cancela desplazamiento suave. init/get/destroy permite añadir o retirar el componente.

@@ -4,12 +4,12 @@ from html.parser import HTMLParser
 from html import escape
 import hashlib,json,re
 ROOT=Path(__file__).resolve().parents[1]
-VERSION='1'
+VERSION='2'
 NOSCRIPT='.nota-estandar > .pagina { display:grid!important; grid-template-columns:1fr min(var(--texto),calc(100% - 2 * var(--gutter))) 1fr; row-gap:28px; }.nota-estandar .indice,.nota-estandar ~ .regla,.navegacion-editorial,.nota-estandar .paginacion { display:none!important; }'
 THREE='https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js'
-CORE=['audio.js','controles.js','interacciones.js','codigo.js','revision.js']
-ORDER=['audio.js','controles.js','interacciones.js','multipagina.js','geografia.js','globo.js','graficas.js','analitica.js','tablas.js','sonido.js','escritura.js','mano.js','atencion.js','escena.js','reportes.js','visor.js','pestanas.js','editorial.js','invitacion.js','codigo.js','explorador.js','revision.js']
-ATTRS={'data-grafica':['graficas.js'],'data-analitica':['geografia.js','analitica.js'],'data-tabla':['tablas.js'],'data-escena':['geografia.js','escena.js'],'data-reporte':['reportes.js'],'data-escritura':['sonido.js','escritura.js'],'data-mano':['mano.js'],'data-subrayar':['mano.js'],'data-atencion':['atencion.js'],'data-visor':['visor.js'],'data-pestanas':['pestanas.js'],'data-archivo':['editorial.js'],'data-config-editorial':['editorial.js'],'data-invitacion':['invitacion.js'],'data-explorador':['explorador.js'],'data-canal-sonido':['sonido.js']}
+CORE=['audio.js','controles.js','piezas-editoriales.js','interacciones.js','codigo.js','revision.js']
+ORDER=['audio.js','controles.js','piezas-editoriales.js','interacciones.js','multipagina.js','geografia.js','globo.js','graficas.js','analitica.js','tablas.js','sonido.js','escritura.js','mano.js','atencion.js','escena.js','reportes.js','visor.js','pestanas.js','editorial.js','invitacion.js','codigo.js','explorador.js','revision.js']
+ATTRS={'data-actividad':['piezas-editoriales.js'],'data-aviso-animado':['piezas-editoriales.js'],'data-galeria':['piezas-editoriales.js'],'data-grafica':['graficas.js'],'data-analitica':['geografia.js','analitica.js'],'data-tabla':['tablas.js'],'data-escena':['geografia.js','escena.js'],'data-reporte':['reportes.js'],'data-escritura':['sonido.js','escritura.js'],'data-mano':['mano.js'],'data-subrayar':['mano.js'],'data-atencion':['atencion.js'],'data-visor':['visor.js'],'data-pestanas':['pestanas.js'],'data-archivo':['editorial.js'],'data-config-editorial':['editorial.js'],'data-invitacion':['invitacion.js'],'data-explorador':['explorador.js'],'data-canal-sonido':['sonido.js']}
 VOID={'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
 class Node:
  def __init__(self,tag='',attrs=(),parent=None):self.tag=tag;self.attrs=dict(attrs);self.parent=parent;self.children=[];self.parts=[]
@@ -82,7 +82,7 @@ def build(title,pages,description='',brand='tikin'):
   if multi:block='<article class="pagina'+(' viva' if i==0 else '')+'" id="'+p['id']+'" data-pagina'+('' if i==0 else ' hidden')+'>'+block+'</article>'
   pieces.append(block)
  pag='<div class="paginacion" data-paginacion><button type="button" data-nav="prev"><span class="et">Anterior</span><span class="tit"></span></button><button type="button" data-nav="next"><span class="et">Siguiente</span><span class="tit"></span></button></div>' if multi else ''
- main='<main class="hoja lectura-guiada nota-estandar'+(' multipagina edicion' if multi else '')+'" data-lectura'+(' data-progreso-pagina data-historial data-enlaces-internos' if multi else '')+' lang="es">'+''.join(pieces)+pag+'<footer class="pie"><p>'+escape(brand)+' · '+escape(title)+'</p></footer></main>'
+ main='<main class="hoja lectura-guiada nota-estandar marcos-editoriales'+(' multipagina edicion' if multi else '')+'" data-lectura'+(' data-progreso-pagina data-historial data-enlaces-internos' if multi else '')+' lang="es">'+''.join(pieces)+pag+'<footer class="pie"><p>'+escape(brand)+' · '+escape(title)+'</p></footer></main>'
  ruler='<div class="regla regla-guiada" role="slider" tabindex="0" aria-orientation="horizontal" aria-label="Progreso de lectura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="ticks"></div><div class="cursor"></div><span class="val">0%</span></div>'
  files=['fuentes.css','estilo.css',*modules]
  manifest={'version':VERSION,'paginas':ids,'modulos':modules,'fuentes':{f:hashlib.sha256((ROOT/f).read_text().encode('utf-8')).hexdigest() for f in files}}
@@ -117,7 +117,7 @@ def validate(html):
  require(len(has('data-revision'))==1,'Falta el montaje único de comentarios flotantes.')
  for attr in ['data-revision-editor','data-revision-panel','data-revision-texto','data-revision-contexto','data-revision-notas','data-revision-prompt','data-revision-estado','data-revision-modo','data-revision-lista','data-revision-guardar','data-revision-cancelar','data-revision-cerrar']:
   require(len(has(attr))==1,'Falta o se duplica '+attr+'.')
- mains=[n for n in nodes if n.tag=='main'];require(len(mains)==1 and {'hoja','lectura-guiada','nota-estandar'}<=mains[0].classes,'Falta la hoja estándar con lectura guiada.')
+ mains=[n for n in nodes if n.tag=='main'];require(len(mains)==1 and {'hoja','lectura-guiada','nota-estandar','marcos-editoriales'}<=mains[0].classes,'Falta la hoja estándar con lectura guiada.')
  multi=bool(mains and 'multipagina' in mains[0].classes)
  require(len(classes('regla-guiada'))==1,'Falta la regla de lectura.')
  for page in (classes('pagina') if multi else mains):
@@ -136,7 +136,7 @@ def validate(html):
   for attr in ['aria-controls','aria-labelledby','aria-describedby','data-copiar','data-ir']:
    if n.attrs.get(attr):require(all(x in ids for x in n.attrs[attr].split()),'Referencia sin destino: '+n.attrs[attr])
   if n.classes & {'ancho','amplio'}:require(bool(n.parent and ('hoja' in n.parent.classes or 'pagina' in n.parent.classes)),'Figura ancha fuera de la rejilla: '+n.attrs.get('id',n.tag))
-  if n.classes & {'tabla-caja','grafica-caja','diagrama-caja','escena-caja','escritura-caja','visor-caja','apariencia-panel','navegacion-scroll'} or n.tag=='pre':require(n.attrs.get('tabindex')=='0' and bool(n.attrs.get('aria-label') or n.attrs.get('aria-labelledby')),'Desplazamiento sin foco o nombre: '+n.tag)
+  if n.classes & {'tabla-caja','grafica-caja','diagrama-caja','escena-caja','escritura-caja','visor-caja','apariencia-panel','navegacion-scroll','galeria-pista'} or n.tag=='pre':require(n.attrs.get('tabindex')=='0' and bool(n.attrs.get('aria-label') or n.attrs.get('aria-labelledby')),'Desplazamiento sin foco o nombre: '+n.tag)
   require(not any(a.lower().startswith('on') for a in n.attrs),'Manejador inline fuera de los módulos: '+n.tag)
   if n.tag=='img':require(n.attrs.get('src','').startswith('data:') and 'alt' in n.attrs,'Imagen externa o sin alternativa.')
   for attr in ['href','src','style']:

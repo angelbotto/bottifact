@@ -1,0 +1,16 @@
+{
+  "titulo": "Lo que sigue en Nota Tikin",
+  "descripcion": "Prioridades para decidir y nuevas piezas para probar.",
+  "paginas": [
+    {
+      "id": "prioridades",
+      "titulo": "Lo que sigue.",
+      "contenido": "prioridades.html"
+    },
+    {
+      "id": "piezas",
+      "titulo": "Más maneras de explicar.",
+      "contenido": "prioridades-piezas.html"
+    }
+  ]
+}

@@ -341,7 +341,7 @@ HTTPS de Tailscale Serve que confirme el host, no un enlace localhost para la en
 
 ### Edición completa para explorar y componer
 
-Abre [biblioteca.html](biblioteca.html) para 65 recetas en nueve capítulos, con HTML,
+Abre [biblioteca.html](biblioteca.html) para 71 recetas en nueve capítulos, con HTML,
 dependencias, criterio y límites junto al ejemplo. Incluye archivos de publicaciones,
 autoría, lecturas relacionadas, anotaciones numeradas, revisiones, criterios y riesgos.
 [editorial.js](editorial.js) ofrece búsqueda/filtro local y configuración de lista/rejilla,
@@ -419,3 +419,21 @@ El attention map tiene tooltip con nombre, valor, porcentaje y total; `data-cont
 permite explicar el dato. Ratón, foco y toque dan acceso; Escape cierra. Mantén tabla y controles.
 La invitación requiere invitacion.js y copia un borrador con contexto: no promete enviar, guardar
 ni conectar un formulario a un servicio. Las cubiertas y los datos de ejemplo son ficticios.
+
+### Piezas editoriales y bordes de figuras
+
+Las nuevas bases llevan `marcos-editoriales`: todas las piezas `.ancho` y `.amplio` reciben
+líneas punteadas de extremos difusos. `piezas-editoriales.js` añade una capa decorativa independiente;
+no reemplaces pseudoelementos que ya usa una invitación o textura. No enmascares contenido ni
+envuelvas una figura ancha dentro de una sección de texto para conseguir el borde. La biblioteca
+activa el acabado; los ejemplos publicados anteriores conservan sus clases.
+
+Las recetas `actividad-editorial`, `codigo-lineas`, `enlaces-icono`, `avisos-animados`, `trayectoria`
+y `galeria` amplían el inventario. La conversación existente tiene variante `suelta` para burbujas
+editoriales. `codigo.js` conserva exactamente el código copiado al numerar y destacar líneas.
+`piezas-editoriales.js` gestiona actividad, pulso y galería, además de los marcos.
+La galería desliza sin autoavance; imágenes incrustadas y pies con contexto. Los avisos tienen
+un pulso acotado, cancelado fuera de pantalla y con movimiento reducido. Nunca animan el texto.
+
+[prioridades.html](prioridades.html) reúne las prioridades propuestas y estas muestras en dos
+páginas. Las propuestas de persistencia, migraciones y nuevos estados no se presentan como hechas.
