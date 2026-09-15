@@ -76,7 +76,7 @@ no se atribuye una duración única sin medir cada variante.
 
 El chunk `407jum8rsxd_g.js` declara 14 sonidos: click, coin, focus, glitch, hover,
 negative, pencil-1/2/3, pop, positive, shutter, swoosh y tada. El estado inicial del sitio
-es `isMuted:false`; Nota mantiene **apagado**. Se midieron duraciones mediante
+es `isMuted:false`; Nota mantuvo **apagado** en la primera versión. Por petición explícita de Angel del 15/09/2026, el contrato 4 comienza habilitado y espera el primer clic real, conservando el silencio elegido. Se midieron duraciones mediante
 `AudioContext.decodeAudioData` (sin reproducirlas): click 47,8125 ms, hover 107,1458 ms,
 swoosh 160,7292 ms, positive 857,1458 ms y lápices 2181,3333–3034,6667 ms. La tabla completa
 está en el JSON con cada URL `/sounds/*.mp3`, canales y frecuencia de decodificación.

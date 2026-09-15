@@ -100,6 +100,24 @@ anchas tienen foco, nombre y desplazamiento propio; nunca reduzcas etiquetas has
 | Blueprint | Planos conceptuales, arquitectura y especificaciones | Técnico; diagramas, notas numeradas y cronología |
 | Hacker | Runbooks, código, incidentes y terminal | Técnico; sintaxis, salida de comandos y avisos |
 
+La llave sol/luna organiza Temas, Letras y Sonido. Busca por nombre/color y filtra Editoriales,
+Marcas o Técnicos; el nombre del tema actual permanece arriba aunque no coincida con el filtro.
+El interruptor de sonido siempre está al pie. Está habilitado inicialmente, espera un clic real
+y respeta el silencio guardado; Probar sonido permite comprobar la salida del dispositivo.
+
+| Combinación | Títulos / lectura | Úsala para |
+|---|---|---|
+| Editorial | Instrument Serif / Geist | Artículos y reportes mixtos |
+| Sobrio | Geist / Geist | Operación y producto |
+| Técnico | Geist Mono / Geist | Runbooks y especificaciones |
+| Libro | Literata / Literata | Ensayos y lectura extensa |
+| Revista | Instrument Serif / Literata | Crónicas, perfiles y dossiers |
+| Bitácora | Geist Mono / Literata | Notas de investigación técnica |
+
+Las seis conservan Reenie Beanie en los apuntes. Los controles mantienen sans; código y datos
+mantienen sus familias. No uses texto manuscrito o serif de títulos para párrafos largos.
+Literata está incrustada con licencia OFL; no se descarga al abrir el artefacto.
+
 Color y tipografía siguen siendo controles independientes. Blueprint añade una cuadrícula estática
 blanca de 24 px, reforzada cada 120 px, también en la navegación; las cifras y los bloques de código
 mantienen sus superficies. Hacker usa verde como acento y conserva varios colores de sintaxis.
@@ -119,8 +137,8 @@ ese tema a los demás documentos. Sin presentación inicial se conserva el compo
 2. Escribe contenido en UTF-8 con IDs únicos y figuras anchas hermanas de los bloques de texto.
    Cuando copies una receta varias veces, cambia IDs y todas sus referencias. La base añade controles.
 3. Genera con `scripts/crear_artefacto.py`; valida la salida con `scripts/validar_artefacto.py`.
-4. Revisa 320/390 px y escritorio, paletas, desplazamientos, capítulos, pines y copia. Activa Sonidos
-   con un clic real; no confundas una señal Web Audio con audición comprobada en el dispositivo del lector.
+4. Revisa 320/390 px y escritorio, paletas, desplazamientos, capítulos, pines y copia. Comprueba el sonido
+   con un clic real y después siléncialo; no confundas una señal Web Audio con audición comprobada en el dispositivo del lector.
 5. Entrega el HTML y conserva sus fuentes. Para mantenimiento de la biblioteca ejecuta
    `scripts/ensamblar.py` y `scripts/validar.py`. El HTML contiene todo salvo la inclusión permitida de Three.
 

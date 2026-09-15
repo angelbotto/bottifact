@@ -15,7 +15,7 @@ una hoja de cálculo u otro medio.
 
 Angel pidió estandarizar la experiencia. En cada nuevo entregable HTML usa el generador de
 [estandar.md](estandar.md): **llave circular sol/luna con nueve paletas y Sistema, comentarios
-flotantes, sonido apagado con prueba y volumen, índice y progreso de lectura**. Los capítulos
+flotantes, sonido habilitado con prueba, silencio y volumen, índice y progreso de lectura**. Los capítulos
 conservan estas piezas. No omitas los comentarios por no aparecer en el contenido del informe.
 Una petición explícita de Angel de omitir o cambiar una pieza prevalece; indica esa excepción.
 
@@ -33,6 +33,11 @@ La base incrusta las fuentes actuales y detecta dependencias. No reconstruyas lo
 memoria ni copies un informe viejo para comenzar. [estandar.html](estandar.html) y
 [estandar-capitulos.html](estandar-capitulos.html) son las bases reproducibles. Los ejemplos previos
 siguen sirviendo para consultar piezas y para mantener documentos ya publicados.
+
+La llave organiza **Temas / Letras / Sonido**: busca por nombre/color, filtra familias y mantiene
+el tema actual visible. No vuelvas a crear una lista vertical con todos los ajustes. Las combinaciones
+Libro/Revista/Bitácora añaden Literata incrustada; lee los usos en guia-uso.md. El interruptor de silencio
+permanece accesible en todas las pestañas. Nunca crees Web Audio antes de una interacción real.
 
 ## La misma base en Claude, Codex y Hermes
 
@@ -77,7 +82,7 @@ segunda lectura. Considera la receta `apuntes` si una observación lateral añad
 - La información crítica y las fuentes se escriben en texto normal. La manuscrita es una segunda
   voz breve, no el lugar único de una fecha, advertencia o decisión. Si no añade contexto, omítela.
 - Conserva `data-mano="fuente" data-escritura-sonora`, IDs únicos y el botón de repetición. El gesto arranca
-  cuando se ve; Sonidos requiere activación explícita en la llave sol/luna. Con movimiento reducido
+  cuando se ve; el contexto de sonido espera el primer clic real y respeta el silencio elegido. Con movimiento reducido
   se muestra completo. Comprueba entrando desde otra sección, no sólo recargando en la anotación.
 
 [prioridades.html](prioridades.html#leer-entre-lineas) muestra esta selección sobre un argumento real.
@@ -276,7 +281,7 @@ La declaración temprana evita acentos rotos al abrir el mismo archivo fuera del
 - El generador incorpora [audio.js](audio.js), [controles.js](controles.js) e
   [interacciones.js](interacciones.js) en orden. Interacciones gestiona temas, índice, regla y copia;
   audio.js gestiona el sonido global. Copiar interacciones.js solo no basta para el audio.
-- El sonido empieza **apagado** y solo se activa con un botón. Usa las grabaciones originales de cmrg.me incrustadas,
+- Por petición explícita de Angel del 15/09/2026, la base nueva empieza con sonido **habilitado**; Web Audio se crea sólo tras el primer clic real. El silencio elegido se recuerda en localStorage y cancela voces/activaciones pendientes. Esto sustituye el requisito anterior de OFF inicial. El canal independiente sin audio.js conserva su botón de activación. Usa las grabaciones originales de cmrg.me incrustadas,
   decodificadas con Web Audio; Angel pidió sustituir la síntesis anterior. No sonorices scroll ni foco. La escritura optativa `data-escritura-sonora` puede acompañar el trazo visible tras activar Sonidos; el resto de lectura automática permanece silencioso.
 - `prefers-reduced-motion` debe cancelar RAF y transiciones. No basta con esconder el canvas.
 
@@ -373,10 +378,11 @@ calculadora de capacidad, globo narrado y visor de prototipos.
   anteriores para artefactos publicados. Las variantes con etiqueta y cápsula se conservan para ejemplos y documentos anteriores; los nuevos entregables usan la llave circular.
   No muestres todas las preferencias permanentemente en la cabecera.
 - Color y estilo son independientes: Editorial (original), Sobrio (Geist en títulos),
-  Técnico (Geist Mono en títulos). Se activan por `data-elegir-estilo`; nunca cambies la
-  tipografía original de una nota que no ofrece esa elección. Cuerpo y gráficos conservan
-  sus familias. Lectura cómoda (`data-comodidad`) y trama (`data-papel-tramado`) son optativas.
-  Los tres estilos funcionan en Claro, Cálido y Sea. Comprueba los saltos de títulos al cambiar.
+  Técnico (Geist Mono en títulos), Libro (Literata), Revista (Instrument / Literata) y
+  Bitácora (Mono / Literata). Se activan por `data-elegir-estilo`; nunca cambies la
+  tipografía original de una nota que no ofrece esa elección. Las tres nuevas cambian el cuerpo
+  de lectura; gráficos, código y controles conservan sus familias. Lectura cómoda (`data-comodidad`) y trama (`data-papel-tramado`) son optativas.
+  Las seis combinaciones funcionan en todas las paletas: Editorial, Sobrio, Técnico, Libro, Revista y Bitácora. Literata añade lectura serif larga; Reenie Beanie mantiene las notas aprobadas. Comprueba los saltos de títulos al cambiar.
 - La búsqueda del catálogo sólo filtra su índice; cada receta tiene un botón para copiar
   su HTML. [catalogo.js](catalogo.js) no es necesario en artículos normales.
 - La firma de cabecera es `.firma-editorial`: “tikin” en serif y una leyenda corta en sans.
@@ -408,7 +414,7 @@ La edición completa incorpora [revision.js](revision.js): pines flotantes en el
 
 El visor permite pegar HTML declarativo local y alternar Móvil/Escritorio; los embeds remotos siguen fuera de CSP. Escritura admite `data-al-ver` para una primera animación al entrar en pantalla; el sonido se activa con un botón explícito. [codigo.js](codigo.js) colorea HTML, CSS, JavaScript, TypeScript, JSON, Python, SQL, Shell y salida de terminal creando nodos de texto seguros y conserva exactamente el contenido copiable. Grano de papel usa SVG de ruido incrustado, no una rejilla de puntos.
 
-[controles.js](controles.js) coloca los menús de tabla y visor dentro del viewport; se incluye antes de interacciones.js. [audio.js](audio.js), antes de interacciones.js, centraliza el audio al principio de Apariencia: apagado al cargar, botón Probar sonido, volumen y estado. Requiere gesto real; no suena por scroll genérico. «Ver escritura animada» lleva a la nota manuscrita animada, o al SVG de Edición si no hay nota. El visor ofrece dispositivo, proporción, rotación y escala visual; conserva píxeles CSS para las consultas de contenedor. La trama se aplica también a la barra de capítulos.
+[controles.js](controles.js) coloca los menús de tabla y visor dentro del viewport; se incluye antes de interacciones.js. [audio.js](audio.js), antes de interacciones.js, centraliza el audio en la pestaña Sonido y mantiene el interruptor al pie de todas las pestañas: habilitado inicialmente, espera el primer clic, botón Probar sonido, volumen y estado. Requiere gesto real; no suena por scroll genérico. «Ver escritura animada» lleva a la nota manuscrita animada, o al SVG de Edición si no hay nota. El visor ofrece dispositivo, proporción, rotación y escala visual; conserva píxeles CSS para las consultas de contenedor. La trama se aplica también a la barra de capítulos.
 
 
 ### Analítica financiera y logística
@@ -448,10 +454,9 @@ una tabla no negativa; categorías pequeñas mantienen nombres y cifras en contr
 `.mapa` y `.con-margen/.margen` continúan disponibles en documentos antiguos.
 
 La receta `cards-trazadas` ofrece rejilla delineada, sombra suave y títulos completos. El atributo
-`data-audio-hover` usa el MP3 original incrustado en [audio.js](audio.js) sólo después de activar Sonidos en
-Apariencia y mover realmente el ratón. El usuario autorizó hover sonoro: sigue apagado al cargar,
+`data-audio-hover` usa el MP3 original incrustado en [audio.js](audio.js) sólo con contexto habilitado por un clic real y movimiento real del ratón. El usuario autorizó hover sonoro: respeta el silencio guardado,
 no suena al hacer scroll ni recibir foco. Angel pidió además lápiz durante la escritura visible:
-`data-escritura-sonora` permite acompañar esa animación, únicamente tras activar Sonidos.
+`data-escritura-sonora` permite acompañar esa animación, únicamente con el contexto activo y la preferencia habilitada.
 Se cancela al salir, finalizar, ocultar el documento o reducir movimiento; sin el atributo sigue silenciosa.
 
 

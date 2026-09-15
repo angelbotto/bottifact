@@ -1,6 +1,6 @@
 # Contrato de nuevos artefactos de Angel
 
-El contrato 3 incorpora marcos punteados difusos en las figuras anchas. La base incluye **una llave sol/luna**, nueve paletas con muestras y Sistema, controles de sonido,
+El contrato 4 conserva marcos punteados difusos en las figuras anchas. La base incluye **una llave sol/luna**, nueve paletas con muestras y Sistema, controles de sonido,
 comentarios flotantes, índice por página y regla de lectura. Es la composición predeterminada de
 los nuevos HTML de Angel. No exige llenar cada artículo con todos los componentes; selecciona
 las piezas a partir de las 71 recetas vigentes. Una excepción explícita de Angel prevalece.
@@ -81,11 +81,11 @@ En capítulos, sin JavaScript se ofrece lectura continua; los controles interact
 
 ## Sonido que se puede comprobar
 
-Apariencia abre con Sonido: interruptor, **Probar sonido**, volumen y estado. El botón de prueba
+Apariencia organiza Temas / Letras / Sonido, con búsqueda y familias. El interruptor está siempre al pie; Sonido ofrece **Probar sonido**, volumen y estado. El botón de prueba
 activa el audio y reproduce la muestra original de clic de cmrg.me. El interruptor solo activa/desactiva; activarlo no
 reproduce nada. El volumen inicial es 65 %, independiente del volumen del dispositivo. El lápiz usa las tres grabaciones originales incrustadas de cmrg.me, sin bucles ni amplificación adicional, sincronizadas con la escritura. Su procedencia está en assets/sonidos-cmrg/PROCEDENCIA.md.
 
-Empieza apagado en cada carga y se apaga al ocultar la pestaña. `data-escritura-sonora` permite
+Por petición explícita de Angel (15/09/2026), empieza habilitado; no crea Web Audio hasta el primer clic real. El silencio elegido se guarda en localStorage. Al ocultar la pestaña se cancelan voces y se pausa el contexto; si sigue habilitado, otro clic puede reanudarlo. No reproduce una señal de arranque. `data-escritura-sonora` permite
 acompañar el trazo visible una vez habilitado; `data-audio-hover` requiere movimiento real del
 ratón. Nunca suena por foco o scroll genérico. Movimiento reducido cancela la escritura y su audio.
 Si el contexto no puede arrancar o el navegador lo pausa, el estado explica cómo reintentarlo.
@@ -115,3 +115,5 @@ Temas: `system`, `light`, `dark`, `sea`, `oliva`, `arcilla`, `ciruela`, `liftit`
 Estilos: `editorial`, `sobrio`, `tecnico`. El lector puede cambiarlos con la misma llave circular.
 Una presentación declarada conserva la elección posterior por ruta del archivo, independiente del
 tema global de otros artefactos. Sin valores declarados se conserva la preferencia global anterior.
+
+Combinaciones de `--estilo`: `editorial`, `sobrio`, `tecnico`, `libro`, `revista`, `bitacora`. Las tres nuevas usan Literata para lectura y mantienen controles sans, datos/código y manuscrita en sus familias.
