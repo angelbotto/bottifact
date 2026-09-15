@@ -1,0 +1,63 @@
+<section id="runbook"><h2>Leer el contrato antes de ejecutar.</h2><p>Runbook ilustrativo para revisar un resumen de registros. El código explica una función; la terminal es evidencia estática. Los ejemplos no ejecutan comandos sobre tu equipo.</p></section><section id="implementacion"><h2>La implementación mínima</h2><p>Las líneas destacadas nombran el total y el promedio. Una entrada vacía conserva total cero y promedio ausente; no fabrica una observación.</p></section><figure class="ancho" id="codigo-lineas-ejemplo"><div class="codigo codigo-editorial"><div class="cab"><span>preparar_resumen.py · Python</span><button class="boton-icono-copia" type="button" data-copiar="codigo-lineas-fuente" aria-label="Copiar código Python" title="Copiar código"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 8h12v13H8zM16 8V3H4v13h4"/></svg></button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código Python con líneas 3 y 6 destacadas, desplazable"><code id="codigo-lineas-fuente" data-lenguaje="python" data-lineas data-destacar="3,6">def resumir(registros):
+    cantidades = [fila["cantidad"] for fila in registros]
+    total = sum(cantidades)
+    if not cantidades:
+        return {"total": 0, "promedio": None}
+    return {"total": total, "promedio": total / len(cantidades)}</code></pre></div><figcaption>Ejemplo ilustrativo. Las líneas 3 y 6 explican el cálculo; el botón copia el código sin números de línea.</figcaption></figure><section id="salida"><h2>Una salida que se puede copiar</h2><p>Usa la terminal para mostrar texto exacto, unidades y contexto. El botón copia la salida sin añadir números de línea.</p></section><figure class="ancho">
+  <div class="terminal">
+    <div class="cab"><span>saldo por bolsillo · ejemplo ilustrativo</span>
+      <button type="button" data-copiar="t-saldos" aria-label="Copiar la salida">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+          <rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>
+        </svg>
+      </button>
+      <span class="copia-estado" role="status" aria-live="polite"></span>
+    </div>
+    <div class="cuerpo">
+      <pre tabindex="0" aria-label="Distribución del saldo"><code id="t-saldos"><span class="tenue">       rango   bolsillos        total COP</span>
+<span class="tenue">  ------------  ---------  ---------------</span>
+  menos de $100        349            5.120
+    más de $1M          5    <span class="subra">14.434.490</span></code></pre>
+    </div>
+  </div>
+  <figcaption>Datos ilustrativos. La columna que importa va señalada, no en negrita.</figcaption>
+</figure><section id="variantes"><h2>El mismo argumento, varios lenguajes</h2><p>Las pestañas agrupan ejemplos relacionados. No sustituyen capítulos con preguntas distintas.</p></section><section class="pieza ancho" id="codigo-poliglota"><h3>Código que también se puede leer</h3><p>Elige un lenguaje. El coloreado conserva exactamente el texto que copias.</p><div class="pestanas" data-pestanas><div class="pestanas-caja" tabindex="0" role="region" aria-label="Lenguajes de código, desplazables"><div class="pestanas-nav" data-tabs-nav aria-label="Lenguajes"><button type="button" id="codigo-tab-html" data-tab="codigo-panel-html">HTML</button><button type="button" id="codigo-tab-css" data-tab="codigo-panel-css">CSS</button><button type="button" id="codigo-tab-javascript" data-tab="codigo-panel-javascript">JavaScript</button><button type="button" id="codigo-tab-typescript" data-tab="codigo-panel-typescript">TypeScript</button><button type="button" id="codigo-tab-json" data-tab="codigo-panel-json">JSON</button><button type="button" id="codigo-tab-python" data-tab="codigo-panel-python">Python</button><button type="button" id="codigo-tab-sql" data-tab="codigo-panel-sql">SQL</button><button type="button" id="codigo-tab-shell" data-tab="codigo-panel-shell">Shell</button><button type="button" id="codigo-tab-salida" data-tab="codigo-panel-salida">Salida</button></div></div><section id="codigo-panel-html" data-tab-panel><div class="codigo"><div class="cab"><span>HTML</span><button type="button" data-copiar="muestra-html" aria-label="Copiar HTML">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código HTML, desplazable"><code id="muestra-html" data-lenguaje="html">&lt;article class=&quot;nota&quot;&gt;
+  &lt;h2&gt;Una decisión con contexto&lt;/h2&gt;
+  &lt;p&gt;La evidencia se conserva completa.&lt;/p&gt;
+&lt;/article&gt;</code></pre></div></section><section id="codigo-panel-css" data-tab-panel><div class="codigo"><div class="cab"><span>CSS</span><button type="button" data-copiar="muestra-css" aria-label="Copiar CSS">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código CSS, desplazable"><code id="muestra-css" data-lenguaje="css">:root {
+  --espacio: 24px;
+}
+.nota {
+  display: grid;
+  gap: var(--espacio);
+  color: var(--tinta);
+}</code></pre></div></section><section id="codigo-panel-javascript" data-tab-panel><div class="codigo"><div class="cab"><span>JavaScript</span><button type="button" data-copiar="muestra-javascript" aria-label="Copiar JavaScript">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código JavaScript, desplazable"><code id="muestra-javascript" data-lenguaje="javascript">// Datos de ejemplo, sin solicitudes
+const registros = [12, 8, 5];
+const total = registros.reduce((suma, n) =&gt; suma + n, 0);
+console.log(&quot;Total:&quot;, total);</code></pre></div></section><section id="codigo-panel-typescript" data-tab-panel><div class="codigo"><div class="cab"><span>TypeScript</span><button type="button" data-copiar="muestra-typescript" aria-label="Copiar TypeScript">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código TypeScript, desplazable"><code id="muestra-typescript" data-lenguaje="typescript">type Registro = { nombre: string; valor: number };
+const ejemplo: Registro = { nombre: &quot;Diseño&quot;, valor: 12 };
+function leer(r: Registro): number {
+  return r.valor;
+}</code></pre></div></section><section id="codigo-panel-json" data-tab-panel><div class="codigo"><div class="cab"><span>JSON</span><button type="button" data-copiar="muestra-json" aria-label="Copiar JSON">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código JSON, desplazable"><code id="muestra-json" data-lenguaje="json">{
+  &quot;edicion&quot;: &quot;cuaderno&quot;,
+  &quot;paginas&quot;: 9,
+  &quot;sonido&quot;: false,
+  &quot;fuente&quot;: null
+}</code></pre></div></section><section id="codigo-panel-python" data-tab-panel><div class="codigo"><div class="cab"><span>Python</span><button type="button" data-copiar="muestra-python" aria-label="Copiar Python">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código Python, desplazable"><code id="muestra-python" data-lenguaje="python"># Ejemplo local
+registros = [12, 8, 5]
+def total(valores):
+    return sum(valores)
+print(&quot;Total:&quot;, total(registros))</code></pre></div></section><section id="codigo-panel-sql" data-tab-panel><div class="codigo"><div class="cab"><span>SQL</span><button type="button" data-copiar="muestra-sql" aria-label="Copiar SQL">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código SQL, desplazable"><code id="muestra-sql" data-lenguaje="sql">-- Consulta ilustrativa
+SELECT equipo, SUM(importe) AS total
+FROM movimientos
+WHERE estado = &#x27;confirmado&#x27;
+GROUP BY equipo
+ORDER BY total DESC;</code></pre></div></section><section id="codigo-panel-shell" data-tab-panel><div class="codigo"><div class="cab"><span>Shell</span><button type="button" data-copiar="muestra-shell" aria-label="Copiar Shell">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código Shell, desplazable"><code id="muestra-shell" data-lenguaje="shell"># Comprobaciones locales
+python3 scripts/ensamblar.py
+python3 scripts/validar.py
+echo &quot;Listo para revisar&quot;</code></pre></div></section><section id="codigo-panel-salida" data-tab-panel><div class="codigo"><div class="cab"><span>Salida</span><button type="button" data-copiar="muestra-salida" aria-label="Copiar Salida">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código Salida, desplazable"><code id="muestra-salida" data-lenguaje="salida">OK     documento generado     44 recetas
+WARN   fuente pendiente       2 registros
+ERROR  ejemplo rechazado      1 recurso externo</code></pre></div></section></div></section><section id="recuperar"><h2>Fallos y límites visibles</h2><p>Un aviso tiene significado escrito y un icono; el color acompaña el estado. La animación se cancela con movimiento reducido.</p></section><div class="pieza" id="avisos-animados-ejemplo">
+  <aside class="aviso aviso-esquina mal" data-aviso-animado aria-labelledby="aviso-cuidado-titulo"><span class="num" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 4v10M12 17v2"/></svg></span><div><p class="titulo" id="aviso-cuidado-titulo">Cuidado</p><p>Estos conteos son ilustrativos. Antes de tomar una decisión, reemplázalos por una fuente verificable.</p></div></aside>
+  <aside class="aviso aviso-esquina" data-aviso-animado aria-labelledby="aviso-nota-titulo"><span class="num" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 3h11v16H7zM4 6v16h11"/></svg></span><div><p class="titulo" id="aviso-nota-titulo">Nota</p><p>Los comentarios de revisión se conservan mientras esta pestaña permanezca abierta. Copia el prompt antes de recargar.</p></div></aside>
+</div>

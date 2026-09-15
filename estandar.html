@@ -1,7 +1,7 @@
 <title>Una base que sí acompaña cada documento</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="nota-tikin-version" content="2">
+<meta name="nota-tikin-version" content="3">
 <style data-nota-fuente="fuentes.css">
 /* Nota Tikin · Fuentes incrustadas. Google Fonts CSS2, 13-sep-2026.
 No hay solicitudes de fuentes en tiempo de ejecución. Conservar estos avisos OFL. */
@@ -1624,7 +1624,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 .biblioteca-rutas strong { display:block; font:400 30px/1.15 var(--serif); margin-block:10px; }
 .biblioteca-rutas small { display:block; color:var(--pieza-secundaria); font:14px/1.6 var(--sans); }
 .biblioteca .receta-copia { margin-bottom:52px; overflow-wrap:anywhere; }
-.biblioteca .receta-guia { overflow-wrap:anywhere; margin-top:16px; font:14px/1.65 var(--sans); color:var(--pieza-secundaria); }
+.biblioteca .receta-guia,.nota-estandar .receta-guia { overflow-wrap:anywhere; margin-top:16px; font:14px/1.65 var(--sans); color:var(--pieza-secundaria); }
 .biblioteca [id] { scroll-margin-top:85px; }
 @media print { .editorial-controles,[data-config-editorial] { display:none !important; } .publicaciones { display:block; } .publicaciones > article[hidden] { display:block !important; } [data-archivo-vacio],[data-archivo-estado] { display:none !important; } }
 
@@ -1988,6 +1988,381 @@ body:has(.revision-barra) { padding-bottom:0; }
 .gesto-escrito [data-mano=fuente] { color:var(--linea-fuerte); font-size:28.5px; line-height:32px; }
 @media(min-width:1280px) { .gesto-escrito [data-mano=fuente] { font-size:36.4px; line-height:40px; } }
 
+/* 28 — Liftit, Blueprint y Hacker. Adiciones; fuentes y anchos originales intactos. */
+:root {
+  --plano-rejilla: #ffffff0c;
+  --plano-rejilla-mayor: #ffffff18;
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --muestra-liftit: #f7f9ff;
+  --muestra-liftit-tinta: #2a2d46;
+  --muestra-liftit-acento: #0051f4;
+  --muestra-blueprint: #082c62;
+  --muestra-blueprint-tinta: #f4f9ff;
+  --muestra-blueprint-acento: #ffffff;
+  --muestra-hacker: #080f0c;
+  --muestra-hacker-tinta: #e3f4e8;
+  --muestra-hacker-acento: #82ed9b;
+}
+:root[data-theme=dark] {
+  --plano-rejilla: #ffffff0c;
+  --plano-rejilla-mayor: #ffffff18;
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --muestra-liftit: #f7f9ff;
+  --muestra-liftit-tinta: #2a2d46;
+  --muestra-liftit-acento: #0051f4;
+  --muestra-blueprint: #082c62;
+  --muestra-blueprint-tinta: #f4f9ff;
+  --muestra-blueprint-acento: #ffffff;
+  --muestra-hacker: #080f0c;
+  --muestra-hacker-tinta: #e3f4e8;
+  --muestra-hacker-acento: #82ed9b;
+}
+:root[data-theme=sea] {
+  --plano-rejilla: #ffffff0c;
+  --plano-rejilla-mayor: #ffffff18;
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --muestra-liftit: #f7f9ff;
+  --muestra-liftit-tinta: #2a2d46;
+  --muestra-liftit-acento: #0051f4;
+  --muestra-blueprint: #082c62;
+  --muestra-blueprint-tinta: #f4f9ff;
+  --muestra-blueprint-acento: #ffffff;
+  --muestra-hacker: #080f0c;
+  --muestra-hacker-tinta: #e3f4e8;
+  --muestra-hacker-acento: #82ed9b;
+}
+:root[data-theme='liftit'] {
+  color-scheme: light;
+  --papel: #f7f9ff;
+  --panel: #edf2fc;
+  --panel-2: #dee7f9;
+  --tinta: #2a2d46;
+  --tinta-2: #414b68;
+  --tinta-3: #52617c;
+  --linea: #ced8ed;
+  --linea-fuerte: #74829f;
+  --naranja: #0051f4;
+  --naranja-suave: #e2ebff;
+  --verde: #226542;
+  --verde-suave: #edf2fc;
+  --rojo: #a02d43;
+  --rojo-suave: #edf2fc;
+  --azul: #0051f4;
+  --azul-suave: #edf2fc;
+  --marcador: #0051f4;
+  --foco: #0051f4;
+  --globo-base: #74829f;
+  --globo-arco: #52617c;
+  --globo-punto: #0051f4;
+  --globo-glow: #ced8ed;
+  --globo-dark: 0;
+  --globo-brillo: 2.4;
+  --grafica-1: #0051f4;
+  --grafica-2: #226542;
+  --grafica-3: #754cad;
+  --grafica-4: #a02d43;
+  --grafica-papel: #f7f9ff;
+  --grafica-tinta: #414b68;
+  --grafica-linea: #ced8ed;
+  --calor-0: #edf2fc;
+  --calor-1: #dce6fc;
+  --calor-2: #c7d8fa;
+  --calor-3: #b0c7f6;
+  --calor-4: #96b4f0;
+  --calor-tinta: #2a2d46;
+  --calor-ausente: #dee7f9;
+  --tabla-total: #edf2fc;
+  --tabla-elegida: #e2ebff;
+  --escena-1: #0051f4;
+  --escena-2: #0051f4;
+  --escena-3: #226542;
+  --escena-tinta: #414b68;
+  --escena-linea: #74829f;
+  --sonido-papel: #edf2fc;
+  --sonido-activo: #226542;
+  --sonido-tinta: #2a2d46;
+  --escritura-trazo: #0051f4;
+  --escritura-papel: #edf2fc;
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --muestra-claro: #fef8f2;
+  --muestra-calido: #231e1a;
+  --muestra-sea: #253342;
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --muestra-claro-tinta: #231e1a;
+  --muestra-claro-acento: #a13f19;
+  --muestra-calido-tinta: #e9dfd7;
+  --muestra-calido-acento: #f1b798;
+  --muestra-sea-tinta: #d6eaff;
+  --muestra-sea-acento: #34febc;
+  --muestra-oliva: #f5f6ec;
+  --muestra-oliva-tinta: #26301e;
+  --muestra-oliva-acento: #486123;
+  --muestra-arcilla: #fcf1e8;
+  --muestra-arcilla-tinta: #37251f;
+  --muestra-arcilla-acento: #a44027;
+  --muestra-ciruela: #201922;
+  --muestra-ciruela-tinta: #f1e4ef;
+  --muestra-ciruela-acento: #e8afd8;
+  --foto-fondo: #10121c;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+  --plano-rejilla: #ffffff0c;
+  --plano-rejilla-mayor: #ffffff18;
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --muestra-liftit: #f7f9ff;
+  --muestra-liftit-tinta: #2a2d46;
+  --muestra-liftit-acento: #0051f4;
+  --muestra-blueprint: #082c62;
+  --muestra-blueprint-tinta: #f4f9ff;
+  --muestra-blueprint-acento: #ffffff;
+  --muestra-hacker: #080f0c;
+  --muestra-hacker-tinta: #e3f4e8;
+  --muestra-hacker-acento: #82ed9b;
+}
+.paleta-mini.liftit { background:var(--muestra-liftit); }
+.paleta-mini.liftit i { background:var(--muestra-liftit-tinta); }
+.paleta-mini.liftit b { background:var(--muestra-liftit-acento); }
+:root[data-theme='blueprint'] {
+  color-scheme: dark;
+  --papel: #082c62;
+  --panel: #0a346e;
+  --panel-2: #123e78;
+  --tinta: #f4f9ff;
+  --tinta-2: #d0e4ff;
+  --tinta-3: #b7d2f5;
+  --linea: #3c6194;
+  --linea-fuerte: #8dafdc;
+  --naranja: #ffffff;
+  --naranja-suave: #18457c;
+  --verde: #b9f1d9;
+  --verde-suave: #0a346e;
+  --rojo: #ffcbcf;
+  --rojo-suave: #0a346e;
+  --azul: #b9e8ff;
+  --azul-suave: #0a346e;
+  --marcador: #ffffff;
+  --foco: #ffffff;
+  --globo-base: #0a346e;
+  --globo-arco: #b7d2f5;
+  --globo-punto: #ffffff;
+  --globo-glow: #3c6194;
+  --globo-dark: .6;
+  --globo-brillo: 10;
+  --grafica-1: #ffffff;
+  --grafica-2: #b9e8ff;
+  --grafica-3: #b9f1d9;
+  --grafica-4: #e6d4ff;
+  --grafica-papel: #082c62;
+  --grafica-tinta: #d0e4ff;
+  --grafica-linea: #3c6194;
+  --calor-0: #0b346b;
+  --calor-1: #16477e;
+  --calor-2: #23598d;
+  --calor-3: #306c9c;
+  --calor-4: #3b759f;
+  --calor-tinta: #f4f9ff;
+  --calor-ausente: #123e78;
+  --tabla-total: #0a346e;
+  --tabla-elegida: #18457c;
+  --escena-1: #ffffff;
+  --escena-2: #b9e8ff;
+  --escena-3: #b9f1d9;
+  --escena-tinta: #d0e4ff;
+  --escena-linea: #8dafdc;
+  --sonido-papel: #0a346e;
+  --sonido-activo: #b9f1d9;
+  --sonido-tinta: #f4f9ff;
+  --escritura-trazo: #ffffff;
+  --escritura-papel: #0a346e;
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --muestra-claro: #fef8f2;
+  --muestra-calido: #231e1a;
+  --muestra-sea: #253342;
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --muestra-claro-tinta: #231e1a;
+  --muestra-claro-acento: #a13f19;
+  --muestra-calido-tinta: #e9dfd7;
+  --muestra-calido-acento: #f1b798;
+  --muestra-sea-tinta: #d6eaff;
+  --muestra-sea-acento: #34febc;
+  --muestra-oliva: #f5f6ec;
+  --muestra-oliva-tinta: #26301e;
+  --muestra-oliva-acento: #486123;
+  --muestra-arcilla: #fcf1e8;
+  --muestra-arcilla-tinta: #37251f;
+  --muestra-arcilla-acento: #a44027;
+  --muestra-ciruela: #201922;
+  --muestra-ciruela-tinta: #f1e4ef;
+  --muestra-ciruela-acento: #e8afd8;
+  --foto-fondo: #082c62;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+  --plano-rejilla: #ffffff0c;
+  --plano-rejilla-mayor: #ffffff18;
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --muestra-liftit: #f7f9ff;
+  --muestra-liftit-tinta: #2a2d46;
+  --muestra-liftit-acento: #0051f4;
+  --muestra-blueprint: #082c62;
+  --muestra-blueprint-tinta: #f4f9ff;
+  --muestra-blueprint-acento: #ffffff;
+  --muestra-hacker: #080f0c;
+  --muestra-hacker-tinta: #e3f4e8;
+  --muestra-hacker-acento: #82ed9b;
+}
+.paleta-mini.blueprint { background:var(--muestra-blueprint); }
+.paleta-mini.blueprint i { background:var(--muestra-blueprint-tinta); }
+.paleta-mini.blueprint b { background:var(--muestra-blueprint-acento); }
+:root[data-theme='hacker'] {
+  color-scheme: dark;
+  --papel: #080f0c;
+  --panel: #101e17;
+  --panel-2: #1b2e23;
+  --tinta: #e3f4e8;
+  --tinta-2: #bfd6c7;
+  --tinta-3: #9fbdab;
+  --linea: #2d4938;
+  --linea-fuerte: #769d82;
+  --naranja: #82ed9b;
+  --naranja-suave: #163722;
+  --verde: #a0e9b2;
+  --verde-suave: #101e17;
+  --rojo: #ffb8ab;
+  --rojo-suave: #101e17;
+  --azul: #91d5ec;
+  --azul-suave: #101e17;
+  --marcador: #82ed9b;
+  --foco: #82ed9b;
+  --globo-base: #101e17;
+  --globo-arco: #9fbdab;
+  --globo-punto: #82ed9b;
+  --globo-glow: #2d4938;
+  --globo-dark: .6;
+  --globo-brillo: 10;
+  --grafica-1: #82ed9b;
+  --grafica-2: #91d5ec;
+  --grafica-3: #a0e9b2;
+  --grafica-4: #d7b9f8;
+  --grafica-papel: #080f0c;
+  --grafica-tinta: #bfd6c7;
+  --grafica-linea: #2d4938;
+  --calor-0: #101e17;
+  --calor-1: #193323;
+  --calor-2: #22452c;
+  --calor-3: #2a5735;
+  --calor-4: #35683f;
+  --calor-tinta: #e3f4e8;
+  --calor-ausente: #1b2e23;
+  --tabla-total: #101e17;
+  --tabla-elegida: #163722;
+  --escena-1: #82ed9b;
+  --escena-2: #91d5ec;
+  --escena-3: #a0e9b2;
+  --escena-tinta: #bfd6c7;
+  --escena-linea: #769d82;
+  --sonido-papel: #101e17;
+  --sonido-activo: #a0e9b2;
+  --sonido-tinta: #e3f4e8;
+  --escritura-trazo: #82ed9b;
+  --escritura-papel: #101e17;
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --muestra-claro: #fef8f2;
+  --muestra-calido: #231e1a;
+  --muestra-sea: #253342;
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --muestra-claro-tinta: #231e1a;
+  --muestra-claro-acento: #a13f19;
+  --muestra-calido-tinta: #e9dfd7;
+  --muestra-calido-acento: #f1b798;
+  --muestra-sea-tinta: #d6eaff;
+  --muestra-sea-acento: #34febc;
+  --muestra-oliva: #f5f6ec;
+  --muestra-oliva-tinta: #26301e;
+  --muestra-oliva-acento: #486123;
+  --muestra-arcilla: #fcf1e8;
+  --muestra-arcilla-tinta: #37251f;
+  --muestra-arcilla-acento: #a44027;
+  --muestra-ciruela: #201922;
+  --muestra-ciruela-tinta: #f1e4ef;
+  --muestra-ciruela-acento: #e8afd8;
+  --foto-fondo: #080f0c;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+  --plano-rejilla: #ffffff0c;
+  --plano-rejilla-mayor: #ffffff18;
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --muestra-liftit: #f7f9ff;
+  --muestra-liftit-tinta: #2a2d46;
+  --muestra-liftit-acento: #0051f4;
+  --muestra-blueprint: #082c62;
+  --muestra-blueprint-tinta: #f4f9ff;
+  --muestra-blueprint-acento: #ffffff;
+  --muestra-hacker: #080f0c;
+  --muestra-hacker-tinta: #e3f4e8;
+  --muestra-hacker-acento: #82ed9b;
+}
+.paleta-mini.hacker { background:var(--muestra-hacker); }
+.paleta-mini.hacker i { background:var(--muestra-hacker-tinta); }
+.paleta-mini.hacker b { background:var(--muestra-hacker-acento); }
+/* El plano se imprime sobre el papel, también bajo la navegación; nunca encima de los datos. */
+@media screen {
+ :root[data-theme=blueprint] body,:root[data-theme=blueprint] .navegacion-editorial {
+  background-image:linear-gradient(var(--plano-rejilla-mayor) 1px,transparent 1px),linear-gradient(90deg,var(--plano-rejilla-mayor) 1px,transparent 1px),linear-gradient(var(--plano-rejilla) 1px,transparent 1px),linear-gradient(90deg,var(--plano-rejilla) 1px,transparent 1px);
+  background-size:120px 120px,120px 120px,24px 24px,24px 24px;
+ }
+ :root:is([data-theme=blueprint],[data-theme=hacker]) .codigo { background:var(--panel); }
+ :root[data-theme=blueprint] .terminal { --term-papel:#06224d; --term-tinta:#edf6ff; --term-tenue:#a7c8f3; --term-linea:#5278a9; --term-marca:#b9e8ff; }
+ :root[data-theme=hacker] .terminal { --term-papel:#050c08; --term-tinta:#d3f4dd; --term-tenue:#91b79c; --term-linea:#2d4938; --term-marca:#82ed9b; }
+ :root[data-theme=liftit] .terminal { --term-papel:#10121c; --term-tinta:#e3eafd; --term-tenue:#a4b1d0; --term-linea:#414b68; --term-marca:#8eb9ff; }
+ :root:is([data-theme=liftit],[data-theme=blueprint],[data-theme=hacker]) .codigo .codigo-numero { color:var(--sintaxis-numero); }
+ :root:is([data-theme=liftit],[data-theme=blueprint],[data-theme=hacker]) .codigo .codigo-funcion { color:var(--sintaxis-funcion); }
+}
+
 </style>
 <a class="salto" href="#experiencia">Saltar al contenido</a><header class="barra capitulos navegacion-editorial" id="nota-inicio"><a class="firma-editorial" href="#experiencia"><span>tikin</span></a><span class="procedencia">Documento para revisión</span><details class="apariencia-menu orbita" data-apariencia-menu>
   <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-principal"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span></summary>
@@ -2006,6 +2381,9 @@ body:has(.revision-barra) { padding-bottom:0; }
       <label><input type="radio" name="color-apariencia-principal" value="oliva" data-elegir-tema><span class="paleta-mini oliva" aria-hidden="true"><i></i><b></b></span><span>Oliva<small>Papel verde · tinta botánica</small></span></label>
       <label><input type="radio" name="color-apariencia-principal" value="arcilla" data-elegir-tema><span class="paleta-mini arcilla" aria-hidden="true"><i></i><b></b></span><span>Arcilla<small>Papel durazno · acento terracota</small></span></label>
       <label><input type="radio" name="color-apariencia-principal" value="ciruela" data-elegir-tema><span class="paleta-mini ciruela" aria-hidden="true"><i></i><b></b></span><span>Ciruela<small>Papel oscuro · acento malva</small></span></label>
+      <label><input type="radio" name="color-apariencia-principal" value="liftit" data-elegir-tema><span class="paleta-mini liftit" aria-hidden="true"><i></i><b></b></span><span>Liftit<small>Azul logístico · papel claro</small></span></label>
+      <label><input type="radio" name="color-apariencia-principal" value="blueprint" data-elegir-tema><span class="paleta-mini blueprint" aria-hidden="true"><i></i><b></b></span><span>Blueprint<small>Plano azul · cuadrícula blanca</small></span></label>
+      <label><input type="radio" name="color-apariencia-principal" value="hacker" data-elegir-tema><span class="paleta-mini hacker" aria-hidden="true"><i></i><b></b></span><span>Hacker<small>Oscuro técnico · acento verde</small></span></label>
       <label><input type="radio" name="color-apariencia-principal" value="system" data-elegir-tema checked><span class="paleta-mini sistema" aria-hidden="true"><i></i><b></b></span><span>Sistema<small>Sigue la apariencia del dispositivo</small></span></label>
     </div></fieldset>
     <fieldset class="apariencia"><legend>Estilo de títulos</legend><div class="apariencia-estilos">
@@ -2217,12 +2595,15 @@ body:has(.revision-barra) { padding-bottom:0; }
   'use strict';
   const root = document.documentElement;
   const selectors = document.querySelectorAll('[data-tema]');
-  const themes = ['system','light','dark','sea','oliva','arcilla','ciruela'];
+  const themes = ['system','light','dark','sea','oliva','arcilla','ciruela','liftit','blueprint','hacker'];
+  const initialTheme=document.querySelector('meta[name="nota-tema-inicial"]')?.content;
+  const initialStyle=document.querySelector('meta[name="nota-estilo-inicial"]')?.content;
+  const preferenceKey=key=>((initialTheme||initialStyle)?key+':'+location.pathname:key);
   const scheme = matchMedia('(prefers-color-scheme: dark)');
-  const themeNames = {system:'Sistema',light:'Claro',dark:'Cálido',sea:'Dark Sea',oliva:'Oliva',arcilla:'Arcilla',ciruela:'Ciruela'};
+  const themeNames = {system:'Sistema',light:'Claro',dark:'Cálido',sea:'Dark Sea',oliva:'Oliva',arcilla:'Arcilla',ciruela:'Ciruela',liftit:'Liftit',blueprint:'Blueprint',hacker:'Hacker'};
   function syncAppearance() {
     const value=root.dataset.theme||'system';
-    const dark=['dark','sea','ciruela'].includes(value)||(value==='system'&&scheme.matches);
+    const dark=['dark','sea','ciruela','blueprint','hacker'].includes(value)||(value==='system'&&scheme.matches);
     document.querySelectorAll('[data-apariencia-menu]').forEach(menu=>{
       menu.dataset.oscuro=String(dark);
       menu.querySelector('summary').setAttribute('aria-label','Apariencia. '+themeNames[value]+(value==='system'?', '+(dark?'oscuro':'claro'):'')+'.');
@@ -2240,11 +2621,11 @@ body:has(.revision-barra) { padding-bottom:0; }
     });
     document.querySelectorAll('[data-elegir-tema]').forEach(input => { input.checked = input.value === value; });
     syncAppearance();
-    try { localStorage.setItem('nota-tema',value); } catch {}
+    try { localStorage.setItem(preferenceKey('nota-tema'),value); } catch {}
     document.dispatchEvent(new CustomEvent('nota:tema'));
   }
-  let stored = 'system';
-  try { stored = localStorage.getItem('nota-tema') || 'system'; } catch {}
+  let stored = initialTheme || 'system';
+  try { stored = localStorage.getItem(preferenceKey('nota-tema')) || stored; } catch {}
   theme(stored);
   selectors.forEach(selector => selector.addEventListener('change', e => theme(e.target.value)));
   document.addEventListener('change', e => {
@@ -2268,15 +2649,15 @@ body:has(.revision-barra) { padding-bottom:0; }
     if(!['editorial','sobrio','tecnico'].includes(value))value='editorial';
     if(value==='editorial')delete root.dataset.estilo;else root.dataset.estilo=value;
     document.querySelectorAll('[data-elegir-estilo]').forEach(input=>input.checked=input.value===value);
-    try{localStorage.setItem('nota-estilo',value);}catch{}
+    try{localStorage.setItem(preferenceKey('nota-estilo'),value);}catch{}
   }
   function paper(enabled) {
     root.toggleAttribute('data-trama',enabled);
     document.querySelectorAll('[data-papel-tramado]').forEach(b=>b.setAttribute('aria-pressed',String(enabled)));
     try{localStorage.setItem('nota-trama',String(enabled));}catch{}
   }
-  let style='editorial',texture=false;
-  try{style=localStorage.getItem('nota-estilo')||style;texture=localStorage.getItem('nota-trama')==='true';}catch{}
+  let style=initialStyle||'editorial',texture=false;
+  try{style=localStorage.getItem(preferenceKey('nota-estilo'))||style;texture=localStorage.getItem('nota-trama')==='true';}catch{}
   if(document.querySelector('[data-elegir-estilo]'))readingStyle(style);
   if(document.querySelector('[data-papel-tramado]'))paper(texture);
   document.addEventListener('change',e=>{if(e.target.matches('[data-elegir-estilo]'))readingStyle(e.target.value);});
@@ -2618,4 +2999,4 @@ body:has(.revision-barra) { padding-bottom:0; }
 })();
 
 </script>
-<script type="application/json" data-nota-manifiesto>{"version": "2", "paginas": ["experiencia"], "modulos": ["audio.js", "controles.js", "piezas-editoriales.js", "interacciones.js", "mano.js", "codigo.js", "revision.js"], "fuentes": {"fuentes.css": "30fae908fc4d4764051b4fdc8dfb63696e212475cb13e5330fe13c0d1eeca462", "estilo.css": "b11ab21f689987b7e31af0396ca8988c7112ce12e87de10186de224ad45122f2", "audio.js": "20afd4856708081b36954554b93ab036a47e11c7a212d7092283a1a81a7f73c7", "controles.js": "362f4824f82cc3aa895c6b303dd46eb60a6449b1f1392f405bbcf9113c225fc0", "piezas-editoriales.js": "120e3fc49ce4d14b8710721eb8645334f7898e2b2229fb2926ecf710cfa9f720", "interacciones.js": "14a5e128c93e6ecf0cc3122fb68b97085a84c1b79c378fd61c8c6004a0f487f4", "mano.js": "3044fb4b51ee0047ecb2f0069a2d24d060102eb0ea798d22384c0ea529116c00", "codigo.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "revision.js": "8dd7ed5e3eb62842155c09626a033564d677bbfd39167df1b530a36f37fefaee"}}</script>
+<script type="application/json" data-nota-manifiesto>{"version": "3", "paginas": ["experiencia"], "modulos": ["audio.js", "controles.js", "piezas-editoriales.js", "interacciones.js", "mano.js", "codigo.js", "revision.js"], "fuentes": {"fuentes.css": "30fae908fc4d4764051b4fdc8dfb63696e212475cb13e5330fe13c0d1eeca462", "estilo.css": "2c0bf8f9ccbf94faeb978e74afe34769940969197d50d95effa1b0d6e4066287", "audio.js": "20afd4856708081b36954554b93ab036a47e11c7a212d7092283a1a81a7f73c7", "controles.js": "362f4824f82cc3aa895c6b303dd46eb60a6449b1f1392f405bbcf9113c225fc0", "piezas-editoriales.js": "120e3fc49ce4d14b8710721eb8645334f7898e2b2229fb2926ecf710cfa9f720", "interacciones.js": "cd19adbb6cdb3b97a01cd088a7c69022e8825f5cc2a769f5e7d55a293dba987b", "mano.js": "3044fb4b51ee0047ecb2f0069a2d24d060102eb0ea798d22384c0ea529116c00", "codigo.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "revision.js": "8dd7ed5e3eb62842155c09626a033564d677bbfd39167df1b530a36f37fefaee"}}</script>

@@ -1,0 +1,117 @@
+{
+  "elementos": [
+    {
+      "color": "rgb(0, 0, 0)",
+      "fondo": "rgba(0, 0, 0, 0)",
+      "fuente": "Inter, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "interlineado": "24px",
+      "selector": "A.",
+      "tamano": "16px",
+      "texto": "Nosotros"
+    },
+    {
+      "color": "rgb(0, 0, 0)",
+      "fondo": "rgba(0, 0, 0, 0)",
+      "fuente": "Inter, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "interlineado": "24px",
+      "selector": "A.",
+      "tamano": "16px",
+      "texto": "Servicios"
+    },
+    {
+      "color": "rgb(0, 0, 0)",
+      "fondo": "rgba(0, 0, 0, 0)",
+      "fuente": "Inter, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "interlineado": "24px",
+      "selector": "A.",
+      "tamano": "16px",
+      "texto": "Cobertura"
+    },
+    {
+      "color": "rgb(0, 0, 0)",
+      "fondo": "rgba(0, 0, 0, 0)",
+      "fuente": "Inter, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "interlineado": "24px",
+      "selector": "A.",
+      "tamano": "16px",
+      "texto": "Tecnología"
+    },
+    {
+      "color": "rgb(0, 0, 0)",
+      "fondo": "rgba(0, 0, 0, 0)",
+      "fuente": "Inter, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "interlineado": "24px",
+      "selector": "A.",
+      "tamano": "16px",
+      "texto": "Lifters / Transportistas"
+    },
+    {
+      "color": "rgb(0, 0, 0)",
+      "fondo": "rgb(42, 45, 70)",
+      "fuente": "Inter, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "interlineado": "24px",
+      "selector": "A.group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none button-primary-rounded hidden border-2 border-secondary bg-tahiti hover:bg-[#1F2133]  lg:block",
+      "tamano": "14px",
+      "texto": "Rastrea tus envíos"
+    },
+    {
+      "color": "rgb(0, 0, 0)",
+      "fondo": "rgba(0, 0, 0, 0)",
+      "fuente": "Inter, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "interlineado": "24px",
+      "selector": "A.",
+      "tamano": "16px",
+      "texto": "Ingresa"
+    },
+    {
+      "color": "rgb(255, 255, 255)",
+      "fondo": "rgba(0, 0, 0, 0)",
+      "fuente": "Eina03_Bold",
+      "interlineado": "49.5px",
+      "selector": "H1.SemiBold title_m title_m pr-0 text-center text-white md:pr-[3rem] md:text-left md:leading-[52px]",
+      "tamano": "45px",
+      "texto": "Plataforma digital enfocada en logística de transporte inteligente"
+    },
+    {
+      "color": "rgb(0, 0, 0)",
+      "fondo": "rgb(42, 45, 70)",
+      "fuente": "Inter, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "interlineado": "24px",
+      "selector": "A.group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none button-primary-rounded border-2 border-secondary bg-tahiti",
+      "tamano": "14px",
+      "texto": "Conoce de Liftit"
+    },
+    {
+      "color": "rgb(255, 255, 255)",
+      "fondo": "rgb(0, 81, 244)",
+      "fuente": "Inter, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "interlineado": "24px",
+      "selector": "A.group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none button-secondary inline-flex items-center rounded-md border border-transparent px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2",
+      "tamano": "14px",
+      "texto": "Agenda un DEMO"
+    },
+    {
+      "color": "rgb(255, 255, 255)",
+      "fondo": "rgb(42, 45, 70)",
+      "fuente": "Inter, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "interlineado": "24px",
+      "selector": "A.group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none button-primary-rounded border-2 border-secondary bg-tahiti",
+      "tamano": "14px",
+      "texto": "Agenda un DEMO"
+    },
+    {
+      "color": "rgb(0, 0, 0)",
+      "fondo": "rgb(42, 45, 70)",
+      "fuente": "Inter, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "interlineado": "24px",
+      "selector": "A.group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none button-primary-rounded border-2 border-secondary bg-tahiti",
+      "tamano": "14px",
+      "texto": "Conoce cómo funciona la asignación de camiones"
+    }
+  ],
+  "url": "https://liftit.co/es/index.html",
+  "viewport": [
+    1440,
+    960
+  ]
+}
