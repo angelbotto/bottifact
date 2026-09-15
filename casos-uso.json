@@ -3,7 +3,7 @@
   "casos": [
     {"id":"decision","nombre":"Decidir con evidencia","pregunta":"¿Qué decisión permite tomar la evidencia disponible?","componentes":["hallazgo","decision","criterios","comparacion","riesgos","apuntes"]},
     {"id":"finanzas","nombre":"Explicar un período financiero","pregunta":"¿Qué cambió, cuánto y por qué?","componentes":["temporal","cascada","totales","sparkline","torta","conciliacion","metodologia"]},
-    {"id":"logistica","nombre":"Entender una operación logística","pregunta":"¿Dónde está la restricción y qué servicio podemos cumplir?","componentes":["mapa-rutas","mapa-burbujas","explorador","caja","almacen","arcos-mapa","recorrido"]},
+    {"id":"logistica","nombre":"Entender una operación logística","pregunta":"¿Dónde está la restricción y qué servicio podemos cumplir?","componentes":["globo-flota","ficha-entrega","cola-novedades","mapa-rutas","mapa-burbujas","explorador","caja","almacen","arcos-mapa","recorrido"]},
     {"id":"articulo","nombre":"Desarrollar un argumento","pregunta":"¿Qué debe comprender el lector y con qué respaldo?","componentes":["articulo","autor","apuntes","conversacion","codigo-lineas","referencias","relacionados"]},
     {"id":"tecnico","nombre":"Documentar un sistema","pregunta":"¿Cómo funciona y cómo se comprueba o recupera?","componentes":["anotaciones","codigo-poliglota","codigo-lineas","terminal","avisos-animados","pestanas"]},
     {"id":"prototipo","nombre":"Revisar una interacción","pregunta":"¿Qué tarea se puede probar y qué ajuste hace falta?","componentes":["visor","antes-despues","anotaciones","hallazgo","revision"]},

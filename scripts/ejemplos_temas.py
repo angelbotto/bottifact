@@ -4,9 +4,11 @@ from contrato_artefacto import ROOT,build,recipe
 def intro(id,title,text):return '<section id="'+id+'"><h2>'+title+'</h2><p>'+text+'</p></section>'
 def generate():
  liftit=intro('operacion','Primero, entender el servicio.','Una lectura de operación conecta tres preguntas: dónde se mueven los pedidos, qué registros conviene revisar y qué capacidad queda. Esta composición usa datos ficticios y componentes de ejemplo; no representa una operación real de Liftit.')
- liftit+=intro('cobertura','Dónde mirar','El mapa compara ubicaciones y conexiones declaradas. No calcula rutas óptimas ni tiempos de viaje.')+recipe('mapa-rutas')
- liftit+=intro('registros','Del territorio al registro','Busca, filtra, agrupa u ordena la tabla. Los controles ayudan a explorar una muestra; no conectan un sistema de producción.')+recipe('explorador')
+ liftit+='<p>Liftit combina tecnología para transporte, asignación y trazabilidad de entregas. <a href="https://liftit.co/es/index.html">Conocer el servicio de Liftit</a>.</p>'
+ liftit+=intro('cobertura','Dónde mirar','Selecciona un vehículo, alterna Colombia y el globo, y reproduce el corte de ejemplo. Las ciudades tienen nombres y las rutas son esquemáticas; la animación no representa GPS ni velocidad real.')+recipe('globo-flota')+recipe('ficha-entrega')
+ liftit+=intro('registros','Del territorio al registro','Busca, filtra, agrupa u ordena la tabla. Los controles ayudan a explorar una muestra; no conectan un sistema de producción.')+recipe('cola-novedades')
  liftit+=intro('capacidad','La capacidad necesita un denominador','La escena permite comparar capacidad y ocupación con su tabla textual. Usa siempre la misma unidad y fecha de corte.')+recipe('almacen')
+ liftit+=intro('mapa-plano','El corte también se puede leer en plano','La misma familia conserva una vista SVG para comparar volumen. Aquí los viajes pertenecen a otro ejemplo de agregados; no equivalen a los tres vehículos anteriores.')+recipe('mapa-rutas')
  liftit+=intro('limite','Qué decidir después','Antes de atribuir una mejora al servicio, confirma el período, la fuente y si los intentos fallidos están incluidos. El tema adapta azul #0051F4 y tinta #2A2D46 medidos en liftit.co; las fuentes siguen siendo las de Nota Tikin.')
  blue=intro('plano','Un plano para entender la confirmación.','Especificación conceptual: crear, revisar y confirmar. La cuadrícula da carácter al documento; las distancias del dibujo no representan duración ni cantidad. Las notas numeradas expresan el contrato de cada paso.')+recipe('anotaciones')
  blue+=intro('contrato','Las decisiones del diseño','Compara el estado anterior y el propuesto. La existencia de una interfaz no demuestra que la tarea sea más fácil.')+recipe('antes-despues')

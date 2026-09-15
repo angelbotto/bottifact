@@ -1,7 +1,7 @@
 {
-  "version": "2026.09.15-apariencia.2",
+  "version": "2026.09.15-flota.1",
   "contrato": "4",
-  "componentes": 71,
+  "componentes": 74,
   "temas": ["light", "dark", "sea", "oliva", "arcilla", "ciruela", "liftit", "blueprint", "hacker"],
   "generacion": "Python 3, biblioteca estándar",
   "agentes": ["Claude", "Codex", "Hermes"]

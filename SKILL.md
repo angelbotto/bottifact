@@ -396,7 +396,7 @@ HTTPS de Tailscale Serve que confirme el host, no un enlace localhost para la en
 
 ### Edición completa para explorar y componer
 
-Abre [biblioteca.html](biblioteca.html) para 71 recetas en nueve capítulos, con HTML,
+Abre [biblioteca.html](biblioteca.html) para 74 recetas en nueve capítulos, con HTML,
 dependencias, criterio y límites junto al ejemplo. Incluye archivos de publicaciones,
 autoría, lecturas relacionadas, anotaciones numeradas, revisiones, criterios y riesgos.
 [editorial.js](editorial.js) ofrece búsqueda/filtro local y configuración de lista/rejilla,
@@ -496,3 +496,21 @@ de la pieza, sólo imágenes con pies breves superpuestos, velo sobre toda la fo
 No añadas una banda negra al pie. Mantén la curva superellipse y el arrastre con cursor grab;
 en móvil se desliza de forma nativa. La muestra lleva ilustraciones rotuladas como tales:
 para evidencia fotográfica incrusta las fotos proporcionadas y conserva su contexto.
+
+
+### Operación logística con contexto
+
+Para explicar flota o reparto, considera las recetas `globo-flota`, `ficha-entrega` y
+`cola-novedades`. [liftit.html](liftit.html) las combina. El globo tiene Colombia resaltada,
+ciudades, selección por vehículo y acercamiento a la ruta; su reproducción es una simulación
+explícita de 45 segundos. Conserva el corte, la hora con zona y la tabla. No lo llames tiempo
+real, GPS o ETA si no hay una fuente conectada y autorizada. Para otro corte, destroy,
+actualización de la tabla e init; no inventes entregas confirmadas por llegar al extremo de un arco.
+La ficha distingue recogida, tránsito, recepción y evidencia; la cola permite filtrar y agrupar
+con el explorador existente. Todo debe conservar foco, scroll local y alternativa sin WebGL.
+
+Antes de proponer más: ventanas prometidas necesitan timestamps; capacidad necesita unidad y
+límite por vehículo; costo por parada necesita costos reales y denominador; una alerta GPS necesita
+hora del último mensaje y umbral definido; la prueba de entrega necesita evidencia autorizada.
+No deduzcas calles ni velocidad desde un arco entre ciudades. El mapa plano `mapa-rutas` sigue
+disponible para volumen agregado y ahora dibuja los nodos después de todas las rutas.

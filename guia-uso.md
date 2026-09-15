@@ -1,7 +1,7 @@
 # Componer con Nota Tikin
 
 Esta es una biblioteca de HTML, CSS y JavaScript, y también un skill para que un agente la use.
-La guía visual [guia.html](guia.html) contiene las 71 recetas completas. [registro.json](registro.json)
+La guía visual [guia.html](guia.html) contiene todas las recetas completas. [registro.json](registro.json)
 es el inventario ejecutable; [componentes.md](componentes.md) conserva HTML, criterio y límites.
 El generador proporciona la experiencia común. No es un paquete React ni un registro del CLI de shadcn.
 
@@ -28,7 +28,7 @@ para documentos existentes; para nuevas anotaciones animadas consulta `apuntes`.
 |---|---|---|---|
 | Informe de decisión | Conclusión provisional → evidencia → alternativas → decisión pendiente | `hallazgo`, `decision`, `criterios`, `comparacion`, `riesgos`, `apuntes` | Presentar una hipótesis como resultado demostrado |
 | Informe financiero | Período y moneda → cambio → composición → conciliación → supuestos | `temporal`, `cascada`, `totales`, `sparkline`, `torta`, `conciliacion`, `metodologia` | Mezclar monedas, balances y flujos; comparar ventanas de distinta duración sin aclararlo |
-| Operación logística | Servicio observado → dónde → dispersión → capacidad → siguiente acción | `mapa-rutas`, `mapa-burbujas`, `explorador`, `caja`, `almacen`, `arcos-mapa`, `recorrido` | Inferir tiempos, distancias o rutas óptimas desde líneas decorativas |
+| Operación logística | Servicio observado → dónde → dispersión → capacidad → siguiente acción | `globo-flota`, `ficha-entrega`, `cola-novedades`, `mapa-rutas`, `mapa-burbujas`, `caja`, `almacen`, `arcos-mapa`, `recorrido` | Inferir tiempos, distancias o rutas óptimas desde líneas decorativas |
 | Artículo o blog | Pregunta → argumento → ejemplo → contrapunto → fuentes → siguiente lectura | `articulo`, `autor`, `apuntes`, `conversacion`, `codigo-lineas`, `referencias`, `relacionados` | Convertir cada párrafo en card o usar manuscrita para toda la explicación |
 | Documentación técnica | Contrato → ejemplo mínimo → salida → fallos → recuperación | `anotaciones`, `codigo-poliglota`, `codigo-lineas`, `terminal`, `avisos-animados`, `pestanas` | Copiar código sin lenguaje, ocultar pasos de recuperación o simular una consola ejecutable |
 | Revisión de prototipo | Tarea → interfaz → variantes → hallazgo → ajustes | `visor`, `antes-despues`, `anotaciones`, `hallazgo`, comentarios estándar | Confundir tamaño visual con hardware real; prometer embeds que la CSP bloquea |
@@ -130,6 +130,18 @@ fuentes incrustadas. Procedencia: [auditoria/liftit-tema-fuente.json](auditoria/
 Puedes fijar una presentación inicial con `--tema liftit --estilo sobrio` o campos `tema`/`estilo`
 en el JSON de capítulos. La preferencia posterior del lector se conserva para ese archivo; no impone
 ese tema a los demás documentos. Sin presentación inicial se conserva el comportamiento previo.
+
+## Logística: del territorio a la acción
+
+En `globo-flota`, empieza por Colombia y selecciona un vehículo para acercar la conexión.
+Vuelve a Globo para contexto regional; reproduce sólo como demostración. Consulta la hora de
+corte antes de interpretar una posición. Combina `ficha-entrega` para hitos/evidencia pendiente
+y `cola-novedades` para filtrar vehículos con incidencias, con responsable y siguiente acción.
+El ejemplo no recibe GPS ni calcula ETA; llegar al destino en la animación no confirma recepción.
+
+Siguientes componentes útiles cuando existan datos: ventanas de entrega prometidas vs reales,
+capacidad disponible por tipo de vehículo, tiempo de espera en cargue, evidencia de entrega,
+frescura del último GPS y costo por parada. Cada uno necesita fuente, unidad y fecha de corte.
 
 ## Copiar, componer y comprobar
 

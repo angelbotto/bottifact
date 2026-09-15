@@ -3,7 +3,7 @@
 El contrato 4 conserva marcos punteados difusos en las figuras anchas. La base incluye **una llave sol/luna**, nueve paletas con muestras y Sistema, controles de sonido,
 comentarios flotantes, índice por página y regla de lectura. Es la composición predeterminada de
 los nuevos HTML de Angel. No exige llenar cada artículo con todos los componentes; selecciona
-las piezas a partir de las 71 recetas vigentes. Una excepción explícita de Angel prevalece.
+las piezas a partir de las 74 recetas vigentes. Una excepción explícita de Angel prevalece.
 
 ## Crear una página
 
