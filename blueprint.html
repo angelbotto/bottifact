@@ -2548,6 +2548,63 @@ body:has(.revision-barra) { padding-bottom:0; }
 [data-revision-editor] [data-revision-guardar] { background:var(--pieza-acento); color:var(--papel); border-radius:50%; }
 [data-revision-editor] [data-revision-guardar]:disabled { background:var(--panel-2); color:var(--tinta-3); cursor:default; }
 @media(pointer:coarse) { .nota-icono,.gesto-repetir,.visor-iconos > button,.visor-iconos .visor-dispositivos button,.visor-iconos > .control-menu > summary { width:44px; height:44px; min-width:44px; min-height:44px; } }
+
+/* 32 — Evidencia editorial. Colores del contrato de gráficas, completos en cada tema. */
+[data-evidencia],.evidencia-ui { min-width:0; }
+.evidencia-ui { display:grid; gap:16px; margin-block:8px 24px; }
+.evidencia-controles { display:flex; flex-wrap:wrap; gap:10px; align-items:center; min-width:0; }
+.evidencia-controles label { display:flex; flex-wrap:wrap; align-items:center; gap:8px; min-width:0; max-width:100%; font:13px/1.5 var(--sans); }
+.evidencia-controles :is(select,button) { min-height:40px; max-width:100%; min-width:0; border:1px solid var(--linea-fuerte); border-radius:5px; background:var(--papel); color:var(--tinta); padding:8px 10px; font:13px/1.4 var(--sans); }
+.evidencia-controles select { width:min(100%,28rem); }
+.evidencia-controles output { font:12px var(--mono); }
+.evidencia-visor { min-width:0; max-width:100%; overflow:auto; border-block:1px dotted var(--grafica-linea); background:var(--grafica-papel); scrollbar-width:thin; }
+.evidencia-visor > svg { display:block; width:100%; min-width:var(--ev-ancho,720px); height:auto; }
+.evidencia-visor text { fill:var(--grafica-tinta); font:12px var(--mono); }
+.evidencia-leyenda { margin:0; font:12px/1.6 var(--mono); color:var(--tinta-2); }
+.evidencia-detalle { margin:0; min-height:3em; font:13px/1.6 var(--sans); color:var(--tinta-2); overflow-wrap:anywhere; }
+.ev-eje,.ev-base { stroke:var(--grafica-tinta); stroke-width:1; }
+.ev-base { stroke-dasharray:4 4; }
+.ev-rejilla { stroke:var(--grafica-linea); stroke-dasharray:2 5; }
+.ev-solido,.ev-nodo { fill:var(--grafica-1); }
+.ev-color-0 { --ev-color:var(--grafica-1); }.ev-color-1 { --ev-color:var(--grafica-2); }.ev-color-2 { --ev-color:var(--grafica-3); }.ev-color-3 { --ev-color:var(--grafica-4); }
+.ev-flujo { stroke:var(--ev-color,var(--grafica-1)); opacity:.55; }
+.ev-flujo.ev-elegido { opacity:1; }
+.ev-marca { cursor:pointer; }
+.ev-marca.ev-elegido:is(rect,circle,path):not(.ev-flujo),.ev-marca.ev-elegido > :is(rect,circle,path) { stroke:var(--grafica-tinta); stroke-width:2; }
+.ev-intervalo { stroke:var(--grafica-1); stroke-width:5; }
+.ev-punto { fill:var(--ev-color,var(--grafica-papel)); stroke:var(--grafica-1); stroke-width:2; }
+.ev-dependencia { fill:none; stroke:var(--grafica-tinta); stroke-width:1; stroke-dasharray:3 2; }
+.ev-banda { fill:var(--grafica-1); opacity:.2; }
+.ev-central { fill:none; stroke:var(--grafica-1); stroke-width:3; }
+.ev-limite { fill:none; stroke:var(--grafica-2); stroke-width:1.5; stroke-dasharray:4 3; }
+.ev-calor-texto { fill:var(--calor-tinta)!important; }
+.ev-nivel-0 { fill:var(--calor-0); }.ev-nivel-1 { fill:var(--calor-1); }.ev-nivel-2 { fill:var(--calor-2); }.ev-nivel-3 { fill:var(--calor-3); }.ev-nivel-4 { fill:var(--calor-4); }
+.ev-ausente { fill:var(--calor-ausente); stroke:var(--grafica-tinta); stroke-dasharray:3 3; }
+.relato-pasos { display:grid; gap:24px; padding-inline-start:24px; margin:0; min-width:0; }
+.relato-pasos > li { padding:20px 0; border-top:1px dotted var(--linea-fuerte); }
+.relato-pasos button { text-align:left; font:400 26px/1.2 var(--serif); background:none; color:var(--tinta-2); border:0; padding:8px 0; cursor:pointer; }
+.relato-pasos p { font-size:15px; }
+.relato-actual button { color:var(--marcador); text-decoration:underline; text-underline-offset:6px; }
+@media(min-width:1100px) {
+ .ev-relato { grid-template-columns:minmax(0,3fr) minmax(0,2fr); align-items:start; }
+ .ev-relato .evidencia-controles,.ev-relato .evidencia-leyenda { margin:0; font:12px/1.6 var(--mono); color:var(--tinta-2); }
+.evidencia-detalle { grid-column:1/-1; }
+ .ev-relato .evidencia-visor { grid-column:1; grid-row:2; position:sticky; top:calc(var(--lectura-cabecera,100px) + 12px); max-height:calc(100dvh - var(--lectura-cabecera,100px) - 32px); }
+ .ev-relato .relato-pasos { grid-column:2; grid-row:2; }
+ .ev-relato .relato-pasos > li { min-height:42vh; }
+}
+.ev-imagen-visor { max-height:65vh; padding:24px; }
+.ev-lamina { position:relative; width:100%; max-width:none; min-width:0; }
+.ev-lamina img { display:block; width:100%; max-width:none; height:auto; }
+.ev-pin { display:grid; place-items:center; min-width:32px; min-height:32px; padding:0; position:absolute; transform:translate(-50%,-50%); width:32px; height:32px; border:2px solid var(--grafica-papel); border-radius:50%; background:var(--grafica-1); color:var(--grafica-papel); font:13px var(--mono); cursor:pointer; box-shadow:0 0 0 1px var(--grafica-tinta); }
+.ev-pin.ev-elegido { outline:2px solid var(--foco); outline-offset:3px; }
+.evidencia-error { border:1px dotted var(--linea-fuerte); padding:16px; color:var(--tinta); }
+.evidencia-ui :is(button,select,input):focus-visible,.evidencia-visor:focus-visible { outline:2px solid var(--foco); outline-offset:3px; }
+@media(pointer:coarse) { .evidencia-controles :is(button,select),.ev-pin { min-width:44px; min-height:44px; } }
+@media print {
+ .evidencia-ui { display:none; }
+ [data-evidencia-imagen][hidden] { display:block!important; }
+}
 .flota-navegacion { display:flex; gap:3px; border-left:1px solid var(--linea); padding-left:8px; }
 .flota-navegacion button { border:0; background:transparent; }
 .flota-navegacion svg { fill:none; stroke:currentColor; stroke-width:1.6; width:18px; height:18px; }
@@ -3320,4 +3377,4 @@ body:has(.revision-barra) { padding-bottom:0; }
 })();
 
 </script>
-<script type="application/json" data-nota-manifiesto>{"version": "4", "paginas": ["contenido"], "modulos": ["audio.js", "controles.js", "piezas-editoriales.js", "interacciones.js", "visor.js", "codigo.js", "revision.js"], "fuentes": {"fuentes.css": "03ac4b770dd47f79468c01c6b0f8b0ce44ae865331d6d5b46472c80bb41fe1d4", "estilo.css": "b7641171010a14a3eef0baf59b367a03ebf3efca6a19996c978d14f872deda05", "audio.js": "9247e4e95f65d44339316ba4f6941f06039b04b5e9c247ff6749314240a06713", "controles.js": "362f4824f82cc3aa895c6b303dd46eb60a6449b1f1392f405bbcf9113c225fc0", "piezas-editoriales.js": "120e3fc49ce4d14b8710721eb8645334f7898e2b2229fb2926ecf710cfa9f720", "interacciones.js": "6e749d4d3657a721f7be31df897571612b8922da78ce380c81d70825ba767c71", "visor.js": "f2bbaab86cf07ef8cd84583fc12f8a0b3bc93e4e20386f6a9c24b25008f22dff", "codigo.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "revision.js": "3befd4355d9b5f2104f7d49ed2ae66c7e1b62b694c04c76ca19fbcbd60a5c796"}}</script>
+<script type="application/json" data-nota-manifiesto>{"version": "4", "paginas": ["contenido"], "modulos": ["audio.js", "controles.js", "piezas-editoriales.js", "interacciones.js", "visor.js", "codigo.js", "revision.js"], "fuentes": {"fuentes.css": "03ac4b770dd47f79468c01c6b0f8b0ce44ae865331d6d5b46472c80bb41fe1d4", "estilo.css": "03cbc668f45851279731fcb7e10119c0637589e1d435f2ef06cf5ac3386d9cc0", "audio.js": "9247e4e95f65d44339316ba4f6941f06039b04b5e9c247ff6749314240a06713", "controles.js": "362f4824f82cc3aa895c6b303dd46eb60a6449b1f1392f405bbcf9113c225fc0", "piezas-editoriales.js": "120e3fc49ce4d14b8710721eb8645334f7898e2b2229fb2926ecf710cfa9f720", "interacciones.js": "6e749d4d3657a721f7be31df897571612b8922da78ce380c81d70825ba767c71", "visor.js": "f2bbaab86cf07ef8cd84583fc12f8a0b3bc93e4e20386f6a9c24b25008f22dff", "codigo.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "revision.js": "3befd4355d9b5f2104f7d49ed2ae66c7e1b62b694c04c76ca19fbcbd60a5c796"}}</script>

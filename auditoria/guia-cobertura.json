@@ -35,6 +35,7 @@
     "lista-estados",
     "lista-proyectos",
     "conversacion",
+    "relato-visual",
     "enlaces-icono",
     "avisos-animados",
     "ficha-entrega",
@@ -46,6 +47,8 @@
     "escenario",
     "conciliacion",
     "trayectoria",
+    "gantt",
+    "sensibilidad",
     "barras",
     "lineas",
     "temporal",
@@ -62,6 +65,10 @@
     "mapa-rutas",
     "mapa-burbujas",
     "atencion",
+    "sankey",
+    "cohortes",
+    "embudo",
+    "incertidumbre",
     "cola-novedades",
     "tabla-densa",
     "comparacion",
@@ -72,6 +79,7 @@
     "pestanas",
     "antes-despues",
     "anotaciones",
+    "evidencia-ampliable",
     "globo-flota",
     "recorrido",
     "xyz",
@@ -101,7 +109,9 @@
         "criterios",
         "comparacion",
         "riesgos",
-        "apuntes"
+        "apuntes",
+        "sensibilidad",
+        "incertidumbre"
       ]
     },
     {
@@ -115,7 +125,11 @@
         "sparkline",
         "torta",
         "conciliacion",
-        "metodologia"
+        "metodologia",
+        "sankey",
+        "sensibilidad",
+        "incertidumbre",
+        "cohortes"
       ]
     },
     {
@@ -132,7 +146,9 @@
         "caja",
         "almacen",
         "arcos-mapa",
-        "recorrido"
+        "recorrido",
+        "gantt",
+        "embudo"
       ]
     },
     {
@@ -146,7 +162,9 @@
         "conversacion",
         "codigo-lineas",
         "referencias",
-        "relacionados"
+        "relacionados",
+        "relato-visual",
+        "evidencia-ampliable"
       ]
     },
     {
@@ -159,7 +177,8 @@
         "codigo-lineas",
         "terminal",
         "avisos-animados",
-        "pestanas"
+        "pestanas",
+        "evidencia-ampliable"
       ]
     },
     {
@@ -171,7 +190,9 @@
         "antes-despues",
         "anotaciones",
         "hallazgo",
-        "revision"
+        "revision",
+        "evidencia-ampliable",
+        "embudo"
       ]
     },
     {
@@ -185,7 +206,8 @@
         "trayectoria",
         "galeria",
         "invitacion",
-        "pie-editorial"
+        "pie-editorial",
+        "relato-visual"
       ]
     },
     {
@@ -197,7 +219,8 @@
         "cronologia",
         "actividad-editorial",
         "calendario",
-        "riesgos"
+        "riesgos",
+        "gantt"
       ]
     }
   ]
