@@ -2452,6 +2452,48 @@ body:has(.revision-barra) { padding-bottom:0; }
 .apariencia-explorador > :is(.apariencia-encabezado,.apariencia-pestanas,.apariencia-pie) { flex-shrink:0; }
 .apariencia-explorador > [role='tabpanel'] { min-height:0; overflow:auto; overscroll-behavior:contain; padding:3px; }
 
+/* 30 — Operación logística. Alias semánticos completos: cada paleta resuelve sus colores. */
+:root { --flota-oceano:var(--panel); --flota-tierra:var(--linea-fuerte); --flota-territorio:var(--calor-2); --flota-borde:var(--marcador); --flota-punto:var(--tinta); }
+@media(prefers-color-scheme:dark) { :root:not([data-theme]) { --flota-oceano:var(--panel); --flota-tierra:var(--linea-fuerte); --flota-territorio:var(--calor-2); --flota-borde:var(--marcador); --flota-punto:var(--tinta); } }
+:root[data-theme='dark'],:root[data-theme='sea'] { --flota-oceano:var(--panel); --flota-tierra:var(--linea-fuerte); --flota-territorio:var(--calor-2); --flota-borde:var(--marcador); --flota-punto:var(--tinta); }
+.nota-flota { min-width:0; }
+.flota-cabecera { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; margin-bottom:20px; }
+.flota-cabecera h3 { margin-top:8px; }
+.flota-badge { border:1px solid var(--linea-fuerte); color:var(--tinta-2); background:var(--panel); padding:6px 9px; border-radius:20px; font:11px/1.5 var(--mono); }
+.flota-herramientas { display:flex; flex-wrap:wrap; align-items:center; gap:12px; padding-block:16px; border-block:1px dotted var(--linea-fuerte); }
+.flota-herramientas button { font:13px/1.4 var(--sans); }
+.flota-vistas { display:flex; gap:4px; }
+.flota-vistas button[aria-pressed='true'] { background:var(--azul-suave); border-color:var(--azul); color:var(--azul); }
+.flota-herramientas label { display:grid; gap:5px; flex:1 1 180px; font:12px/1.4 var(--sans); color:var(--tinta-2); min-width:0; }
+.flota-herramientas input { width:100%; accent-color:var(--azul); min-height:24px; }
+.flota-layout { display:grid; grid-template-columns:minmax(0,1fr); gap:20px; margin-block:20px; }
+.flota-mapa-caja { min-width:0; width:100%; overflow:auto; overscroll-behavior-x:contain; border:1px dotted var(--linea-fuerte); border-radius:12px; background:var(--papel); }
+.flota-superficie { width:100%; min-width:680px; height:480px; position:relative; }
+.flota-superficie canvas { width:100%; height:100%; display:block; }
+.flota-etiquetas { position:absolute; inset:0; pointer-events:none; }
+.flota-ciudad,.flota-pais { position:absolute; max-width:160px; padding:3px 6px; border:1px solid var(--linea); border-radius:4px; background:var(--papel); color:var(--tinta); font:500 12px/1.4 var(--sans); overflow-wrap:anywhere; }
+.flota-pais { color:var(--azul); border-color:var(--azul); }
+.flota-camion { pointer-events:auto; position:absolute; transform:translate(-50%,-50%); display:grid; place-items:center; width:44px; height:44px; min-height:44px; padding:4px; background:transparent; border:0; color:var(--grafica-1); }
+.flota-camion svg { width:23px; height:20px; overflow:visible; fill:currentColor; stroke:var(--papel); stroke-width:1.5; filter:drop-shadow(0 1px 2px var(--linea-fuerte)); }
+.flota-camion .flota-ventana { fill:var(--papel); stroke:none; }
+.flota-camion[aria-pressed='true'] { border:0; background:transparent; }
+.flota-camion:active { transform:translate(-50%,-50%); }
+.flota-camion[data-serie='2'] { color:var(--grafica-2); }.flota-camion[data-serie='3'] { color:var(--grafica-3); }.flota-camion[data-serie='4'] { color:var(--grafica-4); }
+.flota-despacho { min-width:0; }
+.flota-vehiculos { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr)); gap:8px; margin-top:12px; }
+.flota-vehiculo { display:grid; gap:7px; text-align:left; min-width:0; padding:14px; font:13px/1.5 var(--sans); border-color:var(--linea); background:var(--papel); overflow-wrap:anywhere; }
+.flota-identidad { display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between; }
+.flota-identidad strong { font-family:var(--mono); }.flota-vehiculo small { color:var(--tinta-2); font-size:12px; }
+.flota-vehiculo[aria-pressed='true'] { border-color:var(--azul); background:var(--azul-suave); }
+.flota-detalle { border-left:2px solid var(--azul); margin-top:16px; padding:10px 14px; font:14px/1.6 var(--sans); }
+.flota-detalle p { margin-top:8px; }.flota-detalle small { display:block; color:var(--tinta-2); margin-top:8px; }
+.flota-nota,.flota-resumen { font:12px/1.6 var(--mono); color:var(--tinta-2); margin-block:12px; }
+@media(min-width:1400px) { .flota-layout { grid-template-columns:minmax(0,2.5fr) minmax(230px,1fr); align-items:start; }.flota-vehiculos { grid-template-columns:minmax(0,1fr); } }
+@media print { .flota-herramientas,.flota-mapa-caja,.flota-layout,.flota-resumen { display:none!important; } }
+.flota-camion[aria-pressed='true']::before { content:''; position:absolute; inset:7px; border:1px solid currentColor; border-radius:50%; background:var(--papel); z-index:-1; }
+.flota-ciudad { z-index:2; }
+.flota-vistas { flex-wrap:wrap; }
+
 </style>
 <a class="salto" href="#contenido">Saltar al contenido</a><header class="barra capitulos navegacion-editorial" id="nota-inicio"><a class="firma-editorial" href="#contenido"><span>nota</span></a><span class="procedencia">Documento para revisión</span><details class="apariencia-menu orbita" data-apariencia-menu>
   <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-principal"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span></summary>
@@ -2486,34 +2528,36 @@ body:has(.revision-barra) { padding-bottom:0; }
       <p role="status" data-audio-estado>Sonido habilitado. Se activa después del primer clic. Puedes apagarlo abajo.</p>
     </fieldset><p class="apariencia-nota">Clics, lápiz y pequeños gestos. Sin música de fondo. Tu elección de silencio se recuerda en este navegador.</p></section><div class="apariencia-pie"><button type="button" data-audio-global aria-pressed="true"><span data-audio-etiqueta>Sonidos activados</span><span class="interruptor" aria-hidden="true"></span></button></div>
   </div>
-</details></header><main class="hoja lectura-guiada nota-estandar marcos-editoriales" data-lectura lang="es"><header class="cabecera" id="contenido"><h1>Liftit · Lectura de operación</h1></header><nav class="indice" tabindex="0" aria-label="En esta página"><p class="ceja">En esta página</p><ol><li><a href="#operacion">Primero, entender el servicio.</a></li><li><a href="#cobertura">Dónde mirar</a></li><li><a href="#registros">Del territorio al registro</a></li><li><a href="#capacidad">La capacidad necesita un denominador</a></li><li><a href="#limite">Qué decidir después</a></li></ol></nav><section id="operacion"><h2>Primero, entender el servicio.</h2><p>Una lectura de operación conecta tres preguntas: dónde se mueven los pedidos, qué registros conviene revisar y qué capacidad queda. Esta composición usa datos ficticios y componentes de ejemplo; no representa una operación real de Liftit.</p></section><section id="cobertura"><h2>Dónde mirar</h2><p>El mapa compara ubicaciones y conexiones declaradas. No calcula rutas óptimas ni tiempos de viaje.</p></section><figure class="ancho" id="analitica-mapa-rutas" data-analitica="rutas" data-unidad="viajes">
-  <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Datos de Mapa de rutas y volumen, desplazables">
-    <table><caption>Mapa de rutas y volumen</caption>
-      <thead><tr><th scope="col">Conexión</th><th scope="col">Lat. origen</th><th scope="col">Lon. origen</th><th scope="col">Lat. destino</th><th scope="col">Lon. destino</th><th scope="col">Viajes</th></tr></thead>
+</details></header><main class="hoja lectura-guiada nota-estandar marcos-editoriales" data-lectura lang="es"><header class="cabecera" id="contenido"><h1>Liftit · Lectura de operación</h1></header><nav class="indice" tabindex="0" aria-label="En esta página"><p class="ceja">En esta página</p><ol><li><a href="#operacion">Primero, entender el servicio.</a></li><li><a href="#cobertura">Dónde mirar</a></li><li><a href="#registros">Del territorio al registro</a></li><li><a href="#capacidad">La capacidad necesita un denominador</a></li><li><a href="#mapa-plano">El corte también se puede leer en plano</a></li><li><a href="#limite">Qué decidir después</a></li></ol></nav><section id="operacion"><h2>Primero, entender el servicio.</h2><p>Una lectura de operación conecta tres preguntas: dónde se mueven los pedidos, qué registros conviene revisar y qué capacidad queda. Esta composición usa datos ficticios y componentes de ejemplo; no representa una operación real de Liftit.</p></section><p>Liftit combina tecnología para transporte, asignación y trazabilidad de entregas. <a href="https://liftit.co/es/index.html">Conocer el servicio de Liftit</a>.</p><section id="cobertura"><h2>Dónde mirar</h2><p>Selecciona un vehículo, alterna Colombia y el globo, y reproduce el corte de ejemplo. Las ciudades tienen nombres y las rutas son esquemáticas; la animación no representa GPS ni velocidad real.</p></section><figure class="amplio" id="flota-colombia" data-flota>
+  <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Corte de flota de ejemplo, desplazable">
+    <table><caption>Flota ficticia · 15 septiembre 2026, 08:00 COT · posiciones iniciales de demostración</caption>
+      <thead><tr><th scope="col">Vehículo</th><th scope="col">Origen</th><th scope="col">Destino</th><th scope="col">Avance ilustrativo %</th><th scope="col">Pedidos</th><th scope="col">Estado al corte</th><th scope="col">Actualización</th><th scope="col">Contexto</th><th scope="col">Siguiente acción</th></tr></thead>
       <tbody>
-        <tr><th scope="row">Bogotá → Medellín</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="6.244">6.244</td><td data-valor="-75.582">-75.582</td><td data-valor="80">80</td></tr>
-        <tr><th scope="row">Bogotá → Cali</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="3.452">3.452</td><td data-valor="-76.532">-76.532</td><td data-valor="50">50</td></tr>
-        <tr><th scope="row">Bogotá → Barranquilla</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="10.969">10.969</td><td data-valor="-74.781">-74.781</td><td data-valor="30">30</td></tr>
+        <tr><th scope="row">LFT-021</th><td data-lat="4.711" data-lon="-74.072">Bogotá</td><td data-lat="6.244" data-lon="-75.582">Medellín</td><td data-valor="35">35</td><td data-valor="18">18</td><td>En ruta</td><td><time datetime="2026-09-15T08:00:00-05:00">08:00 COT</time></td><td>Salida confirmada; sin novedades reportadas en este ejemplo.</td><td>Próximo hito: llegada al punto de distribución.</td></tr>
+        <tr><th scope="row">LFT-034</th><td data-lat="4.711" data-lon="-74.072">Bogotá</td><td data-lat="3.452" data-lon="-76.532">Cali</td><td data-valor="62">62</td><td data-valor="12">12</td><td>Con novedad</td><td><time datetime="2026-09-15T07:58:00-05:00">07:58 COT</time></td><td>Congestión reportada. La demo no estima cuánto retrasará la llegada.</td><td>Acción: confirmar situación con el transportista antes de informar una nueva hora.</td></tr>
+        <tr><th scope="row">LFT-056</th><td data-lat="4.711" data-lon="-74.072">Bogotá</td><td data-lat="10.969" data-lon="-74.781">Barranquilla</td><td data-valor="18">18</td><td data-valor="9">9</td><td>En ruta</td><td><time datetime="2026-09-15T07:59:00-05:00">07:59 COT</time></td><td>Documentos verificados; nueve pedidos asociados al vehículo de ejemplo.</td><td>Próximo hito: confirmar recepción en destino.</td></tr>
       </tbody>
     </table>
   </div>
-  <figcaption>Datos ficticios de logística; no son operaciones de Liftit. Ubicaciones urbanas aproximadas. Contorno: <a href="https://www.naturalearthdata.com/about/terms-of-use/">Natural Earth</a>, dominio público, escala 1:110m.</figcaption>
-</figure><section id="registros"><h2>Del territorio al registro</h2><p>Busca, filtra, agrupa u ordena la tabla. Los controles ayudan a explorar una muestra; no conectan un sistema de producción.</p></section><section class="pieza amplio" id="explorador-ejemplo" data-explorador>
-<h3>Explorar el registro</h3><p>Seis registros ficticios. Ordena por encabezado, filtra y agrupa sin perder el detalle.</p>
+  <figcaption>Ejemplo ficticio, no una operación real de Liftit. Coordenadas urbanas aproximadas WGS84. Colombia: Natural Earth 1:110m, dominio público; máscara terrestre COBE. Los arcos no son vías terrestres.</figcaption>
+</figure><section class="pieza" id="ficha-entrega-ejemplo">
+  <p class="ceja">Pedido de ejemplo / DEMO-018</p><h3>Estar cerca no es haber entregado.</h3>
+  <p>Vehículo LFT-021 · Bogotá → Medellín. Estado ilustrativo: en tránsito.</p>
+  <ol class="cronologia cronologia-vertical">
+    <li><h3>Recogida confirmada</h3><p class="periodo"><time datetime="2026-09-15T06:30:00-05:00">06:30 COT</time></p><p>18 pedidos asociados al vehículo. La cantidad pertenece al corte de ejemplo.</p></li>
+    <li class="actual"><h3>En tránsito</h3><p class="periodo"><time datetime="2026-09-15T08:00:00-05:00">08:00 COT</time> · último evento conocido</p><p>El movimiento en el mapa no confirma recepción ni prueba de entrega.</p></li>
+    <li><h3>Recepción pendiente</h3><p>Sin hora confirmada. No se fabrica una estimación a partir de la animación.</p></li>
+    <li><h3>Evidencia pendiente</h3><p>Registrar fecha, receptor y prueba autorizada de entrega cuando existan. No se incluyen firmas ni fotos ficticias como si fueran evidencia real.</p></li>
+  </ol>
+</section><section id="registros"><h2>Del territorio al registro</h2><p>Busca, filtra, agrupa u ordena la tabla. Los controles ayudan a explorar una muestra; no conectan un sistema de producción.</p></section><section class="pieza amplio" id="cola-novedades-ejemplo" data-explorador data-unidad="pedidos">
+<h3>Despacho y novedades</h3><p>Tres vehículos ficticios del corte. Filtra Con novedad, agrupa por ciudad y ordena los pedidos para revisar a quién contactar.</p>
 <form class="tabla-herramientas" aria-label="Explorar registros">
 <label class="tabla-busqueda"><span class="control-etiqueta">Buscar registros</span><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input type="search" name="buscar" placeholder="Buscar registros…"></label>
-<details class="control-menu"><summary>Filtros <span data-filtros-cuenta></span>⌄</summary><div class="control-panel" tabindex="0" role="region" aria-label="Filtros de registros"><label>Estado<select name="estado"><option value="">Todos los estados</option><option>En revisión</option><option>Confirmado</option></select></label><button type="reset">Limpiar filtros</button></div></details>
-<details class="control-menu"><summary>Agrupar ⌄</summary><div class="control-panel" tabindex="0" role="region" aria-label="Agrupar registros"><label>Agrupar por<select name="grupo"><option value="">Sin grupos</option><option value="1">Equipo</option><option value="2">Estado</option></select></label></div></details>
-<details class="control-menu"><summary>Columnas ⌄</summary><div class="control-panel" tabindex="0" role="region" aria-label="Columnas visibles"><label><input type="checkbox" data-columna="1" checked> Equipo</label><label><input type="checkbox" data-columna="2" checked> Estado</label><label><input type="checkbox" data-columna="3" checked> Importe COP</label></div></details>
+<details class="control-menu"><summary>Filtros <span data-filtros-cuenta></span>⌄</summary><div class="control-panel" tabindex="0" role="region" aria-label="Filtros de registros"><label>Estado<select name="estado"><option value="">Todos los estados</option><option>Con novedad</option><option>En ruta</option></select></label><button type="reset">Limpiar filtros</button></div></details>
+<details class="control-menu"><summary>Agrupar ⌄</summary><div class="control-panel" tabindex="0" role="region" aria-label="Agrupar registros"><label>Agrupar por<select name="grupo"><option value="">Sin grupos</option><option value="1">Ciudad</option><option value="2">Estado</option></select></label></div></details>
+<details class="control-menu"><summary>Columnas ⌄</summary><div class="control-panel" tabindex="0" role="region" aria-label="Columnas visibles"><label><input type="checkbox" data-columna="1" checked> Ciudad</label><label><input type="checkbox" data-columna="2" checked> Estado</label><label><input type="checkbox" data-columna="3" checked> Pedidos</label></div></details>
 </form>
-<p data-explorador-estado role="status">6 registros de ejemplo.</p><div class="tabla-caja" tabindex="0" role="region" aria-label="Registros ordenables y agrupables, desplazables"><table><caption>Movimientos ilustrativos · importes en COP</caption><thead><tr><th scope="col"><details class="control-menu tabla-orden"><summary>Nombre <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Nombre"><button type="button" data-orden-col="0" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="0" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="0" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th><th scope="col"><details class="control-menu tabla-orden"><summary>Equipo <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Equipo"><button type="button" data-orden-col="1" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="1" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="1" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th><th scope="col"><details class="control-menu tabla-orden"><summary>Estado <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Estado"><button type="button" data-orden-col="2" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="2" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="2" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th><th scope="col"><details class="control-menu tabla-orden"><summary>Importe COP <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Importe COP"><button type="button" data-orden-col="3" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="3" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="3" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th></tr></thead><tbody>
-<tr><th scope="row">Sesión de diseño</th><td>Producto</td><td>En revisión</td><td data-valor="120000">120.000</td></tr>
-<tr><th scope="row">Prueba de lectura</th><td>Investigación</td><td>Confirmado</td><td data-valor="80000">80.000</td></tr>
-<tr><th scope="row">Revisión móvil</th><td>Producto</td><td>Confirmado</td><td data-valor="60000">60.000</td></tr>
-<tr><th scope="row">Entrevista inicial</th><td>Investigación</td><td>En revisión</td><td data-valor="95000">95.000</td></tr>
-<tr><th scope="row">Control de calidad</th><td>Ingeniería</td><td>Confirmado</td><td data-valor="140000">140.000</td></tr>
-<tr><th scope="row">Ajuste de interfaz</th><td>Ingeniería</td><td>En revisión</td><td data-valor="75000">75.000</td></tr>
-</tbody></table></div></section><section id="capacidad"><h2>La capacidad necesita un denominador</h2><p>La escena permite comparar capacidad y ocupación con su tabla textual. Usa siempre la misma unidad y fecha de corte.</p></section><figure class="ancho" id="analitica-almacen" data-escena="almacen" data-unidad="posiciones">
+<p data-explorador-estado role="status">3 vehículos de ejemplo.</p><div class="tabla-caja" tabindex="0" role="region" aria-label="Registros ordenables y agrupables, desplazables"><table><caption>Vehículos de ejemplo · pedidos asociados al corte</caption><thead><tr><th scope="col"><details class="control-menu tabla-orden"><summary>Vehículo <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Vehículo"><button type="button" data-orden-col="0" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="0" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="0" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th><th scope="col"><details class="control-menu tabla-orden"><summary>Ciudad <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Ciudad"><button type="button" data-orden-col="1" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="1" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="1" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th><th scope="col"><details class="control-menu tabla-orden"><summary>Estado <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Estado"><button type="button" data-orden-col="2" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="2" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="2" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th><th scope="col"><details class="control-menu tabla-orden"><summary>Pedidos <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Pedidos"><button type="button" data-orden-col="3" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="3" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="3" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th></tr></thead><tbody><tr><th scope="row">LFT-021</th><td>Medellín</td><td>En ruta</td><td data-valor="18">18</td></tr><tr><th scope="row">LFT-034</th><td>Cali</td><td>Con novedad</td><td data-valor="12">12</td></tr><tr><th scope="row">LFT-056</th><td>Barranquilla</td><td>En ruta</td><td data-valor="9">9</td></tr></tbody></table></div></section><section id="capacidad"><h2>La capacidad necesita un denominador</h2><p>La escena permite comparar capacidad y ocupación con su tabla textual. Usa siempre la misma unidad y fecha de corte.</p></section><figure class="ancho" id="analitica-almacen" data-escena="almacen" data-unidad="posiciones">
   <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Datos de Capacidad de almacén 3D, desplazables">
     <table><caption>Capacidad de almacén 3D</caption>
       <thead><tr><th scope="col">Ubicación</th><th scope="col">X (m)</th><th scope="col">Z (m)</th><th scope="col">Ocupados</th><th scope="col">Capacidad</th></tr></thead>
@@ -2528,6 +2572,18 @@ body:has(.revision-barra) { padding-bottom:0; }
     </table>
   </div>
   <figcaption>Almacén ficticio. Coordenadas en planta; sólido = posiciones ocupadas, contorno = capacidad total.</figcaption>
+</figure><section id="mapa-plano"><h2>El corte también se puede leer en plano</h2><p>La misma familia conserva una vista SVG para comparar volumen. Aquí los viajes pertenecen a otro ejemplo de agregados; no equivalen a los tres vehículos anteriores.</p></section><figure class="ancho" id="analitica-mapa-rutas" data-analitica="rutas" data-unidad="viajes">
+  <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Datos de Mapa de rutas y volumen, desplazables">
+    <table><caption>Mapa de rutas y volumen</caption>
+      <thead><tr><th scope="col">Conexión</th><th scope="col">Lat. origen</th><th scope="col">Lon. origen</th><th scope="col">Lat. destino</th><th scope="col">Lon. destino</th><th scope="col">Viajes</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Bogotá → Medellín</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="6.244">6.244</td><td data-valor="-75.582">-75.582</td><td data-valor="80">80</td></tr>
+        <tr><th scope="row">Bogotá → Cali</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="3.452">3.452</td><td data-valor="-76.532">-76.532</td><td data-valor="50">50</td></tr>
+        <tr><th scope="row">Bogotá → Barranquilla</th><td data-valor="4.711">4.711</td><td data-valor="-74.072">-74.072</td><td data-valor="10.969">10.969</td><td data-valor="-74.781">-74.781</td><td data-valor="30">30</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figcaption>Datos ficticios de logística; no son operaciones de Liftit. Ubicaciones urbanas aproximadas. Contorno: <a href="https://www.naturalearthdata.com/about/terms-of-use/">Natural Earth</a>, dominio público, escala 1:110m.</figcaption>
 </figure><section id="limite"><h2>Qué decidir después</h2><p>Antes de atribuir una mejora al servicio, confirma el período, la fuente y si los intentos fallidos están incluidos. El tema adapta azul #0051F4 y tinta #2A2D46 medidos en liftit.co; las fuentes siguen siendo las de Nota Tikin.</p></section><footer class="pie"><p>nota · Liftit · Lectura de operación</p></footer></main><div class="regla regla-guiada" role="slider" tabindex="0" aria-orientation="horizontal" aria-label="Progreso de lectura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="ticks"></div><div class="cursor"></div><span class="val">0%</span></div><div id="revision-base" data-revision hidden>
 <h3>Revisar sin perder el contexto</h3><p>Activa Comentar y elige un párrafo, título, figura o card. También puedes seleccionar texto antes de pulsar Comentar.</p><div class="acciones"><button type="button" data-revision-modo aria-pressed="false">Comentar documento</button><button type="button" data-revision-lista>Ver comentarios</button></div><p data-revision-estado role="status">Borrador local de esta pestaña. Copia tus comentarios antes de recargar.</p>
 <dialog class="revision-dialogo revision-ui" data-revision-editor aria-labelledby="revision-editor-titulo"><form><h2 id="revision-editor-titulo">Añadir comentario</h2><details class="revision-contexto"><summary>Contexto del punto</summary><p data-revision-contexto tabindex="0" aria-label="Contexto completo del comentario"></p></details><label for="revision-texto">Ajuste que propones</label><textarea id="revision-texto" data-revision-texto rows="3" maxlength="4000" required placeholder="Qué cambiarías y por qué"></textarea><div class="acciones"><button type="button" data-revision-guardar>Guardar</button><button type="button" data-revision-cancelar>Cerrar</button></div></form></dialog>
@@ -3009,6 +3065,448 @@ window.NotaGeografia=Object.freeze({
 });
 
 </script>
+<script data-nota-modulo="globo.js">
+/* NotaGlobo — renderizador Three.js con geometría esférica y arcos de rutas.
+ * La máscara terrestre y el shader Fibonacci derivan de COBE, de Shu Ding.
+ * MIT License
+ *
+ * Copyright (c) 2021 Shu Ding
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ * No hay peticiones de imágenes ni fetch: la máscara es un data: URI.
+ */
+(() => {
+  'use strict';
+  const LAND = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAACAAQAAAADMzoqnAAAECklEQVR42u3VsW4jRRzH8d94gzfF4Q0VQaC4vBLTRTp0mze4ggfAPAE5XQEFsGNAVIjwBrmW7h7gJE+giKjyABTZE4g06LKJETdRJvtD65kdz6yduKABiW+TVfzRf2bXYxtcE/59YJCz6YdbgQF6ACSRrwYKYImmh5PbwOewlV3wlQNbAN6SEExjUOO+BU0aCSnxReHABUlK4YFQeJeUT3da8IIkZ6NGoSnFY5KsMoVzMKfECUnqxgPYRArarmUCndHwzIEaQEpg5xVdBXROl8mpAQx5dUgPiHoYAAkg5w3JABR06byGAVgcRGAz5bznj6phBQNRFwyqgdxebH6gshJAesWoFhgYpApAFoG8BIZ/fEhSox5jDjQXmV0Ar5XJfAIrALi3URVs09gHIL4XJCkLC5LH9JWiArABFCSrQjdgkBzRJ0WJeUOSNyQAfJJwUSWUBRlJQ8oGHATACGlBynnzy2kEYLNjrxouigD8BZcgOeVPqh12RtufaCN5wCPVDpvQ9lsIrqndsJtDcWqBCpf4hWN7OdWHBw58FwIaNOU/n1TpMW2DFaD48cmr4185T8NHkpUFX749pQPVdgRKC/DGoQPVeAEKv+WHvY8OOWNTPRp5kHuwSf8wzXtVBKR7YwEH9H3lQUaypUfSATOALyVNu5vZJW31Bnx98nkLfDUWJaz6ixvm+RIQRdl3kmRxxiaDoGnZW4CpPfkaQadlcPim1xOSvETQo7Lv75enVAXJ3xGUlony4KQBBWUM1NiDc6qhyS8RgQs18OCMMtPDaAUIyg0PZkRWDqs+wnKJBTDI1Js6BolegOsKmUxNDBAAKqQyMQmidhegBlLZ+wwKYdv5M/8x1khkb1cgKqP2H+MKyV5vS+whrE8DQDgAlUAoRBX056EElJCjJVACeJBZgNfVp+iCCm4RBWCgKsRxASSA9KgDhDtCiTuMyfHsKXzhC6wNAIjjWb8LKAOA2ctk3FmCOlgKFy8f1N0JJtgsxinYnVAHt4t3gPzZXSCTyCWCQmBT91QE3B5yarSN40dNHYPka4TlDhTUI8zLvl0JSL3vZn6DsCFZOeB2yROEpR68sECQQA++xIGCR2X7DwlEoLRgUrZrqlUg50S1uy43YqDcN6UFBVkhAjWiCV2Q0jgQPdplMKxvBXodcOfAwJYvgdL+1etA1YJJfBcZlQV7sO1i2gHoNiyxtQ5sBsCgWyoxCHiFFd2L5nUTCqMAqGUgsQ9f5kCcCiZgRYkMgMTd5WsB1rTzj0Em14BE4r+QxN1lCEsVur2PoF5Wbg8RJXR4djgvBgauhLywoEZQrt1KKRdVS4CdlJ8qafyP+9KIj/nE/d7kKwH9jgS72e9DV+kvfTWgct4ZyP8Byb8BPG7MaaIIkAQAAAAASUVORK5CYII=';
+  // Shader de COBE: t=viewport, s=ángulos, F=base, w=atmósfera,
+  // n=(brillo,difusión,oscuro,opacidad), k=muestras, x=escala, y=brillo del océano.
+  const PLANET = `precision highp float;uniform vec2 t,v,s;uniform vec3 paper;uniform float lightTheme;uniform vec3 F,w;uniform vec4 n;uniform float k,x,y;uniform sampler2D z;float u;mat3 A(float a,float b){float c=cos(a),d=cos(b),e=sin(a),f=sin(b);return mat3(d,f*e,-f*c,0,c,e,f,d*-e,d*c);}vec3 B(vec3 c,out float G){c=c.xzy;float q=max(2.,floor(log2(2.236068*k*3.141593*(1.-c.z*c.z))*.72021));vec2 g=floor(pow(1.618034,q)/2.236068*vec2(1,1.618034)+.5),d=fract((g+1.)*.618034)*6.283185-3.883222,e=-2.*g,f=vec2(atan(c.y,c.x),c.z-1.),r=floor(vec2(e.y*f.x-d.y*(f.y*k+1.),-e.x*f.x+d.x*(f.y*k+1.))/(d.x*e.y-e.x*d.y));float o=3.141593;vec3 C;for(float h=0.;h<4.;h+=1.){vec2 D=vec2(mod(h,2.),floor(h*.5));float j=dot(g,r+D);if(j>k)continue;float a=j,b=0.;a>=16384.?(a-=16384.,b+=.868872):0.,a>=8192.?(a-=8192.,b+=.934436):0.,a>=4096.?(a-=4096.,b+=.467218):0.,a>=2048.?(a-=2048.,b+=.733609):0.,a>=1024.?(a-=1024.,b+=.866804):0.,a>=512.?(a-=512.,b+=.433402):0.,a>=256.?(a-=256.,b+=.216701):0.,a>=128.?(a-=128.,b+=.108351):0.,a>=64.?(a-=64.,b+=.554175):0.,a>=32.?(a-=32.,b+=.777088):0.,a>=16.?(a-=16.,b+=.888544):0.,a>=8.?(a-=8.,b+=.944272):0.,a>=4.?(a-=4.,b+=.472136):0.,a>=2.?(a-=2.,b+=.236068):0.,a>=1.?(a-=1.,b+=.618034):0.;float l=fract(b)*6.283185,i=1.-2.*j*u,m=sqrt(1.-i*i);vec3 p=vec3(cos(l)*m,sin(l)*m,i);float E=length(c-p);if(E<o)o=E,C=p;}G=o;return C.xzy;}void main(){u=1./k;vec2 c=1./t,b=(gl_FragCoord.xy*c*2.-1.)/x-v*vec2(1,-1)*c;b.x*=t.x*c.y;float a=dot(b,b),f=0.,landShade=0.;vec4 l=vec4(0);if(a<=.64){float g;vec4 m=vec4(0);vec3 h=normalize(vec3(b,sqrt(.64-a)));mat3 o=A(s.y,s.x);float i=h.z;vec3 d=B(h*o,g);float j=asin(d.y),e=acos(-d.x/cos(j));e=d.z<0.?-e:e;float p=max(texture2D(z,vec2(e*.5/3.141593,-(j/3.141593+.5))).x,y),q=p*smoothstep(8e-3,0.,g)*pow(i,n.y)*n.x;landShade=q;m+=vec4(F*(mix((1.-q)*pow(i,.4),q,n.z)+.1)+pow(1.-i,4.)*w,1),l+=m*(1.+n.w)*.5,f=(1.-a)*(1.-a)*smoothstep(0.,1.,.2/(a-.64));}else{float r=sqrt(.2/(a-.64));f=smoothstep(.5,1.,r/(r+1.));}if(lightTheme>.5){if(a<=.64){float ink=clamp(.025+landShade*.30,0.,.50);gl_FragColor=vec4(mix(paper,F,ink),1.);}else{gl_FragColor=vec4(w,f*.15);}}else{gl_FragColor=l+vec4(f*w,f);}}`;
+  const PROJECT = `
+    uniform vec2 viewport, angles;
+    uniform float scale;
+    vec3 rotatePoint(vec3 p) {
+      float cp=cos(angles.x), sp=sin(angles.x), ct=cos(angles.y), st=sin(angles.y);
+      return vec3(cp*p.x+sp*p.z, sp*st*p.x+ct*p.y-cp*st*p.z, -sp*ct*p.x+st*p.y+cp*ct*p.z);
+    }
+    vec2 projectPoint(vec3 p) { return p.xy * vec2(viewport.y/viewport.x,1.) * scale; }
+  `;
+  const ARC_VERTEX = `
+    attribute vec3 position;
+    uniform vec3 fromPoint,toPoint,controlPoint;
+    uniform float width;
+    varying vec3 viewPoint;
+    ${PROJECT}
+    void main() {
+      float t=position.x, u=1.-t;
+      vec3 p=u*u*fromPoint+2.*u*t*controlPoint+t*t*toPoint;
+      viewPoint=rotatePoint(p);
+      vec3 tangent=rotatePoint(2.*u*(controlPoint-fromPoint)+2.*t*(toPoint-controlPoint));
+      vec2 normal=normalize(vec2(-tangent.y,tangent.x)+vec2(.000001));
+      vec2 clip=projectPoint(viewPoint)+normal*position.y*width*vec2(2./viewport.x,2./viewport.y);
+      gl_Position=vec4(clip,0.,1.);
+    }
+  `;
+  const ARC_FRAGMENT = `precision highp float;
+    varying vec3 viewPoint;
+    uniform vec3 color;
+    void main() {
+      if(viewPoint.z<0. && length(viewPoint.xy)<.8) discard;
+      gl_FragColor=vec4(color,1.);
+    }
+  `;
+  const MARKER_VERTEX = `
+    attribute vec3 position;
+    uniform vec3 location;
+    uniform float size;
+    varying vec2 uv;
+    varying vec3 viewPoint;
+    ${PROJECT}
+    void main() {
+      uv=position.xy;
+      viewPoint=rotatePoint(location*.82);
+      vec2 clip=projectPoint(viewPoint)+position.xy*size*vec2(viewport.y/viewport.x,1.)*scale;
+      gl_Position=vec4(clip,0.,1.);
+    }
+  `;
+  const MARKER_FRAGMENT = `precision highp float;
+    varying vec2 uv; varying vec3 viewPoint; uniform vec3 color;
+    void main() {
+      if(viewPoint.z<0. && length(viewPoint.xy)<.8) discard;
+      float alpha=1.-smoothstep(.4,.5,length(uv));
+      if(alpha<=0.) discard;
+      gl_FragColor=vec4(color,alpha);
+    }
+  `;
+  const node = (tag,cls,text) => { const e=document.createElement(tag);if(cls)e.className=cls;if(text)e.textContent=text;return e; };
+  const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+  const wrap=a=>((a+Math.PI)%(2*Math.PI)+2*Math.PI)%(2*Math.PI)-Math.PI;
+  class NotaGlobo {
+    constructor(element, data) {
+      this.element=element; this.frame=0; this.frames=0; this.dead=false;
+      this.visible=true; this.contextLost=false; this.paused=false;
+      this.phi=4.6;this.theta=.18;this.scale=1;this.selected=null;
+      this.motion=matchMedia('(prefers-reduced-motion: reduce)');
+      this.scheme=matchMedia('(prefers-color-scheme: dark)');
+      this.abort=new AbortController();this.cleanups=[];
+      this.points=[];this.arcs=[];this.routeMeshes=[];this.markerMeshes=[];
+      this.buildDOM();
+      this.setData(data);
+      this.listen(this.motion,'change',()=>{this.stop();this.syncPause();this.draw();this.start();});
+      this.listen(this.scheme,'change',()=>this.theme());
+      this.listen(document,'visibilitychange',()=>{this.stop();if(!document.hidden){this.draw();this.start();}});
+      this.listen(document,'nota:tema',()=>this.theme());
+      this.mutation=new MutationObserver(()=>this.theme());
+      this.mutation.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+      this.intersection=new IntersectionObserver(entries=>{this.visible=entries[0].isIntersecting;this.stop();if(this.visible){this.draw();this.start();}},{rootMargin:'80px'});
+      this.intersection.observe(this.element);
+      try { this.init(); }
+      catch(error) { this.error.textContent='El globo 3D no está disponible. Las rutas completas están en la lista.';this.error.hidden=false;this.canvas.hidden=true;this.stage.hidden=true;this.layout.style.gridTemplateColumns='1fr';this.controls.hidden=true;this.error.dataset.reason=error.name; }
+      this.syncPause();
+    }
+    listen(target,type,handler,options={}) { target.addEventListener(type,handler,{...options,signal:this.abort.signal}); }
+    buildDOM() {
+      this.element.classList.add('globo');
+      this.layout=node('div','globo-layout');
+      this.stage=node('div','globo-escena');
+      this.canvas=node('canvas');this.canvas.tabIndex=0;this.canvas.setAttribute('role','img');
+      this.canvas.setAttribute('aria-label','Globo de rutas. Usa las flechas para girar; también puedes elegir una ruta en la lista.');
+      this.stage.append(this.canvas);
+      this.list=node('div','globo-rutas');this.list.setAttribute('aria-label','Rutas del globo');
+      this.layout.append(this.stage,this.list);
+      this.controls=node('div','globo-controles');
+      this.pauseButton=node('button','','Pausar giro');
+      this.pauseButton.type='button';this.pauseButton.setAttribute('aria-pressed','false');
+      const left=node('button','','← Girar'),right=node('button','','Girar →'),reset=node('button','','Vista inicial');
+      for(const button of [left,right,reset])button.type='button';
+      this.controls.append(this.pauseButton,left,right,reset);
+      this.status=node('p','globo-ayuda');this.status.setAttribute('role','status');this.status.setAttribute('aria-live','polite');
+      this.status.textContent='Arrastra horizontalmente o usa las flechas. Selecciona una ruta para verla.';
+      this.error=node('p','globo-error');this.error.hidden=true;
+      this.element.append(this.error,this.layout,this.controls,this.status);
+      this.listen(this.pauseButton,'click',()=>{this.paused=!this.paused;this.stop();this.syncPause();this.start();});
+      this.listen(left,'click',()=>this.rotate(-.25,0));this.listen(right,'click',()=>this.rotate(.25,0));
+      this.listen(reset,'click',()=>{this.select(null);this.phi=4.6;this.theta=.18;this.draw();});
+      this.listen(this.canvas,'keydown',e=>{
+        const directions={ArrowLeft:[-.15,0],ArrowRight:[.15,0],ArrowUp:[0,-.12],ArrowDown:[0,.12]};
+        if(directions[e.key]){e.preventDefault();this.rotate(...directions[e.key]);}
+        if(e.key==='Home'){e.preventDefault();this.select(null);this.phi=4.6;this.theta=.18;this.draw();}
+      });
+      this.listen(this.canvas,'pointerdown',e=>{
+        if(e.button!==0)return;
+        this.drag={id:e.pointerId,x:e.clientX,y:e.clientY,type:e.pointerType};
+        this.canvas.setPointerCapture(e.pointerId);this.target=null;this.stop();
+      });
+      this.listen(this.canvas,'pointermove',e=>{
+        if(!this.drag||this.drag.id!==e.pointerId)return;
+        const dx=e.clientX-this.drag.x,dy=e.clientY-this.drag.y;
+        this.phi+=dx*.005;
+        // Un dedo conserva el scroll vertical de la página. Ratón permite inclinación.
+        if(this.drag.type!=='touch')this.theta=clamp(this.theta+dy*.003,-1.2,1.2);
+        this.drag.x=e.clientX;this.drag.y=e.clientY;this.draw();
+      });
+      const release=e=>{if(this.drag?.id===e.pointerId){this.drag=null;if(this.canvas.hasPointerCapture(e.pointerId))this.canvas.releasePointerCapture(e.pointerId);this.start();}};
+      this.listen(this.canvas,'pointerup',release);this.listen(this.canvas,'pointercancel',release);
+      this.listen(this.canvas,'lostpointercapture',()=>{this.drag=null;this.start();});
+      this.listen(this.canvas,'webglcontextlost',e=>{e.preventDefault();this.contextLost=true;this.stop();this.error.textContent='La vista 3D está suspendida. Las rutas siguen disponibles.';this.error.hidden=false;});
+      // Three reconstruye su estado en otro listener del mismo evento; dibujar después.
+      this.listen(this.canvas,'webglcontextrestored',()=>queueMicrotask(()=>{if(this.dead)return;this.contextLost=false;this.error.hidden=true;this.draw();this.start();}));
+    }
+    setData(data) {
+      if(!data||!Array.isArray(data.points)||!Array.isArray(data.arcs))throw new TypeError('Se esperan points y arcs.');
+      const ids=new Set();
+      const points=data.points.map(p=>{
+        if(!p||typeof p.id!=='string'||!p.id||ids.has(p.id)||!Number.isFinite(p.lat)||!Number.isFinite(p.lon)||Math.abs(p.lat)>90||Math.abs(p.lon)>180)throw new TypeError('Punto inválido o id duplicado.');
+        ids.add(p.id);return {id:p.id,label:String(p.label||p.id),lat:p.lat,lon:p.lon};
+      });
+      const routeIds=new Set();
+      const arcs=data.arcs.map((a,i)=>{
+        const id=String(a.id??'ruta-'+i);
+        if(!ids.has(a.from)||!ids.has(a.to)||routeIds.has(id))throw new TypeError('Ruta inválida o id duplicado.');
+        routeIds.add(id);return {id,from:a.from,to:a.to,label:String(a.label||a.from+' → '+a.to),detail:String(a.detail||'')};
+      });
+      this.points=points;this.arcs=arcs;this.selected=null;this.target=null;
+      this.list.replaceChildren();
+      if(!arcs.length)this.list.append(node('p','secundario','Sin rutas registradas.'));
+      arcs.forEach(a=>{const b=node('button');b.type='button';b.dataset.route=a.id;b.setAttribute('aria-pressed','false');b.append(node('span','',a.label));if(a.detail)b.append(node('small','',a.detail));b.addEventListener('click',()=>this.select(this.selected===a.id?null:a.id));this.list.append(b);});
+      if(this.scene){this.buildRoutes();this.draw();this.start();}
+    }
+    vector(point) {
+      const lat=point.lat*Math.PI/180,lon=point.lon*Math.PI/180;
+      return new THREE.Vector3(Math.cos(lat)*Math.cos(lon),Math.sin(lat),-Math.cos(lat)*Math.sin(lon));
+    }
+    rgb(css) {
+      // El shader de referencia trabaja en sRGB; no convertir a espacio lineal aquí.
+      const context=this.colorContext||(this.colorContext=document.createElement('canvas').getContext('2d'));
+      context.fillStyle='#000';context.fillStyle=css;context.fillRect(0,0,1,1);
+      const c=context.getImageData(0,0,1,1).data;
+      return new THREE.Vector3(c[0]/255,c[1]/255,c[2]/255);
+    }
+    init() {
+      if(!window.THREE)throw new Error('Three.js unavailable');
+      this.renderer=new THREE.WebGLRenderer({canvas:this.canvas,alpha:true,antialias:true,preserveDrawingBuffer:true});
+      this.renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));
+      this.renderer.setClearColor(0,0);
+      this.scene=new THREE.Scene();this.camera=new THREE.Camera();
+      this.shared={viewport:{value:new THREE.Vector2(1,1)},angles:{value:new THREE.Vector2(this.phi,this.theta)},scale:{value:1}};
+      this.planetUniforms={t:{value:new THREE.Vector2(1,1)},v:{value:new THREE.Vector2(0,0)},s:this.shared.angles,F:{value:new THREE.Vector3()},w:{value:new THREE.Vector3()},n:{value:new THREE.Vector4(10,2,.6,1)},k:{value:15000},x:this.shared.scale,y:{value:.05},z:{value:null},paper:{value:new THREE.Vector3()},lightTheme:{value:0}};
+      const material=new THREE.RawShaderMaterial({uniforms:this.planetUniforms,vertexShader:'precision highp float; attribute vec3 position; void main(){gl_Position=vec4(position.xy,0.,1.);}',fragmentShader:PLANET,transparent:true,depthTest:false,depthWrite:false});
+      const plane=new THREE.Mesh(new THREE.PlaneGeometry(2,2),material);plane.frustumCulled=false;plane.renderOrder=0;this.scene.add(plane);
+      // Textura 256 × 128 de COBE, incrustada y con filtrado NEAREST como el original.
+      this.texture=new THREE.TextureLoader().load(LAND,()=>{if(!this.dead){this.draw();this.start();}},undefined,()=>{this.error.textContent='No se pudo decodificar el mapa. Consulta la lista de rutas.';this.error.hidden=false;});
+      this.texture.minFilter=THREE.NearestFilter;this.texture.magFilter=THREE.NearestFilter;
+      // COBE usa UV negativos y los valores por defecto de WebGL: REPEAT y flipY=false.
+      // Los defaults de Three (clamp/flip) borrarían o invertirían los continentes.
+      this.texture.wrapS=THREE.RepeatWrapping;this.texture.wrapT=THREE.RepeatWrapping;this.texture.flipY=false;
+      this.planetUniforms.z.value=this.texture;
+      this.buildRoutes();this.theme();
+      this.resize=new ResizeObserver(()=>this.fit());this.resize.observe(this.stage);
+      this.fit();this.start();
+    }
+    disposeMeshes(list) { for(const mesh of list){this.scene.remove(mesh);mesh.geometry.dispose();mesh.material.dispose();}list.length=0; }
+    buildRoutes() {
+      this.disposeMeshes(this.routeMeshes);this.disposeMeshes(this.markerMeshes);
+      const byId=new Map(this.points.map(p=>[p.id,p]));
+      this.arcs.forEach(a=>{
+        const from=this.vector(byId.get(a.from)),to=this.vector(byId.get(a.to));
+        if(from.distanceTo(to)<.00001)return; // Una ruta a sí misma no produce una curva degenerada.
+        const mid=from.clone().add(to);
+        if(mid.length()<.0001)mid.crossVectors(from,new THREE.Vector3(Math.abs(from.y)<.9?0:1,Math.abs(from.y)<.9?1:0,0));
+        mid.normalize();
+        // Curva cuadrática elevada. Compensar la cuerda evita que rutas largas atraviesen la Tierra.
+        const height=.1+.14*(1-from.dot(to))/2;
+        const control=mid.multiplyScalar(2*(.82+height)-.82*Math.sqrt(Math.max(0,(1+from.dot(to))/2)));
+        const vertices=[];
+        for(let i=0;i<64;i++){const s=i/64,e=(i+1)/64;vertices.push(s,-1,0,e,-1,0,s,1,0,s,1,0,e,-1,0,e,1,0);}
+        const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));
+        const uniforms={...this.shared,fromPoint:{value:from.multiplyScalar(.82)},toPoint:{value:to.multiplyScalar(.82)},controlPoint:{value:control},width:{value:.65},color:{value:new THREE.Vector3()}};
+        const material=new THREE.RawShaderMaterial({uniforms,vertexShader:'precision highp float;\n'+ARC_VERTEX,fragmentShader:ARC_FRAGMENT,transparent:true,depthTest:false,depthWrite:false});
+        const mesh=new THREE.Mesh(geometry,material);mesh.frustumCulled=false;mesh.renderOrder=1;mesh.userData.id=a.id;this.scene.add(mesh);this.routeMeshes.push(mesh);
+      });
+      this.points.forEach(p=>{
+        const geometry=new THREE.PlaneGeometry(1,1);
+        const material=new THREE.RawShaderMaterial({uniforms:{...this.shared,location:{value:this.vector(p)},size:{value:.028},color:{value:new THREE.Vector3()}},vertexShader:'precision highp float;\n'+MARKER_VERTEX,fragmentShader:MARKER_FRAGMENT,transparent:true,depthTest:false,depthWrite:false});
+        const mesh=new THREE.Mesh(geometry,material);mesh.frustumCulled=false;mesh.renderOrder=2;mesh.userData.id=p.id;this.scene.add(mesh);this.markerMeshes.push(mesh);
+      });
+      this.theme();
+    }
+    theme() {
+      if(!this.renderer||this.dead)return;
+      const css=getComputedStyle(this.element),get=name=>css.getPropertyValue(name).trim();
+      this.colors={arc:this.rgb(get('--globo-arco')),point:this.rgb(get('--globo-punto')),selected:this.rgb(get('--marcador'))};
+      const u=this.planetUniforms;
+      u.F.value.copy(this.rgb(get('--globo-base')));u.w.value.copy(this.rgb(get('--globo-glow')));
+      u.paper.value.copy(this.rgb(get('--papel')));u.n.value.x=parseFloat(get('--globo-brillo'))||10;
+      u.n.value.z=parseFloat(get('--globo-dark'))||0;u.lightTheme.value=u.n.value.z===0?1:0;
+      this.colorRoutes();this.draw();
+    }
+    colorRoutes() {
+      if(!this.colors)return;
+      const selected=this.arcs.find(a=>a.id===this.selected);
+      this.routeMeshes.forEach(m=>{const on=m.userData.id===this.selected;m.material.uniforms.color.value.copy(on?this.colors.selected:this.colors.arc);m.material.uniforms.width.value=on?1.15:.65;});
+      this.markerMeshes.forEach(m=>{const on=selected&&(m.userData.id===selected.from||m.userData.id===selected.to);m.material.uniforms.color.value.copy(on?this.colors.selected:this.colors.point);m.material.uniforms.size.value=on?.045:.028;});
+    }
+    select(id) {
+      if(id!==null&&!this.arcs.some(a=>a.id===id))throw new TypeError('Ruta desconocida.');
+      this.selected=id;this.target=null;
+      for(const button of this.list.querySelectorAll('button'))button.setAttribute('aria-pressed',String(button.dataset.route===id));
+      const arc=this.arcs.find(a=>a.id===id);
+      this.status.textContent=arc?arc.label+(arc.detail?' · '+arc.detail:''):'Todas las rutas.';
+      if(arc&&this.scene){
+        const a=this.vector(this.points.find(p=>p.id===arc.from)),b=this.vector(this.points.find(p=>p.id===arc.to));
+        const center=a.add(b);if(center.length()<.0001)center.copy(this.vector(this.points.find(p=>p.id===arc.from)));center.normalize();
+        this.target={phi:Math.atan2(-center.x,center.z),theta:clamp(Math.asin(center.y),-1.2,1.2)};
+        if(this.motion.matches||this.paused){this.phi=this.target.phi;this.theta=this.target.theta;this.target=null;}
+      }
+      this.colorRoutes();this.draw();this.start();
+    }
+    fit() {
+      if(this.dead||!this.renderer)return;
+      const rect=this.stage.getBoundingClientRect(),w=Math.max(1,Math.round(rect.width)),h=Math.max(1,Math.round(rect.height));
+      this.renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));this.renderer.setSize(w,h,false);
+      this.shared.viewport.value.set(w,h);
+      this.planetUniforms.t.value.set(this.canvas.width,this.canvas.height);
+      // La proyección reserva espacio para atmósfera y arcos incluso en un viewport vertical.
+      this.scale=Math.min(1,w/h)*.92;this.shared.scale.value=this.scale;this.draw();
+    }
+    rotate(dx,dy) { this.target=null;this.phi+=dx;this.theta=clamp(this.theta+dy,-1.2,1.2);this.draw(); }
+    syncPause() {
+      this.pauseButton.disabled=this.motion.matches;
+      this.pauseButton.setAttribute('aria-pressed',String(this.paused||this.motion.matches));
+      this.pauseButton.textContent=this.motion.matches?'Giro desactivado por preferencia':this.paused?'Reanudar giro':'Pausar giro';
+    }
+    pause() {this.paused=true;this.stop();this.syncPause();}
+    resume() {this.paused=false;this.syncPause();this.start();}
+    draw() {
+      if(!this.renderer||this.dead||this.contextLost)return;
+      this.shared.angles.value.set(this.phi,this.theta);
+      this.renderer.render(this.scene,this.camera);this.frames++;
+    }
+    stop() {cancelAnimationFrame(this.frame);this.frame=0;this.last=0;}
+    start() {
+      if(this.frame||!this.renderer||this.dead||this.contextLost||this.motion.matches||this.paused||this.drag||!this.visible||document.hidden)return;
+      if(this.selected&&!this.target)return;
+      this.frame=requestAnimationFrame(t=>this.tick(t));
+    }
+    tick(time) {
+      this.frame=0;
+      const dt=this.last?Math.min((time-this.last)/1000,.05):1/60;this.last=time;
+      if(this.target){
+        const factor=1-Math.pow(1-.09,dt*60),delta=wrap(this.target.phi-this.phi);
+        this.phi+=delta*factor;this.theta+=(this.target.theta-this.theta)*factor;
+        if(Math.abs(delta)<.0001&&Math.abs(this.target.theta-this.theta)<.0001)this.target=null;
+      } else if(!this.selected)this.phi+=.072*dt; // .0012 rad/cuadro a 60 Hz, ahora independiente de FPS.
+      this.draw();this.start();
+    }
+    destroy() {
+      if(this.dead)return;this.dead=true;this.stop();this.abort.abort();
+      this.resize?.disconnect();this.intersection?.disconnect();this.mutation?.disconnect();
+      this.scene?.traverse(m=>{m.geometry?.dispose();m.material?.dispose();});
+      this.texture?.dispose();this.renderer?.dispose();this.element.replaceChildren();
+    }
+  }
+  Object.defineProperty(NotaGlobo,'landTexture',{value:LAND});
+  window.NotaGlobo=NotaGlobo;
+})();
+
+</script>
+<script data-nota-modulo="flota.js">
+/* NotaFlota: globo operativo local. Datos ficticios y reproducción explícita, sin GPS ni red. */
+(()=>{
+ 'use strict';
+ const instances=new WeakMap(),node=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;};
+ const vector=(lat,lon,r=1)=>{const a=lat*Math.PI/180,b=lon*Math.PI/180;return new THREE.Vector3(Math.cos(a)*Math.cos(b)*r,Math.sin(a)*r,-Math.cos(a)*Math.sin(b)*r);};
+ const truck='<svg viewBox="0 0 36 26" aria-hidden="true"><path d="M3 5h18v14H3zM21 10h7l5 6v3H21z"/><path d="M24 12h3l3 4h-6z" class="flota-ventana"/><circle cx="10" cy="20" r="3"/><circle cx="27" cy="20" r="3"/></svg>';
+ const fmt=n=>new Intl.NumberFormat('es-CO',{maximumFractionDigits:0}).format(n);
+ function read(e){
+  const table=e.querySelector('table'),rows=[...(table?.tBodies[0]?.rows||[])];
+  if(!rows.length||rows.length>12)throw Error('Se esperan de 1 a 12 vehículos.');
+  const ids=new Set(),cities=new Map();
+  const data=rows.map(row=>{
+   if(row.cells.length!==9)throw Error('Cada vehículo requiere nueve columnas.');
+   const c=[...row.cells],id=c[0].textContent.trim(),point=cell=>{
+    const lat=Number(cell.dataset.lat),lon=Number(cell.dataset.lon),name=cell.textContent.trim();
+    if(!name||!cell.dataset.lat||!cell.dataset.lon||!Number.isFinite(lat)||!Number.isFinite(lon)||lat < -5||lat >14||lon < -80||lon >-66)throw Error('Ciudad y coordenadas válidas de Colombia requeridas.');
+    const p={name,lat,lon};if(cities.has(name)&&(cities.get(name).lat!==lat||cities.get(name).lon!==lon))throw Error('Ciudad con coordenadas inconsistentes.');cities.set(name,p);return p;
+   };
+   if(!id||ids.has(id))throw Error('Identificadores de vehículo únicos.');ids.add(id);
+   const from=point(c[1]),to=point(c[2]),progress=Number(c[3].dataset.valor),orders=Number(c[4].dataset.valor),status=c[5].textContent.trim(),time=c[6].querySelector('time')?.dateTime;
+   if(!c[3].dataset.valor||!c[4].dataset.valor||!Number.isFinite(progress)||progress<0||progress>100||!Number.isInteger(orders)||orders<0||orders>10000||!['En ruta','Con novedad','Entregado'].includes(status)||!time||!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})$/.test(time)||!Number.isFinite(Date.parse(time)))throw Error('Avance, pedidos, estado u hora de corte inválidos.');
+   if(from.lat===to.lat&&from.lon===to.lon)throw Error('Origen y destino deben ser distintos.');
+   if(status==='Entregado'&&progress!==100)throw Error('Una entrega completada requiere avance 100.');
+   return {id,from,to,progress,orders,status,time,note:c[7].textContent.trim(),next:c[8].textContent.trim()};
+  });
+  return {data,cities:[...cities.values()]};
+ }
+ class Fleet{
+  constructor(element){
+   this.model=read(element);this.element=element;this.abort=new AbortController();this.parts=[];this.dead=false;this.frame=0;this.frames=0;this.progress=0;this.playing=false;this.visible=false;this.world=false;this.focusRoute=false;this.selected=this.model.data[0].id;this.materials=[];this.geometries=[];
+   this.motion=matchMedia('(prefers-reduced-motion: reduce)');this.longitude=-73.5;this.latitude=4.5;
+   this.build();instances.set(element,this);
+   this.listen(this.motion,'change',()=>{this.stop();if(this.motion.matches)this.playing=false;this.sync();this.render();});
+   this.listen(document,'visibilitychange',()=>{this.stop();if(!document.hidden)this.start();});
+   this.listen(document,'nota:tema',()=>this.theme());
+   this.mutation=new MutationObserver(()=>this.theme());this.mutation.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+   this.scheme=matchMedia('(prefers-color-scheme: dark)');this.listen(this.scheme,'change',()=>this.theme());
+   this.observer=new IntersectionObserver(entries=>{this.visible=entries[0].isIntersecting;this.stop();if(this.visible)this.start();},{threshold:0});this.observer.observe(this.stage);
+   try{this.init3D();}catch(error){this.fallback(error);}
+   this.sync();
+  }
+  listen(target,type,fn){target.addEventListener(type,fn,{signal:this.abort.signal});}
+  build(){
+   const e=this.element;e.classList.add('nota-flota');
+   this.header=node('div','flota-cabecera');const title=node('div');title.append(node('p','ceja','Colombia / demostración interactiva'),node('h3','','Cada vehículo cuenta una historia.'));
+   this.badge=node('span','flota-badge','SIMULACIÓN · sin GPS conectado');this.header.append(title,this.badge);
+   this.toolbar=node('div','flota-herramientas');this.views=node('div','flota-vistas');this.views.setAttribute('role','group');this.views.setAttribute('aria-label','Vista geográfica');
+   this.buttons={};for(const [key,label]of [['region','Colombia'],['world','Globo'],['route','Acercar ruta']]){const b=node('button','',label);b.type='button';b.setAttribute('aria-pressed',String(key==='region'));this.listen(b,'click',()=>{this.world=key==='world';this.focusRoute=key==='route';this.longitude=-73.5;this.latitude=4.5;this.fit();this.sync();});this.buttons[key]=b;this.views.append(b);}
+   this.play=node('button','','Reproducir demo');this.play.type='button';this.listen(this.play,'click',()=>{if(this.motion.matches)return;if(this.progress>=100)this.progress=0;this.playing=!this.playing;this.stop();this.sync();this.start();});
+   const label=node('label','','Avance de la demo');this.slider=node('input');this.slider.type='range';this.slider.min=0;this.slider.max=100;this.slider.value=0;this.slider.step=1;this.slider.setAttribute('aria-label','Avance de la demostración');this.listen(this.slider,'input',()=>{this.playing=false;this.stop();this.seek(Number(this.slider.value));});label.append(this.slider);this.toolbar.append(this.views,this.play,label);
+   this.layout=node('div','flota-layout');this.stage=node('div','flota-mapa-caja');this.stage.tabIndex=0;this.stage.setAttribute('role','region');this.stage.setAttribute('aria-label','Globo operativo de Colombia, desplazable horizontalmente');
+   this.surface=node('div','flota-superficie');this.canvas=node('canvas');this.canvas.setAttribute('role','img');this.canvas.setAttribute('aria-label','Colombia resaltada en un globo. Las rutas, estados y valores están en la lista y la tabla.');this.overlay=node('div','flota-etiquetas');this.surface.append(this.canvas,this.overlay);this.stage.append(this.surface);
+   this.country=node('span','flota-pais','Colombia');this.overlay.append(this.country);
+   this.cityLabels=this.model.cities.map(city=>{const el=node('span','flota-ciudad',city.name);this.overlay.append(el);return {city,el};});
+   this.trucks=this.model.data.map((r,i)=>{const b=node('button','flota-camion');b.type='button';b.innerHTML=truck;b.dataset.serie=i%4+1;b.setAttribute('aria-label','Seleccionar '+r.id+': '+r.from.name+' a '+r.to.name);this.listen(b,'click',()=>this.select(r.id));this.overlay.append(b);return b;});
+   this.side=node('div','flota-despacho');this.side.append(node('p','ceja','Vehículos / datos de ejemplo'));this.list=node('div','flota-vehiculos');this.cards=this.model.data.map((r,i)=>{const b=node('button','flota-vehiculo');b.type='button';b.dataset.serie=i%4+1;const line=node('span','flota-identidad');line.append(node('strong','',r.id),node('span','',r.status));b.append(line,node('span','',r.from.name+' → '+r.to.name),node('small','',fmt(r.orders)+' pedidos · corte '+new Intl.DateTimeFormat('es-CO',{timeZone:'America/Bogota',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(r.time))+' COT'));this.listen(b,'click',()=>this.select(r.id));this.list.append(b);return b;});
+   this.detail=node('div','flota-detalle');this.detail.setAttribute('role','status');this.side.append(this.list,this.detail);this.layout.append(this.stage,this.side);
+   this.summary=node('p','flota-resumen');this.summary.setAttribute('role','status');this.note=node('p','flota-nota','Conexiones entre ciudades, no carreteras. Los camiones recorren arcos esquemáticos. Una demo completa dura 45 segundos; el avance no mide distancia, ETA ni puntualidad.');
+   this.error=node('p','grafica-error');this.error.hidden=true;this.parts=[this.header,this.toolbar,this.error,this.layout,this.summary,this.note];const before=e.firstChild;this.parts.forEach(p=>e.insertBefore(p,before));
+   this.listen(this.canvas,'webglcontextlost',event=>{event.preventDefault();this.lost=true;this.stop();this.error.hidden=false;this.error.textContent='Vista 3D pausada. Selección y tabla siguen disponibles.';});
+   this.listen(this.canvas,'webglcontextrestored',()=>queueMicrotask(()=>{if(this.dead)return;this.lost=false;this.error.hidden=true;this.theme();this.start();}));
+  }
+  material(options){const m=new THREE.MeshBasicMaterial(options);this.materials.push(m);return m;}
+  mesh(geometry,material){this.geometries.push(geometry);const m=new THREE.Mesh(geometry,material);this.scene.add(m);return m;}
+  init3D(){
+   if(!window.THREE||!window.NotaGeografia||!window.NotaGlobo)throw Error('Faltan Three, geografia.js o globo.js.');
+   this.renderer=new THREE.WebGLRenderer({canvas:this.canvas,antialias:true,alpha:true});this.renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));this.scene=new THREE.Scene();this.camera=new THREE.OrthographicCamera();
+   this.earth=this.mesh(new THREE.SphereGeometry(1,80,48),this.material({color:0xffffff}));
+   const ring=NotaGeografia.colombia.coordinates[0].slice(0,-1),points=ring.map(([lon,lat])=>new THREE.Vector2(lon,lat)),indices=THREE.ShapeUtils.triangulateShape(points,[]),positions=[];
+   const subdivide=(a,b,c,level)=>{if(!level){positions.push(...a.toArray(),...b.toArray(),...c.toArray());return;}const ab=a.clone().add(b).normalize().multiplyScalar(1.004),bc=b.clone().add(c).normalize().multiplyScalar(1.004),ca=c.clone().add(a).normalize().multiplyScalar(1.004);subdivide(a,ab,ca,level-1);subdivide(ab,b,bc,level-1);subdivide(ca,bc,c,level-1);subdivide(ab,bc,ca,level-1);};
+   indices.forEach(triangle=>subdivide(...triangle.map(i=>vector(ring[i][1],ring[i][0],1.004)),3));const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));this.countryMesh=this.mesh(geo,this.material({side:THREE.DoubleSide}));
+   const contour=ring.concat([ring[0]]).map(([lon,lat])=>vector(lat,lon,1.006));this.outline=new THREE.Line(new THREE.BufferGeometry().setFromPoints(contour),new THREE.LineBasicMaterial());this.geometries.push(this.outline.geometry);this.materials.push(this.outline.material);this.scene.add(this.outline);
+   this.routes=this.model.data.map((r,i)=>{const a=vector(r.from.lat,r.from.lon,1.018),b=vector(r.to.lat,r.to.lon,1.018),control=a.clone().add(b).normalize().multiplyScalar(1.018+a.distanceTo(b)*.12);const curve=new THREE.QuadraticBezierCurve3(a,control,b);const route=this.mesh(new THREE.TubeGeometry(curve,80,.0017,6,false),this.material({depthTest:true}));return {curve,mesh:route};});
+   this.pins=this.model.cities.map(city=>{const m=this.mesh(new THREE.SphereGeometry(.0048,14,10),this.material({depthTest:false}));m.position.copy(vector(city.lat,city.lon,1.02));m.renderOrder=5;return m;});
+   // Reutiliza la máscara COBE incrustada del globo; nunca solicita una imagen externa.
+   const image=new Image();this.landImage=image;image.onload=()=>{if(this.dead)return;const c=document.createElement('canvas');c.width=image.width;c.height=image.height;const ctx=c.getContext('2d');ctx.drawImage(image,0,0);const pixels=ctx.getImageData(0,0,c.width,c.height).data,positions=[];
+    for(let i=0;i<16000;i++){const y=1-2*(i+.5)/16000,lat=Math.asin(y)*180/Math.PI,lon=((i*137.507764)%360)-180,x=Math.min(c.width-1,Math.floor((lon+180)/360*c.width)),v=Math.min(c.height-1,Math.floor((90-lat)/180*c.height));if(pixels[(v*c.width+x)*4]>100)positions.push(...vector(lat,lon,1.001).toArray());}
+    const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));const material=new THREE.PointsMaterial({size:.008,sizeAttenuation:true});this.land=new THREE.Points(geometry,material);this.scene.add(this.land);this.geometries.push(geometry);this.materials.push(material);this.theme();};image.src=NotaGlobo.landTexture;
+   this.resize=new ResizeObserver(()=>this.fit());this.resize.observe(this.surface);this.theme();this.fit();
+  }
+  color(raw){const ctx=this.colorContext||(this.colorContext=document.createElement('canvas').getContext('2d'));ctx.clearRect(0,0,1,1);ctx.fillStyle=raw;ctx.fillRect(0,0,1,1);const [r,g,b]=ctx.getImageData(0,0,1,1).data;return new THREE.Color().setRGB(r/255,g/255,b/255,THREE.SRGBColorSpace);}
+  theme(){if(!this.renderer||this.dead)return;const css=getComputedStyle(this.element),color=name=>this.color(css.getPropertyValue(name).trim());this.earth.material.color.copy(color('--flota-oceano'));this.countryMesh.material.color.copy(color('--flota-territorio'));this.outline.material.color.copy(color('--flota-borde'));this.land?.material.color.copy(color('--flota-tierra'));this.pins.forEach(p=>p.material.color.copy(color('--flota-punto')));this.routes.forEach((r,i)=>r.mesh.material.color.copy(color('--grafica-'+(i%4+1))));this.render();}
+  fit(){if(!this.renderer||this.dead)return;const r=this.surface.getBoundingClientRect(),w=Math.max(1,r.width),h=Math.max(1,r.height);this.renderer.setSize(w,h,false);const row=this.model.data.find(r=>r.id===this.selected),a=vector(row.from.lat,row.from.lon),b=vector(row.to.lat,row.to.lon);const half=this.world?1.16:this.focusRoute?Math.max(.065,a.distanceTo(b)*.7):.225;this.camera.left=-half*w/h;this.camera.right=half*w/h;this.camera.top=half;this.camera.bottom=-half;this.camera.near=.01;this.camera.far=10;const normal=this.focusRoute?a.clone().add(b).normalize():vector(this.latitude,this.longitude);this.camera.position.copy(normal.clone().multiplyScalar(4));this.camera.up.set(0,1,0);this.camera.lookAt(this.world?new THREE.Vector3():normal);this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();
+   // Grosor visual constante: acercarse no convierte un punto en un disco que tapa la ruta.
+   const radius=half*(this.world?1.5:3.5)/h;
+   if(this.routeRadius!==radius){this.routeRadius=radius;this.routes.forEach(route=>{const old=route.mesh.geometry;this.geometries.splice(this.geometries.indexOf(old),1);old.dispose();route.mesh.geometry=new THREE.TubeGeometry(route.curve,80,radius,6,false);this.geometries.push(route.mesh.geometry);});}
+   this.pins.forEach(pin=>pin.scale.setScalar(half*(this.world?7:10)/h/.0048));
+   this.stage.scrollLeft=Math.max(0,(this.surface.clientWidth-this.stage.clientWidth)/2);this.render();}
+  point(v){const p=v.clone().project(this.camera),r=this.surface.getBoundingClientRect();return {x:(p.x+1)*r.width/2,y:(1-p.y)*r.height/2};}
+  position(row){return Math.min(100,row.progress+(100-row.progress)*this.progress/100);}
+  render(){
+   if(!this.renderer||this.dead||this.lost)return;
+   const row=this.model.data.find(r=>r.id===this.selected),activeCity=city=>!this.focusRoute||city.name===row.from.name||city.name===row.to.name;this.pins.forEach((pin,i)=>pin.visible=activeCity(this.model.cities[i]));this.routes.forEach((route,i)=>route.mesh.visible=!this.focusRoute||this.model.data[i].id===this.selected);
+   const used=[];this.cityLabels.forEach(({city,el})=>{el.hidden=this.world||!activeCity(city);if(el.hidden)return;const p=this.point(vector(city.lat,city.lon,1.025)),w=el.offsetWidth,h=el.offsetHeight;
+    let chosen=null;const choices=city.lon < -75?[[-w-12,-h-8],[-w-12,9],[12,-h-8],[12,9]]:[[12,-h-8],[12,9],[-w-12,-h-8],[-w-12,9]];for(const [dx,dy]of choices){const rect={x:p.x+dx,y:p.y+dy,w,h};if(rect.x<4||rect.y<4||rect.x+w>this.surface.clientWidth-4||rect.y+h>this.surface.clientHeight-4)continue;if(!used.some(a=>rect.x<a.x+a.w+5&&rect.x+w>a.x-5&&rect.y<a.y+a.h+5&&rect.y+h>a.y-5)){chosen=rect;break;}}
+    if(!chosen){el.hidden=true;return;}used.push(chosen);el.style.left=chosen.x+'px';el.style.top=chosen.y+'px';
+   });
+   this.country.hidden=!this.world;const p=this.point(vector(4.5,-73.5,1.03));this.country.style.left=(p.x+14)+'px';this.country.style.top=(p.y-18)+'px';
+   this.trucks.forEach((button,i)=>{button.hidden=this.world||(this.focusRoute&&this.model.data[i].id!==this.selected);const route=this.routes[i],t=this.position(this.model.data[i])/100,point=this.point(route.curve.getPoint(t));button.style.left=point.x+'px';button.style.top=point.y+'px';const next=this.point(route.curve.getPoint(Math.min(1,t+.01))),prev=this.point(route.curve.getPoint(Math.max(0,t-.01))),angle=Math.atan2(next.y-prev.y,next.x-prev.x);button.querySelector('svg').style.transform='rotate('+angle+'rad)';});
+   this.renderer.render(this.scene,this.camera);this.frames++;
+  }
+  select(id){if(!this.model.data.some(r=>r.id===id))throw Error('Vehículo desconocido.');this.selected=id;this.focusRoute=true;this.world=false;this.sync();this.fit();}
+  sync(){
+   const row=this.model.data.find(r=>r.id===this.selected);this.buttons.region.setAttribute('aria-pressed',String(!this.world&&!this.focusRoute));this.buttons.route.setAttribute('aria-pressed',String(this.focusRoute));this.buttons.world.setAttribute('aria-pressed',String(this.world));this.play.disabled=this.motion.matches||!this.renderer;this.play.textContent=this.motion.matches?'Movimiento reducido':this.playing?'Pausar demo':this.progress>=100?'Repetir demo':'Reproducir demo';this.play.setAttribute('aria-pressed',String(this.playing));this.slider.value=String(Math.round(this.progress));
+   this.cards.forEach((c,i)=>{c.setAttribute('aria-pressed',String(this.model.data[i].id===this.selected));this.trucks[i].setAttribute('aria-pressed',String(this.model.data[i].id===this.selected));});
+   this.detail.replaceChildren(node('strong','',row.id+' · '+row.status),node('p','',row.note),node('p','',row.next),node('small','','Avance inicial al corte: '+fmt(row.progress)+' %'));
+   if(this.routes)this.routes.forEach((r,i)=>{r.mesh.material.transparent=true;r.mesh.material.opacity=1;});
+   this.summary.textContent=this.progress>=100?'Fin de la demostración. Las posiciones llegaron al destino; esto no confirma entregas reales.':this.playing?'Reproduciendo posiciones simuladas. Los estados y pedidos pertenecen al corte de ejemplo.':'Demostración en pausa · '+this.model.data.length+' vehículos · '+fmt(this.model.data.reduce((a,r)=>a+r.orders,0))+' pedidos de ejemplo.';
+  }
+  seek(value){if(!Number.isFinite(value)||value<0||value>100)throw Error('Avance entre 0 y 100.');this.progress=value;if(value===100){this.playing=false;this.stop();}this.sync();this.render();}
+  stop(){cancelAnimationFrame(this.frame);this.frame=0;this.last=0;}
+  start(){if(this.frame||!this.playing||this.motion.matches||!this.visible||document.hidden||this.dead||!this.renderer||this.lost)return;this.frame=requestAnimationFrame(t=>{this.frame=0;const dt=this.last?Math.min((t-this.last)/1000,.1):0;this.last=t;this.progress=Math.min(100,this.progress+dt/45*100);this.render();if(this.progress>=100){this.playing=false;this.sync();this.last=0;}else{this.slider.value=String(Math.round(this.progress));this.start();}});}
+  fallback(error){this.stop();this.renderer?.dispose();this.geometries.forEach(g=>g.dispose());this.materials.forEach(m=>m.dispose());this.renderer=null;this.stage.hidden=true;this.views.hidden=true;this.error.hidden=false;this.error.textContent='Vista 3D no disponible. Puedes consultar cada vehículo y la tabla completa.';this.error.dataset.reason=error.message;this.play.disabled=true;this.slider.disabled=true;}
+  destroy(){if(this.dead)return;this.dead=true;this.stop();this.abort.abort();this.observer.disconnect();this.resize?.disconnect();this.mutation.disconnect();if(this.landImage)this.landImage.onload=null;this.geometries.forEach(g=>g.dispose());this.materials.forEach(m=>m.dispose());this.renderer?.dispose();this.parts.forEach(p=>p.remove());this.element.classList.remove('nota-flota');instances.delete(this.element);}
+ }
+ function init(root=document){return [...(root.matches?.('[data-flota]')?[root]:[]),...root.querySelectorAll('[data-flota]')].map(e=>{if(instances.has(e))return instances.get(e);e.querySelector('[data-error-flota]')?.remove();try{return new Fleet(e);}catch(error){const p=node('p','grafica-error','No se pudo construir la flota: '+error.message);p.dataset.errorFlota='';e.prepend(p);return null;}});}
+ window.NotaFlota={init,get:e=>instances.get(e)};init();
+})();
+
+</script>
 <script data-nota-modulo="analitica.js">
 /* Nota Tikin · analítica local. La tabla es la única fuente de cifras.
    Sin red, sin animación automática, SVG accesible y selección por teclado. */
@@ -3134,7 +3632,13 @@ window.NotaGeografia=Object.freeze({
     }
     rutas(){
       const project=this.mapBase(),max=Math.max(...this.model.rows.map(r=>r.values[4]))||1;this.max=max;
-      this.model.rows.forEach((r,i)=>{const[a,b,c,d,v]=r.values,p=project([b,a]),q=project([d,c]);if(v>0){const n=this.add('path',{d:`M${p} Q${(p[0]+q[0])/2+35},${(p[1]+q[1])/2} ${q}`,fill:'none',stroke:this.color(i),'stroke-width':v/max*8});this.mark(n,i);} [p,q].forEach(pt=>this.add('circle',{cx:pt[0],cy:pt[1],r:4,fill:this.color(i)}));this.key(`${i+1}. ${r.label} · ${fmt(v)} ${this.model.unit}`,i);this.text(q[0]+9,q[1],String(i+1));});
+      const cities=new Map();
+      this.model.rows.forEach((r,i)=>{const[a,b,c,d,v]=r.values,p=project([b,a]),q=project([d,c]),dx=q[0]-p[0],dy=q[1]-p[1],distance=Math.hypot(dx,dy)||1,bend=Math.min(22,distance*.2);
+        if(v>0){const n=this.add('path',{d:`M${p} Q${(p[0]+q[0])/2-dy/distance*bend},${(p[1]+q[1])/2+dx/distance*bend} ${q}`,fill:'none',stroke:this.color(i),'stroke-width':v/max*8,'stroke-linecap':'round','stroke-linejoin':'round'});this.mark(n,i);}
+        const names=r.label.split(/\s*→\s*/);[[p,names[0]],[q,names[1]]].forEach(([pt,name])=>{const key=pt.join(',');if(!cities.has(key))cities.set(key,{pt,name:name||'Ciudad '+(cities.size+1)});});this.key(`${i+1}. ${r.label} · ${fmt(v)} ${this.model.unit}`,i);
+      });
+      // Los nodos se dibujan al final: ninguna ruta posterior corta o repinta su centro.
+      cities.forEach(({pt,name})=>{this.add('circle',{cx:pt[0],cy:pt[1],r:5,fill:'var(--grafica-papel)',stroke:'var(--grafica-tinta)','stroke-width':2});const label=this.text(pt[0]+11,pt[1]-9,name);label.setAttribute('paint-order','stroke');label.setAttribute('stroke','var(--grafica-papel)');label.setAttribute('stroke-width',4);label.setAttribute('stroke-linejoin','round');});
       this.text(100,25,`Grosor proporcional · máximo ${fmt(max)} ${this.model.unit}`);
     }
     burbujas(){
@@ -3421,7 +3925,7 @@ window.NotaGeografia=Object.freeze({
    if(!visible.length){const body=document.createElement('tbody'),row=body.insertRow(),cell=row.insertCell();cell.colSpan=4;cell.textContent='No hay filas que coincidan. Limpia los filtros para volver a empezar.';table.append(body);parts.push(body);}
    for(const [name,items] of [...groups].sort(([a],[b])=>a.localeCompare(b,'es'))){const body=document.createElement('tbody');if(group){const tr=body.insertRow(),th=document.createElement('th');th.scope='rowgroup';th.colSpan=4;th.className='tabla-grupo';th.textContent=name+' · '+items.length+' registros';tr.append(th);}items.forEach(r=>body.append(r));table.append(body);parts.push(body);}
    const total=visible.reduce((s,r)=>s+Number(r.cells[3].dataset.valor),0);
-   status.textContent=visible.length+' de '+rows.length+' registros · '+total.toLocaleString('es-CO')+' COP en la vista actual.';
+   status.textContent=visible.length+' de '+rows.length+' registros · '+total.toLocaleString('es-CO')+' '+(el.dataset.unidad?.trim()||'COP')+' en la vista actual.';
    headers.forEach((h,i)=>{h.setAttribute('aria-sort',i===column?(direction===1?'ascending':'descending'):'none');const hint=h.querySelector('[data-indicador-orden]');if(hint)hint.textContent=i===column?(direction===1?'↑':'↓'):'↕';});
    const hidden=[...form.querySelectorAll('[data-columna]:not(:checked)')].map(e=>Number(e.dataset.columna));headers.forEach((h,i)=>h.hidden=hidden.includes(i));rows.forEach(r=>[...r.cells].forEach((c,i)=>c.hidden=hidden.includes(i)));table.querySelectorAll('.tabla-grupo').forEach(th=>th.colSpan=4-hidden.length);const count=form.querySelector('[data-filtros-cuenta]');if(count)count.textContent=state?'1 · ':'';
   }
@@ -3494,4 +3998,4 @@ window.NotaGeografia=Object.freeze({
 })();
 
 </script>
-<script type="application/json" data-nota-manifiesto>{"version": "4", "paginas": ["contenido"], "modulos": ["audio.js", "controles.js", "piezas-editoriales.js", "interacciones.js", "geografia.js", "analitica.js", "escena.js", "codigo.js", "explorador.js", "revision.js"], "fuentes": {"fuentes.css": "03ac4b770dd47f79468c01c6b0f8b0ce44ae865331d6d5b46472c80bb41fe1d4", "estilo.css": "f4111e65e5545f1c844cae9f3c333b3f41963ee963ab0c8705918b94c0d68832", "audio.js": "9247e4e95f65d44339316ba4f6941f06039b04b5e9c247ff6749314240a06713", "controles.js": "362f4824f82cc3aa895c6b303dd46eb60a6449b1f1392f405bbcf9113c225fc0", "piezas-editoriales.js": "120e3fc49ce4d14b8710721eb8645334f7898e2b2229fb2926ecf710cfa9f720", "interacciones.js": "aa23bf281a32dc444b273386ba35e73aaf52b0c343cd609f2119245bbcfcbe89", "geografia.js": "ab22b9e5a09917e034cb58fd089b2ea2fce01976d5c41d4090bfe8eb75ba4dea", "analitica.js": "d58376edf015c63860be8dbc553a11ba27fd8f1440a7d35a90a41849ffe2f0be", "escena.js": "aa5b4c76c348ad0a0370a4bef696f1a92a150f6c991b0adfbd94dee4257cf28e", "codigo.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "explorador.js": "4b56315f1b675b76984a8093aaa8c2f1812428fd462eec0c943b8bde92cbb3e9", "revision.js": "8dd7ed5e3eb62842155c09626a033564d677bbfd39167df1b530a36f37fefaee"}}</script>
+<script type="application/json" data-nota-manifiesto>{"version": "4", "paginas": ["contenido"], "modulos": ["audio.js", "controles.js", "piezas-editoriales.js", "interacciones.js", "geografia.js", "globo.js", "flota.js", "analitica.js", "escena.js", "codigo.js", "explorador.js", "revision.js"], "fuentes": {"fuentes.css": "03ac4b770dd47f79468c01c6b0f8b0ce44ae865331d6d5b46472c80bb41fe1d4", "estilo.css": "ea8017ad6848347d33fd63340c145ffadc65c052b10bc84f05437c03acc56268", "audio.js": "9247e4e95f65d44339316ba4f6941f06039b04b5e9c247ff6749314240a06713", "controles.js": "362f4824f82cc3aa895c6b303dd46eb60a6449b1f1392f405bbcf9113c225fc0", "piezas-editoriales.js": "120e3fc49ce4d14b8710721eb8645334f7898e2b2229fb2926ecf710cfa9f720", "interacciones.js": "aa23bf281a32dc444b273386ba35e73aaf52b0c343cd609f2119245bbcfcbe89", "geografia.js": "ab22b9e5a09917e034cb58fd089b2ea2fce01976d5c41d4090bfe8eb75ba4dea", "globo.js": "4c078ff713e93439f3ae5defcad735209a785045e22a83fb9496fe5921e89ec4", "flota.js": "2213b3ee8af90e19769959d0c579d545d4b0045171a5e7c31d0e76402949df67", "analitica.js": "71e7b097204a5a09826ebe502a6f91c79aa386b7f20dd4ae56997708065ea23a", "escena.js": "aa5b4c76c348ad0a0370a4bef696f1a92a150f6c991b0adfbd94dee4257cf28e", "codigo.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "explorador.js": "665af82372e4500b2d04a25b8303e1fc0d181f72036bc639cde77928e30e2fd1", "revision.js": "8dd7ed5e3eb62842155c09626a033564d677bbfd39167df1b530a36f37fefaee"}}</script>
