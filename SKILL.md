@@ -34,6 +34,36 @@ memoria ni copies un informe viejo para comenzar. [estandar.html](estandar.html)
 [estandar-capitulos.html](estandar-capitulos.html) son las bases reproducibles. Los ejemplos previos
 siguen sirviendo para consultar piezas y para mantener documentos ya publicados.
 
+## La misma base en Claude, Codex y Hermes
+
+Este skill es un directorio portable: las instrucciones, el registro y los scripts son los mismos
+para cualquier agente. Resuelve las rutas desde el directorio donde cargaste `SKILL.md`, no desde
+el proyecto actual ni desde una ruta fija de Claude. Python 3 genera y valida sin instalar paquetes.
+Orca sirve para revisar/publicar cuando está disponible; si no lo está, usa el navegador y el medio
+de entrega disponibles y declara qué verificaciones faltan. No omitas por ello los controles comunes.
+En este Mac, Claude conserva la copia canónica; Codex y Hermes la leen mediante enlaces al mismo
+directorio. Una conversación ya iniciada puede requerir volver a cargar el skill para ver cambios.
+
+## Subrayar y anotar con intención
+
+Al componer un informe o artículo, busca la decisión, la tensión o el límite que más merece una
+segunda lectura. Considera la receta `apuntes` si una observación lateral añade algo útil:
+
+- Subraya con `data-subrayar` una frase corta del argumento, no todo el párrafo. Conserva el texto
+  principal completo; un enlace sigue siendo un enlace y no se disfraza de subrayado manuscrito.
+- El apunte responde a esa frase con una pregunta, un matiz o una consecuencia. Por ejemplo:
+  «conservar las revisiones» → «¿y si cambia el texto?». Evita repetir la frase o poner elogios vacíos.
+- Usa `.apunte` a la derecha y `.apunte.izquierda` cuando ayude al ritmo de lectura. Copia la rejilla
+  completa de `apuntes`; no saques notas del documento con offsets. En móvil van después del párrafo.
+- La información crítica y las fuentes se escriben en texto normal. La manuscrita es una segunda
+  voz breve, no el lugar único de una fecha, advertencia o decisión. Si no añade contexto, omítela.
+- Conserva `data-mano data-escritura-sonora`, IDs únicos y el botón de repetición. El gesto arranca
+  cuando se ve; Sonidos requiere activación explícita en la llave sol/luna. Con movimiento reducido
+  se muestra completo. Comprueba entrando desde otra sección, no sólo recargando en la anotación.
+
+[prioridades.html](prioridades.html#leer-entre-lineas) muestra esta selección sobre un argumento real.
+El HTML interactivo no decide dónde anotar: esa selección la hace el agente al componer el contenido.
+
 ## Consultar la biblioteca completa
 
 Antes de componer un artefacto, revisa **todo el inventario vigente** de [registro.json](registro.json),
