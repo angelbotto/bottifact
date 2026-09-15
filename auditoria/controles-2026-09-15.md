@@ -1,0 +1,61 @@
+# TIKIN-629 · Controles compactos y cámara de flota
+
+15 de septiembre de 2026. Cambios solicitados sobre f7c53da, rama nota-libreria.
+
+## Resultado
+
+Repetir apuntes izquierda/derecha usa un icono de 18 px, botón de 32 px y 44 px en puntero
+coarse. Mantiene el nombre específico, title y el estado de movimiento reducido. La animación
+y el lápiz original se conservan. Copiar código/terminal usa un mismo icono en todos los bloques:
+los doce botones de Hacker copian exactamente la fuente. Cabeceras con nombre de archivo
+permanecen; las que sólo dicen CSS/HTML/etc. se integran en la esquina, con espacio reservado.
+
+El visor tiene acceso directo por iconos a móvil, tablet y escritorio. Proporción y tamaños
+secundarios viven en un menú; rotar, ajustar y reiniciar son iconos. En 320/390 px, dispositivos
+y herramientas forman dos filas deliberadas. Las APIs, importación y ancho CSS real se conservan.
+
+Temas ocupa hasta 560 px y tres columnas en escritorio; dos columnas en móvil. Sonido y su
+interruptor permanecen **sólo en Sonido**, por petición explícita de Angel. Esto sustituye la
+anterior regla del interruptor común. No cambia la preferencia inicial ni la activación de Web Audio.
+
+El comentario usa una burbuja de una línea, contexto plegado, cerrar y guardar por iconos. La
+entrada crece hasta 160 px antes de desplazarse; el comentario corto midió 118 px de alto en los
+tres viewports. Guardar se habilita al escribir; Cmd/Ctrl+Enter conserva el atajo. Pines, fragmento,
+referencia y prompt se preservan. El panel de revisión conserva espacio para leer los comentarios.
+
+El globo admite arrastre para girar, Mayús + arrastre para desplazar, zoom con botones, rueda tras
+foco o Ctrl/Meta y pellizco de dos contactos. Flechas, Mayús + flechas, +/− y Home tienen manejadores
+accesibles. La cámara cambia inmediatamente sin RAF ni inercia. Zoom limitado a 0,5–6× respecto
+al encuadre; restablecer y seleccionar vehículo recuperan el encuadre. Puntos y rótulos posteriores
+se ocultan. En exploración libre, una ruta puede salir del encuadre; los presets conservan extremos.
+
+Se documentaron estas convenciones en SKILL.md, componentes.md y guia-uso.md. Las recetas, el
+registro y el generador se mantienen en 74 componentes y contrato 4; versión 2026.09.15-controles.1.
+
+## Pruebas ejecutadas y límites
+
+- ensamblar.py, validar.py y probar_contrato.py: fuentes/CSP/IDs/rejilla/dependencias y siete
+  grupos de contrato. La salida del validador de artefactos ya dice «silencio/prueba/volumen»:
+  su texto anterior decía «apagado» aunque la preferencia inicial habilitada ya estaba implementada.
+- comprobar_controles_compactos.py: 320×740, 390×844 y 1440×960. Iconos y nombres de repetición,
+  tres pestañas con sonido visible sólo en Sonido, nueve paletas, scroll de temas, dispositivos,
+  rotación/ajuste del visor, comentario corto/largo y doce copias exactas. Copia comprobada con
+  clipboard.writeText interceptado: no se alteró el portapapeles del usuario. Datos en
+  controles-compactos.json; ajuste final de las dos filas móviles en controles-compactos-ajustes.json.
+- comprobar_guia_interacciones.py: ocho interacciones de base, fuentes exactas de las 74 recetas,
+  comentarios guardar/editar/borrar, tabla COP anterior, visor, clic nativo de escritura y
+  señal Web Audio con cancelación al reducir movimiento. Se actualizó la prueba para despachar
+  input después de escribir: una asignación JS sin input no habilita el nuevo botón Guardar.
+- comprobar_orbita_flota.py: 81 presets (tres vistas × nueve temas × tres tamaños), zoom mínimo/
+  máximo, rueda enfocada/no enfocada, rotación, desplazamiento, pinch, cancelación, ocultación
+  posterior, restablecer, selección, reducción y destroy. PointerEvents y rueda sintéticos;
+  setPointerCapture interceptado porque un puntero inventado no pertenece a un dispositivo real.
+- Se intentó Orca focus/keypress, pero la pulsación no llegó como keydown al DOM. El manejador
+  de teclado pasó con KeyboardEvent explícito. **No se acredita teclado físico, arrastre nativo,
+  trackpad ni multitáctil del MacBook**. El CLI «exec help» tampoco estuvo disponible en este host.
+- Capturas de código, comentario, temas, visor y órbita en auditoria/capturas. Se inspeccionaron
+  visualmente los cambios; son viewports emulados de Orca. Hacker se abrió también desde la URL
+  Tailscale indicada por Angel. No se afirma audición humana ni conexión a GPS real.
+
+No se repitió toda la auditoría histórica de cada pieza antigua. La flota sigue usando datos
+ficticios y la misma instancia/versionado de Three; esta entrega no añade red ni un backend.

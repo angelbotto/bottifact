@@ -1,0 +1,466 @@
+{
+  "layouts": [
+    {
+      "width": 320,
+      "replay": [
+        {
+          "icon": true,
+          "name": "Repetir apunte izquierdo",
+          "text": "",
+          "width": 32
+        },
+        {
+          "icon": true,
+          "name": "Repetir apunte derecho",
+          "text": "",
+          "width": 32
+        }
+      ],
+      "appearance": {
+        "inside": true,
+        "panels": [
+          {
+            "name": "temas",
+            "sound": false
+          },
+          {
+            "name": "letras",
+            "sound": false
+          },
+          {
+            "name": "sonido",
+            "sound": true
+          }
+        ],
+        "width": 296
+      },
+      "themes": [
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "sea",
+          "width": 320
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "oliva",
+          "width": 320
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "arcilla",
+          "width": 320
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "ciruela",
+          "width": 320
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "liftit",
+          "width": 320
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "blueprint",
+          "width": 320
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "hacker",
+          "width": 320
+        }
+      ],
+      "visor": {
+        "fit": true,
+        "inside": true,
+        "rotated": true,
+        "sizes": [
+          {
+            "expected": 390,
+            "icon": true,
+            "name": "Móvil · 390 px",
+            "width": 390
+          },
+          {
+            "expected": 768,
+            "icon": true,
+            "name": "Tablet · 768 px",
+            "width": 768
+          },
+          {
+            "expected": 1024,
+            "icon": true,
+            "name": "Escritorio · 1024 px",
+            "width": 1024
+          }
+        ]
+      },
+      "comment": {
+        "buttons": true,
+        "contextClosed": true,
+        "inside": true,
+        "send": true,
+        "shortHeight": 118
+      },
+      "longComment": {
+        "height": 160,
+        "inside": true,
+        "scroll": true
+      }
+    },
+    {
+      "width": 390,
+      "replay": [
+        {
+          "icon": true,
+          "name": "Repetir apunte izquierdo",
+          "text": "",
+          "width": 32
+        },
+        {
+          "icon": true,
+          "name": "Repetir apunte derecho",
+          "text": "",
+          "width": 32
+        }
+      ],
+      "appearance": {
+        "inside": true,
+        "panels": [
+          {
+            "name": "temas",
+            "sound": false
+          },
+          {
+            "name": "letras",
+            "sound": false
+          },
+          {
+            "name": "sonido",
+            "sound": true
+          }
+        ],
+        "width": 366
+      },
+      "themes": [
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "light",
+          "width": 390
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "dark",
+          "width": 390
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "sea",
+          "width": 390
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "oliva",
+          "width": 390
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "arcilla",
+          "width": 390
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "ciruela",
+          "width": 390
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "liftit",
+          "width": 390
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "blueprint",
+          "width": 390
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "hacker",
+          "width": 390
+        }
+      ],
+      "visor": {
+        "fit": true,
+        "inside": true,
+        "rotated": true,
+        "sizes": [
+          {
+            "expected": 390,
+            "icon": true,
+            "name": "Móvil · 390 px",
+            "width": 390
+          },
+          {
+            "expected": 768,
+            "icon": true,
+            "name": "Tablet · 768 px",
+            "width": 768
+          },
+          {
+            "expected": 1024,
+            "icon": true,
+            "name": "Escritorio · 1024 px",
+            "width": 1024
+          }
+        ]
+      },
+      "comment": {
+        "buttons": true,
+        "contextClosed": true,
+        "inside": true,
+        "send": true,
+        "shortHeight": 118
+      },
+      "longComment": {
+        "height": 160,
+        "inside": true,
+        "scroll": true
+      }
+    },
+    {
+      "width": 1440,
+      "replay": [
+        {
+          "icon": true,
+          "name": "Repetir apunte izquierdo",
+          "text": "",
+          "width": 32
+        },
+        {
+          "icon": true,
+          "name": "Repetir apunte derecho",
+          "text": "",
+          "width": 32
+        }
+      ],
+      "appearance": {
+        "inside": true,
+        "panels": [
+          {
+            "name": "temas",
+            "sound": false
+          },
+          {
+            "name": "letras",
+            "sound": false
+          },
+          {
+            "name": "sonido",
+            "sound": true
+          }
+        ],
+        "width": 560
+      },
+      "themes": [
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "light",
+          "width": 1440
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "dark",
+          "width": 1440
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "sea",
+          "width": 1440
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "oliva",
+          "width": 1440
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "arcilla",
+          "width": 1440
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "ciruela",
+          "width": 1440
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "liftit",
+          "width": 1440
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "blueprint",
+          "width": 1440
+        },
+        {
+          "inside": true,
+          "scroll": true,
+          "theme": "hacker",
+          "width": 1440
+        }
+      ],
+      "visor": {
+        "fit": true,
+        "inside": true,
+        "rotated": true,
+        "sizes": [
+          {
+            "expected": 390,
+            "icon": true,
+            "name": "Móvil · 390 px",
+            "width": 390
+          },
+          {
+            "expected": 768,
+            "icon": true,
+            "name": "Tablet · 768 px",
+            "width": 768
+          },
+          {
+            "expected": 1024,
+            "icon": true,
+            "name": "Escritorio · 1024 px",
+            "width": 1024
+          }
+        ]
+      },
+      "comment": {
+        "buttons": true,
+        "contextClosed": true,
+        "inside": true,
+        "send": true,
+        "shortHeight": 118
+      },
+      "longComment": {
+        "height": 160,
+        "inside": true,
+        "scroll": true
+      }
+    }
+  ],
+  "copy": [
+    {
+      "exact": true,
+      "icon": true,
+      "name": "Copiar código Python",
+      "text": ""
+    },
+    {
+      "exact": true,
+      "icon": true,
+      "name": "Copiar la salida",
+      "text": ""
+    },
+    {
+      "exact": true,
+      "icon": true,
+      "name": "Copiar HTML",
+      "text": ""
+    },
+    {
+      "exact": true,
+      "icon": true,
+      "name": "Copiar CSS",
+      "text": ""
+    },
+    {
+      "exact": true,
+      "icon": true,
+      "name": "Copiar JavaScript",
+      "text": ""
+    },
+    {
+      "exact": true,
+      "icon": true,
+      "name": "Copiar TypeScript",
+      "text": ""
+    },
+    {
+      "exact": true,
+      "icon": true,
+      "name": "Copiar JSON",
+      "text": ""
+    },
+    {
+      "exact": true,
+      "icon": true,
+      "name": "Copiar Python",
+      "text": ""
+    },
+    {
+      "exact": true,
+      "icon": true,
+      "name": "Copiar SQL",
+      "text": ""
+    },
+    {
+      "exact": true,
+      "icon": true,
+      "name": "Copiar Shell",
+      "text": ""
+    },
+    {
+      "exact": true,
+      "icon": true,
+      "name": "Copiar Salida",
+      "text": ""
+    },
+    {
+      "exact": true,
+      "icon": true,
+      "name": "Copiar código",
+      "text": ""
+    }
+  ],
+  "limits": [
+    "Viewports emulados con Orca. Sin prueba física de MacBook o lector de pantalla.",
+    "Copia comprobada interceptando clipboard.writeText, sin alterar el portapapeles del usuario."
+  ]
+}

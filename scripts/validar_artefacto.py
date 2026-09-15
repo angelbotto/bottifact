@@ -9,5 +9,5 @@ def main():
  try:errors=validate(args.archivo.read_text())
  except OSError as e:p.exit(1,str(e)+'\n')
  if errors:p.exit(1,'\n'.join('ERROR: '+e for e in errors)+'\n')
- print('Contrato estándar correcto: apariencia, audio apagado/prueba/volumen, comentarios, lectura, dependencias, fuentes y referencias. Falta comprobar comportamiento en navegador.')
+ print('Contrato estándar correcto: apariencia, audio con silencio/prueba/volumen, comentarios, lectura, dependencias, fuentes y referencias. Falta comprobar comportamiento en navegador.')
 if __name__=='__main__':main()

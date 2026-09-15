@@ -1,0 +1,528 @@
+{
+  "nativeKeyboardDelivered": false,
+  "controlledKeyboard": true,
+  "gestures": {
+    "back": true,
+    "cancel": true,
+    "capture": true,
+    "max": true,
+    "min": true,
+    "noRAF": true,
+    "pan": true,
+    "pinch": true,
+    "reduced": true,
+    "reset": true,
+    "rotate": true,
+    "select": true,
+    "wheelInside": true,
+    "wheelOutside": true
+  },
+  "presets": [
+    {
+      "width": 320,
+      "views": [
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "light",
+          "view": "region"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "light",
+          "view": "world"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "light",
+          "view": "route"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "dark",
+          "view": "region"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "dark",
+          "view": "world"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "dark",
+          "view": "route"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "sea",
+          "view": "region"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "sea",
+          "view": "world"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "sea",
+          "view": "route"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "oliva",
+          "view": "region"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "oliva",
+          "view": "world"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "oliva",
+          "view": "route"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "arcilla",
+          "view": "region"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "arcilla",
+          "view": "world"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "arcilla",
+          "view": "route"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "ciruela",
+          "view": "region"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "ciruela",
+          "view": "world"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "ciruela",
+          "view": "route"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "liftit",
+          "view": "region"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "liftit",
+          "view": "world"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "liftit",
+          "view": "route"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "blueprint",
+          "view": "region"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "blueprint",
+          "view": "world"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "blueprint",
+          "view": "route"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "hacker",
+          "view": "region"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "hacker",
+          "view": "world"
+        },
+        {
+          "documentWidth": 320,
+          "inside": true,
+          "theme": "hacker",
+          "view": "route"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "views": [
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "light",
+          "view": "region"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "light",
+          "view": "world"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "light",
+          "view": "route"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "dark",
+          "view": "region"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "dark",
+          "view": "world"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "dark",
+          "view": "route"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "sea",
+          "view": "region"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "sea",
+          "view": "world"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "sea",
+          "view": "route"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "oliva",
+          "view": "region"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "oliva",
+          "view": "world"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "oliva",
+          "view": "route"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "arcilla",
+          "view": "region"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "arcilla",
+          "view": "world"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "arcilla",
+          "view": "route"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "ciruela",
+          "view": "region"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "ciruela",
+          "view": "world"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "ciruela",
+          "view": "route"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "liftit",
+          "view": "region"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "liftit",
+          "view": "world"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "liftit",
+          "view": "route"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "blueprint",
+          "view": "region"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "blueprint",
+          "view": "world"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "blueprint",
+          "view": "route"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "hacker",
+          "view": "region"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "hacker",
+          "view": "world"
+        },
+        {
+          "documentWidth": 390,
+          "inside": true,
+          "theme": "hacker",
+          "view": "route"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "views": [
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "light",
+          "view": "region"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "light",
+          "view": "world"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "light",
+          "view": "route"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "dark",
+          "view": "region"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "dark",
+          "view": "world"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "dark",
+          "view": "route"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "sea",
+          "view": "region"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "sea",
+          "view": "world"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "sea",
+          "view": "route"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "oliva",
+          "view": "region"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "oliva",
+          "view": "world"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "oliva",
+          "view": "route"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "arcilla",
+          "view": "region"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "arcilla",
+          "view": "world"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "arcilla",
+          "view": "route"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "ciruela",
+          "view": "region"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "ciruela",
+          "view": "world"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "ciruela",
+          "view": "route"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "liftit",
+          "view": "region"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "liftit",
+          "view": "world"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "liftit",
+          "view": "route"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "blueprint",
+          "view": "region"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "blueprint",
+          "view": "world"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "blueprint",
+          "view": "route"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "hacker",
+          "view": "region"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "hacker",
+          "view": "world"
+        },
+        {
+          "documentWidth": 1440,
+          "inside": true,
+          "theme": "hacker",
+          "view": "route"
+        }
+      ]
+    }
+  ],
+  "destroy": true,
+  "limits": [
+    "Orca focus/keypress intentado; consultar nativeKeyboardDelivered: si es false, no entregó keydown al DOM. Teclado comprobado además con KeyboardEvent explícito. PointerEvents, rueda y pinch sintéticos; setPointerCapture interceptado para eventos sin dispositivo real.",
+    "No prueba física de trackpad ni multitáctil del MacBook. Cámara inmediata, sin RAF ni inercia."
+  ]
+}
