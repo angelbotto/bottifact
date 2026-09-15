@@ -1947,7 +1947,7 @@ body:has(.revision-barra) { padding-bottom:0; }
 [data-revision-editor] form { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:4px; }
 [data-revision-editor] h2.sr-only { position:absolute; margin:0; }
 [data-revision-editor] textarea { grid-column:1/-1; grid-row:1; min-height:44px; max-height:160px; margin:0; padding:10px 8px; border:0; background:transparent; resize:none; overflow-y:auto; font:16px/1.45 var(--sans); }
-[data-revision-editor] textarea:focus-visible { outline:1px solid var(--pieza-linea); outline-offset:0; }
+[data-revision-editor] textarea:focus-visible { outline:2px solid var(--foco); outline-offset:0; }
 [data-revision-editor] .revision-contexto { grid-column:1; grid-row:2; margin:0; align-self:center; min-width:0; }
 [data-revision-editor] .revision-contexto summary { display:grid; place-items:center; width:32px; height:32px; padding:6px; cursor:pointer; border-radius:6px; color:var(--tinta-2); }
 [data-revision-editor] .revision-contexto[open] { grid-column:1/-1; grid-row:3; }
@@ -1964,3 +1964,8 @@ body:has(.revision-barra) { padding-bottom:0; }
 .flota-ayuda { font:12px/1.5 var(--sans); color:var(--tinta-2); }
 
 [data-revision-editor] [data-revision-guardar] { order:2; }
+@media(max-width:400px) {
+ .visor-iconos { display:grid; grid-template-columns:repeat(4,36px); justify-content:center; }
+ .visor-iconos .visor-dispositivos { grid-column:1/-1; justify-self:center; border-right:0; border-bottom:1px solid var(--pieza-linea); margin:0 0 3px; padding:0 0 5px; }
+}
+@media(max-width:400px) and (pointer:coarse) { .visor-iconos { grid-template-columns:repeat(4,44px); } }
