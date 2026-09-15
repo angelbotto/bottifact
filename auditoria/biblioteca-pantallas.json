@@ -1138,6 +1138,216 @@
         "name": "HTML de Pequeños múltiples, desplazable",
         "overflow": "auto",
         "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Calendario de actividad, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Calendario de actividad, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 927,
+        "end": 649,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Calendario de actividad, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Torta y donut de composición, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Torta y donut de composición, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 974,
+        "end": 696,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Torta y donut, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Áreas apiladas de ingresos, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Áreas apiladas de ingresos, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1257,
+        "end": 979,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Áreas apiladas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Caja y bigotes de entrega, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Caja y bigotes de entrega, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1477,
+        "end": 1199,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Caja y bigotes, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Velas financieras OHLC, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Velas financieras OHLC, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1375,
+        "end": 1097,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Velas OHLC, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de rutas y volumen, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Mapa de rutas y volumen, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de rutas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de volumen por sede, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Mapa de volumen por sede, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 278
       }
     ],
     "resources": [
@@ -1782,6 +1992,96 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Three.js · etapas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Columnas geográficas 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Columnas geográficas 3D, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Columnas geográficas 3D, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Arcos logísticos 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Arcos logísticos 3D, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Arcos logísticos 3D, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Capacidad de almacén 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Capacidad de almacén 3D, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1383,
+        "end": 1105,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Capacidad de almacén 3D, desplazable",
         "overflow": "auto",
         "width": 278
       },
@@ -3196,6 +3496,216 @@
         "name": "HTML de Pequeños múltiples, desplazable",
         "overflow": "auto",
         "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Calendario de actividad, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Calendario de actividad, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 927,
+        "end": 649,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Calendario de actividad, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Torta y donut de composición, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Torta y donut de composición, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 974,
+        "end": 696,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Torta y donut, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Áreas apiladas de ingresos, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Áreas apiladas de ingresos, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1257,
+        "end": 979,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Áreas apiladas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Caja y bigotes de entrega, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Caja y bigotes de entrega, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1477,
+        "end": 1199,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Caja y bigotes, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Velas financieras OHLC, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Velas financieras OHLC, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1375,
+        "end": 1097,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Velas OHLC, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de rutas y volumen, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Mapa de rutas y volumen, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de rutas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de volumen por sede, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Mapa de volumen por sede, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 278
       }
     ],
     "resources": [
@@ -3840,6 +4350,96 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Three.js · etapas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Columnas geográficas 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Columnas geográficas 3D, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Columnas geográficas 3D, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Arcos logísticos 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Arcos logísticos 3D, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Arcos logísticos 3D, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Capacidad de almacén 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Capacidad de almacén 3D, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1383,
+        "end": 1105,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Capacidad de almacén 3D, desplazable",
         "overflow": "auto",
         "width": 278
       },
@@ -5254,6 +5854,216 @@
         "name": "HTML de Pequeños múltiples, desplazable",
         "overflow": "auto",
         "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Calendario de actividad, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Calendario de actividad, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 927,
+        "end": 649,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Calendario de actividad, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Torta y donut de composición, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Torta y donut de composición, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 974,
+        "end": 696,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Torta y donut, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Áreas apiladas de ingresos, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Áreas apiladas de ingresos, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1257,
+        "end": 979,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Áreas apiladas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Caja y bigotes de entrega, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Caja y bigotes de entrega, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1477,
+        "end": 1199,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Caja y bigotes, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Velas financieras OHLC, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Velas financieras OHLC, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1375,
+        "end": 1097,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Velas OHLC, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de rutas y volumen, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Mapa de rutas y volumen, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de rutas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de volumen por sede, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Mapa de volumen por sede, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 278
       }
     ],
     "resources": [
@@ -5898,6 +6708,96 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Three.js · etapas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Columnas geográficas 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Columnas geográficas 3D, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Columnas geográficas 3D, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Arcos logísticos 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Arcos logísticos 3D, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Arcos logísticos 3D, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Capacidad de almacén 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Capacidad de almacén 3D, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1383,
+        "end": 1105,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Capacidad de almacén 3D, desplazable",
         "overflow": "auto",
         "width": 278
       },
@@ -7312,6 +8212,216 @@
         "name": "HTML de Pequeños múltiples, desplazable",
         "overflow": "auto",
         "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Calendario de actividad, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Calendario de actividad, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 927,
+        "end": 649,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Calendario de actividad, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Torta y donut de composición, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Torta y donut de composición, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 974,
+        "end": 696,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Torta y donut, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Áreas apiladas de ingresos, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Áreas apiladas de ingresos, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1257,
+        "end": 979,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Áreas apiladas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Caja y bigotes de entrega, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Caja y bigotes de entrega, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1477,
+        "end": 1199,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Caja y bigotes, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Velas financieras OHLC, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Velas financieras OHLC, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1375,
+        "end": 1097,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Velas OHLC, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de rutas y volumen, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Mapa de rutas y volumen, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de rutas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de volumen por sede, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Mapa de volumen por sede, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 278
       }
     ],
     "resources": [
@@ -7956,6 +9066,96 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Three.js · etapas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Columnas geográficas 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Columnas geográficas 3D, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Columnas geográficas 3D, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Arcos logísticos 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Arcos logísticos 3D, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Arcos logísticos 3D, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Capacidad de almacén 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Capacidad de almacén 3D, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1383,
+        "end": 1105,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Capacidad de almacén 3D, desplazable",
         "overflow": "auto",
         "width": 278
       },
@@ -9370,6 +10570,216 @@
         "name": "HTML de Pequeños múltiples, desplazable",
         "overflow": "auto",
         "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Calendario de actividad, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Calendario de actividad, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 927,
+        "end": 649,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Calendario de actividad, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Torta y donut de composición, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Torta y donut de composición, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 974,
+        "end": 696,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Torta y donut, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Áreas apiladas de ingresos, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Áreas apiladas de ingresos, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1257,
+        "end": 979,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Áreas apiladas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Caja y bigotes de entrega, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Caja y bigotes de entrega, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1477,
+        "end": 1199,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Caja y bigotes, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Velas financieras OHLC, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Velas financieras OHLC, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1375,
+        "end": 1097,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Velas OHLC, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de rutas y volumen, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Mapa de rutas y volumen, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de rutas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de volumen por sede, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Mapa de volumen por sede, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 278
       }
     ],
     "resources": [
@@ -10014,6 +11424,96 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Three.js · etapas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Columnas geográficas 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Columnas geográficas 3D, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Columnas geográficas 3D, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Arcos logísticos 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Arcos logísticos 3D, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Arcos logísticos 3D, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Capacidad de almacén 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Capacidad de almacén 3D, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1383,
+        "end": 1105,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Capacidad de almacén 3D, desplazable",
         "overflow": "auto",
         "width": 278
       },
@@ -11428,6 +12928,216 @@
         "name": "HTML de Pequeños múltiples, desplazable",
         "overflow": "auto",
         "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Calendario de actividad, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Calendario de actividad, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 927,
+        "end": 649,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Calendario de actividad, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Torta y donut de composición, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Torta y donut de composición, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 974,
+        "end": 696,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Torta y donut, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Áreas apiladas de ingresos, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Áreas apiladas de ingresos, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1257,
+        "end": 979,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Áreas apiladas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Caja y bigotes de entrega, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Caja y bigotes de entrega, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1477,
+        "end": 1199,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Caja y bigotes, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Velas financieras OHLC, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Velas financieras OHLC, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1375,
+        "end": 1097,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Velas OHLC, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de rutas y volumen, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Mapa de rutas y volumen, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de rutas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 720,
+        "end": 440,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de volumen por sede, gráfica desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Mapa de volumen por sede, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 278
       }
     ],
     "resources": [
@@ -12072,6 +13782,96 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Three.js · etapas, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Columnas geográficas 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 544,
+        "end": 264,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Columnas geográficas 3D, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Columnas geográficas 3D, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Arcos logísticos 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Arcos logísticos 3D, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1948,
+        "end": 1670,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Arcos logísticos 3D, desplazable",
+        "overflow": "auto",
+        "width": 278
+      },
+      {
+        "content": 600,
+        "end": 320,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Capacidad de almacén 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 928,
+        "end": 648,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Capacidad de almacén 3D, desplazables",
+        "overflow": "auto",
+        "width": 280
+      },
+      {
+        "content": 1383,
+        "end": 1105,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Capacidad de almacén 3D, desplazable",
         "overflow": "auto",
         "width": 278
       },
@@ -13486,6 +15286,216 @@
         "name": "HTML de Pequeños múltiples, desplazable",
         "overflow": "auto",
         "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Calendario de actividad, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Calendario de actividad, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 927,
+        "end": 579,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Calendario de actividad, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Torta y donut de composición, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Torta y donut de composición, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 974,
+        "end": 626,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Torta y donut, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Áreas apiladas de ingresos, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Áreas apiladas de ingresos, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1257,
+        "end": 909,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Áreas apiladas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Caja y bigotes de entrega, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Caja y bigotes de entrega, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1477,
+        "end": 1129,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Caja y bigotes, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Velas financieras OHLC, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Velas financieras OHLC, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1375,
+        "end": 1027,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Velas OHLC, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de rutas y volumen, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Mapa de rutas y volumen, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de rutas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de volumen por sede, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Mapa de volumen por sede, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 348
       }
     ],
     "resources": [
@@ -14130,6 +16140,96 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Three.js · etapas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Columnas geográficas 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Columnas geográficas 3D, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Columnas geográficas 3D, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Arcos logísticos 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Arcos logísticos 3D, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Arcos logísticos 3D, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Capacidad de almacén 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Capacidad de almacén 3D, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1383,
+        "end": 1035,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Capacidad de almacén 3D, desplazable",
         "overflow": "auto",
         "width": 348
       },
@@ -15544,6 +17644,216 @@
         "name": "HTML de Pequeños múltiples, desplazable",
         "overflow": "auto",
         "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Calendario de actividad, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Calendario de actividad, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 927,
+        "end": 579,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Calendario de actividad, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Torta y donut de composición, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Torta y donut de composición, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 974,
+        "end": 626,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Torta y donut, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Áreas apiladas de ingresos, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Áreas apiladas de ingresos, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1257,
+        "end": 909,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Áreas apiladas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Caja y bigotes de entrega, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Caja y bigotes de entrega, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1477,
+        "end": 1129,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Caja y bigotes, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Velas financieras OHLC, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Velas financieras OHLC, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1375,
+        "end": 1027,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Velas OHLC, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de rutas y volumen, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Mapa de rutas y volumen, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de rutas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de volumen por sede, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Mapa de volumen por sede, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 348
       }
     ],
     "resources": [
@@ -16188,6 +18498,96 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Three.js · etapas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Columnas geográficas 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Columnas geográficas 3D, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Columnas geográficas 3D, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Arcos logísticos 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Arcos logísticos 3D, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Arcos logísticos 3D, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Capacidad de almacén 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Capacidad de almacén 3D, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1383,
+        "end": 1035,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Capacidad de almacén 3D, desplazable",
         "overflow": "auto",
         "width": 348
       },
@@ -17602,6 +20002,216 @@
         "name": "HTML de Pequeños múltiples, desplazable",
         "overflow": "auto",
         "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Calendario de actividad, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Calendario de actividad, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 927,
+        "end": 579,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Calendario de actividad, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Torta y donut de composición, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Torta y donut de composición, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 974,
+        "end": 626,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Torta y donut, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Áreas apiladas de ingresos, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Áreas apiladas de ingresos, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1257,
+        "end": 909,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Áreas apiladas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Caja y bigotes de entrega, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Caja y bigotes de entrega, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1477,
+        "end": 1129,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Caja y bigotes, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Velas financieras OHLC, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Velas financieras OHLC, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1375,
+        "end": 1027,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Velas OHLC, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de rutas y volumen, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Mapa de rutas y volumen, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de rutas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de volumen por sede, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Mapa de volumen por sede, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 348
       }
     ],
     "resources": [
@@ -18246,6 +20856,96 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Three.js · etapas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Columnas geográficas 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Columnas geográficas 3D, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Columnas geográficas 3D, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Arcos logísticos 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Arcos logísticos 3D, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Arcos logísticos 3D, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Capacidad de almacén 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Capacidad de almacén 3D, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1383,
+        "end": 1035,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Capacidad de almacén 3D, desplazable",
         "overflow": "auto",
         "width": 348
       },
@@ -19660,6 +22360,216 @@
         "name": "HTML de Pequeños múltiples, desplazable",
         "overflow": "auto",
         "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Calendario de actividad, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Calendario de actividad, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 927,
+        "end": 579,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Calendario de actividad, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Torta y donut de composición, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Torta y donut de composición, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 974,
+        "end": 626,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Torta y donut, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Áreas apiladas de ingresos, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Áreas apiladas de ingresos, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1257,
+        "end": 909,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Áreas apiladas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Caja y bigotes de entrega, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Caja y bigotes de entrega, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1477,
+        "end": 1129,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Caja y bigotes, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Velas financieras OHLC, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Velas financieras OHLC, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1375,
+        "end": 1027,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Velas OHLC, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de rutas y volumen, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Mapa de rutas y volumen, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de rutas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de volumen por sede, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Mapa de volumen por sede, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 348
       }
     ],
     "resources": [
@@ -20304,6 +23214,96 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Three.js · etapas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Columnas geográficas 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Columnas geográficas 3D, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Columnas geográficas 3D, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Arcos logísticos 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Arcos logísticos 3D, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Arcos logísticos 3D, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Capacidad de almacén 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Capacidad de almacén 3D, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1383,
+        "end": 1035,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Capacidad de almacén 3D, desplazable",
         "overflow": "auto",
         "width": 348
       },
@@ -21718,6 +24718,216 @@
         "name": "HTML de Pequeños múltiples, desplazable",
         "overflow": "auto",
         "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Calendario de actividad, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Calendario de actividad, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 927,
+        "end": 579,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Calendario de actividad, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Torta y donut de composición, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Torta y donut de composición, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 974,
+        "end": 626,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Torta y donut, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Áreas apiladas de ingresos, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Áreas apiladas de ingresos, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1257,
+        "end": 909,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Áreas apiladas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Caja y bigotes de entrega, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Caja y bigotes de entrega, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1477,
+        "end": 1129,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Caja y bigotes, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Velas financieras OHLC, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Velas financieras OHLC, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1375,
+        "end": 1027,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Velas OHLC, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de rutas y volumen, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Mapa de rutas y volumen, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de rutas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de volumen por sede, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Mapa de volumen por sede, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 348
       }
     ],
     "resources": [
@@ -22362,6 +25572,96 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Three.js · etapas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Columnas geográficas 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Columnas geográficas 3D, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Columnas geográficas 3D, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Arcos logísticos 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Arcos logísticos 3D, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Arcos logísticos 3D, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Capacidad de almacén 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Capacidad de almacén 3D, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1383,
+        "end": 1035,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Capacidad de almacén 3D, desplazable",
         "overflow": "auto",
         "width": 348
       },
@@ -23776,6 +27076,216 @@
         "name": "HTML de Pequeños múltiples, desplazable",
         "overflow": "auto",
         "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Calendario de actividad, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Calendario de actividad, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 927,
+        "end": 579,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Calendario de actividad, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Torta y donut de composición, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Torta y donut de composición, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 974,
+        "end": 626,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Torta y donut, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Áreas apiladas de ingresos, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Áreas apiladas de ingresos, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1257,
+        "end": 909,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Áreas apiladas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Caja y bigotes de entrega, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Caja y bigotes de entrega, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1477,
+        "end": 1129,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Caja y bigotes, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Velas financieras OHLC, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Velas financieras OHLC, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1375,
+        "end": 1027,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Velas OHLC, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de rutas y volumen, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Mapa de rutas y volumen, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de rutas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 720,
+        "end": 370,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de volumen por sede, gráfica desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Mapa de volumen por sede, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de volumen, desplazable",
+        "overflow": "auto",
+        "width": 348
       }
     ],
     "resources": [
@@ -24420,6 +27930,96 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Three.js · etapas, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Columnas geográficas 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 544,
+        "end": 194,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Columnas geográficas 3D, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Columnas geográficas 3D, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Arcos logísticos 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Arcos logísticos 3D, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1948,
+        "end": 1600,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Arcos logísticos 3D, desplazable",
+        "overflow": "auto",
+        "width": 348
+      },
+      {
+        "content": 600,
+        "end": 250,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Capacidad de almacén 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 928,
+        "end": 578,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Capacidad de almacén 3D, desplazables",
+        "overflow": "auto",
+        "width": 350
+      },
+      {
+        "content": 1383,
+        "end": 1035,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Capacidad de almacén 3D, desplazable",
         "overflow": "auto",
         "width": 348
       },
@@ -25374,14 +28974,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Matriz de criterios, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 8229,
@@ -25394,14 +28994,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registro de riesgos, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 7970,
@@ -25424,14 +29024,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja densa",
         "name": "Conciliación de operaciones, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 1453,
@@ -25787,43 +29387,43 @@
       },
       {
         "content": 360,
-        "end": 15,
+        "end": 21,
         "focus": 0,
         "inside": true,
         "kind": "grafica-caja",
         "name": "Bogotá · Solicitudes semanales · ejemplo · eje Y en solicitudes. Dibujo desplazable; tabla completa a continuación.",
         "overflow": "auto",
-        "width": 345
+        "width": 339
       },
       {
         "content": 360,
-        "end": 15,
+        "end": 21,
         "focus": 0,
         "inside": true,
         "kind": "grafica-caja",
         "name": "Medellín · Solicitudes semanales · ejemplo · eje Y en solicitudes. Dibujo desplazable; tabla completa a continuación.",
         "overflow": "auto",
-        "width": 345
+        "width": 339
       },
       {
         "content": 360,
-        "end": 15,
+        "end": 21,
         "focus": 0,
         "inside": true,
         "kind": "grafica-caja",
         "name": "Cali · Solicitudes semanales · ejemplo · eje Y en solicitudes. Dibujo desplazable; tabla completa a continuación.",
         "overflow": "auto",
-        "width": 345
+        "width": 339
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Solicitudes por sede y semana, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 1131,
@@ -25832,6 +29432,216 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Pequeños múltiples, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Calendario de actividad, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Calendario de actividad, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Calendario de actividad, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Torta y donut de composición, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Torta y donut de composición, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Torta y donut, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Áreas apiladas de ingresos, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Áreas apiladas de ingresos, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1257,
+        "end": 267,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Áreas apiladas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Caja y bigotes de entrega, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Caja y bigotes de entrega, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1477,
+        "end": 487,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Caja y bigotes, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Velas financieras OHLC, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Velas financieras OHLC, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1375,
+        "end": 385,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Velas OHLC, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de rutas y volumen, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Mapa de rutas y volumen, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de rutas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de volumen por sede, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Mapa de volumen por sede, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de volumen, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -25978,14 +29788,14 @@
         "width": 1440
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja densa",
         "name": "Brechas, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 2176,
@@ -25998,14 +29808,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Comparación de fuentes, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 1194,
@@ -26058,14 +29868,14 @@
         "width": 990
       },
       {
-        "content": 1082,
+        "content": 1062,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 1082
+        "width": 1062
       },
       {
         "content": 19449,
@@ -26478,6 +30288,96 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Three.js · etapas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Columnas geográficas 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Columnas geográficas 3D, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Columnas geográficas 3D, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Arcos logísticos 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Arcos logísticos 3D, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Arcos logísticos 3D, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Capacidad de almacén 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Capacidad de almacén 3D, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1383,
+        "end": 393,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Capacidad de almacén 3D, desplazable",
         "overflow": "auto",
         "width": 990
       },
@@ -27432,14 +31332,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Matriz de criterios, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 8229,
@@ -27452,14 +31352,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registro de riesgos, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 7970,
@@ -27482,14 +31382,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja densa",
         "name": "Conciliación de operaciones, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 1453,
@@ -27845,43 +31745,43 @@
       },
       {
         "content": 360,
-        "end": 15,
+        "end": 21,
         "focus": 0,
         "inside": true,
         "kind": "grafica-caja",
         "name": "Bogotá · Solicitudes semanales · ejemplo · eje Y en solicitudes. Dibujo desplazable; tabla completa a continuación.",
         "overflow": "auto",
-        "width": 345
+        "width": 339
       },
       {
         "content": 360,
-        "end": 15,
+        "end": 21,
         "focus": 0,
         "inside": true,
         "kind": "grafica-caja",
         "name": "Medellín · Solicitudes semanales · ejemplo · eje Y en solicitudes. Dibujo desplazable; tabla completa a continuación.",
         "overflow": "auto",
-        "width": 345
+        "width": 339
       },
       {
         "content": 360,
-        "end": 15,
+        "end": 21,
         "focus": 0,
         "inside": true,
         "kind": "grafica-caja",
         "name": "Cali · Solicitudes semanales · ejemplo · eje Y en solicitudes. Dibujo desplazable; tabla completa a continuación.",
         "overflow": "auto",
-        "width": 345
+        "width": 339
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Solicitudes por sede y semana, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 1131,
@@ -27890,6 +31790,216 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Pequeños múltiples, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Calendario de actividad, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Calendario de actividad, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Calendario de actividad, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Torta y donut de composición, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Torta y donut de composición, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Torta y donut, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Áreas apiladas de ingresos, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Áreas apiladas de ingresos, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1257,
+        "end": 267,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Áreas apiladas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Caja y bigotes de entrega, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Caja y bigotes de entrega, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1477,
+        "end": 487,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Caja y bigotes, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Velas financieras OHLC, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Velas financieras OHLC, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1375,
+        "end": 385,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Velas OHLC, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de rutas y volumen, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Mapa de rutas y volumen, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de rutas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de volumen por sede, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Mapa de volumen por sede, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de volumen, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -28036,14 +32146,14 @@
         "width": 1440
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja densa",
         "name": "Brechas, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 2176,
@@ -28056,14 +32166,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Comparación de fuentes, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 1194,
@@ -28116,14 +32226,14 @@
         "width": 990
       },
       {
-        "content": 1082,
+        "content": 1062,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 1082
+        "width": 1062
       },
       {
         "content": 19449,
@@ -28536,6 +32646,96 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Three.js · etapas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Columnas geográficas 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Columnas geográficas 3D, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Columnas geográficas 3D, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Arcos logísticos 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Arcos logísticos 3D, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Arcos logísticos 3D, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Capacidad de almacén 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Capacidad de almacén 3D, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1383,
+        "end": 393,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Capacidad de almacén 3D, desplazable",
         "overflow": "auto",
         "width": 990
       },
@@ -29490,14 +33690,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Matriz de criterios, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 8229,
@@ -29510,14 +33710,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registro de riesgos, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 7970,
@@ -29540,14 +33740,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja densa",
         "name": "Conciliación de operaciones, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 1453,
@@ -29903,43 +34103,43 @@
       },
       {
         "content": 360,
-        "end": 15,
+        "end": 21,
         "focus": 0,
         "inside": true,
         "kind": "grafica-caja",
         "name": "Bogotá · Solicitudes semanales · ejemplo · eje Y en solicitudes. Dibujo desplazable; tabla completa a continuación.",
         "overflow": "auto",
-        "width": 345
+        "width": 339
       },
       {
         "content": 360,
-        "end": 15,
+        "end": 21,
         "focus": 0,
         "inside": true,
         "kind": "grafica-caja",
         "name": "Medellín · Solicitudes semanales · ejemplo · eje Y en solicitudes. Dibujo desplazable; tabla completa a continuación.",
         "overflow": "auto",
-        "width": 345
+        "width": 339
       },
       {
         "content": 360,
-        "end": 15,
+        "end": 21,
         "focus": 0,
         "inside": true,
         "kind": "grafica-caja",
         "name": "Cali · Solicitudes semanales · ejemplo · eje Y en solicitudes. Dibujo desplazable; tabla completa a continuación.",
         "overflow": "auto",
-        "width": 345
+        "width": 339
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Solicitudes por sede y semana, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 1131,
@@ -29948,6 +34148,216 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Pequeños múltiples, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Calendario de actividad, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Calendario de actividad, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Calendario de actividad, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Torta y donut de composición, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Torta y donut de composición, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Torta y donut, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Áreas apiladas de ingresos, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Áreas apiladas de ingresos, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1257,
+        "end": 267,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Áreas apiladas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Caja y bigotes de entrega, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Caja y bigotes de entrega, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1477,
+        "end": 487,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Caja y bigotes, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Velas financieras OHLC, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Velas financieras OHLC, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1375,
+        "end": 385,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Velas OHLC, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de rutas y volumen, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Mapa de rutas y volumen, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de rutas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de volumen por sede, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Mapa de volumen por sede, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de volumen, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -30094,14 +34504,14 @@
         "width": 1440
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja densa",
         "name": "Brechas, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 2176,
@@ -30114,14 +34524,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Comparación de fuentes, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 1194,
@@ -30174,14 +34584,14 @@
         "width": 990
       },
       {
-        "content": 1082,
+        "content": 1062,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 1082
+        "width": 1062
       },
       {
         "content": 19449,
@@ -30594,6 +35004,96 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Three.js · etapas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Columnas geográficas 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Columnas geográficas 3D, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Columnas geográficas 3D, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Arcos logísticos 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Arcos logísticos 3D, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Arcos logísticos 3D, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Capacidad de almacén 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Capacidad de almacén 3D, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1383,
+        "end": 393,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Capacidad de almacén 3D, desplazable",
         "overflow": "auto",
         "width": 990
       },
@@ -31548,14 +36048,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Matriz de criterios, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 8229,
@@ -31568,14 +36068,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registro de riesgos, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 7970,
@@ -31598,14 +36098,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja densa",
         "name": "Conciliación de operaciones, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 1453,
@@ -31961,43 +36461,43 @@
       },
       {
         "content": 360,
-        "end": 15,
+        "end": 21,
         "focus": 0,
         "inside": true,
         "kind": "grafica-caja",
         "name": "Bogotá · Solicitudes semanales · ejemplo · eje Y en solicitudes. Dibujo desplazable; tabla completa a continuación.",
         "overflow": "auto",
-        "width": 345
+        "width": 339
       },
       {
         "content": 360,
-        "end": 15,
+        "end": 21,
         "focus": 0,
         "inside": true,
         "kind": "grafica-caja",
         "name": "Medellín · Solicitudes semanales · ejemplo · eje Y en solicitudes. Dibujo desplazable; tabla completa a continuación.",
         "overflow": "auto",
-        "width": 345
+        "width": 339
       },
       {
         "content": 360,
-        "end": 15,
+        "end": 21,
         "focus": 0,
         "inside": true,
         "kind": "grafica-caja",
         "name": "Cali · Solicitudes semanales · ejemplo · eje Y en solicitudes. Dibujo desplazable; tabla completa a continuación.",
         "overflow": "auto",
-        "width": 345
+        "width": 339
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Solicitudes por sede y semana, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 1131,
@@ -32006,6 +36506,216 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Pequeños múltiples, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Calendario de actividad, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Calendario de actividad, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Calendario de actividad, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Torta y donut de composición, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Torta y donut de composición, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Torta y donut, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Áreas apiladas de ingresos, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Áreas apiladas de ingresos, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1257,
+        "end": 267,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Áreas apiladas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Caja y bigotes de entrega, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Caja y bigotes de entrega, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1477,
+        "end": 487,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Caja y bigotes, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Velas financieras OHLC, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Velas financieras OHLC, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1375,
+        "end": 385,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Velas OHLC, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de rutas y volumen, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Mapa de rutas y volumen, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de rutas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de volumen por sede, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Mapa de volumen por sede, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de volumen, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -32152,14 +36862,14 @@
         "width": 1440
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja densa",
         "name": "Brechas, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 2176,
@@ -32172,14 +36882,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Comparación de fuentes, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 1194,
@@ -32232,14 +36942,14 @@
         "width": 990
       },
       {
-        "content": 1082,
+        "content": 1062,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 1082
+        "width": 1062
       },
       {
         "content": 19449,
@@ -32652,6 +37362,96 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Three.js · etapas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Columnas geográficas 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Columnas geográficas 3D, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Columnas geográficas 3D, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Arcos logísticos 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Arcos logísticos 3D, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Arcos logísticos 3D, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Capacidad de almacén 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Capacidad de almacén 3D, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1383,
+        "end": 393,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Capacidad de almacén 3D, desplazable",
         "overflow": "auto",
         "width": 990
       },
@@ -33606,14 +38406,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Matriz de criterios, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 8229,
@@ -33626,14 +38426,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registro de riesgos, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 7970,
@@ -33656,14 +38456,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja densa",
         "name": "Conciliación de operaciones, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 1453,
@@ -34019,43 +38819,43 @@
       },
       {
         "content": 360,
-        "end": 15,
+        "end": 21,
         "focus": 0,
         "inside": true,
         "kind": "grafica-caja",
         "name": "Bogotá · Solicitudes semanales · ejemplo · eje Y en solicitudes. Dibujo desplazable; tabla completa a continuación.",
         "overflow": "auto",
-        "width": 345
+        "width": 339
       },
       {
         "content": 360,
-        "end": 15,
+        "end": 21,
         "focus": 0,
         "inside": true,
         "kind": "grafica-caja",
         "name": "Medellín · Solicitudes semanales · ejemplo · eje Y en solicitudes. Dibujo desplazable; tabla completa a continuación.",
         "overflow": "auto",
-        "width": 345
+        "width": 339
       },
       {
         "content": 360,
-        "end": 15,
+        "end": 21,
         "focus": 0,
         "inside": true,
         "kind": "grafica-caja",
         "name": "Cali · Solicitudes semanales · ejemplo · eje Y en solicitudes. Dibujo desplazable; tabla completa a continuación.",
         "overflow": "auto",
-        "width": 345
+        "width": 339
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Solicitudes por sede y semana, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 1131,
@@ -34064,6 +38864,216 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Pequeños múltiples, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Calendario de actividad, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Calendario de actividad, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Calendario de actividad, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Torta y donut de composición, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Torta y donut de composición, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Torta y donut, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Áreas apiladas de ingresos, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Áreas apiladas de ingresos, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1257,
+        "end": 267,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Áreas apiladas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Caja y bigotes de entrega, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Caja y bigotes de entrega, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1477,
+        "end": 487,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Caja y bigotes, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Velas financieras OHLC, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Velas financieras OHLC, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1375,
+        "end": 385,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Velas OHLC, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de rutas y volumen, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Mapa de rutas y volumen, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de rutas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de volumen por sede, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Mapa de volumen por sede, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de volumen, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -34210,14 +39220,14 @@
         "width": 1440
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja densa",
         "name": "Brechas, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 2176,
@@ -34230,14 +39240,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Comparación de fuentes, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 1194,
@@ -34290,14 +39300,14 @@
         "width": 990
       },
       {
-        "content": 1082,
+        "content": 1062,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 1082
+        "width": 1062
       },
       {
         "content": 19449,
@@ -34710,6 +39720,96 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Three.js · etapas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Columnas geográficas 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Columnas geográficas 3D, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Columnas geográficas 3D, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Arcos logísticos 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Arcos logísticos 3D, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Arcos logísticos 3D, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Capacidad de almacén 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Capacidad de almacén 3D, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1383,
+        "end": 393,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Capacidad de almacén 3D, desplazable",
         "overflow": "auto",
         "width": 990
       },
@@ -35664,14 +40764,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Matriz de criterios, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 8229,
@@ -35684,14 +40784,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registro de riesgos, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 7970,
@@ -35714,14 +40814,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja densa",
         "name": "Conciliación de operaciones, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 1453,
@@ -36077,43 +41177,43 @@
       },
       {
         "content": 360,
-        "end": 15,
+        "end": 21,
         "focus": 0,
         "inside": true,
         "kind": "grafica-caja",
         "name": "Bogotá · Solicitudes semanales · ejemplo · eje Y en solicitudes. Dibujo desplazable; tabla completa a continuación.",
         "overflow": "auto",
-        "width": 345
+        "width": 339
       },
       {
         "content": 360,
-        "end": 15,
+        "end": 21,
         "focus": 0,
         "inside": true,
         "kind": "grafica-caja",
         "name": "Medellín · Solicitudes semanales · ejemplo · eje Y en solicitudes. Dibujo desplazable; tabla completa a continuación.",
         "overflow": "auto",
-        "width": 345
+        "width": 339
       },
       {
         "content": 360,
-        "end": 15,
+        "end": 21,
         "focus": 0,
         "inside": true,
         "kind": "grafica-caja",
         "name": "Cali · Solicitudes semanales · ejemplo · eje Y en solicitudes. Dibujo desplazable; tabla completa a continuación.",
         "overflow": "auto",
-        "width": 345
+        "width": 339
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Solicitudes por sede y semana, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 1131,
@@ -36122,6 +41222,216 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Pequeños múltiples, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Calendario de actividad, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Calendario de actividad, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Calendario de actividad, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Torta y donut de composición, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Torta y donut de composición, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 990,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Torta y donut, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Áreas apiladas de ingresos, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Áreas apiladas de ingresos, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1257,
+        "end": 267,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Áreas apiladas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Caja y bigotes de entrega, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Caja y bigotes de entrega, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1477,
+        "end": 487,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Caja y bigotes, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Velas financieras OHLC, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Velas financieras OHLC, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1375,
+        "end": 385,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Velas OHLC, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de rutas y volumen, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Mapa de rutas y volumen, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de rutas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "grafica-caja analitica-caja",
+        "name": "Mapa de volumen por sede, gráfica desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Mapa de volumen por sede, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Mapa de volumen, desplazable",
         "overflow": "auto",
         "width": 990
       }
@@ -36268,14 +41578,14 @@
         "width": 1440
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja densa",
         "name": "Brechas, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 2176,
@@ -36288,14 +41598,14 @@
         "width": 990
       },
       {
-        "content": 1084,
+        "content": 1064,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Comparación de fuentes, desplazable",
         "overflow": "auto",
-        "width": 1084
+        "width": 1064
       },
       {
         "content": 1194,
@@ -36348,14 +41658,14 @@
         "width": 990
       },
       {
-        "content": 1082,
+        "content": 1062,
         "end": 0,
         "focus": 0,
         "inside": true,
         "kind": "tabla-caja",
         "name": "Registros ordenables y agrupables, desplazables",
         "overflow": "auto",
-        "width": 1082
+        "width": 1062
       },
       {
         "content": 19449,
@@ -36768,6 +42078,96 @@
         "inside": true,
         "kind": "PRE",
         "name": "HTML de Three.js · etapas, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Columnas geográficas 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja",
+        "name": "Datos de Columnas geográficas 3D, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Columnas geográficas 3D, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Arcos logísticos 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Arcos logísticos 3D, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1948,
+        "end": 958,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Arcos logísticos 3D, desplazable",
+        "overflow": "auto",
+        "width": 990
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "escena-caja",
+        "name": "Capacidad de almacén 3D, vista 3D desplazable",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": 0,
+        "inside": true,
+        "kind": "tabla-caja densa",
+        "name": "Datos de Capacidad de almacén 3D, desplazables",
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 1383,
+        "end": 393,
+        "focus": 0,
+        "inside": true,
+        "kind": "PRE",
+        "name": "HTML de Capacidad de almacén 3D, desplazable",
         "overflow": "auto",
         "width": 990
       },

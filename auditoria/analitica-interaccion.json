@@ -1,0 +1,57 @@
+{
+  "failed": 0,
+  "results": [
+    {
+      "name": "Siete SVG y tres nuevas escenas, sin errores de inicialización",
+      "ok": true
+    },
+    {
+      "name": "Calendario distingue cero, ausencia y máximo observado",
+      "ok": true
+    },
+    {
+      "name": "Torta cambia forma sin alterar total ni valores",
+      "ok": true
+    },
+    {
+      "name": "Áreas alcanzan el total de 80 con fechas a distancia real",
+      "ok": true
+    },
+    {
+      "name": "Caja alcanza mínimo 15 y máximo 110; mediana dentro del cuartil",
+      "ok": true
+    },
+    {
+      "name": "OHLC usa extremos globales y cuerpo apertura/cierre",
+      "ok": true
+    },
+    {
+      "name": "Mapas: área de burbujas y grosor de rutas proporcionales",
+      "ok": true
+    },
+    {
+      "name": "Selección por control y por marca conserva el dato exacto",
+      "ok": true
+    },
+    {
+      "name": "Tres escenas conservan magnitudes, no sólo formas",
+      "ok": true
+    },
+    {
+      "name": "Entradas inválidas conservan tabla y muestran error",
+      "ok": true
+    },
+    {
+      "name": "Cero, categoría única, fechas repetidas y reinicialización",
+      "ok": true
+    },
+    {
+      "name": "Magnitudes pequeñas/grandes legibles sin convertir valores en cero",
+      "ok": true
+    },
+    {
+      "name": "Todas las marcas SVG tienen coordenadas finitas y texto dentro del lienzo",
+      "ok": true
+    }
+  ]
+}

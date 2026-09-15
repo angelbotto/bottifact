@@ -109,3 +109,7 @@ envían mensajes. La emulación es de viewport CSS, no una prueba en hardware iP
 [calor Sea, 320×740](capturas/calor-320-sea.png),
 [tablas claras, 390×844](capturas/tabla-390-claro.png),
 [impresión desde Sea](capturas/impresion-sea.png).
+
+
+La ampliación de diez gráficas, la regla coloreada y el recorte de laterales se verificaron
+en [analitica-verificacion.md](analitica-verificacion.md), con 54 recetas y capturas nuevas.

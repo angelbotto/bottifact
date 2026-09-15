@@ -1,0 +1,98 @@
+{
+  "records": [
+    {
+      "type": "columnas",
+      "active": {
+        "frame": 43,
+        "frames": 38,
+        "visible": true
+      },
+      "hidden": {
+        "frame": 0,
+        "frames": 42,
+        "visible": false
+      },
+      "reduced": {
+        "disabled": true,
+        "frame": 0,
+        "frames": 72,
+        "matches": true
+      },
+      "destroy": {
+        "frame": 0,
+        "resources": 0,
+        "table": true,
+        "unregistered": true
+      },
+      "withoutThree": {
+        "error": true,
+        "hidden": true,
+        "renderer": false,
+        "table": true
+      }
+    },
+    {
+      "type": "arcos",
+      "active": {
+        "frame": 130,
+        "frames": 36,
+        "visible": true
+      },
+      "hidden": {
+        "frame": 0,
+        "frames": 39,
+        "visible": false
+      },
+      "reduced": {
+        "disabled": true,
+        "frame": 0,
+        "frames": 70,
+        "matches": true
+      },
+      "destroy": {
+        "frame": 0,
+        "resources": 0,
+        "table": true,
+        "unregistered": true
+      },
+      "withoutThree": {
+        "error": true,
+        "hidden": true,
+        "renderer": false,
+        "table": true
+      }
+    },
+    {
+      "type": "almacen",
+      "active": {
+        "frame": 216,
+        "frames": 35,
+        "visible": true
+      },
+      "hidden": {
+        "frame": 0,
+        "frames": 39,
+        "visible": false
+      },
+      "reduced": {
+        "disabled": true,
+        "frame": 0,
+        "frames": 71,
+        "matches": true
+      },
+      "destroy": {
+        "frame": 0,
+        "resources": 0,
+        "table": true,
+        "unregistered": true
+      },
+      "withoutThree": {
+        "error": true,
+        "hidden": true,
+        "renderer": false,
+        "table": true
+      }
+    }
+  ],
+  "method": "Orca y WebGL real. IO por scroll/cambio de capítulo. Reduce emulado con evento MQL explícito. Fallback simulando dependencia Three ausente; no fallo físico de GPU."
+}
