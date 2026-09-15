@@ -1,0 +1,13 @@
+# Índice y progreso recuperados
+
+La edición por capítulos omitía el HTML de índice y regla. El comportamiento base aún existía en CSS/JS, pero no podía actuar sobre controles ausentes. La variante anterior sólo fijaba el índice directo de `.hoja` desde 1600 px; no resolvía el caso de un índice dentro de `.pagina` en un portátil.
+
+Se añade `lectura-guiada`: desde 1200 px, el documento reserva 200 px a la izquierda y 76 px a la derecha. Índice de 160 px, regla de 44 px; las figuras conservan su rejilla en el espacio restante. Son dimensiones elegidas para esta composición, no medidas de una referencia. La biblioteca incluye nueve índices, uno por capítulo, y una sola regla. En móvil, el índice está en el flujo y el porcentaje permanece en un control de 112×44 px abajo a la izquierda, separado de los comentarios.
+
+`data-progreso-pagina` hace que el progreso corresponda sólo al capítulo visible, con la altura de la barra fija descontada. El porcentaje llega a 100 % al final del capítulo, antes del pie y la paginación. Clic y teclado usan la misma medida; en móvil el clic se interpreta horizontalmente. El índice sigue usando `aria-current` y las marcas de `multipagina.js`, y desplaza su propia lista cuando la sección activa queda fuera de ella. La variante original conserva su contrato.
+
+`SKILL.md` y la receta completa indican que los próximos artefactos de Angel con varias secciones incluyen ambas ayudas aunque tengan pestañas. Una pieza aislada no necesita un índice vacío. Las fuentes de Claude y Codex se comparten mediante un enlace local al checkout instalado, para evitar copias divergentes.
+
+Verificación: `scripts/comprobar_lectura.py`, con Orca, prueba sección actual, cinco anteriores, enlaces con foco, Home/End, reinicio entre capítulos y clic horizontal. 324 combinaciones (nueve capítulos × seis paletas × anchos 320, 390, 1199, 1200, 1440 y 1639 px) sin desbordamiento ni intersecciones de figuras con los laterales. Pasan las 15 pruebas originales de componentes. La preferencia reducida se emula y las pruebas de teclado son eventos DOM, no lector de pantalla ni hardware móvil. Resultados en `lectura-*.json`.
+
+La regresión completa de biblioteca también pasó: 162 combinaciones de capítulos/paletas/viewports, navegación e historial, ocho pruebas de capítulos, 21 del catálogo y PDF. `ensamblar.py`, `validar.py` y `skill-creator/scripts/quick_validate.py` terminaron correctamente. Se inspeccionaron las capturas a 1440×960 y 390×844. Orca reconoce `nota-tikin` instalado después de enlazar `~/.agents/skills/nota-tikin` a `~/.claude/skills/nota-tikin`; ambos acceden a los mismos archivos.

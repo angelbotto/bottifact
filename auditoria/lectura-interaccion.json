@@ -1,0 +1,25 @@
+{
+  "failed": 0,
+  "results": [
+    {
+      "name": "Un índice por capítulo y una regla",
+      "ok": true
+    },
+    {
+      "name": "Sección actual y anteriores avanzan al desplazar",
+      "ok": true
+    },
+    {
+      "name": "Home/End alcanzan 0 y 100 del capítulo",
+      "ok": true
+    },
+    {
+      "name": "Cambio de capítulo reinicia regla y limpia marcas ocultas",
+      "ok": true
+    },
+    {
+      "name": "Enlace de índice mantiene hash y foco del destino",
+      "ok": true
+    }
+  ]
+}
