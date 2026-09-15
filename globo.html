@@ -1751,13 +1751,17 @@ body:has(.revision-barra) { padding-bottom:0; }
 .regla-guiada .val { display:block; position:static; padding-top:6px; text-align:center; font:11px/16px var(--mono); }
 .regla-guiada .val::before { content:'Lectura '; }
 @media(min-width:1200px) {
-  .hoja.lectura-guiada { margin-inline:200px 76px; }
-  .hoja.lectura-guiada > .indice,.hoja.lectura-guiada > .pagina > .indice { position:fixed; left:20px; top:100px; width:160px; max-height:calc(100dvh - 128px); overflow-y:auto; z-index:2; scrollbar-width:thin; }
-  .regla-guiada { left:auto; right:12px; top:15vh; bottom:auto; width:44px; height:70vh; background:transparent; border:0; border-radius:0; }
+  .hoja.lectura-guiada { margin-inline:200px 96px; }
+  .hoja.lectura-guiada > .indice,.hoja.lectura-guiada > .pagina > .indice { position:fixed; left:20px; top:max(100px,var(--lectura-cabecera,100px)); width:160px; max-height:calc(100dvh - max(100px,var(--lectura-cabecera,100px)) - 32px); overflow-y:auto; z-index:2; scrollbar-width:thin; }
+  .regla-guiada { left:auto; right:12px; top:max(15vh,var(--lectura-cabecera,0px)); bottom:auto; width:64px; height:min(70vh,calc(100dvh - max(15vh,var(--lectura-cabecera,0px)) - 84px)); background:transparent; border:0; border-radius:0; }
   .regla-guiada .ticks { left:auto; right:0; top:0; bottom:0; width:10px; height:auto; background:repeating-linear-gradient(to bottom,var(--linea-fuerte) 0 1px,transparent 1px 10px); }
   .regla-guiada .cursor { left:auto; right:0; top:calc(var(--lectura,0) * (100% - 2px)); bottom:auto; width:22px; }
-  .regla-guiada .val { position:absolute; padding:0; right:15px; top:clamp(0px,calc(var(--lectura,0) * 100% - 6px),calc(100% - 14px)); font:10px/14px var(--mono); }
+  .regla-guiada .val { position:absolute; padding:0; right:28px; width:36px; text-align:right; white-space:nowrap; top:clamp(0px,calc(var(--lectura,0) * 100% - 6px),calc(100% - 14px)); font:10px/14px var(--mono); }
   .regla-guiada .val::before { content:none; }
+  .regla-guiada .ticks::after { content:''; position:absolute; inset:0;
+    background:repeating-linear-gradient(to bottom,var(--marcador) 0 2px,transparent 2px 10px);
+    clip-path:inset(0 0 calc((1 - var(--lectura,0)) * 100%) 0); }
+  .regla-guiada .val { color:var(--marcador); }
 }
 @media print { .hoja.lectura-guiada { margin-inline:0; } }
 
@@ -1951,6 +1955,9 @@ body:has(.revision-barra) { padding-bottom:0; }
   function update() {
     frame = 0;
     if (!article) return;
+    // La barra aún no está pegada al borde al inicio: medir su fondo, no sólo su altura.
+    const barBottom=Math.max(0,document.querySelector('.barra')?.getBoundingClientRect().bottom||0);
+    root.style.setProperty('--lectura-cabecera',Math.ceil(barBottom+24)+'px');
     const {target,rect,start,distance}=readingMetrics();
     const progress=distance<=0?(rect.bottom<=innerHeight?1:0):Math.max(0,Math.min(1,(scrollY-start)/distance));
     if (ruler) {

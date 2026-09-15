@@ -132,6 +132,9 @@
   function update() {
     frame = 0;
     if (!article) return;
+    // La barra aún no está pegada al borde al inicio: medir su fondo, no sólo su altura.
+    const barBottom=Math.max(0,document.querySelector('.barra')?.getBoundingClientRect().bottom||0);
+    root.style.setProperty('--lectura-cabecera',Math.ceil(barBottom+24)+'px');
     const {target,rect,start,distance}=readingMetrics();
     const progress=distance<=0?(rect.bottom<=innerHeight?1:0):Math.max(0,Math.min(1,(scrollY-start)/distance));
     if (ruler) {
