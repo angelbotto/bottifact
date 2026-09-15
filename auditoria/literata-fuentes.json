@@ -1,0 +1,42 @@
+{
+  "date": "2026-09-15",
+  "license": "https://raw.githubusercontent.com/googlefonts/literata/main/OFL.txt",
+  "files": [
+    {
+      "family": "Literata",
+      "subset": "latin-ext",
+      "style": "italic",
+      "weight": "400 700",
+      "source": "https://fonts.gstatic.com/s/literata/v40/or3NQ6P12-iJxAIgLYT1PLs1a-t7PU0AbeE9KPxYzNiCp1OUedn8VrLmQEiSlcuFojBg.woff2",
+      "bytes": 71628,
+      "sha256": "4b65b11f69183ab2be9e027314bf3105aab66578bd7dc7df92115a344d1a1a6f"
+    },
+    {
+      "family": "Literata",
+      "subset": "latin",
+      "style": "italic",
+      "weight": "400 700",
+      "source": "https://fonts.gstatic.com/s/literata/v40/or3NQ6P12-iJxAIgLYT1PLs1a-t7PU0AbeE9KPxYzNiCp1OUedn8VrLmTkiSlcuFog.woff2",
+      "bytes": 88632,
+      "sha256": "8552d197eb02bdc753fc5355ad317d508b80a65acfa85a0cb58cf91aa2425dd5"
+    },
+    {
+      "family": "Literata",
+      "subset": "latin-ext",
+      "style": "normal",
+      "weight": "400 700",
+      "source": "https://fonts.gstatic.com/s/literata/v40/or3PQ6P12-iJxAIgLa78DkTtAoDhk0oVpaK3YLanFLHpPf2TbLi4J__WTEKVt8m1ow.woff2",
+      "bytes": 70736,
+      "sha256": "3f1abb33549406163ab6f4984f4a5e2e1199bd59377ecf927da0c7484c7ad43d"
+    },
+    {
+      "family": "Literata",
+      "subset": "latin",
+      "style": "normal",
+      "weight": "400 700",
+      "source": "https://fonts.gstatic.com/s/literata/v40/or3PQ6P12-iJxAIgLa78DkTtAoDhk0oVpaK3YLanFLHpPf2TbLi4J_HWTEKVt8k.woff2",
+      "bytes": 85780,
+      "sha256": "33b49c485e21a38bbfe68de764cc5b329b82c74e6ae4dc0cd9ace5b349da25fe"
+    }
+  ]
+}
