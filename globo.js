@@ -313,5 +313,6 @@
       this.texture?.dispose();this.renderer?.dispose();this.element.replaceChildren();
     }
   }
+  Object.defineProperty(NotaGlobo,'landTexture',{value:LAND});
   window.NotaGlobo=NotaGlobo;
 })();
