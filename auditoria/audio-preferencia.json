@@ -1,0 +1,17 @@
+{
+  "cancelledActivation": {
+    "busy": "false",
+    "enabled": false,
+    "plays": 0,
+    "preferred": false,
+    "voices": 0
+  },
+  "paused": {
+    "enabled": false,
+    "preferred": true,
+    "stored": "true",
+    "voices": 0
+  },
+  "resumedAfterTrustedClick": true,
+  "method": "Clics nativos Orca; promesa resume demorada 2500 ms y pagehide simulado. Contexto real. No audición humana."
+}

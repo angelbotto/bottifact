@@ -4,7 +4,7 @@
     "enabled": true,
     "peak": 0.2494487464427948,
     "plays": 1,
-    "rms": 0.03728450641959502,
+    "rms": 0.03735026484996764,
     "state": "running",
     "trusted": true
   },
@@ -20,7 +20,7 @@
     "enabled": true,
     "peak": 0.03804228454828262,
     "plays": 4,
-    "rms": 0.00501727483728919,
+    "rms": 0.005017629703169513,
     "state": "running",
     "trusted": true,
     "settledPeak": 0

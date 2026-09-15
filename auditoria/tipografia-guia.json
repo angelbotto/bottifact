@@ -1,0 +1,938 @@
+[
+  {
+    "errors": [],
+    "page": "manual",
+    "style": "editorial",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "manual",
+    "style": "sobrio",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "manual",
+    "style": "tecnico",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "manual",
+    "style": "libro",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "manual",
+    "style": "revista",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "manual",
+    "style": "bitacora",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "componer",
+    "style": "editorial",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "componer",
+    "style": "sobrio",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "componer",
+    "style": "tecnico",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "componer",
+    "style": "libro",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "componer",
+    "style": "revista",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "componer",
+    "style": "bitacora",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "voz",
+    "style": "editorial",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "voz",
+    "style": "sobrio",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "voz",
+    "style": "tecnico",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "voz",
+    "style": "libro",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "voz",
+    "style": "revista",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "voz",
+    "style": "bitacora",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "ambientes",
+    "style": "editorial",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "ambientes",
+    "style": "sobrio",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "ambientes",
+    "style": "tecnico",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "ambientes",
+    "style": "libro",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "ambientes",
+    "style": "revista",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "ambientes",
+    "style": "bitacora",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-publicaciones",
+    "style": "editorial",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-publicaciones",
+    "style": "sobrio",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-publicaciones",
+    "style": "tecnico",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-publicaciones",
+    "style": "libro",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-publicaciones",
+    "style": "revista",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-publicaciones",
+    "style": "bitacora",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-lectura",
+    "style": "editorial",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-lectura",
+    "style": "sobrio",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-lectura",
+    "style": "tecnico",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-lectura",
+    "style": "libro",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-lectura",
+    "style": "revista",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-lectura",
+    "style": "bitacora",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-reportes",
+    "style": "editorial",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-reportes",
+    "style": "sobrio",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-reportes",
+    "style": "tecnico",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-reportes",
+    "style": "libro",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-reportes",
+    "style": "revista",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-reportes",
+    "style": "bitacora",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-graficas",
+    "style": "editorial",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-graficas",
+    "style": "sobrio",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-graficas",
+    "style": "tecnico",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-graficas",
+    "style": "libro",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-graficas",
+    "style": "revista",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-graficas",
+    "style": "bitacora",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-tablas",
+    "style": "editorial",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-tablas",
+    "style": "sobrio",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-tablas",
+    "style": "tecnico",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-tablas",
+    "style": "libro",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-tablas",
+    "style": "revista",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-tablas",
+    "style": "bitacora",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-prototipos",
+    "style": "editorial",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-prototipos",
+    "style": "sobrio",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-prototipos",
+    "style": "tecnico",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-prototipos",
+    "style": "libro",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-prototipos",
+    "style": "revista",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-prototipos",
+    "style": "bitacora",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-expresion",
+    "style": "editorial",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-expresion",
+    "style": "sobrio",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-expresion",
+    "style": "tecnico",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-expresion",
+    "style": "libro",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-expresion",
+    "style": "revista",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-expresion",
+    "style": "bitacora",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-configuracion",
+    "style": "editorial",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-configuracion",
+    "style": "sobrio",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-configuracion",
+    "style": "tecnico",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-configuracion",
+    "style": "libro",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-configuracion",
+    "style": "revista",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "piezas-configuracion",
+    "style": "bitacora",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "entrega",
+    "style": "editorial",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "entrega",
+    "style": "sobrio",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "entrega",
+    "style": "tecnico",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "entrega",
+    "style": "libro",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "entrega",
+    "style": "revista",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "entrega",
+    "style": "bitacora",
+    "viewport": 320
+  },
+  {
+    "errors": [],
+    "page": "manual",
+    "style": "editorial",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "manual",
+    "style": "sobrio",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "manual",
+    "style": "tecnico",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "manual",
+    "style": "libro",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "manual",
+    "style": "revista",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "manual",
+    "style": "bitacora",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "componer",
+    "style": "editorial",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "componer",
+    "style": "sobrio",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "componer",
+    "style": "tecnico",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "componer",
+    "style": "libro",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "componer",
+    "style": "revista",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "componer",
+    "style": "bitacora",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "voz",
+    "style": "editorial",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "voz",
+    "style": "sobrio",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "voz",
+    "style": "tecnico",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "voz",
+    "style": "libro",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "voz",
+    "style": "revista",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "voz",
+    "style": "bitacora",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "ambientes",
+    "style": "editorial",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "ambientes",
+    "style": "sobrio",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "ambientes",
+    "style": "tecnico",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "ambientes",
+    "style": "libro",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "ambientes",
+    "style": "revista",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "ambientes",
+    "style": "bitacora",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-publicaciones",
+    "style": "editorial",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-publicaciones",
+    "style": "sobrio",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-publicaciones",
+    "style": "tecnico",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-publicaciones",
+    "style": "libro",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-publicaciones",
+    "style": "revista",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-publicaciones",
+    "style": "bitacora",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-lectura",
+    "style": "editorial",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-lectura",
+    "style": "sobrio",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-lectura",
+    "style": "tecnico",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-lectura",
+    "style": "libro",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-lectura",
+    "style": "revista",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-lectura",
+    "style": "bitacora",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-reportes",
+    "style": "editorial",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-reportes",
+    "style": "sobrio",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-reportes",
+    "style": "tecnico",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-reportes",
+    "style": "libro",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-reportes",
+    "style": "revista",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-reportes",
+    "style": "bitacora",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-graficas",
+    "style": "editorial",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-graficas",
+    "style": "sobrio",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-graficas",
+    "style": "tecnico",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-graficas",
+    "style": "libro",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-graficas",
+    "style": "revista",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-graficas",
+    "style": "bitacora",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-tablas",
+    "style": "editorial",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-tablas",
+    "style": "sobrio",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-tablas",
+    "style": "tecnico",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-tablas",
+    "style": "libro",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-tablas",
+    "style": "revista",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-tablas",
+    "style": "bitacora",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-prototipos",
+    "style": "editorial",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-prototipos",
+    "style": "sobrio",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-prototipos",
+    "style": "tecnico",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-prototipos",
+    "style": "libro",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-prototipos",
+    "style": "revista",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-prototipos",
+    "style": "bitacora",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-expresion",
+    "style": "editorial",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-expresion",
+    "style": "sobrio",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-expresion",
+    "style": "tecnico",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-expresion",
+    "style": "libro",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-expresion",
+    "style": "revista",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-expresion",
+    "style": "bitacora",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-configuracion",
+    "style": "editorial",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-configuracion",
+    "style": "sobrio",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-configuracion",
+    "style": "tecnico",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-configuracion",
+    "style": "libro",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-configuracion",
+    "style": "revista",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "piezas-configuracion",
+    "style": "bitacora",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "entrega",
+    "style": "editorial",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "entrega",
+    "style": "sobrio",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "entrega",
+    "style": "tecnico",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "entrega",
+    "style": "libro",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "entrega",
+    "style": "revista",
+    "viewport": 390
+  },
+  {
+    "errors": [],
+    "page": "entrega",
+    "style": "bitacora",
+    "viewport": 390
+  }
+]

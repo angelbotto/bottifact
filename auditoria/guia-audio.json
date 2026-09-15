@@ -1,9 +1,9 @@
 {
   "audio": {
     "enabled": true,
-    "peak": 0.007331542670726776,
+    "peak": 0.048035889863967896,
     "played": true,
-    "rms": 0.0017577816876729539,
+    "rms": 0.003999027489619746,
     "state": "running",
     "trusted": true
   },

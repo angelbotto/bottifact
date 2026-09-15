@@ -12,8 +12,13 @@ class ContractTests(unittest.TestCase):
   self.assertEqual(validate(multi),[]);self.assertIn('data-nota-sin-js',multi)
   self.assertIn('data-nota-modulo="graficas.js"',multi);self.assertIn('href="#evidencia"',multi)
  def test_missing_controls_fail(self):
-  for attr in ['data-apariencia-menu','data-revision','data-audio-prueba','data-audio-volumen']:
+  for attr in ['data-apariencia-menu','data-revision','data-audio-prueba','data-audio-volumen','data-buscar-tema','data-familia-tema','data-temas-resultados']:
    with self.subTest(attr=attr):self.assertTrue(validate(re.sub(' '+attr+r'(?=[\s>])', ' data-ausente',self.html,count=1)))
+ def test_new_reading_styles_and_sound_default(self):
+  for style in ['libro','revista','bitacora']:
+   with self.subTest(style=style):self.assertEqual(validate(build('Lectura',self.pages,style=style)),[])
+  self.assertTrue(validate(self.html.replace('data-audio-global aria-pressed="true"','data-audio-global aria-pressed="false"')))
+  self.assertTrue(validate(self.html.replace('data-preferencia-tab="sonido"','data-preferencia-tab="otro"')))
  def test_stale_sources_and_missing_module(self):
   self.assertTrue(validate(self.html.replace('data-nota-modulo="revision.js"','data-no-modulo="revision.js"')))
   self.assertTrue(validate(self.html.replace('/* Sonido central:', '/* Versión anterior:')))

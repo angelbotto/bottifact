@@ -1,0 +1,1945 @@
+{
+  "panel": [
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 256,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 256
+        }
+      ],
+      "tab": "temas",
+      "theme": "light",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 256,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 256
+        }
+      ],
+      "tab": "letras",
+      "theme": "light",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "light",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 256,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 256
+        }
+      ],
+      "tab": "temas",
+      "theme": "dark",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 256,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 256
+        }
+      ],
+      "tab": "letras",
+      "theme": "dark",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "dark",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 256,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 256
+        }
+      ],
+      "tab": "temas",
+      "theme": "sea",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 256,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 256
+        }
+      ],
+      "tab": "letras",
+      "theme": "sea",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "sea",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 256,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 256
+        }
+      ],
+      "tab": "temas",
+      "theme": "oliva",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 256,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 256
+        }
+      ],
+      "tab": "letras",
+      "theme": "oliva",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "oliva",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 256,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 256
+        }
+      ],
+      "tab": "temas",
+      "theme": "arcilla",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 256,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 256
+        }
+      ],
+      "tab": "letras",
+      "theme": "arcilla",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "arcilla",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 256,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 256
+        }
+      ],
+      "tab": "temas",
+      "theme": "ciruela",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 256,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 256
+        }
+      ],
+      "tab": "letras",
+      "theme": "ciruela",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "ciruela",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 256,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 256
+        }
+      ],
+      "tab": "temas",
+      "theme": "liftit",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 256,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 256
+        }
+      ],
+      "tab": "letras",
+      "theme": "liftit",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "liftit",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 256,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 256
+        }
+      ],
+      "tab": "temas",
+      "theme": "blueprint",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 256,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 256
+        }
+      ],
+      "tab": "letras",
+      "theme": "blueprint",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "blueprint",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 256,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 256
+        }
+      ],
+      "tab": "temas",
+      "theme": "hacker",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 256,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 256
+        }
+      ],
+      "tab": "letras",
+      "theme": "hacker",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "hacker",
+      "toggleVisible": true,
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 320
+        }
+      ],
+      "tab": "temas",
+      "theme": "light",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 823.828125,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 320
+        }
+      ],
+      "tab": "letras",
+      "theme": "light",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "light",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 320
+        }
+      ],
+      "tab": "temas",
+      "theme": "dark",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 823.828125,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 320
+        }
+      ],
+      "tab": "letras",
+      "theme": "dark",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "dark",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 320
+        }
+      ],
+      "tab": "temas",
+      "theme": "sea",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 823.828125,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 320
+        }
+      ],
+      "tab": "letras",
+      "theme": "sea",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "sea",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 320
+        }
+      ],
+      "tab": "temas",
+      "theme": "oliva",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 823.828125,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 320
+        }
+      ],
+      "tab": "letras",
+      "theme": "oliva",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "oliva",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 320
+        }
+      ],
+      "tab": "temas",
+      "theme": "arcilla",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 823.828125,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 320
+        }
+      ],
+      "tab": "letras",
+      "theme": "arcilla",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "arcilla",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 320
+        }
+      ],
+      "tab": "temas",
+      "theme": "ciruela",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 823.828125,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 320
+        }
+      ],
+      "tab": "letras",
+      "theme": "ciruela",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "ciruela",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 320
+        }
+      ],
+      "tab": "temas",
+      "theme": "liftit",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 823.828125,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 320
+        }
+      ],
+      "tab": "letras",
+      "theme": "liftit",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "liftit",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 320
+        }
+      ],
+      "tab": "temas",
+      "theme": "blueprint",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 823.828125,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 320
+        }
+      ],
+      "tab": "letras",
+      "theme": "blueprint",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "blueprint",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 320
+        }
+      ],
+      "tab": "temas",
+      "theme": "hacker",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 823.828125,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 320
+        }
+      ],
+      "tab": "letras",
+      "theme": "hacker",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 12,
+        "right": 372,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "hacker",
+      "toggleVisible": true,
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 320
+        }
+      ],
+      "tab": "temas",
+      "theme": "light",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 823.828125,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 320
+        }
+      ],
+      "tab": "letras",
+      "theme": "light",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "light",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 320
+        }
+      ],
+      "tab": "temas",
+      "theme": "dark",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 823.828125,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 320
+        }
+      ],
+      "tab": "letras",
+      "theme": "dark",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "dark",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 320
+        }
+      ],
+      "tab": "temas",
+      "theme": "sea",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 823.828125,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 320
+        }
+      ],
+      "tab": "letras",
+      "theme": "sea",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "sea",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 320
+        }
+      ],
+      "tab": "temas",
+      "theme": "oliva",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 823.828125,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 320
+        }
+      ],
+      "tab": "letras",
+      "theme": "oliva",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "oliva",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 320
+        }
+      ],
+      "tab": "temas",
+      "theme": "arcilla",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 823.828125,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 320
+        }
+      ],
+      "tab": "letras",
+      "theme": "arcilla",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "arcilla",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 320
+        }
+      ],
+      "tab": "temas",
+      "theme": "ciruela",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 823.828125,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 320
+        }
+      ],
+      "tab": "letras",
+      "theme": "ciruela",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "ciruela",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 320
+        }
+      ],
+      "tab": "temas",
+      "theme": "liftit",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 823.828125,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 320
+        }
+      ],
+      "tab": "letras",
+      "theme": "liftit",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "liftit",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 320
+        }
+      ],
+      "tab": "temas",
+      "theme": "blueprint",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 823.828125,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 320
+        }
+      ],
+      "tab": "letras",
+      "theme": "blueprint",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "blueprint",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 654.6875,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 586,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Temas disponibles, desplazables",
+          "overflow": "auto",
+          "scroll": 304,
+          "width": 320
+        }
+      ],
+      "tab": "temas",
+      "theme": "hacker",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 823.828125,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [
+        {
+          "content": 356,
+          "contentWidth": 320,
+          "focus": 0,
+          "height": 282,
+          "name": "Combinaciones tipográficas, desplazables",
+          "overflow": "auto",
+          "scroll": 74,
+          "width": 320
+        }
+      ],
+      "tab": "letras",
+      "theme": "hacker",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "rect": {
+        "bottom": 509.65625,
+        "left": 856,
+        "right": 1216,
+        "top": 63.5
+      },
+      "regions": [],
+      "tab": "sonido",
+      "theme": "hacker",
+      "toggleVisible": true,
+      "viewport": 1440,
+      "width": 1440
+    }
+  ],
+  "types": [
+    {
+      "body": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "literata": true,
+      "loaded": 1,
+      "style": "editorial",
+      "title": "\"Instrument Serif\", Georgia, serif",
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "body": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "literata": true,
+      "loaded": 1,
+      "style": "sobrio",
+      "title": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "body": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "literata": true,
+      "loaded": 1,
+      "style": "tecnico",
+      "title": "\"Geist Mono\", ui-monospace, monospace",
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "body": "Literata, Georgia, serif",
+      "literata": true,
+      "loaded": 1,
+      "style": "libro",
+      "title": "Literata, Georgia, serif",
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "body": "Literata, Georgia, serif",
+      "literata": true,
+      "loaded": 1,
+      "style": "revista",
+      "title": "\"Instrument Serif\", Georgia, serif",
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "body": "Literata, Georgia, serif",
+      "literata": true,
+      "loaded": 1,
+      "style": "bitacora",
+      "title": "\"Geist Mono\", ui-monospace, monospace",
+      "viewport": 320,
+      "width": 320
+    },
+    {
+      "body": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "literata": true,
+      "loaded": 1,
+      "style": "editorial",
+      "title": "\"Instrument Serif\", Georgia, serif",
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "body": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "literata": true,
+      "loaded": 1,
+      "style": "sobrio",
+      "title": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "body": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "literata": true,
+      "loaded": 1,
+      "style": "tecnico",
+      "title": "\"Geist Mono\", ui-monospace, monospace",
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "body": "Literata, Georgia, serif",
+      "literata": true,
+      "loaded": 1,
+      "style": "libro",
+      "title": "Literata, Georgia, serif",
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "body": "Literata, Georgia, serif",
+      "literata": true,
+      "loaded": 1,
+      "style": "revista",
+      "title": "\"Instrument Serif\", Georgia, serif",
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "body": "Literata, Georgia, serif",
+      "literata": true,
+      "loaded": 1,
+      "style": "bitacora",
+      "title": "\"Geist Mono\", ui-monospace, monospace",
+      "viewport": 390,
+      "width": 390
+    },
+    {
+      "body": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "literata": true,
+      "loaded": 1,
+      "style": "editorial",
+      "title": "\"Instrument Serif\", Georgia, serif",
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "body": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "literata": true,
+      "loaded": 1,
+      "style": "sobrio",
+      "title": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "body": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif",
+      "literata": true,
+      "loaded": 1,
+      "style": "tecnico",
+      "title": "\"Geist Mono\", ui-monospace, monospace",
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "body": "Literata, Georgia, serif",
+      "literata": true,
+      "loaded": 1,
+      "style": "libro",
+      "title": "Literata, Georgia, serif",
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "body": "Literata, Georgia, serif",
+      "literata": true,
+      "loaded": 1,
+      "style": "revista",
+      "title": "\"Instrument Serif\", Georgia, serif",
+      "viewport": 1440,
+      "width": 1440
+    },
+    {
+      "body": "Literata, Georgia, serif",
+      "literata": true,
+      "loaded": 1,
+      "style": "bitacora",
+      "title": "\"Geist Mono\", ui-monospace, monospace",
+      "viewport": 1440,
+      "width": 1440
+    }
+  ],
+  "search": {
+    "accent": [
+      "light",
+      "dark"
+    ],
+    "empty": [],
+    "future": {
+      "content": 2624,
+      "count": 50,
+      "height": 282,
+      "scroll": 2342
+    },
+    "reset": 10,
+    "status": "No encontramos ese tema."
+  },
+  "keyboardSynthetic": {
+    "closed": true,
+    "end": "sonido",
+    "focus": true,
+    "right": "letras"
+  },
+  "audio": {
+    "initial": {
+      "enabled": false,
+      "plays": 0,
+      "preferred": true,
+      "state": "uninitialized"
+    },
+    "firstTrustedClick": {
+      "enabled": true,
+      "plays": 0,
+      "preferred": true,
+      "state": "running"
+    },
+    "muted": {
+      "persists": true,
+      "laterClickDoesNotEnable": true
+    },
+    "firstClickMute": {
+      "plays": 0,
+      "preferred": false,
+      "state": "uninitialized"
+    }
+  },
+  "limitations": [
+    "Teclas simuladas por eventos DOM, no teclado físico ni lector de pantalla.",
+    "AudioContext y ausencia de señal de inicio; señal audible medida por otra prueba.",
+    "No prueba en el MacBook del usuario."
+  ]
+}

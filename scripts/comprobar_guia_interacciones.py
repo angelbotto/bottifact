@@ -16,7 +16,7 @@ assert not evaluate('NotaMano.get(document.getElementById("guia-demo-apunte-izqu
 evaluate('document.querySelector("[data-apariencia-menu] summary").focus();document.querySelector("[data-apariencia-menu]").open=true;true');call('screenshot')
 def click(name):
  ref=re.search(r'button "'+re.escape(name)+r'"[^\n]*ref=(e\d+)',call('snapshot')['snapshot']).group(1);call('click','--element','@'+ref)
-click('Probar sonido');assert evaluate('new Promise(r=>setTimeout(()=>r(NotaAudio.enabled),400))')
+evaluate('document.querySelector("[data-preferencia-tab=sonido]").click();true');click('Probar sonido');assert evaluate('new Promise(r=>setTimeout(()=>r(NotaAudio.enabled),400))')
 evaluate('document.querySelector("[data-apariencia-menu]").open=false;document.querySelector(\'[data-ir="voz"]\').click();document.getElementById("guia-demo-apuntes-ejemplo").scrollIntoView({block:"center",behavior:"instant"});true');call('screenshot')
 evaluate('''(()=>{window.sampleAudio=[];document.addEventListener('click',function f(e){if(!e.target.closest('[data-mano-repetir]'))return;document.removeEventListener('click',f);window.gestoReal=e.isTrusted;let n=0;const t=setInterval(()=>{sampleAudio.push(NotaAudio.sampleLevel());if(++n===30)clearInterval(t)},20)});return true})()''')
 click('Repetir apunte izquierdo');evaluate('new Promise(r=>setTimeout(()=>r(true),700))')
