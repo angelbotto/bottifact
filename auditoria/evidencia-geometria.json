@@ -1,0 +1,3944 @@
+[
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 560,
+        "end": 324,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 840,
+        "end": 604,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 690,
+        "end": 454,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 860,
+        "end": 624,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 940,
+        "end": 704,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 880,
+        "end": 644,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 960,
+        "end": 724,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 236,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "texts": [],
+    "theme": "light",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 560,
+        "end": 324,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 840,
+        "end": 604,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 690,
+        "end": 454,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 860,
+        "end": 624,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 940,
+        "end": 704,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 880,
+        "end": 644,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 960,
+        "end": 724,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 236,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "texts": [],
+    "theme": "dark",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 560,
+        "end": 324,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 840,
+        "end": 604,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 690,
+        "end": 454,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 860,
+        "end": 624,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 940,
+        "end": 704,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 880,
+        "end": 644,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 960,
+        "end": 724,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 236,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "texts": [],
+    "theme": "sea",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 560,
+        "end": 324,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 840,
+        "end": 604,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 690,
+        "end": 454,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 860,
+        "end": 624,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 940,
+        "end": 704,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 880,
+        "end": 644,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 960,
+        "end": 724,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 236,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "texts": [],
+    "theme": "oliva",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 560,
+        "end": 324,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 840,
+        "end": 604,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 690,
+        "end": 454,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 860,
+        "end": 624,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 940,
+        "end": 704,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 880,
+        "end": 644,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 960,
+        "end": 724,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 236,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "texts": [],
+    "theme": "arcilla",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 560,
+        "end": 324,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 840,
+        "end": 604,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 690,
+        "end": 454,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 860,
+        "end": 624,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 940,
+        "end": 704,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 880,
+        "end": 644,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 960,
+        "end": 724,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 236,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "texts": [],
+    "theme": "ciruela",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 560,
+        "end": 324,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 840,
+        "end": 604,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 690,
+        "end": 454,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 860,
+        "end": 624,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 940,
+        "end": 704,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 880,
+        "end": 644,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 960,
+        "end": 724,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 236,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "texts": [],
+    "theme": "liftit",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 560,
+        "end": 324,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 840,
+        "end": 604,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 690,
+        "end": 454,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 860,
+        "end": 624,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 940,
+        "end": 704,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 880,
+        "end": 644,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 960,
+        "end": 724,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 236,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "texts": [],
+    "theme": "blueprint",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 560,
+        "end": 324,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 840,
+        "end": 604,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 690,
+        "end": 454,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 860,
+        "end": 624,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 940,
+        "end": 704,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 880,
+        "end": 644,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 960,
+        "end": 724,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 928,
+        "end": 692,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      },
+      {
+        "content": 236,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 236
+      }
+    ],
+    "texts": [],
+    "theme": "hacker",
+    "viewport": [
+      320,
+      740
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 560,
+        "end": 254,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 840,
+        "end": 534,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 690,
+        "end": 384,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 860,
+        "end": 554,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 940,
+        "end": 634,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 880,
+        "end": 574,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 960,
+        "end": 654,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 306,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "texts": [],
+    "theme": "light",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 560,
+        "end": 254,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 840,
+        "end": 534,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 690,
+        "end": 384,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 860,
+        "end": 554,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 940,
+        "end": 634,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 880,
+        "end": 574,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 960,
+        "end": 654,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 306,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "texts": [],
+    "theme": "dark",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 560,
+        "end": 254,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 840,
+        "end": 534,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 690,
+        "end": 384,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 860,
+        "end": 554,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 940,
+        "end": 634,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 880,
+        "end": 574,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 960,
+        "end": 654,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 306,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "texts": [],
+    "theme": "sea",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 560,
+        "end": 254,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 840,
+        "end": 534,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 690,
+        "end": 384,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 860,
+        "end": 554,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 940,
+        "end": 634,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 880,
+        "end": 574,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 960,
+        "end": 654,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 306,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "texts": [],
+    "theme": "oliva",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 560,
+        "end": 254,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 840,
+        "end": 534,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 690,
+        "end": 384,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 860,
+        "end": 554,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 940,
+        "end": 634,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 880,
+        "end": 574,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 960,
+        "end": 654,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 306,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "texts": [],
+    "theme": "arcilla",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 560,
+        "end": 254,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 840,
+        "end": 534,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 690,
+        "end": 384,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 860,
+        "end": 554,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 940,
+        "end": 634,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 880,
+        "end": 574,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 960,
+        "end": 654,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 306,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "texts": [],
+    "theme": "ciruela",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 560,
+        "end": 254,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 840,
+        "end": 534,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 690,
+        "end": 384,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 860,
+        "end": 554,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 940,
+        "end": 634,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 880,
+        "end": 574,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 960,
+        "end": 654,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 306,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "texts": [],
+    "theme": "liftit",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 560,
+        "end": 254,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 840,
+        "end": 534,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 690,
+        "end": 384,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 860,
+        "end": 554,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 940,
+        "end": 634,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 880,
+        "end": 574,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 960,
+        "end": 654,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 306,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "texts": [],
+    "theme": "blueprint",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 560,
+        "end": 254,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 840,
+        "end": 534,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 690,
+        "end": 384,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 860,
+        "end": 554,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 940,
+        "end": 634,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 880,
+        "end": 574,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 960,
+        "end": 654,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 928,
+        "end": 622,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      },
+      {
+        "content": 306,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 306
+      }
+    ],
+    "texts": [],
+    "theme": "hacker",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 586,
+        "end": 0,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 586
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "texts": [],
+    "theme": "light",
+    "viewport": [
+      1440,
+      960
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 586,
+        "end": 0,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 586
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "texts": [],
+    "theme": "dark",
+    "viewport": [
+      1440,
+      960
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 586,
+        "end": 0,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 586
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "texts": [],
+    "theme": "sea",
+    "viewport": [
+      1440,
+      960
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 586,
+        "end": 0,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 586
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "texts": [],
+    "theme": "oliva",
+    "viewport": [
+      1440,
+      960
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 586,
+        "end": 0,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 586
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "texts": [],
+    "theme": "arcilla",
+    "viewport": [
+      1440,
+      960
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 586,
+        "end": 0,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 586
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "texts": [],
+    "theme": "ciruela",
+    "viewport": [
+      1440,
+      960
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 586,
+        "end": 0,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 586
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "texts": [],
+    "theme": "liftit",
+    "viewport": [
+      1440,
+      960
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 586,
+        "end": 0,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 586
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "texts": [],
+    "theme": "blueprint",
+    "viewport": [
+      1440,
+      960
+    ]
+  },
+  {
+    "overflow": false,
+    "regions": [
+      {
+        "content": 586,
+        "end": 0,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 586
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "relato",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sankey",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "cohortes",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "sensibilidad",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "gantt",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "embudo",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "incertidumbre",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      },
+      {
+        "content": 992,
+        "end": 0,
+        "focus": true,
+        "kind": "imagen",
+        "named": true,
+        "overflow": "auto",
+        "width": 992
+      }
+    ],
+    "texts": [],
+    "theme": "hacker",
+    "viewport": [
+      1440,
+      960
+    ]
+  }
+]

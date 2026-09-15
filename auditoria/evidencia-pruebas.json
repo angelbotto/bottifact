@@ -1,0 +1,391 @@
+{
+  "failed": 0,
+  "passed": 88,
+  "results": [
+    {
+      "name": "Ocho instancias sin errores",
+      "ok": true
+    },
+    {
+      "name": "Sankey conserva 120 entre conexiones",
+      "ok": true
+    },
+    {
+      "name": "Sankey: grosor 65/5 = 13",
+      "ok": true
+    },
+    {
+      "name": "Cohorte conserva base y pendiente",
+      "ok": true
+    },
+    {
+      "name": "Porcentaje de cohorte sobre su base",
+      "ok": true
+    },
+    {
+      "name": "Sensibilidad permite impacto inverso",
+      "ok": true
+    },
+    {
+      "name": "Gantt conserva hito y dos dependencias",
+      "ok": true
+    },
+    {
+      "detail": "Completadas: 450 pedidos; 45 % de la base. Conversión desde la anterior: 90 %; abandono 50 pedidos. Programadas con recepción registrada.",
+      "name": "Embudo 450/1000 y 450/500",
+      "ok": true
+    },
+    {
+      "name": "Banda alcanza ambos extremos",
+      "ok": true
+    },
+    {
+      "name": "Selección cambia detalle y conserva datos",
+      "ok": true
+    },
+    {
+      "name": "Restablecer consulta",
+      "ok": true
+    },
+    {
+      "name": "Paso manual detiene seguimiento",
+      "ok": true
+    },
+    {
+      "name": "Zoom acotado a 400 %",
+      "ok": true
+    },
+    {
+      "name": "Imagen selecciona una zona y desplaza localmente",
+      "ok": true
+    },
+    {
+      "name": "Ajustar vuelve a 100 %",
+      "ok": true
+    },
+    {
+      "detail": "Declara una unidad de 1 a 40 caracteres.",
+      "name": "Validación sankey: unidad ausente",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente sankey",
+      "ok": true
+    },
+    {
+      "detail": "Se requiere una sola tabla fuente.",
+      "name": "Validación sankey: tabla duplicada",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente sankey",
+      "ok": true
+    },
+    {
+      "detail": null,
+      "name": "Validación sankey: magnitudes pequeñas",
+      "ok": true
+    },
+    {
+      "name": "Geometría finita sankey",
+      "ok": true
+    },
+    {
+      "detail": [],
+      "name": "Rótulos completos sankey",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente sankey",
+      "ok": true
+    },
+    {
+      "name": "Fechas del eje coinciden con coordenadas UTC",
+      "ok": true
+    },
+    {
+      "detail": "Sankey requiere magnitudes no negativas.",
+      "name": "Validación sankey: negativo",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente sankey",
+      "ok": true
+    },
+    {
+      "detail": "El total debe ser positivo y no superar 10¹².",
+      "name": "Validación sankey: total cero",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente sankey",
+      "ok": true
+    },
+    {
+      "detail": null,
+      "name": "Validación sankey: flujo cero",
+      "ok": true
+    },
+    {
+      "name": "Geometría finita sankey",
+      "ok": true
+    },
+    {
+      "detail": [],
+      "name": "Rótulos completos sankey",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente sankey",
+      "ok": true
+    },
+    {
+      "detail": "La base de cohorte debe ser un entero positivo.",
+      "name": "Validación cohortes: base cero",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente cohortes",
+      "ok": true
+    },
+    {
+      "detail": "Recuentos de cohorte entre cero y su base.",
+      "name": "Validación cohortes: supera base",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente cohortes",
+      "ok": true
+    },
+    {
+      "detail": "Los períodos pendientes deben quedar al final de la fila.",
+      "name": "Validación cohortes: observado tras pendiente",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente cohortes",
+      "ok": true
+    },
+    {
+      "detail": null,
+      "name": "Validación cohortes: cero observado",
+      "ok": true
+    },
+    {
+      "name": "Geometría finita cohortes",
+      "ok": true
+    },
+    {
+      "detail": [],
+      "name": "Rótulos completos cohortes",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente cohortes",
+      "ok": true
+    },
+    {
+      "detail": "Fecha inexistente.",
+      "name": "Validación gantt: fecha inexistente",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente gantt",
+      "ok": true
+    },
+    {
+      "detail": "Dependencia inexistente: Z",
+      "name": "Validación gantt: dependencia ausente",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente gantt",
+      "ok": true
+    },
+    {
+      "detail": "Una dependencia fin→inicio no puede terminar después del inicio dependiente.",
+      "name": "Validación gantt: dependencia futura",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente gantt",
+      "ok": true
+    },
+    {
+      "detail": "Las dependencias no pueden formar ciclos.",
+      "name": "Validación gantt: ciclo",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente gantt",
+      "ok": true
+    },
+    {
+      "detail": "El embudo exige recuentos enteros no crecientes y base positiva.",
+      "name": "Validación embudo: etapa creciente",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente embudo",
+      "ok": true
+    },
+    {
+      "detail": null,
+      "name": "Validación embudo: ceros al final",
+      "ok": true
+    },
+    {
+      "name": "Geometría finita embudo",
+      "ok": true
+    },
+    {
+      "detail": [],
+      "name": "Rótulos completos embudo",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente embudo",
+      "ok": true
+    },
+    {
+      "detail": "Fechas estrictamente crecientes y límite inferior ≤ central ≤ superior.",
+      "name": "Validación incertidumbre: intervalo invertido",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente incertidumbre",
+      "ok": true
+    },
+    {
+      "detail": "Explica cómo se construyó el intervalo.",
+      "name": "Validación incertidumbre: sin metodología",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente incertidumbre",
+      "ok": true
+    },
+    {
+      "detail": "Fechas estrictamente crecientes y límite inferior ≤ central ≤ superior.",
+      "name": "Validación incertidumbre: fecha duplicada",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente incertidumbre",
+      "ok": true
+    },
+    {
+      "detail": "Usa 1–12 zonas, con coordenadas porcentuales de 0 a 100.",
+      "name": "Validación imagen: zona fuera de imagen",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente imagen",
+      "ok": true
+    },
+    {
+      "detail": null,
+      "name": "Validación sankey: nombre largo",
+      "ok": true
+    },
+    {
+      "name": "Geometría finita sankey",
+      "ok": true
+    },
+    {
+      "detail": [],
+      "name": "Rótulos completos sankey",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente sankey",
+      "ok": true
+    },
+    {
+      "detail": null,
+      "name": "Validación cohortes: base grande",
+      "ok": true
+    },
+    {
+      "name": "Geometría finita cohortes",
+      "ok": true
+    },
+    {
+      "detail": [],
+      "name": "Rótulos completos cohortes",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente cohortes",
+      "ok": true
+    },
+    {
+      "detail": null,
+      "name": "Validación gantt: tarea larga",
+      "ok": true
+    },
+    {
+      "name": "Geometría finita gantt",
+      "ok": true
+    },
+    {
+      "detail": [],
+      "name": "Rótulos completos gantt",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente gantt",
+      "ok": true
+    },
+    {
+      "detail": null,
+      "name": "Validación incertidumbre: extremos grandes y negativos",
+      "ok": true
+    },
+    {
+      "name": "Geometría finita incertidumbre",
+      "ok": true
+    },
+    {
+      "detail": [],
+      "name": "Rótulos completos incertidumbre",
+      "ok": true
+    },
+    {
+      "name": "Destroy conserva fuente incertidumbre",
+      "ok": true
+    },
+    {
+      "name": "Init idempotente relato",
+      "ok": true
+    },
+    {
+      "name": "Init idempotente sankey",
+      "ok": true
+    },
+    {
+      "name": "Init idempotente cohortes",
+      "ok": true
+    },
+    {
+      "name": "Init idempotente sensibilidad",
+      "ok": true
+    },
+    {
+      "name": "Init idempotente gantt",
+      "ok": true
+    },
+    {
+      "name": "Init idempotente embudo",
+      "ok": true
+    },
+    {
+      "name": "Init idempotente incertidumbre",
+      "ok": true
+    },
+    {
+      "name": "Init idempotente imagen",
+      "ok": true
+    }
+  ]
+}

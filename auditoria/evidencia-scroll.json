@@ -1,0 +1,18 @@
+{
+  "steps": [
+    {
+      "step": 0,
+      "selected": 0
+    },
+    {
+      "step": 1,
+      "selected": 1
+    },
+    {
+      "step": 2,
+      "selected": 2
+    }
+  ],
+  "manualPersists": true,
+  "method": "Scroll programático en Orca; selección por IntersectionObserver real. No gesto físico."
+}

@@ -1,0 +1,37 @@
+{
+  "recipesExact": 82,
+  "instances": [
+    {
+      "kind": "relato",
+      "ok": true
+    },
+    {
+      "kind": "gantt",
+      "ok": true
+    },
+    {
+      "kind": "sensibilidad",
+      "ok": true
+    },
+    {
+      "kind": "sankey",
+      "ok": true
+    },
+    {
+      "kind": "cohortes",
+      "ok": true
+    },
+    {
+      "kind": "embudo",
+      "ok": true
+    },
+    {
+      "kind": "incertidumbre",
+      "ok": true
+    },
+    {
+      "kind": "imagen",
+      "ok": true
+    }
+  ]
+}
