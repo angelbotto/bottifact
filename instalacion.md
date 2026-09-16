@@ -22,8 +22,9 @@ symlink compartido: respalda el enlace y crea una copia independiente en la ruta
 
 Abre una conversación nueva de Hermes y pide:
 
-> Usa el skill bottifact. Lee su guia-uso.md, recorre registro.json y elige piezas que expliquen
-> este contenido. Genera el HTML con scripts/crear_artefacto.py y valida el archivo final. Conserva
+> Usa el skill bottifact. Lee voz-ejecutiva.md y guia-uso.md. Redacta desde mi voz de CTO/CEO
+> hacia mi equipo, con evidencia, highlights, lowlights y decisiones; adapta la estructura al formato.
+> Recorre registro.json y aprovecha la mayor variedad de componentes que ayude a explicar el contenido. Genera el HTML con scripts/crear_artefacto.py y valida el archivo final. Conserva
 > la llave de apariencia, los comentarios flotantes y las ayudas de lectura. No inventes datos.
 
 Hermes descubre carpetas con `SKILL.md` bajo `~/.hermes/skills`, según su [documentación oficial de skills](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills). Si tienes un perfil o un

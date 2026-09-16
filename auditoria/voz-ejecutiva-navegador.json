@@ -1,0 +1,194 @@
+{
+  "url": "http://127.0.0.1:8768/ejecutivo.html",
+  "viewports": [
+    {
+      "chapter": "#memo",
+      "documentWidth": 320,
+      "regions": [
+        {
+          "content": 620,
+          "name": "Registros ordenables y agrupables, desplazables",
+          "overflow": "auto",
+          "tabindex": 0,
+          "width": 234
+        }
+      ],
+      "visible": [
+        "memo"
+      ],
+      "width": 320
+    },
+    {
+      "chapter": "#memo",
+      "documentWidth": 390,
+      "regions": [
+        {
+          "content": 620,
+          "name": "Registros ordenables y agrupables, desplazables",
+          "overflow": "auto",
+          "tabindex": 0,
+          "width": 304
+        }
+      ],
+      "visible": [
+        "memo"
+      ],
+      "width": 390
+    },
+    {
+      "chapter": "#memo",
+      "documentWidth": 1440,
+      "regions": [
+        {
+          "content": 990,
+          "name": "Registros ordenables y agrupables, desplazables",
+          "overflow": "auto",
+          "tabindex": 0,
+          "width": 990
+        }
+      ],
+      "visible": [
+        "memo"
+      ],
+      "width": 1440
+    },
+    {
+      "chapter": "#perfil",
+      "documentWidth": 320,
+      "regions": [
+        {
+          "content": 544,
+          "name": "Criterios de composición, tabla desplazable",
+          "overflow": "auto",
+          "tabindex": 0,
+          "width": 236
+        },
+        {
+          "content": 544,
+          "name": "Criterios de composición, tabla desplazable",
+          "overflow": "auto",
+          "tabindex": 0,
+          "width": 236
+        },
+        {
+          "content": 544,
+          "name": "Criterios de composición, tabla desplazable",
+          "overflow": "auto",
+          "tabindex": 0,
+          "width": 236
+        }
+      ],
+      "visible": [
+        "perfil"
+      ],
+      "width": 320
+    },
+    {
+      "chapter": "#perfil",
+      "documentWidth": 390,
+      "regions": [
+        {
+          "content": 544,
+          "name": "Criterios de composición, tabla desplazable",
+          "overflow": "auto",
+          "tabindex": 0,
+          "width": 306
+        },
+        {
+          "content": 544,
+          "name": "Criterios de composición, tabla desplazable",
+          "overflow": "auto",
+          "tabindex": 0,
+          "width": 306
+        },
+        {
+          "content": 544,
+          "name": "Criterios de composición, tabla desplazable",
+          "overflow": "auto",
+          "tabindex": 0,
+          "width": 306
+        }
+      ],
+      "visible": [
+        "perfil"
+      ],
+      "width": 390
+    },
+    {
+      "chapter": "#perfil",
+      "documentWidth": 1440,
+      "regions": [
+        {
+          "content": 920,
+          "name": "Criterios de composición, tabla desplazable",
+          "overflow": "auto",
+          "tabindex": 0,
+          "width": 920
+        },
+        {
+          "content": 920,
+          "name": "Criterios de composición, tabla desplazable",
+          "overflow": "auto",
+          "tabindex": 0,
+          "width": 920
+        },
+        {
+          "content": 920,
+          "name": "Criterios de composición, tabla desplazable",
+          "overflow": "auto",
+          "tabindex": 0,
+          "width": 920
+        }
+      ],
+      "visible": [
+        "perfil"
+      ],
+      "width": 1440
+    },
+    {
+      "chapter": "#fuentes",
+      "documentWidth": 320,
+      "regions": [],
+      "visible": [
+        "fuentes"
+      ],
+      "width": 320
+    },
+    {
+      "chapter": "#fuentes",
+      "documentWidth": 390,
+      "regions": [],
+      "visible": [
+        "fuentes"
+      ],
+      "width": 390
+    },
+    {
+      "chapter": "#fuentes",
+      "documentWidth": 1440,
+      "regions": [],
+      "visible": [
+        "fuentes"
+      ],
+      "width": 1440
+    }
+  ],
+  "filter": {
+    "rows": [
+      "Calidad editorial por agenteEvaluaciónPendienteevaluacion-skill.md",
+      "Impacto en trabajo del equipoEvaluaciónPendientevoz-ejecutiva.md",
+      "Sincronización de comentariosColaboraciónPendientecolaboracion.md"
+    ],
+    "status": "3 de 6 registros."
+  },
+  "appearance": {
+    "comments": true,
+    "left": 12,
+    "right": 336,
+    "width": 390
+  },
+  "limits": [
+    "No ejecución de encargos en Claude/Hermes independientes.",
+    "Sin audición humana ni lector de pantalla."
+  ]
+}

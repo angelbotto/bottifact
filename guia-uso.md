@@ -7,6 +7,8 @@ El generador proporciona la experiencia común. No es un paquete React ni un reg
 
 ## Antes de escoger piezas
 
+Lee primero [voz-ejecutiva.md](voz-ejecutiva.md). Escribe desde la posición del usuario hacia su audiencia, con conclusión, evidencia y acción; no como un asistente que le entrega un reporte. [ejecutivo.html](ejecutivo.html) muestra un memo y el perfil completo.
+
 Identifica lector, pregunta, evidencia disponible y acción siguiente. Recorre el inventario entero;
 selecciona componentes por su función, no por su aspecto. Una gráfica sin una pregunta y una nota
 manuscrita que repite el párrafo añaden trabajo al lector. La cobertura completa pertenece al catálogo;
@@ -26,6 +28,7 @@ para documentos existentes; para nuevas anotaciones animadas consulta `apuntes`.
 
 | Entregable | Hilo editorial | Piezas que conviene consultar | Evita |
 |---|---|---|---|
+| Actualización ejecutiva | Lectura propia → highlights/lowlights → evidencia → decisión → próximos pasos | `hallazgo`, `cards-trazadas`, `explorador`, `apuntes`, `decision`, `riesgos`, `cronologia`, `metodologia` | Confundir actividad con impacto, inventar acuerdos o escribir como asistente |
 | Informe de decisión | Conclusión provisional → evidencia → alternativas → decisión pendiente | `hallazgo`, `decision`, `criterios`, `comparacion`, `riesgos`, `apuntes` | Presentar una hipótesis como resultado demostrado |
 | Informe financiero | Período y moneda → cambio → composición → conciliación → supuestos | `temporal`, `cascada`, `totales`, `sparkline`, `torta`, `conciliacion`, `metodologia` | Mezclar monedas, balances y flujos; comparar ventanas de distinta duración sin aclararlo |
 | Operación logística | Servicio observado → dónde → dispersión → capacidad → siguiente acción | `globo-flota`, `ficha-entrega`, `cola-novedades`, `mapa-rutas`, `mapa-burbujas`, `caja`, `almacen`, `arcos-mapa`, `recorrido` | Inferir tiempos, distancias o rutas óptimas desde líneas decorativas |

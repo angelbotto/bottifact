@@ -105,7 +105,7 @@ print('Registro local: '+str(len(expected))+' recetas con HTML original, documen
 print('Esto NO comprueba píxeles, audio, WebGL, foco real ni comportamiento del navegador.')
 
 from contrato_artefacto import validate
-for name in ['estandar.html','estandar-capitulos.html','prioridades.html','guia.html','liftit.html','blueprint.html','hacker.html','evidencia.html','colaborativo.html','linear-light.html','linear-dark.html','temas.html','sistema.html']:
+for name in ['estandar.html','estandar-capitulos.html','prioridades.html','guia.html','liftit.html','blueprint.html','hacker.html','evidencia.html','colaborativo.html','linear-light.html','linear-dark.html','temas.html','sistema.html','ejecutivo.html']:
  errors=validate((ROOT/name).read_text());assert not errors,(name,errors)
  print(name+': contrato estándar de artefacto correcto')
 

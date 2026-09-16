@@ -1,6 +1,6 @@
 ---
 name: bottifact
-description: Genera y valida artefactos HTML editoriales, informes, documentación y prototipos con la biblioteca Bottifact. Incluye temas, comentarios flotantes, tablas, gráficas, notas manuscritas y ayudas de lectura. Úsalo para crear o mantener estos entregables y su biblioteca; conserva otros formatos si fueron solicitados.
+description: Genera y valida artefactos HTML editoriales, informes, documentación y prototipos con la biblioteca Bottifact. Redacta desde la voz del usuario como CTO/CEO, con evidencia, highlights, lowlights y decisiones. Incluye temas, comentarios flotantes, tablas, gráficas y notas manuscritas. Úsalo para crear o mantener estos entregables y su biblioteca; conserva otros formatos si fueron solicitados.
 ---
 
 # Bottifact
@@ -11,7 +11,7 @@ Requisitos: Generación con Python 3.10 o posterior, sin paquetes externos. Nave
 
 ## Crear un artefacto
 
-1. Identifica lector, pregunta, evidencia y siguiente acción. Revisa el inventario completo por nombre/ID; lee sólo el HTML, criterio, límites y dependencias de las piezas elegidas.
+1. Lee [voz-ejecutiva.md](voz-ejecutiva.md): el artefacto se escribe desde la voz del usuario hacia su equipo, otros lectores o sí mismo. Identifica autor, destinatario, pregunta, evidencia y siguiente acción. Una instrucción específica del encargo prevalece. Revisa el inventario completo por nombre/ID; lee sólo el HTML, criterio, límites y dependencias de las piezas elegidas.
 2. Lee [guia-uso.md](guia-uso.md) para componer: artículo, informe, logística, finanzas, documentación o prototipo. [guia.html](guia.html) permite explorar todas las recetas.
 3. Escribe contenido HTML semántico. Cada h2 necesita ID propio o en su sección. Las figuras `.ancho` / `.amplio` son hermanas de los bloques de texto dentro de `.hoja` o `.pagina`.
 4. Genera con la base estándar; no reconstruyas sus controles de memoria:
@@ -27,6 +27,12 @@ Para capítulos y configuración consulta [estandar.md](estandar.md). Mantén `-
 
 La base incluye llave sol/luna (Temas / Letras / Sonido), comentarios flotantes, índice y regla de lectura. Sonido habilitado por preferencia, pero espera una interacción real y respeta silencio/volumen. Una petición explícita del usuario de cambiar u omitir una pieza prevalece.
 
+## Voz y evidencia
+
+Redacta listo para compartir, sin mensajes del asistente al usuario. Abre con conclusión o decisión pendiente, hechos relevantes e implicación. En informes ejecutivos incluye highlights, lowlights, alternativas y próximos pasos con responsables/fechas conocidos. Mantén profundidad mediante evidencia y anexos. Distingue hecho, cálculo, hipótesis y propuesta; no inventes resultados, recuerdos ni acuerdos en primera persona. Adapta esta estructura a artículos, runbooks y notas personales.
+
+[voz-ejecutiva.md](voz-ejecutiva.md) contiene el perfil completo y la matriz de componentes. [ejecutivo.html](ejecutivo.html) muestra la composición; [referencias-comunicacion.md](referencias-comunicacion.md) declara las lecturas y su alcance.
+
 ## Elegir y componer
 
 ```bash
@@ -34,7 +40,7 @@ python3 scripts/catalogo.py
 python3 scripts/catalogo.py --id apuntes
 ```
 
-No pongas todos los componentes por obligación. En una muestra de biblioteca sí verifica todos los IDs; en un documento cada pieza debe explicar algo. No inventes cifras, fuentes, GPS, conversiones o probabilidades para mostrar un componente.
+Busca la mayor variedad útil de componentes: highlights/lowlights, evidencia explorable, notas izquierda/derecha, decisiones y seguimiento cuando el contenido lo permita. No reduzcas un informe rico a párrafos y cards genéricas. Recorre todo el catálogo y selecciona piezas que profundicen el argumento; en una muestra de biblioteca sí verifica todos los IDs. No inventes cifras, fuentes, GPS, conversiones o probabilidades para mostrar un componente.
 
 - Notas izquierda/derecha: un matiz, límite o pregunta sobre la frase subrayada. La información crítica permanece en texto normal. Copia `apuntes`; no coloques contenido con offsets para simular márgenes.
 - Escritura y tachado: se revelan al entrar en pantalla, no desde la carga; repetir es un icono flotante en hover/foco, disponible al tacto. Usa la Reenie Beanie y el audio aprobados; no sintetices otro lápiz.

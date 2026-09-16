@@ -1,4 +1,4 @@
 interface:
   display_name: "Bottifact"
   short_description: "Artefactos editoriales, datos y revisión con contexto"
-  default_prompt: "Usa $bottifact para crear un artefacto que explique mi contenido, con componentes pertinentes, comentarios y apariencia estándar."
+  default_prompt: "Usa $bottifact para redactar desde mi voz de CTO/CEO un artefacto listo para compartir, con evidencia, highlights, lowlights, decisiones y una composición rica de componentes útiles, comentarios y apariencia estándar."

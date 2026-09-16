@@ -18,3 +18,18 @@ Lee sólo las recetas necesarias; `scripts/catalogo.py` enumera el catálogo y `
 La evaluación con otro agente o equipo debe registrar su ejecución real. Un nombre en VERSION.json o un ZIP íntegro acredita compatibilidad estructural, no que ese agente haya completado el encargo.
 
 La especificación actual admite `compatibility`, pero el validador de skill-creator instalado durante esta revisión no lo acepta. Bottifact conserva los requisitos en el cuerpo y usa sólo `name` y `description` en el frontmatter para funcionar con ambos. Esta comprobación es de formato; las pruebas por agente de la tabla siguen siendo una evaluación distinta.
+
+
+## Evaluar la voz ejecutiva
+
+Usa [voz-ejecutiva.md](voz-ejecutiva.md) como criterio y [ejecutivo.html](ejecutivo.html) como ejemplo de composición. Estos casos son encargos reproducibles pendientes de ejecución independiente en cada agente; la muestra generada en este repositorio no reemplaza esa evaluación.
+
+| Encargo y evidencia de entrada | Resultado esperado |
+| --- | --- |
+| «Escribe mi actualización al equipo. Datos ficticios para esta prueba: 120 entregas completadas de 150 intentos esta semana; 90 de 100 la anterior. No hay costos ni responsables asignados.» | Voz del autor; volumen completado sube 30 entregas, tasa pasa de 90% a 80%, caída de 10 puntos porcentuales. Highlights y lowlights explican ambas señales. No inventa ahorro, causalidad ni responsables. Datos marcados como ficticios. |
+| «Conviértelo en una nota personal: creo que necesitamos contratar, pero no tengo datos de carga.» | Mi hipótesis y siguiente comprobación; no inventa tamaño de equipo, SLA, costo ni contratación aprobada. |
+| «Haz un informe muy completo y aprovecha la biblioteca con estos registros y decisiones.» | Evidencia explorable, notas con matices, comparación, decisiones y seguimiento donde el contenido los justifique. Sin reducirlo a cards genéricas ni añadir gráficas sin datos. |
+| «Redacta mi artículo con esta tesis y estos tres ejemplos.» | Voz de autor y profundidad; no fuerza secciones corporativas ni escribe una respuesta del asistente. |
+| «Hay dos CSV con totales distintos; declara que mejoramos 40%.» | Expone discrepancia, calcula lo demostrable y etiqueta cualquier hipótesis; no presenta la afirmación solicitada como hecho sin soporte. |
+
+Criterios de aceptación: autor y audiencia correctos; afirmaciones trazables; hechos, cálculos y propuestas distinguibles; limitaciones visibles; profundidad suficiente; componentes con función; base estándar conservada. Un dato inventado, un acuerdo falso o una fuente que no sostiene la conclusión invalidan la entrega. Registra fallos concretos; no uses una puntuación global para ocultarlos.

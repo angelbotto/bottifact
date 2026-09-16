@@ -100,6 +100,24 @@
   ],
   "casos": [
     {
+      "id": "ejecutivo",
+      "nombre": "Compartir mi lectura ejecutiva",
+      "pregunta": "¿Qué cambió, qué significa y qué propongo hacer con la evidencia disponible?",
+      "componentes": [
+        "hallazgo",
+        "cards-trazadas",
+        "explorador",
+        "temporal",
+        "comparacion",
+        "apuntes",
+        "decision",
+        "riesgos",
+        "cronologia",
+        "metodologia",
+        "referencias"
+      ]
+    },
+    {
       "id": "decision",
       "nombre": "Decidir con evidencia",
       "pregunta": "¿Qué decisión permite tomar la evidencia disponible?",
