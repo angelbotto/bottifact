@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nota Tikin"
+  short_description: "Artefactos editoriales, datos y revisión con contexto"
+  default_prompt: "Usa $nota-tikin para crear un artefacto que explique mi contenido, con componentes pertinentes, comentarios y apariencia estándar."

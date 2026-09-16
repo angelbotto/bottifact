@@ -180,3 +180,6 @@ for key in new_ids:
 (ROOT/'ejemplos/evidencia-contenido.html').write_text(new_body)
 (ROOT/'evidencia.html').write_text(build_estandar('Nota Tikin · Ocho formas de explicar',[{'id':'evidencia','titulo':'Ocho formas de explicar','html':(ROOT/'ejemplos/evidencia-contenido.html').read_text()}],'Lectura guiada, escenarios y revisión visual. Datos ilustrativos.',theme='dark'))
 print('Generado evidencia.html: ocho piezas nuevas')
+from ejemplo_colaborativo import generate as build_colaborativo
+build_colaborativo()
+print('Generados colaborativo.html y temas Linear Light / Dark')

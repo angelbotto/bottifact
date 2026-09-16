@@ -3,15 +3,15 @@
   'use strict';
   const root = document.documentElement;
   const selectors = document.querySelectorAll('[data-tema]');
-  const themes = ['system','light','dark','sea','oliva','arcilla','ciruela','liftit','blueprint','hacker'];
+  const themes = ['system','light','dark','sea','oliva','arcilla','ciruela','liftit','blueprint','hacker','linear-light','linear-dark'];
   const initialTheme=document.querySelector('meta[name="nota-tema-inicial"]')?.content;
   const initialStyle=document.querySelector('meta[name="nota-estilo-inicial"]')?.content;
   const preferenceKey=key=>((initialTheme||initialStyle)?key+':'+location.pathname:key);
   const scheme = matchMedia('(prefers-color-scheme: dark)');
-  const themeNames = {system:'Sistema',light:'Claro',dark:'Cálido',sea:'Dark Sea',oliva:'Oliva',arcilla:'Arcilla',ciruela:'Ciruela',liftit:'Liftit',blueprint:'Blueprint',hacker:'Hacker'};
+  const themeNames = {system:'Sistema',light:'Claro',dark:'Cálido',sea:'Dark Sea',oliva:'Oliva',arcilla:'Arcilla',ciruela:'Ciruela',liftit:'Liftit',blueprint:'Blueprint',hacker:'Hacker','linear-light':'Linear Light','linear-dark':'Linear Dark'};
   function syncAppearance() {
     const value=root.dataset.theme||'system';
-    const dark=['dark','sea','ciruela','blueprint','hacker'].includes(value)||(value==='system'&&scheme.matches);
+    const dark=['dark','sea','ciruela','blueprint','hacker','linear-dark'].includes(value)||(value==='system'&&scheme.matches);
     document.querySelectorAll('[data-apariencia-menu]').forEach(menu=>{
       menu.dataset.oscuro=String(dark);
       menu.querySelector('summary').setAttribute('aria-label','Apariencia. '+themeNames[value]+(value==='system'?', '+(dark?'oscuro':'claro'):'')+'.');

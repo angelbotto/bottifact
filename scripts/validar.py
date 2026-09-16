@@ -84,7 +84,7 @@ new_palettes=[set(re.findall(r'(--[\w-]+)\s*:',body)) for _,body in re.findall(r
 base_colors=set(re.findall(r'(--[\w-]+)\s*:',css.split('/* 01 —')[1].split('--texto:')[0]))
 assert len(new_palettes)==3 and all(p==new_palettes[0] and p>=base_colors|palettes[0] for p in new_palettes), 'Paleta adicional incompleta'
 new_themes=[set(re.findall(r'(--[\w-]+)\s*:',body)) for selector,body in re.findall(r'(:root[^{}]*)\{([^{}]*)\}',css.split('/* 28 —')[1]) if '--calor-0:' in body]
-assert len(new_themes)==3 and all(p==new_themes[0] and p>=new_palettes[0] for p in new_themes),'Tema nuevo incompleto'
+assert len(new_themes)==5 and all(p==new_themes[0] and p>=new_palettes[0] for p in new_themes),'Tema nuevo incompleto'
 for doc in ['SKILL.md','componentes.md','referencia-cmrg.md']:
  for ref in re.findall(r'\]\(([^)]+)\)',(ROOT/doc).read_text()):
   if ref.startswith(('https:','http:','#')):continue
@@ -92,7 +92,7 @@ for doc in ['SKILL.md','componentes.md','referencia-cmrg.md']:
 for file in ROOT.glob('*.js'):
  assert not re.search(r'\b(fetch|XMLHttpRequest)\s*\(',file.read_text()),(file.name,'red en tiempo de ejecución')
  if shutil.which('node'):subprocess.run(['node','--check',str(file)],check=True,capture_output=True)
-print('Tokens de nueve paletas y preferencia del sistema completos; enlaces, ausencia de fetch y sintaxis JS correctos' if shutil.which('node') else 'Tokens, enlaces y ausencia de fetch correctos; Node no disponible: sintaxis JS no ejecutada')
+print('Tokens de once paletas y preferencia del sistema completos; enlaces, ausencia de fetch y sintaxis JS correctos' if shutil.which('node') else 'Tokens, enlaces y ausencia de fetch correctos; Node no disponible: sintaxis JS no ejecutada')
 registry=json.loads((ROOT/'registro.json').read_text())
 recipes=dict(re.findall(r'<!-- nota:ejemplo ([\w-]+) -->\s*```html\n(.*?)\n```',(ROOT/'componentes.md').read_text(),re.S))
 expected=set(recipes)-{'informe','multipagina'}
@@ -105,7 +105,7 @@ print('Registro local: '+str(len(expected))+' recetas con HTML original, documen
 print('Esto NO comprueba píxeles, audio, WebGL, foco real ni comportamiento del navegador.')
 
 from contrato_artefacto import validate
-for name in ['estandar.html','estandar-capitulos.html','prioridades.html','guia.html','liftit.html','blueprint.html','hacker.html','evidencia.html']:
+for name in ['estandar.html','estandar-capitulos.html','prioridades.html','guia.html','liftit.html','blueprint.html','hacker.html','evidencia.html','colaborativo.html','linear-light.html','linear-dark.html']:
  errors=validate((ROOT/name).read_text());assert not errors,(name,errors)
  print(name+': contrato estándar de artefacto correcto')
 

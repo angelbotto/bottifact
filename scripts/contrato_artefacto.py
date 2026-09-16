@@ -5,7 +5,7 @@ from html import escape
 import hashlib,json,re
 ROOT=Path(__file__).resolve().parents[1]
 VERSION='4'
-THEMES=('system','light','dark','sea','oliva','arcilla','ciruela','liftit','blueprint','hacker')
+THEMES=('system','light','dark','sea','oliva','arcilla','ciruela','liftit','blueprint','hacker','linear-light','linear-dark')
 STYLES=('editorial','sobrio','tecnico','libro','revista','bitacora')
 NOSCRIPT='.nota-estandar > .pagina { display:grid!important; grid-template-columns:1fr min(var(--texto),calc(100% - 2 * var(--gutter))) 1fr; row-gap:28px; }.nota-estandar .indice,.nota-estandar ~ .regla,.navegacion-editorial,.nota-estandar .paginacion { display:none!important; }'
 THREE='https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js'
@@ -60,7 +60,8 @@ def toc(content):
   items.append((anchor.attrs['id'],n.text().strip()))
  return items
 
-def build(title,pages,description='',brand='tikin',theme=None,style=None):
+def build(title,pages,description='',brand='tikin',theme=None,style=None,document_id=None):
+ if document_id is not None and (not isinstance(document_id,str) or not re.fullmatch(r'[a-zA-Z0-9_-]{1,120}',document_id)):raise ValueError('documento_id: 1–120 letras, números, guiones o subrayados.')
  if theme is not None and theme not in THEMES:raise ValueError('Tema desconocido: '+str(theme))
  if style is not None and style not in STYLES:raise ValueError('Estilo desconocido: '+str(style))
  if not isinstance(title,str) or not title.strip() or not isinstance(pages,list) or not pages:raise ValueError('Faltan título o páginas.')
@@ -91,6 +92,7 @@ def build(title,pages,description='',brand='tikin',theme=None,style=None):
  files=['fuentes.css','estilo.css',*modules]
  manifest={'version':VERSION,'paginas':ids,'modulos':modules,'fuentes':{f:hashlib.sha256((ROOT/f).read_text().encode('utf-8')).hexdigest() for f in files}}
  result='<title>'+escape(title)+'</title>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="nota-tikin-version" content="'+VERSION+'">\n'
+ result+='<meta name="nota-documento" content="'+(document_id or 'nota-'+hashlib.sha256(title.encode()).hexdigest()[:24])+'">\n'
  for name,value in [('nota-tema-inicial',theme),('nota-estilo-inicial',style)]:
   if value is not None:result+='<meta name="'+name+'" content="'+value+'">\n'
  for file in files[:2]:result+='<style data-nota-fuente="'+file+'">\n'+(ROOT/file).read_text()+'\n</style>\n'
@@ -118,7 +120,7 @@ def validate(html):
  menus=has('data-apariencia-menu');require(len(menus)==1 and 'orbita' in menus[0].classes,'Debe existir una sola llave circular sol/luna de Apariencia.')
  if menus:
   children=menus[0].descendants()
-  require(set(THEMES)<={n.attrs.get('value') for n in children if 'data-elegir-tema' in n.attrs},'Apariencia debe ofrecer las nueve paletas y Sistema.')
+  require(set(THEMES)<={n.attrs.get('value') for n in children if 'data-elegir-tema' in n.attrs},'Apariencia debe ofrecer todas las paletas y Sistema.')
   require(all(any(c in n.classes for n in children) for c in ['icono-sol','icono-luna','paleta-mini']),'Faltan iconos sol/luna o muestras de color.')
  require(set(STYLES)<={n.attrs.get('value') for n in has('data-elegir-estilo')},'Apariencia debe ofrecer las seis combinaciones tipográficas.')
  require({n.attrs.get('data-preferencia-tab') for n in has('data-preferencia-tab')}=={'temas','letras','sonido'},'Apariencia necesita pestañas Temas, Letras y Sonido.')

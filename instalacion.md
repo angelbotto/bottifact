@@ -59,3 +59,7 @@ de agentes. El ZIP está en el servidor privado ya usado para revisar los artefa
 
 Para regenerarlo en una copia de desarrollo ejecuta `python3 scripts/empaquetar.py`. La carpeta
 `descargas` es salida, no una fuente: no se incluye recursivamente en el paquete.
+
+## Instalar desde GitHub
+
+El repositorio `angelbotto/nota-tikin` contiene la misma raíz portable. Puedes clonarlo en el directorio de skills con el nombre `nota-tikin`; el repositorio privado requiere acceso de GitHub. Un clone se actualiza con `git pull --ff-only` después de revisar los cambios y comprobar que no hay modificaciones locales. No mezcles ese procedimiento con el instalador de ZIP: cada método conserva su propio origen. La CI adjunta el ZIP verificado como artefacto descargable de cada ejecución correcta.

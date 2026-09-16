@@ -71,8 +71,7 @@ Los `h2` con IDs describen el recorrido; evita títulos vacíos como «Más info
 
 El botón flotante de comentarios permite señalar un punto, escribir un ajuste y revisar los pines.
 «Ver comentarios» reúne contexto, capítulo, fragmento y posición en un prompt copiable. No dupliques
-el montaje en cada página. Los comentarios son locales y se pierden al recargar: invita a copiar
-el prompt al terminar la revisión; no prometas colaboración o guardado que no existe.
+el montaje en cada página. Los hilos se guardan en este navegador y admiten respuestas, responsable y resolución. Para compartir, exporta el archivo de revisión y reúne respuestas mediante importación. No prometas sincronización remota ni identidad verificada. Conserva el documento-id; consulta [colaboracion.md](colaboracion.md).
 
 ## Dar escala a la evidencia
 
