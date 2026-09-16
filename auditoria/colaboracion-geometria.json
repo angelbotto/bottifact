@@ -1,0 +1,314 @@
+[
+  {
+    "overflow": false,
+    "ratios": [
+      {
+        "bg": "--papel",
+        "fg": "--tinta",
+        "ratio": 16.067994334843153
+      },
+      {
+        "bg": "--papel",
+        "fg": "--tinta-2",
+        "ratio": 8.300910527297805
+      },
+      {
+        "bg": "--papel",
+        "fg": "--tinta-3",
+        "ratio": 5.740318770794708
+      },
+      {
+        "bg": "--panel",
+        "fg": "--tinta",
+        "ratio": 15.12091426979583
+      },
+      {
+        "bg": "--panel",
+        "fg": "--tinta-2",
+        "ratio": 7.81163808181919
+      },
+      {
+        "bg": "--panel",
+        "fg": "--tinta-3",
+        "ratio": 5.401972779282402
+      },
+      {
+        "bg": "--panel-2",
+        "fg": "--tinta",
+        "ratio": 13.832667487533387
+      },
+      {
+        "bg": "--panel-2",
+        "fg": "--tinta-2",
+        "ratio": 7.146114989528144
+      },
+      {
+        "bg": "--panel-2",
+        "fg": "--tinta-3",
+        "ratio": 4.9417443878893845
+      }
+    ],
+    "theme": "linear-light",
+    "width": 320
+  },
+  {
+    "overflow": false,
+    "ratios": [
+      {
+        "bg": "--papel",
+        "fg": "--tinta",
+        "ratio": 16.716074930692542
+      },
+      {
+        "bg": "--papel",
+        "fg": "--tinta-2",
+        "ratio": 11.172519481172033
+      },
+      {
+        "bg": "--papel",
+        "fg": "--tinta-3",
+        "ratio": 7.587583356659402
+      },
+      {
+        "bg": "--panel",
+        "fg": "--tinta",
+        "ratio": 15.538120519161714
+      },
+      {
+        "bg": "--panel",
+        "fg": "--tinta-2",
+        "ratio": 10.385210339203772
+      },
+      {
+        "bg": "--panel",
+        "fg": "--tinta-3",
+        "ratio": 7.052898789565005
+      },
+      {
+        "bg": "--panel-2",
+        "fg": "--tinta",
+        "ratio": 13.547554221960823
+      },
+      {
+        "bg": "--panel-2",
+        "fg": "--tinta-2",
+        "ratio": 9.05477596233896
+      },
+      {
+        "bg": "--panel-2",
+        "fg": "--tinta-3",
+        "ratio": 6.149362058030214
+      }
+    ],
+    "theme": "linear-dark",
+    "width": 320
+  },
+  {
+    "overflow": false,
+    "ratios": [
+      {
+        "bg": "--papel",
+        "fg": "--tinta",
+        "ratio": 16.067994334843153
+      },
+      {
+        "bg": "--papel",
+        "fg": "--tinta-2",
+        "ratio": 8.300910527297805
+      },
+      {
+        "bg": "--papel",
+        "fg": "--tinta-3",
+        "ratio": 5.740318770794708
+      },
+      {
+        "bg": "--panel",
+        "fg": "--tinta",
+        "ratio": 15.12091426979583
+      },
+      {
+        "bg": "--panel",
+        "fg": "--tinta-2",
+        "ratio": 7.81163808181919
+      },
+      {
+        "bg": "--panel",
+        "fg": "--tinta-3",
+        "ratio": 5.401972779282402
+      },
+      {
+        "bg": "--panel-2",
+        "fg": "--tinta",
+        "ratio": 13.832667487533387
+      },
+      {
+        "bg": "--panel-2",
+        "fg": "--tinta-2",
+        "ratio": 7.146114989528144
+      },
+      {
+        "bg": "--panel-2",
+        "fg": "--tinta-3",
+        "ratio": 4.9417443878893845
+      }
+    ],
+    "theme": "linear-light",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "ratios": [
+      {
+        "bg": "--papel",
+        "fg": "--tinta",
+        "ratio": 16.716074930692542
+      },
+      {
+        "bg": "--papel",
+        "fg": "--tinta-2",
+        "ratio": 11.172519481172033
+      },
+      {
+        "bg": "--papel",
+        "fg": "--tinta-3",
+        "ratio": 7.587583356659402
+      },
+      {
+        "bg": "--panel",
+        "fg": "--tinta",
+        "ratio": 15.538120519161714
+      },
+      {
+        "bg": "--panel",
+        "fg": "--tinta-2",
+        "ratio": 10.385210339203772
+      },
+      {
+        "bg": "--panel",
+        "fg": "--tinta-3",
+        "ratio": 7.052898789565005
+      },
+      {
+        "bg": "--panel-2",
+        "fg": "--tinta",
+        "ratio": 13.547554221960823
+      },
+      {
+        "bg": "--panel-2",
+        "fg": "--tinta-2",
+        "ratio": 9.05477596233896
+      },
+      {
+        "bg": "--panel-2",
+        "fg": "--tinta-3",
+        "ratio": 6.149362058030214
+      }
+    ],
+    "theme": "linear-dark",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "ratios": [
+      {
+        "bg": "--papel",
+        "fg": "--tinta",
+        "ratio": 16.067994334843153
+      },
+      {
+        "bg": "--papel",
+        "fg": "--tinta-2",
+        "ratio": 8.300910527297805
+      },
+      {
+        "bg": "--papel",
+        "fg": "--tinta-3",
+        "ratio": 5.740318770794708
+      },
+      {
+        "bg": "--panel",
+        "fg": "--tinta",
+        "ratio": 15.12091426979583
+      },
+      {
+        "bg": "--panel",
+        "fg": "--tinta-2",
+        "ratio": 7.81163808181919
+      },
+      {
+        "bg": "--panel",
+        "fg": "--tinta-3",
+        "ratio": 5.401972779282402
+      },
+      {
+        "bg": "--panel-2",
+        "fg": "--tinta",
+        "ratio": 13.832667487533387
+      },
+      {
+        "bg": "--panel-2",
+        "fg": "--tinta-2",
+        "ratio": 7.146114989528144
+      },
+      {
+        "bg": "--panel-2",
+        "fg": "--tinta-3",
+        "ratio": 4.9417443878893845
+      }
+    ],
+    "theme": "linear-light",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "ratios": [
+      {
+        "bg": "--papel",
+        "fg": "--tinta",
+        "ratio": 16.716074930692542
+      },
+      {
+        "bg": "--papel",
+        "fg": "--tinta-2",
+        "ratio": 11.172519481172033
+      },
+      {
+        "bg": "--papel",
+        "fg": "--tinta-3",
+        "ratio": 7.587583356659402
+      },
+      {
+        "bg": "--panel",
+        "fg": "--tinta",
+        "ratio": 15.538120519161714
+      },
+      {
+        "bg": "--panel",
+        "fg": "--tinta-2",
+        "ratio": 10.385210339203772
+      },
+      {
+        "bg": "--panel",
+        "fg": "--tinta-3",
+        "ratio": 7.052898789565005
+      },
+      {
+        "bg": "--panel-2",
+        "fg": "--tinta",
+        "ratio": 13.547554221960823
+      },
+      {
+        "bg": "--panel-2",
+        "fg": "--tinta-2",
+        "ratio": 9.05477596233896
+      },
+      {
+        "bg": "--panel-2",
+        "fg": "--tinta-3",
+        "ratio": 6.149362058030214
+      }
+    ],
+    "theme": "linear-dark",
+    "width": 1440
+  }
+]

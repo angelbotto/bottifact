@@ -1,0 +1,50 @@
+[
+  {
+    "name": "36 filas disponibles y 10 montadas",
+    "ok": true
+  },
+  {
+    "name": "Selección persiste entre páginas",
+    "ok": true
+  },
+  {
+    "name": "CSV selección exacta",
+    "ok": true
+  },
+  {
+    "name": "Filtro numérico 7 filas",
+    "ok": true
+  },
+  {
+    "name": "Filtro fecha 4 filas",
+    "ok": true
+  },
+  {
+    "name": "Grupo plegable",
+    "ok": true
+  },
+  {
+    "name": "Impresión conserva las 36 filas",
+    "ok": true
+  },
+  {
+    "name": "Después de imprimir recupera página",
+    "ok": true
+  },
+  {
+    "name": "Comentario creado",
+    "ok": true
+  },
+  {
+    "name": "Respuesta conservada",
+    "ok": true
+  },
+  {
+    "name": "Resolver excluye del prompt",
+    "ok": true
+  },
+  {
+    "name": "Reabrir conserva hilo",
+    "ok": true
+  }
+]
