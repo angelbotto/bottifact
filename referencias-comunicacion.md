@@ -1,6 +1,6 @@
 # Referencias para la comunicación ejecutiva
 
-Consulta realizada el 15 de septiembre de 2026. Esta revisión usa secciones y materiales públicos de los autores e instituciones originales; no equivale a haber leído íntegramente los tres libros. No se incluye su texto completo en el skill. Las aplicaciones editoriales son una adaptación propia para el perfil solicitado por Angel, no reglas que estos autores hayan definido para Bottifact.
+Consulta actualizada el 15 de septiembre de 2026. Esta revisión usa secciones y materiales públicos de los autores e instituciones originales; no equivale a haber leído íntegramente los cuatro libros. No se incluye su texto completo en el skill. Las aplicaciones editoriales son una adaptación propia para el perfil solicitado por Angel, no reglas que estos autores hayan definido para Bottifact.
 
 ## High Growth Handbook · Elad Gil
 
@@ -27,6 +27,12 @@ El primer extracto cuestiona la precisión atribuida a los datos utilizados para
 Leído: [Master Plan, Part Deux](https://www.tesla.com/master-plan-part-deux), texto firmado por Musk el 20 de julio de 2016. Explica la relación entre propósito, restricciones iniciales y una secuencia de acciones; también presenta aspiraciones futuras.
 
 Aplicación editorial propia: abrir con la intención, hacer visible la lógica de las decisiones y cerrar con pasos concretos. No trasladar predicciones históricas al presente como resultados comprobados. No usar correos virales sin procedencia, ni copiar agresividad o afirmaciones absolutas como si fueran la voz del usuario.
+
+## Scaling People · Claire Hughes Johnson
+
+Leído: [Creating your founding documents](https://stripe.com/guides/atlas/creating-your-founding-documents), extracto oficial del libro: misión, metas, principios y acuerdos de equipo. Conecta propósito y responsabilidades, y propone hacer visibles métricas, riesgos y dependencias.
+
+Aplicación: los documentos sobre equipos deben aclarar qué resultado persiguen, qué les corresponde y cómo trabajar con ellos. Llevar esos acuerdos a una pieza consultable evita depender de explicaciones repetidas. Esta lectura cubre el extracto, no el libro completo.
 
 ## Cómo mantener estas referencias
 

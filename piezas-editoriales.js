@@ -54,7 +54,12 @@
  }
  function init(root=document){
   const framed='.marcos-editoriales :is(.ancho,.amplio):not(.marco-difuso),.marco-punteado';
-  [...(root.matches?.(framed)?[root]:[]),...root.querySelectorAll(framed)].forEach(el=>{if(el.querySelector(':scope > .marco-lineas'))return;const lines=document.createElement('span');lines.className='marco-lineas';lines.setAttribute('aria-hidden','true');el.append(lines);});
+  [...(root.matches?.(framed)?[root]:[]),...root.querySelectorAll(framed)].forEach(el=>{
+   // Una composición tiene un marco exterior; sus piezas no crean otra rejilla.
+   const existing=el.querySelector(':scope > .marco-lineas');
+   if(el.parentElement?.closest('.marco-difuso,.marco-punteado,.marcos-editoriales :is(.ancho,.amplio)')){existing?.remove();return;}
+   if(existing)return;const lines=document.createElement('span');lines.className='marco-lineas';lines.setAttribute('aria-hidden','true');el.append(lines);
+  });
   [...(root.matches?.(selector)?[root]:[]),...root.querySelectorAll(selector)].forEach(mount);}
  window.NotaPiezasEditoriales={init,get:el=>instances.get(el)};init();
 })();

@@ -1,0 +1,145 @@
+{
+  "regression": {
+    "after": "none",
+    "before": "none",
+    "frames": 1,
+    "mask": "none",
+    "padding": "0px"
+  },
+  "measurements": [
+    {
+      "charts": [
+        {
+          "id": "ejecutivo-capitulos",
+          "svg": true,
+          "total": 82
+        },
+        {
+          "id": "ejecutivo-composicion",
+          "svg": true,
+          "total": 82
+        }
+      ],
+      "documentWidth": 320,
+      "frames": 1,
+      "left": 3,
+      "notes": 6,
+      "right": 3,
+      "width": 320,
+      "mode": "light"
+    },
+    {
+      "charts": [
+        {
+          "id": "ejecutivo-capitulos",
+          "svg": true,
+          "total": 82
+        },
+        {
+          "id": "ejecutivo-composicion",
+          "svg": true,
+          "total": 82
+        }
+      ],
+      "documentWidth": 390,
+      "frames": 1,
+      "left": 3,
+      "notes": 6,
+      "right": 3,
+      "width": 390,
+      "mode": "light"
+    },
+    {
+      "charts": [
+        {
+          "id": "ejecutivo-capitulos",
+          "svg": true,
+          "total": 82
+        },
+        {
+          "id": "ejecutivo-composicion",
+          "svg": true,
+          "total": 82
+        }
+      ],
+      "documentWidth": 1440,
+      "frames": 1,
+      "left": 3,
+      "notes": 6,
+      "right": 3,
+      "width": 1440,
+      "mode": "light"
+    },
+    {
+      "charts": [
+        {
+          "id": "ejecutivo-capitulos",
+          "svg": true,
+          "total": 82
+        },
+        {
+          "id": "ejecutivo-composicion",
+          "svg": true,
+          "total": 82
+        }
+      ],
+      "documentWidth": 320,
+      "frames": 1,
+      "left": 3,
+      "notes": 6,
+      "right": 3,
+      "width": 320,
+      "mode": "dark"
+    },
+    {
+      "charts": [
+        {
+          "id": "ejecutivo-capitulos",
+          "svg": true,
+          "total": 82
+        },
+        {
+          "id": "ejecutivo-composicion",
+          "svg": true,
+          "total": 82
+        }
+      ],
+      "documentWidth": 390,
+      "frames": 1,
+      "left": 3,
+      "notes": 6,
+      "right": 3,
+      "width": 390,
+      "mode": "dark"
+    },
+    {
+      "charts": [
+        {
+          "id": "ejecutivo-capitulos",
+          "svg": true,
+          "total": 82
+        },
+        {
+          "id": "ejecutivo-composicion",
+          "svg": true,
+          "total": 82
+        }
+      ],
+      "documentWidth": 1440,
+      "frames": 1,
+      "left": 3,
+      "notes": 6,
+      "right": 3,
+      "width": 1440,
+      "mode": "dark"
+    }
+  ],
+  "toggle": {
+    "restored": true,
+    "switched": true
+  },
+  "limits": [
+    "Comprobación DOM de las notas, no audición humana.",
+    "La instalación del skill no acredita calidad editorial de cada agente."
+  ]
+}

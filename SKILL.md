@@ -53,7 +53,7 @@ Las recetas completas y límites están en [componentes.md](componentes.md). Par
 
 ## Invariantes visuales
 
-Texto hasta 35rem, figuras hasta 62/76rem y contracción fluida. No uses márgenes negativos, overflow oculto en el documento ni elipsis para datos. Tablas/código anchos tienen scroll local, tabindex y nombre accesible. El índice y la regla no pisan figuras ni cabecera.
+Texto hasta 35rem, figuras hasta 62/76rem y contracción fluida. No uses márgenes negativos, overflow oculto en el documento ni elipsis para datos. Tablas/código anchos tienen scroll local, tabindex y nombre accesible. El índice y la regla no pisan figuras ni cabecera. Cada composición tiene un solo marco exterior: no acumules `.marco-difuso` dentro de otra sección enmarcada.
 
 Color y tipografía son elecciones independientes. Elige una de las 13 familias y un modo `light`, `dark` o `system` de forma independiente; Sistema sigue el dispositivo. [temas.md](temas.md) documenta el catálogo, referencias, migración y cómo añadir familias. Las paletas de editores y Linear son adaptaciones propias. Los estilos Editorial, Sobrio, Técnico, Libro, Revista y Bitácora cambian la combinación tipográfica. Conserva la identidad de un artefacto existente salvo que el usuario pida cambiarla.
 

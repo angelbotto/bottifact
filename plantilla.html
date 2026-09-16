@@ -1981,6 +1981,10 @@ body:has(.revision-barra) { padding-bottom:0; }
 
 .marco-lineas { position:absolute; inset:0; margin:0; pointer-events:none; }
 .marcos-editoriales .marco-difuso::before { border-block-style:dotted; }.marcos-editoriales .marco-difuso::after { border-inline-style:dotted; }
+/* El contenedor exterior es dueño del marco, también cuando una receta trae el suyo. */
+.marcos-editoriales :is(.ancho,.amplio,.marco-punteado,.marco-difuso) :is(.ancho,.amplio,.marco-punteado,.marco-difuso) { padding:0; }
+.marcos-editoriales :is(.ancho,.amplio,.marco-punteado,.marco-difuso) .marco-difuso::before,
+.marcos-editoriales :is(.ancho,.amplio,.marco-punteado,.marco-difuso) .marco-difuso::after { content:none; }
 
 /* 26 — Galería fotográfica de /work; la variante anterior conserva sus controles. */
 :root { --foto-fondo:#171614; --foto-tinta:#f4eee8; --foto-borde:#ffffff20; --foto-sombra:#17161433; }
@@ -6568,7 +6572,12 @@ ERROR  ejemplo rechazado      1 recurso externo&lt;/code&gt;&lt;/pre&gt;&lt;/div
  }
  function init(root=document){
   const framed='.marcos-editoriales :is(.ancho,.amplio):not(.marco-difuso),.marco-punteado';
-  [...(root.matches?.(framed)?[root]:[]),...root.querySelectorAll(framed)].forEach(el=>{if(el.querySelector(':scope > .marco-lineas'))return;const lines=document.createElement('span');lines.className='marco-lineas';lines.setAttribute('aria-hidden','true');el.append(lines);});
+  [...(root.matches?.(framed)?[root]:[]),...root.querySelectorAll(framed)].forEach(el=>{
+   // Una composición tiene un marco exterior; sus piezas no crean otra rejilla.
+   const existing=el.querySelector(':scope > .marco-lineas');
+   if(el.parentElement?.closest('.marco-difuso,.marco-punteado,.marcos-editoriales :is(.ancho,.amplio)')){existing?.remove();return;}
+   if(existing)return;const lines=document.createElement('span');lines.className='marco-lineas';lines.setAttribute('aria-hidden','true');el.append(lines);
+  });
   [...(root.matches?.(selector)?[root]:[]),...root.querySelectorAll(selector)].forEach(mount);}
  window.NotaPiezasEditoriales={init,get:el=>instances.get(el)};init();
 })();

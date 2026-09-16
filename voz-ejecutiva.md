@@ -70,6 +70,8 @@ Alterna notas izquierda/derecha cuando cambie su relación con el argumento. Una
 
 ## Calibración de la voz
 
+Para documentos de organización, aplica también la lectura de **Scaling People**: propósito del equipo, alcance, responsabilidades, métricas, dependencias y forma de colaboración deben poder encontrarse juntos. Usa `criterios`, `decision`, `lista-estados` y comentarios para discutir acuerdos concretos. Una expectativa sin confirmar se presenta como propuesta. La referencia y el alcance de lectura están en [referencias-comunicacion.md](referencias-comunicacion.md).
+
 Los ejemplos siguientes usan hechos de Bottifact, no resultados financieros ni acuerdos del equipo.
 
 | Redacción débil | Redacción lista para compartir |

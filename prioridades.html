@@ -1985,6 +1985,10 @@ body:has(.revision-barra) { padding-bottom:0; }
 
 .marco-lineas { position:absolute; inset:0; margin:0; pointer-events:none; }
 .marcos-editoriales .marco-difuso::before { border-block-style:dotted; }.marcos-editoriales .marco-difuso::after { border-inline-style:dotted; }
+/* El contenedor exterior es dueño del marco, también cuando una receta trae el suyo. */
+.marcos-editoriales :is(.ancho,.amplio,.marco-punteado,.marco-difuso) :is(.ancho,.amplio,.marco-punteado,.marco-difuso) { padding:0; }
+.marcos-editoriales :is(.ancho,.amplio,.marco-punteado,.marco-difuso) .marco-difuso::before,
+.marcos-editoriales :is(.ancho,.amplio,.marco-punteado,.marco-difuso) .marco-difuso::after { content:none; }
 
 /* 26 — Galería fotográfica de /work; la variante anterior conserva sus controles. */
 :root { --foto-fondo:#171614; --foto-tinta:#f4eee8; --foto-borde:#ffffff20; --foto-sombra:#17161433; }
@@ -4312,7 +4316,12 @@ body:has(.revision-barra) { padding-bottom:0; }
  }
  function init(root=document){
   const framed='.marcos-editoriales :is(.ancho,.amplio):not(.marco-difuso),.marco-punteado';
-  [...(root.matches?.(framed)?[root]:[]),...root.querySelectorAll(framed)].forEach(el=>{if(el.querySelector(':scope > .marco-lineas'))return;const lines=document.createElement('span');lines.className='marco-lineas';lines.setAttribute('aria-hidden','true');el.append(lines);});
+  [...(root.matches?.(framed)?[root]:[]),...root.querySelectorAll(framed)].forEach(el=>{
+   // Una composición tiene un marco exterior; sus piezas no crean otra rejilla.
+   const existing=el.querySelector(':scope > .marco-lineas');
+   if(el.parentElement?.closest('.marco-difuso,.marco-punteado,.marcos-editoriales :is(.ancho,.amplio)')){existing?.remove();return;}
+   if(existing)return;const lines=document.createElement('span');lines.className='marco-lineas';lines.setAttribute('aria-hidden','true');el.append(lines);
+  });
   [...(root.matches?.(selector)?[root]:[]),...root.querySelectorAll(selector)].forEach(mount);}
  window.NotaPiezasEditoriales={init,get:el=>instances.get(el)};init();
 })();
@@ -4992,4 +5001,4 @@ body:has(.revision-barra) { padding-bottom:0; }
 })();
 
 </script>
-<script type="application/json" data-nota-manifiesto>{"version": "4", "paginas": ["prioridades", "piezas"], "modulos": ["audio.js", "controles.js", "piezas-editoriales.js", "interacciones.js", "multipagina.js", "mano.js", "codigo.js", "revision.js"], "fuentes": {"fuentes.css": "03ac4b770dd47f79468c01c6b0f8b0ce44ae865331d6d5b46472c80bb41fe1d4", "estilo.css": "6c0f46ab1e6624819af97af4b7059e8c7b74efd1d2e0d3e839824087d34e69a1", "audio.js": "9247e4e95f65d44339316ba4f6941f06039b04b5e9c247ff6749314240a06713", "controles.js": "1404b8abb8ce5534bbfccae6fc38ca7db4d4d29c399538fafe19c625dc203532", "piezas-editoriales.js": "120e3fc49ce4d14b8710721eb8645334f7898e2b2229fb2926ecf710cfa9f720", "interacciones.js": "9e2fa3a3b1d967413e2e4ce7ea72854cbd2f828523dd0ae4afae6c33f334046f", "multipagina.js": "ca6f20dcd7c0c9037aafe3797465146be89117307df328ec84242119442ec03a", "mano.js": "7acebd9e2de58ae8daa141d47a3fe23d33d257fd30fd707268b83d3f1a88140e", "codigo.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "revision.js": "310c8438b89056088b8ab9b6e436eb58e34918cfd91f71d8c2319a6395c2b4f8"}}</script>
+<script type="application/json" data-nota-manifiesto>{"version": "4", "paginas": ["prioridades", "piezas"], "modulos": ["audio.js", "controles.js", "piezas-editoriales.js", "interacciones.js", "multipagina.js", "mano.js", "codigo.js", "revision.js"], "fuentes": {"fuentes.css": "03ac4b770dd47f79468c01c6b0f8b0ce44ae865331d6d5b46472c80bb41fe1d4", "estilo.css": "3f995e8ef1f3345dc8b8452520aec0b2b7a51166e1418aa4712a421c3c4a46bf", "audio.js": "9247e4e95f65d44339316ba4f6941f06039b04b5e9c247ff6749314240a06713", "controles.js": "1404b8abb8ce5534bbfccae6fc38ca7db4d4d29c399538fafe19c625dc203532", "piezas-editoriales.js": "8604004dfc2aacf7e51ae4a0e6184950fdaaa0187f64e956b562adb787cd5fe9", "interacciones.js": "9e2fa3a3b1d967413e2e4ce7ea72854cbd2f828523dd0ae4afae6c33f334046f", "multipagina.js": "ca6f20dcd7c0c9037aafe3797465146be89117307df328ec84242119442ec03a", "mano.js": "7acebd9e2de58ae8daa141d47a3fe23d33d257fd30fd707268b83d3f1a88140e", "codigo.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "revision.js": "310c8438b89056088b8ab9b6e436eb58e34918cfd91f71d8c2319a6395c2b4f8"}}</script>
