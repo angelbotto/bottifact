@@ -12,7 +12,7 @@ Prueba [temas.html](temas.html). Todas las familias tienen versión clara y oscu
 | Arcilla | Narración, arena y terracota |
 | Ciruela | Ensayos y portafolios, malva |
 | Liftit | Operación logística, Ribbon/Bay y coral del LMS |
-| Tikin | Finanzas, papel cálido, lima y lavanda del design system |
+| Tikin | Finanzas, blanco y negro con rojo Tikin; identidad confirmada de la landing |
 | Catabum | Comunidad, violeta, magenta y naranja de la app |
 | Blueprint | Arquitectura, planos y cuadrícula |
 | Hacker | Terminal y documentación técnica, verde |

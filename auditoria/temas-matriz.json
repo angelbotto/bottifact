@@ -230,8 +230,8 @@
       "modeChecked": "light",
       "overflow": false,
       "previewMatches": true,
-      "swatch": "rgb(250, 248, 244)",
-      "terminal": 19.265328216751758,
+      "swatch": "rgb(255, 255, 255)",
+      "terminal": 19.602217167508474,
       "width": 320
     },
     {
@@ -248,8 +248,8 @@
       "modeChecked": "dark",
       "overflow": false,
       "previewMatches": true,
-      "swatch": "rgb(18, 18, 18)",
-      "terminal": 15.660428185847957,
+      "swatch": "rgb(0, 0, 0)",
+      "terminal": 19.028110547666497,
       "width": 320
     },
     {
@@ -770,8 +770,8 @@
       "modeChecked": "light",
       "overflow": false,
       "previewMatches": true,
-      "swatch": "rgb(250, 248, 244)",
-      "terminal": 19.265328216751758,
+      "swatch": "rgb(255, 255, 255)",
+      "terminal": 19.602217167508474,
       "width": 390
     },
     {
@@ -788,8 +788,8 @@
       "modeChecked": "dark",
       "overflow": false,
       "previewMatches": true,
-      "swatch": "rgb(18, 18, 18)",
-      "terminal": 15.660428185847957,
+      "swatch": "rgb(0, 0, 0)",
+      "terminal": 19.028110547666497,
       "width": 390
     },
     {
@@ -1310,8 +1310,8 @@
       "modeChecked": "light",
       "overflow": false,
       "previewMatches": true,
-      "swatch": "rgb(250, 248, 244)",
-      "terminal": 19.265328216751758,
+      "swatch": "rgb(255, 255, 255)",
+      "terminal": 19.602217167508474,
       "width": 1440
     },
     {
@@ -1328,8 +1328,8 @@
       "modeChecked": "dark",
       "overflow": false,
       "previewMatches": true,
-      "swatch": "rgb(18, 18, 18)",
-      "terminal": 15.660428185847957,
+      "swatch": "rgb(0, 0, 0)",
+      "terminal": 19.028110547666497,
       "width": 1440
     },
     {

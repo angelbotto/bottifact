@@ -2895,6 +2895,7 @@ body:has(.revision-barra) { padding-bottom:0; }
 .marca-firma { display:inline-flex; align-items:center; gap:8px; }
 .marca-firma .marca-logo { display:block; width:110px; height:32px; object-fit:contain; }
 .marca-firma[data-marca=liftit] .marca-logo { width:36px; height:36px; }
+.marca-firma[data-marca=tikin] .marca-logo { width:124px; height:26px; }
 .marca-firma .marca-nombre { font:600 24px/1 var(--sans); letter-spacing:-.04em; }
 .marca-firma .marca-logo-dark { display:none; }
 :root[data-color-mode=dark] .marca-firma .marca-logo-light { display:none; }
@@ -3373,50 +3374,50 @@ body:has(.revision-barra) { padding-bottom:0; }
 :root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="liftit"] { --vista-papel:#10121C; --vista-tinta:#FFFFFF; --vista-acento:#A2ADFF; }
 :root[data-theme="tikin-light"] {
   color-scheme:light;
-  --papel: #FAF8F4;
-  --panel: #FFFFFF;
-  --panel-2: #F3F3F3;
-  --tinta: #0B0F10;
-  --tinta-2: #4A4A4A;
-  --tinta-3: #696969;
-  --naranja: #176323;
-  --verde: #067006;
-  --rojo: #C40000;
-  --azul: #5A46C8;
-  --marca-acento: #85FF85;
-  --marca-secundario: #DFE1FF;
-  --linea: #d6d6d6;
-  --linea-fuerte: #8a8c8c;
-  --naranja-suave: #e3e9df;
-  --verde-suave: #FFFFFF;
-  --rojo-suave: #FFFFFF;
-  --azul-suave: #FFFFFF;
-  --marcador: #176323;
-  --foco: #176323;
-  --globo-base: #F3F3F3;
-  --globo-arco: #696969;
-  --globo-punto: #176323;
-  --globo-glow: #F3F3F3;
+  --papel: #FFFFFF;
+  --panel: #F7F7F7;
+  --panel-2: #EFEFEF;
+  --tinta: #000000;
+  --tinta-2: #333333;
+  --tinta-3: #626262;
+  --naranja: #C51D24;
+  --verde: #262626;
+  --rojo: #B91C23;
+  --azul: #575757;
+  --marca-acento: #FC2929;
+  --marca-secundario: #000000;
+  --linea: #cdcdcd;
+  --linea-fuerte: #808080;
+  --naranja-suave: #f9e8e9;
+  --verde-suave: #F7F7F7;
+  --rojo-suave: #F7F7F7;
+  --azul-suave: #F7F7F7;
+  --marcador: #C51D24;
+  --foco: #C51D24;
+  --globo-base: #EFEFEF;
+  --globo-arco: #626262;
+  --globo-punto: #C51D24;
+  --globo-glow: #EFEFEF;
   --globo-dark: 0;
   --globo-brillo: 2.4;
-  --grafica-1: #176323;
-  --grafica-2: #067006;
-  --grafica-3: #C40000;
-  --grafica-4: #5A46C8;
-  --grafica-papel: #FAF8F4;
-  --grafica-tinta: #4A4A4A;
-  --calor-tinta: #0B0F10;
-  --calor-ausente: #F3F3F3;
-  --tabla-total: #FFFFFF;
-  --escena-1: #176323;
-  --escena-2: #067006;
-  --escena-3: #C40000;
-  --escena-tinta: #4A4A4A;
-  --sonido-papel: #FFFFFF;
-  --sonido-activo: #067006;
-  --sonido-tinta: #0B0F10;
-  --escritura-trazo: #176323;
-  --escritura-papel: #FFFFFF;
+  --grafica-1: #C51D24;
+  --grafica-2: #262626;
+  --grafica-3: #B91C23;
+  --grafica-4: #575757;
+  --grafica-papel: #FFFFFF;
+  --grafica-tinta: #333333;
+  --calor-tinta: #000000;
+  --calor-ausente: #EFEFEF;
+  --tabla-total: #F7F7F7;
+  --escena-1: #C51D24;
+  --escena-2: #262626;
+  --escena-3: #B91C23;
+  --escena-tinta: #333333;
+  --sonido-papel: #F7F7F7;
+  --sonido-activo: #262626;
+  --sonido-tinta: #000000;
+  --escritura-trazo: #C51D24;
+  --escritura-papel: #F7F7F7;
   --grafica-linea: var(--linea);
   --tabla-elegida: var(--naranja-suave);
   --escena-linea: var(--linea-fuerte);
@@ -3436,11 +3437,11 @@ body:has(.revision-barra) { padding-bottom:0; }
   --papel-trama: var(--linea);
   --sintaxis-numero: var(--azul);
   --sintaxis-funcion: var(--naranja);
-  --calor-0: #f5f5f0;
-  --calor-1: #e6ebe1;
-  --calor-2: #d3dfd0;
-  --calor-3: #c1d3c0;
-  --calor-4: #afc7af;
+  --calor-0: #fefafb;
+  --calor-1: #faebeb;
+  --calor-2: #f5d9da;
+  --calor-3: #f0c6c8;
+  --calor-4: #ecb4b7;
   --plano-rejilla: #1853a00b;
   --plano-rejilla-mayor: #1853a016;
   --foto-fondo: #101114;
@@ -3448,53 +3449,53 @@ body:has(.revision-barra) { padding-bottom:0; }
   --foto-borde: #ffffff20;
   --foto-sombra: #00000033;
 }
-:root[data-color-mode="light"] .paleta-mini[data-muestra-tema="tikin"] { --vista-papel:#FAF8F4; --vista-tinta:#0B0F10; --vista-acento:#176323; }
+:root[data-color-mode="light"] .paleta-mini[data-muestra-tema="tikin"] { --vista-papel:#FFFFFF; --vista-tinta:#000000; --vista-acento:#C51D24; }
 :root[data-theme="tikin-dark"] {
   color-scheme:dark;
-  --papel: #121212;
-  --panel: #1B1B1B;
-  --panel-2: #242424;
-  --tinta: #F4F4F4;
-  --tinta-2: #C9C9C9;
-  --tinta-3: #A0A0A0;
-  --naranja: #85FF85;
-  --verde: #85FF85;
-  --rojo: #FF9E9E;
-  --azul: #C2BBFF;
-  --marca-acento: #85FF85;
-  --marca-secundario: #DFE1FF;
-  --linea: #404040;
+  --papel: #000000;
+  --panel: #101010;
+  --panel-2: #1C1C1C;
+  --tinta: #FFFFFF;
+  --tinta-2: #DEDEDE;
+  --tinta-3: #AAAAAA;
+  --naranja: #FF6262;
+  --verde: #FFFFFF;
+  --rojo: #FF8585;
+  --azul: #BBBBBB;
+  --marca-acento: #FC2929;
+  --marca-secundario: #FFFFFF;
+  --linea: #393939;
   --linea-fuerte: #838383;
-  --naranja-suave: #1e2a1e;
-  --verde-suave: #1B1B1B;
-  --rojo-suave: #1B1B1B;
-  --azul-suave: #1B1B1B;
-  --marcador: #85FF85;
-  --foco: #85FF85;
-  --globo-base: #242424;
-  --globo-arco: #A0A0A0;
-  --globo-punto: #85FF85;
-  --globo-glow: #242424;
+  --naranja-suave: #1a0a0a;
+  --verde-suave: #101010;
+  --rojo-suave: #101010;
+  --azul-suave: #101010;
+  --marcador: #FF6262;
+  --foco: #FF6262;
+  --globo-base: #1C1C1C;
+  --globo-arco: #AAAAAA;
+  --globo-punto: #FF6262;
+  --globo-glow: #1C1C1C;
   --globo-dark: .6;
   --globo-brillo: 10;
-  --grafica-1: #85FF85;
-  --grafica-2: #85FF85;
-  --grafica-3: #FF9E9E;
-  --grafica-4: #C2BBFF;
-  --grafica-papel: #121212;
-  --grafica-tinta: #C9C9C9;
-  --calor-tinta: #F4F4F4;
-  --calor-ausente: #242424;
-  --tabla-total: #1B1B1B;
-  --escena-1: #85FF85;
-  --escena-2: #85FF85;
-  --escena-3: #FF9E9E;
-  --escena-tinta: #C9C9C9;
-  --sonido-papel: #1B1B1B;
-  --sonido-activo: #85FF85;
-  --sonido-tinta: #F4F4F4;
-  --escritura-trazo: #85FF85;
-  --escritura-papel: #1B1B1B;
+  --grafica-1: #FF6262;
+  --grafica-2: #FFFFFF;
+  --grafica-3: #FF8585;
+  --grafica-4: #BBBBBB;
+  --grafica-papel: #000000;
+  --grafica-tinta: #DEDEDE;
+  --calor-tinta: #FFFFFF;
+  --calor-ausente: #1C1C1C;
+  --tabla-total: #101010;
+  --escena-1: #FF6262;
+  --escena-2: #FFFFFF;
+  --escena-3: #FF8585;
+  --escena-tinta: #DEDEDE;
+  --sonido-papel: #101010;
+  --sonido-activo: #FFFFFF;
+  --sonido-tinta: #FFFFFF;
+  --escritura-trazo: #FF6262;
+  --escritura-papel: #101010;
   --grafica-linea: var(--linea);
   --tabla-elegida: var(--naranja-suave);
   --escena-linea: var(--linea-fuerte);
@@ -3514,11 +3515,11 @@ body:has(.revision-barra) { padding-bottom:0; }
   --papel-trama: var(--linea);
   --sintaxis-numero: var(--azul);
   --sintaxis-funcion: var(--naranja);
-  --calor-0: #141714;
-  --calor-1: #1c271c;
-  --calor-2: #263a26;
-  --calor-3: #2f4d2f;
-  --calor-4: #386038;
+  --calor-0: #050202;
+  --calor-1: #170909;
+  --calor-2: #2b1111;
+  --calor-3: #401818;
+  --calor-4: #542020;
   --plano-rejilla: #ffffff0c;
   --plano-rejilla-mayor: #ffffff18;
   --foto-fondo: #101114;
@@ -3526,7 +3527,7 @@ body:has(.revision-barra) { padding-bottom:0; }
   --foto-borde: #ffffff20;
   --foto-sombra: #00000033;
 }
-:root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="tikin"] { --vista-papel:#121212; --vista-tinta:#F4F4F4; --vista-acento:#85FF85; }
+:root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="tikin"] { --vista-papel:#000000; --vista-tinta:#FFFFFF; --vista-acento:#FF6262; }
 :root[data-theme="catabum-light"] {
   color-scheme:light;
   --papel: #FCF9FF;
@@ -4459,7 +4460,7 @@ body:has(.revision-barra) { padding-bottom:0; }
 <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-principal" value="arcilla" data-elegir-tema><span class="paleta-mini" data-muestra-tema="arcilla" aria-hidden="true"><i></i><b></b></span><span>Arcilla<small>Terracota · arena</small></span></label>
 <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-principal" value="ciruela" data-elegir-tema><span class="paleta-mini" data-muestra-tema="ciruela" aria-hidden="true"><i></i><b></b></span><span>Ciruela<small>Malva · tinta violeta</small></span></label>
 <label data-tema-familia="marca"><input type="radio" name="color-apariencia-principal" value="liftit" data-elegir-tema><span class="paleta-mini" data-muestra-tema="liftit" aria-hidden="true"><i></i><b></b></span><span>Liftit<small>LMS · Ribbon, Bay y coral</small></span></label>
-<label data-tema-familia="marca"><input type="radio" name="color-apariencia-principal" value="tikin" data-elegir-tema><span class="paleta-mini" data-muestra-tema="tikin" aria-hidden="true"><i></i><b></b></span><span>Tikin<small>Finanzas · lima y lavanda</small></span></label>
+<label data-tema-familia="marca"><input type="radio" name="color-apariencia-principal" value="tikin" data-elegir-tema><span class="paleta-mini" data-muestra-tema="tikin" aria-hidden="true"><i></i><b></b></span><span>Tikin<small>Blanco y negro · rojo Tikin</small></span></label>
 <label data-tema-familia="marca"><input type="radio" name="color-apariencia-principal" value="catabum" data-elegir-tema><span class="paleta-mini" data-muestra-tema="catabum" aria-hidden="true"><i></i><b></b></span><span>Catabum<small>Comunidad · violeta y magenta</small></span></label>
 <label data-tema-familia="tecnico"><input type="radio" name="color-apariencia-principal" value="blueprint" data-elegir-tema><span class="paleta-mini" data-muestra-tema="blueprint" aria-hidden="true"><i></i><b></b></span><span>Blueprint<small>Plano · cuadrícula</small></span></label>
 <label data-tema-familia="tecnico"><input type="radio" name="color-apariencia-principal" value="hacker" data-elegir-tema><span class="paleta-mini" data-muestra-tema="hacker" aria-hidden="true"><i></i><b></b></span><span>Hacker<small>Terminal · verde</small></span></label>
@@ -4700,7 +4701,7 @@ body:has(.revision-barra) { padding-bottom:0; }
   'use strict';
   const root = document.documentElement;
   const selectors = document.querySelectorAll('[data-tema]');
-  /* REGISTRO TEMAS */ const themeRegistry = {"familias":[{"id":"editorial","nombre":"Editorial","grupo":"editorial","descripcion":"Papel cálido · cobre","light":"light","dark":"dark"},{"id":"sea","nombre":"Sea","grupo":"editorial","descripcion":"Azul oceánico · menta","light":"sea-light","dark":"sea"},{"id":"oliva","nombre":"Oliva","grupo":"editorial","descripcion":"Botánico · verde","light":"oliva","dark":"oliva-dark"},{"id":"arcilla","nombre":"Arcilla","grupo":"editorial","descripcion":"Terracota · arena","light":"arcilla","dark":"arcilla-dark"},{"id":"ciruela","nombre":"Ciruela","grupo":"editorial","descripcion":"Malva · tinta violeta","light":"ciruela-light","dark":"ciruela"},{"id":"liftit","nombre":"Liftit","grupo":"marca","descripcion":"LMS · Ribbon, Bay y coral","light":"liftit-light","dark":"liftit-dark"},{"id":"tikin","nombre":"Tikin","grupo":"marca","descripcion":"Finanzas · lima y lavanda","light":"tikin-light","dark":"tikin-dark"},{"id":"catabum","nombre":"Catabum","grupo":"marca","descripcion":"Comunidad · violeta y magenta","light":"catabum-light","dark":"catabum-dark"},{"id":"blueprint","nombre":"Blueprint","grupo":"tecnico","descripcion":"Plano · cuadrícula","light":"blueprint-light","dark":"blueprint"},{"id":"hacker","nombre":"Hacker","grupo":"tecnico","descripcion":"Terminal · verde","light":"hacker-light","dark":"hacker"},{"id":"linear","nombre":"Linear","grupo":"producto","descripcion":"Grafito · lavanda","light":"linear-light","dark":"linear-dark"},{"id":"modern","nombre":"Modern","grupo":"editor","descripcion":"VS Code · azul","light":"modern-light","dark":"modern-dark"},{"id":"github","nombre":"GitHub","grupo":"editor","descripcion":"Neutros · azul","light":"github-light","dark":"github-dark"},{"id":"catppuccin","nombre":"Catppuccin","grupo":"editor","descripcion":"Latte / Mocha · pastel","light":"catppuccin-light","dark":"catppuccin-dark"},{"id":"solarized","nombre":"Solarized","grupo":"editor","descripcion":"Marfil / petróleo · cian","light":"solarized-light","dark":"solarized-dark"}],"aliases":{"system":["editorial","system"],"light":["editorial","light"],"dark":["editorial","dark"],"linear-light":["linear","light"],"linear-dark":["linear","dark"],"sea":["sea","dark"],"oliva":["oliva","light"],"arcilla":["arcilla","light"],"ciruela":["ciruela","dark"],"liftit":["liftit","light"],"blueprint":["blueprint","dark"],"hacker":["hacker","dark"]}}; /* FIN REGISTRO TEMAS */
+  /* REGISTRO TEMAS */ const themeRegistry = {"familias":[{"id":"editorial","nombre":"Editorial","grupo":"editorial","descripcion":"Papel cálido · cobre","light":"light","dark":"dark"},{"id":"sea","nombre":"Sea","grupo":"editorial","descripcion":"Azul oceánico · menta","light":"sea-light","dark":"sea"},{"id":"oliva","nombre":"Oliva","grupo":"editorial","descripcion":"Botánico · verde","light":"oliva","dark":"oliva-dark"},{"id":"arcilla","nombre":"Arcilla","grupo":"editorial","descripcion":"Terracota · arena","light":"arcilla","dark":"arcilla-dark"},{"id":"ciruela","nombre":"Ciruela","grupo":"editorial","descripcion":"Malva · tinta violeta","light":"ciruela-light","dark":"ciruela"},{"id":"liftit","nombre":"Liftit","grupo":"marca","descripcion":"LMS · Ribbon, Bay y coral","light":"liftit-light","dark":"liftit-dark"},{"id":"tikin","nombre":"Tikin","grupo":"marca","descripcion":"Blanco y negro · rojo Tikin","light":"tikin-light","dark":"tikin-dark"},{"id":"catabum","nombre":"Catabum","grupo":"marca","descripcion":"Comunidad · violeta y magenta","light":"catabum-light","dark":"catabum-dark"},{"id":"blueprint","nombre":"Blueprint","grupo":"tecnico","descripcion":"Plano · cuadrícula","light":"blueprint-light","dark":"blueprint"},{"id":"hacker","nombre":"Hacker","grupo":"tecnico","descripcion":"Terminal · verde","light":"hacker-light","dark":"hacker"},{"id":"linear","nombre":"Linear","grupo":"producto","descripcion":"Grafito · lavanda","light":"linear-light","dark":"linear-dark"},{"id":"modern","nombre":"Modern","grupo":"editor","descripcion":"VS Code · azul","light":"modern-light","dark":"modern-dark"},{"id":"github","nombre":"GitHub","grupo":"editor","descripcion":"Neutros · azul","light":"github-light","dark":"github-dark"},{"id":"catppuccin","nombre":"Catppuccin","grupo":"editor","descripcion":"Latte / Mocha · pastel","light":"catppuccin-light","dark":"catppuccin-dark"},{"id":"solarized","nombre":"Solarized","grupo":"editor","descripcion":"Marfil / petróleo · cian","light":"solarized-light","dark":"solarized-dark"}],"aliases":{"system":["editorial","system"],"light":["editorial","light"],"dark":["editorial","dark"],"linear-light":["linear","light"],"linear-dark":["linear","dark"],"sea":["sea","dark"],"oliva":["oliva","light"],"arcilla":["arcilla","light"],"ciruela":["ciruela","dark"],"liftit":["liftit","light"],"blueprint":["blueprint","dark"],"hacker":["hacker","dark"]}}; /* FIN REGISTRO TEMAS */
   const families=new Map(themeRegistry.familias.map(f=>[f.id,f]));
   const modes=['light','dark','system'];
   const initialTheme=document.querySelector('meta[name="nota-tema-inicial"]')?.content;
@@ -5188,4 +5189,4 @@ body:has(.revision-barra) { padding-bottom:0; }
 })();
 
 </script>
-<script type="application/json" data-nota-manifiesto>{"version": "4", "paginas": ["contenido"], "modulos": ["audio.js", "controles.js", "piezas-editoriales.js", "interacciones.js", "codigo.js", "explorador.js", "revision.js"], "fuentes": {"fuentes.css": "03ac4b770dd47f79468c01c6b0f8b0ce44ae865331d6d5b46472c80bb41fe1d4", "estilo.css": "771e55cf01c123fee28b8b4dc86c65c7004814753dfb97529b4cc448e485d644", "audio.js": "9247e4e95f65d44339316ba4f6941f06039b04b5e9c247ff6749314240a06713", "controles.js": "1404b8abb8ce5534bbfccae6fc38ca7db4d4d29c399538fafe19c625dc203532", "piezas-editoriales.js": "8604004dfc2aacf7e51ae4a0e6184950fdaaa0187f64e956b562adb787cd5fe9", "interacciones.js": "1e7cedf4d17ce0bd9973b638eec0ca7f5148189b41d60a9f839aa1936e176f95", "codigo.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "explorador.js": "ea3af41276996d2a3ce532176dd253266716b46cdfc6de7620ef6c218d1b3187", "revision.js": "310c8438b89056088b8ab9b6e436eb58e34918cfd91f71d8c2319a6395c2b4f8"}}</script>
+<script type="application/json" data-nota-manifiesto>{"version": "4", "paginas": ["contenido"], "modulos": ["audio.js", "controles.js", "piezas-editoriales.js", "interacciones.js", "codigo.js", "explorador.js", "revision.js"], "fuentes": {"fuentes.css": "03ac4b770dd47f79468c01c6b0f8b0ce44ae865331d6d5b46472c80bb41fe1d4", "estilo.css": "e009fd23d06ef6922653070da77731da8ace770c00edaa111e3eb7520186ce85", "audio.js": "9247e4e95f65d44339316ba4f6941f06039b04b5e9c247ff6749314240a06713", "controles.js": "1404b8abb8ce5534bbfccae6fc38ca7db4d4d29c399538fafe19c625dc203532", "piezas-editoriales.js": "8604004dfc2aacf7e51ae4a0e6184950fdaaa0187f64e956b562adb787cd5fe9", "interacciones.js": "83418c16d519224bd92d95d5a571c27efca76868f3d024e1ae270f11444e1802", "codigo.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "explorador.js": "ea3af41276996d2a3ce532176dd253266716b46cdfc6de7620ef6c218d1b3187", "revision.js": "310c8438b89056088b8ab9b6e436eb58e34918cfd91f71d8c2319a6395c2b4f8"}}</script>

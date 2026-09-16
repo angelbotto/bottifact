@@ -11,12 +11,16 @@ Las rutas y commits consultados, los colores originales y hashes de los logos es
 | Marca | Fuente elegida | Identidad original | Adaptación editorial |
 | --- | --- | --- | --- |
 | Liftit | LMS web y UI compartida | Ribbon #465EFF, Bay #2B3492, coral #FF7A57; isotipo del menú | Sustituye el azul extraído antes de la web pública. El texto azul usa #3E54ED para mantener contraste en las tres superficies; Ribbon queda intacto como token de marca. El oscuro usa los neutros Mirage de la fuente y acentos aclarados para lectura |
-| Tikin | Design system para tokens; landing para logo | Papel #FAF8F4, lima #85FF85, lavanda #DFE1FF, dorado #FFE680, rojo #FF2E2E | El verde de texto en claro es más oscuro; la lima original queda disponible como color de marca. Superficies claras/oscuras del sistema |
+| Tikin | Landing y confirmación de Angel | Blanco #FFFFFF, negro #000000 y rojo #FC2929 | Claro: blanco, tinta negra y rojo #C51D24 para texto. Oscuro: negro, tinta blanca y rojo #FF6262 para texto. El rojo original queda en el token de marca |
 | Catabum | Tokens de la app y logo compartido | Fondo #1A0D2E, violeta #7C4DFF, magenta #FF3E81, naranja #FF8C3B | Claro propio y acentos legibles. La app aporta identidad; el admin usa neutros genéricos que no se tomaron como marca |
 
 La paleta de marca y el color semántico de un dato no son siempre iguales. Los colores originales están en las muestras; enlaces, focos y series usan variantes con contraste. Estos temas son adaptaciones para documentos, no una declaración de que cada variante esté aprobada como manual corporativo.
 
-Se identificaron también las fuentes de los productos: Eina03/CircularStd en Liftit; Funnel Display y la familia Ubuntu en el design system de Tikin; Montserrat en la app Catabum. Esta entrega conserva las seis combinaciones tipográficas de Bottifact, elegibles en Letras. No incorpora los archivos de esas fuentes ni afirma reproducir toda la tipografía de las aplicaciones.
+Se identificaron también las fuentes de los productos: Eina03/CircularStd en Liftit; Neurial y Funnel Display en la landing de Tikin; Montserrat en la app Catabum. Esta entrega conserva las seis combinaciones tipográficas de Bottifact, elegibles en Letras. No incorpora los archivos de esas fuentes ni afirma reproducir toda la tipografía de las aplicaciones.
+
+## Tikin: identidad confirmada
+
+Tikin se compone en blanco, negro y rojo. La paleta lima/lavanda de otro repositorio no es la identidad solicitada y no debe reutilizarse para esta marca. El logo conserva los trazos originales: negro puro en claro y blanco puro en oscuro, con proporción y espacio propios. No se recolorea el wordmark de rojo ni se redibuja con tipografía. En gráficas, los neutros y el rojo se acompañan de rótulos, signos y valores; el color no es la única señal de un estado.
 
 ## Elegir identidad y apariencia
 

@@ -21,7 +21,7 @@ def generate():
     tikin += recipe('apuntes')
     tikin += intro('conciliar', 'La diferencia debe poder explicarse', 'Una conciliación necesita dos fuentes comparables. Aquí la tabla permite explorar un ejemplo; una coincidencia en el total no prueba que cada registro sea correcto.')+recipe('conciliacion')
     tikin += intro('criterio', 'Conservar el razonamiento de la decisión', 'Una propuesta debe dejar visibles su fundamento, alternativas y condiciones de revisión. La siguiente ficha muestra la estructura con un ejemplo de producto, no una decisión aprobada en Tikin.')+recipe('decision')
-    tikin += '<p class="procedencia">Identidad: design system y logo de la landing. <a href="marcas.html#marca-tikin">Ver colores originales, fuentes y límites</a>.</p>'
+    tikin += '<p class="procedencia">Identidad: blanco, negro y rojo; logo original de la landing. <a href="marcas.html#marca-tikin">Ver colores originales, fuentes y límites</a>.</p>'
     catabum = intro('lectura', 'Entender qué trae de vuelta a la comunidad.', 'Quiero separar participación, avance y recurrencia antes de atribuir un cambio a una campaña. Esta composición usa datos ficticios de la biblioteca: las piezas son muestras independientes, no un único embudo ni resultados de Catabum.')
     catabum += intro('recurrencia', 'Volver importa tanto como llegar', 'Las cohortes permiten comparar grupos que comenzaron en momentos distintos. La lectura necesita población inicial, ventana de retorno y una definición estable de actividad.')+recipe('cohortes')
     catabum += recipe('apuntes')
