@@ -12,12 +12,13 @@ Bottifact reúne una biblioteca de componentes, un generador y un skill portable
 | Generación | Python 3.10+, sólo biblioteca estándar | Incrusta fuentes y módulos usados; valida el contrato |
 | Gráficas y tablas | SVG/DOM local, tablas como fuente de datos | Ordenación, filtros, grupos, selección, CSV y alternativas textuales |
 | Mapas 3D | Three.js 0.160.1 desde CDN fijado, con alternativa textual | Globo y escenas; esta parte necesita red para cargar Three |
-| Comentarios | Eventos en localStorage e intercambio JSON | Hilos, respuestas, responsables, resolución e historial local |
+| Comentarios standalone | Eventos en localStorage e intercambio JSON | Hilos e historial local |
+| Portal NAS | FastAPI + Uvicorn, SQLite WAL y HTML por hash | Cuentas, permisos, versiones, comentarios e inbox |
 | Sonido y escritura | Web Audio, MP3 y fuentes aprobados, recursos incrustados | Interacción tras un gesto real y preferencia de silencio |
 | Skill | SKILL.md breve, referencias a demanda y scripts deterministas | Mismo procedimiento para Claude, Codex y Hermes |
 | Distribución | Git privado, Actions, ZIP y manifiesto SHA-256 | Generación reproducible y copia verificable del sistema |
 
-Los HTML no exigen Python para leerse. Node sólo participa en pruebas. No hay React, Vite, servidor de aplicación, base de datos, autenticación ni sincronización entre dispositivos implementados. Orca es una herramienta local de desarrollo y comprobación, no una dependencia de los lectores ni del skill instalado.
+Los HTML no exigen Python para leerse. Node sólo participa en pruebas. El HTML no depende de React ni Vite. El portal opcional sí incorpora servidor, base de datos, autenticación y revisión entre dispositivos. Orca es una herramienta local de desarrollo y comprobación, no una dependencia de los lectores ni del skill instalado.
 
 ## Evaluación del stack
 
@@ -45,15 +46,13 @@ Una validación estructural no prueba que un agente elija bien las piezas. [eval
 
 No están implementados los cinco trabajos completos. La revisión actual sí dispone de pruebas locales de contrato, store, temas y geometría; la CI ejecuta comprobaciones de Python/Node y el empaquetado.
 
-## Si construimos la aplicación colaborativa
+## Portal conectado en el NAS
 
-Mi propuesta es TypeScript + React/Vite para la interfaz conectada, PostgreSQL para documentos e hilos, y una capa de autenticación con permisos por documento. Supabase puede cubrir Auth/Postgres/Realtime; debe evaluarse con pruebas de autorización y recuperación antes de adoptarlo. Los archivos exportados seguirían siendo instantáneas portables, con el mismo lenguaje visual.
+La revisión conectada está implementada en `portal/` y se despliega por separado. Usa FastAPI + Uvicorn, SQLite WAL en disco local y versiones HTML inmutables. El frontend conserva JavaScript y la biblioteca existente. No incorpora Supabase. Un proceso con transacciones basta para esta primera revisión asíncrona; moveríamos a PostgreSQL si las mediciones exigen varios nodos o más concurrencia de escritura.
 
-Para tablas grandes conviene evaluar el núcleo de TanStack Table, que también tiene adaptadores para distintos frameworks. React no es un requisito de ese motor. Elegiríamos y fijaríamos una versión al iniciar esa capa; el repositorio actual documenta además skills asociadas a sus versiones más recientes. [TanStack Table](https://github.com/TanStack/table).
+Cloudflare Access verifica el correo únicamente en el login. Bottifact comprueba propietario y permisos por documento en cada lectura/escritura. Los HTML se aíslan de la sesión mediante CSP e iframe sin `allow-same-origin`; un puente de mensajes limitado transporta la revisión. El agente usa una conexión personal revocable y publica privado por defecto. [portal-nas.md](portal-nas.md) explica operación, privacidad y límites.
 
-Presencia y cursores pueden utilizar un canal efímero; comentarios e historial necesitan persistencia. Supabase documenta Broadcast, Presence y Postgres Changes como capacidades diferentes. Esto es una propuesta para Bottifact, no un servicio activo. [Supabase Realtime](https://supabase.com/docs/guides/realtime).
-
-CRDT sólo merece una evaluación si varias personas editan simultáneamente el cuerpo del mismo documento. Para comentarios, comenzar con eventos, versiones y permisos es una solución más acotada.
+La vista consulta cambios cada 12 segundos. No hay presencia en vivo ni coedición del texto. El siguiente trabajo es recepción real de correos y dominio público verificados de extremo a extremo, migración de comentarios locales y comparación visual entre versiones. CRDT sólo merece evaluación si varias personas editan simultáneamente el cuerpo.
 
 ## Cambio de nombre y compatibilidad
 

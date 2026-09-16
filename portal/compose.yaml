@@ -1,0 +1,33 @@
+services:
+  bottifact:
+    build:
+      context: ..
+      dockerfile: portal/Dockerfile
+    image: bottifact-portal:2026.09.16-portal.1
+    container_name: bottifact-portal
+    restart: unless-stopped
+    env_file: /volume1/docker/bottifact/config.env
+    volumes:
+      - /volume1/docker/bottifact/data:/data
+      - /volume1/docker/bottifact/backups:/backups
+    ports:
+      - "127.0.0.1:8788:8080"
+    networks: [edge]
+    read_only: true
+    tmpfs: [/tmp:size=32m]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 768m
+    cpu_shares: 512
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health',timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: json-file
+      options: {max-size: 5m, max-file: '3'}
+networks:
+  edge:
+    external: true
+    name: botto-site_default

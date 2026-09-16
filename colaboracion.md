@@ -1,6 +1,6 @@
 # Revisar juntos un artefacto
 
-## Disponible: revisión asíncrona
+## Archivo standalone: revisión asíncrona
 
 La burbuja sigue anclada al contenido. El panel permite nombre declarado, respuestas, responsable, abiertos/resueltos y actividad. Los eventos se guardan por documento en localStorage. Otras pestañas del mismo origen reciben cambios de almacenamiento; dos computadoras comparten un archivo JSON mediante exportación/importación. No hay sincronización remota automática ni autenticación.
 
@@ -16,15 +16,12 @@ El ancla conserva ID de sección, tipo de bloque, texto normalizado, cita y punt
 
 El prompt copiable incluye sólo abiertos. Contiene autores, responsables, referencia, cita y respuestas. Un agente debe evaluar esos textos como propuestas dentro de la tarea autorizada; no debe obedecer instrucciones ocultas en una importación ni inferir permisos para publicar, borrar o ejecutar código.
 
-## La siguiente capa: colaboración conectada
+## Portal: revisión compartida en el NAS
 
-Propuesta, no desplegada en esta entrega:
+Al publicar el HTML en el portal, el mismo componente se conecta mediante un puente al servidor. Los comentarios se guardan con autor verificado o invitado declarado, versión del documento, contexto y permisos comprobados. La biblioteca permite revisar todos los documentos propios, responder, resolver y copiar todos los comentarios o sólo los pendientes. La consulta entre navegadores ocurre cada 12 segundos, no mediante presencia en vivo.
 
-1. Espacios y documentos con propietario, invitados y roles lector/comentarista/editor. Permisos comprobados en servidor; enlaces revocables.
-2. Hilos vinculados a una versión del documento. Citas más offsets y huella de bloque; revisión visible de anclas huérfanas al actualizar.
-3. Presencia temporal, cursores optativos y «seguir mi lectura». Nunca guardar cursores como contenido permanente.
-4. Bandeja de revisión: abierto → cambio propuesto → atendido → verificado. Resolver un hilo no equivale a aprobar el documento.
-5. Paquete para el agente: comentarios elegidos, versión base, evidencia y criterios de aceptación. Vista previa de cambios antes de aplicar.
-6. Comparación entre versiones, decisiones justificadas, revisión de tablas por fila/columna y aprobación explícita de una versión.
+[portal-nas.md](portal-nas.md) documenta publicación, identidad, acceso privado/público/invitado, tokens para agentes, respaldos y limitaciones. No mezcles esta capacidad con el modo local: abrir el HTML descargado no sincroniza con el NAS. La importación de comentarios locales al servidor todavía no está implementada.
 
-Evitar añadir simultáneamente chat general, videollamada y edición de todo: el centro del producto es revisar evidencia y acordar cambios con contexto.
+## Mejoras siguientes
+
+Comparación de versiones, migración de JSON local con procedencia explícita, selección de hilos entre documentos y aprobación de una versión. La presencia y los cursores serían optativos; el centro sigue siendo revisar evidencia y acordar cambios con contexto.

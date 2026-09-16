@@ -1,0 +1,6 @@
+**
+!portal/
+!portal/**
+portal/**/__pycache__/
+portal/.env
+portal/data/

@@ -75,3 +75,7 @@ Bottifact reemplaza el nombre público anterior. Instala el ZIP en una carpeta n
 En Claude Code varios accesos simbólicos al mismo destino se deduplican, según su documentación. En Hermes y Codex mantén un único acceso activo por nombre para no divergir. El equipo de desarrollo puede conservar una ruta histórica para Git/Orca; el paquete descargado y las instalaciones nuevas usan `bottifact`.
 
 El renombrado conserva los IDs de ejemplos publicados, las claves locales de comentarios y preferencias, y los formatos anteriores de revisión. No copies comentarios a otro documento cambiando su ID para forzar la importación. Las versiones antiguas descargadas mantienen su contenido hasta que regeneres o actualices sus archivos.
+
+## Conexión personal al portal
+
+Después de actualizar el skill, usa `scripts/publicar.py conectar --servidor https://artifacts.botto.is`. La biblioteca se puede compartir; `~/.config/bottifact/portal.json` es personal y queda fuera de la distribución. Consulta [portal-nas.md](portal-nas.md). El portal requiere un despliegue aparte: instalar el ZIP no instala Docker ni el servidor.

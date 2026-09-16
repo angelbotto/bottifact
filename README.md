@@ -42,3 +42,7 @@ Para mantener la biblioteca: `python3 scripts/ensamblar.py`, `python3 scripts/va
 ## Recursos y procedencia
 
 Las fuentes tienen sus avisos OFL en `licencias/`. Los recursos de referencia y sus hashes están documentados en `referencia-cmrg.md` y `auditoria/`. La biblioteca mantiene los recursos aprobados durante el diseño. Las paletas Linear y de editores son adaptaciones propias, no oficiales; [temas.md](temas.md) registra las referencias y ajustes. Publicar este repositorio no concede una licencia adicional sobre recursos de terceros.
+
+## Publicación y revisión en el NAS
+
+El portal opcional añade cuentas, permisos por documento, versiones y bandeja central de comentarios. El HTML standalone sigue funcionando por sí solo. Consulta [portal-nas.md](portal-nas.md) para conectar Claude, Codex o Hermes, publicar privado y recuperar revisiones. Servidor en `portal/`; el ZIP portable contiene el skill y el cliente de publicación, sin credenciales personales.

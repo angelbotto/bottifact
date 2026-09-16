@@ -209,3 +209,8 @@ for filename,identity in json.loads((ROOT/'compatibilidad.json').read_text())['d
   marker='<meta name="nota-titulo-anterior" content="'+html_escape.escape(identity['titulo'],quote=True)+'">'
   content=content.replace('</title>','</title>\n'+marker,1)
  path.write_text(content)
+
+# Recursos compartidos del portal; no se incluyen credenciales ni datos de instancia.
+if (ROOT/"portal/static").is_dir():
+ for source,target in [("revision.js","revision.js"),("fuentes.css","fonts.css")]:
+  (ROOT/"portal/static"/target).write_bytes((ROOT/source).read_bytes())
