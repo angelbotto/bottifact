@@ -13,7 +13,8 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
-      "swatch": "rgb(255, 255, 255)",
+      "previewMatches": true,
+      "swatch": "rgb(254, 248, 242)",
       "terminal": 14.607634224489928,
       "width": 320
     },
@@ -30,6 +31,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(19, 17, 15)",
       "terminal": 12.57855252981979,
       "width": 320
@@ -47,6 +49,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(241, 247, 250)",
       "terminal": 11.126867233518219,
       "width": 320
@@ -64,6 +67,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(29, 38, 47)",
       "terminal": 10.824581528602149,
       "width": 320
@@ -81,6 +85,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(245, 246, 236)",
       "terminal": 11.77510292252061,
       "width": 320
@@ -98,6 +103,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(21, 26, 18)",
       "terminal": 13.141916121939849,
       "width": 320
@@ -115,6 +121,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(252, 241, 232)",
       "terminal": 11.761095928428842,
       "width": 320
@@ -132,6 +139,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(33, 23, 18)",
       "terminal": 13.151261079004723,
       "width": 320
@@ -149,6 +157,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(252, 245, 251)",
       "terminal": 12.30529147782007,
       "width": 320
@@ -166,6 +175,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(32, 25, 34)",
       "terminal": 12.28893004054052,
       "width": 320
@@ -183,8 +193,9 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
-      "swatch": "rgb(247, 249, 255)",
-      "terminal": 11.974722235598353,
+      "previewMatches": true,
+      "swatch": "rgb(255, 255, 255)",
+      "terminal": 15.759755210878449,
       "width": 320
     },
     {
@@ -200,8 +211,81 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
-      "swatch": "rgb(13, 20, 37)",
-      "terminal": 14.674159796899323,
+      "previewMatches": true,
+      "swatch": "rgb(16, 18, 28)",
+      "terminal": 17.21270183296726,
+      "width": 320
+    },
+    {
+      "fails": [],
+      "family": "tikin",
+      "familyChecked": "tikin",
+      "menu": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "mode": "light",
+      "modeChecked": "light",
+      "overflow": false,
+      "previewMatches": true,
+      "swatch": "rgb(250, 248, 244)",
+      "terminal": 19.265328216751758,
+      "width": 320
+    },
+    {
+      "fails": [],
+      "family": "tikin",
+      "familyChecked": "tikin",
+      "menu": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "mode": "dark",
+      "modeChecked": "dark",
+      "overflow": false,
+      "previewMatches": true,
+      "swatch": "rgb(18, 18, 18)",
+      "terminal": 15.660428185847957,
+      "width": 320
+    },
+    {
+      "fails": [],
+      "family": "catabum",
+      "familyChecked": "catabum",
+      "menu": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "mode": "light",
+      "modeChecked": "light",
+      "overflow": false,
+      "previewMatches": true,
+      "swatch": "rgb(252, 249, 255)",
+      "terminal": 16.264006537687102,
+      "width": 320
+    },
+    {
+      "fails": [],
+      "family": "catabum",
+      "familyChecked": "catabum",
+      "menu": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 63.5
+      },
+      "mode": "dark",
+      "modeChecked": "dark",
+      "overflow": false,
+      "previewMatches": true,
+      "swatch": "rgb(26, 13, 46)",
+      "terminal": 17.025949105241864,
       "width": 320
     },
     {
@@ -217,6 +301,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(243, 248, 255)",
       "terminal": 11.663104096465561,
       "width": 320
@@ -234,6 +319,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(8, 44, 98)",
       "terminal": 11.473628999311684,
       "width": 320
@@ -251,6 +337,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(243, 250, 245)",
       "terminal": 11.790434681781765,
       "width": 320
@@ -268,6 +355,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(8, 15, 12)",
       "terminal": 15.05736271459997,
       "width": 320
@@ -285,6 +373,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(255, 255, 255)",
       "terminal": 15.12091426979583,
       "width": 320
@@ -302,6 +391,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(16, 17, 20)",
       "terminal": 15.538120519161714,
       "width": 320
@@ -319,6 +409,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(255, 255, 255)",
       "terminal": 15.520461516524195,
       "width": 320
@@ -336,6 +427,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(31, 31, 31)",
       "terminal": 11.056696482610674,
       "width": 320
@@ -353,6 +445,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(255, 255, 255)",
       "terminal": 14.839194581350755,
       "width": 320
@@ -370,6 +463,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(13, 17, 23)",
       "terminal": 14.639773375342953,
       "width": 320
@@ -387,6 +481,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(239, 241, 245)",
       "terminal": 6.56603960831074,
       "width": 320
@@ -404,6 +499,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(30, 30, 46)",
       "terminal": 12.139034496271739,
       "width": 320
@@ -421,6 +517,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(253, 246, 227)",
       "terminal": 7.173841220373346,
       "width": 320
@@ -438,6 +535,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(0, 43, 54)",
       "terminal": 9.464701163552828,
       "width": 320
@@ -455,7 +553,8 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
-      "swatch": "rgb(255, 255, 255)",
+      "previewMatches": true,
+      "swatch": "rgb(254, 248, 242)",
       "terminal": 14.607634224489928,
       "width": 390
     },
@@ -472,6 +571,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(19, 17, 15)",
       "terminal": 12.57855252981979,
       "width": 390
@@ -489,6 +589,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(241, 247, 250)",
       "terminal": 11.126867233518219,
       "width": 390
@@ -506,6 +607,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(29, 38, 47)",
       "terminal": 10.824581528602149,
       "width": 390
@@ -523,6 +625,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(245, 246, 236)",
       "terminal": 11.77510292252061,
       "width": 390
@@ -540,6 +643,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(21, 26, 18)",
       "terminal": 13.141916121939849,
       "width": 390
@@ -557,6 +661,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(252, 241, 232)",
       "terminal": 11.761095928428842,
       "width": 390
@@ -574,6 +679,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(33, 23, 18)",
       "terminal": 13.151261079004723,
       "width": 390
@@ -591,6 +697,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(252, 245, 251)",
       "terminal": 12.30529147782007,
       "width": 390
@@ -608,6 +715,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(32, 25, 34)",
       "terminal": 12.28893004054052,
       "width": 390
@@ -625,8 +733,9 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
-      "swatch": "rgb(247, 249, 255)",
-      "terminal": 11.974722235598353,
+      "previewMatches": true,
+      "swatch": "rgb(255, 255, 255)",
+      "terminal": 15.759755210878449,
       "width": 390
     },
     {
@@ -642,8 +751,81 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
-      "swatch": "rgb(13, 20, 37)",
-      "terminal": 14.674159796899323,
+      "previewMatches": true,
+      "swatch": "rgb(16, 18, 28)",
+      "terminal": 17.21270183296726,
+      "width": 390
+    },
+    {
+      "fails": [],
+      "family": "tikin",
+      "familyChecked": "tikin",
+      "menu": {
+        "bottom": 832,
+        "left": 12,
+        "right": 378,
+        "top": 63.5
+      },
+      "mode": "light",
+      "modeChecked": "light",
+      "overflow": false,
+      "previewMatches": true,
+      "swatch": "rgb(250, 248, 244)",
+      "terminal": 19.265328216751758,
+      "width": 390
+    },
+    {
+      "fails": [],
+      "family": "tikin",
+      "familyChecked": "tikin",
+      "menu": {
+        "bottom": 832,
+        "left": 12,
+        "right": 378,
+        "top": 63.5
+      },
+      "mode": "dark",
+      "modeChecked": "dark",
+      "overflow": false,
+      "previewMatches": true,
+      "swatch": "rgb(18, 18, 18)",
+      "terminal": 15.660428185847957,
+      "width": 390
+    },
+    {
+      "fails": [],
+      "family": "catabum",
+      "familyChecked": "catabum",
+      "menu": {
+        "bottom": 832,
+        "left": 12,
+        "right": 378,
+        "top": 63.5
+      },
+      "mode": "light",
+      "modeChecked": "light",
+      "overflow": false,
+      "previewMatches": true,
+      "swatch": "rgb(252, 249, 255)",
+      "terminal": 16.264006537687102,
+      "width": 390
+    },
+    {
+      "fails": [],
+      "family": "catabum",
+      "familyChecked": "catabum",
+      "menu": {
+        "bottom": 832,
+        "left": 12,
+        "right": 378,
+        "top": 63.5
+      },
+      "mode": "dark",
+      "modeChecked": "dark",
+      "overflow": false,
+      "previewMatches": true,
+      "swatch": "rgb(26, 13, 46)",
+      "terminal": 17.025949105241864,
       "width": 390
     },
     {
@@ -659,6 +841,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(243, 248, 255)",
       "terminal": 11.663104096465561,
       "width": 390
@@ -676,6 +859,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(8, 44, 98)",
       "terminal": 11.473628999311684,
       "width": 390
@@ -693,6 +877,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(243, 250, 245)",
       "terminal": 11.790434681781765,
       "width": 390
@@ -710,6 +895,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(8, 15, 12)",
       "terminal": 15.05736271459997,
       "width": 390
@@ -727,6 +913,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(255, 255, 255)",
       "terminal": 15.12091426979583,
       "width": 390
@@ -744,6 +931,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(16, 17, 20)",
       "terminal": 15.538120519161714,
       "width": 390
@@ -761,6 +949,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(255, 255, 255)",
       "terminal": 15.520461516524195,
       "width": 390
@@ -778,6 +967,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(31, 31, 31)",
       "terminal": 11.056696482610674,
       "width": 390
@@ -795,6 +985,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(255, 255, 255)",
       "terminal": 14.839194581350755,
       "width": 390
@@ -812,6 +1003,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(13, 17, 23)",
       "terminal": 14.639773375342953,
       "width": 390
@@ -829,6 +1021,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(239, 241, 245)",
       "terminal": 6.56603960831074,
       "width": 390
@@ -846,6 +1039,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(30, 30, 46)",
       "terminal": 12.139034496271739,
       "width": 390
@@ -863,6 +1057,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(253, 246, 227)",
       "terminal": 7.173841220373346,
       "width": 390
@@ -880,6 +1075,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(0, 43, 54)",
       "terminal": 9.464701163552828,
       "width": 390
@@ -897,7 +1093,8 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
-      "swatch": "rgb(255, 255, 255)",
+      "previewMatches": true,
+      "swatch": "rgb(254, 248, 242)",
       "terminal": 14.607634224489928,
       "width": 1440
     },
@@ -914,6 +1111,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(19, 17, 15)",
       "terminal": 12.57855252981979,
       "width": 1440
@@ -931,6 +1129,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(241, 247, 250)",
       "terminal": 11.126867233518219,
       "width": 1440
@@ -948,6 +1147,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(29, 38, 47)",
       "terminal": 10.824581528602149,
       "width": 1440
@@ -965,6 +1165,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(245, 246, 236)",
       "terminal": 11.77510292252061,
       "width": 1440
@@ -982,6 +1183,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(21, 26, 18)",
       "terminal": 13.141916121939849,
       "width": 1440
@@ -999,6 +1201,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(252, 241, 232)",
       "terminal": 11.761095928428842,
       "width": 1440
@@ -1016,6 +1219,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(33, 23, 18)",
       "terminal": 13.151261079004723,
       "width": 1440
@@ -1033,6 +1237,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(252, 245, 251)",
       "terminal": 12.30529147782007,
       "width": 1440
@@ -1050,6 +1255,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(32, 25, 34)",
       "terminal": 12.28893004054052,
       "width": 1440
@@ -1067,8 +1273,9 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
-      "swatch": "rgb(247, 249, 255)",
-      "terminal": 11.974722235598353,
+      "previewMatches": true,
+      "swatch": "rgb(255, 255, 255)",
+      "terminal": 15.759755210878449,
       "width": 1440
     },
     {
@@ -1084,8 +1291,81 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
-      "swatch": "rgb(13, 20, 37)",
-      "terminal": 14.674159796899323,
+      "previewMatches": true,
+      "swatch": "rgb(16, 18, 28)",
+      "terminal": 17.21270183296726,
+      "width": 1440
+    },
+    {
+      "fails": [],
+      "family": "tikin",
+      "familyChecked": "tikin",
+      "menu": {
+        "bottom": 918.484375,
+        "left": 656,
+        "right": 1216,
+        "top": 63.5
+      },
+      "mode": "light",
+      "modeChecked": "light",
+      "overflow": false,
+      "previewMatches": true,
+      "swatch": "rgb(250, 248, 244)",
+      "terminal": 19.265328216751758,
+      "width": 1440
+    },
+    {
+      "fails": [],
+      "family": "tikin",
+      "familyChecked": "tikin",
+      "menu": {
+        "bottom": 918.484375,
+        "left": 656,
+        "right": 1216,
+        "top": 63.5
+      },
+      "mode": "dark",
+      "modeChecked": "dark",
+      "overflow": false,
+      "previewMatches": true,
+      "swatch": "rgb(18, 18, 18)",
+      "terminal": 15.660428185847957,
+      "width": 1440
+    },
+    {
+      "fails": [],
+      "family": "catabum",
+      "familyChecked": "catabum",
+      "menu": {
+        "bottom": 918.484375,
+        "left": 656,
+        "right": 1216,
+        "top": 63.5
+      },
+      "mode": "light",
+      "modeChecked": "light",
+      "overflow": false,
+      "previewMatches": true,
+      "swatch": "rgb(252, 249, 255)",
+      "terminal": 16.264006537687102,
+      "width": 1440
+    },
+    {
+      "fails": [],
+      "family": "catabum",
+      "familyChecked": "catabum",
+      "menu": {
+        "bottom": 918.484375,
+        "left": 656,
+        "right": 1216,
+        "top": 63.5
+      },
+      "mode": "dark",
+      "modeChecked": "dark",
+      "overflow": false,
+      "previewMatches": true,
+      "swatch": "rgb(26, 13, 46)",
+      "terminal": 17.025949105241864,
       "width": 1440
     },
     {
@@ -1101,6 +1381,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(243, 248, 255)",
       "terminal": 11.663104096465561,
       "width": 1440
@@ -1118,6 +1399,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(8, 44, 98)",
       "terminal": 11.473628999311684,
       "width": 1440
@@ -1135,6 +1417,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(243, 250, 245)",
       "terminal": 11.790434681781765,
       "width": 1440
@@ -1152,6 +1435,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(8, 15, 12)",
       "terminal": 15.05736271459997,
       "width": 1440
@@ -1169,6 +1453,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(255, 255, 255)",
       "terminal": 15.12091426979583,
       "width": 1440
@@ -1186,6 +1471,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(16, 17, 20)",
       "terminal": 15.538120519161714,
       "width": 1440
@@ -1203,6 +1489,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(255, 255, 255)",
       "terminal": 15.520461516524195,
       "width": 1440
@@ -1220,6 +1507,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(31, 31, 31)",
       "terminal": 11.056696482610674,
       "width": 1440
@@ -1237,6 +1525,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(255, 255, 255)",
       "terminal": 14.839194581350755,
       "width": 1440
@@ -1254,6 +1543,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(13, 17, 23)",
       "terminal": 14.639773375342953,
       "width": 1440
@@ -1271,6 +1561,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(239, 241, 245)",
       "terminal": 6.56603960831074,
       "width": 1440
@@ -1288,6 +1579,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(30, 30, 46)",
       "terminal": 12.139034496271739,
       "width": 1440
@@ -1305,6 +1597,7 @@
       "mode": "light",
       "modeChecked": "light",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(253, 246, 227)",
       "terminal": 7.173841220373346,
       "width": 1440
@@ -1322,6 +1615,7 @@
       "mode": "dark",
       "modeChecked": "dark",
       "overflow": false,
+      "previewMatches": true,
       "swatch": "rgb(0, 43, 54)",
       "terminal": 9.464701163552828,
       "width": 1440

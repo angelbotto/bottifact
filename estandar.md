@@ -1,6 +1,6 @@
 # Contrato de nuevos artefactos de Angel
 
-El contrato 4 conserva marcos punteados difusos en las figuras anchas. La base incluye **una llave sol/luna**, 13 familias con muestras y modos Claro / Oscuro / Sistema, controles de sonido,
+El contrato 4 conserva marcos punteados difusos en las figuras anchas. La base incluye **una llave sol/luna**, 15 familias con muestras y modos Claro / Oscuro / Sistema, controles de sonido,
 comentarios flotantes, índice por página y regla de lectura. Es la composición predeterminada de
 los nuevos HTML de Angel. No exige llenar cada artículo con todos los componentes; selecciona
 las piezas a partir de las 82 recetas vigentes. Una excepción explícita de Angel prevalece.
@@ -63,7 +63,7 @@ La receta `configuracion` referencia el archivo editorial: incluye también `arc
 
 ## Qué comprueba y qué no
 
-El verificador exige controles, módulos, 26 paletas, referencias internas, rejilla y regiones
+El verificador exige controles, módulos, 30 paletas, referencias internas, rejilla y regiones
 con foco/nombre. Comprueba CSS y JS contra las fuentes instaladas y registra sus hashes en un
 manifiesto. Detecta una copia vieja al compararla con el skill actual; no migra documentos ni
 promete compatibilidad binaria entre versiones. No modifica artefactos publicados.
@@ -75,7 +75,7 @@ sus dependencias y su verificación; no desactives el control para conseguir un 
 Los ejemplos antiguos conservan su compatibilidad, pero no todos cumplen este contrato nuevo.
 
 La comprobación estructural no acredita accesibilidad completa ni comportamiento: abre el
-resultado a 320, 390 y 1440 px, prueba las 26 paletas, foco, desplazamiento local, capítulos,
+resultado a 320, 390 y 1440 px, prueba las 30 paletas, foco, desplazamiento local, capítulos,
 pines, exportación del prompt y movimiento reducido. Usa un clic real para Probar sonido.
 En capítulos, sin JavaScript se ofrece lectura continua; los controles interactivos necesitan JS.
 

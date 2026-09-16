@@ -2891,6 +2891,19 @@ body:has(.revision-barra) { padding-bottom:0; }
  :root[data-theme-family=blueprint] body,:root[data-theme-family=blueprint] .navegacion-editorial { background-image:linear-gradient(var(--plano-rejilla-mayor) 1px,transparent 1px),linear-gradient(90deg,var(--plano-rejilla-mayor) 1px,transparent 1px),linear-gradient(var(--plano-rejilla) 1px,transparent 1px),linear-gradient(90deg,var(--plano-rejilla) 1px,transparent 1px); background-size:120px 120px,120px 120px,24px 24px,24px 24px; }
 }
 
+/* Identidad estable del documento; el lector puede cambiar la paleta sin cambiar de empresa. */
+.marca-firma { display:inline-flex; align-items:center; gap:8px; }
+.marca-firma .marca-logo { display:block; width:110px; height:32px; object-fit:contain; }
+.marca-firma[data-marca=liftit] .marca-logo { width:36px; height:36px; }
+.marca-firma .marca-nombre { font:600 24px/1 var(--sans); letter-spacing:-.04em; }
+.marca-firma .marca-logo-dark { display:none; }
+:root[data-color-mode=dark] .marca-firma .marca-logo-light { display:none; }
+:root[data-color-mode=dark] .marca-firma .marca-logo-dark { display:block; }
+@media(prefers-color-scheme:dark) { :root:not([data-color-mode]) .marca-firma .marca-logo-light { display:none; } :root:not([data-color-mode]) .marca-firma .marca-logo-dark { display:block; } }
+.marca-muestras { display:flex; flex-wrap:wrap; gap:12px; margin-block:20px; }
+.marca-muestras > span { display:flex; align-items:center; gap:8px; font:12px var(--mono); }
+.marca-muestras i { display:block; width:24px; height:24px; background:var(--muestra); border:1px solid var(--linea-fuerte); border-radius:6px; }
+
 /* TEMAS GENERADOS — scripts/temas.py; editar temas.json. */
 :root[data-color-mode="light"] .paleta-mini[data-muestra-tema="editorial"] { --vista-papel:#fef8f2; --vista-tinta:#231e1a; --vista-acento:#a13f19; }
 :root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="editorial"] { --vista-papel:#13110f; --vista-tinta:#e9dfd7; --vista-acento:#f1b798; }
@@ -3202,51 +3215,52 @@ body:has(.revision-barra) { padding-bottom:0; }
 }
 :root[data-color-mode="light"] .paleta-mini[data-muestra-tema="ciruela"] { --vista-papel:#fcf5fb; --vista-tinta:#342438; --vista-acento:#864977; }
 :root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="ciruela"] { --vista-papel:#201922; --vista-tinta:#f1e4ef; --vista-acento:#e8afd8; }
-:root[data-color-mode="light"] .paleta-mini[data-muestra-tema="liftit"] { --vista-papel:#f7f9ff; --vista-tinta:#2a2d46; --vista-acento:#0051f4; }
-:root[data-theme="liftit-dark"] {
-  color-scheme:dark;
-  --papel: #0d1425;
-  --panel: #151f34;
-  --panel-2: #202c44;
-  --tinta: #edf2ff;
-  --tinta-2: #c3cee7;
-  --tinta-3: #9eaece;
-  --naranja: #89b1ff;
-  --verde: #85c9ac;
-  --rojo: #f3a4a8;
-  --azul: #9bafff;
-  --linea: #3a4357;
-  --linea-fuerte: #7d8495;
-  --naranja-suave: #19243b;
-  --verde-suave: #151f34;
-  --rojo-suave: #151f34;
-  --azul-suave: #151f34;
-  --marcador: #89b1ff;
-  --foco: #89b1ff;
-  --globo-base: #202c44;
-  --globo-arco: #9eaece;
-  --globo-punto: #89b1ff;
-  --globo-glow: #202c44;
-  --globo-dark: .6;
-  --globo-brillo: 10;
-  --grafica-1: #89b1ff;
-  --grafica-2: #85c9ac;
-  --grafica-3: #f3a4a8;
-  --grafica-4: #9bafff;
-  --grafica-papel: #0d1425;
-  --grafica-tinta: #c3cee7;
-  --calor-tinta: #edf2ff;
-  --calor-ausente: #202c44;
-  --tabla-total: #151f34;
-  --escena-1: #89b1ff;
-  --escena-2: #85c9ac;
-  --escena-3: #f3a4a8;
-  --escena-tinta: #c3cee7;
-  --sonido-papel: #151f34;
-  --sonido-activo: #85c9ac;
-  --sonido-tinta: #edf2ff;
-  --escritura-trazo: #89b1ff;
-  --escritura-papel: #151f34;
+:root[data-theme="liftit-light"] {
+  color-scheme:light;
+  --papel: #FFFFFF;
+  --panel: #F3F5F8;
+  --panel-2: #EAEBF4;
+  --tinta: #181A2A;
+  --tinta-2: #2B3492;
+  --tinta-3: #555A71;
+  --naranja: #3E54ED;
+  --verde: #247A3C;
+  --rojo: #B93732;
+  --azul: #2B3492;
+  --marca-acento: #465EFF;
+  --marca-secundario: #FF7A57;
+  --linea: #ced0d5;
+  --linea-fuerte: #8a8c95;
+  --naranja-suave: #eceefd;
+  --verde-suave: #F3F5F8;
+  --rojo-suave: #F3F5F8;
+  --azul-suave: #F3F5F8;
+  --marcador: #3E54ED;
+  --foco: #3E54ED;
+  --globo-base: #EAEBF4;
+  --globo-arco: #555A71;
+  --globo-punto: #3E54ED;
+  --globo-glow: #EAEBF4;
+  --globo-dark: 0;
+  --globo-brillo: 2.4;
+  --grafica-1: #3E54ED;
+  --grafica-2: #247A3C;
+  --grafica-3: #B93732;
+  --grafica-4: #2B3492;
+  --grafica-papel: #FFFFFF;
+  --grafica-tinta: #2B3492;
+  --calor-tinta: #181A2A;
+  --calor-ausente: #EAEBF4;
+  --tabla-total: #F3F5F8;
+  --escena-1: #3E54ED;
+  --escena-2: #247A3C;
+  --escena-3: #B93732;
+  --escena-tinta: #2B3492;
+  --sonido-papel: #F3F5F8;
+  --sonido-activo: #247A3C;
+  --sonido-tinta: #181A2A;
+  --escritura-trazo: #3E54ED;
+  --escritura-papel: #F3F5F8;
   --grafica-linea: var(--linea);
   --tabla-elegida: var(--naranja-suave);
   --escena-linea: var(--linea-fuerte);
@@ -3266,11 +3280,89 @@ body:has(.revision-barra) { padding-bottom:0; }
   --papel-trama: var(--linea);
   --sintaxis-numero: var(--azul);
   --sintaxis-funcion: var(--naranja);
-  --calor-0: #0f1729;
-  --calor-1: #182239;
-  --calor-2: #222f4a;
-  --calor-3: #2c3b5c;
-  --calor-4: #36486d;
+  --calor-0: #fbfcff;
+  --calor-1: #eef0fd;
+  --calor-2: #dee2fc;
+  --calor-3: #cfd4fa;
+  --calor-4: #bfc7f9;
+  --plano-rejilla: #1853a00b;
+  --plano-rejilla-mayor: #1853a016;
+  --foto-fondo: #101114;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+}
+:root[data-color-mode="light"] .paleta-mini[data-muestra-tema="liftit"] { --vista-papel:#FFFFFF; --vista-tinta:#181A2A; --vista-acento:#3E54ED; }
+:root[data-theme="liftit-dark"] {
+  color-scheme:dark;
+  --papel: #10121C;
+  --panel: #181A2A;
+  --panel-2: #232842;
+  --tinta: #FFFFFF;
+  --tinta-2: #DDDEE8;
+  --tinta-3: #A7ACC4;
+  --naranja: #A2ADFF;
+  --verde: #7CD998;
+  --rojo: #FF9C85;
+  --azul: #BEBAFF;
+  --marca-acento: #465EFF;
+  --marca-secundario: #FF7A57;
+  --linea: #3f414e;
+  --linea-fuerte: #878890;
+  --naranja-suave: #1f2233;
+  --verde-suave: #181A2A;
+  --rojo-suave: #181A2A;
+  --azul-suave: #181A2A;
+  --marcador: #A2ADFF;
+  --foco: #A2ADFF;
+  --globo-base: #232842;
+  --globo-arco: #A7ACC4;
+  --globo-punto: #A2ADFF;
+  --globo-glow: #232842;
+  --globo-dark: .6;
+  --globo-brillo: 10;
+  --grafica-1: #A2ADFF;
+  --grafica-2: #7CD998;
+  --grafica-3: #FF9C85;
+  --grafica-4: #BEBAFF;
+  --grafica-papel: #10121C;
+  --grafica-tinta: #DDDEE8;
+  --calor-tinta: #FFFFFF;
+  --calor-ausente: #232842;
+  --tabla-total: #181A2A;
+  --escena-1: #A2ADFF;
+  --escena-2: #7CD998;
+  --escena-3: #FF9C85;
+  --escena-tinta: #DDDEE8;
+  --sonido-papel: #181A2A;
+  --sonido-activo: #7CD998;
+  --sonido-tinta: #FFFFFF;
+  --escritura-trazo: #A2ADFF;
+  --escritura-papel: #181A2A;
+  --grafica-linea: var(--linea);
+  --tabla-elegida: var(--naranja-suave);
+  --escena-linea: var(--linea-fuerte);
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --calor-0: #131521;
+  --calor-1: #1d2030;
+  --calor-2: #292c43;
+  --calor-3: #343955;
+  --calor-4: #404567;
   --plano-rejilla: #ffffff0c;
   --plano-rejilla-mayor: #ffffff18;
   --foto-fondo: #101114;
@@ -3278,7 +3370,319 @@ body:has(.revision-barra) { padding-bottom:0; }
   --foto-borde: #ffffff20;
   --foto-sombra: #00000033;
 }
-:root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="liftit"] { --vista-papel:#0d1425; --vista-tinta:#edf2ff; --vista-acento:#89b1ff; }
+:root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="liftit"] { --vista-papel:#10121C; --vista-tinta:#FFFFFF; --vista-acento:#A2ADFF; }
+:root[data-theme="tikin-light"] {
+  color-scheme:light;
+  --papel: #FAF8F4;
+  --panel: #FFFFFF;
+  --panel-2: #F3F3F3;
+  --tinta: #0B0F10;
+  --tinta-2: #4A4A4A;
+  --tinta-3: #696969;
+  --naranja: #176323;
+  --verde: #067006;
+  --rojo: #C40000;
+  --azul: #5A46C8;
+  --marca-acento: #85FF85;
+  --marca-secundario: #DFE1FF;
+  --linea: #d6d6d6;
+  --linea-fuerte: #8a8c8c;
+  --naranja-suave: #e3e9df;
+  --verde-suave: #FFFFFF;
+  --rojo-suave: #FFFFFF;
+  --azul-suave: #FFFFFF;
+  --marcador: #176323;
+  --foco: #176323;
+  --globo-base: #F3F3F3;
+  --globo-arco: #696969;
+  --globo-punto: #176323;
+  --globo-glow: #F3F3F3;
+  --globo-dark: 0;
+  --globo-brillo: 2.4;
+  --grafica-1: #176323;
+  --grafica-2: #067006;
+  --grafica-3: #C40000;
+  --grafica-4: #5A46C8;
+  --grafica-papel: #FAF8F4;
+  --grafica-tinta: #4A4A4A;
+  --calor-tinta: #0B0F10;
+  --calor-ausente: #F3F3F3;
+  --tabla-total: #FFFFFF;
+  --escena-1: #176323;
+  --escena-2: #067006;
+  --escena-3: #C40000;
+  --escena-tinta: #4A4A4A;
+  --sonido-papel: #FFFFFF;
+  --sonido-activo: #067006;
+  --sonido-tinta: #0B0F10;
+  --escritura-trazo: #176323;
+  --escritura-papel: #FFFFFF;
+  --grafica-linea: var(--linea);
+  --tabla-elegida: var(--naranja-suave);
+  --escena-linea: var(--linea-fuerte);
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --calor-0: #f5f5f0;
+  --calor-1: #e6ebe1;
+  --calor-2: #d3dfd0;
+  --calor-3: #c1d3c0;
+  --calor-4: #afc7af;
+  --plano-rejilla: #1853a00b;
+  --plano-rejilla-mayor: #1853a016;
+  --foto-fondo: #101114;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+}
+:root[data-color-mode="light"] .paleta-mini[data-muestra-tema="tikin"] { --vista-papel:#FAF8F4; --vista-tinta:#0B0F10; --vista-acento:#176323; }
+:root[data-theme="tikin-dark"] {
+  color-scheme:dark;
+  --papel: #121212;
+  --panel: #1B1B1B;
+  --panel-2: #242424;
+  --tinta: #F4F4F4;
+  --tinta-2: #C9C9C9;
+  --tinta-3: #A0A0A0;
+  --naranja: #85FF85;
+  --verde: #85FF85;
+  --rojo: #FF9E9E;
+  --azul: #C2BBFF;
+  --marca-acento: #85FF85;
+  --marca-secundario: #DFE1FF;
+  --linea: #404040;
+  --linea-fuerte: #838383;
+  --naranja-suave: #1e2a1e;
+  --verde-suave: #1B1B1B;
+  --rojo-suave: #1B1B1B;
+  --azul-suave: #1B1B1B;
+  --marcador: #85FF85;
+  --foco: #85FF85;
+  --globo-base: #242424;
+  --globo-arco: #A0A0A0;
+  --globo-punto: #85FF85;
+  --globo-glow: #242424;
+  --globo-dark: .6;
+  --globo-brillo: 10;
+  --grafica-1: #85FF85;
+  --grafica-2: #85FF85;
+  --grafica-3: #FF9E9E;
+  --grafica-4: #C2BBFF;
+  --grafica-papel: #121212;
+  --grafica-tinta: #C9C9C9;
+  --calor-tinta: #F4F4F4;
+  --calor-ausente: #242424;
+  --tabla-total: #1B1B1B;
+  --escena-1: #85FF85;
+  --escena-2: #85FF85;
+  --escena-3: #FF9E9E;
+  --escena-tinta: #C9C9C9;
+  --sonido-papel: #1B1B1B;
+  --sonido-activo: #85FF85;
+  --sonido-tinta: #F4F4F4;
+  --escritura-trazo: #85FF85;
+  --escritura-papel: #1B1B1B;
+  --grafica-linea: var(--linea);
+  --tabla-elegida: var(--naranja-suave);
+  --escena-linea: var(--linea-fuerte);
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --calor-0: #141714;
+  --calor-1: #1c271c;
+  --calor-2: #263a26;
+  --calor-3: #2f4d2f;
+  --calor-4: #386038;
+  --plano-rejilla: #ffffff0c;
+  --plano-rejilla-mayor: #ffffff18;
+  --foto-fondo: #101114;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+}
+:root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="tikin"] { --vista-papel:#121212; --vista-tinta:#F4F4F4; --vista-acento:#85FF85; }
+:root[data-theme="catabum-light"] {
+  color-scheme:light;
+  --papel: #FCF9FF;
+  --panel: #F5EEFF;
+  --panel-2: #EBE1FA;
+  --tinta: #1A0D2E;
+  --tinta-2: #463252;
+  --tinta-3: #685375;
+  --naranja: #6633C6;
+  --verde: #246C3F;
+  --rojo: #B92158;
+  --azul: #464FA1;
+  --marca-acento: #7C4DFF;
+  --marca-secundario: #FF3E81;
+  --linea: #d0c8db;
+  --linea-fuerte: #8c829b;
+  --naranja-suave: #ede5f9;
+  --verde-suave: #F5EEFF;
+  --rojo-suave: #F5EEFF;
+  --azul-suave: #F5EEFF;
+  --marcador: #6633C6;
+  --foco: #6633C6;
+  --globo-base: #EBE1FA;
+  --globo-arco: #685375;
+  --globo-punto: #6633C6;
+  --globo-glow: #EBE1FA;
+  --globo-dark: 0;
+  --globo-brillo: 2.4;
+  --grafica-1: #6633C6;
+  --grafica-2: #246C3F;
+  --grafica-3: #B92158;
+  --grafica-4: #464FA1;
+  --grafica-papel: #FCF9FF;
+  --grafica-tinta: #463252;
+  --calor-tinta: #1A0D2E;
+  --calor-ausente: #EBE1FA;
+  --tabla-total: #F5EEFF;
+  --escena-1: #6633C6;
+  --escena-2: #246C3F;
+  --escena-3: #B92158;
+  --escena-tinta: #463252;
+  --sonido-papel: #F5EEFF;
+  --sonido-activo: #246C3F;
+  --sonido-tinta: #1A0D2E;
+  --escritura-trazo: #6633C6;
+  --escritura-papel: #F5EEFF;
+  --grafica-linea: var(--linea);
+  --tabla-elegida: var(--naranja-suave);
+  --escena-linea: var(--linea-fuerte);
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --calor-0: #f9f5fe;
+  --calor-1: #efe7fa;
+  --calor-2: #e2d7f5;
+  --calor-3: #d6c8f1;
+  --calor-4: #cab8ec;
+  --plano-rejilla: #1853a00b;
+  --plano-rejilla-mayor: #1853a016;
+  --foto-fondo: #101114;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+}
+:root[data-color-mode="light"] .paleta-mini[data-muestra-tema="catabum"] { --vista-papel:#FCF9FF; --vista-tinta:#1A0D2E; --vista-acento:#6633C6; }
+:root[data-theme="catabum-dark"] {
+  color-scheme:dark;
+  --papel: #1A0D2E;
+  --panel: #24133C;
+  --panel-2: #311F4B;
+  --tinta: #FFFFFF;
+  --tinta-2: #E4D8F3;
+  --tinta-3: #BDAACD;
+  --naranja: #C5AAFF;
+  --verde: #80DEA3;
+  --rojo: #FF9BBE;
+  --azul: #AEB8FF;
+  --marca-acento: #7C4DFF;
+  --marca-secundario: #FF3E81;
+  --linea: #493b5d;
+  --linea-fuerte: #8d849a;
+  --naranja-suave: #2b1d43;
+  --verde-suave: #24133C;
+  --rojo-suave: #24133C;
+  --azul-suave: #24133C;
+  --marcador: #C5AAFF;
+  --foco: #C5AAFF;
+  --globo-base: #311F4B;
+  --globo-arco: #BDAACD;
+  --globo-punto: #C5AAFF;
+  --globo-glow: #311F4B;
+  --globo-dark: .6;
+  --globo-brillo: 10;
+  --grafica-1: #C5AAFF;
+  --grafica-2: #80DEA3;
+  --grafica-3: #FF9BBE;
+  --grafica-4: #AEB8FF;
+  --grafica-papel: #1A0D2E;
+  --grafica-tinta: #E4D8F3;
+  --calor-tinta: #FFFFFF;
+  --calor-ausente: #311F4B;
+  --tabla-total: #24133C;
+  --escena-1: #C5AAFF;
+  --escena-2: #80DEA3;
+  --escena-3: #FF9BBE;
+  --escena-tinta: #E4D8F3;
+  --sonido-papel: #24133C;
+  --sonido-activo: #80DEA3;
+  --sonido-tinta: #FFFFFF;
+  --escritura-trazo: #C5AAFF;
+  --escritura-papel: #24133C;
+  --grafica-linea: var(--linea);
+  --tabla-elegida: var(--naranja-suave);
+  --escena-linea: var(--linea-fuerte);
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --calor-0: #1d1032;
+  --calor-1: #291b41;
+  --calor-2: #372852;
+  --calor-3: #453462;
+  --calor-4: #524173;
+  --plano-rejilla: #ffffff0c;
+  --plano-rejilla-mayor: #ffffff18;
+  --foto-fondo: #101114;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+}
+:root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="catabum"] { --vista-papel:#1A0D2E; --vista-tinta:#FFFFFF; --vista-acento:#C5AAFF; }
 :root[data-theme="blueprint-light"] {
   color-scheme:light;
   --papel: #f3f8ff;
@@ -4045,7 +4449,7 @@ body:has(.revision-barra) { padding-bottom:0; }
 :root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="solarized"] { --vista-papel:#002b36; --vista-tinta:#d6ded7; --vista-acento:#6cc2c0; }
 
 </style>
-<a class="salto" href="#contenido">Saltar al contenido</a><header class="barra capitulos navegacion-editorial" id="nota-inicio"><a class="firma-editorial" href="#contenido"><span>nota</span></a><span class="procedencia">Documento para revisión</span><details class="apariencia-menu orbita" data-apariencia-menu>
+<a class="salto" href="#contenido">Saltar al contenido</a><header class="barra capitulos navegacion-editorial" id="nota-inicio"><a class="firma-editorial" aria-label="nota · Inicio" href="#contenido"><span>nota</span></a><span class="procedencia">Documento para revisión</span><details class="apariencia-menu orbita" data-apariencia-menu>
   <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-principal"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span></summary>
   <div class="apariencia-panel apariencia-explorador" id="panel-apariencia-principal" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
     <div class="apariencia-encabezado"><p class="apariencia-titulo">Tu espacio</p><span data-tema-actual>Sistema</span></div>
@@ -4054,14 +4458,16 @@ body:has(.revision-barra) { padding-bottom:0; }
 <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-principal" value="oliva" data-elegir-tema><span class="paleta-mini" data-muestra-tema="oliva" aria-hidden="true"><i></i><b></b></span><span>Oliva<small>Botánico · verde</small></span></label>
 <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-principal" value="arcilla" data-elegir-tema><span class="paleta-mini" data-muestra-tema="arcilla" aria-hidden="true"><i></i><b></b></span><span>Arcilla<small>Terracota · arena</small></span></label>
 <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-principal" value="ciruela" data-elegir-tema><span class="paleta-mini" data-muestra-tema="ciruela" aria-hidden="true"><i></i><b></b></span><span>Ciruela<small>Malva · tinta violeta</small></span></label>
-<label data-tema-familia="marca"><input type="radio" name="color-apariencia-principal" value="liftit" data-elegir-tema><span class="paleta-mini" data-muestra-tema="liftit" aria-hidden="true"><i></i><b></b></span><span>Liftit<small>Operaciones · azul</small></span></label>
+<label data-tema-familia="marca"><input type="radio" name="color-apariencia-principal" value="liftit" data-elegir-tema><span class="paleta-mini" data-muestra-tema="liftit" aria-hidden="true"><i></i><b></b></span><span>Liftit<small>LMS · Ribbon, Bay y coral</small></span></label>
+<label data-tema-familia="marca"><input type="radio" name="color-apariencia-principal" value="tikin" data-elegir-tema><span class="paleta-mini" data-muestra-tema="tikin" aria-hidden="true"><i></i><b></b></span><span>Tikin<small>Finanzas · lima y lavanda</small></span></label>
+<label data-tema-familia="marca"><input type="radio" name="color-apariencia-principal" value="catabum" data-elegir-tema><span class="paleta-mini" data-muestra-tema="catabum" aria-hidden="true"><i></i><b></b></span><span>Catabum<small>Comunidad · violeta y magenta</small></span></label>
 <label data-tema-familia="tecnico"><input type="radio" name="color-apariencia-principal" value="blueprint" data-elegir-tema><span class="paleta-mini" data-muestra-tema="blueprint" aria-hidden="true"><i></i><b></b></span><span>Blueprint<small>Plano · cuadrícula</small></span></label>
 <label data-tema-familia="tecnico"><input type="radio" name="color-apariencia-principal" value="hacker" data-elegir-tema><span class="paleta-mini" data-muestra-tema="hacker" aria-hidden="true"><i></i><b></b></span><span>Hacker<small>Terminal · verde</small></span></label>
 <label data-tema-familia="producto"><input type="radio" name="color-apariencia-principal" value="linear" data-elegir-tema><span class="paleta-mini" data-muestra-tema="linear" aria-hidden="true"><i></i><b></b></span><span>Linear<small>Grafito · lavanda</small></span></label>
 <label data-tema-familia="editor"><input type="radio" name="color-apariencia-principal" value="modern" data-elegir-tema><span class="paleta-mini" data-muestra-tema="modern" aria-hidden="true"><i></i><b></b></span><span>Modern<small>VS Code · azul</small></span></label>
 <label data-tema-familia="editor"><input type="radio" name="color-apariencia-principal" value="github" data-elegir-tema><span class="paleta-mini" data-muestra-tema="github" aria-hidden="true"><i></i><b></b></span><span>GitHub<small>Neutros · azul</small></span></label>
 <label data-tema-familia="editor"><input type="radio" name="color-apariencia-principal" value="catppuccin" data-elegir-tema><span class="paleta-mini" data-muestra-tema="catppuccin" aria-hidden="true"><i></i><b></b></span><span>Catppuccin<small>Latte / Mocha · pastel</small></span></label>
-<label data-tema-familia="editor"><input type="radio" name="color-apariencia-principal" value="solarized" data-elegir-tema><span class="paleta-mini" data-muestra-tema="solarized" aria-hidden="true"><i></i><b></b></span><span>Solarized<small>Marfil / petróleo · cian</small></span></label></div></fieldset><p class="apariencia-resultados" data-temas-resultados role="status">13 temas · claro y oscuro</p><button type="button" data-limpiar-temas hidden>Limpiar búsqueda y filtros</button></section><section role="tabpanel" tabindex="0" id="preferencia-panel-apariencia-principal-letras" aria-labelledby="preferencia-apariencia-principal-letras" data-preferencia-panel="letras" hidden><fieldset class="apariencia"><legend>Combinaciones de lectura</legend><div class="apariencia-estilos" tabindex="0" role="region" aria-label="Combinaciones tipográficas, desplazables">
+<label data-tema-familia="editor"><input type="radio" name="color-apariencia-principal" value="solarized" data-elegir-tema><span class="paleta-mini" data-muestra-tema="solarized" aria-hidden="true"><i></i><b></b></span><span>Solarized<small>Marfil / petróleo · cian</small></span></label></div></fieldset><p class="apariencia-resultados" data-temas-resultados role="status">15 temas · claro y oscuro</p><button type="button" data-limpiar-temas hidden>Limpiar búsqueda y filtros</button></section><section role="tabpanel" tabindex="0" id="preferencia-panel-apariencia-principal-letras" aria-labelledby="preferencia-apariencia-principal-letras" data-preferencia-panel="letras" hidden><fieldset class="apariencia"><legend>Combinaciones de lectura</legend><div class="apariencia-estilos" tabindex="0" role="region" aria-label="Combinaciones tipográficas, desplazables">
       <label><input type="radio" name="estilo-apariencia-principal" value="editorial" data-elegir-estilo checked><span class="muestra-letra editorial" aria-hidden="true">Aa</span><span>Editorial<small>Instrument · Geist</small></span></label>
       <label><input type="radio" name="estilo-apariencia-principal" value="sobrio" data-elegir-estilo><span class="muestra-letra sobrio" aria-hidden="true">Aa</span><span>Sobrio<small>Geist · Geist</small></span></label>
       <label><input type="radio" name="estilo-apariencia-principal" value="tecnico" data-elegir-estilo><span class="muestra-letra tecnico" aria-hidden="true">Aa</span><span>Técnico<small>Mono · Geist</small></span></label>
@@ -4348,7 +4754,7 @@ ERROR  ejemplo rechazado      1 recurso externo</code></pre></div></section></di
   'use strict';
   const root = document.documentElement;
   const selectors = document.querySelectorAll('[data-tema]');
-  /* REGISTRO TEMAS */ const themeRegistry = {"familias":[{"id":"editorial","nombre":"Editorial","grupo":"editorial","descripcion":"Papel cálido · cobre","light":"light","dark":"dark"},{"id":"sea","nombre":"Sea","grupo":"editorial","descripcion":"Azul oceánico · menta","light":"sea-light","dark":"sea"},{"id":"oliva","nombre":"Oliva","grupo":"editorial","descripcion":"Botánico · verde","light":"oliva","dark":"oliva-dark"},{"id":"arcilla","nombre":"Arcilla","grupo":"editorial","descripcion":"Terracota · arena","light":"arcilla","dark":"arcilla-dark"},{"id":"ciruela","nombre":"Ciruela","grupo":"editorial","descripcion":"Malva · tinta violeta","light":"ciruela-light","dark":"ciruela"},{"id":"liftit","nombre":"Liftit","grupo":"marca","descripcion":"Operaciones · azul","light":"liftit","dark":"liftit-dark"},{"id":"blueprint","nombre":"Blueprint","grupo":"tecnico","descripcion":"Plano · cuadrícula","light":"blueprint-light","dark":"blueprint"},{"id":"hacker","nombre":"Hacker","grupo":"tecnico","descripcion":"Terminal · verde","light":"hacker-light","dark":"hacker"},{"id":"linear","nombre":"Linear","grupo":"producto","descripcion":"Grafito · lavanda","light":"linear-light","dark":"linear-dark"},{"id":"modern","nombre":"Modern","grupo":"editor","descripcion":"VS Code · azul","light":"modern-light","dark":"modern-dark"},{"id":"github","nombre":"GitHub","grupo":"editor","descripcion":"Neutros · azul","light":"github-light","dark":"github-dark"},{"id":"catppuccin","nombre":"Catppuccin","grupo":"editor","descripcion":"Latte / Mocha · pastel","light":"catppuccin-light","dark":"catppuccin-dark"},{"id":"solarized","nombre":"Solarized","grupo":"editor","descripcion":"Marfil / petróleo · cian","light":"solarized-light","dark":"solarized-dark"}],"aliases":{"system":["editorial","system"],"light":["editorial","light"],"dark":["editorial","dark"],"linear-light":["linear","light"],"linear-dark":["linear","dark"],"sea":["sea","dark"],"oliva":["oliva","light"],"arcilla":["arcilla","light"],"ciruela":["ciruela","dark"],"liftit":["liftit","light"],"blueprint":["blueprint","dark"],"hacker":["hacker","dark"]}}; /* FIN REGISTRO TEMAS */
+  /* REGISTRO TEMAS */ const themeRegistry = {"familias":[{"id":"editorial","nombre":"Editorial","grupo":"editorial","descripcion":"Papel cálido · cobre","light":"light","dark":"dark"},{"id":"sea","nombre":"Sea","grupo":"editorial","descripcion":"Azul oceánico · menta","light":"sea-light","dark":"sea"},{"id":"oliva","nombre":"Oliva","grupo":"editorial","descripcion":"Botánico · verde","light":"oliva","dark":"oliva-dark"},{"id":"arcilla","nombre":"Arcilla","grupo":"editorial","descripcion":"Terracota · arena","light":"arcilla","dark":"arcilla-dark"},{"id":"ciruela","nombre":"Ciruela","grupo":"editorial","descripcion":"Malva · tinta violeta","light":"ciruela-light","dark":"ciruela"},{"id":"liftit","nombre":"Liftit","grupo":"marca","descripcion":"LMS · Ribbon, Bay y coral","light":"liftit-light","dark":"liftit-dark"},{"id":"tikin","nombre":"Tikin","grupo":"marca","descripcion":"Finanzas · lima y lavanda","light":"tikin-light","dark":"tikin-dark"},{"id":"catabum","nombre":"Catabum","grupo":"marca","descripcion":"Comunidad · violeta y magenta","light":"catabum-light","dark":"catabum-dark"},{"id":"blueprint","nombre":"Blueprint","grupo":"tecnico","descripcion":"Plano · cuadrícula","light":"blueprint-light","dark":"blueprint"},{"id":"hacker","nombre":"Hacker","grupo":"tecnico","descripcion":"Terminal · verde","light":"hacker-light","dark":"hacker"},{"id":"linear","nombre":"Linear","grupo":"producto","descripcion":"Grafito · lavanda","light":"linear-light","dark":"linear-dark"},{"id":"modern","nombre":"Modern","grupo":"editor","descripcion":"VS Code · azul","light":"modern-light","dark":"modern-dark"},{"id":"github","nombre":"GitHub","grupo":"editor","descripcion":"Neutros · azul","light":"github-light","dark":"github-dark"},{"id":"catppuccin","nombre":"Catppuccin","grupo":"editor","descripcion":"Latte / Mocha · pastel","light":"catppuccin-light","dark":"catppuccin-dark"},{"id":"solarized","nombre":"Solarized","grupo":"editor","descripcion":"Marfil / petróleo · cian","light":"solarized-light","dark":"solarized-dark"}],"aliases":{"system":["editorial","system"],"light":["editorial","light"],"dark":["editorial","dark"],"linear-light":["linear","light"],"linear-dark":["linear","dark"],"sea":["sea","dark"],"oliva":["oliva","light"],"arcilla":["arcilla","light"],"ciruela":["ciruela","dark"],"liftit":["liftit","light"],"blueprint":["blueprint","dark"],"hacker":["hacker","dark"]}}; /* FIN REGISTRO TEMAS */
   const families=new Map(themeRegistry.familias.map(f=>[f.id,f]));
   const modes=['light','dark','system'];
   const initialTheme=document.querySelector('meta[name="nota-tema-inicial"]')?.content;
@@ -4841,4 +5247,4 @@ ERROR  ejemplo rechazado      1 recurso externo</code></pre></div></section></di
 })();
 
 </script>
-<script type="application/json" data-nota-manifiesto>{"version": "4", "paginas": ["contenido"], "modulos": ["audio.js", "controles.js", "piezas-editoriales.js", "interacciones.js", "pestanas.js", "codigo.js", "revision.js"], "fuentes": {"fuentes.css": "03ac4b770dd47f79468c01c6b0f8b0ce44ae865331d6d5b46472c80bb41fe1d4", "estilo.css": "3f995e8ef1f3345dc8b8452520aec0b2b7a51166e1418aa4712a421c3c4a46bf", "audio.js": "9247e4e95f65d44339316ba4f6941f06039b04b5e9c247ff6749314240a06713", "controles.js": "1404b8abb8ce5534bbfccae6fc38ca7db4d4d29c399538fafe19c625dc203532", "piezas-editoriales.js": "8604004dfc2aacf7e51ae4a0e6184950fdaaa0187f64e956b562adb787cd5fe9", "interacciones.js": "9e2fa3a3b1d967413e2e4ce7ea72854cbd2f828523dd0ae4afae6c33f334046f", "pestanas.js": "89079edd08150658542602e557ad735cf8157bbb737f0b6cd505f15207e0c40b", "codigo.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "revision.js": "310c8438b89056088b8ab9b6e436eb58e34918cfd91f71d8c2319a6395c2b4f8"}}</script>
+<script type="application/json" data-nota-manifiesto>{"version": "4", "paginas": ["contenido"], "modulos": ["audio.js", "controles.js", "piezas-editoriales.js", "interacciones.js", "pestanas.js", "codigo.js", "revision.js"], "fuentes": {"fuentes.css": "03ac4b770dd47f79468c01c6b0f8b0ce44ae865331d6d5b46472c80bb41fe1d4", "estilo.css": "771e55cf01c123fee28b8b4dc86c65c7004814753dfb97529b4cc448e485d644", "audio.js": "9247e4e95f65d44339316ba4f6941f06039b04b5e9c247ff6749314240a06713", "controles.js": "1404b8abb8ce5534bbfccae6fc38ca7db4d4d29c399538fafe19c625dc203532", "piezas-editoriales.js": "8604004dfc2aacf7e51ae4a0e6184950fdaaa0187f64e956b562adb787cd5fe9", "interacciones.js": "1e7cedf4d17ce0bd9973b638eec0ca7f5148189b41d60a9f839aa1936e176f95", "pestanas.js": "89079edd08150658542602e557ad735cf8157bbb737f0b6cd505f15207e0c40b", "codigo.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "revision.js": "310c8438b89056088b8ab9b6e436eb58e34918cfd91f71d8c2319a6395c2b4f8"}}</script>

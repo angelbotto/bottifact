@@ -1,5 +1,5 @@
 {
-  "version": "2026.09.15-voz.2",
+  "version": "2026.09.16-marcas.1",
   "contrato": "4",
   "componentes": 82,
   "temas": [
@@ -9,6 +9,8 @@
     "arcilla",
     "ciruela",
     "liftit",
+    "tikin",
+    "catabum",
     "blueprint",
     "hacker",
     "linear",
@@ -28,7 +30,7 @@
     "dark",
     "system"
   ],
-  "paletas": 26,
+  "paletas": 30,
   "nombre": "Bottifact",
   "skill": "bottifact"
 }

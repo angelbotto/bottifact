@@ -33,7 +33,7 @@ menu.open=false;probe.remove();return rows})()'''.replace('FAMILIES',json.dumps(
    assert not r['fails'] and r['terminal']>=4.5 and r['previewMatches'],r
    assert r['familyChecked']==r['family'] and r['modeChecked']==r['mode'],r
   checks+=data
-  print(f'{w}px: 26 paletas, contraste de tres superficies, terminal y panel comprobados.',flush=True)
+  print(f'{w}px: {2*len(FAMILIES)} paletas, contraste de tres superficies, terminal y panel comprobados.',flush=True)
  # Cambiar el SO de verdad a través de media emulation, no un evento sintético del componente.
  evaluate("NotaTemas.set({family:'github',mode:'system'})")
  systems=[]

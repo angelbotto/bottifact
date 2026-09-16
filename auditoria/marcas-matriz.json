@@ -1,0 +1,311 @@
+{
+  "casos": [
+    {
+      "brand": "liftit",
+      "inside": true,
+      "label": "Liftit · Inicio",
+      "loaded": true,
+      "overflow": false,
+      "review": true,
+      "theme": {
+        "effective": "light",
+        "family": "liftit",
+        "mode": "light",
+        "palette": "liftit-light"
+      },
+      "tone": "marca-logo marca-logo-light",
+      "visible": 1,
+      "width": 320
+    },
+    {
+      "brand": "liftit",
+      "inside": true,
+      "label": "Liftit · Inicio",
+      "loaded": true,
+      "overflow": false,
+      "review": true,
+      "theme": {
+        "effective": "dark",
+        "family": "liftit",
+        "mode": "dark",
+        "palette": "liftit-dark"
+      },
+      "tone": "marca-logo marca-logo-dark",
+      "visible": 1,
+      "width": 320
+    },
+    {
+      "brand": "liftit",
+      "inside": true,
+      "label": "Liftit · Inicio",
+      "loaded": true,
+      "overflow": false,
+      "review": true,
+      "theme": {
+        "effective": "light",
+        "family": "liftit",
+        "mode": "light",
+        "palette": "liftit-light"
+      },
+      "tone": "marca-logo marca-logo-light",
+      "visible": 1,
+      "width": 390
+    },
+    {
+      "brand": "liftit",
+      "inside": true,
+      "label": "Liftit · Inicio",
+      "loaded": true,
+      "overflow": false,
+      "review": true,
+      "theme": {
+        "effective": "dark",
+        "family": "liftit",
+        "mode": "dark",
+        "palette": "liftit-dark"
+      },
+      "tone": "marca-logo marca-logo-dark",
+      "visible": 1,
+      "width": 390
+    },
+    {
+      "brand": "liftit",
+      "inside": true,
+      "label": "Liftit · Inicio",
+      "loaded": true,
+      "overflow": false,
+      "review": true,
+      "theme": {
+        "effective": "light",
+        "family": "liftit",
+        "mode": "light",
+        "palette": "liftit-light"
+      },
+      "tone": "marca-logo marca-logo-light",
+      "visible": 1,
+      "width": 1440
+    },
+    {
+      "brand": "liftit",
+      "inside": true,
+      "label": "Liftit · Inicio",
+      "loaded": true,
+      "overflow": false,
+      "review": true,
+      "theme": {
+        "effective": "dark",
+        "family": "liftit",
+        "mode": "dark",
+        "palette": "liftit-dark"
+      },
+      "tone": "marca-logo marca-logo-dark",
+      "visible": 1,
+      "width": 1440
+    },
+    {
+      "brand": "tikin",
+      "inside": true,
+      "label": "Tikin · Inicio",
+      "loaded": true,
+      "overflow": false,
+      "review": true,
+      "theme": {
+        "effective": "light",
+        "family": "tikin",
+        "mode": "light",
+        "palette": "tikin-light"
+      },
+      "tone": "marca-logo marca-logo-light",
+      "visible": 1,
+      "width": 320
+    },
+    {
+      "brand": "tikin",
+      "inside": true,
+      "label": "Tikin · Inicio",
+      "loaded": true,
+      "overflow": false,
+      "review": true,
+      "theme": {
+        "effective": "dark",
+        "family": "tikin",
+        "mode": "dark",
+        "palette": "tikin-dark"
+      },
+      "tone": "marca-logo marca-logo-dark",
+      "visible": 1,
+      "width": 320
+    },
+    {
+      "brand": "tikin",
+      "inside": true,
+      "label": "Tikin · Inicio",
+      "loaded": true,
+      "overflow": false,
+      "review": true,
+      "theme": {
+        "effective": "light",
+        "family": "tikin",
+        "mode": "light",
+        "palette": "tikin-light"
+      },
+      "tone": "marca-logo marca-logo-light",
+      "visible": 1,
+      "width": 390
+    },
+    {
+      "brand": "tikin",
+      "inside": true,
+      "label": "Tikin · Inicio",
+      "loaded": true,
+      "overflow": false,
+      "review": true,
+      "theme": {
+        "effective": "dark",
+        "family": "tikin",
+        "mode": "dark",
+        "palette": "tikin-dark"
+      },
+      "tone": "marca-logo marca-logo-dark",
+      "visible": 1,
+      "width": 390
+    },
+    {
+      "brand": "tikin",
+      "inside": true,
+      "label": "Tikin · Inicio",
+      "loaded": true,
+      "overflow": false,
+      "review": true,
+      "theme": {
+        "effective": "light",
+        "family": "tikin",
+        "mode": "light",
+        "palette": "tikin-light"
+      },
+      "tone": "marca-logo marca-logo-light",
+      "visible": 1,
+      "width": 1440
+    },
+    {
+      "brand": "tikin",
+      "inside": true,
+      "label": "Tikin · Inicio",
+      "loaded": true,
+      "overflow": false,
+      "review": true,
+      "theme": {
+        "effective": "dark",
+        "family": "tikin",
+        "mode": "dark",
+        "palette": "tikin-dark"
+      },
+      "tone": "marca-logo marca-logo-dark",
+      "visible": 1,
+      "width": 1440
+    },
+    {
+      "brand": "catabum",
+      "inside": true,
+      "label": "Catabum · Inicio",
+      "loaded": true,
+      "overflow": false,
+      "review": true,
+      "theme": {
+        "effective": "light",
+        "family": "catabum",
+        "mode": "light",
+        "palette": "catabum-light"
+      },
+      "tone": "marca-logo marca-logo-light",
+      "visible": 1,
+      "width": 320
+    },
+    {
+      "brand": "catabum",
+      "inside": true,
+      "label": "Catabum · Inicio",
+      "loaded": true,
+      "overflow": false,
+      "review": true,
+      "theme": {
+        "effective": "dark",
+        "family": "catabum",
+        "mode": "dark",
+        "palette": "catabum-dark"
+      },
+      "tone": "marca-logo marca-logo-dark",
+      "visible": 1,
+      "width": 320
+    },
+    {
+      "brand": "catabum",
+      "inside": true,
+      "label": "Catabum · Inicio",
+      "loaded": true,
+      "overflow": false,
+      "review": true,
+      "theme": {
+        "effective": "light",
+        "family": "catabum",
+        "mode": "light",
+        "palette": "catabum-light"
+      },
+      "tone": "marca-logo marca-logo-light",
+      "visible": 1,
+      "width": 390
+    },
+    {
+      "brand": "catabum",
+      "inside": true,
+      "label": "Catabum · Inicio",
+      "loaded": true,
+      "overflow": false,
+      "review": true,
+      "theme": {
+        "effective": "dark",
+        "family": "catabum",
+        "mode": "dark",
+        "palette": "catabum-dark"
+      },
+      "tone": "marca-logo marca-logo-dark",
+      "visible": 1,
+      "width": 390
+    },
+    {
+      "brand": "catabum",
+      "inside": true,
+      "label": "Catabum · Inicio",
+      "loaded": true,
+      "overflow": false,
+      "review": true,
+      "theme": {
+        "effective": "light",
+        "family": "catabum",
+        "mode": "light",
+        "palette": "catabum-light"
+      },
+      "tone": "marca-logo marca-logo-light",
+      "visible": 1,
+      "width": 1440
+    },
+    {
+      "brand": "catabum",
+      "inside": true,
+      "label": "Catabum · Inicio",
+      "loaded": true,
+      "overflow": false,
+      "review": true,
+      "theme": {
+        "effective": "dark",
+        "family": "catabum",
+        "mode": "dark",
+        "palette": "catabum-dark"
+      },
+      "tone": "marca-logo marca-logo-dark",
+      "visible": 1,
+      "width": 1440
+    }
+  ],
+  "alcance": "DOM y estilos calculados. No acredita ejecución del modelo ni audición humana."
+}

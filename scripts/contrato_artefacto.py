@@ -6,6 +6,7 @@ import hashlib,json,re
 ROOT=Path(__file__).resolve().parents[1]
 VERSION='4'
 from temas import THEMES,FAMILIES,MODES,normalize
+from marcas import BRANDS,identity,logo
 STYLES=('editorial','sobrio','tecnico','libro','revista','bitacora')
 NOSCRIPT='.nota-estandar > .pagina { display:grid!important; grid-template-columns:1fr min(var(--texto),calc(100% - 2 * var(--gutter))) 1fr; row-gap:28px; }.nota-estandar .indice,.nota-estandar ~ .regla,.navegacion-editorial,.nota-estandar .paginacion { display:none!important; }'
 THREE='https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js'
@@ -60,9 +61,11 @@ def toc(content):
   items.append((anchor.attrs['id'],n.text().strip()))
  return items
 
-def build(title,pages,description='',brand='Bottifact',theme=None,style=None,document_id=None,mode=None):
+def build(title,pages,description='',brand='Bottifact',theme=None,style=None,document_id=None,mode=None,marca=None):
  if document_id is not None and (not isinstance(document_id,str) or not re.fullmatch(r'[a-zA-Z0-9_-]{1,120}',document_id)):raise ValueError('documento_id: 1–120 letras, números, guiones o subrayados.')
  if theme is not None or mode is not None:theme,mode=normalize(theme,mode)
+ brand_id=identity(marca,theme)
+ if brand_id:brand=BRANDS[brand_id]['nombre']
  if style is not None and style not in STYLES:raise ValueError('Estilo desconocido: '+str(style))
  if not isinstance(title,str) or not title.strip() or not isinstance(pages,list) or not pages:raise ValueError('Faltan título o páginas.')
  if not isinstance(description,str) or any(not isinstance(p,dict) or any(not isinstance(p.get(k),str) for k in ['id','titulo','html']) for p in pages):raise ValueError('Cada página requiere id, titulo y html de texto.')
@@ -77,7 +80,7 @@ def build(title,pages,description='',brand='Bottifact',theme=None,style=None,doc
  if multi:
   nav='<div class="navegacion-scroll" data-capitulos-scroll tabindex="0" role="region" aria-label="Capítulos, desplazables"><nav aria-label="Capítulos">'+('<span class="nav-separador" aria-hidden="true">/</span>'.join('<button type="button" data-ir="'+p['id']+'">'+escape(p['titulo'])+'</button>' for p in pages))+'</nav></div>'
  else:nav='<span class="procedencia">Documento para revisión</span>'
- header='<a class="salto" href="#'+ids[0]+'">Saltar al contenido</a><header class="barra capitulos navegacion-editorial" id="nota-inicio"><a class="firma-editorial" href="#'+ids[0]+'"><span>'+escape(brand)+'</span></a>'+nav+appearance()+'</header>'
+ header='<a class="salto" href="#'+ids[0]+'">Saltar al contenido</a><header class="barra capitulos navegacion-editorial" id="nota-inicio"><a class="firma-editorial" aria-label="'+escape(brand,quote=True)+' · Inicio" href="#'+ids[0]+'">'+(logo(brand_id) if brand_id else '<span>'+escape(brand)+'</span>')+'</a>'+nav+appearance()+'</header>'
  pieces=[]
  for i,p in enumerate(pages):
   heading='<header class="cabecera"'+('' if multi else ' id="'+p['id']+'"')+'><h1>'+escape(p['titulo'] if multi else title)+'</h1>'+('<p class="bajada">'+escape(description)+'</p>' if i==0 and description else '')+'</header>'

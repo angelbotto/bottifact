@@ -1,7 +1,8 @@
 # Bottifact
 
-**Bottico + artifact.** Biblioteca editorial, generador y skill para crear artefactos HTML con datos, notas manuscritas, revisión y navegación de lectura. **82 componentes, 13 familias con versiones clara y oscura y seis combinaciones tipográficas.** Funciona con Claude, Codex y Hermes; los HTML generados no necesitan un agente para leerse.
+**Bottico + artifact.** Biblioteca editorial, generador y skill para crear artefactos HTML con datos, notas manuscritas, revisión y navegación de lectura. **82 componentes, 15 familias con versiones clara y oscura y seis combinaciones tipográficas.** Funciona con Claude, Codex y Hermes; los HTML generados no necesitan un agente para leerse.
 
+- [marcas.html](marcas.html): Liftit, Tikin y Catabum, logos originales y variantes claras/oscuras.
 - [ejecutivo.html](ejecutivo.html): memo de ejemplo, voz CTO/CEO y guía de comunicación con evidencia.
 - `sistema.html`: revisión del stack, el skill y su evolución.
 - `guia.html`: biblioteca documentada y recetas copiables.

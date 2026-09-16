@@ -1,8 +1,8 @@
 # Familias y modos
 
-La apariencia tiene tres ejes independientes: **familia**, **modo** y **tipografía**. La pestaña Temas ofrece 13 familias con muestras, búsqueda y categoría. Arriba se elige Claro, Oscuro o Sistema. Letras conserva las seis combinaciones tipográficas y Sonido sus controles. Cambiar una familia conserva el modo; cambiar el dispositivo sólo afecta al modo Sistema.
+La apariencia tiene tres ejes independientes: **familia**, **modo** y **tipografía**. La pestaña Temas ofrece 15 familias con muestras, búsqueda y categoría. Arriba se elige Claro, Oscuro o Sistema. Letras conserva las seis combinaciones tipográficas y Sonido sus controles. Cambiar una familia conserva el modo; cambiar el dispositivo sólo afecta al modo Sistema.
 
-Prueba [temas.html](temas.html). Todas las familias tienen versión clara y oscura; hay 26 paletas. Las muestras siguen el modo efectivo. Linear tiene una sola tarjeta.
+Prueba [temas.html](temas.html). Todas las familias tienen versión clara y oscura; hay 30 paletas. Las muestras siguen el modo efectivo. Linear tiene una sola tarjeta.
 
 | Familia | Uso sugerido |
 | --- | --- |
@@ -11,7 +11,9 @@ Prueba [temas.html](temas.html). Todas las familias tienen versión clara y oscu
 | Oliva | Investigación y síntesis, tonos botánicos |
 | Arcilla | Narración, arena y terracota |
 | Ciruela | Ensayos y portafolios, malva |
-| Liftit | Operación logística, azul |
+| Liftit | Operación logística, Ribbon/Bay y coral del LMS |
+| Tikin | Finanzas, papel cálido, lima y lavanda del design system |
+| Catabum | Comunidad, violeta, magenta y naranja de la app |
 | Blueprint | Arquitectura, planos y cuadrícula |
 | Hacker | Terminal y documentación técnica, verde |
 | Linear | Producto y revisión, neutros y lavanda |
@@ -49,3 +51,5 @@ Paletas adaptadas por Bottifact, no extensiones oficiales ni una integración co
 - [Solarized, de Ethan Schoonover](https://ethanschoonover.com/solarized/): referencia de fondos marfil y petróleo y sus acentos.
 
 No se afirma que estos temas vengan preinstalados en Cursor: son referencias del ecosistema de editores, adaptadas a nuestros artefactos.
+
+Las identidades de empresa, logos y la distinción entre color original y adaptación están en [marcas.md](marcas.md). Cambiar la paleta del lector conserva la empresa que firma el documento.

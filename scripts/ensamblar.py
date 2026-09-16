@@ -188,10 +188,12 @@ print('Generados colaborativo.html y temas Linear Light / Dark')
 
 from ejemplo_apariencia import generate as build_apariencia
 build_apariencia()
-print("Generado temas.html: 13 familias y 26 versiones")
+print("Generado temas.html: 15 familias y 30 versiones")
 
 from ejemplo_ejecutivo import generate as build_ejecutivo
 build_ejecutivo()
+from ejemplo_marcas import generate as build_marcas
+build_marcas()
 from ejemplo_sistema import generate as build_sistema
 build_sistema()
 print("Generado sistema.html: stack y skill de Bottifact")

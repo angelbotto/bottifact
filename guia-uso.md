@@ -178,4 +178,4 @@ según el equipo: la inspección visual sigue siendo necesaria, con el navegador
 
 ### Elegir familia y modo
 
-[temas.md](temas.md) reúne el catálogo completo: 13 familias, 26 paletas y modo Sistema. Usa `--tema linear --modo system`, por ejemplo. La tipografía es independiente. [temas.html](temas.html) permite comparar el mismo contenido y sus componentes.
+[temas.md](temas.md) reúne el catálogo completo: 15 familias, 30 paletas y modo Sistema. Usa `--tema linear --modo system`, por ejemplo. La tipografía es independiente. [temas.html](temas.html) permite comparar el mismo contenido y sus componentes.

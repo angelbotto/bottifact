@@ -8,7 +8,7 @@ Bottifact reúne una biblioteca de componentes, un generador y un skill portable
 | --- | --- | --- |
 | Artefacto | HTML semántico, CSS con tokens, SVG y JavaScript sin framework | Lectura, datos, interacción y exportación del archivo |
 | Biblioteca | 82 recetas en componentes.md y registro.json; 26 módulos JS de raíz | Composición por intención y dependencias seleccionadas |
-| Temas | temas.json y scripts/temas.py; 13 familias, 26 paletas, tres modos | Identidad visual separada de Claro / Oscuro / Sistema y tipografía |
+| Temas | temas.json y scripts/temas.py; 15 familias, 30 paletas, tres modos | Identidad visual separada de Claro / Oscuro / Sistema y tipografía |
 | Generación | Python 3.10+, sólo biblioteca estándar | Incrusta fuentes y módulos usados; valida el contrato |
 | Gráficas y tablas | SVG/DOM local, tablas como fuente de datos | Ordenación, filtros, grupos, selección, CSV y alternativas textuales |
 | Mapas 3D | Three.js 0.160.1 desde CDN fijado, con alternativa textual | Globo y escenas; esta parte necesita red para cargar Three |

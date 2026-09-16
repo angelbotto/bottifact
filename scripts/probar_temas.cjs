@@ -33,4 +33,4 @@ equal(restored.api.set({family:'invalid'}),false);equal(restored.api.set({mode:'
 const blocked=load({initial:'liftit',mode:'system',blocked:true});equal(blocked.api.set({mode:'dark'}),true);equal(blocked.dataset.theme,'liftit-dark');
 const unscoped=load({stored:{'nota-apariencia-v2':'{"family":"sea","mode":"light"}','nota-tema':'dark'}});equal(unscoped.dataset.theme,'sea-light');
 const corrupt=load({stored:{'nota-apariencia-v2':'broken'}});equal(corrupt.dataset.themeFamily,'editorial');
-console.log(`${assertions} comprobaciones: 13 familias, modos independientes, cambio del SO, persistencia, alias y almacenamiento bloqueado.`);
+console.log(`${assertions} comprobaciones: 15 familias, modos independientes, cambio del SO, persistencia, alias y almacenamiento bloqueado.`);

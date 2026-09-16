@@ -49,4 +49,30 @@ class ContractTests(unittest.TestCase):
    with self.subTest(recipe=item['id']):
     result=build(item['nombre'],[{**self.pages[0],'html':html}]);self.assertEqual(validate(result),[])
     if THREE in item['dependencias']:self.assertEqual(result.count('<script src="'+THREE+'">'),1)
+ def test_brand_identity_is_independent_of_palette(self):
+  from marcas import BRANDS
+  import base64,hashlib,xml.etree.ElementTree as ET
+  for key,brand in BRANDS.items():
+   with self.subTest(brand=key):
+    source=(ROOT/brand['logo']).read_bytes()
+    self.assertEqual(hashlib.sha256(source).hexdigest(),brand['sha256_logo'])
+    ET.fromstring(source)
+    for palette,override in [(key,None),('blueprint',key)]:
+     html=build('Identidad',self.pages,theme=palette,marca=override)
+     doc=Document(html)
+     self.assertEqual(len([n for n in doc.live if n.attrs.get('data-marca')==key]),1)
+     imgs=[n for n in doc.live if 'marca-logo' in n.classes]
+     self.assertEqual(len(imgs),2)
+     for img in imgs:
+      prefix,data=img.attrs['src'].split(',',1)
+      self.assertEqual(prefix,'data:image/svg+xml;base64')
+      svg=ET.fromstring(base64.b64decode(data))
+      self.assertTrue(svg.tag.endswith('svg'))
+      for element in svg.iter():
+       self.assertNotIn(element.tag.rsplit('}',1)[-1],['script','foreignObject'])
+       self.assertFalse(any(k.lower().startswith('on') or k.rsplit('}',1)[-1]=='href' for k in element.attrib))
+     self.assertEqual(validate(html),[])
+    neutral=Document(build('Genérico',self.pages,theme=key,marca='bottifact'))
+    self.assertFalse(any('data-marca' in n.attrs for n in neutral.live))
+  with self.assertRaises(ValueError):build('Inválido',self.pages,marca='inventada')
 if __name__=='__main__':unittest.main()
