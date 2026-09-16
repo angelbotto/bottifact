@@ -903,8 +903,8 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 
 /* ===========================================================
    10c — TERMINAL. Una salida de consola es evidencia: se lee como se vio.
-   Se queda oscura en los dos temas a propósito; una terminal clara no se lee
-   como una terminal. El valor que importa va en `.subra`, no en negrita.
+   Sigue la familia y el modo de lectura. El valor que importa va en
+   `.subra`, no en negrita.
    =========================================================== */
 .terminal { --term-papel: #171614; --term-tinta: #cfc6bb; --term-tenue: #998f83;
   --term-linea: #2d2a26; --term-marca: #c98f5a;
@@ -1443,7 +1443,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   --tinta-3: #705349;
   --linea: #dcc5b7;
   --linea-fuerte: #9e7e6b;
-  --naranja: #a44027;
+  --naranja: #9f3e26;
   --naranja-suave: #f3dacc;
   --verde: #49623c;
   --verde-suave: #f2e5dc;
@@ -1451,15 +1451,15 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   --rojo-suave: #f2e5dc;
   --azul: #3b627a;
   --azul-suave: #f2e5dc;
-  --marcador: #a44027;
-  --foco: #a44027;
+  --marcador: #9f3e26;
+  --foco: #9f3e26;
   --globo-base: #9e7e6b;
   --globo-arco: #705349;
   --globo-punto: #9e7e6b;
   --globo-glow: #dcc5b7;
   --globo-dark: 0;
   --globo-brillo: 2.4;
-  --grafica-1: #a44027;
+  --grafica-1: #9f3e26;
   --grafica-2: #3b627a;
   --grafica-3: #49623c;
   --grafica-4: #795073;
@@ -1470,7 +1470,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   --calor-ausente: #e7d4c7;
   --tabla-total: #f2e5dc;
   --tabla-elegida: #f3dacc;
-  --escena-1: #a44027;
+  --escena-1: #9f3e26;
   --escena-2: #3b627a;
   --escena-3: #49623c;
   --escena-tinta: #624a40;
@@ -1478,7 +1478,7 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
   --sonido-papel: #f2e5dc;
   --sonido-activo: #49623c;
   --sonido-tinta: #37251f;
-  --escritura-trazo: #a44027;
+  --escritura-trazo: #9f3e26;
   --escritura-papel: #f2e5dc;
   --calor-0: #f3e7dd;
   --calor-1: #edd6c6;
@@ -1541,37 +1541,37 @@ th { background: var(--panel); color: var(--tinta-2); font: 12px/1.6 var(--mono)
 }
 :root {
   --muestra-oliva: #f5f6ec; --muestra-oliva-tinta: #26301e; --muestra-oliva-acento: #486123;
-  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #a44027;
+  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #9f3e26;
   --muestra-ciruela: #201922; --muestra-ciruela-tinta: #f1e4ef; --muestra-ciruela-acento: #e8afd8;
 }
 @media(prefers-color-scheme:dark) { :root:not([data-theme]) {
   --muestra-oliva: #f5f6ec; --muestra-oliva-tinta: #26301e; --muestra-oliva-acento: #486123;
-  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #a44027;
+  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #9f3e26;
   --muestra-ciruela: #201922; --muestra-ciruela-tinta: #f1e4ef; --muestra-ciruela-acento: #e8afd8;
 } }
 :root[data-theme='dark'] {
   --muestra-oliva: #f5f6ec; --muestra-oliva-tinta: #26301e; --muestra-oliva-acento: #486123;
-  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #a44027;
+  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #9f3e26;
   --muestra-ciruela: #201922; --muestra-ciruela-tinta: #f1e4ef; --muestra-ciruela-acento: #e8afd8;
 }
 :root[data-theme='sea'] {
   --muestra-oliva: #f5f6ec; --muestra-oliva-tinta: #26301e; --muestra-oliva-acento: #486123;
-  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #a44027;
+  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #9f3e26;
   --muestra-ciruela: #201922; --muestra-ciruela-tinta: #f1e4ef; --muestra-ciruela-acento: #e8afd8;
 }
 :root[data-theme='oliva'] {
   --muestra-oliva: #f5f6ec; --muestra-oliva-tinta: #26301e; --muestra-oliva-acento: #486123;
-  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #a44027;
+  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #9f3e26;
   --muestra-ciruela: #201922; --muestra-ciruela-tinta: #f1e4ef; --muestra-ciruela-acento: #e8afd8;
 }
 :root[data-theme='arcilla'] {
   --muestra-oliva: #f5f6ec; --muestra-oliva-tinta: #26301e; --muestra-oliva-acento: #486123;
-  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #a44027;
+  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #9f3e26;
   --muestra-ciruela: #201922; --muestra-ciruela-tinta: #f1e4ef; --muestra-ciruela-acento: #e8afd8;
 }
 :root[data-theme='ciruela'] {
   --muestra-oliva: #f5f6ec; --muestra-oliva-tinta: #26301e; --muestra-oliva-acento: #486123;
-  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #a44027;
+  --muestra-arcilla: #fcf1e8; --muestra-arcilla-tinta: #37251f; --muestra-arcilla-acento: #9f3e26;
   --muestra-ciruela: #201922; --muestra-ciruela-tinta: #f1e4ef; --muestra-ciruela-acento: #e8afd8;
 }
 .paleta-mini.oliva { background: var(--muestra-oliva); }
@@ -2144,7 +2144,7 @@ body:has(.revision-barra) { padding-bottom:0; }
   --muestra-oliva-acento: #486123;
   --muestra-arcilla: #fcf1e8;
   --muestra-arcilla-tinta: #37251f;
-  --muestra-arcilla-acento: #a44027;
+  --muestra-arcilla-acento: #9f3e26;
   --muestra-ciruela: #201922;
   --muestra-ciruela-tinta: #f1e4ef;
   --muestra-ciruela-acento: #e8afd8;
@@ -2249,7 +2249,7 @@ body:has(.revision-barra) { padding-bottom:0; }
   --muestra-oliva-acento: #486123;
   --muestra-arcilla: #fcf1e8;
   --muestra-arcilla-tinta: #37251f;
-  --muestra-arcilla-acento: #a44027;
+  --muestra-arcilla-acento: #9f3e26;
   --muestra-ciruela: #201922;
   --muestra-ciruela-tinta: #f1e4ef;
   --muestra-ciruela-acento: #e8afd8;
@@ -2354,7 +2354,7 @@ body:has(.revision-barra) { padding-bottom:0; }
   --muestra-oliva-acento: #486123;
   --muestra-arcilla: #fcf1e8;
   --muestra-arcilla-tinta: #37251f;
-  --muestra-arcilla-acento: #a44027;
+  --muestra-arcilla-acento: #9f3e26;
   --muestra-ciruela: #201922;
   --muestra-ciruela-tinta: #f1e4ef;
   --muestra-ciruela-acento: #e8afd8;
@@ -2692,7 +2692,7 @@ body:has(.revision-barra) { padding-bottom:0; }
   --muestra-oliva-acento: #486123;
   --muestra-arcilla: #fcf1e8;
   --muestra-arcilla-tinta: #37251f;
-  --muestra-arcilla-acento: #a44027;
+  --muestra-arcilla-acento: #9f3e26;
   --muestra-ciruela: #201922;
   --muestra-ciruela-tinta: #f1e4ef;
   --muestra-ciruela-acento: #e8afd8;
@@ -2796,7 +2796,7 @@ body:has(.revision-barra) { padding-bottom:0; }
   --muestra-oliva-acento: #486123;
   --muestra-arcilla: #fcf1e8;
   --muestra-arcilla-tinta: #37251f;
-  --muestra-arcilla-acento: #a44027;
+  --muestra-arcilla-acento: #9f3e26;
   --muestra-ciruela: #201922;
   --muestra-ciruela-tinta: #f1e4ef;
   --muestra-ciruela-acento: #e8afd8;
@@ -2860,6 +2860,1177 @@ body:has(.revision-barra) { padding-bottom:0; }
 .revision-utilidades .revision-importar { position:relative; display:flex; align-items:center; justify-content:center; padding:8px; min-height:36px; border:1px solid var(--linea-fuerte); border-radius:5px; background:var(--papel); cursor:pointer; }
 .revision-importar:focus-within { outline:2px solid var(--foco); outline-offset:3px; }
 .revision-prompt-detalle > summary { padding:10px 12px; font:12px/1.5 var(--sans); cursor:pointer; }
+
+/* Familia y modo: dos decisiones independientes, controles nativos por teclado. */
+.apariencia-modos { border:0; padding:0; margin:0 0 16px; min-width:0; }
+.apariencia-modos legend { padding:0; margin-bottom:7px; color:var(--tinta-2); font:500 12px/1.4 var(--sans); }
+.apariencia-modos > div { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4px; background:var(--panel); border:1px solid var(--linea); padding:4px; border-radius:8px; }
+.apariencia-modos label { position:relative; min-width:0; cursor:pointer; }
+.apariencia-modos input { position:absolute; width:1px; height:1px; opacity:0; }
+.apariencia-modos span { display:flex; justify-content:center; align-items:center; min-height:40px; padding:7px 4px; border:1px solid transparent; border-radius:5px; color:var(--tinta-2); font:500 13px/1.3 var(--sans); }
+.apariencia-modos input:checked + span { color:var(--tinta); border-color:var(--linea-fuerte); background:var(--papel); }
+.apariencia-modos input:focus-visible + span { outline:2px solid var(--foco); outline-offset:2px; }
+.apariencia-modos [data-modo-estado] { margin:7px 0 0; font:12px/1.5 var(--sans); color:var(--tinta-3); }
+.apariencia-explorador .paleta-mini[data-muestra-tema] { background:var(--vista-papel,var(--papel)); }
+.apariencia-explorador .paleta-mini[data-muestra-tema] i { background:var(--vista-tinta,var(--tinta)); }
+.apariencia-explorador .paleta-mini[data-muestra-tema] b { background:var(--vista-acento,var(--naranja)); }
+:root[data-color-mode] .terminal { --term-papel:var(--panel); --term-tinta:var(--tinta); --term-tenue:var(--tinta-3); --term-linea:var(--linea-fuerte); --term-marca:var(--naranja); }
+@media screen {
+ :root[data-theme-family=blueprint] body,:root[data-theme-family=blueprint] .navegacion-editorial { background-image:linear-gradient(var(--plano-rejilla-mayor) 1px,transparent 1px),linear-gradient(90deg,var(--plano-rejilla-mayor) 1px,transparent 1px),linear-gradient(var(--plano-rejilla) 1px,transparent 1px),linear-gradient(90deg,var(--plano-rejilla) 1px,transparent 1px); background-size:120px 120px,120px 120px,24px 24px,24px 24px; }
+}
+
+/* TEMAS GENERADOS — scripts/temas.py; editar temas.json. */
+:root[data-color-mode="light"] .paleta-mini[data-muestra-tema="editorial"] { --vista-papel:#fef8f2; --vista-tinta:#231e1a; --vista-acento:#a13f19; }
+:root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="editorial"] { --vista-papel:#13110f; --vista-tinta:#e9dfd7; --vista-acento:#f1b798; }
+:root[data-theme="sea-light"] {
+  color-scheme:light;
+  --papel: #f1f7fa;
+  --panel: #e8f0f5;
+  --panel-2: #dce8f0;
+  --tinta: #213443;
+  --tinta-2: #385368;
+  --tinta-3: #52677c;
+  --naranja: #006b54;
+  --verde: #226742;
+  --rojo: #a23940;
+  --azul: #315ea0;
+  --linea: #c6d0d7;
+  --linea-fuerte: #8896a0;
+  --naranja-suave: #d9e9e9;
+  --verde-suave: #e8f0f5;
+  --rojo-suave: #e8f0f5;
+  --azul-suave: #e8f0f5;
+  --marcador: #006b54;
+  --foco: #006b54;
+  --globo-base: #dce8f0;
+  --globo-arco: #52677c;
+  --globo-punto: #006b54;
+  --globo-glow: #dce8f0;
+  --globo-dark: 0;
+  --globo-brillo: 2.4;
+  --grafica-1: #006b54;
+  --grafica-2: #226742;
+  --grafica-3: #a23940;
+  --grafica-4: #315ea0;
+  --grafica-papel: #f1f7fa;
+  --grafica-tinta: #385368;
+  --calor-tinta: #213443;
+  --calor-ausente: #dce8f0;
+  --tabla-total: #e8f0f5;
+  --escena-1: #006b54;
+  --escena-2: #226742;
+  --escena-3: #a23940;
+  --escena-tinta: #385368;
+  --sonido-papel: #e8f0f5;
+  --sonido-activo: #226742;
+  --sonido-tinta: #213443;
+  --escritura-trazo: #006b54;
+  --escritura-papel: #e8f0f5;
+  --grafica-linea: var(--linea);
+  --tabla-elegida: var(--naranja-suave);
+  --escena-linea: var(--linea-fuerte);
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --calor-0: #ecf4f7;
+  --calor-1: #dbeaeb;
+  --calor-2: #c8dfde;
+  --calor-3: #b5d4d0;
+  --calor-4: #a1c9c3;
+  --plano-rejilla: #1853a00b;
+  --plano-rejilla-mayor: #1853a016;
+  --foto-fondo: #101114;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+}
+:root[data-color-mode="light"] .paleta-mini[data-muestra-tema="sea"] { --vista-papel:#f1f7fa; --vista-tinta:#213443; --vista-acento:#006b54; }
+:root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="sea"] { --vista-papel:hsl(212 24% 15%); --vista-tinta:hsl(212 99% 92%); --vista-acento:hsl(160 99% 60%); }
+:root[data-color-mode="light"] .paleta-mini[data-muestra-tema="oliva"] { --vista-papel:#f5f6ec; --vista-tinta:#26301e; --vista-acento:#486123; }
+:root[data-theme="oliva-dark"] {
+  color-scheme:dark;
+  --papel: #151a12;
+  --panel: #1d2519;
+  --panel-2: #2a3425;
+  --tinta: #e6edda;
+  --tinta-2: #c0cbb0;
+  --tinta-3: #a4b196;
+  --naranja: #b4cb86;
+  --verde: #9bcca3;
+  --rojo: #eda19a;
+  --azul: #a4c8e2;
+  --linea: #3f473a;
+  --linea-fuerte: #7d8576;
+  --naranja-suave: #252c1e;
+  --verde-suave: #1d2519;
+  --rojo-suave: #1d2519;
+  --azul-suave: #1d2519;
+  --marcador: #b4cb86;
+  --foco: #b4cb86;
+  --globo-base: #2a3425;
+  --globo-arco: #a4b196;
+  --globo-punto: #b4cb86;
+  --globo-glow: #2a3425;
+  --globo-dark: .6;
+  --globo-brillo: 10;
+  --grafica-1: #b4cb86;
+  --grafica-2: #9bcca3;
+  --grafica-3: #eda19a;
+  --grafica-4: #a4c8e2;
+  --grafica-papel: #151a12;
+  --grafica-tinta: #c0cbb0;
+  --calor-tinta: #e6edda;
+  --calor-ausente: #2a3425;
+  --tabla-total: #1d2519;
+  --escena-1: #b4cb86;
+  --escena-2: #9bcca3;
+  --escena-3: #eda19a;
+  --escena-tinta: #c0cbb0;
+  --sonido-papel: #1d2519;
+  --sonido-activo: #9bcca3;
+  --sonido-tinta: #e6edda;
+  --escritura-trazo: #b4cb86;
+  --escritura-papel: #1d2519;
+  --grafica-linea: var(--linea);
+  --tabla-elegida: var(--naranja-suave);
+  --escena-linea: var(--linea-fuerte);
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --calor-0: #181e14;
+  --calor-1: #232a1c;
+  --calor-2: #303826;
+  --calor-3: #3d462f;
+  --calor-4: #495438;
+  --plano-rejilla: #ffffff0c;
+  --plano-rejilla-mayor: #ffffff18;
+  --foto-fondo: #101114;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+}
+:root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="oliva"] { --vista-papel:#151a12; --vista-tinta:#e6edda; --vista-acento:#b4cb86; }
+:root[data-color-mode="light"] .paleta-mini[data-muestra-tema="arcilla"] { --vista-papel:#fcf1e8; --vista-tinta:#37251f; --vista-acento:#9f3e26; }
+:root[data-theme="arcilla-dark"] {
+  color-scheme:dark;
+  --papel: #211712;
+  --panel: #2d2019;
+  --panel-2: #3a2b23;
+  --tinta: #f7e8db;
+  --tinta-2: #dac3b1;
+  --tinta-3: #bca48f;
+  --naranja: #f0aa85;
+  --verde: #b2c895;
+  --rojo: #efa6a0;
+  --azul: #a9c6e4;
+  --linea: #4f423a;
+  --linea-fuerte: #8e8076;
+  --naranja-suave: #36261e;
+  --verde-suave: #2d2019;
+  --rojo-suave: #2d2019;
+  --azul-suave: #2d2019;
+  --marcador: #f0aa85;
+  --foco: #f0aa85;
+  --globo-base: #3a2b23;
+  --globo-arco: #bca48f;
+  --globo-punto: #f0aa85;
+  --globo-glow: #3a2b23;
+  --globo-dark: .6;
+  --globo-brillo: 10;
+  --grafica-1: #f0aa85;
+  --grafica-2: #b2c895;
+  --grafica-3: #efa6a0;
+  --grafica-4: #a9c6e4;
+  --grafica-papel: #211712;
+  --grafica-tinta: #dac3b1;
+  --calor-tinta: #f7e8db;
+  --calor-ausente: #3a2b23;
+  --tabla-total: #2d2019;
+  --escena-1: #f0aa85;
+  --escena-2: #b2c895;
+  --escena-3: #efa6a0;
+  --escena-tinta: #dac3b1;
+  --sonido-papel: #2d2019;
+  --sonido-activo: #b2c895;
+  --sonido-tinta: #f7e8db;
+  --escritura-trazo: #f0aa85;
+  --escritura-papel: #2d2019;
+  --grafica-linea: var(--linea);
+  --tabla-elegida: var(--naranja-suave);
+  --escena-linea: var(--linea-fuerte);
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --calor-0: #251a14;
+  --calor-1: #34241c;
+  --calor-2: #443026;
+  --calor-3: #553c2f;
+  --calor-4: #654838;
+  --plano-rejilla: #ffffff0c;
+  --plano-rejilla-mayor: #ffffff18;
+  --foto-fondo: #101114;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+}
+:root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="arcilla"] { --vista-papel:#211712; --vista-tinta:#f7e8db; --vista-acento:#f0aa85; }
+:root[data-theme="ciruela-light"] {
+  color-scheme:light;
+  --papel: #fcf5fb;
+  --panel: #f4eaf3;
+  --panel-2: #eaddE9;
+  --tinta: #342438;
+  --tinta-2: #58405c;
+  --tinta-3: #735a77;
+  --naranja: #864977;
+  --verde: #536632;
+  --rojo: #ab384b;
+  --azul: #555f9d;
+  --linea: #d3c8d3;
+  --linea-fuerte: #988b99;
+  --naranja-suave: #f0e4ee;
+  --verde-suave: #f4eaf3;
+  --rojo-suave: #f4eaf3;
+  --azul-suave: #f4eaf3;
+  --marcador: #864977;
+  --foco: #864977;
+  --globo-base: #eaddE9;
+  --globo-arco: #735a77;
+  --globo-punto: #864977;
+  --globo-glow: #eaddE9;
+  --globo-dark: 0;
+  --globo-brillo: 2.4;
+  --grafica-1: #864977;
+  --grafica-2: #536632;
+  --grafica-3: #ab384b;
+  --grafica-4: #555f9d;
+  --grafica-papel: #fcf5fb;
+  --grafica-tinta: #58405c;
+  --calor-tinta: #342438;
+  --calor-ausente: #eaddE9;
+  --tabla-total: #f4eaf3;
+  --escena-1: #864977;
+  --escena-2: #536632;
+  --escena-3: #ab384b;
+  --escena-tinta: #58405c;
+  --sonido-papel: #f4eaf3;
+  --sonido-activo: #536632;
+  --sonido-tinta: #342438;
+  --escritura-trazo: #864977;
+  --escritura-papel: #f4eaf3;
+  --grafica-linea: var(--linea);
+  --tabla-elegida: var(--naranja-suave);
+  --escena-linea: var(--linea-fuerte);
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --calor-0: #faf2f8;
+  --calor-1: #f1e6ef;
+  --calor-2: #e8d8e5;
+  --calor-3: #decada;
+  --calor-4: #d5bccf;
+  --plano-rejilla: #1853a00b;
+  --plano-rejilla-mayor: #1853a016;
+  --foto-fondo: #101114;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+}
+:root[data-color-mode="light"] .paleta-mini[data-muestra-tema="ciruela"] { --vista-papel:#fcf5fb; --vista-tinta:#342438; --vista-acento:#864977; }
+:root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="ciruela"] { --vista-papel:#201922; --vista-tinta:#f1e4ef; --vista-acento:#e8afd8; }
+:root[data-color-mode="light"] .paleta-mini[data-muestra-tema="liftit"] { --vista-papel:#f7f9ff; --vista-tinta:#2a2d46; --vista-acento:#0051f4; }
+:root[data-theme="liftit-dark"] {
+  color-scheme:dark;
+  --papel: #0d1425;
+  --panel: #151f34;
+  --panel-2: #202c44;
+  --tinta: #edf2ff;
+  --tinta-2: #c3cee7;
+  --tinta-3: #9eaece;
+  --naranja: #89b1ff;
+  --verde: #85c9ac;
+  --rojo: #f3a4a8;
+  --azul: #9bafff;
+  --linea: #3a4357;
+  --linea-fuerte: #7d8495;
+  --naranja-suave: #19243b;
+  --verde-suave: #151f34;
+  --rojo-suave: #151f34;
+  --azul-suave: #151f34;
+  --marcador: #89b1ff;
+  --foco: #89b1ff;
+  --globo-base: #202c44;
+  --globo-arco: #9eaece;
+  --globo-punto: #89b1ff;
+  --globo-glow: #202c44;
+  --globo-dark: .6;
+  --globo-brillo: 10;
+  --grafica-1: #89b1ff;
+  --grafica-2: #85c9ac;
+  --grafica-3: #f3a4a8;
+  --grafica-4: #9bafff;
+  --grafica-papel: #0d1425;
+  --grafica-tinta: #c3cee7;
+  --calor-tinta: #edf2ff;
+  --calor-ausente: #202c44;
+  --tabla-total: #151f34;
+  --escena-1: #89b1ff;
+  --escena-2: #85c9ac;
+  --escena-3: #f3a4a8;
+  --escena-tinta: #c3cee7;
+  --sonido-papel: #151f34;
+  --sonido-activo: #85c9ac;
+  --sonido-tinta: #edf2ff;
+  --escritura-trazo: #89b1ff;
+  --escritura-papel: #151f34;
+  --grafica-linea: var(--linea);
+  --tabla-elegida: var(--naranja-suave);
+  --escena-linea: var(--linea-fuerte);
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --calor-0: #0f1729;
+  --calor-1: #182239;
+  --calor-2: #222f4a;
+  --calor-3: #2c3b5c;
+  --calor-4: #36486d;
+  --plano-rejilla: #ffffff0c;
+  --plano-rejilla-mayor: #ffffff18;
+  --foto-fondo: #101114;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+}
+:root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="liftit"] { --vista-papel:#0d1425; --vista-tinta:#edf2ff; --vista-acento:#89b1ff; }
+:root[data-theme="blueprint-light"] {
+  color-scheme:light;
+  --papel: #f3f8ff;
+  --panel: #e7f0fc;
+  --panel-2: #d8e6f6;
+  --tinta: #102f57;
+  --tinta-2: #315581;
+  --tinta-3: #4d678c;
+  --naranja: #1853a0;
+  --verde: #266946;
+  --rojo: #a3394b;
+  --azul: #254f9c;
+  --linea: #c2cfe0;
+  --linea-fuerte: #8093ad;
+  --naranja-suave: #dde8f6;
+  --verde-suave: #e7f0fc;
+  --rojo-suave: #e7f0fc;
+  --azul-suave: #e7f0fc;
+  --marcador: #1853a0;
+  --foco: #1853a0;
+  --globo-base: #d8e6f6;
+  --globo-arco: #4d678c;
+  --globo-punto: #1853a0;
+  --globo-glow: #d8e6f6;
+  --globo-dark: 0;
+  --globo-brillo: 2.4;
+  --grafica-1: #1853a0;
+  --grafica-2: #266946;
+  --grafica-3: #a3394b;
+  --grafica-4: #254f9c;
+  --grafica-papel: #f3f8ff;
+  --grafica-tinta: #315581;
+  --calor-tinta: #102f57;
+  --calor-ausente: #d8e6f6;
+  --tabla-total: #e7f0fc;
+  --escena-1: #1853a0;
+  --escena-2: #266946;
+  --escena-3: #a3394b;
+  --escena-tinta: #315581;
+  --sonido-papel: #e7f0fc;
+  --sonido-activo: #266946;
+  --sonido-tinta: #102f57;
+  --escritura-trazo: #1853a0;
+  --escritura-papel: #e7f0fc;
+  --grafica-linea: var(--linea);
+  --tabla-elegida: var(--naranja-suave);
+  --escena-linea: var(--linea-fuerte);
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --calor-0: #eff5fd;
+  --calor-1: #dfe9f6;
+  --calor-2: #cedcef;
+  --calor-3: #bccfe7;
+  --calor-4: #abc2e0;
+  --plano-rejilla: #1853a00b;
+  --plano-rejilla-mayor: #1853a016;
+  --foto-fondo: #101114;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+}
+:root[data-color-mode="light"] .paleta-mini[data-muestra-tema="blueprint"] { --vista-papel:#f3f8ff; --vista-tinta:#102f57; --vista-acento:#1853a0; }
+:root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="blueprint"] { --vista-papel:#082c62; --vista-tinta:#f4f9ff; --vista-acento:#ffffff; }
+:root[data-theme="hacker-light"] {
+  color-scheme:light;
+  --papel: #f3faf5;
+  --panel: #e7f3eb;
+  --panel-2: #d8e9df;
+  --tinta: #143522;
+  --tinta-2: #315c43;
+  --tinta-3: #4c6d5a;
+  --naranja: #206b38;
+  --verde: #276440;
+  --rojo: #aa3b49;
+  --azul: #365a9d;
+  --linea: #c3d3c9;
+  --linea-fuerte: #82988b;
+  --naranja-suave: #deece2;
+  --verde-suave: #e7f3eb;
+  --rojo-suave: #e7f3eb;
+  --azul-suave: #e7f3eb;
+  --marcador: #206b38;
+  --foco: #206b38;
+  --globo-base: #d8e9df;
+  --globo-arco: #4c6d5a;
+  --globo-punto: #206b38;
+  --globo-glow: #d8e9df;
+  --globo-dark: 0;
+  --globo-brillo: 2.4;
+  --grafica-1: #206b38;
+  --grafica-2: #276440;
+  --grafica-3: #aa3b49;
+  --grafica-4: #365a9d;
+  --grafica-papel: #f3faf5;
+  --grafica-tinta: #315c43;
+  --calor-tinta: #143522;
+  --calor-ausente: #d8e9df;
+  --tabla-total: #e7f3eb;
+  --escena-1: #206b38;
+  --escena-2: #276440;
+  --escena-3: #aa3b49;
+  --escena-tinta: #315c43;
+  --sonido-papel: #e7f3eb;
+  --sonido-activo: #276440;
+  --sonido-tinta: #143522;
+  --escritura-trazo: #206b38;
+  --escritura-papel: #e7f3eb;
+  --grafica-linea: var(--linea);
+  --tabla-elegida: var(--naranja-suave);
+  --escena-linea: var(--linea-fuerte);
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --calor-0: #eff7f1;
+  --calor-1: #e0ede4;
+  --calor-2: #cfe2d5;
+  --calor-3: #bed6c6;
+  --calor-4: #adcbb7;
+  --plano-rejilla: #1853a00b;
+  --plano-rejilla-mayor: #1853a016;
+  --foto-fondo: #101114;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+}
+:root[data-color-mode="light"] .paleta-mini[data-muestra-tema="hacker"] { --vista-papel:#f3faf5; --vista-tinta:#143522; --vista-acento:#206b38; }
+:root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="hacker"] { --vista-papel:#080f0c; --vista-tinta:#e3f4e8; --vista-acento:#82ed9b; }
+:root[data-color-mode="light"] .paleta-mini[data-muestra-tema="linear"] { --vista-papel:#ffffff; --vista-tinta:#202126; --vista-acento:#5260bd; }
+:root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="linear"] { --vista-papel:#101114; --vista-tinta:#f0f1f4; --vista-acento:#a4adff; }
+:root[data-theme="modern-light"] {
+  color-scheme:light;
+  --papel: #ffffff;
+  --panel: #f8f8f8;
+  --panel-2: #ededed;
+  --tinta: #1f1f1f;
+  --tinta-2: #424242;
+  --tinta-3: #606060;
+  --naranja: #005fb8;
+  --verde: #267044;
+  --rojo: #a83238;
+  --azul: #005fb8;
+  --linea: #d3d3d3;
+  --linea-fuerte: #909090;
+  --naranja-suave: #e6eff8;
+  --verde-suave: #f8f8f8;
+  --rojo-suave: #f8f8f8;
+  --azul-suave: #f8f8f8;
+  --marcador: #005fb8;
+  --foco: #005fb8;
+  --globo-base: #ededed;
+  --globo-arco: #606060;
+  --globo-punto: #005fb8;
+  --globo-glow: #ededed;
+  --globo-dark: 0;
+  --globo-brillo: 2.4;
+  --grafica-1: #005fb8;
+  --grafica-2: #267044;
+  --grafica-3: #a83238;
+  --grafica-4: #005fb8;
+  --grafica-papel: #ffffff;
+  --grafica-tinta: #424242;
+  --calor-tinta: #1f1f1f;
+  --calor-ausente: #ededed;
+  --tabla-total: #f8f8f8;
+  --escena-1: #005fb8;
+  --escena-2: #267044;
+  --escena-3: #a83238;
+  --escena-tinta: #424242;
+  --sonido-papel: #f8f8f8;
+  --sonido-activo: #267044;
+  --sonido-tinta: #1f1f1f;
+  --escritura-trazo: #005fb8;
+  --escritura-papel: #f8f8f8;
+  --grafica-linea: var(--linea);
+  --tabla-elegida: var(--naranja-suave);
+  --escena-linea: var(--linea-fuerte);
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --calor-0: #fafcfe;
+  --calor-1: #e8f1f9;
+  --calor-2: #d4e4f3;
+  --calor-3: #bfd7ed;
+  --calor-4: #abcae8;
+  --plano-rejilla: #1853a00b;
+  --plano-rejilla-mayor: #1853a016;
+  --foto-fondo: #101114;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+}
+:root[data-color-mode="light"] .paleta-mini[data-muestra-tema="modern"] { --vista-papel:#ffffff; --vista-tinta:#1f1f1f; --vista-acento:#005fb8; }
+:root[data-theme="modern-dark"] {
+  color-scheme:dark;
+  --papel: #1f1f1f;
+  --panel: #181818;
+  --panel-2: #2b2b2b;
+  --tinta: #cccccc;
+  --tinta-2: #c2c2c2;
+  --tinta-3: #9d9d9d;
+  --naranja: #75beff;
+  --verde: #89d185;
+  --rojo: #f48771;
+  --azul: #9cdcfe;
+  --linea: #373737;
+  --linea-fuerte: #6e6e6e;
+  --naranja-suave: #282f35;
+  --verde-suave: #181818;
+  --rojo-suave: #181818;
+  --azul-suave: #181818;
+  --marcador: #75beff;
+  --foco: #75beff;
+  --globo-base: #2b2b2b;
+  --globo-arco: #9d9d9d;
+  --globo-punto: #75beff;
+  --globo-glow: #2b2b2b;
+  --globo-dark: .6;
+  --globo-brillo: 10;
+  --grafica-1: #75beff;
+  --grafica-2: #89d185;
+  --grafica-3: #f48771;
+  --grafica-4: #9cdcfe;
+  --grafica-papel: #1f1f1f;
+  --grafica-tinta: #c2c2c2;
+  --calor-tinta: #cccccc;
+  --calor-ausente: #2b2b2b;
+  --tabla-total: #181818;
+  --escena-1: #75beff;
+  --escena-2: #89d185;
+  --escena-3: #f48771;
+  --escena-tinta: #c2c2c2;
+  --sonido-papel: #181818;
+  --sonido-activo: #89d185;
+  --sonido-tinta: #cccccc;
+  --escritura-trazo: #75beff;
+  --escritura-papel: #181818;
+  --grafica-linea: var(--linea);
+  --tabla-elegida: var(--naranja-suave);
+  --escena-linea: var(--linea-fuerte);
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --calor-0: #212223;
+  --calor-1: #272d33;
+  --calor-2: #2e3a45;
+  --calor-3: #344757;
+  --calor-4: #3b5369;
+  --plano-rejilla: #ffffff0c;
+  --plano-rejilla-mayor: #ffffff18;
+  --foto-fondo: #101114;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+}
+:root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="modern"] { --vista-papel:#1f1f1f; --vista-tinta:#cccccc; --vista-acento:#75beff; }
+:root[data-theme="github-light"] {
+  color-scheme:light;
+  --papel: #ffffff;
+  --panel: #f6f8fa;
+  --panel-2: #eaeef2;
+  --tinta: #1f2328;
+  --tinta-2: #424a53;
+  --tinta-3: #59636e;
+  --naranja: #0967d7;
+  --verde: #1a7b35;
+  --rojo: #cf222e;
+  --azul: #0550ae;
+  --linea: #d1d4d6;
+  --linea-fuerte: #8f9295;
+  --naranja-suave: #e6f0fb;
+  --verde-suave: #f6f8fa;
+  --rojo-suave: #f6f8fa;
+  --azul-suave: #f6f8fa;
+  --marcador: #0967d7;
+  --foco: #0967d7;
+  --globo-base: #eaeef2;
+  --globo-arco: #59636e;
+  --globo-punto: #0967d7;
+  --globo-glow: #eaeef2;
+  --globo-dark: 0;
+  --globo-brillo: 2.4;
+  --grafica-1: #0967d7;
+  --grafica-2: #1a7b35;
+  --grafica-3: #cf222e;
+  --grafica-4: #0550ae;
+  --grafica-papel: #ffffff;
+  --grafica-tinta: #424a53;
+  --calor-tinta: #1f2328;
+  --calor-ausente: #eaeef2;
+  --tabla-total: #f6f8fa;
+  --escena-1: #0967d7;
+  --escena-2: #1a7b35;
+  --escena-3: #cf222e;
+  --escena-tinta: #424a53;
+  --sonido-papel: #f6f8fa;
+  --sonido-activo: #1a7b35;
+  --sonido-tinta: #1f2328;
+  --escritura-trazo: #0967d7;
+  --escritura-papel: #f6f8fa;
+  --grafica-linea: var(--linea);
+  --tabla-elegida: var(--naranja-suave);
+  --escena-linea: var(--linea-fuerte);
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --calor-0: #fafcfe;
+  --calor-1: #e9f1fb;
+  --calor-2: #d5e5f8;
+  --calor-3: #c2d9f5;
+  --calor-4: #aecdf2;
+  --plano-rejilla: #1853a00b;
+  --plano-rejilla-mayor: #1853a016;
+  --foto-fondo: #101114;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+}
+:root[data-color-mode="light"] .paleta-mini[data-muestra-tema="github"] { --vista-papel:#ffffff; --vista-tinta:#1f2328; --vista-acento:#0967d7; }
+:root[data-theme="github-dark"] {
+  color-scheme:dark;
+  --papel: #0d1117;
+  --panel: #161b22;
+  --panel-2: #21262d;
+  --tinta: #e6edf3;
+  --tinta-2: #c9d1d9;
+  --tinta-3: #9da7b3;
+  --naranja: #79c0ff;
+  --verde: #7ee787;
+  --rojo: #ffa198;
+  --azul: #a5d6ff;
+  --linea: #393f46;
+  --linea-fuerte: #7a8086;
+  --naranja-suave: #18222e;
+  --verde-suave: #161b22;
+  --rojo-suave: #161b22;
+  --azul-suave: #161b22;
+  --marcador: #79c0ff;
+  --foco: #79c0ff;
+  --globo-base: #21262d;
+  --globo-arco: #9da7b3;
+  --globo-punto: #79c0ff;
+  --globo-glow: #21262d;
+  --globo-dark: .6;
+  --globo-brillo: 10;
+  --grafica-1: #79c0ff;
+  --grafica-2: #7ee787;
+  --grafica-3: #ffa198;
+  --grafica-4: #a5d6ff;
+  --grafica-papel: #0d1117;
+  --grafica-tinta: #c9d1d9;
+  --calor-tinta: #e6edf3;
+  --calor-ausente: #21262d;
+  --tabla-total: #161b22;
+  --escena-1: #79c0ff;
+  --escena-2: #7ee787;
+  --escena-3: #ffa198;
+  --escena-tinta: #c9d1d9;
+  --sonido-papel: #161b22;
+  --sonido-activo: #7ee787;
+  --sonido-tinta: #e6edf3;
+  --escritura-trazo: #79c0ff;
+  --escritura-papel: #161b22;
+  --grafica-linea: var(--linea);
+  --tabla-elegida: var(--naranja-suave);
+  --escena-linea: var(--linea-fuerte);
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --calor-0: #0f141c;
+  --calor-1: #17212c;
+  --calor-2: #1f2f3e;
+  --calor-3: #283d51;
+  --calor-4: #314b64;
+  --plano-rejilla: #ffffff0c;
+  --plano-rejilla-mayor: #ffffff18;
+  --foto-fondo: #101114;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+}
+:root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="github"] { --vista-papel:#0d1117; --vista-tinta:#e6edf3; --vista-acento:#79c0ff; }
+:root[data-theme="catppuccin-light"] {
+  color-scheme:light;
+  --papel: #eff1f5;
+  --panel: #e6e9ef;
+  --panel-2: #dce0e8;
+  --tinta: #4c4f69;
+  --tinta-2: #55586f;
+  --tinta-3: #5e6174;
+  --naranja: #7e34de;
+  --verde: #247037;
+  --rojo: #c30f34;
+  --azul: #1e5ad4;
+  --linea: #cccfd8;
+  --linea-fuerte: #9c9faf;
+  --naranja-suave: #e4def3;
+  --verde-suave: #e6e9ef;
+  --rojo-suave: #e6e9ef;
+  --azul-suave: #e6e9ef;
+  --marcador: #7e34de;
+  --foco: #7e34de;
+  --globo-base: #dce0e8;
+  --globo-arco: #5e6174;
+  --globo-punto: #7e34de;
+  --globo-glow: #dce0e8;
+  --globo-dark: 0;
+  --globo-brillo: 2.4;
+  --grafica-1: #7e34de;
+  --grafica-2: #247037;
+  --grafica-3: #c30f34;
+  --grafica-4: #1e5ad4;
+  --grafica-papel: #eff1f5;
+  --grafica-tinta: #55586f;
+  --calor-tinta: #4c4f69;
+  --calor-ausente: #dce0e8;
+  --tabla-total: #e6e9ef;
+  --escena-1: #7e34de;
+  --escena-2: #247037;
+  --escena-3: #c30f34;
+  --escena-tinta: #55586f;
+  --sonido-papel: #e6e9ef;
+  --sonido-activo: #247037;
+  --sonido-tinta: #4c4f69;
+  --escritura-trazo: #7e34de;
+  --escritura-papel: #e6e9ef;
+  --grafica-linea: var(--linea);
+  --tabla-elegida: var(--naranja-suave);
+  --escena-linea: var(--linea-fuerte);
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --calor-0: #ededf5;
+  --calor-1: #e5e0f3;
+  --calor-2: #dcd1f1;
+  --calor-3: #d3c2ef;
+  --calor-4: #cab3ed;
+  --plano-rejilla: #1853a00b;
+  --plano-rejilla-mayor: #1853a016;
+  --foto-fondo: #101114;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+}
+:root[data-color-mode="light"] .paleta-mini[data-muestra-tema="catppuccin"] { --vista-papel:#eff1f5; --vista-tinta:#4c4f69; --vista-acento:#7e34de; }
+:root[data-theme="catppuccin-dark"] {
+  color-scheme:dark;
+  --papel: #1e1e2e;
+  --panel: #181825;
+  --panel-2: #313244;
+  --tinta: #cdd6f4;
+  --tinta-2: #bac2de;
+  --tinta-3: #a6adc8;
+  --naranja: #cba6f7;
+  --verde: #a6e3a1;
+  --rojo: #f38ba8;
+  --azul: #89b4fa;
+  --linea: #373848;
+  --linea-fuerte: #6f7388;
+  --naranja-suave: #2f2c42;
+  --verde-suave: #181825;
+  --rojo-suave: #181825;
+  --azul-suave: #181825;
+  --marcador: #cba6f7;
+  --foco: #cba6f7;
+  --globo-base: #313244;
+  --globo-arco: #a6adc8;
+  --globo-punto: #cba6f7;
+  --globo-glow: #313244;
+  --globo-dark: .6;
+  --globo-brillo: 10;
+  --grafica-1: #cba6f7;
+  --grafica-2: #a6e3a1;
+  --grafica-3: #f38ba8;
+  --grafica-4: #89b4fa;
+  --grafica-papel: #1e1e2e;
+  --grafica-tinta: #bac2de;
+  --calor-tinta: #cdd6f4;
+  --calor-ausente: #313244;
+  --tabla-total: #181825;
+  --escena-1: #cba6f7;
+  --escena-2: #a6e3a1;
+  --escena-3: #f38ba8;
+  --escena-tinta: #bac2de;
+  --sonido-papel: #181825;
+  --sonido-activo: #a6e3a1;
+  --sonido-tinta: #cdd6f4;
+  --escritura-trazo: #cba6f7;
+  --escritura-papel: #181825;
+  --grafica-linea: var(--linea);
+  --tabla-elegida: var(--naranja-suave);
+  --escena-linea: var(--linea-fuerte);
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --calor-0: #212132;
+  --calor-1: #2e2a40;
+  --calor-2: #3b3550;
+  --calor-3: #494060;
+  --calor-4: #574b70;
+  --plano-rejilla: #ffffff0c;
+  --plano-rejilla-mayor: #ffffff18;
+  --foto-fondo: #101114;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+}
+:root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="catppuccin"] { --vista-papel:#1e1e2e; --vista-tinta:#cdd6f4; --vista-acento:#cba6f7; }
+:root[data-theme="solarized-light"] {
+  color-scheme:light;
+  --papel: #fdf6e3;
+  --panel: #eee8d5;
+  --panel-2: #e5dec9;
+  --tinta: #384e55;
+  --tinta-2: #4a6067;
+  --tinta-3: #526368;
+  --naranja: #006b7e;
+  --verde: #4f6a00;
+  --rojo: #ab392e;
+  --azul: #216693;
+  --linea: #cfcebf;
+  --linea-fuerte: #979e98;
+  --naranja-suave: #e4e8d9;
+  --verde-suave: #eee8d5;
+  --rojo-suave: #eee8d5;
+  --azul-suave: #eee8d5;
+  --marcador: #006b7e;
+  --foco: #006b7e;
+  --globo-base: #e5dec9;
+  --globo-arco: #526368;
+  --globo-punto: #006b7e;
+  --globo-glow: #e5dec9;
+  --globo-dark: 0;
+  --globo-brillo: 2.4;
+  --grafica-1: #006b7e;
+  --grafica-2: #4f6a00;
+  --grafica-3: #ab392e;
+  --grafica-4: #216693;
+  --grafica-papel: #fdf6e3;
+  --grafica-tinta: #4a6067;
+  --calor-tinta: #384e55;
+  --calor-ausente: #e5dec9;
+  --tabla-total: #eee8d5;
+  --escena-1: #006b7e;
+  --escena-2: #4f6a00;
+  --escena-3: #ab392e;
+  --escena-tinta: #4a6067;
+  --sonido-papel: #eee8d5;
+  --sonido-activo: #4f6a00;
+  --sonido-tinta: #384e55;
+  --escritura-trazo: #006b7e;
+  --escritura-papel: #eee8d5;
+  --grafica-linea: var(--linea);
+  --tabla-elegida: var(--naranja-suave);
+  --escena-linea: var(--linea-fuerte);
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --calor-0: #f8f3e1;
+  --calor-1: #e6e9da;
+  --calor-2: #d2ded2;
+  --calor-3: #bed3ca;
+  --calor-4: #aac8c2;
+  --plano-rejilla: #1853a00b;
+  --plano-rejilla-mayor: #1853a016;
+  --foto-fondo: #101114;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+}
+:root[data-color-mode="light"] .paleta-mini[data-muestra-tema="solarized"] { --vista-papel:#fdf6e3; --vista-tinta:#384e55; --vista-acento:#006b7e; }
+:root[data-theme="solarized-dark"] {
+  color-scheme:dark;
+  --papel: #002b36;
+  --panel: #073642;
+  --panel-2: #103f4b;
+  --tinta: #d6ded7;
+  --tinta-2: #b3c5c3;
+  --tinta-3: #98b0b0;
+  --naranja: #6cc2c0;
+  --verde: #b3c56c;
+  --rojo: #ef9a8d;
+  --azul: #82bbe0;
+  --linea: #2a535b;
+  --linea-fuerte: #6a878a;
+  --naranja-suave: #0b3a44;
+  --verde-suave: #073642;
+  --rojo-suave: #073642;
+  --azul-suave: #073642;
+  --marcador: #6cc2c0;
+  --foco: #6cc2c0;
+  --globo-base: #103f4b;
+  --globo-arco: #98b0b0;
+  --globo-punto: #6cc2c0;
+  --globo-glow: #103f4b;
+  --globo-dark: .6;
+  --globo-brillo: 10;
+  --grafica-1: #6cc2c0;
+  --grafica-2: #b3c56c;
+  --grafica-3: #ef9a8d;
+  --grafica-4: #82bbe0;
+  --grafica-papel: #002b36;
+  --grafica-tinta: #b3c5c3;
+  --calor-tinta: #d6ded7;
+  --calor-ausente: #103f4b;
+  --tabla-total: #073642;
+  --escena-1: #6cc2c0;
+  --escena-2: #b3c56c;
+  --escena-3: #ef9a8d;
+  --escena-tinta: #b3c5c3;
+  --sonido-papel: #073642;
+  --sonido-activo: #b3c56c;
+  --sonido-tinta: #d6ded7;
+  --escritura-trazo: #6cc2c0;
+  --escritura-papel: #073642;
+  --grafica-linea: var(--linea);
+  --tabla-elegida: var(--naranja-suave);
+  --escena-linea: var(--linea-fuerte);
+  --pieza-papel: var(--panel);
+  --pieza-tinta: var(--tinta);
+  --pieza-secundaria: var(--tinta-2);
+  --pieza-linea: var(--linea-fuerte);
+  --pieza-acento: var(--naranja);
+  --pieza-suave: var(--naranja-suave);
+  --pieza-sube: var(--verde);
+  --pieza-baja: var(--azul);
+  --apariencia-papel: var(--papel);
+  --apariencia-tinta: var(--tinta);
+  --apariencia-secundaria: var(--tinta-2);
+  --apariencia-linea: var(--linea-fuerte);
+  --apariencia-suave: var(--panel);
+  --papel-trama: var(--linea);
+  --sintaxis-numero: var(--azul);
+  --sintaxis-funcion: var(--naranja);
+  --calor-0: #022e39;
+  --calor-1: #0a3942;
+  --calor-2: #12454d;
+  --calor-3: #1b5158;
+  --calor-4: #245d64;
+  --plano-rejilla: #ffffff0c;
+  --plano-rejilla-mayor: #ffffff18;
+  --foto-fondo: #101114;
+  --foto-tinta: #f4f9ff;
+  --foto-borde: #ffffff20;
+  --foto-sombra: #00000033;
+}
+:root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="solarized"] { --vista-papel:#002b36; --vista-tinta:#d6ded7; --vista-acento:#6cc2c0; }
 
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -3083,42 +4254,68 @@ body:has(.revision-barra) { padding-bottom:0; }
   'use strict';
   const root = document.documentElement;
   const selectors = document.querySelectorAll('[data-tema]');
-  const themes = ['system','light','dark','sea','oliva','arcilla','ciruela','liftit','blueprint','hacker','linear-light','linear-dark'];
+  /* REGISTRO TEMAS */ const themeRegistry = {"familias":[{"id":"editorial","nombre":"Editorial","grupo":"editorial","descripcion":"Papel cálido · cobre","light":"light","dark":"dark"},{"id":"sea","nombre":"Sea","grupo":"editorial","descripcion":"Azul oceánico · menta","light":"sea-light","dark":"sea"},{"id":"oliva","nombre":"Oliva","grupo":"editorial","descripcion":"Botánico · verde","light":"oliva","dark":"oliva-dark"},{"id":"arcilla","nombre":"Arcilla","grupo":"editorial","descripcion":"Terracota · arena","light":"arcilla","dark":"arcilla-dark"},{"id":"ciruela","nombre":"Ciruela","grupo":"editorial","descripcion":"Malva · tinta violeta","light":"ciruela-light","dark":"ciruela"},{"id":"liftit","nombre":"Liftit","grupo":"marca","descripcion":"Operaciones · azul","light":"liftit","dark":"liftit-dark"},{"id":"blueprint","nombre":"Blueprint","grupo":"tecnico","descripcion":"Plano · cuadrícula","light":"blueprint-light","dark":"blueprint"},{"id":"hacker","nombre":"Hacker","grupo":"tecnico","descripcion":"Terminal · verde","light":"hacker-light","dark":"hacker"},{"id":"linear","nombre":"Linear","grupo":"producto","descripcion":"Grafito · lavanda","light":"linear-light","dark":"linear-dark"},{"id":"modern","nombre":"Modern","grupo":"editor","descripcion":"VS Code · azul","light":"modern-light","dark":"modern-dark"},{"id":"github","nombre":"GitHub","grupo":"editor","descripcion":"Neutros · azul","light":"github-light","dark":"github-dark"},{"id":"catppuccin","nombre":"Catppuccin","grupo":"editor","descripcion":"Latte / Mocha · pastel","light":"catppuccin-light","dark":"catppuccin-dark"},{"id":"solarized","nombre":"Solarized","grupo":"editor","descripcion":"Marfil / petróleo · cian","light":"solarized-light","dark":"solarized-dark"}],"aliases":{"system":["editorial","system"],"light":["editorial","light"],"dark":["editorial","dark"],"linear-light":["linear","light"],"linear-dark":["linear","dark"],"sea":["sea","dark"],"oliva":["oliva","light"],"arcilla":["arcilla","light"],"ciruela":["ciruela","dark"],"liftit":["liftit","light"],"blueprint":["blueprint","dark"],"hacker":["hacker","dark"]}}; /* FIN REGISTRO TEMAS */
+  const families=new Map(themeRegistry.familias.map(f=>[f.id,f]));
+  const modes=['light','dark','system'];
   const initialTheme=document.querySelector('meta[name="nota-tema-inicial"]')?.content;
+  const initialMode=document.querySelector('meta[name="nota-modo-inicial"]')?.content;
   const initialStyle=document.querySelector('meta[name="nota-estilo-inicial"]')?.content;
-  const preferenceKey=key=>((initialTheme||initialStyle)?key+':'+location.pathname:key);
-  const scheme = matchMedia('(prefers-color-scheme: dark)');
-  const themeNames = {system:'Sistema',light:'Claro',dark:'Cálido',sea:'Dark Sea',oliva:'Oliva',arcilla:'Arcilla',ciruela:'Ciruela',liftit:'Liftit',blueprint:'Blueprint',hacker:'Hacker','linear-light':'Linear Light','linear-dark':'Linear Dark'};
-  function syncAppearance() {
-    const value=root.dataset.theme||'system';
-    const dark=['dark','sea','ciruela','blueprint','hacker','linear-dark'].includes(value)||(value==='system'&&scheme.matches);
+  const preferenceKey=key=>((initialTheme||initialMode||initialStyle)?key+':'+location.pathname:key);
+  const scheme=matchMedia('(prefers-color-scheme: dark)');
+  const legacy=value=>themeRegistry.aliases[value]||[families.has(value)?value:'editorial','system'];
+  let [family,mode]=legacy(initialTheme);
+  if(modes.includes(initialMode))mode=initialMode;
+  try {
+    const saved=JSON.parse(localStorage.getItem(preferenceKey('nota-apariencia-v2'))||'null');
+    if(saved&&families.has(saved.family)&&modes.includes(saved.mode)){family=saved.family;mode=saved.mode;}
+    else {
+      const old=localStorage.getItem(preferenceKey('nota-tema'));
+      if(old)[family,mode]=legacy(old);
+    }
+  } catch {}
+  const modeNames={light:'Claro',dark:'Oscuro',system:'Sistema'};
+  function syncAppearance(persist=false) {
+    const effective=mode==='system'?(scheme.matches?'dark':'light'):mode;
+    const selected=families.get(family);
+    root.dataset.themeFamily=family;
+    root.dataset.themeMode=mode;
+    root.dataset.colorMode=effective;
+    root.dataset.theme=selected[effective];
+    selectors.forEach(selector=>{
+      const value=root.dataset.theme;
+      if(![...selector.options].some(option=>option.value===value))selector.add(new Option(selected.nombre+' · '+modeNames[effective],value));
+      selector.value=value;
+    });
+    document.querySelectorAll('[data-elegir-tema]').forEach(input=>input.checked=input.value===family);
+    document.querySelectorAll('[data-elegir-modo]').forEach(input=>input.checked=input.value===mode);
     document.querySelectorAll('[data-apariencia-menu]').forEach(menu=>{
-      menu.dataset.oscuro=String(dark);
-      menu.querySelector('summary').setAttribute('aria-label','Apariencia. '+themeNames[value]+(value==='system'?', '+(dark?'oscuro':'claro'):'')+'.');
-      menu.querySelectorAll('[data-tema-actual]').forEach(label=>label.textContent=themeNames[value]);
+      menu.dataset.oscuro=String(effective==='dark');
+      const name=selected.nombre+' · '+modeNames[effective];
+      menu.querySelector('summary').setAttribute('aria-label','Apariencia. '+name+(mode==='system'?', según el sistema':'')+'.');
+      menu.querySelectorAll('[data-tema-actual]').forEach(label=>label.textContent=name);
+      menu.querySelectorAll('[data-modo-estado]').forEach(label=>label.textContent=mode==='system'?'Ahora en '+modeNames[effective].toLowerCase()+', según tu dispositivo.':'Modo '+modeNames[effective].toLowerCase()+' para cualquier tema.');
     });
+    if(persist)try{localStorage.setItem(preferenceKey('nota-apariencia-v2'),JSON.stringify({family,mode}));}catch{}
+    document.dispatchEvent(new CustomEvent('nota:tema',{detail:{family,mode,effective,palette:root.dataset.theme}}));
   }
-  scheme.addEventListener('change',syncAppearance);
-  function theme(value) {
-    if (!themes.includes(value)) value = 'system';
-    if (value === 'system') delete root.dataset.theme; else root.dataset.theme = value;
-    selectors.forEach(selector => {
-      // Una receta antigua puede no ofrecer las paletas nuevas: el control sigue nombrando el tema activo.
-      if(![...selector.options].some(option=>option.value===value))selector.add(new Option(themeNames[value],value));
-      selector.value = value;
-    });
-    document.querySelectorAll('[data-elegir-tema]').forEach(input => { input.checked = input.value === value; });
-    syncAppearance();
-    try { localStorage.setItem(preferenceKey('nota-tema'),value); } catch {}
-    document.dispatchEvent(new CustomEvent('nota:tema'));
+  function setAppearance(next={}) {
+    if(next.family!==undefined&&!families.has(next.family))return false;
+    if(next.mode!==undefined&&!modes.includes(next.mode))return false;
+    family=next.family??family;mode=next.mode??mode;syncAppearance(true);return true;
   }
-  let stored = initialTheme || 'system';
-  try { stored = localStorage.getItem(preferenceKey('nota-tema')) || stored; } catch {}
-  theme(stored);
-  selectors.forEach(selector => selector.addEventListener('change', e => theme(e.target.value)));
-  document.addEventListener('change', e => {
-    if (e.target.matches('[data-elegir-tema]')) theme(e.target.value);
+  // Mantiene tema y modo independientes. Los selectores antiguos aceptan sus IDs de paleta.
+  selectors.forEach(selector=>selector.addEventListener('change',e=>{
+    const value=e.target.value;
+    const paired=themeRegistry.familias.flatMap(f=>['light','dark'].map(m=>({family:f.id,mode:m,palette:f[m]}))).find(p=>p.palette===value);
+    if(paired)setAppearance(paired);else{const [f,m]=legacy(value);setAppearance({family:f,mode:m});}
+  }));
+  document.addEventListener('change',e=>{
+    if(e.target.matches('[data-elegir-tema]'))setAppearance({family:e.target.value});
+    if(e.target.matches('[data-elegir-modo]'))setAppearance({mode:e.target.value});
   });
+  scheme.addEventListener('change',()=>{if(mode==='system')syncAppearance();});
+  window.NotaTemas=Object.freeze({set:setAppearance,get:()=>({family,mode,effective:root.dataset.colorMode,palette:root.dataset.theme})});
+  syncAppearance(true);
   // Variante optativa: las notas antiguas conservan su escala de lectura.
   function comfort(enabled) {
     root.toggleAttribute('data-lectura-comoda', enabled);

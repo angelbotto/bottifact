@@ -172,3 +172,7 @@ La imagen ampliable admite 100–400 % y desplazamiento local; no aumenta la res
 Para Hermes en otro equipo, sigue [instalacion.md](instalacion.md). El skill no requiere Claude,
 Codex, Orca ni npm para componer; necesita Python 3. Las pruebas de navegador con Orca son optativas
 según el equipo: la inspección visual sigue siendo necesaria, con el navegador disponible.
+
+### Elegir familia y modo
+
+[temas.md](temas.md) reúne el catálogo completo: 13 familias, 26 paletas y modo Sistema. Usa `--tema linear --modo system`, por ejemplo. La tipografía es independiente. [temas.html](temas.html) permite comparar el mismo contenido y sus componentes.

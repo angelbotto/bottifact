@@ -1,6 +1,6 @@
 # Contrato de nuevos artefactos de Angel
 
-El contrato 4 conserva marcos punteados difusos en las figuras anchas. La base incluye **una llave sol/luna**, once paletas con muestras y Sistema, controles de sonido,
+El contrato 4 conserva marcos punteados difusos en las figuras anchas. La base incluye **una llave sol/luna**, 13 familias con muestras y modos Claro / Oscuro / Sistema, controles de sonido,
 comentarios flotantes, índice por página y regla de lectura. Es la composición predeterminada de
 los nuevos HTML de Angel. No exige llenar cada artículo con todos los componentes; selecciona
 las piezas a partir de las 82 recetas vigentes. Una excepción explícita de Angel prevalece.
@@ -63,7 +63,7 @@ La receta `configuracion` referencia el archivo editorial: incluye también `arc
 
 ## Qué comprueba y qué no
 
-El verificador exige controles, módulos, once paletas, referencias internas, rejilla y regiones
+El verificador exige controles, módulos, 26 paletas, referencias internas, rejilla y regiones
 con foco/nombre. Comprueba CSS y JS contra las fuentes instaladas y registra sus hashes en un
 manifiesto. Detecta una copia vieja al compararla con el skill actual; no migra documentos ni
 promete compatibilidad binaria entre versiones. No modifica artefactos publicados.
@@ -75,7 +75,7 @@ sus dependencias y su verificación; no desactives el control para conseguir un 
 Los ejemplos antiguos conservan su compatibilidad, pero no todos cumplen este contrato nuevo.
 
 La comprobación estructural no acredita accesibilidad completa ni comportamiento: abre el
-resultado a 320, 390 y 1440 px, prueba las once paletas, foco, desplazamiento local, capítulos,
+resultado a 320, 390 y 1440 px, prueba las 26 paletas, foco, desplazamiento local, capítulos,
 pines, exportación del prompt y movimiento reducido. Usa un clic real para Probar sonido.
 En capítulos, sin JavaScript se ofrece lectura continua; los controles interactivos necesitan JS.
 
@@ -110,7 +110,7 @@ El diagnóstico, las pruebas ejecutadas y las prioridades que aún faltan están
 python3 scripts/crear_artefacto.py --contenido contenido.html --titulo 'Operación' --tema liftit --estilo sobrio --salida operacion.html
 ```
 
-Temas: `system`, `light`, `dark`, `sea`, `oliva`, `arcilla`, `ciruela`, `liftit`, `blueprint`, `hacker`, `linear-light`, `linear-dark`.
+Temas: `editorial`, `sea`, `oliva`, `arcilla`, `ciruela`, `liftit`, `blueprint`, `hacker`, `linear`, `modern`, `github`, `catppuccin`, `solarized`. Modo independiente: `--modo light`, `--modo dark` o `--modo system`. En JSON se usan `tema` y `modo`. Consulta [temas.md](temas.md); se aceptan los IDs antiguos para migrar documentos.
 Estilos: `editorial`, `sobrio`, `tecnico`, `libro`, `revista`, `bitacora`. El lector puede cambiarlos con la misma llave circular.
 Una presentación declarada conserva la elección posterior por ruta del archivo, independiente del
 tema global de otros artefactos. Sin valores declarados se conserva la preferencia global anterior.

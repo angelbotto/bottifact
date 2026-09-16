@@ -1,10 +1,9 @@
 {
-  "version": "2026.09.15-colaboracion.1",
+  "version": "2026.09.15-temas.1",
   "contrato": "4",
   "componentes": 82,
   "temas": [
-    "light",
-    "dark",
+    "editorial",
     "sea",
     "oliva",
     "arcilla",
@@ -12,13 +11,22 @@
     "liftit",
     "blueprint",
     "hacker",
-    "linear-light",
-    "linear-dark"
+    "linear",
+    "modern",
+    "github",
+    "catppuccin",
+    "solarized"
   ],
   "generacion": "Python 3, biblioteca estándar",
   "agentes": [
     "Claude",
     "Codex",
     "Hermes"
-  ]
+  ],
+  "modos": [
+    "light",
+    "dark",
+    "system"
+  ],
+  "paletas": 26
 }

@@ -1,0 +1,333 @@
+{
+  "version": 1,
+  "modos": [
+    "light",
+    "dark",
+    "system"
+  ],
+  "alias_anteriores": {
+    "system": [
+      "editorial",
+      "system"
+    ],
+    "light": [
+      "editorial",
+      "light"
+    ],
+    "dark": [
+      "editorial",
+      "dark"
+    ],
+    "linear-light": [
+      "linear",
+      "light"
+    ],
+    "linear-dark": [
+      "linear",
+      "dark"
+    ],
+    "sea": [
+      "sea",
+      "dark"
+    ],
+    "oliva": [
+      "oliva",
+      "light"
+    ],
+    "arcilla": [
+      "arcilla",
+      "light"
+    ],
+    "ciruela": [
+      "ciruela",
+      "dark"
+    ],
+    "liftit": [
+      "liftit",
+      "light"
+    ],
+    "blueprint": [
+      "blueprint",
+      "dark"
+    ],
+    "hacker": [
+      "hacker",
+      "dark"
+    ]
+  },
+  "familias": [
+    {
+      "id": "editorial",
+      "nombre": "Editorial",
+      "grupo": "editorial",
+      "descripcion": "Papel cálido · cobre",
+      "light": "light",
+      "dark": "dark"
+    },
+    {
+      "id": "sea",
+      "nombre": "Sea",
+      "grupo": "editorial",
+      "descripcion": "Azul oceánico · menta",
+      "light": {
+        "papel": "#f1f7fa",
+        "panel": "#e8f0f5",
+        "panel-2": "#dce8f0",
+        "tinta": "#213443",
+        "tinta-2": "#385368",
+        "tinta-3": "#52677c",
+        "naranja": "#006b54",
+        "verde": "#226742",
+        "rojo": "#a23940",
+        "azul": "#315ea0"
+      },
+      "dark": "sea"
+    },
+    {
+      "id": "oliva",
+      "nombre": "Oliva",
+      "grupo": "editorial",
+      "descripcion": "Botánico · verde",
+      "light": "oliva",
+      "dark": {
+        "papel": "#151a12",
+        "panel": "#1d2519",
+        "panel-2": "#2a3425",
+        "tinta": "#e6edda",
+        "tinta-2": "#c0cbb0",
+        "tinta-3": "#a4b196",
+        "naranja": "#b4cb86",
+        "verde": "#9bcca3",
+        "rojo": "#eda19a",
+        "azul": "#a4c8e2"
+      }
+    },
+    {
+      "id": "arcilla",
+      "nombre": "Arcilla",
+      "grupo": "editorial",
+      "descripcion": "Terracota · arena",
+      "light": "arcilla",
+      "dark": {
+        "papel": "#211712",
+        "panel": "#2d2019",
+        "panel-2": "#3a2b23",
+        "tinta": "#f7e8db",
+        "tinta-2": "#dac3b1",
+        "tinta-3": "#bca48f",
+        "naranja": "#f0aa85",
+        "verde": "#b2c895",
+        "rojo": "#efa6a0",
+        "azul": "#a9c6e4"
+      }
+    },
+    {
+      "id": "ciruela",
+      "nombre": "Ciruela",
+      "grupo": "editorial",
+      "descripcion": "Malva · tinta violeta",
+      "light": {
+        "papel": "#fcf5fb",
+        "panel": "#f4eaf3",
+        "panel-2": "#eaddE9",
+        "tinta": "#342438",
+        "tinta-2": "#58405c",
+        "tinta-3": "#735a77",
+        "naranja": "#864977",
+        "verde": "#536632",
+        "rojo": "#ab384b",
+        "azul": "#555f9d"
+      },
+      "dark": "ciruela"
+    },
+    {
+      "id": "liftit",
+      "nombre": "Liftit",
+      "grupo": "marca",
+      "descripcion": "Operaciones · azul",
+      "light": "liftit",
+      "dark": {
+        "papel": "#0d1425",
+        "panel": "#151f34",
+        "panel-2": "#202c44",
+        "tinta": "#edf2ff",
+        "tinta-2": "#c3cee7",
+        "tinta-3": "#9eaece",
+        "naranja": "#89b1ff",
+        "verde": "#85c9ac",
+        "rojo": "#f3a4a8",
+        "azul": "#9bafff"
+      }
+    },
+    {
+      "id": "blueprint",
+      "nombre": "Blueprint",
+      "grupo": "tecnico",
+      "descripcion": "Plano · cuadrícula",
+      "light": {
+        "papel": "#f3f8ff",
+        "panel": "#e7f0fc",
+        "panel-2": "#d8e6f6",
+        "tinta": "#102f57",
+        "tinta-2": "#315581",
+        "tinta-3": "#4d678c",
+        "naranja": "#1853a0",
+        "verde": "#266946",
+        "rojo": "#a3394b",
+        "azul": "#254f9c"
+      },
+      "dark": "blueprint"
+    },
+    {
+      "id": "hacker",
+      "nombre": "Hacker",
+      "grupo": "tecnico",
+      "descripcion": "Terminal · verde",
+      "light": {
+        "papel": "#f3faf5",
+        "panel": "#e7f3eb",
+        "panel-2": "#d8e9df",
+        "tinta": "#143522",
+        "tinta-2": "#315c43",
+        "tinta-3": "#4c6d5a",
+        "naranja": "#206b38",
+        "verde": "#276440",
+        "rojo": "#aa3b49",
+        "azul": "#365a9d"
+      },
+      "dark": "hacker"
+    },
+    {
+      "id": "linear",
+      "nombre": "Linear",
+      "grupo": "producto",
+      "descripcion": "Grafito · lavanda",
+      "light": "linear-light",
+      "dark": "linear-dark"
+    },
+    {
+      "id": "modern",
+      "nombre": "Modern",
+      "grupo": "editor",
+      "descripcion": "VS Code · azul",
+      "light": {
+        "papel": "#ffffff",
+        "panel": "#f8f8f8",
+        "panel-2": "#ededed",
+        "tinta": "#1f1f1f",
+        "tinta-2": "#424242",
+        "tinta-3": "#606060",
+        "naranja": "#005fb8",
+        "verde": "#267044",
+        "rojo": "#a83238",
+        "azul": "#005fb8"
+      },
+      "dark": {
+        "papel": "#1f1f1f",
+        "panel": "#181818",
+        "panel-2": "#2b2b2b",
+        "tinta": "#cccccc",
+        "tinta-2": "#c2c2c2",
+        "tinta-3": "#9d9d9d",
+        "naranja": "#75beff",
+        "verde": "#89d185",
+        "rojo": "#f48771",
+        "azul": "#9cdcfe"
+      },
+      "fuente": "https://github.com/microsoft/vscode/tree/main/extensions/theme-defaults/themes"
+    },
+    {
+      "id": "github",
+      "nombre": "GitHub",
+      "grupo": "editor",
+      "descripcion": "Neutros · azul",
+      "light": {
+        "papel": "#ffffff",
+        "panel": "#f6f8fa",
+        "panel-2": "#eaeef2",
+        "tinta": "#1f2328",
+        "tinta-2": "#424a53",
+        "tinta-3": "#59636e",
+        "naranja": "#0967d7",
+        "verde": "#1a7b35",
+        "rojo": "#cf222e",
+        "azul": "#0550ae"
+      },
+      "dark": {
+        "papel": "#0d1117",
+        "panel": "#161b22",
+        "panel-2": "#21262d",
+        "tinta": "#e6edf3",
+        "tinta-2": "#c9d1d9",
+        "tinta-3": "#9da7b3",
+        "naranja": "#79c0ff",
+        "verde": "#7ee787",
+        "rojo": "#ffa198",
+        "azul": "#a5d6ff"
+      },
+      "fuente": "https://github.com/primer/github-vscode-theme"
+    },
+    {
+      "id": "catppuccin",
+      "nombre": "Catppuccin",
+      "grupo": "editor",
+      "descripcion": "Latte / Mocha · pastel",
+      "light": {
+        "papel": "#eff1f5",
+        "panel": "#e6e9ef",
+        "panel-2": "#dce0e8",
+        "tinta": "#4c4f69",
+        "tinta-2": "#55586f",
+        "tinta-3": "#5e6174",
+        "naranja": "#7e34de",
+        "verde": "#247037",
+        "rojo": "#c30f34",
+        "azul": "#1e5ad4"
+      },
+      "dark": {
+        "papel": "#1e1e2e",
+        "panel": "#181825",
+        "panel-2": "#313244",
+        "tinta": "#cdd6f4",
+        "tinta-2": "#bac2de",
+        "tinta-3": "#a6adc8",
+        "naranja": "#cba6f7",
+        "verde": "#a6e3a1",
+        "rojo": "#f38ba8",
+        "azul": "#89b4fa"
+      },
+      "fuente": "https://github.com/catppuccin/catppuccin"
+    },
+    {
+      "id": "solarized",
+      "nombre": "Solarized",
+      "grupo": "editor",
+      "descripcion": "Marfil / petróleo · cian",
+      "light": {
+        "papel": "#fdf6e3",
+        "panel": "#eee8d5",
+        "panel-2": "#e5dec9",
+        "tinta": "#384e55",
+        "tinta-2": "#4a6067",
+        "tinta-3": "#526368",
+        "naranja": "#006b7e",
+        "verde": "#4f6a00",
+        "rojo": "#ab392e",
+        "azul": "#216693"
+      },
+      "dark": {
+        "papel": "#002b36",
+        "panel": "#073642",
+        "panel-2": "#103f4b",
+        "tinta": "#d6ded7",
+        "tinta-2": "#b3c5c3",
+        "tinta-3": "#98b0b0",
+        "naranja": "#6cc2c0",
+        "verde": "#b3c56c",
+        "rojo": "#ef9a8d",
+        "azul": "#82bbe0"
+      },
+      "fuente": "https://ethanschoonover.com/solarized/"
+    }
+  ]
+}

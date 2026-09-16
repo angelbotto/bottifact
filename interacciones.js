@@ -3,42 +3,68 @@
   'use strict';
   const root = document.documentElement;
   const selectors = document.querySelectorAll('[data-tema]');
-  const themes = ['system','light','dark','sea','oliva','arcilla','ciruela','liftit','blueprint','hacker','linear-light','linear-dark'];
+  /* REGISTRO TEMAS */ const themeRegistry = {"familias":[{"id":"editorial","nombre":"Editorial","grupo":"editorial","descripcion":"Papel cálido · cobre","light":"light","dark":"dark"},{"id":"sea","nombre":"Sea","grupo":"editorial","descripcion":"Azul oceánico · menta","light":"sea-light","dark":"sea"},{"id":"oliva","nombre":"Oliva","grupo":"editorial","descripcion":"Botánico · verde","light":"oliva","dark":"oliva-dark"},{"id":"arcilla","nombre":"Arcilla","grupo":"editorial","descripcion":"Terracota · arena","light":"arcilla","dark":"arcilla-dark"},{"id":"ciruela","nombre":"Ciruela","grupo":"editorial","descripcion":"Malva · tinta violeta","light":"ciruela-light","dark":"ciruela"},{"id":"liftit","nombre":"Liftit","grupo":"marca","descripcion":"Operaciones · azul","light":"liftit","dark":"liftit-dark"},{"id":"blueprint","nombre":"Blueprint","grupo":"tecnico","descripcion":"Plano · cuadrícula","light":"blueprint-light","dark":"blueprint"},{"id":"hacker","nombre":"Hacker","grupo":"tecnico","descripcion":"Terminal · verde","light":"hacker-light","dark":"hacker"},{"id":"linear","nombre":"Linear","grupo":"producto","descripcion":"Grafito · lavanda","light":"linear-light","dark":"linear-dark"},{"id":"modern","nombre":"Modern","grupo":"editor","descripcion":"VS Code · azul","light":"modern-light","dark":"modern-dark"},{"id":"github","nombre":"GitHub","grupo":"editor","descripcion":"Neutros · azul","light":"github-light","dark":"github-dark"},{"id":"catppuccin","nombre":"Catppuccin","grupo":"editor","descripcion":"Latte / Mocha · pastel","light":"catppuccin-light","dark":"catppuccin-dark"},{"id":"solarized","nombre":"Solarized","grupo":"editor","descripcion":"Marfil / petróleo · cian","light":"solarized-light","dark":"solarized-dark"}],"aliases":{"system":["editorial","system"],"light":["editorial","light"],"dark":["editorial","dark"],"linear-light":["linear","light"],"linear-dark":["linear","dark"],"sea":["sea","dark"],"oliva":["oliva","light"],"arcilla":["arcilla","light"],"ciruela":["ciruela","dark"],"liftit":["liftit","light"],"blueprint":["blueprint","dark"],"hacker":["hacker","dark"]}}; /* FIN REGISTRO TEMAS */
+  const families=new Map(themeRegistry.familias.map(f=>[f.id,f]));
+  const modes=['light','dark','system'];
   const initialTheme=document.querySelector('meta[name="nota-tema-inicial"]')?.content;
+  const initialMode=document.querySelector('meta[name="nota-modo-inicial"]')?.content;
   const initialStyle=document.querySelector('meta[name="nota-estilo-inicial"]')?.content;
-  const preferenceKey=key=>((initialTheme||initialStyle)?key+':'+location.pathname:key);
-  const scheme = matchMedia('(prefers-color-scheme: dark)');
-  const themeNames = {system:'Sistema',light:'Claro',dark:'Cálido',sea:'Dark Sea',oliva:'Oliva',arcilla:'Arcilla',ciruela:'Ciruela',liftit:'Liftit',blueprint:'Blueprint',hacker:'Hacker','linear-light':'Linear Light','linear-dark':'Linear Dark'};
-  function syncAppearance() {
-    const value=root.dataset.theme||'system';
-    const dark=['dark','sea','ciruela','blueprint','hacker','linear-dark'].includes(value)||(value==='system'&&scheme.matches);
+  const preferenceKey=key=>((initialTheme||initialMode||initialStyle)?key+':'+location.pathname:key);
+  const scheme=matchMedia('(prefers-color-scheme: dark)');
+  const legacy=value=>themeRegistry.aliases[value]||[families.has(value)?value:'editorial','system'];
+  let [family,mode]=legacy(initialTheme);
+  if(modes.includes(initialMode))mode=initialMode;
+  try {
+    const saved=JSON.parse(localStorage.getItem(preferenceKey('nota-apariencia-v2'))||'null');
+    if(saved&&families.has(saved.family)&&modes.includes(saved.mode)){family=saved.family;mode=saved.mode;}
+    else {
+      const old=localStorage.getItem(preferenceKey('nota-tema'));
+      if(old)[family,mode]=legacy(old);
+    }
+  } catch {}
+  const modeNames={light:'Claro',dark:'Oscuro',system:'Sistema'};
+  function syncAppearance(persist=false) {
+    const effective=mode==='system'?(scheme.matches?'dark':'light'):mode;
+    const selected=families.get(family);
+    root.dataset.themeFamily=family;
+    root.dataset.themeMode=mode;
+    root.dataset.colorMode=effective;
+    root.dataset.theme=selected[effective];
+    selectors.forEach(selector=>{
+      const value=root.dataset.theme;
+      if(![...selector.options].some(option=>option.value===value))selector.add(new Option(selected.nombre+' · '+modeNames[effective],value));
+      selector.value=value;
+    });
+    document.querySelectorAll('[data-elegir-tema]').forEach(input=>input.checked=input.value===family);
+    document.querySelectorAll('[data-elegir-modo]').forEach(input=>input.checked=input.value===mode);
     document.querySelectorAll('[data-apariencia-menu]').forEach(menu=>{
-      menu.dataset.oscuro=String(dark);
-      menu.querySelector('summary').setAttribute('aria-label','Apariencia. '+themeNames[value]+(value==='system'?', '+(dark?'oscuro':'claro'):'')+'.');
-      menu.querySelectorAll('[data-tema-actual]').forEach(label=>label.textContent=themeNames[value]);
+      menu.dataset.oscuro=String(effective==='dark');
+      const name=selected.nombre+' · '+modeNames[effective];
+      menu.querySelector('summary').setAttribute('aria-label','Apariencia. '+name+(mode==='system'?', según el sistema':'')+'.');
+      menu.querySelectorAll('[data-tema-actual]').forEach(label=>label.textContent=name);
+      menu.querySelectorAll('[data-modo-estado]').forEach(label=>label.textContent=mode==='system'?'Ahora en '+modeNames[effective].toLowerCase()+', según tu dispositivo.':'Modo '+modeNames[effective].toLowerCase()+' para cualquier tema.');
     });
+    if(persist)try{localStorage.setItem(preferenceKey('nota-apariencia-v2'),JSON.stringify({family,mode}));}catch{}
+    document.dispatchEvent(new CustomEvent('nota:tema',{detail:{family,mode,effective,palette:root.dataset.theme}}));
   }
-  scheme.addEventListener('change',syncAppearance);
-  function theme(value) {
-    if (!themes.includes(value)) value = 'system';
-    if (value === 'system') delete root.dataset.theme; else root.dataset.theme = value;
-    selectors.forEach(selector => {
-      // Una receta antigua puede no ofrecer las paletas nuevas: el control sigue nombrando el tema activo.
-      if(![...selector.options].some(option=>option.value===value))selector.add(new Option(themeNames[value],value));
-      selector.value = value;
-    });
-    document.querySelectorAll('[data-elegir-tema]').forEach(input => { input.checked = input.value === value; });
-    syncAppearance();
-    try { localStorage.setItem(preferenceKey('nota-tema'),value); } catch {}
-    document.dispatchEvent(new CustomEvent('nota:tema'));
+  function setAppearance(next={}) {
+    if(next.family!==undefined&&!families.has(next.family))return false;
+    if(next.mode!==undefined&&!modes.includes(next.mode))return false;
+    family=next.family??family;mode=next.mode??mode;syncAppearance(true);return true;
   }
-  let stored = initialTheme || 'system';
-  try { stored = localStorage.getItem(preferenceKey('nota-tema')) || stored; } catch {}
-  theme(stored);
-  selectors.forEach(selector => selector.addEventListener('change', e => theme(e.target.value)));
-  document.addEventListener('change', e => {
-    if (e.target.matches('[data-elegir-tema]')) theme(e.target.value);
+  // Mantiene tema y modo independientes. Los selectores antiguos aceptan sus IDs de paleta.
+  selectors.forEach(selector=>selector.addEventListener('change',e=>{
+    const value=e.target.value;
+    const paired=themeRegistry.familias.flatMap(f=>['light','dark'].map(m=>({family:f.id,mode:m,palette:f[m]}))).find(p=>p.palette===value);
+    if(paired)setAppearance(paired);else{const [f,m]=legacy(value);setAppearance({family:f,mode:m});}
+  }));
+  document.addEventListener('change',e=>{
+    if(e.target.matches('[data-elegir-tema]'))setAppearance({family:e.target.value});
+    if(e.target.matches('[data-elegir-modo]'))setAppearance({mode:e.target.value});
   });
+  scheme.addEventListener('change',()=>{if(mode==='system')syncAppearance();});
+  window.NotaTemas=Object.freeze({set:setAppearance,get:()=>({family,mode,effective:root.dataset.colorMode,palette:root.dataset.theme})});
+  syncAppearance(true);
   // Variante optativa: las notas antiguas conservan su escala de lectura.
   function comfort(enabled) {
     root.toggleAttribute('data-lectura-comoda', enabled);

@@ -14,7 +14,7 @@ try:
    call('exec','--command',f'set viewport {w} {h}')
    for theme in ['linear-light','linear-dark']:
     call('exec','--command',f'set viewport {w} {h}')
-    evaluate('document.querySelector(\'[data-elegir-tema][value="'+theme+'"]\').click();true')
+    evaluate('NotaTemas.set({family:"linear",mode:'+json.dumps(theme.split('-')[1])+'});true')
     r=evaluate('''(()=>{const m=document.querySelector('[data-apariencia-menu]');m.open=true;const p=m.querySelector('.apariencia-panel'),r=p.getBoundingClientRect();return {theme:document.documentElement.dataset.theme,dark:m.dataset.oscuro,paper:getComputedStyle(document.documentElement).getPropertyValue('--papel').trim(),width:innerWidth,overflow:document.documentElement.scrollWidth>innerWidth,box:{x:r.left,y:r.top,right:r.right,bottom:r.bottom}}})()''')
     assert r['dark']==str(theme=='linear-dark').lower() and r['paper']==('#ffffff' if theme=='linear-light' else '#101114') and not r['overflow'],r
     # Wait a frame without screenshot: Orca captures can reset the viewport to the host size.

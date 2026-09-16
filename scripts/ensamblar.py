@@ -3,6 +3,8 @@
 from pathlib import Path
 import json, base64, hashlib, re, html as html_escape
 ROOT = Path(__file__).resolve().parents[1]
+from temas import generate as generate_theme_registry
+generate_theme_registry()
 THREE = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js'
 DATA = {
  'points': [
@@ -183,3 +185,7 @@ print('Generado evidencia.html: ocho piezas nuevas')
 from ejemplo_colaborativo import generate as build_colaborativo
 build_colaborativo()
 print('Generados colaborativo.html y temas Linear Light / Dark')
+
+from ejemplo_apariencia import generate as build_apariencia
+build_apariencia()
+print("Generado temas.html: 13 familias y 26 versiones")

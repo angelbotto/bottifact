@@ -19,6 +19,7 @@ jobs:
           python scripts/validar.py
           python scripts/probar_contrato.py
           node scripts/probar_revision_store.cjs
+          node scripts/probar_temas.cjs
           python scripts/validar_skill.py
           git diff --exit-code
       - name: Paquete portable

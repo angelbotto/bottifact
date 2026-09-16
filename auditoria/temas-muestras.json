@@ -1,0 +1,158 @@
+[
+  {
+    "family": "editorial",
+    "mode": "light",
+    "paper": "rgb(254, 248, 242)",
+    "preview": "rgb(254, 248, 242)"
+  },
+  {
+    "family": "editorial",
+    "mode": "dark",
+    "paper": "rgb(19, 17, 15)",
+    "preview": "rgb(19, 17, 15)"
+  },
+  {
+    "family": "sea",
+    "mode": "light",
+    "paper": "rgb(241, 247, 250)",
+    "preview": "rgb(241, 247, 250)"
+  },
+  {
+    "family": "sea",
+    "mode": "dark",
+    "paper": "rgb(29, 38, 47)",
+    "preview": "rgb(29, 38, 47)"
+  },
+  {
+    "family": "oliva",
+    "mode": "light",
+    "paper": "rgb(245, 246, 236)",
+    "preview": "rgb(245, 246, 236)"
+  },
+  {
+    "family": "oliva",
+    "mode": "dark",
+    "paper": "rgb(21, 26, 18)",
+    "preview": "rgb(21, 26, 18)"
+  },
+  {
+    "family": "arcilla",
+    "mode": "light",
+    "paper": "rgb(252, 241, 232)",
+    "preview": "rgb(252, 241, 232)"
+  },
+  {
+    "family": "arcilla",
+    "mode": "dark",
+    "paper": "rgb(33, 23, 18)",
+    "preview": "rgb(33, 23, 18)"
+  },
+  {
+    "family": "ciruela",
+    "mode": "light",
+    "paper": "rgb(252, 245, 251)",
+    "preview": "rgb(252, 245, 251)"
+  },
+  {
+    "family": "ciruela",
+    "mode": "dark",
+    "paper": "rgb(32, 25, 34)",
+    "preview": "rgb(32, 25, 34)"
+  },
+  {
+    "family": "liftit",
+    "mode": "light",
+    "paper": "rgb(247, 249, 255)",
+    "preview": "rgb(247, 249, 255)"
+  },
+  {
+    "family": "liftit",
+    "mode": "dark",
+    "paper": "rgb(13, 20, 37)",
+    "preview": "rgb(13, 20, 37)"
+  },
+  {
+    "family": "blueprint",
+    "mode": "light",
+    "paper": "rgb(243, 248, 255)",
+    "preview": "rgb(243, 248, 255)"
+  },
+  {
+    "family": "blueprint",
+    "mode": "dark",
+    "paper": "rgb(8, 44, 98)",
+    "preview": "rgb(8, 44, 98)"
+  },
+  {
+    "family": "hacker",
+    "mode": "light",
+    "paper": "rgb(243, 250, 245)",
+    "preview": "rgb(243, 250, 245)"
+  },
+  {
+    "family": "hacker",
+    "mode": "dark",
+    "paper": "rgb(8, 15, 12)",
+    "preview": "rgb(8, 15, 12)"
+  },
+  {
+    "family": "linear",
+    "mode": "light",
+    "paper": "rgb(255, 255, 255)",
+    "preview": "rgb(255, 255, 255)"
+  },
+  {
+    "family": "linear",
+    "mode": "dark",
+    "paper": "rgb(16, 17, 20)",
+    "preview": "rgb(16, 17, 20)"
+  },
+  {
+    "family": "modern",
+    "mode": "light",
+    "paper": "rgb(255, 255, 255)",
+    "preview": "rgb(255, 255, 255)"
+  },
+  {
+    "family": "modern",
+    "mode": "dark",
+    "paper": "rgb(31, 31, 31)",
+    "preview": "rgb(31, 31, 31)"
+  },
+  {
+    "family": "github",
+    "mode": "light",
+    "paper": "rgb(255, 255, 255)",
+    "preview": "rgb(255, 255, 255)"
+  },
+  {
+    "family": "github",
+    "mode": "dark",
+    "paper": "rgb(13, 17, 23)",
+    "preview": "rgb(13, 17, 23)"
+  },
+  {
+    "family": "catppuccin",
+    "mode": "light",
+    "paper": "rgb(239, 241, 245)",
+    "preview": "rgb(239, 241, 245)"
+  },
+  {
+    "family": "catppuccin",
+    "mode": "dark",
+    "paper": "rgb(30, 30, 46)",
+    "preview": "rgb(30, 30, 46)"
+  },
+  {
+    "family": "solarized",
+    "mode": "light",
+    "paper": "rgb(253, 246, 227)",
+    "preview": "rgb(253, 246, 227)"
+  },
+  {
+    "family": "solarized",
+    "mode": "dark",
+    "paper": "rgb(0, 43, 54)",
+    "preview": "rgb(0, 43, 54)"
+  }
+]
