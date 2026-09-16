@@ -35,7 +35,7 @@
   const bar=document.createElement('div'),layer=document.createElement('div');bar.className='revision-barra revision-ui';bar.setAttribute('role','group');bar.setAttribute('aria-label','Comentarios');layer.className='revision-capa revision-ui';
   const modeButton=el.querySelector('[data-revision-modo]').cloneNode(true),listButton=el.querySelector('[data-revision-lista]').cloneNode(true);modeButton.innerHTML=icon;modeButton.setAttribute('aria-label','Comentar: activar pines');modeButton.title='Comentar';listButton.textContent='0';listButton.title='Ver comentarios';listButton.setAttribute('aria-label','Ver comentarios, 0');bar.append(modeButton,listButton);document.body.append(bar,layer,editor,panel);
   const listen=(node,type,fn,options={})=>node.addEventListener(type,fn,{...options,signal:abort.signal}),make=(tag,text)=>{const node=document.createElement(tag);node.textContent=text;return node;};
-  const documentId=document.querySelector('meta[name="nota-documento"]')?.content||document.title+'@'+location.pathname;
+  const documentId=document.querySelector('meta[name="nota-documento"]')?.content||(document.querySelector('meta[name="nota-titulo-anterior"]')?.content||document.title)+'@'+location.pathname;
   let storage;try{storage=localStorage;}catch{}const store=NotaRevisionStore.create(documentId,storage);
   let author='';try{author=storage?.getItem('nota-revision-autor')||'';}catch{}
   panel.classList.add('revision-panel-v2');const toolbar=make('div','');toolbar.className='revision-utilidades';

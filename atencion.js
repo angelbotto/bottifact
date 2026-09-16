@@ -1,4 +1,4 @@
-/* Nota Tikin · attention map: partición binaria con área exactamente proporcional.
+/* Bottifact · attention map: partición binaria con área exactamente proporcional.
    Sin datos remotos ni animación automática; detalle completo fuera de las celdas pequeñas. */
 (()=>{'use strict';const NS='http://www.w3.org/2000/svg',instances=new WeakMap();let serial=0;
  const svg=(tag,attrs,text)=>{const n=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>n.setAttribute(k,v));if(text!==undefined)n.textContent=text;return n;};

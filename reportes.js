@@ -1,4 +1,4 @@
-/* Nota Tikin · piezas de reportes. Tablas como fuente, sin red ni animaciones.
+/* Bottifact · piezas de reportes. Tablas como fuente, sin red ni animaciones.
    Incluir tras globo.js si se usa recorrido. init/get/destroy por contenedor. */
 (() => {
   'use strict';

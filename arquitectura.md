@@ -1,30 +1,62 @@
-# Stack y evolución de Nota Tikin
+# Bottifact: stack y decisiones
 
-## Decisión
+Bottifact reúne una biblioteca de componentes, un generador y un skill portable. El nombre combina Bottico y artifact. El repositorio y el skill se llaman `bottifact`; una marca de un cliente, como Liftit, es una elección del documento, no el nombre de la biblioteca.
 
-Mantener HTML semántico, CSS con tokens, JavaScript modular sin framework y generación/validación con Python para los artefactos portables. Esta salida funciona descargada, carga sólo módulos usados y conserva tablas/texto cuando falta JavaScript. Cambiar toda la biblioteca a React impondría un runtime y un empaquetado sin resolver por sí solo identidad, permisos o colaboración.
+## Qué está implementado
 
-Para una aplicación colaborativa conectada: TypeScript + React/Vite en el cliente, TanStack Table para tablas de producto, y PostgreSQL con autenticación y políticas por documento. Supabase es una opción coherente para Auth/Postgres/Realtime. Este proyecto todavía no provisiona ese servicio ni introduce claves. Las fuentes del artefacto siguen independientes de la aplicación: una exportación es una instantánea verificable, no una sesión conectada.
+| Capa | Implementación comprobable | Qué resuelve |
+| --- | --- | --- |
+| Artefacto | HTML semántico, CSS con tokens, SVG y JavaScript sin framework | Lectura, datos, interacción y exportación del archivo |
+| Biblioteca | 82 recetas en componentes.md y registro.json; 26 módulos JS de raíz | Composición por intención y dependencias seleccionadas |
+| Temas | temas.json y scripts/temas.py; 13 familias, 26 paletas, tres modos | Identidad visual separada de Claro / Oscuro / Sistema y tipografía |
+| Generación | Python 3.10+, sólo biblioteca estándar | Incrusta fuentes y módulos usados; valida el contrato |
+| Gráficas y tablas | SVG/DOM local, tablas como fuente de datos | Ordenación, filtros, grupos, selección, CSV y alternativas textuales |
+| Mapas 3D | Three.js 0.160.1 desde CDN fijado, con alternativa textual | Globo y escenas; esta parte necesita red para cargar Three |
+| Comentarios | Eventos en localStorage e intercambio JSON | Hilos, respuestas, responsables, resolución e historial local |
+| Sonido y escritura | Web Audio, MP3 y fuentes aprobados, recursos incrustados | Interacción tras un gesto real y preferencia de silencio |
+| Skill | SKILL.md breve, referencias a demanda y scripts deterministas | Mismo procedimiento para Claude, Codex y Hermes |
+| Distribución | Git privado, Actions, ZIP y manifiesto SHA-256 | Generación reproducible y copia verificable del sistema |
 
-## Evaluación
+Los HTML no exigen Python para leerse. Node sólo participa en pruebas. No hay React, Vite, servidor de aplicación, base de datos, autenticación ni sincronización entre dispositivos implementados. Orca es una herramienta local de desarrollo y comprobación, no una dependencia de los lectores ni del skill instalado.
 
-| Área | Actual | Decisión |
-|---|---|---|
-| Documentos editoriales | HTML, CSS, SVG y JS local | Conservar semántica y exportación autocontenida. |
-| Generación por agentes | Python estándar, registro y validadores | Conservar; entrada corta del skill y referencias por necesidad. |
-| Tablas de informe | Motor DOM local, hasta 2000 filas | Mejorado con tipos, filtros, selección, páginas y CSV. Medir antes de ampliar límites. |
-| Tablas de aplicación | No hay backend ni consulta remota | Usar TanStack Table en la capa conectada; paginación en servidor si el volumen lo requiere. |
-| Revisión | Eventos locales e intercambio JSON | Útil para revisión asíncrona; no sustituye permisos ni sincronización remota. |
-| Colaboración simultánea | No implementada | Postgres para contenido durable; Realtime para cambios y presencia. |
-| Edición simultánea de texto | Fuera del alcance actual | Evaluar CRDT sólo si varias personas editan el mismo texto; no hace falta para hilos de comentarios. |
-| Distribución | Skill y ZIP verificado | Repositorio, CI de contratos, paquete reproducible e instalación independiente del agente. |
+## Evaluación del stack
 
-## Buenas prácticas y próximos límites
+Conservar esta base es mi recomendación para artículos, informes, documentación y prototipos que se comparten como archivos. El valor es poder entregar el documento y sus interacciones con pocas dependencias. Una migración completa a React añadiría un proceso de compilación; por sí sola no resolvería permisos, identidad o colaboración.
 
-Los datos y los ejemplos deben distinguirse; los totales conservan unidad y alcance. Los módulos nuevos requieren init/get/destroy, texto seguro, limpieza de listeners, foco y alternativa accesible. El registro es fuente para agentes y no un registro shadcn compatible por nombre.
+La mayor deuda está en mantener y probar la biblioteca: CSS extenso, módulos con estilos de ciclo de vida distintos y pruebas antiguas ligadas a catálogos anteriores. La recomendación es separar responsabilidades por etapas, conservar las exportaciones y medir el peso de documentos representativos antes de optimizar. Las seis combinaciones de fuentes se incrustan para poder cambiarlas: eso tiene un coste de tamaño deliberado.
 
-Las pruebas deben separar contrato, datos e interacción de inspección visual. CI valida fuentes, ejemplos, ciclos de vida y paquetes; una captura no demuestra lector de pantalla ni audio audible. La revisión conectada necesita pruebas de autorización entre usuarios/documentos, conflicto de versiones, reconexión y recuperación antes de presentarse como multiusuario.
+## Skill: investigación y decisiones
 
-Los temas Linear Light y Linear Dark son adaptaciones propias inspiradas en superficies neutras, bordes discretos y acento lavanda. No son un tema oficial de Linear ni una réplica de su producto. El color y la combinación tipográfica permanecen independientes; Sobrio da una composición de producto más próxima a la referencia.
+El formato Agent Skills admite una entrada con nombre y descripción y recursos que se consultan según la tarea. Bottifact mantiene las instrucciones comunes en SKILL.md y usa `catalogo.py --id` para recuperar una receta sin cargar todos sus HTML. La carpeta instalada y `name` deben llamarse `bottifact`. [Especificación Agent Skills](https://agentskills.io/specification).
 
-Fuentes primarias consultadas: [Agent Skills](https://agentskills.io/specification), [TanStack Table](https://tanstack.com/table/v8/docs/overview), [Supabase Realtime](https://supabase.com/docs/guides/realtime), [Linear Brand](https://linear.app/brand) y [preferencias de Linear](https://linear.app/docs/account-preferences). TanStack es un motor headless; Supabase ofrece eventos, presencia y cambios de Postgres. La elección anterior es una recomendación para este proyecto, no un requisito de esas herramientas.
+Claude Code, Codex y Hermes tienen sus propios mecanismos de descubrimiento. Usamos el formato común, rutas relativas y Python estándar; no introducimos una dependencia obligatoria de herramientas de un agente. La instalación y los contextos de carga se documentan por separado. [Claude Code](https://code.claude.com/docs/en/skills), [Codex](https://developers.openai.com/codex/skills/), [Hermes](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills/).
+
+Una validación estructural no prueba que un agente elija bien las piezas. [evaluacion-skill.md](evaluacion-skill.md) define tareas y criterios de aceptación para comprobar el comportamiento en cada agente, sin atribuir resultados a un dispositivo o modelo no ejecutado. Esta separación sigue la recomendación de probar skills con tareas representativas. [Buenas prácticas de Agent Skills](https://agentskills.io/skill-creation/best-practices).
+
+## Evolución recomendada
+
+| Prioridad | Trabajo | Criterio de salida |
+| --- | --- | --- |
+| 1 | Evaluación de generación en Claude, Codex y Hermes | Mismo encargo, datos correctos, componentes pertinentes y controles conservados |
+| 2 | Pruebas de navegador en CI independientes de Orca | Teclado, tamaños, modos y comentarios comprobados sobre un archivo generado |
+| 3 | Contrato de ciclo de vida y tipos de datos | init/get/destroy o montaje único documentado por módulo; pruebas de desmontaje y datos inválidos |
+| 4 | Medición de tamaño y tiempo de apertura | Presupuestos basados en artículo, informe y globo reales; distinguir archivo standalone de sitio con caché |
+| 5 | Revisión conectada | Identidad, permisos por documento, historial durable, reconexión y conflictos probados |
+
+No están implementados los cinco trabajos completos. La revisión actual sí dispone de pruebas locales de contrato, store, temas y geometría; la CI ejecuta comprobaciones de Python/Node y el empaquetado.
+
+## Si construimos la aplicación colaborativa
+
+Mi propuesta es TypeScript + React/Vite para la interfaz conectada, PostgreSQL para documentos e hilos, y una capa de autenticación con permisos por documento. Supabase puede cubrir Auth/Postgres/Realtime; debe evaluarse con pruebas de autorización y recuperación antes de adoptarlo. Los archivos exportados seguirían siendo instantáneas portables, con el mismo lenguaje visual.
+
+Para tablas grandes conviene evaluar el núcleo de TanStack Table, que también tiene adaptadores para distintos frameworks. React no es un requisito de ese motor. Elegiríamos y fijaríamos una versión al iniciar esa capa; el repositorio actual documenta además skills asociadas a sus versiones más recientes. [TanStack Table](https://github.com/TanStack/table).
+
+Presencia y cursores pueden utilizar un canal efímero; comentarios e historial necesitan persistencia. Supabase documenta Broadcast, Presence y Postgres Changes como capacidades diferentes. Esto es una propuesta para Bottifact, no un servicio activo. [Supabase Realtime](https://supabase.com/docs/guides/realtime).
+
+CRDT sólo merece una evaluación si varias personas editan simultáneamente el cuerpo del mismo documento. Para comentarios, comenzar con eventos, versiones y permisos es una solución más acotada.
+
+## Cambio de nombre y compatibilidad
+
+El repositorio, los paquetes, las instrucciones y las cabeceras públicas usan Bottifact. `compatibilidad.json` conserva las identidades de los ejemplos publicados antes del cambio. Los espacios de almacenamiento `nota-*`, las APIs `Nota*` y el metadato histórico de versión permanecen para evitar una migración innecesaria de datos. Su presencia en código no representa la marca del producto.
+
+El checkout que da soporte a los worktrees de desarrollo puede conservar una ruta histórica. Las instalaciones nuevas y los accesos de los agentes usan `bottifact`. No muevas un repositorio principal dentro de una carpeta de skills sin revisar sus worktrees y registros del entorno.

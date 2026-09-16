@@ -1,4 +1,4 @@
-/* Nota Tikin · fuente Reenie Beanie revelada por caracteres y alfabeto SVG anterior.
+/* Bottifact · fuente Reenie Beanie revelada por caracteres y alfabeto SVG anterior.
    Minúsculas latinas, acentos, números y puntuación; otros glifos conservan texto.
    No usa fuentes remotas, temporizadores de escritura ni RAF. */
 (()=>{'use strict';

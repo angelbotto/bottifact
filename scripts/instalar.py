@@ -12,14 +12,14 @@ def install(source,destination,update=False):
  existing=destination.exists() or destination.is_symlink()
  if existing and not update:raise ValueError('El destino ya existe. Para conservar una copia anterior y actualizar, añade --actualizar.')
  destination.parent.mkdir(parents=True,exist_ok=True)
- stage=Path(tempfile.mkdtemp(prefix='.nota-tikin-instalacion-',dir=destination.parent));backup=None
+ stage=Path(tempfile.mkdtemp(prefix='.bottifact-instalacion-',dir=destination.parent));backup=None
  try:
   for name in [*manifest['archivos'],'MANIFIESTO.json']:
    target=stage/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(source/name,target)
   verify(stage)
   if existing:
    # Fuera de skills para que los agentes no descubran dos versiones de la misma biblioteca.
-   backups=destination.parent.parent/'nota-tikin-respaldos';backups.mkdir(parents=True,exist_ok=True)
+   backups=destination.parent.parent/'bottifact-respaldos';backups.mkdir(parents=True,exist_ok=True)
    backup=backups/(destination.name+'-'+datetime.datetime.now().strftime('%Y%m%d-%H%M%S-%f'))
    destination.rename(backup)
   try:stage.rename(destination)
@@ -35,5 +35,5 @@ if __name__=='__main__':
   dest,backup=install(Path(__file__).resolve().parents[1],args.destino,args.actualizar)
   print('Instalado y verificado: '+str(dest))
   if backup:print('Versión anterior conservada: '+str(backup))
-  print('Abre una conversación nueva y pide usar nota-tikin. La carga del agente se comprueba en este equipo.')
+  print('Abre una conversación nueva y pide usar bottifact. La carga del agente se comprueba en este equipo.')
  except (ValueError,KeyError,OSError) as e:p.exit(1,str(e)+'\n')

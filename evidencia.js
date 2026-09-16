@@ -1,4 +1,4 @@
-/* Nota Tikin · evidencia editorial. SVG local, tablas como fuente; sin RAF ni red. */
+/* Bottifact · evidencia editorial. SVG local, tablas como fuente; sin RAF ni red. */
 (()=>{'use strict';
  const instances=new WeakMap(),NS='http://www.w3.org/2000/svg',fmt={format:v=>new Intl.NumberFormat('es-CO',{maximumSignificantDigits:8,notation:v!==0&&(Math.abs(v)<.001||Math.abs(v)>1e9)?'scientific':'standard'}).format(v)};
  const make=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e;};

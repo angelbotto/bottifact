@@ -5,6 +5,7 @@ from pathlib import Path,PurePosixPath
 
 def verify(root):
  root=Path(root).resolve();manifest=json.loads((root/'MANIFIESTO.json').read_text())
+ if manifest.get('formato') not in {'bottifact-portable','nota-tikin-portable'}:raise ValueError('Formato de paquete desconocido')
  files=manifest['archivos']
  if not isinstance(files,dict) or 'SKILL.md' not in files or 'registro.json' not in files:raise ValueError('Manifiesto incompleto')
  for name,digest in files.items():

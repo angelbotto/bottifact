@@ -41,7 +41,7 @@ Se migra `nota-tema` a `nota-apariencia-v2` (familia y modo), manteniendo su ám
 
 ## Referencias y alcance
 
-Paletas adaptadas por Nota Tikin, no extensiones oficiales ni una integración con un editor. Se conservan el carácter y los fondos de referencia; ciertos acentos y textos secundarios se ajustan para mantener contraste al usarlos en datos y superficies. Las nuevas contrapartes de los temas anteriores son diseños propios. No se descarga ningún tema durante la lectura.
+Paletas adaptadas por Bottifact, no extensiones oficiales ni una integración con un editor. Se conservan el carácter y los fondos de referencia; ciertos acentos y textos secundarios se ajustan para mantener contraste al usarlos en datos y superficies. Las nuevas contrapartes de los temas anteriores son diseños propios. No se descarga ningún tema durante la lectura.
 
 - [VS Code: temas y modos del dispositivo](https://code.visualstudio.com/docs/configure/themes); [paletas Modern originales](https://github.com/microsoft/vscode/tree/main/extensions/theme-defaults/themes).
 - [GitHub para VS Code](https://github.com/primer/github-vscode-theme): familias claras y oscuras de Primer.

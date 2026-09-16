@@ -1,4 +1,4 @@
-/* Nota Tikin. Pegar una vez al final del fragmento, dentro de <script>. */
+/* Bottifact. Pegar una vez al final del fragmento, dentro de <script>. */
 (() => {
   'use strict';
   const root = document.documentElement;

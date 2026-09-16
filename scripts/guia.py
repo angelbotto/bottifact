@@ -59,10 +59,10 @@ def generate():
    body+='<div class="receta-guia">'+prose(r['criterio_y_limites'])+'<p class="procedencia">Dependencias: '+html.escape(', '.join(r['dependencias']))+'</p></div>'+code_box(r['html'],key,r['nombre'])
   pages.append({'id':'piezas-'+chapter,'titulo':label,'html':body})
  install=(ROOT/'instalacion.md').read_text();installparts=re.split(r'^## (.+)$',install,flags=re.M)
- delivery=section('Copiar, componer y comprobar','guia-generar')
+ delivery=section('Copiar, componer y comprobar','guia-generar')+'<p><a href="sistema.html">Revisión del stack, el skill y la evolución de Bottifact</a>.</p>'
  for i in range(1,len(installparts),2):delivery+='<section id="guia-instalar-'+str(i)+'"><h2>'+html.escape(installparts[i])+'</h2>'+prose(installparts[i+1])+'</section>'
  pages.append({'id':'entrega','titulo':'Usar el skill','html':delivery})
- (ROOT/'guia.html').write_text(build('Nota Tikin · Guía de uso y componentes',pages,'Cómo construir documentos que se leen, se exploran y se revisan.'))
+ (ROOT/'guia.html').write_text(build('Bottifact · Guía de uso y componentes',pages,'Cómo construir documentos que se leen, se exploran y se revisan.'))
  (ROOT/'auditoria/guia-cobertura.json').write_text(json.dumps({'paginas':[p['id'] for p in pages],'componentes':[r['id'] for r in registry],'casos':cases},ensure_ascii=False,indent=2)+'\n')
  print('Generada guia.html: '+str(len(pages))+' páginas y '+str(len(registry))+' recetas completas')
 

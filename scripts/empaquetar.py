@@ -19,13 +19,13 @@ def package():
  files=sorted(set(files));blobs={str(p.relative_to(ROOT)):p.read_bytes() for p in files}
  blobs.pop('MANIFIESTO.json',None)
  version=json.loads(blobs['VERSION.json'])['version']
- manifest={'formato':'nota-tikin-portable','version':version,'archivos':{n:hashlib.sha256(b).hexdigest() for n,b in blobs.items()}}
+ manifest={'formato':'bottifact-portable','version':version,'archivos':{n:hashlib.sha256(b).hexdigest() for n,b in blobs.items()}}
  blobs['MANIFIESTO.json']=(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n').encode()
- out=ROOT/'descargas';out.mkdir(exist_ok=True);target=out/'nota-tikin-portable.zip'
+ out=ROOT/'descargas';out.mkdir(exist_ok=True);target=out/'bottifact-portable.zip'
  with zipfile.ZipFile(target,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
   for n,b in sorted(blobs.items()):
-   info=zipfile.ZipInfo('nota-tikin/'+n,date_time=(2026,9,15,0,0,0));info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=0o644<<16;z.writestr(info,b)
- sha=hashlib.sha256(target.read_bytes()).hexdigest();(out/'nota-tikin-portable.sha256').write_text(sha+'  '+target.name+'\n')
+   info=zipfile.ZipInfo('bottifact/'+n,date_time=(2026,9,15,0,0,0));info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=0o644<<16;z.writestr(info,b)
+ sha=hashlib.sha256(target.read_bytes()).hexdigest();(out/'bottifact-portable.sha256').write_text(sha+'  '+target.name+'\n')
  print(str(target)+': '+str(len(files))+' archivos, '+str(target.stat().st_size)+' bytes; SHA-256 '+sha)
  return target
 if __name__=='__main__':package()

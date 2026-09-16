@@ -1,4 +1,4 @@
-# Componer con Nota Tikin
+# Componer con Bottifact
 
 Esta es una biblioteca de HTML, CSS y JavaScript, y también un skill para que un agente la use.
 La guía visual [guia.html](guia.html) contiene todas las recetas completas. [registro.json](registro.json)

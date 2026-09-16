@@ -1,5 +1,5 @@
 {
-  "version": "2026.09.15-temas.1",
+  "version": "2026.09.15-bottifact.1",
   "contrato": "4",
   "componentes": 82,
   "temas": [
@@ -28,5 +28,7 @@
     "dark",
     "system"
   ],
-  "paletas": 26
+  "paletas": 26,
+  "nombre": "Bottifact",
+  "skill": "bottifact"
 }

@@ -1,12 +1,13 @@
 ---
-name: nota-tikin
-description: Genera y valida artefactos HTML editoriales, informes, documentación y prototipos con la biblioteca Nota Tikin. Incluye temas, comentarios flotantes, tablas, gráficas, notas manuscritas y ayudas de lectura. Úsalo para crear o mantener estos entregables y su biblioteca; conserva otros formatos si fueron solicitados.
-compatibility: Generación con Python 3.10 o posterior, sin paquetes externos. Navegador moderno para interacción; Three.js usa un CDN fijado. Claude, Codex y Hermes pueden cargar el mismo directorio.
+name: bottifact
+description: Genera y valida artefactos HTML editoriales, informes, documentación y prototipos con la biblioteca Bottifact. Incluye temas, comentarios flotantes, tablas, gráficas, notas manuscritas y ayudas de lectura. Úsalo para crear o mantener estos entregables y su biblioteca; conserva otros formatos si fueron solicitados.
 ---
 
-# Nota Tikin
+# Bottifact
 
-Biblioteca editorial y skill portable. Resuelve rutas desde esta carpeta, no desde el proyecto del usuario ni una instalación fija de un agente. El inventario vigente es [registro.json](registro.json); versión, temas y conteo están en [VERSION.json](VERSION.json).
+Bottifact combina Bottico y artifact: biblioteca editorial, generador y un único skill portable. Resuelve rutas desde esta carpeta, no desde el proyecto del usuario ni una instalación fija de un agente. El inventario vigente es [registro.json](registro.json); explóralo con `scripts/catalogo.py` y recupera piezas con `--id`, sin cargar todos los HTML. Versión, temas y conteo están en [VERSION.json](VERSION.json).
+
+Requisitos: Generación con Python 3.10 o posterior, sin paquetes externos. Navegador moderno para interacción; Three.js usa un CDN fijado. Claude, Codex y Hermes pueden cargar el mismo directorio.
 
 ## Crear un artefacto
 
@@ -69,5 +70,7 @@ python3 scripts/empaquetar.py
 Prueba además las interacciones afectadas y revisa la salida final. El montaje de módulos conserva init/get/destroy y limpieza de listeners/observadores. No presentes la validación estática como verificación visual.
 
 [instalacion.md](instalacion.md) explica instalación en Claude, Codex y Hermes, actualización con respaldo y verificación del ZIP. [arquitectura.md](arquitectura.md) registra el stack actual y la propuesta conectada. Una instalación local no acredita otro equipo ni que una sesión abierta haya recargado el skill.
+
+Para revisar la calidad del skill con encargos reales usa [evaluacion-skill.md](evaluacion-skill.md). No hace falta ejecutarlos todos al generar un documento.
 
 Orca es opcional: sirve para navegador/publicación cuando esté disponible. El generador y el skill no lo requieren. Comparte únicamente el destino autorizado; instalar este skill no concede permisos para publicar datos ni crear servicios.

@@ -1,4 +1,4 @@
-/* Nota Tikin · ordenación optativa y series embebidas. Tabla sigue siendo la fuente. */
+/* Bottifact · ordenación optativa y series embebidas. Tabla sigue siendo la fuente. */
 (() => {
   'use strict';
   const instances=new WeakMap(), NS='http://www.w3.org/2000/svg';

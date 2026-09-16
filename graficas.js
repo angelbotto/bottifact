@@ -1,4 +1,4 @@
-/* Nota Tikin · gráficas SVG desde tablas semánticas. Sin dependencias.
+/* Bottifact · gráficas SVG desde tablas semánticas. Sin dependencias.
    Pegar una vez; NotaGraficas.init(raíz) para contenido insertado posteriormente. */
 (() => {
   'use strict';

@@ -35,7 +35,7 @@ def start(title):
  return '<title>' + title + '</title>\n<meta charset="utf-8">\n<style>\n' + (ROOT / 'fuentes.css').read_text() + '\n' + (ROOT / 'estilo.css').read_text() + '\n</style>\n<meta name="viewport" content="width=device-width, initial-scale=1">\n'
 
 def tools():
- return '<div class="herramientas"><a href="#inicio" class="firma-editorial" aria-label="Inicio de la nota"><span>tikin</span><small>Cuadernos</small></a>'+appearance()+'</div>'
+ return '<div class="herramientas"><a href="#inicio" class="firma-editorial" aria-label="Inicio de la nota"><span>Bottifact</span><small>Cuadernos</small></a>'+appearance()+'</div>'
 
 def appearance():
  # Fuente única: copiar el control circular documentado, con IDs/nombres de cabecera.
@@ -103,7 +103,7 @@ GLOBE
 </div>
 <div class="extracto"><p class="desvanece" aria-hidden="true">Una nota se termina cuando alguien puede tomar una decisión con ella. La forma prepara el terreno; la evidencia sostiene lo que decimos.</p><details><summary>Leer la nota completa</summary><p>Una nota se termina cuando alguien puede tomar una decisión con ella. La forma prepara el terreno; la evidencia sostiene lo que decimos. Si la pieza necesita una segunda lectura para entender qué propone, todavía queda trabajo editorial.</p></details></div>
 <aside class="aviso cita"><span class="num" aria-hidden="true">↳</span><div><blockquote>Dejar una buena nota es dejarle contexto a quien llega después.</blockquote><p class="secundario">Principio de esta plantilla</p></div></aside>
-<footer class="pie"><p>Nota Tikin · Muestra de todos los componentes. Inspirada en <a href="https://www.cmrg.me">cmrg.me</a>; el tema claro, los ajustes de acceso y Dark Sea están documentados en el informe.</p><button type="button" data-sonido aria-pressed="false">Sonido apagado</button></footer>
+<footer class="pie"><p>Bottifact · Muestra de todos los componentes. Inspirada en <a href="https://www.cmrg.me">cmrg.me</a>; el tema claro, los ajustes de acceso y Dark Sea están documentados en el informe.</p><button type="button" data-sonido aria-pressed="false">Sonido apagado</button></footer>
 </main>
 <div class="regla" role="slider" tabindex="0" aria-orientation="vertical" aria-label="Progreso de lectura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="ticks"></div><div class="cursor"></div><span class="val">0%</span></div>
 '''
@@ -141,14 +141,14 @@ catalog=catalog.replace('NAV_COMPONENTES','<div data-buscador-recetas><div class
 body=body.replace('<footer class="pie">',catalog+'<footer class="pie">')
 body=body.replace('<li><a href="#guardado">Lo que vale guardar</a></li>','<li><a href="#guardado">Lo que vale guardar</a></li><li><a href="#libreria">Librería de evidencia</a></li><li><a href="#segunda-tanda">Artículos y prototipos</a></li>')
 body=re.sub(r'(<p class="bajada">.*?</p>)',r'\1<p class="enlace-edicion"><a href="informe.html">Explorar el informe con capítulos →</a> · <a href="biblioteca.html">Abrir la biblioteca completa →</a></p>',body,count=1)
-(ROOT/'plantilla.html').write_text(start('Nota Tikin — la forma también explica')+body+script('interacciones.js')+globe_scripts()+script('invitacion.js')+script('mano.js')+script('atencion.js')+script('geografia.js')+script('flota.js')+script('analitica.js')+script('graficas.js')+script('tablas.js')+script('sonido.js')+script('escritura.js')+script('escena.js')+script('reportes.js')+script('visor.js')+script('pestanas.js')+script('catalogo.js')+script('editorial.js')+script('codigo.js')+script('explorador.js')+script('evidencia.js')+script('revision.js'))
+(ROOT/'plantilla.html').write_text(start('Bottifact — la forma también explica')+body+script('interacciones.js')+globe_scripts()+script('invitacion.js')+script('mano.js')+script('atencion.js')+script('geografia.js')+script('flota.js')+script('analitica.js')+script('graficas.js')+script('tablas.js')+script('sonido.js')+script('escritura.js')+script('escena.js')+script('reportes.js')+script('visor.js')+script('pestanas.js')+script('catalogo.js')+script('editorial.js')+script('codigo.js')+script('explorador.js')+script('evidencia.js')+script('revision.js'))
 globe_body='<main class="hoja" id="inicio" lang="es">'+tools()+'''<header class="cabecera"><p class="ceja">Nota / geografía</p><h1>Planes, puntos<br>y lugares.</h1><p class="bajada">Un globo de puntos para explorar conexiones. Elige una ruta, gira la Tierra o pausa la vista.</p></header>'''+globe()+'''<footer class="pie">Ejemplo reutilizable · Three.js desde cdnjs · máscara geográfica incrustada · ambos temas y movimiento reducido.</footer></main>'''
-(ROOT/'globo.html').write_text(start('Nota Tikin — globo de rutas')+globe_body+script('interacciones.js')+globe_scripts())
-(ROOT/'multipagina.html').write_text(start('Nota Tikin — capítulos')+dict(recipes())['multipagina']+script('interacciones.js')+script('multipagina.js'))
+(ROOT/'globo.html').write_text(start('Bottifact — globo de rutas')+globe_body+script('interacciones.js')+globe_scripts())
+(ROOT/'multipagina.html').write_text(start('Bottifact — capítulos')+dict(recipes())['multipagina']+script('interacciones.js')+script('multipagina.js'))
 informe=dict(recipes())['informe'].replace('<div class="edicion-acciones"><span>Edición 02</span></div>','<div class="edicion-acciones"><span>Edición 02</span>'+appearance()+'</div>')
 informe=re.sub(r'<figure class="pieza amplio" id="visor-ejemplo"[\s\S]*?</figure>',lambda _:dict(recipes())['visor'],informe,count=1)
 from contrato_artefacto import revision, build as build_estandar
-(ROOT/'informe.html').write_text(start('tikin · Una revisión antes de confirmar')+informe+revision()+''.join(script(file) for file in ['interacciones.js','multipagina.js','graficas.js','reportes.js','visor.js','pestanas.js','revision.js']))
+(ROOT/'informe.html').write_text(start('Bottifact · Una revisión antes de confirmar')+informe+revision()+''.join(script(file) for file in ['interacciones.js','multipagina.js','graficas.js','reportes.js','visor.js','pestanas.js','revision.js']))
 from biblioteca import build as build_biblioteca
 build_biblioteca(ROOT,start,script,appearance,recipes,labels,THREE)
 from fixture_regresion import build
@@ -180,7 +180,7 @@ for key in new_ids:
  r=new_registry[key]
  new_body+='<section id="ver-'+key+'"><h2>'+r['nombre']+'</h2></section>'+r['html']+'<div class="receta-guia">'+prose(r['criterio_y_limites'])+'</div>'+code_box(r['html'],'nuevo-'+key,r['nombre'])
 (ROOT/'ejemplos/evidencia-contenido.html').write_text(new_body)
-(ROOT/'evidencia.html').write_text(build_estandar('Nota Tikin · Ocho formas de explicar',[{'id':'evidencia','titulo':'Ocho formas de explicar','html':(ROOT/'ejemplos/evidencia-contenido.html').read_text()}],'Lectura guiada, escenarios y revisión visual. Datos ilustrativos.',theme='dark'))
+(ROOT/'evidencia.html').write_text(build_estandar('Bottifact · Ocho formas de explicar',[{'id':'evidencia','titulo':'Ocho formas de explicar','html':(ROOT/'ejemplos/evidencia-contenido.html').read_text()}],'Lectura guiada, escenarios y revisión visual. Datos ilustrativos.',theme='dark'))
 print('Generado evidencia.html: ocho piezas nuevas')
 from ejemplo_colaborativo import generate as build_colaborativo
 build_colaborativo()
@@ -189,3 +189,19 @@ print('Generados colaborativo.html y temas Linear Light / Dark')
 from ejemplo_apariencia import generate as build_apariencia
 build_apariencia()
 print("Generado temas.html: 13 familias y 26 versiones")
+
+from ejemplo_sistema import generate as build_sistema
+build_sistema()
+print("Generado sistema.html: stack y skill de Bottifact")
+
+# Congela la identidad de demos ya publicados, aunque cambie su marca visible.
+for filename,identity in json.loads((ROOT/'compatibilidad.json').read_text())['documentos_publicados'].items():
+ path=ROOT/filename
+ if not path.is_file():continue
+ content=path.read_text()
+ if 'documento_id' in identity:
+  content=re.sub(r'(<meta name="nota-documento" content=")[^"]+',lambda m:m[1]+identity['documento_id'],content,count=1)
+ else:
+  marker='<meta name="nota-titulo-anterior" content="'+html_escape.escape(identity['titulo'],quote=True)+'">'
+  content=content.replace('</title>','</title>\n'+marker,1)
+ path.write_text(content)

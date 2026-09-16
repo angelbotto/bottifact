@@ -14,4 +14,7 @@ for link in re.findall(r'\]\(([^)]+)\)',s):
 assert (ROOT/'agents/openai.yaml').is_file()
 version=json.loads((ROOT/'VERSION.json').read_text());registry=json.loads((ROOT/'registro.json').read_text())
 assert version['componentes']==len(registry['componentes'])
+assert version['skill']==name=='bottifact' and version['nombre']=='Bottifact'
+ui=(ROOT/'agents/openai.yaml').read_text()
+assert 'display_name: "Bottifact"' in ui and '$'+name in ui
 print(f'Skill portable: {len(s.splitlines())} líneas, enlaces vigentes y {len(registry["componentes"])} recetas. Compatible con el formato Agent Skills; no acredita carga automática de un agente.')

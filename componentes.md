@@ -1,4 +1,4 @@
-# Componentes de Nota Tikin
+# Componentes de Bottifact
 
 Para **nuevos artefactos**, escribe contenido con estas recetas y usa el generador de
 [estandar.md](estandar.md): incorpora la llave sol/luna, comentarios, sonido y ayudas de lectura.
@@ -27,7 +27,7 @@ artefactos**: omite los controles que Angel pidió estandarizar. Para crear uno 
 <a class="salto" href="#contenido">Saltar al contenido</a>
 <main class="hoja" data-lectura lang="es">
   <div class="herramientas">
-    <span class="firma-editorial"><span>tikin</span><small>Cuadernos</small></span>
+    <span class="firma-editorial"><span>Bottifact</span><small>Cuadernos</small></span>
     <div class="temas">
       <label for="tema">Papel</label>
       <select id="tema" data-tema>
@@ -318,7 +318,7 @@ no añadas un `onclick` a un `div`. Las portadas con `<img>` deben ser `data:` U
 ```html
 <a class="salto" href="#contenido">Saltar al contenido</a>
 <div class="barra" tabindex="0" role="region" aria-label="Páginas y tema, desplazable">
-  <span class="sello">nota / tikin</span>
+  <span class="sello">bottifact</span>
   <nav aria-label="Páginas del informe">
     <button type="button" data-ir="p1" aria-current="page"><span class="n">01</span>El destino</button>
     <button type="button" data-ir="p2"><span class="n">02</span>La evidencia</button>
@@ -369,7 +369,7 @@ estado: pendiente de medir</code></pre></div><figcaption>Datos de ejemplo, sin u
     <button type="button" data-nav="prev"><span class="et">Anterior</span><span class="tit"></span></button>
     <button type="button" data-nav="next"><span class="et">Siguiente</span><span class="tit"></span></button>
   </div>
-  <footer class="pie">Nota Tikin · Dos capítulos de ejemplo.</footer>
+  <footer class="pie">Bottifact · Dos capítulos de ejemplo.</footer>
 </main>
 ```
 
@@ -848,7 +848,7 @@ paths originales; la animación recorre **su longitud**, no un rectángulo que d
   </div>
   <p data-texto-escritura>«a mano»</p><p class="procedencia">Activa el sonido en Apariencia —o en el control local— y pulsa Repetir para escuchar el trazo.</p>
   <p role="status" aria-live="polite">Trazo completo.</p>
-  <figcaption>Gesto ilustrativo original de Nota Tikin. 2400 ms repartidos por la longitud de cada trazo; la frase siempre permanece escrita debajo.</figcaption>
+  <figcaption>Gesto ilustrativo original de Bottifact. 2400 ms repartidos por la longitud de cada trazo; la frase siempre permanece escrita debajo.</figcaption>
 </figure>
 ```
 
@@ -1595,7 +1595,7 @@ las pestañas locales de Evidencia sí son un tablist. Cada capítulo sigue la r
 ```html
 <a class="salto" href="#contenido">Saltar al contenido</a>
 <header class="edicion-cabecera" id="inicio">
-  <div class="edicion-franja"><a class="firma-editorial" href="#resumen" aria-label="Primer capítulo"><span>tikin</span><small>Estudios de producto</small></a><div class="edicion-acciones"><span>Edición 02</span></div></div>
+  <div class="edicion-franja"><a class="firma-editorial" href="#resumen" aria-label="Primer capítulo"><span>Bottifact</span><small>Estudios de producto</small></a><div class="edicion-acciones"><span>Edición 02</span></div></div>
   <div class="edicion-contexto"><span>Una revisión antes de confirmar</span><span>Septiembre de 2026 · ejemplo ilustrativo</span></div>
 </header>
 <div class="barra capitulos" tabindex="0" role="region" aria-label="Capítulos del informe, desplazables">
@@ -1719,7 +1719,7 @@ las pestañas locales de Evidencia sí son un tablist. Cada capítulo sigue la r
 </div><aside class="aviso ojo"><span class="num">!</span><div><p class="titulo">El prototipo no confirma la hipótesis.</p><p>Este ejemplo no ha registrado sesiones ni enviado datos. El siguiente entregable debe aportar evidencia.</p></div></aside>
 </article>
 <div class="paginacion" data-paginacion><button type="button" data-nav="prev"><span class="et">Anterior</span><span class="tit"></span></button><button type="button" data-nav="next"><span class="et">Siguiente</span><span class="tit"></span></button></div>
-<footer class="pie"><span>tikin · Estudios de producto</span><p>Cuatro capítulos, una pregunta. Datos ilustrativos, sin solicitudes ni registros reales.</p></footer>
+<footer class="pie"><span>Bottifact · Estudios de producto</span><p>Cuatro capítulos, una pregunta. Datos ilustrativos, sin solicitudes ni registros reales.</p></footer>
 </main>
 ```
 
@@ -2588,7 +2588,7 @@ no falsifica presencia, escritura o respuestas de una persona. Para citas reales
 <!-- nota:ejemplo navegacion -->
 ```html
 <div class="ancho navegacion-muestra" id="navegacion-ejemplo">
-  <a class="firma-editorial" href="informe.html#resumen"><span>tikin</span></a>
+  <a class="firma-editorial" href="informe.html#resumen"><span>Bottifact</span></a>
   <nav aria-label="Recorrer el informe"><a href="informe.html#resumen">inicio</a><span class="nav-separador" aria-hidden="true">/</span><a href="informe.html#evidencia">evidencia</a><span class="nav-separador" aria-hidden="true">/</span><a href="informe.html#prototipo">propuesta</a><span class="nav-separador" aria-hidden="true">/</span><a href="informe.html#siguientes">siguiente</a></nav>
 </div>
 ```
@@ -2606,7 +2606,7 @@ La variante no modifica las barras antiguas. Bajo 700 px, los capítulos pasan a
 <!-- nota:ejemplo pie-editorial -->
 ```html
 <footer class="ancho pie-editorial" id="pie-editorial-ejemplo">
-  <div><h3>tikin</h3><nav aria-label="Más del cuaderno"><a href="informe.html#resumen">El informe</a><a href="informe.html#evidencia">Las fuentes y sus límites</a><a href="informe.html#siguientes">Lo que sigue</a></nav></div>
+  <div><h3>Bottifact</h3><nav aria-label="Más del cuaderno"><a href="informe.html#resumen">El informe</a><a href="informe.html#evidencia">Las fuentes y sus límites</a><a href="informe.html#siguientes">Lo que sigue</a></nav></div>
   <div class="pie-carta"><h3>Una nota para quien viene después.</h3><p>Dejamos las preguntas, las fuentes y las decisiones a la vista. Que la siguiente versión pueda comenzar desde aquí.</p><p><em>Este cuaderno sigue abierto.</em></p></div>
   <div class="pie-colofon"><span>Edición ilustrativa · <time datetime="2026-09-14">14 sep 2026</time></span><span>Lectura · evidencia · conversación</span></div>
 </footer>

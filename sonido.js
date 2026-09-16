@@ -1,4 +1,4 @@
-/* Nota Tikin · señales breves, exclusivamente por botones y apagadas al cargar.
+/* Bottifact · señales breves, exclusivamente por botones y apagadas al cargar.
    Cada canal es independiente. Sin archivos, fetch, autoplay ni persistencia. */
 (() => {
   'use strict';

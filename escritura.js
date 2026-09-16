@@ -1,4 +1,4 @@
-/* Nota Tikin · escribir paths SVG en orden, con longitud real y texto equivalente.
+/* Bottifact · escribir paths SVG en orden, con longitud real y texto equivalente.
    Sin RAF. Las animaciones Web Animations se cancelan al reducir movimiento. */
 (() => {
   'use strict';

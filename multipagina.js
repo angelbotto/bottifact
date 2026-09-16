@@ -1,4 +1,4 @@
-/* NOTA TIKIN · multipágina · septiembre 2026
+/* BOTTIFACT · multipágina · septiembre 2026
    Pegar DESPUÉS de interacciones.js, dentro de su propio <script>.
 
    Reparte una nota larga en páginas con su propio temario, sin cargar nada remoto y sin

@@ -1,0 +1,71 @@
+{
+  "documentos_publicados": {
+    "guia.html": {
+      "titulo": "Nota Tikin · Guía de uso y componentes",
+      "documento_id": "nota-d0c75ccb23234396b895a2b5"
+    },
+    "linear-dark.html": {
+      "titulo": "Nota Tikin · Revisión compartida",
+      "documento_id": "nota-laboratorio-colaborativo"
+    },
+    "estandar.html": {
+      "titulo": "Una base que sí acompaña cada documento",
+      "documento_id": "nota-18eb8a62218bfde51a4a440b"
+    },
+    "biblioteca.html": {
+      "titulo": "tikin · Biblioteca editorial"
+    },
+    "pruebas.html": {
+      "titulo": "Nota Tikin · regresiones"
+    },
+    "linear-light.html": {
+      "titulo": "Nota Tikin · Revisión compartida",
+      "documento_id": "nota-laboratorio-colaborativo"
+    },
+    "plantilla.html": {
+      "titulo": "Nota Tikin — la forma también explica"
+    },
+    "liftit.html": {
+      "titulo": "Liftit · Lectura de operación",
+      "documento_id": "nota-7068c39c9ae0e14e27ec1135"
+    },
+    "temas.html": {
+      "titulo": "Nota Tikin · Familias y modos",
+      "documento_id": "nota-guia-temas"
+    },
+    "prioridades.html": {
+      "titulo": "Lo que sigue en Nota Tikin",
+      "documento_id": "nota-f585ac38850aa86a14b773fe"
+    },
+    "colaborativo.html": {
+      "titulo": "Nota Tikin · Revisión compartida",
+      "documento_id": "nota-laboratorio-colaborativo"
+    },
+    "multipagina.html": {
+      "titulo": "Nota Tikin — capítulos"
+    },
+    "informe.html": {
+      "titulo": "tikin · Una revisión antes de confirmar"
+    },
+    "blueprint.html": {
+      "titulo": "Blueprint · Plano de una confirmación",
+      "documento_id": "nota-4c1e42b93b608cb0553de9c8"
+    },
+    "globo.html": {
+      "titulo": "Nota Tikin — globo de rutas"
+    },
+    "evidencia.html": {
+      "titulo": "Nota Tikin · Ocho formas de explicar",
+      "documento_id": "nota-1422a776360cd0b3d51f55d7"
+    },
+    "estandar-capitulos.html": {
+      "titulo": "Una base que sí acompaña cada documento",
+      "documento_id": "nota-18eb8a62218bfde51a4a440b"
+    },
+    "hacker.html": {
+      "titulo": "Hacker · Contrato, código y evidencia",
+      "documento_id": "nota-89402d572e03e91cf880a944"
+    }
+  },
+  "nota": "Identidades de documentos anteriores al cambio de marca; no modificar por estética."
+}

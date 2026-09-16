@@ -1,17 +1,17 @@
 # La misma biblioteca en otro equipo
 
-Nota Tikin incluye un skill (`SKILL.md`), 82 recetas con HTML, criterio y límites, CSS, fuentes,
+Bottifact incluye un skill (`SKILL.md`), 82 recetas con HTML, criterio y límites, CSS, fuentes,
 sonidos y módulos, más scripts Python para generar y validar. Claude, Codex y Hermes pueden leer
 exactamente ese directorio. Los artefactos generados son HTML; no dependen de que el lector tenga
 instalado un agente. Three.js requiere su CDN permitido; los demás recursos van incrustados.
 
 ## Hermes en el MacBook
 
-Descarga [nota-tikin-portable.zip](descargas/nota-tikin-portable.zip) desde el servidor privado de
-Tailscale, descomprímelo y abre una terminal dentro de la carpeta `nota-tikin` extraída:
+Descarga [bottifact-portable.zip](descargas/bottifact-portable.zip) desde el servidor privado de
+Tailscale, descomprímelo y abre una terminal dentro de la carpeta `bottifact` extraída:
 
 ```bash
-python3 scripts/instalar.py --destino ~/.hermes/skills/nota-tikin
+python3 scripts/instalar.py --destino ~/.hermes/skills/bottifact
 ```
 
 El instalador verifica los SHA-256 del paquete, copia sólo sus archivos y no instala dependencias,
@@ -22,7 +22,7 @@ symlink compartido: respalda el enlace y crea una copia independiente en la ruta
 
 Abre una conversación nueva de Hermes y pide:
 
-> Usa el skill nota-tikin. Lee su guia-uso.md, recorre registro.json y elige piezas que expliquen
+> Usa el skill bottifact. Lee su guia-uso.md, recorre registro.json y elige piezas que expliquen
 > este contenido. Genera el HTML con scripts/crear_artefacto.py y valida el archivo final. Conserva
 > la llave de apariencia, los comentarios flotantes y las ayudas de lectura. No inventes datos.
 
@@ -33,17 +33,17 @@ haya recargado sus instrucciones. La instalación en el MacBook debe comprobarse
 
 ## Claude y Codex
 
-Usa el mismo instalador cambiando el destino: `~/.claude/skills/nota-tikin` para Claude Code y
-`~/.agents/skills/nota-tikin` para Codex. También puedes mantener una sola copia canónica y enlaces
+Usa el mismo instalador cambiando el destino: `~/.claude/skills/bottifact` para Claude Code y
+`~/.agents/skills/bottifact` para Codex. También puedes mantener una sola copia canónica y enlaces
 locales deliberados. Nunca uses en el MacBook un enlace a una ruta del Mac mini: no comparte su disco.
 El generador resuelve recursos desde su propia ubicación, no desde un directorio fijo de Claude.
 
 ## Comprobar la instalación sin conectarse a servicios
 
 ```bash
-python3 ~/.hermes/skills/nota-tikin/scripts/verificar_paquete.py ~/.hermes/skills/nota-tikin
-python3 ~/.hermes/skills/nota-tikin/scripts/crear_artefacto.py --contenido ~/.hermes/skills/nota-tikin/ejemplos/estandar-contenido.html --titulo 'Prueba local' --tema blueprint --estilo tecnico --salida /tmp/prueba-nota.html
-python3 ~/.hermes/skills/nota-tikin/scripts/validar_artefacto.py /tmp/prueba-nota.html
+python3 ~/.hermes/skills/bottifact/scripts/verificar_paquete.py ~/.hermes/skills/bottifact
+python3 ~/.hermes/skills/bottifact/scripts/crear_artefacto.py --contenido ~/.hermes/skills/bottifact/ejemplos/estandar-contenido.html --titulo 'Prueba local' --tema blueprint --estilo tecnico --salida /tmp/prueba-nota.html
+python3 ~/.hermes/skills/bottifact/scripts/validar_artefacto.py /tmp/prueba-nota.html
 ```
 
 Abre `/tmp/prueba-nota.html` en el navegador del MacBook. Comprueba apariencia, comentarios y
@@ -62,4 +62,13 @@ Para regenerarlo en una copia de desarrollo ejecuta `python3 scripts/empaquetar.
 
 ## Instalar desde GitHub
 
-El repositorio `angelbotto/nota-tikin` contiene la misma raíz portable. Puedes clonarlo en el directorio de skills con el nombre `nota-tikin`; el repositorio privado requiere acceso de GitHub. Un clone se actualiza con `git pull --ff-only` después de revisar los cambios y comprobar que no hay modificaciones locales. No mezcles ese procedimiento con el instalador de ZIP: cada método conserva su propio origen. La CI adjunta el ZIP verificado como artefacto descargable de cada ejecución correcta.
+El repositorio `angelbotto/bottifact` contiene la misma raíz portable. Puedes clonarlo en el directorio de skills con el nombre `bottifact`; el repositorio privado requiere acceso de GitHub. Un clone se actualiza con `git pull --ff-only` después de revisar los cambios y comprobar que no hay modificaciones locales. No mezcles ese procedimiento con el instalador de ZIP: cada método conserva su propio origen. La CI adjunta el ZIP verificado como artefacto descargable de cada ejecución correcta.
+
+
+## Migrar del nombre anterior
+
+Bottifact reemplaza el nombre público anterior. Instala el ZIP en una carpeta nueva llamada `bottifact`; su frontmatter declara el mismo nombre. Si tenías un enlace de skill antiguo, consérvalo como respaldo fuera de la carpeta de skills y crea el nuevo acceso. Si era un clone con trabajo local o el repositorio principal de varios worktrees, conserva ese repositorio y registra un acceso `bottifact` a su ubicación; no lo borres ni lo muevas como si fuera una copia descargada.
+
+En Claude Code varios accesos simbólicos al mismo destino se deduplican, según su documentación. En Hermes y Codex mantén un único acceso activo por nombre para no divergir. El equipo de desarrollo puede conservar una ruta histórica para Git/Orca; el paquete descargado y las instalaciones nuevas usan `bottifact`.
+
+El renombrado conserva los IDs de ejemplos publicados, las claves locales de comentarios y preferencias, y los formatos anteriores de revisión. No copies comentarios a otro documento cambiando su ID para forzar la importación. Las versiones antiguas descargadas mantienen su contenido hasta que regeneres o actualices sus archivos.

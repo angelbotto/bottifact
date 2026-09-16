@@ -105,7 +105,7 @@ print('Registro local: '+str(len(expected))+' recetas con HTML original, documen
 print('Esto NO comprueba píxeles, audio, WebGL, foco real ni comportamiento del navegador.')
 
 from contrato_artefacto import validate
-for name in ['estandar.html','estandar-capitulos.html','prioridades.html','guia.html','liftit.html','blueprint.html','hacker.html','evidencia.html','colaborativo.html','linear-light.html','linear-dark.html','temas.html']:
+for name in ['estandar.html','estandar-capitulos.html','prioridades.html','guia.html','liftit.html','blueprint.html','hacker.html','evidencia.html','colaborativo.html','linear-light.html','linear-dark.html','temas.html','sistema.html']:
  errors=validate((ROOT/name).read_text());assert not errors,(name,errors)
  print(name+': contrato estándar de artefacto correcto')
 
@@ -130,3 +130,11 @@ for family in DATA["familias"]:
    assert set(palette)>=set(k[2:] for k in palettes[0]), (family["id"],mode,"Tokens incompletos")
    assert f':root[data-theme="{family["id"]}-{mode}"]' in css
 print(f"{len(FAMILIES)} familias con claro/oscuro y selector Sistema verificadas")
+
+compat=json.loads((ROOT/'compatibilidad.json').read_text())['documentos_publicados']
+for filename,identity in compat.items():
+ html=(ROOT/filename).read_text()
+ if 'documento_id' in identity:
+  assert 'name="nota-documento" content="'+identity['documento_id']+'"' in html,filename
+ else:assert 'name="nota-titulo-anterior"' in html,filename
+print('Identidades publicadas conservadas tras el cambio de marca')

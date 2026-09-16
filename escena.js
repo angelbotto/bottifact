@@ -1,4 +1,4 @@
-/* Nota Tikin · evidencia espacial. Requiere Three.js 0.160.1, incluido UNA sola vez.
+/* Bottifact · evidencia espacial. Requiere Three.js 0.160.1, incluido UNA sola vez.
    Tabla de datos permanente; una instancia por figura; sin texturas externas. */
 (() => {
   'use strict';

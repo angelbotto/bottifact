@@ -1,0 +1,59 @@
+[
+  {
+    "brand": "Bottifact",
+    "brandRect": {
+      "left": 20,
+      "right": 95.546875
+    },
+    "comments": true,
+    "height": 740,
+    "panel": {
+      "bottom": 728,
+      "left": 12,
+      "right": 308,
+      "top": 63.5
+    },
+    "scrollWidth": 320,
+    "tables": 2,
+    "title": "Bottifact · El sistema y su evolución",
+    "width": 320
+  },
+  {
+    "brand": "Bottifact",
+    "brandRect": {
+      "left": 20,
+      "right": 95.546875
+    },
+    "comments": true,
+    "height": 844,
+    "panel": {
+      "bottom": 832,
+      "left": 12,
+      "right": 378,
+      "top": 63.5
+    },
+    "scrollWidth": 390,
+    "tables": 2,
+    "title": "Bottifact · El sistema y su evolución",
+    "width": 390
+  },
+  {
+    "brand": "Bottifact",
+    "brandRect": {
+      "left": 224,
+      "right": 299.546875
+    },
+    "comments": true,
+    "height": 960,
+    "panel": {
+      "bottom": 918.484375,
+      "left": 656,
+      "right": 1216,
+      "top": 63.5
+    },
+    "scrollWidth": 1440,
+    "tables": 2,
+    "title": "Bottifact · El sistema y su evolución",
+    "width": 1440
+  }
+]

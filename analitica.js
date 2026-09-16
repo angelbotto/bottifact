@@ -1,4 +1,4 @@
-/* Nota Tikin · analítica local. La tabla es la única fuente de cifras.
+/* Bottifact · analítica local. La tabla es la única fuente de cifras.
    Sin red, sin animación automática, SVG accesible y selección por teclado. */
 (() => {
   'use strict';

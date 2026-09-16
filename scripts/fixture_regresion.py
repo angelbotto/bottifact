@@ -25,4 +25,4 @@ def build(start,script):
  <div class="paginacion" data-paginacion><button type="button" data-nav="prev"><span class="et">Anterior</span><span class="tit"></span></button><button type="button" data-nav="next"><span class="et">Siguiente</span><span class="tit"></span></button></div>
  <footer class="pie">Fixture de regresión. No contiene datos de producción.</footer>
 </main>'''
- (ROOT/'pruebas.html').write_text(start('Nota Tikin · regresiones')+body+script('interacciones.js')+script('multipagina.js'))
+ (ROOT/'pruebas.html').write_text(start('Bottifact · regresiones')+body+script('interacciones.js')+script('multipagina.js'))

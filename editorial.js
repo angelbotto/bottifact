@@ -1,4 +1,4 @@
-/* NOTA TIKIN · archivos y configuración editorial local. Sin red ni persistencia. */
+/* BOTTIFACT · archivos y configuración editorial local. Sin red ni persistencia. */
 (() => {
   'use strict';
   const instances=new WeakMap(),normal=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('es');
