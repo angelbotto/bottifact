@@ -2,6 +2,7 @@
 """Publica HTML y recupera comentarios del portal Bottifact con una conexión personal."""
 import argparse
 import getpass
+import socket
 import json
 import os
 import re
@@ -50,7 +51,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--config',type=Path,default=CONFIG)
     sub=p.add_subparsers(dest='command',required=True)
     c=sub.add_parser('conectar');c.add_argument('--servidor',required=True);c.add_argument('--token-archivo',type=Path)
-    c=sub.add_parser('publicar');c.add_argument('--archivo',type=Path,required=True);c.add_argument('--titulo',required=True);c.add_argument('--espacio',default='Personal');c.add_argument('--artefacto-id');c.add_argument('--visibilidad',choices=['private','unlisted','public']);c.add_argument('--modo',choices=['draft','published']);c.add_argument('--agente',default='');c.add_argument('--sesion',default='');c.add_argument('--nuevo',action='store_true',help='Crear otro enlace aun si el documento ya fue publicado desde este equipo.')
+    c=sub.add_parser('publicar');c.add_argument('--archivo',type=Path,required=True);c.add_argument('--titulo',required=True);c.add_argument('--espacio',default='Personal');c.add_argument('--artefacto-id');c.add_argument('--visibilidad',choices=['private','unlisted','public']);c.add_argument('--modo',choices=['draft','published']);c.add_argument('--agente',default='');c.add_argument('--sesion',default='');c.add_argument('--dispositivo',default='');c.add_argument('--nuevo',action='store_true',help='Crear otro enlace aun si el documento ya fue publicado desde este equipo.')
     c=sub.add_parser('comentarios');c.add_argument('--artefacto-id');c.add_argument('--abiertos',action='store_true');c.add_argument('--tipo',choices=['all','comment','note'],default='all');c.add_argument('--salida',type=Path)
     sub.add_parser('estado');c=sub.add_parser('listar');c.add_argument('--buscar',default='')
     c=sub.add_parser('preferencias');c.add_argument('--publicar-al-crear',choices=['si','no'],required=True)
@@ -91,7 +92,7 @@ def main():
             if own:aid=own[0]['id']
         if aid and (len(aid)!=32 or any(x not in '0123456789abcdef' for x in aid)):raise SystemExit('ID de artefacto inválido.')
         if aid and args.visibilidad:raise SystemExit('Las revisiones conservan permisos; usa Compartir en el portal para cambiarlos.')
-        body={'title':args.titulo,'space':args.espacio,'html':content,'mode':args.modo or ('draft' if aid else 'published'),'source':{'agent':args.agente,'session':args.sesion}}
+        body={'title':args.titulo,'space':args.espacio,'html':content,'mode':args.modo or ('draft' if aid else 'published'),'source':{'agent':args.agente,'session':args.sesion,'device':args.dispositivo or os.environ.get('BOTTIFACT_DEVICE','') or socket.gethostname()}}
         if args.visibilidad:body['visibility']=args.visibilidad
         result=request(base,token,'/api/artifacts'+('/'+aid+'/versions' if aid else ''),body)
         receipts[key]={**result,'document_id':match[1],'saved_at':int(time.time())};private_json(receipt_file,receipts)

@@ -14,6 +14,8 @@ from portal.search import extract_text
 
 
 def migrate(db):
+    from portal.knowledge import migrate as migrate_knowledge
+    migrate_knowledge(db)
     db.executescript('''
     CREATE TABLE IF NOT EXISTS version_meta(version TEXT PRIMARY KEY REFERENCES versions(id),state TEXT NOT NULL,title TEXT NOT NULL,space TEXT NOT NULL,source TEXT NOT NULL DEFAULT '{}');
     CREATE TABLE IF NOT EXISTS artifact_meta(artifact TEXT PRIMARY KEY REFERENCES artifacts(id),tags TEXT NOT NULL DEFAULT '[]',collections TEXT NOT NULL DEFAULT '[]',archived INTEGER NOT NULL DEFAULT 0);
@@ -52,7 +54,7 @@ def visible_events(db, a, user, can_review=True, can_edit=False):
 def provenance(body, clean):
     value=body.get('source',{})
     if not isinstance(value,dict):clean(None)  # raises the standard validation error
-    return {k:clean(value.get(k,''),200,True) for k in ['agent','session','label']}
+    return {k:clean(value.get(k,''),200,True) for k in ['agent','session','label','device']}
 
 
 def normalize(text):return ' '.join(text.split())
@@ -134,6 +136,7 @@ def prompt_bundle(items):
                     'Estado: '+('resuelto' if n['resolved'] else 'pendiente'),'Autor: '+n['author']+' · '+stamp,'Abrir contexto: '+c['url'],
                     'Versión de origen: '+n['version'],'SHA-256 del HTML original: '+c['version_sha256'],'Versión publicada actual: '+str(c['current_version']),
                     'Agente de origen: '+(source.get('agent') or 'no registrado'),'Sesión de creación del artefacto: '+(source.get('session') or 'no registrada'),
+                    'Dispositivo de creación: '+(source.get('device') or 'no registrado'),
                     'Sesión o encargo de esta nota: '+(n.get('session') or 'no registrado'),
                     'Capítulo: '+an.get('page',''),'Sección: '+an.get('section',''),'Referencia: #'+an.get('reference',''),
                     'Estado del ancla: '+c['anchor_status']+' (exact=conservada; moved=posible traslado; changed=modificada; missing=ausente; ambiguous=varias coincidencias)',

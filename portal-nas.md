@@ -136,3 +136,7 @@ python -m portal.backup restore /backups/snapshot-FECHA-ID /destino/nuevo
 ```
 
 La restauración rechaza destinos existentes y nunca sobrescribe producción. Para recuperación real, verifica el resultado aislado, configura las credenciales desde el respaldo privado, detén el servicio y cambia su volumen de datos de forma deliberada. Referencias: [SQLite Online Backup API](https://www.sqlite.org/backup.html), [idempotencia de Resend](https://resend.com/docs/dashboard/emails/idempotency-keys), [modelo de anotaciones W3C](https://www.w3.org/TR/annotation-model/). Bottifact conserva selectores y citas propios; no declara conformidad completa con ese modelo.
+
+## Biblioteca y procedencia
+
+La guía vigente de búsqueda, galería/lista/tabla, mapa de relaciones y clasificación corregible está en [biblioteca-conectada.md](biblioteca-conectada.md). Las nuevas publicaciones del CLI guardan dispositivo, agente y sesión conocida por versión. Estos metadatos pertenecen al creador; los archivos antiguos sin procedencia mantienen ese límite visible.

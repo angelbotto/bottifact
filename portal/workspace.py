@@ -25,9 +25,11 @@ def mount_workspace(app,store,origin,who,account,payload,clean,artifact_for,perm
                 updated=t.get('updated',t['time'])
                 thread_seen=db.execute('SELECT seen FROM thread_reads WHERE user=? AND thread=?',(u['id'],t['thread'])).fetchone()
                 read_at=max(seen['seen'] if seen else 0,thread_seen['seen'] if thread_seen else 0)
+                context=context_for(store,db,a,t,origin)
+                if a['owner']!=u['id']:context['source']={}
                 items.append({'artifact':a['id'],'title':a['title'],'space':a['space'],'thread':t,
                               'unread':updated>read_at,'permissions':p,
-                              'context':context_for(store,db,a,t,origin)})
+                              'context':context})
         return items
 
     @app.get('/api/inbox')
@@ -66,6 +68,13 @@ def mount_workspace(app,store,origin,who,account,payload,clean,artifact_for,perm
                 values=body.get(key,old[key])
                 if not isinstance(values,list) or len(values)>20:raise HTTPException(422,'Máximo 20 etiquetas o colecciones.')
                 old[key]=list(dict.fromkeys(clean(v,60) for v in values))
+            if 'category' in body or 'automatic' in body:
+                previous=db.execute('SELECT * FROM knowledge_overrides WHERE artifact=?',(aid,)).fetchone()
+                category=body.get('category',previous['category'] if previous else None)
+                if category is not None:category=clean(category,60,True) or None
+                automatic=body.get('automatic',bool(previous['automatic']) if previous else True)
+                if not isinstance(automatic,bool):raise HTTPException(422,'Clasificación automática inválida.')
+                db.execute('INSERT INTO knowledge_overrides VALUES(?,?,?) ON CONFLICT(artifact) DO UPDATE SET category=excluded.category,automatic=excluded.automatic',(aid,category,int(automatic)))
             archived=body.get('archived',old['archived'])
             if not isinstance(archived,bool):raise HTTPException(422,'Estado de archivo inválido.')
             db.execute('INSERT INTO artifact_meta VALUES(?,?,?,?) ON CONFLICT(artifact) DO UPDATE SET tags=excluded.tags,collections=excluded.collections,archived=excluded.archived',(aid,json.dumps(old['tags']),json.dumps(old['collections']),int(archived)))

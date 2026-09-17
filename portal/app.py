@@ -22,6 +22,7 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse, Response, FileResponse
 from portal.workflows import migrate, metadata, version_state, visible_events, provenance, enqueue
 from portal.workspace import mount_workspace
+from portal.knowledge import enrich, connections
 from portal.auth import mount_auth
 from portal.preview import preview_html
 from portal.search import index_document, match_query, normalized, window
@@ -98,6 +99,10 @@ class Store:
 
     def refresh_search(self):
         with self.db() as db:
+            revision=db.execute("SELECT value FROM operation_status WHERE key='search_revision'").fetchone()
+            if not revision or revision['value']!='2':
+                db.execute('DELETE FROM artifact_fts')
+                db.execute("INSERT OR REPLACE INTO operation_status VALUES('search_revision','2')")
             pending=db.execute('SELECT a.*,v.sha FROM artifacts a JOIN versions v ON v.id=a.current_version LEFT JOIN artifact_fts f ON f.artifact=a.id WHERE f.artifact IS NULL OR f.version<>a.current_version OR f.title<>a.title OR f.space<>a.space').fetchall()
             for artifact in pending:
                 index_document(db,artifact,(self.files/(artifact['sha']+'.html')).read_text())
@@ -384,25 +389,36 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
                     meta=metadata(db,a['id'])
                     if not params.get('document_id') and bool(meta['archived']) != (view=='archived'):continue
                     drafts=db.execute("SELECT count(*) FROM versions v JOIN version_meta m ON m.version=v.id WHERE v.artifact=? AND m.state='draft'",(a['id'],)).fetchone()[0] if p['edit'] else 0
-                    rows.append({**dict(a),**meta,'drafts':drafts,'permissions':p,'open_comments':sum(not n['resolved'] for n in notes)})
+                    rows.append({**dict(a),**meta,**enrich(db,a,u),'drafts':drafts,'permissions':p,'open_comments':sum(not n['resolved'] for n in notes)})
             if u and not public and view!='shared':
                 for b in db.execute('SELECT * FROM bookmarks WHERE (owner=? OR ?) AND id NOT IN (SELECT bookmark FROM bookmark_migrations) ORDER BY created DESC',(u['id'],is_admin(u))):
-                    rows.append({**dict(b),'external':True,'visibility':'external','updated':b['created'],'open_comments':0,'permissions':{'read':True,'review':False,'comment':False,'edit':False,'manage':False,'role':'owner'}})
+                    rows.append({**dict(b),'external':True,'category':'Enlaces','visibility':'external','updated':b['created'],'open_comments':0,'permissions':{'read':True,'review':False,'comment':False,'edit':False,'manage':False,'role':'owner'}})
             summary={'total':len(rows),'open_comments':sum(a['open_comments'] for a in rows),'shared':sum(a['visibility'] not in ('private','external') for a in rows)}
             spaces=sorted({a['space'] for a in rows})
             collections=sorted({v for a in rows for v in a.get('collections',[])})
-            tags=sorted({v for a in rows for v in a.get('tags',[])})
-            rows=[a for a in rows if (not params.get('collection') or params['collection'] in a.get('collections',[])) and (not params.get('tag') or params['tag'] in a.get('tags',[]))]
+            tags=sorted({v for a in rows for v in a.get('tags',[])+a.get('auto_tags',[])})
+            rows=[a for a in rows if (not params.get('collection') or params['collection'] in a.get('collections',[])) and (not params.get('tag') or params['tag'] in a.get('tags',[])+a.get('auto_tags',[]))]
+            categories=sorted({a.get('category','Sin clasificar') for a in rows})
+            if params.get('category'):rows=[a for a in rows if a.get('category')==params['category']]
             if query:
                 expression=match_query(query)
-                hits={r['artifact']:r['excerpt'] for r in db.execute("SELECT artifact,snippet(artifact_fts,4,'','',' … ',26) AS excerpt FROM artifact_fts WHERE artifact_fts MATCH ?",(expression,))} if expression else {}
-                rows=[{**a,'excerpt':hits.get(a['id'],'')} for a in rows if a['id'] in hits or (a.get('external') and normalized(query) in normalized(a['title']+' '+a['space']))]
+                hits={r['artifact']:{'excerpt':r['excerpt'],'rank':r['rank']} for r in db.execute("SELECT artifact,bm25(artifact_fts,0,0,8,3,1) AS rank,snippet(artifact_fts,4,'','',' … ',26) AS excerpt FROM artifact_fts WHERE artifact_fts MATCH ?",(expression,))} if expression else {}
+                words=normalized(query).split()
+                def metadata_match(a):
+                    value=normalized(' '.join(a.get('tags',[])+a.get('auto_tags',[])+a.get('collections',[])+[a.get('category',''),a['title'],a['space']]+list(a.get('source',{}).values())))
+                    return all(w in value for w in words)
+                rows=[{**a,**hits.get(a['id'],{'excerpt':'','rank':0})} for a in rows if a['id'] in hits or metadata_match(a)]
             rows=[a for a in rows if (not params.get('space') or a['space']==params['space']) and (not params.get('access') or a['visibility']==params['access'])]
             if params.get('document_id'):rows=[a for a in rows if a.get('document_id')==params['document_id']]
             total=len(rows)
+            if params.get('graph')=='1':
+                rows=[a for a in rows if not a.get('external')]
+                total=len(rows)
+                nodes=sorted(rows,key=lambda a:(-a['updated'],a['id']))[:120]
+                return {'nodes':nodes,'edges':connections(nodes),'total':total,'truncated':total>len(nodes)}
             try:rows,cursor=window(rows,params)
             except (ValueError,TypeError,KeyError,UnicodeError):raise HTTPException(422,'Búsqueda o cursor inválido.') from None
-            return {'artifacts':rows,'total':total,'next_cursor':cursor,'summary':summary,'spaces':spaces,'collections':collections,'tags':tags}
+            return {'artifacts':rows,'total':total,'next_cursor':cursor,'summary':summary,'spaces':spaces,'collections':collections,'tags':tags,'categories':categories}
 
     @app.post('/api/bookmarks')
     async def bookmark(request: Request):
@@ -485,7 +501,7 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
         with store.db() as db:
             a = artifact_for(db,aid,u);p = permissions(db,a,u)
             owner=bool(u and u['id']==a['owner'])
-            return {**a,**metadata(db,aid),'permissions':p,'versions':[dict(v) for v in db.execute("SELECT v.id,v.created,COALESCE(m.state,'published') AS state,m.source FROM versions v LEFT JOIN version_meta m ON m.version=v.id WHERE v.artifact=? AND (? OR v.id=?) ORDER BY v.rowid DESC",(aid,owner,a['current_version']))],
+            return {**a,**metadata(db,aid),**enrich(db,a,u),'permissions':p,'versions':[{**dict(v),'source':v['source'] if owner else '{}'} for v in db.execute("SELECT v.id,v.created,COALESCE(m.state,'published') AS state,m.source FROM versions v LEFT JOIN version_meta m ON m.version=v.id WHERE v.artifact=? AND (? OR v.id=?) ORDER BY v.rowid DESC",(aid,owner,a['current_version']))],
                     'grants':[dict(g) for g in db.execute('SELECT email,role FROM grants WHERE artifact=?',(aid,))] if p['manage'] else []}
 
     @app.put('/api/artifacts/{aid}/access')

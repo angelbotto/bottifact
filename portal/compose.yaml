@@ -3,7 +3,7 @@ services:
     build:
       context: ..
       dockerfile: portal/Dockerfile
-    image: bottifact-portal:2026.09.17-workspace.1
+    image: bottifact-portal:2026.09.17-atlas.1
     container_name: bottifact-portal
     restart: unless-stopped
     env_file: /volume1/docker/bottifact/config.env
@@ -29,7 +29,7 @@ services:
       driver: json-file
       options: {max-size: 5m, max-file: '3'}
   worker:
-    image: bottifact-portal:2026.09.17-workspace.1
+    image: bottifact-portal:2026.09.17-atlas.1
     pull_policy: never
     container_name: bottifact-worker
     command: [python, -m, portal.worker]

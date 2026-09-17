@@ -13,16 +13,20 @@ class DocumentText(HTMLParser):
         self.skip=[]; self.parts=[]; self.size=0
 
     def handle_starttag(self, tag, attrs):
-        if tag in ('script','style','nav','button','dialog','select','textarea','template'):
-            self.skip.append(tag)
-        elif tag=='img' and not self.skip:
-            self.handle_data(dict(attrs).get('alt',''))
+        values=dict(attrs)
+        hidden=tag in ('script','style','nav','header','footer','button','dialog','select','textarea','template','title','label') or 'popover' in values or values.get('role')=='dialog' or any(c in values.get('class','').split() for c in ('apariencia-panel','nota-revision','nota-regla','nota-indice','skip','salto'))
+        void=tag in ('area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr')
+        if not void:self.skip.append((tag,hidden or bool(self.skip and self.skip[-1][1])))
+        if tag=='img' and not (self.skip and self.skip[-1][1]):self.handle_data(values.get('alt',''))
 
     def handle_endtag(self, tag):
-        if self.skip and tag==self.skip[-1]:self.skip.pop()
+        for i in range(len(self.skip)-1,-1,-1):
+            if self.skip[i][0]==tag:
+                del self.skip[i:]
+                break
 
     def handle_data(self, data):
-        if not self.skip and self.size<1000000:
+        if not (self.skip and self.skip[-1][1]) and self.size<1000000:
             text=' '.join(data.split())
             if text:self.parts.append(text);self.size+=len(text)+1
 
@@ -51,6 +55,7 @@ def window(rows, params):
     """Cursor por clave estable; las altas nuevas no desplazan páginas existentes."""
     sort=params.get('sort','recent')
     def key(a):
+        if sort=='relevance':return (a.get('rank',0),-a['updated'],a['id'])
         if sort=='title':return (normalized(a['title']),a['id'])
         if sort=='comments':return (-a['open_comments'],-a['updated'],a['id'])
         return (-a['updated'],a['id'])
@@ -58,7 +63,7 @@ def window(rows, params):
     if 'limit' not in params:return rows,None
     limit=int(params['limit'])
     if not 1<=limit<=60:raise ValueError('Límite inválido.')
-    signature=hashlib.sha256(json.dumps({k:params.get(k,'') for k in ['q','view','space','access','sort','document_id','collection','tag']},sort_keys=True).encode()).hexdigest()[:16]
+    signature=hashlib.sha256(json.dumps({k:params.get(k,'') for k in ['q','view','space','access','sort','document_id','collection','tag','category']},sort_keys=True).encode()).hexdigest()[:16]
     if params.get('cursor'):
         if len(params['cursor'])>2048:raise ValueError('Cursor inválido.')
         cursor=json.loads(base64.urlsafe_b64decode(params['cursor']).decode())
