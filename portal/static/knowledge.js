@@ -17,6 +17,7 @@ window.BottifactKnowledge = (() => {
       sidebar.replaceChildren(make('p',node.category,'eyebrow'),make('h2',node.title),make('p',node.space+' · '+edges.length+' conexiones visibles','muted'));const open=make('button','Vista previa','primary');open.addEventListener('click',()=>peek(node));sidebar.append(open,make('h3','Qué conecta estas ideas'));
       if(!edges.length)sidebar.append(make('p','Aún no hay temas o colecciones compartidos en esta selección.','muted'));
       for(const e of edges){const other=nodes.get(e.source===id?e.target:e.source),b=make('button',undefined,'atlas-related');b.append(make('strong',other.title),make('span',e.reasons.join(' · ')));b.addEventListener('click',()=>select(other.id));sidebar.append(b);}
+      sidebar.append(accessible);
     }
     for(const n of data.nodes){const pos=positions.get(n.id),g=document.createElementNS(ns,'g'),c=document.createElementNS(ns,'circle'),t=document.createElementNS(ns,'title');g.setAttribute('transform',`translate(${pos.x} ${pos.y})`);g.setAttribute('class','atlas-node group-'+(pos.group%6));g.setAttribute('tabindex','0');g.setAttribute('role','button');g.setAttribute('aria-label',n.title);c.setAttribute('r','9');t.textContent=n.title;g.append(c,t);g.addEventListener('click',()=>select(n.id));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(n.id);}});layer.append(g);nodeEls.push([g,n]);}
     const controls=make('div',undefined,'atlas-controls');let zoom=1,tx=0,ty=0,start=null;
