@@ -33,8 +33,12 @@ def main():
         with sqlite3.connect(out/'bottifact.sqlite3') as snap:
             assert snap.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
             hashes=[x[0] for x in snap.execute('SELECT DISTINCT sha FROM versions')]
+            versions=[x[0] for x in snap.execute('SELECT id FROM versions')]
         (out/'files').mkdir(mode=0o700)
         for sha in hashes:shutil.copy2(store.files/(sha+'.html'),out/'files'/(sha+'.html'))
+        for version in versions:
+            attachments=store.files/'attachments'/version
+            if attachments.is_dir():shutil.copytree(attachments,out/'files'/'attachments'/version)
         (out/'backup.json').write_text(json.dumps({'created':int(time.time()),'files':len(hashes),'schema':1}))
         print('Respaldo íntegro: '+str(out));return
     user=store.user(args.email,args.name)

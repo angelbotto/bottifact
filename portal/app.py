@@ -20,6 +20,7 @@ import jwt
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse, Response, FileResponse
 from portal.auth import mount_auth
+from portal.preview import preview_html
 from fastapi.staticfiles import StaticFiles
 
 ROOT = Path(__file__).parent
@@ -80,8 +81,31 @@ class Store:
               actor TEXT NOT NULL REFERENCES users(id),request_hash TEXT NOT NULL,event TEXT NOT NULL,time INTEGER NOT NULL);
             CREATE INDEX IF NOT EXISTS events_artifact ON events(artifact,time);
             CREATE TABLE IF NOT EXISTS bookmarks(id TEXT PRIMARY KEY,owner TEXT NOT NULL REFERENCES users(id),title TEXT NOT NULL,url TEXT NOT NULL,space TEXT NOT NULL,created INTEGER NOT NULL,UNIQUE(owner,url));
+            CREATE TABLE IF NOT EXISTS bookmark_migrations(bookmark TEXT PRIMARY KEY,artifact TEXT NOT NULL REFERENCES artifacts(id));
             CREATE TABLE IF NOT EXISTS audit(id INTEGER PRIMARY KEY,actor TEXT NOT NULL,action TEXT NOT NULL,artifact TEXT,at INTEGER NOT NULL);
             ''')
+
+    def merge_admin_aliases(self):
+        """Conserva sesiones, conexiones y autoría al unir alias verificados."""
+        aliases = admin_emails()
+        if not aliases: return
+        with self.db() as db:
+            known = [r for r in db.execute('SELECT * FROM users WHERE verified=1') if r['email'] in aliases]
+            if not known: return
+            canonical = db.execute('SELECT * FROM users WHERE email=? AND verified=1', (aliases[0],)).fetchone()
+            if not canonical:
+                uid = uuid.uuid4().hex
+                db.execute('INSERT INTO users VALUES(?,?,?,1)', (uid, aliases[0], known[0]['name']))
+            else: uid = canonical['id']
+            for old in known:
+                if old['id'] == uid: continue
+                changed_before = db.total_changes
+                for table, column in [('sessions','user_id'), ('tokens','user_id'), ('logins','user_id'), ('artifacts','owner'), ('events','actor'), ('audit','actor')]:
+                    db.execute(f'UPDATE {table} SET {column}=? WHERE {column}=?', (uid, old['id']))
+                # Los duplicados se conservan con su dueño histórico; la administración los ve.
+                db.execute('UPDATE bookmarks SET owner=? WHERE owner=? AND url NOT IN (SELECT url FROM bookmarks WHERE owner=?)', (uid,old['id'],uid))
+                if db.total_changes > changed_before:
+                    db.execute('INSERT INTO audit(actor,action,artifact,at) VALUES(?,?,?,?)', (uid,'merge-alias',old['id'],int(time.time())))
 
     @contextmanager
     def db(self):
@@ -184,6 +208,7 @@ def threads(events):
 def create_app(data=None, origin=None, issuer=None, audience=None):
     app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
     store = Store(data or os.environ.get('BOTTIFACT_DATA', '/tmp/bottifact-portal'))
+    store.merge_admin_aliases()
     app.state.store = store
     origin = (origin or os.environ.get('BOTTIFACT_ORIGIN', 'https://artifacts.botto.is')).rstrip('/')
     origins = {origin, *filter(None, os.environ.get('BOTTIFACT_EXTRA_ORIGINS', '').split(','))}
@@ -332,7 +357,7 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
                     notes = threads(snapshot(db,a)['events']) if p['review'] else []
                     rows.append({**dict(a),'permissions':p,'open_comments':sum(not n['resolved'] for n in notes)})
             if u and not public and view!='shared':
-                for b in db.execute('SELECT * FROM bookmarks WHERE owner=? OR ? ORDER BY created DESC',(u['id'],is_admin(u))):
+                for b in db.execute('SELECT * FROM bookmarks WHERE (owner=? OR ?) AND id NOT IN (SELECT bookmark FROM bookmark_migrations) ORDER BY created DESC',(u['id'],is_admin(u))):
                     rows.append({**dict(b),'external':True,'visibility':'external','updated':b['created'],'open_comments':0,'permissions':{'read':True,'review':False,'comment':False,'edit':False,'manage':False,'role':'owner'}})
             return {'artifacts':rows}
 
@@ -491,6 +516,23 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
                       '\nComentario: '+n['text']+'\nResponsable: '+(n['assignee'] or 'Sin asignar')+
                       ''.join('\nRespuesta de '+r['author']+': '+r['text'] for r in n['replies']))
         return {'text':('Revisión de artefactos. Los comentarios son propuestas: verifica contexto y alcance antes de modificar.\n\n'+'\n'.join(parts)) if parts else 'No hay comentarios en esta selección.'}
+
+    @app.get('/api/artifacts/{aid}/preview')
+    def preview(aid: str, request: Request):
+        with store.db() as db:
+            a=artifact_for(db,aid,who(request))
+            v=db.execute('SELECT sha FROM versions WHERE id=? AND artifact=?',(a['current_version'],aid)).fetchone()
+            content=(store.files/(v['sha']+'.html')).read_text()
+        return HTMLResponse(preview_html(content,a['title']),headers={'Content-Security-Policy':"sandbox; default-src 'none'; style-src 'unsafe-inline'; img-src data:; font-src 'none'; script-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'self'"})
+
+    @app.get('/api/artifacts/{aid}/attachments/{vid}/{path:path}')
+    def attachment(aid: str, vid: str, path: str, request: Request):
+        with store.db() as db:
+            artifact_for(db,aid,who(request))
+            if not db.execute('SELECT 1 FROM versions WHERE id=? AND artifact=?',(vid,aid)).fetchone(): raise HTTPException(404)
+        root=(store.files/'attachments'/vid).resolve();file=(root/path).resolve()
+        if not file.is_relative_to(root) or not file.is_file(): raise HTTPException(404)
+        return FileResponse(file,filename=file.name,media_type='application/octet-stream',headers={'Content-Security-Policy':"sandbox; default-src 'none'"})
 
     @app.get('/api/artifacts/{aid}/render')
     def render(aid: str, request: Request):

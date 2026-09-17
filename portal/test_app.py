@@ -171,4 +171,25 @@ class PortalTests(unittest.TestCase):
             self.assertEqual(self.guest.get('/api/session').json()['user']['email'],'invited@example.com')
 
 
-if __name__=='__main__': unittest.main()
+
+class PreviewAndAttachmentTests(unittest.TestCase):
+    setUp=PortalTests.setUp
+    tearDown=PortalTests.tearDown
+    client=PortalTests.client
+    access=PortalTests.access
+    def test_private_preview_and_attachment_follow_document_permissions(self):
+        from pathlib import Path
+        root=self.store.files/'attachments'/self.a['version'];root.mkdir(parents=True)
+        (root/'evidence.csv').write_text('id,total\n1,100')
+        preview=self.path+'/preview';attachment=self.path+'/attachments/'+self.a['version']+'/evidence.csv'
+        for c in [self.other,self.guest]:
+            self.assertEqual(c.get(preview).status_code,404)
+            self.assertEqual(c.get(attachment).status_code,404)
+        r=self.owner.get(preview);self.assertEqual(r.status_code,200);self.assertIn("script-src 'none'",r.headers['content-security-policy']);self.assertNotIn('<script',r.text)
+        r=self.owner.get(attachment);self.assertEqual(r.status_code,200);self.assertIn('attachment',r.headers['content-disposition'])
+        self.assertEqual(self.owner.get(self.path+'/attachments/'+self.a['version']+'/%2e%2e/bottifact.sqlite3').status_code,404)
+        self.access(visibility='public',comments='readers',guests=False,grants=[])
+        self.assertEqual(self.guest.get(preview).status_code,200)
+        self.assertEqual(self.guest.get(attachment).status_code,200)
+
+if __name__=='__main__':unittest.main()

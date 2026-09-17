@@ -122,4 +122,27 @@ class AuthTests(unittest.TestCase):
         self.assertIsNone(self.c.get('/api/session').json()['user'])
         with self.store.db() as db:self.assertEqual(db.execute('SELECT count(*) FROM auth_challenges').fetchone()[0],0)
 
+
+class AliasMigrationTests(unittest.TestCase):
+    def test_existing_alias_sessions_tokens_documents_and_comments_move_together(self):
+        with tempfile.TemporaryDirectory() as directory, patch.dict(os.environ,{'BOTTIFACT_ADMIN_EMAILS':''}):
+            app=create_app(directory,origin=ORIGIN);store=app.state.store
+            primary=store.user('owner@example.com','Owner');old=store.user('tikin@example.com','Owner Tikin')
+            cookie=store.session(old['id']);token=store.token(old['id'])
+            c=TestClient(app,base_url=ORIGIN,headers={'Origin':ORIGIN});c.cookies.set(COOKIE,cookie)
+            a=c.post('/api/artifacts',json={'title':'Antes de unir','html':HTML}).json()
+            event={'id':'alias-note','kind':'create','version':a['version'],'text':'Comentario conservado','anchor':{'reference':'dato','tag':'P','text':'dato','quote':'dato','page':'Informe','x':.5,'y':.5}}
+            self.assertEqual(c.post('/api/artifacts/'+a['id']+'/review',json=event).status_code,200)
+            with patch.dict(os.environ,{'BOTTIFACT_ADMIN_EMAILS':'owner@example.com,tikin@example.com,liftit@example.com'}):
+                rebuilt=create_app(directory,origin=ORIGIN);client=TestClient(rebuilt,base_url=ORIGIN,headers={'Origin':ORIGIN});client.cookies.set(COOKIE,cookie)
+                self.assertEqual(client.get('/api/session').json()['user']['id'],primary['id'])
+                self.assertEqual(rebuilt.state.store.user('liftit@example.com','Owner')['id'],primary['id'])
+                self.assertEqual(client.get('/api/artifacts').json()['artifacts'][0]['owner'],primary['id'])
+                self.assertEqual(len(client.get('/api/inbox').json()['items']),1)
+                self.assertIn('Comentario conservado',client.get('/api/review/export').json()['text'])
+                agent=TestClient(rebuilt,base_url=ORIGIN,headers={'Authorization':'Bearer '+token})
+                self.assertEqual(agent.get('/api/session').json()['user']['id'],primary['id'])
+                rebuilt.state.store.merge_admin_aliases()
+                with rebuilt.state.store.db() as db:self.assertEqual(db.execute("SELECT count(*) FROM audit WHERE action='merge-alias'").fetchone()[0],1)
+
 if __name__=='__main__':unittest.main()
