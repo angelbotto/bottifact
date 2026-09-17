@@ -3,7 +3,7 @@ services:
     build:
       context: ..
       dockerfile: portal/Dockerfile
-    image: bottifact-portal:2026.09.17-portal.5
+    image: bottifact-portal:2026.09.17-portal.6
     container_name: bottifact-portal
     restart: unless-stopped
     env_file: /volume1/docker/bottifact/config.env

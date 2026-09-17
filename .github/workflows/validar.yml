@@ -41,6 +41,6 @@ jobs:
           python-version: '3.13'
       - run: pip install --require-hashes -r portal/requirements.lock
       - run: pip install httpx==0.28.1
-      - run: python -m unittest portal.test_app portal.test_auth portal.test_installer portal.test_import -v
+      - run: python -m unittest portal.test_app portal.test_auth portal.test_installer portal.test_import portal.test_library portal.test_publisher -v
       - run: bash -n scripts/instalar.sh
       - run: node --check portal/static/app.js && node --check portal/static/bridge.js && node --check portal/static/login.js && node --check portal/static/install.js

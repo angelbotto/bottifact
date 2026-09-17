@@ -69,7 +69,7 @@ Código: `portal/` en [angelbotto/bottifact](https://github.com/angelbotto/botti
 
 El despliegue Synology usa `portal/compose.yaml`, usuario 1026:100, filesystem de contenedor de sólo lectura, red `botto-site_default` y puerto de host `127.0.0.1:8788`. Datos y configuración quedan en `/volume1/docker/bottifact/`, fuera de Git. Ajusta UID/GID, volumen y red si instalas en otro NAS. No publiques ese puerto HTTP directamente a Internet.
 
-Variables principales: `BOTTIFACT_DATA`, `BOTTIFACT_ORIGIN`, `BOTTIFACT_EXTRA_ORIGINS`, `BOTTIFACT_ADMIN_EMAILS`. Para correo: `BOTTIFACT_EMAIL_PROVIDER` (`resend` o `usesend`), `BOTTIFACT_EMAIL_URL`, `BOTTIFACT_EMAIL_FROM`, `BOTTIFACT_EMAIL_KEY`, `BOTTIFACT_AUTH_SECRET` (secreto aleatorio estable). Para Google: `BOTTIFACT_GOOGLE_ID`, `BOTTIFACT_GOOGLE_SECRET`, `BOTTIFACT_GOOGLE_ENABLED=1`, callback `https://artifacts.botto.is/auth/google/callback`. Los secretos van en el env externo, nunca en Git. `BOTTIFACT_ISSUER` y `BOTTIFACT_AUDIENCE` sólo mantienen el acceso legado.
+Variables principales: `BOTTIFACT_DATA`, `BOTTIFACT_ORIGIN`, `BOTTIFACT_EXTRA_ORIGINS`, `BOTTIFACT_ADMIN_EMAILS` (roles administrativos), `BOTTIFACT_OWNER_ALIASES` (correos de la misma persona, con el canónico primero). Para correo: `BOTTIFACT_EMAIL_PROVIDER` (`resend` o `usesend`), `BOTTIFACT_EMAIL_URL`, `BOTTIFACT_EMAIL_FROM`, `BOTTIFACT_EMAIL_KEY`, `BOTTIFACT_AUTH_SECRET` (secreto aleatorio estable). Para Google: `BOTTIFACT_GOOGLE_ID`, `BOTTIFACT_GOOGLE_SECRET`, `BOTTIFACT_GOOGLE_ENABLED=1`, callback `https://artifacts.botto.is/auth/google/callback`. Los secretos van en el env externo, nunca en Git. `BOTTIFACT_ISSUER` y `BOTTIFACT_AUDIENCE` sólo mantienen el acceso legado.
 
 `/install` explica el proceso; `/install.sh` sirve la entrada Bash y `/install.py` el motor de instalación; `/downloads/` expone exclusivamente el ZIP portable y su SHA-256 del volumen `/releases`, montado de sólo lectura. Publica ambos después de las validaciones del skill. El instalador no requiere sesión ni token.
 
@@ -83,3 +83,22 @@ El backup usa la API de SQLite para copiar una instantánea coherente y sólo lo
 La administración SSH puede emitir una conexión o un enlace de acceso de un solo uso que vence en cinco minutos mediante `python -m portal.manage token|login`. Requiere `--email`, `--name` y `--output`; nunca imprime el secreto. Es una facultad del administrador del NAS, no un alta pública. No incluyas esos archivos en respaldos de código.
 
 Pruebas: instalar `portal/requirements.txt` y `httpx`, ejecutar `python -m unittest portal.test_app portal.test_auth portal.test_installer -v`. Cubren acceso cruzado, invitados, revocación, JWT firmado, CSRF, reintentos, versiones y persistencia. Una prueba con JWT sintético no acredita la recepción real de códigos por correo.
+
+## Biblioteca, lectura y publicación habitual
+
+Los artefactos publicados, versiones, comentarios y adjuntos viven en el NAS. Un HTML guardado sólo en el equipo es un borrador; el skill no mueve archivos por sí solo. El enlace `/a/ID` muestra el documento a pantalla completa. Únicamente el creador ve el control flotante de gestión: nombre, espacio, versiones, compartir y comentarios. El lector conserva la interacción del artefacto y el acceso a comentar según sus permisos.
+
+La biblioteca carga tarjetas al desplazarse, con botón **Cargar más** como alternativa de teclado. Lista y galería consultan el mismo conjunto autorizado. El buscador indexa títulos, espacios y texto HTML de la versión actual; ignora scripts y estilos, no hace OCR ni ejecuta aplicaciones para extraer su contenido. Cambiar el nombre no altera el contenido ni la URL. El índice se actualiza al publicar y renombrar.
+
+Para indicar a tus agentes que los artefactos terminados deben publicarse en tu cuenta:
+
+```bash
+bottifact preferencias --publicar-al-crear si
+bottifact estado
+bottifact listar --buscar 'conciliación'
+bottifact publicar --archivo informe.html --titulo 'Cierre mensual' --espacio 'Tikin'
+```
+
+Esta preferencia es personal y queda en `~/.config/bottifact/portal.json`; no se distribuye en el paquete. El skill la consulta al crear un artefacto. No es un watcher ni ejecuta publicaciones en segundo plano. `publications.json`, en la misma carpeta privada, recuerda los enlaces por servidor, cuenta y documento-id. El CLI también consulta el portal para reconocer publicaciones hechas desde otro equipo. Si hay varios documentos con el mismo ID, requiere elegir `--artefacto-id`; no decide por similitud de títulos. `--nuevo` es una copia deliberada. Repetir exactamente la versión actual con igual nombre y espacio no crea otra versión.
+
+Cambiar ficha: `bottifact renombrar --artefacto-id ID --titulo 'Nuevo nombre' --espacio 'Empresa'`. Para una revisión, conserva documento-id y audiencia. Un fallo de conexión deja el HTML local y se informa; nunca se cambia de proveedor ni se declara publicado sin recibir una URL válida.

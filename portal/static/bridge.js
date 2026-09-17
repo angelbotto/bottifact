@@ -2,7 +2,7 @@
 (()=>{'use strict';
   const pending=new Map(),listeners=new Set();let latest=null;const retries=new Map();
   const send=(op,data={})=>new Promise((resolve,reject)=>{
-    const id=crypto.randomUUID(),timer=setTimeout(()=>{pending.delete(id);reject(Error('No se pudo guardar en el NAS. El texto permanece aquí; intenta de nuevo.'));},20000);
+    const id=crypto.randomUUID(),timer=setTimeout(()=>{pending.delete(id);reject(Error('No se pudo guardar. El texto permanece aquí; intenta de nuevo.'));},20000);
     pending.set(id,{resolve,reject,timer});parent.postMessage({bottifact:1,id,op,data},'*');
   });
   addEventListener('message',event=>{
@@ -30,5 +30,5 @@
     const path=mapped?(mapped+(href.includes('#')?('#'+href.split('#').slice(1).join('#')):'')):(a.hasAttribute('data-bottifact-link')?href:null);
     if(!path)return;event.preventDefault();send('navigate',{path}).catch(()=>{});
   },true);
-  addEventListener('DOMContentLoaded',()=>send('ready').then(value=>{latest=value;listeners.forEach(fn=>fn(value));}).catch(()=>{}),{once:true});
+  addEventListener('DOMContentLoaded',()=>send('ready',{pins:!!document.querySelector('script[data-nota-modulo="revision.js"]')}).then(value=>{latest=value;listeners.forEach(fn=>fn(value));}).catch(()=>{}),{once:true});
 })();

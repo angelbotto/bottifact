@@ -17,7 +17,7 @@ from portal.test_app import HTML, ORIGIN
 
 class AuthTests(unittest.TestCase):
     def setUp(self):
-        self.env=patch.dict(os.environ,{'BOTTIFACT_EMAIL_URL':'https://email.test','BOTTIFACT_EMAIL_KEY':'test','BOTTIFACT_EMAIL_FROM':'Bottifact <access@example.com>','BOTTIFACT_AUTH_SECRET':'test-secret','BOTTIFACT_GOOGLE_ID':'client','BOTTIFACT_GOOGLE_SECRET':'secret','BOTTIFACT_GOOGLE_ENABLED':'1','BOTTIFACT_ADMIN_EMAILS':'owner@example.com,alias@example.com,third@example.com'})
+        self.env=patch.dict(os.environ,{'BOTTIFACT_EMAIL_URL':'https://email.test','BOTTIFACT_EMAIL_KEY':'test','BOTTIFACT_EMAIL_FROM':'Bottifact <access@example.com>','BOTTIFACT_AUTH_SECRET':'test-secret','BOTTIFACT_GOOGLE_ID':'client','BOTTIFACT_GOOGLE_SECRET':'secret','BOTTIFACT_GOOGLE_ENABLED':'1','BOTTIFACT_ADMIN_EMAILS':'owner@example.com,alias@example.com,third@example.com','BOTTIFACT_OWNER_ALIASES':'owner@example.com,alias@example.com,third@example.com'})
         self.env.start();self.tmp=tempfile.TemporaryDirectory();self.app=create_app(self.tmp.name,origin=ORIGIN);self.store=self.app.state.store
         self.c=TestClient(self.app,base_url=ORIGIN,headers={'Origin':ORIGIN})
 
@@ -125,7 +125,7 @@ class AuthTests(unittest.TestCase):
 
 class AliasMigrationTests(unittest.TestCase):
     def test_existing_alias_sessions_tokens_documents_and_comments_move_together(self):
-        with tempfile.TemporaryDirectory() as directory, patch.dict(os.environ,{'BOTTIFACT_ADMIN_EMAILS':''}):
+        with tempfile.TemporaryDirectory() as directory, patch.dict(os.environ,{'BOTTIFACT_ADMIN_EMAILS':'','BOTTIFACT_OWNER_ALIASES':''}):
             app=create_app(directory,origin=ORIGIN);store=app.state.store
             primary=store.user('owner@example.com','Owner');old=store.user('tikin@example.com','Owner Tikin')
             cookie=store.session(old['id']);token=store.token(old['id'])
@@ -133,7 +133,7 @@ class AliasMigrationTests(unittest.TestCase):
             a=c.post('/api/artifacts',json={'title':'Antes de unir','html':HTML}).json()
             event={'id':'alias-note','kind':'create','version':a['version'],'text':'Comentario conservado','anchor':{'reference':'dato','tag':'P','text':'dato','quote':'dato','page':'Informe','x':.5,'y':.5}}
             self.assertEqual(c.post('/api/artifacts/'+a['id']+'/review',json=event).status_code,200)
-            with patch.dict(os.environ,{'BOTTIFACT_ADMIN_EMAILS':'owner@example.com,tikin@example.com,liftit@example.com'}):
+            with patch.dict(os.environ,{'BOTTIFACT_ADMIN_EMAILS':'owner@example.com,tikin@example.com,liftit@example.com','BOTTIFACT_OWNER_ALIASES':'owner@example.com,tikin@example.com,liftit@example.com'}):
                 rebuilt=create_app(directory,origin=ORIGIN);client=TestClient(rebuilt,base_url=ORIGIN,headers={'Origin':ORIGIN});client.cookies.set(COOKIE,cookie)
                 self.assertEqual(client.get('/api/session').json()['user']['id'],primary['id'])
                 self.assertEqual(rebuilt.state.store.user('liftit@example.com','Owner')['id'],primary['id'])
@@ -144,5 +144,14 @@ class AliasMigrationTests(unittest.TestCase):
                 self.assertEqual(agent.get('/api/session').json()['user']['id'],primary['id'])
                 rebuilt.state.store.merge_admin_aliases()
                 with rebuilt.state.store.db() as db:self.assertEqual(db.execute("SELECT count(*) FROM audit WHERE action='merge-alias'").fetchone()[0],1)
+
+class SeparateAdminsTests(unittest.TestCase):
+    def test_admin_role_does_not_merge_independent_people(self):
+        with tempfile.TemporaryDirectory() as tmp, patch.dict(os.environ,{'BOTTIFACT_ADMIN_EMAILS':'one@example.com,two@example.com','BOTTIFACT_OWNER_ALIASES':''}):
+            store=create_app(tmp,origin=ORIGIN).state.store
+            one=store.user('one@example.com','One');two=store.user('two@example.com','Two')
+            store.merge_admin_aliases()
+            self.assertNotEqual(one['id'],two['id'])
+            self.assertEqual(store.user('two@example.com','Two')['id'],two['id'])
 
 if __name__=='__main__':unittest.main()

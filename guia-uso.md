@@ -74,7 +74,7 @@ Los `h2` con IDs describen el recorrido; evita títulos vacíos como «Más info
 
 El botón flotante de comentarios permite señalar un punto, escribir un ajuste y revisar los pines.
 «Ver comentarios» reúne contexto, capítulo, fragmento y posición en un prompt copiable. No dupliques
-el montaje en cada página. Los hilos se guardan en este navegador y admiten respuestas, responsable y resolución. Para compartir, exporta el archivo de revisión y reúne respuestas mediante importación. No prometas sincronización remota ni identidad verificada. Conserva el documento-id; consulta [colaboracion.md](colaboracion.md).
+el montaje en cada página. En un HTML standalone, los hilos se guardan en el navegador y se intercambian por JSON. Publicado en el portal personal de Bottifact, el mismo componente guarda comentarios centralizados con identidad y permisos; el autor los reúne en Comentarios. Conserva el documento-id y consulta [colaboracion.md](colaboracion.md) y [portal-nas.md](portal-nas.md). No atribuyas sincronización al borrador local.
 
 ## Dar escala a la evidencia
 

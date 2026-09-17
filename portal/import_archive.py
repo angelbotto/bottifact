@@ -6,6 +6,7 @@ Cada entrada declara source, file, title, space, attachments y optional legacy_u
 import argparse, hashlib, html as html_module, json, os, re, shutil, time, uuid
 from pathlib import Path
 from portal.app import Store, admin_emails
+from portal.search import index_document
 
 
 def import_archive(store, entries):
@@ -84,6 +85,7 @@ def import_archive(store, entries):
             else:
                 db.execute('INSERT INTO artifacts(id,owner,title,space,document_id,visibility,current_version,updated) VALUES(?,?,?,?,?,?,?,?)',(aid,owner['id'],title,space,docid,'private',vid,now))
             db.execute('INSERT INTO versions VALUES(?,?,?,?)',(vid,aid,sha,now))
+            index_document(db,{'id':aid,'title':title,'space':space,'current_version':vid},html)
             db.execute('INSERT OR REPLACE INTO imports VALUES(?,?,?,?)',(e['source'],aid,original_sha,now))
             if e.get('legacy_url'):db.execute('INSERT OR REPLACE INTO bookmark_migrations SELECT id,? FROM bookmarks WHERE url=?',(aid,e['legacy_url']))
             db.execute('INSERT INTO audit(actor,action,artifact,at) VALUES(?,?,?,?)',(owner['id'],'import-private',aid,now))

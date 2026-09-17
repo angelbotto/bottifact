@@ -125,3 +125,9 @@ El renombrado conserva los IDs de ejemplos publicados, las claves locales de com
 ## Conexión personal al portal
 
 Después de actualizar el skill, usa `scripts/publicar.py conectar --servidor https://artifacts.botto.is`. La biblioteca se puede compartir; `~/.config/bottifact/portal.json` es personal y queda fuera de la distribución. Consulta [portal-nas.md](portal-nas.md). El portal requiere un despliegue aparte: instalar el ZIP no instala Docker ni el servidor.
+
+## Adoptarlo como sistema habitual
+
+Instalar el paquete permite descubrir el skill. Para usarlo como sistema habitual, configura una conexión personal y, si ésa es tu preferencia, ejecuta `bottifact preferencias --publicar-al-crear si`. Añade a las instrucciones personales del agente una indicación breve: «Para mis artefactos HTML, informes, decks y prototipos usa Bottifact; consulta su SKILL.md y respeta la preferencia personal de publicación». Esto sustituye instrucciones anteriores que enviaban esos entregables a otro host, sin cambiar el despliegue de aplicaciones completas.
+
+El instalador compartido no cambia instrucciones globales ni activa publicación en cuentas ajenas. Claude, Codex y cada perfil de Hermes deben descubrir la copia canónica en su directorio de skills. Abre una conversación nueva para cargar la versión actual. La instalación no acredita que sesiones abiertas o agentes de otro usuario hayan adoptado el flujo.

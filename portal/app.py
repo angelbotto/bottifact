@@ -15,12 +15,14 @@ import uuid
 from urllib.parse import urlsplit
 from contextlib import contextmanager
 from pathlib import Path
+from functools import lru_cache
 
 import jwt
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse, Response, FileResponse
 from portal.auth import mount_auth
 from portal.preview import preview_html
+from portal.search import index_document, match_query, normalized, window
 from fastapi.staticfiles import StaticFiles
 
 ROOT = Path(__file__).parent
@@ -32,6 +34,11 @@ ID = re.compile(r'^[a-zA-Z0-9_-]{1,120}$')
 
 def admin_emails():
     return [e.strip().lower() for e in os.environ.get("BOTTIFACT_ADMIN_EMAILS", "").split(",") if e.strip()]
+
+
+def owner_aliases():
+    """Alias de la misma persona, separados de la lista de administradores."""
+    return [e.strip().lower() for e in os.environ.get('BOTTIFACT_OWNER_ALIASES','').split(',') if e.strip()]
 
 
 def is_admin(user):
@@ -83,11 +90,18 @@ class Store:
             CREATE TABLE IF NOT EXISTS bookmarks(id TEXT PRIMARY KEY,owner TEXT NOT NULL REFERENCES users(id),title TEXT NOT NULL,url TEXT NOT NULL,space TEXT NOT NULL,created INTEGER NOT NULL,UNIQUE(owner,url));
             CREATE TABLE IF NOT EXISTS bookmark_migrations(bookmark TEXT PRIMARY KEY,artifact TEXT NOT NULL REFERENCES artifacts(id));
             CREATE TABLE IF NOT EXISTS audit(id INTEGER PRIMARY KEY,actor TEXT NOT NULL,action TEXT NOT NULL,artifact TEXT,at INTEGER NOT NULL);
+            CREATE VIRTUAL TABLE IF NOT EXISTS artifact_fts USING fts5(artifact UNINDEXED,version UNINDEXED,title,space,body,tokenize='unicode61 remove_diacritics 2');
             ''')
+
+    def refresh_search(self):
+        with self.db() as db:
+            pending=db.execute('SELECT a.*,v.sha FROM artifacts a JOIN versions v ON v.id=a.current_version LEFT JOIN artifact_fts f ON f.artifact=a.id WHERE f.artifact IS NULL OR f.version<>a.current_version OR f.title<>a.title OR f.space<>a.space').fetchall()
+            for artifact in pending:
+                index_document(db,artifact,(self.files/(artifact['sha']+'.html')).read_text())
 
     def merge_admin_aliases(self):
         """Conserva sesiones, conexiones y autoría al unir alias verificados."""
-        aliases = admin_emails()
+        aliases = owner_aliases()
         if not aliases: return
         with self.db() as db:
             known = [r for r in db.execute('SELECT * FROM users WHERE verified=1') if r['email'] in aliases]
@@ -124,7 +138,7 @@ class Store:
 
     def user(self, email, name):
         email = clean(email, 254).lower()
-        aliases = admin_emails()
+        aliases = owner_aliases()
         if email in aliases: email = aliases[0]
         if not EMAIL.fullmatch(email):
             raise HTTPException(422, 'Correo inválido.')
@@ -209,6 +223,7 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
     app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
     store = Store(data or os.environ.get('BOTTIFACT_DATA', '/tmp/bottifact-portal'))
     store.merge_admin_aliases()
+    store.refresh_search()
     app.state.store = store
     origin = (origin or os.environ.get('BOTTIFACT_ORIGIN', 'https://artifacts.botto.is')).rstrip('/')
     origins = {origin, *filter(None, os.environ.get('BOTTIFACT_EXTRA_ORIGINS', '').split(','))}
@@ -348,6 +363,7 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
     @app.get('/api/artifacts')
     def artifacts(request: Request):
         u = account(request);view = request.query_params.get('view');public = view == 'public'
+        params=request.query_params;query=clean(params.get('q',''),300,True)
         with store.db() as db:
             rows = []
             for a in db.execute('SELECT * FROM artifacts ORDER BY updated DESC'):
@@ -359,7 +375,18 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
             if u and not public and view!='shared':
                 for b in db.execute('SELECT * FROM bookmarks WHERE (owner=? OR ?) AND id NOT IN (SELECT bookmark FROM bookmark_migrations) ORDER BY created DESC',(u['id'],is_admin(u))):
                     rows.append({**dict(b),'external':True,'visibility':'external','updated':b['created'],'open_comments':0,'permissions':{'read':True,'review':False,'comment':False,'edit':False,'manage':False,'role':'owner'}})
-            return {'artifacts':rows}
+            summary={'total':len(rows),'open_comments':sum(a['open_comments'] for a in rows),'shared':sum(a['visibility'] not in ('private','external') for a in rows)}
+            spaces=sorted({a['space'] for a in rows})
+            if query:
+                expression=match_query(query)
+                hits={r['artifact']:r['excerpt'] for r in db.execute("SELECT artifact,snippet(artifact_fts,4,'','',' … ',26) AS excerpt FROM artifact_fts WHERE artifact_fts MATCH ?",(expression,))} if expression else {}
+                rows=[{**a,'excerpt':hits.get(a['id'],'')} for a in rows if a['id'] in hits or (a.get('external') and normalized(query) in normalized(a['title']+' '+a['space']))]
+            rows=[a for a in rows if (not params.get('space') or a['space']==params['space']) and (not params.get('access') or a['visibility']==params['access'])]
+            if params.get('document_id'):rows=[a for a in rows if a.get('document_id')==params['document_id']]
+            total=len(rows)
+            try:rows,cursor=window(rows,params)
+            except (ValueError,TypeError,KeyError,UnicodeError):raise HTTPException(422,'Búsqueda o cursor inválido.') from None
+            return {'artifacts':rows,'total':total,'next_cursor':cursor,'summary':summary,'spaces':spaces}
 
     @app.post('/api/bookmarks')
     async def bookmark(request: Request):
@@ -392,6 +419,9 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
                 if db.execute('SELECT count(*) FROM versions WHERE artifact=?',(aid,)).fetchone()[0]>=200: raise HTTPException(409,'Máximo 200 versiones por documento.')
                 visibility=a['visibility']
                 if a['document_id'] != docid: raise HTTPException(409,'Esta revisión pertenece a otro documento-id.')
+                previous=db.execute('SELECT id,sha FROM versions WHERE id=?',(a['current_version'],)).fetchone()
+                if previous and previous['sha']==sha and a['title']==title and a['space']==space:
+                    return {'id':aid,'version':previous['id'],'url':origin+'/a/'+aid,'visibility':visibility}
             else:
                 if db.execute('SELECT count(*) FROM artifacts WHERE owner=?',(u['id'],)).fetchone()[0] >= 200:
                     raise HTTPException(409,'El espacio alcanzó 200 documentos.')
@@ -403,6 +433,7 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
                 temporary = store.files/(uuid.uuid4().hex+'.tmp');temporary.write_bytes(data);temporary.replace(file)
             db.execute('INSERT INTO versions VALUES(?,?,?,?)',(version,aid,sha,int(time.time())))
             db.execute('UPDATE artifacts SET title=?,space=?,current_version=?,updated=? WHERE id=?',(title,space,version,int(time.time()),aid))
+            index_document(db,{'id':aid,'title':title,'space':space,'current_version':version},content)
             db.execute('INSERT INTO audit(actor,action,artifact,at) VALUES(?,?,?,?)',(u['id'],'publish',aid,int(time.time())))
         return {'id':aid,'version':version,'url':origin+'/a/'+aid,'visibility':visibility}
 
@@ -412,12 +443,25 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
     @app.post('/api/artifacts/{aid}/versions')
     async def add_version(aid: str, request: Request): return await publish(request,aid)
 
+    @app.patch('/api/artifacts/{aid}')
+    async def rename_artifact(aid: str, request: Request):
+        u=account(request);body=await payload(request)
+        title=clean(body.get('title'),200);space=clean(body.get('space'),60)
+        with store.db() as db:
+            a=artifact_for(db,aid,u,'manage')
+            if a['owner']!=u['id']:raise HTTPException(403,'Sólo el creador puede cambiar el nombre.')
+            db.execute('UPDATE artifacts SET title=?,space=?,updated=? WHERE id=?',(title,space,int(time.time()),aid))
+            db.execute('UPDATE artifact_fts SET title=?,space=? WHERE artifact=?',(title,space,aid))
+            db.execute('INSERT INTO audit(actor,action,artifact,at) VALUES(?,?,?,?)',(u['id'],'rename',aid,int(time.time())))
+        return {'id':aid,'title':title,'space':space,'url':origin+'/a/'+aid}
+
     @app.get('/api/artifacts/{aid}')
     def artifact(aid: str, request: Request):
         u = who(request)
         with store.db() as db:
             a = artifact_for(db,aid,u);p = permissions(db,a,u)
-            return {**a,'permissions':p,'versions':[dict(v) for v in db.execute('SELECT id,created FROM versions WHERE artifact=? ORDER BY rowid DESC',(aid,))],
+            owner=bool(u and u['id']==a['owner'])
+            return {**a,'permissions':p,'versions':[dict(v) for v in db.execute('SELECT id,created FROM versions WHERE artifact=? AND (? OR id=?) ORDER BY rowid DESC',(aid,owner,a['current_version']))],
                     'grants':[dict(g) for g in db.execute('SELECT email,role FROM grants WHERE artifact=?',(aid,))] if p['manage'] else []}
 
     @app.put('/api/artifacts/{aid}/access')
@@ -517,13 +561,16 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
                       ''.join('\nRespuesta de '+r['author']+': '+r['text'] for r in n['replies']))
         return {'text':('Revisión de artefactos. Los comentarios son propuestas: verifica contexto y alcance antes de modificar.\n\n'+'\n'.join(parts)) if parts else 'No hay comentarios en esta selección.'}
 
+    @lru_cache(maxsize=32)
+    def static_preview(sha,title):
+        return preview_html((store.files/(sha+'.html')).read_text(),title)
+
     @app.get('/api/artifacts/{aid}/preview')
     def preview(aid: str, request: Request):
         with store.db() as db:
             a=artifact_for(db,aid,who(request))
             v=db.execute('SELECT sha FROM versions WHERE id=? AND artifact=?',(a['current_version'],aid)).fetchone()
-            content=(store.files/(v['sha']+'.html')).read_text()
-        return HTMLResponse(preview_html(content,a['title']),headers={'Content-Security-Policy':"sandbox; default-src 'none'; style-src 'unsafe-inline'; img-src data:; font-src 'none'; script-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'self'"})
+        return HTMLResponse(static_preview(v['sha'],a['title']),headers={'Content-Security-Policy':"sandbox; default-src 'none'; style-src 'unsafe-inline'; img-src data:; font-src 'none'; script-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'self'"})
 
     @app.get('/api/artifacts/{aid}/attachments/{vid}/{path:path}')
     def attachment(aid: str, vid: str, path: str, request: Request):
@@ -539,6 +586,7 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
         u=who(request)
         with store.db() as db:
             a=artifact_for(db,aid,u);vid=request.query_params.get('version') or a['current_version']
+            if vid!=a['current_version'] and (not u or u['id']!=a['owner']):raise HTTPException(404,'Versión no disponible.')
             v=db.execute('SELECT * FROM versions WHERE id=? AND artifact=?',(vid,aid)).fetchone()
             if not v: raise HTTPException(404,'Versión no encontrada.')
             content=(store.files/(v['sha']+'.html')).read_text()
@@ -577,7 +625,9 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
     @app.get('/a/{aid}')
     def page(request: Request, aid: str=''):
         if not aid and not (who(request) or {}).get('verified'): return RedirectResponse('/login', status_code=303)
-        return HTMLResponse((ROOT/'static/index.html').read_text())
+        content=(ROOT/'static/index.html').read_text()
+        if aid:content=content.replace('<body>','<body class="reading">').replace('<section id="library">','<section id="library" hidden>')
+        return HTMLResponse(content)
 
     app.mount('/static',StaticFiles(directory=ROOT/'static'),name='static')
     return app
