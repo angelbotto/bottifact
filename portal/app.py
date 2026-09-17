@@ -20,6 +20,8 @@ from functools import lru_cache
 import jwt
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse, Response, FileResponse
+from portal.workflows import migrate, metadata, version_state, visible_events, provenance, enqueue
+from portal.workspace import mount_workspace
 from portal.auth import mount_auth
 from portal.preview import preview_html
 from portal.search import index_document, match_query, normalized, window
@@ -92,6 +94,7 @@ class Store:
             CREATE TABLE IF NOT EXISTS audit(id INTEGER PRIMARY KEY,actor TEXT NOT NULL,action TEXT NOT NULL,artifact TEXT,at INTEGER NOT NULL);
             CREATE VIRTUAL TABLE IF NOT EXISTS artifact_fts USING fts5(artifact UNINDEXED,version UNINDEXED,title,space,body,tokenize='unicode61 remove_diacritics 2');
             ''')
+            migrate(db)
 
     def refresh_search(self):
         with self.db() as db:
@@ -116,6 +119,10 @@ class Store:
                 changed_before = db.total_changes
                 for table, column in [('sessions','user_id'), ('tokens','user_id'), ('logins','user_id'), ('artifacts','owner'), ('events','actor'), ('audit','actor')]:
                     db.execute(f'UPDATE {table} SET {column}=? WHERE {column}=?', (uid, old['id']))
+                for table in ['review_reads','thread_reads','notifications','notification_settings']:
+                    # Las claves únicas del usuario canónico prevalecen; el historial original queda auditable.
+                    db.execute(f'UPDATE OR IGNORE {table} SET user=? WHERE user=?',(uid,old['id']))
+                db.execute('UPDATE delivery_batches SET user=? WHERE user=?',(uid,old['id']))
                 # Los duplicados se conservan con su dueño histórico; la administración los ve.
                 db.execute('UPDATE bookmarks SET owner=? WHERE owner=? AND url NOT IN (SELECT url FROM bookmarks WHERE owner=?)', (uid,old['id'],uid))
                 if db.total_changes > changed_before:
@@ -185,6 +192,7 @@ def role(db, artifact, user):
 def permissions(db, artifact, user):
     r = role(db, artifact, user)
     read = bool(r) or artifact['visibility'] in ('public', 'unlisted')
+    if version_state(db,artifact['current_version'])=='draft' and r not in ('owner','editor'):read=False
     review = read and (bool(r) or artifact['comments'] == 'readers')
     comment = review and bool(user) and (r in ('owner', 'editor', 'commenter') or
               (r is None and artifact['comments'] == 'readers' and (user['verified'] or artifact['guests'])))
@@ -198,9 +206,10 @@ def artifact_for(db, aid, user, capability='read'):
     return dict(a)
 
 
-def snapshot(db, a):
-    return {'format': 'nota-revision', 'version': 2, 'document': a['document_id'],
-            'events': [json.loads(x['event']) for x in db.execute('SELECT event FROM events WHERE artifact=? ORDER BY time,id', (a['id'],))]}
+def snapshot(db, a, user=None):
+    p=permissions(db,a,user)
+    return {'format':'nota-revision','version':2,'document':a['document_id'],
+            'events':visible_events(db,a,user,p['review'],p['edit'])}
 
 
 def threads(events):
@@ -211,6 +220,7 @@ def threads(events):
         t = result.get(e['thread'])
         if not t:
             continue
+        t['updated']=e['time']
         if e['kind'] == 'reply': t['replies'].append(e)
         if e['kind'] == 'edit': t['text'] = e['text']
         if e['kind'] == 'resolve': t['resolved'] = e['resolved']
@@ -368,15 +378,21 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
             rows = []
             for a in db.execute('SELECT * FROM artifacts ORDER BY updated DESC'):
                 r = role(db,a,u)
-                if (public and a['visibility']=='public') or (not public and r and (view!='mine' or r=='owner') and (view!='shared' or r!='owner')):
+                if permissions(db,a,u)['read'] and ((public and a['visibility']=='public') or (not public and r and (view!='mine' or r=='owner') and (view!='shared' or r!='owner'))):
                     p = permissions(db,a,u)
-                    notes = threads(snapshot(db,a)['events']) if p['review'] else []
-                    rows.append({**dict(a),'permissions':p,'open_comments':sum(not n['resolved'] for n in notes)})
+                    notes = threads(snapshot(db,a,u)['events']) if p['review'] else []
+                    meta=metadata(db,a['id'])
+                    if not params.get('document_id') and bool(meta['archived']) != (view=='archived'):continue
+                    drafts=db.execute("SELECT count(*) FROM versions v JOIN version_meta m ON m.version=v.id WHERE v.artifact=? AND m.state='draft'",(a['id'],)).fetchone()[0] if p['edit'] else 0
+                    rows.append({**dict(a),**meta,'drafts':drafts,'permissions':p,'open_comments':sum(not n['resolved'] for n in notes)})
             if u and not public and view!='shared':
                 for b in db.execute('SELECT * FROM bookmarks WHERE (owner=? OR ?) AND id NOT IN (SELECT bookmark FROM bookmark_migrations) ORDER BY created DESC',(u['id'],is_admin(u))):
                     rows.append({**dict(b),'external':True,'visibility':'external','updated':b['created'],'open_comments':0,'permissions':{'read':True,'review':False,'comment':False,'edit':False,'manage':False,'role':'owner'}})
             summary={'total':len(rows),'open_comments':sum(a['open_comments'] for a in rows),'shared':sum(a['visibility'] not in ('private','external') for a in rows)}
             spaces=sorted({a['space'] for a in rows})
+            collections=sorted({v for a in rows for v in a.get('collections',[])})
+            tags=sorted({v for a in rows for v in a.get('tags',[])})
+            rows=[a for a in rows if (not params.get('collection') or params['collection'] in a.get('collections',[])) and (not params.get('tag') or params['tag'] in a.get('tags',[]))]
             if query:
                 expression=match_query(query)
                 hits={r['artifact']:r['excerpt'] for r in db.execute("SELECT artifact,snippet(artifact_fts,4,'','',' … ',26) AS excerpt FROM artifact_fts WHERE artifact_fts MATCH ?",(expression,))} if expression else {}
@@ -386,7 +402,7 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
             total=len(rows)
             try:rows,cursor=window(rows,params)
             except (ValueError,TypeError,KeyError,UnicodeError):raise HTTPException(422,'Búsqueda o cursor inválido.') from None
-            return {'artifacts':rows,'total':total,'next_cursor':cursor,'summary':summary,'spaces':spaces}
+            return {'artifacts':rows,'total':total,'next_cursor':cursor,'summary':summary,'spaces':spaces,'collections':collections,'tags':tags}
 
     @app.post('/api/bookmarks')
     async def bookmark(request: Request):
@@ -410,6 +426,9 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
         if not match: raise HTTPException(422,'Genera el archivo con Bottifact y un documento-id estable.')
         docid = match[1];title = clean(body.get('title'),200);space = clean(body.get('space','Personal'),60)
         data = content.encode();sha = hashlib.sha256(data).hexdigest();version = uuid.uuid4().hex
+        mode=body.get('mode','published')
+        if mode not in ('draft','published'):raise HTTPException(422,'Estado de versión inválido.')
+        source=provenance(body,clean)
         visibility=body.get('visibility','private')
         if visibility not in ('private','unlisted','public'): raise HTTPException(422,'Visibilidad inválida.')
         if aid and 'visibility' in body: raise HTTPException(422,'Una revisión conserva los permisos. Cámbialos desde Compartir.')
@@ -419,9 +438,12 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
                 if db.execute('SELECT count(*) FROM versions WHERE artifact=?',(aid,)).fetchone()[0]>=200: raise HTTPException(409,'Máximo 200 versiones por documento.')
                 visibility=a['visibility']
                 if a['document_id'] != docid: raise HTTPException(409,'Esta revisión pertenece a otro documento-id.')
-                previous=db.execute('SELECT id,sha FROM versions WHERE id=?',(a['current_version'],)).fetchone()
-                if previous and previous['sha']==sha and a['title']==title and a['space']==space:
-                    return {'id':aid,'version':previous['id'],'url':origin+'/a/'+aid,'visibility':visibility}
+                if mode=='published' and a['owner']!=u['id']:
+                    if 'mode' in body:raise HTTPException(403,'Sólo el creador publica una versión compartida.')
+                    mode='draft'
+                previous=db.execute("SELECT v.id,v.sha,m.title AS saved_title,m.space AS saved_space FROM versions v LEFT JOIN version_meta m ON m.version=v.id WHERE v.artifact=? AND COALESCE(m.state,'published')=? ORDER BY v.rowid DESC LIMIT 1",(aid,mode)).fetchone()
+                if previous and previous['sha']==sha and (previous['saved_title'] or a['title'])==title and (previous['saved_space'] or a['space'])==space:
+                    return {'id':aid,'version':previous['id'],'url':origin+'/a/'+aid,'visibility':visibility,'state':mode,'preview_url':origin+'/a/'+aid+('?version='+previous['id'] if mode=='draft' else '')}
             else:
                 if db.execute('SELECT count(*) FROM artifacts WHERE owner=?',(u['id'],)).fetchone()[0] >= 200:
                     raise HTTPException(409,'El espacio alcanzó 200 documentos.')
@@ -432,10 +454,12 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
             if not file.exists():
                 temporary = store.files/(uuid.uuid4().hex+'.tmp');temporary.write_bytes(data);temporary.replace(file)
             db.execute('INSERT INTO versions VALUES(?,?,?,?)',(version,aid,sha,int(time.time())))
-            db.execute('UPDATE artifacts SET title=?,space=?,current_version=?,updated=? WHERE id=?',(title,space,version,int(time.time()),aid))
-            index_document(db,{'id':aid,'title':title,'space':space,'current_version':version},content)
+            db.execute('INSERT INTO version_meta VALUES(?,?,?,?,?)',(version,mode,title,space,json.dumps(source)))
+            if mode=='published' or not db.execute('SELECT current_version FROM artifacts WHERE id=?',(aid,)).fetchone()[0]:
+                db.execute('UPDATE artifacts SET title=?,space=?,current_version=?,updated=? WHERE id=?',(title,space,version,int(time.time()),aid))
+                index_document(db,{'id':aid,'title':title,'space':space,'current_version':version},content)
             db.execute('INSERT INTO audit(actor,action,artifact,at) VALUES(?,?,?,?)',(u['id'],'publish',aid,int(time.time())))
-        return {'id':aid,'version':version,'url':origin+'/a/'+aid,'visibility':visibility}
+        return {'id':aid,'version':version,'url':origin+'/a/'+aid,'visibility':visibility,'state':mode,'preview_url':origin+'/a/'+aid+('?version='+version if mode=='draft' else '')}
 
     @app.post('/api/artifacts')
     async def create_artifact(request: Request): return await publish(request)
@@ -461,7 +485,7 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
         with store.db() as db:
             a = artifact_for(db,aid,u);p = permissions(db,a,u)
             owner=bool(u and u['id']==a['owner'])
-            return {**a,'permissions':p,'versions':[dict(v) for v in db.execute('SELECT id,created FROM versions WHERE artifact=? AND (? OR id=?) ORDER BY rowid DESC',(aid,owner,a['current_version']))],
+            return {**a,**metadata(db,aid),'permissions':p,'versions':[dict(v) for v in db.execute("SELECT v.id,v.created,COALESCE(m.state,'published') AS state,m.source FROM versions v LEFT JOIN version_meta m ON m.version=v.id WHERE v.artifact=? AND (? OR v.id=?) ORDER BY v.rowid DESC",(aid,owner,a['current_version']))],
                     'grants':[dict(g) for g in db.execute('SELECT email,role FROM grants WHERE artifact=?',(aid,))] if p['manage'] else []}
 
     @app.put('/api/artifacts/{aid}/access')
@@ -493,8 +517,8 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
         u = who(request)
         with store.db() as db:
             a = artifact_for(db,aid,u);p = permissions(db,a,u)
-            return {'snapshot':snapshot(db,a) if p['review'] else {'format':'nota-revision','version':2,'document':a['document_id'],'events':[]},
-                    'permissions':p,'author':u['name'] if u else '', 'actor':u['id'] if u else '', 'verified':bool(u and u['verified'])}
+            return {'snapshot':snapshot(db,a,u),
+                    'permissions':p,'author':u['name'] if u else '', 'actor':u['id'] if u else '', 'verified':bool(u and u['verified']),'artifact':{'id':aid,'title':a['title'],'url':origin+'/a/'+aid,'version':a['current_version']}}
 
     @app.post('/api/artifacts/{aid}/review')
     async def add_review(aid: str, request: Request):
@@ -504,19 +528,26 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
         if not ID.fullmatch(event_id) or kind not in ['create','reply','edit','resolve','assign','delete']: raise HTTPException(422,'Comentario inválido.')
         request_hash = digest(json.dumps(body,sort_keys=True,separators=(',',':')))
         with store.db() as db:
-            a = artifact_for(db,aid,u,'comment');p = permissions(db,a,u)
+            a = artifact_for(db,aid,u);p = permissions(db,a,u)
+            personal=body.get('entry_type')=='note'
+            if kind!='create':
+                original=db.execute('SELECT event,actor FROM events WHERE id=? AND artifact=?',(body.get('thread'),aid)).fetchone()
+                personal=bool(original and json.loads(original['event']).get('entry_type')=='note')
+                if personal and original['actor']!=u['id']:raise HTTPException(404,'Nota no disponible.')
+            if not (personal and u['verified']) and not p['comment']:raise HTTPException(404,'No puedes comentar en este documento.')
             old = db.execute('SELECT * FROM events WHERE id=?',(event_id,)).fetchone()
             if old:
                 if old['artifact']!=aid or old['actor']!=u['id'] or old['request_hash']!=request_hash: raise HTTPException(409,'Identificador en conflicto.')
                 return review(aid,request)
             if not db.execute('SELECT 1 FROM versions WHERE id=? AND artifact=?',(version,aid)).fetchone(): raise HTTPException(409,'Versión desconocida.')
-            entries = snapshot(db,a)['events']
-            if len(entries)>=2000: raise HTTPException(409,'Esta revisión alcanzó 2000 cambios. Exporta el historial.')
+            if version_state(db,version)=='draft' and not p['edit']:raise HTTPException(404,'Versión no disponible.')
+            entries = snapshot(db,a,u)['events']
+            if db.execute('SELECT count(*) FROM events WHERE artifact=?',(aid,)).fetchone()[0]>=2000: raise HTTPException(409,'Esta revisión alcanzó 2000 cambios. Exporta el historial.')
             thread = event_id if kind=='create' else clean(body.get('thread'),80)
             if kind!='create':
                 original = db.execute('SELECT actor,event FROM events WHERE artifact=? AND id=?',(aid,thread)).fetchone()
                 if not original or json.loads(original['event'])['kind']!='create': raise HTTPException(404,'Hilo no disponible.')
-                if kind in ['resolve','assign','delete'] and not p['edit']: raise HTTPException(403,'Sólo el autor del documento y sus editores pueden gestionar hilos.')
+                if kind in ['resolve','assign','delete'] and not (p['edit'] or personal): raise HTTPException(403,'Sólo el autor del documento y sus editores pueden gestionar hilos.')
                 if kind=='edit' and not (p['edit'] or original['actor']==u['id']): raise HTTPException(403,'Sólo puedes editar tus comentarios.')
             e = {'id':event_id,'thread':thread,'kind':kind,'author':u['name'],'time':max(int(time.time()*1000),max([x['time'] for x in entries],default=0)+1),
                  'version':version,'actor':u['id'],'verified':bool(u['verified'])}
@@ -526,40 +557,23 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
                 e['resolved']=body['resolved']
             if kind=='assign': e['assignee']=clean(body.get('assignee',''),80,True)
             if kind=='create':
+                entry_type=body.get('entry_type','comment')
+                if entry_type not in ('comment','note'):raise HTTPException(422,'Tipo inválido.')
+                e['entry_type']=entry_type
+                e['session']=clean(body.get('session',''),200,True)
                 an=body.get('anchor',{})
                 if not isinstance(an,dict): raise HTTPException(422,'Punto inválido.')
-                anchor={k:clean(an.get(k,''),n,True) for k,n in [('reference',200),('tag',20),('text',4000),('quote',1200),('page',300)]}
+                anchor={k:clean(an.get(k,''),n,True) for k,n in [('reference',200),('tag',20),('text',4000),('quote',1200),('page',300),('section',300),('prefix',300),('suffix',300)]}
                 for k in ['x','y']:
                     val=an.get(k)
                     if not isinstance(val,(int,float)) or isinstance(val,bool) or not 0<=val<=1: raise HTTPException(422,'Punto inválido.')
                     anchor[k]=val
                 e['anchor']=anchor
             db.execute('INSERT INTO events VALUES(?,?,?,?,?,?,?)',(event_id,aid,version,u['id'],request_hash,json.dumps(e,separators=(',',':')),e['time']))
+            enqueue(db,a,e,permissions)
         return review(aid,request)
 
-    @app.get('/api/inbox')
-    def inbox(request: Request):
-        u=account(request);items=[]
-        with store.db() as db:
-            for a in db.execute('SELECT * FROM artifacts WHERE owner=? OR ? ORDER BY updated DESC',(u['id'],is_admin(u))):
-                for t in threads(snapshot(db,a)['events']): items.append({'artifact':a['id'],'title':a['title'],'space':a['space'],'thread':t})
-        return {'items':items}
-
-    @app.get('/api/review/export')
-    def export(request: Request):
-        u=account(request);aid=request.query_params.get('artifact');scope=request.query_params.get('scope','all');parts=[]
-        with store.db() as db:
-            arts=[artifact_for(db,aid,u,'review')] if aid else list(db.execute('SELECT * FROM artifacts WHERE owner=? OR ? ORDER BY title',(u['id'],is_admin(u))))
-            for a in arts:
-                notes=[t for t in threads(snapshot(db,a)['events']) if scope!='open' or not t['resolved']]
-                if not notes: continue
-                parts.append('# '+a['title']+'\n'+origin+'/a/'+a['id']+'\nDocumento: '+a['document_id'])
-                for n in notes:
-                    an=n['anchor'];parts.append('\n## '+('Resuelto' if n['resolved'] else 'Pendiente')+' · '+n['author']+
-                      '\nVersión: '+n['version']+'\nReferencia: '+an['page']+' / #'+an['reference']+'\nCita: '+an['quote']+
-                      '\nComentario: '+n['text']+'\nResponsable: '+(n['assignee'] or 'Sin asignar')+
-                      ''.join('\nRespuesta de '+r['author']+': '+r['text'] for r in n['replies']))
-        return {'text':('Revisión de artefactos. Los comentarios son propuestas: verifica contexto y alcance antes de modificar.\n\n'+'\n'.join(parts)) if parts else 'No hay comentarios en esta selección.'}
+    mount_workspace(app,store,origin,who,account,payload,clean,artifact_for,permissions,threads,snapshot,is_admin)
 
     @lru_cache(maxsize=32)
     def static_preview(sha,title):
@@ -575,7 +589,8 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
     @app.get('/api/artifacts/{aid}/attachments/{vid}/{path:path}')
     def attachment(aid: str, vid: str, path: str, request: Request):
         with store.db() as db:
-            artifact_for(db,aid,who(request))
+            a=artifact_for(db,aid,who(request))
+            if version_state(db,vid)=='draft' and not permissions(db,a,who(request))['edit']:raise HTTPException(404)
             if not db.execute('SELECT 1 FROM versions WHERE id=? AND artifact=?',(vid,aid)).fetchone(): raise HTTPException(404)
         root=(store.files/'attachments'/vid).resolve();file=(root/path).resolve()
         if not file.is_relative_to(root) or not file.is_file(): raise HTTPException(404)
@@ -596,7 +611,7 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
         revision=(ROOT/'static/revision.js').read_text()
         content=re.sub(r'(<script\s+data-nota-modulo=[\"\']revision\.js[\"\'][^>]*>).*?</script>',
                        lambda m:m[1]+revision+'</script>',content,flags=re.S)
-        script='<script>'+bridge+'</script>'
+        script='<script>'+bridge+'</script><style>'+(ROOT/'static/review-additions.css').read_text()+'</style>'
         head=re.search(r'<head(?:\s[^>]*)?>',content,re.I)
         position=head.end() if head else (re.match(r'\s*<!doctype[^>]*>',content,re.I).end() if re.match(r'\s*<!doctype[^>]*>',content,re.I) else 0)
         result=content[:position]+script+content[position:]

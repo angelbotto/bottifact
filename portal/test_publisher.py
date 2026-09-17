@@ -29,3 +29,14 @@ class PublisherTests(unittest.TestCase):
    with patch('sys.argv',['publicar.py','--config',str(config),'publicar','--archivo',str(source),'--titulo','Informe']),patch.object(publicar,'request',side_effect=[{'user':{'id':'owner'}},{'artifacts':[{'id':'a'*32,'owner':'owner','document_id':'stable-report'},{'id':'b'*32,'owner':'owner','document_id':'stable-report'}]}]),self.assertRaisesRegex(SystemExit,'varios artefactos'):publicar.main()
 
 if __name__=='__main__':unittest.main()
+
+class ProvenanceTests(unittest.TestCase):
+ def test_real_session_inference_does_not_mix_agents(self):
+  from scripts.publicar import source_defaults
+  with patch.dict('os.environ',{'CODEX_THREAD_ID':'codex-real'},clear=True):
+   self.assertEqual(source_defaults('',''),('Codex','codex-real'))
+   self.assertEqual(source_defaults('Hermes',''),('Hermes',''))
+   self.assertEqual(source_defaults('Codex','explicit'),('Codex','explicit'))
+  with patch.dict('os.environ',{'CODEX_THREAD_ID':'a','HERMES_SESSION_ID':'b'},clear=True):
+   self.assertEqual(source_defaults('',''),('',''))
+   self.assertEqual(source_defaults('Hermes',''),('Hermes','b'))

@@ -59,3 +59,6 @@ La vista consulta cambios cada 12 segundos. No hay presencia en vivo ni coedici�
 El repositorio, los paquetes, las instrucciones y las cabeceras públicas usan Bottifact. `compatibilidad.json` conserva las identidades de los ejemplos publicados antes del cambio. Los espacios de almacenamiento `nota-*`, las APIs `Nota*` y el metadato histórico de versión permanecen para evitar una migración innecesaria de datos. Su presencia en código no representa la marca del producto.
 
 El checkout que da soporte a los worktrees de desarrollo puede conservar una ruta histórica. Las instalaciones nuevas y los accesos de los agentes usan `bottifact`. No muevas un repositorio principal dentro de una carpeta de skills sin revisar sus worktrees y registros del entorno.
+
+
+El espacio de trabajo añade `portal/workflows.py` (procedencia y contexto), `portal/workspace.py` (organización, borradores, comparación, avisos y exportación), y `portal/worker.py` (resúmenes optativos y respaldo diario). `portal/backup.py` verifica archivos y ensaya restauración aislada; `portal/offsite.py` mantiene una copia privada fuera del NAS. Las notas sólo se proyectan para su autor y los borradores sólo para quienes editan. La comparación es textual y conserva el historial; no reancla automáticamente una coincidencia ambigua.

@@ -38,15 +38,26 @@ def request(base, token, path, data=None, method=None):
         raise SystemExit(str(e.code)+': '+str(message)) from None
     except urllib.error.URLError:raise SystemExit('No se pudo conectar al portal. Revisa la dirección y la red.') from None
 
+def source_defaults(agent, session):
+    known={name:os.environ.get(key,'') for name,key in [('Codex','CODEX_THREAD_ID'),('Claude','CLAUDE_SESSION_ID'),('Hermes','HERMES_SESSION_ID')]}
+    agent=agent or os.environ.get('BOTTIFACT_AGENT','')
+    active=[name for name,value in known.items() if value]
+    if not agent and len(active)==1:agent=active[0]
+    session=session or os.environ.get('BOTTIFACT_SESSION','') or next((value for name,value in known.items() if name.casefold()==agent.casefold()),'')
+    return agent,session
+
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--config',type=Path,default=CONFIG)
     sub=p.add_subparsers(dest='command',required=True)
     c=sub.add_parser('conectar');c.add_argument('--servidor',required=True);c.add_argument('--token-archivo',type=Path)
-    c=sub.add_parser('publicar');c.add_argument('--archivo',type=Path,required=True);c.add_argument('--titulo',required=True);c.add_argument('--espacio',default='Personal');c.add_argument('--artefacto-id');c.add_argument('--visibilidad',choices=['private','unlisted','public']);c.add_argument('--nuevo',action='store_true',help='Crear otro enlace aun si el documento ya fue publicado desde este equipo.')
-    c=sub.add_parser('comentarios');c.add_argument('--artefacto-id');c.add_argument('--abiertos',action='store_true');c.add_argument('--salida',type=Path)
+    c=sub.add_parser('publicar');c.add_argument('--archivo',type=Path,required=True);c.add_argument('--titulo',required=True);c.add_argument('--espacio',default='Personal');c.add_argument('--artefacto-id');c.add_argument('--visibilidad',choices=['private','unlisted','public']);c.add_argument('--modo',choices=['draft','published']);c.add_argument('--agente',default='');c.add_argument('--sesion',default='');c.add_argument('--nuevo',action='store_true',help='Crear otro enlace aun si el documento ya fue publicado desde este equipo.')
+    c=sub.add_parser('comentarios');c.add_argument('--artefacto-id');c.add_argument('--abiertos',action='store_true');c.add_argument('--tipo',choices=['all','comment','note'],default='all');c.add_argument('--salida',type=Path)
     sub.add_parser('estado');c=sub.add_parser('listar');c.add_argument('--buscar',default='')
     c=sub.add_parser('preferencias');c.add_argument('--publicar-al-crear',choices=['si','no'],required=True)
     c=sub.add_parser('renombrar');c.add_argument('--artefacto-id',required=True);c.add_argument('--titulo',required=True);c.add_argument('--espacio',required=True)
+    c=sub.add_parser('versiones');c.add_argument('--artefacto-id',required=True)
+    c=sub.add_parser('comparar');c.add_argument('--artefacto-id',required=True);c.add_argument('--desde',required=True);c.add_argument('--hasta',required=True)
+    c=sub.add_parser('liberar');c.add_argument('--artefacto-id',required=True);c.add_argument('--version',required=True);c.add_argument('--actual-esperada',required=True)
     args=p.parse_args()
     if args.command=='conectar':
         base=args.servidor.rstrip('/');url=urllib.parse.urlparse(base)
@@ -64,6 +75,7 @@ def main():
         config['publish_on_create']=args.publicar_al_crear=='si';private_json(args.config,config)
         print('Publicar artefactos nuevos como privados al terminar: '+('sí' if config['publish_on_create'] else 'no'));return
     if args.command=='publicar':
+        args.agente,args.sesion=source_defaults(args.agente,args.sesion)
         if args.archivo.stat().st_size>20*1024*1024:raise SystemExit('El HTML supera 20 MB.')
         content=args.archivo.read_text();match=re.search(r'<meta\s+name=[\"\']nota-documento[\"\']\s+content=[\"\']([a-zA-Z0-9_-]{1,120})[\"\']',content)
         if not match:raise SystemExit('Genera el HTML con un documento-id estable antes de publicar.')
@@ -79,16 +91,22 @@ def main():
             if own:aid=own[0]['id']
         if aid and (len(aid)!=32 or any(x not in '0123456789abcdef' for x in aid)):raise SystemExit('ID de artefacto inválido.')
         if aid and args.visibilidad:raise SystemExit('Las revisiones conservan permisos; usa Compartir en el portal para cambiarlos.')
-        body={'title':args.titulo,'space':args.espacio,'html':content}
+        body={'title':args.titulo,'space':args.espacio,'html':content,'mode':args.modo or ('draft' if aid else 'published'),'source':{'agent':args.agente,'session':args.sesion}}
         if args.visibilidad:body['visibility']=args.visibilidad
         result=request(base,token,'/api/artifacts'+('/'+aid+'/versions' if aid else ''),body)
         receipts[key]={**result,'document_id':match[1],'saved_at':int(time.time())};private_json(receipt_file,receipts)
         result['operation']='revision' if aid else 'created'
+    elif args.command in ('versiones','comparar','liberar'):
+        if not re.fullmatch('[a-f0-9]{32}',args.artefacto_id):raise SystemExit('ID de artefacto inválido.')
+        path='/api/artifacts/'+args.artefacto_id
+        if args.command=='versiones':result=request(base,token,path)
+        elif args.command=='comparar':result=request(base,token,path+'/compare?'+urllib.parse.urlencode({'from':args.desde,'to':args.hasta}))
+        else:result=request(base,token,path+'/release',{'version':args.version,'expected_current':args.actual_esperada})
     elif args.command=='renombrar':
         if not re.fullmatch('[a-f0-9]{32}',args.artefacto_id):raise SystemExit('ID de artefacto inválido.')
         result=request(base,token,'/api/artifacts/'+args.artefacto_id,{'title':args.titulo,'space':args.espacio},method='PATCH')
     elif args.command=='comentarios':
-        params={'scope':'open' if args.abiertos else 'all'}
+        params={'scope':'open' if args.abiertos else 'all','kind':args.tipo}
         if args.artefacto_id:params['artifact']=args.artefacto_id
         text=request(base,token,'/api/review/export?'+urllib.parse.urlencode(params))['text']
         if args.salida:args.salida.write_text(text+'\n');print(str(args.salida))

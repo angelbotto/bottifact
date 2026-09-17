@@ -3,7 +3,7 @@ services:
     build:
       context: ..
       dockerfile: portal/Dockerfile
-    image: bottifact-portal:2026.09.17-portal.6
+    image: bottifact-portal:2026.09.17-workspace.1
     container_name: bottifact-portal
     restart: unless-stopped
     env_file: /volume1/docker/bottifact/config.env
@@ -28,6 +28,30 @@ services:
     logging:
       driver: json-file
       options: {max-size: 5m, max-file: '3'}
+  worker:
+    image: bottifact-portal:2026.09.17-workspace.1
+    pull_policy: never
+    container_name: bottifact-worker
+    command: [python, -m, portal.worker]
+    restart: unless-stopped
+    depends_on: [bottifact]
+    env_file: /volume1/docker/bottifact/config.env
+    environment:
+      BOTTIFACT_BACKUP_CONFIG: /backup-config/config.env
+    volumes:
+      - /volume1/docker/bottifact/data:/data
+      - /volume1/docker/bottifact/backups:/backups
+      - /volume1/docker/bottifact/config.env:/backup-config/config.env:ro
+    networks: [edge]
+    read_only: true
+    tmpfs: [/tmp:size=32m]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 512m
+    logging:
+      driver: json-file
+      options: {max-size: 5m, max-file: '3'}
+
 networks:
   edge:
     external: true

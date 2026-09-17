@@ -102,3 +102,37 @@ bottifact publicar --archivo informe.html --titulo 'Cierre mensual' --espacio 'T
 Esta preferencia es personal y queda en `~/.config/bottifact/portal.json`; no se distribuye en el paquete. El skill la consulta al crear un artefacto. No es un watcher ni ejecuta publicaciones en segundo plano. `publications.json`, en la misma carpeta privada, recuerda los enlaces por servidor, cuenta y documento-id. El CLI también consulta el portal para reconocer publicaciones hechas desde otro equipo. Si hay varios documentos con el mismo ID, requiere elegir `--artefacto-id`; no decide por similitud de títulos. `--nuevo` es una copia deliberada. Repetir exactamente la versión actual con igual nombre y espacio no crea otra versión.
 
 Cambiar ficha: `bottifact renombrar --artefacto-id ID --titulo 'Nuevo nombre' --espacio 'Empresa'`. Para una revisión, conserva documento-id y audiencia. Un fallo de conexión deja el HTML local y se informa; nunca se cambia de proveedor ni se declara publicado sin recibir una URL válida.
+
+## Revisión y publicación por etapas
+
+El espacio de trabajo distingue comentarios compartidos y notas personales. Las notas sólo aparecen a su autor, también en la bandeja, la exportación y el API; no generan avisos. En el artefacto, el lápiz crea una nota privada y el globo crea un comentario. Ambos conservan capítulo, sección, bloque, cita y coordenadas. El campo opcional «Sesión o encargo» aporta la referencia para retomar el trabajo con un agente; no se infiere una sesión que no esté registrada.
+
+«Copiar todo para IA» y «Copiar pendientes» reúnen el título, documento-id, ID del portal, URL al hilo, versión original, SHA-256, procedencia del agente, sesión, texto completo del contexto, cita, observación, responsable y respuestas. El estado del ancla distingue fragmento conservado, posible traslado, modificado, ausente y ambiguo. La exportación no ejecuta acciones ni envía contenido automáticamente a un proveedor de IA.
+
+La bandeja filtra comentarios/notas y pendientes/sin leer/resueltos. Los avisos incluyen nuevos comentarios, respuestas y menciones `@correo@empresa.com` a cuentas existentes con acceso. El resumen diario por correo es optativo en Avisos, desactivado por defecto, y sólo incluye enlaces autorizados. Revocar acceso impide nuevos avisos o exportaciones. Los avisos se deduplican por evento; el envío usa clave de idempotencia. Una aceptación del proveedor no prueba entrega.
+
+Las revisiones que guarda el CLI o la interfaz son borradores por defecto. El enlace compartido conserva su versión publicada. «Comparar versiones» compara texto visible y comprueba las anclas; no afirma detectar cambios visuales en CSS, scripts o imágenes. El creador publica deliberadamente una versión, con comprobación de que la versión actual no cambió mientras revisaba. La API conserva su comportamiento anterior si un creador omite `mode`; integraciones nuevas deben enviar `mode: draft`.
+
+```bash
+bottifact publicar --archivo revision.html --titulo 'Revisión' --agente Codex --sesion 'cierre-septiembre'
+bottifact comentarios --artefacto-id ID --abiertos --salida ajustes.md
+bottifact versiones --artefacto-id ID
+bottifact comparar --artefacto-id ID --desde VERSION_PUBLICADA --hasta BORRADOR
+bottifact liberar --artefacto-id ID --version BORRADOR --actual-esperada VERSION_PUBLICADA
+```
+
+Colecciones y etiquetas agrupan la biblioteca sin modificar permisos. Archivar es reversible y conserva los enlaces; Archivo permite recuperar el documento. El panel Administración muestra inventario, borradores, almacenamiento, actividad y fechas de verificación de respaldos y restauración. Los datos operativos no aparecen en la lectura compartida.
+
+## Continuidad y restauración
+
+El proceso `bottifact-worker` hace un respaldo diario con la API de backup de SQLite, copia los HTML inmutables y adjuntos referidos por esa instantánea, verifica hashes, integridad y claves foráneas, y ensaya restauración en un directorio aislado. Conserva siete instantáneas gestionadas; no elimina los respaldos manuales anteriores. El archivo de configuración se incluye sólo si se monta explícitamente; los respaldos son privados y contienen información de cuenta. Nunca se sirven por HTTP.
+
+`portal/offsite.py` descarga por SSH la última instantánea al Mac mini y verifica los hashes antes de registrar éxito. La tarea diaria de launchd también se ejecuta al iniciar sesión. Si el equipo está apagado o la red no responde, reintenta en la siguiente ejecución y la fecha queda visible en Administración. Es una copia fuera del NAS, no una afirmación de separación geográfica. El portal marca comprobaciones antiguas como pendientes de atención.
+
+```bash
+python -m portal.backup create --data /data --output /backups --config /backup-config/config.env
+python -m portal.backup verify /backups/snapshot-FECHA-ID
+python -m portal.backup restore /backups/snapshot-FECHA-ID /destino/nuevo
+```
+
+La restauración rechaza destinos existentes y nunca sobrescribe producción. Para recuperación real, verifica el resultado aislado, configura las credenciales desde el respaldo privado, detén el servicio y cambia su volumen de datos de forma deliberada. Referencias: [SQLite Online Backup API](https://www.sqlite.org/backup.html), [idempotencia de Resend](https://resend.com/docs/dashboard/emails/idempotency-keys), [modelo de anotaciones W3C](https://www.w3.org/TR/annotation-model/). Bottifact conserva selectores y citas propios; no declara conformidad completa con ese modelo.

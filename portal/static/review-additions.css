@@ -1,0 +1,7 @@
+/* Notas personales y procedencia: controles compactos dentro del editor flotante. */
+[data-revision-editor] label.revision-field { position:static; width:auto; height:auto; clip-path:none; display:block; font:12px var(--sans); }
+.revision-field select { width:100%; min-height:34px; margin:4px 0 8px; padding:6px; font:13px var(--sans); }
+.revision-session { font:12px var(--sans); margin:6px 0; }
+.revision-session input { width:100%; min-height:32px; font:13px var(--sans); }
+.revision-marca[data-kind="note"] { border-style:dashed; }
+.revision-enfocado { outline:2px solid var(--acento); outline-offset:3px; }

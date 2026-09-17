@@ -19,7 +19,14 @@ AUTH_COOKIE = '__Host-bottifact-auth'
 
 
 def target(value):
-    return value if isinstance(value, str) and re.fullmatch(r'/(?:a/[a-f0-9]{32})?', value) else '/'
+    if not isinstance(value,str):return '/'
+    parts=urllib.parse.urlsplit(value)
+    if parts.scheme or parts.netloc or not __import__('re').fullmatch(r'/(?:a/[a-f0-9]{32})?',parts.path):return '/'
+    fields=urllib.parse.parse_qs(parts.query);query={}
+    for key in ['thread','version']:
+        if key in fields and __import__('re').fullmatch(r'[a-zA-Z0-9_-]{1,120}',fields[key][0]):query[key]=fields[key][0]
+    if parts.path=='/' and fields.get('view',[''])[0] in ['mine','shared','inbox','notifications','admin','archived','public','connections']:query['view']=fields['view'][0]
+    return parts.path+('?' + urllib.parse.urlencode(query) if query else '')
 
 
 def remote_json(url, data=None, headers=None, form=False):

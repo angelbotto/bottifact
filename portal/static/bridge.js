@@ -11,8 +11,9 @@
     if(message.op==='capture-context'){
       const selection=getSelection(),node=selection?.anchorNode,el=node?.nodeType===1?node:node?.parentElement;
       const target=el?.closest('p,h1,h2,h3,h4,li,td,figure,pre')||document.querySelector('h1')||document.body;
-      send('context',{reference:target.closest('[id]')?.id||'documento',tag:target.tagName,text:(target.textContent||'').trim().slice(0,4000),quote:(selection?.toString()||target.textContent||document.title).trim().slice(0,1200),page:document.title.slice(0,300),x:.5,y:.5}).catch(()=>{});return;
+      send('context',{reference:target.closest('[id]')?.id||'documento',tag:target.tagName,text:(target.textContent||'').trim().slice(0,4000),quote:(selection?.toString()||target.textContent||document.title).trim().slice(0,1200),page:document.title.slice(0,300),section:target.closest('section')?.querySelector('h2,h3')?.textContent?.slice(0,300)||'',x:.5,y:.5}).catch(()=>{});return;
     }
+    if(message.op==='focus-thread'){document.dispatchEvent(new CustomEvent('bottifact:focus-thread',{detail:message.thread}));return;}
     if(message.op==='snapshot'){latest=message.data;listeners.forEach(fn=>fn(latest));return;}
     const request=pending.get(message.id);if(!request)return;
     clearTimeout(request.timer);pending.delete(message.id);
@@ -22,6 +23,7 @@
     commit:async data=>{const key=JSON.stringify(data),id=retries.get(key)||crypto.randomUUID();retries.set(key,id);const result=await send('commit',{...data,id});retries.delete(key);latest=result;listeners.forEach(fn=>fn(result));return result;},
     subscribe:fn=>{listeners.add(fn);if(latest)fn(latest);return()=>listeners.delete(fn);},
     identify:()=>send('identify').catch(()=>{}),
+    exportPrompt:scope=>send('export',{scope}),
   };
   document.addEventListener('click',event=>{
     const a=event.target.closest?.('a');if(!a)return;

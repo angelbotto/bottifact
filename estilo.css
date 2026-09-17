@@ -2327,6 +2327,14 @@ body:has(.revision-barra) { padding-bottom:0; }
 .marca-muestras > span { display:flex; align-items:center; gap:8px; font:12px var(--mono); }
 .marca-muestras i { display:block; width:24px; height:24px; background:var(--muestra); border:1px solid var(--linea-fuerte); border-radius:6px; }
 
+/* Notas personales y procedencia: controles compactos dentro del editor flotante. */
+[data-revision-editor] label.revision-field { position:static; width:auto; height:auto; clip-path:none; display:block; font:12px var(--sans); }
+.revision-field select { width:100%; min-height:34px; margin:4px 0 8px; padding:6px; font:13px var(--sans); }
+.revision-session { font:12px var(--sans); margin:6px 0; }
+.revision-session input { width:100%; min-height:32px; font:13px var(--sans); }
+.revision-marca[data-kind="note"] { border-style:dashed; }
+.revision-enfocado { outline:2px solid var(--acento); outline-offset:3px; }
+
 /* TEMAS GENERADOS — scripts/temas.py; editar temas.json. */
 :root[data-color-mode="light"] .paleta-mini[data-muestra-tema="editorial"] { --vista-papel:#fef8f2; --vista-tinta:#231e1a; --vista-acento:#a13f19; }
 :root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="editorial"] { --vista-papel:#13110f; --vista-tinta:#e9dfd7; --vista-acento:#f1b798; }

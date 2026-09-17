@@ -25,3 +25,10 @@ Al publicar el HTML en el portal, el mismo componente se conecta mediante un pue
 ## Mejoras siguientes
 
 Comparación de versiones, migración de JSON local con procedencia explícita, selección de hilos entre documentos y aprobación de una versión. La presencia y los cursores serían optativos; el centro sigue siendo revisar evidencia y acordar cambios con contexto.
+
+
+## Revisión conectada, notas y prompt para IA
+
+En el portal, el lápiz permite dejar una nota privada en un punto del documento; el globo conserva los comentarios compartidos. El campo de sesión/encargo es opcional y no se inventa. La bandeja reúne ambos con filtros de tipo y estado. «Copiar todo para IA» incluye procedencia, documento, versión y SHA, sección, cita, contexto completo y respuestas; «Copiar pendientes» limita la selección. Se copia texto: no se envía automáticamente a ningún modelo. La exportación sólo incluye las notas del usuario conectado. Los archivos standalone guardan sus notas en el navegador y no ofrecen privacidad frente a quien recibe un JSON exportado.
+
+Las revisiones nuevas se preparan como borrador. El creador compara texto y referencias antes de publicar la versión en el mismo enlace. Los estados de contexto avisan de un fragmento modificado, trasladado, ausente o ambiguo; no aplican un cambio automáticamente. Consulta [portal-nas.md](portal-nas.md) para permisos, avisos y operación.
