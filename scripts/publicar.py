@@ -30,7 +30,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--config',type=Path,default=CONFIG)
     sub=p.add_subparsers(dest='command',required=True)
     c=sub.add_parser('conectar');c.add_argument('--servidor',required=True);c.add_argument('--token-archivo',type=Path)
-    c=sub.add_parser('publicar');c.add_argument('--archivo',type=Path,required=True);c.add_argument('--titulo',required=True);c.add_argument('--espacio',default='Personal');c.add_argument('--artefacto-id')
+    c=sub.add_parser('publicar');c.add_argument('--archivo',type=Path,required=True);c.add_argument('--titulo',required=True);c.add_argument('--espacio',default='Personal');c.add_argument('--artefacto-id');c.add_argument('--visibilidad',choices=['private','unlisted','public'])
     c=sub.add_parser('comentarios');c.add_argument('--artefacto-id');c.add_argument('--abiertos',action='store_true');c.add_argument('--salida',type=Path)
     sub.add_parser('estado');sub.add_parser('listar');args=p.parse_args()
     if args.command=='conectar':
@@ -50,7 +50,10 @@ def main():
         if args.archivo.stat().st_size>20*1024*1024:raise SystemExit('El HTML supera 20 MB.')
         aid=args.artefacto_id
         if aid and (len(aid)!=32 or any(x not in '0123456789abcdef' for x in aid)):raise SystemExit('ID de artefacto inválido.')
-        result=request(base,token,'/api/artifacts'+('/'+aid+'/versions' if aid else ''),{'title':args.titulo,'space':args.espacio,'html':args.archivo.read_text()})
+        if aid and args.visibilidad:raise SystemExit('Las revisiones conservan permisos; usa Compartir en el portal para cambiarlos.')
+        body={'title':args.titulo,'space':args.espacio,'html':args.archivo.read_text()}
+        if args.visibilidad:body['visibility']=args.visibilidad
+        result=request(base,token,'/api/artifacts'+('/'+aid+'/versions' if aid else ''),body)
     elif args.command=='comentarios':
         params={'scope':'open' if args.abiertos else 'all'}
         if args.artefacto_id:params['artifact']=args.artefacto_id

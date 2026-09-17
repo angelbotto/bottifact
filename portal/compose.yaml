@@ -3,13 +3,14 @@ services:
     build:
       context: ..
       dockerfile: portal/Dockerfile
-    image: bottifact-portal:2026.09.16-portal.2
+    image: bottifact-portal:2026.09.17-portal.3
     container_name: bottifact-portal
     restart: unless-stopped
     env_file: /volume1/docker/bottifact/config.env
     volumes:
       - /volume1/docker/bottifact/data:/data
       - /volume1/docker/bottifact/backups:/backups
+      - /volume1/docker/bottifact/releases:/releases:ro
     ports:
       - "127.0.0.1:8788:8080"
     networks: [edge]

@@ -1,0 +1,12 @@
+(()=>{'use strict';const $=s=>document.querySelector(s);const params=new URLSearchParams(location.search),next=/^\/(a\/[a-f0-9]{32})?$/.test(params.get('next'))?params.get('next'):'/';let challenge='';
+try{document.documentElement.toggleAttribute('data-dark',localStorage.getItem('bottifact-portal-dark')==='true'||(!localStorage.getItem('bottifact-portal-dark')&&matchMedia('(prefers-color-scheme:dark)').matches));}catch{}
+$('#appearance').onclick=()=>{const dark=document.documentElement.toggleAttribute('data-dark');try{localStorage.setItem('bottifact-portal-dark',String(dark));}catch{}};
+async function api(path,body){const response=await fetch(path,{method:body?'POST':'GET',headers:{'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});const data=await response.json();if(!response.ok)throw Error(data.detail||'No pudimos conectar. Intenta de nuevo.');return data;}
+async function submit(form,work){const button=form.querySelector('[type=submit]');button.disabled=true;$('#message').textContent='';try{await work();}catch(error){$('#message').textContent=error.message;}finally{button.disabled=false;}}
+$('#email-form').onsubmit=e=>{e.preventDefault();submit(e.target,async()=>{const data=await api('/api/auth/email',{email:$('#email').value,next});challenge=data.challenge;$('#email-form').hidden=true;$('#verify-form').hidden=false;$('#sent-to').textContent='Enviamos el código a '+$('#email').value+'. Revisa también spam.';$('#code').focus();});};
+$('#verify-form').onsubmit=e=>{e.preventDefault();submit(e.target,async()=>{const data=await api('/api/auth/email/verify',{challenge,code:$('#code').value});location.replace(data.next);});};
+$('#retry').onclick=()=>{$('#verify-form').hidden=true;$('#email-form').hidden=false;$('#code').value='';$('#message').textContent='Puedes pedir otro código después de un minuto.';$('#email').focus();};
+if(params.has('error'))$('#message').textContent='No se completó el acceso con Google. Intenta de nuevo o usa un código por correo.';
+api('/api/auth/options').then(options=>{$('#google').hidden=!options.google;$('#divider').hidden=!options.google;$('#google-pending').hidden=options.google;$('#google').href='/auth/google?next='+encodeURIComponent(next);if(!options.email){$('#email-form').hidden=true;$('#message').textContent='El acceso por correo está en preparación.';}}).catch(()=>$('#message').textContent='No pudimos conectar. Recarga para volver a intentar.');
+api('/api/session').then(({user})=>{if(user?.verified)location.replace(next);}).catch(()=>{});
+})();

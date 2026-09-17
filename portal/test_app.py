@@ -46,7 +46,7 @@ class PortalTests(unittest.TestCase):
         for c in [self.other,self.guest]:
             for suffix in ['', '/render','/review']:
                 self.assertEqual(c.get(self.path+suffix).status_code,404)
-            self.assertEqual(c.get('/api/artifacts').json()['artifacts'],[])
+            self.assertEqual(c.get('/api/artifacts').status_code,401 if c is self.guest else 200)
         response=self.owner.get(self.path+'/render')
         self.assertIn('sandbox allow-scripts allow-downloads',response.headers['content-security-policy'])
         self.assertNotIn('allow-same-origin',response.headers['content-security-policy'])
@@ -126,12 +126,12 @@ class PortalTests(unittest.TestCase):
         self.assertEqual(self.owner.put(self.path+'/access',json={'visibility':'invited','grants':[None]}).status_code,422)
         self.access(visibility='unlisted',comments='readers',guests=False,grants=[])
         self.assertEqual(self.guest.get(self.path).status_code,200)
-        self.assertEqual(self.guest.get('/api/artifacts?view=public').json()['artifacts'],[])
+        self.assertEqual(self.guest.get('/api/artifacts?view=public').status_code,401)
         self.owner.post(self.path+'/review',json=self.event())
         self.assertEqual(self.other.post(self.path+'/review',json=self.event(id='foreign-edit',kind='edit',thread='test-event-1')).status_code,403)
         self.assertEqual(self.owner.post(self.path+'/review',json=self.event(id='bad-anchor',anchor=[])).status_code,422)
         self.access(visibility='public',comments='readers',guests=False,grants=[])
-        self.assertEqual(len(self.guest.get('/api/artifacts?view=public').json()['artifacts']),1)
+        self.assertEqual(len(self.other.get('/api/artifacts?view=public').json()['artifacts']),1)
 
     def test_library_separates_owned_shared_and_public(self):
         self.access()
@@ -139,8 +139,8 @@ class PortalTests(unittest.TestCase):
         self.assertEqual(self.owner.get('/api/artifacts?view=shared').json()['artifacts'],[])
         self.assertEqual(self.other.get('/api/artifacts?view=mine').json()['artifacts'],[])
         self.assertEqual(len(self.other.get('/api/artifacts?view=shared').json()['artifacts']),1)
-        self.assertEqual(self.guest.get('/api/artifacts?view=mine').json()['artifacts'],[])
-        self.assertEqual(self.guest.get('/api/artifacts?view=shared').json()['artifacts'],[])
+        self.assertEqual(self.guest.get('/api/artifacts?view=mine').status_code,401)
+        self.assertEqual(self.guest.get('/api/artifacts?view=shared').status_code,401)
         self.assertEqual(self.other.get('/api/artifacts?view=public').json()['artifacts'],[])
         self.assertEqual(len(self.other.get('/api/artifacts').json()['artifacts']),1)
         self.access(visibility='private')
@@ -152,7 +152,7 @@ class PortalTests(unittest.TestCase):
         self.assertEqual(a.status_code,200)
         self.assertEqual(a.json(),self.owner.post('/api/bookmarks',json=body).json())
         self.assertEqual(len(self.owner.get('/api/artifacts?view=mine').json()['artifacts']),2)
-        for client in [self.other,self.guest]:
+        for client in [self.other]:
             self.assertEqual(client.get('/api/artifacts?view=mine').json()['artifacts'],[])
             self.assertEqual(client.get('/api/artifacts?view=public').json()['artifacts'],[])
         self.assertEqual(self.owner.post('/api/bookmarks',json={**body,'url':'javascript:alert(1)'}).status_code,422)

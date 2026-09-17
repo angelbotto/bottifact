@@ -18,7 +18,8 @@ from pathlib import Path
 
 import jwt
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse, Response
+from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse, Response, FileResponse
+from portal.auth import mount_auth
 from fastapi.staticfiles import StaticFiles
 
 ROOT = Path(__file__).parent
@@ -26,6 +27,14 @@ COOKIE = '__Host-bottifact'
 MAX_BODY = 22 * 1024 * 1024
 EMAIL = re.compile(r'^[^\s@]{1,64}@[^\s@.]+(?:\.[^\s@.]+)+$')
 ID = re.compile(r'^[a-zA-Z0-9_-]{1,120}$')
+
+
+def admin_emails():
+    return [e.strip().lower() for e in os.environ.get("BOTTIFACT_ADMIN_EMAILS", "").split(",") if e.strip()]
+
+
+def is_admin(user):
+    return bool(user and user["verified"] and user.get("email") in admin_emails())
 
 
 def digest(value):
@@ -91,6 +100,8 @@ class Store:
 
     def user(self, email, name):
         email = clean(email, 254).lower()
+        aliases = admin_emails()
+        if email in aliases: email = aliases[0]
         if not EMAIL.fullmatch(email):
             raise HTTPException(422, 'Correo inválido.')
         with self.db() as db:
@@ -126,7 +137,7 @@ class Store:
 def role(db, artifact, user):
     if not user:
         return None
-    if artifact['owner'] == user['id']:
+    if artifact['owner'] == user['id'] or is_admin(user):
         return 'owner'
     grant = db.execute('SELECT role FROM grants WHERE artifact=? AND email=?',
                        (artifact['id'], user.get('email') or '')).fetchone() if user['verified'] else None
@@ -238,13 +249,15 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
             response.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'"
         return response
 
+    mount_auth(app, store, origin, set_session, payload, clean, EMAIL)
+
     @app.get('/health')
     def health(): return {'service':'bottifact', 'status':'ok', 'storage':'nas-local'}
 
     @app.get('/api/session')
     def session(request: Request):
         u = who(request)
-        return {'user': {k:u[k] for k in ('id','email','name','verified')} if u else None}
+        return {'user': {**{k:u[k] for k in ('id','email','name','verified')}, 'admin':is_admin(u)} if u else None}
 
     @app.post('/api/guest')
     async def guest(request: Request):
@@ -309,7 +322,7 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
 
     @app.get('/api/artifacts')
     def artifacts(request: Request):
-        u = who(request);view = request.query_params.get('view');public = view == 'public'
+        u = account(request);view = request.query_params.get('view');public = view == 'public'
         with store.db() as db:
             rows = []
             for a in db.execute('SELECT * FROM artifacts ORDER BY updated DESC'):
@@ -319,7 +332,7 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
                     notes = threads(snapshot(db,a)['events']) if p['review'] else []
                     rows.append({**dict(a),'permissions':p,'open_comments':sum(not n['resolved'] for n in notes)})
             if u and not public and view!='shared':
-                for b in db.execute('SELECT * FROM bookmarks WHERE owner=? ORDER BY created DESC',(u['id'],)):
+                for b in db.execute('SELECT * FROM bookmarks WHERE owner=? OR ? ORDER BY created DESC',(u['id'],is_admin(u))):
                     rows.append({**dict(b),'external':True,'visibility':'external','updated':b['created'],'open_comments':0,'permissions':{'read':True,'review':False,'comment':False,'edit':False,'manage':False,'role':'owner'}})
             return {'artifacts':rows}
 
@@ -345,7 +358,9 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
         if not match: raise HTTPException(422,'Genera el archivo con Bottifact y un documento-id estable.')
         docid = match[1];title = clean(body.get('title'),200);space = clean(body.get('space','Personal'),60)
         data = content.encode();sha = hashlib.sha256(data).hexdigest();version = uuid.uuid4().hex
-        visibility='private'
+        visibility=body.get('visibility','private')
+        if visibility not in ('private','unlisted','public'): raise HTTPException(422,'Visibilidad inválida.')
+        if aid and 'visibility' in body: raise HTTPException(422,'Una revisión conserva los permisos. Cámbialos desde Compartir.')
         with store.db() as db:
             if aid:
                 a = artifact_for(db,aid,u,'edit')
@@ -356,8 +371,8 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
                 if db.execute('SELECT count(*) FROM artifacts WHERE owner=?',(u['id'],)).fetchone()[0] >= 200:
                     raise HTTPException(409,'El espacio alcanzó 200 documentos.')
                 aid = uuid.uuid4().hex
-                db.execute('INSERT INTO artifacts(id,owner,title,space,document_id,updated) VALUES(?,?,?,?,?,?)',
-                           (aid,u['id'],title,space,docid,int(time.time())))
+                db.execute('INSERT INTO artifacts(id,owner,title,space,document_id,updated,visibility) VALUES(?,?,?,?,?,?,?)',
+                           (aid,u['id'],title,space,docid,int(time.time()),visibility))
             file = store.files/(sha+'.html')
             if not file.exists():
                 temporary = store.files/(uuid.uuid4().hex+'.tmp');temporary.write_bytes(data);temporary.replace(file)
@@ -457,7 +472,7 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
     def inbox(request: Request):
         u=account(request);items=[]
         with store.db() as db:
-            for a in db.execute('SELECT * FROM artifacts WHERE owner=? ORDER BY updated DESC',(u['id'],)):
+            for a in db.execute('SELECT * FROM artifacts WHERE owner=? OR ? ORDER BY updated DESC',(u['id'],is_admin(u))):
                 for t in threads(snapshot(db,a)['events']): items.append({'artifact':a['id'],'title':a['title'],'space':a['space'],'thread':t})
         return {'items':items}
 
@@ -465,7 +480,7 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
     def export(request: Request):
         u=account(request);aid=request.query_params.get('artifact');scope=request.query_params.get('scope','all');parts=[]
         with store.db() as db:
-            arts=[artifact_for(db,aid,u,'review')] if aid else list(db.execute('SELECT * FROM artifacts WHERE owner=? ORDER BY title',(u['id'],)))
+            arts=[artifact_for(db,aid,u,'review')] if aid else list(db.execute('SELECT * FROM artifacts WHERE owner=? OR ? ORDER BY title',(u['id'],is_admin(u))))
             for a in arts:
                 notes=[t for t in threads(snapshot(db,a)['events']) if scope!='open' or not t['resolved']]
                 if not notes: continue
@@ -497,9 +512,24 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
         result=content[:position]+script+content[position:]
         return HTMLResponse(result,headers={'Content-Security-Policy':"sandbox allow-scripts allow-downloads; default-src 'none'; script-src 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'unsafe-inline'; img-src data: blob:; font-src data:; media-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'self'"})
 
+    @app.get('/login')
+    def login_page(): return HTMLResponse((ROOT/'static/login.html').read_text())
+
+    @app.get('/install.py')
+    def installer(): return FileResponse(ROOT/'install.py' if (ROOT/'install.py').exists() else ROOT.parent/'scripts/actualizar.py', media_type='text/x-python')
+
+    @app.get('/downloads/{name}')
+    def download(name: str):
+        if name not in ('bottifact-portable.zip','bottifact-portable.sha256'): raise HTTPException(404)
+        path=Path(os.environ.get('BOTTIFACT_RELEASES','/releases'))/name
+        if not path.is_file(): raise HTTPException(503,'Paquete pendiente de publicación.')
+        return FileResponse(path, filename=name)
+
     @app.get('/')
     @app.get('/a/{aid}')
-    def page(aid: str=''): return HTMLResponse((ROOT/'static/index.html').read_text())
+    def page(request: Request, aid: str=''):
+        if not aid and not (who(request) or {}).get('verified'): return RedirectResponse('/login', status_code=303)
+        return HTMLResponse((ROOT/'static/index.html').read_text())
 
     app.mount('/static',StaticFiles(directory=ROOT/'static'),name='static')
     return app

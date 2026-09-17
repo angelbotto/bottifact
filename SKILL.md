@@ -63,7 +63,7 @@ Para Liftit, Tikin o Catabum, lee [marcas.md](marcas.md): usa el logo incrustado
 
 ## Publicar y recoger revisiones
 
-Cuando el encargo autorice publicar, usa `scripts/publicar.py`: `estado` comprueba la conexión personal; `publicar --archivo /ruta/artefacto.html --titulo 'Título'` crea un documento privado; `--artefacto-id ID` añade una versión al mismo enlace. `comentarios --abiertos` recupera contexto desde el NAS. La configuración personal queda fuera del skill; no la copies al entregable. Consulta [portal-nas.md](portal-nas.md) para modos de acceso, conexión y límites. Una conexión instalada no implica permiso para hacer público un documento.
+Cuando el encargo autorice publicar, usa `scripts/publicar.py`: `estado` comprueba la conexión personal; `publicar --archivo /ruta/artefacto.html --titulo 'Título'` crea un documento privado; `--artefacto-id ID` añade una versión al mismo enlace y conserva sus permisos. Si el usuario autoriza un documento público nuevo, añade `--visibilidad public`; `unlisted` permite abrirlo con enlace sin listarlo. `comentarios --abiertos` recupera contexto desde el NAS. La configuración personal queda fuera del skill; no la copies al entregable. Consulta [portal-nas.md](portal-nas.md) para modos de acceso, conexión y límites. Una conexión instalada no implica permiso para hacer público un documento.
 
 ## Mantener y distribuir
 
@@ -81,7 +81,7 @@ python3 scripts/empaquetar.py
 
 Prueba además las interacciones afectadas y revisa la salida final. El montaje de módulos conserva init/get/destroy y limpieza de listeners/observadores. No presentes la validación estática como verificación visual.
 
-[instalacion.md](instalacion.md) explica instalación en Claude, Codex y Hermes, actualización con respaldo y verificación del ZIP. [arquitectura.md](arquitectura.md) registra el stack del archivo y el portal conectado. Una instalación local no acredita otro equipo ni que una sesión abierta haya recargado el skill.
+`python3 scripts/actualizar.py` instala la última versión publicada con respaldo; no ejecuta actualizaciones automáticas durante la generación ni cambia el token. [instalacion.md](instalacion.md) explica instalación en Claude, Codex y Hermes, actualización con respaldo y verificación del ZIP. [arquitectura.md](arquitectura.md) registra el stack del archivo y el portal conectado. Una instalación local no acredita otro equipo ni que una sesión abierta haya recargado el skill.
 
 Para revisar la calidad del skill con encargos reales usa [evaluacion-skill.md](evaluacion-skill.md). No hace falta ejecutarlos todos al generar un documento.
 

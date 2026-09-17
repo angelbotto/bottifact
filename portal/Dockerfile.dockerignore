@@ -4,3 +4,5 @@
 portal/**/__pycache__/
 portal/.env
 portal/data/
+!scripts/
+!scripts/actualizar.py

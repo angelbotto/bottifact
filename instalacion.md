@@ -5,10 +5,53 @@ sonidos y módulos, más scripts Python para generar y validar. Claude, Codex y 
 exactamente ese directorio. Los artefactos generados son HTML; no dependen de que el lector tenga
 instalado un agente. Three.js requiere su CDN permitido; los demás recursos van incrustados.
 
+## Instalación y actualización por terminal
+
+Cualquier persona puede descargar el skill sin cuenta. El repositorio sigue siendo privado; el paquete publicado contiene sólo la biblioteca y sus recursos compartibles.
+
+```bash
+curl -fsSL https://artifacts.botto.is/install.py -o /tmp/bottifact-install.py
+python3 /tmp/bottifact-install.py
+```
+
+Requiere Python 3.10+. En macOS con Python antiguo usa el de Homebrew (`brew install python`).
+El comando descarga el ZIP, verifica su SHA-256 y el manifiesto interno, instala en
+`~/.local/share/bottifact/library` y crea enlaces para Codex (`~/.agents/skills/bottifact`),
+Claude Code (`~/.claude/skills/bottifact`) y Hermes (`~/.hermes/skills/bottifact`). Conserva carpetas
+y enlaces que ya apunten a otras bibliotecas; revisa los avisos si tienes una instalación propia.
+Un checkout Git nunca se reemplaza. Si usas un perfil de agente personalizado, enlaza su carpeta
+de skills a la copia instalada. No se cambia la configuración global de ningún agente.
+
+Para actualizar, repite el comando o ejecuta:
+
+```bash
+python3 ~/.local/share/bottifact/library/scripts/actualizar.py
+# Si ~/.local/bin está en PATH:
+bottifact actualizar
+```
+
+Se respalda la versión anterior fuera de las carpetas de skills. No se copia ni cambia
+`~/.config/bottifact/portal.json`, donde vive el token personal. No hay actualización silenciosa:
+ejecuta el comando cuando quieras adoptar una nueva versión y abre una conversación nueva.
+SHA-256 detecta una descarga corrupta; su publicación en el mismo servidor no constituye una firma independiente.
+
+## Crear y publicar son pasos separados
+
+Generar HTML funciona sin cuenta. Para alojarlo en el NAS, entra en https://artifacts.botto.is/,
+abre **Conectar un agente**, crea un token y ejecuta:
+
+```bash
+bottifact conectar --servidor https://artifacts.botto.is
+bottifact publicar --archivo informe.html --titulo 'Informe' --visibilidad public
+```
+
+El token se pega en una entrada oculta. Omite `--visibilidad` para guardar privado. Una revisión
+con `--artefacto-id ID` conserva el enlace y los permisos. Cada persona usa su propio token;
+compartir el skill nunca comparte una cuenta. Consulta [portal-nas.md](portal-nas.md).
+
 ## Hermes en el MacBook
 
-Descarga [bottifact-portable.zip](descargas/bottifact-portable.zip) desde el servidor privado de
-Tailscale, descomprímelo y abre una terminal dentro de la carpeta `bottifact` extraída:
+Descarga [bottifact-portable.zip](descargas/bottifact-portable.zip) desde https://artifacts.botto.is/downloads/bottifact-portable.zip, descomprímelo y abre una terminal dentro de la carpeta `bottifact` extraída:
 
 ```bash
 python3 scripts/instalar.py --destino ~/.hermes/skills/bottifact
@@ -56,7 +99,7 @@ sólo acredita archivos íntegros. Python 3 debe estar disponible; no hace falta
 Incluye instrucciones, fuentes, licencias/procedencias, módulos, recetas, ejemplos, guías y scripts.
 Excluye historia git, capturas de auditoría, cachés, entornos y otros skills. El manifiesto registra
 cada archivo y su hash; `VERSION.json` identifica el conjunto. No incluye configuración ni credenciales
-de agentes. El ZIP está en el servidor privado ya usado para revisar los artefactos, no en un enlace público.
+de agentes. El ZIP verificado está disponible públicamente en el portal; no incluye credenciales ni datos del servidor.
 
 Para regenerarlo en una copia de desarrollo ejecuta `python3 scripts/empaquetar.py`. La carpeta
 `descargas` es salida, no una fuente: no se incluye recursivamente en el paquete.

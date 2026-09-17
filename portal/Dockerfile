@@ -3,6 +3,7 @@ WORKDIR /app
 COPY portal/requirements.lock /app/requirements.lock
 RUN pip install --no-cache-dir --require-hashes -r requirements.lock
 COPY portal /app/portal
+COPY scripts/actualizar.py /app/portal/install.py
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 BOTTIFACT_DATA=/data
 USER 1026:100
 EXPOSE 8080
