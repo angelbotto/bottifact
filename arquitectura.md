@@ -52,7 +52,7 @@ La revisión conectada está implementada en `portal/` y se despliega por separa
 
 Cloudflare Access verifica el correo únicamente en el login. Bottifact comprueba propietario y permisos por documento en cada lectura/escritura. Los HTML se aíslan de la sesión mediante CSP e iframe sin `allow-same-origin`; un puente de mensajes limitado transporta la revisión. El agente usa una conexión personal revocable y publica privado por defecto. [portal-nas.md](portal-nas.md) explica operación, privacidad y límites.
 
-La vista consulta cambios cada 12 segundos. No hay presencia en vivo ni coedición del texto. El siguiente trabajo es recepción real de correos y dominio público verificados de extremo a extremo, migración de comentarios locales y comparación visual entre versiones. CRDT sólo merece evaluación si varias personas editan simultáneamente el cuerpo.
+La vista consulta cambios cada 12 segundos. No hay presencia en vivo ni coedición del texto. El dominio público artifacts.botto.is está activo. La portada reúne documentos propios, compartidos y enlaces del portal anterior sin alterar sus permisos. Sigue pendiente acreditar recepción real de códigos con usuarios invitados, migración de comentarios locales y comparación visual entre versiones. CRDT sólo merece evaluación si varias personas editan simultáneamente el cuerpo.
 
 ## Cambio de nombre y compatibilidad
 

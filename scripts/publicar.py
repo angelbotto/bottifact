@@ -14,7 +14,7 @@ CONFIG=Path.home()/'.config/bottifact/portal.json'
 
 def request(base, token, path, data=None):
     req=urllib.request.Request(base+path,data=json.dumps(data).encode() if data is not None else None,
-        headers={'Authorization':'Bearer '+token,'Content-Type':'application/json'})
+        headers={'Authorization':'Bearer '+token,'Content-Type':'application/json','User-Agent':'Bottifact/1.0'})
     # No enviar la conexión a otro destino mediante una redirección.
     class NoRedirect(urllib.request.HTTPRedirectHandler):
         def redirect_request(self,*args,**kwargs):return None

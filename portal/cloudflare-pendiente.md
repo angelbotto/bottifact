@@ -1,21 +1,25 @@
-# Activar artifacts.botto.is
+# artifacts.botto.is está activo
 
-El servidor ya está en el NAS y comparte la red Docker con el conector existente. La credencial disponible permite administrar Access, pero devuelve 401 al consultar la configuración del túnel; no permite completar la ruta pública.
+El dominio público apunta al NAS mediante el túnel existente. Se agregó únicamente la ruta `artifacts.botto.is` → `http://bottifact:8080` y su CNAME proxied, conservando las otras 35 reglas. La credencial administrativa se resolvió desde Infisical; no está en este repositorio ni en el contenedor.
 
-En Cloudflare Zero Trust, abre el túnel con ID `dfa2b99e-a481-43b3-b73d-e1b1306e0729`. Añade una aplicación publicada sin cambiar las existentes:
+La portada está en https://artifacts.botto.is/. Cada cuenta ve sus documentos y los compartidos con ella. El catálogo del propietario incorpora 14 enlaces del portal anterior, privados dentro de esta biblioteca: abrirlos conserva las políticas de su sitio de origen. No se migraron sus versiones ni comentarios.
 
-- Hostname: `artifacts.botto.is`
-- Service: `HTTP`, dirección `bottifact:8080` (nombre del servicio en la red `botto-site_default`).
-- Si el panel no crea DNS automáticamente: CNAME `artifacts` → `dfa2b99e-a481-43b3-b73d-e1b1306e0729.cfargotunnel.com`, proxied.
+## Acceso por persona
 
-Ya existe la aplicación Access «Bottifact · Inicio de sesión» para `artifacts.botto.is/auth/login`. Su política Allow acepta personas autenticadas; los documentos privados se autorizan después en Bottifact. No agregues un bypass sobre esa ruta ni protejas todos los artefactos con la misma lista de correos del propietario. El servidor comprueba firma/audiencia/emisor del JWT; una cabecera inventada no sirve.
+En el documento, pulsa **Compartir**, elige **Personas invitadas**, añade el correo y escoge **Ver**, **Comentar** o **Editar**. Guarda y comparte el enlace. También puedes hacerlo desde la tarjeta de la biblioteca. Añadir un correo a un documento privado cambia el formulario a invitados; guardar es lo que aplica los permisos.
 
-Después de conectar la ruta:
+La persona entra con su correo y un código personal de Cloudflare Access. No hay contraseña compartida por documento. El código verifica la identidad y Bottifact comprueba que ese correo tenga permiso. Las invitaciones automáticas por email aún no están implementadas: añadir una persona no le envía un mensaje.
 
-1. Comprobar `https://artifacts.botto.is/health` y que la portada carga.
-2. Cambiar `BOTTIFACT_ORIGIN=https://artifacts.botto.is` en `/volume1/docker/bottifact/config.env`. Mantener el origen privado en `BOTTIFACT_EXTRA_ORIGINS` si se desea conservar la vista Tailscale.
-3. Recrear sólo Bottifact: `docker compose -f /volume1/docker/bottifact/source/portal/compose.yaml up -d`.
-4. Probar ingreso real con el correo del propietario. Compartir un ejemplo con una segunda identidad autorizada; comprobar privado, invitado, público, comentario y revocación.
-5. Reconectar el cliente de los agentes al origen público. Mantener los tokens fuera de Git y de los HTML.
+Quitar un correo y guardar revoca su acceso restringido. En un documento público o con enlace, quitar una invitación no impide la lectura general: para restringirla elige Invitados o Privado.
 
-No es necesario abrir puertos públicos del NAS ni cambiar los servicios `pages.botto.is` o `pages-api.botto.is`. La ruta HTTPS privada de prueba es `https://namakarius.tailf63ddf.ts.net:8788/`; requiere pertenecer a la red Tailscale. Su login por correo no pasa por Cloudflare: para el administrador se usa un enlace temporal emitido por SSH.
+## Configuración operativa
+
+- NAS: `bottifact-portal`, volumen `/volume1/docker/bottifact/data`.
+- Origen principal: `BOTTIFACT_ORIGIN=https://artifacts.botto.is`.
+- Origen adicional: `https://namakarius.tailf63ddf.ts.net:8788` para administración privada.
+- Login protegido por Access: `artifacts.botto.is/auth/login`; la API de documentos valida sus propios permisos.
+- Proveedor de identidad: One-time PIN. Firma, audiencia y emisor del JWT se verifican en el servidor.
+- DNS: CNAME `artifacts` → `dfa2b99e-a481-43b3-b73d-e1b1306e0729.cfargotunnel.com`, proxied.
+- Ruta añadida al túnel `dfa2b99e-a481-43b3-b73d-e1b1306e0729`: `http://bottifact:8080`.
+
+Se verificaron HTTPS, portada, redirección al formulario de código, API autenticada de agentes, aislamiento del catálogo y controles de acceso. La entrega real del código por correo requiere que la persona complete el ingreso; no se enviaron correos de prueba a terceros.

@@ -133,6 +133,31 @@ class PortalTests(unittest.TestCase):
         self.access(visibility='public',comments='readers',guests=False,grants=[])
         self.assertEqual(len(self.guest.get('/api/artifacts?view=public').json()['artifacts']),1)
 
+    def test_library_separates_owned_shared_and_public(self):
+        self.access()
+        self.assertEqual(len(self.owner.get('/api/artifacts?view=mine').json()['artifacts']),1)
+        self.assertEqual(self.owner.get('/api/artifacts?view=shared').json()['artifacts'],[])
+        self.assertEqual(self.other.get('/api/artifacts?view=mine').json()['artifacts'],[])
+        self.assertEqual(len(self.other.get('/api/artifacts?view=shared').json()['artifacts']),1)
+        self.assertEqual(self.guest.get('/api/artifacts?view=mine').json()['artifacts'],[])
+        self.assertEqual(self.guest.get('/api/artifacts?view=shared').json()['artifacts'],[])
+        self.assertEqual(self.other.get('/api/artifacts?view=public').json()['artifacts'],[])
+        self.assertEqual(len(self.other.get('/api/artifacts').json()['artifacts']),1)
+        self.access(visibility='private')
+        self.assertEqual(self.other.get('/api/artifacts?view=shared').json()['artifacts'],[])
+
+    def test_external_catalog_is_personal_and_idempotent(self):
+        body={'title':'Documento anterior','url':'https://pages.botto.is/informe/'}
+        a=self.owner.post('/api/bookmarks',json=body)
+        self.assertEqual(a.status_code,200)
+        self.assertEqual(a.json(),self.owner.post('/api/bookmarks',json=body).json())
+        self.assertEqual(len(self.owner.get('/api/artifacts?view=mine').json()['artifacts']),2)
+        for client in [self.other,self.guest]:
+            self.assertEqual(client.get('/api/artifacts?view=mine').json()['artifacts'],[])
+            self.assertEqual(client.get('/api/artifacts?view=public').json()['artifacts'],[])
+        self.assertEqual(self.owner.post('/api/bookmarks',json={**body,'url':'javascript:alert(1)'}).status_code,422)
+        self.assertEqual(self.owner.post('/api/bookmarks',json={**body,'url':'https://name:secret@example.com'}).status_code,422)
+
     def test_signed_login_rejects_wrong_audience_and_expired(self):
         private=rsa.generate_private_key(public_exponent=65537,key_size=2048)
         claims={'iss':'https://identity.test','aud':['our-app'],'sub':'subject','email':'invited@example.com','iat':int(time.time()),'exp':int(time.time())+60,'type':'app'}
