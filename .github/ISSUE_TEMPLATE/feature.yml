@@ -1,0 +1,19 @@
+name: Feature or component / Propuesta
+description: Explain a concrete use case, not just a feature name.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Who needs this and what are they trying to do?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior and alternatives
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Illustrative example or acceptance criteria

@@ -1,0 +1,22 @@
+name: Bug report / Error
+description: Report a reproducible problem using sanitized examples.
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Release or commit
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps and expected behavior
+      description: Include agent, browser, OS and deployment method where relevant. Do not include secrets or private artifacts.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and evidence
+    validations:
+      required: true

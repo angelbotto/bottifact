@@ -2,6 +2,7 @@
 import base64
 import hashlib
 import hmac
+import html
 import json
 import os
 import re
@@ -40,13 +41,15 @@ def remote_json(url, data=None, headers=None, form=False):
 
 
 def send_code(email, code):
+    origin=os.environ.get('BOTTIFACT_ORIGIN','http://localhost:8788').rstrip('/')
+    safe_origin=html.escape(origin,quote=True)
     provider = os.environ.get('BOTTIFACT_EMAIL_PROVIDER', 'usesend')
     suffix = '/emails' if provider == 'resend' else '/api/v1/emails'
     return remote_json(os.environ['BOTTIFACT_EMAIL_URL'].rstrip('/') + suffix, {
         'from': os.environ['BOTTIFACT_EMAIL_FROM'], 'to': [email] if provider == 'resend' else email,
         'subject': 'Tu código de acceso a Bottifact',
-        'text': f'Tu código de acceso es {code}. Vence en 10 minutos y solo sirve una vez.\n\nÚsalo en https://artifacts.botto.is. Si no lo pediste, ignora este mensaje. No compartas el código.',
-        'html': f'<div style="font-family:Arial,sans-serif;max-width:480px;margin:auto;padding:32px;color:#292520"><h1 style="font-family:Georgia,serif;font-weight:400">bottifact</h1><p>Tu código de acceso</p><p style="font-size:36px;letter-spacing:8px">{code}</p><p>Vence en 10 minutos y solo sirve una vez.</p><p>Úsalo en <a href="https://artifacts.botto.is">artifacts.botto.is</a>. Si no lo pediste, ignora este mensaje. No compartas el código.</p></div>'
+        'text': f'Tu código de acceso es {code}. Vence en 10 minutos y solo sirve una vez.\n\nÚsalo en {origin}. Si no lo pediste, ignora este mensaje. No compartas el código.',
+        'html': f'<div style="font-family:Arial,sans-serif;max-width:480px;margin:auto;padding:32px;color:#292520"><h1 style="font-family:Georgia,serif;font-weight:400">bottifact</h1><p>Tu código de acceso</p><p style="font-size:36px;letter-spacing:8px">{code}</p><p>Vence en 10 minutos y solo sirve una vez.</p><p>Úsalo en <a href="{safe_origin}">{safe_origin}</a>. Si no lo pediste, ignora este mensaje. No compartas el código.</p></div>'
     }, {'Authorization': 'Bearer ' + os.environ['BOTTIFACT_EMAIL_KEY']})
 
 

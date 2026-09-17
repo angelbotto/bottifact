@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="490" viewBox="0 0 1280 490" role="img" aria-labelledby="title desc">
+<title id="title">Bottifact</title><desc id="desc">Documents with a life beyond the chat. An open source artifact library, agent skill and self-hosted review portal.</desc>
+<defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#d4cbbd" stroke-opacity=".12"/></pattern><linearGradient id="page" x2="1" y2="1"><stop stop-color="#f8f3e9"/><stop offset="1" stop-color="#ece3d4"/></linearGradient></defs>
+<rect width="1280" height="490" rx="18" fill="#171916"/><rect width="1280" height="490" rx="18" fill="url(#grid)"/>
+<path d="M48 48H1232M48 442H1232" stroke="#c6bbaa" stroke-opacity=".4" stroke-dasharray="2 5"/>
+<text x="66" y="97" fill="#afa895" font-family="monospace" font-size="14" letter-spacing="3">OPEN SOURCE · SELF-HOSTED · AGENT PORTABLE</text>
+<text x="62" y="215" fill="#f2ecdf" font-family="Georgia,serif" font-size="99" letter-spacing="-5">bottifact</text>
+<text x="66" y="269" fill="#d9d2c2" font-family="Arial,sans-serif" font-size="26">Documents with a life beyond the chat.</text>
+<text x="66" y="318" fill="#a7ac9e" font-family="Arial,sans-serif" font-size="17">Compose with evidence. Discuss in context. Keep your work.</text>
+<rect x="66" y="357" width="156" height="36" rx="18" fill="#c4d0a5"/><text x="144" y="380" text-anchor="middle" fill="#20271b" font-family="monospace" font-size="13">YOUR SERVER</text>
+<text x="244" y="380" fill="#b8baa9" font-family="monospace" font-size="13">82 recipes / 15 theme families</text>
+<g transform="translate(812 90)"><rect x="24" y="20" width="330" height="318" rx="9" fill="#0b0e0b" opacity=".6"/><rect width="330" height="318" rx="9" fill="url(#page)"/>
+<text x="28" y="40" fill="#6b7062" font-family="monospace" font-size="10" letter-spacing="2">A DOCUMENT, STILL IN CONVERSATION</text>
+<path d="M28 55H302" stroke="#cbc7bb"/><text x="28" y="90" font-family="Georgia,serif" font-size="28" fill="#272d25">What changes next?</text>
+<path d="M28 119H257M28 134H286M28 149H229" stroke="#b6b7a8" stroke-width="4"/>
+<rect x="28" y="178" width="274" height="89" fill="#e3e3d4" rx="4"/>
+<path d="M43 245L91 224L142 233L192 200L241 213L285 190" fill="none" stroke="#546e45" stroke-width="3"/>
+<circle cx="192" cy="200" r="5" fill="#546e45"/>
+<path d="M28 289H189" stroke="#b6b7a8" stroke-width="4"/>
+<circle cx="321" cy="151" r="22" fill="#edb28a" stroke="#171916" stroke-width="5"/><text x="321" y="157" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#392820">3</text>
+<path d="M321 173V198" stroke="#a27855" stroke-dasharray="3 3"/>
+</g>
+</svg>

@@ -1,8 +1,13 @@
+# Legacy deployment example for an existing Synology installation.
+# New installations: use ../compose.yaml and ../self-hosting.md.
 services:
   bottifact:
     build:
       context: ..
       dockerfile: portal/Dockerfile
+      args:
+        APP_UID: 1026
+        APP_GID: 100
     image: bottifact-portal:2026.09.17-atlas.1
     container_name: bottifact-portal
     restart: unless-stopped

@@ -8,8 +8,8 @@ def package():
  # Lista por extensiones y carpetas explícitas. No empaqueta archivos privados desconocidos.
  files=[]
  for p in ROOT.iterdir():
-  if p.is_file() and not p.is_symlink() and p.suffix in {'.md','.css','.js','.json','.html'}:files.append(p)
- for folder in ['scripts','ejemplos','assets','agents','licencias']:
+  if p.is_file() and not p.is_symlink() and (p.name in {'LICENSE','NOTICE'} or p.suffix in {'.md','.css','.js','.json','.html'}):files.append(p)
+ for folder in ['scripts','ejemplos','assets','agents','licencias','docs']:
   if not (ROOT/folder).exists():continue
   for p in (ROOT/folder).rglob('*'):
    if p.is_file() and not p.is_symlink() and '__pycache__' not in p.parts and p.suffix in {'.sh','.py','.js','.cjs','.html','.json','.md','.yaml','.woff2','.mp3','.svg','.txt'}:files.append(p)

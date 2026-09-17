@@ -1,4 +1,4 @@
-"""Administración mediante SSH. Nunca imprime tokens ni enlaces de acceso."""
+"""Administración local. Bootstrap imprime un enlace de acceso temporal; trátalo como una contraseña."""
 import argparse
 import json
 import os
@@ -6,7 +6,7 @@ import shutil
 import sqlite3
 import time
 from pathlib import Path
-from .app import Store
+from .app import Store, admin_emails
 
 
 def secret_file(path, value):
@@ -23,8 +23,14 @@ def main():
     for command in ['token','login']:
         c=sub.add_parser(command);c.add_argument('--email',required=True);c.add_argument('--name',required=True);c.add_argument('--output',required=True)
         if command=='token':c.add_argument('--label',default='Agente')
+    c=sub.add_parser('bootstrap');c.add_argument('--email',required=True)
     c=sub.add_parser('backup');c.add_argument('--output',required=True)
     args=p.parse_args();store=Store(args.data)
+    if args.command=='bootstrap':
+        if args.email.lower() not in admin_emails():p.error('Email must be listed in BOTTIFACT_ADMIN_EMAILS.')
+        user=store.user(args.email.lower(),args.email.split('@')[0])
+        print(os.environ.get('BOTTIFACT_ORIGIN','http://localhost:8788').rstrip('/')+'/auth/bootstrap?code='+store.login_once(user['id']))
+        return
     if args.command=='backup':
         out=Path(args.output);out.mkdir(parents=True,exist_ok=False,mode=0o700)
         # SQLite backup toma una instantánea coherente aunque el servidor siga activo.
@@ -42,7 +48,7 @@ def main():
         (out/'backup.json').write_text(json.dumps({'created':int(time.time()),'files':len(hashes),'schema':1}))
         print('Respaldo íntegro: '+str(out));return
     user=store.user(args.email,args.name)
-    value=store.token(user['id'],args.label) if args.command=='token' else os.environ.get('BOTTIFACT_ORIGIN','https://artifacts.botto.is')+'/auth/bootstrap?code='+store.login_once(user['id'])
+    value=store.token(user['id'],args.label) if args.command=='token' else os.environ.get('BOTTIFACT_ORIGIN','http://localhost:8788')+'/auth/bootstrap?code='+store.login_once(user['id'])
     secret_file(args.output,value)
 
 if __name__=='__main__':main()

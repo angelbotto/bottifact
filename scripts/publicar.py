@@ -69,7 +69,7 @@ def main():
         old=json.loads(args.config.read_text()) if args.config.exists() else {}
         private_json(args.config,{'server':base,'token':token,'publish_on_create':bool(old.get('publish_on_create')) if old.get('server')==base else False})
         print('Conexión guardada para '+user['email']+'. No se incluye en el skill ni en los artefactos.');return
-    if not args.config.exists():raise SystemExit('Primero conecta tu cuenta con: publicar.py conectar --servidor https://artifacts.botto.is')
+    if not args.config.exists():raise SystemExit('Primero conecta tu cuenta con: publicar.py conectar --servidor https://artifacts.example.com')
     if args.config.stat().st_mode&0o077:raise SystemExit('La conexión debe ser privada: chmod 600 '+str(args.config))
     config=json.loads(args.config.read_text());base=config['server'];token=config['token']
     if args.command=='preferencias':

@@ -1,0 +1,30 @@
+name: Self-host smoke test
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Configure a disposable instance
+        run: |
+          python3 scripts/configurar_portal.py --origin http://localhost:8788 --admin owner@example.com
+          docker compose config --quiet
+          docker compose -f compose.yaml -f deploy/https.yaml config --quiet
+      - name: Build and start without external authentication
+        run: docker compose up -d --build --wait --wait-timeout 120
+      - name: Check health, downloads and backup
+        run: |
+          curl --fail http://localhost:8788/health
+          curl --fail http://localhost:8788/downloads/bottifact-portable.zip -o /tmp/bottifact-portable.zip
+          curl --fail http://localhost:8788/downloads/bottifact-portable.sha256 -o /tmp/bottifact-portable.sha256
+          python3 scripts/actualizar.py --paquete /tmp/bottifact-portable.zip --destino /tmp/installed/bottifact --sin-enlaces
+          docker compose exec -T app python -m portal.backup create --data /data --output /backups
+      - name: Stop disposable instance
+        if: always()
+        run: docker compose down -v

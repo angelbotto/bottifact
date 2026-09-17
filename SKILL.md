@@ -47,7 +47,7 @@ Busca la mayor variedad útil de componentes: highlights/lowlights, evidencia ex
 - Notas izquierda/derecha: un matiz, límite o pregunta sobre la frase subrayada. La información crítica permanece en texto normal. Copia `apuntes`; no coloques contenido con offsets para simular márgenes.
 - Escritura y tachado: se revelan al entrar en pantalla, no desde la carga; repetir es un icono flotante en hover/foco, disponible al tacto. Usa la Reenie Beanie y el audio aprobados; no sintetices otro lápiz.
 - Tablas y gráficas: declara fuente, unidad, fecha, denominador y alcance del total. Ofrece tabla/lista y acceso al dato sin depender de hover. No reduzcas texto hasta hacerlo ilegible.
-- Comentarios: el HTML standalone conserva hilos locales y exportación JSON. En el portal del NAS, los pines guardan comentarios centralizados con identidad y permisos. Lee [colaboracion.md](colaboracion.md) para revisión y [portal-nas.md](portal-nas.md) para publicar o recuperar comentarios. No atribuyas sincronización al archivo abierto fuera del portal.
+- Comentarios: el HTML standalone conserva hilos locales y exportación JSON. En un portal Bottifact conectado, los pines guardan comentarios centralizados con identidad y permisos. Lee [colaboracion.md](colaboracion.md) para revisión y [portal-nas.md](portal-nas.md) para publicar o recuperar comentarios. No atribuyas sincronización al archivo abierto fuera del portal.
 - Mapas y flota: una simulación no es tiempo real; conserva la alternativa textual. Un arco entre ciudades no representa calles ni estima ETA.
 - Prototipos: visor declarativo local, no emulación de hardware ni ejecución de aplicaciones remotas. Conserva los controles de dispositivo y proporción.
 
@@ -94,3 +94,9 @@ Prueba además las interacciones afectadas y revisa la salida final. El montaje 
 Para revisar la calidad del skill con encargos reales usa [evaluacion-skill.md](evaluacion-skill.md). No hace falta ejecutarlos todos al generar un documento.
 
 Orca es opcional: sirve para navegador/publicación cuando esté disponible. El generador y el skill no lo requieren. Comparte únicamente el destino autorizado; instalar este skill no concede permisos para publicar datos ni crear servicios.
+
+## Instancias propias y comunidad
+
+Bottifact es independiente del servicio botto.is. [self-hosting.md](self-hosting.md) documenta el despliegue desde el repositorio con Docker Compose, variables privadas y dominio propio. El ZIP portable contiene el skill y cliente; el servidor se despliega desde el repositorio completo. Usa siempre el servidor de la configuración personal. Instalar un paquete no autoriza crear cuentas ni publicar documentos. Una instalación local con `scripts/actualizar.py --paquete ZIP` no requiere servidor y se actualiza con otro ZIP; una instalación desde un portal recuerda ese origen. No sustituyas el origen del usuario por botto.is.
+
+Para contribuir sigue [CONTRIBUTING.md](CONTRIBUTING.md); conserva [LICENSE](LICENSE) y [NOTICE](NOTICE) al redistribuir. No incluyas datos, tokens, sesiones ni configuración personal en commits, capturas o paquetes. Las posibilidades del [ROADMAP.md](ROADMAP.md) son propuestas, no capacidades implementadas.

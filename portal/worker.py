@@ -69,7 +69,7 @@ def main():
             last=json.loads(r['value']) if r else {}
             if not last.get('ok') or time.time()-last.get('at',0)>86400:
                 backup(root,os.environ.get('BOTTIFACT_BACKUPS','/backups'),os.environ.get('BOTTIFACT_BACKUP_CONFIG'))
-            if os.environ.get('BOTTIFACT_EMAIL_KEY'):digests(store,os.environ.get('BOTTIFACT_ORIGIN','https://artifacts.botto.is'),permissions)
+            if os.environ.get('BOTTIFACT_EMAIL_KEY'):digests(store,os.environ.get('BOTTIFACT_ORIGIN','http://localhost:8788'),permissions)
             status(root,'worker',{'ok':True,'at':int(time.time()),'detail':'Respaldo diario · avisos optativos cada minuto.'})
         except Exception:
             status(root,'worker',{'ok':False,'at':int(time.time()),'detail':'Hay una tarea pendiente de reintento.'})

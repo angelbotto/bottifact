@@ -25,7 +25,7 @@ main() {
   trap "rm -rf -- $(printf '%q' "$bottifact_tmp")" EXIT
   printf 'Descargando y verificando la versión publicada…\n'
   curl --proto '=https' --tlsv1.2 -fsS --max-time 60 https://artifacts.botto.is/install.py -o "$bottifact_tmp/install.py"
-  "$bottifact_python" "$bottifact_tmp/install.py" "$@"
+  "$bottifact_python" "$bottifact_tmp/install.py" --servidor https://artifacts.botto.is "$@"
   rm -rf -- "$bottifact_tmp"
   trap - EXIT
   printf '\nPara futuras actualizaciones: bottifact actualizar\n'

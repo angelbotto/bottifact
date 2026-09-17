@@ -11,6 +11,7 @@ import sys
 import tempfile
 import urllib.request
 import zipfile
+from urllib.parse import urlsplit
 
 ORIGIN = 'https://artifacts.botto.is'
 
@@ -41,18 +42,30 @@ def extract(data, expected, destination):
 def main():
     if sys.version_info < (3, 10): raise ValueError('Bottifact requiere Python 3.10 o posterior. En macOS: brew install python')
     parser = argparse.ArgumentParser(description=__doc__)
+    global ORIGIN
+    parser.add_argument('--servidor', help='Portal propio HTTPS; se conserva para futuras actualizaciones.')
+    parser.add_argument('--paquete', type=Path, help='ZIP local; no usa ningún servidor. Requiere archivo .sha256 contiguo.')
     parser.add_argument('--destino', type=Path, default=Path.home()/'.local/share/bottifact/library')
     parser.add_argument('--sin-enlaces', action='store_true', help='Actualiza solo la biblioteca; no modifica carpetas de agentes ni instala el comando.')
     args = parser.parse_args()
     destination = args.destino.expanduser().absolute()
     if (destination/'.git').exists(): raise ValueError('El destino es un checkout Git. Conserva ese desarrollo y elige otra carpeta con --destino.')
+    setting=destination.parent/('.'+destination.name+'-update.json')
+    saved=json.loads(setting.read_text()) if setting.exists() else {}
+    if args.servidor:
+        parsed=urlsplit(args.servidor)
+        if parsed.scheme!='https' or not parsed.hostname or parsed.username or parsed.password or parsed.path not in ('','/') or parsed.query or parsed.fragment:raise ValueError('Usa un servidor HTTPS sin ruta ni credenciales.')
+        ORIGIN=args.servidor.rstrip('/')
+    elif saved.get('servidor'):ORIGIN=saved['servidor']
+    elif saved.get('local') and not args.paquete:raise ValueError('Instalación local: usa --paquete ZIP para actualizar, o --servidor HTTPS para conectar un servidor.')
     with tempfile.TemporaryDirectory(prefix='bottifact-download-') as temporary:
         root = Path(temporary)
-        expected = fetch('/downloads/bottifact-portable.sha256', 1024).decode().split()[0]
+        expected = (args.paquete.with_suffix('.sha256').read_text() if args.paquete else fetch('/downloads/bottifact-portable.sha256', 1024).decode()).split()[0]
         if len(expected) != 64 or any(c not in '0123456789abcdef' for c in expected): raise ValueError('SHA-256 inválido.')
-        extract(fetch('/downloads/bottifact-portable.zip', 50*1024*1024), expected, root)
+        extract(args.paquete.read_bytes() if args.paquete else fetch('/downloads/bottifact-portable.zip', 50*1024*1024), expected, root)
         source = root/'bottifact'
         subprocess.run([sys.executable, str(source/'scripts/instalar.py'), '--destino', str(destination), '--actualizar'], check=True)
+    setting.write_text(json.dumps({'local':bool(args.paquete) and not args.servidor,'servidor':ORIGIN if not args.paquete or args.servidor else None})+'\n')
     if not args.sin_enlaces:
         for agent,label in [('.agents','Codex'),('.claude','Claude Code'),('.hermes','Hermes')]:
             link = Path.home()/agent/'skills/bottifact'
@@ -76,7 +89,8 @@ def main():
             print('Comando: ' + str(binary) + ' (añade ~/.local/bin a PATH si hace falta).')
     version = json.loads((destination/'VERSION.json').read_text())['version']
     print('Bottifact ' + version + '. Generar HTML no requiere cuenta ni token.')
-    print('Para publicar: entra en ' + ORIGIN + ' → Conectar un agente. Nunca pegues el token en un artefacto.')
+    if not args.paquete or args.servidor:print('Para publicar: entra en ' + ORIGIN + ' → Conectar un agente. Nunca pegues el token en un artefacto.')
+    else:print('Instalación local independiente. Conecta tu propio portal solo cuando quieras publicar.')
     print('Actualizar después: python3 ' + str(destination/'scripts/actualizar.py'))
 
 

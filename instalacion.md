@@ -1,3 +1,5 @@
+> **Instalación independiente:** consulta el [README](README.md) para instalar desde un ZIP local sin servidor. Para tu propio portal usa [self-hosting.md](self-hosting.md). El instalador de cada instancia conserva su servidor para las actualizaciones.
+
 # La misma biblioteca en otro equipo
 
 Bottifact incluye un skill (`SKILL.md`), 82 recetas con HTML, criterio y límites, CSS, fuentes,

@@ -1,3 +1,15 @@
 __pycache__/
 .DS_Store
 descargas/
+.env
+.env.*
+!.env.example
+*.sqlite*
+*.db
+*.pem
+*.key
+.venv/
+node_modules/
+data/
+backups/
+private/

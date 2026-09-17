@@ -240,11 +240,13 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
     store.merge_admin_aliases()
     store.refresh_search()
     app.state.store = store
-    origin = (origin or os.environ.get('BOTTIFACT_ORIGIN', 'https://artifacts.botto.is')).rstrip('/')
+    origin = (origin or os.environ.get('BOTTIFACT_ORIGIN', 'http://localhost:8788')).rstrip('/')
+    from .settings import validate_origin
+    origin=validate_origin(origin)
     origins = {origin, *filter(None, os.environ.get('BOTTIFACT_EXTRA_ORIGINS', '').split(','))}
-    issuer = (issuer or os.environ.get('BOTTIFACT_ISSUER', 'https://bottico.cloudflareaccess.com')).rstrip('/')
+    issuer = (issuer or os.environ.get('BOTTIFACT_ISSUER', '')).rstrip('/')
     audience = audience or os.environ.get('BOTTIFACT_AUDIENCE', '')
-    jwks = jwt.PyJWKClient(issuer + '/cdn-cgi/access/certs', cache_keys=True, lifespan=300)
+    jwks = jwt.PyJWKClient(issuer + '/cdn-cgi/access/certs', cache_keys=True, lifespan=300) if issuer and audience else None
     rate = {}
     rate_lock = threading.Lock()
 
@@ -637,13 +639,17 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
     def login_page(): return HTMLResponse((ROOT/'static/login.html').read_text())
 
     @app.get('/install')
-    def install_page(): return HTMLResponse((ROOT/'static/install.html').read_text())
+    def install_page(): return HTMLResponse((ROOT/'static/install.html').read_text().replace('https://artifacts.botto.is',__import__('html').escape(origin,quote=True)))
 
     @app.get('/install.sh')
-    def shell_installer(): return FileResponse(ROOT/'install.sh' if (ROOT/'install.sh').exists() else ROOT.parent/'scripts/instalar.sh', media_type='text/plain')
+    def shell_installer():
+        path=ROOT/'install.sh' if (ROOT/'install.sh').exists() else ROOT.parent/'scripts/instalar.sh'
+        return Response(path.read_text().replace('https://artifacts.botto.is',origin),media_type='text/plain')
 
     @app.get('/install.py')
-    def installer(): return FileResponse(ROOT/'install.py' if (ROOT/'install.py').exists() else ROOT.parent/'scripts/actualizar.py', media_type='text/x-python')
+    def installer():
+        path=ROOT/'install.py' if (ROOT/'install.py').exists() else ROOT.parent/'scripts/actualizar.py'
+        return Response(path.read_text().replace("ORIGIN = 'https://artifacts.botto.is'",'ORIGIN = '+repr(origin)),media_type='text/x-python')
 
     @app.get('/downloads/{name}')
     def download(name: str):
@@ -657,7 +663,7 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
     def page(request: Request, aid: str=''):
         if not aid and not (who(request) or {}).get('verified'): return RedirectResponse('/login', status_code=303)
         content=(ROOT/'static/index.html').read_text()
-        if aid:content=content.replace('<body>','<body class="reading">').replace('<section id="library">','<section id="library" hidden>')
+        if aid:content=content.replace('<body class="portal-app">','<body class="portal-app reading">').replace('<section id="library">','<section id="library" hidden>')
         return HTMLResponse(content)
 
     app.mount('/static',StaticFiles(directory=ROOT/'static'),name='static')
