@@ -515,6 +515,12 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
     @app.get('/login')
     def login_page(): return HTMLResponse((ROOT/'static/login.html').read_text())
 
+    @app.get('/install')
+    def install_page(): return HTMLResponse((ROOT/'static/install.html').read_text())
+
+    @app.get('/install.sh')
+    def shell_installer(): return FileResponse(ROOT/'install.sh' if (ROOT/'install.sh').exists() else ROOT.parent/'scripts/instalar.sh', media_type='text/plain')
+
     @app.get('/install.py')
     def installer(): return FileResponse(ROOT/'install.py' if (ROOT/'install.py').exists() else ROOT.parent/'scripts/actualizar.py', media_type='text/x-python')
 

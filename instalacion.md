@@ -10,11 +10,10 @@ instalado un agente. Three.js requiere su CDN permitido; los demás recursos van
 Cualquier persona puede descargar el skill sin cuenta. El repositorio sigue siendo privado; el paquete publicado contiene sólo la biblioteca y sus recursos compartibles.
 
 ```bash
-curl -fsSL https://artifacts.botto.is/install.py -o /tmp/bottifact-install.py
-python3 /tmp/bottifact-install.py
+curl -fsSL https://artifacts.botto.is/install.sh | bash
 ```
 
-Requiere Python 3.10+. En macOS con Python antiguo usa el de Homebrew (`brew install python`).
+La entrada es Bash y explica los agentes y rutas que prepara. Detecta Python 3.10+ para el generador y la verificación del paquete; si falta, indica cómo instalarlo. En macOS con Homebrew: `brew install python`. No instala dependencias con sudo ni oculta errores. Puedes revisar [instalar.sh](scripts/instalar.sh) antes de ejecutarlo.
 El comando descarga el ZIP, verifica su SHA-256 y el manifiesto interno, instala en
 `~/.local/share/bottifact/library` y crea enlaces para Codex (`~/.agents/skills/bottifact`),
 Claude Code (`~/.claude/skills/bottifact`) y Hermes (`~/.hermes/skills/bottifact`). Conserva carpetas
@@ -34,6 +33,10 @@ Se respalda la versión anterior fuera de las carpetas de skills. No se copia ni
 `~/.config/bottifact/portal.json`, donde vive el token personal. No hay actualización silenciosa:
 ejecuta el comando cuando quieras adoptar una nueva versión y abre una conversación nueva.
 SHA-256 detecta una descarga corrupta; su publicación en el mismo servidor no constituye una firma independiente.
+
+## ChatGPT
+
+La instalación de ChatGPT se gestiona dentro de la aplicación: Plugins → Skills → Create → Upload from your computer, cuando tu plan y espacio permitan skills. Descarga el ZIP portable desde el portal e impórtalo allí. Bash no modifica tu cuenta de ChatGPT ni acredita que se haya importado. Las actualizaciones en ChatGPT requieren volver a cargar el paquete; son independientes de los enlaces locales de Codex. [Documentación oficial](https://help.openai.com/en/articles/20001066).
 
 ## Crear y publicar son pasos separados
 

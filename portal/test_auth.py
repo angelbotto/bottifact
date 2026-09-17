@@ -24,7 +24,7 @@ class AuthTests(unittest.TestCase):
     def tearDown(self):self.tmp.cleanup();self.env.stop()
 
     def start(self,email='alias@example.com'):
-        with patch('portal.auth.send_code') as send:
+        with patch('portal.auth.send_code',return_value={'id':'message-test'}) as send:
             response=self.c.post('/api/auth/email',json={'email':email,'next':'//evil.test'})
             self.assertEqual(response.status_code,200,response.text)
             return response.json()['challenge'],send.call_args.args[1]
@@ -94,6 +94,26 @@ class AuthTests(unittest.TestCase):
             with patch('portal.auth.remote_json',return_value={'id_token':jwt.encode(bad,private,algorithm='RS256')}),patch('jwt.PyJWKClient.get_signing_key_from_jwt',return_value=SimpleNamespace(key=private.public_key())):
                 r=self.c.get('/auth/google/callback?state='+p['state'][0]+'&code=c',follow_redirects=False)
                 self.assertIn('error=',r.headers['location'])
+
+    def test_delivery_failure_is_visible_only_to_requesting_browser(self):
+        cid,code=self.start('recipient@example.com')
+        other=TestClient(self.app,base_url=ORIGIN)
+        path='/api/auth/email/status?challenge='+cid
+        self.assertEqual(other.get(path).status_code,404)
+        with patch('portal.auth.delivery_status',return_value='failed') as check:
+            response=self.c.get(path)
+            self.assertEqual(response.json(),{'status':'failed'})
+            self.assertNotIn('message-test',response.text)
+            self.c.get(path);self.assertEqual(check.call_count,1)
+
+    def test_resend_and_usesend_delivery_states(self):
+        from portal.auth import delivery_status,send_code
+        with patch.dict(os.environ,{'BOTTIFACT_EMAIL_PROVIDER':'resend','BOTTIFACT_EMAIL_URL':'https://api.resend.com'}),patch('portal.auth.remote_json',return_value={'id':'queued-id'}) as remote:
+            send_code('reader@example.com','123456')
+            self.assertEqual(remote.call_args.args[0],'https://api.resend.com/emails')
+            self.assertEqual(remote.call_args.args[1]['to'],['reader@example.com'])
+        for provider,data,expected in [('resend',{'last_event':'bounced'},'failed'),('resend',{'last_event':'delivered'},'delivered'),('resend',{'last_event':'sent'},'sent'),('usesend',{'emailEvents':[{'status':'SENT','createdAt':'1'},{'status':'FAILED','createdAt':'2'}]},'failed')]:
+            with patch('portal.auth.remote_json',return_value=data):self.assertEqual(delivery_status(provider,'id'),expected)
 
     def test_mail_failure_does_not_create_session_or_valid_code(self):
         with patch('portal.auth.send_code',side_effect=OSError('Secret upstream message')):

@@ -54,15 +54,17 @@ def main():
         source = root/'bottifact'
         subprocess.run([sys.executable, str(source/'scripts/instalar.py'), '--destino', str(destination), '--actualizar'], check=True)
     if not args.sin_enlaces:
-        for agent in ['.agents', '.claude', '.hermes']:
+        for agent,label in [('.agents','Codex'),('.claude','Claude Code'),('.hermes','Hermes')]:
             link = Path.home()/agent/'skills/bottifact'
             link.parent.mkdir(parents=True, exist_ok=True)
             if link.exists() and not link.is_symlink():
                 print('Conservado sin cambios (carpeta propia): ' + str(link));continue
-            if link.is_symlink() and link.resolve() == destination.resolve(): continue
+            if link.is_symlink() and link.resolve() == destination.resolve():
+                print(label + ': listo · ' + str(link));continue
             if link.is_symlink():
                 print('Conservado sin cambios (apunta a otra biblioteca): ' + str(link));continue
             link.symlink_to(destination, target_is_directory=True)
+            print(label + ': instalado · ' + str(link))
         binary = Path.home()/'.local/bin/bottifact'
         binary.parent.mkdir(parents=True, exist_ok=True)
         if binary.exists() and '# Bottifact managed launcher' not in binary.read_text():

@@ -46,4 +46,18 @@ class InstallerTests(unittest.TestCase):
             data=out.getvalue()
             with self.assertRaises(ValueError):updater.extract(data,hashlib.sha256(data).hexdigest(),Path(temporary))
 
+
+class ShellEntryTests(unittest.TestCase):
+    def test_shell_entry_explains_agents_and_propagates_failure(self):
+        import os, subprocess
+        script=ROOT/'scripts/instalar.sh'
+        with tempfile.TemporaryDirectory() as temporary:
+            root=Path(temporary);fake=root/'curl'
+            fake.write_text('#!/bin/bash\nexit 22\n');fake.chmod(0o755)
+            env={**os.environ,'PATH':str(root)+os.pathsep+os.environ['PATH'],'TMPDIR':str(root)}
+            result=subprocess.run(['bash',str(script)],env=env,capture_output=True,text=True)
+            self.assertEqual(result.returncode,22)
+            for agent in ['Codex','Claude Code','Hermes','ChatGPT']:self.assertIn(agent,result.stdout)
+            self.assertEqual(list(root.glob('bottifact-install.*')),[])
+
 if __name__=='__main__':unittest.main()

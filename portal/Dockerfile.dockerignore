@@ -6,3 +6,4 @@ portal/.env
 portal/data/
 !scripts/
 !scripts/actualizar.py
+!scripts/instalar.sh

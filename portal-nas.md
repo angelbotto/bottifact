@@ -43,11 +43,13 @@ No se utiliza una contraseña compartida por artefacto. El código de acceso per
 
 Los roles de invitado son ver, comentar y editar. Un editor puede añadir versiones y gestionar hilos, pero sólo el propietario cambia acceso. La conversación puede ser visible únicamente al equipo invitado o a todos los lectores. Un enlace no listado puede reenviarse; no reemplaza los permisos por correo.
 
-La pantalla de acceso propia está en `/login`. El correo usa un código de seis dígitos enviado por useSend, con vencimiento de diez minutos, cinco intentos, límites persistentes de envío y vínculo al navegador que lo pidió. Se guarda sólo su HMAC, nunca el código. Google usa OpenID Connect con estado, nonce, PKCE y validación de firma, emisor, audiencia y correo verificado; se habilita únicamente después de registrar el callback en Google Cloud. La ruta anterior de Cloudflare Access queda como compatibilidad operativa, pero la interfaz ya no dirige allí.
+La pantalla de acceso propia está en `/login`. El correo usa un código de seis dígitos enviado por el proveedor configurado (Resend en producción), con vencimiento de diez minutos, cinco intentos, límites persistentes de envío y vínculo al navegador que lo pidió. Se guarda sólo su HMAC, nunca el código. Google usa OpenID Connect con estado, nonce, PKCE y validación de firma, emisor, audiencia y correo verificado; se habilita únicamente después de registrar el callback en Google Cloud. La ruta anterior de Cloudflare Access queda como compatibilidad operativa, pero la interfaz ya no dirige allí.
 
 `BOTTIFACT_ADMIN_EMAILS` define correos verificados que pertenecen a la misma cuenta administradora; el primero es la identidad canónica. Esa cuenta puede ver y administrar todos los documentos y enlaces del portal. Ninguna dirección escrita sin verificar concede acceso. El nombre de un invitado no confiere permisos de cuenta.
 
-Referencias de implementación: [Google OAuth web](https://developers.google.com/identity/protocols/oauth2/web-server) y [useSend: envío de correo](https://docs.usesend.com/api-reference/emails/send-email).
+Referencias de implementación: [Google OAuth web](https://developers.google.com/identity/protocols/oauth2/web-server) y [Resend: envío de correo](https://resend.com/docs/api-reference/emails/send-email).
+
+El estado del envío se consulta sólo desde el navegador que pidió el código. La aceptación inicial del proveedor no se presenta como entrega; los rechazos posteriores aparecen en la pantalla. La entrega del proveedor confirma aceptación por el servidor de destino, no lectura humana. useSend con Amazon SES en sandbox rechaza destinatarios no verificados; por eso se utiliza Resend con el dominio ya verificado.
 
 Las invitaciones todavía no envían correo: añade las direcciones y comparte el enlace manualmente. El lector debe entrar con la dirección autorizada. La sesión del portal dura 14 días; revocar permisos del documento tiene efecto en las siguientes solicitudes.
 
@@ -67,9 +69,9 @@ Código: `portal/` en [angelbotto/bottifact](https://github.com/angelbotto/botti
 
 El despliegue Synology usa `portal/compose.yaml`, usuario 1026:100, filesystem de contenedor de sólo lectura, red `botto-site_default` y puerto de host `127.0.0.1:8788`. Datos y configuración quedan en `/volume1/docker/bottifact/`, fuera de Git. Ajusta UID/GID, volumen y red si instalas en otro NAS. No publiques ese puerto HTTP directamente a Internet.
 
-Variables principales: `BOTTIFACT_DATA`, `BOTTIFACT_ORIGIN`, `BOTTIFACT_EXTRA_ORIGINS`, `BOTTIFACT_ADMIN_EMAILS`. Para correo: `BOTTIFACT_EMAIL_URL`, `BOTTIFACT_EMAIL_FROM`, `BOTTIFACT_EMAIL_KEY`, `BOTTIFACT_AUTH_SECRET` (secreto aleatorio estable). Para Google: `BOTTIFACT_GOOGLE_ID`, `BOTTIFACT_GOOGLE_SECRET`, `BOTTIFACT_GOOGLE_ENABLED=1`, callback `https://artifacts.botto.is/auth/google/callback`. Los secretos van en el env externo, nunca en Git. `BOTTIFACT_ISSUER` y `BOTTIFACT_AUDIENCE` sólo mantienen el acceso legado.
+Variables principales: `BOTTIFACT_DATA`, `BOTTIFACT_ORIGIN`, `BOTTIFACT_EXTRA_ORIGINS`, `BOTTIFACT_ADMIN_EMAILS`. Para correo: `BOTTIFACT_EMAIL_PROVIDER` (`resend` o `usesend`), `BOTTIFACT_EMAIL_URL`, `BOTTIFACT_EMAIL_FROM`, `BOTTIFACT_EMAIL_KEY`, `BOTTIFACT_AUTH_SECRET` (secreto aleatorio estable). Para Google: `BOTTIFACT_GOOGLE_ID`, `BOTTIFACT_GOOGLE_SECRET`, `BOTTIFACT_GOOGLE_ENABLED=1`, callback `https://artifacts.botto.is/auth/google/callback`. Los secretos van en el env externo, nunca en Git. `BOTTIFACT_ISSUER` y `BOTTIFACT_AUDIENCE` sólo mantienen el acceso legado.
 
-`/install.py` sirve el instalador; `/downloads/` expone exclusivamente el ZIP portable y su SHA-256 del volumen `/releases`, montado de sólo lectura. Publica ambos después de las validaciones del skill. El instalador no requiere sesión ni token.
+`/install` explica el proceso; `/install.sh` sirve la entrada Bash y `/install.py` el motor de instalación; `/downloads/` expone exclusivamente el ZIP portable y su SHA-256 del volumen `/releases`, montado de sólo lectura. Publica ambos después de las validaciones del skill. El instalador no requiere sesión ni token.
 
 ```bash
 docker compose -f portal/compose.yaml up -d --build

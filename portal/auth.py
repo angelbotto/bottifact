@@ -22,8 +22,8 @@ def target(value):
     return value if isinstance(value, str) and re.fullmatch(r'/(?:a/[a-f0-9]{32})?', value) else '/'
 
 
-def remote_json(url, data, headers=None, form=False):
-    body = urllib.parse.urlencode(data).encode() if form else json.dumps(data).encode()
+def remote_json(url, data=None, headers=None, form=False):
+    body = None if data is None else urllib.parse.urlencode(data).encode() if form else json.dumps(data).encode()
     req = urllib.request.Request(url, data=body, headers={'Content-Type': 'application/x-www-form-urlencoded' if form else 'application/json', 'User-Agent': 'Bottifact/1.0', **(headers or {})})
     # No reenviar credenciales a redirecciones de un proveedor.
     class NoRedirect(urllib.request.HTTPRedirectHandler):
@@ -33,11 +33,28 @@ def remote_json(url, data, headers=None, form=False):
 
 
 def send_code(email, code):
-    return remote_json(os.environ['BOTTIFACT_EMAIL_URL'].rstrip('/') + '/api/v1/emails', {
-        'from': os.environ['BOTTIFACT_EMAIL_FROM'], 'to': email,
+    provider = os.environ.get('BOTTIFACT_EMAIL_PROVIDER', 'usesend')
+    suffix = '/emails' if provider == 'resend' else '/api/v1/emails'
+    return remote_json(os.environ['BOTTIFACT_EMAIL_URL'].rstrip('/') + suffix, {
+        'from': os.environ['BOTTIFACT_EMAIL_FROM'], 'to': [email] if provider == 'resend' else email,
         'subject': 'Tu código de acceso a Bottifact',
-        'text': f'Tu código de acceso es {code}. Vence en 10 minutos y solo sirve una vez.\n\nÚsalo en https://artifacts.botto.is. Si no lo pediste, ignora este mensaje. No compartas el código.'
+        'text': f'Tu código de acceso es {code}. Vence en 10 minutos y solo sirve una vez.\n\nÚsalo en https://artifacts.botto.is. Si no lo pediste, ignora este mensaje. No compartas el código.',
+        'html': f'<div style="font-family:Arial,sans-serif;max-width:480px;margin:auto;padding:32px;color:#292520"><h1 style="font-family:Georgia,serif;font-weight:400">bottifact</h1><p>Tu código de acceso</p><p style="font-size:36px;letter-spacing:8px">{code}</p><p>Vence en 10 minutos y solo sirve una vez.</p><p>Úsalo en <a href="https://artifacts.botto.is">artifacts.botto.is</a>. Si no lo pediste, ignora este mensaje. No compartas el código.</p></div>'
     }, {'Authorization': 'Bearer ' + os.environ['BOTTIFACT_EMAIL_KEY']})
+
+
+def delivery_status(provider, message_id):
+    suffix = '/emails/' if provider == 'resend' else '/api/v1/emails/'
+    data = remote_json(os.environ['BOTTIFACT_EMAIL_URL'].rstrip('/') + suffix + urllib.parse.quote(message_id, safe=''), headers={'Authorization': 'Bearer ' + os.environ['BOTTIFACT_EMAIL_KEY']})
+    if provider == 'resend': event = data.get('last_event', '')
+    else:
+        events = data.get('emailEvents', [])
+        event = max(events, key=lambda e:e.get('createdAt','')).get('status','') if events else ''
+    event = event.lower()
+    if event in ('delivered','opened','clicked'): return 'delivered'
+    if event in ('failed','bounced','complained','suppressed','canceled'): return 'failed'
+    if event == 'sent': return 'sent'
+    return 'queued'
 
 
 def mount_auth(app, store, origin, set_session, payload, clean, email_pattern):
@@ -90,11 +107,30 @@ def mount_auth(app, store, origin, set_session, payload, clean, email_pattern):
             db.execute('DELETE FROM auth_challenges WHERE expires<=? OR (kind=? AND email=?)', (int(time.time()), 'email', email))
             db.execute('INSERT INTO auth_challenges VALUES(?,?,?,?,?,?,0,?,?)', (cid, 'email', email, proof, sha(browser), int(time.time()) + 600, target(body.get('next')), '{}'))
         try:
-            await run_in_threadpool(send_code, email, code)
+            result = await run_in_threadpool(send_code, email, code)
+            message_id = result.get('id') or result.get('emailId')
+            if not isinstance(message_id, str) or not message_id: raise ValueError('Missing delivery ID')
+            extra = {'provider': os.environ.get('BOTTIFACT_EMAIL_PROVIDER','usesend'), 'message_id': message_id, 'status': 'queued', 'checked': 0}
+            with store.db() as db: db.execute('UPDATE auth_challenges SET extra=? WHERE id=?', (json.dumps(extra), cid))
         except Exception:
             with store.db() as db: db.execute('DELETE FROM auth_challenges WHERE id=?', (cid,))
             raise HTTPException(503, 'No pudimos enviar el código. Intenta de nuevo en un minuto.') from None
         return binding(JSONResponse({'challenge': cid, 'expires_in': 600}), browser)
+
+    @app.get('/api/auth/email/status')
+    def email_status(request: Request):
+        cid = request.query_params.get('challenge','')
+        with store.db() as db:
+            row = db.execute('SELECT * FROM auth_challenges WHERE id=? AND kind=?', (cid,'email')).fetchone()
+            if not row or row['expires'] <= time.time() or not hmac.compare_digest(row['binding'], sha(request.cookies.get(AUTH_COOKIE,''))):
+                raise HTTPException(404, 'Solicitud no disponible.')
+            extra = json.loads(row['extra'])
+        if extra.get('status') not in ('delivered','failed') and extra.get('checked',0) < time.time()-5:
+            extra['checked'] = time.time()
+            try: extra['status'] = delivery_status(extra['provider'], extra['message_id'])
+            except Exception: pass  # Una caída del proveedor no equivale a un rebote.
+            with store.db() as db: db.execute('UPDATE auth_challenges SET extra=? WHERE id=?', (json.dumps(extra),cid))
+        return {'status': extra.get('status','queued')}
 
     @app.post('/api/auth/email/verify')
     async def email_verify(request: Request):

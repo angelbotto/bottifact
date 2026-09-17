@@ -81,7 +81,7 @@ python3 scripts/empaquetar.py
 
 Prueba además las interacciones afectadas y revisa la salida final. El montaje de módulos conserva init/get/destroy y limpieza de listeners/observadores. No presentes la validación estática como verificación visual.
 
-`python3 scripts/actualizar.py` instala la última versión publicada con respaldo; no ejecuta actualizaciones automáticas durante la generación ni cambia el token. [instalacion.md](instalacion.md) explica instalación en Claude, Codex y Hermes, actualización con respaldo y verificación del ZIP. [arquitectura.md](arquitectura.md) registra el stack del archivo y el portal conectado. Una instalación local no acredita otro equipo ni que una sesión abierta haya recargado el skill.
+`curl -fsSL https://artifacts.botto.is/install.sh | bash` instala o actualiza desde terminal; `python3 scripts/actualizar.py` instala la última versión publicada con respaldo; no ejecuta actualizaciones automáticas durante la generación ni cambia el token. [instalacion.md](instalacion.md) explica instalación en Claude, Codex y Hermes, actualización con respaldo y verificación del ZIP. [arquitectura.md](arquitectura.md) registra el stack del archivo y el portal conectado. Una instalación local no acredita otro equipo ni que una sesión abierta haya recargado el skill.
 
 Para revisar la calidad del skill con encargos reales usa [evaluacion-skill.md](evaluacion-skill.md). No hace falta ejecutarlos todos al generar un documento.
 
