@@ -6,7 +6,7 @@
 
 [![Checks](https://github.com/angelbotto/bottifact/actions/workflows/validar.yml/badge.svg)](https://github.com/angelbotto/bottifact/actions/workflows/validar.yml)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
-[![Latest release](https://img.shields.io/github/v/release/angelbotto/bottifact)](https://github.com/angelbotto/bottifact/releases/latest)
+[![Latest release](https://img.shields.io/github/v/release/angelbotto/bottifact?cacheSeconds=300)](https://github.com/angelbotto/bottifact/releases/latest)
 [![GitHub stars](https://img.shields.io/github/stars/angelbotto/bottifact?style=flat&label=stars)](https://github.com/angelbotto/bottifact/stargazers)
 
 [Get started](#get-started) · [Self-host](self-hosting.md) · [Components](componentes.md) · [Contribute](CONTRIBUTING.md) · [Español](README.es.md)
@@ -147,9 +147,9 @@ Contributions are welcome: a focused bug fix, a useful recipe, accessibility imp
 
 ### Star history
 
-If Bottifact is useful, a star helps other people discover it. This chart is generated from the repository's actual public star history; it may be empty just after launch.
+If Bottifact is useful, a star helps other people discover it. The linked graph uses the repository's actual public star history. A new project starts without a history; we do not add sample stars or a fabricated growth curve.
 
-[![Star History Chart](https://api.star-history.com/svg?repos=angelbotto/bottifact&type=Date)](https://star-history.com/#angelbotto/bottifact&Date)
+[Explore the live star-history graph →](https://star-history.com/#angelbotto/bottifact&Date)
 
 ## License and credits
 
