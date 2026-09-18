@@ -32,3 +32,8 @@ adaptations described in docs/themes.md. Product names identify references only.
 Server dependencies retain their upstream licenses; versions and hashes are
 recorded in portal/requirements.lock. Container base images and Caddy also
 retain their respective upstream licenses.
+
+React table primitives use Radix UI (MIT, WorkOS and contributors) and TanStack Table
+(MIT, Tanner Linsley and contributors). Versions are pinned in package-lock.json.
+Composition references shadcn/ui (MIT); original token-based wrappers live under
+packages/react/src/components/ui. Dependency packages retain their upstream license notices. Demo avatar/package SVGs are original synthetic illustrations.

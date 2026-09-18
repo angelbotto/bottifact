@@ -12,6 +12,10 @@ css=re.sub(re.escape(start)+r'.*?'+re.escape(end)+r'\n?','',css,flags=re.S)
 prefix,marker,suffix=css.partition('/* GENERATED THEMES')
 assert marker, 'Missing generated theme boundary'
 css=prefix.rstrip()+'\n\n'+start+'\n'+review_css+end+'\n\n'+marker+suffix
+rich_start='/* TABLE CONTENT START */';rich_end='/* TABLE CONTENT END */'
+css=re.sub(re.escape(rich_start)+r'.*?'+re.escape(rich_end)+r'\n?','',css,flags=re.S)
+head,boundary,tail=css.partition('/* GENERATED THEMES')
+css = head+'\n'+rich_start+'\n'+(ROOT/'packages/core/styles/table-content.css').read_text()+rich_end+'\n'+boundary+tail
 css_path.write_text(css)
 if (ROOT/'portal/static').is_dir():(ROOT/'portal/static/review-additions.css').write_text(review_css)
 from recipes import assemble as assemble_recipes

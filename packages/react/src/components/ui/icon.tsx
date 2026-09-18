@@ -1,5 +1,8 @@
 /** Small decorative controls; the adjacent label owns the accessible name. */
 const paths = {
+  pin: "M9 3h6l-1 7 4 4H6l4-4ZM12 14v7",
+  chevronRight: "m9 6 6 6-6 6",
+  chevronDown: "m6 9 6 6 6-6",
   review: "M5 6h14M5 12h14M5 18h14",
   filter: "M4 6h16M7 12h10M10 18h4",
   columns: "M3 4h18v16H3ZM10 4v16M16 4v16",
