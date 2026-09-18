@@ -13,7 +13,7 @@ def send_digest(email,text,key):
     suffix='/emails' if provider=='resend' else '/api/v1/emails'
     return remote_json(os.environ['BOTTIFACT_EMAIL_URL'].rstrip('/')+suffix,{
         'from':os.environ['BOTTIFACT_EMAIL_FROM'],'to':[email] if provider=='resend' else email,
-        'subject':'Bottifact · revisión pendiente','text':text},
+        'subject':'Margen · revisión pendiente','text':text},
         {'Authorization':'Bearer '+os.environ['BOTTIFACT_EMAIL_KEY'],'Idempotency-Key':'bottifact-digest/'+key})
 
 
@@ -44,7 +44,7 @@ def digests(store,origin,permissions,send=send_digest):
                 record=dict(batch)
             elif rows:
                 ids=[n['id'] for n,a in rows];bid=uuid.uuid4().hex
-                lines=['Tienes revisiones pendientes en Bottifact.','']
+                lines=['Tienes revisiones pendientes en Margen.','']
                 for n,a in rows:lines.extend([a['title'],origin+'/a/'+a['id']+'?thread='+n['thread'],''])
                 lines+=['Puedes desactivar este resumen en Avisos → Resumen por correo. No respondas a este mensaje para modificar un artefacto.']
                 record={'id':bid,'items':json.dumps(ids),'body':'\n'.join(lines)}

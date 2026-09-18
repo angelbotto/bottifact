@@ -1,4 +1,6 @@
-## Mapa de proporción
+## Fixed proportion map
+
+This grid represents exactly 60/25/15: columns 3fr/2fr, then rows 5fr/3fr subdividing the second column. Recalculate proportions when data changes; changing labels alone misrepresents values. Only comparable nonnegative values with a positive total fit this recipe. Check text minimums against actual areas. Use the attention map or bars for other distributions, and disclose any grouped tail separately.
 
 ```html
 <figure class="ancho">
@@ -10,13 +12,3 @@
   <figcaption>Ejemplo de cien horas. Las áreas incluyen el borde interior de cada celda.</figcaption>
 </figure>
 ```
-
-**Cuándo:** participación sobre un total positivo y comparable. Las columnas `3fr 2fr` dan
-60/40; las filas `5fr 3fr` subdividen el 40 en 25/15. Esta receta corresponde **solo a esos
-pesos**. Al cambiar datos, calcula nuevas fracciones o genera un treemap con sus valores; no
-cambies únicamente las etiquetas. Las filas tienen mínimos para proteger texto; con otros
-idiomas o texto mucho más largo, verifica el reparto o usa un gráfico de barras y una tabla.
-
-Para más de tres grupos, ordena por peso y considera agrupar la cola como «Otros», desglosada
-aparte. No omitas cifras pequeñas ni sustituyas un porcentaje por una celda arbitraria. El
-original calcula un treemap squarify; esta receta de rejilla es una versión explícita sin D3.

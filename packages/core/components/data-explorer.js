@@ -564,6 +564,8 @@
         ...(model ? [views] : []),
         selectionTools,
       );
+      tools.setAttribute("role", "group");
+      tools.setAttribute("aria-label", "Herramientas de tabla");
       form.append(tools);
       form.after(chips, batch);
       el.classList.add("explorer-ready");
@@ -579,6 +581,7 @@
       const switcher = make("div");
       switcher.className = "explorer-presentation";
       switcher.setAttribute("aria-label", "Vista de registros");
+      switcher.setAttribute("role", "group");
       const layoutButtons = ["table", "cards"].map((value, i) => {
         const b = button(i ? "Fichas" : "Tabla", () => {
           presentation.value = value;

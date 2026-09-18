@@ -1,10 +1,9 @@
-## Barras: cantidades y diferencias
+## Bar chart
 
 <!-- nota:ejemplo barras -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** comparar magnitudes en la misma unidad; admite negativos y hasta cuatro series agrupadas. Cero siempre está en la escala. Usa línea si importa la continuidad temporal.
-
-**Límite:** hasta 500 filas y cuatro series. Muchas barras requieren una figura alta: para centenares de registros, prefiere tabla ordenable. El ancho mínimo del dibujo es 800 px con desplazamiento local; las categorías largas saltan de línea. No son barras apiladas ni porcentajes normalizados.
+**Use and limits:** Compare magnitudes in one unit. Zero stays in the domain; negatives and up to four grouped series are supported. Up to 500 rows; for many categories prefer a sortable table. The drawing keeps an 800 px local minimum and wraps long category labels. This is not a stacked or normalized percentage chart.

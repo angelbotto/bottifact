@@ -1,11 +1,11 @@
 # Comments, notes and agent sessions
 
-Bottifact links feedback to the document and version being reviewed. It also records the publishing agent, source session and device when supplied. That context makes a useful prompt; it does not give the portal access to your conversations.
+Margen links feedback to the document and version being reviewed. It also records the publishing agent, source session and device when supplied. That context makes a useful prompt; it does not give the portal access to your conversations.
 
 ## Capture origin at publication
 
 ```bash
-bottifact publish --file /tmp/brief.html --title 'Decision brief' \
+margen publish --file /tmp/brief.html --title 'Decision brief' \
   --agent codex --session SESSION_ID --device DEVICE_LABEL --visibility private
 ```
 
@@ -22,8 +22,8 @@ Feedback exports include available artifact identity/link, version and hash, sec
 ## Retrieve feedback
 
 ```bash
-bottifact comments --artifact-id ARTIFACT_ID --open --kind all
-bottifact feedback --artifact-id ARTIFACT_ID --output /tmp/bottifact-feedback
+margen comments --artifact-id ARTIFACT_ID --open --kind all
+margen feedback --artifact-id ARTIFACT_ID --output /tmp/bottifact-feedback
 ```
 
 The first command retrieves a review prompt. The second writes a new private directory:
@@ -38,7 +38,7 @@ bottifact-feedback/
 The CLI uses the authenticated export API. It cannot export another user's private notes or bypass artifact access rules. With a single unambiguous origin, the bundle targets that original agent/session. Missing or mixed origins require a deliberate target:
 
 ```bash
-bottifact feedback --artifact-id ARTIFACT_ID --output /tmp/selected-feedback \
+margen feedback --artifact-id ARTIFACT_ID --output /tmp/selected-feedback \
   --agent hermes --session SESSION_ID
 ```
 
@@ -52,7 +52,7 @@ Open the target session in Claude Code, Codex or Hermes and ask:
 
 Review the result, validate it, publish a new version through the usual workflow, and resolve threads only when addressed. An export is not evidence that a requested change was applied.
 
-**Current delivery is manual session read.** Bottifact does not send terminal messages, append to native conversation databases, automatically resume a session or resolve comments during export. A future integration would need explicit agent adapters, destination verification, user authorization and delivery receipts. It must never infer success from writing a file.
+**Current delivery is manual session read.** Margen does not send terminal messages, append to native conversation databases, automatically resume a session or resolve comments during export. A future integration would need explicit agent adapters, destination verification, user authorization and delivery receipts. It must never infer success from writing a file.
 
 ## API and implementation
 

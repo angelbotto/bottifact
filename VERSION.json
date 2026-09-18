@@ -1,5 +1,5 @@
 {
-  "version": "2026.09.18-interface.1",
+  "version": "2026.09.18-margen.1",
   "contrato": "4",
   "componentes": 88,
   "temas": [
@@ -19,7 +19,7 @@
     "catppuccin",
     "solarized"
   ],
-  "generacion": "Python 3, biblioteca estándar",
+  "generacion": "Python 3, standard library",
   "agentes": [
     "Claude",
     "Codex",
@@ -31,6 +31,6 @@
     "system"
   ],
   "paletas": 30,
-  "nombre": "Bottifact",
-  "skill": "bottifact"
+  "nombre": "Margen",
+  "skill": "margen"
 }

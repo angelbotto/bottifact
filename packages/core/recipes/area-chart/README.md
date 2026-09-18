@@ -1,10 +1,9 @@
-## Áreas apiladas de ingresos
+## Area chart
 
 <!-- nota:ejemplo areas -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** ver el total y su composición a lo largo del tiempo. Para comparar el crecimiento exacto de una banda intermedia, usa líneas o pequeños múltiples.
-
-**Límite:** Incluye packages/core/components/analytics.js. Exactamente tres series aditivas en la misma unidad, 2–60 fechas ISO únicas, valores no negativos. Une observaciones por interpolación lineal; no agrega transacciones ni inventa días faltantes. Las fechas usan distancia real; no mezcla monedas. Un total constantemente cero usa dominio auxiliar 0–1 explícito.
+**Use and limits:** Show a total and its composition over time. Exactly three additive series in one unit, 2–60 unique ISO dates and nonnegative values. Real date spacing and linear segments connect observations without creating transactions or missing-day data. No mixed currencies. An all-zero total has an explicit auxiliary 0–1 domain. Use lines/small multiples for precise comparison of middle bands.

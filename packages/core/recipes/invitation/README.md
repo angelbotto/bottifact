@@ -1,15 +1,9 @@
-## Invitación editorial tramada
+## Invitation
 
 <!-- nota:ejemplo invitacion -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** cerrar una lectura con una invitación concreta. Incluye packages/core/components/invitation.js; al copiar se
-añaden título del documento y referencia del bloque. La trama de puntos y curvas es CSS estático,
-un tratamiento de semitono independiente del grano de papel de Apariencia.
-
-**Límite:** no envía, guarda ni sincroniza mensajes. El botón dice copiar porque no hay backend.
-Hasta 1000 caracteres; vacío no se copia. Si el portapapeles falla, selecciona el texto para copia
-manual y lo explica. `NotaInvitacion.init/get/destroy` permite montar y retirar la mejora. Sin JS
-queda un espacio para escribir, sin envío. No usar la trama para información ni para simular una gráfica.
+**Use and limits:** End a reading with a concrete invitation and a static halftone treatment. invitation.js copies up to 1000 nonempty characters plus document title and block reference; clipboard denial selects text and explains manual copy. It does not submit, store or synchronize messages. init/get/destroy supports mounting. Without JavaScript it is a writing surface, not a working send form. The decorative pattern is not a chart or paper-grain setting.

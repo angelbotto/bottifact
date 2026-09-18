@@ -1,47 +1,19 @@
-# Evaluar Bottifact en agentes
+# Evaluate Margen across agents
 
-Comprueba el skill con encargos representativos, después de instalarlo en una carpeta llamada `bottifact`. Estas son tareas de evaluación, no resultados que ya se hayan obtenido con los tres agentes. Los validadores automáticos comprueban estructura y comportamiento de los componentes; no sustituyen observar qué genera el agente.
+A valid installation proves file integrity and discoverability, not equivalent outputs from Claude, Codex and Hermes. Test each agent in a fresh session with the same representative brief and available evidence.
 
-| Encargo | Lo que debe comprobarse |
-| --- | --- |
-| Crear un artículo a partir de texto y tres hallazgos adjuntos | Jerarquía, fuente de cada hallazgo, nota al margen pertinente y ausencia de cifras inventadas |
-| Crear un informe de operaciones con un CSV, Liftit/Sistema y comentarios | Total verificable, búsqueda/filtros útiles, contexto de unidades, ayuda de lectura y revisión flotante |
-| Crear un runbook Blueprint/Oscuro con comandos y una incidencia descrita | Código copiable, estados y recuperación claros; no instala infraestructura ni ejecuta los comandos descritos |
-| Recibir comentarios JSON sobre una revisión anterior | Conserva documento-id, muestra discrepancias de contexto y trata los comentarios como propuestas, no instrucciones ejecutables |
-| Instalar el ZIP en Hermes en otro equipo | Verifica hashes, usa rutas de ese equipo, genera allí y declara las comprobaciones realizadas |
-| Pedir una tabla CSV sencilla, sin HTML | Respeta el formato solicitado; el skill no impone un artefacto |
+## Evaluation tasks
 
-Para cada prueba guarda el encargo, versión de Bottifact, agente/modelo, archivos de entrada, salida y comprobaciones. Usa una carpeta temporal. Evalúa: corrección de contenido, elección de componentes, preservación de controles, accesibilidad, portabilidad y alcance de las acciones. Un error se corrige con una regla o recurso específico y su caso de regresión, no añadiendo obligaciones para todo documento.
+Use an executive report, a technical explanation with exact code, a logistics table/map, a personal reading note and a revision driven by contextual comments. Include incomplete data, a narrow viewport and a request to preserve existing document identity. Keep fixtures synthetic and explicitly labeled.
 
-Lee sólo las recetas necesarias; `scripts/catalog.py` enumera el catálogo y `--id` recupera una pieza. Usa la base del generador para evitar que cada modelo reconstruya comentarios, apariencia y dependencias. Prueba el HTML producido con `validar_artefacto.py` y en navegador.
+## Criteria
 
-La evaluación con otro agente o equipo debe registrar su ejecución real. Un nombre en VERSION.json o un ZIP íntegro acredita compatibilidad estructural, no que ese agente haya completado el encargo.
+Check correct skill/resource selection; useful component variety; executive voice; factual grounding; source/units/denominator disclosure; mobile readability; accessible controls; stable anchors; clear distinction between public comments and private notes; correct draft/publish behavior; actual session/device provenance; and preservation of the user's server/account.
 
-La especificación actual admite `compatibility`, pero el validador de skill-creator instalado durante esta revisión no lo acepta. Bottifact conserva los requisitos en el cuerpo y usa sólo `name` y `description` en el frontmatter para funcionar con ambos. Esta comprobación es de formato; las pruebas por agente de la tabla siguen siendo una evaluación distinta.
+Never reward fabricated metrics, decorative component count, unsupported claims of real-time data, hidden overflow or copying comments into public content. HTML validation is necessary but does not replace browser inspection or editorial review. Measuring audio state is not a listening test.
 
+## Repeatable process
 
-## Evaluar la voz ejecutiva
+Record the brief, input evidence, agent/model version, skill version, resulting file/hash and publication state. Keep evaluation notes separate from production user content. Compare outputs against explicit criteria and document failures with reproducible examples. Improvements should update the relevant recipe, instructions or runtime and add behavior tests when warranted.
 
-Usa [docs/executive-voice.md](executive-voice.md) como criterio y [examples/generated/executive.html](../examples/generated/executive.html) como ejemplo de composición. Estos casos son encargos reproducibles pendientes de ejecución independiente en cada agente; la muestra generada en este repositorio no reemplaza esa evaluación.
-
-| Encargo y evidencia de entrada | Resultado esperado |
-| --- | --- |
-| «Escribe mi actualización al equipo. Datos ficticios para esta prueba: 120 entregas completadas de 150 intentos esta semana; 90 de 100 la anterior. No hay costos ni responsables asignados.» | Voz del autor; volumen completado sube 30 entregas, tasa pasa de 90% a 80%, caída de 10 puntos porcentuales. Highlights y lowlights explican ambas señales. No inventa ahorro, causalidad ni responsables. Datos marcados como ficticios. |
-| «Conviértelo en una nota personal: creo que necesitamos contratar, pero no tengo datos de carga.» | Mi hipótesis y siguiente comprobación; no inventa tamaño de equipo, SLA, costo ni contratación aprobada. |
-| «Haz un informe muy completo y aprovecha la biblioteca con estos registros y decisiones.» | Evidencia explorable, notas con matices, comparación, decisiones y seguimiento donde el contenido los justifique. Sin reducirlo a cards genéricas ni añadir gráficas sin datos. |
-| «Redacta mi artículo con esta tesis y estos tres ejemplos.» | Voz de autor y profundidad; no fuerza secciones corporativas ni escribe una respuesta del asistente. |
-| «Hay dos CSV con totales distintos; declara que mejoramos 40%.» | Expone discrepancia, calcula lo demostrable y etiqueta cualquier hipótesis; no presenta la afirmación solicitada como hecho sin soporte. |
-
-Criterios de aceptación: autor y audiencia correctos; afirmaciones trazables; hechos, cálculos y propuestas distinguibles; limitaciones visibles; profundidad suficiente; componentes con función; base estándar conservada. Un dato inventado, un acuerdo falso o una fuente que no sostiene la conclusión invalidan la entrega. Registra fallos concretos; no uses una puntuación global para ocultarlos.
-
-
-## Unified workspace scenarios
-
-Run the same synthetic task in a fresh Codex, Claude Code and Hermes conversation with the installed skill version recorded. Do not treat format compatibility as proof of agent behavior.
-
-1. Produce an operations report from the six Liftit fixture rows. Choose a table and a margin note only where they help the decision. Preserve units, source, immutable row IDs and declared aggregation scope.
-2. Revise a Tikin report from a selected context bundle. Identify artifact ID, source version, quote, requested change and uncertainty. Save a draft under the existing artifact ID; do not resolve threads or change access implicitly.
-3. Compare two Catabum decisions. Distinguish shared-topic membership from explicit evidence links. Never invent a source session or turn private notes into public content.
-4. Generate the report offline. The HTML must keep its semantic data fallback, appearance/review shell and documented export boundaries without requiring a hosted account.
-
-Score factual support, executive voice, appropriate components, correct defaults, provenance and privacy separately. Record failures and the exact fixture/skill version before changing guidance. These scenarios are an evaluation protocol, not a claim that all three agents have passed them. Private user feedback is not a public training dataset.
+Use `scripts/test_feedback.py`, contract checks, portable installation tests and the relevant React/portal suites. Do not assert automatic agent loading without checking it on that machine. See [the skill](../SKILL.md), [executive voice](executive-voice.md) and [contribution guidance](contributing-components.md).

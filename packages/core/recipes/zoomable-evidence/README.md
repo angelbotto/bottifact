@@ -1,14 +1,9 @@
-## Evidencia ampliable
+## Zoomable evidence
 
 <!-- nota:ejemplo evidencia-ampliable -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** Examinar una captura con zoom y puntos numerados. Los controles +/−/ajustar amplían de 100 a 400 %, y cada punto puede seleccionarse con teclado o desde el selector.
-
-**Cuándo no y límite:** Una imagen data: y 1–12 zonas con data-x/data-y porcentuales de 0 a 100, texto de hasta 100 caracteres. La lista conserva el contexto y el original se imprime. Desplazamiento local en ambos ejes; no cambia la resolución del archivo ni aplica reconocimiento de texto. Las zonas cercanas pueden solaparse: el selector y la lista permiten consultar todas. Coloca los puntos junto al dato para no taparlo. No sustituye comentarios: las zonas son anotaciones del autor, la burbuja común recoge la revisión del lector.
-
-**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
-
-**Dependencia:** packages/core/components/evidence.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
+**Use and limits:** Inspect one embedded data image with 1–12 numbered zones. Percentage `data-x/data-y` coordinates range 0–100; labels up to 100 characters. Zoom/fit supports 100–400%, local two-axis scrolling and keyboard/selector access. Overlapping zones remain accessible in the list. Place markers beside evidence. This does not increase image resolution or perform OCR. Author annotations are separate from reader comments; print preserves the original. Source data stays in one table (or the image zone list). Declare data-unidad (1–40 characters); numeric magnitude is limited to 10^12. Views round to eight significant digits while source values remain. Load evidence.js; NotaEvidencia.init/get/destroy owns lifecycle. Destroy before changing the source. No network or external libraries; data remains if enhancement fails.

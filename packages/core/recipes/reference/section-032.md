@@ -1,7 +1,3 @@
-## Alcance de esta versión
+## Current scope
 
-Es una librería de recetas HTML/CSS/JS copiables, sin instalación de framework. No incluye
-un CLI de generación, React, una dependencia de shadcn, un constructor de consultas,
-streaming, mapas políticos o conversión automática de fuentes a caligrafía. Cualquier pieza
-nueva debe conservar los tres temas, los datos accesibles, los mínimos locales y el ciclo
-de vida documentado. Los ejemplos no se publican ni envían datos.
+Margen includes portable HTML/CSS/JS recipes, a Python generator and validator, React adapters, an optional hosted portal, and portable agent instructions. The HTML runtime does not require a framework. React adapters are separate and do not provide one-to-one coverage of every recipe. The registry is not a shadcn installation registry. Maps and dashboards need declared data; no sample implies a live feed. Publishing is an explicit action. See architecture.md and react.md for current boundaries.

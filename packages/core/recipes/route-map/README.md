@@ -1,10 +1,9 @@
-## Mapa de rutas y volumen
+## Route map
 
 <!-- nota:ejemplo mapa-rutas -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** comparar corredores entre sedes y el volumen de viajes; el grosor comparte una escala lineal. No para orientar a un conductor ni estimar tiempo de viaje.
-
-**Límite:** Incluye packages/core/components/geography.js y packages/core/components/analytics.js, en ese orden. Hasta 24 conexiones, cantidades no negativas; vista acotada a Colombia (lat. −5…14, lon. −80…−66). Proyección equirectangular; líneas curvas esquemáticas, no carreteras ni geodésicas. 0 viajes no dibuja una ruta. No obtiene datos, distancias ni rutas de un proveedor.
+**Use and limits:** Compare up to 24 corridors with a shared linear width scale and nonnegative trip counts. Load geography before analytics. Colombia view is latitude −5…14, longitude −80…−66, with equirectangular projection and schematic curves. Zero trips draws no route. No roads, provider routing, geodesic distances, driver guidance or ETA.

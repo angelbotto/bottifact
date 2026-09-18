@@ -1,9 +1,6 @@
-## Documento y temas — compatibilidad histórica
+## Document and themes — legacy compatibility
 
-Este esqueleto explica documentos anteriores con selector simple. **No es la base de nuevos
-artefactos**: omite los controles que Angel pidió estandarizar. Para crear uno consulta
-[docs/artifact-contract.md](artifact-contract.md); la receta `apariencia` documenta la llave vigente con nueve paletas.
-
+This skeleton explains older documents with a simple selector. Use the artifact contract for new documents: this historical shell omits current controls. Replace embedding comments with complete local files, not remote dependencies. Use `.amplio` instead of `.ancho` for a wider figure; do not widen the entire reading column.
 
 ```html
 <title>Nota — decisión y evidencia</title>
@@ -13,7 +10,7 @@ artefactos**: omite los controles que Angel pidió estandarizar. Para crear uno 
 <a class="salto" href="#contenido">Saltar al contenido</a>
 <main class="hoja" data-lectura lang="es">
   <div class="herramientas">
-    <span class="firma-editorial"><span>Bottifact</span><small>Cuadernos</small></span>
+    <span class="firma-editorial"><span>Margen</span><small>Cuadernos</small></span>
     <div class="temas">
       <label for="tema">Papel</label>
       <select id="tema" data-tema>
@@ -33,7 +30,3 @@ artefactos**: omite los controles que Angel pidió estandarizar. Para crear uno 
 </main>
 <script>/* Pegar aquí packages/core/components/reader.js completo */</script>
 ```
-
-La plantilla ejecutable ya contiene los archivos incrustados. Los comentarios de este ejemplo
-se sustituyen por los archivos indicados; no son dependencias remotas. Para una figura aún más
-ancha, cambia `.ancho` por `.amplio`, nunca el ancho de todo el documento.

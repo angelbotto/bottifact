@@ -1,14 +1,9 @@
-## Paquete de contexto para agentes
+## Context bundle
 
 <!-- nota:ejemplo context-bundle -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** Revisar y copiar un encargo con cita, versión, audiencia y objetivo.
-
-**Datos necesarios:** reemplaza documento, versión, cita, fuente, audiencia y estado por valores conocidos; deja lo desconocido explícito. Los ejemplos son sintéticos.
-
-**Interacción y accesibilidad:** lectura semántica, detalles con teclado y redistribución en móvil. El paquete permite copiar su texto mediante el control estándar.
-
-**Límite:** La copia local no envía mensajes ni reabre agentes. Omitir información privada que no corresponda al destinatario.
+**Use and limits:** Review and copy a task with quote, version, audience and objective. Supply verified provenance and explicit unknowns. Copying local text neither sends a message nor resumes an agent. Exclude private information inappropriate for the recipient. Preserve semantic reading, keyboard disclosures and mobile flow.

@@ -1,6 +1,6 @@
 # Security policy
 
-Report vulnerabilities privately through [GitHub's vulnerability reporting form](https://github.com/angelbotto/bottifact/security/advisories/new). If that form is unavailable, email security details to angel@botto.is. Do not post live tokens, login links, private documents or exploit data in public issues.
+Report vulnerabilities privately through [GitHub's vulnerability reporting form](https://github.com/angelbotto/margen/security/advisories/new). If that form is unavailable, email security details to angel@botto.is. Do not post live tokens, login links, private documents or exploit data in public issues.
 
 Include the affected release/commit, deployment configuration with secrets removed, reproduction steps, expected impact and any proposed mitigation. Use a local disposable installation to reproduce. Do not test against someone else's hosted instance without authorization.
 

@@ -69,7 +69,7 @@ Props and data interfaces are exported from `packages/react/src/index.ts`. The w
 
 ## Lifecycle and server rendering
 
-Theme subscriptions and visibility observers are installed in effects and cleaned up on unmount. Native components render without reading browser APIs during server rendering; system appearance initially renders light and updates after mount. In Next.js, import interactive Bottifact components from your own `'use client'` wrapper. `RecipePreview` begins as a loading state and assembles its document in an effect. Do not use it as a replacement for SEO-visible article text.
+Theme subscriptions and visibility observers are installed in effects and cleaned up on unmount. Native components render without reading browser APIs during server rendering; system appearance initially renders light and updates after mount. In Next.js, import interactive Margen components from your own `'use client'` wrapper. `RecipePreview` begins as a loading state and assembles its document in an effect. Do not use it as a replacement for SEO-visible article text.
 
 ## Isolation and persistence
 

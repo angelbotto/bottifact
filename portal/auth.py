@@ -32,7 +32,7 @@ def target(value):
 
 def remote_json(url, data=None, headers=None, form=False):
     body = None if data is None else urllib.parse.urlencode(data).encode() if form else json.dumps(data).encode()
-    req = urllib.request.Request(url, data=body, headers={'Content-Type': 'application/x-www-form-urlencoded' if form else 'application/json', 'User-Agent': 'Bottifact/1.0', **(headers or {})})
+    req = urllib.request.Request(url, data=body, headers={'Content-Type': 'application/x-www-form-urlencoded' if form else 'application/json', 'User-Agent': 'Margen/1.0', **(headers or {})})
     # No reenviar credenciales a redirecciones de un proveedor.
     class NoRedirect(urllib.request.HTTPRedirectHandler):
         def redirect_request(self, *args, **kwargs): return None
@@ -47,9 +47,9 @@ def send_code(email, code):
     suffix = '/emails' if provider == 'resend' else '/api/v1/emails'
     return remote_json(os.environ['BOTTIFACT_EMAIL_URL'].rstrip('/') + suffix, {
         'from': os.environ['BOTTIFACT_EMAIL_FROM'], 'to': [email] if provider == 'resend' else email,
-        'subject': 'Tu código de acceso a Bottifact',
+        'subject': 'Tu código de acceso a Margen',
         'text': f'Tu código de acceso es {code}. Vence en 10 minutos y solo sirve una vez.\n\nÚsalo en {origin}. Si no lo pediste, ignora este mensaje. No compartas el código.',
-        'html': f'<div style="font-family:Arial,sans-serif;max-width:480px;margin:auto;padding:32px;color:#292520"><h1 style="font-family:Georgia,serif;font-weight:400">bottifact</h1><p>Tu código de acceso</p><p style="font-size:36px;letter-spacing:8px">{code}</p><p>Vence en 10 minutos y solo sirve una vez.</p><p>Úsalo en <a href="{safe_origin}">{safe_origin}</a>. Si no lo pediste, ignora este mensaje. No compartas el código.</p></div>'
+        'html': f'<div style="font-family:Arial,sans-serif;max-width:480px;margin:auto;padding:32px;color:#292520"><h1 style="font-family:Georgia,serif;font-weight:400">Margen</h1><p>Tu código de acceso</p><p style="font-size:36px;letter-spacing:8px">{code}</p><p>Vence en 10 minutos y solo sirve una vez.</p><p>Úsalo en <a href="{safe_origin}">{safe_origin}</a>. Si no lo pediste, ignora este mensaje. No compartas el código.</p></div>'
     }, {'Authorization': 'Bearer ' + os.environ['BOTTIFACT_EMAIL_KEY']})
 
 

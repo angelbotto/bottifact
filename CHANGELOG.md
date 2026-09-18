@@ -1,5 +1,16 @@
 # Changelog
 
+
+## 0.6.0 — 2026-09-18
+
+- Adopt Margen as the product, repository and canonical agent skill name. Preserve document IDs, URLs, account storage, runtime APIs and legacy commands.
+- Replace the crowded comment form with a compact author/draft/send composer. Disclose context, note type and session on demand; preserve failed drafts and restore controls on remount.
+- Replace the large theme-card grid with a searchable list, compact mode controls and independent typography/sound tabs.
+- Group table tools in portable artifacts and React with shared borders and accessible labels.
+- Maintain repository guidance and recipe documentation in English while preserving localized executable examples.
+- Install the `margen` command and skill entries for Codex, Claude Code and Hermes, with explicit compatibility forwarding for the old name and protection for custom installations.
+
+
 ## 0.5.2 — Refined controls and reader tools
 
 - Introduce consistent SVG controls and a grouped floating reader dock with direct comment/note actions, active tool states, keyboard navigation and focus/hover hints.

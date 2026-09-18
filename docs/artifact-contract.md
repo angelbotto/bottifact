@@ -1,122 +1,28 @@
-# Contrato de nuevos artefactos de Angel
+# Artifact contract
 
-El contrato 4 conserva marcos punteados difusos en las figuras anchas. La base incluye **una llave sol/luna**, 15 familias con muestras y modos Claro / Oscuro / Sistema, controles de sonido,
-comentarios flotantes, índice por página y regla de lectura. Es la composición predeterminada de
-los nuevos HTML de Angel. No exige llenar cada artículo con todos los componentes; selecciona
-las piezas a partir de las 88 recetas vigentes. Una excepción explícita de Angel prevalece.
+Contract 4 defines the shared HTML base: appearance, contextual review, typography, sound, reading navigation and stable document metadata. Use the generator for new work rather than copying a historical example. The contract preserves dotted, fading frames on wide figures and a consistent reader dock.
 
-## Crear una página
-
-Escribe sólo el contenido de la hoja en un archivo UTF-8. No copies cabecera, estilos, scripts,
-comentarios ni el panel de apariencia: los incorpora el generador desde sus fuentes canónicas.
-Cada `h2` necesita un ID propio o en su sección. Las figuras anchas son hermanas de las secciones,
-no hijas de ellas. Ejemplo completo de contenido:
-
-```html
-<section id="decision">
-  <h2>Una decisión pendiente</h2>
-  <p>Antes de avanzar, necesitamos confirmar la fuente y el alcance.</p>
-</section>
-<section id="evidencia">
-  <h2>Evidencia disponible</h2>
-  <p>Enlaza aquí la fuente real y explica lo que permite concluir.</p>
-</section>
-```
-
-Ejecuta desde el directorio de este skill (o usa la ruta absoluta de los scripts):
+## Generate
 
 ```bash
-python3 scripts/create_artifact.py --contenido /tmp/contenido.html --titulo 'Una decisión pendiente' --salida /tmp/examples/generated/report.html
-python3 scripts/validate_artifact.py /tmp/examples/generated/report.html
+python3 scripts/create_artifact.py --content /path/content.html --title 'Operational review' --document-id operations-review --theme linear --mode light --typography sobrio --output /path/review.html
+python3 scripts/validate_artifact.py /path/review.html
 ```
 
-El resultado es un HTML autocontenido listo para abrir como artefacto. Conserva el archivo de
-contenido para regenerarlo al editar; no modifiques a mano las copias incrustadas de los módulos.
-La salida reemplaza el archivo indicado; el generador rechaza sobrescribir el contenido fuente.
+Use `--help` for chapter input and supported options. Titles and IDs must be escaped; each heading/section target must be unique. The same logical document retains its ID across title changes and revisions. New documents get new IDs. Do not fabricate session or device metadata.
 
-## Crear capítulos
+## Structure
 
-Usa un JSON con `tema` y `estilo` optativos, `titulo`, `descripcion` opcional y `paginas`. Cada página tiene `id`, `titulo`
-y `contenido`, una ruta relativa al JSON. Los IDs son únicos, minúsculos, con números y guiones.
+The generator embeds complete fonts, CSS and required modules. Wide `.ancho` or `.amplio` figures are siblings of text sections inside `.hoja` or `.pagina`; nesting them in a narrow paragraph column breaks their width. Multipage documents use a grid on each `.pagina`, not a competing grid on the outer wrapper. Chapter navigation is page navigation; local content tabs use tab semantics.
 
-```json
-{
-  "titulo": "Revisión del proyecto",
-  "paginas": [
-    {"id": "decision", "titulo": "Decisión", "contenido": "decision.html"},
-    {"id": "evidencia", "titulo": "Evidencia", "contenido": "examples/generated/evidence.html"}
-  ]
-}
-```
+The base includes one appearance menu and one review surface. The hosted adapter negotiates permissions without passing credentials into artifact HTML. Theme and typography preferences are reader-specific; published source remains immutable. Preserve existing metadata keys such as `nota-documento` and runtime globals for compatibility.
 
-```bash
-python3 scripts/create_artifact.py --config /tmp/informe.json --salida /tmp/examples/generated/report.html
-python3 scripts/validate_artifact.py /tmp/examples/generated/report.html
-```
+## Validation
 
-Hay una muestra reproducible en [examples/content/standard-chapters.json](../examples/content/standard-chapters.json),
-y resultados completos en [examples/generated/standard.html](../examples/generated/standard.html) y [examples/generated/standard-chapters.html](../examples/generated/standard-chapters.html).
-El generador incorpora los módulos que requieren los atributos declarativos de las recetas,
-en su orden, una sola vez. `recorrido` ofrece el globo declarativo; una instancia programática
-personalizada de NotaGlobo necesita una extensión explícita del generador, no un script improvisado.
-La receta `configuracion` referencia el archivo editorial: incluye también `archivo` o adapta ese destino.
+The validator checks required modules, recorded hashes, IDs, dependencies, metadata, theme settings and contract structure. It cannot prove visual quality, human-perceived sound, keyboard ergonomics or WebGL behavior. Also inspect desktop, 320/390 px, light/dark modes, reduced motion and fallback states in a browser. Do not hide document overflow to pass a layout check.
 
-## Qué comprueba y qué no
+Source HTML and generated assets must agree. Rebuild after runtime or recipe changes. A historical artifact is not automatically upgraded by updating an agent's skill; regenerate and publish a new revision with the same ID. The portal may provide current reader chrome without altering stored source versions.
 
-El verificador exige controles, módulos, 30 paletas, referencias internas, rejilla y regiones
-con foco/nombre. Comprueba CSS y JS contra las fuentes instaladas y registra sus hashes en un
-manifiesto. Detecta una copia vieja al compararla con el skill actual; no migra documentos ni
-promete compatibilidad binaria entre versiones. No modifica artefactos publicados.
+## Publication
 
-El contrato es una composición de la biblioteca, **no un sanitizador de contenido no confiable**.
-No admite scripts personalizados, CSS adicional fuera de los prototipos declarativos, iframes
-ni recursos remotos. Para extender la biblioteca, añade primero una implementación documentada,
-sus dependencias y su verificación; no desactives el control para conseguir un resultado verde.
-Los ejemplos antiguos conservan su compatibilidad, pero no todos cumplen este contrato nuevo.
-
-La comprobación estructural no acredita accesibilidad completa ni comportamiento: abre el
-resultado a 320, 390 y 1440 px, prueba las 30 paletas, foco, desplazamiento local, capítulos,
-pines, exportación del prompt y movimiento reducido. Usa un clic real para Probar sonido.
-En capítulos, sin JavaScript se ofrece lectura continua; los controles interactivos necesitan JS.
-
-## Sonido que se puede comprobar
-
-Apariencia organiza Temas / Letras / Sonido, con búsqueda y familias. El interruptor vive únicamente en Sonido; esa pestaña ofrece **Probar sonido**, volumen y estado. El botón de prueba
-activa el audio y reproduce la muestra original de clic de cmrg.me. El interruptor solo activa/desactiva; activarlo no
-reproduce nada. El volumen inicial es 65 %, independiente del volumen del dispositivo. El lápiz usa las tres grabaciones originales incrustadas de cmrg.me, sin bucles ni amplificación adicional, sincronizadas con la escritura. Su procedencia está en packages/core/assets/reference-audio/PROVENANCE.md.
-
-Por petición explícita de Angel (15/09/2026), empieza habilitado; no crea Web Audio hasta el primer clic real. El silencio elegido se guarda en localStorage. Al ocultar la pestaña se cancelan voces y se pausa el contexto; si sigue habilitado, otro clic puede reanudarlo. No reproduce una señal de arranque. `data-escritura-sonora` permite
-acompañar el trazo visible una vez habilitado; `data-audio-hover` requiere movimiento real del
-ratón. Nunca suena por foco o scroll genérico. Movimiento reducido cancela la escritura y su audio.
-Si el contexto no puede arrancar o el navegador lo pausa, el estado explica cómo reintentarlo.
-
-Un contexto `running` y una señal distinta de cero no prueban que el usuario la escuche: también
-intervienen la pestaña silenciada, el volumen y el dispositivo de salida. En una vista remota hay
-que identificar dónde ejecuta el navegador. Para la prueba del MacBook abre la URL de Tailscale
-en su propio navegador y pulsa Probar sonido; no asumas que una captura remota retransmite audio.
-
-## Comentarios incluidos
-
-Una sola instancia de `packages/core/components/review.js`, con su montaje oculto de la receta, crea los controles
-flotantes. No pongas una caja grande en el flujo. El contador abre los comentarios y el prompt
-con referencia y fragmento; los pines se anclan al contenido. Los hilos se guardan localmente y permiten respuestas, asignación y resolución. Comparte un JSON para reunir revisiones; no hay sincronización remota. Consulta [docs/collaboration.md](collaboration.md).
-
-El diagnóstico, las pruebas ejecutadas y las prioridades que aún faltan están en
-[auditoría de estandarización](../tests/evidence/standardization.md).
-
-## Presentación inicial
-
-```bash
-python3 scripts/create_artifact.py --contenido contenido.html --titulo 'Operación' --tema liftit --estilo sobrio --salida operacion.html
-```
-
-Temas: `editorial`, `sea`, `oliva`, `arcilla`, `ciruela`, `liftit`, `blueprint`, `hacker`, `linear`, `modern`, `github`, `catppuccin`, `solarized`. Modo independiente: `--modo light`, `--modo dark` o `--modo system`. En JSON se usan `tema` y `modo`. Consulta [docs/themes.md](themes.md); se aceptan los IDs antiguos para migrar documentos.
-Estilos: `editorial`, `sobrio`, `tecnico`, `libro`, `revista`, `bitacora`. El lector puede cambiarlos con la misma llave circular.
-Una presentación declarada conserva la elección posterior por ruta del archivo, independiente del
-tema global de otros artefactos. Sin valores declarados se conserva la preferencia global anterior.
-
-Combinaciones de `--estilo`: `editorial`, `sobrio`, `tecnico`, `libro`, `revista`, `bitacora`. Las tres nuevas usan Literata para lectura y mantienen controles sans, datos/código y manuscrita en sus familias.
-
-## Identidad de revisión
-
-`--documento-id mi-documento` (o `documento_id` en el JSON) mantiene comentarios entre revisiones aunque cambie el título. Admite 1–120 letras, números, guiones y subrayados. Sin valor explícito, el ID deriva del título. Documentos distintos deben tener IDs distintos; conservando el ID puedes compartir el mismo archivo en otro equipo y reunir su revisión.
+Validate locally, upload a draft, review it, then promote using the expected current version. Keep permissions and audience unchanged unless explicitly requested. New artifacts are private by default. See [portal operations](portal-operations.md) and [the unified workspace](unified-workspace.md).

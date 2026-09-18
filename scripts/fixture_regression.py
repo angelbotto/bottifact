@@ -25,4 +25,4 @@ def build(start,script):
  <div class="paginacion" data-paginacion><button type="button" data-nav="prev"><span class="et">Anterior</span><span class="tit"></span></button><button type="button" data-nav="next"><span class="et">Siguiente</span><span class="tit"></span></button></div>
  <footer class="pie">Fixture de regresión. No contiene datos de producción.</footer>
 </main>'''
- (ROOT/'examples/generated/checks.html').write_text(start('Bottifact · regresiones')+body+script('packages/core/components/reader.js')+script('packages/core/components/chapters.js'))
+ (ROOT/'examples/generated/checks.html').write_text(start('Margen · regresiones')+body+script('packages/core/components/reader.js')+script('packages/core/components/chapters.js'))

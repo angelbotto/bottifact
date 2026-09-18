@@ -1,4 +1,6 @@
-## Pastillas, lista mono y medida
+## Status pills, definition lists and meters
+
+Use a `dl` to associate labels and values, a pill for a short labeled state, and `meter` for coverage. An operation in progress needs `progress` instead. Keep units and explicit state words; color is supplementary. Dates and names are not fake controls.
 
 ```html
 <p>El valor está <span class="dato">pendiente de medir</span>.</p>
@@ -15,7 +17,3 @@
   <meter id="cobertura" min="0" max="10" value="10">10 de 10 páginas</meter>
 </div>
 ```
-
-**Cuándo:** la lista `dl` asocia etiquetas y valores; una pastilla representa un estado o dato
-breve. La barra usa `meter` porque mide cobertura, no una operación en curso. No conviertas
-fechas o nombres en controles falsos. Las pastillas saltan de línea si hace falta.

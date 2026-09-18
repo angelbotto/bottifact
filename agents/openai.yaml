@@ -1,4 +1,4 @@
 interface:
-  display_name: "Bottifact"
-  short_description: "Artefactos editoriales, datos y revisión con contexto"
-  default_prompt: "Usa $bottifact para crear un artefacto desde mi voz de CTO/CEO, con evidencia y componentes útiles. Consulta la preferencia de publicación, valida el HTML y, cuando esté autorizado, entrega el enlace del portal personal conservando documento-id, versiones y comentarios."
+  display_name: "Margen"
+  short_description: "Editorial artifacts, evidence and contextual review"
+  default_prompt: "Use $margen to create an artifact in my CTO/CEO voice with evidence and useful components. Check the publishing preference, validate the HTML and, when authorized, deliver the personal portal link while preserving document identity, versions and comments."

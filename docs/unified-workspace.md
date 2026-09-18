@@ -1,6 +1,6 @@
 # Reading, tables and connected context
 
-Bottifact has three delivery surfaces: portable HTML, React components and the hosted workspace. They share concepts but do not have identical capabilities. Nothing in the reader grants extra permissions.
+Margen has three delivery surfaces: portable HTML, React components and the hosted workspace. They share concepts but do not have identical capabilities. Nothing in the reader grants extra permissions.
 
 ## Reader controls
 

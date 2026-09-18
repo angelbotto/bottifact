@@ -1,4 +1,4 @@
-# Contributing to Bottifact
+# Contributing to Margen
 
 Thank you for improving the tools people use to explain and review their work. Small, focused changes are easier to assess. Open an issue for a large architectural change before implementing it. Bug reports should include reproduction steps using synthetic data, expected behavior and actual behavior.
 
@@ -7,8 +7,8 @@ Thank you for improving the tools people use to explain and review their work. S
 Python 3.10+ generates standalone artifacts using the standard library. Node 22.12+ is needed for the React workspace. Portal development additionally needs its pinned Python dependencies.
 
 ```bash
-git clone https://github.com/angelbotto/bottifact.git
-cd bottifact
+git clone https://github.com/angelbotto/margen.git
+cd margen
 npm ci
 python3 scripts/build.py
 npm run build

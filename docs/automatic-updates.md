@@ -7,11 +7,11 @@ The portal and the portable skill have separate release lifecycles. A portal dep
 The updater remembers the HTTPS server selected at installation. A self-hosted installation keeps using that server, never artifacts.botto.is as an unsolicited fallback.
 
 ```sh
-bottifact update --check
-bottifact update --if-changed
-bottifact update --auto enable
-bottifact update --auto status
-bottifact update --auto disable
+margen update --check
+margen update --if-changed
+margen update --auto enable
+margen update --auto status
+margen update --auto disable
 ```
 
 If the command is not on PATH, use `python3 ~/.local/share/bottifact/library/scripts/update.py` with the same flags. Use `--destination PATH` for a custom installation.
@@ -23,8 +23,8 @@ A checksum check avoids downloading an unchanged ZIP. A per-destination lock pre
 Local ZIP installations never silently enable network access. First choose a source explicitly, then enable the scheduler in a separate command:
 
 ```sh
-bottifact update --server https://your-instance.example
-bottifact update --auto enable
+margen update --server https://your-instance.example
+margen update --auto enable
 ```
 
 Git checkouts are not overwritten. Existing agent folders or links to a different library remain untouched. Other computers must install or enable the schedule themselves; one installation cannot configure unknown devices.

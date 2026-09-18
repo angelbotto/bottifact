@@ -1,10 +1,9 @@
-## Calendario de actividad
+## Contribution calendar
 
 <!-- nota:ejemplo calendario -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** ver continuidad, pausas o carga diaria al estilo del calendario de GitHub. No para comparar importes exactos entre meses de distinta duración.
-
-**Límite:** Incluye packages/core/components/analytics.js. De 1 a 366 registros, máximo 366 días consecutivos de rango; fechas ISO UTC únicas, conteos enteros no negativos. No infiere cero donde falta una fila: dibuja una diagonal. Semana comienza el lunes. No consulta GitHub ni un repositorio; umbrales calculados del máximo observado, no percentiles. Selector accesible para el detalle de cada día.
+**Use and limits:** Show continuity and gaps in daily activity. analytics.js accepts 1–366 unique UTC ISO dates over at most 366 consecutive days, with nonnegative integer counts. Missing rows use a diagonal rather than implied zero. Weeks start Monday; thresholds derive from the observed maximum, not percentiles. A selector exposes every day's values. No GitHub connection or productivity inference.

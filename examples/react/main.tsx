@@ -18,6 +18,6 @@ function App() {
       <Callout title="A boundary worth keeping" tone="note">A graph connection explains shared context. It does not establish cause and effect.</Callout>
       <Timeline items={[{ id: 'now', title: 'Review the evidence', date: 'Step 01', current: true, children: <p>Open the document, inspect sources and leave an anchored comment.</p> }, { id: 'next', title: 'Carry the context forward', date: 'Step 02', children: <p>Load the feedback bundle in the intended agent session and prepare a draft.</p> }]} />
       <section className="lab-catalog"><p className="bf-meta">THE COMPLETE RECIPE CATALOG</p><h2>Explore the same core.</h2><p>These previews isolate the original HTML runtime inside a sandboxed frame. The primitives above are native React.</p><label>Choose a recipe <select value={recipe} onChange={event => setRecipe(event.target.value as RecipeId)}>{recipes.map(item => <option key={item.id} value={item.id}>{item.id} · {item.name}</option>)}</select></label><RecipePreview id={recipe} theme={theme} mode={mode} /></section>
-    </Artifact><footer className="lab-footer">Bottifact · Synthetic component fixture · No account or private documents.</footer></>;
+    </Artifact><footer className="lab-footer">Margen · Synthetic component fixture · No account or private documents.</footer></>;
 }
 createRoot(document.getElementById('root')!).render(<StrictMode><App /></StrictMode>);

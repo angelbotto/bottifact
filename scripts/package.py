@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 EXTENSIONS = {'.md', '.css', '.js', '.cjs', '.json', '.html', '.py', '.sh', '.yaml', '.woff2', '.mp3', '.svg', '.txt'}
 ROOT_FILES = ['SKILL.md', 'VERSION.json', 'README.md', 'README.es.md', 'LICENSE', 'NOTICE',
               'CONTRIBUTING.md', 'SECURITY.md', 'CODE_OF_CONDUCT.md', 'CHANGELOG.md', 'ROADMAP.md']
-FOLDERS = ['scripts', 'docs', 'examples/content', 'examples/generated', 'agents', 'licenses',
+FOLDERS = ['compat', 'scripts', 'docs', 'examples/content', 'examples/generated', 'agents', 'licenses',
            'packages/core/components', 'packages/core/styles', 'packages/core/themes',
            'packages/core/brands', 'packages/core/registry', 'packages/core/recipes', 'packages/core/assets']
 # Transitional entrypoints exist only in built ZIPs for older installed launchers.

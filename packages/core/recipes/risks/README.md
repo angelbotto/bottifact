@@ -1,10 +1,9 @@
-## Registro de riesgos
+## Risks
 
 <!-- nota:ejemplo riesgos -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** Acompañar decisiones con causa, impacto, dueño, mitigación y señal observable.
-
-**Cuándo no / límite:** No estima probabilidad ni severidad automáticamente, y no multiplica escalas ordinales. No sustituye seguimiento operativo ni asigna trabajo a personas reales.
+**Use and limits:** Describe cause, impact, owner, mitigation and observable warning signals. No automatic probability/severity estimates or multiplication of ordinal scales. The component neither assigns real work nor replaces operational tracking.

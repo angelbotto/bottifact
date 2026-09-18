@@ -1,4 +1,4 @@
-# Host Bottifact on your own server
+# Host Margen on your own server
 
 To use the existing service without operating a server, follow [artifacts.botto.is onboarding](hosted-service.md). This guide is only for deploying your own instance.
 
@@ -11,8 +11,8 @@ Use Docker with Compose v2 on a Linux host, VM or NAS. For a first small install
 For public HTTPS, point your domain's A/AAAA records at the host and allow ports 80 and 443. Remove an incorrect AAAA record if the host has no IPv6 connectivity. If a reverse proxy already owns those ports, use the existing-proxy option below. Nothing here requires Cloudflare.
 
 ```bash
-git clone https://github.com/angelbotto/bottifact.git
-cd bottifact
+git clone https://github.com/angelbotto/margen.git
+cd margen
 python3 scripts/configure_portal.py \
   --origin https://artifacts.example.com --admin you@example.com
 ```
@@ -39,7 +39,7 @@ docker compose config --quiet
 docker compose up -d --build
 ```
 
-Forward your configured origin to `http://127.0.0.1:8788`. A proxy in a different container needs a shared Docker network and `app:8080` instead of the host loopback. Preserve request bodies, query strings, cookies and the `Origin` header. Do not place a separate Google/Cloudflare Access login in front of Bottifact's normal login flow.
+Forward your configured origin to `http://127.0.0.1:8788`. A proxy in a different container needs a shared Docker network and `app:8080` instead of the host loopback. Preserve request bodies, query strings, cookies and the `Origin` header. Do not place a separate Google/Cloudflare Access login in front of Margen's normal login flow.
 
 Check startup:
 
@@ -85,7 +85,7 @@ The current adapters support **UseSend** and **Resend**, through their HTTP APIs
 ```dotenv
 BOTTIFACT_EMAIL_PROVIDER=usesend
 BOTTIFACT_EMAIL_URL=https://mail.example.com
-BOTTIFACT_EMAIL_FROM=Bottifact <no-reply@example.com>
+BOTTIFACT_EMAIL_FROM=Margen <no-reply@example.com>
 BOTTIFACT_EMAIL_KEY=your-provider-key
 ```
 
@@ -111,13 +111,13 @@ curl -fsSL https://artifacts.example.com/install.sh -o /tmp/bottifact-install.sh
 bash /tmp/bottifact-install.sh
 ```
 
-The installer downloads from that origin and remembers it for future updates. It creates a shared skill for Claude Code, Codex and Hermes. `bottifact update` continues using the selected server. A local ZIP installation is also supported; see the README.
+The installer downloads from that origin and remembers it for future updates. It creates a shared skill for Claude Code, Codex and Hermes. `margen update` continues using the selected server. A local ZIP installation is also supported; see the README.
 
 Sign in to your portal, open **Conectar un agente**, and create an access token. Connect through the CLI, which prompts for the token without putting it in a shell command:
 
 ```bash
-bottifact connect --server https://artifacts.example.com
-bottifact status
+margen connect --server https://artifacts.example.com
+margen status
 ```
 
 Creating files remains local. Publishing requires explicit instruction or the user's stored `publish_on_create` preference. New documents are private unless explicitly published otherwise. Tokens, personal settings and publication receipts live outside the skill folder and must never be added to a shared ZIP.
@@ -183,7 +183,7 @@ Use the command without the HTTPS overlay if you use your own proxy. Volumes and
 | Login returns to the wrong host | `BOTTIFACT_ORIGIN`, exact Google redirect URI and recreated containers |
 | Email code never arrives | Provider key, verified sender, spam folder and provider delivery status |
 | Library looks empty | Signed-in account, permissions and owner aliases; a fresh install starts empty |
-| Updates download from another host | Re-run that instance's installer, or `bottifact update --server https://artifacts.example.com` |
+| Updates download from another host | Re-run that instance's installer, or `margen update --server https://artifacts.example.com` |
 | Backup status is stale | Worker health, disk capacity and permissions on `/backups` |
 
 When sharing logs, redact credentials, email addresses, private titles, access links and document bodies. Report security issues through [SECURITY.md](../SECURITY.md).

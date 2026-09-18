@@ -1,7 +1,8 @@
-## Índice lateral y regla de lectura
+## Reading outline and progress ruler
 
-Patrón por defecto para nuevos artefactos de Angel con varias secciones. Pega `packages/core/styles/fonts.css` y
-`packages/core/styles/artifact.css` inline, este HTML y `packages/core/components/reader.js` una vez al final.
+Use for a document with multiple sections. At 1200px, `lectura-guiada` reserves 200px left and 76px right, with a 160px outline and a 44px ruler. Below that, the outline is in flow and progress is compact. Previous sections are struck through to indicate position, not proof of reading. The ruler supports click, arrows, PageUp/Down and Home/End. Keep IDs unique; never announce every scroll through aria-live.
+
+For chapters, use `hoja multipagina lectura-guiada`, `data-lectura data-progreso-pagina`, one outline per `.pagina`, and one ruler after main. Add `data-historial data-enlaces-internos` for deep links. Load chapters after reader. Progress tracks the visible chapter and excludes footer/pagination. Without JS, navigation remains available. Print removes controls. The older non-guided layout retains its 1600px threshold.
 
 ```html
 <main class="hoja lectura-guiada" data-lectura lang="es">
@@ -19,25 +20,3 @@ Patrón por defecto para nuevos artefactos de Angel con varias secciones. Pega `
   <div class="ticks"></div><div class="cursor"></div><span class="val">0%</span>
 </div>
 ```
-
-**Cuándo:** orientar un documento de varias secciones. Desde 1200 px, `lectura-guiada` reserva
-200 px a la izquierda y 76 px a la derecha; el índice fijo mide 160 px y la regla 44 px.
-Son decisiones de esta variante, no medidas de cmrg. Figuras y texto siguen calculando sus
-anchos dentro del espacio disponible. Debajo, el índice se lee en el flujo y el progreso aparece
-como control compacto en la esquina inferior izquierda; no tapa el control de comentarios.
-El índice marca la sección actual y tacha las anteriores. El tachado indica posición, no prueba de lectura.
-La regla admite clic, flechas, PageUp/Down y Home/End; actualiza su orientación accesible al cambiar de tamaño.
-
-**Multipágina:** conserva las pestañas y añade un `nav.indice` dentro de cada `.pagina`, con enlaces
-sólo a sus secciones. El contenedor usa `class="hoja multipagina lectura-guiada" data-lectura data-progreso-pagina`.
-Para enlaces profundos con historial añade `data-historial data-enlaces-internos`, como en la biblioteca.
-Coloca una sola `.regla.regla-guiada` después de `main`. Incluye `packages/core/components/chapters.js` después de
-`packages/core/components/reader.js`. El porcentaje corresponde al capítulo visible, excluye el pie y la paginación,
-y se recalcula al cambiar de capítulo o abrir contenido. Si un capítulo cabe completo, indica 100 % al quedar visible entero.
-
-**Cuándo no / límite:** una pieza aislada sin secciones no necesita un índice vacío. Los enlaces
-exigen IDs únicos y existentes; no añadas `aria-live` al porcentaje porque anunciaría cada scroll.
-No anides los componentes anchos dentro del índice ni alteres sus contenedores de rejilla.
-El HTML funciona como navegación sin JS; el seguimiento y el porcentaje requieren el módulo.
-Al imprimir se ocultan controles y se recupera el ancho. El patrón anterior `.hoja` + `.indice` +
-`.regla`, sin las nuevas clases, conserva su comportamiento y el umbral de 1600 px.

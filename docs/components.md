@@ -1,23 +1,10 @@
-# Componentes de Bottifact
+# Margen components
 
-Para **nuevos artefactos**, escribe contenido con estas recetas y usa el generador de
-[docs/artifact-contract.md](artifact-contract.md): incorpora la llave sol/luna, comentarios, sonido y ayudas de lectura.
-No reconstruyas esa base copiando el esqueleto histórico de abajo. Cada receta indica sus
-módulos; el generador los detecta e incrusta junto con `packages/core/styles/fonts.css` y `packages/core/styles/artifact.css` completos.
-Las piezas no requieren React ni clases de Tailwind.
+For new artifacts, compose content from these recipes and use the [artifact contract](artifact-contract.md). The generator includes appearance, comments, sound and reading aids once, detects recipe modules and embeds complete fonts and styles. React and Tailwind are not required. Start with [charts](#recetas-graficas), [heatmaps](#recetas-calor), [tables](#recetas-tablas), [sound](#recetas-sonido), [writing](#recetas-escritura) or [Three.js](#recetas-three). The executable catalog is `examples/generated/template.html`; chapters are in `examples/generated/chapters.html`.
 
-Para empezar por una pieza: [gráficas](#recetas-graficas),
-[calor](#recetas-calor), [tablas](#recetas-tablas),
-[sonido](#recetas-sonido), [escritura](#recetas-escritura),
-[Three.js](#recetas-three). `examples/generated/template.html` es el catálogo ejecutable;
-`examples/generated/chapters.html` muestra capítulos completos. Las recetas marcadas son sus fuentes.
+## Document and themes — legacy compatibility
 
-## Documento y temas — compatibilidad histórica
-
-Este esqueleto explica documentos anteriores con selector simple. **No es la base de nuevos
-artefactos**: omite los controles que Angel pidió estandarizar. Para crear uno consulta
-[docs/artifact-contract.md](artifact-contract.md); la receta `apariencia` documenta la llave vigente con nueve paletas.
-
+This skeleton explains older documents with a simple selector. Use the artifact contract for new documents: this historical shell omits current controls. Replace embedding comments with complete local files, not remote dependencies. Use `.amplio` instead of `.ancho` for a wider figure; do not widen the entire reading column.
 
 ```html
 <title>Nota — decisión y evidencia</title>
@@ -27,7 +14,7 @@ artefactos**: omite los controles que Angel pidió estandarizar. Para crear uno 
 <a class="salto" href="#contenido">Saltar al contenido</a>
 <main class="hoja" data-lectura lang="es">
   <div class="herramientas">
-    <span class="firma-editorial"><span>Bottifact</span><small>Cuadernos</small></span>
+    <span class="firma-editorial"><span>Margen</span><small>Cuadernos</small></span>
     <div class="temas">
       <label for="tema">Papel</label>
       <select id="tema" data-tema>
@@ -48,23 +35,18 @@ artefactos**: omite los controles que Angel pidió estandarizar. Para crear uno 
 <script>/* Pegar aquí packages/core/components/reader.js completo */</script>
 ```
 
-La plantilla ejecutable ya contiene los archivos incrustados. Los comentarios de este ejemplo
-se sustituyen por los archivos indicados; no son dependencias remotas. Para una figura aún más
-ancha, cambia `.ancho` por `.amplio`, nunca el ancho de todo el documento.
+## Hand-drawn underline
 
-## Subrayado a mano
+Use `.marca` for a short decision-bearing phrase. Its two embedded SVG strokes have distinct curves; `box-decoration-break:clone` handles wrapping. Text remains selectable and retains its contrast. An underline does not replace a link, a status label or a heading.
 
 ```html
 <p>El estado definitivo debe vivir en <span class="marca">un solo registro</span>.
   El <a href="#evidencia">detalle de la evidencia</a> se puede consultar después.</p>
 ```
 
-**Cuándo:** una frase que contiene la decisión. `.marca` usa dos trazos SVG incrustados, de
-`1.7px`, con curvas distintas; `background-size:100% .32em` y `box-decoration-break:clone`
-permiten saltar de línea. El tema Sea cambia el trazo a verde. El texto conserva su tinta,
-selección y contraste; el trazo no pretende reemplazar enlaces o negritas.
+## Handwritten note and bracket
 
-## Nota manuscrita y corchete
+Use a margin note for a complementary perspective, never for a critical condition. The paragraph occupies the central grid cell; from 1184px the note occupies a real cell on the right and below that it follows the paragraph. Reenie Beanie supplies the annotation typography; only bracket decorations use absolute positioning. Use the margin-notes recipe for left/right animated variants.
 
 ```html
 <div class="con-margen">
@@ -77,12 +59,9 @@ selección y contraste; el trazo no pretende reemplazar enlaces o negritas.
 <p class="nota">una buena nota le ahorra contexto a la siguiente persona</p>
 ```
 
-**Cuándo:** una perspectiva complementaria, no una condición que cambia la decisión principal.
-El párrafo ocupa la celda central; a partir de `1184px` la nota usa una celda real a su derecha.
-Debajo, sigue al párrafo. La nota usa Reenie Beanie `26px / 1.18`; el corchete es CSS de `1px`
-con remates de `9px`. Solo los remates decorativos son absolutos.
+## Circular callouts
 
-## Avisos con círculo
+Use for conditions, errors, confirmations and short quotations. The default variant is informational; `ojo`, `bien` and `mal` add semantic emphasis. The 28px circle stays in the grid rather than invading the margin. Static callouts do not need `role="alert"`. Numbering does not make a callout an executable step.
 
 ```html
 <aside class="aviso ojo" aria-label="Aviso 1: condición">
@@ -107,12 +86,9 @@ con remates de `9px`. Solo los remates decorativos son absolutos.
 </aside>
 ```
 
-**Cuándo:** condiciones, errores, confirmaciones o citas breves. Omite la variante para una nota
-informativa azul. Círculo `28px`, dos columnas `30px minmax(0,1fr)`, borde izquierdo `3px`;
-el número pertenece al flujo y no invade un margen. No uses `role="alert"` para avisos estáticos.
-El original usa símbolos dentro de un círculo; la numeración es la adaptación pedida por Angel.
+## Fixed proportion map
 
-## Mapa de proporción
+This grid represents exactly 60/25/15: columns 3fr/2fr, then rows 5fr/3fr subdividing the second column. Recalculate proportions when data changes; changing labels alone misrepresents values. Only comparable nonnegative values with a positive total fit this recipe. Check text minimums against actual areas. Use the attention map or bars for other distributions, and disclose any grouped tail separately.
 
 ```html
 <figure class="ancho">
@@ -125,17 +101,9 @@ El original usa símbolos dentro de un círculo; la numeración es la adaptació
 </figure>
 ```
 
-**Cuándo:** participación sobre un total positivo y comparable. Las columnas `3fr 2fr` dan
-60/40; las filas `5fr 3fr` subdividen el 40 en 25/15. Esta receta corresponde **solo a esos
-pesos**. Al cambiar datos, calcula nuevas fracciones o genera un treemap con sus valores; no
-cambies únicamente las etiquetas. Las filas tienen mínimos para proteger texto; con otros
-idiomas o texto mucho más largo, verifica el reparto o usa un gráfico de barras y una tabla.
+## Status pills, definition lists and meters
 
-Para más de tres grupos, ordena por peso y considera agrupar la cola como «Otros», desglosada
-aparte. No omitas cifras pequeñas ni sustituyas un porcentaje por una celda arbitraria. El
-original calcula un treemap squarify; esta receta de rejilla es una versión explícita sin D3.
-
-## Pastillas, lista mono y medida
+Use a `dl` to associate labels and values, a pill for a short labeled state, and `meter` for coverage. An operation in progress needs `progress` instead. Keep units and explicit state words; color is supplementary. Dates and names are not fake controls.
 
 ```html
 <p>El valor está <span class="dato">pendiente de medir</span>.</p>
@@ -153,14 +121,11 @@ original calcula un treemap squarify; esta receta de rejilla es una versión exp
 </div>
 ```
 
-**Cuándo:** la lista `dl` asocia etiquetas y valores; una pastilla representa un estado o dato
-breve. La barra usa `meter` porque mide cobertura, no una operación en curso. No conviertas
-fechas o nombres en controles falsos. Las pastillas saltan de línea si hace falta.
+## Reading outline and progress ruler
 
-## Índice lateral y regla de lectura
+Use for a document with multiple sections. At 1200px, `lectura-guiada` reserves 200px left and 76px right, with a 160px outline and a 44px ruler. Below that, the outline is in flow and progress is compact. Previous sections are struck through to indicate position, not proof of reading. The ruler supports click, arrows, PageUp/Down and Home/End. Keep IDs unique; never announce every scroll through aria-live.
 
-Patrón por defecto para nuevos artefactos de Angel con varias secciones. Pega `packages/core/styles/fonts.css` y
-`packages/core/styles/artifact.css` inline, este HTML y `packages/core/components/reader.js` una vez al final.
+For chapters, use `hoja multipagina lectura-guiada`, `data-lectura data-progreso-pagina`, one outline per `.pagina`, and one ruler after main. Add `data-historial data-enlaces-internos` for deep links. Load chapters after reader. Progress tracks the visible chapter and excludes footer/pagination. Without JS, navigation remains available. Print removes controls. The older non-guided layout retains its 1600px threshold.
 
 ```html
 <main class="hoja lectura-guiada" data-lectura lang="es">
@@ -179,29 +144,9 @@ Patrón por defecto para nuevos artefactos de Angel con varias secciones. Pega `
 </div>
 ```
 
-**Cuándo:** orientar un documento de varias secciones. Desde 1200 px, `lectura-guiada` reserva
-200 px a la izquierda y 76 px a la derecha; el índice fijo mide 160 px y la regla 44 px.
-Son decisiones de esta variante, no medidas de cmrg. Figuras y texto siguen calculando sus
-anchos dentro del espacio disponible. Debajo, el índice se lee en el flujo y el progreso aparece
-como control compacto en la esquina inferior izquierda; no tapa el control de comentarios.
-El índice marca la sección actual y tacha las anteriores. El tachado indica posición, no prueba de lectura.
-La regla admite clic, flechas, PageUp/Down y Home/End; actualiza su orientación accesible al cambiar de tamaño.
+## Code with copy control
 
-**Multipágina:** conserva las pestañas y añade un `nav.indice` dentro de cada `.pagina`, con enlaces
-sólo a sus secciones. El contenedor usa `class="hoja multipagina lectura-guiada" data-lectura data-progreso-pagina`.
-Para enlaces profundos con historial añade `data-historial data-enlaces-internos`, como en la biblioteca.
-Coloca una sola `.regla.regla-guiada` después de `main`. Incluye `packages/core/components/chapters.js` después de
-`packages/core/components/reader.js`. El porcentaje corresponde al capítulo visible, excluye el pie y la paginación,
-y se recalcula al cambiar de capítulo o abrir contenido. Si un capítulo cabe completo, indica 100 % al quedar visible entero.
-
-**Cuándo no / límite:** una pieza aislada sin secciones no necesita un índice vacío. Los enlaces
-exigen IDs únicos y existentes; no añadas `aria-live` al porcentaje porque anunciaría cada scroll.
-No anides los componentes anchos dentro del índice ni alteres sus contenedores de rejilla.
-El HTML funciona como navegación sin JS; el seguimiento y el porcentaje requieren el módulo.
-Al imprimir se ocultan controles y se recupera el ancho. El patrón anterior `.hoja` + `.indice` +
-`.regla`, sin las nuevas clases, conserva su comportamiento y el umbral de 1600 px.
-
-## Código con encabezado y copia
+Use when readers need exact text to inspect or copy. Keep filenames when meaningful; language-only headers are compacted by the interface runtime. Preserve native selection and local scrolling. If clipboard access fails, select the code and explain manual copying. IDs must be unique. Escape &, < and > when inserting source into HTML.
 
 ```html
 <figure class="ancho">
@@ -217,12 +162,9 @@ Al imprimir se ocultan controles y se recupera el ancho. El patrón anterior `.h
 </figure>
 ```
 
-**Cuándo:** la persona necesita inspeccionar, comparar o copiar una entrada exacta. El encabezado
-usa mono `12px`; el código `13px / 1.65`, con desplazamiento y selección nativos. Si la API del
-portapapeles está bloqueada, el script selecciona el contenido y explica cómo copiarlo. Usa
-identificadores únicos por bloque. Escapa `&`, `<` y `>` al insertar código dentro del HTML.
+## Wide tables and diagrams
 
-## Tablas y diagramas anchos
+Tables are wide by default. Do not apply nowrap to every cell; wrap long identifiers and scroll locally where structure needs width. SVG diagrams need a viewBox, title and equivalent text. Protect label readability with a scrollable region or a mobile vertical composition. The example diagram contains exactly three steps; adding steps requires updating geometry, equivalent text and viewBox. It neither simulates a process nor calculates duration.
 
 ```html
 <figure class="amplio">
@@ -236,14 +178,6 @@ identificadores únicos por bloque. Escapa `&`, `<` y `>` al insertar código de
   <figcaption>Fuente: hoja CSS y estilo calculado a 1639 px de viewport.</figcaption>
 </figure>
 ```
-
-Las tablas son anchas por defecto. No apliques `white-space:nowrap` a toda la tabla. Si una
-columna contiene identificadores largos, permite partirlos; si la estructura necesita más
-ancho, conserva el desplazamiento local. Los diagramas SVG deben tener `viewBox`, título y
-una descripción equivalente en texto. El tamaño del dibujo debe proteger la lectura de sus
-etiquetas; usa una región desplazable para figuras densas, o una composición vertical en móvil.
-
-Diagrama completo, sin dependencias:
 
 ```html
 <figure class="ancho">
@@ -261,14 +195,9 @@ Diagrama completo, sin dependencias:
 </figure>
 ```
 
-**Cuándo:** una relación o secuencia concreta se entiende mejor como dibujo. Para registros
-comparables usa la tabla; para magnitudes, una gráfica a escala.
+## Fading excerpt
 
-**Límite:** esta composición contiene tres pasos. Cambiar sólo las etiquetas no añade nodos
-ni rutas; para más pasos ajusta SVG, texto equivalente y viewBox. Conserva los IDs únicos,
-el mínimo de 640 px y su región desplazable. No simula procesos ni calcula tiempos.
-
-## Texto que se desvanece
+Use only for an optional teaser. Apply the mask to an aria-hidden decorative copy; complete text remains available in details, through keyboard/screen reader and in print. Never fade the only copy of a conclusion, warning, source or table.
 
 ```html
 <div class="extracto">
@@ -281,11 +210,9 @@ el mínimo de 640 px y su región desplazable. No simula procesos ni calcula tie
 </div>
 ```
 
-**Cuándo:** un anticipo opcional. La máscara `35% → 100%` afecta solo una copia decorativa;
-el contenido íntegro siempre está disponible por teclado, lector de pantalla e impresión.
-No apliques `.desvanece` al cierre de una conclusión, una alerta, una tabla o un pie con la fuente.
+## Kept cards
 
-## Tarjetas «kept»
+Use for selected objects or references with a complete title and a useful personal note. Covers are optional. Adaptive columns have a 240px minimum; hover transforms the cover without moving text and reduced motion removes transitions. Use a real named link for navigation. Embed images as data URIs. Generated sample covers are local illustrations, not commercial artwork.
 
 ```html
 <div class="kept ancho">
@@ -305,16 +232,10 @@ No apliques `.desvanece` al cierre de una conclusión, una alerta, una tabla o u
 </div>
 ```
 
-**Cuándo:** objetos o referencias seleccionados, no un catálogo exhaustivo. Portada opcional,
-título completo y una nota personal o útil. `auto-fit` con mínimo adaptable de `240px`; el hover
-inclina la portada `−2deg` y la eleva `3px` durante `320ms`, sin mover el texto. Con movimiento
-reducido no hay transición. Si toda la tarjeta debe navegar, usa un enlace real con nombre;
-no añadas un `onclick` a un `div`. Las portadas con `<img>` deben ser `data:` URI, como las de
-`examples/generated/template.html`, que se generan localmente y no reproducen carátulas comerciales.
-
-## Multipágina
+## Chapter layout
 
 <!-- nota:ejemplo multipagina -->
+
 ```html
 <a class="salto" href="#contenido">Saltar al contenido</a>
 <div class="barra" tabindex="0" role="region" aria-label="Páginas y tema, desplazable">
@@ -369,34 +290,16 @@ estado: pendiente de medir</code></pre></div><figcaption>Datos de ejemplo, sin u
     <button type="button" data-nav="prev"><span class="et">Anterior</span><span class="tit"></span></button>
     <button type="button" data-nav="next"><span class="et">Siguiente</span><span class="tit"></span></button>
   </div>
-  <footer class="pie">Bottifact · Dos capítulos de ejemplo.</footer>
+  <footer class="pie">Margen · Dos capítulos de ejemplo.</footer>
 </main>
 ```
 
-**Cuándo:** un informe con capítulos que se leen por separado y merecen cada uno su temario. No
-para una nota de tres secciones: ahí la página única con índice lateral es mejor.
+**Use and limits:** Use separate chapters when each has its own reading task and contents. Put the grid on `.pagina`, never combine `por-seccion` with `multipagina`. Load reader then chapters once. Active navigation uses `aria-current=page`; hashes identify chapters and `nota:pagina` announces changes. IDs and `data-ir` targets must match. This is local navigation, not a network router. Historical chapter layouts show only the first chapter without JavaScript; print includes all chapters. The standard contract provides its own no-JavaScript fallback.
 
-**La rejilla va en `.pagina`, no en `.hoja`.** Por eso la clase es `multipagina` y no
-`por-seccion`: con las páginas de por medio, el selector `>` de `por-seccion` ya no alcanza a las
-secciones y todo termina del ancho del párrafo.
-
-**Instalación:** pega `packages/core/components/reader.js` y después `packages/core/components/chapters.js`, completos dentro de
-sendos `<script>` al final. El primero delega el índice cuando ve `.multipagina`; el segundo
-mantiene `aria-current`, `aqui-visto` y `aqui-actual` únicamente en la página visible.
-`examples/generated/chapters.html` contiene la receta completa con ambos guiones y el CSS incrustados.
-
-**Límite:** no carga páginas por red ni implementa un router de aplicación. Un enlace de
-capítulo usa su ID (`#p2`); los enlaces a secciones son internos a la página ya abierta.
-Sin JS sólo se ve el primer capítulo en pantalla; imprime todos los capítulos. No combines
-`por-seccion` con `multipagina`. Cada ID y cada `data-ir` debe ser único y corresponderse.
-
-El botón activo lleva `aria-current="page"`; el hash conserva la página abierta, así que un enlace
-a un capítulo concreto funciona. Al cambiar de página se emite `nota:pagina` por si hay que
-arrancar un lienzo o recalcular una figura.
-
-## Tablas densas
+## Dense table
 
 <!-- nota:ejemplo tabla-densa -->
+
 ```html
 <figure class="amplio">
   <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Brechas, desplazable">
@@ -410,14 +313,12 @@ arrancar un lienzo o recalcular una figura.
 </figure>
 ```
 
-**Cuándo:** desde cinco columnas. `.tabla-caja table` ya trae `min-width: 34rem`; `densa` lo sube a
-`58rem`. Sin ese mínimo la tabla no se desplaza, se comprime: medido a 390 px, seis columnas daban
-celdas de 50 px y filas de **581 px de alto**. Con `densa`, celdas de 139–285 px y filas de 140 px.
-El desplazamiento es local —la página nunca se mueve de lado— y la caja es alcanzable por teclado.
+**Use and limits:** Use for five or more columns. `.tabla-caja table` starts at 34rem; `.densa` raises the local minimum to 58rem. Preserve a focusable, named local scroller instead of compressing cells or making the entire page scroll horizontally. Inspect actual long values at 320/390 px. Do not apply nowrap to every cell.
 
 ## Terminal
 
 <!-- nota:ejemplo terminal -->
+
 ```html
 <figure class="ancho">
   <div class="terminal">
@@ -440,17 +341,12 @@ El desplazamiento es local —la página nunca se mueve de lado— y la caja es 
 </figure>
 ```
 
-**Cuándo:** una salida de consola, una consulta y su resultado, un volcado — cuando la evidencia
-*es* el texto tal como se vio. No para código fuente de ejemplo: para eso está `.codigo`.
+**Use and limits:** Use when exact console output is the evidence, not as a substitute for an analytical table. The terminal intentionally retains a dark surface in light and dark documents, with theme-specific tones. Copy uses the shared `data-copiar` behavior and a manual-selection fallback. Align plain output with monospace spaces inside `pre`. It never executes commands.
 
-Se queda **oscura en los dos temas** a propósito: una terminal clara no se lee como una terminal.
-La variante Sea sí cambia sus tonos, porque ahí el documento entero es oscuro y una caja con otro
-negro se vería sucia. El botón de copia usa el mismo `data-copiar` del sistema. Alinea las columnas
-con espacios dentro del `<pre>`; no uses una tabla disfrazada.
-
-## Nota manuscrita señalada
+## Handwritten note
 
 <!-- nota:ejemplo manuscrita -->
+
 ```html
 <div class="gesto-escrito">
   <p class="manuscrita" data-mano="fuente" data-escritura-sonora id="nota-decision">de doce frentes, siete están en producción. el cuello de botella ya no es construir: es decidir.</p>
@@ -458,23 +354,23 @@ con espacios dentro del `<pre>`; no uses una tabla disfrazada.
 </div>
 ```
 
-**Cuándo:** destacar una observación breve con escritura que aparece al llegar a ella. Incluye
-packages/core/components/handwriting.js: `data-mano="fuente"` revela Reenie Beanie por caracteres, como cmrg.me; no sustituye
-sus glifos por dibujos. Cada carácter aparece en 375 ms, escalonado para terminar con una
-muestra original de lápiz de aproximadamente 2,18–3,03 s. El ejemplo se anima una vez al
-entrar un 30 %; el botón permite repetirlo. `.manuscrita` sin atributo conserva texto estático.
+**Use and limits:** Use a short secondary observation revealed when seen. `data-mano=fuente` reveals the embedded Reenie Beanie glyphs, with 375 ms character reveals staggered to match the approved pencil sample (about 2.18–3.03 s). Entry triggers once at 30% visibility; replay remains available. Keep complete equivalent text for selection, assistive reading and review. Leaving the viewport, hiding the tab or reduced motion completes the text and cancels sound. `data-escritura-sonora` requests the original recording after a real audio-unlocking gesture; do not loop, normalize or stretch it. No RAF. The older empty `data-mano` SVG alphabet remains compatible (lowercase, 240 characters, words up to 160 px). Prefer `fuente` for new notes. `NotaMano.init/get/destroy` preserves original nodes.
 
-**Límite:** notas breves, con fuente incrustada; no animar párrafos extensos ni información
-crítica. Admite mayúsculas y puntuación de la fuente; palabras largas pueden partirse sin
-comprimir letras. Texto equivalente completo para lectores y comentarios. Sin JS se lee completo.
-Al salir, ocultar la pestaña o reducir movimiento se cancela la animación y se completa el texto.
-No hay RAF. `data-escritura-sonora` reproduce una grabación original sólo tras activar Sonidos;
-se corta al salir. No se normaliza, estira ni repite el audio. Sin el atributo permanece silenciosa.
-La variante anterior `data-mano` sin valor sigue disponible con su alfabeto SVG y sus límites
-(minúsculas, 240 caracteres, palabras de hasta 160 px). Para nuevas notas elige `fuente`.
-`NotaMano.init/get/destroy` permite insertar o retirar la mejora preservando los nodos originales.
+## Route globe
 
-## Globo de rutas
+The complete executable example is `examples/generated/globe.html`. Land-mask data is embedded in globe.js; there are no map keys or fetch requests. Load the pinned Three dependency once.
+
+| Input / method | Contract |
+|---|---|
+| `points` | Unique string id; latitude −90…90, longitude −180…180; optional label. |
+| `arcs` | Existing from/to IDs; optional unique id, label and detail. |
+| `select(id)` | Selects and centers a route; null selects all; unknown ID throws. |
+| `setData({points,arcs})` | Validates before replacing geometry; invalid data throws TypeError and retains prior data. |
+| `rotate(dx,dy)` | Radians; tilt is limited to ±1.2. |
+| `pause()` / `resume()` | Rotation control; resume respects reduced motion. |
+| `destroy()` | Stops RAF, disconnects listeners/observers, frees WebGL and empties the container. |
+
+Coincident points avoid degenerate curves; antipodes use a deterministic axis. Labels enter through textContent. Escape `<` as `\u003c` in embedded JSON. Curves have 64 segments and hide behind the sphere. Time-based rotation is 0.072rad/s; reduced motion makes selection immediate. Buttons and keyboard remain available; touch rotation preserves vertical page scrolling. Without WebGL, retain the complete route list and an explanation. The 256×128 land mask is not a political map or measured distance source. Label invented routes as illustrative.
 
 ```html
 <figure class="ancho">
@@ -498,67 +394,18 @@ const rutas = new NotaGlobo(document.getElementById('mi-globo'), {
 </script>
 ```
 
-`examples/generated/globe.html` es la versión completa ejecutable de ese contrato, sin comentarios por sustituir.
-La máscara terrestre está incrustada dentro de `packages/core/components/globe.js`. No necesita APIs, claves, imágenes
-externas ni solicitudes `fetch`.
+## Evidence modules
 
-| Entrada / método | Contrato |
-|---|---|
-| `points` | Array; `id` string único, `lat` número entre −90 y 90, `lon` entre −180 y 180; `label` opcional. |
-| `arcs` | Array; `from` y `to` son IDs existentes; `id` opcional pero único, `label` y `detail` opcionales. Las coordenadas y unidades son geográficas. |
-| `select(id)` | Selecciona y centra una ruta; `select(null)` vuelve a todas. Error si el ID no existe. |
-| `setData({points,arcs})` | Reemplaza los datos validados, libera geometrías anteriores y reconstruye la lista. Datos inválidos lanzan `TypeError` y conservan el conjunto anterior. |
-| `rotate(dx,dy)` | Radianes; giro horizontal e inclinación limitada a ±1,2. |
-| `pause()` / `resume()` | Controlan el giro; `resume()` sigue respetando movimiento reducido. |
-| `destroy()` | Detiene RAF, desconecta listeners/observers, libera WebGL y vacía el contenedor. |
+Each visualization uses its HTML table as the source of truth. Embed complete fonts/styles and each necessary script once: charts.js for charts/heatmaps and tables.js for sorting/sparklines. These modules are independent of Three. `NotaGraficas.init(root)` and `NotaTablas.init(root)` are idempotent; get(element).destroy() restores the original markup. Destroy, edit source data, then initialize again. No network or framework is required.
 
-Los puntos coincidentes no dibujan una curva degenerada; los antípodas usan un eje determinista.
-Las etiquetas entran por `textContent`, no por HTML. Cuando serialices JSON dentro de un script,
-escapa `<` como `\u003c`; nunca interpoles datos sin escapar dentro de `innerHTML`.
-
-La proyección y la atmósfera siguen COBE; los arcos son bandas cuadráticas con 64 segmentos,
-con ocultación tras la esfera. El giro es `0.072rad/s`, equivalente a los `0.0012rad/cuadro`
-originales a 60 Hz, pero estable a otras frecuencias. El suavizado conserva el factor original
-`0.09` a 60 Hz. En modo reducido el cambio de selección se resuelve inmediatamente; hay
-botones y flechas de teclado. Con touch se puede girar horizontalmente y conservar el scroll
-vertical de la página. Sin WebGL queda un mensaje y la lista completa de rutas.
-
-El globo no es un mapa político ni una medición de distancias. La máscara de 256×128 describe
-masas terrestres; no añade fronteras. No inventes kilómetros, vuelos o sedes: recibe datos reales
-o identifica el ejemplo como ilustrativo. Los arcos y marcadores se han aclarado frente al
-original, una decisión deliberada para informes, no una afirmación de igualdad píxel a píxel.
-
-## Librería de evidencia: instalación por pieza
-
-La fuente de cada visualización es **su tabla HTML**, no una segunda copia de los datos.
-Pega `packages/core/styles/fonts.css` y `packages/core/styles/artifact.css` completos y, al final del documento, los módulos necesarios dentro de
-`<script>`: [packages/core/components/charts.js](../packages/core/components/charts.js) para gráficas/calor y [packages/core/components/tables.js](../packages/core/components/tables.js) para
-ordenación/sparkline. Son independientes de Three.js. Cada módulo se pega una sola vez.
-Se inicializan al cargar; para HTML insertado después usa `NotaGraficas.init(contenedor)`
-o `NotaTablas.init(contenedor)`. Repetir `init` devuelve la instancia existente.
-`get(elemento).destroy()` devuelve el HTML original; para nuevos datos, destruye la
-instancia, modifica la tabla y vuelve a inicializar. No hay red, almacenamiento ni framework.
-
-Los siguientes bloques son también la fuente del catálogo ejecutable: el ensamblador
-extrae las recetas marcadas `nota:ejemplo`. Las figuras se copian **como hijas de `.hoja`**.
-Para secciones anidadas usa `por-seccion`; para capítulos usa `multipagina` y coloca las
-figuras como hijas de `.pagina`. No envuelvas el bloque en otra sección angosta.
-
-`data-valor` usa punto decimal, sin separadores de miles; su texto visible incluye la
-unidad y el formato humano. Vacío significa ausencia, `0` es un cero medido. Los ejemplos
-son ilustrativos y lo dicen en su pie. Los nombres y los datos se insertan como texto.
-Las unidades de los ejes se escriben completas junto al dibujo (`X`, `Y`) para permitir
-que envuelvan en varias líneas. El SVG mantiene los ticks y sus valores en la misma escala.
-Las gráficas no tienen animación ni tooltip imprescindible: la tabla permite consultar
-cada punto por teclado. Las escalas se calculan con los datos, sin recortar extremos.
-No se suman ni se interpolan registros ausentes. Los intervalos entre puntos de una línea
-son segmentos rectos, no observaciones adicionales.
+Keep wide figures as direct children of `.hoja` or `.pagina`, using por-seccion for nested sections. `data-valor` uses decimal points without thousands separators. Empty means missing; zero is a measured zero. Visible text includes units. Scales include extremes; missing records are not summed or interpolated. Straight line segments between observations do not imply additional measurements. Exact values remain available in the table.
 
 <a id="recetas-graficas"></a>
 
-## Barras: cantidades y diferencias
+## Bar chart
 
 <!-- nota:ejemplo barras -->
+
 ```html
 <figure class="ancho" id="barras-ejemplo" data-grafica="barras" data-unidad="Horas">
   <details open><summary>Ver los datos de balance de horas</summary>
@@ -576,13 +423,12 @@ son segmentos rectos, no observaciones adicionales.
 </figure>
 ```
 
-**Cuándo:** comparar magnitudes en la misma unidad; admite negativos y hasta cuatro series agrupadas. Cero siempre está en la escala. Usa línea si importa la continuidad temporal.
+**Use and limits:** Compare magnitudes in one unit. Zero stays in the domain; negatives and up to four grouped series are supported. Up to 500 rows; for many categories prefer a sortable table. The drawing keeps an 800 px local minimum and wraps long category labels. This is not a stacked or normalized percentage chart.
 
-**Límite:** hasta 500 filas y cuatro series. Muchas barras requieren una figura alta: para centenares de registros, prefiere tabla ordenable. El ancho mínimo del dibujo es 800 px con desplazamiento local; las categorías largas saltan de línea. No son barras apiladas ni porcentajes normalizados.
-
-## Líneas: secuencia y datos ausentes
+## Line chart
 
 <!-- nota:ejemplo lineas -->
+
 ```html
 <figure class="ancho" id="lineas-ejemplo" data-grafica="lineas" data-unidad="Horas">
   <details open><summary>Ver los datos de tiempo de resolución</summary>
@@ -600,13 +446,12 @@ son segmentos rectos, no observaciones adicionales.
 </figure>
 ```
 
-**Cuándo:** seguir una secuencia ordenada de categorías comparables. Trazo y número en la leyenda distinguen series incluso en Sea. Para fechas con separaciones distintas, usa temporal; para categorías independientes, barras.
+**Use and limits:** Follow an ordered sequence of comparable categories. X positions are equally spaced, not dated intervals. Missing values break the line instead of becoming zero. Y covers the observed domain and need not start at zero. Up to four series; line styles and legend numbers distinguish them. No smoothing or inferred confidence intervals. Use time-series for irregular dates.
 
-**Límite:** los intervalos en X son categóricos y equidistantes. La ausencia corta el trazo, no se convierte en cero. El eje Y muestra el dominio completo observado; no tiene que comenzar en cero porque codifica posición. Hasta cuatro series; no calcula suavizados ni intervalos de confianza.
-
-## Serie temporal con variación
+## Time series
 
 <!-- nota:ejemplo temporal -->
+
 ```html
 <figure class="ancho" id="temporal-ejemplo" data-grafica="temporal" data-unidad="Solicitudes">
   <details open><summary>Ver los datos de solicitudes por día</summary>
@@ -624,13 +469,12 @@ son segmentos rectos, no observaciones adicionales.
 </figure>
 ```
 
-**Cuándo:** comparar observaciones fechadas. La posición usa milisegundos UTC: dos días y cinco días no ocupan el mismo espacio. El delta compara los dos últimos registros y nombra ambos.
+**Use and limits:** Compare dated observations with UTC millisecond positions. Dates must be valid, unique, increasing ISO days. Absolute change is current minus previous; relative change divides by the absolute previous value. A zero baseline makes percentage change undefined; missing values prevent comparison. Name the compared records. No aggregation, timezone repair, causal inference or automatic judgment that an increase is good.
 
-**Límite:** fechas ISO diarias válidas, únicas y crecientes; no agrega días ni corrige zonas horarias. El delta absoluto es actual − anterior y el relativo divide por |anterior|; base 0 indica porcentaje no definido, ausente indica sin comparación. Si tus registros representan ventanas, deben tener duración/composición comparables. No infiere causalidad ni si subir es bueno.
-
-## Dispersión: relación entre dos variables
+## Scatter plot
 
 <!-- nota:ejemplo dispersion -->
+
 ```html
 <figure class="ancho" id="dispersion-ejemplo" data-grafica="dispersion" >
   <details open><summary>Ver los datos de carga y latencia</summary>
@@ -649,13 +493,12 @@ son segmentos rectos, no observaciones adicionales.
 </figure>
 ```
 
-**Cuándo:** explorar pares X/Y medidos en la misma observación. Las dos variables tienen ejes numéricos con unidades. Para una sola secuencia de tiempo usa temporal.
+**Use and limits:** Explore paired numeric X/Y observations with explicit units. Both coordinates must be finite; up to 500 points. Coincident points overlap but remain distinct in the source table. No regression, jitter, uncertainty estimation or causal inference.
 
-**Límite:** cada punto exige ambos valores finitos. Hasta 500 puntos; coincidentes se superponen y siguen separados en la tabla. No ajusta regresiones, no aplica jitter, no representa incertidumbre ni permite inferir causalidad.
-
-## Distribución: histograma con intervalos reales
+## Distribution
 
 <!-- nota:ejemplo distribucion -->
+
 ```html
 <figure class="ancho" id="distribucion-ejemplo" data-grafica="distribucion">
   <details open><summary>Ver los datos de duración</summary>
@@ -674,15 +517,14 @@ son segmentos rectos, no observaciones adicionales.
 </figure>
 ```
 
-**Cuándo:** mostrar la distribución de una variable continua agrupada en intervalos explícitos. Los bordes de las barras corresponden a los bordes del intervalo.
-
-**Límite:** frecuencias enteras no negativas; intervalos crecientes sin solapamientos. La densidad se calcula como frecuencia/ancho; con intervalos desiguales es el área la que representa el conteo. La tabla declara inclusión/exclusión de extremos; el módulo no agrupa muestras individuales ni inventa bins. No es una curva de probabilidad ni un gráfico de categorías.
-
 <a id="recetas-calor"></a>
 
-## Attention map: matriz de intensidad
+**Use and limits:** Show continuous-variable frequencies in explicit increasing, non-overlapping bins. Frequencies are nonnegative integers. Density is frequency divided by bin width; with unequal widths, area represents count. Declare boundary inclusion in the table. The module does not bin raw samples or estimate a probability curve.
+
+## Heatmap
 
 <!-- nota:ejemplo calor -->
+
 ```html
 <figure class="ancho" id="calor-ejemplo" data-grafica="calor" data-umbrales="0,30,60,90,120,150" data-unidad="Minutos">
   <details open><summary>Ver los datos de tiempo por actividad y día</summary>
@@ -699,15 +541,14 @@ son segmentos rectos, no observaciones adicionales.
 </figure>
 ```
 
-**Cuándo:** buscar concentraciones entre dos dimensiones discretas. Cada celda muestra su valor y la leyenda tiene intervalos explícitos. Para partes de un total usa `.mapa`, que conserva el treemap original.
-
-**Límite:** cinco niveles, definidos por seis límites crecientes; máximo incluido en el último nivel. Un valor fuera del dominio produce error visible y conserva la tabla, nunca se satura en secreto. Hasta 31 × 31 celdas con ancho mínimo por columna y scroll local. No usa degradado ni escala implícita por fila. Las cifras mantienen el significado con colores forzados.
-
 <a id="recetas-tablas"></a>
 
-## Tabla de comparación
+**Use and limits:** Compare intensity across two discrete dimensions. Five levels use six increasing boundaries, with the maximum included in the final level. Out-of-domain data produces an error while preserving the source table, never silent saturation. Up to 31×31 cells, local scrolling and a minimum column width. Each cell retains its value; no hidden row-specific scales or gradient encoding.
+
+## Comparison
 
 <!-- nota:ejemplo comparacion -->
+
 ```html
 <figure class="amplio">
   <div class="tabla-caja" tabindex="0" role="region" aria-label="Comparación de fuentes, desplazable">
@@ -724,13 +565,12 @@ son segmentos rectos, no observaciones adicionales.
 </figure>
 ```
 
-**Cuándo:** comparar las mismas propiedades de pocas alternativas. Escribe la decisión en la cabecera además de señalarla con color. No uses un ranking si los criterios son cualitativos.
+**Use and limits:** Compare shared properties across a few alternatives. State the decision explicitly instead of relying on color. `.elegida` marks cells; it does not calculate a winner. Add `.densa` for five or more columns. The first column is not automatically sticky, preserving mobile comparison space.
 
-**Límite:** la clase `.elegida` se aplica a cada celda de la columna; no calcula ganadores. Para cinco columnas o más añade `densa`. No vuelve sticky la primera columna, para que el espacio útil del teléfono quede disponible al desplazar.
-
-## Tabla de totales y ordenación
+## Totals
 
 <!-- nota:ejemplo totales -->
+
 ```html
 <figure class="ancho">
   <div class="tabla-caja" tabindex="0" role="region" aria-label="Horas por actividad, tabla ordenable y desplazable">
@@ -748,13 +588,12 @@ son segmentos rectos, no observaciones adicionales.
 </figure>
 ```
 
-**Cuándo:** consultar registros y su total aditivo; ofrece ordenación cuando ayuda a encontrar extremos. Sin `data-tabla` funciona como tabla estática.
+**Use and limits:** Show records with a genuinely additive total. The author supplies the total; do not sum percentages, rates or averages. One tbody, no merged cells or subtotal rows inside it. `data-tabla` enables sorting; numeric cells need `data-valor`. Missing values remain last in both directions, ties retain order and tfoot stays fixed. This simple recipe has no filtering or paging.
 
-**Límite:** el total lo calcula quien prepara los datos, no el DOM. No sumar porcentajes, tasas o promedios. Un solo `tbody`, sin celdas combinadas ni filas de subtotal dentro de él; no hay paginación o filtrado. La ordenación numérica requiere `data-valor`; ausencias quedan al final en ambos sentidos. Repetidos conservan su orden, `tfoot` no se mueve.
-
-## Tabla con serie embebida
+## Sparkline
 
 <!-- nota:ejemplo sparkline -->
+
 ```html
 <figure class="ancho">
   <div class="tabla-caja" tabindex="0" role="region" aria-label="Serie semanal de solicitudes, desplazable">
@@ -770,17 +609,14 @@ son segmentos rectos, no observaciones adicionales.
 </figure>
 ```
 
-**Cuándo:** añadir tendencia a una tabla sin apartarse del registro. El texto de la celda nombra cada valor; el SVG es redundante y lleva `aria-hidden`.
-
-**Límite:** X equidistante; todas las filas deben describir los mismos períodos. Exige `data-min`/`data-max` comunes y rechaza dibujar puntos fuera de ellos. No autoescala por fila, no es una gráfica con ejes ni codifica tiempo irregular; para eso usa la serie temporal. El texto sigue disponible si el dibujo no se puede generar.
-
 <a id="recetas-sonido"></a>
 
-## Sonido: control central y canal independiente
+**Use and limits:** Add a trend without separating it from its record. Keep all values in text; the SVG is redundant and aria-hidden. X is equally spaced and all rows must use the same periods. Declare shared `data-min`/`data-max`; out-of-range points are rejected. No per-row autoscaling or irregular-time encoding. Text remains when rendering fails.
 
-En la biblioteca, Apariencia controla todo el audio con [packages/core/components/audio.js](../packages/core/components/audio.js), incluido antes de `packages/core/components/reader.js`. Para copiar sólo un canal independiente usa [packages/core/components/sound.js](../packages/core/components/sound.js). En nuevos artefactos, el control central empieza habilitado y espera el primer clic real para abrir Web Audio; recuerda el silencio elegido. El canal independiente conserva su inicio apagado y su botón de activación. El control central oculta los interruptores locales cuando está presente.
+## Sound
 
 <!-- nota:ejemplo sonido -->
+
 ```html
 <aside class="nota-sonido" data-canal-sonido aria-labelledby="sonido-titulo">
   <h3 id="sonido-titulo">Una señal breve.</h3>
@@ -795,39 +631,14 @@ En la biblioteca, Apariencia controla todo el audio con [packages/core/component
 </aside>
 ```
 
-**Cuándo:** confirmar una acción explícita y breve, en una experiencia donde la persona
-puede apagarlo siempre. No añade sonido a gráficos, scroll genérico, foco ni cambios de tema. El botón de activación no emite una señal. El canal independiente no recuerda la preferencia y vuelve a apagado al ocultar la pestaña; la base central recuerda el silencio y pausa al ocultarse. Sólo los elementos con atributos de escritura o hover autorizan esos gestos sonoros.
-
-**Límite:** Web Audio y gesto real de botón; eventos sintéticos no activan ni reproducen.
-El canal independiente de `packages/core/components/sound.js` usa seno, ganancia pico 0,025, ataque 3 ms y caída a 0,0001 en 55 ms;
-acción 660→440 Hz, confirmación 520→780 Hz, atención 440→360→440 Hz. Cada nota dura 60 ms,
-separada por 5 ms; total 125 o 190 ms. Son decisiones de Nota, no mediciones del sitio.
-Una nueva señal interrumpe la anterior. No son alarmas, sonificación de series ni audio de
-fondo, y la ganancia digital no garantiza un nivel acústico en el dispositivo.
-`NotaSonido.get(contenedor).disable()` apaga; `.destroy()` cierra el contexto y listeners.
-`NotaSonido.init(contenedor)` inicializa HTML nuevo. No hay método público de reproducción
-automática. Sin `packages/core/components/audio.js`, `[data-sonido]` conserva el comportamiento anterior.
-
-Con la base estándar, `packages/core/components/audio.js` usa los MP3 originales de cmrg.me, incrustados en base64 y
-decodificados por Web Audio al activar Sonidos. Clic, hover, confirmación, atención y tres
-lápices; sin descargas durante la lectura. Conserva los niveles de la referencia (clic .9,
-hover .4, lápiz .6, positivo/negativo .8) multiplicados por el volumen maestro inicial .65.
-Hover usa playbackRate .9; el lápiz mantiene su tono y duración original, sin bucle ni normalización.
-El canal independiente anterior se conserva sólo cuando falta `packages/core/components/audio.js`; con él, sus botones
-usan las mismas grabaciones y el mismo interruptor de la cabecera.
-`NotaAudio.enabled`, `activeVoices`, `plays` y `samples` permiten inspeccionar el estado;
-`NotaAudio.disable()` apaga y cancela las voces. `data-audio="accion|confirmacion|atencion|escritura"`
-en botones conserva su resultado textual. Procedencia y hashes en `packages/core/assets/reference-audio/PROVENANCE.md`
-y `tests/evidence/sounds-cmrg.json`. La sustitución de síntesis por grabaciones fue pedida por Angel.
-
 <a id="recetas-escritura"></a>
 
-## Escritura: trazo a trazo
+**Use and limits:** The standard base loads `audio.js` before reader and uses the approved embedded cmrg.me recordings. It starts enabled by preference but requires a real interaction to unlock Web Audio; mute and volume are remembered. Click .9, hover .4, pencil .6 and positive/negative .8 are multiplied by initial master volume .65. Hover playback rate is .9; pencil pitch/duration stay original, without loops or normalization. No runtime downloads. Only explicitly marked interactions produce sound; theme changes, focus and generic scrolling remain silent. Hiding the tab pauses/cancels voices. Inspect `NotaAudio.enabled`, `activeVoices`, `plays` and `samples`; `disable()` stops voices. Provenance is in reference-audio/PROVENANCE.md and tests/evidence/sounds-cmrg.json. The older independent sound.js channel starts muted, does not persist preference, and stops when hidden. Its 60 ms sine signals are a legacy fallback, not the reference recording. A digital gain does not establish physical loudness. init/get/destroy clean up contexts and listeners.
 
-Pega [packages/core/components/writing.js](../packages/core/components/writing.js) una vez al final. La frase de ejemplo está dibujada con
-paths originales; la animación recorre **su longitud**, no un rectángulo que descubre texto.
+## Writing
 
 <!-- nota:ejemplo escritura -->
+
 ```html
 <figure class="ancho nota-escritura" data-escritura data-escritura-sonora data-al-ver data-canal-sonido data-duracion="2400">
   <div class="escritura-caja" tabindex="0" role="region" aria-label="Escritura a mano, desplazable">
@@ -847,38 +658,22 @@ paths originales; la animación recorre **su longitud**, no un rectángulo que d
   </div>
   <p data-texto-escritura>«a mano»</p><p class="procedencia">Activa el sonido en Apariencia —o en el control local— y pulsa Repetir para escuchar el trazo.</p>
   <p role="status" aria-live="polite">Trazo completo.</p>
-  <figcaption>Gesto ilustrativo original de Bottifact. 2400 ms repartidos por la longitud de cada trazo; la frase siempre permanece escrita debajo.</figcaption>
+  <figcaption>Gesto ilustrativo original de Margen. 2400 ms repartidos por la longitud de cada trazo; la frase siempre permanece escrita debajo.</figcaption>
 </figure>
 ```
 
-**Cuándo:** una anotación corta y secundaria que gana significado con el gesto del trazo.
-Con `data-al-ver` se escribe una vez al entrar al menos un 30 % de su caja en pantalla; sin ese atributo empieza completa y la persona decide repetirla. En la base estándar el sonido está habilitado y espera un primer clic real; si estaba silenciado, actívalo en Apariencia. En un canal independiente pulsa Activar sonido y después Repetir escritura. Con `data-escritura-sonora`, y sólo después de que un clic habilite el contexto de audio, el lápiz acompaña la animación al entrar y se detiene al salir. Sin el atributo la entrada es silenciosa. Incluye `packages/core/components/audio.js` con Apariencia para el sonido de lápiz; si copias la escritura sola, `packages/core/components/sound.js` ofrece el mismo gesto de lápiz desde su botón local. El acceso «Ver escritura animada» aparece sólo en documentos que incluyen un trazo. Conserva `.manuscrita` para texto corriente
-que deba seleccionarse, traducirse o cambiar con datos.
-
-**Límite:** recibe paths SVG ordenados, no transforma automáticamente cualquier fuente
-en escritura cursiva. Cada path es un trazo continuo; separa levantamientos de lápiz en
-paths distintos. No uses contornos de glifos rellenos si esperas un trazo central de pluma.
-Al cambiar la frase, dibuja paths correspondientes y actualiza `data-texto-escritura`.
-El SVG es redundante (`aria-hidden`), el texto equivalente es permanente. Admite 100–10000 ms,
-no música sincronizada. Web Animations se cancela y completa al salir de pantalla, ocultar
-la pestaña o activar movimiento reducido; no hay RAF ni colas que se reanuden al volver. La entrada automática ocurre una sola vez por instancia; Repetir permite verla de nuevo.
-`NotaEscritura.get(elemento).play()`, `.finish()` y `.destroy()` controlan la instancia;
-`.play()` respeta movimiento reducido. `NotaEscritura.init(elemento)` admite inserción tardía.
-
 <a id="recetas-three"></a>
 
-## Three.js: dispersión XYZ
+**Use and limits:** Use ordered SVG centerline paths for a brief secondary handwritten gesture. It does not turn arbitrary text or filled font outlines into handwriting. Update `data-texto-escritura` whenever paths change; permanent equivalent text remains and SVG is aria-hidden. `data-al-ver` starts once at 30% visibility; otherwise readers choose replay. `data-escritura-sonora` requests approved pencil sound only after audio unlock and respects mute. Supported duration is 100–10000 ms. Leaving view, hiding the tab or reduced motion cancels/completes the gesture with no RAF or queued replay. `NotaEscritura.init/get`, `play()`, `finish()` and `destroy()` manage lifecycle. `play()` respects reduced motion.
 
-Usa **una sola** inclusión externa para toda la nota (compartida con `NotaGlobo`):
+## Coordinates
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js"></script>
 ```
 
-Después pega [packages/core/components/scene.js](../packages/core/components/scene.js) completo dentro de `<script>`, una vez, al final.
-No necesita `packages/core/components/globe.js`, `packages/core/components/charts.js`, controles externos ni importaciones adicionales.
-
 <!-- nota:ejemplo xyz -->
+
 ```html
 <figure class="ancho" data-escena="xyz" id="xyz-ejemplo">
   <div class="tabla-caja" tabindex="0" role="region" aria-label="Carga, latencia y memoria, tabla desplazable">
@@ -896,22 +691,12 @@ No necesita `packages/core/components/globe.js`, `packages/core/components/chart
 </figure>
 ```
 
-**Cuándo:** la tercera variable aporta una relación espacial que conviene explorar. Los
-controles giran la vista e identifican registros sin depender de arrastrar ni acertar a un punto.
-Si dos variables bastan, la dispersión SVG es más fácil de leer y comparar.
+**Use and limits:** Use a third dimension only when it adds a meaningful spatial relationship. One pinned Three.js inclusion can serve all scenes/globes. Load scene.js once. Accepts 1–100 finite complete XYZ records; axes have independent domains, so geometric distance across different units is not a common metric. No regression, jitter or correlation claims. Selection reveals an exact record while dimming others. Keep short labels, units in headers, a 600 px local canvas minimum and the permanent source table. Use a 2D scatterplot when two variables suffice.
 
-**Límite:** 1–100 registros finitos; sin ausencias, regresión, jitter ni inferencias de
-correlación. Cada eje tiene dominio propio, por lo que distancia geométrica no equivale
-a una métrica entre variables de unidades distintas. Los puntos pueden ocluirse: elegir
-uno atenúa los demás y escribe su valor. El lienzo conserva 600 px de ancho mínimo con
-scroll local; las etiquetas de ejes deben ser breves, con las unidades en las cabeceras.
-La tabla siempre queda visible, con o sin WebGL. Ningún dato existe sólo en una textura.
-
-## Three.js: etapas con duración
-
-Misma instalación de `packages/core/components/scene.js` y la misma inclusión única de Three.js.
+## Stages
 
 <!-- nota:ejemplo etapas -->
+
 ```html
 <figure class="ancho" data-escena="etapas" id="etapas-ejemplo">
   <div class="tabla-caja" tabindex="0" role="region" aria-label="Duración por etapa, tabla desplazable">
@@ -929,79 +714,24 @@ Misma instalación de `packages/core/components/scene.js` y la misma inclusión 
 </figure>
 ```
 
-**Cuándo:** explicar etapas de un proceso junto con su duración. Seleccionar una etapa
-conecta su caja con la explicación escrita. Empieza inmóvil; el giro continuo es optativo.
-Usa las barras SVG para comparar muchas categorías o cuando girar no aporte información.
+**Use and limits:** Explain ordered process stages with durations. Supports 1–12 stages with nonnegative duration; zero height is not inflated. No dependency planning, parallelism, cumulative waterfall or physical simulation. Do not sum overlapping durations as elapsed time. Selection connects a stage to its written explanation; initial rotation is paused. `NotaEscena.init/get`, `select(index|null)`, `rotate(dx,dy)`, `pause/resume` and idempotent `destroy()` manage instances. Rotation is .15 rad/s and runs only while visible, active and requested without reduced motion. Destroy releases RAF, observers, listeners and WebGL resources while restoring the source table. Destroy/reinitialize to replace data.
 
-**Límite:** 1–12 etapas en orden, duraciones no negativas. La altura cero no se infla para
-hacer visible una caja. No representa dependencias, paralelismo, un waterfall acumulado
-ni una simulación física. No sumes duraciones como tiempo total si las etapas se solapan.
-Los números 1…N identifican las filas de la tabla. Rotar puede superponer etiquetas; los
-valores exactos permanecen en la tabla y «Vista inicial» devuelve la composición inicial.
+## Limits of editorial primitives
 
-### Ciclo de vida de NotaEscena
+These rules supplement individual recipes. Keep appearance tokens complete, one control per document, explicit status text and truthful denominators. Margin notes carry secondary context; handwriting is not a replacement for body copy. Fixed proportion grids require recalculated geometry for different data. A reading ruler indicates position, not comprehension. Code and terminals copy text but do not execute it. Dense tables need local scrolling and checks at 320/390px; they are not virtualized databases. Decorative excerpts must have a complete accessible counterpart. Kept cards do not load external covers automatically. Handwriting is static without its animation module. Globes do not supply political boundaries or measured distances. Call destroy when removing enhanced components.
 
-| Operación | Contrato |
-|---|---|
-| `NotaEscena.init(raíz)` | Inicializa `data-escena` una vez por figura; el segundo llamado devuelve la instancia existente. |
-| `new NotaEscena(figura)` | Alternativa manual; rechaza una segunda instancia para el mismo contenedor. |
-| `NotaEscena.get(figura)` | Recupera la instancia automática. |
-| `select(índice)` / `select(null)` | Selecciona una fila, índice desde cero, o muestra todas. Rechaza índices inexistentes. |
-| `rotate(dx,dy)` | Giro manual inmediato, en radianes. |
-| `pause()` / `resume()` | Desactiva/solicita giro. `resume()` respeta movimiento reducido, visibilidad y estado WebGL. |
-| `destroy()` | Cancela RAF, aborta listeners, desconecta observers, libera geometrías/materiales/texturas/renderer y devuelve la tabla original. Es idempotente. |
+## Current scope
 
-El giro es 0,15 rad/s, limitado por tiempo, no por cuadros. Sólo hay RAF mientras la vista
-es visible, la pestaña está activa, se pidió girar y no hay movimiento reducido. Cambiar
-esa preferencia cancela el RAF pendiente; el giro manual sigue siendo instantáneo.
-Colores leídos de los tokens claros/oscuros/Sea; los rótulos son canvas locales. Al retirar
-la figura de una aplicación llama `destroy()`. Para reemplazar datos: destruye, modifica
-la tabla e inicializa otra vez. No hay `fetch`, modelos, mapas ni imágenes externas.
+Margen includes portable HTML/CSS/JS recipes, a Python generator and validator, React adapters, an optional hosted portal, and portable agent instructions. The HTML runtime does not require a framework. React adapters are separate and do not provide one-to-one coverage of every recipe. The registry is not a shadcn installation registry. Maps and dashboards need declared data; no sample implies a live feed. Publishing is an explicit action. See architecture.md and react.md for current boundaries.
 
-## Límites de las piezas editoriales base
+## Reports, articles and prototypes
 
-Estas condiciones complementan el HTML y el criterio de cada receta anterior. No cambian
-las clases existentes; ayudan a elegir una pieza antes de copiarla.
+Embed complete fonts/styles and reader once. Add reports.js for data-reporte, prototype.js for data-visor, and globe.js plus pinned Three for journey globes. `NotaReportes.init(root)` and `NotaVisores.init(root)` are idempotent; get(element).destroy() removes enhancement and restores source data. To change a source table, destroy, edit and reinitialize; there is no data observer.
 
-| Pieza | Cuándo no usarla / qué no hace / qué puede romperla |
-|---|---|
-| Documento y temas | No reemplaza un formato solicitado distinto de HTML. Un solo selector y `data-theme` en la raíz; mezclar CSS parciales puede dejar tokens sin definir. |
-| `.marca` | No señalar un párrafo entero ni expresar un estado sólo con el trazo. No transforma texto en enlace ni dibuja escritura animada. |
-| `.con-margen` / `.margen` / `.nota` | No esconder una condición crítica al margen. Varias páginas de texto manuscrito desbordan el propósito de la anotación; el bloque base de margen es hijo directo de `.hoja`. |
-| `.aviso` ×4 | No asignar urgencia a todos los párrafos. Una numeración no implica pasos ejecutables; para alertas dinámicas se necesita gestionar el anuncio sin duplicarlo. |
-| `.mapa` | No negativos, ausencias ni datos nuevos con proporciones viejas. Esta receta fija sólo representa 60/25/15; usa barras si no vas a recalcular la rejilla. |
-| `.dato` / `.datos` / `.pildora` | No falsear controles ni eliminar unidades para que quepan. No calculan ni validan datos; el texto debe incluir el estado además del color. |
-| `.medida` | No representar una tarea en ejecución: usa `progress` para eso. `min/max/value`, porcentaje y texto deben describir el mismo denominador. |
-| `.indice` / `.regla` | No en una nota breve. IDs duplicados, destinos inexistentes o falta de `data-lectura` rompen seguimiento; el tachado indica posición, no lectura demostrada. |
-| `.codigo` | No sustituye un editor ni ejecuta código. Portapapeles puede estar denegado; conserva selección manual y estado. Resaltado escrito a mano, no detección automática de sintaxis. |
-| `.tabla-caja` / `.densa` | No grandes bases de datos virtualizadas. Cinco o más columnas usan `densa`; alterar mínimos sin verificar 320/390 puede comprimir las celdas. |
-| `.terminal` | No usar para una tabla analítica que necesite ordenar o cabeceras semánticas. Sólo copia texto, no ejecuta comandos. Las columnas dependen de mono y espacios; el ancho se desplaza dentro del `pre`. |
-| `.extracto` | No degradar datos críticos ni aplicar máscara al único ejemplar del texto. La copia decorativa debe ser `aria-hidden`; la versión completa vive en `details`. |
-| `.kept` | No envoltorio universal para el informe. No carga portadas ni convierte tarjetas en enlaces; añade un `a` real si hay navegación y datos de imagen incrustados. |
-| `.manuscrita` / `.senalado` | No instrucciones críticas ni frases llenas de corchetes. Sin atributos es tipografía estática y seleccionable. Para texto breve animado usa `data-mano` con `packages/core/components/handwriting.js`; para paths propios usa `NotaEscritura`. |
-| `NotaGlobo` | No topografía, fronteras políticas ni distancias medidas. Una instancia por contenedor, IDs de puntos/rutas únicos; `destroy()` al retirarlo. Sin Three/WebGL conserva lista y mensaje. |
-
-## Alcance de esta versión
-
-Es una librería de recetas HTML/CSS/JS copiables, sin instalación de framework. No incluye
-un CLI de generación, React, una dependencia de shadcn, un constructor de consultas,
-streaming, mapas políticos o conversión automática de fuentes a caligrafía. Cualquier pieza
-nueva debe conservar los tres temas, los datos accesibles, los mínimos locales y el ciclo
-de vida documentado. Los ejemplos no se publican ni envían datos.
-
-## Segunda tanda: reportes, artículos y prototipos
-
-Las siguientes recetas amplían el sistema; no cambian los anchos ni los estilos de documentos
-previos. Incluye `packages/core/styles/fonts.css`, `packages/core/styles/artifact.css` e `packages/core/components/reader.js`. Añade [packages/core/components/reports.js](../packages/core/components/reports.js)
-para `data-reporte`, [packages/core/components/prototype.js](../packages/core/components/prototype.js) para `data-visor`. El recorrido necesita además
-`packages/core/components/globe.js` y la única inclusión de Three 0.160.1. Los módulos son independientes de
-`packages/core/components/charts.js`; no cargan red. `NotaReportes.init(raíz)` y `NotaVisores.init(raíz)` se pueden
-repetir; `get(elemento).destroy()` retira la mejora y restaura los datos originales.
-Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador de datos.
-
-## Apariencia y lectura cómoda
+## Appearance
 
 <!-- nota:ejemplo apariencia -->
+
 ```html
 <div class="pieza" id="apariencia-ejemplo">
   <h3>Una llave pequeña, distintas formas de leer</h3>
@@ -1011,7 +741,7 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
 <details class="apariencia-menu orbita" data-apariencia-menu>
   <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-orbita"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span></summary>
   <div class="apariencia-panel apariencia-explorador" id="panel-apariencia-orbita" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
-    <div class="apariencia-encabezado"><p class="apariencia-titulo">Tu espacio</p><span data-tema-actual>Sistema</span></div>
+    <div class="apariencia-encabezado"><p class="apariencia-titulo">Apariencia</p><span data-tema-actual>Sistema</span></div>
 <div class="apariencia-pestanas" role="tablist" aria-label="Preferencias del documento"><button type="button" role="tab" id="preferencia-apariencia-orbita-temas" aria-controls="preferencia-panel-apariencia-orbita-temas" aria-selected="true" tabindex="0" data-preferencia-tab="temas">Temas</button><button type="button" role="tab" id="preferencia-apariencia-orbita-letras" aria-controls="preferencia-panel-apariencia-orbita-letras" aria-selected="false" tabindex="-1" data-preferencia-tab="letras">Letras</button><button type="button" role="tab" id="preferencia-apariencia-orbita-sonido" aria-controls="preferencia-panel-apariencia-orbita-sonido" aria-selected="false" tabindex="-1" data-preferencia-tab="sonido">Sonido</button></div><section role="tabpanel" tabindex="0" id="preferencia-panel-apariencia-orbita-temas" aria-labelledby="preferencia-apariencia-orbita-temas" data-preferencia-panel="temas"><fieldset class="apariencia-modos"><legend>Modo</legend><div><label><input type="radio" name="modo-apariencia-orbita" value="light" data-elegir-modo><span>Claro</span></label><label><input type="radio" name="modo-apariencia-orbita" value="dark" data-elegir-modo><span>Oscuro</span></label><label><input type="radio" name="modo-apariencia-orbita" value="system" data-elegir-modo checked><span>Sistema</span></label></div><p data-modo-estado>Se adapta a la apariencia del dispositivo.</p></fieldset><div class="apariencia-filtros"><label>Buscar tema<input type="search" data-buscar-tema placeholder="Nombre o color" autocomplete="off"></label><label>Categoría<select data-familia-tema><option value="">Todas</option><option value="editorial">Editoriales</option><option value="marca">Marcas</option><option value="tecnico">Técnicos</option><option value="producto">Producto</option><option value="editor">Editores</option></select></label></div><fieldset class="apariencia"><legend class="sr-only">Paleta del documento</legend><div class="apariencia-colores" tabindex="0" role="region" aria-label="Temas disponibles, desplazables"><label data-tema-familia="editorial"><input type="radio" name="color-apariencia-orbita" value="editorial" data-elegir-tema checked><span class="paleta-mini" data-muestra-tema="editorial" aria-hidden="true"><i></i><b></b></span><span>Editorial<small>Papel cálido · cobre</small></span></label>
 <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-orbita" value="sea" data-elegir-tema><span class="paleta-mini" data-muestra-tema="sea" aria-hidden="true"><i></i><b></b></span><span>Sea<small>Azul oceánico · menta</small></span></label>
 <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-orbita" value="oliva" data-elegir-tema><span class="paleta-mini" data-muestra-tema="oliva" aria-hidden="true"><i></i><b></b></span><span>Oliva<small>Botánico · verde</small></span></label>
@@ -1050,7 +780,7 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
 <details class="apariencia-menu etiqueta" data-apariencia-menu>
   <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-etiqueta"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span><span>Apariencia</span><svg class="icono-flecha" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></summary>
   <div class="apariencia-panel apariencia-explorador" id="panel-apariencia-etiqueta" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
-    <div class="apariencia-encabezado"><p class="apariencia-titulo">Tu espacio</p><span data-tema-actual>Sistema</span></div>
+    <div class="apariencia-encabezado"><p class="apariencia-titulo">Apariencia</p><span data-tema-actual>Sistema</span></div>
 <div class="apariencia-pestanas" role="tablist" aria-label="Preferencias del documento"><button type="button" role="tab" id="preferencia-apariencia-etiqueta-temas" aria-controls="preferencia-panel-apariencia-etiqueta-temas" aria-selected="true" tabindex="0" data-preferencia-tab="temas">Temas</button><button type="button" role="tab" id="preferencia-apariencia-etiqueta-letras" aria-controls="preferencia-panel-apariencia-etiqueta-letras" aria-selected="false" tabindex="-1" data-preferencia-tab="letras">Letras</button><button type="button" role="tab" id="preferencia-apariencia-etiqueta-sonido" aria-controls="preferencia-panel-apariencia-etiqueta-sonido" aria-selected="false" tabindex="-1" data-preferencia-tab="sonido">Sonido</button></div><section role="tabpanel" tabindex="0" id="preferencia-panel-apariencia-etiqueta-temas" aria-labelledby="preferencia-apariencia-etiqueta-temas" data-preferencia-panel="temas"><fieldset class="apariencia-modos"><legend>Modo</legend><div><label><input type="radio" name="modo-apariencia-etiqueta" value="light" data-elegir-modo><span>Claro</span></label><label><input type="radio" name="modo-apariencia-etiqueta" value="dark" data-elegir-modo><span>Oscuro</span></label><label><input type="radio" name="modo-apariencia-etiqueta" value="system" data-elegir-modo checked><span>Sistema</span></label></div><p data-modo-estado>Se adapta a la apariencia del dispositivo.</p></fieldset><div class="apariencia-filtros"><label>Buscar tema<input type="search" data-buscar-tema placeholder="Nombre o color" autocomplete="off"></label><label>Categoría<select data-familia-tema><option value="">Todas</option><option value="editorial">Editoriales</option><option value="marca">Marcas</option><option value="tecnico">Técnicos</option><option value="producto">Producto</option><option value="editor">Editores</option></select></label></div><fieldset class="apariencia"><legend class="sr-only">Paleta del documento</legend><div class="apariencia-colores" tabindex="0" role="region" aria-label="Temas disponibles, desplazables"><label data-tema-familia="editorial"><input type="radio" name="color-apariencia-etiqueta" value="editorial" data-elegir-tema checked><span class="paleta-mini" data-muestra-tema="editorial" aria-hidden="true"><i></i><b></b></span><span>Editorial<small>Papel cálido · cobre</small></span></label>
 <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-etiqueta" value="sea" data-elegir-tema><span class="paleta-mini" data-muestra-tema="sea" aria-hidden="true"><i></i><b></b></span><span>Sea<small>Azul oceánico · menta</small></span></label>
 <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-etiqueta" value="oliva" data-elegir-tema><span class="paleta-mini" data-muestra-tema="oliva" aria-hidden="true"><i></i><b></b></span><span>Oliva<small>Botánico · verde</small></span></label>
@@ -1089,7 +819,7 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
 <details class="apariencia-menu capsula" data-apariencia-menu>
   <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-capsula"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span><span class="apariencia-actual" data-tema-actual>Sistema</span><svg class="icono-flecha" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></summary>
   <div class="apariencia-panel apariencia-explorador" id="panel-apariencia-capsula" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
-    <div class="apariencia-encabezado"><p class="apariencia-titulo">Tu espacio</p><span data-tema-actual>Sistema</span></div>
+    <div class="apariencia-encabezado"><p class="apariencia-titulo">Apariencia</p><span data-tema-actual>Sistema</span></div>
 <div class="apariencia-pestanas" role="tablist" aria-label="Preferencias del documento"><button type="button" role="tab" id="preferencia-apariencia-capsula-temas" aria-controls="preferencia-panel-apariencia-capsula-temas" aria-selected="true" tabindex="0" data-preferencia-tab="temas">Temas</button><button type="button" role="tab" id="preferencia-apariencia-capsula-letras" aria-controls="preferencia-panel-apariencia-capsula-letras" aria-selected="false" tabindex="-1" data-preferencia-tab="letras">Letras</button><button type="button" role="tab" id="preferencia-apariencia-capsula-sonido" aria-controls="preferencia-panel-apariencia-capsula-sonido" aria-selected="false" tabindex="-1" data-preferencia-tab="sonido">Sonido</button></div><section role="tabpanel" tabindex="0" id="preferencia-panel-apariencia-capsula-temas" aria-labelledby="preferencia-apariencia-capsula-temas" data-preferencia-panel="temas"><fieldset class="apariencia-modos"><legend>Modo</legend><div><label><input type="radio" name="modo-apariencia-capsula" value="light" data-elegir-modo><span>Claro</span></label><label><input type="radio" name="modo-apariencia-capsula" value="dark" data-elegir-modo><span>Oscuro</span></label><label><input type="radio" name="modo-apariencia-capsula" value="system" data-elegir-modo checked><span>Sistema</span></label></div><p data-modo-estado>Se adapta a la apariencia del dispositivo.</p></fieldset><div class="apariencia-filtros"><label>Buscar tema<input type="search" data-buscar-tema placeholder="Nombre o color" autocomplete="off"></label><label>Categoría<select data-familia-tema><option value="">Todas</option><option value="editorial">Editoriales</option><option value="marca">Marcas</option><option value="tecnico">Técnicos</option><option value="producto">Producto</option><option value="editor">Editores</option></select></label></div><fieldset class="apariencia"><legend class="sr-only">Paleta del documento</legend><div class="apariencia-colores" tabindex="0" role="region" aria-label="Temas disponibles, desplazables"><label data-tema-familia="editorial"><input type="radio" name="color-apariencia-capsula" value="editorial" data-elegir-tema checked><span class="paleta-mini" data-muestra-tema="editorial" aria-hidden="true"><i></i><b></b></span><span>Editorial<small>Papel cálido · cobre</small></span></label>
 <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-capsula" value="sea" data-elegir-tema><span class="paleta-mini" data-muestra-tema="sea" aria-hidden="true"><i></i><b></b></span><span>Sea<small>Azul oceánico · menta</small></span></label>
 <label data-tema-familia="editorial"><input type="radio" name="color-apariencia-capsula" value="oliva" data-elegir-tema><span class="paleta-mini" data-muestra-tema="oliva" aria-hidden="true"><i></i><b></b></span><span>Oliva<small>Botánico · verde</small></span></label>
@@ -1129,41 +859,12 @@ Para cambiar una tabla destruye, edita y vuelve a inicializar. No hay observador
 </div>
 ```
 
-**Cuándo:** un control discreto de lectura en la cabecera. El círculo sol/luna es la opción
-principal; la etiqueta hace explícita su función y la cápsula muestra la preferencia elegida.
-Copia un solo `details` en una nota. El ejemplo reúne tres variantes para compararlas.
-La cabecera del catálogo reutiliza exactamente el primer control con IDs/nombres propios.
+**Use and limits:** Use one appearance control per document; the catalog shows variants only for comparison. The shared dock hosts the normal control. Themes, typography and sound are separate tabs with arrows/Home/End navigation. Escape closes and returns focus; outside interaction closes. Theme selection stays open for comparison. Family and light/dark/system mode are independent. Search ignores accents; category, favorites and result count narrow a compact scrollable list. The current family remains named in the header. Sound and volume belong only to Sound. Six heading/body pairs are supported: Instrument Serif/Geist, Geist/Geist, Geist Mono/Geist, Literata/Literata, Instrument Serif/Literata and Geist Mono/Literata. Reenie Beanie remains for annotations. Include reader once, preserve unique IDs and radio names, and define complete tokens when adding a family. Preferences are local unless a connected host stores them; without storage they last for the session. Sound enabled does not prove audible output. Paper grain is independent and removed in print. Check typography reflow on real content. This is not a token editor or prototype device emulator.
 
-**Interacción:** Temas, Letras y Sonido son pestañas con flechas izquierda/derecha, Home y End.
-Escape cierra y devuelve el foco a la llave; pulsar o enfocar fuera cierra. Un solo panel abierto.
-Los radios conservan la selección; elegir una familia no cierra el panel para poder comparar.
-Claro, Oscuro y Sistema son modos independientes: cambiar de familia mantiene el modo.
-El tema actual se nombra arriba aunque un filtro lo oculte. Búsqueda sin tildes por nombre o
- descripción, categoría, contador y restablecimiento. Las muestras tienen scroll local con foco y nombre.
-El silencio y volumen están sólo en Sonido. Sin JS el disclosure abre, pero los ajustes
-no cambian el documento: no es una configuración persistida en el propio HTML.
-
-**Tipografía:** seis combinaciones, independientes de los colores. Editorial: Instrument Serif / Geist;
-Sobrio: Geist / Geist; Técnico: Geist Mono / Geist. Libro: Literata / Literata; Revista: Instrument Serif /
-Literata; Bitácora: Geist Mono / Literata. El primer nombre corresponde a títulos y el segundo a lectura.
-Literata normal e itálica, pesos 400–700, latín y latín extendido, están incrustados; OFL y procedencia en
-`licenses/literata-OFL.txt` y `tests/evidence/literata-fonts.json`. Reenie Beanie sigue reservada a notas;
-código y controles conservan sus familias. Instrument Serif es de títulos, no se usa como cuerpo largo.
-
-**Cuándo no / límite:** no modifica prototipos ni emula preferencias del sistema. Los temas son opciones
-predefinidas, no un editor de tokens ni una descarga de temas. Para ampliar, copia una etiqueta con radio,
-muestra y `data-tema-familia`; define todos los tokens, registra su clave en packages/core/components/reader.js/contrato y
-actualiza validación. La búsqueda descubre las etiquetas disponibles sin una lista de resultados duplicada.
-No inserta controles dinámicamente. Cada copia necesita IDs, aria-controls, aria-labelledby y nombres de
-radio únicos. Incluir packages/core/components/reader.js una vez. Tipografía puede cambiar altura y saltos: revisar contenido real.
-Las preferencias se guardan por origen, o por archivo cuando hay presentación inicial; el silencio se comparte
-por origen. Sin localStorage funcionan durante la sesión. Sin Web Audio se explica el fallo; habilitado no
-significa que el navegador o dispositivo ya esté reproduciendo. El grano incrustado es independiente de la
-paleta; se retira al imprimir. Lectura cómoda sigue siendo 18 px/1,7, sin comprimir datos.
-
-## Ficha de decisión
+## Decision
 
 <!-- nota:ejemplo decision -->
+
 ```html
 <aside class="pieza ficha-decision" id="decision-ejemplo" aria-labelledby="decision-titulo">
   <p class="ceja">Decisión 02 · ejemplo</p>
@@ -1178,13 +879,12 @@ paleta; se retira al imprimir. Lectura cómoda sigue siendo 18 px/1,7, sin compr
 </aside>
 ```
 
-**Cuándo:** conservar el razonamiento de una decisión con sus condiciones de revisión.
-**Cuándo no / límite:** no es un aviso urgente ni un registro de aprobación. El estado,
-responsables y fechas son contenido editorial; no guarda aceptación, firmas ni historial.
+**Use and limits:** Record a decision's reasoning and conditions for revisiting it. Status, owner and date are editorial facts supplied by the author. This is not an urgent alert, approval workflow, signature or automatic audit trail.
 
-## Cronología anotada
+## Chronology
 
 <!-- nota:ejemplo cronologia -->
+
 ```html
 <div class="pieza" id="cronologia-ejemplo">
   <h3>De la observación a la prueba</h3>
@@ -1197,13 +897,12 @@ responsables y fechas son contenido editorial; no guarda aceptación, firmas ni 
 </div>
 ```
 
-**Cuándo:** ordenar eventos y explicar qué cambió. En móvil la fecha queda sobre su evento.
-**Cuándo no / límite:** no codifica duración ni distancia temporal; el espacio entre filas no
-representa días. Para comparar duraciones usa etapas. No afirma causalidad por proximidad.
+**Use and limits:** Order events and explain what changed. Dates stack above their event on mobile. Spacing does not encode elapsed time or establish causality; use duration charts when duration matters.
 
-## Ficha de artículo
+## Article
 
 <!-- nota:ejemplo articulo -->
+
 ```html
 <div class="pieza" id="articulo-ejemplo">
   <h3>El contexto antes de empezar</h3>
@@ -1217,13 +916,12 @@ representa días. Para comparar duraciones usa etapas. No afirma causalidad por 
 </div>
 ```
 
-**Cuándo:** artículos que necesitan autoría, fecha y estado editorial sin ocupar una portada.
-**Cuándo no / límite:** no inventa tiempo de lectura, credenciales ni revisión por pares. Los
-campos son opcionales y no son botones. No genera metadatos SEO ni tarjetas para redes.
+**Use and limits:** Present author, date and editorial status without a large cover. Fields are optional metadata, not controls. Do not invent reading time, credentials or peer review. No automatic SEO or social cards.
 
-## Referencias con regreso al texto
+## References
 
 <!-- nota:ejemplo referencias -->
+
 ```html
 <div class="pieza" id="referencias-ejemplo">
   <h3>La evidencia queda a un paso</h3>
@@ -1240,15 +938,12 @@ campos son opcionales y no son botones. No genera metadatos SEO ni tarjetas para
 </div>
 ```
 
-**Cuándo:** citas, aclaraciones o fuentes extensas que interrumpirían el párrafo. Funcionan sin JS.
-**Cuándo no / límite:** no es una bibliografía automática. IDs únicos por nota y una llamada
-por retorno; si una fuente se cita varias veces, añade retornos distintos y explícitos. Las
-fuentes reales requieren autor, título, fecha y enlace verificable. Estas dos son aclaraciones
-internas, no citas bibliográficas. Mantén llamada y referencia en la misma página multipágina.
+**Use and limits:** Keep lengthy citations and clarifications outside the paragraph with links back. Works without JavaScript. Use unique note/return IDs; repeated citations need distinct return links. Real sources require author, title, date and a verifiable destination. Keep references and calls in the same chapter. This is not automatic bibliography management.
 
-## Glosario editorial
+## Glossary
 
 <!-- nota:ejemplo glosario -->
+
 ```html
 <div class="pieza" id="glosario-ejemplo">
   <h3>Palabras que conviene acordar</h3>
@@ -1260,13 +955,12 @@ internas, no citas bibliográficas. Mantén llamada y referencia en la misma pá
 </div>
 ```
 
-**Cuándo:** vocabulario propio de un informe o artículo que necesita definiciones compartidas.
-**Cuándo no / límite:** no es una ayuda que aparece sólo al pasar el cursor; las definiciones
-permanecen visibles. No incluye búsqueda ni traduce términos. Las definiciones son editoriales.
+**Use and limits:** Define report-specific vocabulary in visible text. Definitions are editorial, not hover-only help, automatic search or translation.
 
-## Metodología desplegable
+## Methodology
 
 <!-- nota:ejemplo metodologia -->
+
 ```html
 <div class="pieza" id="metodologia-ejemplo">
   <h3>Cómo leer esta evidencia</h3>
@@ -1283,13 +977,12 @@ permanecen visibles. No incluye búsqueda ni traduce términos. Las definiciones
 </div>
 ```
 
-**Cuándo:** explicar detalles del método después de un resumen que ya declara el límite principal.
-**Cuándo no / límite:** no ocultes condiciones que cambian la conclusión. `details` funciona sin
-JS; `packages/core/components/reader.js` abre y restaura el método al imprimir. No verifica ni ejecuta el método.
+**Use and limits:** Disclose methodological detail after stating the main limitation in normal text. Do not hide conditions that change the conclusion. Native details works without JavaScript; reader expands and restores it for print. The component neither executes nor verifies the method.
 
-## Antes y después editorial
+## Before after
 
 <!-- nota:ejemplo antes-despues -->
+
 ```html
 <figure class="pieza ancho" id="antes-despues-ejemplo">
   <h3>Un cambio que se puede leer</h3>
@@ -1301,13 +994,12 @@ JS; `packages/core/components/reader.js` abre y restaura el método al imprimir.
 </figure>
 ```
 
-**Cuándo:** mostrar una corrección de texto, una decisión de interfaz o una revisión de contenido.
-**Cuándo no / límite:** no calcula un diff, ni compara capturas con un deslizador. `del`/`ins`
-identifican cambios editoriales; para alternativas sin relación temporal usa comparación.
+**Use and limits:** Explain an editorial correction or interface/content revision with del/ins semantics. It does not compute diffs or compare screenshots with a slider. Use comparison for alternatives without a temporal relationship.
 
-## Cascada de cantidades
+## Waterfall
 
 <!-- nota:ejemplo cascada -->
+
 ```html
 <figure class="pieza ancho" id="cascada-ejemplo" data-reporte="cascada">
   <h3>Cómo se llega al resultado</h3>
@@ -1328,16 +1020,12 @@ identifican cambios editoriales; para alternativas sin relación temporal usa co
 </figure>
 ```
 
-**Cuándo:** explicar un total como suma de aportes positivos y negativos en la misma unidad.
-**Cuándo no / límite:** no sumar tasas, porcentajes ni monedas distintas. Tres columnas,
-1–60 filas; valores y acumulados finitos de hasta ±10⁹. La primera fila también es un cambio
-desde cero; no admite subtotales intermedios ni reinicios. El módulo calcula acumulados y
-resultado, nunca toma la tercera columna como entrada. Tabla visible y dibujo de 860px con
-scroll local. Cero y todos los acumulados están en la escala. Sin animación.
+**Use and limits:** Explain a total through positive and negative contributions in one unit. Three columns, 1–60 rows, finite values and running totals within ±10^9. The first row is a change from zero; no intermediate subtotals or resets. The module calculates the third column rather than reading it as input. Zero and every cumulative extreme stay in the domain. Keep the visible table and 860 px local drawing minimum. Do not add rates, percentages or different currencies.
 
-## Pequeños múltiples con escala común
+## Small multiples
 
 <!-- nota:ejemplo multiples -->
+
 ```html
 <figure class="pieza amplio" id="multiples-ejemplo" data-reporte="multiples">
   <h3>La misma pregunta en tres sedes</h3>
@@ -1357,15 +1045,12 @@ scroll local. Cero y todos los acumulados están en la escala. Sin animación.
 </figure>
 ```
 
-**Cuándo:** comparar patrones de hasta cuatro grupos sin superponer sus líneas.
-**Cuándo no / límite:** los períodos son equidistantes y deben ser los mismos para todos los
-grupos; no codifica fechas irregulares. Entre 2 y 60 filas. Valores finitos de hasta ±10⁹,
-vacío distinto de cero. Cada panel conserva 360px mínimos dentro de su región desplazable.
-Sin valores, el dominio convencional es 0–1 y no hay puntos; no se inventan observaciones.
+**Use and limits:** Compare up to four groups without overlapping their lines. Use the same 2–60 equally spaced periods for every group; irregular dates are unsupported. Finite values up to ±10^9, with missing distinct from zero. Each panel retains a 360 px local minimum. An empty series has an explicit 0–1 auxiliary domain and no invented points.
 
-## Conciliación de registros
+## Reconciliation
 
 <!-- nota:ejemplo conciliacion -->
+
 ```html
 <figure class="pieza amplio" id="conciliacion-ejemplo" data-reporte="conciliacion">
   <h3>Una diferencia necesita explicación</h3>
@@ -1384,15 +1069,12 @@ Sin valores, el dominio convencional es 0–1 y no hay puntos; no se inventan ob
 </figure>
 ```
 
-**Cuándo:** comparar conteos esperados/observados y conservar la explicación por fila.
-**Cuándo no / límite:** requiere conteos enteros no negativos (≤10⁹), no importes monetarios.
-No cruza IDs, no detecta duplicados ni demuestra conciliación contable. Si falta un observado,
-el total indica incompleto y no da un saldo neto. Cinco columnas exactas, hasta 60 filas.
-Las explicaciones son editoriales: el módulo no las infiere de la diferencia.
+**Use and limits:** Compare expected/observed counts while retaining each row's explanation. Exactly five columns, up to 60 rows, nonnegative integer counts up to 10^9. Missing observed counts make the total incomplete with no net balance. This does not join IDs, detect duplicates or demonstrate financial reconciliation. Explanations are supplied, not inferred.
 
-## Calculadora de escenarios
+## Scenario
 
 <!-- nota:ejemplo escenario -->
+
 ```html
 <div class="pieza ancho" id="escenario-ejemplo" data-reporte="escenario">
   <h3>¿Qué cambia si la tarea toma menos tiempo?</h3>
@@ -1410,16 +1092,12 @@ Las explicaciones son editoriales: el módulo no las infiere de la diferencia.
 </div>
 ```
 
-**Cuándo:** explicar la sensibilidad de un resultado a supuestos explícitos y reversibles.
-**Cuándo no / límite:** modelo lineal de capacidad, sin simulación, predicción ni valoración
-financiera. Minutos no negativos, hasta un día por operación y un millón de operaciones al mes;
-volumen entero y tiempos en décimas. Si después es mayor, muestra horas adicionales. Vacíos y
-entradas fuera de límites invalidan el resultado; no conserva silenciosamente una cifra previa.
-Sin JS se ve el cálculo inicial; no usar los controles como formulario de recolección.
+**Use and limits:** Explore a linear capacity model with explicit reversible assumptions. Nonnegative minutes, at most one day per operation and one million operations per month; integer volume and time in tenths. Longer after-times show additional hours. Missing/out-of-range inputs invalidate output instead of retaining a stale result. No forecasting, valuation or data submission; without JavaScript the initial calculation remains.
 
-## Globo narrado por etapas
+## Journey
 
 <!-- nota:ejemplo recorrido -->
+
 ```html
 <figure class="pieza ancho" id="recorrido-ejemplo" data-reporte="recorrido">
   <h3>Seguir el viaje de una idea</h3>
@@ -1439,22 +1117,12 @@ Sin JS se ve el cálculo inicial; no usar los controles como formulario de recol
 </figure>
 ```
 
-**Cuándo:** la ubicación y el orden de una historia importan. Las etapas escritas siempre están
-visibles; el mapa orienta una ruta a la vez. Incluye Three una sola vez y `packages/core/components/globe.js` antes de
-`packages/core/components/reports.js`. Comparte la dependencia con todos los demás globos/escenas del documento.
+**Use and limits:** Use location and sequence together, keeping written stages visible. Load globe before reports and share one Three.js dependency. `data-lugar` identifies a place; repeated IDs require identical coordinates/name. Every route has a unique ID and two locations. No automatic advance, sound, geocoding or network maps. Starts paused; selection aligns the globe and story. Manual rotation does not change the stage. Without WebGL retain the narrative and route list. Respect reduced motion and destroy resources when removed.
 
-**Cuándo no / límite:** no convierte etapas abstractas en geografía. `data-lugar` identifica
-un lugar; repetir un ID exige las mismas coordenadas y nombre. Cada ruta necesita un ID único
-y dos lugares. No autoavanza ni añade sonido. Empieza pausado; conserva controles de NotaGlobo,
-reduce, pausa por visibilidad y destroy. Sin Three queda mensaje y relato; sin WebGL queda
-además la lista de rutas. No añade mapas, texturas ni geocodificación remota.
-La lista del globo también cambia la etapa del relato. Una ruta seleccionada mantiene su
-orientación: para giro libre usa «Vista inicial» y «Reanudar giro»; anterior/siguiente vuelve
-a orientar la etapa. No interpreta el giro manual como un cambio de etapa.
-
-## Visor de prototipos con estados
+## Prototype
 
 <!-- nota:ejemplo visor -->
+
 ```html
 <figure class="pieza amplio" id="visor-ejemplo" data-visor data-visor-editor>
   <h3>Una interfaz, varios tamaños</h3>
@@ -1507,38 +1175,16 @@ a orientar la etapa. No interpreta el giro manual como un cambio de etapa.
 </figure>
 ```
 
-**Cuándo:** documentar estados de un componente o recorrer un prototipo pequeño dentro de un
-artículo. El lienzo cambia entre 320, 390, 768, 1024 y el espacio disponible. Reiniciar reconstruye
-la muestra original. El menú de dispositivo elige el ancho; la proporción fija la altura del marco, Rotar intercambia sus dimensiones y Ajustar escala la vista para caber. El estado muestra dimensiones CSS y porcentaje visual. Incluye `packages/core/components/controls.js` y `packages/core/components/prototype.js`. El texto alternativo aparece sin JS y al imprimir. No carga archivos.
+**Use and limits:** Preview trusted declarative component states at 320, 390, 768, 1024 px or available width. Named icon controls choose device, aspect, rotation and fit; report CSS dimensions and visual scale. Uses Shadow DOM and @container, not a remote iframe or hardware emulator; @media(width) measures the outer window. No scripts, inline event handlers, submissions or arbitrary remote resources. loadHTML accepts up to 100000 characters of trusted local HTML/CSS with raster data images, rejecting scripts, iframes, external URLs and CSS imports. This is not a sanitizer for hostile content. `NotaVisores.get().setWidth()`, `setAspect(auto|9/16|4/3|16/9|1/1)`, `reset()` and `destroy()` preserve the textual/print alternative. Fit can shrink text; use 100% to judge readability.
 
-**Cuándo no / límite:** no es un emulador de iPhone, una captura ni un navegador remoto. No
-modifica la densidad de píxeles, el motor o el viewport del documento. Usa **Shadow DOM y
-`@container`**, por eso las reglas responsivas del prototipo deben consultar el contenedor;
-`@media (width)` seguiría midiendo la ventana exterior. No hay iframe porque la CSP lo bloquea.
-El template contiene HTML/CSS de confianza, sin guiones ni manejadores `on…`; no es un sandbox
-para HTML ajeno. Los botones `data-demo-ir` activan un `data-demo-pagina` del mismo visor;
-no envían formularios, calculan datos ni persisten cambios. Los IDs, si se usan, viven dentro
-del shadow. Los estilos del documento no entran, pero sí se heredan sus tokens y fuentes.
-El contenido del prototipo debe respetar reduce; el visor no inicia RAF ni transiciones.
-`NotaVisores.get(figura).setWidth('768')` permite controlar el ancho; `setAspect('9/16')` fija la proporción (`auto`, `9/16`, `4/3`, `16/9`, `1/1`). Ajustar reduce visualmente también los textos: usa 100 % para valorar legibilidad. `reset()` reinicia y
-`destroy()` devuelve la alternativa textual y retira listeners/observer.
+## Choose and copy from the catalog
 
-## Elegir y copiar desde el catálogo
+The executable template searches recipe names and purposes and exposes each exact snippet in details. Search filters the recipe index, not document sections or reading progress, and ignores case/accents. Without JS the full index remains. Clipboard failure offers manual selection. catalog.js is needed only for data-buscador-recetas. A copied snippet is a content component with documented dependencies; complete generated examples are self-contained documents.
 
-`examples/generated/template.html` ofrece búsqueda por nombre/propósito y el HTML exacto de cada receta en un
-`details` junto al ejemplo. La búsqueda filtra **el índice de recetas**, no borra secciones de
-la nota ni altera su progreso. Acentos y mayúsculas no cambian los resultados. El índice
-completo sigue disponible sin JS. El botón usa el mismo contrato de copia y alternativa por
-selección de `packages/core/components/reader.js`. El módulo [packages/core/components/catalog.js](../packages/core/components/catalog.js) sólo hace falta en un
-catálogo que incluya `data-buscador-recetas`; no se necesita en artículos normales.
-
-Las muestras son componentes de documento, no un constructor de aplicaciones. Cada snippet
-requiere las fuentes y módulos indicados arriba; el botón copia el componente, no toda la
-biblioteca. La plantilla y los ejemplos completos sí son autocontenidos.
-
-## Pestañas dentro de una pieza
+## Tabs
 
 <!-- nota:ejemplo pestanas -->
+
 ```html
 <div class="pieza pestanas" id="pestanas-ejemplo" data-pestanas>
   <h3>La afirmación, sus datos y su límite</h3>
@@ -1555,21 +1201,12 @@ biblioteca. La plantilla y los ejemplos completos sí son autocontenidos.
 </div>
 ```
 
-**Cuándo:** alternar vistas cortas de una misma pregunta: hallazgo/evidencia/límite, diseño/datos
-u otras vistas relacionadas. Incluye `packages/core/components/tabs.js` después de `packages/core/components/reader.js`.
-Flechas, Inicio y Fin mueven el foco; Enter o Espacio activan (comportamiento nativo del botón).
-El ratón activa al pulsar. Hay un solo tabulador activo; cada panel tiene nombre y foco.
+**Use and limits:** Switch short alternative views of one question. Load tabs after reader. Arrows/Home/End move focus; native Enter/Space and clicks activate. Keep one active tab, named panels, matching unique IDs and source order. Do not hide mandatory steps or essential warnings. No fetching, URL synchronization, persistence or nested instances. All sections remain visible without JavaScript and in print. init/get/destroy preserves original content.
 
-**Cuándo no / límite:** no uses pestañas para ocultar pasos obligatorios o avisos esenciales.
-Para capítulos largos usa navegación multipágina. No carga datos, no sincroniza la URL, no
-ofrece pestañas deshabilitadas ni persistencia. Mantén botones y paneles en el mismo orden,
-con IDs únicos. No anides instancias. Sin JS se ven todas las secciones; al imprimir también.
-`NotaPestanas.init(raíz)`, `get(elemento).select(índice)` y `destroy()` siguen el ciclo habitual.
-`select` no mueve foco; se emite `nota:pestana` al cambiar para que otras piezas puedan medir.
-
-## Ficha de hallazgo
+## Finding
 
 <!-- nota:ejemplo hallazgo -->
+
 ```html
 <aside class="pieza hallazgo" id="hallazgo-ejemplo" aria-labelledby="hallazgo-titulo">
   <p class="ceja">Ficha 01 · hipótesis pendiente</p>
@@ -1583,24 +1220,16 @@ con IDs únicos. No anides instancias. Sin JS se ven todas las secciones; al imp
 </aside>
 ```
 
-**Cuándo:** separar una afirmación de la evidencia que la sostiene y de lo que aún falta
-comprobar. Sirve para investigación, reportes, revisiones de prototipo y artículos técnicos.
-**Cuándo no / límite:** no genera conclusiones ni grados de confianza. Una hipótesis pendiente
-no se vuelve un hallazgo confirmado por presentarla aquí. Reemplaza las frases de ejemplo
-por datos, fuentes y límites verificables; no repitas la ficha por cada párrafo del informe.
-HTML estático, sin estado ni eventos; funciona con todos los papeles y al imprimir.
+**Use and limits:** Separate an observed finding, supporting evidence and implication. Use verified data, sources and limits; label hypotheses before presenting them. Static HTML with no hidden state. Avoid repeating this card for every paragraph.
 
-## Informe de cuatro capítulos
-
-El ejemplo [examples/generated/report.html](../examples/generated/report.html) reúne piezas existentes como una lectura coherente.
-Los botones superiores son navegación de capítulos (`aria-current="page"`), no tabs ARIA;
-las pestañas locales de Evidencia sí son un tablist. Cada capítulo sigue la rejilla multipágina.
+## Report layout
 
 <!-- nota:ejemplo informe -->
+
 ```html
 <a class="salto" href="#contenido">Saltar al contenido</a>
 <header class="edicion-cabecera" id="inicio">
-  <div class="edicion-franja"><a class="firma-editorial" href="#resumen" aria-label="Primer capítulo"><span>Bottifact</span><small>Estudios de producto</small></a><div class="edicion-acciones"><span>Edición 02</span></div></div>
+  <div class="edicion-franja"><a class="firma-editorial" href="#resumen" aria-label="Primer capítulo"><span>Margen</span><small>Estudios de producto</small></a><div class="edicion-acciones"><span>Edición 02</span></div></div>
   <div class="edicion-contexto"><span>Una revisión antes de confirmar</span><span>Septiembre de 2026 · ejemplo ilustrativo</span></div>
 </header>
 <div class="barra capitulos" tabindex="0" role="region" aria-label="Capítulos del informe, desplazables">
@@ -1724,38 +1353,20 @@ las pestañas locales de Evidencia sí son un tablist. Cada capítulo sigue la r
 </div><aside class="aviso ojo"><span class="num">!</span><div><p class="titulo">El prototipo no confirma la hipótesis.</p><p>Este ejemplo no ha registrado sesiones ni enviado datos. El siguiente entregable debe aportar evidencia.</p></div></aside>
 </article>
 <div class="paginacion" data-paginacion><button type="button" data-nav="prev"><span class="et">Anterior</span><span class="tit"></span></button><button type="button" data-nav="next"><span class="et">Siguiente</span><span class="tit"></span></button></div>
-<footer class="pie"><span>Bottifact · Estudios de producto</span><p>Cuatro capítulos, una pregunta. Datos ilustrativos, sin solicitudes ni registros reales.</p></footer>
+<footer class="pie"><span>Margen · Estudios de producto</span><p>Cuatro capítulos, una pregunta. Datos ilustrativos, sin solicitudes ni registros reales.</p></footer>
 </main>
 ```
 
-**Cuándo:** un reporte con varias tareas de lectura: comprender la decisión, consultar datos,
-probar una propuesta y revisar los próximos pasos. La cabecera conserva una firma editorial
-compacta. Añade una sola llave de apariencia de su receta en `.edicion-acciones` si se necesita;
-el ensamblador del ejemplo ya lo hace. No copies las tres variantes del control.
+**Use and limits:** Compose a report with distinct tasks: understand the decision, inspect evidence, try a proposal and review next steps. Chapter controls are page navigation; local tabs are a tablist. Wide figures belong directly to each `.pagina`. Include reader, chapters, charts, reports, prototype and tabs once; this example does not need Three. `data-historial` enables chapter history; share chapter IDs for deep links. No remote routing. Historical layout shows the first chapter without JavaScript and all chapters in print; use the standard generator for new reports.
 
-**Instalación:** `packages/core/components/reader.js`, `packages/core/components/chapters.js`, `packages/core/components/charts.js`, `packages/core/components/reports.js`, `packages/core/components/prototype.js`
-y `packages/core/components/tabs.js`, incrustados al final; fuentes y CSS completos. Este ejemplo no necesita Three.
-`data-historial` activa historial de capítulos para Atrás/Adelante; sin ese atributo sigue el
-contrato anterior con replaceState. Los enlaces `#evidencia` y `#prototipo` abren esos capítulos.
+## Extended palettes
 
-**Cuándo no / límite:** no es un router ni carga HTML remoto. Los enlaces a secciones no abren
-otros capítulos; comparte el ID del capítulo. Sin JS sólo se ve el primero en pantalla;
-impresión incluye los cuatro. Si el informe es corto, usa página única. Para alternar sólo
-vistas de una figura, usa la receta de pestañas. Los anchos grandes son hijos de `.pagina`.
+Oliva, Arcilla and Ciruela are library adaptations rather than colors measured from cmrg.me. Each palette defines evidence, semantic state and WebGL tokens. Color alone does not express certainty or status. Typography and theme are independently selectable. See themes.md for the current family/mode registry; do not infer supported families from this historical example.
 
-## Paletas adicionales
-
-`oliva`, `arcilla` y `ciruela` son opciones explícitas en `data-theme`. Oliva usa papel verde
-claro; Arcilla, papel durazno y tinta terracota; Ciruela, fondo oscuro y acentos malva.
-Son decisiones nuevas de esta librería, no colores medidos en cmrg.me. Todas incluyen escalas
-de gráficas/calor, estados y tonos de WebGL; los tres papeles anteriores permanecen intactos.
-Una paleta no comunica por sí sola estado, certeza o calidad. Mantén palabras y símbolos.
-El color y el estilo tipográfico se eligen por separado. El terminal conserva su superficie
-oscura deliberada, como en los papeles originales.
-
-## Archivo de publicaciones
+## Archive
 
 <!-- nota:ejemplo archivo -->
+
 ```html
 <section class="pieza ancho" id="archivo-ejemplo" data-archivo>
   <h3>El cuaderno abierto</h3><p>Artículos de ejemplo sobre cómo investigar, explicar y construir.</p>
@@ -1772,37 +1383,34 @@ oscura deliberada, como en los papeles originales.
 </section>
 ```
 
-**Cuándo:** Una portada o archivo corto de artículos ya incluidos en el documento. Requiere packages/core/components/editorial.js; combina texto y tema, ignora acentos y permite limpiar filtros.
+**Use and limits:** Filter a short local publication archive by text/topic with editorial.js. Matching ignores accents and supports reset. It is not CMS search, server pagination or an index of thousands of records. Without JavaScript all entries remain visible. Replace example destinations with real links and do not invent dates or reading times.
 
-**Cuándo no / límite:** No sustituye búsqueda de un CMS, paginación de servidor ni índice de miles de entradas. Sólo filtra el HTML local; sin JS muestra todo. Los enlaces del ejemplo llevan a capítulos reales de examples/generated/report.html; reemplázalos al copiar. No inventa fechas ni tiempos de lectura.
-
-## Ficha de autor
+## Author
 
 <!-- nota:ejemplo autor -->
+
 ```html
 <aside class="pieza autor-editorial" id="autor-ejemplo" aria-labelledby="autor-nombre">
   <span class="autor-inicial" aria-hidden="true">t</span><div><p class="ceja">Acerca de esta edición</p><h3 id="autor-nombre">Equipo editorial</h3><p>Investigación, producto y documentación. Esta identidad ilustra la ficha; reemplázala por la autoría real del artículo.</p><a href="examples/generated/report.html">Leer el estudio completo →</a></div>
 </aside>
 ```
 
-**Cuándo:** Cerrar un artículo con autoría y contexto, o abrir una página de autor. HTML estático.
+**Use and limits:** Close an article with author identity and relevant context. Static HTML does not verify identity or contributions. Decorative initials repeat the visible name; an optional photograph needs an embedded data URI and appropriate alternative text.
 
-**Cuándo no / límite:** No acredita identidad ni contribuciones. La inicial es decorativa porque el nombre ya está escrito; una foto deberá ir incrustada como data: con el alt adecuado.
-
-## Lecturas relacionadas
+## Related reading
 
 <!-- nota:ejemplo relacionados -->
+
 ```html
 <nav class="pieza" id="relacionados-ejemplo" aria-labelledby="relacionados-titulo"><h3 id="relacionados-titulo">Seguir el hilo</h3><ol class="lecturas-relacionadas"><li><span class="ceja">01 · Evidencia</span><a href="examples/generated/report.html#evidencia">Qué sabemos y qué falta medir</a><p>Los supuestos que sostienen la propuesta.</p></li><li><span class="ceja">02 · Práctica</span><a href="examples/generated/report.html#prototipo">Recorrer el prototipo</a><p>Explorar los estados de una tarea.</p></li></ol></nav>
 ```
 
-**Cuándo:** Proponer siguientes lecturas seleccionadas por su relación con el argumento.
+**Use and limits:** Suggest deliberately selected next readings with specific reasons and real destinations. No automatic recommendation or personalization. Do not hide primary navigation here.
 
-**Cuándo no / límite:** No recomienda automáticamente ni personaliza. Usa destinos existentes y descripciones específicas; no sirve para esconder la navegación principal.
-
-## Diagrama anotado
+## Annotations
 
 <!-- nota:ejemplo anotaciones -->
+
 ```html
 <figure class="pieza ancho" id="anotaciones-ejemplo">
 <h3>Tres momentos de una confirmación</h3><div class="diagrama-caja" tabindex="0" role="region" aria-label="Flujo anotado de 720 píxeles, desplazable">
@@ -1811,89 +1419,60 @@ oscura deliberada, como en los papeles originales.
 </figure>
 ```
 
-**Cuándo:** Explicar partes numeradas de un flujo o una captura incrustada sin depender de hover.
+**Use and limits:** Explain numbered parts of a flow or embedded capture without relying on hover. Keep note numbering aligned with drawing order. Wide diagrams retain scale with local scrolling. No attention measurement or click tracking.
 
-**Cuándo no / límite:** No mide atención ni registra clics. Las notas deben mantener numeración y orden del dibujo. Un diagrama ancho conserva escala con desplazamiento local, no se comprime para caber.
-
-## Historial de revisiones
+## Revision history
 
 <!-- nota:ejemplo revisiones -->
+
 ```html
 <section class="pieza" id="revisiones-ejemplo"><h3>Qué cambió en el documento</h3><p class="procedencia">Historial ficticio para mostrar el formato; no describe commits del repositorio.</p><ol class="revisiones-editoriales"><li><p class="ceja"><time datetime="2026-09-14">14 sep 2026</time> · v0.2 · Equipo editorial</p><h4>Se explican las exclusiones</h4><p>El cálculo ahora distingue capacidad estimada de ahorro realizado.</p></li><li><p class="ceja"><time datetime="2026-09-12">12 sep 2026</time> · v0.1 · Equipo editorial</p><h4>Primera propuesta</h4><p>Hipótesis, prototipo y preguntas por observar.</p></li></ol></section>
 ```
 
-**Cuándo:** Reportes que cambian tras una revisión y artículos con correcciones materiales.
+**Use and limits:** Record material changes and corrections using real dates and owners. This is an editorial history, not automatic version control, an audit log or a signature. A build timestamp is not a publication date.
 
-**Cuándo no / límite:** No es auditoría automática, control de versiones ni firma verificable. Escribe cambios reales y responsables reales; no uses la fecha de compilación como fecha de publicación.
-
-## Matriz de criterios
+## Criteria
 
 <!-- nota:ejemplo criterios -->
+
 ```html
 <figure class="pieza amplio" id="criterios-ejemplo"><h3>Comparar sin esconder el criterio</h3><div class="tabla-caja" tabindex="0" role="region" aria-label="Matriz de criterios, desplazable"><table class="matriz-criterios"><caption>Opciones de revisión · comparación conceptual</caption><thead><tr><th scope="col">Criterio</th><th scope="col">Resumen final</th><th scope="col">Revisión por paso</th><th scope="col">Cómo comprobarlo</th></tr></thead><tbody><tr><th scope="row">Ver todo en contexto</th><td>Reúne los campos</td><td>Los reparte entre pantallas</td><td>Observar errores detectados</td></tr><tr><th scope="row">Editar cerca del dato</th><td>Requiere acceso desde el resumen</td><td>Edición dentro de cada paso</td><td>Contar pasos de corrección</td></tr><tr><th scope="row">Tiempo total</th><td>Pendiente de medir</td><td>Pendiente de medir</td><td>Misma tarea, alcance comparable</td></tr></tbody></table></div><figcaption>No hay puntuación agregada: las compensaciones y los datos faltantes quedan visibles.</figcaption></figure>
 ```
 
-**Cuándo:** Decisiones entre opciones con criterios explícitos y evidencia comparable.
+**Use and limits:** Compare alternatives against explicit evidence-based criteria. Missing observations remain pending. Do not invent weights, scores or winners, or turn ordinal labels into numerical precision.
 
-**Cuándo no / límite:** No inventa pesos, puntuaciones ni ganador. Si un criterio no se observó, marca pendiente; no conviertas etiquetas ordinales en precisión numérica.
-
-## Registro de riesgos
+## Risks
 
 <!-- nota:ejemplo riesgos -->
+
 ```html
 <figure class="pieza amplio" id="riesgos-ejemplo"><h3>Lo que podría salir mal</h3><div class="tabla-caja" tabindex="0" role="region" aria-label="Registro de riesgos, desplazable"><table><caption>Riesgos ilustrativos de un flujo de confirmación</caption><thead><tr><th scope="col">Causa y consecuencia</th><th scope="col">Responsable propuesto</th><th scope="col">Mitigación</th><th scope="col">Señal para revisar</th></tr></thead><tbody><tr><th scope="row">Un resumen incompleto permite confirmar un dato incorrecto</th><td>Diseño de producto</td><td>Mostrar todos los campos críticos y su edición</td><td>Correcciones posteriores a confirmar</td></tr><tr><th scope="row">Un fallo de guardado parece un envío exitoso</th><td>Ingeniería</td><td>Confirmar sólo tras respuesta válida y ofrecer reintento</td><td>Discrepancia entre interfaz y registro</td></tr></tbody></table></div><figcaption>Ejemplo sin probabilidades estimadas. Asigna personas y señales verificables en el proyecto real.</figcaption></figure>
 ```
 
-**Cuándo:** Acompañar decisiones con causa, impacto, dueño, mitigación y señal observable.
+**Use and limits:** Describe cause, impact, owner, mitigation and observable warning signals. No automatic probability/severity estimates or multiplication of ordinal scales. The component neither assigns real work nor replaces operational tracking.
 
-**Cuándo no / límite:** No estima probabilidad ni severidad automáticamente, y no multiplica escalas ordinales. No sustituye seguimiento operativo ni asigna trabajo a personas reales.
-
-## Configuración editorial
+## Configuration
 
 <!-- nota:ejemplo configuracion -->
+
 ```html
 <section class="pieza" id="configuracion-ejemplo" data-config-editorial><h3>La misma publicación, otra edición</h3><p>Elige cómo se presentan las publicaciones del archivo. Los cambios se aplican en este documento.</p><form class="editorial-controles" aria-label="Configuración del archivo"><label>Presentación<select name="disposicion"><option value="rejilla">Rejilla editorial</option><option value="lista">Lista de lectura</option></select></label><label class="editorial-check"><input type="checkbox" name="extractos" checked> Mostrar extractos</label><label class="editorial-check"><input type="checkbox" name="metadatos" checked> Mostrar autoría y formato</label><button type="reset">Restablecer edición</button></form><p data-config-estado role="status">Rejilla editorial con extractos y metadatos.</p><div class="codigo"><div class="cab"><span>Configuración local · JSON</span><button type="button" data-copiar="config-editorial-json">Copiar configuración</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Configuración editorial JSON, desplazable"><code id="config-editorial-json" data-config-json>{"version":1,"disposicion":"rejilla","extractos":true,"metadatos":true}</code></pre></div><p class="procedencia">Configuración de presentación, independiente de la paleta y tipografía del botón de apariencia. No instala un tema de Ghost.</p><p><a href="#archivo-ejemplo">Ver el archivo con esta configuración →</a></p></section>
 ```
 
-**Cuándo:** Variar lista/rejilla y cantidad de información sin cambiar el contenido. Requiere packages/core/components/editorial.js; actualiza los archivos [data-archivo] del mismo documento y genera JSON copiable.
+**Use and limits:** Change archive list/grid presentation and information density with editorial.js, producing copyable JSON. Scope is the current document: use one configurator. No preference persistence, JSON import, content changes or Ghost connection. Appearance continues to own palette and typography. Without JavaScript preserve the initial state.
 
-**Cuándo no / límite:** No guarda preferencias ni importa JSON, no cambia el contenido y no conecta Ghost. El alcance es todo el documento; usa un solo configurador. Sin JS conserva el estado inicial. La paleta, tipografía y lectura cómoda siguen en apariencia.
+## Component library and local registry
 
-## Biblioteca completa y registro local
+`examples/generated/library.html` groups recipes into navigable chapters with guidance and dependencies. template.html is the continuous catalog; report.html is a narrative example. Use the generated registry for current counts.
 
-[examples/generated/library.html](../examples/generated/library.html) reúne **44 recetas en nueve capítulos**: inicio,
-publicaciones, artículos, reportes, gráficas, tablas, prototipos, espacio y gesto, y edición.
-Cada pieza se genera desde el HTML anterior, con su criterio, límites y dependencias al lado.
-El estudio narrativo sigue en [examples/generated/report.html](../examples/generated/report.html); el cuaderno continuo, en
-[examples/generated/template.html](../examples/generated/template.html). Son tres composiciones del mismo sistema.
+`data-enlaces-internos` enables descendant deep links and history in the multipage library. Navigation activates and focuses the target outside the fixed bar; link to the recipe rather than a hidden inner tab. Each chapter has its own outline/progress. Printing includes all chapters; without JS all content remains.
 
-**Cuándo:** explorar y copiar piezas, evaluar temas con contenidos distintos o compartir
-un componente concreto. `data-enlaces-internos` en `.hoja.multipagina` habilita enlaces a
-IDs descendientes y su historial, por ejemplo `examples/generated/library.html#receta-calor`. Es optativo:
-las notas anteriores conservan su contrato. La barra navega capítulos, no es un tablist. Cada capítulo conserva además su índice de secciones y la regla muestra su progreso; en portátil ambos disponen de espacio reservado.
-El destino se muestra, recibe foco al navegar y queda fuera de la barra fija. Para enlazar
-vistas de pestañas usa el ID de la receta, no un panel oculto de la pieza.
+The library is a local HTML catalog, not an installable CMS theme. The optional portal supplies separate authentication/collaboration. registry.json contains versioned HTML, chapter, modules and documentation; it is not the shadcn schema and should not be fetched at reader runtime. `NotaEditorial.init(root)` and get(element).destroy() manage archive/configurator lifecycle. Do not nest archives or duplicate IDs. A Ghost integration would additionally require CMS templates, context and GScan validation.
 
-**Límite:** es una biblioteca HTML local, no un CMS ni un tema Ghost instalable. No crea
-usuarios, comentarios, pagos o suscripciones. La búsqueda encuentra recetas locales y el
-archivo filtra las publicaciones que ya contiene. Al imprimir se incluyen todos los capítulos;
-la búsqueda y la configuración son controles de pantalla. Sin JS se muestran todos los
-capítulos de esta edición, con los datos originales y las alternativas de cada componente.
-
-[packages/core/registry/registry.json](../packages/core/registry/registry.json) contiene HTML, capítulo, dependencias y documentación de cada
-receta. Es un formato local versionado, **no el esquema de instalación de shadcn**. No lo
-cargues por fetch dentro de un artefacto. El ensamblador lo construye junto al HTML, sin red.
-`NotaEditorial.init(raíz)` y `get(elemento).destroy()` permiten inicializar y desmontar archivo
-/configurador. No anides archivos ni dupliques configuradores; los IDs de copiado son únicos.
-
-La configuración de Ghost inspira la separación entre contenido y presentación. Una futura
-integración necesita plantillas Handlebars, contexto del CMS, `package.json` y validación
-GScan; copiar este HTML no cumple ese contrato. La comparación y sus fuentes están en
-[edition-complete.md](../tests/evidence/edition-complete.md).
-
-## Tabla interactiva
+## Data explorer
 
 <!-- nota:ejemplo explorador -->
+
 ```html
 <section class="pieza amplio" id="explorador-ejemplo" data-explorador>
 <h3>Explorar el registro</h3><p>Seis registros ficticios. Ordena por encabezado, filtra y agrupa sin perder el detalle.</p>
@@ -1913,25 +1492,12 @@ GScan; copiar este HTML no cumple ese contrato. La comparación y sus fuentes es
 </tbody></table></div></section>
 ```
 
-**Cuándo:** Investigar una tabla corta: buscar, filtrar un estado, agrupar y ordenar dentro de cada grupo. Incluye `packages/core/components/controls.js` y `packages/core/components/data-explorer.js`. Buscar queda visible; Filtros, Diseño, Vistas y Más organizan las herramientas. Tabla/Fichas cambia la presentación conservando las mismas celdas. A 640 px o menos, Automática usa fichas. Cada encabezado ofrece ascendente, descendente y restablecer. Escape cierra el menú y devuelve el foco. Las columnas ocultas se pueden recuperar; Nombre permanece. Los encabezados indican `aria-sort`; el total corresponde sólo a las filas visibles.
+**Use and limits:** Explore 1–16 columns and up to 2000 local rows. Load table-model before data-explorer and include controls.js. Search stays visible; Filters, Display, Views and More form one action group. Table/Cards changes presentation while preserving source cells and IDs; auto uses cards at 640 px or below. Use stable table/row/cell identifiers for review anchors. Text, finite numbers (`data-valor`, header `data-tipo=numero`) and ISO dates (`data-tipo=fecha`) are supported. State/total column indexes are zero-based and default to 2/3; declare the additive unit and never mix currencies. Facets, AND/OR conditions, empty values, numeric/date ranges, chips, multi-sort, grouping, visibility, density and local saved views share one query model. Incomplete ranges match nothing. Paging offers 10/25/50/100 rows; totals cover all filtered rows while group counters cover the page. Selection persists across pages; selection export includes selected rows outside the filter using visible columns, otherwise exports the filtered set. CSV neutralizes formulas. Printing restores the complete source. No editing, virtualization or remote fetching. `NotaExplorador.init/get/destroy`, `.visible`, `.selected` and `.exportCSV()` preserve original data. The detail action exposes all fields with keyboard access. Fixed columns and widths are open-table adjustments; saved views retain query/grouping/visibility/density/presentation. See docs/mobile-and-tables.md. React uses its native adapter; standalone does not download React/TanStack. The administrator queries the authorized server collection with progressive scrolling.
 
-**Cuándo no / límite:** tabla local de 1–16 columnas y hasta 2000 filas. Admite texto, números con `data-valor` y fechas ISO mediante `data-tipo="fecha"` en el encabezado; declara `data-tipo="numero"` cuando corresponda. La receta de cuatro columnas mantiene equipo, estado e importe, pero el motor no exige ese esquema. `data-columna-estado` y `data-columna-total` usan índices desde cero (por defecto 2 y 3); declara la unidad de la suma. No mezcla monedas ni conecta un servidor.
-
-Incluye filtros por valores y condiciones (texto, rango numérico o fecha), búsqueda, grupos plegables de la página, columnas visibles, selección de filas entre páginas, paginación 10/25/50/100, espaciado y encabezado fijo. Mayús al elegir otro orden agrega un criterio. El total corresponde a la vista filtrada completa; el contador de grupo corresponde a la página. Exportar selección incluye filas seleccionadas aunque estén fuera del filtro, usando columnas visibles; sin selección exporta toda la vista filtrada. CSV neutraliza fórmulas. Impresión muestra la fuente completa. No hay edición de celdas ni virtualización. `NotaExplorador.init/get/destroy`, `instance.visible`, `instance.selected` e `instance.exportCSV()` conservan los valores originales.
-
-### Unified table controls
-
-`table-model.js` must load before `data-explorer.js`. The generator resolves this dependency. Conditions support AND/OR, text equality/contains/multiple values, numeric/date bounds, and empty values. Distinct-value facets with source counts and removable chips share the same condition model. Empty range inputs do not match any rows until completed.
-
-Saved views are device-local and scoped by document and table identity. They include search, conditions, sort, grouping, visibility and density. Presentation is saved with the view; fixed columns and width sliders are per-open-table adjustments. Give the table an `id`, each row an immutable `data-row-id` and each cell an `id` when a reference must survive a future version; synthesized IDs only remain stable inside the current HTML. Sorting and filtering move existing rows without rewriting their IDs. The ↗ action opens all fields in a keyboard-accessible dialog. Filtered-out references remain reachable from the review list.
-
-Examples: operational, financial and project scenarios in `examples/generated/workbench.html`. React consumers use the native `DataTable` adapter; standalone HTML does not download React or TanStack. The portal's table queries the complete authorized collection and loads more rows as you scroll. Local tables disclose page groups and complete filtered totals separately.
-
-See `docs/mobile-and-tables.md` for composition, selection semantics and migration of existing artifacts.
-
-## Familia de cards
+## Cards
 
 <!-- nota:ejemplo cards -->
+
 ```html
 <section class="pieza ancho" id="cards-ejemplo"><h3>Tarjetas con un propósito</h3><div class="cards-editoriales">
 <article class="card-editorial"><p class="ceja">Lectura / 01</p><h4><a href="examples/generated/report.html#evidencia">De la hipótesis a la evidencia</a></h4><p>Una tarjeta editorial con título, extracto y destino concreto.</p><p class="procedencia">Ensayo de ejemplo · Investigación</p></article>
@@ -1940,17 +1506,12 @@ See `docs/mobile-and-tables.md` for composition, selection semantics and migrati
 </div></section>
 ```
 
-**Cuándo:** Agrupar entidades distintas: artículo, indicador y proyecto. La rejilla se adapta al ancho; el enlace está en el título o acción, no en toda la tarjeta.
+**Use and limits:** Group distinct entities such as articles, metrics or projects in a responsive grid. Link through an explicit title/action. Do not use one card per paragraph or conceal a comparison better served by a table. Values/states need sources; avoid overlapping clicks, fixed heights and truncation. Prototype embedding belongs to the prototype recipe and its trusted-local-content restrictions.
 
-**Cuándo no / límite:** No uses una tarjeta por párrafo ni escondas una comparación que necesita tabla. Los valores y estados requieren fuente. No hay clics superpuestos, carrusel ni alturas fijas que corten textos. HTML estático con tokens de las seis paletas.
-
-### Pegar un prototipo propio
-
-El visor ofrece **Embeber mi HTML** y `NotaVisores.get(elemento).loadHTML(texto)`. Conserva el ancho elegido y Reiniciar vuelve al template original. Acepta hasta 100.000 caracteres de HTML declarativo con CSS local; rechaza scripts, eventos inline, iframes, envíos, recursos externos y CSS con url()/@import. No es un navegador remoto ni un sanitizador para contenido hostil. Usa HTML de confianza, imágenes raster data: y consultas @container para adaptar el prototipo a su ancho. No modifica ni guarda la fuente del documento.
-
-## Comentarios sobre el documento
+## Review
 
 <!-- nota:ejemplo revision -->
+
 ```html
 <section class="pieza" id="revision-ejemplo" data-revision>
 <h3>Revisar sin perder el contexto</h3><p>Activa Comentar y elige un párrafo, título, figura o card. También puedes seleccionar texto antes de pulsar Comentar.</p><div class="acciones"><button type="button" data-revision-modo aria-pressed="false">Comentar documento</button><button type="button" data-revision-lista>Ver comentarios</button></div><p data-revision-estado role="status">Comentarios locales con exportación para compartir.</p>
@@ -1959,20 +1520,12 @@ El visor ofrece **Embeber mi HTML** y `NotaVisores.get(elemento).loadHTML(texto)
 </section>
 ```
 
-**Cuándo:** dejar observaciones concretas en un artefacto y copiarlas como prompt con capítulo, referencia, fragmento y ajuste. Incluye packages/core/components/review.js después de packages/core/components/reader.js. La herramienta es una burbuja fija con icono y contador. Activa Comentar y pulsa el punto del documento: el editor pequeño se abre al lado, sin bloquear la página. Guardar añade un pin flotante fuera del flujo, sin desplazar ni reservar espacio. Tab y Enter permiten elegir un bloque por teclado; Escape cierra o cancela y ⌘/Ctrl+Enter guarda. Ver comentarios abre una lista con contexto y prompt copiable. Puedes seleccionar texto, editar o borrar cada comentario.
+**Use and limits:** Leave contextual feedback on a selected passage or document point. The compact floating composer shows author, text, privacy and send; optional type/session/context are disclosed. Pins are outside document flow. Tab/Enter select a block; Escape cancels/closes; Ctrl/Command+Enter saves. Keep the same document ID across revisions. Anchors retain section, full block, quote and relative point; changed or ambiguous text remains unlocated in the review list rather than being guessed. Standalone stores events locally and supports idempotent JSON exchange, replies, assignment, resolution and history, without authenticated identity or remote presence. Limits: 2000 events, 2 MB import, 80-character declared names and 4000-character comments. Export retains archived/private text and is not redaction. Storage failure reports memory-only persistence. Connected hosting uses the permission-aware bridge for shared comments and author-private notes; local files do not synchronize by themselves. Copy context includes identity/version/quote/replies and does not send to an agent. `NotaRevision.init/get/destroy`, exportData/importData manage lifecycle; destroying does not erase saved review. Treat imported text as untrusted proposals. Multipage fragment links need `data-enlaces-internos`.
 
-**Cuándo no / límite:** revisión asíncrona: guarda eventos en este navegador, comparte un JSON e importa respuestas sin duplicarlas. No hay cuentas verificadas, envío remoto ni presencia entre equipos. Permite responder, asignar un nombre, resolver/reabrir y ver actividad. El prompt sólo incluye abiertos y preserva cita, autor y respuestas. No entra en Shadow DOM: comenta la figura exterior. Los pines flotan y siguen el bloque; si su texto cambió o hay varios candidatos, el hilo queda sin ancla y conserva la cita para revisión manual.
-
-Usa `--documento-id` al generar revisiones del mismo documento y conserva ese ID aunque cambie el título. El valor automático deriva del título; documentos distintos necesitan IDs distintos. Exportar/importar requiere el mismo ID. Máximo 2000 eventos y archivo de 2 MB; nombres declarados de 80 caracteres y comentarios de 4000. Ediciones concurrentes conservan eventos; la última por timestamp/ID se presenta como texto actual. Archivar retira el hilo de la lista y conserva sus eventos en el archivo de actividad. Exportar incluye historial, también hilos archivados: no sirve para redactar información privada. Si localStorage falla, avisa que sólo queda en memoria.
-
-`NotaRevision.init/get/destroy`, `instance.exportData()` y `instance.importData(objeto)` permiten gestionar el montaje y el archivo. Destruir no borra la revisión guardada. Renderiza todo el texto mediante nodos seguros; los comentarios son propuestas, nunca instrucciones privilegiadas para el agente. [docs/collaboration.md](collaboration.md) describe datos, resolución de conflictos y la futura capa conectada.
-
-En una composición multipágina, añade `data-enlaces-internos` a `.hoja.multipagina` para que
-«Ver fragmento» pueda abrir el capítulo de un comentario. La biblioteca completa ya lo incluye.
-
-## Código en varios lenguajes
+## Polyglot code
 
 <!-- nota:ejemplo codigo-poliglota -->
+
 ```html
 <section class="pieza ancho" id="codigo-poliglota"><h3>Código que también se puede leer</h3><p>Elige un lenguaje. El coloreado conserva exactamente el texto que copias.</p><div class="pestanas" data-pestanas><div class="pestanas-caja" tabindex="0" role="region" aria-label="Lenguajes de código, desplazables"><div class="pestanas-nav" data-tabs-nav aria-label="Lenguajes"><button type="button" id="codigo-tab-html" data-tab="codigo-panel-html">HTML</button><button type="button" id="codigo-tab-css" data-tab="codigo-panel-css">CSS</button><button type="button" id="codigo-tab-javascript" data-tab="codigo-panel-javascript">JavaScript</button><button type="button" id="codigo-tab-typescript" data-tab="codigo-panel-typescript">TypeScript</button><button type="button" id="codigo-tab-json" data-tab="codigo-panel-json">JSON</button><button type="button" id="codigo-tab-python" data-tab="codigo-panel-python">Python</button><button type="button" id="codigo-tab-sql" data-tab="codigo-panel-sql">SQL</button><button type="button" id="codigo-tab-shell" data-tab="codigo-panel-shell">Shell</button><button type="button" id="codigo-tab-salida" data-tab="codigo-panel-salida">Salida</button></div></div><section id="codigo-panel-html" data-tab-panel><div class="codigo"><div class="cab"><span>HTML</span><button type="button" data-copiar="muestra-html" aria-label="Copiar HTML" title="Copiar"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V3H4v13h4"/></svg></button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código HTML, desplazable"><code id="muestra-html" data-lenguaje="html">&lt;article class=&quot;nota&quot;&gt;
   &lt;h2&gt;Una decisión con contexto&lt;/h2&gt;
@@ -2013,13 +1566,12 @@ WARN   fuente pendiente       2 registros
 ERROR  ejemplo rechazado      1 recurso externo</code></pre></div></section></div></section>
 ```
 
-**Cuándo:** documentación con HTML, CSS, JavaScript, TypeScript, JSON, Python, SQL, shell o salidas de terminal. Usa `data-lenguaje` para declararlo. Incluye packages/core/components/code.js y packages/core/components/tabs.js para esta muestra. El módulo usa nodos de texto; no ejecuta ni modifica los ejemplos.
+**Use and limits:** Declare HTML, CSS, JavaScript, TypeScript, JSON, Python, SQL, shell or output with `data-lenguaje`. Load code.js and tabs.js for this example. The lightweight lexer preserves original copy text and editorial spans; it never executes code, compiles, validates or downloads language grammars. Keep local scrolling and theme-aware token contrast.
 
-**Cuándo no / límite:** resaltador ligero, no compilador ni parser completo; no valida código, no carga gramáticas y no colorea todos los lenguajes posibles. Conserva spans editoriales .subra/.tenue y el texto de copia. Los números, cadenas, palabras clave y comentarios siguen tokens de cada tema; el terminal mantiene sus tonos propios.
-
-## Calendario de actividad
+## Contribution calendar
 
 <!-- nota:ejemplo calendario -->
+
 ```html
 <figure class="ancho" id="analitica-calendario" data-analitica="calendario" data-unidad="conciliaciones">
   <details><summary>Consultar los 109 días registrados</summary>
@@ -2144,13 +1696,12 @@ ERROR  ejemplo rechazado      1 recurso externo</code></pre></div></section></di
 </figure>
 ```
 
-**Cuándo:** ver continuidad, pausas o carga diaria al estilo del calendario de GitHub. No para comparar importes exactos entre meses de distinta duración.
+**Use and limits:** Show continuity and gaps in daily activity. analytics.js accepts 1–366 unique UTC ISO dates over at most 366 consecutive days, with nonnegative integer counts. Missing rows use a diagonal rather than implied zero. Weeks start Monday; thresholds derive from the observed maximum, not percentiles. A selector exposes every day's values. No GitHub connection or productivity inference.
 
-**Límite:** Incluye packages/core/components/analytics.js. De 1 a 366 registros, máximo 366 días consecutivos de rango; fechas ISO UTC únicas, conteos enteros no negativos. No infiere cero donde falta una fila: dibuja una diagonal. Semana comienza el lunes. No consulta GitHub ni un repositorio; umbrales calculados del máximo observado, no percentiles. Selector accesible para el detalle de cada día.
-
-## Torta y donut de composición
+## Pie chart
 
 <!-- nota:ejemplo torta -->
+
 ```html
 <figure class="ancho" id="analitica-torta" data-analitica="torta" data-unidad="millones COP">
   <div class="tabla-caja" tabindex="0" role="region" aria-label="Datos de Torta y donut de composición, desplazables">
@@ -2168,13 +1719,12 @@ ERROR  ejemplo rechazado      1 recurso externo</code></pre></div></section></di
 </figure>
 ```
 
-**Cuándo:** explicar de qué se compone un total positivo con pocas partes. Para comparaciones cercanas o muchas categorías, usa barras.
+**Use and limits:** Show parts of a positive whole with 1–6 unique nonnegative categories. Zero remains in legend/table without an invented sector. Percentages use the row total, not an external denominator. No negatives or double counting. Names/values remain authoritative where colors repeat. Prefer bars for close comparisons or many categories.
 
-**Límite:** Incluye packages/core/components/analytics.js. Entre 1 y 6 categorías únicas, no negativas; total mayor que cero. No admite negativos ni doble conteo; porcentaje calculado del total de filas, no de un denominador externo. Ceros permanecen en leyenda/tabla sin inventar un sector. Colores pueden repetirse desde la quinta categoría: nombres y cifras son la referencia.
-
-## Áreas apiladas de ingresos
+## Area chart
 
 <!-- nota:ejemplo areas -->
+
 ```html
 <figure class="ancho" id="analitica-areas" data-analitica="areas" data-unidad="millones COP">
   <div class="tabla-caja" tabindex="0" role="region" aria-label="Datos de Áreas apiladas de ingresos, desplazables">
@@ -2193,13 +1743,12 @@ ERROR  ejemplo rechazado      1 recurso externo</code></pre></div></section></di
 </figure>
 ```
 
-**Cuándo:** ver el total y su composición a lo largo del tiempo. Para comparar el crecimiento exacto de una banda intermedia, usa líneas o pequeños múltiples.
+**Use and limits:** Show a total and its composition over time. Exactly three additive series in one unit, 2–60 unique ISO dates and nonnegative values. Real date spacing and linear segments connect observations without creating transactions or missing-day data. No mixed currencies. An all-zero total has an explicit auxiliary 0–1 domain. Use lines/small multiples for precise comparison of middle bands.
 
-**Límite:** Incluye packages/core/components/analytics.js. Exactamente tres series aditivas en la misma unidad, 2–60 fechas ISO únicas, valores no negativos. Une observaciones por interpolación lineal; no agrega transacciones ni inventa días faltantes. Las fechas usan distancia real; no mezcla monedas. Un total constantemente cero usa dominio auxiliar 0–1 explícito.
-
-## Caja y bigotes de entrega
+## Box plot
 
 <!-- nota:ejemplo caja -->
+
 ```html
 <figure class="ancho" id="analitica-caja" data-analitica="caja" data-unidad="minutos">
   <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Datos de Caja y bigotes de entrega, desplazables">
@@ -2216,13 +1765,12 @@ ERROR  ejemplo rechazado      1 recurso externo</code></pre></div></section></di
 </figure>
 ```
 
-**Cuándo:** comparar dispersión y mediana por zona, sin dejar que el promedio esconda colas largas. Para conteos por intervalo, usa distribución.
+**Use and limits:** Compare dispersion and median using five ordered statistics per group. Up to 24 groups, same units and calculation method. Does not derive quartiles from raw samples or identify outliers. Constant groups receive a domain expanded by one on each side. Use distribution for bin counts.
 
-**Límite:** Incluye packages/core/components/analytics.js. Recibe cinco estadísticas ordenadas por fila; no calcula cuartiles desde datos crudos ni identifica atípicos. Hasta 24 grupos. Misma unidad y método de cálculo; si mínimo = máximo, amplía el dominio un punto a cada lado para hacer visible el caso constante.
-
-## Velas financieras OHLC
+## Candlestick
 
 <!-- nota:ejemplo velas -->
+
 ```html
 <figure class="ancho" id="analitica-velas" data-analitica="velas" data-unidad="índice base 100">
   <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Datos de Velas financieras OHLC, desplazables">
@@ -2241,13 +1789,12 @@ ERROR  ejemplo rechazado      1 recurso externo</code></pre></div></section></di
 </figure>
 ```
 
-**Cuándo:** mostrar apertura, extremos y cierre de un mismo período. No para saldos que no tengan apertura/cierre definidos ni para mezclar unidades.
+**Use and limits:** Show open, high, low and close for 1–60 unique ISO dates in one unit. Low must not exceed open/close, which must not exceed high. Real temporal positions; constant data uses an auxiliary ±10% or ±1 domain. No market feed or technical indicators. Do not use for undefined opening/closing balances.
 
-**Límite:** Incluye packages/core/components/analytics.js. 1–60 fechas ISO únicas; mínimo ≤ apertura y cierre ≤ máximo. No calcula indicadores técnicos ni conecta mercados. Posiciones temporales reales; limita el número de observaciones para conservar cuerpos legibles. Si todo es constante, muestra un dominio auxiliar ±10 % o ±1 alrededor del valor.
-
-## Mapa de rutas y volumen
+## Route map
 
 <!-- nota:ejemplo mapa-rutas -->
+
 ```html
 <figure class="ancho" id="analitica-mapa-rutas" data-analitica="rutas" data-unidad="viajes">
   <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Datos de Mapa de rutas y volumen, desplazables">
@@ -2264,13 +1811,12 @@ ERROR  ejemplo rechazado      1 recurso externo</code></pre></div></section></di
 </figure>
 ```
 
-**Cuándo:** comparar corredores entre sedes y el volumen de viajes; el grosor comparte una escala lineal. No para orientar a un conductor ni estimar tiempo de viaje.
+**Use and limits:** Compare up to 24 corridors with a shared linear width scale and nonnegative trip counts. Load geography before analytics. Colombia view is latitude −5…14, longitude −80…−66, with equirectangular projection and schematic curves. Zero trips draws no route. No roads, provider routing, geodesic distances, driver guidance or ETA.
 
-**Límite:** Incluye packages/core/components/geography.js y packages/core/components/analytics.js, en ese orden. Hasta 24 conexiones, cantidades no negativas; vista acotada a Colombia (lat. −5…14, lon. −80…−66). Proyección equirectangular; líneas curvas esquemáticas, no carreteras ni geodésicas. 0 viajes no dibuja una ruta. No obtiene datos, distancias ni rutas de un proveedor.
-
-## Mapa de volumen por sede
+## Bubble map
 
 <!-- nota:ejemplo mapa-burbujas -->
+
 ```html
 <figure class="ancho" id="analitica-mapa-burbujas" data-analitica="burbujas" data-unidad="entregas">
   <div class="tabla-caja" tabindex="0" role="region" aria-label="Datos de Mapa de volumen por sede, desplazables">
@@ -2288,13 +1834,12 @@ ERROR  ejemplo rechazado      1 recurso externo</code></pre></div></section></di
 </figure>
 ```
 
-**Cuándo:** comparar cantidades absolutas por ubicación. El área, no el radio, representa volumen. Para tasas sobre población, explicita denominadores antes de elegir este mapa.
+**Use and limits:** Compare absolute values at up to 24 Colombian locations. Area, not radius, encodes volume; radius is proportional to the square root of the ratio to the maximum. Zero has zero area. No clustering, territorial coverage or choropleth. Overlap remains accessible through selector/table. Rates need explicit denominators.
 
-**Límite:** Incluye packages/core/components/geography.js y packages/core/components/analytics.js. Hasta 24 puntos en la vista de Colombia, sin valores negativos. Radio = raíz de la proporción al máximo; cero tiene área cero. No agrupa puntos cercanos: si hay solapamiento, usa el selector y la tabla o un mapa más específico. No representa cobertura territorial ni una coropleta.
-
-## Columnas geográficas 3D
+## Map columns
 
 <!-- nota:ejemplo columnas-mapa -->
+
 ```html
 <figure class="ancho" id="analitica-columnas-mapa" data-escena="columnas" data-unidad="entregas">
   <div class="tabla-caja" tabindex="0" role="region" aria-label="Datos de Columnas geográficas 3D, desplazables">
@@ -2312,13 +1857,12 @@ ERROR  ejemplo rechazado      1 recurso externo</code></pre></div></section></di
 </figure>
 ```
 
-**Cuándo:** explorar la relación entre ubicación y volumen desde distintos ángulos. Si sólo interesa un ranking, usa barras; la perspectiva dificulta comparar alturas cercanas.
+**Use and limits:** Explore location and volume when perspective is useful. Up to 12 nonnegative Colombian locations, constant footprints and a shared height scale from zero. Equirectangular projection, no terrain elevation. Load one Three.js dependency, geography and scene. Starts without rotation, pauses outside view and respects reduced motion; destroy releases resources. Keep the permanent table. Prefer bars for close height comparisons.
 
-**Límite:** Incluye Three 0.160.1 una sola vez, packages/core/components/geography.js y packages/core/components/scene.js. Hasta 12 ubicaciones en Colombia, cantidades no negativas; eje de altura común desde cero. Huella de columna constante, proyección equirectangular. No incluye elevación del terreno. Giro apagado inicialmente; cancela RAF fuera de pantalla y con movimiento reducido; destroy libera recursos. Tabla permanente.
-
-## Arcos logísticos 3D
+## Map arcs
 
 <!-- nota:ejemplo arcos-mapa -->
+
 ```html
 <figure class="ancho" id="analitica-arcos-mapa" data-escena="arcos" data-unidad="viajes">
   <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Datos de Arcos logísticos 3D, desplazables">
@@ -2335,13 +1879,12 @@ ERROR  ejemplo rechazado      1 recurso externo</code></pre></div></section></di
 </figure>
 ```
 
-**Cuándo:** explicar conexiones de origen/destino que se cruzan en una vista plana; selecciona una para aislarla. No para rutas viales o tiempos estimados.
+**Use and limits:** Explain up to 12 origin/destination connections in Colombia. Tube cross-section is proportional to trips; constant arc height is visual separation, not altitude or duration. Zero has zero cross-section. No road routing, ETA, animated vehicles or live tracking. Share Three/geography/scene lifecycle; selector and table retain exact data.
 
-**Límite:** Incluye Three 0.160.1, packages/core/components/geography.js y packages/core/components/scene.js. Hasta 12 rutas en Colombia. La sección del tubo es proporcional a viajes; altura del arco constante, sólo separación visual, no altitud ni duración. Cero genera sección cero. No anima vehículos ni sugiere seguimiento en vivo. Comparte pausa, reducción de movimiento y destroy de NotaEscena; lista y tabla dan el detalle exacto.
-
-## Capacidad de almacén 3D
+## Warehouse
 
 <!-- nota:ejemplo almacen -->
+
 ```html
 <figure class="ancho" id="analitica-almacen" data-escena="almacen" data-unidad="posiciones">
   <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Datos de Capacidad de almacén 3D, desplazables">
@@ -2361,31 +1904,18 @@ ERROR  ejemplo rechazado      1 recurso externo</code></pre></div></section></di
 </figure>
 ```
 
-**Cuándo:** ver dónde queda espacio dentro de una distribución de almacén. No para decidir seguridad estructural, altura real de estibas o rutas de evacuación.
+**Use and limits:** Show available capacity across 1–12 locations with finite X/Z coordinates in metres, positive capacity and occupancy between zero and capacity. X/Z share scale; constant box footprints are not actual shelf dimensions. Height represents position count, not metres. Duplicate coordinates can overlap. No structural-safety, evacuation or digital-twin claims. Keep table and scene lifecycle cleanup.
 
-**Límite:** Incluye Three 0.160.1 y packages/core/components/scene.js. 1–12 ubicaciones con X/Z finitos en metros, capacidad positiva y 0 ≤ ocupados ≤ capacidad. X/Z comparten escala en metros; la huella de cada caja es constante, no mide la estantería. La altura representa cantidad de posiciones, no metros. No evita superposición si duplicas coordenadas; usa ubicaciones distintas y separadas. Comparte ciclo de vida de NotaEscena y tabla permanente; no es un gemelo digital conectado.
+## Shared analytics contract
 
-## Contrato común de la ampliación analítica
+Embed dependencies named in the registry once. Original tables remain the data source. `NotaAnalitica.init(root)` returns new or existing instances; get(figure).destroy() removes controls/SVG and preserves the source. Retry init after fixing invalid data; destroy first when changing initialized data. Keep axis labels short and explanations in captions. Selection reveals exact values without filtering/recalculating totals. Calendar details expand in print.
 
-Copia las dependencias indicadas en el registro, incrustadas en un `<script>` cada una. Las
-recetas completas anteriores son la fuente de datos; no necesitan objetos JS paralelos.
-`NotaAnalitica.init(raíz)` devuelve las instancias nuevas o existentes y
-`NotaAnalitica.get(figura).destroy()` retira controles y SVG conservando la tabla original.
-Si corriges una entrada inválida, vuelve a llamar `init`; el aviso anterior se elimina.
-No modifica una instancia al editar su tabla: destrúyela y vuelve a inicializar para actualizar.
-Las etiquetas de ejes deben ser breves; las explicaciones largas pertenecen a caption/figcaption.
-La selección permite consultar valores exactos; no filtra ni recalcula series o totales.
-El calendario puede plegar su tabla con `details`: se despliega completa al imprimir.
+NotaEscena adds columnas/arcos/almacen to its XYZ/stage contract and shares pinned Three with globes. Scenes start stationary; manual controls work with reduced motion and resume cannot bypass it. Colors use theme tokens. No analytics view needs audio, external shaders or third-party map data at reading time.
 
-`NotaEscena` conserva su contrato para XYZ y etapas y añade `columnas`, `arcos` y `almacen`.
-Comparte una sola inclusión de Three con el globo. Las escenas arrancan sin giro; los controles
-manuales funcionan con movimiento reducido y `resume()` no puede saltarse esa preferencia.
-Cada color procede de tokens ya definidos en las seis paletas. Ninguna vista nueva usa audio,
-red, shaders externos ni mapas de terceros en tiempo de lectura.
-
-## Apuntes a izquierda y derecha
+## Margin notes
 
 <!-- nota:ejemplo apuntes -->
+
 ```html
 <div class="apuntes ancho" id="apuntes-ejemplo">
   <section class="apunte izquierda">
@@ -2399,24 +1929,12 @@ red, shaders externos ni mapas de terceros en tiempo de lectura.
 </div>
 ```
 
-**Cuándo:** preguntas o comentarios editoriales secundarios junto al argumento. Incluye packages/core/components/handwriting.js.
-La variante izquierda sitúa el apunte antes del texto en el espacio; el orden de lectura mantiene
-primero el argumento. El subrayado usa un path propio y comparte entrada y cancelación.
-El botón de repetición flota sobre el corchete, sin añadir altura. Con ratón aparece al pasar
-por la nota; también al enfocar por teclado. En táctil queda visible. Escritura, subrayado y
-tachado comienzan una vez, al entrar un 30 % de la caja en pantalla, no al cargar fuera de vista.
-Salir completa el gesto y detiene el sonido; volver no lo repite automáticamente.
-`<del data-subrayar="tachado">texto anterior</del>` dibuja el trazo a media altura y conserva
-la semántica de corrección. `.tachado` sigue siendo la variante estática anterior.
+**Use and limits:** Place a brief secondary question beside the claim it qualifies. Left/right variants use reserved grid space; reading order keeps the argument first. Below 1000 px notes follow the paragraph. Replay floats on the bracket with no reserved height, appearing on hover/focus and remaining available on touch. Handwriting, underline and `del[data-subrayar=tachado]` start once at 30% visibility; leaving completes the gesture and stops audio. Reentry does not auto-repeat. Keep complete equivalent text and correction semantics. Use brief one-line underlines and approved handwriting/audio; no essential conditions or long prose in the margin.
 
-**Límite:** se reserva una rejilla real dentro de la figura ancha; no son offsets negativos ni
-notas fijas que invadan el índice. Bajo 1000 px, los apuntes caen después del párrafo. Frases cortas
-y subrayados que quepan en una línea; no para anotaciones largas ni contenido obligatorio. El
-alfabeto admite la puntuación española; el texto equivalente siempre se conserva. Sonido optativo sincronizado con el trazo visible tras activar Sonidos; también al repetir. La API y los límites de packages/core/components/handwriting.js son los de la receta manuscrita.
-
-## Cards delineadas de publicaciones
+## Outlined cards
 
 <!-- nota:ejemplo cards-trazadas -->
+
 ```html
 <section class="ancho" id="cards-trazadas-ejemplo">
   <h3>Escrito recientemente</h3><p>Lecturas de ejemplo para volver sobre una idea.</p>
@@ -2432,18 +1950,12 @@ alfabeto admite la puntuación española; el texto equivalente siempre se conser
 </section>
 ```
 
-**Cuándo:** una rejilla editorial de artículos o documentos con bordes compartidos, fondo suave y
-sombra breve al pasar el puntero. Cada card es un único enlace, también accesible por teclado.
-Incluye packages/core/components/audio.js y Apariencia si quieres el hover sonoro optativo; el estilo no necesita JS.
+**Use and limits:** Use a publication/document grid with shared outlines, subtle surface and short hover shadow. Each card is one real keyboard-accessible link; do not nest buttons inside it. Preserve full titles/excerpts without fixed-height clipping. Optional `data-audio-hover` requires actual pointer motion and unlocked sound, never focus, loading or scrolling. The original embedded hover sample respects master volume and rate limiting. Mobile requires no hover or sound to understand the link.
 
-**Límite:** títulos y extractos completos, sin elipsis ni alturas fijas. No mezcles botones dentro
-del enlace. Hover sólo con ratón moviéndose realmente sobre `data-audio-hover`, después de activar
-Sonidos; nunca al enfocar, desplazar o cargar. Señal propia de 60 ms y separación mínima de 160 ms;
-reproduce el MP3 hover original incrustado, al nivel de referencia y con el volumen maestro. En móvil basta el enlace; sin sonido no se pierde información.
-
-## Attention map de áreas
+## Attention map
 
 <!-- nota:ejemplo atencion -->
+
 ```html
 <figure class="ancho" id="atencion-ejemplo" data-atencion data-unidad="horas">
   <div class="tabla-caja" tabindex="0" role="region" aria-label="Datos del attention map, desplazables">
@@ -2462,42 +1974,24 @@ reproduce el MP3 hover original incrustado, al nivel de referencia y con el volu
 </figure>
 ```
 
-**Cuándo:** ver cómo se reparte atención, tiempo o gasto entre partes de un total. Incluye packages/core/components/attention-map.js;
-packages/core/components/audio.js ofrece hover optativo con el interruptor general. Este treemap recupera el tipo de mapa
-de la referencia; `data-grafica="calor"` sigue disponible para intensidades en una matriz.
+**Use and limits:** Partition a positive total across 1–40 unique categories with finite nonnegative values up to 10^9. Binary area partitioning, not fixed placeholder positions or hierarchical squarification. Zero remains in controls/table with no area. Tiny cells may show a number while full names/values remain outside the map. A 1000×380 viewBox uses a 900 px readable local minimum. Hover, focus and touch expose value, share, total and optional plain-text `data-contexto`; Escape dismisses a hoverable tooltip. The table/selector expose equivalent data. No productivity measurement or app connection. init/get/destroy preserves source; destroy/reinitialize after data changes. Prefer bars for precise rankings.
 
-**Límite:** 1–40 categorías únicas, valores finitos no negativos de hasta 10⁹ y total positivo. Área
-calculada con una partición binaria; no imita posiciones fijas ni soporta jerarquías. Cero no ocupa
-área, pero sigue en la tabla y controles. Las celdas pequeñas muestran un número o sólo su área;
-los nombres y valores completos se conservan fuera del mapa, sin elipsis. Para diferencias
-pequeñas o un ranking preciso, usa barras. ViewBox de 1000×380, mínimo legible de 900 px con
-scroll local. No mide productividad ni conecta aplicaciones. `NotaAtencion.init/get/destroy`
-conserva la tabla original; destruye y reinicia tras cambiar sus datos. Tooltip al pasar el ratón,
-al enfocar un control o al tocar una celda: valor, porcentaje, total y `data-contexto` optativo en
-un texto de la fila (también visible en la tabla). Se puede mantener el puntero sobre el tooltip; Escape lo cierra. Los mismos datos
-siguen disponibles en la tabla y selección. No añadas HTML ni información exclusiva al contexto.
-
-## Marco de líneas desvanecidas
+## Frame
 
 <!-- nota:ejemplo marco -->
+
 ```html
 <aside class="ancho marco-difuso" id="marco-ejemplo">
   <div class="marco-contenido"><h3>Una pausa para mirar la evidencia.</h3><p>Las líneas se cruzan en las esquinas y se pierden hacia los extremos. El contenido permanece completo.</p></div>
 </aside>
 ```
 
-**Cuándo:** enmarcar una composición de cards, una estantería o una invitación. `marco-difuso`
-reserva entre 12 y 32 px dentro de su caja para prolongar las líneas sin desbordar la página.
-Puedes añadirlo a una rejilla existente como `cards-trazadas cards-abiertas marco-difuso`.
+**Use and limits:** Frame a wide composition once. `marco-difuso` reserves 12–32 px inside its box for fading dotted extensions without page overflow. Only decorative pseudo-elements fade; never mask evidence, focus or state borders. Do not compete with a component's existing pseudo-elements. Without masking, a dashed frame remains. No negative-margin imitation.
 
-**Límite:** el desvanecido sólo afecta a dos pseudoelementos decorativos. No borra texto, no
-reemplaza foco ni bordes que comuniquen estado. No combinar con componentes que ya usen ambos
-pseudoelementos; envuélvelos dentro de la caja. Sin máscaras se conserva el marco discontinuo.
-Es una adaptación con espacio reservado, no los márgenes negativos de la referencia.
-
-## Estantería editorial
+## Bookshelf
 
 <!-- nota:ejemplo estanteria -->
+
 ```html
 <section class="ancho marco-difuso" id="estanteria-ejemplo" aria-label="Lecturas guardadas">
   <ul class="estanteria">
@@ -2508,17 +2002,12 @@ Es una adaptación con espacio reservado, no los márgenes negativos de la refer
 </section>
 ```
 
-**Cuándo:** curar libros, documentos, prototipos o recursos con título, estado y razón para
-conservarlos. Las cubiertas de ejemplo son composiciones CSS originales; todos los títulos
-son ficticios. Puedes sustituirlas por una imagen `data:` con dimensiones y alternativa correcta.
+**Use and limits:** Curate books, documents or resources with title, status and a reason to keep them. Example covers are original CSS illustrations with fictional titles. Authorized replacements need embedded data images and alternative text. No fabricated commercial links or remote cover downloads. The visible title repeats any cover information. Mobile stacks each row with a 120 px cover; no automatic animation.
 
-**Límite:** no catálogo comercial, enlaces a libros inventados ni carátulas remotas. Las cubiertas
-no llevan información exclusiva; el título se repite como texto accesible. En móvil cada fila
-se apila y conserva una cubierta de 120 px. No gira ni se anima al leer.
-
-## Invitación editorial tramada
+## Invitation
 
 <!-- nota:ejemplo invitacion -->
+
 ```html
 <section class="ancho marco-difuso" id="invitacion-ejemplo">
   <div class="invitacion" data-invitacion id="invitacion-idea">
@@ -2528,18 +2017,12 @@ se apila y conserva una cubierta de 120 px. No gira ni se anima al leer.
 </section>
 ```
 
-**Cuándo:** cerrar una lectura con una invitación concreta. Incluye packages/core/components/invitation.js; al copiar se
-añaden título del documento y referencia del bloque. La trama de puntos y curvas es CSS estático,
-un tratamiento de semitono independiente del grano de papel de Apariencia.
+**Use and limits:** End a reading with a concrete invitation and a static halftone treatment. invitation.js copies up to 1000 nonempty characters plus document title and block reference; clipboard denial selects text and explains manual copy. It does not submit, store or synchronize messages. init/get/destroy supports mounting. Without JavaScript it is a writing surface, not a working send form. The decorative pattern is not a chart or paper-grain setting.
 
-**Límite:** no envía, guarda ni sincroniza mensajes. El botón dice copiar porque no hay backend.
-Hasta 1000 caracteres; vacío no se copia. Si el portapapeles falla, selecciona el texto para copia
-manual y lo explica. `NotaInvitacion.init/get/destroy` permite montar y retirar la mejora. Sin JS
-queda un espacio para escribir, sin envío. No usar la trama para información ni para simular una gráfica.
-
-## Listas de estado
+## Status list
 
 <!-- nota:ejemplo lista-estados -->
+
 ```html
 <section id="lista-estados-ejemplo">
   <h3>En qué estamos</h3><p class="procedencia">Instantánea ilustrativa · <time datetime="2026-09-14">14 sep 2026</time></p>
@@ -2552,15 +2035,12 @@ queda un espacio para escribir, sin envío. No usar la trama para información n
 </section>
 ```
 
-**Cuándo:** una página «ahora», avance editorial o lista de pendientes a una fecha. Estado por
-símbolo, texto accesible y tachado sólo para lo completado; los pendientes siguen siendo legibles.
+**Use and limits:** Show a dated snapshot of completed and pending work. Symbols, text and strike-through distinguish status; color is supplementary. It is not an editable task manager or checkbox list. Do not derive percentages from qualitative states. Update date and content together.
 
-**Límite:** instantánea de lectura, no checkboxes editables ni gestor de tareas. No asigna progreso
-porcentual a estados cualitativos. Actualiza fecha y contenido juntos; el color nunca es la única señal.
-
-## Lista de proyectos con contexto
+## Project list
 
 <!-- nota:ejemplo lista-proyectos -->
+
 ```html
 <section id="lista-proyectos-ejemplo"><h3>Tres preguntas abiertas</h3>
   <ul class="lista-proyectos">
@@ -2571,15 +2051,12 @@ porcentual a estados cualitativos. Actualiza fecha y contenido juntos; el color 
 </section>
 ```
 
-**Cuándo:** describir frentes paralelos, proyectos o líneas de investigación. Título breve y un
-párrafo por elemento; separación de 24 px inspirada en la lista de proyectos de `/now`.
+**Use and limits:** Describe parallel projects or research directions with a short title and paragraph. Use a table when comparing common attributes. Numbering must not imply priority unless an order is real. Preserve complete names and real destinations.
 
-**Límite:** no reemplaza una tabla cuando se comparan atributos. No numera para sugerir prioridad
-si no existe un orden. Conserva enlaces reales y nombres completos al adaptar el contenido.
-
-## Conversación en el artículo
+## Conversation
 
 <!-- nota:ejemplo conversacion -->
+
 ```html
 <section id="conversacion-ejemplo"><h3>Aclarar la pregunta</h3>
   <ol class="conversacion" aria-label="Diálogo ilustrativo">
@@ -2591,72 +2068,45 @@ si no existe un orden. Conserva enlaces reales y nombres completos al adaptar el
 </section>
 ```
 
-**Cuándo:** mostrar un diálogo, intercambio o pregunta y respuesta que ayude a entender una idea.
-Participantes escritos y orden de lectura natural; no depende de la alineación para identificar voces.
+**Use and limits:** Use a dialogue to explain an idea, with explicit participants and natural reading order. The fixture is fictional, not a quote. Real quotations need provenance. No connected chat, simulated typing, presence or fabricated replies.
 
-**Límite:** ejemplo ficticio, no atribuir citas sin fuente. No chat conectado ni animación de mensajes;
-no falsifica presencia, escritura o respuestas de una persona. Para citas reales añade procedencia.
-
-## Navegación editorial con separadores
+## Navigation
 
 <!-- nota:ejemplo navegacion -->
+
 ```html
 <div class="ancho navegacion-muestra" id="navegacion-ejemplo">
-  <a class="firma-editorial" href="examples/generated/report.html#resumen"><span>Bottifact</span></a>
+  <a class="firma-editorial" href="examples/generated/report.html#resumen"><span>Margen</span></a>
   <nav aria-label="Recorrer el informe"><a href="examples/generated/report.html#resumen">inicio</a><span class="nav-separador" aria-hidden="true">/</span><a href="examples/generated/report.html#evidencia">evidencia</a><span class="nav-separador" aria-hidden="true">/</span><a href="examples/generated/report.html#prototipo">propuesta</a><span class="nav-separador" aria-hidden="true">/</span><a href="examples/generated/report.html#siguientes">siguiente</a></nav>
 </div>
 ```
 
-**Cuándo:** cabecera discreta para un blog o informe. Enlaces ordinarios para documentos; para
-capítulos dinámicos la biblioteca usa `barra capitulos navegacion-editorial`, botones `data-ir`
-y una región `data-capitulos-scroll` para desplazar sólo la navegación. Apariencia queda fuera.
+**Use and limits:** Use ordinary links for documents and `data-ir` buttons for local chapters. `data-capitulos-scroll` scrolls only chapter navigation; appearance stays separate. Preserve contents/progress for long documents and use one chapter navigation instance. Decorative separators do not replace accessible names. Below 700 px chapters move to a second row.
 
-**Límite:** conservar índice y regla de lectura en documentos largos. No mezclar múltiples barras
-`data-ir` en un mismo documento. El separador es decorativo; cada enlace tiene un nombre propio.
-La variante no modifica las barras antiguas. Bajo 700 px, los capítulos pasan a una segunda fila.
-
-## Footer editorial
+## Editorial footer
 
 <!-- nota:ejemplo pie-editorial -->
+
 ```html
 <footer class="ancho pie-editorial" id="pie-editorial-ejemplo">
-  <div><h3>Bottifact</h3><nav aria-label="Más del cuaderno"><a href="examples/generated/report.html#resumen">El informe</a><a href="examples/generated/report.html#evidencia">Las fuentes y sus límites</a><a href="examples/generated/report.html#siguientes">Lo que sigue</a></nav></div>
+  <div><h3>Margen</h3><nav aria-label="Más del cuaderno"><a href="examples/generated/report.html#resumen">El informe</a><a href="examples/generated/report.html#evidencia">Las fuentes y sus límites</a><a href="examples/generated/report.html#siguientes">Lo que sigue</a></nav></div>
   <div class="pie-carta"><h3>Una nota para quien viene después.</h3><p>Dejamos las preguntas, las fuentes y las decisiones a la vista. Que la siguiente versión pueda comenzar desde aquí.</p><p><em>Este cuaderno sigue abierto.</em></p></div>
   <div class="pie-colofon"><span>Edición ilustrativa · <time datetime="2026-09-14">14 sep 2026</time></span><span>Lectura · evidencia · conversación</span></div>
 </footer>
 ```
 
-**Cuándo:** cerrar con identidad, enlaces útiles, una nota editorial y fecha. Dos columnas en
-escritorio, apiladas en móvil. También admite un botón `data-audio-global` si el artefacto no tiene
-otro control de Sonidos; su estado lo gestiona packages/core/components/audio.js.
+**Use and limits:** Close with identity, useful links, editorial context and a real date where known. Two columns stack on mobile. An optional global sound button is appropriate only when another sound control is absent. Do not invent contact details, commit statistics or licensing. The main footer follows content and does not cover the final section.
 
-**Límite:** sin direcciones, estadísticas de commits ni licencia inventadas. Usa fecha, responsable
-y licencia reales cuando existan. Esta receta dentro de un capítulo es una muestra; el footer
-principal debe quedar después del contenido. No queda pegado detrás del documento ni tapa el final.
+## Compose a standard artifact
 
-## Componer un artefacto estándar
+Use the [artifact contract](artifact-contract.md) for new documents. Appearance, optional sound, floating comments and navigation are embedded once; do not insert duplicates in content. Appearance separates Themes, Typography and Sound. The sound tab owns preview, volume (initially 65%) and state. Preview activates the reference click; toggling preference alone does not play audio. Browser activation failure keeps audio inactive and explains retry. Pencil sound tracks its stroke and cancels with it. Enabled preference is not proof of audible output.
 
-Las recetas anteriores son piezas de contenido. Para un nuevo artefacto completo de Angel,
-usa [el contrato de composición](artifact-contract.md): incluye HTML mínimo completo para copiar,
-comandos de una página y capítulos, criterio y límites del generador. La apariencia circular,
-el sonido optativo y los comentarios flotantes se incorporan una sola vez automáticamente.
-El índice se deriva de los h2 y la regla acompaña cada página. No insertes otra receta de
-apariencia o revisión dentro del contenido de esa base.
+Choose components for editorial usefulness. Structural validation does not prove hearing, screen-reader output or responsive layout, and building does not update already published HTML. Standalone comments persist locally when storage is available, with a memory-only fallback; connected comments follow portal permissions.
 
-Apariencia organiza Temas / Letras / Sonido y conserva el interruptor en Sonido. Sonido ofrece Probar sonido, volumen
-inicial 65 % y estado. Probar sonido activa y reproduce el clic original de cmrg.me; el interruptor por sí solo
-no emite audio. Un error al iniciar Web Audio mantiene el contexto inactivo y explica el reintento; la preferencia habilitada no equivale a salida audible.
-La señal de lápiz dura lo que el trazo y se cancela con él. Estos controles están en el HTML
-completo de la receta `apariencia`, en sus tres variantes; la llave circular es la predeterminada.
-
-**Cuándo:** artículos, informes y prototipos entregados como artefactos HTML de Angel. Selecciona
-las piezas de contenido por utilidad; los controles comunes deben estar presentes en cada entrega.
-**Límite:** el validador estructural no prueba audición, lector de pantalla ni layout. Tampoco
-actualiza HTML publicado. Sonido habilitado inicialmente, silencio persistido, pausa al ocultar y comentarios en memoria solamente.
-
-## Actividad con contexto editorial
+## Activity
 
 <!-- nota:ejemplo actividad-editorial -->
+
 ```html
 <section class="pieza amplio actividad-editorial" id="actividad-editorial-ejemplo" data-actividad data-actividad-tabla="actividad-editorial-datos">
   <div><p class="ceja">Actividad de ejemplo / ocho semanas</p><h3>Pequeños avances,<br>una historia visible.</h3><p>Cada cuadrado representa una semana. La intensidad indica cuántas acciones se registraron; no mide calidad ni productividad.</p><a class="enlace-icono" href="https://www.cmrg.me/now">Ver la referencia editorial ↗</a></div>
@@ -2667,13 +2117,12 @@ actualiza HTML publicado. Sonido habilitado inicialmente, silencio persistido, p
   </tbody></table></div></details>
 ```
 
-**Cuándo:** introducir actividad reciente con relato y conteos consultables. packages/core/components/editorial-pieces.js deriva las celdas, suma y escala desde la tabla; ratón, foco y clic muestran el contexto.
+**Use and limits:** Introduce recent activity with contextual counts derived from the source table. 1–52 periods, integer counts 0–1000000. Equal cell size represents equal periods; intensity represents count, not area or productivity. Zero has its own legend sample; positive bins derive from the observed maximum. Hover, focus and click expose detail. `data-actividad-tabla` points to a sibling table outside the frame: copy both blocks and update IDs together. The table prints in full; missing targets show an error. No GitHub feed.
 
-**Límite:** 1–52 períodos, conteos enteros 0–1.000.000. Tamaño igual por período, intensidad por cantidad; no área proporcional, ni mapa de calor de dos variables. No conecta GitHub ni atribuye productividad. Los intervalos positivos se calculan desde el máximo y se recortan al valor alcanzado; el cero tiene su propia muestra. Conserva tabla, unidad y fechas reales al adaptar. `data-actividad-tabla` nombra el ID de los datos, hermanos del marco: copia ambos bloques y cambia ambos IDs juntos. La tabla queda fuera de la figura y visible al imprimir. Sin ese atributo se conserva la compatibilidad con tablas dentro de la pieza. Un destino ausente muestra un error, nunca datos inventados.
-
-## Código numerado y líneas destacadas
+## Code lines
 
 <!-- nota:ejemplo codigo-lineas -->
+
 ```html
 <figure class="ancho" id="codigo-lineas-ejemplo"><div class="codigo codigo-editorial"><div class="cab"><span>preparar_resumen.py · Python</span><button class="boton-icono-copia" type="button" data-copiar="codigo-lineas-fuente" aria-label="Copiar código Python" title="Copiar código"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 8h12v13H8zM16 8V3H4v13h4"/></svg></button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código Python con líneas 3 y 6 destacadas, desplazable"><code id="codigo-lineas-fuente" data-lenguaje="python" data-lineas data-destacar="3,6">def resumir(registros):
     cantidades = [fila["cantidad"] for fila in registros]
@@ -2683,24 +2132,22 @@ actualiza HTML publicado. Sonido habilitado inicialmente, silencio persistido, p
     return {"total": total, "promedio": total / len(cantidades)}</code></pre></div><figcaption>Ejemplo ilustrativo. Las líneas 3 y 6 explican el cálculo; el botón copia el código sin números de línea.</figcaption></figure>
 ```
 
-**Cuándo:** explicar una sección precisa de código, manteniendo lectura completa. packages/core/components/code.js colorea el bloque y data-destacar admite números o intervalos, por ejemplo 3,6-8. El icono usa data-copiar y conserva nombre accesible y estado de resultado.
+**Use and limits:** Explain precise code lines with code.js and `data-destacar`, such as `3,6-8`. `data-lineas` starts from plain code text; do not add manual token spans. CSS line numbers never enter copied text. Unhighlighted lines remain readable. Copy has an accessible name and result state. This is lexical highlighting, not an editor/compiler; wide code scrolls locally.
 
-**Límite:** resaltado léxico, no un compilador ni editor. Esta variante parte de texto plano dentro de code: no añadas marcado manual a data-lineas. La numeración se dibuja con CSS y no entra en textContent ni en la copia. No atenúa las líneas no destacadas; todas conservan contraste. Código ancho se desplaza localmente.
-
-## Enlaces con icono y código en línea
+## Icon links
 
 <!-- nota:ejemplo enlaces-icono -->
+
 ```html
 <section class="pieza" id="enlaces-icono-ejemplo"><h3>Una referencia en medio del argumento.</h3><p>Consulta <a class="enlace-icono" href="https://www.cmrg.me/blog/react-19-part-2-the-code"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 4H4v16h16v-4M13 3h8v8M21 3 10 14"/></svg>el artículo de referencia</a> antes de interpretar <code class="codigo-en-linea">data-lineas</code>. Para una ruta local, <code class="codigo-en-linea">scripts/validate.py</code> nombra exactamente qué ejecutar.</p></section>
 ```
 
-**Cuándo:** integrar una fuente, repositorio o archivo en el párrafo. Iconos SVG pequeños acompañan una etiqueta completa; código en línea queda delimitado con puntos.
+**Use and limits:** Add a small decorative SVG beside a complete source/repository/file link label. Icons do not replace the name or promise a different action. No external logo fetch. Allow long URLs/paths to wrap. Multiline code belongs in a code block, not an inline chip.
 
-**Límite:** el icono no sustituye el nombre del enlace ni promete una acción distinta del destino. No descarga logotipos externos. No fuerces nowrap: URLs y rutas largas pueden partirse. Un bloque de varias líneas pertenece al componente de código, no a un chip.
-
-## Avisos con icono animado
+## Animated callouts
 
 <!-- nota:ejemplo avisos-animados -->
+
 ```html
 <div class="pieza" id="avisos-animados-ejemplo">
   <aside class="aviso aviso-esquina mal" data-aviso-animado aria-labelledby="aviso-cuidado-titulo"><span class="num" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 4v10M12 17v2"/></svg></span><div><p class="titulo" id="aviso-cuidado-titulo">Cuidado</p><p>Estos conteos son ilustrativos. Antes de tomar una decisión, reemplázalos por una fuente verificable.</p></div></aside>
@@ -2708,13 +2155,12 @@ actualiza HTML publicado. Sonido habilitado inicialmente, silencio persistido, p
 </div>
 ```
 
-**Cuándo:** señalar una precaución o contexto breve dentro de un artículo. La variante aviso-esquina reserva espacio al icono; packages/core/components/editorial-pieces.js añade dos pulsos al entrar, y permite repetir al pasar el ratón o enfocar contenido interior. También admite las variantes ojo y bien existentes.
+**Use and limits:** Mark brief caution or context with a corner icon that reserves its own space. editorial-pieces.js adds two 1000 ms pulses on entry and optional replay on hover/focus. Motion stops when hidden, outside view, reduced or destroyed. No RAF or sound. Static notices must not use role=alert; meaning does not depend on animation. Existing notice variants remain compatible.
 
-**Límite:** la lectura no depende del pulso. Son 2 ciclos de 1000 ms; se cancela al salir, ocultar la pestaña, reducir movimiento o destruir la instancia. No usa RAF ni sonido. No uses role=alert para avisos estáticos: evita anuncios automáticos innecesarios. El componente original aviso conserva su forma.
-
-## Cronología vertical
+## Timeline
 
 <!-- nota:ejemplo trayectoria -->
+
 ```html
 <section class="pieza" id="trayectoria-ejemplo"><h3>La trayectoria de una idea.</h3><p class="procedencia">Proyecto ficticio · hitos de ejemplo, del más reciente al más antiguo.</p><ol class="cronologia cronologia-vertical">
 <li class="actual"><h3>Una prueba con lectores</h3><p class="periodo"><time datetime="2026-09">Septiembre de 2026</time> · etapa actual</p><p>Observar dónde se pierde el contexto y qué hace falta para decidir con confianza.</p></li>
@@ -2723,13 +2169,12 @@ actualiza HTML publicado. Sonido habilitado inicialmente, silencio persistido, p
 </ol></section>
 ```
 
-**Cuándo:** contar una trayectoria profesional, decisiones o hitos de un proyecto. Fecha, título y explicación siguen el mismo eje; el punto de la etapa actual se distingue por color y texto.
+**Use and limits:** Present actual milestones with date, title and explanation on one axis. Distinguish the current point with words and color. Vertical spacing is editorial, not proportional time. The line fades from accent to secondary ink at the end; evidence and older entries remain fully legible. Use duration/time charts when elapsed time matters.
 
-**Límite:** el espacio entre hitos es editorial, no proporcional al tiempo. Para medir duración, usa una serie temporal o una gráfica de etapas. La línea continua pasa de acento a tinta secundaria y se desvanece al final; el degradado sólo afecta la línea, nunca la evidencia. No oculta los hitos antiguos con blur. La cronología anotada anterior sigue disponible; esta es una variante vertical estática.
-
-## Galería deslizable
+## Gallery
 
 <!-- nota:ejemplo galeria -->
+
 ```html
 <section class="pieza amplio galeria-fotografica" id="galeria-ejemplo" data-galeria><div class="galeria-pista" data-galeria-pista tabindex="0" role="region" aria-label="Galería de cuatro ilustraciones, desplazable horizontalmente">
 <figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNDAwIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzI2M2IzNyIvPjxjaXJjbGUgY3g9IjEzMCIgY3k9IjEwMCIgcj0iNjIiIGZpbGw9IiNkOGI5ODgiLz48cGF0aCBkPSJNMCAzMzAgMTYwIDE0MCAzMTAgMzAwIDQ1NSAxMzAgNjAwIDI3MFY0MDBIMFoiIGZpbGw9IiNhY2MzYTQiLz48cGF0aCBkPSJNMCAzNzUgMTgwIDMwMCAzNDAgMzcwIDUwMCAyNjUgNjAwIDMxMFY0MDBIMFoiIGZpbGw9IiMyNjNiMzciIG9wYWNpdHk9Ii42Ii8+PC9zdmc+" alt="Relieve: ilustración geométrica de paisaje" width="600" height="400" loading="lazy"><figcaption>Relieve · ilustración, 2026</figcaption></figure>
@@ -2739,23 +2184,19 @@ actualiza HTML publicado. Sonido habilitado inicialmente, silencio persistido, p
 </div><p class="sr-only" data-galeria-estado role="status">Desliza para recorrer las cuatro ilustraciones.</p></section>
 ```
 
-**Cuándo:** mostrar fotografías, capturas, evidencia de campo o etapas visuales. La variante `galeria-fotografica` usa desplazamiento nativo con ratón/trackpad, tacto o flechas del teclado tras enfocar la región. Sin encabezado interno, botones ni avance automático; pies breves dentro de la imagen, degradado completo, contorno tenue y sombra. Ratón: cursor grab y arrastre con captura de puntero; tacto conserva scroll nativo. Las esquinas usan superellipse(1.6) con radio 28px, como /work; si el navegador no admite esa curva, el radio circular baja a 18px. packages/core/components/editorial-pieces.js anuncia la posición; sin JS se puede recorrer igualmente. Las galerías anteriores con controles siguen funcionando.
+**Use and limits:** Show embedded photos/captures with native horizontal scrolling via trackpad, touch or focused keyboard arrows. The photographic variant has no internal heading, controls or autoplay; short captions overlay a full-image gradient, subtle outline and shadow. Pointer drag uses grab/capture; touch stays native. Superellipse(1.6) corners use 28 px with an 18 px circular fallback. Position announcements enhance rather than replace native scrolling. Use data images and alt text; fixtures are illustrations, not the user's photos. Cover crops may hide edges; use contain for evidence requiring the full image. Long explanations belong outside. No zoom/360 viewer. Reduced motion also disables legacy smooth controls. init/get/destroy preserves content.
 
-**Límite:** no autoavanza, no amplía imágenes ni emula un visor 360°. Las muestras son ilustraciones, no fotografías reales de Angel. Imágenes data: URI y alt; no enlazar carátulas o fotos remotas. Recorta visualmente con object-fit:cover: para capturas cuyo borde importa usa contain. Los pies breves se superponen en una fila de rejilla y pueden crecer sin recortarse; una explicación extensa pertenece fuera de la imagen. El degradado ocupa la imagen completa, no una banda negra detrás del pie. No hay movimiento programado en esta variante. Movimiento reducido cancela el desplazamiento suave de los controles antiguos. init/get/destroy permite añadir o retirar el componente.
+## Liftit, Blueprint and Hacker examples
 
-## Presentaciones Liftit, Blueprint y Hacker
+Theme family and light/dark/system mode are independent. Components inherit tokens rather than needing separate markup per theme. Use the generator options below for initial appearance. Liftit supports logistics, Blueprint architectural specifications, and Hacker code/runbooks. Color never replaces status words; a Blueprint grid is not a chart scale. Do not attribute fictional data to a company.
 
-La receta `apariencia` ofrece 15 familias con muestras y modos Claro / Oscuro / Sistema. Los
-componentes de todas las familias usan sus tokens; no hace falta copiar una variante de cada tabla.
-Para empezar un documento con una presentación concreta usa el generador estándar:
+Blueprint uses a static 24/120px grid omitted in print; Hacker does not execute commands or blink. Brand sources and current token choices live in brands.md and themes.md. Declared initial presentation is overridden by later route-local preferences; changing the route starts from declared defaults. Without an initial presentation, global preferences remain. Complete examples are in examples/generated/{liftit,blueprint,hacker,guide}.html.
 
 ```bash
 python3 scripts/create_artifact.py --contenido operacion.html --titulo 'Lectura de operación' --tema liftit --modo system --estilo sobrio --salida examples/generated/report.html
 python3 scripts/create_artifact.py --contenido especificacion.html --titulo 'Plano del sistema' --tema blueprint --modo dark --estilo tecnico --salida plano.html
 python3 scripts/create_artifact.py --contenido runbook.html --titulo 'Diagnóstico y recuperación' --tema hacker --modo dark --estilo tecnico --salida diagnostico.html
 ```
-
-En capítulos, la configuración completa es:
 
 ```json
 {
@@ -2769,25 +2210,10 @@ En capítulos, la configuración completa es:
 }
 ```
 
-**Cuándo:** Liftit para operación/logística; Blueprint para arquitectura, planos conceptuales y
-especificaciones; Hacker para código, terminal, runbooks e incidentes. El color no impone una
-estructura ni reemplaza las palabras de estado. Se pueden elegir desde Apariencia en cualquier pieza.
-
-**Cuándo no:** no uses el verde de Hacker como única prueba de éxito, la cuadrícula de Blueprint
-como escala de una gráfica ni el nombre Liftit para atribuir datos ficticios a la empresa.
-
-**Límites:** Liftit es una adaptación editorial de #0051F4 y #2A2D46 medidos en su web, sin sustituir
-las fuentes incrustadas por fuentes propietarias. Blueprint dibuja una cuadrícula estática de 24/120 px
-que se omite en impresión. Hacker no simula una terminal ejecutable ni incluye parpadeos. La
-presentación inicial guarda cambios posteriores por ruta del archivo; al renombrarlo se inicia con
-sus valores declarados. Sin parámetros se conserva la preferencia global original.
-
-Los ejemplos completos están en [examples/generated/liftit.html](../examples/generated/liftit.html), [examples/generated/blueprint.html](../examples/generated/blueprint.html) y
-[examples/generated/hacker.html](../examples/generated/hacker.html). La guía con todas las recetas y combinaciones está en [examples/generated/guide.html](../examples/generated/guide.html).
-
-## Globo operativo de Colombia
+## Fleet globe
 
 <!-- nota:ejemplo globo-flota -->
+
 ```html
 <figure class="amplio" id="flota-colombia" data-flota>
   <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Corte de flota de ejemplo, desplazable">
@@ -2804,13 +2230,12 @@ Los ejemplos completos están en [examples/generated/liftit.html](../examples/ge
 </figure>
 ```
 
-**Cuándo:** Comparar ciudades, seleccionar vehículos y explicar un corte de operación con movimiento demostrativo. Alterna Colombia/Globo o Acercar ruta; seleccionar un vehículo centra sólo su conexión. Usa la lista para detalle y la tabla para valores exactos.
+**Use and limits:** Explore a declared operational snapshot across Colombian cities with selectable vehicles. Load one Three 0.160.1, geography, globe and fleet. One instance; 1–12 vehicles with unique IDs, distinct endpoints, valid Colombian coordinates, progress 0–100, nonnegative integer orders and a zoned ISO timestamp. Routes are schematic arcs, never streets, GPS, ETA or measured distance. Drag rotates; Shift+drag pans; focused wheel/buttons and pinch zoom. Arrows rotate, Shift+arrows pan, +/- zoom and Home resets. No inertia/camera animation. Rear-hemisphere labels/vehicles hide; collision-prone labels remain accessible in route focus and list. Manual exploration can move endpoints out of view; reset restores framing. Playback demonstrates positions for 45 seconds without sound or delivery-state updates, pausing when hidden and respecting reduced motion/manual progress. A historical snapshot must not be labeled live. Without WebGL retain list/detail/table. `NotaFlota.init/get`, seek(0…100), select(id) and destroy manage lifecycle; destroy/update/reinitialize for another snapshot.
 
-**Límite:** Incluye Three 0.160.1 una vez, packages/core/components/geography.js, packages/core/components/globe.js y packages/core/components/fleet.js. Una instancia por figura. 1–12 vehículos, IDs únicos, origen/destino distintos, coordenadas en la vista de Colombia, avance 0–100, pedidos enteros no negativos y fecha ISO con zona. Las rutas son arcos esquemáticos; no carreteras, GPS, ETA ni distancias. El contorno continental generalizado no incluye detalle de islas. El globo permite girar con arrastre, mover con Mayús + arrastre y acercar con botones o rueda tras enfocarlo; en táctil, pellizco. Flechas giran, Mayús + flechas desplazan, +/− acercan y Home restablece. No hay inercia ni animación de cámara. Al girar se ocultan rótulos y vehículos del hemisferio posterior. Colombia empieza centrada; la vista Acercar ruta amplía la conexión elegida y oculta las otras. El contorno nacional puede continuar fuera de ese acercamiento, pero ambos extremos permanecen visibles en los encuadres iniciales. La exploración manual puede sacarlos de la vista; Restablecer vista recupera el encuadre. En móvil hay desplazamiento horizontal local, centrado al abrir. El globo general oculta los rótulos de ciudades y camiones para no superponerlos. Si los rótulos no caben sin colisiones en Colombia, se consultan en Acercar ruta y la lista; no se recortan con elipsis. Reproducir mueve posiciones durante 45 s, sin sonido ni cambios de estado; al llegar al final no confirma entregas. Pausa fuera de pantalla/documento oculto, cancela RAF con movimiento reducido y permite avance manual. Sin WebGL conserva lista, detalle y tabla. NotaFlota.init(raíz) es idempotente; get(figura).seek(0…100), select(id) y destroy(). Para otro corte, destruye, actualiza la tabla e inicializa; no consulta ni conecta servicios en vivo. No presenta una hora antigua como «ahora». Sólo usa datos autorizados en integraciones futuras.
-
-## Ficha de entrega e hitos
+## Delivery summary
 
 <!-- nota:ejemplo ficha-entrega -->
+
 ```html
 <section class="pieza" id="ficha-entrega-ejemplo">
   <p class="ceja">Pedido de ejemplo / DEMO-018</p><h3>Estar cerca no es haber entregado.</h3>
@@ -2824,13 +2249,12 @@ Los ejemplos completos están en [examples/generated/liftit.html](../examples/ge
 </section>
 ```
 
-**Cuándo:** Explicar último evento conocido y evidencia pendiente de un pedido. Complementa el mapa con recepción y prueba de entrega.
+**Use and limits:** Explain a delivery's last known event and missing evidence. Use real zoned timestamps and stable IDs; unknown receipt/signature/time remains pending. Static HTML does not track, upload files or store signatures. A nearby vehicle is not proof of delivery. Keep a few milestones and one current status.
 
-**Límite:** HTML estático. Copia IDs únicos, fechas reales con zona y estado escrito. No hace seguimiento, carga archivos ni almacena firmas. No confundir cercanía del vehículo con pedido entregado. Si no hay un evento, escribir pendiente; no inventar hora o receptor. Usa pocos hitos y conserva un solo estado actual.
-
-## Cola de despacho y novedades
+## Incident queue
 
 <!-- nota:ejemplo cola-novedades -->
+
 ```html
 <section class="pieza amplio" id="cola-novedades-ejemplo" data-explorador data-unidad="pedidos">
 <h3>Despacho y novedades</h3><p>Tres vehículos ficticios del corte. Filtra Con novedad, agrupa por ciudad y ordena los pedidos para revisar a quién contactar.</p>
@@ -2843,27 +2267,18 @@ Los ejemplos completos están en [examples/generated/liftit.html](../examples/ge
 <p data-explorador-estado role="status">3 vehículos de ejemplo.</p><div class="tabla-caja" tabindex="0" role="region" aria-label="Registros ordenables y agrupables, desplazables"><table><caption>Vehículos de ejemplo · pedidos asociados al corte</caption><thead><tr><th scope="col"><details class="control-menu tabla-orden"><summary>Vehículo <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Vehículo"><button type="button" data-orden-col="0" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="0" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="0" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th><th scope="col"><details class="control-menu tabla-orden"><summary>Ciudad <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Ciudad"><button type="button" data-orden-col="1" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="1" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="1" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th><th scope="col"><details class="control-menu tabla-orden"><summary>Estado <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Estado"><button type="button" data-orden-col="2" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="2" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="2" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th><th scope="col"><details class="control-menu tabla-orden"><summary>Pedidos <span data-indicador-orden aria-hidden="true">↕</span></summary><div class="control-panel" tabindex="0" role="region" aria-label="Ordenar por Pedidos"><button type="button" data-orden-col="3" data-direccion="1" data-cerrar-menu>↑ Ascendente</button><button type="button" data-orden-col="3" data-direccion="-1" data-cerrar-menu>↓ Descendente</button><button type="button" data-orden-col="3" data-direccion="0" data-cerrar-menu>Restablecer orden</button></div></details></th></tr></thead><tbody><tr><th scope="row">LFT-021</th><td>Medellín</td><td>En ruta</td><td data-valor="18">18</td></tr><tr><th scope="row">LFT-034</th><td>Cali</td><td>Con novedad</td><td data-valor="12">12</td></tr><tr><th scope="row">LFT-056</th><td>Barranquilla</td><td>En ruta</td><td data-valor="9">9</td></tr></tbody></table></div></section>
 ```
 
-**Cuándo:** Filtrar vehículos con novedad, agrupar por ciudad y ordenar pedidos para revisar la operación. Reutiliza el explorador tabular, con datos de logística. `data-unidad="pedidos"` nombra el total; sin ese atributo el explorador conserva COP para los ejemplos financieros existentes.
+**Use and limits:** Filter operational exceptions, group by city and sort orders using the shared data explorer. `data-unidad=pedidos` declares the total; legacy financial examples default to COP. This is a static snapshot, not updated by fleet playback. Keep units and explicit status text. Explorer limits, mobile cards, selection and export semantics apply; no dispatch or assignment actions are executed.
 
-**Límite:** Incluye packages/core/components/controls.js y packages/core/components/data-explorer.js además de la base. Corte estático con las mismas cifras iniciales del ejemplo de flota; la simulación no modifica esta tabla. Buscar/filtrar/agrupar no asigna conductores ni envía mensajes. No calcula prioridad automáticamente. Identificar novedad, responsable y siguiente acción en una implementación operativa real. destroy/init del explorador permite sustituir el corte; no hay suscripción en vivo.
+## Compact interface conventions
 
-## Convenciones de interfaz compacta
+Replay, copy, device, rotate and fit actions use icons with accessible names, tooltips and visible focus. Decorative SVG is aria-hidden. Preserve usable touch targets and reduced-motion behavior. Prototype presets include 390/768/1024px; 320px and available width remain in the menu. Filename headers stay visible; language-only code headers are compacted without changing copied text.
 
-Las recetas actuales usan iconos para repetir apuntes, copiar, cambiar dispositivo, rotar y
-ajustar. Siempre conserva aria-label, title y foco visible; un SVG es aria-hidden. Repetir
-mantiene un icono de 18 px en un botón de 32 px (44 px en táctil), incluso con movimiento
-reducido. El visor da acceso directo a 390/768/1024 px; 320 y ancho disponible siguen en su menú.
-Los controles antiguos siguen siendo reconocidos por los módulos.
+The comment composer prioritizes author, draft and send, with context/type/session under an optional disclosure. Draft text grows before scrolling locally. Appearance is a searchable compact list with favorites/category and an independent mode control. Sound belongs exclusively to the Sound tab. Table tools share a button group while retaining named actions. Compactness never permits removing accessible labels.
 
-Las cabeceras de código con nombre de archivo se conservan; las que sólo nombran el lenguaje
-se compactan con el icono superpuesto y espacio reservado. El texto copiado no cambia. El
-editor de comentarios crece hasta 160 px de entrada y después tiene scroll local; su contexto
-se abre voluntariamente. Apariencia reserva Temas a paletas: sonido, prueba y volumen están
-sólo en Sonido. No interpretes esos cambios como permiso para quitar nombres accesibles.
-
-## Relato visual por pasos
+## Visual story
 
 <!-- nota:ejemplo relato-visual -->
+
 ```html
 <figure class="amplio" id="evidencia-relato" data-evidencia="relato" data-unidad="horas">
 <div class="tabla-caja densa" role="region" tabindex="0" aria-label="Cien horas de trabajo, datos desplazables">
@@ -2877,17 +2292,12 @@ sólo en Sonido. No interpretes esos cambios como permiso para quitar nombres ac
 </figure>
 ```
 
-**Cuándo:** Acompañar un argumento con una figura compartida. El scroll selecciona el paso en escritorio; los botones y el selector permiten fijarlo manualmente.
+**Use and limits:** Connect a narrative to one shared figure with 2–8 rows: name, nonnegative magnitude and explanation, each text up to 100 characters. Desktop scroll selects a step; controls allow explicit selection. Mobile restores normal flow and written values. Shared zero-based scale, no data mutation or scroll hijacking. Without JavaScript retain the table. IntersectionObserver is cleaned up; no animation loop. Source data stays in one table (or the image zone list). Declare data-unidad (1–40 characters); numeric magnitude is limited to 10^12. Views round to eight significant digits while source values remain. Load evidence.js; NotaEvidencia.init/get/destroy owns lifecycle. Destroy before changing the source. No network or external libraries; data remains if enhancement fails.
 
-**Cuándo no y límite:** 2–8 filas: nombre, magnitud no negativa y explicación breve (hasta 100 caracteres cada texto). Escala común con cero. En móvil la figura vuelve al flujo; cada paso conserva su dato escrito. No cambia cifras ni altera el scroll del lector. Sin JavaScript queda la tabla. No hace transiciones ni RAF; usa IntersectionObserver, que se desconecta al destruir la instancia.
-
-**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
-
-**Dependencia:** packages/core/components/evidence.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
-
-## Flujos Sankey
+## Sankey
 
 <!-- nota:ejemplo sankey -->
+
 ```html
 <figure class="amplio" id="evidencia-sankey" data-evidencia="sankey" data-unidad="millones COP">
 <div class="tabla-caja densa" role="region" tabindex="0" aria-label="Destino de ingresos de ejemplo, datos desplazables">
@@ -2904,17 +2314,12 @@ sólo en Sonido. No interpretes esos cambios como permiso para quitar nombres ac
 </figure>
 ```
 
-**Cuándo:** Comparar cómo se distribuye una magnitud entre orígenes y destinos. El grosor representa el valor con una escala compartida; el selector revela valor y participación.
+**Use and limits:** Compare nonnegative flows with a common thickness scale. Two columns only, 1–24 connections, at most eight nodes per column and positive total. Nodes derive from connections; zero has no thickness. No intermediate stages, cycles, negative values, mixed currencies or crossing optimization. Use the table when dense. Conceptual reference: https://github.com/d3/d3-sankey ; the implementation is local and does not load D3. Source data stays in one table (or the image zone list). Declare data-unidad (1–40 characters); numeric magnitude is limited to 10^12. Views round to eight significant digits while source values remain. Load evidence.js; NotaEvidencia.init/get/destroy owns lifecycle. Destroy before changing the source. No network or external libraries; data remains if enhancement fails.
 
-**Cuándo no y límite:** 1–24 conexiones, hasta ocho nodos por columna, valores no negativos y total positivo. Esta versión es de dos columnas: no admite etapas intermedias, ciclos, cantidades negativas o monedas mezcladas. Nodos calculados desde sus conexiones, cero sin grosor. No ordena para minimizar cruces; usa la tabla cuando haya demasiados. Referencia conceptual: https://github.com/d3/d3-sankey ; implementación local sin D3 ni descarga.
-
-**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
-
-**Dependencia:** packages/core/components/evidence.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
-
-## Cohortes de recurrencia
+## Cohorts
 
 <!-- nota:ejemplo cohortes -->
+
 ```html
 <figure class="amplio" id="evidencia-cohortes" data-evidencia="cohortes" data-unidad="clientes">
 <div class="tabla-caja densa" role="region" tabindex="0" aria-label="Clientes activos por cohorte, datos desplazables">
@@ -2929,17 +2334,12 @@ sólo en Sonido. No interpretes esos cambios como permiso para quitar nombres ac
 </figure>
 ```
 
-**Cuándo:** Comparar recurrencia de grupos con distintas fechas de entrada. Cada celda muestra recuento, base y porcentaje; no convierte lo pendiente en cero.
+**Use and limits:** Compare recurrence using 1–20 cohorts and 1–12 periods with labels up to 24 characters. Positive integer bases; integer counts between zero and base. Pending cells (`data-estado=pendiente`) must trail each row and are not zero. Exact count/base/percentage remain visible. Five intensity ranges: [0,20), [20,40), [40,60), [60,80), [80,100]%. No event-to-cohort calculation or incompatible period comparisons. Source data stays in one table (or the image zone list). Declare data-unidad (1–40 characters); numeric magnitude is limited to 10^12. Views round to eight significant digits while source values remain. Load evidence.js; NotaEvidencia.init/get/destroy owns lifecycle. Destroy before changing the source. No network or external libraries; data remains if enhancement fails.
 
-**Cuándo no y límite:** 1–20 cohortes y 1–12 períodos con cabeceras de hasta 24 caracteres. Base entera positiva, recuentos enteros entre cero y la base. Las celdas con data-estado="pendiente" deben quedar al final de cada fila. No calcula cohortes desde eventos, ni compara meses de distinta definición. Cinco intensidades: [0,20), [20,40), [40,60), [60,80), [80,100] %. Los porcentajes exactos siempre se escriben.
-
-**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
-
-**Dependencia:** packages/core/components/evidence.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
-
-## Sensibilidad de escenarios
+## Sensitivity
 
 <!-- nota:ejemplo sensibilidad -->
+
 ```html
 <figure class="amplio" id="evidencia-sensibilidad" data-evidencia="sensibilidad" data-unidad="millones COP">
 <p>Resultado base: <strong data-evidencia-base data-valor="100">100</strong> millones COP.</p>
@@ -2954,17 +2354,12 @@ sólo en Sonido. No interpretes esos cambios como permiso para quitar nombres ac
 </figure>
 ```
 
-**Cuándo:** Ver qué supuesto modifica más el resultado, con una base común y extremos A/B identificados por círculo/cuadrado. Seleccionar un supuesto muestra sus cambios absolutos.
+**Use and limits:** Compare assumption changes against one visible baseline with declared A/B outcomes. 1–16 rows sorted by absolute B−A range; A need not be the smaller outcome. Shapes distinguish extremes and selection exposes absolute change. No financial modeling, probabilities, interpolation or combined effects. Reset changes inspection, not source data. Source data stays in one table (or the image zone list). Declare data-unidad (1–40 characters); numeric magnitude is limited to 10^12. Views round to eight significant digits while source values remain. Load evidence.js; NotaEvidencia.init/get/destroy owns lifecycle. Destroy before changing the source. No network or external libraries; data remains if enhancement fails.
 
-**Cuándo no y límite:** 1–16 filas, un resultado base visible y dos resultados declarados por supuesto. Ordena por amplitud absoluta B−A; no presupone que A sea el menor resultado. No calcula un modelo financiero, probabilidades, interpolaciones o efectos conjuntos. El botón restablece la consulta, no modifica la tabla fuente.
-
-**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
-
-**Dependencia:** packages/core/components/evidence.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
-
-## Gantt editorial
+## Gantt
 
 <!-- nota:ejemplo gantt -->
+
 ```html
 <figure class="amplio" id="evidencia-gantt" data-evidencia="gantt" data-unidad="días">
 <div class="tabla-caja densa" role="region" tabindex="0" aria-label="Hoja de ruta de una revisión, datos desplazables">
@@ -2980,17 +2375,12 @@ sólo en Sonido. No interpretes esos cambios como permiso para quitar nombres ac
 </figure>
 ```
 
-**Cuándo:** Explicar fechas, trabajo simultáneo, responsables y dependencias fin→inicio. El estado se escribe y lleva símbolo; nunca se infiere del día actual.
+**Use and limits:** Show 1–24 tasks with actual dates, owners and finish-to-start dependencies. Unique ASCII IDs up to 12 characters; valid ISO dates over at most ten years. Comma-separated dependency IDs or an em dash for none. Reject cycles, absent IDs and dependencies ending after their successor starts. Explicit text/symbol status, never inferred from today. Duration is elapsed time, not inclusive working days. No holiday calendar, critical-path calculation or scheduler. Source data stays in one table (or the image zone list). Declare data-unidad (1–40 characters); numeric magnitude is limited to 10^12. Views round to eight significant digits while source values remain. Load evidence.js; NotaEvidencia.init/get/destroy owns lifecycle. Destroy before changing the source. No network or external libraries; data remains if enhancement fails.
 
-**Cuándo no y límite:** 1–24 tareas, IDs únicos ASCII de hasta 12 caracteres, fechas ISO válidas y rango máximo de diez años. Dependencias separadas por comas, «—» para ninguna. Rechaza ciclos, IDs inexistentes y dependencias cuyo fin supera el inicio dependiente. No es un planificador, no excluye festivos ni calcula ruta crítica. La duración es tiempo transcurrido, no conteo inclusivo de días laborables.
-
-**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
-
-**Dependencia:** packages/core/components/evidence.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
-
-## Embudo explicado
+## Funnel
 
 <!-- nota:ejemplo embudo -->
+
 ```html
 <figure class="amplio" id="evidencia-embudo" data-evidencia="embudo" data-unidad="pedidos">
 <div class="tabla-caja densa" role="region" tabindex="0" aria-label="Del pedido a la entrega, datos desplazables">
@@ -3005,17 +2395,12 @@ sólo en Sonido. No interpretes esos cambios como permiso para quitar nombres ac
 </figure>
 ```
 
-**Cuándo:** Mostrar volumen, conversión y abandono entre etapas de una misma población. Barras desde cero permiten comparar recuentos; el selector explica denominadores.
+**Use and limits:** Show counts, conversion and drop-off for the same population across 2–12 stages. Non-increasing nonnegative integer counts with a positive first stage. Conversion from a zero stage is undefined. No mixed populations, reentry or causal claims about loss. Bars start at zero and detail names the denominator. Source data stays in one table (or the image zone list). Declare data-unidad (1–40 characters); numeric magnitude is limited to 10^12. Views round to eight significant digits while source values remain. Load evidence.js; NotaEvidencia.init/get/destroy owns lifecycle. Destroy before changing the source. No network or external libraries; data remains if enhancement fails.
 
-**Cuándo no y límite:** 2–12 etapas, recuentos enteros no crecientes y primera etapa positiva. Desde una etapa con cero, la conversión siguiente no se define. No acepta poblaciones distintas, reingresos o valores negativos; en esos casos usa estados o flujos. No atribuye la caída a una causa que no esté medida.
-
-**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
-
-**Dependencia:** packages/core/components/evidence.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
-
-## Rangos de incertidumbre
+## Uncertainty
 
 <!-- nota:ejemplo incertidumbre -->
+
 ```html
 <figure class="amplio" id="evidencia-incertidumbre" data-evidencia="incertidumbre" data-unidad="pedidos">
 <p data-evidencia-metodo>Los límites son escenarios declarados por el equipo de ejemplo. No hay un nivel de confianza ni una probabilidad asignada.</p>
@@ -3031,17 +2416,12 @@ sólo en Sonido. No interpretes esos cambios como permiso para quitar nombres ac
 </figure>
 ```
 
-**Cuándo:** Mostrar una trayectoria central junto con límites explícitos. La banda acompaña los datos; los bordes discontinuos y la línea central se distinguen también por trazo.
+**Use and limits:** Show a central trajectory with explicit lower/upper values across 2–48 strictly increasing ISO dates. All values finite and lower ≤ central ≤ upper. A visible `data-evidencia-metodo` explanation is required. The domain covers actual extremes; zero is not mandatory for a series. No inferred confidence, imputation or invented scenarios. Line/dash style supplements band color. Source data stays in one table (or the image zone list). Declare data-unidad (1–40 characters); numeric magnitude is limited to 10^12. Views round to eight significant digits while source values remain. Load evidence.js; NotaEvidencia.init/get/destroy owns lifecycle. Destroy before changing the source. No network or external libraries; data remains if enhancement fails.
 
-**Cuándo no y límite:** 2–48 fechas ISO estrictamente crecientes; inferior ≤ central ≤ superior, todos finitos. Exige un texto visible data-evidencia-metodo. El dominio vertical alcanza los extremos reales; no requiere cero porque representa una serie. No estima confianza, imputa huecos ni genera escenarios: recibe valores ya justificados por el autor.
-
-**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
-
-**Dependencia:** packages/core/components/evidence.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
-
-## Evidencia ampliable
+## Zoomable evidence
 
 <!-- nota:ejemplo evidencia-ampliable -->
+
 ```html
 <figure class="amplio" id="evidencia-imagen" data-evidencia="imagen">
 <h3>Revisar una evidencia en detalle</h3>
@@ -3055,17 +2435,12 @@ sólo en Sonido. No interpretes esos cambios como permiso para quitar nombres ac
 </figure>
 ```
 
-**Cuándo:** Examinar una captura con zoom y puntos numerados. Los controles +/−/ajustar amplían de 100 a 400 %, y cada punto puede seleccionarse con teclado o desde el selector.
+**Use and limits:** Inspect one embedded data image with 1–12 numbered zones. Percentage `data-x/data-y` coordinates range 0–100; labels up to 100 characters. Zoom/fit supports 100–400%, local two-axis scrolling and keyboard/selector access. Overlapping zones remain accessible in the list. Place markers beside evidence. This does not increase image resolution or perform OCR. Author annotations are separate from reader comments; print preserves the original. Source data stays in one table (or the image zone list). Declare data-unidad (1–40 characters); numeric magnitude is limited to 10^12. Views round to eight significant digits while source values remain. Load evidence.js; NotaEvidencia.init/get/destroy owns lifecycle. Destroy before changing the source. No network or external libraries; data remains if enhancement fails.
 
-**Cuándo no y límite:** Una imagen data: y 1–12 zonas con data-x/data-y porcentuales de 0 a 100, texto de hasta 100 caracteres. La lista conserva el contexto y el original se imprime. Desplazamiento local en ambos ejes; no cambia la resolución del archivo ni aplica reconocimiento de texto. Las zonas cercanas pueden solaparse: el selector y la lista permiten consultar todas. Coloca los puntos junto al dato para no taparlo. No sustituye comentarios: las zonas son anotaciones del autor, la burbuja común recoge la revisión del lector.
-
-**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
-
-**Dependencia:** packages/core/components/evidence.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
-
-## Mapa de relaciones explorable
+## Relationship map
 
 <!-- nota:ejemplo relationship-map -->
+
 ```html
 <section class="pieza amplio" id="relationship-map-example" data-relationship-map>
 <p class="ceja">Relaciones de ejemplo · datos sintéticos</p><h3>Del proyecto a la decisión</h3><p>Empieza en una pieza, sigue una conexión y vuelve atrás. Buscar encuentra piezas incluso fuera de la vecindad visible. Los filtros cambian el alcance, no la fuente.</p>
@@ -3087,34 +2462,22 @@ sólo en Sonido. No interpretes esos cambios como permiso para quitar nombres ac
 </tbody></table></div></details></section>
 ```
 
-**Cuándo:** entender la vecindad de una pieza y seguir relaciones con dirección, motivo y estado. Incluye búsqueda global dentro del conjunto local, uno/dos saltos, mapa completo, filtros por relación/estado, historial de navegación, zoom, ajuste y lista equivalente.
+**Use and limits:** Explore a declared local graph with node/edge tables, unique node IDs, type/context and directed links with reason and declared/suggested status. Both endpoints must exist. Search includes nodes beyond the current neighborhood; one/two-hop scope includes incoming/outgoing edges. Filters, history, zoom, fit, inspector and equivalent tables remain keyboard-accessible. Fit can shrink text; 100% restores it. Up to 100 nodes/250 edges, deterministic type-based layout. No AI inference, confidence scores, force simulation, persistent project editing or portal/session connection. Filter permissions before generating HTML; hidden browser nodes are not private. `BottifactRelationships.init/get/destroy` preserves source tables; invalid input does not mount a partial graph.
 
-**Datos necesarios:** tablas `data-map-nodes` y `data-map-edges`. Cada nodo usa `data-node` único, nombre, tipo y contexto. Cada relación declara `data-source`, `data-target`, tipo, razón y estado `Declarada` o `Sugerida`. Los extremos deben existir. Usa un ID único en el contenedor. No inventes conexiones ni confianza porcentual. Las relaciones del ejemplo fueron escritas para la muestra; no se infieren con IA.
-
-**Interacción y accesibilidad:** botones y controles nativos con teclado; texto completo en inspector y fuente tabular. Buscar encuentra también piezas fuera de la vecindad. En móvil la región tiene scroll local; no encoger el texto por defecto. Ajustar es opcional y puede reducirlo: 100 % recupera su tamaño. Las líneas discontinuas tienen también etiqueta textual de estado. Sin JavaScript quedan las dos tablas. Seleccionar un nodo explora su vecindad; Volver restaura el nodo anterior con los filtros actuales.
-
-**Límite:** componente local, hasta 100 nodos y 250 relaciones. No conecta el grafo del portal, no importa sesiones, no crea proyectos persistentes ni edita relaciones. El servidor debe filtrar permisos antes de generar el HTML: esconder nodos en el navegador no protege datos. La disposición es determinista por tipo; no es un motor de fuerzas ni un trazador de rutas óptimas. Relaciones entrantes y salientes participan en el alcance de uno/dos saltos.
-
-**Runtime:** `BottifactRelationships.init/get/destroy`; destruir limpia controles y listeners, conserva las tablas originales y permite volver a inicializar. Datos inválidos conservan la fuente sin montar un mapa parcial.
-
-## Ficha de sesión y continuación
+## Session brief
 
 <!-- nota:ejemplo session-brief -->
+
 ```html
 <section class="pieza ancho" id="session-brief-example"><p class="ceja">Sesión de ejemplo · pendiente de continuar</p><h3>Evaluar el alcance del piloto</h3><p>Objetivo: identificar la evidencia necesaria antes de recomendar una prueba.</p><dl class="datos"><div><dt>Agente / dispositivo</dt><dd>Codex · equipo de ejemplo</dd></div><div><dt>Origen</dt><dd>No conectado · muestra sintética</dd></div><div><dt>Resultado</dt><dd>Borrador del informe · versión 2</dd></div><div><dt>Siguiente paso</dt><dd>Validar la fuente del supuesto de demanda</dd></div></dl><details><summary>Qué conservar para retomar</summary><p>Pregunta inicial, restricciones conocidas, versiones producidas, decisiones abiertas y referencia real de la conversación cuando exista. Esta ficha no abre ni importa sesiones.</p></details></section>
 ```
 
-**Cuándo:** Retomar trabajo con objetivo, resultados y siguiente paso.
+**Use and limits:** Resume work using its actual objective, outputs and next step. Supply known document, version, quote, source, audience and state; explicitly mark unknowns. Semantic reading and keyboard disclosures reflow on mobile. Synthetic examples are not a portal session entity or conversation import. Reference real sessions only when available.
 
-**Datos necesarios:** reemplaza documento, versión, cita, fuente, audiencia y estado por valores conocidos; deja lo desconocido explícito. Los ejemplos son sintéticos.
-
-**Interacción y accesibilidad:** lectura semántica, detalles con teclado y redistribución en móvil. El paquete permite copiar su texto mediante el control estándar.
-
-**Límite:** No es una entidad de sesión del portal ni importa conversaciones. Usar referencias reales sólo cuando existan.
-
-## Paquete de contexto para agentes
+## Context bundle
 
 <!-- nota:ejemplo context-bundle -->
+
 ```html
 <section class="pieza ancho" id="context-bundle-example"><p class="ceja">Contexto de ejemplo · preparado, no enviado</p><h3>Verificar un supuesto antes de editar</h3><dl class="datos"><div><dt>Documento / versión</dt><dd>Informe del piloto · v2 ilustrativa</dd></div><div><dt>Audiencia</dt><dd>Creador y agente elegido</dd></div><div><dt>Incluido</dt><dd>Comentario, cita y objetivo del cambio</dd></div><div><dt>Excluido</dt><dd>Notas privadas no seleccionadas e historial completo</dd></div></dl><blockquote>«¿Cuál es la fuente de la demanda prevista?»</blockquote><div class="codigo codigo-editorial"><div class="cab"><span>Instrucción revisable</span><button type="button" data-copiar="context-bundle-prompt" aria-label="Copiar contexto de ejemplo">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Contexto de ejemplo"><code id="context-bundle-prompt">Documento: Informe del piloto. Versión: v2 (ejemplo).
 Cita comentada: “La demanda prevista permite iniciar un piloto”.
@@ -3124,55 +2487,34 @@ Entrega: proponer una revisión; no marcar el comentario como resuelto.
 Origen: sin sesión conectada; no inventar una referencia.</code></pre></div><p class="procedencia">Copiar no entrega el paquete a un agente. Sustituye los datos ilustrativos antes de usarlo.</p></section>
 ```
 
-**Cuándo:** Revisar y copiar un encargo con cita, versión, audiencia y objetivo.
+**Use and limits:** Review and copy a task with quote, version, audience and objective. Supply verified provenance and explicit unknowns. Copying local text neither sends a message nor resumes an agent. Exclude private information inappropriate for the recipient. Preserve semantic reading, keyboard disclosures and mobile flow.
 
-**Datos necesarios:** reemplaza documento, versión, cita, fuente, audiencia y estado por valores conocidos; deja lo desconocido explícito. Los ejemplos son sintéticos.
-
-**Interacción y accesibilidad:** lectura semántica, detalles con teclado y redistribución en móvil. El paquete permite copiar su texto mediante el control estándar.
-
-**Límite:** La copia local no envía mensajes ni reabre agentes. Omitir información privada que no corresponda al destinatario.
-
-## Registro de afirmaciones y evidencia
+## Evidence ledger
 
 <!-- nota:ejemplo evidence-ledger -->
+
 ```html
 <figure class="ancho" id="evidence-ledger-example"><div class="tabla-caja" tabindex="0" role="region" aria-label="Registro de evidencia, tabla desplazable"><table><caption>Afirmaciones del piloto · ejemplo sin datos de negocio</caption><thead><tr><th scope="col">Afirmación</th><th scope="col">Estado</th><th scope="col">Fuente y alcance</th><th scope="col">Qué falta</th></tr></thead><tbody><tr><th scope="row">Existe demanda suficiente</th><td>Hipótesis</td><td>Sin fuente adjunta</td><td>Definir ventana, unidad y denominador</td></tr><tr><th scope="row">La interfaz permite revisar el informe</th><td>Propuesta verificable</td><td>Prototipo ilustrativo, no prueba de usuarios</td><td>Observar la tarea y registrar errores</td></tr><tr><th scope="row">La revisión reduce retrabajo</th><td>Pendiente de medir</td><td>No se infiere desde actividad</td><td>Establecer comparación y criterio de éxito</td></tr></tbody></table></div><figcaption>Distingue evidencia, interpretación y vacío. No asigna porcentajes de confianza inventados.</figcaption></figure>
 ```
 
-**Cuándo:** Contrastar afirmaciones y mostrar vacíos de evidencia antes de decidir.
+**Use and limits:** Contrast claims with evidence and identify gaps before deciding. Supply real source/version/quote and explicit unknowns. No automatic confidence score or source verification. Preserve semantic headers, local table scrolling and accessible copyable text.
 
-**Datos necesarios:** reemplaza documento, versión, cita, fuente, audiencia y estado por valores conocidos; deja lo desconocido explícito. Los ejemplos son sintéticos.
-
-**Interacción y accesibilidad:** lectura semántica, detalles con teclado y redistribución en móvil. El paquete permite copiar su texto mediante el control estándar.
-
-**Límite:** No calcula confianza ni valida fuentes automáticamente. La tabla conserva scroll local y encabezados semánticos.
-
-## Bandeja de revisión contextual
+## Review queue
 
 <!-- nota:ejemplo review-queue -->
+
 ```html
 <section class="pieza ancho" id="review-queue-example"><p class="ceja">Revisión de ejemplo</p><h3>Dos pendientes, contextos diferentes</h3><div class="cards-trazadas cards-abiertas"><article><p class="ceja">Comentario compartido · abierto</p><h4>Validar la fuente de demanda</h4><blockquote>«La demanda permite iniciar un piloto»</blockquote><p>Informe · v2 · sección Supuestos. La cita sigue pendiente de comprobar.</p><details><summary>Qué se necesita para resolver</summary><p>Una fuente verificable y una versión revisada. Exportar el comentario no lo resuelve.</p></details></article><article><p class="ceja">Nota privada · ejemplo</p><h4>Preparar una pregunta para el agente</h4><p>Comparar el escenario conservador antes de recomendar.</p><details><summary>Audiencia del contexto</summary><p>Una interfaz debe filtrar esta nota por permisos antes de renderizarla. Ocultarla con CSS no la hace privada.</p></details></article></div><p class="procedencia">Muestra estática. Los hilos reales se crean desde los comentarios flotantes; esta receta no sincroniza ni administra permisos.</p></section>
 ```
 
-**Cuándo:** Mostrar diferencias entre comentario compartido y nota personal con su contexto.
+**Use and limits:** Demonstrate shared comments and personal notes with their distinct context. This is a sample composition, not a connected manager. Use verified references and filter permissions server-side before creating HTML. Preserve mobile reading and keyboard disclosure; do not expose private notes in a public example.
 
-**Datos necesarios:** reemplaza documento, versión, cita, fuente, audiencia y estado por valores conocidos; deja lo desconocido explícito. Los ejemplos son sintéticos.
-
-**Interacción y accesibilidad:** lectura semántica, detalles con teclado y redistribución en móvil. El paquete permite copiar su texto mediante el control estándar.
-
-**Límite:** Es una composición de muestra, no un gestor conectado. Filtrar permisos en servidor antes de construir el HTML.
-
-## Comparación editorial entre versiones
+## Version comparison
 
 <!-- nota:ejemplo version-comparison -->
+
 ```html
 <section class="pieza ancho" id="version-comparison-example"><p class="ceja">Revisión editorial · ejemplo</p><h3>De una afirmación a un supuesto explícito</h3><div class="cards-trazadas cards-abiertas"><article><p class="ceja">Antes · v2 ilustrativa</p><blockquote>La demanda permite iniciar el piloto.</blockquote><p>Problema: presenta una conclusión sin fuente.</p></article><article><p class="ceja">Propuesta · v3 ilustrativa</p><blockquote>El piloto depende de validar la demanda prevista. Todavía falta una fuente con período y denominador.</blockquote><p>El cambio aclara el límite; no fabrica evidencia.</p></article></div><details><summary>Revisión y trazabilidad</summary><p>Motivo: comentario sobre el supuesto. Estado: propuesta, no aceptada. Una comparación real debe enlazar versiones inmutables y conservar la cita original.</p></details></section>
 ```
 
-**Cuándo:** Explicar una corrección editorial y su motivo sin ocultar la incertidumbre.
-
-**Datos necesarios:** reemplaza documento, versión, cita, fuente, audiencia y estado por valores conocidos; deja lo desconocido explícito. Los ejemplos son sintéticos.
-
-**Interacción y accesibilidad:** lectura semántica, detalles con teclado y redistribución en móvil. El paquete permite copiar su texto mediante el control estándar.
-
-**Límite:** Comparación manual de fragmentos, no motor de diff ni control de versiones. Mantener títulos Antes/Propuesta en móvil.
+**Use and limits:** Explain a manual editorial correction and its reason without hiding uncertainty. Use real source versions and quotes; examples are synthetic. Not an automatic diff or version-control engine. Keep Before/Proposal labels clear on mobile and retain keyboard-readable/copyable text.

@@ -1,14 +1,9 @@
-## Flujos Sankey
+## Sankey
 
 <!-- nota:ejemplo sankey -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** Comparar cómo se distribuye una magnitud entre orígenes y destinos. El grosor representa el valor con una escala compartida; el selector revela valor y participación.
-
-**Cuándo no y límite:** 1–24 conexiones, hasta ocho nodos por columna, valores no negativos y total positivo. Esta versión es de dos columnas: no admite etapas intermedias, ciclos, cantidades negativas o monedas mezcladas. Nodos calculados desde sus conexiones, cero sin grosor. No ordena para minimizar cruces; usa la tabla cuando haya demasiados. Referencia conceptual: https://github.com/d3/d3-sankey ; implementación local sin D3 ni descarga.
-
-**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
-
-**Dependencia:** packages/core/components/evidence.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
+**Use and limits:** Compare nonnegative flows with a common thickness scale. Two columns only, 1–24 connections, at most eight nodes per column and positive total. Nodes derive from connections; zero has no thickness. No intermediate stages, cycles, negative values, mixed currencies or crossing optimization. Use the table when dense. Conceptual reference: https://github.com/d3/d3-sankey ; the implementation is local and does not load D3. Source data stays in one table (or the image zone list). Declare data-unidad (1–40 characters); numeric magnitude is limited to 10^12. Views round to eight significant digits while source values remain. Load evidence.js; NotaEvidencia.init/get/destroy owns lifecycle. Destroy before changing the source. No network or external libraries; data remains if enhancement fails.

@@ -1,12 +1,9 @@
-## Conciliación de registros
+## Reconciliation
 
 <!-- nota:ejemplo conciliacion -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** comparar conteos esperados/observados y conservar la explicación por fila.
-**Cuándo no / límite:** requiere conteos enteros no negativos (≤10⁹), no importes monetarios.
-No cruza IDs, no detecta duplicados ni demuestra conciliación contable. Si falta un observado,
-el total indica incompleto y no da un saldo neto. Cinco columnas exactas, hasta 60 filas.
-Las explicaciones son editoriales: el módulo no las infiere de la diferencia.
+**Use and limits:** Compare expected/observed counts while retaining each row's explanation. Exactly five columns, up to 60 rows, nonnegative integer counts up to 10^9. Missing observed counts make the total incomplete with no net balance. This does not join IDs, detect duplicates or demonstrate financial reconciliation. Explanations are supplied, not inferred.

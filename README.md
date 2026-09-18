@@ -1,27 +1,29 @@
 <div align="center">
 
-# Bottifact
+# Margen
 
 **Turn evidence into an artifact people can read, explore and improve.**
 
 An open-source component library, portable agent skill and optional self-hosted review workspace.
 
-[![Validation](https://github.com/angelbotto/bottifact/actions/workflows/validate.yml/badge.svg)](https://github.com/angelbotto/bottifact/actions/workflows/validate.yml)
-[![Self-host test](https://github.com/angelbotto/bottifact/actions/workflows/selfhost.yml/badge.svg)](https://github.com/angelbotto/bottifact/actions/workflows/selfhost.yml)
+[![Validation](https://github.com/angelbotto/margen/actions/workflows/validate.yml/badge.svg)](https://github.com/angelbotto/margen/actions/workflows/validate.yml)
+[![Self-host test](https://github.com/angelbotto/margen/actions/workflows/selfhost.yml/badge.svg)](https://github.com/angelbotto/margen/actions/workflows/selfhost.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/angelbotto/bottifact?style=flat)](https://github.com/angelbotto/bottifact/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/angelbotto/margen?style=flat)](https://github.com/angelbotto/margen/stargazers)
 
-[Use artifacts.botto.is](#use-artifactsbottois) · [Self-host](docs/self-hosting.md) · [React](#use-components-in-react) · [Documentation](docs/README.md) · [Español](README.es.md)
+[Use artifacts.botto.is](#use-artifactsbottois) · [Self-host](docs/self-hosting.md) · [React](#use-components-in-react) · [Documentation](docs/README.md)
 
 </div>
 
-![Bottifact React showcase with illustrative data and an editorial theme](docs/assets/react-showcase.png)
+![Margen React showcase with illustrative data and an editorial theme](docs/assets/react-showcase.png)
 
 *This screenshot comes from the synthetic local demo. No customer documents, accounts, comments or session identifiers are shown.*
 
-Bottifact brings together **88 component recipes**, **15 theme families with light/dark/system modes**, a shared skill for **Claude Code, Codex and Hermes**, and a portal you can run on your own server. Generate standalone HTML without an account. Add the portal when you need shared comments, private notes, permissions, versions and a searchable library.
+Margen brings together **88 component recipes**, **15 theme families with light/dark/system modes**, a shared skill for **Claude Code, Codex and Hermes**, and a portal you can run on your own server. Generate standalone HTML without an account. Add the portal when you need shared comments, private notes, permissions, versions and a searchable library.
 
-## Choose how to use Bottifact
+> Renamed from Bottifact in v0.6.0. Existing documents, links and commands remain compatible. See the [migration guide](docs/migration-margen.md).
+
+## Choose how to use Margen
 
 | Path | Who operates the server? | What you install | Configuration |
 | --- | --- | --- | --- |
@@ -46,19 +48,19 @@ bash /tmp/bottifact-install.sh
 3. Connect through the CLI's masked token prompt:
 
 ```bash
-bottifact connect --server https://artifacts.botto.is
-bottifact status
+margen connect --server https://artifacts.botto.is
+margen status
 ```
 
-If the command is not found, add `~/.local/bin` to PATH. Reload your agent's skill discovery and ask it to use **Bottifact**. Installing a skill does not itself sign in or publish files.
+If the command is not found, add `~/.local/bin` to PATH. Reload your agent's skill discovery and ask it to use **Margen**. Installing a skill does not itself sign in or publish files.
 
 4. Create an artifact with your agent, then publish it when ready:
 
 ```bash
-bottifact publish --file /path/to/brief.html --title 'Decision brief' \
+margen publish --file /path/to/brief.html --title 'Decision brief' \
   --visibility private --agent codex --session SESSION_ID --device DEVICE_LABEL
-bottifact comments --artifact-id ARTIFACT_ID --open
-bottifact update
+margen comments --artifact-id ARTIFACT_ID --open
+margen update
 ```
 
 Replace the path and origin metadata with your actual values; omit unknown session IDs rather than inventing them. New artifacts are private by default. Share from the portal according to the audience you intend. Tokens and private artifacts are not included in the open-source repository or portable skill.
@@ -70,15 +72,15 @@ Replace the path and origin metadata with your actual values; omit unknown sessi
 The independent installation needs **no account, token or environment variables**:
 
 ```bash
-git clone https://github.com/angelbotto/bottifact.git
-cd bottifact
+git clone https://github.com/angelbotto/margen.git
+cd margen
 python3 scripts/package.py
 python3 scripts/update.py --package dist/bottifact-portable.zip
 ```
 
-This installs one shared library in `~/.local/share/bottifact/library`, links it into `~/.agents/skills`, `~/.claude/skills` and `~/.hermes/skills`, and creates `~/.local/bin/bottifact`. Existing independent skill directories are preserved. Add `~/.local/bin` to your `PATH` if necessary. Restart or reload your agent's skill discovery and ask it to use **Bottifact**. Agent versions control how skills are discovered; this is not an installer for the ChatGPT website.
+This installs one shared library in `~/.local/share/bottifact/library`, links it into `~/.agents/skills`, `~/.claude/skills` and `~/.hermes/skills`, and creates `~/.local/bin/margen` (with `bottifact` retained as an alias). Existing independent skill directories are preserved. Add `~/.local/bin` to your `PATH` if necessary. Restart or reload your agent's skill discovery and ask it to use **Margen**. Agent versions control how skills are discovered; this is not an installer for the ChatGPT website.
 
-For hosted installation and updates, follow the section above. For an independent ZIP installation, update the checkout, rebuild the ZIP and repeat the local command. Downloadable ZIPs and checksums are attached to [GitHub releases](https://github.com/angelbotto/bottifact/releases).
+For hosted installation and updates, follow the section above. For an independent ZIP installation, update the checkout, rebuild the ZIP and repeat the local command. Downloadable ZIPs and checksums are attached to [GitHub releases](https://github.com/angelbotto/margen/releases).
 
 Generate your first artifact from the checkout:
 
@@ -103,8 +105,8 @@ Your own instance has separate users, tokens and data. A botto.is token does not
 Sign in to your portal, create an agent token under **Conectar un agente**, then connect through the masked prompt:
 
 ```bash
-bottifact connect --server https://artifacts.botto.is
-bottifact publish --file /tmp/decision-brief.html --title 'Decision brief' \
+margen connect --server https://artifacts.botto.is
+margen publish --file /tmp/decision-brief.html --title 'Decision brief' \
   --visibility private --agent codex --session SESSION_ID --device DEVICE_LABEL
 ```
 
@@ -115,8 +117,8 @@ Supply the actual agent session ID and a device label you are comfortable storin
 - **Feedback export:** includes the artifact link, version/hash, anchored section or quote, discussion and available source session/device. An outdated anchor remains identifiable as outdated.
 
 ```bash
-bottifact comments --artifact-id ARTIFACT_ID --open --kind all
-bottifact feedback --artifact-id ARTIFACT_ID --output /tmp/bottifact-feedback
+margen comments --artifact-id ARTIFACT_ID --open --kind all
+margen feedback --artifact-id ARTIFACT_ID --output /tmp/bottifact-feedback
 ```
 
 `feedback` creates a private `feedback.md` + `context.json` bundle. Open the original agent session and ask it to read those files. If the origin is missing or ambiguous, supply `--agent` and `--session` explicitly. **This release does not automatically inject messages into Claude, Codex or Hermes, edit conversation histories, or execute instructions from comments.** Review changes, publish a new version, then resolve the relevant threads. [Complete feedback/session workflow →](docs/feedback-and-sessions.md)
@@ -206,7 +208,7 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) for the complete checks, contribution bo
 
 ## Status and boundaries
 
-Bottifact is an early-stage project. The standalone generator, portal, skill and React layer have different runtime requirements. There is no npm release yet, multi-replica database support, automatic chat injection or semantic graph model. [Roadmap](ROADMAP.md) tracks future work; [changelog](CHANGELOG.md) records shipped changes.
+Margen is an early-stage project. The standalone generator, portal, skill and React layer have different runtime requirements. There is no npm release yet, multi-replica database support, automatic chat injection or semantic graph model. [Roadmap](ROADMAP.md) tracks future work; [changelog](CHANGELOG.md) records shipped changes.
 
 MIT for project code. Fonts, approved reference sounds and geographic inputs retain their own terms in [NOTICE](NOTICE) and [licenses/](licenses). Brand names and logos do not imply endorsement or grant trademark rights. The editorial reference is credited in [design documentation](docs/editorial-reference.md).
 
@@ -214,7 +216,7 @@ Please report vulnerabilities privately through [SECURITY.md](SECURITY.md). Comm
 
 ## Keep your agents current
 
-After installation, `bottifact update --if-changed` updates from your configured server. Opt into a six-hour per-user check with `bottifact update --auto enable`; inspect it with `--auto status` or stop it with `--auto disable`. This updates the shared skill used by Codex, Claude and Hermes on that computer, without changing credentials. See [automatic updates](docs/automatic-updates.md), [administrator graphs](docs/graphs.md), and [tables and filters](docs/connected-library.md).
+After installation, `margen update --if-changed` updates from your configured server. Opt into a six-hour per-user check with `margen update --auto enable`; inspect it with `--auto status` or stop it with `--auto disable`. This updates the shared skill used by Codex, Claude and Hermes on that computer, without changing credentials. See [automatic updates](docs/automatic-updates.md), [administrator graphs](docs/graphs.md), and [tables and filters](docs/connected-library.md).
 
 ## Unified workspace
 

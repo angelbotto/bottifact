@@ -1,10 +1,9 @@
-## Ficha de artículo
+## Article
 
 <!-- nota:ejemplo articulo -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** artículos que necesitan autoría, fecha y estado editorial sin ocupar una portada.
-**Cuándo no / límite:** no inventa tiempo de lectura, credenciales ni revisión por pares. Los
-campos son opcionales y no son botones. No genera metadatos SEO ni tarjetas para redes.
+**Use and limits:** Present author, date and editorial status without a large cover. Fields are optional metadata, not controls. Do not invent reading time, credentials or peer review. No automatic SEO or social cards.

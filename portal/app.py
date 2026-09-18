@@ -449,7 +449,7 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
         if not isinstance(content,str) or not content.strip() or len(content.encode()) > 20*1024*1024:
             raise HTTPException(422,'El HTML debe ocupar menos de 20 MB.')
         match = re.search(r'<meta\s+name=[\"\']nota-documento[\"\']\s+content=[\"\']([a-zA-Z0-9_-]{1,120})[\"\']',content)
-        if not match: raise HTTPException(422,'Genera el archivo con Bottifact y un documento-id estable.')
+        if not match: raise HTTPException(422,'Genera el archivo con Margen y un documento-id estable.')
         docid = match[1];title = clean(body.get('title'),200);space = clean(body.get('space','Personal'),60)
         data = content.encode();sha = hashlib.sha256(data).hexdigest();version = uuid.uuid4().hex
         mode=body.get('mode','published')

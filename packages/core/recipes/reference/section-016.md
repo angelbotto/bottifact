@@ -1,4 +1,18 @@
-## Globo de rutas
+## Route globe
+
+The complete executable example is `examples/generated/globe.html`. Land-mask data is embedded in globe.js; there are no map keys or fetch requests. Load the pinned Three dependency once.
+
+| Input / method | Contract |
+|---|---|
+| `points` | Unique string id; latitude −90…90, longitude −180…180; optional label. |
+| `arcs` | Existing from/to IDs; optional unique id, label and detail. |
+| `select(id)` | Selects and centers a route; null selects all; unknown ID throws. |
+| `setData({points,arcs})` | Validates before replacing geometry; invalid data throws TypeError and retains prior data. |
+| `rotate(dx,dy)` | Radians; tilt is limited to ±1.2. |
+| `pause()` / `resume()` | Rotation control; resume respects reduced motion. |
+| `destroy()` | Stops RAF, disconnects listeners/observers, frees WebGL and empties the container. |
+
+Coincident points avoid degenerate curves; antipodes use a deterministic axis. Labels enter through textContent. Escape `<` as `\u003c` in embedded JSON. Curves have 64 segments and hide behind the sphere. Time-based rotation is 0.072rad/s; reduced motion makes selection immediate. Buttons and keyboard remain available; touch rotation preserves vertical page scrolling. Without WebGL, retain the complete route list and an explanation. The 256×128 land mask is not a political map or measured distance source. Label invented routes as illustrative.
 
 ```html
 <figure class="ancho">
@@ -21,33 +35,3 @@ const rutas = new NotaGlobo(document.getElementById('mi-globo'), {
 });
 </script>
 ```
-
-`examples/generated/globe.html` es la versión completa ejecutable de ese contrato, sin comentarios por sustituir.
-La máscara terrestre está incrustada dentro de `packages/core/components/globe.js`. No necesita APIs, claves, imágenes
-externas ni solicitudes `fetch`.
-
-| Entrada / método | Contrato |
-|---|---|
-| `points` | Array; `id` string único, `lat` número entre −90 y 90, `lon` entre −180 y 180; `label` opcional. |
-| `arcs` | Array; `from` y `to` son IDs existentes; `id` opcional pero único, `label` y `detail` opcionales. Las coordenadas y unidades son geográficas. |
-| `select(id)` | Selecciona y centra una ruta; `select(null)` vuelve a todas. Error si el ID no existe. |
-| `setData({points,arcs})` | Reemplaza los datos validados, libera geometrías anteriores y reconstruye la lista. Datos inválidos lanzan `TypeError` y conservan el conjunto anterior. |
-| `rotate(dx,dy)` | Radianes; giro horizontal e inclinación limitada a ±1,2. |
-| `pause()` / `resume()` | Controlan el giro; `resume()` sigue respetando movimiento reducido. |
-| `destroy()` | Detiene RAF, desconecta listeners/observers, libera WebGL y vacía el contenedor. |
-
-Los puntos coincidentes no dibujan una curva degenerada; los antípodas usan un eje determinista.
-Las etiquetas entran por `textContent`, no por HTML. Cuando serialices JSON dentro de un script,
-escapa `<` como `\u003c`; nunca interpoles datos sin escapar dentro de `innerHTML`.
-
-La proyección y la atmósfera siguen COBE; los arcos son bandas cuadráticas con 64 segmentos,
-con ocultación tras la esfera. El giro es `0.072rad/s`, equivalente a los `0.0012rad/cuadro`
-originales a 60 Hz, pero estable a otras frecuencias. El suavizado conserva el factor original
-`0.09` a 60 Hz. En modo reducido el cambio de selección se resuelve inmediatamente; hay
-botones y flechas de teclado. Con touch se puede girar horizontalmente y conservar el scroll
-vertical de la página. Sin WebGL queda un mensaje y la lista completa de rutas.
-
-El globo no es un mapa político ni una medición de distancias. La máscara de 256×128 describe
-masas terrestres; no añade fronteras. No inventes kilómetros, vuelos o sedes: recibe datos reales
-o identifica el ejemplo como ilustrativo. Los arcos y marcadores se han aclarado frente al
-original, una decisión deliberada para informes, no una afirmación de igualdad píxel a píxel.

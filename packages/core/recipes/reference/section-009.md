@@ -1,4 +1,6 @@
-## Tablas y diagramas anchos
+## Wide tables and diagrams
+
+Tables are wide by default. Do not apply nowrap to every cell; wrap long identifiers and scroll locally where structure needs width. SVG diagrams need a viewBox, title and equivalent text. Protect label readability with a scrollable region or a mobile vertical composition. The example diagram contains exactly three steps; adding steps requires updating geometry, equivalent text and viewBox. It neither simulates a process nor calculates duration.
 
 ```html
 <figure class="amplio">
@@ -12,14 +14,6 @@
   <figcaption>Fuente: hoja CSS y estilo calculado a 1639 px de viewport.</figcaption>
 </figure>
 ```
-
-Las tablas son anchas por defecto. No apliques `white-space:nowrap` a toda la tabla. Si una
-columna contiene identificadores largos, permite partirlos; si la estructura necesita más
-ancho, conserva el desplazamiento local. Los diagramas SVG deben tener `viewBox`, título y
-una descripción equivalente en texto. El tamaño del dibujo debe proteger la lectura de sus
-etiquetas; usa una región desplazable para figuras densas, o una composición vertical en móvil.
-
-Diagrama completo, sin dependencias:
 
 ```html
 <figure class="ancho">
@@ -36,10 +30,3 @@ Diagrama completo, sin dependencias:
   <figcaption>Fuente → verificación → decisión registrada. Las flechas indican orden, no duración.</figcaption>
 </figure>
 ```
-
-**Cuándo:** una relación o secuencia concreta se entiende mejor como dibujo. Para registros
-comparables usa la tabla; para magnitudes, una gráfica a escala.
-
-**Límite:** esta composición contiene tres pasos. Cambiar sólo las etiquetas no añade nodos
-ni rutas; para más pasos ajusta SVG, texto equivalente y viewBox. Conserva los IDs únicos,
-el mínimo de 640 px y su región desplazable. No simula procesos ni calcula tiempos.

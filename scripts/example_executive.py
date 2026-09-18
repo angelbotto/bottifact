@@ -27,10 +27,10 @@ def generate():
     count, families = len(registry), len(version['temas'])
     chapters = Counter(item['capitulo'] for item in registry)
     labels = {'graficas': 'Gráficas', 'lectura': 'Lectura', 'reportes': 'Reportes', 'publicaciones': 'Publicaciones', 'configuracion': 'Configuración', 'expresion': 'Expresión', 'tablas': 'Tablas', 'prototipos': 'Prototipos'}
-    body = f'''<section id="lectura-ejecutiva"><p class="ceja">Bottifact / memo de trabajo / 15 sep 2026</p>
+    body = f'''<section id="lectura-ejecutiva"><p class="ceja">Margen / memo de trabajo / 15 sep 2026</p>
 <h2>Una base común para compartir criterio.</h2>
 <p class="bajada">Propongo que cada artefacto permita entender qué cambió, contrastar la evidencia y decidir qué sigue.</p>
-<p>Bottifact reúne {count} recetas y {families} familias visuales. Mi prioridad es aprovechar esa biblioteca con una voz consistente: una lectura ejecutiva al inicio, profundidad disponible y una propuesta que se pueda discutir.</p>
+<p>Margen reúne {count} recetas y {families} familias visuales. Mi prioridad es aprovechar esa biblioteca con una voz consistente: una lectura ejecutiva al inicio, profundidad disponible y una propuesta que se pueda discutir.</p>
 <p>El catálogo describe capacidad disponible. Todavía falta demostrar, con encargos comparables por agente, la calidad editorial y el ahorro de trabajo. Esa es la siguiente prueba que propongo.</p>
 <p class="procedencia">Corte del catálogo: versión {escape(version['version'])}. Fuentes: <a href="packages/core/registry/registry.json">registro de componentes</a> y <a href="VERSION.json">versión del sistema</a>. Propuesta de trabajo; no registra aprobación ni asignaciones.</p></section>
 <section class="ancho" id="balance"><h2>Highlights y lowlights</h2>
@@ -84,7 +84,7 @@ def generate():
     table = recipe('explorador').replace('explorador-ejemplo', 'evidencia')
     table = table.replace('Explorar el registro', 'Qué está disponible y qué falta demostrar')
     table = table.replace('Seis registros ficticios. Ordena por encabezado, filtra y agrupa sin perder el detalle.', 'Seis observaciones sobre el sistema. Filtra por estado o agrupa por ámbito para separar capacidad y validación.')
-    for old, new in [('Equipo', 'Ámbito'), ('Importe COP', 'Fuente'), ('En revisión', 'Pendiente'), ('Confirmado', 'Disponible'), ('6 registros de ejemplo.', '6 observaciones del sistema.'), ('Movimientos ilustrativos · importes en COP', 'Estado de Bottifact · corte de esta versión')]:
+    for old, new in [('Equipo', 'Ámbito'), ('Importe COP', 'Fuente'), ('En revisión', 'Pendiente'), ('Confirmado', 'Disponible'), ('6 registros de ejemplo.', '6 observaciones del sistema.'), ('Movimientos ilustrativos · importes en COP', 'Estado de Margen · corte de esta versión')]:
         table = table.replace(old, new)
     rows = [
         ('Recetas', 'Biblioteca', 'Disponible', 'packages/core/registry/registry.json'),
@@ -131,7 +131,7 @@ def generate():
         {'id': 'perfil', 'titulo': 'Guía de comunicación', 'html': document('docs/executive-voice.md', 'perfil')},
         {'id': 'fuentes', 'titulo': 'Referencias', 'html': document('docs/communication-references.md', 'fuentes')},
     ]
-    (ROOT / 'examples/generated/executive.html').write_text(build('Bottifact · Comunicar para decidir', pages, description='Voz ejecutiva, evidencia y una biblioteca al servicio del argumento.', theme='editorial', mode='system', document_id='bottifact-voz-ejecutiva'))
+    (ROOT / 'examples/generated/executive.html').write_text(build('Margen · Comunicar para decidir', pages, description='Voz ejecutiva, evidencia y una biblioteca al servicio del argumento.', theme='editorial', mode='system', document_id='bottifact-voz-ejecutiva'))
 
 
 if __name__ == '__main__':

@@ -1,41 +1,18 @@
-# Biblioteca conectada
+# Connected library
 
-Bottifact organiza el trabajo en https://artifacts.botto.is. El skill genera el HTML y publica con una conexión personal; el portal guarda sus versiones, permisos y revisión. Compartir el paquete del skill no comparte una cuenta.
+Margen connects generated artifacts to a personal portal at the configured server. The skill generates HTML; the portal stores versions, permissions, comments, private notes and organization. The hosted service is `https://artifacts.botto.is`; self-hosters choose their own origin.
 
-## Encontrar y explorar
+Gallery, list, table and graph share authorized search and filters. Search covers titles and indexed document text. Scrolling loads more records without page-number navigation. Previews use static isolated HTML, not active scripts from the uploaded artifact. Renaming and organization do not create a new document version.
 
-La biblioteca ofrece galería, lista, tabla y mapa de ideas. Galería, lista y tabla tienen miniaturas estáticas aisladas; la ficha lateral muestra una vista mayor, organización, procedencia y documentos relacionados. Abrir el artefacto activa su experiencia completa. Los documentos dependientes de JavaScript pueden mostrar una portada de referencia en lugar de su aplicación renderizada.
+## Organization
+Assign a company/space, category, collections and tags. Automatic classification is rule-based and correctable; the UI explains matching evidence. Manual organization remains under the owner's control. Tags and collection membership do not grant access or prove causality. Archive removes an item from the normal library while preserving its shared link and history.
 
-La búsqueda (`⌘ K` / `Ctrl K`) consulta título y contenido, sin controles de apariencia, además de etiquetas, categorías, colecciones y procedencia disponible para el creador. Prioriza coincidencias en el título al ordenar por relevancia. Los filtros combinan categoría, espacio, colección, etiqueta y acceso. Las vistas de documentos cargan por desplazamiento, con un botón accesible de continuación. La tabla permite ordenar desde sus encabezados. La búsqueda de la biblioteca personal se conserva en esa pestaña del navegador al volver de un documento.
+## Relationships and provenance
+The graph connects accessible artifacts through declared organization and typed references. Companies, projects and topics can have aliases and properties. Inspect a relationship's origin instead of treating proximity as semantic proof. The same topic can span companies. Filters, search, zoom, keyboard interaction and the list alternative remain available.
 
-## Clasificación y relaciones
+Version provenance records the real creating agent, session reference and device. Missing historical provenance is not inferred. Session browsing groups recorded outputs; it does not load private conversations. The context composer exports selected authorized evidence and feedback, with private notes opt-in. Copy/download does not execute or send to an agent.
 
-Las reglas locales asignan categoría y hasta cinco etiquetas automáticas según términos presentes en título y contenido. No envían el documento a otro servicio ni simulan un análisis semántico de IA. La ficha `Organizar` muestra los términos encontrados; el creador puede fijar una categoría, añadir sus etiquetas y colecciones o desactivar la clasificación automática. Las revisiones conservan esas decisiones manuales. Una categoría vacía vuelve a la selección automática si está habilitada. Sin evidencia suficiente se muestra `Sin clasificar`.
+## Access
+Owners control audience, versions and organization. Review permissions govern comments; personal notes remain author-private. Search, graph endpoints, related-document lookups and exports enforce access independently. Avoid embedding management metadata into the reader's document.
 
-El mapa agrupa por categoría y conecta etiquetas o colecciones compartidas. Cada conexión muestra su motivo. No implica dependencia, causalidad ni acuerdo. Para mantenerlo legible muestra hasta 120 documentos de la selección y cuatro conexiones por documento; los filtros permiten explorar otros subconjuntos. Se puede arrastrar, acercar, alejar, restablecer y seleccionar con teclado. Una lista de documentos ofrece otra forma de recorrerlo. Los permisos se comprueban antes de construir el mapa; las notas privadas y los borradores ajenos no forman parte del índice.
-
-## Procedencia y vuelta a la IA
-
-Cada publicación puede registrar `source.agent`, `source.session` y `source.device`, por versión. El CLI identifica la sesión sólo cuando existe una referencia real y registra el nombre del equipo donde se ejecuta. Si la creación ocurrió en otro dispositivo, indícalo explícitamente:
-
-```bash
-python3 scripts/publish.py publicar --archivo examples/generated/report.html --titulo 'Informe de operación' --espacio Liftit --agente Hermes --sesion REFERENCIA_REAL --dispositivo 'MacBook'
-```
-
-`BOTTIFACT_AGENT`, `BOTTIFACT_SESSION` y `BOTTIFACT_DEVICE` permiten configurar referencias reales en el entorno. `--dispositivo` prevalece sobre el entorno; en su ausencia se usa el hostname. No registres tokens, transcripciones ni rutas privadas. La carga manual permite indicar el dispositivo conocido; no deduce el dispositivo de creación a partir del navegador. En publicaciones antiguas, `No registrado` significa que no hay evidencia conservada. No inventes datos para completar la ficha.
-
-El creador ve procedencia en la ficha lateral y en la versión seleccionada del lector. `Copiar contexto para IA` reúne documento, enlace, ID estable, versión, origen y los comentarios/notas visibles para su cuenta. Funciona también sin comentarios. Cada hilo mantiene su versión original y el contexto del fragmento; una sesión escrita en una nota es distinta de la sesión que creó el artefacto. Los lectores no reciben las referencias de sesión y dispositivo del creador.
-
-Al recibir ese prompt, identifica el artefacto, compara la revisión publicada y conserva URL, audiencia e ID. Prepara un borrador, explica qué comentarios atendiste y no resuelvas hilos automáticamente. La procedencia ayuda a retomar; no concede acceso a otra máquina ni ejecuta agentes por sí sola.
-
-## Administrator table and graph
-
-The table has searchable menus for company/space, topic, collection, category, access, agent, and pending review. Active filters can be removed individually or cleared together. The agent facet only uses provenance available to the current viewer. Sorting by title, company, category, agent, updated date, or pending count runs on the server before cursor pagination; table headers toggle ascending/descending. Column visibility and comfortable/compact density are saved on the device. Document and action columns always remain available.
-
-Rows load as you scroll inside the table, preserving its scroll position. A load-more button remains available. The table scrolls horizontally on small screens instead of shrinking its content. Gallery and list views share the same query and filters.
-
-See [Graph exploration](graphs.md) for companies, topics, neighborhoods and connection evidence, and [automatic skill updates](automatic-updates.md) for keeping agent installations current. The standalone relationship-map recipe is a different component.
-
-## Unified context layer
-
-Version 0.5 adds the common reader toolbar, typed table controls, account-private views/boards, evidence-backed references and selected review bundles. See [implementation and limits](unified-workspace.md). The portal retains FastAPI/SQLite and its vanilla JavaScript UI; the React table and inspector are reusable package adapters.
+See [graphs](graphs.md), [feedback and sessions](feedback-and-sessions.md), [unified workspace](unified-workspace.md) and [portal operations](portal-operations.md).

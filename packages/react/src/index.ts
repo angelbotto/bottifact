@@ -8,3 +8,5 @@ export { ArtifactFrame, RecipePreview, type ArtifactFrameProps, type RecipePrevi
 export { recipes, themeFamilies, getRecipe, type Recipe, type RecipeId, type ThemeFamily, type ThemeMode } from '@bottifact/core';
 export {FilterBuilder, type FilterColumn} from './components/FilterBuilder.js';
 export {Inspector} from './components/Inspector.js';
+
+export { ButtonGroup } from './components/ui/button-group.js';
