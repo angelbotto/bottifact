@@ -74,3 +74,36 @@ def connections(rows):
         selected.append(e)
         for key in ('source','target'):degree[e[key]]=degree.get(e[key],0)+1
     return selected
+
+
+def knowledge_network(rows, entity_limit=300):
+    """Membership graph built exclusively from the caller's authorized artifacts.
+
+    Space is a user-maintained company/workspace label, never a company inferred
+    from private content. Topic nodes preserve manual/automatic evidence per edge.
+    """
+    import hashlib
+    artifacts=[{'id':a['id'],'kind':'artifact','title':a['title'],'artifact':a['id'],
+                'space':a['space'],'category':a.get('category','Sin clasificar')} for a in rows]
+    entities={}; links=[]; memberships=set()
+    def connect(a, kind, title, reason):
+        if not title or not title.strip():return
+        key=kind+':'+hashlib.sha256(normalized(title.strip()).encode()).hexdigest()[:24]
+        entity=entities.setdefault(key,{'id':key,'kind':kind,'title':title.strip(),'count':0})
+        membership=(a['id'],key)
+        if membership in memberships:return
+        memberships.add(membership)
+        entity['count']+=1
+        links.append({'source':a['id'],'target':key,'kind':kind,'reason':reason})
+    for a in rows:
+        connect(a,'space',a['space'],'Empresa/espacio asignado al artefacto: '+a['space'])
+        for collection in a.get('collections',[]):connect(a,'collection',collection,'Colección asignada: '+collection)
+        manual=set(a.get('tags',[]))
+        for topic in dict.fromkeys(a.get('tags',[])+a.get('auto_tags',[])):
+            evidence=next((m['evidence'] for m in a.get('classification',[]) if m['tag']==topic),[])
+            reason='Tema manual: '+topic if topic in manual else 'Tema automático: '+topic+(' · coincidencias: '+', '.join(evidence) if evidence else '')
+            connect(a,'topic',topic,reason)
+    ordered=sorted(entities.values(),key=lambda n:(-n['count'],n['kind'],normalized(n['title'])))
+    selected=ordered[:entity_limit];kept={n['id'] for n in selected}
+    return {'nodes':artifacts+selected,'edges':[e for e in links if e['target'] in kept],
+            'entity_total':len(ordered),'entity_truncated':len(ordered)>len(selected)}

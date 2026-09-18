@@ -65,3 +65,7 @@ Vuelve a la sesión original y pide al agente leer `feedback.md` y `context.json
 Los grafos relacionan artefactos autorizados mediante etiquetas y colecciones compartidas, con razones visibles. La clasificación local no es un modelo semántico ni lee tus chats. [Modelo y límites](docs/graphs.md).
 
 Las capturas públicas deben usar exclusivamente ejemplos sintéticos. [Política de capturas](docs/screenshots.md). Código MIT; licencias de terceros en [NOTICE](NOTICE) y [licenses/](licenses).
+
+## Mantener los agentes actualizados
+
+Después de instalar, `bottifact update --if-changed` actualiza desde el servidor elegido. Activa una comprobación cada seis horas con `bottifact update --auto enable`; consulta su configuración con `--auto status` o desactívala con `--auto disable`. Actualiza la biblioteca compartida por Codex, Claude y Hermes en ese equipo, sin cambiar credenciales. Consulta [actualizaciones automáticas](docs/automatic-updates.md), [grafos del administrador](docs/graphs.md) y [tablas y filtros](docs/connected-library.md).

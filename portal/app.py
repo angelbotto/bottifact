@@ -22,7 +22,7 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse, Response, FileResponse
 from portal.workflows import migrate, metadata, version_state, visible_events, provenance, enqueue
 from portal.workspace import mount_workspace
-from portal.knowledge import enrich, connections
+from portal.knowledge import enrich, connections, knowledge_network
 from portal.auth import mount_auth
 from portal.preview import preview_html
 from portal.search import index_document, match_query, normalized, window
@@ -397,6 +397,7 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
                     rows.append({**dict(b),'external':True,'category':'Enlaces','visibility':'external','updated':b['created'],'open_comments':0,'permissions':{'read':True,'review':False,'comment':False,'edit':False,'manage':False,'role':'owner'}})
             summary={'total':len(rows),'open_comments':sum(a['open_comments'] for a in rows),'shared':sum(a['visibility'] not in ('private','external') for a in rows)}
             spaces=sorted({a['space'] for a in rows})
+            agents=sorted({a.get('source',{}).get('agent','') for a in rows}-{''})
             collections=sorted({v for a in rows for v in a.get('collections',[])})
             tags=sorted({v for a in rows for v in a.get('tags',[])+a.get('auto_tags',[])})
             rows=[a for a in rows if (not params.get('collection') or params['collection'] in a.get('collections',[])) and (not params.get('tag') or params['tag'] in a.get('tags',[])+a.get('auto_tags',[]))]
@@ -411,16 +412,19 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
                     return all(w in value for w in words)
                 rows=[{**a,**hits.get(a['id'],{'excerpt':'','rank':0})} for a in rows if a['id'] in hits or metadata_match(a)]
             rows=[a for a in rows if (not params.get('space') or a['space']==params['space']) and (not params.get('access') or a['visibility']==params['access'])]
+            if params.get('agent'):rows=[a for a in rows if a.get('source',{}).get('agent','').casefold()==params['agent'].casefold()]
+            if params.get('review')=='pending':rows=[a for a in rows if a['open_comments']>0]
+            if params.get('review')=='clear':rows=[a for a in rows if a['open_comments']==0]
             if params.get('document_id'):rows=[a for a in rows if a.get('document_id')==params['document_id']]
             total=len(rows)
             if params.get('graph')=='1':
                 rows=[a for a in rows if not a.get('external')]
                 total=len(rows)
                 nodes=sorted(rows,key=lambda a:(-a['updated'],a['id']))[:120]
-                return {'nodes':nodes,'edges':connections(nodes),'total':total,'truncated':total>len(nodes)}
+                return {'nodes':nodes,'edges':connections(nodes),'total':total,'truncated':total>len(nodes),'network':knowledge_network(nodes)}
             try:rows,cursor=window(rows,params)
             except (ValueError,TypeError,KeyError,UnicodeError):raise HTTPException(422,'Búsqueda o cursor inválido.') from None
-            return {'artifacts':rows,'total':total,'next_cursor':cursor,'summary':summary,'spaces':spaces,'collections':collections,'tags':tags,'categories':categories}
+            return {'artifacts':rows,'total':total,'next_cursor':cursor,'summary':summary,'spaces':spaces,'collections':collections,'tags':tags,'categories':categories,'agents':agents}
 
     @app.post('/api/bookmarks')
     async def bookmark(request: Request):

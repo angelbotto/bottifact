@@ -13,6 +13,14 @@ Requisitos: Generación con Python 3.10 o posterior, sin paquetes externos. Nave
 
 Para usar la instancia existente, sigue [artifacts.botto.is](docs/hosted-service.md): instalar el skill, iniciar sesión y conectar un token personal. No pidas Docker, `.env` ni credenciales de Google Cloud para ese camino. El [self-hosting](docs/self-hosting.md) es una opción independiente para operar otra instancia. Conserva siempre el servidor que el usuario ya haya elegido; no migres conexiones por iniciativa propia.
 
+## Mantener la instalación
+
+Consulta [actualizaciones](docs/automatic-updates.md). Si el usuario habilitó actualizaciones automáticas, el programador comprueba cada seis horas el servidor guardado. No cambies ese servidor, cuenta o token. Para revisar manualmente usa `scripts/update.py --check`; para actualizar el directorio gestionado usa `--if-changed` antes de comenzar una nueva tarea. No sobrescribas un checkout Git ni actives descargas automáticas sin autorización. Los agentes con instrucciones ya cargadas deben releer el skill actualizado o iniciar sesión nueva.
+
+## Biblioteca del administrador
+
+Cuando el usuario diga «mapa», «empresas», «temas» o «como Obsidian» en contexto de su biblioteca, trabaja en el **grafo del administrador** ([guía](docs/graphs.md)). No lo sustituyas por una gráfica dentro de un artefacto. Conecta empresas/espacios asignados, temas y colecciones; explica cada vínculo y respeta permisos. [La tabla del administrador](docs/connected-library.md) comparte búsqueda, filtros y orden del servidor con la lista y galería.
+
 ## Crear un artefacto
 
 Si hay una conexión personal, ejecuta `python3 scripts/publish.py status`: muestra el servidor, la cuenta y `publish_on_create`, nunca el token. Esa preferencia representa la instrucción persistente del usuario para terminar los artefactos publicándolos como privados. Si está activa, el resultado incluye HTML validado y enlace del portal. Si falta conexión, conserva el borrador y explica que aún no está publicado. Una petición actual de dejarlo local prevalece. No uses un host alternativo por iniciativa propia.

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.0 — Administrator knowledge workbench
+
+- Connect artifacts to companies/spaces, manual or automatic topics, and collections in the actual portal graph. Explain membership, explore one/two-hop neighborhoods, search nodes, pan, zoom and move nodes.
+- Add searchable library facets, server-wide bidirectional column sorting, agent and pending-review filters, column visibility, density and scroll-preserving table loading.
+- Add opt-in six-hour skill updates for macOS LaunchAgents and Linux user timers, preserving each installation’s chosen server and credentials. Skip unchanged downloads and lock concurrent updates.
+- Document the portal/local-component distinction and update lifecycle. Add graph, cursor, privacy, filter UI and scheduler regression checks.
+- The core/React package API remains at 0.3.0; this release changes the portal and portable skill.
+
 ## 0.3.0 — Component discovery and local relationship exploration
 
 - Expand the library to 88 documented recipes with six continuity compositions.

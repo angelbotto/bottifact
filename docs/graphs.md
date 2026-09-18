@@ -1,34 +1,32 @@
-# Search, classification and graphs
+# Knowledge graph in the administrator
 
-The graph explains connections among artifacts available to the signed-in viewer. It is a navigation aid, not a claim that the system understands every idea or has read your agent conversations.
+The administrator's **Graph** view connects the documents you can access through explicit companies/spaces, topics, and collections. It is distinct from the standalone `relationship-map` component inside an artifact.
 
-## Inputs and meaning
+## What each node means
 
-SQLite FTS indexes document text and metadata for search. Local classification rules in `portal/knowledge.py` inspect normalized titles and body text, propose up to five tags and expose matching terms. The current vocabulary is primarily Spanish; English documents do not have equivalent classification coverage yet. Manual tags, category overrides and collections remain useful regardless of document language.
+| Node | Source | Connection explanation |
+| --- | --- | --- |
+| Artifact | Published artifact in the current authorized result set | Title and existing preview |
+| Company / space | The artifact's assigned `space` | Assigned workspace; never guessed from a company name in its body |
+| Topic | Manual tags and enabled rule-based classification | Manual tag, or automatic tag plus matched evidence |
+| Collection | Assigned collection | Membership in that collection |
 
-A graph node represents an authorized artifact. An edge exists when two artifacts share tags or collections. Its reasons name those shared items; the weight is `3 × shared collections + shared tags`. Category alone does not create an edge. The graph bounds each node to four retained edges, preferring stronger relationships, to avoid unreadable clusters. The portal also limits the graph to the 120 most recently updated matching documents; it is not an exhaustive graph of an arbitrarily large library.
+Two companies can meet through a topic shared by their artifacts. Entity counts describe **the loaded, authorized set**, not an organization-wide total. Automatic topics use transparent rules, not embeddings or an LLM. You can correct organization metadata or turn automatic classification off from the artifact preview.
 
-## Access and privacy
+## Explore
 
-Graph input is filtered through artifact permissions before relationships are calculated. An invisible artifact must not leak through a label, edge, count or preview. Personal notes do not automatically become shared knowledge edges. Publishing origin remains separate from inferred subject matter.
+1. Apply library filters or search across titles, indexed content, and authorized metadata.
+2. Switch to Graph. Choose all connections, companies, topics, or collections.
+3. Search for a node within the loaded graph, or select it directly. Its inspector explains each connection and offers the artifact preview.
+4. Choose **Explore connections** for a local neighborhood. One hop shows immediate membership; two hops can reach other artifacts through a shared topic or company. Return restores the previous selection and scope.
+5. Drag the background to pan, drag nodes to arrange them, and use the wheel or zoom buttons. Names can be toggled; hovering reveals a hidden name and highlights its edges. A list in the inspector provides an alternative to spatial exploration.
 
-A shared tag means topical overlap, not dependency, causation or agreement. Users should be able to inspect the edge reason and refine classification instead of treating suggestions as facts.
+Keyboard: Tab reaches controls and nodes; Enter/Space selects a node. When the canvas itself has focus, arrow keys pan, Shift increases the step, and +/− zoom. There is no continuous motion or simulation loop after layout.
 
-## Sessions and review context
+## Boundaries
 
-An artifact can record its publishing agent/session/device. Feedback exports use that provenance to explain where a requested change belongs. The graph does not import the session transcript, infer discussion history or send comments back automatically. See [feedback and sessions](feedback-and-sessions.md).
+The graph loads at most 120 recently updated artifacts and 300 entity nodes. The interface discloses truncation; narrow the library filters to explore another subset. Local graph search searches that subset; the main library search searches the authorized library. Unassigned artifacts remain visible, without invented company edges.
 
-## Extension points
+The server checks access **before** producing nodes or edges. Other users' private artifacts, unpublished content, private notes, and owner-only session/device details do not become graph entities. No session history is imported. The older artifact-to-artifact `nodes`/`edges` API remains available for the related-documents preview; typed membership is returned under `network`.
 
-- Expand language-specific rules with tests and visible matching evidence.
-- Add explicit typed links such as “supersedes”, “supports” or “contradicts”, with author and rationale.
-- Add a semantic search adapter only with a documented data boundary and an opt-in provider configuration.
-- Keep permission filtering before scoring and before returning graph payloads.
-- Separate source-session links from subject links; they answer different questions.
-- Test sparse, dense, empty and access-revoked graphs before increasing limits.
-
-These are extension directions, not shipped embedding search, automatic model training or transcript synchronization. Tests in `portal/test_knowledge.py` exercise classification and graph access behavior.
-
-## Local relationship explorer
-
-The `relationship-map` library recipe is a separate, local component with declared typed edges, search, one/two-hop focus, relation/state filters, history and an accessible source table. It does not alter the portal graph or create session/project records. See [component playbook](component-playbook.md) and [workbench directions](knowledge-workbench.md).
+This release does not provide semantic similarity, editable graph edges, saved graph layouts, or automatic topic merging. Those require separate interaction and evidence models.

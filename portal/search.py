@@ -54,22 +54,29 @@ def normalized(text):
 def window(rows, params):
     """Cursor por clave estable; las altas nuevas no desplazan páginas existentes."""
     sort=params.get('sort','recent')
+    fields={'recent','relevance','title','comments','space','category','agent'}
+    if sort not in fields:raise ValueError('Orden desconocido.')
+    direction=params.get('direction') or ('asc' if sort in ('title','relevance','space','category','agent') else 'desc')
+    if direction not in ('asc','desc'):raise ValueError('Dirección desconocida.')
+    reverse=direction=='desc'
     def key(a):
         if sort=='relevance':return (a.get('rank',0),-a['updated'],a['id'])
         if sort=='title':return (normalized(a['title']),a['id'])
-        if sort=='comments':return (-a['open_comments'],-a['updated'],a['id'])
-        return (-a['updated'],a['id'])
-    rows=sorted(rows,key=key)
+        if sort=='comments':return (a['open_comments'],a['updated'],a['id'])
+        if sort in ('space','category'):return (normalized(a.get(sort,'')),normalized(a['title']),a['id'])
+        if sort=='agent':return (normalized(a.get('source',{}).get('agent','')),normalized(a['title']),a['id'])
+        return (a['updated'],a['id'])
+    rows=sorted(rows,key=key,reverse=reverse)
     if 'limit' not in params:return rows,None
     limit=int(params['limit'])
     if not 1<=limit<=60:raise ValueError('Límite inválido.')
-    signature=hashlib.sha256(json.dumps({k:params.get(k,'') for k in ['q','view','space','access','sort','document_id','collection','tag','category']},sort_keys=True).encode()).hexdigest()[:16]
+    signature=hashlib.sha256(json.dumps({k:params.get(k,'') for k in ['q','view','space','access','sort','document_id','collection','tag','category','agent','review','direction']},sort_keys=True).encode()).hexdigest()[:16]
     if params.get('cursor'):
         if len(params['cursor'])>2048:raise ValueError('Cursor inválido.')
         cursor=json.loads(base64.urlsafe_b64decode(params['cursor']).decode())
         if cursor['scope']!=signature:raise ValueError('La búsqueda cambió. Vuelve a empezar.')
         after=tuple(cursor['after'])
-        rows=[a for a in rows if key(a)>after]
+        rows=[a for a in rows if (key(a)<after if reverse else key(a)>after)]
     selected=rows[:limit]
     cursor=None
     if len(rows)>limit:

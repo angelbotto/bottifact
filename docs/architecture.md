@@ -41,7 +41,7 @@ flowchart LR
 
 The existing runtime initializes document-wide interactions and assumes a standalone reader. Running those scripts against a React application's DOM would introduce unmanaged listeners, global theme changes and StrictMode remount problems. `RecipePreview` instead creates an opaque-origin sandboxed iframe without `allow-same-origin`. `ArtifactFrame` does not forward portal authentication or grant parent DOM access.
 
-Eight native exports cover scoped appearance, callouts, margin notes, timelines, card grids, tables and frames. All 82 recipes remain accessible through preview frames. Native components receive data through typed props and follow React lifecycles. A native port should replace an iframe only after interaction, accessibility and cleanup are tested. Full stroke handwriting/audio remains in the original recipe; native `MarginNote` is a simpler visibility-triggered reveal.
+Eight native exports cover scoped appearance, callouts, margin notes, timelines, card grids, tables and frames. All 88 recipes remain accessible through preview frames. Native components receive data through typed props and follow React lifecycles. A native port should replace an iframe only after interaction, accessibility and cleanup are tested. Full stroke handwriting/audio remains in the original recipe; native `MarginNote` is a simpler visibility-triggered reveal.
 
 The preview asset payload includes existing fonts and runtime resources, loaded on demand. It is larger than the native components and is intended for a component explorer or embedded specimen. Do not mount dozens of live frames when a static preview will do. Native theme imports use the small `@bottifact/core/themes` entrypoint.
 

@@ -27,3 +27,11 @@ python3 scripts/publish.py publicar --archivo examples/generated/report.html --t
 El creador ve procedencia en la ficha lateral y en la versión seleccionada del lector. `Copiar contexto para IA` reúne documento, enlace, ID estable, versión, origen y los comentarios/notas visibles para su cuenta. Funciona también sin comentarios. Cada hilo mantiene su versión original y el contexto del fragmento; una sesión escrita en una nota es distinta de la sesión que creó el artefacto. Los lectores no reciben las referencias de sesión y dispositivo del creador.
 
 Al recibir ese prompt, identifica el artefacto, compara la revisión publicada y conserva URL, audiencia e ID. Prepara un borrador, explica qué comentarios atendiste y no resuelvas hilos automáticamente. La procedencia ayuda a retomar; no concede acceso a otra máquina ni ejecuta agentes por sí sola.
+
+## Administrator table and graph
+
+The table has searchable menus for company/space, topic, collection, category, access, agent, and pending review. Active filters can be removed individually or cleared together. The agent facet only uses provenance available to the current viewer. Sorting by title, company, category, agent, updated date, or pending count runs on the server before cursor pagination; table headers toggle ascending/descending. Column visibility and comfortable/compact density are saved on the device. Document and action columns always remain available.
+
+Rows load as you scroll inside the table, preserving its scroll position. A load-more button remains available. The table scrolls horizontally on small screens instead of shrinking its content. Gallery and list views share the same query and filters.
+
+See [Graph exploration](graphs.md) for companies, topics, neighborhoods and connection evidence, and [automatic skill updates](automatic-updates.md) for keeping agent installations current. The standalone relationship-map recipe is a different component.

@@ -211,3 +211,7 @@ Bottifact is an early-stage project. The standalone generator, portal, skill and
 MIT for project code. Fonts, approved reference sounds and geographic inputs retain their own terms in [NOTICE](NOTICE) and [licenses/](licenses). Brand names and logos do not imply endorsement or grant trademark rights. The editorial reference is credited in [design documentation](docs/editorial-reference.md).
 
 Please report vulnerabilities privately through [SECURITY.md](SECURITY.md). Community participation follows the [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## Keep your agents current
+
+After installation, `bottifact update --if-changed` updates from your configured server. Opt into a six-hour per-user check with `bottifact update --auto enable`; inspect it with `--auto status` or stop it with `--auto disable`. This updates the shared skill used by Codex, Claude and Hermes on that computer, without changing credentials. See [automatic updates](docs/automatic-updates.md), [administrator graphs](docs/graphs.md), and [tables and filters](docs/connected-library.md).
