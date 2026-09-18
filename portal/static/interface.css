@@ -1,0 +1,10 @@
+/* Generated from core/components/interface.js. */
+
+    .bf-ui-icon{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+    .bf-control{display:inline-flex!important;align-items:center;justify-content:center;gap:7px;font-family:var(--sans,system-ui);font-weight:500;letter-spacing:0}
+    .bf-control[hidden]{display:none!important}.bf-control-label{min-width:0}.bf-icon-button .bf-control-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+    .bf-icon-button{width:34px;min-width:34px;padding:0!important}.bf-control:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+    .bf-control:focus-visible{outline:2px solid var(--foco,var(--accent,#6765cc));outline-offset:3px}
+    @media(prefers-reduced-motion:no-preference){.bf-control{transition:background-color 120ms ease-out,border-color 120ms ease-out,color 120ms ease-out,box-shadow 120ms ease-out}.bf-control:active:not(:disabled){transform:translateY(.5px)}}
+    @media(pointer:coarse){.bf-control{min-height:44px}.bf-icon-button{min-width:44px}}
+    

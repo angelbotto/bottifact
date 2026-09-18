@@ -1004,6 +1004,10 @@
         });
         positionColumns();
         paintChips();
+        const ui = window.BottifactUI;
+        for(const [menu, icon] of [[filters,"filter"],[layout,"columns"],[views,"bookmark"],[selectionTools,"more"]]) ui?.decorate(menu.querySelector("summary"),icon);
+        layoutButtons.forEach(b => ui?.decorate(b,b.dataset.layout === "table" ? "table" : "cards"));
+        ui?.decorate(prev,"back",true); ui?.decorate(next,"arrow",true);
         mobileSort.value = sorts[0] ? sorts[0].col + ":" + sorts[0].dir : "";
         batch.hidden = !selected.size;
         selectedCount.textContent =
@@ -1015,6 +1019,7 @@
         csv.textContent = selected.size
           ? "Exportar selección (" + selected.size + ")"
           : "Exportar vista";
+        window.BottifactUI?.decorate(csv, "download");
         selectAll.checked =
           !!pageRows.length && pageRows.every((i) => selected.has(i));
         selectAll.indeterminate =

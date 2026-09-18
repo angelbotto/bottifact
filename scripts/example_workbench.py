@@ -70,7 +70,7 @@ def table(key, title, headers, rows, unit):
 
 
 def generate():
-    intro = """<section id="decision"><p class="ceja">Bottifact / guía de trabajo</p><h2>Leer, contrastar y devolver contexto.</h2><p>La prioridad es reducir el trabajo entre encontrar un documento y preparar su siguiente versión. Esta guía permite probar las tablas con datos ficticios y entender qué queda guardado en el archivo, en el navegador o en la cuenta.</p><p>Los controles de apariencia, revisión y compartir están juntos al pie del documento. En el portal, Más abre las referencias y la búsqueda de artefactos. El tema elegido por un lector conserva el diseño publicado.</p></section>"""
+    intro = """<section id="decision"><p class="ceja">Bottifact / guía de trabajo</p><h2>Leer, contrastar y devolver contexto.</h2><p>La prioridad es reducir el trabajo entre encontrar un documento y preparar su siguiente versión. Esta guía permite probar las tablas con datos ficticios y entender qué queda guardado en el archivo, en el navegador o en la cuenta.</p><p>La barra inferior reúne Apariencia, Comentar, Nota privada, Revisión, Compartir y Más. Pasa el cursor o enfoca un icono para identificarlo; también puedes recorrer las herramientas con las flechas del teclado. En el portal, Más abre las referencias y la búsqueda de artefactos. El tema elegido por un lector conserva el diseño publicado.</p></section>"""
     scenarios = [
         (
             "liftit-deliveries",

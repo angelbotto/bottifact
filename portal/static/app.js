@@ -1092,6 +1092,28 @@
 
   $("#view-controls").append($(".view-switch"));
   $("#search-icon").append(K.icon("search"));
+  const decorate = window.BottifactUI?.decorate;
+  document
+    .querySelectorAll("button[data-close],#close-peek")
+    .forEach((b) => decorate?.(b, "close", true));
+  for (const [selector, icon, only] of [
+    ["#theme", "appearance", true],
+    ["#publish", "plus", false],
+    ["#toggle-filters", "filter", false],
+    ["#logout", "logout", false],
+  ])
+    decorate?.($(selector), icon, only);
+  for (const [view, icon] of Object.entries({
+    mine: "folder",
+    shared: "share",
+    inbox: "comment",
+    public: "globe",
+    notifications: "bell",
+    archived: "archive",
+    admin: "settings",
+    connections: "agent",
+  }))
+    decorate?.($('[data-view="' + view + '"]'), icon);
   for (const name of ["grid", "list", "table", "graph"])
     $("#" + name + "-view").replaceChildren(K.icon(name));
   $("#toggle-filters").addEventListener("click", () => {
@@ -1604,16 +1626,17 @@
   });
   const workbenchTools = make("div", undefined, "context-actions");
   workbenchTools.id = "context-tools";
-  for (const [label, fn] of [
-    ["Buscar / ⌘ K", contextWorkbench.search],
-    ["Filtros avanzados", contextWorkbench.filters],
-    ["Mesas y vistas", contextWorkbench.views],
-    ["Entidades", contextWorkbench.entities],
-    ["Sesiones", contextWorkbench.sessions],
+  for (const [label, fn, icon] of [
+    ["Buscar / ⌘ K", contextWorkbench.search, "search"],
+    ["Condiciones", contextWorkbench.filters, "filter"],
+    ["Mesas y vistas", contextWorkbench.views, "table"],
+    ["Empresas y temas", contextWorkbench.entities, "graph"],
+    ["Sesiones", contextWorkbench.sessions, "clock"],
   ]) {
     const b = make("button", label);
     b.type = "button";
     b.addEventListener("click", safe(fn));
+    window.BottifactUI?.decorate(b, icon);
     workbenchTools.append(b);
   }
   $("#results").before(workbenchTools);

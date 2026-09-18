@@ -1,4 +1,5 @@
 import type { TableQuery, TableRule } from "@bottifact/core";
+import { ControlIcon } from "./ui/icon.js";
 export interface FilterColumn {
   id: string;
   header: string;
@@ -21,7 +22,8 @@ export function FilterBuilder({
   return (
     <details className="bf-filter-builder">
       <summary>
-        Filters {value.rules.length > 0 && `(${value.rules.length})`}
+        <ControlIcon name="filter" /> Filters{" "}
+        {value.rules.length > 0 && `(${value.rules.length})`}
       </summary>
       <div className="bf-filter-panel">
         <label>

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.2 — Refined controls and reader tools
+
+- Introduce consistent SVG controls and a grouped floating reader dock with direct comment/note actions, active tool states, keyboard navigation and focus/hover hints.
+- Refine the library, appearance panels and portable/React table controls with quieter surfaces, clearer hierarchy and shorter labels.
+- Preserve account CSP with a generated external control stylesheet; keep permissions, private notes and historical versions intact.
+- Document UX research, interface guidance and the proposed Margen brand direction without renaming packages or installations.
+
 ## 0.5.1 — Tables and mobile reading
 
 - Consolidate portable table controls with source-value facets, removable filter chips, contextual selection actions and clearer column settings.

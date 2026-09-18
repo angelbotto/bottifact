@@ -21,6 +21,7 @@ window.BottifactKnowledge = (() => {
     filter: "M4 6h16 M7 12h10 M10 18h4",
   };
   function icon(name) {
+    if (window.BottifactUI?.paths[name]) return window.BottifactUI.icon(name);
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("viewBox", "0 0 24 24");
     svg.setAttribute("aria-hidden", "true");

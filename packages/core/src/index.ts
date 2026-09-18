@@ -23,7 +23,7 @@ export function getRecipe(id: RecipeId | string): Recipe {
 }
 
 const escape = (text: string) => text.replace(/[&<>"']/g, value => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[value]!);
-const baseModules = ['audio', 'controls', 'editorial-pieces', 'reader', 'code'].map(name => `packages/core/components/${name}.js`);
+const baseModules = ['interface', 'audio', 'controls', 'editorial-pieces', 'reader', 'code'].map(name => `packages/core/components/${name}.js`);
 const three = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js';
 
 /** Creates an isolated specimen, not a publishable artifact or an authenticated portal. */

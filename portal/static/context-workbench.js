@@ -10,6 +10,24 @@ window.BottifactContextWorkbench = {
     const button = (text, fn) => {
       const b = el("button", text);
       b.type = "button";
+      const icons = {
+        Cerrar: "close",
+        Guardar: "check",
+        "Guardar entidad": "check",
+        "Guardar mesa": "check",
+        "Añadir nota": "note",
+        "Crear entidad": "plus",
+        "Nueva mesa de trabajo": "plus",
+        "Nuevo tablero": "plus",
+        "Referencias y conexiones": "graph",
+        "Preparar contexto": "copy",
+        "Conectar otro artefacto": "plus",
+        "Confirmar conexión": "check",
+        "Añadir condición": "plus",
+        "Aplicar al conjunto completo": "check",
+      };
+      if (icons[text])
+        window.BottifactUI?.decorate(b, icons[text], text === "Cerrar");
       b.onclick = async () => {
         b.disabled = true;
         try {
@@ -134,7 +152,30 @@ window.BottifactContextWorkbench = {
         d.close();
         peek(a);
       });
-      const found=el("section");body.append(found);const records=(await api("/api/context/entities")).items;const norm=v=>v.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();function findEntities(){found.replaceChildren();const q=norm(field.value.trim());if(!q)return;for(const entity of records.filter(e=>norm([e.name,...e.aliases].join(" ")).includes(q)).slice(0,12))found.append(button(entity.kind+" · "+entity.name,()=>{d.close();entities(entity.id);}));}field.addEventListener("input",findEntities);field.focus();
+      const found = el("section");
+      body.append(found);
+      const records = (await api("/api/context/entities")).items;
+      const norm = (v) =>
+        v
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase();
+      function findEntities() {
+        found.replaceChildren();
+        const q = norm(field.value.trim());
+        if (!q) return;
+        for (const entity of records
+          .filter((e) => norm([e.name, ...e.aliases].join(" ")).includes(q))
+          .slice(0, 12))
+          found.append(
+            button(entity.kind + " · " + entity.name, () => {
+              d.close();
+              entities(entity.id);
+            }),
+          );
+      }
+      field.addEventListener("input", findEntities);
+      field.focus();
     }
     async function entities(focusId) {
       const { body, status } = dialog("Empresas, proyectos y temas"),
@@ -163,7 +204,12 @@ window.BottifactContextWorkbench = {
         row.append(dl);
         for (const a of entity.artifacts)
           row.append(button(a.title, () => inspect(a)));
-        list.append(row);if(entity.id===focusId){row.tabIndex=-1;row.focus();row.scrollIntoView({block:"center"});}
+        list.append(row);
+        if (entity.id === focusId) {
+          row.tabIndex = -1;
+          row.focus();
+          row.scrollIntoView({ block: "center" });
+        }
       }
       status.textContent = r.items.length + " entidades personales.";
     }
@@ -755,7 +801,8 @@ window.BottifactContextWorkbench = {
       if (
         (e.metaKey || e.ctrlKey) &&
         e.key.toLowerCase() === "k" &&
-        !document.querySelector("dialog[open]") && !e.target.closest?.("input,textarea,select,[contenteditable=true]")
+        !document.querySelector("dialog[open]") &&
+        !e.target.closest?.("input,textarea,select,[contenteditable=true]")
       ) {
         e.preventDefault();
         search().catch(() => {});

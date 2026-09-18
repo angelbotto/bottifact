@@ -31,7 +31,7 @@ DATA = {
  ]
 }
 
-def script(file): return (script('packages/core/components/audio.js')+script('packages/core/components/controls.js')+script('packages/core/components/editorial-pieces.js') if file=='packages/core/components/reader.js' else '')+'<script>\n' + (ROOT / file).read_text() + '\n</script>\n'
+def script(file): return (script('packages/core/components/interface.js')+script('packages/core/components/audio.js')+script('packages/core/components/controls.js')+script('packages/core/components/editorial-pieces.js') if file=='packages/core/components/reader.js' else '')+'<script>\n' + (ROOT / file).read_text() + '\n</script>\n'
 
 def start(title):
  return '<title>' + title + '</title>\n<meta charset="utf-8">\n<style>\n' + (ROOT / 'packages/core/styles/fonts.css').read_text() + '\n' + (ROOT / 'packages/core/styles/artifact.css').read_text() + '\n</style>\n<meta name="viewport" content="width=device-width, initial-scale=1">\n'
@@ -219,8 +219,13 @@ for filename,identity in json.loads((ROOT/'packages/core/registry/compatibility.
 
 # Recursos compartidos del portal; no se incluyen credenciales ni datos de instancia.
 if (ROOT/"portal/static").is_dir():
- for source,target in [("packages/core/components/review.js","review.js"),("packages/core/components/reader-controls.js","reader-controls.js"),("packages/core/styles/fonts.css","fonts.css")]:
+ for source,target in [("packages/core/components/interface.js","interface.js"),("packages/core/components/review.js","review.js"),("packages/core/components/reader-controls.js","reader-controls.js"),("packages/core/styles/fonts.css","fonts.css")]:
   (ROOT/"portal/static"/target).write_bytes((ROOT/source).read_bytes())
+
+ # External copy keeps the account UI compatible with its strict style-src policy.
+ interface = (ROOT/'packages/core/components/interface.js').read_text()
+ interface_css = re.search(r'style\.textContent\s*=\s*`(.*?)`', interface, re.S).group(1)
+ (ROOT/'portal/static/interface.css').write_text('/* Generated from core/components/interface.js. */\n'+interface_css+'\n')
 
 # Resolve navigation from the generated examples directory without touching runtime code.
 for page in (ROOT / 'examples/generated').glob('*.html'):

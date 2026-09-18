@@ -19,6 +19,7 @@ Start with the path matching your goal. Start with the hosted service for the sh
 | Explore knowledge-workbench directions | [Graph usability and product backlog](knowledge-workbench.md) |
 | Explore all existing recipes | [Generated component reference](components.md), [HTML guide](../examples/generated/guide.html) |
 | Choose a voice and use evidence | [Executive voice](executive-voice.md), [communication references](communication-references.md) |
+| Review control hierarchy, UX research and naming | [Interface direction](interface-direction.md) |
 | Inspect typography, themes and brand identity | [Themes](themes.md), [brands](brands.md), [design](design.md) |
 | Work on existing portal operations | [Portal operations](portal-operations.md) |
 

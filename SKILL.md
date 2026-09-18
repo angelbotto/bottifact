@@ -43,7 +43,11 @@ Para capítulos y configuración consulta [docs/artifact-contract.md](docs/artif
 
 5. Comprueba en navegador 320/390 px y escritorio: lectura, foco, controles, desplazamiento local y temas usados. Revisa movimiento reducido y alternativa sin WebGL si hay globo. Indica lo que no pudiste probar; medir Web Audio no acredita audición humana.
 
-La base incluye llave sol/luna (Temas / Letras / Sonido), comentarios flotantes, índice y regla de lectura. Sonido habilitado por preferencia, pero espera una interacción real y respeta silencio/volumen. Una petición explícita del usuario de cambiar u omitir una pieza prevalece.
+La base incluye el control Apariencia (Temas / Letras / Sonido), comentarios flotantes, índice y regla de lectura. Sonido habilitado por preferencia, pero espera una interacción real y respeta silencio/volumen. Una petición explícita del usuario de cambiar u omitir una pieza prevalece.
+
+## Lenguaje de interfaz
+
+Sigue [la dirección de interfaz](docs/interface-direction.md): una sola barra flotante, jerarquía primaria/secundaria/discreta e iconos SVG coherentes. Conserva etiquetas en acciones ambiguas; los botones sólo con icono necesitan nombre accesible, ayuda al foco/hover y área táctil suficiente. Usa `BottifactUI.decorate` para controles portables, preservando nodos y eventos; no agregues iconos a los datos. Los estados de comentario y nota deben distinguirse. No cambies nombre técnico, dominio o identidad visual por inferir una propuesta de marca.
 
 ## Tablas y lectura móvil
 

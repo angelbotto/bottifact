@@ -2481,6 +2481,35 @@ body:has(.revision-barra) { padding-bottom:0; }
 
 @media(max-width:640px) { .explorer-ready.pieza { padding:16px 10px; } }
 
+/* Interface controls share a quiet product vocabulary; document typography is unchanged. */
+:root { --ui-radius:8px; --ui-control:color-mix(in srgb,var(--papel) 75%,var(--panel)); --ui-border:color-mix(in srgb,var(--tinta) 15%,var(--papel)); --ui-shadow:0 1px 2px color-mix(in srgb,var(--tinta) 5%,transparent); }
+:is(.tabla-herramientas,.explorador-utilidades,.explorador-paginacion,.visor-herramientas,.analitica-controles,.flota-herramientas,.apariencia-panel,.revision-ui,.revision-panel-v2,.explorador-detalle) :is(button,select),.control-menu>summary { border-color:var(--ui-border); border-radius:var(--ui-radius); box-shadow:none; font-family:var(--sans); font-weight:500; letter-spacing:0; }
+:is(.apariencia-panel,.revision-panel-v2,.explorador-detalle) :is(input:not([type=checkbox]):not([type=radio]):not([type=range]),textarea,select) { border:1px solid var(--ui-border); background:var(--ui-control); border-radius:8px; color:var(--tinta); }
+:is(.tabla-herramientas,.explorador-utilidades,.explorador-paginacion,.visor-herramientas,.flota-herramientas,.revision-panel-v2,.apariencia-panel) button:disabled { opacity:.4; cursor:not-allowed; box-shadow:none; }
+:is(.control-panel,.apariencia-panel,.revision-panel-v2,.explorador-detalle) :focus-visible { outline:2px solid var(--foco); outline-offset:3px; }
+.control-panel { border-color:var(--ui-border); border-radius:12px; box-shadow:0 4px 8px #00000008,0 12px 36px #00000012; }
+.control-panel button { border-radius:7px; }
+.explorer-ready .explorador-utilidades>details>summary { border-color:transparent; background:var(--panel); color:var(--tinta-2); border-radius:8px; }
+.explorer-ready .explorador-utilidades>details[open]>summary { background:var(--panel-2); color:var(--tinta); }
+.explorer-ready .explorer-search input { background:var(--ui-control); border-color:var(--ui-border); border-radius:8px; }
+.explorer-ready .explorer-presentation { background:var(--panel); border:0; padding:3px; border-radius:9px; }
+.explorer-ready .explorer-presentation button { gap:6px; border-radius:6px; color:var(--tinta-2); }
+.explorer-ready .explorer-presentation button[aria-pressed=true] { background:var(--papel); color:var(--tinta); box-shadow:var(--ui-shadow); }
+.explorer-ready .explorer-filter-chips button { background:var(--panel); border-color:transparent; border-radius:6px; }
+.explorer-ready .explorador-paginacion button { border-color:transparent; background:var(--panel); width:34px; padding:0; }
+.explorer-ready .explorador-paginacion button:disabled { background:transparent; }
+.explorer-ready th[data-tipo=numero] { text-align:right; }
+.explorer-ready [data-value-type=numero] { font-variant-numeric:tabular-nums; }
+.apariencia-explorador { border-radius:16px; border-color:var(--ui-border); box-shadow:0 4px 8px #00000008,0 16px 48px #00000016; }
+.apariencia-explorador .apariencia-pestanas { padding:3px; background:var(--panel); border-radius:10px; gap:3px; }
+.apariencia-explorador .apariencia-pestanas button { border:0; border-radius:7px; }
+.apariencia-explorador .apariencia-pestanas button[aria-selected=true] { background:var(--papel); box-shadow:var(--ui-shadow); }
+.apariencia-explorador .apariencia-colores label { border-color:transparent; background:var(--ui-control); border-radius:10px; }
+.apariencia-explorador .apariencia-colores label:has(:checked) { outline:2px solid var(--foco); outline-offset:-2px; background:var(--panel); }
+@media(hover:hover){:is(.explorador-utilidades,.visor-herramientas,.apariencia-panel,.revision-panel-v2) button:hover:not(:disabled),.explorer-ready .explorador-utilidades>details>summary:hover { background:var(--panel-2); color:var(--tinta); }}
+@media(prefers-reduced-motion:no-preference){:is(.control-menu>summary,.apariencia-panel button,.revision-panel-v2 button,.visor-herramientas button){transition:background-color 120ms ease-out,color 120ms ease-out,border-color 120ms ease-out}}
+@media(max-width:640px){.explorer-ready .explorador-utilidades>details>summary {gap:4px}.explorer-ready .explorador-utilidades>details>summary .bf-ui-icon{width:14px;height:14px}.explorer-ready .explorador-paginacion button{width:44px}}
+
 /* GENERATED THEMES — scripts/themes.py; edit packages/core/themes/families/. */
 :root[data-color-mode="light"] .paleta-mini[data-muestra-tema="editorial"] { --vista-papel:#fef8f2; --vista-tinta:#231e1a; --vista-acento:#a13f19; }
 :root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="editorial"] { --vista-papel:#13110f; --vista-tinta:#e9dfd7; --vista-acento:#f1b798; }

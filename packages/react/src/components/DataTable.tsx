@@ -20,6 +20,7 @@ import {
   tableCSV,
   type TableQuery,
 } from "@bottifact/core";
+import { ControlIcon } from "./ui/icon.js";
 import { FilterBuilder } from "./FilterBuilder.js";
 import { Inspector } from "./Inspector.js";
 import {
@@ -257,7 +258,10 @@ export function DataTable<Row extends RowData>({
         )}
         <FilterBuilder columns={columns} value={query} onChange={setQuery} />
         <details>
-          <summary>Display</summary>
+          <summary>
+            <ControlIcon name="columns" />
+            Display
+          </summary>
           <div className="bf-filter-panel">
             {columns.map((c) => (
               <div key={c.id} className="bf-column-control">
@@ -325,7 +329,10 @@ export function DataTable<Row extends RowData>({
           </div>
         </details>
         <details>
-          <summary>More</summary>
+          <summary>
+            <ControlIcon name="more" />
+            More
+          </summary>
           <div className="bf-filter-panel">
             {" "}
             <button
@@ -342,13 +349,16 @@ export function DataTable<Row extends RowData>({
               Reset
             </button>
             <button type="button" onClick={() => exportRows(visible)}>
-              Export visible
+              <ControlIcon name="download" /> Export visible
             </button>
           </div>
         </details>
         {storageKey && (
           <details>
-            <summary>Views</summary>
+            <summary>
+              <ControlIcon name="bookmark" />
+              Views
+            </summary>
             <div className="bf-filter-panel">
               {views.map((v) => (
                 <div key={v.name}>
@@ -396,14 +406,14 @@ export function DataTable<Row extends RowData>({
             aria-pressed={effectiveLayout === "table"}
             onClick={() => setLayout("table")}
           >
-            Table
+            <ControlIcon name="table" /> Table
           </button>
           <button
             type="button"
             aria-pressed={effectiveLayout === "cards"}
             onClick={() => setLayout("cards")}
           >
-            Cards
+            <ControlIcon name="cards" /> Cards
           </button>
         </div>
       </div>

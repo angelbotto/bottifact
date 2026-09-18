@@ -13,3 +13,7 @@ Navegación lateral de 226 px en escritorio; navegación horizontal desplazable 
 ## Interacción
 
 Miniaturas estáticas en iframes aislados y carga próxima al viewport. Abrir la ficha no ejecuta el artefacto. Cambios visuales de 150–180 ms, sin animaciones decorativas de carga y con movimiento reducido. El mapa tiene botones de zoom, arrastre y selección con teclado, además de lista alternativa. Controles de interfaz con iconos coherentes y nombre accesible.
+
+## Controles y revisión
+
+La dirección detallada y sus referencias están en [interface-direction.md](interface-direction.md). Jerarquía primaria/secundaria/discreta, iconos SVG de 16–19 px, radios de 8 px y transiciones de 120 ms. Conserva texto para acciones ambiguas. La barra del lector agrupa apariencia, comentario/nota/revisión y compartir/más; usa áreas de 44 px en móvil, ayuda con hover/foco y estados activos. La biblioteca carga el CSS de controles desde un archivo para conservar su CSP estricta.

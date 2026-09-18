@@ -45,3 +45,36 @@
 .portal-app .atlas-legend{display:flex;flex-wrap:wrap;gap:16px;font-size:11px;color:var(--muted);margin:0 0 12px}.portal-app .atlas-legend span::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;background:var(--accent)}.portal-app .atlas-legend .kind-space::before{background:#d49b50}.portal-app .atlas-legend .kind-topic::before{background:#8f80c6}.portal-app .atlas-legend .kind-collection::before{background:#66a79e}
 .workbench-dialog{width:min(760px,calc(100vw - 24px));max-height:calc(100dvh - 32px);padding:0;border-radius:14px;overflow:auto;background:var(--bg);color:var(--ink)}.workbench-dialog>header{display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;padding:18px 22px;background:var(--bg);border-bottom:1px solid var(--line);z-index:1}.workbench-dialog h2{font:600 18px var(--sans);margin:0}.workbench-body{padding:20px 22px}.workbench-body>label{display:flex;gap:10px;align-items:center}.workbench-body textarea{width:100%;box-sizing:border-box;font:12px/1.6 var(--mono,monospace)}.workbench-body footer{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.workbench-dialog>[role=status]{padding:0 22px 14px;margin:0}.bundle-threads{max-height:340px;overflow:auto;margin:16px 0;border:1px solid var(--line);border-radius:8px}.bundle-thread{display:flex!important;gap:12px;padding:14px;border-bottom:1px solid var(--line);cursor:pointer}.bundle-thread input{flex:0 0 auto;align-self:flex-start;margin-top:5px}.bundle-thread span{min-width:0}.bundle-thread small{display:block;color:var(--muted);margin:4px 0}.bundle-thread p{margin:5px 0}.bundle-thread blockquote{font-size:12px;margin:6px 0;color:var(--muted);padding-left:12px;border-left:2px solid var(--line)}
 .context-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:14px 0}.context-actions button{font-size:12px;padding:8px 12px}.context-card{border:1px solid var(--line);border-radius:10px;padding:16px;margin-block:12px}.context-card h3{margin:0 0 8px}.context-card a{display:block;margin-block:8px}.context-card blockquote{margin:12px 0;padding-left:14px;border-left:2px solid currentColor}.context-card button{margin:4px}.context-rule{display:flex;gap:8px;flex-wrap:wrap;padding:12px 0;border-bottom:1px solid #8883}.context-rule label{max-width:180px}.workbench-body>label{display:grid;gap:6px;margin:12px 0}.workbench-body>label:has(input[type=checkbox]){display:flex}.context-board{height:480px;overflow:auto;position:relative;background-image:radial-gradient(#8885 1px,transparent 1px);background-size:20px 20px;min-width:0;border:1px solid #8884;border-radius:12px}.context-board:after{content:'';display:block;width:2100px;height:1450px;pointer-events:none}.context-board .context-card{position:absolute;width:220px;max-height:300px;overflow:auto;background:var(--panel);box-shadow:0 4px 16px #0001;z-index:1;margin:0}.context-board .context-card>button:first-child{cursor:grab;touch-action:none}.context-board .context-card:focus{outline:2px solid currentColor}
+
+/* Product refinement: weight through hierarchy, not a border on every action. */
+.portal-app { --control-radius:8px; --control-line:color-mix(in oklch,var(--ink) 14%,var(--panel)); --control-shadow:0 1px 2px color-mix(in oklch,var(--ink) 5%,transparent); }
+.portal-app :is(button,.button,select) { border-radius:var(--control-radius); border-color:var(--control-line); font-family:var(--sans); font-weight:500; letter-spacing:0; }
+.portal-app button:not(.primary):not(.active):not([aria-pressed=true]) { box-shadow:none; }
+.portal-app button:disabled { opacity:.42; cursor:not-allowed; }
+.portal-app :is(button,.button,summary):focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+.portal-app .primary { border-color:transparent; box-shadow:0 1px 2px #0001; }
+.portal-app .tools { border-color:transparent; padding:12px 0; background:transparent; }
+.portal-app .search { border:1px solid var(--control-line); border-radius:10px; background:var(--panel); box-shadow:var(--control-shadow); }
+.portal-app #toggle-filters,.portal-app .context-actions>button { background:var(--wash); border-color:transparent; }
+.portal-app #context-tools { display:flex; gap:6px; flex-wrap:wrap; padding:0 0 18px; margin:0; }
+.portal-app #context-tools button { font-size:12px; min-height:34px; padding:7px 10px; color:var(--muted); }
+.portal-app #context-tools button:first-child { margin-right:auto; }
+.portal-app .tabs button .bf-control-label:not(:empty) { flex:1; margin-left:0; background:transparent; padding:0; }
+.portal-app .tabs button .bf-ui-icon { width:17px;height:17px; margin-right:3px; }
+.portal-app .tabs button { border-radius:9px; gap:9px; }
+.portal-app .tabs button.active { background:var(--panel); color:var(--ink); box-shadow:var(--control-shadow); }
+.portal-app .view-switch { padding:3px; border:0; border-radius:9px; background:var(--wash); gap:2px; }
+.portal-app .view-switch button { border:0; border-radius:6px; background:transparent; }
+.portal-app .view-switch button.active,.portal-app .view-switch button[aria-pressed=true] { background:var(--panel); box-shadow:var(--control-shadow); }
+.portal-app :is(.icon,.card-edit) { border-color:transparent; background:transparent; }
+.portal-app dialog { border-color:var(--control-line); border-radius:16px; box-shadow:0 4px 12px #00000008,0 24px 80px #00000022; }
+.portal-app dialog::backdrop { background:color-mix(in oklch,var(--ink) 18%,transparent); }
+.portal-app dialog :is(input:not([type=checkbox]):not([type=radio]),select,textarea) { border-color:var(--control-line); border-radius:8px; background:var(--wash); }
+.portal-app .dialog-head h2,.portal-app .workbench-dialog header h2 { font:600 18px/1.35 var(--sans); letter-spacing:-.02em; }
+.portal-app :is(.dialog-actions,.owner-actions,.peek-actions) button:not(.primary) { background:var(--wash); border-color:transparent; }
+.portal-app .facet-menu>summary { border-color:var(--control-line); border-radius:8px; }
+.portal-app .facet-panel { border-color:var(--control-line); border-radius:12px; box-shadow:0 8px 32px #0002; }
+.portal-app .facet-options button { border:0; border-radius:6px; }
+@media(hover:hover){.portal-app #context-tools button:hover,.portal-app .tabs button:hover,.portal-app #toggle-filters:hover { background:var(--wash); color:var(--ink); }.portal-app #context-tools button:hover {box-shadow:0 0 0 1px var(--control-line) inset;}}
+@media(prefers-reduced-motion:no-preference){.portal-app :is(button,.button,summary){transition:background-color 120ms ease-out,border-color 120ms ease-out,color 120ms ease-out,box-shadow 120ms ease-out}.portal-app button:active:not(:disabled){transform:translateY(.5px)}}
+@media(max-width:640px){.portal-app #context-tools {display:grid;grid-template-columns:1fr 1fr;gap:6px}.portal-app #context-tools button:first-child{margin:0;grid-column:1/-1}.portal-app #context-tools button{min-height:44px;justify-content:flex-start}.portal-app dialog :is(input:not([type=checkbox]):not([type=radio]),textarea,select){font-size:16px}.portal-app .bf-icon-button{min-width:44px;min-height:44px}.portal-app .tabs button .bf-ui-icon{width:16px;height:16px}}
