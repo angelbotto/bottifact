@@ -2962,7 +2962,7 @@ body:has(.revision-barra) { padding-bottom:0; }
 .explorer-ready table { width:100%; }
 .explorer-ready caption { padding:12px 16px; text-align:left; background:var(--papel); font:12px/1.5 var(--sans); color:var(--tinta-2); }
 .explorer-ready :is(th,td) { border-bottom:1px solid var(--linea); font:14px/1.5 var(--sans); vertical-align:middle; }
-.explorer-ready tbody :is(td,th):first-child { font-weight:550; }
+.explorer-ready tbody :is(td,th)[data-primary=true] { font-weight:550; }
 .explorer-ready :is(th,td)[data-value-type=numero] { text-align:right; font-variant-numeric:tabular-nums; font-family:var(--mono); }
 .explorer-ready .explorador-inspeccionar { width:30px; min-height:30px; padding:0; margin-left:8px; border:0; background:transparent; color:var(--tinta-2); font:16px var(--sans); }
 .explorer-ready .explorador-inspeccionar:hover { background:var(--panel-2); color:var(--tinta); }
@@ -2991,7 +2991,7 @@ body:has(.revision-barra) { padding-bottom:0; }
 .explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) tbody tr:has(.tabla-grupo),.explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) .explorer-empty { grid-column:1/-1; }
 .explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) tbody :is(td,th) { display:block; width:auto!important; min-width:0!important; padding:0; border:0; text-align:left; overflow-wrap:anywhere; white-space:normal; font-size:14px; }
 .explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) tbody :is(td,th)::before { content:attr(data-label); display:block; margin-bottom:4px; color:var(--tinta-2); font:11px/1.5 var(--sans); }
-.explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) tbody :is(td,th):first-child { grid-column:1/-1; padding-bottom:10px; border-bottom:1px solid var(--linea); font-size:16px; }
+.explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) tbody :is(td,th)[data-primary=true] { grid-column:1/-1; padding-bottom:10px; border-bottom:1px solid var(--linea); font-size:16px; }
 .explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) .explorador-inspeccionar { float:right; margin-top:-4px; }
 .explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) .tabla-grupo { border:0!important; padding:0!important; }
 @media(max-width:640px) {
@@ -3158,7 +3158,7 @@ body:has(.revision-barra) { padding-bottom:0; }
 /* All presentations reuse the original rows, cells, selection and anchors. */
 @media screen{
 .explorer-ready[data-layout=list] tbody tr{display:grid;grid-template-columns:minmax(100px,1.1fr) repeat(auto-fit,minmax(90px,1fr));padding:12px;gap:12px;border-radius:0;border:0;border-bottom:1px solid var(--linea);background:transparent}
-.explorer-ready[data-layout=list] tbody :is(td,th):first-child{grid-column:auto;padding:0;border:0;font-size:14px}
+.explorer-ready[data-layout=list] tbody :is(td,th)[data-primary=true]{grid-column:auto;padding:0;border:0;font-size:14px}
 .explorer-ready[data-layout=list] tbody :is(td,th)::before{font-size:10px;margin-bottom:2px}
 .explorer-ready[data-layout=board] .tabla-caja{overflow:auto;padding-bottom:12px;scroll-snap-type:x proximity}
 .explorer-ready[data-layout=board] table{display:flex;align-items:flex-start;gap:12px;min-width:100%;width:max-content}
@@ -3176,7 +3176,44 @@ body:has(.revision-barra) { padding-bottom:0; }
 .bottifact-toolbar>details>summary{position:relative}
 
 @media(max-width:640px){.explorer-ready[data-layout=board] .explorer-scroll-hint{display:block}}
+
+/* Ordered columns retain stable source-cell identity across presentations. */
+.explorer-ready .explorer-column-list{display:grid;gap:0}
+.explorer-ready .explorer-column{grid-template-columns:minmax(0,1fr) auto;gap:6px;cursor:grab}
+.explorer-ready .explorer-column>label:last-child{grid-column:1;grid-row:1;min-width:0}
+.explorer-ready .explorer-column>.explorer-column-moves{grid-column:2;grid-row:1;display:flex;gap:2px}
+.explorer-ready .explorer-column-moves button{width:30px;height:30px;min-height:30px!important;padding:0!important;border:1px solid var(--linea);border-radius:5px;box-shadow:none}
+.explorer-ready .explorer-column>label:first-of-type:not(:last-child){grid-row:2;grid-column:1;font-size:11px}
+.explorer-ready .explorer-column>details{grid-column:2;grid-row:2;font-size:11px}
+.explorer-ready .explorer-column>details input{min-width:90px}
+.explorer-ready .explorer-column button:disabled{opacity:.3;cursor:default}
+.explorer-ready .explorer-column [data-columna]{accent-color:var(--foco)}
+.explorer-ready .explorer-presentation{background:transparent;border:0;padding:0}.explorer-ready .explorer-presentation button[aria-pressed=true]{background:var(--panel);box-shadow:none}
+.explorer-ready thead :is(th,button,summary){font:500 12px/1.5 var(--sans);color:var(--tinta-2)}.explorer-ready tbody :is(td,th){font-size:13px;padding:12px 14px}.explorer-ready tbody [data-primary=true]{min-width:210px}
+.explorer-ready .bf-inline-detail .bf-detail-card{min-width:0}.explorer-ready .bf-inline-detail .bf-detail-card p{font-size:12px}.explorer-ready .bf-media{min-width:180px}
+@media(max-width:640px){.explorer-ready .explorer-column-moves button{width:40px;height:40px;min-height:40px!important}.explorer-ready .bf-person,.explorer-ready .bf-media{min-width:0}.explorer-ready .bf-media img{width:48px;height:38px}.explorer-ready:is([data-layout=cards],[data-layout=list]) tbody [data-primary=true]{grid-column:1/-1;min-width:0}.explorer-ready .bf-inline-detail{grid-column:1/-1}}
+.explorer-ready tbody [data-primary=true]{position:relative;padding-right:44px}
+.explorer-ready tbody [data-primary=true]>.explorador-inspeccionar{position:absolute;right:6px;top:10px;margin:0;float:none}
+.explorer-ready .bf-inline-detail{margin-top:4px}.explorer-ready .bf-inline-detail>summary{padding:3px 0;font-size:11px}
+.explorer-ready :is([data-value-type=texto],th){word-break:normal}
+@media(max-width:640px){.explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) tbody [data-primary=true]{padding-right:40px}.explorer-ready tbody [data-primary=true]>.explorador-inspeccionar{right:0;top:0}}
 /* REVIEW COMPOSER END */
+
+/* TABLE CONTENT START */
+/* Rich records share visual semantics across React and portable HTML. */
+.bf-person,.bf-media{display:flex;align-items:center;gap:10px;min-width:0;text-align:left;font:13px/1.4 var(--sans,system-ui,sans-serif)}
+.bf-person>span:last-child,.bf-media>span:last-child{min-width:0}.bf-person strong,.bf-media strong{display:block;font-weight:550}.bf-person small,.bf-media small{display:block;font-size:11px;font-weight:400;color:var(--tinta-2,#737373);margin-top:2px;white-space:normal}
+.bf-avatar{display:inline-flex;position:relative;flex:none;width:30px;height:30px;align-items:center;justify-content:center;overflow:hidden;border-radius:50%;background:color-mix(in srgb,var(--tinta,#222) 8%,var(--papel,#fff));color:var(--tinta-2,#555);font:500 10px var(--sans,system-ui);border:1px solid var(--linea,#ddd)}
+.bf-avatar img{width:100%;height:100%;object-fit:cover}.bf-media img,.bf-media-fallback{flex:none;width:64px;height:44px;border-radius:6px;object-fit:cover;background:var(--panel,#eee);border:1px solid var(--linea,#ddd)}.bf-media-fallback{display:grid;place-items:center;font-size:22px}
+.bf-status{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;border-radius:5px;padding:3px 7px;font:500 11px/1.5 var(--sans,system-ui);background:var(--panel,#f5f5f5);color:var(--tinta-2,#555);border:1px solid var(--linea,#ddd)}
+.bf-status>span{width:6px;height:6px;border-radius:50%;background:currentColor}.bf-status[data-tone=success]{color:var(--verde,#23845d)}.bf-status[data-tone=warning]{color:var(--amarillo,#a4791c)}.bf-status[data-tone=danger]{color:var(--rojo,#ba4141)}.bf-status[data-tone=info]{color:var(--azul,#426bc4)}
+.bf-detail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px;white-space:normal;min-width:0}
+.bf-detail-card{min-width:0;padding:16px;border:1px solid var(--linea,#ddd);border-radius:9px;background:var(--papel,#fff);font:13px/1.6 var(--sans,system-ui)}
+.bf-detail-card h4{font:600 13px/1.5 var(--sans,system-ui);margin:0 0 8px}.bf-detail-card p{font:inherit;margin:6px 0}.bf-detail-card small{color:var(--tinta-2,#666)}
+.bf-inline-detail{margin-top:8px;white-space:normal;font:12px/1.5 var(--sans,system-ui)}.bf-inline-detail>summary{width:fit-content;cursor:pointer;color:var(--tinta-2,#666);padding:5px 0}.bf-inline-detail[open]>.bf-detail-grid{margin-top:10px;min-width:min(420px,100%)}
+@media(max-width:640px){.bf-inline-detail>summary{min-height:44px;display:flex;align-items:center}.bf-person,.bf-media{overflow-wrap:anywhere}.bf-detail-card{padding:12px}}
+.bf-record-subtitle{display:block;font:11px/1.5 var(--sans,system-ui);color:var(--tinta-2);margin-top:3px}
+/* TABLE CONTENT END */
 
 /* GENERATED THEMES — scripts/themes.py; edit packages/core/themes/families/. */
 :root[data-color-mode="light"] .paleta-mini[data-muestra-tema="editorial"] { --vista-papel:#fef8f2; --vista-tinta:#231e1a; --vista-acento:#a13f19; }
@@ -9827,15 +9864,19 @@ globalThis.BottifactTableModel=TableModel;
           listen(b, "click", fn);
           return b;
         };
+      const cells = rows.map(row => [...row.cells]);
+      let columnOrder = headers.map((_, index) => index);
       const names = headers.map((h) =>
           (h.querySelector("summary") || h).textContent
             .replace(/[↕↑↓]/g, "")
             .trim(),
         ),
-        values = rows.map((r) => [...r.cells].map((c) => c.textContent.trim())),
+        values = cells.map(row => row.map(c => c.dataset.valor ?? c.textContent.trim())),
         raw = rows.map((r) =>
           [...r.cells].map((c) => c.dataset.valor ?? c.textContent.trim()),
         );
+      const originalCellStyles = cells.map(row => row.map(cell => cell.getAttribute("style")));
+      const originalHeaderStyles = headers.map(h => h.getAttribute("style"));
       const types = headers.map(
         (h, c) =>
           h.dataset.tipo ||
@@ -10132,6 +10173,9 @@ globalThis.BottifactTableModel=TableModel;
             name,
             query,
             sorts,
+            columnOrder,
+            pinned: [...pinned],
+            widths: headers.map(h => h.style.width),
             group: form.elements.grupo?.value || "",
             search: form.elements.buscar?.value || "",
             state: form.elements.estado?.value || "",
@@ -10180,6 +10224,17 @@ globalThis.BottifactTableModel=TableModel;
         query = JSON.parse(JSON.stringify(v.query || model.empty()));
         join.value = query.join;
         sorts = v.sorts || [];
+        const order = Array.isArray(v.columnOrder) ? [...new Set(v.columnOrder.filter(c => Number.isInteger(c) && c >= 0 && c < headers.length))] : [];
+        columnOrder = [...order, ...headers.map((_, c) => c).filter(c => !order.includes(c))];
+        pinned = new Set((v.pinned || []).filter(c => Number.isInteger(c) && c >= 0 && c < headers.length));
+        headers.forEach((h, c) => {
+          const width = /^\d+px$/.test(v.widths?.[c] || "") ? Math.max(100, Math.min(480, parseInt(v.widths[c]))) + "px" : "";
+          [h, ...cells.map(row => row[c])].forEach(cell => { cell.style.width = width; cell.style.minWidth = width; });
+          const control = layoutBody.querySelector('[data-column-control="' + c + '"]');
+          control.querySelector("[data-column-pin]").checked = pinned.has(c);
+          control.querySelector('[type=range]').value = parseInt(width) || 180;
+        });
+        applyColumnOrder();
         for (const [name, value] of [
           ["grupo", v.group],
           ["buscar", v.search],
@@ -10208,11 +10263,15 @@ globalThis.BottifactTableModel=TableModel;
       layoutBody.className = "control-panel";
       layout.append(make("summary", "Diseño"), layoutBody);
       layout.dataset.panelWidth = "340";
+      const columnList = make("div");
+      columnList.className = "explorer-column-list";
+      layoutBody.append(columnList);
       headers.forEach((h, c) => {
         const line = make("div"),
           pin = make("input"),
           width = make("input");
         pin.type = "checkbox";
+        pin.dataset.columnPin = String(c);
         pin.setAttribute("aria-label", "Fijar " + names[c]);
         width.type = "range";
         width.min = "100";
@@ -10220,7 +10279,7 @@ globalThis.BottifactTableModel=TableModel;
         width.value = "180";
         width.setAttribute("aria-label", "Ancho de " + names[c]);
         listen(width, "input", () => {
-          [h, ...rows.map((r) => r.cells[c])].forEach((cell) => {
+          [h, ...cells.map(row => row[c])].forEach((cell) => {
             cell.style.minWidth = width.value + "px";
             cell.style.width = width.value + "px";
           });
@@ -10238,9 +10297,62 @@ globalThis.BottifactTableModel=TableModel;
         pinLabel.prepend(pin);
         const resize = make("details");
         resize.append(make("summary", "Ancho"), width);
-        line.append(name, pinLabel, resize);
-        layoutBody.append(line);
+        const moves = make("div");
+        moves.className = "explorer-column-moves";
+        for (const [step, text] of [[-1, "↑"], [1, "↓"]]) {
+          const action = button(text, () => {
+            const index = columnOrder.indexOf(c), target = columnOrder[index + step];
+            if (target !== undefined) reorderColumn(c, target);
+          });
+          action.dataset.move = String(step);
+          action.setAttribute("aria-label", "Mover " + names[c] + (step === -1 ? " antes" : " después"));
+          action.title = action.getAttribute("aria-label");
+          moves.append(action);
+        }
+        line.draggable = true;
+        listen(line, "dragstart", event => { event.dataTransfer.setData("application/x-margen-column", String(c)); event.dataTransfer.effectAllowed = "move"; });
+        listen(line, "dragover", event => event.preventDefault());
+        listen(line, "drop", event => {
+          event.preventDefault();
+          const source = event.dataTransfer.getData("application/x-margen-column");
+          if (/^\d+$/.test(source)) reorderColumn(Number(source), c);
+        });
+        line.append(name, moves, pinLabel, resize);
+        columnList.append(line);
       });
+      const columnSearch = make("input");
+      columnSearch.type = "search";
+      columnSearch.placeholder = "Buscar columna…";
+      columnSearch.setAttribute("aria-label", "Buscar columna");
+      listen(columnSearch, "input", () => {
+        [...columnList.children].forEach(line => { line.hidden = !normal(names[Number(line.dataset.columnControl)]).includes(normal(columnSearch.value)); });
+      });
+      layoutBody.insertBefore(columnSearch, columnList);
+      const orderHint = make("p", "Arrastra las columnas o usa las flechas para cambiar su orden.");
+      layoutBody.insertBefore(orderHint, columnList);
+      const orderStatus = make("span");
+      orderStatus.className = "sr-only";
+      orderStatus.setAttribute("role", "status");
+      layoutBody.append(orderStatus);
+      function applyColumnOrder() {
+        for (const c of columnOrder) {
+          table.tHead.rows[0].append(headers[c]);
+          rows.forEach((row, i) => row.append(cells[i][c]));
+          columnList.append(layoutBody.querySelector('[data-column-control="' + c + '"]'));
+        }
+        [...columnList.children].forEach((line, index) => {
+          line.querySelector('[data-move="-1"]').disabled = index === 0;
+          line.querySelector('[data-move="1"]').disabled = index === columnOrder.length - 1;
+        });
+        positionColumns();
+      }
+      function reorderColumn(from, to) {
+        const a = columnOrder.indexOf(from), b = columnOrder.indexOf(to);
+        if (a < 0 || b < 0 || a === b) return;
+        columnOrder.splice(a, 1); columnOrder.splice(b, 0, from);
+        applyColumnOrder();
+        orderStatus.textContent = names[from] + " en posición " + (b + 1);
+      }
       tools.append(layout);
       // One toolbar, progressively disclosed options, and the same DOM records in both layouts.
       const moved = [],
@@ -10340,7 +10452,7 @@ globalThis.BottifactTableModel=TableModel;
         selectionBody = make("div");
       selectionTools.className = "control-menu";
       selectionBody.className = "control-panel";
-      selectionTools.append(make("summary", "Más"), selectionBody);
+      selectionTools.append(make("summary", "Exportar"), selectionBody);
       selectionBody.append(selectionLabel, csv);
       if (!model) advanced.append(panel);
       advanced.remove();
@@ -10434,6 +10546,7 @@ globalThis.BottifactTableModel=TableModel;
             cell.tagName === "TH" ? "rowheader" : "cell",
           );
           cell.dataset.label = names[c];
+          cell.dataset.primary = String(c === 0);
           cell.dataset.valueType = types[c];
         });
       });
@@ -10538,9 +10651,10 @@ globalThis.BottifactTableModel=TableModel;
       }
       function positionColumns() {
         let left = 0;
-        headers.forEach((h, c) => {
+        columnOrder.forEach(c => {
+          const h = headers[c];
           const fixed = pinned.has(c) && el.dataset.layout === "table";
-          for (const cell of [h, ...rows.map((r) => r.cells[c])]) {
+          for (const cell of [h, ...cells.map(row => row[c])]) {
             cell.style.position = fixed ? "sticky" : "";
             cell.style.left = fixed ? left + "px" : "";
             cell.style.zIndex = fixed ? "2" : "";
@@ -10702,7 +10816,7 @@ globalThis.BottifactTableModel=TableModel;
         }
         headers.forEach((h, c) => (h.hidden = hidden.has(c)));
         rows.forEach((r, i) => {
-          [...r.cells].forEach((c, j) => (c.hidden = hidden.has(j)));
+          cells[i].forEach((c, j) => (c.hidden = hidden.has(j)));
           r.setAttribute("aria-selected", String(selected.has(i)));
           boxes[i].checked = selected.has(i);
         });
@@ -10801,7 +10915,7 @@ globalThis.BottifactTableModel=TableModel;
         positionColumns();
         paintChips();
         const ui = window.BottifactUI;
-        for(const [menu, icon] of [[filters,"filter"],[layout,"columns"],[views,"bookmark"],[selectionTools,"more"]]) ui?.decorate(menu.querySelector("summary"),icon);
+        for(const [menu, icon] of [[filters,"filter"],[layout,"columns"],[views,"bookmark"],[selectionTools,"download"]]) ui?.decorate(menu.querySelector("summary"),icon);
         layoutButtons.forEach(b => ui?.decorate(b,({table:"table",list:"review",cards:"cards",board:"columns"}[b.dataset.layout])));
         ui?.decorate(prev,"back",true); ui?.decorate(next,"arrow",true);
         mobileSort.value = sorts[0] ? sorts[0].col + ":" + sorts[0].dir : "";
@@ -10830,9 +10944,7 @@ globalThis.BottifactTableModel=TableModel;
         const indices = selected.size
           ? rows.map((_, i) => i).filter((i) => selected.has(i))
           : visible;
-        const columns = headers
-          .map((_, i) => i)
-          .filter((c) => !headers[c].hidden);
+        const columns = columnOrder.filter(c => !headers[c].hidden);
         const safe = (v, numeric = false) =>
           '"' +
           (!numeric && /^[\s]*[=+@\-]/.test(v) ? "'" + v : v).replaceAll(
@@ -10965,10 +11077,15 @@ globalThis.BottifactTableModel=TableModel;
           rows.forEach((r, i) => {
             r.hidden = false;
             r.removeAttribute("aria-selected");
-            [...r.cells].forEach((c, j) => (c.hidden = previous.hidden[i][j]));
+            cells[i].forEach((c, j) => {
+              r.append(c); c.hidden = previous.hidden[i][j];
+              originalCellStyles[i][j] === null ? c.removeAttribute("style") : c.setAttribute("style", originalCellStyles[i][j]);
+            });
             initial.append(r);
           });
           headers.forEach((h, i) => {
+            table.tHead.rows[0].append(h);
+            originalHeaderStyles[i] === null ? h.removeAttribute("style") : h.setAttribute("style", originalHeaderStyles[i]);
             h.hidden = previous.headers[i];
             previous.sort[i] === null
               ? h.removeAttribute("aria-sort")
@@ -11012,6 +11129,7 @@ globalThis.BottifactTableModel=TableModel;
         },
       };
       instances.set(el, instance);
+      applyColumnOrder();
       setPresentation();
       update();
       return instance;

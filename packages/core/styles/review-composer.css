@@ -74,7 +74,7 @@
 /* All presentations reuse the original rows, cells, selection and anchors. */
 @media screen{
 .explorer-ready[data-layout=list] tbody tr{display:grid;grid-template-columns:minmax(100px,1.1fr) repeat(auto-fit,minmax(90px,1fr));padding:12px;gap:12px;border-radius:0;border:0;border-bottom:1px solid var(--linea);background:transparent}
-.explorer-ready[data-layout=list] tbody :is(td,th):first-child{grid-column:auto;padding:0;border:0;font-size:14px}
+.explorer-ready[data-layout=list] tbody :is(td,th)[data-primary=true]{grid-column:auto;padding:0;border:0;font-size:14px}
 .explorer-ready[data-layout=list] tbody :is(td,th)::before{font-size:10px;margin-bottom:2px}
 .explorer-ready[data-layout=board] .tabla-caja{overflow:auto;padding-bottom:12px;scroll-snap-type:x proximity}
 .explorer-ready[data-layout=board] table{display:flex;align-items:flex-start;gap:12px;min-width:100%;width:max-content}
@@ -92,3 +92,24 @@
 .bottifact-toolbar>details>summary{position:relative}
 
 @media(max-width:640px){.explorer-ready[data-layout=board] .explorer-scroll-hint{display:block}}
+
+/* Ordered columns retain stable source-cell identity across presentations. */
+.explorer-ready .explorer-column-list{display:grid;gap:0}
+.explorer-ready .explorer-column{grid-template-columns:minmax(0,1fr) auto;gap:6px;cursor:grab}
+.explorer-ready .explorer-column>label:last-child{grid-column:1;grid-row:1;min-width:0}
+.explorer-ready .explorer-column>.explorer-column-moves{grid-column:2;grid-row:1;display:flex;gap:2px}
+.explorer-ready .explorer-column-moves button{width:30px;height:30px;min-height:30px!important;padding:0!important;border:1px solid var(--linea);border-radius:5px;box-shadow:none}
+.explorer-ready .explorer-column>label:first-of-type:not(:last-child){grid-row:2;grid-column:1;font-size:11px}
+.explorer-ready .explorer-column>details{grid-column:2;grid-row:2;font-size:11px}
+.explorer-ready .explorer-column>details input{min-width:90px}
+.explorer-ready .explorer-column button:disabled{opacity:.3;cursor:default}
+.explorer-ready .explorer-column [data-columna]{accent-color:var(--foco)}
+.explorer-ready .explorer-presentation{background:transparent;border:0;padding:0}.explorer-ready .explorer-presentation button[aria-pressed=true]{background:var(--panel);box-shadow:none}
+.explorer-ready thead :is(th,button,summary){font:500 12px/1.5 var(--sans);color:var(--tinta-2)}.explorer-ready tbody :is(td,th){font-size:13px;padding:12px 14px}.explorer-ready tbody [data-primary=true]{min-width:210px}
+.explorer-ready .bf-inline-detail .bf-detail-card{min-width:0}.explorer-ready .bf-inline-detail .bf-detail-card p{font-size:12px}.explorer-ready .bf-media{min-width:180px}
+@media(max-width:640px){.explorer-ready .explorer-column-moves button{width:40px;height:40px;min-height:40px!important}.explorer-ready .bf-person,.explorer-ready .bf-media{min-width:0}.explorer-ready .bf-media img{width:48px;height:38px}.explorer-ready:is([data-layout=cards],[data-layout=list]) tbody [data-primary=true]{grid-column:1/-1;min-width:0}.explorer-ready .bf-inline-detail{grid-column:1/-1}}
+.explorer-ready tbody [data-primary=true]{position:relative;padding-right:44px}
+.explorer-ready tbody [data-primary=true]>.explorador-inspeccionar{position:absolute;right:6px;top:10px;margin:0;float:none}
+.explorer-ready .bf-inline-detail{margin-top:4px}.explorer-ready .bf-inline-detail>summary{padding:3px 0;font-size:11px}
+.explorer-ready :is([data-value-type=texto],th){word-break:normal}
+@media(max-width:640px){.explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) tbody [data-primary=true]{padding-right:40px}.explorer-ready tbody [data-primary=true]>.explorador-inspeccionar{right:0;top:0}}

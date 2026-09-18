@@ -43,15 +43,19 @@
           listen(b, "click", fn);
           return b;
         };
+      const cells = rows.map(row => [...row.cells]);
+      let columnOrder = headers.map((_, index) => index);
       const names = headers.map((h) =>
           (h.querySelector("summary") || h).textContent
             .replace(/[↕↑↓]/g, "")
             .trim(),
         ),
-        values = rows.map((r) => [...r.cells].map((c) => c.textContent.trim())),
+        values = cells.map(row => row.map(c => c.dataset.valor ?? c.textContent.trim())),
         raw = rows.map((r) =>
           [...r.cells].map((c) => c.dataset.valor ?? c.textContent.trim()),
         );
+      const originalCellStyles = cells.map(row => row.map(cell => cell.getAttribute("style")));
+      const originalHeaderStyles = headers.map(h => h.getAttribute("style"));
       const types = headers.map(
         (h, c) =>
           h.dataset.tipo ||
@@ -348,6 +352,9 @@
             name,
             query,
             sorts,
+            columnOrder,
+            pinned: [...pinned],
+            widths: headers.map(h => h.style.width),
             group: form.elements.grupo?.value || "",
             search: form.elements.buscar?.value || "",
             state: form.elements.estado?.value || "",
@@ -396,6 +403,17 @@
         query = JSON.parse(JSON.stringify(v.query || model.empty()));
         join.value = query.join;
         sorts = v.sorts || [];
+        const order = Array.isArray(v.columnOrder) ? [...new Set(v.columnOrder.filter(c => Number.isInteger(c) && c >= 0 && c < headers.length))] : [];
+        columnOrder = [...order, ...headers.map((_, c) => c).filter(c => !order.includes(c))];
+        pinned = new Set((v.pinned || []).filter(c => Number.isInteger(c) && c >= 0 && c < headers.length));
+        headers.forEach((h, c) => {
+          const width = /^\d+px$/.test(v.widths?.[c] || "") ? Math.max(100, Math.min(480, parseInt(v.widths[c]))) + "px" : "";
+          [h, ...cells.map(row => row[c])].forEach(cell => { cell.style.width = width; cell.style.minWidth = width; });
+          const control = layoutBody.querySelector('[data-column-control="' + c + '"]');
+          control.querySelector("[data-column-pin]").checked = pinned.has(c);
+          control.querySelector('[type=range]').value = parseInt(width) || 180;
+        });
+        applyColumnOrder();
         for (const [name, value] of [
           ["grupo", v.group],
           ["buscar", v.search],
@@ -424,11 +442,15 @@
       layoutBody.className = "control-panel";
       layout.append(make("summary", "Diseño"), layoutBody);
       layout.dataset.panelWidth = "340";
+      const columnList = make("div");
+      columnList.className = "explorer-column-list";
+      layoutBody.append(columnList);
       headers.forEach((h, c) => {
         const line = make("div"),
           pin = make("input"),
           width = make("input");
         pin.type = "checkbox";
+        pin.dataset.columnPin = String(c);
         pin.setAttribute("aria-label", "Fijar " + names[c]);
         width.type = "range";
         width.min = "100";
@@ -436,7 +458,7 @@
         width.value = "180";
         width.setAttribute("aria-label", "Ancho de " + names[c]);
         listen(width, "input", () => {
-          [h, ...rows.map((r) => r.cells[c])].forEach((cell) => {
+          [h, ...cells.map(row => row[c])].forEach((cell) => {
             cell.style.minWidth = width.value + "px";
             cell.style.width = width.value + "px";
           });
@@ -454,9 +476,62 @@
         pinLabel.prepend(pin);
         const resize = make("details");
         resize.append(make("summary", "Ancho"), width);
-        line.append(name, pinLabel, resize);
-        layoutBody.append(line);
+        const moves = make("div");
+        moves.className = "explorer-column-moves";
+        for (const [step, text] of [[-1, "↑"], [1, "↓"]]) {
+          const action = button(text, () => {
+            const index = columnOrder.indexOf(c), target = columnOrder[index + step];
+            if (target !== undefined) reorderColumn(c, target);
+          });
+          action.dataset.move = String(step);
+          action.setAttribute("aria-label", "Mover " + names[c] + (step === -1 ? " antes" : " después"));
+          action.title = action.getAttribute("aria-label");
+          moves.append(action);
+        }
+        line.draggable = true;
+        listen(line, "dragstart", event => { event.dataTransfer.setData("application/x-margen-column", String(c)); event.dataTransfer.effectAllowed = "move"; });
+        listen(line, "dragover", event => event.preventDefault());
+        listen(line, "drop", event => {
+          event.preventDefault();
+          const source = event.dataTransfer.getData("application/x-margen-column");
+          if (/^\d+$/.test(source)) reorderColumn(Number(source), c);
+        });
+        line.append(name, moves, pinLabel, resize);
+        columnList.append(line);
       });
+      const columnSearch = make("input");
+      columnSearch.type = "search";
+      columnSearch.placeholder = "Buscar columna…";
+      columnSearch.setAttribute("aria-label", "Buscar columna");
+      listen(columnSearch, "input", () => {
+        [...columnList.children].forEach(line => { line.hidden = !normal(names[Number(line.dataset.columnControl)]).includes(normal(columnSearch.value)); });
+      });
+      layoutBody.insertBefore(columnSearch, columnList);
+      const orderHint = make("p", "Arrastra las columnas o usa las flechas para cambiar su orden.");
+      layoutBody.insertBefore(orderHint, columnList);
+      const orderStatus = make("span");
+      orderStatus.className = "sr-only";
+      orderStatus.setAttribute("role", "status");
+      layoutBody.append(orderStatus);
+      function applyColumnOrder() {
+        for (const c of columnOrder) {
+          table.tHead.rows[0].append(headers[c]);
+          rows.forEach((row, i) => row.append(cells[i][c]));
+          columnList.append(layoutBody.querySelector('[data-column-control="' + c + '"]'));
+        }
+        [...columnList.children].forEach((line, index) => {
+          line.querySelector('[data-move="-1"]').disabled = index === 0;
+          line.querySelector('[data-move="1"]').disabled = index === columnOrder.length - 1;
+        });
+        positionColumns();
+      }
+      function reorderColumn(from, to) {
+        const a = columnOrder.indexOf(from), b = columnOrder.indexOf(to);
+        if (a < 0 || b < 0 || a === b) return;
+        columnOrder.splice(a, 1); columnOrder.splice(b, 0, from);
+        applyColumnOrder();
+        orderStatus.textContent = names[from] + " en posición " + (b + 1);
+      }
       tools.append(layout);
       // One toolbar, progressively disclosed options, and the same DOM records in both layouts.
       const moved = [],
@@ -556,7 +631,7 @@
         selectionBody = make("div");
       selectionTools.className = "control-menu";
       selectionBody.className = "control-panel";
-      selectionTools.append(make("summary", "Más"), selectionBody);
+      selectionTools.append(make("summary", "Exportar"), selectionBody);
       selectionBody.append(selectionLabel, csv);
       if (!model) advanced.append(panel);
       advanced.remove();
@@ -650,6 +725,7 @@
             cell.tagName === "TH" ? "rowheader" : "cell",
           );
           cell.dataset.label = names[c];
+          cell.dataset.primary = String(c === 0);
           cell.dataset.valueType = types[c];
         });
       });
@@ -754,9 +830,10 @@
       }
       function positionColumns() {
         let left = 0;
-        headers.forEach((h, c) => {
+        columnOrder.forEach(c => {
+          const h = headers[c];
           const fixed = pinned.has(c) && el.dataset.layout === "table";
-          for (const cell of [h, ...rows.map((r) => r.cells[c])]) {
+          for (const cell of [h, ...cells.map(row => row[c])]) {
             cell.style.position = fixed ? "sticky" : "";
             cell.style.left = fixed ? left + "px" : "";
             cell.style.zIndex = fixed ? "2" : "";
@@ -918,7 +995,7 @@
         }
         headers.forEach((h, c) => (h.hidden = hidden.has(c)));
         rows.forEach((r, i) => {
-          [...r.cells].forEach((c, j) => (c.hidden = hidden.has(j)));
+          cells[i].forEach((c, j) => (c.hidden = hidden.has(j)));
           r.setAttribute("aria-selected", String(selected.has(i)));
           boxes[i].checked = selected.has(i);
         });
@@ -1017,7 +1094,7 @@
         positionColumns();
         paintChips();
         const ui = window.BottifactUI;
-        for(const [menu, icon] of [[filters,"filter"],[layout,"columns"],[views,"bookmark"],[selectionTools,"more"]]) ui?.decorate(menu.querySelector("summary"),icon);
+        for(const [menu, icon] of [[filters,"filter"],[layout,"columns"],[views,"bookmark"],[selectionTools,"download"]]) ui?.decorate(menu.querySelector("summary"),icon);
         layoutButtons.forEach(b => ui?.decorate(b,({table:"table",list:"review",cards:"cards",board:"columns"}[b.dataset.layout])));
         ui?.decorate(prev,"back",true); ui?.decorate(next,"arrow",true);
         mobileSort.value = sorts[0] ? sorts[0].col + ":" + sorts[0].dir : "";
@@ -1046,9 +1123,7 @@
         const indices = selected.size
           ? rows.map((_, i) => i).filter((i) => selected.has(i))
           : visible;
-        const columns = headers
-          .map((_, i) => i)
-          .filter((c) => !headers[c].hidden);
+        const columns = columnOrder.filter(c => !headers[c].hidden);
         const safe = (v, numeric = false) =>
           '"' +
           (!numeric && /^[\s]*[=+@\-]/.test(v) ? "'" + v : v).replaceAll(
@@ -1181,10 +1256,15 @@
           rows.forEach((r, i) => {
             r.hidden = false;
             r.removeAttribute("aria-selected");
-            [...r.cells].forEach((c, j) => (c.hidden = previous.hidden[i][j]));
+            cells[i].forEach((c, j) => {
+              r.append(c); c.hidden = previous.hidden[i][j];
+              originalCellStyles[i][j] === null ? c.removeAttribute("style") : c.setAttribute("style", originalCellStyles[i][j]);
+            });
             initial.append(r);
           });
           headers.forEach((h, i) => {
+            table.tHead.rows[0].append(h);
+            originalHeaderStyles[i] === null ? h.removeAttribute("style") : h.setAttribute("style", originalHeaderStyles[i]);
             h.hidden = previous.headers[i];
             previous.sort[i] === null
               ? h.removeAttribute("aria-sort")
@@ -1228,6 +1308,7 @@
         },
       };
       instances.set(el, instance);
+      applyColumnOrder();
       setPresentation();
       update();
       return instance;

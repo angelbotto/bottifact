@@ -98,3 +98,34 @@ it('reuses filtered records and selection across board, list and table views',()
  (root.querySelector(".explorer-filter-chips button") as HTMLElement).click();
  expect(document.getElementById(id)).toBe(cell);
 });
+
+it('reorders original cells, hides by identity and exports in the chosen column order', () => {
+  const sourceCell = root.querySelector('[data-cell-id$=":3"]')!;
+  const identity = sourceCell.id;
+  (root.querySelector('[aria-label="Mover Importe COP antes"]') as HTMLElement).click();
+  expect([...root.querySelectorAll('thead th')].map(n => n.textContent?.trim().split(' ')[0])).toEqual(['Nombre', 'Equipo', 'Importe', 'Estado']);
+  expect(document.getElementById(identity)).toBe(sourceCell);
+  (root.querySelector('[data-columna="2"]') as HTMLInputElement).click();
+  expect(sourceCell.hasAttribute('hidden')).toBe(false);
+  expect(engine().exportCSV().split(/\r?\n/)[0]).toBe('"Nombre","Equipo","Importe COP"');
+  const search = root.querySelector('[name=buscar]') as HTMLInputElement;
+  search.value = 'Producto'; search.dispatchEvent(new Event('input', {bubbles:true}));
+  expect(engine().visible).toHaveLength(2);
+  engine().destroy();
+  expect(root.querySelector('thead th:last-child')?.textContent).toContain('Importe COP');
+});
+
+it('restores column order and widths with a saved view', () => {
+  const name = root.querySelector('[aria-label="Nombre de la vista"]') as HTMLInputElement;
+  (root.querySelector('[aria-label="Mover Estado antes"]') as HTMLElement).click();
+  const width = root.querySelector('[aria-label="Ancho de Estado"]') as HTMLInputElement;
+  width.value = '260'; width.dispatchEvent(new Event('input', {bubbles:true}));
+  name.value = 'Review layout';
+  [...root.querySelectorAll('button')].find(b => b.textContent === 'Guardar vista')!.click();
+  (root.querySelector('[aria-label="Mover Estado después"]') as HTMLElement).click();
+  const view = root.querySelector('[aria-label="Vista guardada"]') as HTMLSelectElement;
+  view.value = '0'; view.dispatchEvent(new Event('change', {bubbles:true}));
+  expect(root.querySelectorAll('thead th')[1].textContent).toContain('Estado');
+  expect((root.querySelectorAll('thead th')[1] as HTMLElement).style.width).toBe('260px');
+  localStorage.clear();
+});

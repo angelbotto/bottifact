@@ -96,3 +96,48 @@ it('switches grouped board and list views without losing record selection',()=>{
  expect((screen.getByLabelText('Select row 1') as HTMLInputElement).checked).toBe(true);
  expect(screen.getByText('4')).toBeDefined();
 });
+
+it('reorders and hides columns through an accessible Radix popover, preserving cell identity', async () => {
+  render(<DataTable caption="Orders" rows={[{id:'a',city:'Bogotá',amount:42}]} rowKey={r=>r.id} columns={[{id:'city',header:'City',value:r=>r.city},{id:'amount',header:'Amount',value:r=>r.amount}]} />);
+  const cell = document.querySelector('[data-cell-id="a:amount"]');
+  fireEvent.click(screen.getByRole('button', {name:'Columns', exact:true}));
+  const popup = screen.getByRole('dialog', {name:'Columns'});
+  fireEvent.click(within(popup).getByRole('button', {name:'Move Amount earlier'}));
+  expect(screen.getAllByRole('columnheader')[0].textContent).toContain('Amount');
+  expect(document.querySelector('[data-cell-id="a:amount"]')).toBe(cell);
+  fireEvent.click(within(popup).getByRole('checkbox', {name:'Show City'}));
+  expect(screen.getAllByRole('columnheader')).toHaveLength(1);
+  fireEvent.click(within(popup).getByRole('button', {name:'Close Columns'}));
+  expect(screen.queryByRole('dialog')).toBeNull();
+});
+
+it('filters scalar values and expands nested content without adding records or losing selection', () => {
+  render(<DataTable caption="Rich records" selectable rows={[{id:'a',owner:'Ana',status:'Open'},{id:'b',owner:'Dan',status:'Closed'}]} rowKey={r=>r.id} columns={[{id:'owner',header:'Owner',value:r=>r.owner,render:r=><span><strong>{r.owner}</strong><small>Rich description</small></span>},{id:'status',header:'Status',value:r=>r.status}]} renderExpanded={r=><section aria-label={`Related ${r.id}`}>Nested manifest {r.id}</section>} />);
+  fireEvent.click(screen.getByLabelText('Select row a'));
+  fireEvent.click(screen.getByLabelText('Expand row a'));
+  expect(screen.getByRole('region', {name:'Related a'}).textContent).toContain('Nested manifest a');
+  expect(screen.getByRole('status').textContent).toBe('2 of 2 rows');
+  fireEvent.click(screen.getByRole('button', {name:'Filters',exact:true}));
+  fireEvent.click(screen.getByLabelText('Status: Open'));
+  expect(screen.getByRole('status').textContent).toBe('1 of 2 rows');
+  expect((screen.getByLabelText('Select row a') as HTMLInputElement).checked).toBe(true);
+  fireEvent.click(screen.getByLabelText('Expand row a'));
+  expect(screen.queryByRole('region', {name:'Related a'})).toBeNull();
+});
+
+it('exports scalar values in the visible reordered column sequence', async () => {
+  let exported: Blob | undefined;
+  const NativeURL = URL;
+  vi.stubGlobal('URL', class extends NativeURL {
+    static createObjectURL(blob: Blob) { exported = blob; return 'blob:test'; }
+    static revokeObjectURL() {}
+  });
+  vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
+  render(<DataTable caption="Export example" rows={[{id:'a',city:'Bogotá',amount:42}]} rowKey={r=>r.id} columns={[{id:'city',header:'City',value:r=>r.city,render:r=><span>{r.city}<small>Display only</small></span>},{id:'amount',header:'Amount',value:r=>r.amount}]} />);
+  fireEvent.click(screen.getByRole('button', {name:'Columns',exact:true}));
+  fireEvent.click(screen.getByLabelText('Move Amount earlier'));
+  fireEvent.click(screen.getByLabelText('Close Columns'));
+  fireEvent.click(screen.getByRole('button', {name:'Export',exact:true}));
+  const csv = await new Promise<string>(resolve => { const reader = new FileReader(); reader.onload = () => resolve(String(reader.result)); reader.readAsText(exported!); });
+  expect(csv).toBe('"Amount","City"\r\n"42","Bogotá"');
+});

@@ -1,9 +1,11 @@
 import type { TableQuery, TableRule } from "@bottifact/core";
+import { TablePopover } from "./ui/popover.js";
 import { ControlIcon } from "./ui/icon.js";
 export interface FilterColumn {
   id: string;
   header: string;
   type?: "text" | "number" | "date";
+  choices?: { value: string; count: number }[];
 }
 export function FilterBuilder({
   columns,
@@ -20,12 +22,17 @@ export function FilterBuilder({
       rules: value.rules.map((r, i) => (i === index ? rule : r)),
     });
   return (
-    <details className="bf-filter-builder">
-      <summary>
-        <ControlIcon name="filter" /> Filters{" "}
-        {value.rules.length > 0 && `(${value.rules.length})`}
-      </summary>
-      <div className="bf-filter-panel">
+    <TablePopover label={`Filters${value.rules.length ? ` (${value.rules.length})` : ""}`} icon={<ControlIcon name="filter" />}>
+      <div className="bf-popover-stack">
+        {columns.filter(c => c.choices?.length).map(column => <fieldset key={column.id} className="bf-facet"><legend>{column.header}</legend>{column.choices!.map(choice => {
+          const rule = value.rules.find(rule => rule.column === column.id && rule.operator === "in");
+          return <label key={choice.value}><input type="checkbox" aria-label={`${column.header}: ${choice.value}`} checked={Array.isArray(rule?.value) && rule.value.includes(choice.value)} onChange={event => {
+            const picked = new Set(Array.isArray(rule?.value) ? rule.value : []);
+            event.target.checked ? picked.add(choice.value) : picked.delete(choice.value);
+            onChange({...value, rules: [...value.rules.filter(item => item !== rule), ...(picked.size ? [{column:column.id, operator:"in" as const, value:[...picked]}] : [])]});
+          }} /><span>{choice.value}</span><small>{choice.count}</small></label>;
+        })}</fieldset>)}
+        {columns.some(c => c.choices?.length) && <small className="bf-popover-help">Counts cover all supplied records.</small>}
         <label>
           Match
           <select
@@ -155,6 +162,6 @@ export function FilterBuilder({
           Add condition
         </button>
       </div>
-    </details>
+    </TablePopover>
   );
 }

@@ -7,11 +7,15 @@ ROOT = Path(__file__).resolve().parents[1]
 review_css=(ROOT/'packages/core/styles/review-composer.css').read_text()
 css_path=ROOT/'packages/core/styles/artifact.css'
 css=css_path.read_text()
-start='/* REVIEW COMPOSER START */';end='/* REVIEW COMPOSER END */'
-css=re.sub(re.escape(start)+r'.*?'+re.escape(end)+r'\n?','',css,flags=re.S)
-prefix,marker,suffix=css.partition('/* GENERATED THEMES')
+blocks = [
+    ("REVIEW COMPOSER", review_css),
+    ("TABLE CONTENT", (ROOT/'packages/core/styles/table-content.css').read_text()),
+]
+for name, content in blocks:
+    css = re.sub(r'\n*'+re.escape('/* '+name+' START */')+r'.*?'+re.escape('/* '+name+' END */')+r'\n*', '\n\n', css, flags=re.S)
+prefix, marker, suffix = css.partition('/* GENERATED THEMES')
 assert marker, 'Missing generated theme boundary'
-css=prefix.rstrip()+'\n\n'+start+'\n'+review_css+end+'\n\n'+marker+suffix
+css = prefix.rstrip() + '\n\n' + '\n\n'.join('/* '+name+' START */\n'+content.rstrip()+'\n/* '+name+' END */' for name, content in blocks) + '\n\n' + marker + suffix
 css_path.write_text(css)
 if (ROOT/'portal/static').is_dir():(ROOT/'portal/static/review-additions.css').write_text(review_css)
 from recipes import assemble as assemble_recipes

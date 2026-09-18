@@ -1,0 +1,13 @@
+/* Rich records share visual semantics across React and portable HTML. */
+.bf-person,.bf-media{display:flex;align-items:center;gap:10px;min-width:0;text-align:left;font:13px/1.4 var(--sans,system-ui,sans-serif)}
+.bf-person>span:last-child,.bf-media>span:last-child{min-width:0}.bf-person strong,.bf-media strong{display:block;font-weight:550}.bf-person small,.bf-media small{display:block;font-size:11px;font-weight:400;color:var(--tinta-2,#737373);margin-top:2px;white-space:normal}
+.bf-avatar{display:inline-flex;position:relative;flex:none;width:30px;height:30px;align-items:center;justify-content:center;overflow:hidden;border-radius:50%;background:color-mix(in srgb,var(--tinta,#222) 8%,var(--papel,#fff));color:var(--tinta-2,#555);font:500 10px var(--sans,system-ui);border:1px solid var(--linea,#ddd)}
+.bf-avatar img{width:100%;height:100%;object-fit:cover}.bf-media img,.bf-media-fallback{flex:none;width:64px;height:44px;border-radius:6px;object-fit:cover;background:var(--panel,#eee);border:1px solid var(--linea,#ddd)}.bf-media-fallback{display:grid;place-items:center;font-size:22px}
+.bf-status{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;border-radius:5px;padding:3px 7px;font:500 11px/1.5 var(--sans,system-ui);background:var(--panel,#f5f5f5);color:var(--tinta-2,#555);border:1px solid var(--linea,#ddd)}
+.bf-status>span{width:6px;height:6px;border-radius:50%;background:currentColor}.bf-status[data-tone=success]{color:var(--verde,#23845d)}.bf-status[data-tone=warning]{color:var(--amarillo,#a4791c)}.bf-status[data-tone=danger]{color:var(--rojo,#ba4141)}.bf-status[data-tone=info]{color:var(--azul,#426bc4)}
+.bf-detail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px;white-space:normal;min-width:0}
+.bf-detail-card{min-width:0;padding:16px;border:1px solid var(--linea,#ddd);border-radius:9px;background:var(--papel,#fff);font:13px/1.6 var(--sans,system-ui)}
+.bf-detail-card h4{font:600 13px/1.5 var(--sans,system-ui);margin:0 0 8px}.bf-detail-card p{font:inherit;margin:6px 0}.bf-detail-card small{color:var(--tinta-2,#666)}
+.bf-inline-detail{margin-top:8px;white-space:normal;font:12px/1.5 var(--sans,system-ui)}.bf-inline-detail>summary{width:fit-content;cursor:pointer;color:var(--tinta-2,#666);padding:5px 0}.bf-inline-detail[open]>.bf-detail-grid{margin-top:10px;min-width:min(420px,100%)}
+@media(max-width:640px){.bf-inline-detail>summary{min-height:44px;display:flex;align-items:center}.bf-person,.bf-media{overflow-wrap:anywhere}.bf-detail-card{padding:12px}}
+.bf-record-subtitle{display:block;font:11px/1.5 var(--sans,system-ui);color:var(--tinta-2);margin-top:3px}

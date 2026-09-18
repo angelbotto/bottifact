@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.8.0 — 2026-09-18
+
+- Use Radix Popover and Avatar in the React data workspace, with shared theme tokens and a compact responsive toolbar.
+- Reorder columns by drag or keyboard/touch buttons. Persist order, visibility, pinning and widths in local views; retain source-cell identities in portable HTML.
+- Add composable people, media, status and detail-card renderers, plus expandable React records and scalar-value filtering/export.
+- Demonstrate rich fictional delivery records in the workbench and React lab. Keep 320/390 px layouts usable, with local table scrolling and inspector access for secondary React fields.
+- Document the React/portable boundary, mobile composition and read-only dataset limits in English.
+
 
 ## 0.7.1 — 2026-09-18
 

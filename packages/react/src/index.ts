@@ -10,3 +10,5 @@ export {FilterBuilder, type FilterColumn} from './components/FilterBuilder.js';
 export {Inspector} from './components/Inspector.js';
 
 export { ButtonGroup } from './components/ui/button-group.js';
+
+export { TablePerson, TableMedia, TableStatus, TableDetailCard } from "./components/TableContent.js";

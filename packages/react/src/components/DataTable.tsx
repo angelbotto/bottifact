@@ -11,6 +11,7 @@ import {
   useTable,
   tableFeatures,
   columnVisibilityFeature,
+  columnOrderingFeature,
   rowSelectionFeature,
   type RowData,
 } from "@tanstack/react-table";
@@ -20,6 +21,7 @@ import {
   tableCSV,
   type TableQuery,
 } from "@bottifact/core";
+import { TablePopover } from "./ui/popover.js";
 import { ButtonGroup } from "./ui/button-group.js";
 import { ControlIcon } from "./ui/icon.js";
 import { FilterBuilder } from "./FilterBuilder.js";
@@ -40,6 +42,9 @@ export interface Column<Row> {
   sortable?: boolean;
   type?: "text" | "number" | "date";
   aggregate?: "sum" | "mean";
+  /** Detail-only fields stay in the inspector on narrow record layouts. */
+  mobile?: "primary" | "visible" | "detail";
+  width?: number;
 }
 export interface DataTableProps<Row> {
   rows: readonly Row[];
@@ -50,11 +55,13 @@ export interface DataTableProps<Row> {
   selectable?: boolean;
   inspectable?: boolean;
   persistenceKey?: string;
+  renderExpanded?: (row: Row) => ReactNode;
   /** Automatic uses readable records below 640px; readers can still compare columns. */
   presentation?: "auto" | "table" | "cards" | "list" | "board";
 }
 const features = tableFeatures({
   columnVisibilityFeature,
+  columnOrderingFeature,
   rowSelectionFeature,
 });
 interface View {
@@ -66,6 +73,7 @@ interface View {
   density: string;
   pinned: string[];
   sizes: Record<string, number>;
+  order?: string[];
 }
 export function DataTable<Row extends RowData>({
   rows,
@@ -77,6 +85,7 @@ export function DataTable<Row extends RowData>({
   inspectable = false,
   persistenceKey,
   presentation = "auto",
+  renderExpanded,
 }: DataTableProps<Row>) {
   const id = useId(),
     [query, setQuery] = useState(emptyTableQuery),
@@ -88,7 +97,9 @@ export function DataTable<Row extends RowData>({
     [message, setMessage] = useState(""),
     [viewName, setViewName] = useState(""),
     [layout, setLayout] = useState(presentation),
-    [narrow, setNarrow] = useState(false);
+    [narrow, setNarrow] = useState(false),
+    [expanded, setExpanded] = useState<Set<string>>(new Set()),
+    [columnSearch, setColumnSearch] = useState("");
   useEffect(() => {
     const media = window.matchMedia?.("(max-width: 640px)");
     if (!media) return;
@@ -138,6 +149,15 @@ export function DataTable<Row extends RowData>({
     data: visible,
     getRowId: rowKey,
   });
+  const ordered = table.getAllLeafColumns();
+  function moveColumn(from: string, to: string) {
+    const order = ordered.map(c => c.id);
+    const fromIndex = order.indexOf(from), toIndex = order.indexOf(to);
+    if (fromIndex < 0 || toIndex < 0 || from === to) return;
+    order.splice(fromIndex, 1); order.splice(toIndex, 0, from);
+    table.setColumnOrder(order);
+    setMessage(`${columns.find(c => c.id === from)?.header} moved to position ${toIndex + 1}.`);
+  }
   const shown = table.getVisibleLeafColumns(),
     selected = rows.filter((r) => table.state.rowSelection[rowKey(r)]);
   const effectiveGroup=group || (effectiveLayout === "board" ? (columns.find(c=>/status|state|team|category/i.test(c.id)) || columns.find(c=>c.type!=="number"))?.id || "" : "");
@@ -176,6 +196,7 @@ export function DataTable<Row extends RowData>({
       density,
       pinned,
       sizes,
+      order: ordered.map(c => c.id),
     };
     const next = [...views.filter((v) => v.name !== view.name), view].slice(
       -20,
@@ -196,9 +217,10 @@ export function DataTable<Row extends RowData>({
     setPinned(v.pinned || []);
     setSizes(v.sizes || {});
     table.setColumnVisibility(v.hidden || {});
+    table.setColumnOrder((v.order || []).filter(id => columns.some(c => c.id === id)));
   }
   function exportRows(data: readonly Row[]) {
-    const active = columns.filter((c) => shown.some((s) => s.id === c.id)),
+    const active = shown.map(column => columns.find(c => c.id === column.id)!),
       blob = new Blob(
         [
           tableCSV(
@@ -215,9 +237,12 @@ export function DataTable<Row extends RowData>({
     a.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
+  function columnWidth(id: string) {
+    const column = columns.find(c => c.id === id)!;
+    return sizes[id] || Math.max(100, Math.min(480, column.width || (column.type === "number" ? 100 : 180)));
+  }
   function style(column: string): CSSProperties {
     const offset =
-      (selectable ? 44 : 0) +
       shown
         .filter((c) => pinned.includes(c.id))
         .slice(
@@ -226,11 +251,11 @@ export function DataTable<Row extends RowData>({
             .filter((c) => pinned.includes(c.id))
             .findIndex((c) => c.id === column),
         )
-        .reduce((sum, c) => sum + (sizes[c.id] || 180), 0);
+        .reduce((sum, c) => sum + columnWidth(c.id), 0);
     return {
-      width: sizes[column] || 180,
-      minWidth: sizes[column] || 180,
-      ...(pinned.includes(column)
+      width: columnWidth(column),
+      minWidth: columnWidth(column),
+      ...(effectiveLayout === "table" && pinned.includes(column)
         ? {
             position: "sticky",
             left: offset,
@@ -240,7 +265,7 @@ export function DataTable<Row extends RowData>({
         : {}),
     };
   }
-  const extra = Number(selectable) + Number(inspectable);
+  const extra = Number(selectable) + Number(inspectable) + Number(Boolean(renderExpanded));
   return (
     <section
       className="bf-table-section"
@@ -261,110 +286,45 @@ export function DataTable<Row extends RowData>({
             />
           </label>
         )}
-        <ButtonGroup aria-label="Table tools"><FilterBuilder columns={columns} value={query} onChange={setQuery} />
-        <details>
-          <summary>
-            <ControlIcon name="columns" />
-            Display
-          </summary>
-          <div className="bf-filter-panel">
-            {columns.map((c) => (
-              <div key={c.id} className="bf-column-control">
-                <label>
-                  <input
-                    type="checkbox"
-                    checked={table.getColumn(c.id)!.getIsVisible()}
-                    onChange={(e) =>
-                      table.getColumn(c.id)!.toggleVisibility(e.target.checked)
-                    }
-                    disabled={
-                      shown.length === 1 &&
-                      table.getColumn(c.id)!.getIsVisible()
-                    }
-                  />
-                  {c.header}
-                </label>
-                <button
-                  type="button"
-                  aria-pressed={pinned.includes(c.id)}
-                  onClick={() =>
-                    setPinned((p) =>
-                      p.includes(c.id)
-                        ? p.filter((x) => x !== c.id)
-                        : [...p, c.id],
-                    )
-                  }
-                >
-                  Pin
-                </button>
-                <input
-                  aria-label={`Width of ${c.header}`}
-                  type="range"
-                  min="100"
-                  max="480"
-                  step="10"
-                  value={sizes[c.id] || 180}
-                  onChange={(e) =>
-                    setSizes({ ...sizes, [c.id]: Number(e.target.value) })
-                  }
-                />
+        <ButtonGroup aria-label="Table tools"><FilterBuilder columns={columns.map((c, index) => {
+          const options = new Map<string, number>();
+          if (index && c.type !== "number" && c.type !== "date") rows.forEach(row => { const value = c.value(row); if (typeof value === "string" && value) options.set(value, (options.get(value) || 0) + 1); });
+          return {...c, choices: options.size <= 12 ? [...options].map(([value, count]) => ({value, count})) : undefined};
+        })} value={query} onChange={setQuery} />
+        <TablePopover label="Columns" icon={<ControlIcon name="columns" />}>
+          <input type="search" aria-label="Find a column" placeholder="Find a column…" value={columnSearch} onChange={e => setColumnSearch(e.target.value)} />
+          <p className="bf-popover-help">Drag to reorder, or use the arrow buttons.</p>
+          <div className="bf-column-list">
+          {ordered.map((entry, index) => {
+            const c = columns.find(c => c.id === entry.id)!;
+            if (!c.header.toLowerCase().includes(columnSearch.toLowerCase())) return null;
+            return <div key={c.id} className="bf-column-control" draggable
+              onDragStart={e => { e.dataTransfer.setData("application/x-margen-column", c.id); e.dataTransfer.effectAllowed = "move"; }}
+              onDragOver={e => e.preventDefault()}
+              onDrop={e => { e.preventDefault(); moveColumn(e.dataTransfer.getData("application/x-margen-column"), c.id); }}>
+              <span className="bf-drag-handle" aria-hidden="true">⠿</span>
+              <label><input type="checkbox" aria-label={`Show ${c.header}`} checked={entry.getIsVisible()}
+                onChange={e => entry.toggleVisibility(e.target.checked)} disabled={shown.length === 1 && entry.getIsVisible()} />{c.header}</label>
+              <div className="bf-column-actions">
+                <button type="button" className="bf-icon-button" title={`Move ${c.header} earlier`} aria-label={`Move ${c.header} earlier`} disabled={index === 0} onClick={() => moveColumn(c.id, ordered[index - 1].id)}>↑</button>
+                <button type="button" className="bf-icon-button" title={`Move ${c.header} later`} aria-label={`Move ${c.header} later`} disabled={index === ordered.length - 1} onClick={() => moveColumn(c.id, ordered[index + 1].id)}>↓</button>
+                <button type="button" className="bf-icon-button" title={`Pin ${c.header}`} aria-label={`Pin ${c.header}`} aria-pressed={pinned.includes(c.id)} onClick={() => setPinned(p => p.includes(c.id) ? p.filter(x => x !== c.id) : [...p, c.id])}><ControlIcon name="pin" /></button>
               </div>
-            ))}
-            <label>
-              Group
-              <select value={group} onChange={(e) => setGroup(e.target.value)}>
-                <option value="">None</option>
-                {columns.map((c) => (
-                  <option key={c.id} value={c.id}>
-                    {c.header}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label>
-              Density
-              <select
-                value={density}
-                onChange={(e) => setDensity(e.target.value)}
-              >
-                <option value="comfortable">Comfortable</option>
-                <option value="compact">Compact</option>
-              </select>
-            </label>
+              <details className="bf-column-width"><summary>Width · {columnWidth(c.id)} px</summary><input aria-label={`Width of ${c.header}`} type="range" min="100" max="480" step="10" value={columnWidth(c.id)} onChange={e => setSizes({ ...sizes, [c.id]: Number(e.target.value) })} /></details>
+            </div>;
+          })}
           </div>
-        </details>
-        <details>
-          <summary>
-            <ControlIcon name="more" />
-            More
-          </summary>
-          <div className="bf-filter-panel">
-            {" "}
-            <button
-              type="button"
-              onClick={() => {
-                setQuery(emptyTableQuery());
-                setGroup("");
-                setPinned([]);
-                setSizes({});
-                table.setColumnVisibility({});
-                table.setRowSelection({});
-              }}
-            >
-              Reset
-            </button>
-            <button type="button" onClick={() => exportRows(visible)}>
-              <ControlIcon name="download" /> Export visible
-            </button>
+          {!ordered.some(c => columns.find(d => d.id === c.id)!.header.toLowerCase().includes(columnSearch.toLowerCase())) && <p>No matching columns.</p>}
+          <div className="bf-display-options">
+            <label>Group<select value={group} onChange={e => setGroup(e.target.value)}><option value="">None</option>{columns.map(c => <option key={c.id} value={c.id}>{c.header}</option>)}</select></label>
+            <label>Density<select value={density} onChange={e => setDensity(e.target.value)}><option value="comfortable">Comfortable</option><option value="compact">Compact</option></select></label>
           </div>
-        </details>
+          <button type="button" onClick={() => { table.setColumnOrder([]); table.setColumnVisibility({}); setPinned([]); setSizes({}); setDensity("comfortable"); }}>Reset columns</button>
+        </TablePopover>
+        <button type="button" className="bf-tool-button" onClick={() => exportRows(visible)}><ControlIcon name="download" />Export</button>
         {storageKey && (
-          <details>
-            <summary>
-              <ControlIcon name="bookmark" />
-              Views
-            </summary>
-            <div className="bf-filter-panel">
+          <TablePopover label="Views" icon={<ControlIcon name="bookmark" />}>
+            <div className="bf-popover-stack">
               {views.map((v) => (
                 <div key={v.name}>
                   <button type="button" onClick={() => apply(v)}>
@@ -398,7 +358,7 @@ export function DataTable<Row extends RowData>({
               </button>
               <small>Private to this browser and table.</small>
             </div>
-          </details>
+          </TablePopover>
         )}
         </ButtonGroup>
       </div>
@@ -520,7 +480,7 @@ export function DataTable<Row extends RowData>({
                   <input
                     type="checkbox"
                     aria-label="Select visible rows"
-                    tabIndex={effectiveLayout === "cards" ? -1 : undefined}
+                    tabIndex={effectiveLayout !== "table" ? -1 : undefined}
                     checked={
                       visible.length > 0 &&
                       visible.every((r) => table.state.rowSelection[rowKey(r)])
@@ -538,6 +498,7 @@ export function DataTable<Row extends RowData>({
                   />
                 </TableHead>
               )}
+              {renderExpanded && <TableHead><span className="bf-visually-hidden">Expand record</span></TableHead>}
               {shown.map((c) => {
                 const def = columns.find((d) => d.id === c.id)!,
                   sort = query.sort.find((s) => s.column === c.id);
@@ -560,7 +521,7 @@ export function DataTable<Row extends RowData>({
                     ) : (
                       <button
                         type="button"
-                        tabIndex={effectiveLayout === "cards" ? -1 : undefined}
+                        tabIndex={effectiveLayout !== "table" ? -1 : undefined}
                         onClick={(e) => toggle(def, e.shiftKey)}
                       >
                         {def.header}
@@ -609,7 +570,7 @@ export function DataTable<Row extends RowData>({
                   </TableRow>
                 )}
                 {members.map((row) => (
-                  <TableRow
+                  <Fragment key={rowKey(row)}><TableRow
                     role="row"
                     key={rowKey(row)}
                     data-row-id={rowKey(row)}
@@ -636,6 +597,7 @@ export function DataTable<Row extends RowData>({
                         />
                       </TableCell>
                     )}
+                    {renderExpanded && <TableCell className="bf-row-expand"><button type="button" aria-label={`Expand row ${rowKey(row)}`} aria-expanded={expanded.has(rowKey(row))} aria-controls={`${id}-detail-${rowKey(row)}`} onClick={() => setExpanded(current => { const next = new Set(current); next.has(rowKey(row)) ? next.delete(rowKey(row)) : next.add(rowKey(row)); return next; })}><ControlIcon name={expanded.has(rowKey(row)) ? "chevronDown" : "chevronRight"} /></button></TableCell>}
                     {shown.map((c) => {
                       const def = columns.find((d) => d.id === c.id)!;
                       return (
@@ -645,7 +607,8 @@ export function DataTable<Row extends RowData>({
                           data-cell-id={rowKey(row) + ":" + c.id}
                           role="cell"
                           data-label={def.header}
-                          data-primary={shown[0]?.id === c.id}
+                          data-primary={def.mobile === "primary" || (!columns.some(c => c.mobile === "primary") && shown[0]?.id === c.id)}
+                          data-mobile={inspectable && def.mobile === "detail" ? "detail" : undefined}
                           data-numeric={
                             def.type === "number" ||
                             typeof def.value(row) === "number"
@@ -669,6 +632,8 @@ export function DataTable<Row extends RowData>({
                       </TableCell>
                     )}
                   </TableRow>
+                  {renderExpanded && <TableRow className="bf-expanded-row" hidden={!expanded.has(rowKey(row))} id={`${id}-detail-${rowKey(row)}`}><TableCell colSpan={shown.length + extra}><div className="bf-expanded-content">{expanded.has(rowKey(row)) && renderExpanded(row)}</div></TableCell></TableRow>}
+                  </Fragment>
                 ))}
               </TableBody>
             ))}
