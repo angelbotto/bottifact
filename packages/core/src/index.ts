@@ -35,8 +35,10 @@ export async function createRecipeDocument(id: RecipeId, options: { theme?: Them
   if (!['light', 'dark', 'system'].includes(mode)) throw new RangeError('Unknown theme mode');
   const { default: data } = await import('./generated-assets.js');
   const modules = data.modules as Record<string, string>;
-  const dependencies = [...new Set([...baseModules, ...recipe.dependencies])];
+  const dependencies = [...new Set([...baseModules, ...(recipe.dependencies.includes('packages/core/components/data-explorer.js')?['packages/core/components/table-model.js']:[]), ...recipe.dependencies])];
   const scripts = dependencies.map(path => path === three ? `<script src="${three}"></script>` :
     modules[path] ? `<script>${modules[path].replace(/<\/script/gi, '<\\/script')}</script>` : '').join('\n');
   return `<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(recipe.name)}</title><meta name="nota-tema-inicial" content="${theme}"><meta name="nota-modo-inicial" content="${mode}"><style>${data.styles}</style></head><body><main class="hoja marcos-editoriales"><header class="cabecera"><p class="ceja">Bottifact · illustrative component example</p><h1>${escape(recipe.name)}</h1></header>${recipe.html}</main>${scripts}</body></html>`;
 }
+
+export { TableModel, emptyTableQuery, queryTableRows, tableCSV, type TableQuery, type TableRule, type TableValue } from './table-model.js';

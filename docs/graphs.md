@@ -25,8 +25,8 @@ Keyboard: Tab reaches controls and nodes; Enter/Space selects a node. When the c
 
 ## Boundaries
 
-The graph loads at most 120 recently updated artifacts and 300 entity nodes. The interface discloses truncation; narrow the library filters to explore another subset. Local graph search searches that subset; the main library search searches the authorized library. Unassigned artifacts remain visible, without invented company edges.
+The graph loads at most 120 recently updated artifacts and 300 membership nodes, plus up to 200 personal explicit entities. The interface discloses truncation; narrow the library filters to explore another subset. Local graph search searches that subset; the main library search searches the authorized library. Unassigned artifacts remain visible, without invented company edges.
 
 The server checks access **before** producing nodes or edges. Other users' private artifacts, unpublished content, private notes, and owner-only session/device details do not become graph entities. No session history is imported. The older artifact-to-artifact `nodes`/`edges` API remains available for the related-documents preview; typed membership is returned under `network`.
 
-This release does not provide semantic similarity, editable graph edges, saved graph layouts, or automatic topic merging. Those require separate interaction and evidence models.
+Version 0.5 adds personal company/project/topic entities, aliases, version-pinned directional links, backlinks, literal title mentions for review, relation filters and saved node layouts. See [connected context](unified-workspace.md). Confirmed relationships carry a literal source quote; only the source owner can create or withdraw them. Existing space/tag membership remains distinct. Semantic similarity and automatic entity merging are not provided.

@@ -2,6 +2,10 @@
 
 This is a direction for discussion, not a delivery commitment. Shipped behavior is described in the README and changelog.
 
+## Unified experience plan
+
+The [workspace and artifact implementation plan](docs/unified-experience-plan.md) covers common reader controls, themes, sharing, contextual review, reusable tables, knowledge exploration and agent handoff. It distinguishes shipped 0.4.0 behavior from proposed increments and defines acceptance criteria for each.
+
 ## Near term
 
 - Improve onboarding and add English UI/documentation progressively.

@@ -6,3 +6,5 @@ export { CardGrid, type EditorialCard } from './components/CardGrid.js';
 export { DataTable, type DataTableProps, type Column } from './components/DataTable.js';
 export { ArtifactFrame, RecipePreview, type ArtifactFrameProps, type RecipePreviewProps } from './components/ArtifactFrame.js';
 export { recipes, themeFamilies, getRecipe, type Recipe, type RecipeId, type ThemeFamily, type ThemeMode } from '@bottifact/core';
+export {FilterBuilder, type FilterColumn} from './components/FilterBuilder.js';
+export {Inspector} from './components/Inspector.js';

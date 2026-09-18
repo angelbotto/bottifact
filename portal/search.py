@@ -70,7 +70,7 @@ def window(rows, params):
     if 'limit' not in params:return rows,None
     limit=int(params['limit'])
     if not 1<=limit<=60:raise ValueError('Límite inválido.')
-    signature=hashlib.sha256(json.dumps({k:params.get(k,'') for k in ['q','view','space','access','sort','document_id','collection','tag','category','agent','review','direction']},sort_keys=True).encode()).hexdigest()[:16]
+    signature=hashlib.sha256(json.dumps({k:params.get(k,'') for k in ['q','view','space','access','sort','document_id','collection','tag','category','agent','review','direction','filters']},sort_keys=True).encode()).hexdigest()[:16]
     if params.get('cursor'):
         if len(params['cursor'])>2048:raise ValueError('Cursor inválido.')
         cursor=json.loads(base64.urlsafe_b64decode(params['cursor']).decode())

@@ -70,3 +70,7 @@ The portable ZIP provides temporary legacy Python command shims for older instal
 The checks cover standalone contracts, installed ZIP generation, theme identity, review persistence, portal authorization, origin metadata, graph filtering, React StrictMode cleanup, table behavior and a real Compose boot in CI. Browser checks complement tests; they do not prove human-perceived audio fidelity.
 
 The older generator scripts and portal remain Python/vanilla JS. This change establishes maintainable boundaries and a typed extension surface; it does not claim a full rewrite, zero technical debt, native React parity for every recipe, or automatic session delivery. Next useful work is progressively porting high-value interactive tables/charts to React and splitting large legacy runtime modules behind stable contracts.
+
+## Unified context layer
+
+Version 0.5 adds the common reader toolbar, typed table controls, account-private views/boards, evidence-backed references and selected review bundles. See [implementation and limits](unified-workspace.md). The portal retains FastAPI/SQLite and its vanilla JavaScript UI; the React table and inspector are reusable package adapters.

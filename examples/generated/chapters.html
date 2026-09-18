@@ -4636,7 +4636,7 @@ estado: pendiente de medir</code></pre></div><figcaption>Datos de ejemplo, sin u
  },{passive:true});
  document.addEventListener('visibilitychange',()=>{if(document.hidden)pause(preferred?'Audio en pausa al salir. Se reanuda con el próximo clic.':'Sonido apagado. Tu elección se conserva.');});
  addEventListener('pagehide',()=>pause('Audio en pausa.'));
- window.NotaAudio={disable,writing(element,duration,sample){
+ window.NotaAudio={configure(value){if(typeof value.preferred==="boolean"){preferred=value.preferred;if(!preferred)disable();}if(Number.isFinite(value.volume)&&value.volume>=0&&value.volume<=1)volume=value.volume;sync();},disable,writing(element,duration,sample){
   const r=element.getBoundingClientRect();
   if(!element.hasAttribute('data-escritura-sonora')||!Number.isFinite(duration)||duration<100||duration>10000||r.bottom<=0||r.top>=innerHeight||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   if(!enabled&&activating&&activation){

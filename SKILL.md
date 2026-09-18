@@ -21,6 +21,10 @@ Consulta [actualizaciones](docs/automatic-updates.md). Si el usuario habilitó a
 
 Cuando el usuario diga «mapa», «empresas», «temas» o «como Obsidian» en contexto de su biblioteca, trabaja en el **grafo del administrador** ([guía](docs/graphs.md)). No lo sustituyas por una gráfica dentro de un artefacto. Conecta empresas/espacios asignados, temas y colecciones; explica cada vínculo y respeta permisos. [La tabla del administrador](docs/connected-library.md) comparte búsqueda, filtros y orden del servidor con la lista y galería.
 
+## Controles, tablas y contexto compartido
+
+Lee [la experiencia unificada](docs/unified-workspace.md) al preparar tablas, revisión o conexiones. El generador incluye una sola barra de apariencia, revisión y compartir: no inventes otra. Para tablas usa IDs estables por registro/celda, unidades, alcance del total y fuente; explora [los escenarios Liftit, Tikin y Catabum](examples/generated/workbench.html). Las notas personales se seleccionan explícitamente al preparar contexto para IA. Registra agente, sesión y dispositivo reales, nunca inventados; conserva ID del artefacto y publica revisiones como borrador. Las relaciones tipadas necesitan versión y cita verificable. No presentes etiquetas compartidas como causalidad, no conviertas notas privadas en contenido público y no afirmes que copiar un prompt reanuda una sesión.
+
 ## Crear un artefacto
 
 Si hay una conexión personal, ejecuta `python3 scripts/publish.py status`: muestra el servidor, la cuenta y `publish_on_create`, nunca el token. Esa preferencia representa la instrucción persistente del usuario para terminar los artefactos publicándolos como privados. Si está activa, el resultado incluye HTML validado y enlace del portal. Si falta conexión, conserva el borrador y explica que aún no está publicado. Una petición actual de dejarlo local prevalece. No uses un host alternativo por iniciativa propia.

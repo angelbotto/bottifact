@@ -145,7 +145,7 @@ catalog=catalog.replace('NAV_COMPONENTES','<div data-buscador-recetas><div class
 body=body.replace('<footer class="pie">',catalog+'<footer class="pie">')
 body=body.replace('<li><a href="#guardado">Lo que vale guardar</a></li>','<li><a href="#guardado">Lo que vale guardar</a></li><li><a href="#libreria">Librería de evidencia</a></li><li><a href="#segunda-tanda">Artículos y prototipos</a></li>')
 body=re.sub(r'(<p class="bajada">.*?</p>)',r'\1<p class="enlace-edicion"><a href="examples/generated/report.html">Explorar el informe con capítulos →</a> · <a href="examples/generated/library.html">Abrir la biblioteca completa →</a></p>',body,count=1)
-(ROOT/'examples/generated/template.html').write_text(start('Bottifact — la forma también explica')+body+script('packages/core/components/reader.js')+globe_scripts()+script('packages/core/components/invitation.js')+script('packages/core/components/handwriting.js')+script('packages/core/components/attention-map.js')+script('packages/core/components/geography.js')+script('packages/core/components/fleet.js')+script('packages/core/components/analytics.js')+script('packages/core/components/charts.js')+script('packages/core/components/tables.js')+script('packages/core/components/sound.js')+script('packages/core/components/writing.js')+script('packages/core/components/scene.js')+script('packages/core/components/reports.js')+script('packages/core/components/prototype.js')+script('packages/core/components/tabs.js')+script('packages/core/components/catalog.js')+script('packages/core/components/editorial.js')+script('packages/core/components/code.js')+script('packages/core/components/data-explorer.js')+script('packages/core/components/evidence.js')+script('packages/core/components/review.js'))
+(ROOT/'examples/generated/template.html').write_text(start('Bottifact — la forma también explica')+body+script('packages/core/components/reader.js')+globe_scripts()+script('packages/core/components/invitation.js')+script('packages/core/components/handwriting.js')+script('packages/core/components/attention-map.js')+script('packages/core/components/geography.js')+script('packages/core/components/fleet.js')+script('packages/core/components/analytics.js')+script('packages/core/components/charts.js')+script('packages/core/components/tables.js')+script('packages/core/components/sound.js')+script('packages/core/components/writing.js')+script('packages/core/components/scene.js')+script('packages/core/components/reports.js')+script('packages/core/components/prototype.js')+script('packages/core/components/tabs.js')+script('packages/core/components/catalog.js')+script('packages/core/components/editorial.js')+script('packages/core/components/code.js')+script('packages/core/components/table-model.js')+script('packages/core/components/data-explorer.js')+script('packages/core/components/evidence.js')+script('packages/core/components/review.js'))
 globe_body='<main class="hoja" id="inicio" lang="es">'+tools()+'''<header class="cabecera"><p class="ceja">Nota / geografía</p><h1>Planes, puntos<br>y lugares.</h1><p class="bajada">Un globo de puntos para explorar conexiones. Elige una ruta, gira la Tierra o pausa la vista.</p></header>'''+globe()+'''<footer class="pie">Ejemplo reutilizable · Three.js desde cdnjs · máscara geográfica incrustada · ambos temas y movimiento reducido.</footer></main>'''
 (ROOT/'examples/generated/globe.html').write_text(start('Bottifact — globo de rutas')+globe_body+script('packages/core/components/reader.js')+globe_scripts())
 (ROOT/'examples/generated/chapters.html').write_text(start('Bottifact — capítulos')+dict(recipes())['multipagina']+script('packages/core/components/reader.js')+script('packages/core/components/chapters.js'))
@@ -202,6 +202,9 @@ from example_system import generate as build_sistema
 build_sistema()
 print("Generado examples/generated/system.html: stack y skill de Bottifact")
 
+from example_workbench import generate as build_workbench
+build_workbench()
+
 # Congela la identidad de demos ya publicados, aunque cambie su marca visible.
 for filename,identity in json.loads((ROOT/'packages/core/registry/compatibility.json').read_text())['documentos_publicados'].items():
  path=ROOT/filename
@@ -216,7 +219,7 @@ for filename,identity in json.loads((ROOT/'packages/core/registry/compatibility.
 
 # Recursos compartidos del portal; no se incluyen credenciales ni datos de instancia.
 if (ROOT/"portal/static").is_dir():
- for source,target in [("packages/core/components/review.js","review.js"),("packages/core/styles/fonts.css","fonts.css")]:
+ for source,target in [("packages/core/components/review.js","review.js"),("packages/core/components/reader-controls.js","reader-controls.js"),("packages/core/styles/fonts.css","fonts.css")]:
   (ROOT/"portal/static"/target).write_bytes((ROOT/source).read_bytes())
 
 # Resolve navigation from the generated examples directory without touching runtime code.

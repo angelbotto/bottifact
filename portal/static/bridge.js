@@ -20,6 +20,9 @@
     if(message.error)request.reject(Error(message.error));else request.resolve(message.data);
   });
   window.BottifactReviewBridge={
+    action:name=>send('action',{name}),
+    preferences:value=>send('preferences',value),
+    controlsReady:()=>send('controls-ready').catch(()=>{}),
     commit:async data=>{const key=JSON.stringify(data),id=retries.get(key)||crypto.randomUUID();retries.set(key,id);const result=await send('commit',{...data,id});retries.delete(key);latest=result;listeners.forEach(fn=>fn(result));return result;},
     subscribe:fn=>{listeners.add(fn);if(latest)fn(latest);return()=>listeners.delete(fn);},
     identify:()=>send('identify').catch(()=>{}),

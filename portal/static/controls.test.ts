@@ -11,7 +11,7 @@ describe('administrator knowledge exploration',()=>{
   expect(root.querySelector('.atlas-detail')?.textContent||root.textContent).toContain('Assigned company');expect(peek).not.toHaveBeenCalled();
   const explore=[...root.querySelectorAll('button')].find(b=>b.textContent==='Explorar conexiones')!;explore.click();
   expect(root.querySelectorAll('[data-node]')).toHaveLength(2);
-  const scope=root.querySelectorAll('select')[1];scope.value='2';scope.dispatchEvent(new Event('change'));
+  const scope=[...root.querySelectorAll('label')].find(l=>l.textContent?.startsWith('Alcance'))!.querySelector('select')!;scope.value='2';scope.dispatchEvent(new Event('change'));
   expect(root.querySelectorAll('[data-node]')).toHaveLength(3);
   const back=[...root.querySelectorAll('button')].find(b=>b.textContent==='← Volver')!;back.click();
   expect(root.querySelectorAll('[data-node]')).toHaveLength(4);

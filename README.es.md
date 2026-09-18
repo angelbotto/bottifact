@@ -69,3 +69,7 @@ Las capturas públicas deben usar exclusivamente ejemplos sintéticos. [Polític
 ## Mantener los agentes actualizados
 
 Después de instalar, `bottifact update --if-changed` actualiza desde el servidor elegido. Activa una comprobación cada seis horas con `bottifact update --auto enable`; consulta su configuración con `--auto status` o desactívala con `--auto disable`. Actualiza la biblioteca compartida por Codex, Claude y Hermes en ese equipo, sin cambiar credenciales. Consulta [actualizaciones automáticas](docs/automatic-updates.md), [grafos del administrador](docs/graphs.md) y [tablas y filtros](docs/connected-library.md).
+
+## Unified workspace
+
+[Reader controls, advanced tables, private boards, entities, references and AI review bundles](docs/unified-workspace.md) · [Live synthetic table examples](examples/generated/workbench.html).

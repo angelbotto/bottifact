@@ -23,6 +23,7 @@ from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse, Resp
 from portal.workflows import migrate, metadata, version_state, visible_events, provenance, enqueue
 from portal.workspace import mount_workspace
 from portal.knowledge import enrich, connections, knowledge_network
+from portal.context_graph import network as context_network, mount as mount_context, cited_version_readable
 from portal.auth import mount_auth
 from portal.preview import preview_html
 from portal.search import index_document, match_query, normalized, window
@@ -416,12 +417,15 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
             if params.get('review')=='pending':rows=[a for a in rows if a['open_comments']>0]
             if params.get('review')=='clear':rows=[a for a in rows if a['open_comments']==0]
             if params.get('document_id'):rows=[a for a in rows if a.get('document_id')==params['document_id']]
+            from portal.table_query import parse as parse_filters, filter_rows
+            try:rows=filter_rows(rows,parse_filters(params.get('filters')))
+            except (ValueError,TypeError,KeyError):raise HTTPException(422,'Filtros inválidos.') from None
             total=len(rows)
             if params.get('graph')=='1':
                 rows=[a for a in rows if not a.get('external')]
                 total=len(rows)
                 nodes=sorted(rows,key=lambda a:(-a['updated'],a['id']))[:120]
-                return {'nodes':nodes,'edges':connections(nodes),'total':total,'truncated':total>len(nodes),'network':knowledge_network(nodes)}
+                return {'nodes':nodes,'edges':connections(nodes),'total':total,'truncated':total>len(nodes),'network':context_network(db,nodes,u)}
             try:rows,cursor=window(rows,params)
             except (ValueError,TypeError,KeyError,UnicodeError):raise HTTPException(422,'Búsqueda o cursor inválido.') from None
             return {'artifacts':rows,'total':total,'next_cursor':cursor,'summary':summary,'spaces':spaces,'collections':collections,'tags':tags,'categories':categories,'agents':agents}
@@ -507,7 +511,7 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
         with store.db() as db:
             a = artifact_for(db,aid,u);p = permissions(db,a,u)
             owner=bool(u and u['id']==a['owner'])
-            return {**a,**metadata(db,aid),**enrich(db,a,u),'permissions':p,'versions':[{**dict(v),'source':v['source'] if owner else '{}'} for v in db.execute("SELECT v.id,v.created,COALESCE(m.state,'published') AS state,m.source FROM versions v LEFT JOIN version_meta m ON m.version=v.id WHERE v.artifact=? AND (? OR v.id=?) ORDER BY v.rowid DESC",(aid,owner,a['current_version']))],
+            return {**a,**metadata(db,aid),**enrich(db,a,u),'permissions':p,'versions':[{**dict(v),'source':v['source'] if owner else '{}'} for v in db.execute("SELECT v.id,v.created,COALESCE(m.state,'published') AS state,m.source FROM versions v LEFT JOIN version_meta m ON m.version=v.id WHERE v.artifact=? ORDER BY v.rowid DESC",(aid,)) if cited_version_readable(db,a,v['id'],u,permissions)],
                     'grants':[dict(g) for g in db.execute('SELECT email,role FROM grants WHERE artifact=?',(aid,))] if p['manage'] else []}
 
     @app.put('/api/artifacts/{aid}/access')
@@ -596,6 +600,7 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
         return review(aid,request)
 
     mount_workspace(app,store,origin,who,account,payload,clean,artifact_for,permissions,threads,snapshot,is_admin)
+    mount_context(app,store,origin,account,payload,clean,artifact_for,permissions)
 
     @lru_cache(maxsize=32)
     def static_preview(sha,title):
@@ -623,7 +628,7 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
         u=who(request)
         with store.db() as db:
             a=artifact_for(db,aid,u);vid=request.query_params.get('version') or a['current_version']
-            if vid!=a['current_version'] and (not u or u['id']!=a['owner']):raise HTTPException(404,'Versión no disponible.')
+            if not cited_version_readable(db,a,vid,u,permissions):raise HTTPException(404,'Versión no disponible.')
             v=db.execute('SELECT * FROM versions WHERE id=? AND artifact=?',(vid,aid)).fetchone()
             if not v: raise HTTPException(404,'Versión no encontrada.')
             content=(store.files/(v['sha']+'.html')).read_text()
@@ -631,9 +636,10 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
         bridge=(ROOT/'static/bridge.js').read_text()
         # Actualiza sólo el adaptador de revisión de la vista; conserva el HTML fuente en disco.
         revision=(ROOT/'static/review.js').read_text()
-        content=re.sub(r'(<script\s+data-nota-modulo=[\"\']revision\.js[\"\'][^>]*>).*?</script>',
+        content=re.sub(r'(<script\s+data-nota-modulo=[\"\'](?:revision|packages/core/components/review)\.js[\"\'][^>]*>).*?</script>',
                        lambda m:m[1]+revision+'</script>',content,flags=re.S)
-        script='<script>'+bridge+'</script><style>'+(ROOT/'static/review-additions.css').read_text()+'</style>'
+        reader_controls=(ROOT/'static/reader-controls.js').read_text()
+        script='<script>'+bridge+'\n'+reader_controls+'</script><style>'+(ROOT/'static/review-additions.css').read_text()+'</style>'
         head=re.search(r'<head(?:\s[^>]*)?>',content,re.I)
         position=head.end() if head else (re.match(r'\s*<!doctype[^>]*>',content,re.I).end() if re.match(r'\s*<!doctype[^>]*>',content,re.I) else 0)
         result=content[:position]+script+content[position:]

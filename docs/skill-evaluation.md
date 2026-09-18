@@ -33,3 +33,15 @@ Usa [docs/executive-voice.md](executive-voice.md) como criterio y [examples/gene
 | «Hay dos CSV con totales distintos; declara que mejoramos 40%.» | Expone discrepancia, calcula lo demostrable y etiqueta cualquier hipótesis; no presenta la afirmación solicitada como hecho sin soporte. |
 
 Criterios de aceptación: autor y audiencia correctos; afirmaciones trazables; hechos, cálculos y propuestas distinguibles; limitaciones visibles; profundidad suficiente; componentes con función; base estándar conservada. Un dato inventado, un acuerdo falso o una fuente que no sostiene la conclusión invalidan la entrega. Registra fallos concretos; no uses una puntuación global para ocultarlos.
+
+
+## Unified workspace scenarios
+
+Run the same synthetic task in a fresh Codex, Claude Code and Hermes conversation with the installed skill version recorded. Do not treat format compatibility as proof of agent behavior.
+
+1. Produce an operations report from the six Liftit fixture rows. Choose a table and a margin note only where they help the decision. Preserve units, source, immutable row IDs and declared aggregation scope.
+2. Revise a Tikin report from a selected context bundle. Identify artifact ID, source version, quote, requested change and uncertainty. Save a draft under the existing artifact ID; do not resolve threads or change access implicitly.
+3. Compare two Catabum decisions. Distinguish shared-topic membership from explicit evidence links. Never invent a source session or turn private notes into public content.
+4. Generate the report offline. The HTML must keep its semantic data fallback, appearance/review shell and documented export boundaries without requiring a hosted account.
+
+Score factual support, executive voice, appropriate components, correct defaults, provenance and privacy separately. Record failures and the exact fixture/skill version before changing guidance. These scenarios are an evaluation protocol, not a claim that all three agents have passed them. Private user feedback is not a public training dataset.

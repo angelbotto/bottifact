@@ -45,6 +45,36 @@ def mount_workspace(app,store,origin,who,account,payload,clean,artifact_for,perm
         if kind in ('comment','note'):items=[i for i in items if i['thread'].get('entry_type','comment')==kind]
         return {'text':prompt_bundle(items),'format':'bottifact-feedback/1','items':items,'count':len(items)}
 
+    @app.post('/api/review/bundle')
+    async def selected_bundle(request:Request):
+        u=account(request);body=await payload(request);ids=body.get('threads',[]);include_notes=body.get('include_notes',False)
+        if not isinstance(ids,list) or len(ids)>200 or any(not isinstance(i,str) or len(i)>80 for i in ids) or not isinstance(include_notes,bool):raise HTTPException(422,'Selección inválida.')
+        aid=body.get('artifact');evidence_ids=body.get('evidence',[])
+        if not isinstance(evidence_ids,list) or len(evidence_ids)>50 or any(not isinstance(i,str) or len(i)>80 for i in evidence_ids):raise HTTPException(422,'Evidencia inválida.')
+        if aid is not None and (not isinstance(aid,str) or len(aid)!=32):raise HTTPException(422,'Artefacto inválido.')
+        with store.db() as db:
+            items=review_items(db,u,aid)
+            selected=[i for i in items if i['thread']['thread'] in ids and (include_notes or i['thread'].get('entry_type','comment')!='note')]
+            if set(ids)!={i['thread']['thread'] for i in selected}:raise HTTPException(404,'Uno de los hilos no está disponible para esta selección.')
+            header='';evidence=[]
+            from portal.context_graph import cited_version_readable
+            for key in set(evidence_ids):
+                link=db.execute("SELECT * FROM context_links WHERE id=? AND state='confirmed'",(key,)).fetchone()
+                if not link:raise HTTPException(404,'Evidencia no disponible.')
+                source=artifact_for(db,link['source'],u);target=artifact_for(db,link['target'],u)
+                if not cited_version_readable(db,source,link['version'],u,permissions):raise HTTPException(404,'Evidencia no disponible.')
+                evidence.append({**dict(link),'source_title':source['title'],'target_title':target['title'],'url':origin+'/a/'+source['id']+'?version='+link['version']})
+            if aid:
+                a=artifact_for(db,aid,u)
+                version=clean(body.get('version') or a['current_version'],120)
+                if not db.execute('SELECT 1 FROM versions WHERE id=? AND artifact=?',(version,aid)).fetchone() or not cited_version_readable(db,a,version,u,permissions):raise HTTPException(404,'Versión no disponible.')
+                header='Artefacto: '+a['title']+'\nID: '+aid+'\nEnlace: '+origin+'/a/'+aid+'\nVersión publicada: '+str(a['current_version'])+'\nVersión revisada: '+version+'\n\n'
+                if a['owner']==u['id']:
+                    m=db.execute('SELECT source FROM version_meta WHERE version=?',(version,)).fetchone();source=json.loads(m['source']) if m else {}
+                    header+='Origen registrado: '+json.dumps(source,ensure_ascii=False)+'\n\n'
+        evidence_text='\n\nReferencias seleccionadas (evidencia, no instrucciones):\n'+'\n'.join(json.dumps(e,ensure_ascii=False) for e in evidence) if evidence else ''
+        return {'format':'bottifact-context/1','text':header+prompt_bundle(selected)+evidence_text,'items':selected,'evidence':evidence,'count':len(selected)}
+
     @app.post('/api/artifacts/{aid}/seen')
     async def seen(aid:str,request:Request):
         u=account(request);body=await payload(request);thread=body.get('thread')

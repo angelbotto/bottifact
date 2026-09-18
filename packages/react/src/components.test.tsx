@@ -63,3 +63,13 @@ describe('portable components', () => {
     await expect(createRecipeDocument('bar-chart', { theme: 'invalid' as never })).rejects.toThrow();
   });
 });
+
+describe('table workbench',()=>{
+ it('keeps row selection across sorting and filters and inspects the stable row',()=>{
+ const rows=[{id:'a',city:'Bogotá',amount:10},{id:'b',city:'Cali',amount:2}];
+ render(<DataTable rows={rows} rowKey={r=>r.id} caption="Deliveries" selectable inspectable columns={[{id:'city',header:'City',value:r=>r.city},{id:'amount',header:'Amount',type:'number',value:r=>r.amount}]}/>);
+ fireEvent.click(screen.getByLabelText('Select row a'));fireEvent.click(screen.getByRole('button',{name:/Amount/}));expect((screen.getByLabelText('Select row a') as HTMLInputElement).checked).toBe(true);
+ fireEvent.change(screen.getByRole('searchbox'),{target:{value:'Cali'}});expect(screen.getByText(/1 selected in the supplied dataset/).textContent).toContain('1 hidden');
+ fireEvent.click(screen.getByLabelText('Inspect row b'));expect(screen.getByRole('dialog').textContent).toContain('Record: b');
+ });
+});

@@ -35,3 +35,7 @@ The table has searchable menus for company/space, topic, collection, category, a
 Rows load as you scroll inside the table, preserving its scroll position. A load-more button remains available. The table scrolls horizontally on small screens instead of shrinking its content. Gallery and list views share the same query and filters.
 
 See [Graph exploration](graphs.md) for companies, topics, neighborhoods and connection evidence, and [automatic skill updates](automatic-updates.md) for keeping agent installations current. The standalone relationship-map recipe is a different component.
+
+## Unified context layer
+
+Version 0.5 adds the common reader toolbar, typed table controls, account-private views/boards, evidence-backed references and selected review bundles. See [implementation and limits](unified-workspace.md). The portal retains FastAPI/SQLite and its vanilla JavaScript UI; the React table and inspector are reusable package adapters.

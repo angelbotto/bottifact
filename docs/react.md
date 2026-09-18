@@ -28,7 +28,7 @@ npm pack --workspace @bottifact/react --pack-destination /tmp
 Then, in your existing React application:
 
 ```bash
-npm install /tmp/bottifact-core-0.3.0.tgz /tmp/bottifact-react-0.3.0.tgz
+npm install /tmp/bottifact-core-0.5.0.tgz /tmp/bottifact-react-0.5.0.tgz
 ```
 
 The host supplies React and React DOM (18.3 or 19). Use a bundler with ESM/JSON support, such as Vite. Import the CSS once:
@@ -59,7 +59,9 @@ export function Example() {
 | `MarginNote` | Left/right annotation, viewport reveal, replay control | Lightweight reveal; original handwriting strokes/sound require the recipe |
 | `Timeline` | Items with date, title, description; fading vertical line | Text remains available without animation |
 | `CardGrid` | Editorial cards with dotted framing and links | Unsafe executable link schemes are refused |
-| `DataTable` | Search, numeric/text sort, accessible headers, empty state | No native grouping, virtualization or remote data source yet |
+| `DataTable` | Typed filters, multi-sort, grouping/aggregation, selection, visibility, fixing/widths, density, saved views and row inspector | TanStack v9; embedded supplied data. No virtualization or built-in remote data fetching |
+| `FilterBuilder` | AND/OR conditions with numeric/date bounds and text facets | Controlled `TableQuery` value; bounded to 12 rules |
+| `Inspector` | Accessible modal side sheet, focus handling, artifact tokens | Radix Dialog; bottom sheet on narrow screens |
 | `ArtifactFrame` | Isolated HTML viewer with explicit title and height | No portal identity bridge or parent DOM access |
 | `RecipePreview` | Any of the 88 recipes, selected theme/mode, lazy asset load | Sandboxed original runtime, not 88 native React components |
 
@@ -74,3 +76,5 @@ Theme subscriptions and visibility observers are installed in effects and cleane
 Frames allow scripts and downloads, but not `allow-same-origin`, forms, popups or top navigation. Some clipboard/storage/browser APIs are consequently unavailable. Recipe examples display fallback states where applicable; shared comments and portal tokens are not passed to preview frames. To publish a complete artifact with review controls, use the Python generator and portal workflow.
 
 The core preview runtime includes embedded fonts/audio and can be large. Import native components for ordinary application UI, defer previews until needed, and avoid a live iframe per row in a large gallery. Native components do not automatically attach analytics, feedback or remote storage.
+
+The [unified workspace guide](unified-workspace.md) specifies persistence and local/hosted boundaries. The live React demo uses selection, row inspection and private local views. Core and React packages are source-distributed; a GitHub release does not imply they have been published to npm.

@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.5.0 — Unified reading and connected context
+
+- Add one artifact toolbar for personal appearance, review, sharing and contextual actions, with a compatible portal adapter for historical HTML.
+- Introduce a shared typed table-query model, TanStack React DataTable, filter builder, row inspector, stable selection, local saved views and portable table upgrades. Include synthetic Liftit, Tikin and Catabum scenarios.
+- Add authorized library conditions, account-private saved filters, explicit batch tagging/collections/archive, command search, working sets and movable private boards.
+- Add personal company/project/topic entities with aliases and properties, version-pinned directional references, backlinks, literal mention suggestions, relationship filters and saved graph positions.
+- Add session-output browsing and a previewable context composer with selected comments, opt-in own notes and selected reference evidence. Copy and download do not send to an agent or publish a revision.
+- Keep source versions immutable, validate both endpoints of every relationship and restrict cited historical versions to confirmed references and current permissions.
+- Document surface-specific capabilities and boundaries; update the canonical portable skill for Codex, Claude Code and Hermes.
+
 ## 0.4.0 — Administrator knowledge workbench
 
 - Connect artifacts to companies/spaces, manual or automatic topics, and collections in the actual portal graph. Explain membership, explore one/two-hop neighborhoods, search nodes, pan, zoom and move nodes.

@@ -1,6 +1,6 @@
 # Knowledge workbench: product directions
 
-This is a proposal backlog, not a list of deployed portal features. The existing portal provides artifact search, classification, gallery/list/table views, review and shared-tag/collection graph edges. The new local `relationship-map` recipe demonstrates richer navigation using declared synthetic data; it does not change the portal's data model.
+This is a proposal backlog, not a list of deployed portal features. The existing portal provides artifact search, classification, gallery/list/table views and review. Since 0.4.0, its graph includes company/space, topic and collection membership with local exploration. The standalone `relationship-map` recipe remains a separate component using declared data. The [unified experience plan](unified-experience-plan.md) sequences the proposed improvements across workspace, hosted reader and portable artifacts.
 
 ## Make the map answer a task
 

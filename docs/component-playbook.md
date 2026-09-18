@@ -10,7 +10,7 @@ Bottifact's catalog is a selection tool, not a checklist to fill in every docume
 | React export / recipe preview | Native wrappers or an isolated preview of the original recipe | Every recipe rewritten as a native React component |
 | Connected portal feature | Authenticated persistence, authorized documents and shared review | All local recipe demonstrations are deployed administrator features |
 
-A session brief is now a reusable recipe. A persistent session entity is still a product proposal. The local relationship explorer supports declared typed connections; the current portal graph still derives links from shared tags and collections. Keep these distinctions visible in demos and release notes.
+A session brief is now a reusable recipe. A persistent session entity is still a product proposal. The local relationship explorer supports declared typed connections; the portal graph now includes typed company/space, topic and collection membership; the related-document preview also retains shared-tag/collection links. Keep these distinctions visible in demos and release notes.
 
 ## Choose by question
 
@@ -63,3 +63,7 @@ A static fixture is valid when labeled. A decorative button that promises to sav
 ## Contributor acceptance checklist
 
 Keep original source tables readable without JavaScript. Use a unique container ID. Mount once, support destroy/remount and release listeners. Imported strings are text, not HTML instructions. Do not include inaccessible records in client payloads. Validate source and generated examples, test affected behavior and inspect mobile/desktop before packaging. See [contributing components](contributing-components.md).
+
+## Unified context layer
+
+Version 0.5 adds the common reader toolbar, typed table controls, account-private views/boards, evidence-backed references and selected review bundles. See [implementation and limits](unified-workspace.md). The portal retains FastAPI/SQLite and its vanilla JavaScript UI; the React table and inspector are reusable package adapters.
