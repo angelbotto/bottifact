@@ -139,3 +139,10 @@ it("shows the open-thread count and removes the duplicated note and generic more
  expect(document.querySelector('summary[aria-label="Más opciones"]')).toBeNull();
  expect(document.querySelector('.bottifact-toolbar>button[aria-label="Añadir nota privada"]')).toBeNull();
 });
+it('counts authorized host threads even when a legacy artifact has no embedded review module',()=>{
+ let receive:any;(window as any).BottifactReviewBridge={subscribe:(fn:any)=>receive=fn,controlsReady:vi.fn()};
+ window.eval(source);document.dispatchEvent(new Event('DOMContentLoaded'));
+ const event=(kind:string,thread:string,time:number,extra={})=>({id:String(time),kind,thread,time,...extra});
+ receive({author:'Reader',verified:true,permissions:{comment:true},snapshot:{events:[event('create','a',1),event('create','b',2),event('reply','a',3),event('create','c',4),event('resolve','b',5,{resolved:true}),event('delete','c',6)]}});
+ expect(document.querySelector('.bf-review-count')?.textContent).toBe('1');
+});

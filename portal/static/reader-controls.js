@@ -435,6 +435,13 @@
     if (bridge) {
       bridge.subscribe((value) => {
         remote = value;
+        // Legacy documents can use the host review panel without a local review module.
+        if (Array.isArray(value.snapshot?.events)) {
+          const events=[...value.snapshot.events].sort((a,b)=>a.time-b.time||String(a.id).localeCompare(String(b.id)));
+          const threads=new Map(events.filter(e=>e.kind==="create").map(e=>[e.thread,{resolved:false,deleted:false}]));
+          for(const event of events){const thread=threads.get(event.thread);if(!thread)continue;if(event.kind==="resolve")thread.resolved=event.resolved;if(event.kind==="delete")thread.deleted=true;}
+          updateCount([...threads.values()].filter(t=>!t.resolved&&!t.deleted).length);
+        }
         manage.hidden = !value.reader?.manage;
         quickComment.disabled = !value.permissions.comment && !value.verified && !!value.author;
         comment.disabled = !value.permissions.comment && !!value.author;
