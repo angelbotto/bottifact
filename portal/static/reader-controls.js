@@ -143,23 +143,27 @@
     };
     divider();
     const quickComment = button("Comentar en un punto", "comment", () =>
-      comment.click(),
+      remote?.verified && !remote.permissions.comment ? note.click() : comment.click(),
     );
-    const quickNote = button("Añadir nota privada", "note", () => note.click());
     quickComment.setAttribute("aria-pressed", "false");
-    quickNote.setAttribute("aria-pressed", "false");
     document.addEventListener("bottifact:review-mode", (event) => {
       if (!event.detail.active) say("");
       quickComment.setAttribute(
         "aria-pressed",
-        String(event.detail.active && event.detail.kind === "comment"),
-      );
-      quickNote.setAttribute(
-        "aria-pressed",
-        String(event.detail.active && event.detail.kind === "note"),
+        String(event.detail.active),
       );
     });
-    const reviewMenu = menu("Comentarios y notas", "review");
+    const reviewMenu = menu("Comentarios", "review");
+    const reviewCount=make("span", "0", "bf-review-count");
+    reviewMenu.d.querySelector("summary").append(reviewCount);
+    function updateCount(count){
+      reviewCount.textContent=String(count);
+      const label="Comentarios · "+count+" abiertos";
+      reviewMenu.d.querySelector("summary").setAttribute("aria-label",label);
+      reviewMenu.d.querySelector("summary").dataset.tooltip=label;
+    }
+    updateCount(Number(review?.querySelector("button:last-child")?.textContent)||0);
+    document.addEventListener("bottifact:review-count",e=>updateCount(e.detail.open));
     const original = (label) =>
       review?.querySelector('[aria-label="' + label + '"]');
     const comment = action(reviewMenu, "Añadir comentario", () => {
@@ -190,7 +194,8 @@
       ),
     );
     divider();
-    button("Compartir", "share", async () => {
+    const shareMenu=menu("Compartir", "share");
+    action(shareMenu, "Enlace y acceso", async () => {
       if (bridge) return bridge.action("share");
       const canonical = document.querySelector("link[rel=canonical]")?.href;
       const url =
@@ -221,19 +226,12 @@
         input.select();
       }
     });
-    const more = menu("Más opciones", "more");
-    const manage = action(more, "Gestionar artefacto", () =>
-      bridge?.action("manage"),
-    );
+    const manage = action(shareMenu, "Gestionar artefacto", () => bridge?.action("manage"));
     manage.hidden = true;
     if (bridge) {
-      action(more, "Referencias y conexiones", () => bridge.action("related"));
-      action(more, "Buscar artefactos", () => bridge.action("search"));
-    }
-    action(more, "Volver al inicio", () =>
-      scrollTo({ top: 0, behavior: "instant" }),
-    );
-    if (!bridge) action(more, "Imprimir", () => print());
+      action(reviewMenu, "Referencias y conexiones", () => bridge.action("related"));
+      action(reviewMenu, "Buscar en mi biblioteca", () => bridge.action("search"));
+    } else action(shareMenu, "Imprimir o guardar PDF", () => print());
     document.body.append(bar, status);
     const tooltip = make("div", null, "bf-dock-tooltip");
     tooltip.id = "bf-dock-tooltip";
@@ -438,9 +436,9 @@
       bridge.subscribe((value) => {
         remote = value;
         manage.hidden = !value.reader?.manage;
-        quickComment.disabled = comment.disabled =
-          !value.permissions.comment && !!value.author;
-        quickNote.disabled = note.disabled = !value.verified;
+        quickComment.disabled = !value.permissions.comment && !value.verified && !!value.author;
+        comment.disabled = !value.permissions.comment && !!value.author;
+        note.disabled = !value.verified;
         bundle.disabled = !value.verified;
         if (!applied && value.reader) {
           applyPreferences(value.reader.preferences);

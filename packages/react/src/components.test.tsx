@@ -86,3 +86,13 @@ it('uses a mobile record layout without losing stable cell references or selecti
   fireEvent.click(screen.getByRole('button',{name:'Cards',exact:true}));
   expect(document.querySelectorAll('[data-cell-id="r1:amount"]')).toHaveLength(1);
 });
+it('switches grouped board and list views without losing record selection',()=>{
+ render(<DataTable caption="Test records" rows={[{id:'1',status:'Open',amount:4},{id:'2',status:'Closed',amount:6}]} rowKey={r=>r.id} selectable columns={[{id:'id',header:'ID',value:r=>r.id},{id:'status',header:'Status',value:r=>r.status},{id:'amount',header:'Amount',type:'number',value:r=>r.amount}]}/>);
+ fireEvent.click(screen.getByLabelText('Select row 1'));
+ fireEvent.click(screen.getByRole('button',{name:'Board',exact:true}));
+ expect(document.querySelector('[data-layout=board]')).not.toBeNull();
+ expect(document.querySelectorAll('tbody')).toHaveLength(2);
+ fireEvent.click(screen.getByRole('button',{name:'List',exact:true}));
+ expect((screen.getByLabelText('Select row 1') as HTMLInputElement).checked).toBe(true);
+ expect(screen.getByText('4')).toBeDefined();
+});

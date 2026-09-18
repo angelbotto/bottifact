@@ -2988,18 +2988,18 @@ body:has(.revision-barra) { padding-bottom:0; }
 .explorador-detalle dl { display:grid; gap:6px; }
 .explorador-detalle dt { font:12px var(--sans); color:var(--tinta-2); margin-top:12px; }
 .explorador-detalle dd { overflow-wrap:anywhere; font:15px/1.6 var(--sans); }
-.explorer-ready[data-layout=cards] .tabla-caja { max-height:none; border:0; border-radius:0; overflow:visible; }
-.explorer-ready[data-layout=cards] table { display:block; min-width:0; }
-.explorer-ready[data-layout=cards] caption { display:block; padding:0 0 12px; }
-.explorer-ready[data-layout=cards] thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
-.explorer-ready[data-layout=cards] tbody { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:12px; margin-bottom:12px; }
-.explorer-ready[data-layout=cards] tbody tr { display:grid; grid-template-columns:1fr 1fr; gap:12px 16px; padding:16px; border:1px solid var(--linea); border-radius:10px; background:var(--papel); min-width:0; }
-.explorer-ready[data-layout=cards] tbody tr:has(.tabla-grupo),.explorer-ready[data-layout=cards] .explorer-empty { grid-column:1/-1; }
-.explorer-ready[data-layout=cards] tbody :is(td,th) { display:block; width:auto!important; min-width:0!important; padding:0; border:0; text-align:left; overflow-wrap:anywhere; white-space:normal; font-size:14px; }
-.explorer-ready[data-layout=cards] tbody :is(td,th)::before { content:attr(data-label); display:block; margin-bottom:4px; color:var(--tinta-2); font:11px/1.5 var(--sans); }
-.explorer-ready[data-layout=cards] tbody :is(td,th):first-child { grid-column:1/-1; padding-bottom:10px; border-bottom:1px solid var(--linea); font-size:16px; }
-.explorer-ready[data-layout=cards] .explorador-inspeccionar { float:right; margin-top:-4px; }
-.explorer-ready[data-layout=cards] .tabla-grupo { border:0!important; padding:0!important; }
+.explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) .tabla-caja { max-height:none; border:0; border-radius:0; overflow:visible; }
+.explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) table { display:block; min-width:0; }
+.explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) caption { display:block; padding:0 0 12px; }
+.explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+.explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) tbody { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:12px; margin-bottom:12px; }
+.explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) tbody tr { display:grid; grid-template-columns:1fr 1fr; gap:12px 16px; padding:16px; border:1px solid var(--linea); border-radius:10px; background:var(--papel); min-width:0; }
+.explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) tbody tr:has(.tabla-grupo),.explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) .explorer-empty { grid-column:1/-1; }
+.explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) tbody :is(td,th) { display:block; width:auto!important; min-width:0!important; padding:0; border:0; text-align:left; overflow-wrap:anywhere; white-space:normal; font-size:14px; }
+.explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) tbody :is(td,th)::before { content:attr(data-label); display:block; margin-bottom:4px; color:var(--tinta-2); font:11px/1.5 var(--sans); }
+.explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) tbody :is(td,th):first-child { grid-column:1/-1; padding-bottom:10px; border-bottom:1px solid var(--linea); font-size:16px; }
+.explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) .explorador-inspeccionar { float:right; margin-top:-4px; }
+.explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) .tabla-grupo { border:0!important; padding:0!important; }
 @media(max-width:640px) {
   :root { --gutter:18px; }
   .hoja { padding-top:24px; row-gap:24px; }
@@ -3024,12 +3024,12 @@ body:has(.revision-barra) { padding-bottom:0; }
 }
 @media print {
   .explorer-filter-chips,.explorer-batch,.explorer-scroll-hint,.explorador-inspeccionar,.explorer-presentation { display:none!important; }
-  .explorer-ready[data-layout=cards] table { display:table; }
-  .explorer-ready[data-layout=cards] thead { display:table-header-group; position:static; width:auto; height:auto; clip-path:none; }
-  .explorer-ready[data-layout=cards] tbody { display:table-row-group; }
-  .explorer-ready[data-layout=cards] tbody tr { display:table-row; }
-  .explorer-ready[data-layout=cards] tbody :is(td,th) { display:table-cell; padding:8px; }
-  .explorer-ready[data-layout=cards] tbody :is(td,th)::before { display:none; }
+  .explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) table { display:table; }
+  .explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) thead { display:table-header-group; position:static; width:auto; height:auto; clip-path:none; }
+  .explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) tbody { display:table-row-group; }
+  .explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) tbody tr { display:table-row; }
+  .explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) tbody :is(td,th) { display:table-cell; padding:8px; }
+  .explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) tbody :is(td,th)::before { display:none; }
 }
 
 /* Small screens keep progress out of the reading and commenting controls. */
@@ -3154,6 +3154,34 @@ body:has(.revision-barra) { padding-bottom:0; }
 .review-composer .review-composer-error{font:12px/1.5 var(--sans);color:var(--tinta);margin:0;padding:6px 8px;border-left:2px solid var(--acento)}
 
 @media(max-width:540px){.review-composer .revision-field select,.review-composer .revision-session input{font-size:16px;min-height:40px}}
+
+/* One review entry point, explicit privacy, and a live count. */
+.bottifact-toolbar .bf-review-count{position:absolute;top:0;right:-3px;min-width:17px;height:17px;display:grid;place-items:center;padding:0 4px;border-radius:9px;background:var(--tinta);color:var(--papel);font:600 10px var(--sans);border:2px solid var(--papel)}
+.review-composer .revision-field.review-privacy{flex:1;margin:0!important;min-width:0}
+.review-composer .review-privacy select{font:500 11px var(--sans);width:auto;max-width:100%;padding:5px 20px 5px 0;border:0;background-color:transparent;cursor:pointer}
+.review-composer .review-privacy select:disabled{opacity:1;cursor:default}
+.revision-marca[data-count]:not([data-count="1"]){min-width:34px;border-radius:12px 12px 12px 3px;box-shadow:3px 3px 0 var(--papel),4px 4px 0 var(--linea)}
+/* All presentations reuse the original rows, cells, selection and anchors. */
+@media screen{
+.explorer-ready[data-layout=list] tbody tr{display:grid;grid-template-columns:minmax(100px,1.1fr) repeat(auto-fit,minmax(90px,1fr));padding:12px;gap:12px;border-radius:0;border:0;border-bottom:1px solid var(--linea);background:transparent}
+.explorer-ready[data-layout=list] tbody :is(td,th):first-child{grid-column:auto;padding:0;border:0;font-size:14px}
+.explorer-ready[data-layout=list] tbody :is(td,th)::before{font-size:10px;margin-bottom:2px}
+.explorer-ready[data-layout=board] .tabla-caja{overflow:auto;padding-bottom:12px;scroll-snap-type:x proximity}
+.explorer-ready[data-layout=board] table{display:flex;align-items:flex-start;gap:12px;min-width:100%;width:max-content}
+.explorer-ready[data-layout=board] caption{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.explorer-ready[data-layout=board] tbody{display:flex;flex-direction:column;gap:10px;width:260px;flex:0 0 260px;padding:10px;background:var(--panel);border-radius:10px;scroll-snap-align:start}
+.explorer-ready[data-layout=board] tbody tr{margin:0;background:var(--papel)}
+.explorer-ready[data-layout=board] tbody tr:has(.tabla-grupo){padding:4px;background:transparent;border:0}
+.explorer-ready[data-layout=board] .tabla-grupo button{font:600 12px var(--sans);text-align:left}
+.explorer-ready[data-layout=board] .explorer-empty{min-width:240px}
+}
+@media(max-width:540px){.explorer-ready .explorer-presentation{display:flex;flex-wrap:wrap}.explorer-ready .explorer-presentation button{padding:6px!important;gap:4px!important}.review-composer .review-privacy select{font-size:16px}}
+
+@media screen{.explorer-ready[data-layout=list] tbody{display:block}}
+
+.bottifact-toolbar>details>summary{position:relative}
+
+@media(max-width:640px){.explorer-ready[data-layout=board] .explorer-scroll-hint{display:block}}
 /* REVIEW COMPOSER END */
 
 /* GENERATED THEMES — scripts/themes.py; edit packages/core/themes/families/. */
@@ -5148,23 +5176,27 @@ body:has(.revision-barra) { padding-bottom:0; }
     };
     divider();
     const quickComment = button("Comentar en un punto", "comment", () =>
-      comment.click(),
+      remote?.verified && !remote.permissions.comment ? note.click() : comment.click(),
     );
-    const quickNote = button("Añadir nota privada", "note", () => note.click());
     quickComment.setAttribute("aria-pressed", "false");
-    quickNote.setAttribute("aria-pressed", "false");
     document.addEventListener("bottifact:review-mode", (event) => {
       if (!event.detail.active) say("");
       quickComment.setAttribute(
         "aria-pressed",
-        String(event.detail.active && event.detail.kind === "comment"),
-      );
-      quickNote.setAttribute(
-        "aria-pressed",
-        String(event.detail.active && event.detail.kind === "note"),
+        String(event.detail.active),
       );
     });
-    const reviewMenu = menu("Comentarios y notas", "review");
+    const reviewMenu = menu("Comentarios", "review");
+    const reviewCount=make("span", "0", "bf-review-count");
+    reviewMenu.d.querySelector("summary").append(reviewCount);
+    function updateCount(count){
+      reviewCount.textContent=String(count);
+      const label="Comentarios · "+count+" abiertos";
+      reviewMenu.d.querySelector("summary").setAttribute("aria-label",label);
+      reviewMenu.d.querySelector("summary").dataset.tooltip=label;
+    }
+    updateCount(Number(review?.querySelector("button:last-child")?.textContent)||0);
+    document.addEventListener("bottifact:review-count",e=>updateCount(e.detail.open));
     const original = (label) =>
       review?.querySelector('[aria-label="' + label + '"]');
     const comment = action(reviewMenu, "Añadir comentario", () => {
@@ -5195,7 +5227,8 @@ body:has(.revision-barra) { padding-bottom:0; }
       ),
     );
     divider();
-    button("Compartir", "share", async () => {
+    const shareMenu=menu("Compartir", "share");
+    action(shareMenu, "Enlace y acceso", async () => {
       if (bridge) return bridge.action("share");
       const canonical = document.querySelector("link[rel=canonical]")?.href;
       const url =
@@ -5226,19 +5259,12 @@ body:has(.revision-barra) { padding-bottom:0; }
         input.select();
       }
     });
-    const more = menu("Más opciones", "more");
-    const manage = action(more, "Gestionar artefacto", () =>
-      bridge?.action("manage"),
-    );
+    const manage = action(shareMenu, "Gestionar artefacto", () => bridge?.action("manage"));
     manage.hidden = true;
     if (bridge) {
-      action(more, "Referencias y conexiones", () => bridge.action("related"));
-      action(more, "Buscar artefactos", () => bridge.action("search"));
-    }
-    action(more, "Volver al inicio", () =>
-      scrollTo({ top: 0, behavior: "instant" }),
-    );
-    if (!bridge) action(more, "Imprimir", () => print());
+      action(reviewMenu, "Referencias y conexiones", () => bridge.action("related"));
+      action(reviewMenu, "Buscar en mi biblioteca", () => bridge.action("search"));
+    } else action(shareMenu, "Imprimir o guardar PDF", () => print());
     document.body.append(bar, status);
     const tooltip = make("div", null, "bf-dock-tooltip");
     tooltip.id = "bf-dock-tooltip";
@@ -5443,9 +5469,9 @@ body:has(.revision-barra) { padding-bottom:0; }
       bridge.subscribe((value) => {
         remote = value;
         manage.hidden = !value.reader?.manage;
-        quickComment.disabled = comment.disabled =
-          !value.permissions.comment && !!value.author;
-        quickNote.disabled = note.disabled = !value.verified;
+        quickComment.disabled = !value.permissions.comment && !value.verified && !!value.author;
+        comment.disabled = !value.permissions.comment && !!value.author;
+        note.disabled = !value.verified;
         bundle.disabled = !value.verified;
         if (!applied && value.reader) {
           applyPreferences(value.reader.preferences);
@@ -6149,7 +6175,7 @@ body:has(.revision-barra) { padding-bottom:0; }
   const editor=el.querySelector('[data-revision-editor]'),panel=el.querySelector('[data-revision-panel]'),input=el.querySelector('[data-revision-texto]'),context=el.querySelector('[data-revision-contexto]'),list=el.querySelector('[data-revision-notas]'),prompt=el.querySelector('[data-revision-prompt]'),status=el.querySelector('[data-revision-estado]');
   if(!editor||!panel||!input||!context||!list||!prompt||!status)return null;
   const originalEditor=editor.innerHTML;
-  const abort=new AbortController(),notes=[],addedIDs=new Set(),originalStatus=status.textContent,originalPrompt=prompt.textContent,focusTargets=new Map();let rowsAbort=new AbortController(),mode=false,pending=null,editing=null,serial=0;
+  const abort=new AbortController(),notes=[],addedIDs=new Set(),originalStatus=status.textContent,originalPrompt=prompt.textContent,focusTargets=new Map();let pinScope=null;let rowsAbort=new AbortController(),mode=false,pending=null,editing=null,serial=0;
   const bar=document.createElement('div'),layer=document.createElement('div');bar.className='revision-barra revision-ui';bar.setAttribute('role','group');bar.setAttribute('aria-label','Comentarios');layer.className='revision-capa revision-ui';
   const modeButton=el.querySelector('[data-revision-modo]').cloneNode(true),listButton=el.querySelector('[data-revision-lista]').cloneNode(true);modeButton.innerHTML=icon;modeButton.setAttribute('aria-label','Comentar: activar pines');modeButton.title='Comentar';listButton.textContent='0';listButton.title='Ver comentarios';listButton.setAttribute('aria-label','Ver comentarios, 0');bar.append(modeButton,listButton);document.body.append(bar,layer,editor,panel);
   const listen=(node,type,fn,options={})=>node.addEventListener(type,fn,{...options,signal:abort.signal}),make=(tag,text)=>{const node=document.createElement(tag);node.textContent=text;return node;};
@@ -6162,8 +6188,8 @@ body:has(.revision-barra) { padding-bottom:0; }
   const filterLabel=make('label','Mostrar'),filter=make('select','');for(const [value,label] of [['open','Abiertos'],['all','Todos'],['resolved','Resueltos'],['mine','Asignados a mí']]){const o=make('option',label);o.value=value;filter.append(o);}filterLabel.append(filter);
   const exportButton=make('button','Exportar revisión'),importLabel=make('label','Importar revisión'),importInput=make('input','');exportButton.type='button';importInput.type='file';importInput.className='sr-only';importInput.accept='.json,application/json';importLabel.className='revision-importar';importLabel.append(importInput);
   const promptPre=prompt.closest('pre'),promptContainer=promptPre.parentElement,promptDetails=make('details','');promptDetails.className='revision-prompt-detalle';promptDetails.append(make('summary','Ver texto completo'),promptPre);promptContainer.append(promptDetails);
-  const feedback=make('p','');feedback.className='revision-guardado';feedback.setAttribute('role','status');toolbar.append(authorLabel,filterLabel,exportButton,importLabel,feedback);list.before(toolbar);
-  const typeLabel=make('label','Tipo'),type=make('select','');typeLabel.className='revision-field';type.setAttribute('aria-label','Comentario o nota');for(const [value,label] of [['comment','Comentario compartido'],['note','Nota privada · sólo yo']]){const option=make('option',label);option.value=value;type.append(option);}typeLabel.append(type);editor.querySelector('form').insertBefore(typeLabel,input);listen(type,'change',()=>{editor.querySelector('h2').textContent=type.value==='note'?'Nota privada':'Comentario';editor.querySelector('[data-revision-guardar]').setAttribute('aria-label',type.value==='note'?'Guardar nota':'Guardar comentario');});const sessionDetails=make('details',''),sessionInput=make('input','');sessionDetails.className='revision-session';sessionDetails.append(make('summary','Sesión o encargo (opcional)'));sessionInput.maxLength=200;sessionInput.setAttribute('aria-label','Sesión o encargo');sessionInput.placeholder='Referencia para retomar con la IA';sessionDetails.append(sessionInput);input.after(sessionDetails);if(!bridge){type.options[0].textContent='Comentario local';type.options[1].textContent='Nota local';}
+  const feedback=make('p','');feedback.className='revision-guardado';feedback.setAttribute('role','status');const allPins=make('button','Ver todos los comentarios');allPins.type='button';allPins.hidden=true;listen(allPins,'click',()=>{pinScope=null;render();});toolbar.append(allPins,authorLabel,filterLabel,exportButton,importLabel,feedback);list.before(toolbar);
+  const typeLabel=make('label','Tipo'),type=make('select','');typeLabel.className='revision-field';type.setAttribute('aria-label','Visibilidad del comentario');for(const [value,label] of [['comment','Comentario compartido'],['note','Nota privada · sólo yo']]){const option=make('option',label);option.value=value;type.append(option);}typeLabel.append(type);editor.querySelector('form').insertBefore(typeLabel,input);listen(type,'change',()=>{editor.querySelector('h2').textContent=type.value==='note'?'Nota privada':'Comentario';editor.querySelector('[data-revision-guardar]').setAttribute('aria-label',type.value==='note'?'Guardar nota':'Guardar comentario');});const sessionDetails=make('details',''),sessionInput=make('input','');sessionDetails.className='revision-session';sessionDetails.append(make('summary','Sesión o encargo (opcional)'));sessionInput.maxLength=200;sessionInput.setAttribute('aria-label','Sesión o encargo');sessionInput.placeholder='Referencia para retomar con la IA';sessionDetails.append(sessionInput);input.after(sessionDetails);if(!bridge){type.options[0].textContent='Comentario local';type.options[1].textContent='Nota local';}
   const noteButton=make('button','✎');noteButton.type='button';noteButton.title='Añadir nota privada';noteButton.setAttribute('aria-label','Añadir nota privada');bar.insertBefore(noteButton,listButton);let choosingType='comment';listen(noteButton,'click',()=>{choosingType='note';toggle();});
   // Compact composer: the writing surface stays primary; metadata is disclosed on demand.
   const composerForm=editor.querySelector('form'),composerTitle=editor.querySelector('h2'),composerActions=editor.querySelector('.acciones'),composerContext=editor.querySelector('.revision-contexto');
@@ -6173,8 +6199,8 @@ body:has(.revision-barra) { padding-bottom:0; }
   const composerCancel=editor.querySelector('[data-revision-cancelar]');composerCancel.title='Cerrar comentario';composerCancel.setAttribute('aria-label','Cerrar comentario');
   composerHeader.append(composerAvatar,composerName,composerCancel);composerForm.prepend(composerHeader);composerTitle.classList.add('sr-only');
   const composerOptions=make('details',''),composerSummary=make('summary',''),composerMetadata=make('div','');composerOptions.className='review-composer-options';composerSummary.setAttribute('aria-label','Contexto y opciones');composerSummary.title='Contexto y opciones';composerSummary.append(window.BottifactUI?.icon('more')||make('span','…'));composerOptions.append(composerSummary,composerMetadata);composerMetadata.className='review-composer-metadata';
-  composerMetadata.append(typeLabel,sessionDetails);if(composerContext)composerMetadata.prepend(composerContext);
-  const composerFooter=make('div','');composerFooter.className='review-composer-footer';composerFooter.append(composerPrivacy,composerOptions,composerActions);composerForm.append(composerFooter);editor.classList.add('review-composer');
+  composerMetadata.append(sessionDetails);if(composerContext)composerMetadata.prepend(composerContext);
+  const composerFooter=make('div','');composerFooter.className='review-composer-footer';typeLabel.classList.add('review-privacy');typeLabel.firstChild.textContent='';type.options[0].textContent=bridge?'Compartido':'Comentario local';type.options[1].textContent=bridge?'Privado · solo yo':'Nota local';composerFooter.append(typeLabel,composerOptions,composerActions);composerPrivacy.hidden=true;composerForm.append(composerFooter);editor.classList.add('review-composer');
   const composerSubmit=editor.querySelector('[data-revision-guardar]');composerSubmit.title='Enviar · ⌘/Ctrl + Enter';
   function refreshComposer(){const label=authorInput.value.trim()||'Tu comentario';composerName.textContent=label;composerAvatar.textContent=label.split(/\s+/).map(x=>x[0]).slice(0,2).join('').toUpperCase();composerPrivacy.textContent=type.value==='note'?(bridge?'Sólo tú':'Nota local'):(bridge?'Comentario':'Comentario local');input.placeholder=type.value==='note'?'Escribe una nota…':'Escribe un comentario…';}
   listen(type,'change',refreshComposer);listen(composerOptions,'toggle',position);listen(document,'pointerdown',e=>{if(composerOptions.open&&!composerOptions.contains(e.target))composerOptions.open=false;});refreshComposer();
@@ -6183,7 +6209,7 @@ body:has(.revision-barra) { padding-bottom:0; }
   if(bridge){authorInput.readOnly=true;importInput.disabled=true;importLabel.hidden=true;authorInput.placeholder='Identidad del portal';}
   const semanticText=node=>{const copy=node.cloneNode(true);copy.querySelectorAll('[aria-hidden="true"],.revision-ui').forEach(n=>n.remove());return copy.textContent.trim().replace(/\s+/g,' ').slice(0,4000);};
   function findTarget(anchor){const base=document.getElementById(anchor.reference)||document.querySelector('main');if(!base)return null;const candidates=[base,...base.querySelectorAll('p,h1,h2,h3,h4,figure,pre,li,table,section,button,a,input,select,textarea')].filter(n=>n.tagName===anchor.tag&&semanticText(n)===anchor.text&&!n.closest('[data-revision],.revision-ui'));return candidates.length===1?candidates[0]:null;}
-  function hydrate(){const old=new Map(notes.map(n=>[n.id,n]));notes.splice(0);for(const t of store.state()){const previous=old.get(t.id),target=previous?.target?.isConnected?previous.target:findTarget(t.anchor),n={...t,...t.anchor,text:t.text,blockText:t.anchor.text,target,marker:previous?.marker||make('button','')};if(target&&!target.id){let id;do{id='nota-revision-bloque-'+(++serial);}while(document.getElementById(id));target.id=id;addedIDs.add(target);}n.marker.type='button';n.marker.className='revision-marca';n.marker.dataset.kind=n.entry_type;n.marker.onclick=()=>{if(n.target&&(!bridge||((remote?.permissions.comment||n.entry_type==='note')&&(remote.permissions.edit||n.history[0]?.actor===remote.actor))))open(n);else{filter.value='all';render();panel.showModal();}};layer.append(n.marker);notes.push(n);old.delete(t.id);}old.forEach(n=>n.marker.remove());render();}
+  function hydrate(){const old=new Map(notes.map(n=>[n.id,n]));notes.splice(0);for(const t of store.state()){const previous=old.get(t.id),target=previous?.target?.isConnected?previous.target:findTarget(t.anchor),n={...t,...t.anchor,text:t.text,blockText:t.anchor.text,target,marker:previous?.marker||make('button','')};if(target&&!target.id){let id;do{id='nota-revision-bloque-'+(++serial);}while(document.getElementById(id));target.id=id;addedIDs.add(target);}n.marker.type='button';n.marker.className='revision-marca';n.marker.dataset.kind=n.entry_type;n.marker.onclick=()=>{if(n.marker._pinGroup?.length>1){pinScope=new Set(n.marker._pinGroup);filter.value='all';render();panel.showModal();return;}if(n.target&&(!bridge||((remote?.permissions.comment||n.entry_type==='note')&&(remote.permissions.edit||n.history[0]?.actor===remote.actor))))open(n);else{filter.value='all';render();panel.showModal();}};layer.append(n.marker);notes.push(n);old.delete(t.id);}old.forEach(n=>n.marker.remove());render();}
   async function mutate(kind,n,data={}){try{if(bridge){const result=await bridge.commit({kind,thread:n?.id,...data});store.importData(result.snapshot);}else store.append(kind,n?.id,authorInput.value.trim()||'Sin nombre',data);hydrate();return true;}catch(e){feedback.textContent=e.message;status.textContent=e.message;composerError.textContent=e.message;composerError.hidden=false;return false;}}
   listen(authorInput,'change',()=>{author=authorInput.value.trim();try{storage?.setItem('nota-revision-autor',author);}catch{}render();});listen(filter,'change',render);
   listen(window,'storage',e=>{if(e.key?.startsWith(store.prefix))hydrate();});
@@ -6196,15 +6222,16 @@ body:has(.revision-barra) { padding-bottom:0; }
   function point(note){const r=note.target?.getBoundingClientRect()||{left:innerWidth/2,top:innerHeight/3,width:0,height:0};return {x:r.left+r.width*note.x,y:r.top+r.height*note.y,r};}
   function position(){
    const vw=visualViewport?.width||innerWidth,vh=visualViewport?.height||innerHeight,ox=visualViewport?.offsetLeft||0,oy=visualViewport?.offsetTop||0;
-   notes.forEach(note=>{const p=point(note);let visible=!!note.target&&!note.resolved&&note.target.getClientRects().length>0&&p.x>=ox&&p.x<=ox+vw&&p.y>=oy+54&&p.y<=oy+vh;
+   const pinGroups=[];notes.forEach(note=>{note.marker._pinGroup=null;const p=point(note);let visible=!!note.target&&!note.resolved&&note.target.getClientRects().length>0&&p.x>=ox&&p.x<=ox+vw&&p.y>=oy+54&&p.y<=oy+vh;
     for(let a=note.target?.parentElement;a&&a!==document.body;a=a.parentElement){const s=getComputedStyle(a);if(/auto|scroll|hidden|clip/.test(s.overflowX+' '+s.overflowY)){const r=a.getBoundingClientRect();if(p.x<r.left||p.x>r.right||p.y<r.top||p.y>r.bottom)visible=false;}}
-    note.marker.hidden=!visible;note.marker.style.left=Math.max(ox+4,Math.min(ox+vw-32,p.x-4))+'px';note.marker.style.top=Math.max(oy+4,Math.min(oy+vh-36,p.y-28))+'px';
+    note.marker.hidden=!visible;note.marker.style.left=Math.max(ox+4,Math.min(ox+vw-32,p.x-4))+'px';note.marker.style.top=Math.max(oy+4,Math.min(oy+vh-36,p.y-28))+'px';if(visible){const x=parseFloat(note.marker.style.left),y=parseFloat(note.marker.style.top),group=pinGroups.find(g=>Math.hypot(g.x-x,g.y-y)<36);if(group){group.notes.push(note);note.marker.hidden=true;}else pinGroups.push({x,y,notes:[note]});}
    });
+   pinGroups.forEach(g=>{const first=g.notes[0],label=g.notes.length+' '+(g.notes.length===1?'comentario':'comentarios')+' en este punto';first.marker._pinGroup=g.notes.map(n=>n.id);first.marker.textContent=String(g.notes.length);first.marker.dataset.count=String(g.notes.length);first.marker.setAttribute('aria-label',label+': '+g.notes.map(n=>n.text.slice(0,60)).join(' · '));first.marker.title=label;});
    if(editor.open&&pending){const p=point(pending);editor.style.width=Math.min(340,vw-24)+'px';editor.style.maxHeight=Math.max(160,vh-24)+'px';const r=editor.getBoundingClientRect();editor.style.left=Math.max(ox+12,Math.min(p.x+14,ox+vw-r.width-12))+'px';editor.style.top=Math.max(oy+12,Math.min(p.y+12,oy+vh-r.height-12))+'px';if(pending.target&&!pending.target.getClientRects().length)editor.close();}
    if(editor.open&&composerOptions.open){const a=composerSummary.getBoundingClientRect();composerMetadata.style.width=Math.min(300,vw-24)+'px';composerMetadata.style.maxHeight=Math.max(80,vh-24)+'px';const r=composerMetadata.getBoundingClientRect();composerMetadata.style.left=Math.max(ox+12,Math.min(a.right-r.width,ox+vw-r.width-12))+'px';composerMetadata.style.top=Math.max(oy+12,Math.min(a.top-r.height-8,oy+vh-r.height-12))+'px';}
   }
   function render(){rowsAbort.abort();rowsAbort=new AbortController();list.replaceChildren();const on=(n,fn)=>n.addEventListener('click',fn,{signal:rowsAbort.signal});
-   const shown=notes.filter(n=>filter.value==='all'||filter.value==='open'&&!n.resolved||filter.value==='resolved'&&n.resolved||filter.value==='mine'&&!!authorInput.value.trim()&&n.assignee===authorInput.value.trim());
+   allPins.hidden=!pinScope;const shown=notes.filter(n=>!pinScope||pinScope.has(n.id)).filter(n=>filter.value==='all'||filter.value==='open'&&!n.resolved||filter.value==='resolved'&&n.resolved||filter.value==='mine'&&!!authorInput.value.trim()&&n.assignee===authorInput.value.trim());
    notes.forEach((note,i)=>{note.marker.textContent=String(i+1);note.marker.setAttribute('aria-label','Comentario '+(i+1)+': '+note.text.slice(0,80));});
    shown.forEach(note=>{const li=make('li',''),actions=make('div','');li.className='revision-hilo';li.dataset.thread=note.id;actions.className='acciones';
     const meta=make('p',(note.entry_type==='note'?'Nota privada · ':'')+note.author+(bridge?(note.history[0]?.verified?' · correo verificado':' · invitado'):'')+' · '+new Date(note.time).toLocaleDateString('es')+' · '+(note.resolved?'Resuelto':'Abierto'));meta.className='revision-meta';
@@ -6220,9 +6247,9 @@ body:has(.revision-barra) { padding-bottom:0; }
    });
    if(!shown.length)list.append(make('li',notes.length?'No hay comentarios en esta vista.':'Aún no hay comentarios. Activa el globo y elige un punto del documento.'));
    const active=notes.filter(n=>!n.resolved);prompt.textContent=localPrompt(active);
-   listButton.textContent=String(active.length);listButton.setAttribute('aria-label','Ver comentarios, '+active.length+' abiertos');status.textContent=notes.length+' comentarios · '+(bridge?'revisión compartida.':store.persistent?'guardados en este navegador.':'en memoria: exporta antes de cerrar.');feedback.textContent=bridge?'Comentarios guardados.':store.persistent?'Guardado local. Exportar incluye todo el historial, también los hilos archivados.':'Sin almacenamiento persistente. Exporta antes de cerrar.';panel.querySelector('.procedencia').textContent=bridge?'Revisión compartida. El portal verifica permisos e identifica los nombres declarados como invitados.':'Revisión local con historial. Los nombres son declarados; compartir requiere exportar e importar.';position();
+   document.dispatchEvent(new CustomEvent('bottifact:review-count',{detail:{open:active.length,total:notes.length}}));listButton.textContent=String(active.length);listButton.setAttribute('aria-label','Ver comentarios, '+active.length+' abiertos');status.textContent=notes.length+' comentarios · '+(bridge?'revisión compartida.':store.persistent?'guardados en este navegador.':'en memoria: exporta antes de cerrar.');feedback.textContent=bridge?'Comentarios guardados.':store.persistent?'Guardado local. Exportar incluye todo el historial, también los hilos archivados.':'Sin almacenamiento persistente. Exporta antes de cerrar.';panel.querySelector('.procedencia').textContent=bridge?'Revisión compartida. El portal verifica permisos e identifica los nombres declarados como invitados.':'Revisión local con historial. Los nombres son declarados; compartir requiere exportar e importar.';position();
   }
-  function open(note){if(editor.open)editor.close();editing=notes.includes(note)?note:null;setMode(false);if(editing&&note.target){const page=note.target.closest('.pagina');if(page?.hidden)document.querySelector('[data-ir="'+page.id+'"]')?.click();const r=note.target.getBoundingClientRect();if(r.bottom<60||r.top>innerHeight-60)note.target.scrollIntoView({behavior:'instant',block:'center'});}pending=note;type.value=editing?note.entry_type:choosingType;type.disabled=!!editing;type.options[0].disabled=!!bridge&&!remote?.permissions.comment;sessionInput.value=editing?note.session:'';sessionDetails.open=false;sessionInput.disabled=!!editing;context.textContent=note.page+' · #'+note.reference+' · '+note.quote;input.value=editing?note.text:'';editor.querySelector('h2').textContent=type.value==='note'?'Nota privada':editing?'Comentario '+(notes.indexOf(note)+1):'Comentario';editor.querySelector('[data-revision-guardar]').setAttribute('aria-label',type.value==='note'?'Guardar nota':'Guardar comentario');editor.querySelector('details').open=false;composerOptions.open=false;composerError.hidden=true;refreshComposer();editor.show();resizeInput();position();input.focus({preventScroll:true});}
+  function open(note){if(editor.open)editor.close();editing=notes.includes(note)?note:null;setMode(false);if(editing&&note.target){const page=note.target.closest('.pagina');if(page?.hidden)document.querySelector('[data-ir="'+page.id+'"]')?.click();const r=note.target.getBoundingClientRect();if(r.bottom<60||r.top>innerHeight-60)note.target.scrollIntoView({behavior:'instant',block:'center'});}pending=note;type.value=editing?note.entry_type:choosingType;type.disabled=!!editing;type.options[0].disabled=!!bridge&&!remote?.permissions.comment;type.options[1].disabled=!!bridge&&!remote?.verified;sessionInput.value=editing?note.session:'';sessionDetails.open=false;sessionInput.disabled=!!editing;context.textContent=note.page+' · #'+note.reference+' · '+note.quote;input.value=editing?note.text:'';editor.querySelector('h2').textContent=type.value==='note'?'Nota privada':editing?'Comentario '+(notes.indexOf(note)+1):'Comentario';editor.querySelector('[data-revision-guardar]').setAttribute('aria-label',type.value==='note'?'Guardar nota':'Guardar comentario');editor.querySelector('details').open=false;composerOptions.open=false;composerError.hidden=true;refreshComposer();editor.show();resizeInput();position();input.focus({preventScroll:true});}
   function choose(target,selection='',coords){if(!target?.closest('main')||target.closest('.revision-ui,[data-revision]'))return;
    const page=target.closest('.pagina');let anchor=target;while(anchor&&(!anchor.id||addedIDs.has(anchor)))anchor=anchor.parentElement;
    const semantic=target.cloneNode(true);semantic.querySelectorAll('[aria-hidden="true"]').forEach(n=>n.remove());
@@ -6230,7 +6257,7 @@ body:has(.revision-barra) { padding-bottom:0; }
    open({target,tag:target.tagName,blockText:semanticText(target),reference:anchor?.id||page?.id||'contenido',page:page?.querySelector('h1')?.textContent||document.title,section:target.closest('section')?.querySelector('h2,h3')?.textContent?.slice(0,300)||'',quote,text:'',x:coords&&r.width?Math.max(0,Math.min(1,(coords.x-r.left)/r.width)):.5,y:coords&&r.height?Math.max(0,Math.min(1,(coords.y-r.top)/r.height)):.5});
   }
   function toggle(){if(bridge&&remote&&!(choosingType==='note'?remote.verified:remote.permissions.comment)){if(!remote.author)bridge.identify();else status.textContent='Tu acceso a esta revisión es de lectura.';return;}if(editor.open)editor.close();const selection=getSelection(),text=selection?.toString().trim(),node=selection?.anchorNode;if(text&&node){const target=(node.nodeType===1?node:node.parentElement).closest('p,h1,h2,h3,h4,figure,pre,li');if(target?.closest('main')){choose(target,text);return;}}setMode(!mode);}
-  [modeButton,el.querySelector('[data-revision-modo]')].forEach(b=>listen(b,'click',()=>{choosingType='comment';toggle();}));[listButton,el.querySelector('[data-revision-lista]')].forEach(b=>listen(b,'click',()=>{setMode(false);editor.close();render();panel.showModal();}));
+  [modeButton,el.querySelector('[data-revision-modo]')].forEach(b=>listen(b,'click',()=>{choosingType='comment';toggle();}));[listButton,el.querySelector('[data-revision-lista]')].forEach(b=>listen(b,'click',()=>{pinScope=null;setMode(false);editor.close();render();panel.showModal();}));
   listen(document,'click',e=>{if(!mode||e.target.closest('.revision-ui,[data-revision],.barra'))return;const target=e.target.closest('button,a,input,select,textarea,p,h1,h2,h3,h4,pre,figure,table,li,.card-editorial,section,.pagina');if(!target?.closest('main'))return;e.preventDefault();e.stopImmediatePropagation();choose(target,'',{x:e.clientX,y:e.clientY});},{capture:true});
   listen(document,'nota:pagina',()=>{setMode(false);editor.close();position();});listen(window,'scroll',position,{capture:true,passive:true});listen(window,'resize',position);if(window.visualViewport){listen(visualViewport,'resize',position);listen(visualViewport,'scroll',position);}
   const resize=new ResizeObserver(position);resize.observe(document.querySelector('main')||document.body);resize.observe(editor);
@@ -6251,4 +6278,4 @@ body:has(.revision-barra) { padding-bottom:0; }
 })();
 
 </script>
-<script type="application/json" data-nota-manifiesto>{"version": "4", "paginas": ["evidencia"], "modulos": ["packages/core/components/interface.js", "packages/core/components/reader-controls.js", "packages/core/components/audio.js", "packages/core/components/controls.js", "packages/core/components/editorial-pieces.js", "packages/core/components/reader.js", "packages/core/components/code.js", "packages/core/components/evidence.js", "packages/core/components/review.js"], "fuentes": {"packages/core/styles/fonts.css": "c496fb4f095a14cbb6a82503a4a828720c01a8120df3c73113495d832e5d40cb", "packages/core/styles/artifact.css": "9b0d808ac7553f6c864026c5d0921dc20517caebc6443989361e69c36f992630", "packages/core/components/interface.js": "685e436dca3d79ce38bcc82aa1dbd01662ccb0081638e75f3c647514b894b176", "packages/core/components/reader-controls.js": "35de266155f91f3d992cfb6b02d3f9b227783b58038673f48d4941ff0d0b312a", "packages/core/components/audio.js": "db6014d04e8710e87912c453eedbe9c24b7feb8bfb02934f5c0cca26da682232", "packages/core/components/controls.js": "b3881b4411e12ae56a1859a56dd14c2fb073712fa732874fce50e9c2061d0aa5", "packages/core/components/editorial-pieces.js": "8604004dfc2aacf7e51ae4a0e6184950fdaaa0187f64e956b562adb787cd5fe9", "packages/core/components/reader.js": "02e08ec1ab76d7fa16003b5126f7a0b12993108f2dbe7e18cef0c10ae424b23f", "packages/core/components/code.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "packages/core/components/evidence.js": "725f0178939c6995c3ff0a9de37ddf67dbddf089af4560b58eaf14c418306aaa", "packages/core/components/review.js": "874f5694d375298140deda7374db770af9afee781dfb0d6d6576e7f3716073e1"}}</script>
+<script type="application/json" data-nota-manifiesto>{"version": "4", "paginas": ["evidencia"], "modulos": ["packages/core/components/interface.js", "packages/core/components/reader-controls.js", "packages/core/components/audio.js", "packages/core/components/controls.js", "packages/core/components/editorial-pieces.js", "packages/core/components/reader.js", "packages/core/components/code.js", "packages/core/components/evidence.js", "packages/core/components/review.js"], "fuentes": {"packages/core/styles/fonts.css": "c496fb4f095a14cbb6a82503a4a828720c01a8120df3c73113495d832e5d40cb", "packages/core/styles/artifact.css": "b741c3fadc565c27a53a1272a1e8e9de70b1ab7f22b3e9dde817403bd5c941ab", "packages/core/components/interface.js": "685e436dca3d79ce38bcc82aa1dbd01662ccb0081638e75f3c647514b894b176", "packages/core/components/reader-controls.js": "75a80c4674e794cbb7ec9740605d8215379dd953c8e71f4c03e488606f792051", "packages/core/components/audio.js": "db6014d04e8710e87912c453eedbe9c24b7feb8bfb02934f5c0cca26da682232", "packages/core/components/controls.js": "b3881b4411e12ae56a1859a56dd14c2fb073712fa732874fce50e9c2061d0aa5", "packages/core/components/editorial-pieces.js": "8604004dfc2aacf7e51ae4a0e6184950fdaaa0187f64e956b562adb787cd5fe9", "packages/core/components/reader.js": "02e08ec1ab76d7fa16003b5126f7a0b12993108f2dbe7e18cef0c10ae424b23f", "packages/core/components/code.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "packages/core/components/evidence.js": "725f0178939c6995c3ff0a9de37ddf67dbddf089af4560b58eaf14c418306aaa", "packages/core/components/review.js": "4cedc00bd0eff886648684b630c177d6a03cf08418ce7b204ebe670654d114a7"}}</script>

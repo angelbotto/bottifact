@@ -1,5 +1,6 @@
 /** Small decorative controls; the adjacent label owns the accessible name. */
 const paths = {
+  review: "M5 6h14M5 12h14M5 18h14",
   filter: "M4 6h16M7 12h10M10 18h4",
   columns: "M3 4h18v16H3ZM10 4v16M16 4v16",
   more: "M5 12h.01M12 12h.01M19 12h.01",

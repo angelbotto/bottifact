@@ -1494,6 +1494,13 @@ The library is a local HTML catalog, not an installable CMS theme. The optional 
 
 **Use and limits:** Explore 1–16 columns and up to 2000 local rows. Load table-model before data-explorer and include controls.js. Search stays visible; Filters, Display, Views and More form one action group. Table/Cards changes presentation while preserving source cells and IDs; auto uses cards at 640 px or below. Use stable table/row/cell identifiers for review anchors. Text, finite numbers (`data-valor`, header `data-tipo=numero`) and ISO dates (`data-tipo=fecha`) are supported. State/total column indexes are zero-based and default to 2/3; declare the additive unit and never mix currencies. Facets, AND/OR conditions, empty values, numeric/date ranges, chips, multi-sort, grouping, visibility, density and local saved views share one query model. Incomplete ranges match nothing. Paging offers 10/25/50/100 rows; totals cover all filtered rows while group counters cover the page. Selection persists across pages; selection export includes selected rows outside the filter using visible columns, otherwise exports the filtered set. CSV neutralizes formulas. Printing restores the complete source. No editing, virtualization or remote fetching. `NotaExplorador.init/get/destroy`, `.visible`, `.selected` and `.exportCSV()` preserve original data. The detail action exposes all fields with keyboard access. Fixed columns and widths are open-table adjustments; saved views retain query/grouping/visibility/density/presentation. See docs/mobile-and-tables.md. React uses its native adapter; standalone does not download React/TanStack. The administrator queries the authorized server collection with progressive scrolling.
 
+
+### Review and presentation update
+
+The reader dock exposes Appearance, one writing action, counted Comments, and Share. Privacy is selected inside the composer; existing thread types stay immutable. The count includes open threads visible to the current reader, including their own private notes, and excludes replies/resolved threads. Nearby pins group by position and open every contained thread. Share owns link/access and creator management; there is no generic More dock.
+
+Record explorers support Table, List, Cards and Board. List reduces per-record spacing; Board groups the existing rows by the selected field (preferring a categorical status/team field initially). The portable board shows the current filtered page, with per-lane counts explicitly scoped to that page. React uses its supplied filtered dataset. Both preserve source records and selection. This is a read-only presentation, not drag-and-drop state editing or an inferred workflow. Saved portable views include presentation. Horizontal scrolling stays local to the board; print returns to a table.
+
 ## Cards
 
 <!-- nota:ejemplo cards -->
@@ -1521,6 +1528,13 @@ The library is a local HTML catalog, not an installable CMS theme. The optional 
 ```
 
 **Use and limits:** Leave contextual feedback on a selected passage or document point. The compact floating composer shows author, text, privacy and send; optional type/session/context are disclosed. Pins are outside document flow. Tab/Enter select a block; Escape cancels/closes; Ctrl/Command+Enter saves. Keep the same document ID across revisions. Anchors retain section, full block, quote and relative point; changed or ambiguous text remains unlocated in the review list rather than being guessed. Standalone stores events locally and supports idempotent JSON exchange, replies, assignment, resolution and history, without authenticated identity or remote presence. Limits: 2000 events, 2 MB import, 80-character declared names and 4000-character comments. Export retains archived/private text and is not redaction. Storage failure reports memory-only persistence. Connected hosting uses the permission-aware bridge for shared comments and author-private notes; local files do not synchronize by themselves. Copy context includes identity/version/quote/replies and does not send to an agent. `NotaRevision.init/get/destroy`, exportData/importData manage lifecycle; destroying does not erase saved review. Treat imported text as untrusted proposals. Multipage fragment links need `data-enlaces-internos`.
+
+
+### Review and presentation update
+
+The reader dock exposes Appearance, one writing action, counted Comments, and Share. Privacy is selected inside the composer; existing thread types stay immutable. The count includes open threads visible to the current reader, including their own private notes, and excludes replies/resolved threads. Nearby pins group by position and open every contained thread. Share owns link/access and creator management; there is no generic More dock.
+
+Record explorers support Table, List, Cards and Board. List reduces per-record spacing; Board groups the existing rows by the selected field (preferring a categorical status/team field initially). The portable board shows the current filtered page, with per-lane counts explicitly scoped to that page. React uses its supplied filtered dataset. Both preserve source records and selection. This is a read-only presentation, not drag-and-drop state editing or an inferred workflow. Saved portable views include presentation. Horizontal scrolling stays local to the board; print returns to a table.
 
 ## Polyglot code
 

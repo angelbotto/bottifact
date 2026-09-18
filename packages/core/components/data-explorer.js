@@ -406,7 +406,7 @@
           c.checked = !(v.hidden || []).includes(c.dataset.columna);
         density.value = v.density || "normal";
         el.dataset.densidad = density.value;
-        presentation.value = ["auto", "table", "cards"].includes(v.presentation)
+        presentation.value = ["auto", "table", "cards", "list", "board"].includes(v.presentation)
           ? v.presentation
           : "auto";
         setPresentation();
@@ -525,6 +525,8 @@
         new Option("Automática · fichas en móvil", "auto"),
         new Option("Tabla · comparar columnas", "table"),
         new Option("Fichas · leer registros", "cards"),
+        new Option("Lista · recorrer rápido", "list"),
+        new Option("Tablero · comparar grupos", "board"),
       );
       const presentLabel = make("label", "Presentación");
       presentLabel.append(presentation);
@@ -582,10 +584,11 @@
       switcher.className = "explorer-presentation";
       switcher.setAttribute("aria-label", "Vista de registros");
       switcher.setAttribute("role", "group");
-      const layoutButtons = ["table", "cards"].map((value, i) => {
-        const b = button(i ? "Fichas" : "Tabla", () => {
+      const layoutButtons = ["table", "list", "cards", "board"].map((value) => {
+        const b = button({table:"Tabla",list:"Lista",cards:"Fichas",board:"Tablero"}[value], () => {
           presentation.value = value;
           setPresentation();
+          update();
         });
         b.dataset.layout = value;
         switcher.append(b);
@@ -594,6 +597,11 @@
       overview.append(switcher);
       const media = window.matchMedia?.("(max-width: 640px)");
       function setPresentation() {
+        if(presentation.value==="board" && form.elements.grupo && form.elements.grupo.value===""){
+          const choices=[...form.elements.grupo.options].filter(o=>o.value!=="" && types[Number(o.value)]!=="numero");
+          const preferred=choices.find(o=>/estado|status|equipo|team|categor/i.test(o.textContent))||choices[0];
+          if(preferred)form.elements.grupo.value=preferred.value;
+        }
         el.dataset.presentation = presentation.value;
         el.dataset.layout =
           presentation.value === "auto"
@@ -601,8 +609,9 @@
               ? "cards"
               : "table"
             : presentation.value;
+        scrollHint.textContent=el.dataset.layout==="board"?"Desliza para ver más grupos →":"Desliza la tabla para ver más columnas →";
         originalTabStops.forEach(([node, previous]) => {
-          if (el.dataset.layout === "cards") node.tabIndex = -1;
+          if (["cards","list"].includes(el.dataset.layout)) node.tabIndex = -1;
           else if (previous === null) node.removeAttribute("tabindex");
           else node.setAttribute("tabindex", previous);
         });
@@ -614,7 +623,7 @@
         );
         positionColumns();
       }
-      listen(presentation, "change", setPresentation);
+      listen(presentation, "change", () => {setPresentation();update();});
       listen(window, "resize", positionColumns);
       if (media?.addEventListener) listen(media, "change", setPresentation);
       listen(mobileSort, "change", () => {
@@ -746,7 +755,7 @@
       function positionColumns() {
         let left = 0;
         headers.forEach((h, c) => {
-          const fixed = pinned.has(c) && el.dataset.layout !== "cards";
+          const fixed = pinned.has(c) && el.dataset.layout === "table";
           for (const cell of [h, ...rows.map((r) => r.cells[c])]) {
             cell.style.position = fixed ? "sticky" : "";
             cell.style.left = fixed ? left + "px" : "";
@@ -1009,7 +1018,7 @@
         paintChips();
         const ui = window.BottifactUI;
         for(const [menu, icon] of [[filters,"filter"],[layout,"columns"],[views,"bookmark"],[selectionTools,"more"]]) ui?.decorate(menu.querySelector("summary"),icon);
-        layoutButtons.forEach(b => ui?.decorate(b,b.dataset.layout === "table" ? "table" : "cards"));
+        layoutButtons.forEach(b => ui?.decorate(b,({table:"table",list:"review",cards:"cards",board:"columns"}[b.dataset.layout])));
         ui?.decorate(prev,"back",true); ui?.decorate(next,"arrow",true);
         mobileSort.value = sorts[0] ? sorts[0].col + ":" + sorts[0].dir : "";
         batch.hidden = !selected.size;
@@ -1182,7 +1191,8 @@
               : h.setAttribute("aria-sort", previous.sort[i]);
           });
           table.append(initial);
-          originalTabStops.forEach(([node, previous]) => {
+          scrollHint.textContent=el.dataset.layout==="board"?"Desliza para ver más grupos →":"Desliza la tabla para ver más columnas →";
+        originalTabStops.forEach(([node, previous]) => {
             if (previous === null) node.removeAttribute("tabindex");
             else node.setAttribute("tabindex", previous);
           });
