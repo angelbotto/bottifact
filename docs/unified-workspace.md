@@ -12,6 +12,8 @@ Owners can manage access through Share. Other readers can copy the canonical lin
 
 ## Tables
 
+See [mobile reading and table controls](mobile-and-tables.md) for the responsive Table/Cards presentation and the current control hierarchy.
+
 - Core `TableQuery`: search, AND/OR conditions, seven operators, stable multi-sort, nulls last and formula-safe CSV. React and portable tables use the same executable query model.
 - React `DataTable`: TanStack Table v9 with semantic table primitives, FilterBuilder, column visibility, fixed columns, width controls, density, explicit aggregation, stable selection, optional row inspector and local saved views. Pass `selectable`, `inspectable` and an account/document/table-specific `persistenceKey` when needed. Avoid using a shared persistence key on shared devices.
 - Portable `[data-explorador]`: semantic fallback, conditions, saved views, grouping, page-sized subsets, column width/fixing, stable row/cell anchors and detail dialog. Data remains in the HTML. Limits: 2,000 rows, 16 columns, no editable cells or virtualized rendering.

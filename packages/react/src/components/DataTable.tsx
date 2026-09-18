@@ -1,6 +1,7 @@
 import {
   Fragment,
   useId,
+  useEffect,
   useMemo,
   useState,
   type ReactNode,
@@ -47,6 +48,8 @@ export interface DataTableProps<Row> {
   selectable?: boolean;
   inspectable?: boolean;
   persistenceKey?: string;
+  /** Automatic uses readable records below 640px; readers can still compare columns. */
+  presentation?: "auto" | "table" | "cards";
 }
 const features = tableFeatures({
   columnVisibilityFeature,
@@ -70,6 +73,7 @@ export function DataTable<Row extends RowData>({
   selectable = false,
   inspectable = false,
   persistenceKey,
+  presentation = "auto",
 }: DataTableProps<Row>) {
   const id = useId(),
     [query, setQuery] = useState(emptyTableQuery),
@@ -79,7 +83,19 @@ export function DataTable<Row extends RowData>({
     [sizes, setSizes] = useState<Record<string, number>>({}),
     [detail, setDetail] = useState<Row | null>(null),
     [message, setMessage] = useState(""),
-    [viewName, setViewName] = useState("");
+    [viewName, setViewName] = useState(""),
+    [layout, setLayout] = useState(presentation),
+    [narrow, setNarrow] = useState(false);
+  useEffect(() => {
+    const media = window.matchMedia?.("(max-width: 640px)");
+    if (!media) return;
+    const update = () => setNarrow(media.matches);
+    update();
+    media.addEventListener?.("change", update);
+    return () => media.removeEventListener?.("change", update);
+  }, []);
+  const effectiveLayout =
+    layout === "auto" ? (narrow ? "cards" : "table") : layout;
   const storageKey = persistenceKey
     ? "bottifact-table:" + persistenceKey
     : null;
@@ -223,15 +239,17 @@ export function DataTable<Row extends RowData>({
     <section
       className="bf-table-section"
       data-density={density}
+      data-layout={effectiveLayout}
       data-table-id={persistenceKey || id}
     >
       <div className="bf-table-tools">
         {searchable && (
-          <label htmlFor={id}>
-            Search rows
+          <label htmlFor={id} className="bf-table-search">
+            <span className="bf-visually-hidden">Search rows</span>
             <input
               id={id}
               type="search"
+              placeholder="Search all records…"
               value={query.search}
               onChange={(e) => setQuery({ ...query, search: e.target.value })}
             />
@@ -239,7 +257,7 @@ export function DataTable<Row extends RowData>({
         )}
         <FilterBuilder columns={columns} value={query} onChange={setQuery} />
         <details>
-          <summary>Columns</summary>
+          <summary>Display</summary>
           <div className="bf-filter-panel">
             {columns.map((c) => (
               <div key={c.id} className="bf-column-control">
@@ -283,42 +301,51 @@ export function DataTable<Row extends RowData>({
                 />
               </div>
             ))}
+            <label>
+              Group
+              <select value={group} onChange={(e) => setGroup(e.target.value)}>
+                <option value="">None</option>
+                {columns.map((c) => (
+                  <option key={c.id} value={c.id}>
+                    {c.header}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label>
+              Density
+              <select
+                value={density}
+                onChange={(e) => setDensity(e.target.value)}
+              >
+                <option value="comfortable">Comfortable</option>
+                <option value="compact">Compact</option>
+              </select>
+            </label>
           </div>
         </details>
-        <label>
-          Group
-          <select value={group} onChange={(e) => setGroup(e.target.value)}>
-            <option value="">None</option>
-            {columns.map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.header}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label>
-          Density
-          <select value={density} onChange={(e) => setDensity(e.target.value)}>
-            <option value="comfortable">Comfortable</option>
-            <option value="compact">Compact</option>
-          </select>
-        </label>
-        <button
-          type="button"
-          onClick={() => {
-            setQuery(emptyTableQuery());
-            setGroup("");
-            setPinned([]);
-            setSizes({});
-            table.setColumnVisibility({});
-            table.setRowSelection({});
-          }}
-        >
-          Reset
-        </button>
-        <button type="button" onClick={() => exportRows(visible)}>
-          Export visible
-        </button>
+        <details>
+          <summary>More</summary>
+          <div className="bf-filter-panel">
+            {" "}
+            <button
+              type="button"
+              onClick={() => {
+                setQuery(emptyTableQuery());
+                setGroup("");
+                setPinned([]);
+                setSizes({});
+                table.setColumnVisibility({});
+                table.setRowSelection({});
+              }}
+            >
+              Reset
+            </button>
+            <button type="button" onClick={() => exportRows(visible)}>
+              Export visible
+            </button>
+          </div>
+        </details>
         {storageKey && (
           <details>
             <summary>Views</summary>
@@ -359,8 +386,93 @@ export function DataTable<Row extends RowData>({
           </details>
         )}
       </div>
-      <p role="status">
-        {visible.length} of {rows.length} rows
+      <div className="bf-table-overview">
+        <p role="status">
+          {visible.length} of {rows.length} rows
+        </p>
+        <div className="bf-table-presentation" aria-label="Record presentation">
+          <button
+            type="button"
+            aria-pressed={effectiveLayout === "table"}
+            onClick={() => setLayout("table")}
+          >
+            Table
+          </button>
+          <button
+            type="button"
+            aria-pressed={effectiveLayout === "cards"}
+            onClick={() => setLayout("cards")}
+          >
+            Cards
+          </button>
+        </div>
+      </div>
+      {(query.search || query.rules.length > 0) && (
+        <div className="bf-table-chips" aria-label="Active filters">
+          {query.search && (
+            <button
+              type="button"
+              aria-label="Clear search filter"
+              onClick={() => setQuery({ ...query, search: "" })}
+            >
+              Search: {query.search} ×
+            </button>
+          )}
+          {query.rules.map((r, i) => (
+            <button
+              type="button"
+              key={i}
+              aria-label={`Remove filter ${i + 1}`}
+              onClick={() =>
+                setQuery({
+                  ...query,
+                  rules: query.rules.filter((_, j) => j !== i),
+                })
+              }
+            >
+              {columns.find((c) => c.id === r.column)?.header}: {r.operator}{" "}
+              {Array.isArray(r.value) ? r.value.join(", ") : r.value}
+              {r.upper !== undefined ? ` – ${r.upper}` : ""} ×
+            </button>
+          ))}
+        </div>
+      )}
+      {effectiveLayout === "cards" && (
+        <label className="bf-card-sort">
+          Order records
+          <select
+            aria-label="Order records"
+            value={
+              query.sort[0]
+                ? `${query.sort[0].column}:${query.sort[0].direction}`
+                : ""
+            }
+            onChange={(e) => {
+              const [column, direction] = e.target.value.split(":");
+              setQuery({
+                ...query,
+                sort: column
+                  ? [{ column, direction: direction as "asc" | "desc" }]
+                  : [],
+              });
+            }}
+          >
+            <option value="">Original order</option>
+            {columns
+              .filter((c) => c.sortable !== false)
+              .flatMap((c) => [
+                <option key={c.id + "asc"} value={c.id + ":asc"}>
+                  {c.header} ↑
+                </option>,
+                <option key={c.id + "desc"} value={c.id + ":desc"}>
+                  {c.header} ↓
+                </option>,
+              ])}
+          </select>
+        </label>
+      )}
+      <p className="bf-scroll-hint">
+        Swipe across the table to compare columns →
       </p>
       {query.sort.length > 0 && (
         <p className="bf-table-hint">
@@ -396,15 +508,16 @@ export function DataTable<Row extends RowData>({
         aria-label={caption}
         tabIndex={0}
       >
-        <Table>
+        <Table role="table">
           <caption>{caption}</caption>
-          <TableHeader>
-            <TableRow>
+          <TableHeader role="rowgroup">
+            <TableRow role="row">
               {selectable && (
                 <TableHead>
                   <input
                     type="checkbox"
                     aria-label="Select visible rows"
+                    tabIndex={effectiveLayout === "cards" ? -1 : undefined}
                     checked={
                       visible.length > 0 &&
                       visible.every((r) => table.state.rowSelection[rowKey(r)])
@@ -430,6 +543,7 @@ export function DataTable<Row extends RowData>({
                     key={c.id}
                     scope="col"
                     style={style(c.id)}
+                    role="columnheader"
                     aria-sort={
                       query.sort[0]?.column === c.id
                         ? sort?.direction === "asc"
@@ -443,6 +557,7 @@ export function DataTable<Row extends RowData>({
                     ) : (
                       <button
                         type="button"
+                        tabIndex={effectiveLayout === "cards" ? -1 : undefined}
                         onClick={(e) => toggle(def, e.shiftKey)}
                       >
                         {def.header}
@@ -458,7 +573,7 @@ export function DataTable<Row extends RowData>({
               {inspectable && <TableHead>Details</TableHead>}
             </TableRow>
           </TableHeader>
-          <TableBody>
+          <TableBody role="rowgroup">
             {[...groups].map(([label, members]) => (
               <Fragment key={label}>
                 {group && (
@@ -493,6 +608,7 @@ export function DataTable<Row extends RowData>({
                 )}
                 {members.map((row) => (
                   <TableRow
+                    role="row"
                     key={rowKey(row)}
                     data-row-id={rowKey(row)}
                     data-selected={Boolean(
@@ -500,7 +616,7 @@ export function DataTable<Row extends RowData>({
                     )}
                   >
                     {selectable && (
-                      <TableCell>
+                      <TableCell role="cell" className="bf-row-select">
                         <input
                           type="checkbox"
                           aria-label={`Select row ${rowKey(row)}`}
@@ -525,6 +641,13 @@ export function DataTable<Row extends RowData>({
                           key={c.id}
                           style={style(c.id)}
                           data-cell-id={rowKey(row) + ":" + c.id}
+                          role="cell"
+                          data-label={def.header}
+                          data-primary={shown[0]?.id === c.id}
+                          data-numeric={
+                            def.type === "number" ||
+                            typeof def.value(row) === "number"
+                          }
                         >
                           {def.render
                             ? def.render(row)
@@ -533,7 +656,7 @@ export function DataTable<Row extends RowData>({
                       );
                     })}
                     {inspectable && (
-                      <TableCell>
+                      <TableCell role="cell" className="bf-row-inspect">
                         <button
                           type="button"
                           aria-label={`Inspect row ${rowKey(row)}`}
@@ -548,7 +671,7 @@ export function DataTable<Row extends RowData>({
               </Fragment>
             ))}
             {!visible.length && (
-              <TableRow>
+              <TableRow role="row">
                 <TableCell colSpan={shown.length + extra}>
                   No matching rows.
                 </TableCell>

@@ -45,6 +45,10 @@ Para capítulos y configuración consulta [docs/artifact-contract.md](docs/artif
 
 La base incluye llave sol/luna (Temas / Letras / Sonido), comentarios flotantes, índice y regla de lectura. Sonido habilitado por preferencia, pero espera una interacción real y respeta silencio/volumen. Una petición explícita del usuario de cambiar u omitir una pieza prevalece.
 
+## Tablas y lectura móvil
+
+Lee [tablas y móvil](docs/mobile-and-tables.md) al componer datos. Usa `data-explorador` para registros explorables: búsqueda, filtros con valores, chips removibles y vista Tabla/Fichas. En móvil, las fichas conservan celdas e IDs; no crees una segunda tabla duplicada. Para comparar números, deja accesible Tabla con scroll local. Declara unidad, denominador, fuente y alcance del total; no conviertas ausencias en cero. Comprueba también controles, menús, notas, gráficos y código a 320/390 px. No ocultes desbordamientos en el documento. Actualizar el skill no rediseña versiones antiguas: regenera, revisa y publica una nueva versión conservando el ID.
+
 ## Voz y evidencia
 
 Redacta listo para compartir, sin mensajes del asistente al usuario. Abre con conclusión o decisión pendiente, hechos relevantes e implicación. En informes ejecutivos incluye highlights, lowlights, alternativas y próximos pasos con responsables/fechas conocidos. Mantén profundidad mediante evidencia y anexos. Distingue hecho, cálculo, hipótesis y propuesta; no inventes resultados, recuerdos ni acuerdos en primera persona. Adapta esta estructura a artículos, runbooks y notas personales.

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.1 — Tables and mobile reading
+
+- Consolidate portable table controls with source-value facets, removable filter chips, contextual selection actions and clearer column settings.
+- Add automatic mobile record cards and explicit Table/Cards switching to portable and React tables, preserving source cells, IDs and selection.
+- Improve mobile detail sheets, reader safe areas, touch targets, reading progress placement and narrow fleet projections.
+- Document mobile composition and revision migration; extend the synthetic workbench and behavior tests. Historical HTML is not silently rewritten.
+
+
 ## 0.5.0 — Unified reading and connected context
 
 - Add one artifact toolbar for personal appearance, review, sharing and contextual actions, with a compatible portal adapter for historical HTML.

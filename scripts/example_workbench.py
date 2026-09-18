@@ -61,7 +61,7 @@ def table(key, title, headers, rows, unit):
         )
         + '</details><button type="reset">Restablecer</button></form><p data-explorador-estado role="status"></p><div class="tabla-caja" tabindex="0" role="region" aria-label="'
         + title
-        + '"><table><caption>Datos sintéticos · seis registros completos · valores ilustrativos, sin conexión a operación real</caption><thead><tr>'
+        + '"><table><caption>Seis registros ilustrativos · sin conexión a operación real</caption><thead><tr>'
         + head
         + "</tr></thead><tbody>"
         + body
@@ -122,7 +122,7 @@ def generate():
             + key
             + '"><h2>'
             + title
-            + "</h2><p>Busca un registro, combina dos condiciones, cambia el orden con Mayús, fija una columna y abre el detalle con ↗. Guarda una vista con nombre para volver a ella en este navegador.</p></section>"
+            + "</h2><p>En móvil, lee cada registro como una ficha. Cambia a Tabla para comparar columnas. En Filtros puedes elegir varios valores, combinar condiciones y quitar cada filtro por separado. Diseño reúne orden, agrupación y columnas.</p></section>"
             + table(key, title, headers, rows, unit)
         )
     body += """<section id="devolver"><h2>De la revisión a la siguiente versión.</h2><ol><li>Dejo el comentario sobre el fragmento que necesita cambiar.</li><li>Abro Revisión → Preparar contexto para IA.</li><li>Elijo hilos y, sólo si hace falta, mis notas privadas y las referencias.</li><li>Reviso el prompt con artefacto, versión, cita, sesión y dispositivo registrados.</li><li>Lo copio a mi agente. Publico la revisión como borrador y comparo antes de reemplazar la versión compartida.</li></ol><p>Copiar no envía instrucciones a una sesión ni resuelve comentarios automáticamente.</p></section><section id="conectar"><h2>Conocimiento que se puede explicar.</h2><p>En la biblioteca, las entidades distinguen empresas, proyectos y temas. Los alias ayudan a buscar; no fusionan empresas. Las relaciones explícitas conservan una cita de la versión que las respalda. Las mesas y tableros son privados: juntar documentos no cambia su audiencia.</p><p>La vista de sesiones agrupa salidas por agente, sesión y dispositivo. No contiene transcripciones importadas.</p></section>"""

@@ -73,3 +73,16 @@ describe('table workbench',()=>{
  fireEvent.click(screen.getByLabelText('Inspect row b'));expect(screen.getByRole('dialog').textContent).toContain('Record: b');
  });
 });
+
+it('uses a mobile record layout without losing stable cell references or selection',()=>{
+  media();
+  render(<DataTable rows={[{id:'r1',name:'Route',amount:42}]} rowKey={r=>r.id} caption="Mobile records" selectable columns={[{id:'name',header:'Name',value:r=>r.name},{id:'amount',header:'Amount',value:r=>r.amount}]}/>);
+  const cell=document.querySelector('[data-cell-id="r1:amount"]');
+  expect(document.querySelector('.bf-table-section')?.getAttribute('data-layout')).toBe('cards');
+  fireEvent.click(screen.getByLabelText('Select row r1'));
+  fireEvent.click(screen.getByRole('button',{name:'Table',exact:true}));
+  expect(document.querySelector('[data-cell-id="r1:amount"]')).toBe(cell);
+  expect((screen.getByLabelText('Select row r1') as HTMLInputElement).checked).toBe(true);
+  fireEvent.click(screen.getByRole('button',{name:'Cards',exact:true}));
+  expect(document.querySelectorAll('[data-cell-id="r1:amount"]')).toHaveLength(1);
+});

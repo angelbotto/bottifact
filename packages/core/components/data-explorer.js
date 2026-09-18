@@ -84,6 +84,10 @@
           if (!c.id) c.id = r.dataset.rowId + "-cell-" + j;
         });
       });
+      const originalFormNodes = [...form.childNodes];
+      const originalTabStops = [
+        ...table.tHead.querySelectorAll("button,summary"),
+      ].map((node) => [node, node.getAttribute("tabindex")]);
       const previous = {
           status: status.textContent,
           sort: headers.map((h) => h.getAttribute("aria-sort")),
@@ -161,7 +165,7 @@
         csv,
       );
       form.after(tools);
-      window.NotaControles?.init(tools);
+
       const footer = make("div");
       footer.className = "explorador-paginacion";
       const prev = button("←", () => {
@@ -205,7 +209,8 @@
         join = make("select");
       filters.className = "control-menu";
       filterBody.className = "control-panel";
-      filters.append(make("summary", "Condiciones"), filterBody);
+      filters.append(make("summary", "Filtros"), filterBody);
+      filters.dataset.panelWidth = "400";
       join.append(
         new Option("Todas las condiciones", "and"),
         new Option("Cualquier condición", "or"),
@@ -219,10 +224,11 @@
       function drawRules() {
         filterBody.querySelectorAll("[data-rule]").forEach((n) => n.remove());
         query.rules.forEach((rule, index) => {
+          if (rule.facet) return;
           const row = make("div");
           row.dataset.rule = "";
           row.style.cssText =
-            "display:flex;gap:6px;flex-wrap:wrap;margin-block:8px";
+            "display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-block:12px";
           const col = make("select"),
             op = make("select"),
             value = make("input"),
@@ -289,7 +295,7 @@
             op,
             value,
             upper,
-            button("×", () => {
+            button("Quitar condición", () => {
               query.rules.splice(index, 1);
               drawRules();
               resetPage();
@@ -349,6 +355,7 @@
               ...form.querySelectorAll("[data-columna]:not(:checked)"),
             ].map((c) => c.dataset.columna),
             density: density.value,
+            presentation: presentation.value,
             field: field.value,
             match: match.value,
             min: min.value,
@@ -399,6 +406,10 @@
           c.checked = !(v.hidden || []).includes(c.dataset.columna);
         density.value = v.density || "normal";
         el.dataset.densidad = density.value;
+        presentation.value = ["auto", "table", "cards"].includes(v.presentation)
+          ? v.presentation
+          : "auto";
+        setPresentation();
         field.value = v.field || "";
         match.value = v.match || "";
         min.value = v.min || "";
@@ -411,9 +422,10 @@
         layoutBody = make("div");
       layout.className = "control-menu";
       layoutBody.className = "control-panel";
-      layout.append(make("summary", "Ajustar columnas"), layoutBody);
+      layout.append(make("summary", "Diseño"), layoutBody);
+      layout.dataset.panelWidth = "340";
       headers.forEach((h, c) => {
-        const line = make("label", names[c] + " "),
+        const line = make("div"),
           pin = make("input"),
           width = make("input");
         pin.type = "checkbox";
@@ -434,14 +446,304 @@
           pin.checked ? pinned.add(c) : pinned.delete(c);
           positionColumns();
         });
-        line.append(pin, width);
+        line.className = "explorer-column";
+        line.dataset.columnControl = String(c);
+        const name = make("span", names[c]);
+        name.className = "explorer-column-name";
+        const pinLabel = make("label", "Fijar");
+        pinLabel.prepend(pin);
+        const resize = make("details");
+        resize.append(make("summary", "Ancho"), width);
+        line.append(name, pinLabel, resize);
         layoutBody.append(line);
       });
       tools.append(layout);
+      // One toolbar, progressively disclosed options, and the same DOM records in both layouts.
+      const moved = [],
+        wrappers = [];
+      const move = (node, target) => {
+        if (!node) return;
+        moved.push([node, node.parentNode, node.nextSibling]);
+        target.append(node);
+      };
+      const searchInput = form.elements.buscar;
+      let searchLabel = searchInput?.closest("label");
+      if (searchLabel) {
+        searchLabel.classList.add("explorer-search");
+        [...searchLabel.childNodes]
+          .filter((n) => n.nodeType === 3)
+          .forEach((n) => {
+            const label = make("span", n.textContent);
+            label.className = "control-etiqueta";
+            n.replaceWith(label);
+          });
+        searchInput.placeholder = "Buscar en todos los registros…";
+        searchInput.setAttribute("aria-label", "Buscar en todos los registros");
+      }
+      for (const name of ["estado", "grupo"]) {
+        const input = form.elements[name];
+        if (input)
+          move(
+            input.closest("label") || input,
+            name === "estado" ? filterBody : layoutBody,
+          );
+      }
+      const legacyState = form.elements.estado?.closest("label");
+      if (
+        model &&
+        legacyState &&
+        new Set(values.map((row) => row[Number(el.dataset.columnaEstado ?? 2)]))
+          .size <= 12
+      )
+        legacyState.classList.add("explorer-legacy-state");
+      const columnsTitle = make("p", "Columnas visibles");
+      columnsTitle.className = "explorer-panel-title";
+      layoutBody.prepend(columnsTitle);
+      form.querySelectorAll("[data-columna]").forEach((input) => {
+        const line = layoutBody.querySelector(
+          '[data-column-control="' + input.dataset.columna + '"]',
+        );
+        if (line) {
+          line.querySelector(".explorer-column-name").hidden = true;
+          move(input.closest("label") || input, line);
+        } else move(input.closest("label") || input, layoutBody);
+      });
+      // Empty legacy disclosures are kept for destroy(), not shown as duplicate menus.
+      for (const node of originalFormNodes) {
+        if (
+          node.nodeType === 1 &&
+          node !== searchLabel &&
+          node.parentNode === form
+        ) {
+          wrappers.push([node, node.hidden]);
+          node.hidden = true;
+        }
+      }
+      const presentation = make("select");
+      presentation.setAttribute("aria-label", "Presentación de registros");
+      presentation.append(
+        new Option("Automática · fichas en móvil", "auto"),
+        new Option("Tabla · comparar columnas", "table"),
+        new Option("Fichas · leer registros", "cards"),
+      );
+      const presentLabel = make("label", "Presentación");
+      presentLabel.append(presentation);
+      const densityLabel = make("label", "Espaciado");
+      densityLabel.append(density);
+      const mobileSort = make("select");
+      mobileSort.setAttribute("aria-label", "Ordenar registros");
+      mobileSort.append(new Option("Orden original", ""));
+      names.forEach((name, c) => {
+        mobileSort.append(
+          new Option(name + " ↑", c + ":1"),
+          new Option(name + " ↓", c + ":-1"),
+        );
+      });
+      const sortLabel = make("label", "Ordenar");
+      sortLabel.append(mobileSort);
+      layoutBody.prepend(presentLabel, sortLabel, densityLabel);
+      const reset = button("Limpiar filtros", () => form.reset());
+      reset.className = "explorer-reset";
+      const chips = make("div");
+      chips.className = "explorer-filter-chips";
+      chips.setAttribute("aria-label", "Filtros activos");
+      const batch = make("div");
+      batch.className = "explorer-batch";
+      batch.append(selectedCount, clear);
+      const selectionTools = make("details"),
+        selectionBody = make("div");
+      selectionTools.className = "control-menu";
+      selectionBody.className = "control-panel";
+      selectionTools.append(make("summary", "Más"), selectionBody);
+      selectionBody.append(selectionLabel, csv);
+      if (!model) advanced.append(panel);
+      advanced.remove();
+      tools.replaceChildren(
+        ...(model ? [filters] : [advanced]),
+        layout,
+        ...(model ? [views] : []),
+        selectionTools,
+      );
+      form.append(tools);
+      form.after(chips, batch);
+      el.classList.add("explorer-ready");
+      el.dataset.presentation = "auto";
+      const box = el.querySelector(".tabla-caja");
+      const scrollHint = make("p", "Desliza la tabla para ver más columnas →");
+      scrollHint.className = "explorer-scroll-hint";
+      box.before(scrollHint);
+      const overview = make("div");
+      overview.className = "explorer-overview";
+      status.before(overview);
+      overview.append(status);
+      const switcher = make("div");
+      switcher.className = "explorer-presentation";
+      switcher.setAttribute("aria-label", "Vista de registros");
+      const layoutButtons = ["table", "cards"].map((value, i) => {
+        const b = button(i ? "Fichas" : "Tabla", () => {
+          presentation.value = value;
+          setPresentation();
+        });
+        b.dataset.layout = value;
+        switcher.append(b);
+        return b;
+      });
+      overview.append(switcher);
+      const media = window.matchMedia?.("(max-width: 640px)");
+      function setPresentation() {
+        el.dataset.presentation = presentation.value;
+        el.dataset.layout =
+          presentation.value === "auto"
+            ? media?.matches
+              ? "cards"
+              : "table"
+            : presentation.value;
+        originalTabStops.forEach(([node, previous]) => {
+          if (el.dataset.layout === "cards") node.tabIndex = -1;
+          else if (previous === null) node.removeAttribute("tabindex");
+          else node.setAttribute("tabindex", previous);
+        });
+        layoutButtons.forEach((b) =>
+          b.setAttribute(
+            "aria-pressed",
+            String(b.dataset.layout === el.dataset.layout),
+          ),
+        );
+        positionColumns();
+      }
+      listen(presentation, "change", setPresentation);
+      listen(window, "resize", positionColumns);
+      if (media?.addEventListener) listen(media, "change", setPresentation);
+      listen(mobileSort, "change", () => {
+        sorts = mobileSort.value
+          ? [
+              {
+                col: Number(mobileSort.value.split(":")[0]),
+                dir: Number(mobileSort.value.split(":")[1]),
+              },
+            ]
+          : [];
+        resetPage();
+      });
+      // Explicit table roles retain navigation when the visual rows become cards.
+      table.setAttribute("role", "table");
+      table.tHead.setAttribute("role", "rowgroup");
+      table.tHead.rows[0].setAttribute("role", "row");
+      headers.forEach((h) => h.setAttribute("role", "columnheader"));
+      rows.forEach((row) => {
+        row.setAttribute("role", "row");
+        [...row.cells].forEach((cell, c) => {
+          cell.setAttribute(
+            "role",
+            cell.tagName === "TH" ? "rowheader" : "cell",
+          );
+          cell.dataset.label = names[c];
+          cell.dataset.valueType = types[c];
+        });
+      });
+      // Facets expose distinct source values with counts, without guessing business semantics.
+      if (model)
+        names.forEach((name, c) => {
+          const choices = [...new Set(values.map((row) => row[c]))];
+          if (c === 0 || types[c] !== "texto" || choices.length > 12) return;
+          const facet = make("fieldset"),
+            legend = make("legend", name);
+          facet.className = "explorer-facet";
+          facet.append(legend);
+          choices.forEach((value) => {
+            const label = make("label"),
+              check = make("input"),
+              count = make(
+                "small",
+                String(values.filter((row) => row[c] === value).length),
+              );
+            check.type = "checkbox";
+            check.dataset.facetColumn = String(c);
+            check.dataset.facetValue = value;
+            label.append(check, make("span", value || "Sin valor"), count);
+            facet.append(label);
+            listen(check, "change", () => {
+              const rule = query.rules.find(
+                (r) => r.column === String(c) && r.operator === "in" && r.facet,
+              );
+              const picked = new Set(rule?.value || []);
+              check.checked ? picked.add(value) : picked.delete(value);
+              query.rules = query.rules.filter((r) => r !== rule);
+              if (picked.size)
+                query.rules.push({
+                  column: String(c),
+                  operator: "in",
+                  value: [...picked],
+                  facet: true,
+                });
+              drawRules();
+              resetPage();
+            });
+          });
+          filterBody.prepend(facet);
+        });
+      filterBody.prepend(
+        make("p", "Los conteos corresponden al registro completo."),
+      );
+      window.NotaControles?.init(form);
+      function paintChips() {
+        chips.replaceChildren();
+        const add = (label, clear) => {
+          const b = make("button", label + " ×");
+          b.type = "button";
+          b.setAttribute("aria-label", "Quitar filtro: " + label);
+          b.addEventListener("click", clear, { signal: renderAbort.signal });
+          chips.append(b);
+        };
+        if (searchInput?.value)
+          add("Búsqueda: " + searchInput.value, () => {
+            searchInput.value = "";
+            resetPage();
+          });
+        if (form.elements.estado?.value)
+          add(form.elements.estado.value, () => {
+            form.elements.estado.value = "";
+            resetPage();
+          });
+        query?.rules.forEach((rule, i) =>
+          add(
+            names[Number(rule.column)] +
+              ": " +
+              ({
+                contains: "contiene ",
+                gte: "≥ ",
+                lte: "≤ ",
+                empty: "sin valor",
+                between: "entre ",
+              }[rule.operator] || "") +
+              (Array.isArray(rule.value)
+                ? rule.value.join(", ")
+                : rule.value || "") +
+              (rule.operator === "between" ? " – " + rule.upper : ""),
+            () => {
+              query.rules.splice(i, 1);
+              drawRules();
+              resetPage();
+            },
+          ),
+        );
+        if (chips.children.length) chips.append(reset);
+        chips.hidden = !chips.children.length;
+        filterBody.querySelectorAll("[data-facet-column]").forEach((check) => {
+          check.checked = !!query?.rules.some(
+            (r) =>
+              r.facet &&
+              r.column === check.dataset.facetColumn &&
+              r.value.includes(check.dataset.facetValue),
+          );
+        });
+        filters.querySelector("summary").textContent =
+          "Filtros" + (query?.rules.length ? " · " + query.rules.length : "");
+      }
       function positionColumns() {
         let left = 0;
         headers.forEach((h, c) => {
-          const fixed = pinned.has(c);
+          const fixed = pinned.has(c) && el.dataset.layout !== "cards";
           for (const cell of [h, ...rows.map((r) => r.cells[c])]) {
             cell.style.position = fixed ? "sticky" : "";
             cell.style.left = fixed ? left + "px" : "";
@@ -453,14 +755,13 @@
       }
       const detail = make("dialog");
       detail.className = "explorador-detalle";
-      detail.style.cssText =
-        "max-width:min(460px,calc(100vw - 32px));max-height:80vh;overflow:auto;background:var(--papel);color:var(--tinta);padding:24px;border:1px solid var(--linea)";
+
       detail.setAttribute("aria-label", "Detalle del registro");
       document.body.append(detail);
       rows.forEach((row, i) => {
         const inspect = button("↗", () => {
           detail.replaceChildren(
-            make("h3", "Registro " + row.dataset.rowId),
+            make("h3", values[i][0]),
             button("Cerrar", () => detail.close()),
           );
           const dl = make("dl");
@@ -472,7 +773,7 @@
         });
         inspect.setAttribute("aria-label", "Ver detalle de " + values[i][0]);
         inspect.className = "explorador-inspeccionar";
-        row.cells[row.cells.length - 1].append(inspect);
+        row.cells[0].append(inspect);
       });
       const boxes = rows.map((r, i) => {
         const c = make("input");
@@ -591,6 +892,13 @@
             Number(e.dataset.columna),
           ),
         );
+        // A record's primary identifier remains available for selection and comments.
+        hidden.delete(0);
+        const identityBox = form.querySelector('[data-columna="0"]');
+        if (identityBox) {
+          identityBox.checked = true;
+          identityBox.disabled = true;
+        }
         if (hidden.size >= headers.length) {
           hidden.delete(0);
           const box = form.querySelector('[data-columna="0"]');
@@ -613,13 +921,18 @@
             tr = body.insertRow(),
             td = tr.insertCell();
           td.colSpan = headers.length - hidden.size;
-          td.textContent =
-            "No hay resultados. Limpia los filtros para volver a ver los registros.";
+          td.append(
+            make("strong", "No encontramos registros"),
+            make("p", "Prueba otra búsqueda o quita los filtros."),
+            button("Ver todos los registros", () => form.reset()),
+          );
+          tr.className = "explorer-empty";
           table.append(body);
           parts.push(body);
         }
         for (const [name, items] of groups) {
           const body = make("tbody");
+          body.setAttribute("role", "rowgroup");
           if (groupCol !== null) {
             const tr = body.insertRow(),
               th = make("th");
@@ -690,6 +1003,9 @@
           if (hint) hint.textContent = s ? (s.dir === 1 ? "↑" : "↓") : "↕";
         });
         positionColumns();
+        paintChips();
+        mobileSort.value = sorts[0] ? sorts[0].col + ":" + sorts[0].dir : "";
+        batch.hidden = !selected.size;
         selectedCount.textContent =
           selected.size +
           " seleccionados · " +
@@ -730,7 +1046,9 @@
               .map((c) =>
                 safe(
                   types[c] === "numero"
-                    ? String(Number(raw[i][c]))
+                    ? raw[i][c] === ""
+                      ? ""
+                      : String(Number(raw[i][c]))
                     : values[i][c],
                   types[c] === "numero",
                 ),
@@ -756,8 +1074,18 @@
         collapsed.clear();
         update();
       };
-      listen(form, "input", resetPage);
-      listen(form, "change", resetPage);
+      listen(form, "input", (e) => {
+        if (
+          e.target.matches(
+            "[name=buscar],[name=estado],[name=grupo],[data-columna]",
+          )
+        )
+          resetPage();
+      });
+      listen(form, "change", (e) => {
+        if (e.target.matches("[name=estado],[name=grupo],[data-columna]"))
+          resetPage();
+      });
       listen(form, "submit", (e) => e.preventDefault());
       listen(form, "reset", () =>
         queueMicrotask(() => {
@@ -846,9 +1174,34 @@
               : h.setAttribute("aria-sort", previous.sort[i]);
           });
           table.append(initial);
+          originalTabStops.forEach(([node, previous]) => {
+            if (previous === null) node.removeAttribute("tabindex");
+            else node.setAttribute("tabindex", previous);
+          });
+          const identityBox = form.querySelector('[data-columna="0"]');
+          if (identityBox) identityBox.disabled = false;
           tools
             .querySelectorAll(".control-menu")
             .forEach((m) => window.NotaControles?.get(m)?.destroy());
+          moved
+            .reverse()
+            .forEach(([node, parent, next]) =>
+              parent.insertBefore(
+                node,
+                next?.parentNode === parent ? next : null,
+              ),
+            );
+          wrappers.forEach(([node, hidden]) => (node.hidden = hidden));
+          chips.remove();
+          batch.remove();
+          scrollHint.remove();
+          overview.before(status);
+          overview.remove();
+          el.classList.remove("explorer-ready");
+          delete el.dataset.layout;
+          delete el.dataset.presentation;
+          searchLabel?.classList.remove("explorer-search");
+          legacyState?.classList.remove("explorer-legacy-state");
           tools.remove();
           footer.remove();
           delete el.dataset.densidad;
@@ -857,6 +1210,7 @@
         },
       };
       instances.set(el, instance);
+      setPresentation();
       update();
       return instance;
     });

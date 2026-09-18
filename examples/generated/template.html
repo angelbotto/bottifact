@@ -2931,6 +2931,127 @@ body:has(.revision-barra) { padding-bottom:0; }
 [data-buscador-recetas] .catalogo-indice a small { font:11px/1.5 var(--mono); color:var(--tinta-2); margin-top:5px; }
 @media(max-width:760px) { .relationship-layout { grid-template-columns:minmax(0,1fr); }.relationship-inspector { border-left:0; border-top:1px dotted var(--linea); padding:16px 0 0; }.relationship-tools { grid-template-columns:minmax(0,1fr) minmax(0,1fr); } }
 
+/* Responsive data workspace: one toolbar, one set of addressable records. */
+.explorer-ready .tabla-herramientas { gap:8px; margin:20px 0 12px; align-items:center; }
+.explorer-ready .explorer-search { display:flex; align-items:center; flex:1 1 230px; gap:8px; min-width:0; max-width:none; font:13px var(--sans); }
+.explorer-ready .explorer-search input { width:100%; min-width:0; min-height:40px; border:1px solid var(--linea); border-radius:7px; padding:10px 12px; background:var(--papel); color:var(--tinta); font:14px var(--sans); }
+.explorer-ready .explorer-search svg { display:none; }
+.explorer-ready .explorador-utilidades { margin:0; gap:6px; }
+.explorer-ready .explorador-utilidades > details > summary { padding:9px 12px; min-height:40px; border:1px solid var(--linea); border-radius:7px; background:var(--papel); font:500 13px/20px var(--sans); }
+.explorer-ready details[open] > summary { background:var(--panel); border-color:var(--linea-fuerte); }
+.explorer-ready .control-panel { padding:14px; box-shadow:0 12px 40px #0002; }
+.explorer-ready .control-panel input:not([type=checkbox]):not([type=range]) { max-width:100%; min-width:0; border:1px solid var(--linea); border-radius:5px; padding:8px; background:var(--papel); color:var(--tinta); }
+.explorer-ready .control-panel > p { font:12px/1.5 var(--sans); color:var(--tinta-2); margin:0 0 12px; }
+.explorer-ready .control-panel label { font:13px/1.5 var(--sans); }
+.explorer-ready .control-panel input[type=range] { width:100%; }
+.explorer-ready .control-panel [data-rule] > button { grid-column:1/-1; font-size:12px; }
+.explorer-ready .control-panel [data-rule] > input { width:100%!important; }
+.explorer-facet { border:0; padding:8px 0 12px; margin:0 0 12px; border-bottom:1px solid var(--linea); }
+.explorer-facet legend { font:600 12px var(--sans); padding:0; }
+.explorer-facet label { display:flex; gap:10px; min-height:36px; padding:6px!important; border-radius:5px; cursor:pointer; }
+.explorer-facet label:hover { background:var(--panel); }
+.explorer-facet small { margin-left:auto; }
+.explorer-filter-chips { display:flex; flex-wrap:wrap; gap:6px; margin-block:10px; }
+.explorer-filter-chips button { min-height:32px; border:1px solid var(--linea); border-radius:6px; padding:5px 9px; background:var(--panel); font:12px/1.5 var(--sans); text-align:left; overflow-wrap:anywhere; }
+.explorer-filter-chips .explorer-reset { border-color:transparent; background:none; color:var(--tinta-2); }
+.explorer-batch { display:flex; align-items:center; flex-wrap:wrap; gap:10px; padding:10px 12px; margin-block:12px; border:1px solid var(--linea); border-radius:7px; background:var(--panel); font:12px/1.5 var(--sans); }
+.explorer-batch button { min-height:32px; padding:4px 8px; margin-left:auto; font:inherit; }
+.explorer-ready [hidden] { display:none!important; }
+.explorer-ready [data-explorador-estado] { margin:12px 0; font-size:12px; }
+.explorer-ready .tabla-caja { border:1px solid var(--linea); border-radius:10px; max-height:min(70dvh,720px); overscroll-behavior-inline:contain; }
+.explorer-ready table { width:100%; }
+.explorer-ready caption { padding:12px 16px; text-align:left; background:var(--papel); font:12px/1.5 var(--sans); color:var(--tinta-2); }
+.explorer-ready :is(th,td) { border-bottom:1px solid var(--linea); font:14px/1.5 var(--sans); vertical-align:middle; }
+.explorer-ready tbody :is(td,th):first-child { font-weight:550; }
+.explorer-ready :is(th,td)[data-value-type=numero] { text-align:right; font-variant-numeric:tabular-nums; font-family:var(--mono); }
+.explorer-ready .explorador-inspeccionar { width:30px; min-height:30px; padding:0; margin-left:8px; border:0; background:transparent; color:var(--tinta-2); font:16px var(--sans); }
+.explorer-ready .explorador-inspeccionar:hover { background:var(--panel-2); color:var(--tinta); }
+.explorer-ready .explorador-seleccion { width:16px; height:16px; vertical-align:middle; }
+.explorer-ready .explorador-paginacion { margin-top:12px; }
+.explorer-ready .explorer-empty td { padding:36px 20px; text-align:center; }
+.explorer-empty p { margin:6px 0 14px; color:var(--tinta-2); }
+.explorer-scroll-hint { display:none; font:12px/1.5 var(--sans); color:var(--tinta-2); margin:0 0 8px; }
+.explorer-overview { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+.explorer-presentation { display:flex; gap:2px; border:1px solid var(--linea); border-radius:7px; padding:2px; }
+.explorer-presentation button { min-height:32px; padding:5px 10px; border:0; background:transparent; font:12px var(--sans); border-radius:5px; }
+.explorer-presentation button[aria-pressed=true] { background:var(--panel-2); }
+.explorador-detalle { width:min(480px,calc(100vw - 32px)); max-height:calc(100dvh - 32px); padding:24px; border:1px solid var(--linea); border-radius:14px; background:var(--papel); color:var(--tinta); box-shadow:0 20px 80px #0003; }
+.explorador-detalle::backdrop { background:#0006; }
+.explorador-detalle > button { position:absolute; right:12px; top:12px; min-height:36px; padding:6px 10px; font:12px var(--sans); }
+.explorador-detalle h3 { padding-right:65px; margin-bottom:22px; }
+.explorador-detalle dl { display:grid; gap:6px; }
+.explorador-detalle dt { font:12px var(--sans); color:var(--tinta-2); margin-top:12px; }
+.explorador-detalle dd { overflow-wrap:anywhere; font:15px/1.6 var(--sans); }
+.explorer-ready[data-layout=cards] .tabla-caja { max-height:none; border:0; border-radius:0; overflow:visible; }
+.explorer-ready[data-layout=cards] table { display:block; min-width:0; }
+.explorer-ready[data-layout=cards] caption { display:block; padding:0 0 12px; }
+.explorer-ready[data-layout=cards] thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+.explorer-ready[data-layout=cards] tbody { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:12px; margin-bottom:12px; }
+.explorer-ready[data-layout=cards] tbody tr { display:grid; grid-template-columns:1fr 1fr; gap:12px 16px; padding:16px; border:1px solid var(--linea); border-radius:10px; background:var(--papel); min-width:0; }
+.explorer-ready[data-layout=cards] tbody tr:has(.tabla-grupo),.explorer-ready[data-layout=cards] .explorer-empty { grid-column:1/-1; }
+.explorer-ready[data-layout=cards] tbody :is(td,th) { display:block; width:auto!important; min-width:0!important; padding:0; border:0; text-align:left; overflow-wrap:anywhere; white-space:normal; font-size:14px; }
+.explorer-ready[data-layout=cards] tbody :is(td,th)::before { content:attr(data-label); display:block; margin-bottom:4px; color:var(--tinta-2); font:11px/1.5 var(--sans); }
+.explorer-ready[data-layout=cards] tbody :is(td,th):first-child { grid-column:1/-1; padding-bottom:10px; border-bottom:1px solid var(--linea); font-size:16px; }
+.explorer-ready[data-layout=cards] .explorador-inspeccionar { float:right; margin-top:-4px; }
+.explorer-ready[data-layout=cards] .tabla-grupo { border:0!important; padding:0!important; }
+@media(max-width:640px) {
+  :root { --gutter:18px; }
+  .hoja { padding-top:24px; row-gap:24px; }
+  .cabecera { padding-top:24px; }
+  .hoja :is(h1,h2,h3) { overflow-wrap:anywhere; }
+  .hoja > :is(.ancho,.amplio) { min-width:0; }
+  .explorer-ready .tabla-herramientas { display:grid; grid-template-columns:minmax(0,1fr); }
+  .explorer-ready .explorador-utilidades { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); width:100%; gap:6px; }
+  .explorer-ready .explorador-utilidades > details > summary { justify-content:center; padding:10px 4px; min-height:44px; font-size:12px; }
+  .explorer-ready input[type=search],.explorer-ready .control-panel :is(input:not([type=checkbox]):not([type=range]),select) { font-size:16px; min-height:44px; }
+  .explorer-ready .explorer-search { display:block; }
+  .explorer-ready .explorer-search input { display:block; }
+  .explorer-ready .explorador-paginacion { gap:6px; }
+  .explorer-ready .explorador-paginacion > span { flex-basis:100%; }
+  .explorer-ready :is(.explorador-paginacion button,.explorador-inspeccionar,.explorer-presentation button) { min-width:44px; min-height:44px; }
+  .explorer-ready .explorer-filter-chips button { min-height:40px; }
+  .explorer-ready[data-layout=table] .explorer-scroll-hint { display:block; }
+  .explorer-ready .tabla-caja { max-height:none; }
+  .explorador-detalle { margin:auto 0 0; width:100%; max-width:none; max-height:85dvh; border-radius:18px 18px 0 0; padding:24px 20px calc(24px + env(safe-area-inset-bottom)); }
+  .apunte-nota { max-width:100%; }
+  .codigo-editorial pre { font-size:13px; }
+}
+@media print {
+  .explorer-filter-chips,.explorer-batch,.explorer-scroll-hint,.explorador-inspeccionar,.explorer-presentation { display:none!important; }
+  .explorer-ready[data-layout=cards] table { display:table; }
+  .explorer-ready[data-layout=cards] thead { display:table-header-group; position:static; width:auto; height:auto; clip-path:none; }
+  .explorer-ready[data-layout=cards] tbody { display:table-row-group; }
+  .explorer-ready[data-layout=cards] tbody tr { display:table-row; }
+  .explorer-ready[data-layout=cards] tbody :is(td,th) { display:table-cell; padding:8px; }
+  .explorer-ready[data-layout=cards] tbody :is(td,th)::before { display:none; }
+}
+
+/* Small screens keep progress out of the reading and commenting controls. */
+@media(max-width:640px) {
+  .regla-guiada { left:0; right:0; top:0; bottom:auto; width:100%; height:3px; border:0; border-radius:0; background:var(--linea); z-index:140; pointer-events:none; }
+  .regla-guiada .ticks { display:none; }
+  .regla-guiada .cursor { left:0; bottom:0; height:3px; width:calc(var(--lectura,0) * 100%); }
+  .regla-guiada .val { position:absolute; width:1px; height:1px; padding:0; clip-path:inset(50%); overflow:hidden; }
+}
+
+ .explorer-column { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:4px 8px; padding-block:8px; border-top:1px solid var(--linea); }
+.explorer-column > .explorer-column-name,.explorer-column > label:last-child { grid-column:1; grid-row:1; }
+.explorer-column > label { padding:4px!important; }
+.explorer-column > label:first-of-type:not(:last-child) { grid-column:2; grid-row:1; font-size:11px; color:var(--tinta-2); }
+.explorer-column > details { grid-column:1/-1; font:11px/1.5 var(--sans); color:var(--tinta-2); }
+.explorer-column > details > summary { cursor:pointer; padding:4px; }
+
+@media(max-width:640px) {
+  .flota-superficie { min-width:0; height:320px; }
+  .flota-herramientas { gap:6px; }
+  .flota-herramientas button { min-width:44px; min-height:44px; }
+}
+
+.explorer-ready .explorer-legacy-state { display:none; }
+@media(max-width:640px) { .explorer-facet label { min-height:44px; } }
+
+@media(max-width:640px) { .explorer-ready.pieza { padding:16px 10px; } }
+
 /* GENERATED THEMES — scripts/themes.py; edit packages/core/themes/families/. */
 :root[data-color-mode="light"] .paleta-mini[data-muestra-tema="editorial"] { --vista-papel:#fef8f2; --vista-tinta:#231e1a; --vista-acento:#a13f19; }
 :root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="editorial"] { --vista-papel:#13110f; --vista-tinta:#e9dfd7; --vista-acento:#f1b798; }
@@ -7017,9 +7138,9 @@ Origen: sin sesión conectada; no inventar una referencia.&lt;/code&gt;&lt;/pre&
 <script>
 /* Menús compactos de herramientas: disclosure nativo y panel limitado al viewport. */
 (()=>{'use strict';const done=new WeakMap();function init(root=document){[...(root.matches?.('.control-menu')?[root]:[]),...root.querySelectorAll('.control-menu')].forEach(menu=>{if(done.has(menu))return;const trigger=menu.querySelector('summary'),panel=menu.querySelector('.control-panel');if(!trigger||!panel)return;const abort=new AbortController(),on=(node,event,fn,opts={})=>node.addEventListener(event,fn,{...opts,signal:abort.signal});done.set(menu,{destroy(){abort.abort();delete menu.dataset.controlListo;done.delete(menu);}});menu.dataset.controlListo='';
- const place=()=>{if(!menu.open)return;const t=trigger.getBoundingClientRect(),w=visualViewport?.width||innerWidth,h=visualViewport?.height||innerHeight;panel.style.width=Math.min(264,w-24)+'px';panel.style.maxHeight=Math.max(80,h-24)+'px';let p=panel.getBoundingClientRect();panel.style.left=Math.max(12,Math.min(t.right-p.width,w-p.width-12))+'px';const below=h-t.bottom-20,above=t.top-20,up=p.height>below&&above>below;panel.style.maxHeight=Math.max(80,up?above:below)+'px';p=panel.getBoundingClientRect();panel.style.top=Math.max(12,Math.min(up?t.top-p.height-8:t.bottom+8,h-p.height-12))+'px';};
+ const place=()=>{if(!menu.open)return;const t=trigger.getBoundingClientRect(),w=visualViewport?.width||innerWidth,h=Math.min(visualViewport?.height||innerHeight,w<=640?(document.querySelector(".bottifact-toolbar")?.getBoundingClientRect().top||innerHeight)-12:innerHeight);panel.style.width=Math.min(Number(menu.dataset.panelWidth)||264,w-24)+'px';panel.style.maxHeight=Math.max(80,h-24)+'px';let p=panel.getBoundingClientRect();panel.style.left=Math.max(12,Math.min(t.right-p.width,w-p.width-12))+'px';const below=h-t.bottom-20,above=t.top-20,up=p.height>below&&above>below;panel.style.maxHeight=Math.max(80,up?above:below)+'px';p=panel.getBoundingClientRect();panel.style.top=Math.max(12,Math.min(up?t.top-p.height-8:t.bottom+8,h-p.height-12))+'px';};
  on(menu,'toggle',()=>{if(menu.open){document.querySelectorAll('.control-menu').forEach(other=>{if(other!==menu)other.open=false;});place();}});on(menu,'click',e=>{if(e.target.closest('[data-cerrar-menu]'))menu.open=false;});on(menu,'change',place);
- on(window,'resize',place);on(document,'scroll',e=>{if(menu.open&&!panel.contains(e.target))menu.open=false;},{capture:true,passive:true});on(document,'pointerdown',e=>{if(!menu.contains(e.target))menu.open=false;});on(document,'keydown',e=>{if(e.key==='Escape'&&menu.open){menu.open=false;trigger.focus();}});
+ on(window,'resize',place);if(window.visualViewport)on(window.visualViewport,'resize',place);on(document,'scroll',e=>{if(menu.open&&!panel.contains(e.target))menu.open=false;},{capture:true,passive:true});on(document,'pointerdown',e=>{if(!menu.contains(e.target))menu.open=false;});on(document,'keydown',e=>{if(e.key==='Escape'&&menu.open){menu.open=false;trigger.focus();}});
  });}window.NotaControles={init,get:el=>done.get(el)};init();})();
 
 </script>
@@ -8074,7 +8195,7 @@ window.NotaGeografia=Object.freeze({
   }
   color(raw){const ctx=this.colorContext||(this.colorContext=document.createElement('canvas').getContext('2d'));ctx.clearRect(0,0,1,1);ctx.fillStyle=raw;ctx.fillRect(0,0,1,1);const [r,g,b]=ctx.getImageData(0,0,1,1).data;return new THREE.Color().setRGB(r/255,g/255,b/255,THREE.SRGBColorSpace);}
   theme(){if(!this.renderer||this.dead)return;const css=getComputedStyle(this.element),color=name=>this.color(css.getPropertyValue(name).trim());this.earth.material.color.copy(color('--flota-oceano'));this.countryMesh.material.color.copy(color('--flota-territorio'));this.outline.material.color.copy(color('--flota-borde'));this.land?.material.color.copy(color('--flota-tierra'));this.pins.forEach(p=>p.material.color.copy(color('--flota-punto')));this.routes.forEach((r,i)=>r.mesh.material.color.copy(color('--grafica-'+(i%4+1))));this.render();}
-  fit(){if(!this.renderer||this.dead)return;const r=this.surface.getBoundingClientRect(),w=Math.max(1,r.width),h=Math.max(1,r.height);this.renderer.setSize(w,h,false);const row=this.model.data.find(r=>r.id===this.selected),a=vector(row.from.lat,row.from.lon),b=vector(row.to.lat,row.to.lon);const half=(this.world?1.16:this.focusRoute?Math.max(.065,a.distanceTo(b)*.7):.225)/this.zoom;this.camera.left=-half*w/h;this.camera.right=half*w/h;this.camera.top=half;this.camera.bottom=-half;this.camera.near=.01;this.camera.far=10;const baseNormal=this.focusRoute?a.clone().add(b).normalize():vector(this.latitude,this.longitude),lat=Math.asin(baseNormal.y)*180/Math.PI+this.orbitY,lon=Math.atan2(-baseNormal.z,baseNormal.x)*180/Math.PI+this.orbitX,normal=vector(Math.max(-85,Math.min(85,lat)),lon);this.viewNormal=normal;const up=new THREE.Vector3(0,1,0),right=new THREE.Vector3().crossVectors(up,normal).normalize(),vertical=new THREE.Vector3().crossVectors(normal,right),shift=right.multiplyScalar(this.panX).add(vertical.multiplyScalar(this.panY));this.camera.position.copy(normal.clone().multiplyScalar(4).add(shift));this.camera.up.set(0,1,0);this.camera.lookAt((this.world?new THREE.Vector3():normal.clone()).add(shift));this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();
+  fit(){if(!this.renderer||this.dead)return;const r=this.surface.getBoundingClientRect(),w=Math.max(1,r.width),h=Math.max(1,r.height);this.renderer.setSize(w,h,false);const row=this.model.data.find(r=>r.id===this.selected),a=vector(row.from.lat,row.from.lon),b=vector(row.to.lat,row.to.lon);const half=(this.world?1.16:this.focusRoute?Math.max(.065,a.distanceTo(b)*.7):.225)/this.zoom/Math.min(1,w/h);this.camera.left=-half*w/h;this.camera.right=half*w/h;this.camera.top=half;this.camera.bottom=-half;this.camera.near=.01;this.camera.far=10;const baseNormal=this.focusRoute?a.clone().add(b).normalize():vector(this.latitude,this.longitude),lat=Math.asin(baseNormal.y)*180/Math.PI+this.orbitY,lon=Math.atan2(-baseNormal.z,baseNormal.x)*180/Math.PI+this.orbitX,normal=vector(Math.max(-85,Math.min(85,lat)),lon);this.viewNormal=normal;const up=new THREE.Vector3(0,1,0),right=new THREE.Vector3().crossVectors(up,normal).normalize(),vertical=new THREE.Vector3().crossVectors(normal,right),shift=right.multiplyScalar(this.panX).add(vertical.multiplyScalar(this.panY));this.camera.position.copy(normal.clone().multiplyScalar(4).add(shift));this.camera.up.set(0,1,0);this.camera.lookAt((this.world?new THREE.Vector3():normal.clone()).add(shift));this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();
    // Grosor visual constante: acercarse no convierte un punto en un disco que tapa la ruta.
    const radius=half*(this.world?1.5:3.5)/h;
    if(this.routeRadius!==radius){this.routeRadius=radius;this.routes.forEach(route=>{const old=route.mesh.geometry;this.geometries.splice(this.geometries.indexOf(old),1);old.dispose();route.mesh.geometry=new THREE.TubeGeometry(route.curve,80,radius,6,false);this.geometries.push(route.mesh.geometry);});}
@@ -9612,6 +9733,10 @@ globalThis.BottifactTableModel=TableModel;
           if (!c.id) c.id = r.dataset.rowId + "-cell-" + j;
         });
       });
+      const originalFormNodes = [...form.childNodes];
+      const originalTabStops = [
+        ...table.tHead.querySelectorAll("button,summary"),
+      ].map((node) => [node, node.getAttribute("tabindex")]);
       const previous = {
           status: status.textContent,
           sort: headers.map((h) => h.getAttribute("aria-sort")),
@@ -9689,7 +9814,7 @@ globalThis.BottifactTableModel=TableModel;
         csv,
       );
       form.after(tools);
-      window.NotaControles?.init(tools);
+
       const footer = make("div");
       footer.className = "explorador-paginacion";
       const prev = button("←", () => {
@@ -9733,7 +9858,8 @@ globalThis.BottifactTableModel=TableModel;
         join = make("select");
       filters.className = "control-menu";
       filterBody.className = "control-panel";
-      filters.append(make("summary", "Condiciones"), filterBody);
+      filters.append(make("summary", "Filtros"), filterBody);
+      filters.dataset.panelWidth = "400";
       join.append(
         new Option("Todas las condiciones", "and"),
         new Option("Cualquier condición", "or"),
@@ -9747,10 +9873,11 @@ globalThis.BottifactTableModel=TableModel;
       function drawRules() {
         filterBody.querySelectorAll("[data-rule]").forEach((n) => n.remove());
         query.rules.forEach((rule, index) => {
+          if (rule.facet) return;
           const row = make("div");
           row.dataset.rule = "";
           row.style.cssText =
-            "display:flex;gap:6px;flex-wrap:wrap;margin-block:8px";
+            "display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-block:12px";
           const col = make("select"),
             op = make("select"),
             value = make("input"),
@@ -9817,7 +9944,7 @@ globalThis.BottifactTableModel=TableModel;
             op,
             value,
             upper,
-            button("×", () => {
+            button("Quitar condición", () => {
               query.rules.splice(index, 1);
               drawRules();
               resetPage();
@@ -9877,6 +10004,7 @@ globalThis.BottifactTableModel=TableModel;
               ...form.querySelectorAll("[data-columna]:not(:checked)"),
             ].map((c) => c.dataset.columna),
             density: density.value,
+            presentation: presentation.value,
             field: field.value,
             match: match.value,
             min: min.value,
@@ -9927,6 +10055,10 @@ globalThis.BottifactTableModel=TableModel;
           c.checked = !(v.hidden || []).includes(c.dataset.columna);
         density.value = v.density || "normal";
         el.dataset.densidad = density.value;
+        presentation.value = ["auto", "table", "cards"].includes(v.presentation)
+          ? v.presentation
+          : "auto";
+        setPresentation();
         field.value = v.field || "";
         match.value = v.match || "";
         min.value = v.min || "";
@@ -9939,9 +10071,10 @@ globalThis.BottifactTableModel=TableModel;
         layoutBody = make("div");
       layout.className = "control-menu";
       layoutBody.className = "control-panel";
-      layout.append(make("summary", "Ajustar columnas"), layoutBody);
+      layout.append(make("summary", "Diseño"), layoutBody);
+      layout.dataset.panelWidth = "340";
       headers.forEach((h, c) => {
-        const line = make("label", names[c] + " "),
+        const line = make("div"),
           pin = make("input"),
           width = make("input");
         pin.type = "checkbox";
@@ -9962,14 +10095,304 @@ globalThis.BottifactTableModel=TableModel;
           pin.checked ? pinned.add(c) : pinned.delete(c);
           positionColumns();
         });
-        line.append(pin, width);
+        line.className = "explorer-column";
+        line.dataset.columnControl = String(c);
+        const name = make("span", names[c]);
+        name.className = "explorer-column-name";
+        const pinLabel = make("label", "Fijar");
+        pinLabel.prepend(pin);
+        const resize = make("details");
+        resize.append(make("summary", "Ancho"), width);
+        line.append(name, pinLabel, resize);
         layoutBody.append(line);
       });
       tools.append(layout);
+      // One toolbar, progressively disclosed options, and the same DOM records in both layouts.
+      const moved = [],
+        wrappers = [];
+      const move = (node, target) => {
+        if (!node) return;
+        moved.push([node, node.parentNode, node.nextSibling]);
+        target.append(node);
+      };
+      const searchInput = form.elements.buscar;
+      let searchLabel = searchInput?.closest("label");
+      if (searchLabel) {
+        searchLabel.classList.add("explorer-search");
+        [...searchLabel.childNodes]
+          .filter((n) => n.nodeType === 3)
+          .forEach((n) => {
+            const label = make("span", n.textContent);
+            label.className = "control-etiqueta";
+            n.replaceWith(label);
+          });
+        searchInput.placeholder = "Buscar en todos los registros…";
+        searchInput.setAttribute("aria-label", "Buscar en todos los registros");
+      }
+      for (const name of ["estado", "grupo"]) {
+        const input = form.elements[name];
+        if (input)
+          move(
+            input.closest("label") || input,
+            name === "estado" ? filterBody : layoutBody,
+          );
+      }
+      const legacyState = form.elements.estado?.closest("label");
+      if (
+        model &&
+        legacyState &&
+        new Set(values.map((row) => row[Number(el.dataset.columnaEstado ?? 2)]))
+          .size <= 12
+      )
+        legacyState.classList.add("explorer-legacy-state");
+      const columnsTitle = make("p", "Columnas visibles");
+      columnsTitle.className = "explorer-panel-title";
+      layoutBody.prepend(columnsTitle);
+      form.querySelectorAll("[data-columna]").forEach((input) => {
+        const line = layoutBody.querySelector(
+          '[data-column-control="' + input.dataset.columna + '"]',
+        );
+        if (line) {
+          line.querySelector(".explorer-column-name").hidden = true;
+          move(input.closest("label") || input, line);
+        } else move(input.closest("label") || input, layoutBody);
+      });
+      // Empty legacy disclosures are kept for destroy(), not shown as duplicate menus.
+      for (const node of originalFormNodes) {
+        if (
+          node.nodeType === 1 &&
+          node !== searchLabel &&
+          node.parentNode === form
+        ) {
+          wrappers.push([node, node.hidden]);
+          node.hidden = true;
+        }
+      }
+      const presentation = make("select");
+      presentation.setAttribute("aria-label", "Presentación de registros");
+      presentation.append(
+        new Option("Automática · fichas en móvil", "auto"),
+        new Option("Tabla · comparar columnas", "table"),
+        new Option("Fichas · leer registros", "cards"),
+      );
+      const presentLabel = make("label", "Presentación");
+      presentLabel.append(presentation);
+      const densityLabel = make("label", "Espaciado");
+      densityLabel.append(density);
+      const mobileSort = make("select");
+      mobileSort.setAttribute("aria-label", "Ordenar registros");
+      mobileSort.append(new Option("Orden original", ""));
+      names.forEach((name, c) => {
+        mobileSort.append(
+          new Option(name + " ↑", c + ":1"),
+          new Option(name + " ↓", c + ":-1"),
+        );
+      });
+      const sortLabel = make("label", "Ordenar");
+      sortLabel.append(mobileSort);
+      layoutBody.prepend(presentLabel, sortLabel, densityLabel);
+      const reset = button("Limpiar filtros", () => form.reset());
+      reset.className = "explorer-reset";
+      const chips = make("div");
+      chips.className = "explorer-filter-chips";
+      chips.setAttribute("aria-label", "Filtros activos");
+      const batch = make("div");
+      batch.className = "explorer-batch";
+      batch.append(selectedCount, clear);
+      const selectionTools = make("details"),
+        selectionBody = make("div");
+      selectionTools.className = "control-menu";
+      selectionBody.className = "control-panel";
+      selectionTools.append(make("summary", "Más"), selectionBody);
+      selectionBody.append(selectionLabel, csv);
+      if (!model) advanced.append(panel);
+      advanced.remove();
+      tools.replaceChildren(
+        ...(model ? [filters] : [advanced]),
+        layout,
+        ...(model ? [views] : []),
+        selectionTools,
+      );
+      form.append(tools);
+      form.after(chips, batch);
+      el.classList.add("explorer-ready");
+      el.dataset.presentation = "auto";
+      const box = el.querySelector(".tabla-caja");
+      const scrollHint = make("p", "Desliza la tabla para ver más columnas →");
+      scrollHint.className = "explorer-scroll-hint";
+      box.before(scrollHint);
+      const overview = make("div");
+      overview.className = "explorer-overview";
+      status.before(overview);
+      overview.append(status);
+      const switcher = make("div");
+      switcher.className = "explorer-presentation";
+      switcher.setAttribute("aria-label", "Vista de registros");
+      const layoutButtons = ["table", "cards"].map((value, i) => {
+        const b = button(i ? "Fichas" : "Tabla", () => {
+          presentation.value = value;
+          setPresentation();
+        });
+        b.dataset.layout = value;
+        switcher.append(b);
+        return b;
+      });
+      overview.append(switcher);
+      const media = window.matchMedia?.("(max-width: 640px)");
+      function setPresentation() {
+        el.dataset.presentation = presentation.value;
+        el.dataset.layout =
+          presentation.value === "auto"
+            ? media?.matches
+              ? "cards"
+              : "table"
+            : presentation.value;
+        originalTabStops.forEach(([node, previous]) => {
+          if (el.dataset.layout === "cards") node.tabIndex = -1;
+          else if (previous === null) node.removeAttribute("tabindex");
+          else node.setAttribute("tabindex", previous);
+        });
+        layoutButtons.forEach((b) =>
+          b.setAttribute(
+            "aria-pressed",
+            String(b.dataset.layout === el.dataset.layout),
+          ),
+        );
+        positionColumns();
+      }
+      listen(presentation, "change", setPresentation);
+      listen(window, "resize", positionColumns);
+      if (media?.addEventListener) listen(media, "change", setPresentation);
+      listen(mobileSort, "change", () => {
+        sorts = mobileSort.value
+          ? [
+              {
+                col: Number(mobileSort.value.split(":")[0]),
+                dir: Number(mobileSort.value.split(":")[1]),
+              },
+            ]
+          : [];
+        resetPage();
+      });
+      // Explicit table roles retain navigation when the visual rows become cards.
+      table.setAttribute("role", "table");
+      table.tHead.setAttribute("role", "rowgroup");
+      table.tHead.rows[0].setAttribute("role", "row");
+      headers.forEach((h) => h.setAttribute("role", "columnheader"));
+      rows.forEach((row) => {
+        row.setAttribute("role", "row");
+        [...row.cells].forEach((cell, c) => {
+          cell.setAttribute(
+            "role",
+            cell.tagName === "TH" ? "rowheader" : "cell",
+          );
+          cell.dataset.label = names[c];
+          cell.dataset.valueType = types[c];
+        });
+      });
+      // Facets expose distinct source values with counts, without guessing business semantics.
+      if (model)
+        names.forEach((name, c) => {
+          const choices = [...new Set(values.map((row) => row[c]))];
+          if (c === 0 || types[c] !== "texto" || choices.length > 12) return;
+          const facet = make("fieldset"),
+            legend = make("legend", name);
+          facet.className = "explorer-facet";
+          facet.append(legend);
+          choices.forEach((value) => {
+            const label = make("label"),
+              check = make("input"),
+              count = make(
+                "small",
+                String(values.filter((row) => row[c] === value).length),
+              );
+            check.type = "checkbox";
+            check.dataset.facetColumn = String(c);
+            check.dataset.facetValue = value;
+            label.append(check, make("span", value || "Sin valor"), count);
+            facet.append(label);
+            listen(check, "change", () => {
+              const rule = query.rules.find(
+                (r) => r.column === String(c) && r.operator === "in" && r.facet,
+              );
+              const picked = new Set(rule?.value || []);
+              check.checked ? picked.add(value) : picked.delete(value);
+              query.rules = query.rules.filter((r) => r !== rule);
+              if (picked.size)
+                query.rules.push({
+                  column: String(c),
+                  operator: "in",
+                  value: [...picked],
+                  facet: true,
+                });
+              drawRules();
+              resetPage();
+            });
+          });
+          filterBody.prepend(facet);
+        });
+      filterBody.prepend(
+        make("p", "Los conteos corresponden al registro completo."),
+      );
+      window.NotaControles?.init(form);
+      function paintChips() {
+        chips.replaceChildren();
+        const add = (label, clear) => {
+          const b = make("button", label + " ×");
+          b.type = "button";
+          b.setAttribute("aria-label", "Quitar filtro: " + label);
+          b.addEventListener("click", clear, { signal: renderAbort.signal });
+          chips.append(b);
+        };
+        if (searchInput?.value)
+          add("Búsqueda: " + searchInput.value, () => {
+            searchInput.value = "";
+            resetPage();
+          });
+        if (form.elements.estado?.value)
+          add(form.elements.estado.value, () => {
+            form.elements.estado.value = "";
+            resetPage();
+          });
+        query?.rules.forEach((rule, i) =>
+          add(
+            names[Number(rule.column)] +
+              ": " +
+              ({
+                contains: "contiene ",
+                gte: "≥ ",
+                lte: "≤ ",
+                empty: "sin valor",
+                between: "entre ",
+              }[rule.operator] || "") +
+              (Array.isArray(rule.value)
+                ? rule.value.join(", ")
+                : rule.value || "") +
+              (rule.operator === "between" ? " – " + rule.upper : ""),
+            () => {
+              query.rules.splice(i, 1);
+              drawRules();
+              resetPage();
+            },
+          ),
+        );
+        if (chips.children.length) chips.append(reset);
+        chips.hidden = !chips.children.length;
+        filterBody.querySelectorAll("[data-facet-column]").forEach((check) => {
+          check.checked = !!query?.rules.some(
+            (r) =>
+              r.facet &&
+              r.column === check.dataset.facetColumn &&
+              r.value.includes(check.dataset.facetValue),
+          );
+        });
+        filters.querySelector("summary").textContent =
+          "Filtros" + (query?.rules.length ? " · " + query.rules.length : "");
+      }
       function positionColumns() {
         let left = 0;
         headers.forEach((h, c) => {
-          const fixed = pinned.has(c);
+          const fixed = pinned.has(c) && el.dataset.layout !== "cards";
           for (const cell of [h, ...rows.map((r) => r.cells[c])]) {
             cell.style.position = fixed ? "sticky" : "";
             cell.style.left = fixed ? left + "px" : "";
@@ -9981,14 +10404,13 @@ globalThis.BottifactTableModel=TableModel;
       }
       const detail = make("dialog");
       detail.className = "explorador-detalle";
-      detail.style.cssText =
-        "max-width:min(460px,calc(100vw - 32px));max-height:80vh;overflow:auto;background:var(--papel);color:var(--tinta);padding:24px;border:1px solid var(--linea)";
+
       detail.setAttribute("aria-label", "Detalle del registro");
       document.body.append(detail);
       rows.forEach((row, i) => {
         const inspect = button("↗", () => {
           detail.replaceChildren(
-            make("h3", "Registro " + row.dataset.rowId),
+            make("h3", values[i][0]),
             button("Cerrar", () => detail.close()),
           );
           const dl = make("dl");
@@ -10000,7 +10422,7 @@ globalThis.BottifactTableModel=TableModel;
         });
         inspect.setAttribute("aria-label", "Ver detalle de " + values[i][0]);
         inspect.className = "explorador-inspeccionar";
-        row.cells[row.cells.length - 1].append(inspect);
+        row.cells[0].append(inspect);
       });
       const boxes = rows.map((r, i) => {
         const c = make("input");
@@ -10119,6 +10541,13 @@ globalThis.BottifactTableModel=TableModel;
             Number(e.dataset.columna),
           ),
         );
+        // A record's primary identifier remains available for selection and comments.
+        hidden.delete(0);
+        const identityBox = form.querySelector('[data-columna="0"]');
+        if (identityBox) {
+          identityBox.checked = true;
+          identityBox.disabled = true;
+        }
         if (hidden.size >= headers.length) {
           hidden.delete(0);
           const box = form.querySelector('[data-columna="0"]');
@@ -10141,13 +10570,18 @@ globalThis.BottifactTableModel=TableModel;
             tr = body.insertRow(),
             td = tr.insertCell();
           td.colSpan = headers.length - hidden.size;
-          td.textContent =
-            "No hay resultados. Limpia los filtros para volver a ver los registros.";
+          td.append(
+            make("strong", "No encontramos registros"),
+            make("p", "Prueba otra búsqueda o quita los filtros."),
+            button("Ver todos los registros", () => form.reset()),
+          );
+          tr.className = "explorer-empty";
           table.append(body);
           parts.push(body);
         }
         for (const [name, items] of groups) {
           const body = make("tbody");
+          body.setAttribute("role", "rowgroup");
           if (groupCol !== null) {
             const tr = body.insertRow(),
               th = make("th");
@@ -10218,6 +10652,9 @@ globalThis.BottifactTableModel=TableModel;
           if (hint) hint.textContent = s ? (s.dir === 1 ? "↑" : "↓") : "↕";
         });
         positionColumns();
+        paintChips();
+        mobileSort.value = sorts[0] ? sorts[0].col + ":" + sorts[0].dir : "";
+        batch.hidden = !selected.size;
         selectedCount.textContent =
           selected.size +
           " seleccionados · " +
@@ -10258,7 +10695,9 @@ globalThis.BottifactTableModel=TableModel;
               .map((c) =>
                 safe(
                   types[c] === "numero"
-                    ? String(Number(raw[i][c]))
+                    ? raw[i][c] === ""
+                      ? ""
+                      : String(Number(raw[i][c]))
                     : values[i][c],
                   types[c] === "numero",
                 ),
@@ -10284,8 +10723,18 @@ globalThis.BottifactTableModel=TableModel;
         collapsed.clear();
         update();
       };
-      listen(form, "input", resetPage);
-      listen(form, "change", resetPage);
+      listen(form, "input", (e) => {
+        if (
+          e.target.matches(
+            "[name=buscar],[name=estado],[name=grupo],[data-columna]",
+          )
+        )
+          resetPage();
+      });
+      listen(form, "change", (e) => {
+        if (e.target.matches("[name=estado],[name=grupo],[data-columna]"))
+          resetPage();
+      });
       listen(form, "submit", (e) => e.preventDefault());
       listen(form, "reset", () =>
         queueMicrotask(() => {
@@ -10374,9 +10823,34 @@ globalThis.BottifactTableModel=TableModel;
               : h.setAttribute("aria-sort", previous.sort[i]);
           });
           table.append(initial);
+          originalTabStops.forEach(([node, previous]) => {
+            if (previous === null) node.removeAttribute("tabindex");
+            else node.setAttribute("tabindex", previous);
+          });
+          const identityBox = form.querySelector('[data-columna="0"]');
+          if (identityBox) identityBox.disabled = false;
           tools
             .querySelectorAll(".control-menu")
             .forEach((m) => window.NotaControles?.get(m)?.destroy());
+          moved
+            .reverse()
+            .forEach(([node, parent, next]) =>
+              parent.insertBefore(
+                node,
+                next?.parentNode === parent ? next : null,
+              ),
+            );
+          wrappers.forEach(([node, hidden]) => (node.hidden = hidden));
+          chips.remove();
+          batch.remove();
+          scrollHint.remove();
+          overview.before(status);
+          overview.remove();
+          el.classList.remove("explorer-ready");
+          delete el.dataset.layout;
+          delete el.dataset.presentation;
+          searchLabel?.classList.remove("explorer-search");
+          legacyState?.classList.remove("explorer-legacy-state");
           tools.remove();
           footer.remove();
           delete el.dataset.densidad;
@@ -10385,6 +10859,7 @@ globalThis.BottifactTableModel=TableModel;
         },
       };
       instances.set(el, instance);
+      setPresentation();
       update();
       return instance;
     });
