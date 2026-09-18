@@ -9,7 +9,9 @@ css_path=ROOT/'packages/core/styles/artifact.css'
 css=css_path.read_text()
 start='/* REVIEW COMPOSER START */';end='/* REVIEW COMPOSER END */'
 css=re.sub(re.escape(start)+r'.*?'+re.escape(end)+r'\n?','',css,flags=re.S)
-css=css.replace('/* GENERATED THEMES',start+'\n'+review_css+end+'\n/* GENERATED THEMES',1)
+prefix,marker,suffix=css.partition('/* GENERATED THEMES')
+assert marker, 'Missing generated theme boundary'
+css=prefix.rstrip()+'\n\n'+start+'\n'+review_css+end+'\n\n'+marker+suffix
 css_path.write_text(css)
 if (ROOT/'portal/static').is_dir():(ROOT/'portal/static/review-additions.css').write_text(review_css)
 from recipes import assemble as assemble_recipes

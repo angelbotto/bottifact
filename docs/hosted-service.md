@@ -24,7 +24,7 @@ curl -fsSL https://artifacts.botto.is/install.sh -o /tmp/bottifact-install.sh
 bash /tmp/bottifact-install.sh
 ```
 
-The installer downloads a checksum-verified package, keeps a shared library in `~/.local/share/bottifact/library`, and creates links for Claude Code, Codex and Hermes. Existing independent skill directories are preserved; read the output if there is a conflict. The CLI launcher is `~/.local/bin/bottifact`.
+The installer downloads a checksum-verified package, keeps a shared library in `~/.local/share/bottifact/library`, and creates links for Claude Code, Codex and Hermes. Existing independent skill directories are preserved; read the output if there is a conflict. The CLI launcher is `~/.local/bin/margen`.
 
 If your shell cannot find it, add the directory for the current shell:
 
@@ -52,7 +52,7 @@ An agent token is a credential for your account. Create and manage connections d
 Ask your agent to use Margen, describe the audience and decision, and ask for a validated HTML artifact. Publishing is separate from generating a local file. Explicitly ask it to publish, or opt into the persistent preference:
 
 ```bash
-bottifact preferences --publish-on-create yes
+margen preferences --publish-on-create yes
 ```
 
 You can disable that preference with `no`. It does not grant public visibility. A direct publication looks like:
@@ -87,7 +87,7 @@ Updates use the server recorded by the installer. If you later self-host, instal
 
 | Symptom | Check |
 | --- | --- |
-| Command not found | PATH and `~/.local/bin/bottifact` |
+| Command not found | PATH and `~/.local/bin/margen` |
 | Skill not discovered | Installer output, agent skill directory and discovery reload |
 | Library empty | Signed-in account, actual publication and artifact permissions |
 | Email code missing | Available alternate sign-in method and service support; users do not need to create an email server |

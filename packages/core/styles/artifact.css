@@ -2510,15 +2510,6 @@ body:has(.revision-barra) { padding-bottom:0; }
 @media(prefers-reduced-motion:no-preference){:is(.control-menu>summary,.apariencia-panel button,.revision-panel-v2 button,.visor-herramientas button){transition:background-color 120ms ease-out,color 120ms ease-out,border-color 120ms ease-out}}
 @media(max-width:640px){.explorer-ready .explorador-utilidades>details>summary {gap:4px}.explorer-ready .explorador-utilidades>details>summary .bf-ui-icon{width:14px;height:14px}.explorer-ready .explorador-paginacion button{width:44px}}
 
-
-
-
-
-
-
-
-
-
 /* REVIEW COMPOSER START */
 /* Shared by portable artifacts and the hosted adapter. */
 [data-revision-editor].review-composer{padding:12px!important;border:1px solid var(--linea)!important;border-radius:14px!important;background:var(--papel)!important;color:var(--tinta);box-shadow:0 4px 10px #00000008,0 16px 48px #00000022!important;max-width:calc(100vw - 24px)}
