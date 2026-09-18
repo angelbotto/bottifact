@@ -1,0 +1,55 @@
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<div class="barra" tabindex="0" role="region" aria-label="Páginas y tema, desplazable">
+  <span class="sello">bottifact</span>
+  <nav aria-label="Páginas del informe">
+    <button type="button" data-ir="p1" aria-current="page"><span class="n">01</span>El destino</button>
+    <button type="button" data-ir="p2"><span class="n">02</span>La evidencia</button>
+  </nav>
+  <div class="temas">
+    <label for="tema" class="sr-only">Papel</label>
+    <select id="tema" data-tema>
+      <option value="system">Sistema</option><option value="light">Claro</option>
+      <option value="dark">Oscuro cálido</option><option value="sea">Dark Sea</option>
+    </select>
+  </div>
+</div>
+
+<main class="hoja multipagina" data-lectura lang="es">
+  <article class="pagina viva" id="p1" data-pagina>
+    <header class="cabecera" id="contenido" tabindex="-1">
+      <p class="ceja">Página 01 / el destino</p>
+      <h1>A dónde tenemos que ir.</h1>
+      <p class="bajada">Una frase que dice de qué trata el capítulo.</p>
+    </header>
+    <nav class="indice" aria-label="Índice de esta página">
+      <p class="ceja">En esta página</p>
+      <ol><li><a href="#criterio">El criterio</a></li></ol>
+    </nav>
+    <section class="seccion" id="criterio"><h2>El criterio</h2><p>Texto.</p></section>
+    <figure class="amplio">
+      <div class="tabla-caja" tabindex="0" role="region" aria-label="Criterios del destino, desplazable">
+        <table><caption>Criterios ilustrativos</caption>
+          <thead><tr><th scope="col">Criterio</th><th scope="col">Resultado esperado</th></tr></thead>
+          <tbody><tr><th scope="row">Trazabilidad</th><td>Conservar la fuente y la fecha de cada registro.</td></tr></tbody>
+        </table>
+      </div><figcaption>Figura hermana de la sección; conserva el ancho amplio.</figcaption>
+    </figure>
+  </article>
+
+  <article class="pagina" id="p2" data-pagina hidden>
+    <header class="cabecera"><p class="ceja">Página 02 / evidencia</p><h1>Qué lo sostiene.</h1></header>
+    <nav class="indice" aria-label="Índice de evidencia"><ol><li><a href="#registro">El registro</a></li></ol></nav>
+    <section class="seccion" id="registro"><h2>El registro</h2><p>Una muestra ilustrativa conserva su origen y distingue lo medido de lo pendiente.</p></section>
+    <figure class="ancho"><div class="codigo"><div class="cab"><span>registro.txt</span>
+      <button type="button" data-copiar="registro-p2">Copiar registro</button><span class="copia-estado" role="status"></span></div>
+      <pre tabindex="0" aria-label="Registro ilustrativo"><code id="registro-p2">fuente: ejemplo local
+fecha: 2026-09-13
+estado: pendiente de medir</code></pre></div><figcaption>Datos de ejemplo, sin una medición de producción.</figcaption></figure>
+  </article>
+
+  <div class="paginacion" data-paginacion>
+    <button type="button" data-nav="prev"><span class="et">Anterior</span><span class="tit"></span></button>
+    <button type="button" data-nav="next"><span class="et">Siguiente</span><span class="tit"></span></button>
+  </div>
+  <footer class="pie">Bottifact · Dos capítulos de ejemplo.</footer>
+</main>

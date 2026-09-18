@@ -1,0 +1,32 @@
+{
+  "name": "@bottifact/core",
+  "version": "0.2.0",
+  "description": "Framework-independent artifact recipes, themes and sandbox preview documents",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE",
+    "licenses"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./themes": {
+      "types": "./dist/themes.d.ts",
+      "import": "./dist/themes.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angelbotto/bottifact.git",
+    "directory": "packages/core"
+  },
+  "sideEffects": false
+}

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.0 — Organized sources and React adapter
+
+- Move runtime, recipes, themes, examples, documentation and verification records into explicit English paths. Preserve published identities and legacy selectors.
+- Add per-recipe manifests and a component scaffolder; split theme families into individual source files.
+- Add typed core/React workspaces with eight native exports and sandbox access to the existing 82 recipes. Packages are available from source/packed tarballs, not the npm registry.
+- Add a private feedback handoff bundle that preserves artifact/version/anchor/session context. Delivery remains manual.
+- Document installation variables, self-hosting, architecture, graphs, React, contribution and migration. Replace historical screenshots in the current tree with a synthetic fixture.
+
+
 ## 0.1.0 — First open-source release
 
 - Portable editorial library: 82 recipes, 15 theme families, light/dark/system and six typography combinations.

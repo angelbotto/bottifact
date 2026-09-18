@@ -1,0 +1,38 @@
+{
+  "name": "@bottifact/react",
+  "version": "0.2.0",
+  "description": "Typed React components for Bottifact artifacts",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE",
+    "licenses"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "peerDependencies": {
+    "react": "^18.3.0 || ^19.0.0",
+    "react-dom": "^18.3.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "@bottifact/core": "0.2.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/copy-styles.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angelbotto/bottifact.git",
+    "directory": "packages/react"
+  }
+}

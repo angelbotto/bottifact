@@ -1,0 +1,19 @@
+{
+  "id": "sea",
+  "nombre": "Sea",
+  "grupo": "editorial",
+  "descripcion": "Azul oceánico · menta",
+  "light": {
+    "papel": "#f1f7fa",
+    "panel": "#e8f0f5",
+    "panel-2": "#dce8f0",
+    "tinta": "#213443",
+    "tinta-2": "#385368",
+    "tinta-3": "#52677c",
+    "naranja": "#006b54",
+    "verde": "#226742",
+    "rojo": "#a23940",
+    "azul": "#315ea0"
+  },
+  "dark": "sea"
+}

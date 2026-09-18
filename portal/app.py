@@ -626,7 +626,7 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
         # El iframe y la cabecera CSP fuerzan origen opaco, incluso al abrir esta URL fuera del portal.
         bridge=(ROOT/'static/bridge.js').read_text()
         # Actualiza sólo el adaptador de revisión de la vista; conserva el HTML fuente en disco.
-        revision=(ROOT/'static/revision.js').read_text()
+        revision=(ROOT/'static/review.js').read_text()
         content=re.sub(r'(<script\s+data-nota-modulo=[\"\']revision\.js[\"\'][^>]*>).*?</script>',
                        lambda m:m[1]+revision+'</script>',content,flags=re.S)
         script='<script>'+bridge+'</script><style>'+(ROOT/'static/review-additions.css').read_text()+'</style>'
@@ -643,12 +643,12 @@ def create_app(data=None, origin=None, issuer=None, audience=None):
 
     @app.get('/install.sh')
     def shell_installer():
-        path=ROOT/'install.sh' if (ROOT/'install.sh').exists() else ROOT.parent/'scripts/instalar.sh'
+        path=ROOT/'install.sh' if (ROOT/'install.sh').exists() else ROOT.parent/'scripts/install.sh'
         return Response(path.read_text().replace('https://artifacts.botto.is',origin),media_type='text/plain')
 
     @app.get('/install.py')
     def installer():
-        path=ROOT/'install.py' if (ROOT/'install.py').exists() else ROOT.parent/'scripts/actualizar.py'
+        path=ROOT/'install.py' if (ROOT/'install.py').exists() else ROOT.parent/'scripts/update.py'
         return Response(path.read_text().replace("ORIGIN = 'https://artifacts.botto.is'",'ORIGIN = '+repr(origin)),media_type='text/x-python')
 
     @app.get('/downloads/{name}')

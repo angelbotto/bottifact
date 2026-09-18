@@ -1,0 +1,19 @@
+{
+  "id": "ciruela",
+  "nombre": "Ciruela",
+  "grupo": "editorial",
+  "descripcion": "Malva · tinta violeta",
+  "light": {
+    "papel": "#fcf5fb",
+    "panel": "#f4eaf3",
+    "panel-2": "#eaddE9",
+    "tinta": "#342438",
+    "tinta-2": "#58405c",
+    "tinta-3": "#735a77",
+    "naranja": "#864977",
+    "verde": "#536632",
+    "rojo": "#ab384b",
+    "azul": "#555f9d"
+  },
+  "dark": "ciruela"
+}

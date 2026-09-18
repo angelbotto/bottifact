@@ -1,0 +1,19 @@
+{
+  "id": "blueprint",
+  "nombre": "Blueprint",
+  "grupo": "tecnico",
+  "descripcion": "Plano · cuadrícula",
+  "light": {
+    "papel": "#f3f8ff",
+    "panel": "#e7f0fc",
+    "panel-2": "#d8e6f6",
+    "tinta": "#102f57",
+    "tinta-2": "#315581",
+    "tinta-3": "#4d678c",
+    "naranja": "#1853a0",
+    "verde": "#266946",
+    "rojo": "#a3394b",
+    "azul": "#254f9c"
+  },
+  "dark": "blueprint"
+}

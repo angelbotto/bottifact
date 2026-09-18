@@ -1,0 +1,128 @@
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<header class="edicion-cabecera" id="inicio">
+  <div class="edicion-franja"><a class="firma-editorial" href="#resumen" aria-label="Primer capítulo"><span>Bottifact</span><small>Estudios de producto</small></a><div class="edicion-acciones"><span>Edición 02</span></div></div>
+  <div class="edicion-contexto"><span>Una revisión antes de confirmar</span><span>Septiembre de 2026 · ejemplo ilustrativo</span></div>
+</header>
+<div class="barra capitulos" tabindex="0" role="region" aria-label="Capítulos del informe, desplazables">
+  <nav aria-label="Capítulos">
+    <button type="button" data-ir="resumen" aria-current="page"><span class="n">01</span>Resumen</button>
+    <button type="button" data-ir="evidencia"><span class="n">02</span>Evidencia</button>
+    <button type="button" data-ir="prototipo"><span class="n">03</span>Prototipo</button>
+    <button type="button" data-ir="siguientes"><span class="n">04</span>Próximos pasos</button>
+  </nav>
+</div>
+<main class="hoja multipagina edicion" data-lectura data-historial lang="es">
+<article class="pagina viva" id="resumen" data-pagina>
+  <header class="cabecera" id="contenido" tabindex="-1"><p class="ceja">Capítulo 01 / 04</p><h1>Confirmar sin repetir el trabajo.</h1><p class="bajada">Un informe para explorar una decisión de interfaz, consultar sus supuestos y probar la interacción.</p></header>
+<section class="seccion"><h2>La decisión que queremos probar</h2><p>Reunir los datos en un resumen editable antes de confirmar una sesión. La persona revisa fecha, duración y estado en un mismo lugar.</p><p>Este documento muestra un formato de informe. Sus cifras son supuestos ilustrativos; no son resultados de producción.</p></section><aside class="pieza hallazgo" id="hallazgo-ejemplo" aria-labelledby="hallazgo-titulo">
+  <p class="ceja">Ficha 01 · hipótesis pendiente</p>
+  <h3 id="hallazgo-titulo">Revisar todo antes de confirmar</h3>
+  <dl>
+    <div><dt>Afirmación</dt><dd>Un resumen final podría facilitar la revisión de los datos antes del envío.</dd></div>
+    <div><dt>Evidencia disponible</dt><dd>Existe un prototipo navegable. Todavía no hay sesiones observadas que prueben la hipótesis.</dd></div>
+    <div><dt>Límite</dt><dd>La existencia del prototipo no acredita usabilidad ni ahorro de tiempo.</dd></div>
+    <div><dt>Siguiente prueba</dt><dd>Observar tareas comparables y registrar duración, errores y correcciones sin cambiar el alcance.</dd></div>
+  </dl>
+</aside><dl class="datos"><div><dt>Pregunta</dt><dd>¿Se detectan errores antes de confirmar?</dd></div><div><dt>Estado</dt><dd>Hipótesis por validar</dd></div><div><dt>Alcance</dt><dd>Una tarea de registro</dd></div><div><dt>Entregable</dt><dd>Prototipo y plan de observación</dd></div></dl>
+</article>
+<article class="pagina" id="evidencia" data-pagina hidden>
+  <header class="cabecera"><p class="ceja">Capítulo 02 / 04</p><h1>Qué sabemos y qué falta medir.</h1><p class="bajada">Separar una hipótesis de sus datos evita presentar una intención como un resultado.</p></header>
+<div class="pieza pestanas" id="pestanas-ejemplo" data-pestanas>
+  <h3>La afirmación, sus datos y su límite</h3>
+  <div class="pestanas-caja" tabindex="0" role="region" aria-label="Vistas de la evidencia, desplazables">
+    <div class="pestanas-nav" data-tabs-nav aria-label="Vistas de la evidencia">
+      <button type="button" id="tab-hallazgo" data-tab="panel-hallazgo">Hallazgo</button>
+      <button type="button" id="tab-datos" data-tab="panel-datos">Evidencia</button>
+      <button type="button" id="tab-limites" data-tab="panel-limites">Límites</button>
+    </div>
+  </div>
+  <section id="panel-hallazgo" data-tab-panel><h4>Una hipótesis para probar</h4><p>Un resumen antes de confirmar podría reducir las correcciones posteriores.</p><p>Esta es una hipótesis de diseño, no un resultado medido.</p></section>
+  <section id="panel-datos" data-tab-panel><h4>Qué necesitamos observar</h4><p>Tiempo hasta confirmar, correcciones posteriores y errores detectados antes del envío.</p><p>Comparar tareas del mismo alcance y conservar los registros de cada sesión.</p></section>
+  <section id="panel-limites" data-tab-panel><h4>Qué no se puede concluir</h4><p>Una mejora en velocidad no demuestra menor tasa de error ni ahorro económico.</p><p>El ejemplo no contiene observaciones de personas reales.</p></section>
+</div><figure class="ancho" id="tiempos-ejemplo" data-grafica="barras" data-unidad="Minutos por operación">
+  <details open><summary>Ver los supuestos de duración</summary><div class="tabla-caja" tabindex="0" role="region" aria-label="Supuestos de duración, desplazables"><table><caption>Duración supuesta por operación · no medida</caption><thead><tr><th scope="col">Escenario</th><th scope="col">Minutos</th></tr></thead><tbody><tr><th scope="row">Actual supuesto</th><td data-valor="8">8 min</td></tr><tr><th scope="row">Propuesto supuesto</th><td data-valor="5">5 min</td></tr></tbody></table></div></details><figcaption>La gráfica compara dos supuestos con una escala común desde cero. No representa un experimento.</figcaption>
+</figure><div class="pieza ancho" id="escenario-ejemplo" data-reporte="escenario">
+  <h3>¿Qué cambia si la tarea toma menos tiempo?</h3>
+  <p>Explora capacidad mensual con un volumen fijo. Los valores iniciales son ilustrativos.</p>
+  <form class="escenario-form" aria-label="Supuestos de capacidad mensual">
+    <label>Operaciones al mes<input name="volumen" type="number" min="0" max="1000000" step="1" value="1200" required></label>
+    <label>Antes, minutos por operación<input name="antes" type="number" min="0" max="1440" step="0.1" value="8" required></label>
+    <label>Después, minutos por operación<input name="despues" type="number" min="0" max="1440" step="0.1" value="5" required></label>
+    <button type="reset">Restablecer supuestos</button>
+  </form>
+  <div class="escenario-resultados">
+    <output data-resultado aria-live="polite">60 h/mes liberadas</output>
+    <p data-formula>1.200 × (8 − 5) ÷ 60 = 60 h/mes. Es capacidad estimada, no ahorro monetario ni una predicción.</p>
+  </div>
+</div>
+</article>
+<article class="pagina" id="prototipo" data-pagina hidden>
+  <header class="cabecera"><p class="ceja">Capítulo 03 / 04</p><h1>Recorrer la propuesta.</h1><p class="bajada">Prueba vacío, revisión y confirmación. El visor cambia de ancho sin salir del informe.</p></header>
+<figure class="pieza amplio" id="visor-ejemplo" data-visor data-visor-editor>
+  <h3>Una interfaz, varios tamaños</h3>
+  <p>Explora los estados vacío, revisión y confirmado de un registro ilustrativo.</p>
+  <div class="visor-herramientas visor-iconos" role="group" aria-label="Vista del prototipo"><div class="visor-dispositivos" role="group" aria-label="Dispositivo"><button type="button" class="nota-icono" data-ancho-visor="390" aria-pressed="true" aria-label="Móvil · 390 px" title="Móvil · 390 px"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 18h4"/></svg></button><button type="button" class="nota-icono" data-ancho-visor="768" aria-pressed="false" aria-label="Tablet · 768 px" title="Tablet · 768 px"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="2" width="18" height="20" rx="2"/><path d="M10 18h4"/></svg></button><button type="button" class="nota-icono" data-ancho-visor="1024" aria-pressed="false" aria-label="Escritorio · 1024 px" title="Escritorio · 1024 px"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M12 17v4M7 21h10"/></svg></button></div><details class="control-menu visor-opciones"><summary class="nota-icono" aria-label="Proporción y otros tamaños" title="Proporción y otros tamaños"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="m8 15 8-6"/></svg></summary><div class="control-panel" tabindex="0" role="region" aria-label="Proporción y tamaños del prototipo"><label class="visor-proporcion"><span class="control-etiqueta">Proporción del marco</span><select data-proporcion-visor aria-label="Proporción del marco"><option value="auto">Altura libre</option><option value="9/16">9:16</option><option value="4/3">4:3</option><option value="16/9">16:9</option><option value="1/1">1:1</option></select></label><button type="button" data-ancho-visor="320" data-cerrar-menu aria-pressed="false">Móvil pequeño · 320 px</button><button type="button" data-ancho-visor="auto" data-cerrar-menu aria-pressed="false">Ancho disponible</button></div></details><button type="button" class="nota-icono" data-girar-visor aria-pressed="false" aria-label="Rotar marco" title="Rotar marco"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="5" width="9" height="14" rx="1"/><path d="M18 4a8 8 0 0 1 3 6m0-6v6h-5"/></svg></button><button type="button" class="nota-icono" data-ajustar-visor aria-pressed="false" aria-label="Ajustar al espacio" title="Ajustar al espacio"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5M8 8h8v8H8z"/></svg></button><button type="button" class="nota-icono" data-reiniciar-visor aria-label="Reiniciar prototipo" title="Reiniciar prototipo"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></svg></button></div>
+  <p data-visor-estado role="status">Vista inicial: 390 px CSS.</p>
+  <div class="visor-caja" tabindex="0" role="region" aria-label="Prototipo interactivo, desplazable horizontalmente"></div>
+  <template data-prototipo>
+    <style>
+      .demo { padding: 24px; min-width: 0; }
+      .demo nav { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 20px; border-bottom: 1px solid var(--pieza-linea); }
+      .demo button { min-height: 44px; padding: 8px 12px; color: var(--pieza-tinta); background: var(--pieza-papel); border: 1px solid var(--pieza-linea); border-radius: 4px; font: inherit; cursor: pointer; }
+      .demo button[aria-pressed='true'] { background: var(--pieza-suave); border-color: var(--pieza-acento); }
+      .demo h2 { font: 400 32px/1.15 var(--serif); margin: 0 0 16px; }
+      .demo p { margin: 0 0 18px; overflow-wrap: anywhere; }
+      .demo .contexto { margin-top: 24px; font-size: 14px; color: var(--pieza-secundaria); }
+      .demo article { padding-top: 28px; }
+      .demo dl { margin: 0 0 20px; display: grid; gap: 12px; }
+      .demo dt { font-size: 13px; color: var(--pieza-secundaria); }
+      .demo dd { margin: 0; }
+      .demo .estado { padding: 16px; border: 1px dashed var(--pieza-linea); }
+      @container (min-width: 600px) {
+        .demo article { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); gap: 32px; }
+        .demo .contexto { margin-top: 0; padding-top: 4px; }
+      }
+    </style>
+    <div class="demo">
+      <nav aria-label="Estados del prototipo">
+        <button type="button" data-demo-ir="vacio" aria-pressed="true">Vacío</button>
+        <button type="button" data-demo-ir="revision" aria-pressed="false">Revisión</button>
+        <button type="button" data-demo-ir="confirmado" aria-pressed="false">Confirmado</button>
+      </nav>
+      <article data-demo-pagina="vacio">
+        <div><h2>Tu primer registro</h2><p>Todavía no hay registros en este ejemplo.</p><button type="button" data-demo-ir="revision">Crear borrador de ejemplo</button></div>
+        <aside class="contexto"><p>Empieza con un nombre, una fecha y una explicación del movimiento.</p><p class="estado">Estado: sin registros</p></aside>
+      </article>
+      <article data-demo-pagina="revision" hidden>
+        <div><h2>Revisa antes de confirmar</h2><dl><div><dt>Nombre</dt><dd>Sesión de revisión</dd></div><div><dt>Fecha</dt><dd>14 de septiembre de 2026</dd></div><div><dt>Duración</dt><dd>30 minutos</dd></div></dl><button type="button" data-demo-ir="confirmado">Confirmar ejemplo</button></div>
+        <aside class="contexto"><p>Comprueba los datos del borrador. Este prototipo usa un registro fijo para explorar la interacción.</p><p class="estado">Estado: pendiente de confirmar</p></aside>
+      </article>
+      <article data-demo-pagina="confirmado" hidden>
+        <div><h2>Registro confirmado</h2><p>La sesión de revisión aparece en el ejemplo con su fecha y duración.</p><button type="button" data-demo-ir="vacio">Volver al inicio</button></div>
+        <aside class="contexto"><p class="estado">Estado: confirmado en el prototipo</p><p>No se envió ni se guardó información.</p></aside>
+      </article>
+    </div>
+  </template>
+  <div class="visor-fuente"><h4>Estados del ejemplo</h4><ol><li>Vacío: crear un borrador de ejemplo.</li><li>Revisión: sesión del 14-sep-2026, 30 minutos, pendiente de confirmar.</li><li>Confirmado: resultado ilustrativo; no se envían datos.</li></ol></div>
+  <figcaption>Vista interactiva local. El ancho conserva píxeles CSS reales; en una pantalla pequeña se desplaza la región completa.</figcaption>
+</figure>
+</article>
+<article class="pagina" id="siguientes" data-pagina hidden>
+  <header class="cabecera"><p class="ceja">Capítulo 04 / 04</p><h1>La siguiente prueba tiene un propósito.</h1><p class="bajada">Antes de construir más, necesitamos observar si la propuesta resuelve el problema.</p></header>
+<section class="seccion"><h2>Observar, comparar, decidir</h2><ol><li>Definir una tarea y mantener el mismo alcance en ambas versiones.</li><li>Registrar duración, errores detectados y correcciones posteriores.</li><li>Conservar el contexto de cada sesión y explicar las exclusiones.</li><li>Revisar la hipótesis con esos datos antes de afirmar una mejora.</li></ol></section><div class="pieza" id="metodologia-ejemplo">
+  <h3>Cómo leer esta evidencia</h3>
+  <p>El ejemplo compara la duración declarada de una tarea bajo dos supuestos.</p>
+  <details class="metodologia">
+    <summary>Consultar método, supuestos y exclusiones</summary>
+    <dl class="nota-glosario">
+      <div><dt>Unidad</dt><dd>Minutos por operación; volumen mensual constante.</dd></div>
+      <div><dt>Supuesto</dt><dd>Las tareas comparadas tienen el mismo alcance.</dd></div>
+      <div><dt>Exclusión</dt><dd>No incluye capacitación, espera ni fallos de otros sistemas.</dd></div>
+      <div><dt>Límite</dt><dd>El resultado estima capacidad, no demuestra ahorro realizado.</dd></div>
+    </dl>
+  </details>
+</div><aside class="aviso ojo"><span class="num">!</span><div><p class="titulo">El prototipo no confirma la hipótesis.</p><p>Este ejemplo no ha registrado sesiones ni enviado datos. El siguiente entregable debe aportar evidencia.</p></div></aside>
+</article>
+<div class="paginacion" data-paginacion><button type="button" data-nav="prev"><span class="et">Anterior</span><span class="tit"></span></button><button type="button" data-nav="next"><span class="et">Siguiente</span><span class="tit"></span></button></div>
+<footer class="pie"><span>Bottifact · Estudios de producto</span><p>Cuatro capítulos, una pregunta. Datos ilustrativos, sin solicitudes ni registros reales.</p></footer>
+</main>

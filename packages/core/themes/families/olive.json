@@ -1,0 +1,19 @@
+{
+  "id": "oliva",
+  "nombre": "Oliva",
+  "grupo": "editorial",
+  "descripcion": "Botánico · verde",
+  "light": "oliva",
+  "dark": {
+    "papel": "#151a12",
+    "panel": "#1d2519",
+    "panel-2": "#2a3425",
+    "tinta": "#e6edda",
+    "tinta-2": "#c0cbb0",
+    "tinta-3": "#a4b196",
+    "naranja": "#b4cb86",
+    "verde": "#9bcca3",
+    "rojo": "#eda19a",
+    "azul": "#a4c8e2"
+  }
+}

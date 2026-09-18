@@ -6,7 +6,7 @@
 **/.DS_Store
 **/.venv
 **/node_modules
-descargas
+dist
 data
 backups
 private
@@ -14,7 +14,7 @@ private
 *.db
 *.pem
 *.key
-auditoria/capturas
+tests/screenshots
 **/.env
 **/.env.*
 **/*.env
@@ -22,3 +22,8 @@ auditoria/capturas
 **/*.db
 **/*.pem
 **/*.key
+
+**/dist
+packages/core/src/generated-*.json
+packages/core/src/generated-ids.ts
+packages/core/src/generated-assets.ts

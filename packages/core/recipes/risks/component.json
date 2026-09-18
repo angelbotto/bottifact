@@ -1,0 +1,14 @@
+{
+  "id": "risks",
+  "legacyId": "riesgos",
+  "category": "reportes",
+  "title": "Registro de riesgos",
+  "dependencies": [
+    "packages/core/styles/fonts.css",
+    "packages/core/styles/artifact.css",
+    "packages/core/components/audio.js",
+    "packages/core/components/controls.js",
+    "packages/core/components/editorial-pieces.js",
+    "packages/core/components/reader.js"
+  ]
+}

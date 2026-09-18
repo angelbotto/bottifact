@@ -14,7 +14,7 @@ from portal.auth import send_code
 from portal.settings import validate_origin
 import portal.test_installer as installer_fixtures
 updater=installer_fixtures.updater
-from scripts.configurar_portal import configure
+from scripts.configure_portal import configure
 
 
 class SelfHostTests(unittest.TestCase):

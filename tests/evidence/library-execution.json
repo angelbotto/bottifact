@@ -1,0 +1,17 @@
+{
+  "utc": "2026-09-15T05:54:39.417104+00:00",
+  "url": "http://127.0.0.1:8768/examples/generated/library.html",
+  "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.7871.47 Safari/537.36",
+  "combinaciones": 162,
+  "deep": {
+    "hash": "#receta-calor",
+    "page": "graficas",
+    "top": 124.390625
+  },
+  "pdf_paginas": 69,
+  "limitaciones": [
+    "Eventos DOM y foco programático, no prueba de teclado físico ni lector de pantalla.",
+    "No audición manual de audio ni medición de hardware móvil.",
+    "No ejecuta Ghost ni GScan."
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "liftit",
+  "nombre": "Liftit",
+  "grupo": "marca",
+  "descripcion": "LMS · Ribbon, Bay y coral",
+  "light": {
+    "papel": "#FFFFFF",
+    "panel": "#F3F5F8",
+    "panel-2": "#EAEBF4",
+    "tinta": "#181A2A",
+    "tinta-2": "#2B3492",
+    "tinta-3": "#555A71",
+    "naranja": "#3E54ED",
+    "verde": "#247A3C",
+    "rojo": "#B93732",
+    "azul": "#2B3492",
+    "marca-acento": "#465EFF",
+    "marca-secundario": "#FF7A57"
+  },
+  "dark": {
+    "papel": "#10121C",
+    "panel": "#181A2A",
+    "panel-2": "#232842",
+    "tinta": "#FFFFFF",
+    "tinta-2": "#DDDEE8",
+    "tinta-3": "#A7ACC4",
+    "naranja": "#A2ADFF",
+    "verde": "#7CD998",
+    "rojo": "#FF9C85",
+    "azul": "#BEBAFF",
+    "marca-acento": "#465EFF",
+    "marca-secundario": "#FF7A57"
+  },
+  "fuente": "https://github.com/Liftitapp/lms-web-app/blob/d4d830424972a5cb5f5e364c6bdffd3d253a3756/src/shared/tokens/colors.ts"
+}

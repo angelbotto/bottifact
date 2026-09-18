@@ -1,6 +1,6 @@
 __pycache__/
 .DS_Store
-descargas/
+dist/
 .env
 .env.*
 !.env.example
@@ -13,3 +13,18 @@ node_modules/
 data/
 backups/
 private/
+**/dist/
+node_modules/
+coverage/
+playwright-report/
+tests/screenshots/
+packages/core/src/generated-data.json
+packages/core/src/generated-ids.ts
+packages/*/LICENSE
+packages/*/NOTICE
+packages/core/src/generated-*.json
+packages/*/licenses/
+
+# Legacy local build output (never publish historical archives).
+descargas/
+packages/core/src/generated-assets.ts

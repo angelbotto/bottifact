@@ -1,0 +1,14 @@
+{
+  "detected": true,
+  "instruction_read": true,
+  "registry_read": true,
+  "generator_from_hermes_path": true,
+  "artifact_validated": true,
+  "canonical": "/Users/example/.claude/skills/nota-tikin",
+  "hermes_link": "/Users/example/.hermes/skills/nota-tikin",
+  "https_sha256": {
+    "examples/generated/priorities.html": "0ebfb7e15cfd8ec988531d6fd7604bf78a8290b52e26d0b732511208f5659604",
+    "examples/generated/library.html": "625d257e59f0dc038a375c964c5f65ae464d1e88c09e4a0b77b90ce19b432b49"
+  },
+  "limit": "Detección y lectura por herramientas reales de Hermes; no es una conversación nueva con el modelo ni una prueba en el MacBook."
+}

@@ -1,0 +1,35 @@
+{
+  "id": "catabum",
+  "nombre": "Catabum",
+  "grupo": "marca",
+  "descripcion": "Comunidad · violeta y magenta",
+  "light": {
+    "papel": "#FCF9FF",
+    "panel": "#F5EEFF",
+    "panel-2": "#EBE1FA",
+    "tinta": "#1A0D2E",
+    "tinta-2": "#463252",
+    "tinta-3": "#685375",
+    "naranja": "#6633C6",
+    "verde": "#246C3F",
+    "rojo": "#B92158",
+    "azul": "#464FA1",
+    "marca-acento": "#7C4DFF",
+    "marca-secundario": "#FF3E81"
+  },
+  "dark": {
+    "papel": "#1A0D2E",
+    "panel": "#24133C",
+    "panel-2": "#311F4B",
+    "tinta": "#FFFFFF",
+    "tinta-2": "#E4D8F3",
+    "tinta-3": "#BDAACD",
+    "naranja": "#C5AAFF",
+    "verde": "#80DEA3",
+    "rojo": "#FF9BBE",
+    "azul": "#AEB8FF",
+    "marca-acento": "#7C4DFF",
+    "marca-secundario": "#FF3E81"
+  },
+  "fuente": "https://github.com/CATABUM-SAS/catabum-V2.0/blob/6e92cb3c33660f22b843f3d655f91ea3b5e9b7d2/app/lib/core/theme/tokens/body_tokens.dart"
+}

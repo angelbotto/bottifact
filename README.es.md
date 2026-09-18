@@ -1,53 +1,73 @@
 # Bottifact
 
-![Bottifact: documentos que siguen vivos después del chat](docs/assets/bottifact-banner.svg)
+Biblioteca de componentes, skill para agentes y portal opcional para crear, compartir y revisar artefactos HTML. Incluye 82 recetas, 15 familias de temas con claro/oscuro/sistema, comentarios, notas, versiones, búsqueda y grafos de relaciones.
 
-**Crea con tu agente. Comparte con contexto. Hospédalo donde quieras.**
+[README completo y variables de entorno](README.md) · [Documentación](docs/README.md) · [Arquitectura](docs/architecture.md)
 
-[README en inglés](README.md) · [Despliegue propio](self-hosting.md) · [Componentes](componentes.md) · [Contribuir](CONTRIBUTING.md)
+## Instalar el skill
 
-Bottifact combina una biblioteca editorial de HTML, un skill portable para Claude Code, Codex y Hermes, y un portal colaborativo opcional. Sirve para crear reportes, artículos, documentación, presentaciones y prototipos con datos, notas al margen y revisión contextual.
-
-Incluye **82 recetas, 15 familias de temas con modos claro/oscuro/sistema y seis combinaciones tipográficas**. Hay tablas interactivas, gráficas, globos, código, cronologías, galerías, anotaciones manuscritas y comentarios flotantes. El inventario verificable está en [registro.json](registro.json).
-
-## Instalar sin depender de botto.is
-
-Necesitas Python 3.10 o posterior. Para generar no hacen falta Docker, Node ni paquetes externos de Python.
+Python 3.10+; generar HTML no requiere cuenta, Node ni variables de entorno.
 
 ```bash
 git clone https://github.com/angelbotto/bottifact.git
 cd bottifact
-python3 scripts/empaquetar.py
-python3 scripts/actualizar.py --paquete descargas/bottifact-portable.zip
+python3 scripts/package.py
+python3 scripts/update.py --package dist/bottifact-portable.zip
 ```
 
-Instala una biblioteca compartida y enlaces para los tres agentes. Conserva carpetas de skill existentes y respalda actualizaciones. No crea cuentas ni sube documentos. Abre una conversación nueva y pide: «Usa el skill bottifact». Para actualizar una instalación local, descarga una versión nueva y repite los dos últimos comandos.
+Instala una biblioteca compartida y enlaces para Claude Code, Codex y Hermes. Conserva carpetas independientes existentes. Añade `~/.local/bin` al PATH y recarga el descubrimiento de skills del agente. No instala un skill en la web de ChatGPT.
 
-También hay ZIP y SHA-256 en [Releases](https://github.com/angelbotto/bottifact/releases). ChatGPT depende de las capacidades de importación de tu cuenta; el instalador de terminal no modifica su servicio en la nube.
-
-## Tener tu propio portal
-
-Usa Docker Compose v2, tu dominio y tus credenciales. No necesitas una cuenta de botto.is, Cloudflare ni Supabase.
+Desde un portal propio:
 
 ```bash
-python3 scripts/configurar_portal.py \
-  --origin https://artifacts.tudominio.com --admin tu@tudominio.com
-docker compose -f compose.yaml -f deploy/https.yaml up -d --build
-docker compose exec app python -m portal.manage bootstrap --email tu@tudominio.com
+curl -fsSL https://artifacts.example.com/install.sh -o /tmp/bottifact-install.sh
+# Revisa el script antes de ejecutarlo.
+bash /tmp/bottifact-install.sh
+bottifact connect --server https://artifacts.example.com
 ```
 
-El dominio debe apuntar a tu servidor y los puertos 80/443 estar disponibles. El primer comando crea un `.env` privado con secreto aleatorio; el último entrega un enlace de administrador temporal de un solo uso. Configura Google o códigos por correo para el ingreso habitual. Si ya tienes proxy HTTPS, usa solamente el Compose principal.
+El token se obtiene iniciando sesión en el portal. El CLI lo pide sin mostrarlo. Actualizar: `bottifact update`. Para instalaciones independientes, reconstruye el ZIP y repite la instalación local.
 
-El portal guarda archivos y SQLite en volúmenes propios. Permite documentos privados, públicos o por enlace, permisos por cuenta/correo, notas privadas, comentarios centralizados, versiones, buscador y vistas de galería, lista, tabla y relaciones. El worker realiza respaldos verificados. Lee la [guía de despliegue, operación y recuperación](self-hosting.md) antes de compartirlo.
+## Desplegar tu portal
 
-## El contexto vuelve al agente
+```bash
+python3 scripts/configure_portal.py \
+  --origin https://artifacts.example.com --admin owner@example.com
+docker compose -f compose.yaml -f deploy/https.yaml up -d --build
+```
 
-Al exportar comentarios se conserva documento, versión, sección, cita y contexto de origen. Puedes registrar agente, sesión y dispositivo al publicar. Esto ayuda a retomar el trabajo sin copiar observaciones sueltas.
+Configura DNS y puertos 80/443. El comando genera un `.env` privado. Requiere `BOTTIFACT_ORIGIN`, `BOTTIFACT_DOMAIN`, `BOTTIFACT_ADMIN_EMAILS` y un `BOTTIFACT_AUTH_SECRET` aleatorio. Google usa `BOTTIFACT_GOOGLE_ENABLED`, `BOTTIFACT_GOOGLE_ID` y `BOTTIFACT_GOOGLE_SECRET`. Correo usa `BOTTIFACT_EMAIL_PROVIDER`, `BOTTIFACT_EMAIL_URL`, `BOTTIFACT_EMAIL_FROM` y `BOTTIFACT_EMAIL_KEY`. La tabla completa, valores predeterminados y requisitos están en el [README](README.md#environment-variables) y [`.env.example`](.env.example).
 
-El mapa conecta etiquetas y colecciones compartidas: no interpreta automáticamente conversaciones ni demuestra relaciones causales. La sincronización de transcripciones, un servidor MCP y el aprendizaje automático de preferencias están en el [roadmap](ROADMAP.md), no en esta versión.
+Primer administrador:
 
-## Explorar y aportar
+```bash
+docker compose exec app python -m portal.manage bootstrap --email owner@example.com
+```
 
-Abre `guia.html` tras clonar para ver la biblioteca. Consulta [guia-uso.md](guia-uso.md), [temas.md](temas.md), [voz-ejecutiva.md](voz-ejecutiva.md) y [biblioteca-conectada.md](biblioteca-conectada.md). Puedes aportar componentes, accesibilidad, traducciones, despliegues o correcciones siguiendo [CONTRIBUTING.md](CONTRIBUTING.md).
+Abre el enlace temporal en privado. Configura Google o correo antes de invitar usuarios. No necesitas botto.is, Cloudflare ni Supabase. [Autenticación, backups y actualizaciones](docs/self-hosting.md).
 
-Código y documentación originales bajo [MIT](LICENSE). Las fuentes, audios y recursos de terceros conservan sus avisos; consulta [NOTICE](NOTICE). Los logos no conceden derechos de marca.
+## Componentes y React
+
+Las recetas viven en `packages/core/recipes/`, los temas en `packages/core/themes/families/` y las interacciones en `packages/core/components/`. React añade 8 exports nativos y un visor aislado para las 82 recetas. **No son 82 componentes React reescritos**. Los paquetes aún no están publicados en npm; usa el workspace o tarballs según la [guía React](docs/react.md).
+
+```bash
+npm ci
+npm run build
+npm run dev
+```
+
+Para contribuir: [guía de componentes](docs/contributing-components.md). Los archivos nuevos tienen nombres en inglés; los identificadores persistidos conservan compatibilidad.
+
+## Comentarios, sesiones y grafos
+
+Publica registrando `--agent`, `--session` y `--device`. Exporta comentarios y notas con el contexto del artefacto, versión, sección y origen:
+
+```bash
+bottifact feedback --artifact-id ARTIFACT_ID --output /tmp/bottifact-feedback
+```
+
+Vuelve a la sesión original y pide al agente leer `feedback.md` y `context.json`. La entrega es manual: no inyecta mensajes ni modifica conversaciones automáticamente. [Flujo completo](docs/feedback-and-sessions.md).
+
+Los grafos relacionan artefactos autorizados mediante etiquetas y colecciones compartidas, con razones visibles. La clasificación local no es un modelo semántico ni lee tus chats. [Modelo y límites](docs/graphs.md).
+
+Las capturas públicas deben usar exclusivamente ejemplos sintéticos. [Política de capturas](docs/screenshots.md). Código MIT; licencias de terceros en [NOTICE](NOTICE) y [licenses/](licenses).

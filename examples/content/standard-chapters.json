@@ -1,0 +1,16 @@
+{
+  "titulo": "Una base que sí acompaña cada documento",
+  "descripcion": "Apariencia, sonido, comentarios y lectura en una composición reproducible.",
+  "paginas": [
+    {
+      "id": "experiencia",
+      "titulo": "La experiencia",
+      "contenido": "standard-content.html"
+    },
+    {
+      "id": "evidencia",
+      "titulo": "El contrato",
+      "contenido": "standard-evidence.html"
+    }
+  ]
+}

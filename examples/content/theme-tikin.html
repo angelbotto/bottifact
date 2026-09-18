@@ -1,0 +1,50 @@
+<section id="lectura"><h2>Primero, entender el movimiento.</h2><p>Propongo leer el corte financiero desde el saldo, sus movimientos y las excepciones que necesitan explicación. Esta composición es una muestra de la biblioteca: todas las cifras son ilustrativas y cada pieza tiene su propio conjunto de datos. No representa actividad de Tikin.</p></section><section id="movimientos"><h2>Del saldo al cambio</h2><p>La cascada permite seguir entradas y salidas. Antes de usarla con información real, quiero confirmar moneda, período y qué partidas componen el cierre.</p></section><figure class="pieza ancho" id="cascada-ejemplo" data-reporte="cascada">
+  <h3>Cómo se llega al resultado</h3>
+  <p>Horas disponibles, ajustes y trabajo añadido. Cada tramo empieza donde termina el anterior.</p>
+  <div class="tabla-caja" tabindex="0" role="region" aria-label="Balance de capacidad en horas, desplazable">
+    <table><caption>Balance ilustrativo · eje X en horas</caption>
+      <thead><tr><th scope="col">Concepto</th><th scope="col">Cambio (h)</th><th scope="col">Acumulado (h)</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Capacidad inicial</th><td data-valor="120">+120</td><td>120</td></tr>
+        <tr><th scope="row">Mantenimiento</th><td data-valor="-30">−30</td><td>90</td></tr>
+        <tr><th scope="row">Apoyo adicional</th><td data-valor="20">+20</td><td>110</td></tr>
+        <tr><th scope="row">Revisión</th><td data-valor="-15">−15</td><td>95</td></tr>
+      </tbody>
+      <tfoot><tr><th scope="row">Resultado</th><td>Horas netas</td><td>95</td></tr></tfoot>
+    </table>
+  </div>
+  <figcaption>Ejemplo: 120 − 30 + 20 − 15 = 95 h. Signos y tabla distinguen aumentos y reducciones sin depender del color.</figcaption>
+</figure><div class="apuntes ancho" id="apuntes-ejemplo">
+  <section class="apunte izquierda">
+    <div class="apunte-cuerpo"><h3>Una decisión necesita contexto.</h3><p>La evidencia sirve cuando nos ayuda a <span data-subrayar="referencia">decidir mejor</span>. Un reporte puede dejar una pregunta breve al margen sin interrumpir el argumento.</p></div>
+    <aside class="apunte-nota" aria-label="Apunte a la izquierda"><p class="manuscrita" data-mano="fuente" data-escritura-sonora id="apunte-izquierdo">menos ruido, más criterio.</p><button class="gesto-repetir" type="button" data-mano-repetir="apunte-izquierdo" data-audio="escritura" aria-label="Repetir apunte izquierdo" title="Repetir apunte izquierdo"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></svg></button></aside>
+  </section>
+  <section class="apunte">
+    <div class="apunte-cuerpo"><h3>Explicar también es editar.</h3><p>Antes de agregar otra gráfica, prueba a <span data-subrayar="referencia">quitar lo que sobra</span>. La anotación acompaña al párrafo; el subrayado se dibuja cuando aparece.</p><p>Corrección ilustrativa: <del data-subrayar="tachado">cinco días</del> <ins>tres días</ins>. Conserva visible el cambio y explica su motivo.</p></div>
+    <aside class="apunte-nota" aria-label="Apunte a la derecha"><p class="manuscrita" data-mano="fuente" data-escritura-sonora id="apunte-derecho">¿se entiende sin explicarlo?</p><button class="gesto-repetir" type="button" data-mano-repetir="apunte-derecho" data-audio="escritura" aria-label="Repetir apunte derecho" title="Repetir apunte derecho"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></svg></button></aside>
+  </section>
+</div><section id="conciliar"><h2>La diferencia debe poder explicarse</h2><p>Una conciliación necesita dos fuentes comparables. Aquí la tabla permite explorar un ejemplo; una coincidencia en el total no prueba que cada registro sea correcto.</p></section><figure class="pieza amplio" id="conciliacion-ejemplo" data-reporte="conciliacion">
+  <h3>Una diferencia necesita explicación</h3>
+  <div class="tabla-caja densa" tabindex="0" role="region" aria-label="Conciliación de operaciones, desplazable">
+    <table class="tabla-calculo"><caption>Operaciones esperadas y observadas · ejemplo</caption>
+      <thead><tr><th scope="col">Canal</th><th scope="col">Esperadas</th><th scope="col">Observadas</th><th scope="col">Diferencia</th><th scope="col">Explicación</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Web</th><td data-valor="120">120</td><td data-valor="118">118</td><td>−2</td><td>Dos operaciones siguen en revisión.</td></tr>
+        <tr><th scope="row">App</th><td data-valor="80">80</td><td data-valor="80">80</td><td>0</td><td>Conteos coincidentes.</td></tr>
+        <tr><th scope="row">Asistido</th><td data-valor="30">30</td><td data-valor="33">33</td><td>+3</td><td>Tres registros pendientes de clasificar.</td></tr>
+      </tbody>
+      <tfoot><tr><th scope="row">Total</th><td>230</td><td>231</td><td>1</td><td>El saldo neto no compensa las diferencias por canal.</td></tr></tfoot>
+    </table>
+  </div>
+  <figcaption>Datos ilustrativos. Diferencia = observado − esperado; una diferencia cero no prueba igualdad de los registros individuales.</figcaption>
+</figure><section id="criterio"><h2>Conservar el razonamiento de la decisión</h2><p>Una propuesta debe dejar visibles su fundamento, alternativas y condiciones de revisión. La siguiente ficha muestra la estructura con un ejemplo de producto, no una decisión aprobada en Tikin.</p></section><aside class="pieza ficha-decision" id="decision-ejemplo" aria-labelledby="decision-titulo">
+  <p class="ceja">Decisión 02 · ejemplo</p>
+  <h3 id="decision-titulo">Una revisión al final del registro</h3>
+  <p>Validar la información en un único paso antes de enviarla.</p>
+  <dl>
+    <div><dt>Por qué</dt><dd>Permite detectar omisiones sin pedir a la persona que repita datos.</dd></div>
+    <div><dt>Alternativa considerada</dt><dd>Confirmar cada campo por separado; interrumpe la tarea con demasiada frecuencia.</dd></div>
+    <div><dt>Qué falta comprobar</dt><dd>Que se detecten los errores antes del envío en una prueba de uso.</dd></div>
+    <div><dt>Cuándo revisarla</dt><dd>Si la revisión final se omite o no ayuda a corregir los errores.</dd></div>
+  </dl>
+</aside><p class="procedencia">Identidad: blanco, negro y rojo; logo original de la landing. <a href="examples/generated/brands.html#marca-tikin">Ver colores originales, fuentes y límites</a>.</p>

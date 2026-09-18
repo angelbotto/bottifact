@@ -1,0 +1,71 @@
+{
+  "documentos_publicados": {
+    "examples/generated/guide.html": {
+      "titulo": "Nota Tikin · Guía de uso y componentes",
+      "documento_id": "nota-d0c75ccb23234396b895a2b5"
+    },
+    "examples/generated/linear-dark.html": {
+      "titulo": "Nota Tikin · Revisión compartida",
+      "documento_id": "nota-laboratorio-colaborativo"
+    },
+    "examples/generated/standard.html": {
+      "titulo": "Una base que sí acompaña cada documento",
+      "documento_id": "nota-18eb8a62218bfde51a4a440b"
+    },
+    "examples/generated/library.html": {
+      "titulo": "tikin · Biblioteca editorial"
+    },
+    "examples/generated/checks.html": {
+      "titulo": "Nota Tikin · regresiones"
+    },
+    "examples/generated/linear-light.html": {
+      "titulo": "Nota Tikin · Revisión compartida",
+      "documento_id": "nota-laboratorio-colaborativo"
+    },
+    "examples/generated/template.html": {
+      "titulo": "Nota Tikin — la forma también explica"
+    },
+    "examples/generated/liftit.html": {
+      "titulo": "Liftit · Lectura de operación",
+      "documento_id": "nota-7068c39c9ae0e14e27ec1135"
+    },
+    "examples/generated/themes.html": {
+      "titulo": "Nota Tikin · Familias y modos",
+      "documento_id": "nota-guia-temas"
+    },
+    "examples/generated/priorities.html": {
+      "titulo": "Lo que sigue en Nota Tikin",
+      "documento_id": "nota-f585ac38850aa86a14b773fe"
+    },
+    "examples/generated/collaborative.html": {
+      "titulo": "Nota Tikin · Revisión compartida",
+      "documento_id": "nota-laboratorio-colaborativo"
+    },
+    "examples/generated/chapters.html": {
+      "titulo": "Nota Tikin — capítulos"
+    },
+    "examples/generated/report.html": {
+      "titulo": "tikin · Una revisión antes de confirmar"
+    },
+    "examples/generated/blueprint.html": {
+      "titulo": "Blueprint · Plano de una confirmación",
+      "documento_id": "nota-4c1e42b93b608cb0553de9c8"
+    },
+    "examples/generated/globe.html": {
+      "titulo": "Nota Tikin — globo de rutas"
+    },
+    "examples/generated/evidence.html": {
+      "titulo": "Nota Tikin · Ocho formas de explicar",
+      "documento_id": "nota-1422a776360cd0b3d51f55d7"
+    },
+    "examples/generated/standard-chapters.html": {
+      "titulo": "Una base que sí acompaña cada documento",
+      "documento_id": "nota-18eb8a62218bfde51a4a440b"
+    },
+    "examples/generated/hacker.html": {
+      "titulo": "Hacker · Contrato, código y evidencia",
+      "documento_id": "nota-89402d572e03e91cf880a944"
+    }
+  },
+  "nota": "Identidades de documentos anteriores al cambio de marca; no modificar por estética."
+}

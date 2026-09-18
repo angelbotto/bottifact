@@ -1,0 +1,33 @@
+"""Flota Colombia: geometría visible, controles, ciclo de vida y fallback en Orca."""
+import json,base64
+from check_browser import call,evaluate,save,ROOT
+URL='http://127.0.0.1:8768/examples/generated/liftit.html'
+call('goto','--url',URL);call('exec','--command','set viewport 1440 960');evaluate('document.fonts.ready.then(()=>true)');call('screenshot')
+evaluate('window.fleet=NotaFlota.get(document.querySelector("[data-flota]"));fleet.element.scrollIntoView({block:"center",behavior:"instant"});true');call('screenshot')
+assert evaluate('!!fleet.renderer && fleet.land.geometry.attributes.position.count>0')
+rows=[]
+for width,height in [(320,740),(390,844),(1440,960)]:
+ call('exec','--command',f'set viewport {width} {height}')
+ result=evaluate('''(async()=>{const rows=[];for(const theme of ['light','dark','sea','oliva','arcilla','ciruela','liftit','blueprint','hacker']){const input=document.querySelector('[data-elegir-tema][value="'+theme+'"]');input.checked=true;input.dispatchEvent(new Event('change',{bubbles:true}));for(const mode of ['region','world','route']){fleet.buttons[mode].click();await new Promise(r=>setTimeout(r,30));const surface=fleet.surface.getBoundingClientRect(),stage=fleet.stage;const labels=fleet.cityLabels.filter(x=>!x.el.hidden).map(({city,el})=>{const r=el.getBoundingClientRect();return {city:city.name,inside:r.left>=surface.left&&r.right<=surface.right&&r.top>=surface.top&&r.bottom<=surface.bottom}});const endpoints=fleet.routes.filter(x=>x.mesh.visible).flatMap(x=>[x.curve.getPoint(0),x.curve.getPoint(1)]).map(x=>fleet.point(x));rows.push({theme,mode,width:innerWidth,documentWidth:document.documentElement.scrollWidth,labels,endpointsInside:endpoints.every(p=>p.x>=0&&p.x<=surface.width&&p.y>=0&&p.y<=surface.height),scroll:stage.scrollWidth>stage.clientWidth?{end:(stage.scrollLeft=stage.scrollWidth),focus:stage.tabIndex,name:stage.getAttribute('aria-label'),overflow:getComputedStyle(stage).overflowX}:null,truckCount:fleet.trucks.filter(x=>!x.hidden).length});}}return rows})()''')
+ for row in result:
+  assert row['documentWidth']==width and row['endpointsInside'] and all(x['inside'] for x in row['labels']),row
+  if row['scroll']:assert row['scroll']['end']>0 and row['scroll']['focus']==0 and row['scroll']['name'] and row['scroll']['overflow']=='auto',row
+  assert row['truckCount']==(0 if row['mode']=='world' else 1 if row['mode']=='route' else 3),row
+ rows+=result
+ print(width,'px: nueve paletas, tres vistas, extremos y nombres visibles',flush=True)
+evaluate('fleet.stage.scrollIntoView({block:"center",behavior:"instant"});true');call('screenshot')
+# Explicit lifecycle checks. Movement reduced through an MQL property override, not OS automation.
+checks=evaluate('''(async()=>{const out={};fleet.select('LFT-034');out.selection=fleet.selected==='LFT-034'&&fleet.focusRoute&&fleet.detail.textContent.includes('Congestión');fleet.seek(100);out.end=!fleet.frame&&!fleet.playing&&fleet.progress===100;fleet.seek(20);fleet.visible=true;fleet.playing=true;fleet.start();await new Promise(r=>setTimeout(r,200));out.play=fleet.progress>20&&fleet.frames>0;fleet.visible=false;fleet.stop();const before=fleet.frames;await new Promise(r=>setTimeout(r,100));out.offscreen=!fleet.frame&&fleet.frames===before;fleet.visible=true;Object.defineProperty(fleet.motion,'matches',{configurable:true,value:true});fleet.motion.dispatchEvent(new Event('change'));fleet.start();out.reduced=!fleet.frame&&!fleet.playing;fleet.seek(60);out.manual=fleet.progress===60&&!fleet.frame;delete fleet.motion.matches;fleet.motion.dispatchEvent(new Event('change'));const owner=fleet.element,table=owner.querySelector('table').outerHTML;fleet.destroy();out.destroy=!NotaFlota.get(owner)&&!fleet.frame&&owner.querySelector('table').outerHTML===table&&!owner.querySelector('canvas');const saved=window.THREE;window.THREE=undefined;const fallback=NotaFlota.init(owner)[0];out.fallback=!fallback.renderer&&fallback.stage.hidden&&!fallback.error.hidden&&fallback.cards.length===3&&fallback.play.disabled;fallback.select('LFT-034');out.fallbackSelection=fallback.detail.textContent.includes('Congestión');fallback.destroy();window.THREE=saved;window.fleet=NotaFlota.init(owner)[0];out.idempotent=NotaFlota.init(owner)[0]===fleet;return out})()''')
+assert all(checks.values()),checks
+# Invalid model does not replace the original table or allocate a canvas.
+invalid=evaluate('''(()=>{const owner=fleet.element,table=owner.querySelector('table');fleet.destroy();const cell=table.tBodies[0].rows[0].cells[3],saved=cell.dataset.valor;cell.dataset.valor='101';const result=NotaFlota.init(owner)[0],ok=result===null&&!owner.querySelector('canvas')&&owner.contains(table)&&!!owner.querySelector('[data-error-flota]');cell.dataset.valor=saved;window.fleet=NotaFlota.init(owner)[0];return ok})()''');assert invalid
+# Plain map fix: all curves precede markers, both ends round and full city names retained.
+plain=evaluate('''(()=>{const x=NotaAnalitica.get(document.querySelector('[data-analitica=rutas]')),nodes=[...x.chart.children],paths=nodes.filter(n=>n.matches('path[data-registro]')),circles=nodes.filter(n=>n.tagName==='circle');return {paths:paths.length,cities:circles.length,round:paths.every(n=>n.getAttribute('stroke-linecap')==='round'),layers:Math.max(...paths.map(n=>nodes.indexOf(n)))<Math.min(...circles.map(n=>nodes.indexOf(n))),names:['Bogotá','Medellín','Cali','Barranquilla'].every(name=>[...x.chart.querySelectorAll('text')].some(n=>n.textContent===name))}})()''')
+assert plain==dict(paths=3,cities=4,round=True,layers=True,names=True),plain
+# Capture full globe, national overview and focused route; center the local mobile scroller.
+for width,height in [(320,740),(390,844),(1440,960)]:
+ call('exec','--command',f'set viewport {width} {height}')
+ for mode in ['world','region','route']:
+  evaluate('(()=>{const input=document.querySelector("[data-elegir-tema][value=liftit]");input.checked=true;input.dispatchEvent(new Event("change",{bubbles:true}));fleet.buttons.'+mode+'.click();fleet.stage.scrollIntoView({block:"center",behavior:"instant"});return true})()');call('screenshot');(ROOT/'tests/screenshots'/f'flota-{mode}-{width}.png').write_bytes(base64.b64decode(call('screenshot')['data']))
+save('flota-verificacion.json',{'views':rows,'lifecycle':checks,'invalidData':invalid,'plainMap':plain,'limits':['Orca embedded browser, no MacBook hardware test.','Reduced motion checked with an explicit MQL override; lifecycle uses a visible stage and explicit stop.','No GPS source connected. Demo does not represent real roads, speed, ETA or delivery confirmation.']})
+print('81 vistas, lifecycle, fallback, datos inválidos y mapa plano correctos.',flush=True)

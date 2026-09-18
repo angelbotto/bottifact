@@ -1,0 +1,35 @@
+{
+  "id": "tikin",
+  "nombre": "Tikin",
+  "grupo": "marca",
+  "descripcion": "Blanco y negro · rojo Tikin",
+  "light": {
+    "papel": "#FFFFFF",
+    "panel": "#F7F7F7",
+    "panel-2": "#EFEFEF",
+    "tinta": "#000000",
+    "tinta-2": "#333333",
+    "tinta-3": "#626262",
+    "naranja": "#C51D24",
+    "verde": "#262626",
+    "rojo": "#B91C23",
+    "azul": "#575757",
+    "marca-acento": "#FC2929",
+    "marca-secundario": "#000000"
+  },
+  "dark": {
+    "papel": "#000000",
+    "panel": "#101010",
+    "panel-2": "#1C1C1C",
+    "tinta": "#FFFFFF",
+    "tinta-2": "#DEDEDE",
+    "tinta-3": "#AAAAAA",
+    "naranja": "#FF6262",
+    "verde": "#FFFFFF",
+    "rojo": "#FF8585",
+    "azul": "#BBBBBB",
+    "marca-acento": "#FC2929",
+    "marca-secundario": "#FFFFFF"
+  },
+  "fuente": "https://github.com/Tikinis/landing/blob/bcde0b5286a51b073054580dc628963914096304/src/app/globals.css"
+}

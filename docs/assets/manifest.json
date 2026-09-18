@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "images": [
+    {
+      "file": "docs/assets/react-showcase.png",
+      "source": "examples/react/main.tsx",
+      "purpose": "README React showcase; illustrative data only",
+      "synthetic": true,
+      "reviewed": true,
+      "sha256": "c9e53bb6ebace923002cd3db0a5af632cdad63097744e313747ca792bdca263e"
+    }
+  ]
+}

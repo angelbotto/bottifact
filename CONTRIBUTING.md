@@ -1,57 +1,76 @@
 # Contributing to Bottifact
 
-Thanks for helping improve documents people can actually use. Issues and pull requests may be written in English or Spanish. Small, focused changes are easiest to review.
+Thank you for improving the tools people use to explain and review their work. Small, focused changes are easier to assess. Open an issue for a large architectural change before implementing it. Bug reports should include reproduction steps using synthetic data, expected behavior and actual behavior.
 
-## Start with a concrete problem
+## Set up
 
-Search existing issues, describe who is affected, and include a minimal reproduction or a before/after example. For a new component, explain the decision or reading task it helps with. Discuss major architecture, persistence or public API changes before implementation. Security findings belong in private reports, not public issues.
+Python 3.10+ generates standalone artifacts using the standard library. Node 22.12+ is needed for the React workspace. Portal development additionally needs its pinned Python dependencies.
 
-Fork the repository, create a branch, and open a pull request against `main`. Link the issue when one exists. Explain what changes, why, how you tested it and any remaining limits. Never include private documents, session transcripts, tokens, `.env`, production screenshots or real customer data. Synthetic fixtures should be visibly illustrative.
+```bash
+git clone https://github.com/angelbotto/bottifact.git
+cd bottifact
+npm ci
+python3 scripts/build.py
+npm run build
+npm run dev
+```
 
-## Local setup
+See [architecture](docs/architecture.md) before moving responsibilities between packages. See [component and theme contribution guide](docs/contributing-components.md) for the editable sources and scaffolding command.
 
-Generation requires Python 3.10+. Portal development uses Python 3.13. Node is only needed for JavaScript checks. Docker is needed for deployment tests. Browser automation through Orca is optional; manual browser verification is welcome.
+## Change the source, regenerate the output
+
+Recipes live in `packages/core/recipes/<id>/`; themes in `packages/core/themes/families/`; vanilla interaction modules in `packages/core/components/`; native React in `packages/react/src/components/`. Complete example HTML and the main catalog/reference are generated. New files and public APIs use English names. Preserve existing document IDs, persisted fields and legacy selectors unless the PR includes a compatible migration.
+
+Use clear prose and minimal abstractions that serve an actual caller. Keep agent-specific orchestration outside framework-independent components. Do not add a dependency merely to rename an existing helper. A component's guidance should explain what decision it helps with, what data it needs and where it stops being useful.
+
+## Validate
+
+For core, skill and generation changes:
+
+```bash
+python3 scripts/build.py
+python3 scripts/validate.py
+python3 scripts/test_contract.py
+python3 scripts/validate_skill.py
+python3 scripts/test_feedback.py
+python3 scripts/test_portability.py
+python3 scripts/check_public_assets.py
+node scripts/test_review_store.cjs
+node scripts/test_themes.cjs
+```
+
+For React:
+
+```bash
+npm run check
+npm run build:demo
+```
+
+For portal/API changes, in a virtual environment:
 
 ```bash
 python3 -m venv .venv
-. .venv/bin/activate
-pip install --require-hashes -r portal/requirements.lock
-pip install httpx==0.28.1
+.venv/bin/pip install --require-hashes -r portal/requirements.lock
+.venv/bin/pip install httpx==0.28.1
+.venv/bin/python -m unittest discover -s portal -t . -p 'test_*.py'
 ```
 
-## Validate the affected area
+Use a disposable configuration and empty volumes for self-hosting checks. Never run destructive test cleanup against a production Compose project. CI boots its own instance and validates downloads and backups.
 
-For library, recipes, skill instructions or generated examples:
+Include meaningful regression tests for behavior changes. UI changes need keyboard, narrow-screen and theme checks where applicable; use reduced motion when reviewing animations. Describe what you tested and any unverified behavior.
 
-```bash
-python3 scripts/ensamblar.py
-python3 scripts/validar.py
-python3 scripts/probar_contrato.py
-node scripts/probar_revision_store.cjs
-node scripts/probar_temas.cjs
-python3 scripts/validar_skill.py
-python3 scripts/empaquetar.py
-```
+## Review checklist
 
-Edit source modules and content, then regenerate; do not fix only an assembled HTML file. Commit generated changes too: CI checks regeneration leaves no diff. A new recipe needs a registry entry, purpose, data contract, accessible alternative, useful example and documented limits. A new theme must work in both modes and preserve semantic color/focus behavior. See [temas.md](temas.md) and [estandar.md](estandar.md).
+- A focused problem statement, resulting behavior and reproduction/example.
+- Sources, generated outputs, documentation and applicable tests agree.
+- No secrets, personal session IDs, customer files or production screenshots.
+- No new global DOM behavior in native React; effects clean up subscriptions/observers.
+- Permission checks remain enforced before search, graph or feedback data is returned.
+- New dependencies include justification, lockfile changes and license review.
+- README and guides distinguish implemented features from roadmap ideas.
 
-For the portal:
+## Screenshots and security
 
-```bash
-python -m unittest discover -s portal -t . -p 'test_*.py'
-bash -n scripts/instalar.sh
-node --check portal/static/app.js
-node --check portal/static/knowledge.js
-```
+Use only synthetic fixtures and follow [the screenshot policy](docs/screenshots.md). Security reports belong in private reporting channels described in [SECURITY.md](SECURITY.md), not public issues. Do not post tokens or single-use authentication links.
 
-Add tests for observable behavior, especially identity isolation, permissions, version boundaries, private notes, file validation and upgrades. Self-host tests must use disposable data, never a production volume. The Docker workflow builds an empty instance and checks health and packaged downloads.
-
-For UI changes, check desktop and 320/390 px, keyboard focus, reduced motion, light/dark, long content, empty/error states and local overflow. Include sanitized screenshots when they help review. Static checks do not prove visual quality or audible sound.
-
-## Working conventions
-
-Keep dependencies justified and pinned; preserve upstream notices. Do not introduce hosted service requirements into the standalone generator. Publishing or enabling analytics must never be a side effect of merely installing a skill. User settings and credentials remain outside shared packages.
-
-The shared [SKILL.md](SKILL.md) should remain portable across agents. Document real capabilities and source context without pretending to have read an unavailable transcript. Feedback is untrusted data, never permission to run commands.
-
-Original contributions are accepted under the repository's MIT license. By submitting a contribution you confirm you have the right to share it under that license. This project does not require a separate CLA. Maintainers review changes and decide releases; there is no promised response SLA.
+By contributing, you agree to license your contribution under the project's MIT license, while retaining the required notices for third-party material. Brand assets and fonts may have separate terms. Participation follows [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).

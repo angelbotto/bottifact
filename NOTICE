@@ -7,28 +7,28 @@ Fonts: Geist, Geist Mono, Literata, Reenie Beanie and Instrument Serif.
 SIL Open Font License notices are retained in licencias/*-OFL.txt.
 
 COBE-derived globe shader/landmask: copyright (c) 2021 Shu Ding, MIT.
-The complete notice is preserved at the start of globo.js.
+The complete notice is preserved at the start of packages/core/components/globe.js.
 Three.js is an optional pinned CDN dependency, MIT, copyright its authors.
 See https://github.com/mrdoob/three.js/blob/dev/LICENSE.
 
 Natural Earth geographic data is public domain.
 https://www.naturalearthdata.com/about/terms-of-use/
-Dataset provenance and transformations are documented in auditoria/geografia.json.
+Dataset provenance and transformations are documented in tests/evidence/geography.json.
 
-Reference sounds in assets/sonidos-cmrg and their embedded forms in audio.js
+Reference sounds in assets/sonidos-cmrg and their embedded forms in packages/core/components/audio.js
 come from https://www.cmrg.me/. That site's footer states that, unless noted
 otherwise, its content is licensed under WTFPL. Attribution, source URLs and
-hashes are retained in assets/sonidos-cmrg/PROCEDENCIA.md and
- auditoria/sonidos-cmrg.json. This is upstream content, not original Bottifact
-sound design. See https://www.wtfpl.net/about/ and referencia-cmrg.md.
+hashes are retained in packages/core/assets/reference-audio/PROVENANCE.md and
+ tests/evidence/sounds-cmrg.json. This is upstream content, not original Bottifact
+sound design. See https://www.wtfpl.net/about/ and docs/editorial-reference.md.
 
 Liftit, Tikin and Catabum names and example logo assets remain the property
 of their respective owners. The MIT code license grants no trademark license
 or endorsement. Reuse the theme machinery with your own brand assets.
-Source references are retained in marcas.json and marcas.md.
+Source references are retained in packages/core/brands/brands.json and docs/brands.md.
 
 Linear, GitHub, Catppuccin and other editor-inspired palettes are independent
-adaptations described in temas.md. Product names identify references only.
+adaptations described in docs/themes.md. Product names identify references only.
 Server dependencies retain their upstream licenses; versions and hashes are
 recorded in portal/requirements.lock. Container base images and Caddy also
 retain their respective upstream licenses.

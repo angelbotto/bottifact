@@ -1,0 +1,19 @@
+{
+  "id": "hacker",
+  "nombre": "Hacker",
+  "grupo": "tecnico",
+  "descripcion": "Terminal · verde",
+  "light": {
+    "papel": "#f3faf5",
+    "panel": "#e7f3eb",
+    "panel-2": "#d8e9df",
+    "tinta": "#143522",
+    "tinta-2": "#315c43",
+    "tinta-3": "#4c6d5a",
+    "naranja": "#206b38",
+    "verde": "#276440",
+    "rojo": "#aa3b49",
+    "azul": "#365a9d"
+  },
+  "dark": "hacker"
+}

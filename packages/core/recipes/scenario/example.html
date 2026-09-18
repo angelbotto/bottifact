@@ -1,0 +1,14 @@
+<div class="pieza ancho" id="escenario-ejemplo" data-reporte="escenario">
+  <h3>¿Qué cambia si la tarea toma menos tiempo?</h3>
+  <p>Explora capacidad mensual con un volumen fijo. Los valores iniciales son ilustrativos.</p>
+  <form class="escenario-form" aria-label="Supuestos de capacidad mensual">
+    <label>Operaciones al mes<input name="volumen" type="number" min="0" max="1000000" step="1" value="1200" required></label>
+    <label>Antes, minutos por operación<input name="antes" type="number" min="0" max="1440" step="0.1" value="8" required></label>
+    <label>Después, minutos por operación<input name="despues" type="number" min="0" max="1440" step="0.1" value="5" required></label>
+    <button type="reset">Restablecer supuestos</button>
+  </form>
+  <div class="escenario-resultados">
+    <output data-resultado aria-live="polite">60 h/mes liberadas</output>
+    <p data-formula>1.200 × (8 − 5) ÷ 60 = 60 h/mes. Es capacidad estimada, no ahorro monetario ni una predicción.</p>
+  </div>
+</div>

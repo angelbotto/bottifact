@@ -1,0 +1,14 @@
+{
+  "id": "decision",
+  "legacyId": "decision",
+  "category": "reportes",
+  "title": "Ficha de decisión",
+  "dependencies": [
+    "packages/core/styles/fonts.css",
+    "packages/core/styles/artifact.css",
+    "packages/core/components/audio.js",
+    "packages/core/components/controls.js",
+    "packages/core/components/editorial-pieces.js",
+    "packages/core/components/reader.js"
+  ]
+}

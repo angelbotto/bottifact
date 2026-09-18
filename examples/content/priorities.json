@@ -1,0 +1,16 @@
+{
+  "titulo": "Lo que sigue en Bottifact",
+  "descripcion": "Prioridades para decidir y nuevas piezas para probar.",
+  "paginas": [
+    {
+      "id": "prioridades",
+      "titulo": "Lo que sigue.",
+      "contenido": "priorities.html"
+    },
+    {
+      "id": "piezas",
+      "titulo": "Más maneras de explicar.",
+      "contenido": "priorities-pieces.html"
+    }
+  ]
+}

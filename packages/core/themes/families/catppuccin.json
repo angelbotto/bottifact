@@ -1,0 +1,31 @@
+{
+  "id": "catppuccin",
+  "nombre": "Catppuccin",
+  "grupo": "editor",
+  "descripcion": "Latte / Mocha · pastel",
+  "light": {
+    "papel": "#eff1f5",
+    "panel": "#e6e9ef",
+    "panel-2": "#dce0e8",
+    "tinta": "#4c4f69",
+    "tinta-2": "#55586f",
+    "tinta-3": "#5e6174",
+    "naranja": "#7e34de",
+    "verde": "#247037",
+    "rojo": "#c30f34",
+    "azul": "#1e5ad4"
+  },
+  "dark": {
+    "papel": "#1e1e2e",
+    "panel": "#181825",
+    "panel-2": "#313244",
+    "tinta": "#cdd6f4",
+    "tinta-2": "#bac2de",
+    "tinta-3": "#a6adc8",
+    "naranja": "#cba6f7",
+    "verde": "#a6e3a1",
+    "rojo": "#f38ba8",
+    "azul": "#89b4fa"
+  },
+  "fuente": "https://github.com/catppuccin/catppuccin"
+}

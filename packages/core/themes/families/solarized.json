@@ -1,0 +1,31 @@
+{
+  "id": "solarized",
+  "nombre": "Solarized",
+  "grupo": "editor",
+  "descripcion": "Marfil / petróleo · cian",
+  "light": {
+    "papel": "#fdf6e3",
+    "panel": "#eee8d5",
+    "panel-2": "#e5dec9",
+    "tinta": "#384e55",
+    "tinta-2": "#4a6067",
+    "tinta-3": "#526368",
+    "naranja": "#006b7e",
+    "verde": "#4f6a00",
+    "rojo": "#ab392e",
+    "azul": "#216693"
+  },
+  "dark": {
+    "papel": "#002b36",
+    "panel": "#073642",
+    "panel-2": "#103f4b",
+    "tinta": "#d6ded7",
+    "tinta-2": "#b3c5c3",
+    "tinta-3": "#98b0b0",
+    "naranja": "#6cc2c0",
+    "verde": "#b3c56c",
+    "rojo": "#ef9a8d",
+    "azul": "#82bbe0"
+  },
+  "fuente": "https://ethanschoonover.com/solarized/"
+}

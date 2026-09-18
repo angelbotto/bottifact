@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "modos": [
+    "light",
+    "dark",
+    "system"
+  ],
+  "alias_anteriores": {
+    "system": [
+      "editorial",
+      "system"
+    ],
+    "light": [
+      "editorial",
+      "light"
+    ],
+    "dark": [
+      "editorial",
+      "dark"
+    ],
+    "linear-light": [
+      "linear",
+      "light"
+    ],
+    "linear-dark": [
+      "linear",
+      "dark"
+    ],
+    "sea": [
+      "sea",
+      "dark"
+    ],
+    "oliva": [
+      "oliva",
+      "light"
+    ],
+    "arcilla": [
+      "arcilla",
+      "light"
+    ],
+    "ciruela": [
+      "ciruela",
+      "dark"
+    ],
+    "liftit": [
+      "liftit",
+      "light"
+    ],
+    "blueprint": [
+      "blueprint",
+      "dark"
+    ],
+    "hacker": [
+      "hacker",
+      "dark"
+    ]
+  },
+  "families": [
+    "editorial",
+    "sea",
+    "olive",
+    "clay",
+    "plum",
+    "liftit",
+    "tikin",
+    "catabum",
+    "blueprint",
+    "hacker",
+    "linear",
+    "modern",
+    "github",
+    "catppuccin",
+    "solarized"
+  ]
+}

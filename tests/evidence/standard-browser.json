@@ -1,0 +1,1310 @@
+{
+  "method": "Orca viewport y eventos DOM; 36 combinaciones de pantalla/paleta. Comentarios creados sin cambio de altura y prompt comprobado; sin lector de pantalla ni clic físico de portapapeles.",
+  "records": [
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 165,
+        "right": 289,
+        "top": 150.078125,
+        "width": 124
+      },
+      "bar": {
+        "bottom": 732,
+        "left": 218,
+        "right": 312,
+        "top": 682,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 612.203125,
+        "left": 19,
+        "right": 301,
+        "top": 127.796875,
+        "width": 282
+      },
+      "documentWidth": 320,
+      "panel": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 63.5,
+        "width": 296
+      },
+      "path": "examples/generated/standard.html",
+      "scrollable": "auto",
+      "theme": "light",
+      "width": 320
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 165,
+        "right": 289,
+        "top": 150.078125,
+        "width": 124
+      },
+      "bar": {
+        "bottom": 732,
+        "left": 218,
+        "right": 312,
+        "top": 682,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 612.203125,
+        "left": 19,
+        "right": 301,
+        "top": 127.796875,
+        "width": 282
+      },
+      "documentWidth": 320,
+      "panel": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 63.5,
+        "width": 296
+      },
+      "path": "examples/generated/standard.html",
+      "scrollable": "auto",
+      "theme": "dark",
+      "width": 320
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 165,
+        "right": 289,
+        "top": 150.078125,
+        "width": 124
+      },
+      "bar": {
+        "bottom": 732,
+        "left": 218,
+        "right": 312,
+        "top": 682,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 612.203125,
+        "left": 19,
+        "right": 301,
+        "top": 127.796875,
+        "width": 282
+      },
+      "documentWidth": 320,
+      "panel": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 63.5,
+        "width": 296
+      },
+      "path": "examples/generated/standard.html",
+      "scrollable": "auto",
+      "theme": "sea",
+      "width": 320
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 165,
+        "right": 289,
+        "top": 150.078125,
+        "width": 124
+      },
+      "bar": {
+        "bottom": 732,
+        "left": 218,
+        "right": 312,
+        "top": 682,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 612.203125,
+        "left": 19,
+        "right": 301,
+        "top": 127.796875,
+        "width": 282
+      },
+      "documentWidth": 320,
+      "panel": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 63.5,
+        "width": 296
+      },
+      "path": "examples/generated/standard.html",
+      "scrollable": "auto",
+      "theme": "oliva",
+      "width": 320
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 165,
+        "right": 289,
+        "top": 150.078125,
+        "width": 124
+      },
+      "bar": {
+        "bottom": 732,
+        "left": 218,
+        "right": 312,
+        "top": 682,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 612.203125,
+        "left": 19,
+        "right": 301,
+        "top": 127.796875,
+        "width": 282
+      },
+      "documentWidth": 320,
+      "panel": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 63.5,
+        "width": 296
+      },
+      "path": "examples/generated/standard.html",
+      "scrollable": "auto",
+      "theme": "arcilla",
+      "width": 320
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 165,
+        "right": 289,
+        "top": 150.078125,
+        "width": 124
+      },
+      "bar": {
+        "bottom": 732,
+        "left": 218,
+        "right": 312,
+        "top": 682,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 612.203125,
+        "left": 19,
+        "right": 301,
+        "top": 127.796875,
+        "width": 282
+      },
+      "documentWidth": 320,
+      "panel": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 63.5,
+        "width": 296
+      },
+      "path": "examples/generated/standard.html",
+      "scrollable": "auto",
+      "theme": "ciruela",
+      "width": 320
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 213,
+        "right": 351,
+        "top": 150.078125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 836,
+        "left": 288,
+        "right": 382,
+        "top": 786,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 653.484375,
+        "left": 19,
+        "right": 371,
+        "top": 190.515625,
+        "width": 352
+      },
+      "documentWidth": 390,
+      "panel": {
+        "bottom": 832,
+        "left": 46,
+        "right": 370,
+        "top": 63.5,
+        "width": 324
+      },
+      "path": "examples/generated/standard.html",
+      "scrollable": "auto",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 213,
+        "right": 351,
+        "top": 150.078125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 836,
+        "left": 288,
+        "right": 382,
+        "top": 786,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 653.484375,
+        "left": 19,
+        "right": 371,
+        "top": 190.515625,
+        "width": 352
+      },
+      "documentWidth": 390,
+      "panel": {
+        "bottom": 832,
+        "left": 46,
+        "right": 370,
+        "top": 63.5,
+        "width": 324
+      },
+      "path": "examples/generated/standard.html",
+      "scrollable": "auto",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 213,
+        "right": 351,
+        "top": 150.078125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 836,
+        "left": 288,
+        "right": 382,
+        "top": 786,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 653.484375,
+        "left": 19,
+        "right": 371,
+        "top": 190.515625,
+        "width": 352
+      },
+      "documentWidth": 390,
+      "panel": {
+        "bottom": 832,
+        "left": 46,
+        "right": 370,
+        "top": 63.5,
+        "width": 324
+      },
+      "path": "examples/generated/standard.html",
+      "scrollable": "auto",
+      "theme": "sea",
+      "width": 390
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 213,
+        "right": 351,
+        "top": 150.078125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 836,
+        "left": 288,
+        "right": 382,
+        "top": 786,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 653.484375,
+        "left": 19,
+        "right": 371,
+        "top": 190.515625,
+        "width": 352
+      },
+      "documentWidth": 390,
+      "panel": {
+        "bottom": 832,
+        "left": 46,
+        "right": 370,
+        "top": 63.5,
+        "width": 324
+      },
+      "path": "examples/generated/standard.html",
+      "scrollable": "auto",
+      "theme": "oliva",
+      "width": 390
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 213,
+        "right": 351,
+        "top": 150.078125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 836,
+        "left": 288,
+        "right": 382,
+        "top": 786,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 653.484375,
+        "left": 19,
+        "right": 371,
+        "top": 190.515625,
+        "width": 352
+      },
+      "documentWidth": 390,
+      "panel": {
+        "bottom": 832,
+        "left": 46,
+        "right": 370,
+        "top": 63.5,
+        "width": 324
+      },
+      "path": "examples/generated/standard.html",
+      "scrollable": "auto",
+      "theme": "arcilla",
+      "width": 390
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 213,
+        "right": 351,
+        "top": 150.078125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 836,
+        "left": 288,
+        "right": 382,
+        "top": 786,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 653.484375,
+        "left": 19,
+        "right": 371,
+        "top": 190.515625,
+        "width": 352
+      },
+      "documentWidth": 390,
+      "panel": {
+        "bottom": 832,
+        "left": 46,
+        "right": 370,
+        "top": 63.5,
+        "width": 324
+      },
+      "path": "examples/generated/standard.html",
+      "scrollable": "auto",
+      "theme": "ciruela",
+      "width": 390
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 1059,
+        "right": 1197,
+        "top": 150.078125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 944,
+        "left": 1330,
+        "right": 1424,
+        "top": 894,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 698.28125,
+        "left": 500,
+        "right": 940,
+        "top": 261.703125,
+        "width": 440
+      },
+      "documentWidth": 1440,
+      "panel": {
+        "bottom": 948,
+        "left": 892,
+        "right": 1216,
+        "top": 63.5,
+        "width": 324
+      },
+      "path": "examples/generated/standard.html",
+      "scrollable": "auto",
+      "theme": "light",
+      "width": 1440
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 1059,
+        "right": 1197,
+        "top": 150.078125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 944,
+        "left": 1330,
+        "right": 1424,
+        "top": 894,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 698.28125,
+        "left": 500,
+        "right": 940,
+        "top": 261.703125,
+        "width": 440
+      },
+      "documentWidth": 1440,
+      "panel": {
+        "bottom": 948,
+        "left": 892,
+        "right": 1216,
+        "top": 63.5,
+        "width": 324
+      },
+      "path": "examples/generated/standard.html",
+      "scrollable": "auto",
+      "theme": "dark",
+      "width": 1440
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 1059,
+        "right": 1197,
+        "top": 150.078125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 944,
+        "left": 1330,
+        "right": 1424,
+        "top": 894,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 698.28125,
+        "left": 500,
+        "right": 940,
+        "top": 261.703125,
+        "width": 440
+      },
+      "documentWidth": 1440,
+      "panel": {
+        "bottom": 948,
+        "left": 892,
+        "right": 1216,
+        "top": 63.5,
+        "width": 324
+      },
+      "path": "examples/generated/standard.html",
+      "scrollable": "auto",
+      "theme": "sea",
+      "width": 1440
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 1059,
+        "right": 1197,
+        "top": 150.078125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 944,
+        "left": 1330,
+        "right": 1424,
+        "top": 894,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 698.28125,
+        "left": 500,
+        "right": 940,
+        "top": 261.703125,
+        "width": 440
+      },
+      "documentWidth": 1440,
+      "panel": {
+        "bottom": 948,
+        "left": 892,
+        "right": 1216,
+        "top": 63.5,
+        "width": 324
+      },
+      "path": "examples/generated/standard.html",
+      "scrollable": "auto",
+      "theme": "oliva",
+      "width": 1440
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 1059,
+        "right": 1197,
+        "top": 150.078125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 944,
+        "left": 1330,
+        "right": 1424,
+        "top": 894,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 698.28125,
+        "left": 500,
+        "right": 940,
+        "top": 261.703125,
+        "width": 440
+      },
+      "documentWidth": 1440,
+      "panel": {
+        "bottom": 948,
+        "left": 892,
+        "right": 1216,
+        "top": 63.5,
+        "width": 324
+      },
+      "path": "examples/generated/standard.html",
+      "scrollable": "auto",
+      "theme": "arcilla",
+      "width": 1440
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 1059,
+        "right": 1197,
+        "top": 150.078125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 944,
+        "left": 1330,
+        "right": 1424,
+        "top": 894,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 698.28125,
+        "left": 500,
+        "right": 940,
+        "top": 261.703125,
+        "width": 440
+      },
+      "documentWidth": 1440,
+      "panel": {
+        "bottom": 948,
+        "left": 892,
+        "right": 1216,
+        "top": 63.5,
+        "width": 324
+      },
+      "path": "examples/generated/standard.html",
+      "scrollable": "auto",
+      "theme": "ciruela",
+      "width": 1440
+    },
+    {
+      "path": "examples/generated/standard.html",
+      "comments": {
+        "after": 2029,
+        "before": 2029,
+        "count": "1",
+        "opened": true,
+        "prompt": "Aplica estos ajustes al artefacto «Una base que sí acompaña cada documento». Conserva el contenido y comportamiento no señalados.\n\n1. Capítulo: Una base que sí acompaña cada documento\nReferencia: #una-base\nPunto del bloque: 0% horizontal, 0% vertical\nContexto: El catálogo ofrecía comentarios y temas, pero el ejemplo de informe no cargaba los comentarios. Consultar el inventario tampoco garantizaba que Claude incluyera los controles.\nAjuste: Aclarar cómo se actualizan documentos anteriores."
+      }
+    },
+    {
+      "audio": {
+        "bottom": 200.171875,
+        "left": 165,
+        "right": 289,
+        "top": 148.578125,
+        "width": 124
+      },
+      "bar": {
+        "bottom": 732,
+        "left": 218,
+        "right": 312,
+        "top": 682,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 612.203125,
+        "left": 19,
+        "right": 301,
+        "top": 127.796875,
+        "width": 282
+      },
+      "documentWidth": 320,
+      "panel": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 62,
+        "width": 296
+      },
+      "path": "examples/generated/standard-chapters.html",
+      "scrollable": "auto",
+      "theme": "light",
+      "width": 320
+    },
+    {
+      "audio": {
+        "bottom": 200.171875,
+        "left": 165,
+        "right": 289,
+        "top": 148.578125,
+        "width": 124
+      },
+      "bar": {
+        "bottom": 732,
+        "left": 218,
+        "right": 312,
+        "top": 682,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 612.203125,
+        "left": 19,
+        "right": 301,
+        "top": 127.796875,
+        "width": 282
+      },
+      "documentWidth": 320,
+      "panel": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 62,
+        "width": 296
+      },
+      "path": "examples/generated/standard-chapters.html",
+      "scrollable": "auto",
+      "theme": "dark",
+      "width": 320
+    },
+    {
+      "audio": {
+        "bottom": 200.171875,
+        "left": 165,
+        "right": 289,
+        "top": 148.578125,
+        "width": 124
+      },
+      "bar": {
+        "bottom": 732,
+        "left": 218,
+        "right": 312,
+        "top": 682,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 612.203125,
+        "left": 19,
+        "right": 301,
+        "top": 127.796875,
+        "width": 282
+      },
+      "documentWidth": 320,
+      "panel": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 62,
+        "width": 296
+      },
+      "path": "examples/generated/standard-chapters.html",
+      "scrollable": "auto",
+      "theme": "sea",
+      "width": 320
+    },
+    {
+      "audio": {
+        "bottom": 200.171875,
+        "left": 165,
+        "right": 289,
+        "top": 148.578125,
+        "width": 124
+      },
+      "bar": {
+        "bottom": 732,
+        "left": 218,
+        "right": 312,
+        "top": 682,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 612.203125,
+        "left": 19,
+        "right": 301,
+        "top": 127.796875,
+        "width": 282
+      },
+      "documentWidth": 320,
+      "panel": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 62,
+        "width": 296
+      },
+      "path": "examples/generated/standard-chapters.html",
+      "scrollable": "auto",
+      "theme": "oliva",
+      "width": 320
+    },
+    {
+      "audio": {
+        "bottom": 200.171875,
+        "left": 165,
+        "right": 289,
+        "top": 148.578125,
+        "width": 124
+      },
+      "bar": {
+        "bottom": 732,
+        "left": 218,
+        "right": 312,
+        "top": 682,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 612.203125,
+        "left": 19,
+        "right": 301,
+        "top": 127.796875,
+        "width": 282
+      },
+      "documentWidth": 320,
+      "panel": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 62,
+        "width": 296
+      },
+      "path": "examples/generated/standard-chapters.html",
+      "scrollable": "auto",
+      "theme": "arcilla",
+      "width": 320
+    },
+    {
+      "audio": {
+        "bottom": 200.171875,
+        "left": 165,
+        "right": 289,
+        "top": 148.578125,
+        "width": 124
+      },
+      "bar": {
+        "bottom": 732,
+        "left": 218,
+        "right": 312,
+        "top": 682,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 612.203125,
+        "left": 19,
+        "right": 301,
+        "top": 127.796875,
+        "width": 282
+      },
+      "documentWidth": 320,
+      "panel": {
+        "bottom": 728,
+        "left": 12,
+        "right": 308,
+        "top": 62,
+        "width": 296
+      },
+      "path": "examples/generated/standard-chapters.html",
+      "scrollable": "auto",
+      "theme": "ciruela",
+      "width": 320
+    },
+    {
+      "audio": {
+        "bottom": 200.171875,
+        "left": 213,
+        "right": 351,
+        "top": 148.578125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 836,
+        "left": 288,
+        "right": 382,
+        "top": 786,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 653.484375,
+        "left": 19,
+        "right": 371,
+        "top": 190.515625,
+        "width": 352
+      },
+      "documentWidth": 390,
+      "panel": {
+        "bottom": 832,
+        "left": 46,
+        "right": 370,
+        "top": 62,
+        "width": 324
+      },
+      "path": "examples/generated/standard-chapters.html",
+      "scrollable": "auto",
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "audio": {
+        "bottom": 200.171875,
+        "left": 213,
+        "right": 351,
+        "top": 148.578125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 836,
+        "left": 288,
+        "right": 382,
+        "top": 786,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 653.484375,
+        "left": 19,
+        "right": 371,
+        "top": 190.515625,
+        "width": 352
+      },
+      "documentWidth": 390,
+      "panel": {
+        "bottom": 832,
+        "left": 46,
+        "right": 370,
+        "top": 62,
+        "width": 324
+      },
+      "path": "examples/generated/standard-chapters.html",
+      "scrollable": "auto",
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "audio": {
+        "bottom": 200.171875,
+        "left": 213,
+        "right": 351,
+        "top": 148.578125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 836,
+        "left": 288,
+        "right": 382,
+        "top": 786,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 653.484375,
+        "left": 19,
+        "right": 371,
+        "top": 190.515625,
+        "width": 352
+      },
+      "documentWidth": 390,
+      "panel": {
+        "bottom": 832,
+        "left": 46,
+        "right": 370,
+        "top": 62,
+        "width": 324
+      },
+      "path": "examples/generated/standard-chapters.html",
+      "scrollable": "auto",
+      "theme": "sea",
+      "width": 390
+    },
+    {
+      "audio": {
+        "bottom": 200.171875,
+        "left": 213,
+        "right": 351,
+        "top": 148.578125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 836,
+        "left": 288,
+        "right": 382,
+        "top": 786,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 653.484375,
+        "left": 19,
+        "right": 371,
+        "top": 190.515625,
+        "width": 352
+      },
+      "documentWidth": 390,
+      "panel": {
+        "bottom": 832,
+        "left": 46,
+        "right": 370,
+        "top": 62,
+        "width": 324
+      },
+      "path": "examples/generated/standard-chapters.html",
+      "scrollable": "auto",
+      "theme": "oliva",
+      "width": 390
+    },
+    {
+      "audio": {
+        "bottom": 200.171875,
+        "left": 213,
+        "right": 351,
+        "top": 148.578125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 836,
+        "left": 288,
+        "right": 382,
+        "top": 786,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 653.484375,
+        "left": 19,
+        "right": 371,
+        "top": 190.515625,
+        "width": 352
+      },
+      "documentWidth": 390,
+      "panel": {
+        "bottom": 832,
+        "left": 46,
+        "right": 370,
+        "top": 62,
+        "width": 324
+      },
+      "path": "examples/generated/standard-chapters.html",
+      "scrollable": "auto",
+      "theme": "arcilla",
+      "width": 390
+    },
+    {
+      "audio": {
+        "bottom": 200.171875,
+        "left": 213,
+        "right": 351,
+        "top": 148.578125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 836,
+        "left": 288,
+        "right": 382,
+        "top": 786,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 653.484375,
+        "left": 19,
+        "right": 371,
+        "top": 190.515625,
+        "width": 352
+      },
+      "documentWidth": 390,
+      "panel": {
+        "bottom": 832,
+        "left": 46,
+        "right": 370,
+        "top": 62,
+        "width": 324
+      },
+      "path": "examples/generated/standard-chapters.html",
+      "scrollable": "auto",
+      "theme": "ciruela",
+      "width": 390
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 1059,
+        "right": 1197,
+        "top": 150.078125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 944,
+        "left": 1330,
+        "right": 1424,
+        "top": 894,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 698.28125,
+        "left": 500,
+        "right": 940,
+        "top": 261.703125,
+        "width": 440
+      },
+      "documentWidth": 1440,
+      "panel": {
+        "bottom": 948,
+        "left": 892,
+        "right": 1216,
+        "top": 63.5,
+        "width": 324
+      },
+      "path": "examples/generated/standard-chapters.html",
+      "scrollable": "auto",
+      "theme": "light",
+      "width": 1440
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 1059,
+        "right": 1197,
+        "top": 150.078125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 944,
+        "left": 1330,
+        "right": 1424,
+        "top": 894,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 698.28125,
+        "left": 500,
+        "right": 940,
+        "top": 261.703125,
+        "width": 440
+      },
+      "documentWidth": 1440,
+      "panel": {
+        "bottom": 948,
+        "left": 892,
+        "right": 1216,
+        "top": 63.5,
+        "width": 324
+      },
+      "path": "examples/generated/standard-chapters.html",
+      "scrollable": "auto",
+      "theme": "dark",
+      "width": 1440
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 1059,
+        "right": 1197,
+        "top": 150.078125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 944,
+        "left": 1330,
+        "right": 1424,
+        "top": 894,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 698.28125,
+        "left": 500,
+        "right": 940,
+        "top": 261.703125,
+        "width": 440
+      },
+      "documentWidth": 1440,
+      "panel": {
+        "bottom": 948,
+        "left": 892,
+        "right": 1216,
+        "top": 63.5,
+        "width": 324
+      },
+      "path": "examples/generated/standard-chapters.html",
+      "scrollable": "auto",
+      "theme": "sea",
+      "width": 1440
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 1059,
+        "right": 1197,
+        "top": 150.078125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 944,
+        "left": 1330,
+        "right": 1424,
+        "top": 894,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 698.28125,
+        "left": 500,
+        "right": 940,
+        "top": 261.703125,
+        "width": 440
+      },
+      "documentWidth": 1440,
+      "panel": {
+        "bottom": 948,
+        "left": 892,
+        "right": 1216,
+        "top": 63.5,
+        "width": 324
+      },
+      "path": "examples/generated/standard-chapters.html",
+      "scrollable": "auto",
+      "theme": "oliva",
+      "width": 1440
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 1059,
+        "right": 1197,
+        "top": 150.078125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 944,
+        "left": 1330,
+        "right": 1424,
+        "top": 894,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 698.28125,
+        "left": 500,
+        "right": 940,
+        "top": 261.703125,
+        "width": 440
+      },
+      "documentWidth": 1440,
+      "panel": {
+        "bottom": 948,
+        "left": 892,
+        "right": 1216,
+        "top": 63.5,
+        "width": 324
+      },
+      "path": "examples/generated/standard-chapters.html",
+      "scrollable": "auto",
+      "theme": "arcilla",
+      "width": 1440
+    },
+    {
+      "audio": {
+        "bottom": 201.671875,
+        "left": 1059,
+        "right": 1197,
+        "top": 150.078125,
+        "width": 138
+      },
+      "bar": {
+        "bottom": 944,
+        "left": 1330,
+        "right": 1424,
+        "top": 894,
+        "width": 94
+      },
+      "dialog": {
+        "bottom": 698.28125,
+        "left": 500,
+        "right": 940,
+        "top": 261.703125,
+        "width": 440
+      },
+      "documentWidth": 1440,
+      "panel": {
+        "bottom": 948,
+        "left": 892,
+        "right": 1216,
+        "top": 63.5,
+        "width": 324
+      },
+      "path": "examples/generated/standard-chapters.html",
+      "scrollable": "auto",
+      "theme": "ciruela",
+      "width": 1440
+    },
+    {
+      "path": "examples/generated/standard-chapters.html",
+      "comments": {
+        "after": 2008,
+        "before": 2008,
+        "count": "1",
+        "opened": true,
+        "prompt": "Aplica estos ajustes al artefacto «Una base que sí acompaña cada documento». Conserva el contenido y comportamiento no señalados.\n\n1. Capítulo: La experiencia\nReferencia: #una-base\nPunto del bloque: 0% horizontal, 0% vertical\nContexto: El catálogo ofrecía comentarios y temas, pero el ejemplo de informe no cargaba los comentarios. Consultar el inventario tampoco garantizaba que Claude incluyera los controles.\nAjuste: Aclarar cómo se actualizan documentos anteriores."
+      }
+    },
+    {
+      "current": "page",
+      "indices": 1,
+      "page": "evidencia",
+      "progress": "0",
+      "tableContent": 992,
+      "tableEnd": 0,
+      "tableWidth": 992
+    },
+    {
+      "content": 544,
+      "documentWidth": 320,
+      "end": 264,
+      "overflow": "auto",
+      "table": 280,
+      "width": 320
+    },
+    {
+      "content": 544,
+      "documentWidth": 390,
+      "end": 194,
+      "overflow": "auto",
+      "table": 350,
+      "width": 390
+    }
+  ]
+}

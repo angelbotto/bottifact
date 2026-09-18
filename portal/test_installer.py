@@ -10,13 +10,13 @@ from unittest.mock import patch
 import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
-spec=importlib.util.spec_from_file_location('bottifact_updater',ROOT/'scripts/actualizar.py')
+spec=importlib.util.spec_from_file_location('bottifact_updater',ROOT/'scripts/update.py')
 updater=importlib.util.module_from_spec(spec);spec.loader.exec_module(updater)
 
 class InstallerTests(unittest.TestCase):
     def archive(self,version):
-        files={'registro.json':b'{}','VERSION.json':json.dumps({'version':version}).encode(),'SKILL.md':b'---\nname: bottifact\ndescription: Test\n---\n'}
-        for name in ['instalar.py','verificar_paquete.py']:files['scripts/'+name]=(ROOT/'scripts'/name).read_bytes()
+        files={'packages/core/registry/registry.json':b'{}','VERSION.json':json.dumps({'version':version}).encode(),'SKILL.md':b'---\nname: bottifact\ndescription: Test\n---\n'}
+        for name in ['install.py','verify_package.py']:files['scripts/'+name]=(ROOT/'scripts'/name).read_bytes()
         files['MANIFIESTO.json']=json.dumps({'formato':'bottifact-portable','version':version,'archivos':{k:hashlib.sha256(v).hexdigest() for k,v in files.items()}}).encode()
         out=io.BytesIO()
         with zipfile.ZipFile(out,'w') as z:
@@ -50,7 +50,7 @@ class InstallerTests(unittest.TestCase):
 class ShellEntryTests(unittest.TestCase):
     def test_shell_entry_explains_agents_and_propagates_failure(self):
         import os, subprocess
-        script=ROOT/'scripts/instalar.sh'
+        script=ROOT/'scripts/install.sh'
         with tempfile.TemporaryDirectory() as temporary:
             root=Path(temporary);fake=root/'curl'
             fake.write_text('#!/bin/bash\nexit 22\n');fake.chmod(0o755)

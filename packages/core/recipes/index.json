@@ -1,0 +1,410 @@
+[
+  {
+    "file": "reference/section-000.md"
+  },
+  {
+    "file": "reference/section-001.md"
+  },
+  {
+    "file": "reference/section-002.md"
+  },
+  {
+    "file": "reference/section-003.md"
+  },
+  {
+    "file": "reference/section-004.md"
+  },
+  {
+    "file": "reference/section-005.md"
+  },
+  {
+    "file": "reference/section-006.md"
+  },
+  {
+    "file": "reference/section-007.md"
+  },
+  {
+    "file": "reference/section-008.md"
+  },
+  {
+    "file": "reference/section-009.md"
+  },
+  {
+    "file": "reference/section-010.md"
+  },
+  {
+    "file": "reference/section-011.md"
+  },
+  {
+    "file": "chapter-layout/README.md",
+    "example": "chapter-layout/example.html"
+  },
+  {
+    "file": "dense-table/README.md",
+    "example": "dense-table/example.html"
+  },
+  {
+    "file": "terminal/README.md",
+    "example": "terminal/example.html"
+  },
+  {
+    "file": "handwritten-note/README.md",
+    "example": "handwritten-note/example.html"
+  },
+  {
+    "file": "reference/section-016.md"
+  },
+  {
+    "file": "reference/section-017.md"
+  },
+  {
+    "file": "bar-chart/README.md",
+    "example": "bar-chart/example.html"
+  },
+  {
+    "file": "line-chart/README.md",
+    "example": "line-chart/example.html"
+  },
+  {
+    "file": "time-series/README.md",
+    "example": "time-series/example.html"
+  },
+  {
+    "file": "scatter-plot/README.md",
+    "example": "scatter-plot/example.html"
+  },
+  {
+    "file": "distribution/README.md",
+    "example": "distribution/example.html"
+  },
+  {
+    "file": "heatmap/README.md",
+    "example": "heatmap/example.html"
+  },
+  {
+    "file": "comparison/README.md",
+    "example": "comparison/example.html"
+  },
+  {
+    "file": "totals/README.md",
+    "example": "totals/example.html"
+  },
+  {
+    "file": "sparkline/README.md",
+    "example": "sparkline/example.html"
+  },
+  {
+    "file": "sound/README.md",
+    "example": "sound/example.html"
+  },
+  {
+    "file": "writing/README.md",
+    "example": "writing/example.html"
+  },
+  {
+    "file": "coordinates/README.md",
+    "example": "coordinates/example.html"
+  },
+  {
+    "file": "stages/README.md",
+    "example": "stages/example.html"
+  },
+  {
+    "file": "reference/section-031.md"
+  },
+  {
+    "file": "reference/section-032.md"
+  },
+  {
+    "file": "reference/section-033.md"
+  },
+  {
+    "file": "appearance/README.md",
+    "example": "appearance/example.html"
+  },
+  {
+    "file": "decision/README.md",
+    "example": "decision/example.html"
+  },
+  {
+    "file": "chronology/README.md",
+    "example": "chronology/example.html"
+  },
+  {
+    "file": "article/README.md",
+    "example": "article/example.html"
+  },
+  {
+    "file": "references/README.md",
+    "example": "references/example.html"
+  },
+  {
+    "file": "glossary/README.md",
+    "example": "glossary/example.html"
+  },
+  {
+    "file": "methodology/README.md",
+    "example": "methodology/example.html"
+  },
+  {
+    "file": "before-after/README.md",
+    "example": "before-after/example.html"
+  },
+  {
+    "file": "waterfall/README.md",
+    "example": "waterfall/example.html"
+  },
+  {
+    "file": "small-multiples/README.md",
+    "example": "small-multiples/example.html"
+  },
+  {
+    "file": "reconciliation/README.md",
+    "example": "reconciliation/example.html"
+  },
+  {
+    "file": "scenario/README.md",
+    "example": "scenario/example.html"
+  },
+  {
+    "file": "journey/README.md",
+    "example": "journey/example.html"
+  },
+  {
+    "file": "prototype/README.md",
+    "example": "prototype/example.html"
+  },
+  {
+    "file": "reference/section-048.md"
+  },
+  {
+    "file": "tabs/README.md",
+    "example": "tabs/example.html"
+  },
+  {
+    "file": "finding/README.md",
+    "example": "finding/example.html"
+  },
+  {
+    "file": "report-layout/README.md",
+    "example": "report-layout/example.html"
+  },
+  {
+    "file": "reference/section-052.md"
+  },
+  {
+    "file": "archive/README.md",
+    "example": "archive/example.html"
+  },
+  {
+    "file": "author/README.md",
+    "example": "author/example.html"
+  },
+  {
+    "file": "related-reading/README.md",
+    "example": "related-reading/example.html"
+  },
+  {
+    "file": "annotations/README.md",
+    "example": "annotations/example.html"
+  },
+  {
+    "file": "revision-history/README.md",
+    "example": "revision-history/example.html"
+  },
+  {
+    "file": "criteria/README.md",
+    "example": "criteria/example.html"
+  },
+  {
+    "file": "risks/README.md",
+    "example": "risks/example.html"
+  },
+  {
+    "file": "configuration/README.md",
+    "example": "configuration/example.html"
+  },
+  {
+    "file": "reference/section-061.md"
+  },
+  {
+    "file": "data-explorer/README.md",
+    "example": "data-explorer/example.html"
+  },
+  {
+    "file": "cards/README.md",
+    "example": "cards/example.html"
+  },
+  {
+    "file": "review/README.md",
+    "example": "review/example.html"
+  },
+  {
+    "file": "polyglot-code/README.md",
+    "example": "polyglot-code/example.html"
+  },
+  {
+    "file": "contribution-calendar/README.md",
+    "example": "contribution-calendar/example.html"
+  },
+  {
+    "file": "pie-chart/README.md",
+    "example": "pie-chart/example.html"
+  },
+  {
+    "file": "area-chart/README.md",
+    "example": "area-chart/example.html"
+  },
+  {
+    "file": "box-plot/README.md",
+    "example": "box-plot/example.html"
+  },
+  {
+    "file": "candlestick/README.md",
+    "example": "candlestick/example.html"
+  },
+  {
+    "file": "route-map/README.md",
+    "example": "route-map/example.html"
+  },
+  {
+    "file": "bubble-map/README.md",
+    "example": "bubble-map/example.html"
+  },
+  {
+    "file": "map-columns/README.md",
+    "example": "map-columns/example.html"
+  },
+  {
+    "file": "map-arcs/README.md",
+    "example": "map-arcs/example.html"
+  },
+  {
+    "file": "warehouse/README.md",
+    "example": "warehouse/example.html"
+  },
+  {
+    "file": "reference/section-076.md"
+  },
+  {
+    "file": "margin-notes/README.md",
+    "example": "margin-notes/example.html"
+  },
+  {
+    "file": "outlined-cards/README.md",
+    "example": "outlined-cards/example.html"
+  },
+  {
+    "file": "attention-map/README.md",
+    "example": "attention-map/example.html"
+  },
+  {
+    "file": "frame/README.md",
+    "example": "frame/example.html"
+  },
+  {
+    "file": "bookshelf/README.md",
+    "example": "bookshelf/example.html"
+  },
+  {
+    "file": "invitation/README.md",
+    "example": "invitation/example.html"
+  },
+  {
+    "file": "status-list/README.md",
+    "example": "status-list/example.html"
+  },
+  {
+    "file": "project-list/README.md",
+    "example": "project-list/example.html"
+  },
+  {
+    "file": "conversation/README.md",
+    "example": "conversation/example.html"
+  },
+  {
+    "file": "navigation/README.md",
+    "example": "navigation/example.html"
+  },
+  {
+    "file": "editorial-footer/README.md",
+    "example": "editorial-footer/example.html"
+  },
+  {
+    "file": "reference/section-088.md"
+  },
+  {
+    "file": "activity/README.md",
+    "example": "activity/example.html"
+  },
+  {
+    "file": "code-lines/README.md",
+    "example": "code-lines/example.html"
+  },
+  {
+    "file": "icon-links/README.md",
+    "example": "icon-links/example.html"
+  },
+  {
+    "file": "animated-callouts/README.md",
+    "example": "animated-callouts/example.html"
+  },
+  {
+    "file": "timeline/README.md",
+    "example": "timeline/example.html"
+  },
+  {
+    "file": "gallery/README.md",
+    "example": "gallery/example.html"
+  },
+  {
+    "file": "reference/section-095.md"
+  },
+  {
+    "file": "fleet-globe/README.md",
+    "example": "fleet-globe/example.html"
+  },
+  {
+    "file": "delivery-summary/README.md",
+    "example": "delivery-summary/example.html"
+  },
+  {
+    "file": "incident-queue/README.md",
+    "example": "incident-queue/example.html"
+  },
+  {
+    "file": "reference/section-099.md"
+  },
+  {
+    "file": "visual-story/README.md",
+    "example": "visual-story/example.html"
+  },
+  {
+    "file": "sankey/README.md",
+    "example": "sankey/example.html"
+  },
+  {
+    "file": "cohorts/README.md",
+    "example": "cohorts/example.html"
+  },
+  {
+    "file": "sensitivity/README.md",
+    "example": "sensitivity/example.html"
+  },
+  {
+    "file": "gantt/README.md",
+    "example": "gantt/example.html"
+  },
+  {
+    "file": "funnel/README.md",
+    "example": "funnel/example.html"
+  },
+  {
+    "file": "uncertainty/README.md",
+    "example": "uncertainty/example.html"
+  },
+  {
+    "file": "zoomable-evidence/README.md",
+    "example": "zoomable-evidence/example.html"
+  }
+]

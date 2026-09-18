@@ -1,5 +1,5 @@
 # Legacy deployment example for an existing Synology installation.
-# New installations: use ../compose.yaml and ../self-hosting.md.
+# New installations: use ../compose.yaml and ../docs/self-hosting.md.
 services:
   bottifact:
     build:

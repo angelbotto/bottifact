@@ -10,7 +10,7 @@ from cryptography.hazmat.primitives.asymmetric import rsa
 from fastapi.testclient import TestClient
 from portal.app import create_app, COOKIE
 
-HTML='<title>Informe</title><meta name="nota-documento" content="informe-prueba"><p id="dato">Cifra de ejemplo</p><script data-nota-modulo="revision.js"></script>'
+HTML='<title>Informe</title><meta name="nota-documento" content="informe-prueba"><p id="dato">Cifra de ejemplo</p><script data-nota-modulo="packages/core/components/review.js"></script>'
 ORIGIN='https://portal.test'
 
 

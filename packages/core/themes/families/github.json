@@ -1,0 +1,31 @@
+{
+  "id": "github",
+  "nombre": "GitHub",
+  "grupo": "editor",
+  "descripcion": "Neutros · azul",
+  "light": {
+    "papel": "#ffffff",
+    "panel": "#f6f8fa",
+    "panel-2": "#eaeef2",
+    "tinta": "#1f2328",
+    "tinta-2": "#424a53",
+    "tinta-3": "#59636e",
+    "naranja": "#0967d7",
+    "verde": "#1a7b35",
+    "rojo": "#cf222e",
+    "azul": "#0550ae"
+  },
+  "dark": {
+    "papel": "#0d1117",
+    "panel": "#161b22",
+    "panel-2": "#21262d",
+    "tinta": "#e6edf3",
+    "tinta-2": "#c9d1d9",
+    "tinta-3": "#9da7b3",
+    "naranja": "#79c0ff",
+    "verde": "#7ee787",
+    "rojo": "#ffa198",
+    "azul": "#a5d6ff"
+  },
+  "fuente": "https://github.com/primer/github-vscode-theme"
+}

@@ -32,5 +32,5 @@
     const path=mapped?(mapped+(href.includes('#')?('#'+href.split('#').slice(1).join('#')):'')):(a.hasAttribute('data-bottifact-link')?href:null);
     if(!path)return;event.preventDefault();send('navigate',{path}).catch(()=>{});
   },true);
-  addEventListener('DOMContentLoaded',()=>send('ready',{pins:!!document.querySelector('script[data-nota-modulo="revision.js"]')}).then(value=>{latest=value;listeners.forEach(fn=>fn(value));}).catch(()=>{}),{once:true});
+  addEventListener('DOMContentLoaded',()=>send('ready',{pins:!!document.querySelector('script[data-nota-modulo="packages/core/components/review.js"]')}).then(value=>{latest=value;listeners.forEach(fn=>fn(value));}).catch(()=>{}),{once:true});
 })();

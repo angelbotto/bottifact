@@ -1,0 +1,6 @@
+<figure class="ancho" id="codigo-lineas-ejemplo"><div class="codigo codigo-editorial"><div class="cab"><span>preparar_resumen.py · Python</span><button class="boton-icono-copia" type="button" data-copiar="codigo-lineas-fuente" aria-label="Copiar código Python" title="Copiar código"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 8h12v13H8zM16 8V3H4v13h4"/></svg></button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Código Python con líneas 3 y 6 destacadas, desplazable"><code id="codigo-lineas-fuente" data-lenguaje="python" data-lineas data-destacar="3,6">def resumir(registros):
+    cantidades = [fila["cantidad"] for fila in registros]
+    total = sum(cantidades)
+    if not cantidades:
+        return {"total": 0, "promedio": None}
+    return {"total": total, "promedio": total / len(cantidades)}</code></pre></div><figcaption>Ejemplo ilustrativo. Las líneas 3 y 6 explican el cálculo; el botón copia el código sin números de línea.</figcaption></figure>

@@ -1,0 +1,19 @@
+{
+  "id": "arcilla",
+  "nombre": "Arcilla",
+  "grupo": "editorial",
+  "descripcion": "Terracota · arena",
+  "light": "arcilla",
+  "dark": {
+    "papel": "#211712",
+    "panel": "#2d2019",
+    "panel-2": "#3a2b23",
+    "tinta": "#f7e8db",
+    "tinta-2": "#dac3b1",
+    "tinta-3": "#bca48f",
+    "naranja": "#f0aa85",
+    "verde": "#b2c895",
+    "rojo": "#efa6a0",
+    "azul": "#a9c6e4"
+  }
+}

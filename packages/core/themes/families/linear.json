@@ -1,0 +1,8 @@
+{
+  "id": "linear",
+  "nombre": "Linear",
+  "grupo": "producto",
+  "descripcion": "Grafito · lavanda",
+  "light": "linear-light",
+  "dark": "linear-dark"
+}

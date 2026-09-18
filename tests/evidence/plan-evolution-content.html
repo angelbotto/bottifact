@@ -1,0 +1,149 @@
+<section class="seccion" id="criterio">
+  <p class="ceja">TIKIN-629 · Revisión y propuesta · 15 septiembre 2026</p>
+  <h2>Hacer que la calidad se repita.</h2>
+  <p>Nota Tikin ya tiene una identidad reconocible: lectura editorial, evidencia ancha, anotaciones con otra voz, controles discretos y escenas que se pueden explorar. El siguiente avance es que esa calidad se conserve al cambiar de documento, de agente y de equipo.</p>
+  <p>Mi recomendación es dedicar la siguiente etapa a <strong>consistencia, composición y distribución</strong>. Después, ampliar las piezas que conectan evidencia con decisiones. Las 74 recetas actuales ofrecen una base suficiente para trabajar esas tres cosas con casos reales.</p>
+  <p class="secundario">Este documento es un plan propuesto. La revisión parte de la versión 2026.09.15-controles.1, contrato 4, commit 0ff6d8c. Después se ajustó la repetición flotante de apuntes, se aclaró la instrucción de sonido en la guía y se añadió el tachado animado. Las demás mejoras siguen propuestas.</p>
+</section>
+
+<div class="apuntes ancho" id="criterio-margen">
+  <section class="apunte izquierda">
+    <div class="apunte-cuerpo"><h3>La biblioteca debe ayudar a escoger.</h3><p>Una guía útil enseña <span data-subrayar="referencia">qué pieza responde a cada pregunta</span>, qué datos necesita y qué conclusión permite. El catálogo completo sirve para descubrir; el documento final necesita selección y ritmo.</p></div>
+    <aside class="apunte-nota" aria-label="Apunte a la izquierda"><p class="manuscrita" data-mano="fuente" data-escritura-sonora id="plan-nota-izquierda">¿qué ayuda a decidir?</p><button class="gesto-repetir" type="button" data-mano-repetir="plan-nota-izquierda" data-audio="escritura" aria-label="Repetir apunte izquierdo" title="Repetir apunte izquierdo"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></svg></button></aside>
+  </section>
+</div>
+
+<section class="seccion" id="hallazgos">
+  <h2>Qué encontré en la base actual.</h2>
+  <p>Hay fortalezas concretas: recetas con HTML, criterio y límites; generación estándar con apariencia y comentarios; tabla como fuente de las gráficas; respaldo al actualizar la instalación; recursos incrustados y comprobaciones locales. Conviene construir sobre esas decisiones.</p>
+</section>
+<figure class="ancho" id="evidencia-revision">
+  <div class="tabla-caja densa" role="region" tabindex="0" aria-label="Hallazgos de revisión y evidencia, desplazable">
+    <table><caption>Hallazgos comprobados y su efecto práctico</caption><thead><tr><th scope="col">Hallazgo</th><th scope="col">Evidencia actual</th><th scope="col">Qué mejoraría</th></tr></thead><tbody>
+    <tr><th scope="row">Instrucciones acumuladas</th><td>En el corte revisado, SKILL.md tenía 536 líneas y 40.980 bytes. docs/composition.md mezclaba activación desde Apariencia con habilitación inicial; ese pasaje ya se aclaró.</td><td>Una regla vigente por comportamiento. Separar claramente el canal de sonido independiente y la base estándar; mover historia y auditorías fuera de las instrucciones de uso.</td></tr>
+    <tr><th scope="row">Descubrimiento desigual</th><td>examples/generated/library.html monta data-buscador-recetas; examples/generated/guide.html presenta los 74 enlaces sin montar ese buscador. packages/core/components/catalog.js ya contiene el filtro reutilizable.</td><td>El mismo buscador en ambas entradas, con etiquetas por intención, datos requeridos y alternativas relacionadas.</td></tr>
+    <tr><th scope="row">Comentarios temporales</th><td>packages/core/components/review.js mantiene notes en memoria. Permite editar, borrar y copiar contexto; no guarda ni importa revisiones.</td><td>Borrador recuperable, exportar/importar JSON y anclas vinculadas a una versión del documento.</td></tr>
+    <tr><th scope="row">Navegación extensa</th><td>La guía tiene 13 capítulos. En 320 px, la región de capítulos mide 280 px y su contenido 1.172 px; desplaza localmente sin desbordar el documento.</td><td>Conservar la navegación con barras / y añadir acceso directo a «Todos los capítulos», manteniendo visible el capítulo actual.</td></tr>
+    <tr><th scope="row">Portabilidad iniciada</th><td>Hay ZIP, manifiesto SHA-256, versión, instalación en staging y respaldo. El repositorio no tiene remoto. La documentación pide Python 3 sin mínimo; el instalador usa Path.is_relative_to.</td><td>Publicar requisitos comprobados, diagnóstico de instalación y versiones recuperables fuera del Mac mini. La copia instalada en el MacBook requiere verificación allí.</td></tr>
+    </tbody></table>
+  </div>
+  <figcaption>Fuentes locales: SKILL.md, docs/composition.md, scripts/guide.py, scripts/library.py, packages/core/components/catalog.js, packages/core/components/review.js, scripts/install.py y scripts/verify_package.py. Medidas de navegador: Orca, viewports emulados, 15/09/2026.</figcaption>
+</figure>
+
+<section class="seccion" id="orden">
+  <h2>El orden de trabajo que propongo.</h2>
+  <p>Cada etapa termina con una entrega revisable y commits pequeños. Las fechas se estiman al acotar cada etapa; esta secuencia expresa prioridad y dependencias.</p>
+</section>
+<figure class="amplio" id="hoja-ruta">
+  <div class="tabla-caja densa" role="region" tabindex="0" aria-label="Plan por etapas y criterios de aceptación, desplazable">
+    <table><caption>Cinco entregas, en este orden</caption><thead><tr><th scope="col">Etapa</th><th scope="col">Entrega concreta</th><th scope="col">Cuándo se considera terminada</th></tr></thead><tbody>
+    <tr><th scope="row">1 · Base coherente</th><td>Depurar instrucciones de sonido, variantes y navegación. Unificar controles de copia, repetición, ayuda y estados. Completar revisión de accesibilidad.</td><td>Documentación y generador expresan la misma regla; las piezas conservan nombres accesibles, foco y reducción de movimiento. Se registran pruebas nativas y sus límites.</td></tr>
+    <tr><th scope="row">2 · Uso entre agentes</th><td>Entrada breve del skill, consulta de recetas por intención, diagnóstico de instalación, distribución versionada y seis encargos de evaluación.</td><td>Claude, Codex y Hermes generan desde una instalación limpia, fuera de Orca, sin omitir la base ni inventar datos. Se comprueba la versión usada y el resultado final.</td></tr>
+    <tr><th scope="row">3 · Lectura y revisión</th><td>Buscador compartido, navegación directa entre capítulos, comentarios recuperables y lectura de impresión revisada.</td><td>Encontrar una receta no exige recorrer 74 enlaces. Recargar conserva el borrador cuando se ha habilitado; importar una revisión de otra versión identifica anclas dudosas.</td></tr>
+    <tr><th scope="row">4 · Evidencia y operaciones</th><td>Primera tanda de piezas: diferencia entre períodos, procedencia/frescura, estados vacíos, tabla reutilizable y ventanas de entrega.</td><td>Cada pieza incluye datos mínimos, ejemplo completo, límites, tabla o alternativa textual y estados sin datos. Pasa el contrato y la revisión en temas y móvil.</td></tr>
+    <tr><th scope="row">5 · Publicación y mantenimiento</th><td>Recetas de publicación web, perfil de impresión, actualización con cambios visibles y política de compatibilidad.</td><td>Una versión anterior permanece disponible; los ejemplos antiguos se verifican; un artículo publicado tiene metadatos, fuentes y enlaces correctos para su destino.</td></tr>
+    </tbody></table>
+  </div>
+</figure>
+
+<section class="seccion" id="experiencia">
+  <h2>Pulir la experiencia cotidiana.</h2>
+  <p><strong>Iconos pequeños, ayuda consistente.</strong> Mantendría los controles compactos que acabamos de ajustar. Añadiría una ayuda breve uniforme al pasar el ratón o enfocar, estado claro al copiar y área táctil cómoda. Comprobaría foco y gestos con teclado y dispositivos reales; las pruebas sintéticas existentes no acreditan esa experiencia.</p>
+  <p><strong>Apariencia que escala.</strong> Conservaría Temas, Letras y Sonido separados. La siguiente mejora sería mostrar una vista previa con un título, un párrafo y una cifra, y permitir volver a la presentación inicial del documento. Propondría favoritos sólo si el uso demuestra que la búsqueda y las familias se quedan cortas.</p>
+  <p><strong>Sonido comprensible.</strong> Mantener habilitación inicial, respeto al silencio guardado y desbloqueo tras el primer clic real. Explicar el estado pendiente sin obligar a buscar un segundo interruptor. La prueba debe distinguir preferencia, contexto activo y muestra reproducida; la audición se confirma en el equipo del lector.</p>
+  <p><strong>Revisión que sobrevive.</strong> Conservar la burbuja pequeña. Añadir guardar borrador, exportar/importar, pendiente/resuelto y copia de pendientes. El ancla combinaría ID estable, fragmento y versión; si no coincide, pedir reubicarla. Para compartir entre personas usaríamos el archivo de revisión; sincronización simultánea requiere un servicio aparte.</p>
+  <p><strong>Lectura e impresión.</strong> Auditar interlineado, largos de línea, enlaces, contraste de texto secundario y jerarquía en las nueve paletas y seis pares tipográficos. Añadir una salida de impresión con capítulos completos, tablas legibles, fuentes y enlaces; las escenas conservan alternativa estática o textual.</p>
+</section>
+
+<section class="seccion" id="componentes-propuestos">
+  <h2>Diez piezas que sí sumarían.</h2>
+  <p>Varias amplían recetas existentes. Cada incorporación necesita HTML copiable, uso y no uso, datos requeridos, límites, dependencias y estados. La información crítica debe seguir disponible sin sonido, animación o WebGL.</p>
+  <ol>
+    <li><strong>Qué cambió.</strong> Comparador de métricas o texto entre dos cortes, con diferencia absoluta, relativa y explicación. Amplía temporal, cascada y revisiones; compara ventanas equivalentes.</li>
+    <li><strong>Procedencia y frescura.</strong> Pie común con fuente, corte, zona horaria, unidad, denominador y estado actualizado/vencido/desconocido. El umbral debe ser explícito.</li>
+    <li><strong>Estados de datos.</strong> Sin registros, sin resultados del filtro, fuente no disponible y datos incompletos, con recuperación concreta. «Cargando» sólo cuando exista una operación real.</li>
+    <li><strong>Tabla configurable.</strong> Ampliar el explorador actual de cuatro columnas a esquemas declarados: tipos, orden múltiple, filtros activos, restablecer, totales y exportación del subconjunto visible. Medir tamaño antes de prometer miles de filas.</li>
+    <li><strong>Ventana de entrega.</strong> Prometida frente a observada, hitos y causa de desviación. Para Liftit necesita timestamps y zona; sin observación se muestra pendiente.</li>
+    <li><strong>Capacidad y espera.</strong> Ocupación por vehículo y tiempo detenido en cargue/descargue. Se requieren capacidad, unidad y eventos; un porcentaje aislado no explica el cuello de botella.</li>
+    <li><strong>Antigüedad de cartera.</strong> Tramos de vencimiento, importe y moneda, con detalle accesible y fecha de corte. Complementa conciliación; el criterio de agrupación queda visible.</li>
+    <li><strong>Evidencia de un hallazgo.</strong> Abrir una captura, registro o cita desde la afirmación, con fecha y procedencia. Amplía hallazgo, galería y referencias, sin presentar una ilustración como prueba.</li>
+    <li><strong>Recorrido de un prototipo.</strong> Tarea, pasos y estados de ejemplo, comparación por dispositivo y comentarios por paso. Mantiene el límite del visor declarativo actual; probar una aplicación remota exige otro entorno.</li>
+    <li><strong>Comando con resultado y recuperación.</strong> Entrada, salida esperada, error y siguiente paso, con copia exacta. Amplía código y terminal; sólo afirma ejecutar cuando exista una ejecución real.</li>
+  </ol>
+</section>
+
+<section class="seccion" id="mas-posibilidades">
+  <h2>Ocho ampliaciones disponibles.</h2>
+  <p>Implementadas el 15 de septiembre de 2026: <a href="../examples/generated/evidence.html">abrir las ocho demostraciones y sus recetas</a>. La biblioteca y la guía incorporan estos componentes. Las demás fases de este plan siguen siendo propuestas.</p>
+  <ul>
+    <li><strong>Relato con una figura por pasos.</strong> Al avanzar por el artículo, una gráfica o mapa señala la evidencia del párrafo actual. Cada paso tiene título y alternativa estática; en móvil se puede recorrer sin una zona fija enorme.</li>
+    <li><strong>Flujos Sankey.</strong> Explicar cómo se reparte una cantidad entre etapas: ingresos y destinos del gasto, o pedidos y estados. Exige una unidad común, valores conservados y pérdidas explícitas.</li>
+    <li><strong>Cohortes.</strong> Comparar retención o recurrencia de grupos que empezaron en fechas distintas. Cada celda muestra base y denominador; un período todavía no observado no es un cero.</li>
+    <li><strong>Sensibilidad de escenarios.</strong> Mostrar qué supuesto mueve más el resultado. Un gráfico de tornado compara cambios frente a una misma base y permite restablecer la consulta; no atribuye probabilidades.</li>
+    <li><strong>Gantt editorial.</strong> Fechas, solapamientos, responsables y dependencias para una hoja de ruta. Debe distinguir plan y observación; una dependencia dibujada no implica un cálculo de ruta crítica.</li>
+    <li><strong>Imagen de evidencia ampliable.</strong> Zoom, zonas numeradas y notas contextuales sobre una captura, factura o prototipo. El original conserva resolución y descripción; los puntos deben poder recorrerse con teclado.</li>
+    <li><strong>Embudo con explicación.</strong> Volumen y conversión entre etapas, con abandonos y definición de cada paso. Sin base comparable entre etapas, usar una tabla de estados en vez de calcular conversión.</li>
+    <li><strong>Rangos de incertidumbre.</strong> Serie con intervalo y escenarios declarados para proyecciones. Debe explicar cómo se construyó el rango; no dibujar una banda que aparente confianza estadística sin sustento.</li>
+  </ul>
+</section>
+
+<section class="seccion" id="composicion">
+  <h2>Enseñar a componer artículos y reportes.</h2>
+  <p>La guía ya incluye ocho recorridos. Los ampliaría con ejemplos completos y comentados: por qué el componente aparece ahí, qué pregunta resuelve y cómo cambia en móvil. La evaluación debe premiar pertinencia, legibilidad y evidencia.</p>
+  <p>Para un artículo: pregunta → argumento → ejemplo → matiz lateral → contrapunto → fuentes. Para un informe: conclusión provisional → comparación → explicación → límite → decisión. Para logística: corte → territorio → excepción → responsable → siguiente acción.</p>
+  <p>Ejemplo de nota útil: el párrafo afirma «bajó el costo por entrega completada»; el subrayado señala el denominador y el margen pregunta «¿incluye devoluciones?». Si no hay cifras verificadas, el texto explica qué falta medir. Alternar izquierda y derecha acompaña el ritmo cuando ese matiz aporta.</p>
+  <p>Ejemplo ilustrativo de corrección visible: «La revisión tarda <del data-subrayar="tachado">cinco días</del> <ins>tres días</ins>». El tachado se dibuja al entrar en pantalla; el motivo del cambio debe explicarse en texto normal.</p>
+  <p>Para blogs agregaría recetas de publicación con autoría, fecha, actualización, descripción, URL canónica y metadatos para compartir cuando exista una URL pública. Ghost, un sitio estático y un HTML de revisión necesitan instrucciones de salida distintas; el contenido y los componentes pueden compartir la misma base.</p>
+</section>
+
+<div class="apuntes ancho" id="criterio-agentes">
+  <section class="apunte">
+    <div class="apunte-cuerpo"><h3>Una instalación no demuestra buen uso.</h3><p>El objetivo es que otro agente produzca <span data-subrayar="referencia">un documento completo sin instrucciones de rescate</span>: base estándar, selección razonada, datos honestos y una salida validada.</p></div>
+    <aside class="apunte-nota" aria-label="Apunte a la derecha"><p class="manuscrita" data-mano="fuente" data-escritura-sonora id="plan-nota-derecha">probar desde cero.</p><button class="gesto-repetir" type="button" data-mano-repetir="plan-nota-derecha" data-audio="escritura" aria-label="Repetir apunte derecho" title="Repetir apunte derecho"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></svg></button></aside>
+  </section>
+</div>
+
+<section class="seccion" id="skill-portable">
+  <h2>Una biblioteca y un skill compartibles.</h2>
+  <p>Hoy ya son ambas cosas: HTML/CSS/JS reutilizable y una guía ejecutable para agentes. Propongo mantener un núcleo común y separar las particularidades de instalación. El formato Agent Skills contempla instrucciones breves y recursos consultados según la tarea; eso encaja con esta biblioteca. <a href="https://agentskills.io/specification">Especificación de Agent Skills</a>.</p>
+  <ul>
+    <li><strong>SKILL.md como entrada.</strong> Propósito, decisiones esenciales, generación y validación. Llevar instrucciones de logística, artículos, mantenimiento e historia a referencias específicas. La ruta de uso habitual debería leerse en pocos minutos.</li>
+    <li><strong>Registro consultable.</strong> Ampliar packages/core/registry/registry.json con intención, esquema de datos, variantes, estados, compatibilidad y versión de introducción. Un comando de consulta mostraría inventario compacto y receta completa por ID, sin cargar 228 KB de registro para elegir una pieza.</li>
+    <li><strong>Documentación derivada.</strong> Generar cifras de inventario, opciones de temas y tablas de compatibilidad desde una fuente común. Conservar docs/components.md como referencia copiable y evitar instrucciones duplicadas que envejecen por separado.</li>
+    <li><strong>Diagnóstico.</strong> Un comando doctor comprobaría versión de Python, integridad, rutas de recursos, duplicados y generación desde cualquier directorio. Separaría «instalado» de «cargado por el agente» y «probado en navegador».</li>
+    <li><strong>Distribución.</strong> Repositorio privado con versiones etiquetadas, ZIP reproducible, manifiesto y notas de cambios. Conservar el instalador y su respaldo actual; agregar selección de versión y restauración guiada. Revisar alcance de licencias y procedencia antes de ampliar la distribución.</li>
+    <li><strong>Dos paquetes.</strong> Uno de uso con generador, recetas, recursos y validación; otro de desarrollo con auditorías y pruebas. La separación se haría después de inventariar dependencias, para conservar generación y diagnósticos en ambos.</li>
+  </ul>
+</section>
+<figure class="ancho" id="agentes-destinos">
+  <div class="tabla-caja" role="region" tabindex="0" aria-label="Distribución propuesta por agente, desplazable">
+    <table><caption>Mismo núcleo, descubrimiento según el agente</caption><thead><tr><th scope="col">Destino</th><th scope="col">Integración</th><th scope="col">Prueba de aceptación</th></tr></thead><tbody>
+    <tr><th scope="row">Codex</th><td>Skill local en .agents/skills; metadatos opcionales de interfaz sin duplicar instrucciones. <a href="https://developers.openai.com/codex/skills/">Documentación oficial</a>.</td><td>Sesión nueva, invocación explícita y por una petición de artefacto, con versión identificada.</td></tr>
+    <tr><th scope="row">Claude Code</th><td>Skill personal o de proyecto en .claude/skills; empaquetado adicional para distribución si se necesita. <a href="https://code.claude.com/docs/en/skills">Documentación oficial</a>.</td><td>Mismo encargo y rúbrica. La instalación local no acredita automáticamente los entornos web o remotos.</td></tr>
+    <tr><th scope="row">Hermes</th><td>Instalación en el directorio de skills del perfil, o directorio compartido declarado con skills.external_dirs. <a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/skills">Documentación oficial</a>.</td><td>Generación y validación en el MacBook, comprobando descubrimiento y versión del perfil activo.</td></tr>
+    <tr><th scope="row">Otros agentes</th><td>Carpeta Agent Skills y scripts independientes del proveedor.</td><td>Registrar capacidades disponibles. No afirmar compatibilidad comprobada hasta ejecutar un encargo completo.</td></tr>
+    </tbody></table>
+  </div>
+</figure>
+
+<section class="seccion" id="aceptacion">
+  <h2>Cómo comprobar que mejoró.</h2>
+  <p>Prepararía seis encargos repetibles: artículo con fuentes, reporte financiero, operación Liftit, runbook técnico, revisión de prototipo y actualización de un documento existente. Cada agente recibe el mismo contenido de entrada, sin la conversación que construyó la biblioteca.</p>
+  <p>La rúbrica comprobaría: selección de componentes pertinente; base común completa; contenido crítico accesible sin efectos; cifras y fuentes preservadas; móvil sin desborde; copia exacta; comentarios recuperables cuando se implemente esa etapa; versión y verificaciones declaradas. Registraríamos omisiones y correcciones necesarias, además del resultado visual.</p>
+  <p>La revisión visual cubriría 320/390 px y escritorio; teclado nativo, VoiceOver, zoom de texto, Safari y Chromium; todas las paletas y pares tipográficos, sin exigir una repetición ciega de todas las combinaciones. Cada prueba debe distinguir emulación, eventos sintéticos y uso físico.</p>
+  <p>También mediría tamaño y tiempo de apertura antes de optimizar. La guía actual pesa 1.816.414 bytes en disco; no es una medición de velocidad. Las fuentes y el audio están incrustados para portabilidad, por lo que cualquier reducción debe preservar las opciones prometidas.</p>
+</section>
+
+<aside class="pieza ficha-decision" id="primera-entrega" aria-labelledby="primera-entrega-titulo">
+  <p class="ceja">Propuesta de siguiente entrega</p>
+  <h3 id="primera-entrega-titulo">Consistencia del skill y prueba desde una instalación limpia.</h3>
+  <p>Empezar por las etapas 1 y 2, con el buscador compartido como mejora visible temprana.</p>
+  <dl><div><dt>Por qué</dt><dd>Mejora todos los artefactos futuros y permite saber si Claude, Codex y Hermes reciben las mismas instrucciones vigentes.</dd></div><div><dt>Resultado revisable</dt><dd>Skill depurado, catálogo consultable, diagnóstico, paquete versionado y resultados de encargos de prueba.</dd></div><div><dt>Siguiente decisión</dt><dd>Priorizar comentarios recuperables o la primera tanda de componentes de evidencia según las revisiones de Angel.</dd></div></dl>
+</aside>
+
+<section class="seccion" id="alcance-revision">
+  <h2>Alcance de esta revisión.</h2>
+  <p>Se revisaron instrucciones, guía de uso, inventario completo, instalador, verificador, módulos relevantes y auditoría previa de controles. Se abrió la guía actual en Orca a 1440×960, 320×740 y 390×844: la portada no presentó desbordamiento horizontal. Se consultó documentación oficial de Agent Skills, Codex, Claude Code y Hermes.</p>
+  <p>Esta revisión no repitió todas las pruebas de las 74 recetas, ni acredita audición humana, gestos físicos del MacBook o uso efectivo de Hermes en ese equipo. Las propuestas anteriores no modifican todavía el comportamiento de la biblioteca.</p>
+  <p>Para comentar este plan, usa el globo flotante. La versión actual conserva los comentarios sólo durante la sesión: copia el prompt antes de recargar.</p>
+</section>

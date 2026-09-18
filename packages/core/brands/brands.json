@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "marcas": {
+    "liftit": {
+      "nombre": "Liftit",
+      "logo": "packages/core/assets/brands/liftit.svg",
+      "logo_tipo": "isotipo",
+      "origen_logo": "https://github.com/Liftitapp/lms-web-app/blob/d4d830424972a5cb5f5e364c6bdffd3d253a3756/src/shell/Menu/LiftitLogoIcon.tsx",
+      "sha256_logo": "d28c6f055b9b4a4197f17879f38d097d5407b27f2a9300cb200e1b8917e1474c",
+      "colores": {
+        "ribbon": "#465EFF",
+        "bay": "#2B3492",
+        "coral": "#FF7A57",
+        "mirage": "#181A2A"
+      },
+      "fuente_color": "https://github.com/Liftitapp/lms-web-app/blob/d4d830424972a5cb5f5e364c6bdffd3d253a3756/src/shared/tokens/colors.ts",
+      "tipografia_origen": "Eina03; CircularStd en la UI compartida",
+      "criterio": "Tokens del LMS actual, contrastados con lms-mf-ui. Oscuro adaptado con neutros de la fuente."
+    },
+    "tikin": {
+      "nombre": "Tikin",
+      "logo": "packages/core/assets/brands/tikin.svg",
+      "logo_tipo": "logotipo",
+      "origen_logo": "https://github.com/Tikinis/landing/blob/bcde0b5286a51b073054580dc628963914096304/src/assets/icons/TikinIcon.tsx",
+      "sha256_logo": "f1ed6b27f3c6b1fc076b1a21ebc976ebda60a798141750494c3d96778481e3b4",
+      "colores": {
+        "blanco": "#FFFFFF",
+        "negro": "#000000",
+        "rojo": "#FC2929"
+      },
+      "fuente_color": "https://github.com/Tikinis/landing/blob/bcde0b5286a51b073054580dc628963914096304/src/app/globals.css",
+      "fuente_superficies": "https://github.com/Tikinis/landing/blob/bcde0b5286a51b073054580dc628963914096304/src/app/globals.css",
+      "tipografia_origen": "Neurial y Funnel Display en la landing",
+      "criterio": "Blanco, negro y rojo de la landing, confirmados por Angel. La paleta lima/lavanda del design system no define esta identidad. Claro y oscuro mantienen superficies neutras y acentos rojos con contraste.",
+      "logo_tintas": {
+        "light": "#000000",
+        "dark": "#FFFFFF"
+      },
+      "logo_tamano": [
+        124,
+        26
+      ]
+    },
+    "catabum": {
+      "nombre": "Catabum",
+      "logo": "packages/core/assets/brands/catabum.svg",
+      "logo_tipo": "logotipo",
+      "origen_logo": "https://github.com/CATABUM-SAS/catabum-V2.0/blob/6e92cb3c33660f22b843f3d655f91ea3b5e9b7d2/app/assets/catabum_logo.svg",
+      "sha256_logo": "7d9cdf0cdc228e6ab3aa3e6e5c98e8ceeacb3c2058883d77ecf49d896ac5a884",
+      "colores": {
+        "violeta": "#7C4DFF",
+        "magenta": "#FF3E81",
+        "naranja": "#FF8C3B",
+        "fondo": "#1A0D2E"
+      },
+      "fuente_color": "https://github.com/CATABUM-SAS/catabum-V2.0/blob/6e92cb3c33660f22b843f3d655f91ea3b5e9b7d2/app/lib/core/theme/tokens/body_tokens.dart",
+      "fuente_secundaria": "https://github.com/CATABUM-SAS/catabum-V2.0/blob/6e92cb3c33660f22b843f3d655f91ea3b5e9b7d2/app/lib/core/theme/tokens/base_tokens.dart",
+      "tipografia_origen": "Montserrat en la app; Geist en el admin",
+      "criterio": "Identidad de la app, no los neutros genéricos del admin. Modo claro adaptado; trazos del logo conservados."
+    }
+  }
+}
