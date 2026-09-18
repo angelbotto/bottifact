@@ -1,14 +1,9 @@
-## Gantt editorial
+## Gantt
 
 <!-- nota:ejemplo gantt -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** Explicar fechas, trabajo simultáneo, responsables y dependencias fin→inicio. El estado se escribe y lleva símbolo; nunca se infiere del día actual.
-
-**Cuándo no y límite:** 1–24 tareas, IDs únicos ASCII de hasta 12 caracteres, fechas ISO válidas y rango máximo de diez años. Dependencias separadas por comas, «—» para ninguna. Rechaza ciclos, IDs inexistentes y dependencias cuyo fin supera el inicio dependiente. No es un planificador, no excluye festivos ni calcula ruta crítica. La duración es tiempo transcurrido, no conteo inclusivo de días laborables.
-
-**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
-
-**Dependencia:** packages/core/components/evidence.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
+**Use and limits:** Show 1–24 tasks with actual dates, owners and finish-to-start dependencies. Unique ASCII IDs up to 12 characters; valid ISO dates over at most ten years. Comma-separated dependency IDs or an em dash for none. Reject cycles, absent IDs and dependencies ending after their successor starts. Explicit text/symbol status, never inferred from today. Duration is elapsed time, not inclusive working days. No holiday calendar, critical-path calculation or scheduler. Source data stays in one table (or the image zone list). Declare data-unidad (1–40 characters); numeric magnitude is limited to 10^12. Views round to eight significant digits while source values remain. Load evidence.js; NotaEvidencia.init/get/destroy owns lifecycle. Destroy before changing the source. No network or external libraries; data remains if enhancement fails.

@@ -1333,7 +1333,7 @@
         $("#doc-title").textContent = current.title;
         $("#doc-meta").textContent =
           current.space + " · " + labels[current.visibility];
-        document.title = current.title + " · Bottifact";
+        document.title = current.title + " · Margen";
       } else await load();
       form.closest("dialog").close();
       toast("Nombre actualizado. El enlace sigue siendo el mismo.");
@@ -1865,7 +1865,7 @@
     $("#owner-tools").hidden = !owner;
     $("#owner-panel").hidden = !owner;
     $("#doc-title").textContent = current.title;
-    document.title = current.title + " · Bottifact";
+    document.title = current.title + " · Margen";
     $("#doc-meta").textContent =
       current.space + " · " + labels[current.visibility];
     const select = $("#version");
@@ -1927,7 +1927,7 @@
     [
       "Instala o actualiza el skill con el comando de abajo. Funciona con Claude Code, Codex y Hermes.",
       "Crea una conexión y guarda el token fuera del documento y del repositorio.",
-      "Usa bottifact conectar y bottifact publicar para enviar el HTML.",
+      "Usa margen connect y margen publish para enviar el HTML.",
     ].forEach((t) => list.append(make("li", t)));
     section.append(list);
     const install = make(
@@ -1958,7 +1958,7 @@
         output.textContent =
           "Token personal (se muestra una sola vez):\n" +
           result.token +
-          "\n\nbottifact conectar --servidor " +
+          "\n\nmargen connect --servidor " +
           location.origin +
           "\nPega el token cuando el comando lo pida.";
         create.disabled = true;

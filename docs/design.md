@@ -1,19 +1,16 @@
-# Bottifact portal
+# Margen design system
 
-El creador recorre documentos y revisiones durante su jornada en portátil y escritorio. La apariencia sigue su preferencia clara u oscura; las miniaturas conservan la identidad del documento.
+Creators browse documents and revisions throughout a working day on desktop and mobile. The interface follows their light/dark preference; previews retain the document's identity.
 
-## Sistema visual
+## Visual language
+The administrator uses Geist, 11–13 px labels, 15 px card headings and 28 px page headings. Instrument Serif is reserved for the wordmark. Warm OKLCH neutrals and a terracotta accent are defined in `portal/static/library.css`. Use a second surface for navigation and selection, subtle 1 px borders, 8 px controls and 14–16 px floating panels.
 
-La gestión usa Geist, con etiquetas compactas de 11–13 px, títulos de ficha de 15 px y título de página de 28 px. Instrument Serif se conserva sólo en la marca. Neutros cálidos OKLCH con acento terracota; tokens en `portal/static/library.css`. Una segunda superficie distingue navegación, filtros y selección. Bordes de un píxel, radios de 7–12 px y foco visible. Los colores del mapa ayudan a separar grupos, pero los nombres y motivos explican las relaciones.
+The reader inherits document tokens. Its six-tool dock separates appearance, annotation/review and sharing. Comments use a compact writing surface with author, privacy and send; optional type, session and anchor context are disclosed. Appearance uses a 380 px panel with a searchable single-column theme list, independent mode control and separate typography/sound tabs.
 
-## Composición
+## Composition
+Desktop navigation is 226 px; below 850 px it becomes horizontally scrollable. Gallery, list, table and graph share search and permissions. Wide tables scroll locally. Group related table actions in one perimeter; keep their names. Do not place creator management inside shared document content.
 
-Navegación lateral de 226 px en escritorio; navegación horizontal desplazable bajo 850 px. Buscador principal, filtros progresivos y cuatro vistas. Galería de tres columnas (dos bajo 1250 px y una en móvil), lista con miniaturas, tabla con scroll local y atlas con inspector. La ficha de vista previa ocupa hasta 500 px y se cierra con Escape. Evitar controles de gestión dentro del documento compartido.
+## Interaction
+Use 120 ms color/surface transitions, reduced motion, explicit focus and 44 px main reader tools on mobile. Hover must not be required. Menus remain within the viewport; focus returns to the invoking control. Previews are isolated static frames loaded near the viewport. Graphs retain keyboard controls and a list alternative.
 
-## Interacción
-
-Miniaturas estáticas en iframes aislados y carga próxima al viewport. Abrir la ficha no ejecuta el artefacto. Cambios visuales de 150–180 ms, sin animaciones decorativas de carga y con movimiento reducido. El mapa tiene botones de zoom, arrastre y selección con teclado, además de lista alternativa. Controles de interfaz con iconos coherentes y nombre accesible.
-
-## Controles y revisión
-
-La dirección detallada y sus referencias están en [interface-direction.md](interface-direction.md). Jerarquía primaria/secundaria/discreta, iconos SVG de 16–19 px, radios de 8 px y transiciones de 120 ms. Conserva texto para acciones ambiguas. La barra del lector agrupa apariencia, comentario/nota/revisión y compartir/más; usa áreas de 44 px en móvil, ayuda con hover/foco y estados activos. La biblioteca carga el CSS de controles desde un archivo para conservar su CSP estricta.
+[Interface direction](interface-direction.md) records rationale and references. [Tables and mobile](mobile-and-tables.md) defines data behavior. The account UI uses external CSS under a strict CSP; do not relax it for cosmetic changes.

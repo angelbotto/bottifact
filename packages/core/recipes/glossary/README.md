@@ -1,10 +1,9 @@
-## Glosario editorial
+## Glossary
 
 <!-- nota:ejemplo glosario -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** vocabulario propio de un informe o artículo que necesita definiciones compartidas.
-**Cuándo no / límite:** no es una ayuda que aparece sólo al pasar el cursor; las definiciones
-permanecen visibles. No incluye búsqueda ni traduce términos. Las definiciones son editoriales.
+**Use and limits:** Define report-specific vocabulary in visible text. Definitions are editorial, not hover-only help, automatic search or translation.

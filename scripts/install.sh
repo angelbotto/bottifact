@@ -2,7 +2,7 @@
 # Entrada sencilla; el motor verificado y el generador utilizan Python 3.10+.
 set -euo pipefail
 main() {
-  printf '\nBottifact · instalar o actualizar\n\n'
+  printf '\nMargen · instalar o actualizar\n\n'
   printf 'Se preparará una biblioteca compartida para:\n  • Codex\n  • Claude Code\n  • Hermes\n\n'
   printf 'Este instalador configura agentes locales; no instala extensiones en la web de ChatGPT.\n'
   printf 'Las instalaciones existentes se respaldan. Tu token no cambia.\n\n'
@@ -28,8 +28,8 @@ main() {
   "$bottifact_python" "$bottifact_tmp/install.py" --servidor https://artifacts.botto.is "$@"
   rm -rf -- "$bottifact_tmp"
   trap - EXIT
-  printf '\nPara futuras actualizaciones: bottifact update\n'
+  printf '\nPara futuras actualizaciones: margen update\n'
   printf 'ChatGPT: https://artifacts.botto.is/downloads/bottifact-portable.zip\n'
-  printf 'Abre una conversación nueva y pide: «Usa el skill bottifact».\n'
+  printf 'Abre una conversación nueva y pide: «Usa el skill margen».\n'
 }
 main "$@"

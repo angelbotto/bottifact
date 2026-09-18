@@ -1,4 +1,4 @@
-"""Opt-in per-user background updates for managed Bottifact libraries."""
+"""Opt-in per-user background updates for managed Margen libraries."""
 import hashlib
 import json
 import os
@@ -38,8 +38,8 @@ def configure(action, destination, home=None, platform=None, run=subprocess.run)
         directory.mkdir(parents=True,exist_ok=True)
         if any('\n' in arg or '\r' in arg for arg in command):raise ValueError('Ruta de comando no válida.')
         quoted=' '.join('"'+arg.replace('\\','\\\\').replace('"','\\"').replace('%','%%').replace('$','$$')+'"' for arg in command)
-        service.write_text('[Unit]\nDescription=Update the managed Bottifact skill\n[Service]\nType=oneshot\nExecStart='+quoted+'\n')
-        timer.write_text('[Unit]\nDescription=Check Bottifact every six hours\n[Timer]\nOnStartupSec=5m\nOnUnitActiveSec=6h\nRandomizedDelaySec=5m\n[Install]\nWantedBy=timers.target\n')
+        service.write_text('[Unit]\nDescription=Update the managed Margen skill\n[Service]\nType=oneshot\nExecStart='+quoted+'\n')
+        timer.write_text('[Unit]\nDescription=Check Margen every six hours\n[Timer]\nOnStartupSec=5m\nOnUnitActiveSec=6h\nRandomizedDelaySec=5m\n[Install]\nWantedBy=timers.target\n')
         run(['systemctl','--user','daemon-reload'],check=True);run(['systemctl','--user','enable','--now',label+'.timer'],check=True)
         return {'configured':True,'scheduler':'systemd-user','interval_hours':6,'definition':str(timer)}
     raise ValueError('Programación automática disponible en macOS y Linux con systemd de usuario. Usa update manualmente en otros entornos.')

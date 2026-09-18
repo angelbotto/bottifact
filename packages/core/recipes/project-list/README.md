@@ -1,12 +1,9 @@
-## Lista de proyectos con contexto
+## Project list
 
 <!-- nota:ejemplo lista-proyectos -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** describir frentes paralelos, proyectos o líneas de investigación. Título breve y un
-párrafo por elemento; separación de 24 px inspirada en la lista de proyectos de `/now`.
-
-**Límite:** no reemplaza una tabla cuando se comparan atributos. No numera para sugerir prioridad
-si no existe un orden. Conserva enlaces reales y nombres completos al adaptar el contenido.
+**Use and limits:** Describe parallel projects or research directions with a short title and paragraph. Use a table when comparing common attributes. Numbering must not imply priority unless an order is real. Preserve complete names and real destinations.

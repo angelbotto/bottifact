@@ -1,6 +1,6 @@
 # Use artifacts.botto.is
 
-Use the existing Bottifact service without operating a server. This guide covers the hosted path only. [Self-hosting](self-hosting.md) has its own guide; [local-only installation](installation.md#local-only-skill) remains available without an account.
+Use the existing Margen service without operating a server. This guide covers the hosted path only. [Self-hosting](self-hosting.md) has its own guide; [local-only installation](installation.md#local-only-skill) remains available without an account.
 
 ## What you need
 
@@ -24,7 +24,7 @@ curl -fsSL https://artifacts.botto.is/install.sh -o /tmp/bottifact-install.sh
 bash /tmp/bottifact-install.sh
 ```
 
-The installer downloads a checksum-verified package, keeps a shared library in `~/.local/share/bottifact/library`, and creates links for Claude Code, Codex and Hermes. Existing independent skill directories are preserved; read the output if there is a conflict. The CLI launcher is `~/.local/bin/bottifact`.
+The installer downloads a checksum-verified package, keeps a shared library in `~/.local/share/bottifact/library`, and creates links for Claude Code, Codex and Hermes. Existing independent skill directories are preserved; read the output if there is a conflict. The CLI launcher is `~/.local/bin/margen`.
 
 If your shell cannot find it, add the directory for the current shell:
 
@@ -32,15 +32,15 @@ If your shell cannot find it, add the directory for the current shell:
 export PATH="$HOME/.local/bin:$PATH"
 ```
 
-Add the equivalent line to your own shell profile if you want it to persist. Reload the agent's skill discovery or start a new session and ask it to use **Bottifact**. This terminal installer configures local agents; it does not install anything into the ChatGPT website.
+Add the equivalent line to your own shell profile if you want it to persist. Reload the agent's skill discovery or start a new session and ask it to use **Margen**. This terminal installer configures local agents; it does not install anything into the ChatGPT website.
 
 ## 3. Connect your account
 
 In the signed-in portal, open **Conectar un agente** and create a personal token with a recognizable label, for example the agent and device. Then run:
 
 ```bash
-bottifact connect --server https://artifacts.botto.is
-bottifact status
+margen connect --server https://artifacts.botto.is
+margen status
 ```
 
 Paste the token only into the masked CLI prompt. Do not place it in a prompt, command argument, repository or screenshot. `status` reports your account, server and publication preference without displaying the token. Connection settings remain under `~/.config/bottifact/`, outside the shared skill.
@@ -49,16 +49,16 @@ An agent token is a credential for your account. Create and manage connections d
 
 ## 4. Create and publish
 
-Ask your agent to use Bottifact, describe the audience and decision, and ask for a validated HTML artifact. Publishing is separate from generating a local file. Explicitly ask it to publish, or opt into the persistent preference:
+Ask your agent to use Margen, describe the audience and decision, and ask for a validated HTML artifact. Publishing is separate from generating a local file. Explicitly ask it to publish, or opt into the persistent preference:
 
 ```bash
-bottifact preferences --publish-on-create yes
+margen preferences --publish-on-create yes
 ```
 
 You can disable that preference with `no`. It does not grant public visibility. A direct publication looks like:
 
 ```bash
-bottifact publish --file /path/to/brief.html --title 'Decision brief' \
+margen publish --file /path/to/brief.html --title 'Decision brief' \
   --visibility private --agent codex --session SESSION_ID --device DEVICE_LABEL
 ```
 
@@ -69,8 +69,8 @@ Open the returned link and manage sharing in the portal. `private`, `unlisted` a
 ## 5. Collect review and return to work
 
 ```bash
-bottifact comments --artifact-id ARTIFACT_ID --open --kind all
-bottifact feedback --artifact-id ARTIFACT_ID --output /tmp/bottifact-feedback
+margen comments --artifact-id ARTIFACT_ID --open --kind all
+margen feedback --artifact-id ARTIFACT_ID --output /tmp/bottifact-feedback
 ```
 
 The export preserves available artifact/version/anchor and source-session context. Open the intended agent session and ask it to read the bundle. Missing or ambiguous origins require `--agent` and `--session`. It does not automatically message the agent, edit conversation histories or resolve threads. See [feedback and sessions](feedback-and-sessions.md).
@@ -78,7 +78,7 @@ The export preserves available artifact/version/anchor and source-session contex
 ## Update or choose another instance
 
 ```bash
-bottifact update
+margen update
 ```
 
 Updates use the server recorded by the installer. If you later self-host, install/update from that new server and connect a token issued by that instance. Server selection for downloads and authentication are separate settings: updating code does not silently move your account or documents. Moving artifacts, reviews and identities between instances requires an explicit migration; simply changing the URL is not a data migration.
@@ -87,11 +87,11 @@ Updates use the server recorded by the installer. If you later self-host, instal
 
 | Symptom | Check |
 | --- | --- |
-| Command not found | PATH and `~/.local/bin/bottifact` |
+| Command not found | PATH and `~/.local/bin/margen` |
 | Skill not discovered | Installer output, agent skill directory and discovery reload |
 | Library empty | Signed-in account, actual publication and artifact permissions |
 | Email code missing | Available alternate sign-in method and service support; users do not need to create an email server |
-| Publish fails with authentication error | `bottifact status`, chosen server and a valid personal token |
+| Publish fails with authentication error | `margen status`, chosen server and a valid personal token |
 | Local HTML comments are absent from the portal | Browser-local comments are not automatically uploaded; use the review import/export workflow |
 | Feedback has no source session | Supply the actual target explicitly; no session transcript was imported |
 | A revision is not visible to readers | Check whether it is still a draft and release it after review |

@@ -1,14 +1,9 @@
-## Relato visual por pasos
+## Visual story
 
 <!-- nota:ejemplo relato-visual -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** Acompañar un argumento con una figura compartida. El scroll selecciona el paso en escritorio; los botones y el selector permiten fijarlo manualmente.
-
-**Cuándo no y límite:** 2–8 filas: nombre, magnitud no negativa y explicación breve (hasta 100 caracteres cada texto). Escala común con cero. En móvil la figura vuelve al flujo; cada paso conserva su dato escrito. No cambia cifras ni altera el scroll del lector. Sin JavaScript queda la tabla. No hace transiciones ni RAF; usa IntersectionObserver, que se desconecta al destruir la instancia.
-
-**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
-
-**Dependencia:** packages/core/components/evidence.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
+**Use and limits:** Connect a narrative to one shared figure with 2–8 rows: name, nonnegative magnitude and explanation, each text up to 100 characters. Desktop scroll selects a step; controls allow explicit selection. Mobile restores normal flow and written values. Shared zero-based scale, no data mutation or scroll hijacking. Without JavaScript retain the table. IntersectionObserver is cleaned up; no animation loop. Source data stays in one table (or the image zone list). Declare data-unidad (1–40 characters); numeric magnitude is limited to 10^12. Views round to eight significant digits while source values remain. Load evidence.js; NotaEvidencia.init/get/destroy owns lifecycle. Destroy before changing the source. No network or external libraries; data remains if enhancement fails.

@@ -1,10 +1,9 @@
-## Cronología anotada
+## Chronology
 
 <!-- nota:ejemplo cronologia -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** ordenar eventos y explicar qué cambió. En móvil la fecha queda sobre su evento.
-**Cuándo no / límite:** no codifica duración ni distancia temporal; el espacio entre filas no
-representa días. Para comparar duraciones usa etapas. No afirma causalidad por proximidad.
+**Use and limits:** Order events and explain what changed. Dates stack above their event on mobile. Spacing does not encode elapsed time or establish causality; use duration charts when duration matters.

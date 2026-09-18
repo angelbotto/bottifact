@@ -1,12 +1,11 @@
-## Attention map: matriz de intensidad
+## Heatmap
 
 <!-- nota:ejemplo calor -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** buscar concentraciones entre dos dimensiones discretas. Cada celda muestra su valor y la leyenda tiene intervalos explícitos. Para partes de un total usa `.mapa`, que conserva el treemap original.
-
-**Límite:** cinco niveles, definidos por seis límites crecientes; máximo incluido en el último nivel. Un valor fuera del dominio produce error visible y conserva la tabla, nunca se satura en secreto. Hasta 31 × 31 celdas con ancho mínimo por columna y scroll local. No usa degradado ni escala implícita por fila. Las cifras mantienen el significado con colores forzados.
-
 <a id="recetas-tablas"></a>
+
+**Use and limits:** Compare intensity across two discrete dimensions. Five levels use six increasing boundaries, with the maximum included in the final level. Out-of-domain data produces an error while preserving the source table, never silent saturation. Up to 31×31 cells, local scrolling and a minimum column width. Each cell retains its value; no hidden row-specific scales or gradient encoding.

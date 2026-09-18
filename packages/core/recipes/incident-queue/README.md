@@ -1,10 +1,9 @@
-## Cola de despacho y novedades
+## Incident queue
 
 <!-- nota:ejemplo cola-novedades -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** Filtrar vehículos con novedad, agrupar por ciudad y ordenar pedidos para revisar la operación. Reutiliza el explorador tabular, con datos de logística. `data-unidad="pedidos"` nombra el total; sin ese atributo el explorador conserva COP para los ejemplos financieros existentes.
-
-**Límite:** Incluye packages/core/components/controls.js y packages/core/components/data-explorer.js además de la base. Corte estático con las mismas cifras iniciales del ejemplo de flota; la simulación no modifica esta tabla. Buscar/filtrar/agrupar no asigna conductores ni envía mensajes. No calcula prioridad automáticamente. Identificar novedad, responsable y siguiente acción en una implementación operativa real. destroy/init del explorador permite sustituir el corte; no hay suscripción en vivo.
+**Use and limits:** Filter operational exceptions, group by city and sort orders using the shared data explorer. `data-unidad=pedidos` declares the total; legacy financial examples default to COP. This is a static snapshot, not updated by fleet playback. Keep units and explicit status text. Explorer limits, mobile cards, selection and export semantics apply; no dispatch or assignment actions are executed.

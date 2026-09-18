@@ -1,13 +1,3 @@
-# Componentes de Bottifact
+# Margen components
 
-Para **nuevos artefactos**, escribe contenido con estas recetas y usa el generador de
-[docs/artifact-contract.md](artifact-contract.md): incorpora la llave sol/luna, comentarios, sonido y ayudas de lectura.
-No reconstruyas esa base copiando el esqueleto histórico de abajo. Cada receta indica sus
-módulos; el generador los detecta e incrusta junto con `packages/core/styles/fonts.css` y `packages/core/styles/artifact.css` completos.
-Las piezas no requieren React ni clases de Tailwind.
-
-Para empezar por una pieza: [gráficas](#recetas-graficas),
-[calor](#recetas-calor), [tablas](#recetas-tablas),
-[sonido](#recetas-sonido), [escritura](#recetas-escritura),
-[Three.js](#recetas-three). `examples/generated/template.html` es el catálogo ejecutable;
-`examples/generated/chapters.html` muestra capítulos completos. Las recetas marcadas son sus fuentes.
+For new artifacts, compose content from these recipes and use the [artifact contract](artifact-contract.md). The generator includes appearance, comments, sound and reading aids once, detects recipe modules and embeds complete fonts and styles. React and Tailwind are not required. Start with [charts](#recetas-graficas), [heatmaps](#recetas-calor), [tables](#recetas-tablas), [sound](#recetas-sonido), [writing](#recetas-escritura) or [Three.js](#recetas-three). The executable catalog is `examples/generated/template.html`; chapters are in `examples/generated/chapters.html`.

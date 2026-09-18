@@ -1,10 +1,9 @@
-## Líneas: secuencia y datos ausentes
+## Line chart
 
 <!-- nota:ejemplo lineas -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** seguir una secuencia ordenada de categorías comparables. Trazo y número en la leyenda distinguen series incluso en Sea. Para fechas con separaciones distintas, usa temporal; para categorías independientes, barras.
-
-**Límite:** los intervalos en X son categóricos y equidistantes. La ausencia corta el trazo, no se convierte en cero. El eje Y muestra el dominio completo observado; no tiene que comenzar en cero porque codifica posición. Hasta cuatro series; no calcula suavizados ni intervalos de confianza.
+**Use and limits:** Follow an ordered sequence of comparable categories. X positions are equally spaced, not dated intervals. Missing values break the line instead of becoming zero. Y covers the observed domain and need not start at zero. Up to four series; line styles and legend numbers distinguish them. No smoothing or inferred confidence intervals. Use time-series for irregular dates.

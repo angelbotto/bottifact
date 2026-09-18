@@ -1,10 +1,9 @@
-## Antes y después editorial
+## Before after
 
 <!-- nota:ejemplo antes-despues -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** mostrar una corrección de texto, una decisión de interfaz o una revisión de contenido.
-**Cuándo no / límite:** no calcula un diff, ni compara capturas con un deslizador. `del`/`ins`
-identifican cambios editoriales; para alternativas sin relación temporal usa comparación.
+**Use and limits:** Explain an editorial correction or interface/content revision with del/ins semantics. It does not compute diffs or compare screenshots with a slider. Use comparison for alternatives without a temporal relationship.

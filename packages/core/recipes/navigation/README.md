@@ -1,14 +1,9 @@
-## Navegación editorial con separadores
+## Navigation
 
 <!-- nota:ejemplo navegacion -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** cabecera discreta para un blog o informe. Enlaces ordinarios para documentos; para
-capítulos dinámicos la biblioteca usa `barra capitulos navegacion-editorial`, botones `data-ir`
-y una región `data-capitulos-scroll` para desplazar sólo la navegación. Apariencia queda fuera.
-
-**Límite:** conservar índice y regla de lectura en documentos largos. No mezclar múltiples barras
-`data-ir` en un mismo documento. El separador es decorativo; cada enlace tiene un nombre propio.
-La variante no modifica las barras antiguas. Bajo 700 px, los capítulos pasan a una segunda fila.
+**Use and limits:** Use ordinary links for documents and `data-ir` buttons for local chapters. `data-capitulos-scroll` scrolls only chapter navigation; appearance stays separate. Preserve contents/progress for long documents and use one chapter navigation instance. Decorative separators do not replace accessible names. Below 700 px chapters move to a second row.

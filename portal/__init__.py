@@ -1,1 +1,1 @@
-"""Portal opcional de Bottifact. El generador HTML sigue siendo independiente."""
+"""Portal opcional de Margen. El generador HTML sigue siendo independiente."""

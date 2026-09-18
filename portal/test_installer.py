@@ -37,6 +37,29 @@ class InstallerTests(unittest.TestCase):
             with patch.object(sys,'argv',['install','--destino',str(dest),'--sin-enlaces']):
                 with self.assertRaises(ValueError):updater.main()
 
+    def test_margen_aliases_preserve_legacy_entry_and_custom_installations(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            home=Path(temporary);dest=home/'library'
+            legacy=home/'.agents/skills/bottifact';legacy.parent.mkdir(parents=True);legacy.symlink_to(dest)
+            custom=home/'.claude/skills/margen';custom.mkdir(parents=True);(custom/'personal.txt').write_text('keep')
+            data=self.archive('margen')
+            def fetch(path,limit):return data if path.endswith('.zip') else (hashlib.sha256(data).hexdigest()+'  package.zip').encode()
+            with patch.object(updater.Path,'home',return_value=home),patch.object(updater,'fetch',fetch),patch.object(sys,'argv',['install','--destination',str(dest)]):updater.main()
+            self.assertEqual((home/'.agents/skills/margen').resolve(),dest.resolve())
+            self.assertEqual((home/'.hermes/skills/margen').resolve(),dest.resolve())
+            self.assertEqual(legacy.resolve(),(dest/'compat/bottifact').resolve())
+            self.assertEqual((custom/'personal.txt').read_text(),'keep')
+            self.assertEqual((home/'.local/bin/margen').resolve(),(home/'.local/bin/bottifact').resolve())
+
+    def test_unmanaged_command_does_not_gain_a_margen_alias(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            home=Path(temporary);binary=home/'.local/bin/bottifact';binary.parent.mkdir(parents=True);binary.write_text('personal command')
+            data=self.archive('margen')
+            def fetch(path,limit):return data if path.endswith('.zip') else (hashlib.sha256(data).hexdigest()+'  package.zip').encode()
+            with patch.object(updater.Path,'home',return_value=home),patch.object(updater,'fetch',fetch),patch.object(sys,'argv',['install','--destination',str(home/'library')]):updater.main()
+            self.assertEqual(binary.read_text(),'personal command')
+            self.assertFalse((home/'.local/bin/margen').is_symlink())
+
     def test_corrupt_and_traversal_packages_rejected(self):
         with tempfile.TemporaryDirectory() as temporary:
             data=self.archive('test')

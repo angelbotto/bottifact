@@ -1,13 +1,5 @@
-## Convenciones de interfaz compacta
+## Compact interface conventions
 
-Las recetas actuales usan iconos para repetir apuntes, copiar, cambiar dispositivo, rotar y
-ajustar. Siempre conserva aria-label, title y foco visible; un SVG es aria-hidden. Repetir
-mantiene un icono de 18 px en un botón de 32 px (44 px en táctil), incluso con movimiento
-reducido. El visor da acceso directo a 390/768/1024 px; 320 y ancho disponible siguen en su menú.
-Los controles antiguos siguen siendo reconocidos por los módulos.
+Replay, copy, device, rotate and fit actions use icons with accessible names, tooltips and visible focus. Decorative SVG is aria-hidden. Preserve usable touch targets and reduced-motion behavior. Prototype presets include 390/768/1024px; 320px and available width remain in the menu. Filename headers stay visible; language-only code headers are compacted without changing copied text.
 
-Las cabeceras de código con nombre de archivo se conservan; las que sólo nombran el lenguaje
-se compactan con el icono superpuesto y espacio reservado. El texto copiado no cambia. El
-editor de comentarios crece hasta 160 px de entrada y después tiene scroll local; su contexto
-se abre voluntariamente. Apariencia reserva Temas a paletas: sonido, prueba y volumen están
-sólo en Sonido. No interpretes esos cambios como permiso para quitar nombres accesibles.
+The comment composer prioritizes author, draft and send, with context/type/session under an optional disclosure. Draft text grows before scrolling locally. Appearance is a searchable compact list with favorites/category and an independent mode control. Sound belongs exclusively to the Sound tab. Table tools share a button group while retaining named actions. Compactness never permits removing accessible labels.

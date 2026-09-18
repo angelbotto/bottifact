@@ -1,4 +1,6 @@
-## Código con encabezado y copia
+## Code with copy control
+
+Use when readers need exact text to inspect or copy. Keep filenames when meaningful; language-only headers are compacted by the interface runtime. Preserve native selection and local scrolling. If clipboard access fails, select the code and explain manual copying. IDs must be unique. Escape &, < and > when inserting source into HTML.
 
 ```html
 <figure class="ancho">
@@ -13,8 +15,3 @@
   <figcaption>Ejemplo verificable; la copia conserva el texto, sin los colores del resaltado.</figcaption>
 </figure>
 ```
-
-**Cuándo:** la persona necesita inspeccionar, comparar o copiar una entrada exacta. El encabezado
-usa mono `12px`; el código `13px / 1.65`, con desplazamiento y selección nativos. Si la API del
-portapapeles está bloqueada, el script selecciona el contenido y explica cómo copiarlo. Usa
-identificadores únicos por bloque. Escapa `&`, `<` y `>` al insertar código dentro del HTML.

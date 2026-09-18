@@ -1,14 +1,9 @@
-## Bandeja de revisión contextual
+## Review queue
 
 <!-- nota:ejemplo review-queue -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** Mostrar diferencias entre comentario compartido y nota personal con su contexto.
-
-**Datos necesarios:** reemplaza documento, versión, cita, fuente, audiencia y estado por valores conocidos; deja lo desconocido explícito. Los ejemplos son sintéticos.
-
-**Interacción y accesibilidad:** lectura semántica, detalles con teclado y redistribución en móvil. El paquete permite copiar su texto mediante el control estándar.
-
-**Límite:** Es una composición de muestra, no un gestor conectado. Filtrar permisos en servidor antes de construir el HTML.
+**Use and limits:** Demonstrate shared comments and personal notes with their distinct context. This is a sample composition, not a connected manager. Use verified references and filter permissions server-side before creating HTML. Preserve mobile reading and keyboard disclosure; do not expose private notes in a public example.

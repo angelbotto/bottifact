@@ -20,7 +20,7 @@ def check():
     for name in ('README.md', 'README.es.md'):
         for link in re.findall(r'!\[[^]]*\]\(([^)]+)\)', (ROOT / name).read_text()):
             # Dynamic badges contain no artifact/account pixels.
-            if link.startswith(('https://img.shields.io/', 'https://github.com/angelbotto/bottifact/actions/workflows/')):continue
+            if link.startswith(('https://img.shields.io/', 'https://github.com/angelbotto/margen/actions/workflows/')):continue
             assert link in allowed, 'Unreviewed README image: ' + link
     actual = {str(p.relative_to(ROOT)) for p in (ROOT / 'docs/assets').iterdir() if p.suffix in ('.png','.jpg','.jpeg','.webp')}
     assert actual == allowed, 'Public image manifest is incomplete'

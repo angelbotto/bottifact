@@ -1,6 +1,6 @@
 # Architecture
 
-Bottifact has three delivery layers sharing a recipe and theme library. HTML generation does not require React, Node, a backend or an agent vendor. The portal adds identity and collaboration. The React package makes selected components native to React and exposes the rest through isolated previews.
+Margen has three delivery layers sharing a recipe and theme library. HTML generation does not require React, Node, a backend or an agent vendor. The portal adds identity and collaboration. The React package makes selected components native to React and exposes the rest through isolated previews.
 
 ```mermaid
 flowchart LR

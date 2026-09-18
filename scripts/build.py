@@ -3,6 +3,17 @@
 from pathlib import Path
 import json, base64, hashlib, re, html as html_escape
 ROOT = Path(__file__).resolve().parents[1]
+# Keep review styling identical in standalone and hosted documents.
+review_css=(ROOT/'packages/core/styles/review-composer.css').read_text()
+css_path=ROOT/'packages/core/styles/artifact.css'
+css=css_path.read_text()
+start='/* REVIEW COMPOSER START */';end='/* REVIEW COMPOSER END */'
+css=re.sub(re.escape(start)+r'.*?'+re.escape(end)+r'\n?','',css,flags=re.S)
+prefix,marker,suffix=css.partition('/* GENERATED THEMES')
+assert marker, 'Missing generated theme boundary'
+css=prefix.rstrip()+'\n\n'+start+'\n'+review_css+end+'\n\n'+marker+suffix
+css_path.write_text(css)
+if (ROOT/'portal/static').is_dir():(ROOT/'portal/static/review-additions.css').write_text(review_css)
 from recipes import assemble as assemble_recipes
 assemble_recipes()
 from themes import generate as generate_theme_registry
@@ -37,7 +48,7 @@ def start(title):
  return '<title>' + title + '</title>\n<meta charset="utf-8">\n<style>\n' + (ROOT / 'packages/core/styles/fonts.css').read_text() + '\n' + (ROOT / 'packages/core/styles/artifact.css').read_text() + '\n</style>\n<meta name="viewport" content="width=device-width, initial-scale=1">\n'
 
 def tools():
- return '<div class="herramientas"><a href="#inicio" class="firma-editorial" aria-label="Inicio de la nota"><span>Bottifact</span><small>Cuadernos</small></a>'+appearance()+'</div>'
+ return '<div class="herramientas"><a href="#inicio" class="firma-editorial" aria-label="Inicio de la nota"><span>Margen</span><small>Cuadernos</small></a>'+appearance()+'</div>'
 
 def appearance():
  # Fuente única: copiar el control circular documentado, con IDs/nombres de cabecera.
@@ -105,7 +116,7 @@ GLOBE
 </div>
 <div class="extracto"><p class="desvanece" aria-hidden="true">Una nota se termina cuando alguien puede tomar una decisión con ella. La forma prepara el terreno; la evidencia sostiene lo que decimos.</p><details><summary>Leer la nota completa</summary><p>Una nota se termina cuando alguien puede tomar una decisión con ella. La forma prepara el terreno; la evidencia sostiene lo que decimos. Si la pieza necesita una segunda lectura para entender qué propone, todavía queda trabajo editorial.</p></details></div>
 <aside class="aviso cita"><span class="num" aria-hidden="true">↳</span><div><blockquote>Dejar una buena nota es dejarle contexto a quien llega después.</blockquote><p class="secundario">Principio de esta plantilla</p></div></aside>
-<footer class="pie"><p>Bottifact · Muestra de todos los componentes. Inspirada en <a href="https://www.cmrg.me">cmrg.me</a>; el tema claro, los ajustes de acceso y Dark Sea están documentados en el informe.</p><button type="button" data-sonido aria-pressed="false">Sonido apagado</button></footer>
+<footer class="pie"><p>Margen · Muestra de todos los componentes. Inspirada en <a href="https://www.cmrg.me">cmrg.me</a>; el tema claro, los ajustes de acceso y Dark Sea están documentados en el informe.</p><button type="button" data-sonido aria-pressed="false">Sonido apagado</button></footer>
 </main>
 <div class="regla" role="slider" tabindex="0" aria-orientation="vertical" aria-label="Progreso de lectura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="ticks"></div><div class="cursor"></div><span class="val">0%</span></div>
 '''
@@ -145,14 +156,14 @@ catalog=catalog.replace('NAV_COMPONENTES','<div data-buscador-recetas><div class
 body=body.replace('<footer class="pie">',catalog+'<footer class="pie">')
 body=body.replace('<li><a href="#guardado">Lo que vale guardar</a></li>','<li><a href="#guardado">Lo que vale guardar</a></li><li><a href="#libreria">Librería de evidencia</a></li><li><a href="#segunda-tanda">Artículos y prototipos</a></li>')
 body=re.sub(r'(<p class="bajada">.*?</p>)',r'\1<p class="enlace-edicion"><a href="examples/generated/report.html">Explorar el informe con capítulos →</a> · <a href="examples/generated/library.html">Abrir la biblioteca completa →</a></p>',body,count=1)
-(ROOT/'examples/generated/template.html').write_text(start('Bottifact — la forma también explica')+body+script('packages/core/components/reader.js')+globe_scripts()+script('packages/core/components/invitation.js')+script('packages/core/components/handwriting.js')+script('packages/core/components/attention-map.js')+script('packages/core/components/geography.js')+script('packages/core/components/fleet.js')+script('packages/core/components/analytics.js')+script('packages/core/components/charts.js')+script('packages/core/components/tables.js')+script('packages/core/components/sound.js')+script('packages/core/components/writing.js')+script('packages/core/components/scene.js')+script('packages/core/components/reports.js')+script('packages/core/components/prototype.js')+script('packages/core/components/tabs.js')+script('packages/core/components/catalog.js')+script('packages/core/components/editorial.js')+script('packages/core/components/code.js')+script('packages/core/components/table-model.js')+script('packages/core/components/data-explorer.js')+script('packages/core/components/evidence.js')+script('packages/core/components/review.js'))
+(ROOT/'examples/generated/template.html').write_text(start('Margen — la forma también explica')+body+script('packages/core/components/reader.js')+globe_scripts()+script('packages/core/components/invitation.js')+script('packages/core/components/handwriting.js')+script('packages/core/components/attention-map.js')+script('packages/core/components/geography.js')+script('packages/core/components/fleet.js')+script('packages/core/components/analytics.js')+script('packages/core/components/charts.js')+script('packages/core/components/tables.js')+script('packages/core/components/sound.js')+script('packages/core/components/writing.js')+script('packages/core/components/scene.js')+script('packages/core/components/reports.js')+script('packages/core/components/prototype.js')+script('packages/core/components/tabs.js')+script('packages/core/components/catalog.js')+script('packages/core/components/editorial.js')+script('packages/core/components/code.js')+script('packages/core/components/table-model.js')+script('packages/core/components/data-explorer.js')+script('packages/core/components/evidence.js')+script('packages/core/components/review.js'))
 globe_body='<main class="hoja" id="inicio" lang="es">'+tools()+'''<header class="cabecera"><p class="ceja">Nota / geografía</p><h1>Planes, puntos<br>y lugares.</h1><p class="bajada">Un globo de puntos para explorar conexiones. Elige una ruta, gira la Tierra o pausa la vista.</p></header>'''+globe()+'''<footer class="pie">Ejemplo reutilizable · Three.js desde cdnjs · máscara geográfica incrustada · ambos temas y movimiento reducido.</footer></main>'''
-(ROOT/'examples/generated/globe.html').write_text(start('Bottifact — globo de rutas')+globe_body+script('packages/core/components/reader.js')+globe_scripts())
-(ROOT/'examples/generated/chapters.html').write_text(start('Bottifact — capítulos')+dict(recipes())['multipagina']+script('packages/core/components/reader.js')+script('packages/core/components/chapters.js'))
+(ROOT/'examples/generated/globe.html').write_text(start('Margen — globo de rutas')+globe_body+script('packages/core/components/reader.js')+globe_scripts())
+(ROOT/'examples/generated/chapters.html').write_text(start('Margen — capítulos')+dict(recipes())['multipagina']+script('packages/core/components/reader.js')+script('packages/core/components/chapters.js'))
 informe=dict(recipes())['informe'].replace('<div class="edicion-acciones"><span>Edición 02</span></div>','<div class="edicion-acciones"><span>Edición 02</span>'+appearance()+'</div>')
 informe=re.sub(r'<figure class="pieza amplio" id="visor-ejemplo"[\s\S]*?</figure>',lambda _:dict(recipes())['visor'],informe,count=1)
 from contract_artifact import revision, build as build_estandar
-(ROOT/'examples/generated/report.html').write_text(start('Bottifact · Una revisión antes de confirmar')+informe+revision()+''.join(script(file) for file in ['packages/core/components/reader.js','packages/core/components/chapters.js','packages/core/components/charts.js','packages/core/components/reports.js','packages/core/components/prototype.js','packages/core/components/tabs.js','packages/core/components/review.js']))
+(ROOT/'examples/generated/report.html').write_text(start('Margen · Una revisión antes de confirmar')+informe+revision()+''.join(script(file) for file in ['packages/core/components/reader.js','packages/core/components/chapters.js','packages/core/components/charts.js','packages/core/components/reports.js','packages/core/components/prototype.js','packages/core/components/tabs.js','packages/core/components/review.js']))
 from library import build as build_biblioteca
 build_biblioteca(ROOT,start,script,appearance,recipes,labels,THREE)
 from fixture_regression import build
@@ -184,7 +195,7 @@ for key in new_ids:
  r=new_registry[key]
  new_body+='<section id="ver-'+key+'"><h2>'+r['nombre']+'</h2></section>'+r['html']+'<div class="receta-guia">'+prose(r['criterio_y_limites'])+'</div>'+code_box(r['html'],'nuevo-'+key,r['nombre'])
 (ROOT/'examples/content/evidence-content.html').write_text(new_body)
-(ROOT/'examples/generated/evidence.html').write_text(build_estandar('Bottifact · Ocho formas de explicar',[{'id':'evidencia','titulo':'Ocho formas de explicar','html':(ROOT/'examples/content/evidence-content.html').read_text()}],'Lectura guiada, escenarios y revisión visual. Datos ilustrativos.',theme='dark'))
+(ROOT/'examples/generated/evidence.html').write_text(build_estandar('Margen · Ocho formas de explicar',[{'id':'evidencia','titulo':'Ocho formas de explicar','html':(ROOT/'examples/content/evidence-content.html').read_text()}],'Lectura guiada, escenarios y revisión visual. Datos ilustrativos.',theme='dark'))
 print('Generado examples/generated/evidence.html: ocho piezas nuevas')
 from example_collaborative import generate as build_colaborativo
 build_colaborativo()
@@ -200,7 +211,7 @@ from example_brands import generate as build_marcas
 build_marcas()
 from example_system import generate as build_sistema
 build_sistema()
-print("Generado examples/generated/system.html: stack y skill de Bottifact")
+print("Generado examples/generated/system.html: stack y skill de Margen")
 
 from example_workbench import generate as build_workbench
 build_workbench()

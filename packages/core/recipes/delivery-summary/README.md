@@ -1,10 +1,9 @@
-## Ficha de entrega e hitos
+## Delivery summary
 
 <!-- nota:ejemplo ficha-entrega -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** Explicar último evento conocido y evidencia pendiente de un pedido. Complementa el mapa con recepción y prueba de entrega.
-
-**Límite:** HTML estático. Copia IDs únicos, fechas reales con zona y estado escrito. No hace seguimiento, carga archivos ni almacena firmas. No confundir cercanía del vehículo con pedido entregado. Si no hay un evento, escribir pendiente; no inventar hora o receptor. Usa pocos hitos y conserva un solo estado actual.
+**Use and limits:** Explain a delivery's last known event and missing evidence. Use real zoned timestamps and stable IDs; unknown receipt/signature/time remains pending. Static HTML does not track, upload files or store signatures. A nearby vehicle is not proof of delivery. Keep a few milestones and one current status.

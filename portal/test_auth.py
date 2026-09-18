@@ -17,7 +17,7 @@ from portal.test_app import HTML, ORIGIN
 
 class AuthTests(unittest.TestCase):
     def setUp(self):
-        self.env=patch.dict(os.environ,{'BOTTIFACT_EMAIL_URL':'https://email.test','BOTTIFACT_EMAIL_KEY':'test','BOTTIFACT_EMAIL_FROM':'Bottifact <access@example.com>','BOTTIFACT_AUTH_SECRET':'test-secret','BOTTIFACT_GOOGLE_ID':'client','BOTTIFACT_GOOGLE_SECRET':'secret','BOTTIFACT_GOOGLE_ENABLED':'1','BOTTIFACT_ADMIN_EMAILS':'owner@example.com,alias@example.com,third@example.com','BOTTIFACT_OWNER_ALIASES':'owner@example.com,alias@example.com,third@example.com'})
+        self.env=patch.dict(os.environ,{'BOTTIFACT_EMAIL_URL':'https://email.test','BOTTIFACT_EMAIL_KEY':'test','BOTTIFACT_EMAIL_FROM':'Margen <access@example.com>','BOTTIFACT_AUTH_SECRET':'test-secret','BOTTIFACT_GOOGLE_ID':'client','BOTTIFACT_GOOGLE_SECRET':'secret','BOTTIFACT_GOOGLE_ENABLED':'1','BOTTIFACT_ADMIN_EMAILS':'owner@example.com,alias@example.com,third@example.com','BOTTIFACT_OWNER_ALIASES':'owner@example.com,alias@example.com,third@example.com'})
         self.env.start();self.tmp=tempfile.TemporaryDirectory();self.app=create_app(self.tmp.name,origin=ORIGIN);self.store=self.app.state.store
         self.c=TestClient(self.app,base_url=ORIGIN,headers={'Origin':ORIGIN})
 

@@ -1,4 +1,6 @@
-## Texto que se desvanece
+## Fading excerpt
+
+Use only for an optional teaser. Apply the mask to an aria-hidden decorative copy; complete text remains available in details, through keyboard/screen reader and in print. Never fade the only copy of a conclusion, warning, source or table.
 
 ```html
 <div class="extracto">
@@ -10,7 +12,3 @@
   </details>
 </div>
 ```
-
-**Cuándo:** un anticipo opcional. La máscara `35% → 100%` afecta solo una copia decorativa;
-el contenido íntegro siempre está disponible por teclado, lector de pantalla e impresión.
-No apliques `.desvanece` al cierre de una conclusión, una alerta, una tabla o un pie con la fuente.

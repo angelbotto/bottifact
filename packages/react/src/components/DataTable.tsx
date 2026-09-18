@@ -20,6 +20,7 @@ import {
   tableCSV,
   type TableQuery,
 } from "@bottifact/core";
+import { ButtonGroup } from "./ui/button-group.js";
 import { ControlIcon } from "./ui/icon.js";
 import { FilterBuilder } from "./FilterBuilder.js";
 import { Inspector } from "./Inspector.js";
@@ -256,7 +257,7 @@ export function DataTable<Row extends RowData>({
             />
           </label>
         )}
-        <FilterBuilder columns={columns} value={query} onChange={setQuery} />
+        <ButtonGroup aria-label="Table tools"><FilterBuilder columns={columns} value={query} onChange={setQuery} />
         <details>
           <summary>
             <ControlIcon name="columns" />
@@ -395,6 +396,7 @@ export function DataTable<Row extends RowData>({
             </div>
           </details>
         )}
+        </ButtonGroup>
       </div>
       <div className="bf-table-overview">
         <p role="status">

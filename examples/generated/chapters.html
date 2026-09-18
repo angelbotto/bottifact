@@ -1,4 +1,4 @@
-<title>Bottifact — capítulos</title>
+<title>Margen — capítulos</title>
 <meta name="nota-titulo-anterior" content="Nota Tikin — capítulos">
 <meta charset="utf-8">
 <style>
@@ -3081,6 +3081,75 @@ body:has(.revision-barra) { padding-bottom:0; }
 @media(prefers-reduced-motion:no-preference){:is(.control-menu>summary,.apariencia-panel button,.revision-panel-v2 button,.visor-herramientas button){transition:background-color 120ms ease-out,color 120ms ease-out,border-color 120ms ease-out}}
 @media(max-width:640px){.explorer-ready .explorador-utilidades>details>summary {gap:4px}.explorer-ready .explorador-utilidades>details>summary .bf-ui-icon{width:14px;height:14px}.explorer-ready .explorador-paginacion button{width:44px}}
 
+/* REVIEW COMPOSER START */
+/* Shared by portable artifacts and the hosted adapter. */
+[data-revision-editor].review-composer{padding:12px!important;border:1px solid var(--linea)!important;border-radius:14px!important;background:var(--papel)!important;color:var(--tinta);box-shadow:0 4px 10px #00000008,0 16px 48px #00000022!important;max-width:calc(100vw - 24px)}
+[data-revision-editor].review-composer form{display:flex;flex-direction:column;gap:8px;margin:0}
+.review-composer .review-composer-header{display:flex;align-items:center;gap:8px;font:500 12px/1.4 var(--sans);min-width:0}
+.review-composer .review-composer-avatar{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;flex:none;background:var(--panel-2);color:var(--tinta-2);font:600 9px var(--sans)}
+.review-composer .review-composer-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+[data-revision-editor].review-composer textarea{width:100%;min-height:60px;max-height:160px;padding:5px 2px;margin:0;border:0;background:transparent;box-shadow:none;border-radius:0;font:14px/1.6 var(--sans);resize:none}
+[data-revision-editor].review-composer textarea:focus-visible{outline:none}
+[data-revision-editor].review-composer:focus-within{border-color:color-mix(in srgb,var(--foco) 40%,var(--linea))!important;box-shadow:0 0 0 2px color-mix(in srgb,var(--foco) 7%,transparent),0 16px 48px #00000022!important}
+.review-composer .review-composer-footer{display:flex;align-items:center;gap:6px;min-height:32px}
+.review-composer .review-composer-privacy{font:11px var(--sans);color:var(--tinta-2);flex:1}
+[data-revision-editor].review-composer .acciones{display:flex;gap:0;margin:0}
+[data-revision-editor].review-composer button.nota-icono,.review-composer .review-composer-options>summary{width:30px;height:30px;min-height:30px;min-width:30px;padding:6px;border:0;background:transparent;box-shadow:none;border-radius:7px;color:var(--tinta-2);display:grid;place-items:center;list-style:none;cursor:pointer}
+.review-composer .review-composer-options>summary::-webkit-details-marker{display:none}
+[data-revision-editor].review-composer [data-revision-guardar]{background:var(--tinta);color:var(--papel);border-radius:50%!important}
+[data-revision-editor].review-composer [data-revision-guardar]:disabled{background:var(--panel-2);color:var(--tinta-3);opacity:.6}
+.review-composer .review-composer-options{position:static;margin:0}
+.review-composer .review-composer-metadata{position:fixed;inset:auto;z-index:160;background:var(--papel);border:1px solid var(--linea);border-radius:10px;padding:12px;box-shadow:0 8px 24px #0002;max-height:220px;overflow:auto;font:12px/1.5 var(--sans)}
+.review-composer .revision-field{position:static!important;display:block!important;width:auto!important;height:auto!important;clip-path:none!important;margin:10px 0}
+.review-composer .revision-field select,.review-composer .revision-session input{width:100%;font:13px var(--sans);padding:7px;border:1px solid var(--linea);border-radius:6px;margin:4px 0;background:var(--panel);color:var(--tinta)}
+.review-composer .revision-session{margin:8px 0 0;font:12px var(--sans)}
+[data-revision-editor].review-composer .revision-contexto{margin:0}
+[data-revision-editor].review-composer .revision-contexto summary{display:block;width:auto;height:auto;padding:0;font:500 12px var(--sans)}
+[data-revision-editor].review-composer .revision-contexto summary::after{content:' Contexto del punto'}
+.review-composer .revision-contexto p{font:12px/1.5 var(--sans);color:var(--tinta-2);max-height:100px;overflow:auto}
+.review-composer :is(button,summary):focus-visible{outline:2px solid var(--foco);outline-offset:2px}
+.revision-marca[data-kind="note"]{border-style:dashed}.revision-enfocado{outline:2px solid var(--acento);outline-offset:3px}
+@media(hover:hover){.review-composer .review-composer-header button:hover,.review-composer .review-composer-options>summary:hover{background:var(--panel)}}
+@media(max-width:540px){[data-revision-editor].review-composer textarea{font-size:16px}.review-composer .review-composer-header button.nota-icono,.review-composer .review-composer-options>summary,[data-revision-editor].review-composer [data-revision-guardar]{width:40px;height:40px}}
+/* Compact appearance browser: one scrollable list, fixed controls. */
+.apariencia-panel.apariencia-explorador{width:min(380px,calc(100vw - 24px))!important;padding:16px!important;border-radius:14px!important;overflow:auto;max-width:calc(100vw - 24px);box-shadow:0 4px 12px #00000008,0 20px 56px #00000022!important}
+.apariencia-explorador .apariencia-encabezado{margin:0 0 12px;align-items:center}.apariencia-explorador .apariencia-titulo{font:600 14px/1.4 var(--sans);margin:0}.apariencia-explorador [data-tema-actual]{font:11px var(--sans);color:var(--tinta-2)}
+.apariencia-explorador .apariencia-pestanas{padding:3px;margin:0 0 14px;border-radius:8px;gap:2px}.apariencia-explorador .apariencia-pestanas button{min-height:34px;border-radius:5px;padding:6px 8px;font-size:12px}
+.apariencia-explorador .bf-theme-favorite{font-size:11px!important;margin:0 10px 10px 0!important;min-height:28px;padding:3px!important}.apariencia-explorador .bf-theme-favorite[aria-pressed=true]{color:var(--foco)}
+.apariencia-explorador .apariencia-modos{margin:0 0 12px}.apariencia-explorador .apariencia-modos legend,.apariencia-explorador [data-modo-estado]{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.apariencia-explorador .apariencia-modos>div{border:0;padding:3px;gap:2px;border-radius:7px}.apariencia-explorador .apariencia-modos span{min-height:30px;padding:5px;font-size:12px;border:0}.apariencia-explorador .apariencia-modos input:checked+span{box-shadow:0 1px 3px #00000012}
+.apariencia-explorador .apariencia-filtros{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:8px;margin:0 0 8px}.apariencia-explorador .apariencia-filtros label{font-size:11px;gap:4px}.apariencia-explorador .apariencia-filtros :is(input,select){min-height:34px;padding:6px 8px;border-radius:7px;border-color:var(--linea);font-size:12px}
+.apariencia-explorador .apariencia-colores{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:2px!important;max-height:min(300px,38dvh)!important;overflow:auto;padding:2px!important;scrollbar-gutter:stable}
+.apariencia-explorador .apariencia-colores label{display:grid;grid-template-columns:38px minmax(0,1fr) 16px!important;grid-template-rows:auto!important;min-height:48px!important;padding:6px 8px!important;gap:10px!important;align-items:center;align-content:center;border:0!important;border-radius:7px!important;background:transparent!important}
+.apariencia-explorador .apariencia-colores label:has(:checked){outline:none!important;background:var(--panel)!important;box-shadow:0 0 0 1px var(--linea) inset}
+.apariencia-explorador .apariencia-colores label:has(:focus-visible){outline:2px solid var(--foco)!important;outline-offset:-2px}
+.apariencia-explorador .apariencia-colores input{grid-column:3!important;grid-row:1!important;margin:0;width:14px;height:14px;accent-color:var(--foco)}
+.apariencia-explorador .apariencia-colores .paleta-mini{grid-column:1;grid-row:1;width:36px;height:28px;border-radius:5px}
+.apariencia-explorador .apariencia-colores label>span:last-child{grid-column:2!important;grid-row:1!important;font:500 12px/1.4 var(--sans)}
+.apariencia-explorador .apariencia-colores small{display:block;font:11px/1.4 var(--sans)!important;color:var(--tinta-2)}
+.apariencia-explorador .apariencia-resultados{margin-top:6px;font-size:11px}.apariencia-explorador .apariencia-resultados button{min-height:28px}
+@media(hover:hover){.apariencia-explorador .apariencia-colores label:hover{background:var(--panel)!important}}
+@media(max-width:540px){.apariencia-panel.apariencia-explorador{padding:12px!important}.apariencia-explorador .apariencia-pestanas button,.apariencia-explorador .apariencia-modos span{min-height:36px}.apariencia-explorador .apariencia-filtros :is(input,select){font-size:16px;min-height:38px}.apariencia-explorador .apariencia-colores{max-height:30dvh!important}}
+/* Grouped table actions, with a shared perimeter and explicit separators. */
+[data-explorador] .explorador-utilidades{display:flex;align-items:stretch;gap:0!important;padding:0!important;border:1px solid var(--linea);border-radius:8px;background:var(--papel);box-shadow:0 1px 2px #00000005;flex-wrap:nowrap}
+[data-explorador] .explorador-utilidades>.control-menu{margin:0;border:0;border-radius:0}
+[data-explorador] .explorador-utilidades>.control-menu+ .control-menu{border-left:1px solid var(--linea)}
+[data-explorador] .explorador-utilidades>.control-menu>summary{border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;min-height:34px;padding:7px 10px;font:500 12px var(--sans)}
+[data-explorador] .explorador-utilidades>.control-menu:first-child>summary{border-radius:7px 0 0 7px!important}[data-explorador] .explorador-utilidades>.control-menu:last-child>summary{border-radius:0 7px 7px 0!important}
+[data-explorador] .explorador-utilidades>.control-menu[open]>summary{background:var(--panel)!important;color:var(--tinta)}
+[data-explorador] .explorer-presentation{gap:0!important;padding:2px!important;border:1px solid var(--linea)!important;border-radius:7px;background:var(--panel)}
+[data-explorador] .explorer-presentation button{border:0!important;min-height:30px;border-radius:5px!important;background:transparent;padding:5px 9px;font-size:11px}[data-explorador] .explorer-presentation button[aria-pressed=true]{background:var(--papel)!important;box-shadow:0 1px 3px #0001}
+@media(hover:hover){[data-explorador] .explorador-utilidades>.control-menu>summary:hover{background:var(--panel)!important}}
+@media(max-width:540px){[data-explorador] .explorador-utilidades{width:100%;display:flex!important}[data-explorador] .explorador-utilidades>.control-menu{flex:1;min-width:0}[data-explorador] .explorador-utilidades>.control-menu>summary{min-height:40px;padding:6px!important;font-size:11px;gap:5px}}
+
+.review-composer .review-composer-options>summary svg{width:16px;height:16px}
+.review-composer .revision-contexto summary>svg{display:none}
+
+.review-composer .review-composer-error{font:12px/1.5 var(--sans);color:var(--tinta);margin:0;padding:6px 8px;border-left:2px solid var(--acento)}
+
+@media(max-width:540px){.review-composer .revision-field select,.review-composer .revision-session input{font-size:16px;min-height:40px}}
+/* REVIEW COMPOSER END */
+
 /* GENERATED THEMES — scripts/themes.py; edit packages/core/themes/families/. */
 :root[data-color-mode="light"] .paleta-mini[data-muestra-tema="editorial"] { --vista-papel:#fef8f2; --vista-tinta:#231e1a; --vista-acento:#a13f19; }
 :root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="editorial"] { --vista-papel:#13110f; --vista-tinta:#e9dfd7; --vista-acento:#f1b798; }
@@ -4680,7 +4749,7 @@ estado: pendiente de medir</code></pre></div><figcaption>Datos de ejemplo, sin u
     <button type="button" data-nav="prev"><span class="et">Anterior</span><span class="tit"></span></button>
     <button type="button" data-nav="next"><span class="et">Siguiente</span><span class="tit"></span></button>
   </div>
-  <footer class="pie">Bottifact · Dos capítulos de ejemplo.</footer>
+  <footer class="pie">Margen · Dos capítulos de ejemplo.</footer>
 </main><script>
 /* Shared, dependency-free interface primitives. Decorative SVG never carries the accessible name. */
 (() => {
@@ -5082,7 +5151,7 @@ estado: pendiente de medir</code></pre></div><figcaption>Datos de ejemplo, sin u
     const panel=menu.querySelector('.apariencia-panel'),trigger=menu.querySelector('summary');
     const viewport=window.visualViewport,w=viewport?.width||innerWidth,h=viewport?.height||innerHeight;
     const ox=viewport?.offsetLeft||0,oy=viewport?.offsetTop||0,gap=12;
-    panel.style.width=Math.max(1,Math.min(menu.querySelector('.apariencia-explorador')?560:324,w-gap*2))+'px';
+    panel.style.width=Math.max(1,Math.min(menu.querySelector('.apariencia-explorador')?380:324,w-gap*2))+'px';
     panel.style.maxHeight=Math.max(1,h-gap*2)+'px';
     const r=trigger.getBoundingClientRect(),height=panel.getBoundingClientRect().height;
     if(r.bottom<oy||r.top>oy+h){close(menu);return;}

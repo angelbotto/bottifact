@@ -1,10 +1,9 @@
-## Ficha de autor
+## Author
 
 <!-- nota:ejemplo autor -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** Cerrar un artículo con autoría y contexto, o abrir una página de autor. HTML estático.
-
-**Cuándo no / límite:** No acredita identidad ni contribuciones. La inicial es decorativa porque el nombre ya está escrito; una foto deberá ir incrustada como data: con el alt adecuado.
+**Use and limits:** Close an article with author identity and relevant context. Static HTML does not verify identity or contributions. Decorative initials repeat the visible name; an optional photograph needs an embedded data URI and appropriate alternative text.

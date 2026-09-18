@@ -1,12 +1,11 @@
-## Tabla con serie embebida
+## Sparkline
 
 <!-- nota:ejemplo sparkline -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** añadir tendencia a una tabla sin apartarse del registro. El texto de la celda nombra cada valor; el SVG es redundante y lleva `aria-hidden`.
-
-**Límite:** X equidistante; todas las filas deben describir los mismos períodos. Exige `data-min`/`data-max` comunes y rechaza dibujar puntos fuera de ellos. No autoescala por fila, no es una gráfica con ejes ni codifica tiempo irregular; para eso usa la serie temporal. El texto sigue disponible si el dibujo no se puede generar.
-
 <a id="recetas-sonido"></a>
+
+**Use and limits:** Add a trend without separating it from its record. Keep all values in text; the SVG is redundant and aria-hidden. X is equally spaced and all rows must use the same periods. Declare shared `data-min`/`data-max`; out-of-range points are rejected. No per-row autoscaling or irregular-time encoding. Text remains when rendering fails.

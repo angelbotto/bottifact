@@ -1,10 +1,9 @@
-## Torta y donut de composición
+## Pie chart
 
 <!-- nota:ejemplo torta -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** explicar de qué se compone un total positivo con pocas partes. Para comparaciones cercanas o muchas categorías, usa barras.
-
-**Límite:** Incluye packages/core/components/analytics.js. Entre 1 y 6 categorías únicas, no negativas; total mayor que cero. No admite negativos ni doble conteo; porcentaje calculado del total de filas, no de un denominador externo. Ceros permanecen en leyenda/tabla sin inventar un sector. Colores pueden repetirse desde la quinta categoría: nombres y cifras son la referencia.
+**Use and limits:** Show parts of a positive whole with 1–6 unique nonnegative categories. Zero remains in legend/table without an invented sector. Percentages use the row total, not an external denominator. No negatives or double counting. Names/values remain authoritative where colors repeat. Prefer bars for close comparisons or many categories.

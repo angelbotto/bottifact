@@ -1,21 +1,9 @@
-## Attention map de áreas
+## Attention map
 
 <!-- nota:ejemplo atencion -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** ver cómo se reparte atención, tiempo o gasto entre partes de un total. Incluye packages/core/components/attention-map.js;
-packages/core/components/audio.js ofrece hover optativo con el interruptor general. Este treemap recupera el tipo de mapa
-de la referencia; `data-grafica="calor"` sigue disponible para intensidades en una matriz.
-
-**Límite:** 1–40 categorías únicas, valores finitos no negativos de hasta 10⁹ y total positivo. Área
-calculada con una partición binaria; no imita posiciones fijas ni soporta jerarquías. Cero no ocupa
-área, pero sigue en la tabla y controles. Las celdas pequeñas muestran un número o sólo su área;
-los nombres y valores completos se conservan fuera del mapa, sin elipsis. Para diferencias
-pequeñas o un ranking preciso, usa barras. ViewBox de 1000×380, mínimo legible de 900 px con
-scroll local. No mide productividad ni conecta aplicaciones. `NotaAtencion.init/get/destroy`
-conserva la tabla original; destruye y reinicia tras cambiar sus datos. Tooltip al pasar el ratón,
-al enfocar un control o al tocar una celda: valor, porcentaje, total y `data-contexto` optativo en
-un texto de la fila (también visible en la tabla). Se puede mantener el puntero sobre el tooltip; Escape lo cierra. Los mismos datos
-siguen disponibles en la tabla y selección. No añadas HTML ni información exclusiva al contexto.
+**Use and limits:** Partition a positive total across 1–40 unique categories with finite nonnegative values up to 10^9. Binary area partitioning, not fixed placeholder positions or hierarchical squarification. Zero remains in controls/table with no area. Tiny cells may show a number while full names/values remain outside the map. A 1000×380 viewBox uses a 900 px readable local minimum. Hover, focus and touch expose value, share, total and optional plain-text `data-contexto`; Escape dismisses a hoverable tooltip. The table/selector expose equivalent data. No productivity measurement or app connection. init/get/destroy preserves source; destroy/reinitialize after data changes. Prefer bars for precise rankings.

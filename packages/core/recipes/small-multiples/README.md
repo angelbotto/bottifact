@@ -1,12 +1,9 @@
-## Pequeños múltiples con escala común
+## Small multiples
 
 <!-- nota:ejemplo multiples -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** comparar patrones de hasta cuatro grupos sin superponer sus líneas.
-**Cuándo no / límite:** los períodos son equidistantes y deben ser los mismos para todos los
-grupos; no codifica fechas irregulares. Entre 2 y 60 filas. Valores finitos de hasta ±10⁹,
-vacío distinto de cero. Cada panel conserva 360px mínimos dentro de su región desplazable.
-Sin valores, el dominio convencional es 0–1 y no hay puntos; no se inventan observaciones.
+**Use and limits:** Compare up to four groups without overlapping their lines. Use the same 2–60 equally spaced periods for every group; irregular dates are unsupported. Finite values up to ±10^9, with missing distinct from zero. Each panel retains a 360 px local minimum. An empty series has an explicit 0–1 auxiliary domain and no invented points.

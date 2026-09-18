@@ -1,31 +1,7 @@
-## Biblioteca completa y registro local
+## Component library and local registry
 
-[examples/generated/library.html](../examples/generated/library.html) reúne **44 recetas en nueve capítulos**: inicio,
-publicaciones, artículos, reportes, gráficas, tablas, prototipos, espacio y gesto, y edición.
-Cada pieza se genera desde el HTML anterior, con su criterio, límites y dependencias al lado.
-El estudio narrativo sigue en [examples/generated/report.html](../examples/generated/report.html); el cuaderno continuo, en
-[examples/generated/template.html](../examples/generated/template.html). Son tres composiciones del mismo sistema.
+`examples/generated/library.html` groups recipes into navigable chapters with guidance and dependencies. template.html is the continuous catalog; report.html is a narrative example. Use the generated registry for current counts.
 
-**Cuándo:** explorar y copiar piezas, evaluar temas con contenidos distintos o compartir
-un componente concreto. `data-enlaces-internos` en `.hoja.multipagina` habilita enlaces a
-IDs descendientes y su historial, por ejemplo `examples/generated/library.html#receta-calor`. Es optativo:
-las notas anteriores conservan su contrato. La barra navega capítulos, no es un tablist. Cada capítulo conserva además su índice de secciones y la regla muestra su progreso; en portátil ambos disponen de espacio reservado.
-El destino se muestra, recibe foco al navegar y queda fuera de la barra fija. Para enlazar
-vistas de pestañas usa el ID de la receta, no un panel oculto de la pieza.
+`data-enlaces-internos` enables descendant deep links and history in the multipage library. Navigation activates and focuses the target outside the fixed bar; link to the recipe rather than a hidden inner tab. Each chapter has its own outline/progress. Printing includes all chapters; without JS all content remains.
 
-**Límite:** es una biblioteca HTML local, no un CMS ni un tema Ghost instalable. No crea
-usuarios, comentarios, pagos o suscripciones. La búsqueda encuentra recetas locales y el
-archivo filtra las publicaciones que ya contiene. Al imprimir se incluyen todos los capítulos;
-la búsqueda y la configuración son controles de pantalla. Sin JS se muestran todos los
-capítulos de esta edición, con los datos originales y las alternativas de cada componente.
-
-[packages/core/registry/registry.json](../packages/core/registry/registry.json) contiene HTML, capítulo, dependencias y documentación de cada
-receta. Es un formato local versionado, **no el esquema de instalación de shadcn**. No lo
-cargues por fetch dentro de un artefacto. El ensamblador lo construye junto al HTML, sin red.
-`NotaEditorial.init(raíz)` y `get(elemento).destroy()` permiten inicializar y desmontar archivo
-/configurador. No anides archivos ni dupliques configuradores; los IDs de copiado son únicos.
-
-La configuración de Ghost inspira la separación entre contenido y presentación. Una futura
-integración necesita plantillas Handlebars, contexto del CMS, `package.json` y validación
-GScan; copiar este HTML no cumple ese contrato. La comparación y sus fuentes están en
-[edition-complete.md](../tests/evidence/edition-complete.md).
+The library is a local HTML catalog, not an installable CMS theme. The optional portal supplies separate authentication/collaboration. registry.json contains versioned HTML, chapter, modules and documentation; it is not the shadcn schema and should not be fetched at reader runtime. `NotaEditorial.init(root)` and get(element).destroy() manage archive/configurator lifecycle. Do not nest archives or duplicate IDs. A Ghost integration would additionally require CMS templates, context and GScan validation.

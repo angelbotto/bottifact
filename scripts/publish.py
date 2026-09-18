@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Publica HTML y recupera comentarios del portal Bottifact con una conexión personal."""
+"""Publica HTML y recupera comentarios del portal Margen con una conexión personal."""
 import argparse
 import getpass
 import socket
@@ -27,7 +27,7 @@ def private_json(path, value):
 
 def request(base, token, path, data=None, method=None):
     req=urllib.request.Request(base+path,data=json.dumps(data).encode() if data is not None else None,
-        headers={'Authorization':'Bearer '+token,'Content-Type':'application/json','User-Agent':'Bottifact/1.0'},method=method)
+        headers={'Authorization':'Bearer '+token,'Content-Type':'application/json','User-Agent':'Margen/1.0'},method=method)
     # No enviar la conexión a otro destino mediante una redirección.
     class NoRedirect(urllib.request.HTTPRedirectHandler):
         def redirect_request(self,*args,**kwargs):return None

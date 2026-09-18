@@ -135,8 +135,6 @@
       trigger.dataset.tooltip = "Apariencia";
       trigger.setAttribute("aria-label", "Apariencia");
       if (window.BottifactUI) trigger.replaceChildren(svg("appearance"));
-      const hint = make("p", "Personaliza tu lectura.", "bf-theme-hint");
-      appearance.querySelector(".apariencia-panel")?.prepend(hint);
     }
     const divider = () => {
       const d = make("span", null, "bf-dock-divider");
@@ -151,6 +149,7 @@
     quickComment.setAttribute("aria-pressed", "false");
     quickNote.setAttribute("aria-pressed", "false");
     document.addEventListener("bottifact:review-mode", (event) => {
+      if (!event.detail.active) say("");
       quickComment.setAttribute(
         "aria-pressed",
         String(event.detail.active && event.detail.kind === "comment"),
@@ -399,7 +398,7 @@
         '[data-preferencia-panel="temas"]',
       );
       themePanel?.prepend(favoriteButton);
-      favoriteOnly = make("button", "Sólo favoritos", "bf-theme-favorite");
+      favoriteOnly = make("button", "Favoritos", "bf-theme-favorite");
       favoriteOnly.type = "button";
       favoriteOnly.setAttribute("aria-pressed", "false");
       themePanel?.prepend(favoriteOnly);

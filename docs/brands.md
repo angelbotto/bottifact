@@ -1,52 +1,13 @@
-# Liftit, Tikin y Catabum en Bottifact
+# Liftit, Tikin and Catabum
 
-Repositorio de la biblioteca: [angelbotto/bottifact](https://github.com/angelbotto/bottifact), privado. Los repositorios de las empresas son fuentes de identidad; esta actualización no modifica sus aplicaciones.
+Brand assets and provenance are recorded in [brands.json](../packages/core/brands/brands.json). Use the embedded authorized logo rather than reconstructing a wordmark with a similar font. Brand identity and reader palette are related but separate choices.
 
-[examples/generated/brands.html](../examples/generated/brands.html) reúne las tres identidades. Prueba los artefactos [Liftit](../examples/generated/liftit.html), [Tikin](../examples/generated/tikin.html) y [Catabum](../examples/generated/catabum.html) en Claro, Oscuro y Sistema. Los ejemplos usan datos ilustrativos explícitos, no actividad de producción.
+- **Liftit:** logistics identity from the documented frontend sources, including LMS Ribbon/Bay and coral tokens. Route and fleet examples are illustrative unless connected to an actual feed.
+- **Tikin:** white, black and red, explicitly confirmed by the owner. Do not use the lime/lavender palette from an unrelated repository. Its logo must remain legible in both light and dark modes.
+- **Catabum:** the documented community identity and violet/magenta palette. Do not infer assets from the company name.
 
-## Procedencia
+The corresponding families each include light/dark variants. System mode follows the device. `--theme tikin` selects the family and its default identity; `--marca` can select identity independently. Check contrast, backgrounds, logo variants, chart colors and print output. Choosing a reader theme must not silently replace the artifact's company identity.
 
-Las rutas y commits consultados, los colores originales y hashes de los logos están en [packages/core/brands/brands.json](../packages/core/brands/brands.json). Se extrajeron los trazos de los SVG originales; los componentes React se convirtieron a SVG sin alterar geometría. Los logos monocromos adaptan su tinta al fondo y se incrustan como imágenes independientes, sin referencias remotas ni IDs compartidos.
+To update a brand, inspect the recorded repository path and commit, verify current authorized assets, edit family tokens and asset records, rebuild and test both modes and mobile. Do not overwrite unrelated checkouts or discard local changes. Logo rights remain with their owners; the project license does not grant trademark rights.
 
-| Marca | Fuente elegida | Identidad original | Adaptación editorial |
-| --- | --- | --- | --- |
-| Liftit | LMS web y UI compartida | Ribbon #465EFF, Bay #2B3492, coral #FF7A57; isotipo del menú | Sustituye el azul extraído antes de la web pública. El texto azul usa #3E54ED para mantener contraste en las tres superficies; Ribbon queda intacto como token de marca. El oscuro usa los neutros Mirage de la fuente y acentos aclarados para lectura |
-| Tikin | Landing y confirmación de Angel | Blanco #FFFFFF, negro #000000 y rojo #FC2929 | Claro: blanco, tinta negra y rojo #C51D24 para texto. Oscuro: negro, tinta blanca y rojo #FF6262 para texto. El rojo original queda en el token de marca |
-| Catabum | Tokens de la app y logo compartido | Fondo #1A0D2E, violeta #7C4DFF, magenta #FF3E81, naranja #FF8C3B | Claro propio y acentos legibles. La app aporta identidad; el admin usa neutros genéricos que no se tomaron como marca |
-
-La paleta de marca y el color semántico de un dato no son siempre iguales. Los colores originales están en las muestras; enlaces, focos y series usan variantes con contraste. Estos temas son adaptaciones para documentos, no una declaración de que cada variante esté aprobada como manual corporativo.
-
-Se identificaron también las fuentes de los productos: Eina03/CircularStd en Liftit; Neurial y Funnel Display en la landing de Tikin; Montserrat en la app Catabum. Esta entrega conserva las seis combinaciones tipográficas de Bottifact, elegibles en Letras. No incorpora los archivos de esas fuentes ni afirma reproducir toda la tipografía de las aplicaciones.
-
-## Tikin: identidad confirmada
-
-Tikin se compone en blanco, negro y rojo. La paleta lima/lavanda de otro repositorio no es la identidad solicitada y no debe reutilizarse para esta marca. El logo conserva los trazos originales: negro puro en claro y blanco puro en oscuro, con proporción y espacio propios. No se recolorea el wordmark de rojo ni se redibuja con tipografía. En gráficas, los neutros y el rojo se acompañan de rótulos, signos y valores; el color no es la única señal de un estado.
-
-## Elegir identidad y apariencia
-
-```bash
-python3 scripts/create_artifact.py --contenido contenido.html --titulo 'Mi lectura financiera' --documento-id lectura-financiera --tema tikin --modo system --estilo sobrio --salida examples/generated/report.html
-```
-
-Un tema inicial Liftit, Tikin o Catabum incorpora su logo automáticamente. `--marca` fija la identidad por separado: `--marca tikin --tema blueprint` prepara un documento técnico de Tikin con paleta Blueprint; `--marca bottifact --tema liftit` conserva la firma Bottifact. En JSON usa `"marca": "tikin"`.
-
-La identidad pertenece al documento. Cambiar el tema en el selector cambia sus colores, no la empresa que firma. El logo ajusta su tinta al modo efectivo. El modo Sistema sigue la apariencia del dispositivo. Los controles de comentarios y lectura siguen siendo los de la base.
-
-## Actualizar desde Hermes, Claude o Codex
-
-Para una instalación clonada desde GitHub, revisa primero si tiene cambios propios. Desde su carpeta ejecuta `git status --short`, `git remote -v` y, si está limpia, `git pull --ff-only`. No hagas reset ni borres una copia con cambios. El origen es `https://github.com/angelbotto/bottifact.git`; se requiere acceso al repositorio privado.
-
-Para una instalación desde ZIP, descarga [bottifact-portable.zip](https://github.com/angelbotto/bottifact/releases), extráelo en una carpeta temporal y ejecuta el instalador incluido allí con `--destino` y `--actualizar`. Verifica el paquete antes y después. El instalador conserva respaldo. No ejecutes `git pull` dentro de un paquete sin `.git`.
-
-En el MacBook configurado en esta sesión, los tres accesos apuntan a `~/.local/share/bottifact/library`. Actualiza esa biblioteca una sola vez desde el ZIP extraído:
-
-```bash
-python3 scripts/install.py --destino ~/.local/share/bottifact/library --actualizar
-python3 ~/.local/share/bottifact/library/scripts/verify_package.py ~/.local/share/bottifact/library
-```
-
-Ejecuta con Python 3.10 o posterior. Si el `python3` del sistema es más antiguo y existe Homebrew, usa `/opt/homebrew/bin/python3`. Conserva los enlaces de `~/.agents/skills/bottifact`, `~/.claude/skills/bottifact` y `~/.hermes/skills/bottifact`. Abre una sesión nueva para cargar las instrucciones actualizadas. Otras máquinas pueden tener otra ubicación; compruébala antes de actualizar.
-
-## Mantener las marcas
-
-Consulta el commit y la ruta de cada fuente; no deduzcas una identidad por el nombre de la empresa. Añade los colores a packages/core/themes/themes.json y registra cualquier adaptación de contraste. Usa el archivo de logo autorizado; no redibujes un wordmark con una fuente parecida. Regenera, valida los tres modos, comprueba móvil y prueba que cambiar de tema conserve la identidad. Los recursos siguen perteneciendo a sus titulares y se distribuyen para el uso autorizado en estos artefactos.
+Agent installation is documented in [installation](installation.md); upgrading a library updates its shared skill, not existing immutable artifact versions.

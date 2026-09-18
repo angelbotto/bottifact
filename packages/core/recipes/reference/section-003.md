@@ -1,4 +1,6 @@
-## Nota manuscrita y corchete
+## Handwritten note and bracket
+
+Use a margin note for a complementary perspective, never for a critical condition. The paragraph occupies the central grid cell; from 1184px the note occupies a real cell on the right and below that it follows the paragraph. Reenie Beanie supplies the annotation typography; only bracket decorations use absolute positioning. Use the margin-notes recipe for left/right animated variants.
 
 ```html
 <div class="con-margen">
@@ -10,8 +12,3 @@
 </div>
 <p class="nota">una buena nota le ahorra contexto a la siguiente persona</p>
 ```
-
-**Cuándo:** una perspectiva complementaria, no una condición que cambia la decisión principal.
-El párrafo ocupa la celda central; a partir de `1184px` la nota usa una celda real a su derecha.
-Debajo, sigue al párrafo. La nota usa Reenie Beanie `26px / 1.18`; el corchete es CSS de `1px`
-con remates de `9px`. Solo los remates decorativos son absolutos.

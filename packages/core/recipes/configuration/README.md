@@ -1,10 +1,9 @@
-## Configuración editorial
+## Configuration
 
 <!-- nota:ejemplo configuracion -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** Variar lista/rejilla y cantidad de información sin cambiar el contenido. Requiere packages/core/components/editorial.js; actualiza los archivos [data-archivo] del mismo documento y genera JSON copiable.
-
-**Cuándo no / límite:** No guarda preferencias ni importa JSON, no cambia el contenido y no conecta Ghost. El alcance es todo el documento; usa un solo configurador. Sin JS conserva el estado inicial. La paleta, tipografía y lectura cómoda siguen en apariencia.
+**Use and limits:** Change archive list/grid presentation and information density with editorial.js, producing copyable JSON. Scope is the current document: use one configurator. No preference persistence, JSON import, content changes or Ghost connection. Appearance continues to own palette and typography. Without JavaScript preserve the initial state.

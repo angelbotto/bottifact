@@ -1,10 +1,9 @@
-## Historial de revisiones
+## Revision history
 
 <!-- nota:ejemplo revisiones -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** Reportes que cambian tras una revisión y artículos con correcciones materiales.
-
-**Cuándo no / límite:** No es auditoría automática, control de versiones ni firma verificable. Escribe cambios reales y responsables reales; no uses la fecha de compilación como fecha de publicación.
+**Use and limits:** Record material changes and corrections using real dates and owners. This is an editorial history, not automatic version control, an audit log or a signature. A build timestamp is not a publication date.

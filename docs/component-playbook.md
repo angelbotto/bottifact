@@ -1,6 +1,6 @@
 # Component playbook
 
-Bottifact's catalog is a selection tool, not a checklist to fill in every document. Open `examples/generated/guide.html`: search by need, narrow by family or composition journey, then open a working example, limits and copyable source. The current count comes from `VERSION.json`; manifests and recipes are authoritative.
+Margen's catalog is a selection tool, not a checklist to fill in every document. Open `examples/generated/guide.html`: search by need, narrow by family or composition journey, then open a working example, limits and copyable source. The current count comes from `VERSION.json`; manifests and recipes are authoritative.
 
 ## Three different levels
 

@@ -1,26 +1,7 @@
-# artifacts.botto.is está activo
+# Hosting history
 
-El dominio público apunta al NAS mediante el túnel existente. Se agregó únicamente la ruta `artifacts.botto.is` → `http://bottifact:8080` y su CNAME proxied, conservando las otras 35 reglas. La credencial administrativa se resolvió desde Infisical; no está en este repositorio ni en el contenedor.
+This page records the original managed deployment, not the recommended self-host installation procedure. The shared service at `artifacts.botto.is` runs on the owner's NAS behind an existing Cloudflare tunnel. Artifact versions and review data are stored centrally, with backup and restore procedures documented separately.
 
-La portada está en https://artifacts.botto.is/. Cada cuenta ve sus documentos y los compartidos con ella. El catálogo del propietario incorpora 14 enlaces del portal anterior, privados dentro de esta biblioteca: abrirlos conserva las políticas de su sitio de origen. No se migraron sus versiones ni comentarios.
+The hosting arrangement is an instance-specific choice. Margen does not require a NAS, Tailscale, Cloudflare or the owner's domains. Follow [self-hosting](../self-hosting.md) for an independent deployment and [the hosted service](../hosted-service.md) for using the existing account service.
 
-## Acceso por persona
-
-En el documento, pulsa **Compartir**, elige **Personas invitadas**, añade el correo y escoge **Ver**, **Comentar** o **Editar**. Guarda y comparte el enlace. También puedes hacerlo desde la tarjeta de la biblioteca. Añadir un correo a un documento privado cambia el formulario a invitados; guardar es lo que aplica los permisos.
-
-La persona entra con Google o con su correo y un código personal de Bottifact enviado por Resend. No hay contraseña compartida por documento. El código verifica la identidad y Bottifact comprueba que ese correo tenga permiso. Las invitaciones automáticas por email aún no están implementadas: añadir una persona no le envía un mensaje.
-
-Quitar un correo y guardar revoca su acceso restringido. En un documento público o con enlace, quitar una invitación no impide la lectura general: para restringirla elige Invitados o Privado.
-
-## Configuración operativa
-
-- NAS: `bottifact-portal`, volumen `/volume1/docker/bottifact/data`.
-- Origen principal: `BOTTIFACT_ORIGIN=https://artifacts.botto.is`.
-- Origen adicional: `https://example-nas.example.invalid:8788` para administración privada.
-- Acceso propio: `artifacts.botto.is/login`. La ruta histórica `/auth/login` conserva Access para compatibilidad; no se enlaza desde la interfaz.
-- Acceso actual: Google OIDC (proyecto botticlaw, cliente Botto apps) o código propio por Resend. Callback registrado: `https://artifacts.botto.is/auth/google/callback`.
-- Proveedor legado de Access: One-time PIN. Firma, audiencia y emisor del JWT se verifican en el servidor.
-- DNS: CNAME `artifacts` → `dfa2b99e-a481-43b3-b73d-e1b1306e0729.cfargotunnel.com`, proxied.
-- Ruta añadida al túnel `dfa2b99e-a481-43b3-b73d-e1b1306e0729`: `http://bottifact:8080`.
-
-Se verificaron HTTPS, portada, redirección al formulario de código, API autenticada de agentes, aislamiento del catálogo y controles de acceso. Resend confirmó la entrega de una prueba al correo de Liftit del propietario; Google completó un ingreso real en el MacBook. No se enviaron correos de prueba a terceros.
+Do not copy instance credentials, tunnel configuration, private addresses, account aliases or production data into a public package. Storage implementation details belong in operational documentation, not the shared artifact UI.

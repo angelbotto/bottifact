@@ -1,19 +1,5 @@
-## Componer un artefacto estándar
+## Compose a standard artifact
 
-Las recetas anteriores son piezas de contenido. Para un nuevo artefacto completo de Angel,
-usa [el contrato de composición](artifact-contract.md): incluye HTML mínimo completo para copiar,
-comandos de una página y capítulos, criterio y límites del generador. La apariencia circular,
-el sonido optativo y los comentarios flotantes se incorporan una sola vez automáticamente.
-El índice se deriva de los h2 y la regla acompaña cada página. No insertes otra receta de
-apariencia o revisión dentro del contenido de esa base.
+Use the [artifact contract](artifact-contract.md) for new documents. Appearance, optional sound, floating comments and navigation are embedded once; do not insert duplicates in content. Appearance separates Themes, Typography and Sound. The sound tab owns preview, volume (initially 65%) and state. Preview activates the reference click; toggling preference alone does not play audio. Browser activation failure keeps audio inactive and explains retry. Pencil sound tracks its stroke and cancels with it. Enabled preference is not proof of audible output.
 
-Apariencia organiza Temas / Letras / Sonido y conserva el interruptor en Sonido. Sonido ofrece Probar sonido, volumen
-inicial 65 % y estado. Probar sonido activa y reproduce el clic original de cmrg.me; el interruptor por sí solo
-no emite audio. Un error al iniciar Web Audio mantiene el contexto inactivo y explica el reintento; la preferencia habilitada no equivale a salida audible.
-La señal de lápiz dura lo que el trazo y se cancela con él. Estos controles están en el HTML
-completo de la receta `apariencia`, en sus tres variantes; la llave circular es la predeterminada.
-
-**Cuándo:** artículos, informes y prototipos entregados como artefactos HTML de Angel. Selecciona
-las piezas de contenido por utilidad; los controles comunes deben estar presentes en cada entrega.
-**Límite:** el validador estructural no prueba audición, lector de pantalla ni layout. Tampoco
-actualiza HTML publicado. Sonido habilitado inicialmente, silencio persistido, pausa al ocultar y comentarios en memoria solamente.
+Choose components for editorial usefulness. Structural validation does not prove hearing, screen-reader output or responsive layout, and building does not update already published HTML. Standalone comments persist locally when storage is available, with a memory-only fallback; connected comments follow portal permissions.

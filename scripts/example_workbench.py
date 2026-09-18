@@ -65,12 +65,12 @@ def table(key, title, headers, rows, unit):
         + head
         + "</tr></thead><tbody>"
         + body
-        + '</tbody></table></div><p class="procedencia">Fuente: fixture público de Bottifact. Los totales corresponden al filtro completo; la selección puede incluir registros ocultos.</p></section>'
+        + '</tbody></table></div><p class="procedencia">Fuente: fixture público de Margen. Los totales corresponden al filtro completo; la selección puede incluir registros ocultos.</p></section>'
     )
 
 
 def generate():
-    intro = """<section id="decision"><p class="ceja">Bottifact / guía de trabajo</p><h2>Leer, contrastar y devolver contexto.</h2><p>La prioridad es reducir el trabajo entre encontrar un documento y preparar su siguiente versión. Esta guía permite probar las tablas con datos ficticios y entender qué queda guardado en el archivo, en el navegador o en la cuenta.</p><p>La barra inferior reúne Apariencia, Comentar, Nota privada, Revisión, Compartir y Más. Pasa el cursor o enfoca un icono para identificarlo; también puedes recorrer las herramientas con las flechas del teclado. En el portal, Más abre las referencias y la búsqueda de artefactos. El tema elegido por un lector conserva el diseño publicado.</p></section>"""
+    intro = """<section id="decision"><p class="ceja">Margen / guía de trabajo</p><h2>Leer, contrastar y devolver contexto.</h2><p>La prioridad es reducir el trabajo entre encontrar un documento y preparar su siguiente versión. Esta guía permite probar las tablas con datos ficticios y entender qué queda guardado en el archivo, en el navegador o en la cuenta.</p><p>La barra inferior reúne Apariencia, Comentar, Nota privada, Revisión, Compartir y Más. Pasa el cursor o enfoca un icono para identificarlo; también puedes recorrer las herramientas con las flechas del teclado. En el portal, Más abre las referencias y la búsqueda de artefactos. El tema elegido por un lector conserva el diseño publicado.</p></section>"""
     scenarios = [
         (
             "liftit-deliveries",
@@ -128,7 +128,7 @@ def generate():
     body += """<section id="devolver"><h2>De la revisión a la siguiente versión.</h2><ol><li>Dejo el comentario sobre el fragmento que necesita cambiar.</li><li>Abro Revisión → Preparar contexto para IA.</li><li>Elijo hilos y, sólo si hace falta, mis notas privadas y las referencias.</li><li>Reviso el prompt con artefacto, versión, cita, sesión y dispositivo registrados.</li><li>Lo copio a mi agente. Publico la revisión como borrador y comparo antes de reemplazar la versión compartida.</li></ol><p>Copiar no envía instrucciones a una sesión ni resuelve comentarios automáticamente.</p></section><section id="conectar"><h2>Conocimiento que se puede explicar.</h2><p>En la biblioteca, las entidades distinguen empresas, proyectos y temas. Los alias ayudan a buscar; no fusionan empresas. Las relaciones explícitas conservan una cita de la versión que las respalda. Las mesas y tableros son privados: juntar documentos no cambia su audiencia.</p><p>La vista de sesiones agrupa salidas por agente, sesión y dispositivo. No contiene transcripciones importadas.</p></section>"""
     (ROOT / "examples/generated/workbench.html").write_text(
         build(
-            "Bottifact · Trabajar con contexto",
+            "Margen · Trabajar con contexto",
             [{"id": "guia", "titulo": "Trabajar con contexto", "html": body}],
             "Tablas, referencias y revisión con datos sintéticos.",
             theme="linear",

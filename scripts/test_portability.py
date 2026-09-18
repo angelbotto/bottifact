@@ -22,8 +22,8 @@ class PortableTests(unittest.TestCase):
    subprocess.run(['python3',str(dest/'scripts/create_artifact.py'),'--contenido',str(dest/'examples/content/standard-content.html'),'--titulo','Prueba portable','--tema','blueprint','--estilo','tecnico','--salida',str(output)],cwd=root,check=True,capture_output=True)
    subprocess.run(['python3',str(dest/'scripts/validate_artifact.py'),str(output)],cwd=root,check=True,capture_output=True)
    self.assertIn('nota-tema-inicial',output.read_text())
-   self.assertIn('Bottifact',output.read_text())
-   self.assertIn('name: bottifact', (dest/'SKILL.md').read_text())
+   self.assertIn('Margen',output.read_text())
+   self.assertIn('name: margen', (dest/'SKILL.md').read_text())
    self.assertEqual(dest.name,'bottifact')
    from new_component import scaffold
    scaffold(dest, 'test-release-brief', 'Release brief', 'reports')

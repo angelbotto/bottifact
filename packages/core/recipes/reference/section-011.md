@@ -1,4 +1,6 @@
-## Tarjetas «kept»
+## Kept cards
+
+Use for selected objects or references with a complete title and a useful personal note. Covers are optional. Adaptive columns have a 240px minimum; hover transforms the cover without moving text and reduced motion removes transitions. Use a real named link for navigation. Embed images as data URIs. Generated sample covers are local illustrations, not commercial artwork.
 
 ```html
 <div class="kept ancho">
@@ -17,10 +19,3 @@
   </article>
 </div>
 ```
-
-**Cuándo:** objetos o referencias seleccionados, no un catálogo exhaustivo. Portada opcional,
-título completo y una nota personal o útil. `auto-fit` con mínimo adaptable de `240px`; el hover
-inclina la portada `−2deg` y la eleva `3px` durante `320ms`, sin mover el texto. Con movimiento
-reducido no hay transición. Si toda la tarjeta debe navegar, usa un enlace real con nombre;
-no añadas un `onclick` a un `div`. Las portadas con `<img>` deben ser `data:` URI, como las de
-`examples/generated/template.html`, que se generan localmente y no reproducen carátulas comerciales.

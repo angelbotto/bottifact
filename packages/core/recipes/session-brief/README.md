@@ -1,14 +1,9 @@
-## Ficha de sesión y continuación
+## Session brief
 
 <!-- nota:ejemplo session-brief -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** Retomar trabajo con objetivo, resultados y siguiente paso.
-
-**Datos necesarios:** reemplaza documento, versión, cita, fuente, audiencia y estado por valores conocidos; deja lo desconocido explícito. Los ejemplos son sintéticos.
-
-**Interacción y accesibilidad:** lectura semántica, detalles con teclado y redistribución en móvil. El paquete permite copiar su texto mediante el control estándar.
-
-**Límite:** No es una entidad de sesión del portal ni importa conversaciones. Usar referencias reales sólo cuando existan.
+**Use and limits:** Resume work using its actual objective, outputs and next step. Supply known document, version, quote, source, audience and state; explicitly mark unknowns. Semantic reading and keyboard disclosures reflow on mobile. Synthetic examples are not a portal session entity or conversation import. Reference real sessions only when available.

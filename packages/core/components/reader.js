@@ -104,7 +104,7 @@
     const panel=menu.querySelector('.apariencia-panel'),trigger=menu.querySelector('summary');
     const viewport=window.visualViewport,w=viewport?.width||innerWidth,h=viewport?.height||innerHeight;
     const ox=viewport?.offsetLeft||0,oy=viewport?.offsetTop||0,gap=12;
-    panel.style.width=Math.max(1,Math.min(menu.querySelector('.apariencia-explorador')?560:324,w-gap*2))+'px';
+    panel.style.width=Math.max(1,Math.min(menu.querySelector('.apariencia-explorador')?380:324,w-gap*2))+'px';
     panel.style.maxHeight=Math.max(1,h-gap*2)+'px';
     const r=trigger.getBoundingClientRect(),height=panel.getBoundingClientRect().height;
     if(r.bottom<oy||r.top>oy+h){close(menu);return;}

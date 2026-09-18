@@ -1,10 +1,9 @@
-## Velas financieras OHLC
+## Candlestick
 
 <!-- nota:ejemplo velas -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** mostrar apertura, extremos y cierre de un mismo período. No para saldos que no tengan apertura/cierre definidos ni para mezclar unidades.
-
-**Límite:** Incluye packages/core/components/analytics.js. 1–60 fechas ISO únicas; mínimo ≤ apertura y cierre ≤ máximo. No calcula indicadores técnicos ni conecta mercados. Posiciones temporales reales; limita el número de observaciones para conservar cuerpos legibles. Si todo es constante, muestra un dominio auxiliar ±10 % o ±1 alrededor del valor.
+**Use and limits:** Show open, high, low and close for 1–60 unique ISO dates in one unit. Low must not exceed open/close, which must not exceed high. Real temporal positions; constant data uses an auxiliary ±10% or ±1 domain. No market feed or technical indicators. Do not use for undefined opening/closing balances.

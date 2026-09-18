@@ -1,12 +1,9 @@
-## Listas de estado
+## Status list
 
 <!-- nota:ejemplo lista-estados -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** una página «ahora», avance editorial o lista de pendientes a una fecha. Estado por
-símbolo, texto accesible y tachado sólo para lo completado; los pendientes siguen siendo legibles.
-
-**Límite:** instantánea de lectura, no checkboxes editables ni gestor de tareas. No asigna progreso
-porcentual a estados cualitativos. Actualiza fecha y contenido juntos; el color nunca es la única señal.
+**Use and limits:** Show a dated snapshot of completed and pending work. Symbols, text and strike-through distinguish status; color is supplementary. It is not an editable task manager or checkbox list. Do not derive percentages from qualitative states. Update date and content together.

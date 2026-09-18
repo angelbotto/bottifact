@@ -1,13 +1,9 @@
-## Calculadora de escenarios
+## Scenario
 
 <!-- nota:ejemplo escenario -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** explicar la sensibilidad de un resultado a supuestos explícitos y reversibles.
-**Cuándo no / límite:** modelo lineal de capacidad, sin simulación, predicción ni valoración
-financiera. Minutos no negativos, hasta un día por operación y un millón de operaciones al mes;
-volumen entero y tiempos en décimas. Si después es mayor, muestra horas adicionales. Vacíos y
-entradas fuera de límites invalidan el resultado; no conserva silenciosamente una cifra previa.
-Sin JS se ve el cálculo inicial; no usar los controles como formulario de recolección.
+**Use and limits:** Explore a linear capacity model with explicit reversible assumptions. Nonnegative minutes, at most one day per operation and one million operations per month; integer volume and time in tenths. Longer after-times show additional hours. Missing/out-of-range inputs invalidate output instead of retaining a stale result. No forecasting, valuation or data submission; without JavaScript the initial calculation remains.

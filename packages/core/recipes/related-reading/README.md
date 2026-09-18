@@ -1,10 +1,9 @@
-## Lecturas relacionadas
+## Related reading
 
 <!-- nota:ejemplo relacionados -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** Proponer siguientes lecturas seleccionadas por su relación con el argumento.
-
-**Cuándo no / límite:** No recomienda automáticamente ni personaliza. Usa destinos existentes y descripciones específicas; no sirve para esconder la navegación principal.
+**Use and limits:** Suggest deliberately selected next readings with specific reasons and real destinations. No automatic recommendation or personalization. Do not hide primary navigation here.

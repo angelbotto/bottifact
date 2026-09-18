@@ -1,14 +1,9 @@
-## Cohortes de recurrencia
+## Cohorts
 
 <!-- nota:ejemplo cohortes -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** Comparar recurrencia de grupos con distintas fechas de entrada. Cada celda muestra recuento, base y porcentaje; no convierte lo pendiente en cero.
-
-**Cuándo no y límite:** 1–20 cohortes y 1–12 períodos con cabeceras de hasta 24 caracteres. Base entera positiva, recuentos enteros entre cero y la base. Las celdas con data-estado="pendiente" deben quedar al final de cada fila. No calcula cohortes desde eventos, ni compara meses de distinta definición. Cinco intensidades: [0,20), [20,40), [40,60), [60,80), [80,100] %. Los porcentajes exactos siempre se escriben.
-
-**Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
-
-**Dependencia:** packages/core/components/evidence.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
+**Use and limits:** Compare recurrence using 1–20 cohorts and 1–12 periods with labels up to 24 characters. Positive integer bases; integer counts between zero and base. Pending cells (`data-estado=pendiente`) must trail each row and are not zero. Exact count/base/percentage remain visible. Five intensity ranges: [0,20), [20,40), [40,60), [60,80), [80,100]%. No event-to-cohort calculation or incompatible period comparisons. Source data stays in one table (or the image zone list). Declare data-unidad (1–40 characters); numeric magnitude is limited to 10^12. Views round to eight significant digits while source values remain. Load evidence.js; NotaEvidencia.init/get/destroy owns lifecycle. Destroy before changing the source. No network or external libraries; data remains if enhancement fails.

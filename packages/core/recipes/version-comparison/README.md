@@ -1,14 +1,9 @@
-## Comparación editorial entre versiones
+## Version comparison
 
 <!-- nota:ejemplo version-comparison -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** Explicar una corrección editorial y su motivo sin ocultar la incertidumbre.
-
-**Datos necesarios:** reemplaza documento, versión, cita, fuente, audiencia y estado por valores conocidos; deja lo desconocido explícito. Los ejemplos son sintéticos.
-
-**Interacción y accesibilidad:** lectura semántica, detalles con teclado y redistribución en móvil. El paquete permite copiar su texto mediante el control estándar.
-
-**Límite:** Comparación manual de fragmentos, no motor de diff ni control de versiones. Mantener títulos Antes/Propuesta en móvil.
+**Use and limits:** Explain a manual editorial correction and its reason without hiding uncertainty. Use real source versions and quotes; examples are synthetic. Not an automatic diff or version-control engine. Keep Before/Proposal labels clear on mobile and retain keyboard-readable/copyable text.

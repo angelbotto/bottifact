@@ -1,4 +1,6 @@
-## Avisos con círculo
+## Circular callouts
+
+Use for conditions, errors, confirmations and short quotations. The default variant is informational; `ojo`, `bien` and `mal` add semantic emphasis. The 28px circle stays in the grid rather than invading the margin. Static callouts do not need `role="alert"`. Numbering does not make a callout an executable step.
 
 ```html
 <aside class="aviso ojo" aria-label="Aviso 1: condición">
@@ -22,8 +24,3 @@
     <p class="secundario">Principio de esta plantilla</p></div>
 </aside>
 ```
-
-**Cuándo:** condiciones, errores, confirmaciones o citas breves. Omite la variante para una nota
-informativa azul. Círculo `28px`, dos columnas `30px minmax(0,1fr)`, borde izquierdo `3px`;
-el número pertenece al flujo y no invade un margen. No uses `role="alert"` para avisos estáticos.
-El original usa símbolos dentro de un círculo; la numeración es la adaptación pedida por Angel.

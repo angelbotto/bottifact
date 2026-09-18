@@ -1,10 +1,9 @@
-## Metodología desplegable
+## Methodology
 
 <!-- nota:ejemplo metodologia -->
+
 ```html
 {{EXAMPLE}}
 ```
 
-**Cuándo:** explicar detalles del método después de un resumen que ya declara el límite principal.
-**Cuándo no / límite:** no ocultes condiciones que cambian la conclusión. `details` funciona sin
-JS; `packages/core/components/reader.js` abre y restaura el método al imprimir. No verifica ni ejecuta el método.
+**Use and limits:** Disclose methodological detail after stating the main limitation in normal text. Do not hide conditions that change the conclusion. Native details works without JavaScript; reader expands and restores it for print. The component neither executes nor verifies the method.

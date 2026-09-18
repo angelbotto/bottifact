@@ -1,4 +1,4 @@
-"""Contrato reutilizable para crear y verificar artefactos Bottifact. Sin red."""
+"""Contrato reutilizable para crear y verificar artefactos Margen. Sin red."""
 from pathlib import Path
 from html.parser import HTMLParser
 from html import escape
@@ -61,7 +61,7 @@ def toc(content):
   items.append((anchor.attrs['id'],n.text().strip()))
  return items
 
-def build(title,pages,description='',brand='Bottifact',theme=None,style=None,document_id=None,mode=None,marca=None):
+def build(title,pages,description='',brand='Margen',theme=None,style=None,document_id=None,mode=None,marca=None):
  if document_id is not None and (not isinstance(document_id,str) or not re.fullmatch(r'[a-zA-Z0-9_-]{1,120}',document_id)):raise ValueError('documento_id: 1–120 letras, números, guiones o subrayados.')
  if theme is not None or mode is not None:theme,mode=normalize(theme,mode)
  brand_id=identity(marca,theme)

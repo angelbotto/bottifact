@@ -11,7 +11,7 @@ try:
  file.write_text(source);call('goto','--url',url)
  evaluate('''(()=>{document.querySelector('.revision-barra [data-revision-modo]').click();document.querySelector('#parrafo').click();const i=document.querySelector('[data-revision-texto]');i.value='Conservar esta observación durante el cambio de marca.';i.dispatchEvent(new Event('input'));document.querySelector('[data-revision-guardar]').click();return true})()''')
  before=evaluate('NotaRevision.get(document.querySelector("[data-revision]")).exportData()')
- file.write_text(source.replace('<title>'+escape(old_title)+'</title>','<title>Bottifact · Prueba</title><meta name="nota-titulo-anterior" content="'+escape(old_title,quote=True)+'">'))
+ file.write_text(source.replace('<title>'+escape(old_title)+'</title>','<title>Margen · Prueba</title><meta name="nota-titulo-anterior" content="'+escape(old_title,quote=True)+'">'))
  call('goto','--url',url)
  after=evaluate('NotaRevision.get(document.querySelector("[data-revision]")).exportData()')
  comments=evaluate('NotaRevision.get(document.querySelector("[data-revision]")).comments')
