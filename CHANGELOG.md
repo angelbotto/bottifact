@@ -1,6 +1,11 @@
 # Changelog
 
 
+## 0.7.1 — 2026-09-18
+
+- Count open threads directly from authorized host snapshots for older artifacts without an embedded review module.
+- Correct workbench instructions to match the simplified reader dock.
+
 ## 0.7.0 — 2026-09-18
 
 - Unify writing in one dock action with visible per-thread privacy. Keep access management in Share and remove the generic More dock.
