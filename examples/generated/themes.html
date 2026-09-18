@@ -2912,6 +2912,31 @@ body:has(.revision-barra) { padding-bottom:0; }
 .revision-marca[data-kind="note"] { border-style:dashed; }
 .revision-enfocado { outline:2px solid var(--acento); outline-offset:3px; }
 
+/* Local relationship explorer: stable positions and a readable source table. */
+.relationship-tools { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin:20px 0; }
+.relationship-tools label { display:grid; gap:6px; font:12px/1.5 var(--sans); min-width:0; }
+.relationship-tools input,.relationship-tools select { width:100%; min-width:0; min-height:44px; background:var(--papel); color:var(--tinta); border:1px solid var(--linea-fuerte); border-radius:5px; padding:8px; }
+.relationship-actions,.relationship-search { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; }
+.relationship-search[hidden] { display:none; }.relationship-search p { flex-basis:100%; margin:0; }
+.relationship-layout { display:grid; grid-template-columns:minmax(0,1fr) 250px; gap:20px; }
+.relationship-viewport { overflow:auto; max-height:620px; padding:12px; border:1px dotted var(--linea); border-radius:6px; min-width:0; overscroll-behavior:contain; }
+.relationship-stage { position:relative; }.relationship-surface { position:relative; transform-origin:top left; }
+.relationship-lines { position:absolute; inset:0; overflow:visible; color:var(--tinta-2); pointer-events:none; }
+.relationship-lines path { fill:none; stroke:currentColor; stroke-width:1.5; }
+.relationship-column { position:absolute; top:0; margin:0; font:11px/1.4 var(--mono); text-transform:uppercase; letter-spacing:.08em; }
+.relationship-node { position:absolute; width:218px; min-height:114px; padding:14px; background:var(--papel); border:1px solid var(--linea-fuerte); border-radius:8px; text-align:left; white-space:normal; }
+.relationship-node small { display:block; font:11px/1.5 var(--mono); margin-bottom:8px; color:var(--tinta-2); }
+.relationship-node strong { display:block; font:500 15px/1.5 var(--sans); overflow-wrap:anywhere; }
+.relationship-node[aria-pressed=true] { border:2px solid var(--naranja); background:var(--suave); }
+.relationship-inspector { min-width:0; border-left:1px dotted var(--linea); padding-left:18px; }
+.relationship-inspector h4 { font:400 25px/1.2 var(--serif); margin:10px 0; }.relationship-inspector p { font:14px/1.6 var(--sans); }
+.relationship-inspector details button { display:block; width:100%; margin:6px 0; text-align:left; }
+.relationship-link { padding:12px 0; border-top:1px dotted var(--linea); }.relationship-link small { display:block; margin:8px 0; }
+.relationship-actions button,.relationship-search button,.relationship-inspector button { min-height:44px; white-space:normal; }
+[data-buscador-recetas] .catalogo-indice a strong,[data-buscador-recetas] .catalogo-indice a small { display:block; }
+[data-buscador-recetas] .catalogo-indice a small { font:11px/1.5 var(--mono); color:var(--tinta-2); margin-top:5px; }
+@media(max-width:760px) { .relationship-layout { grid-template-columns:minmax(0,1fr); }.relationship-inspector { border-left:0; border-top:1px dotted var(--linea); padding:16px 0 0; }.relationship-tools { grid-template-columns:minmax(0,1fr) minmax(0,1fr); } }
+
 /* GENERATED THEMES — scripts/themes.py; edit packages/core/themes/families/. */
 :root[data-color-mode="light"] .paleta-mini[data-muestra-tema="editorial"] { --vista-papel:#fef8f2; --vista-tinta:#231e1a; --vista-acento:#a13f19; }
 :root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="editorial"] { --vista-papel:#13110f; --vista-tinta:#e9dfd7; --vista-acento:#f1b798; }
@@ -5553,4 +5578,4 @@ body:has(.revision-barra) { padding-bottom:0; }
 })();
 
 </script>
-<script type="application/json" data-nota-manifiesto>{"version": "4", "paginas": ["apariencia"], "modulos": ["packages/core/components/audio.js", "packages/core/components/controls.js", "packages/core/components/editorial-pieces.js", "packages/core/components/reader.js", "packages/core/components/charts.js", "packages/core/components/handwriting.js", "packages/core/components/code.js", "packages/core/components/review.js"], "fuentes": {"packages/core/styles/fonts.css": "c496fb4f095a14cbb6a82503a4a828720c01a8120df3c73113495d832e5d40cb", "packages/core/styles/artifact.css": "f142d91f0e3d81761d91514e5a12890c41beed5ee037fac9419ee92349b53f60", "packages/core/components/audio.js": "b0587cb0e20f88bcf00fadb1103721cc200b11412b5a9a46b3105c6d4fdc8973", "packages/core/components/controls.js": "1404b8abb8ce5534bbfccae6fc38ca7db4d4d29c399538fafe19c625dc203532", "packages/core/components/editorial-pieces.js": "8604004dfc2aacf7e51ae4a0e6184950fdaaa0187f64e956b562adb787cd5fe9", "packages/core/components/reader.js": "6c9e70ccb0a46a04591e53729e8c8fea8398ef00970dcb944d6604d30ca61161", "packages/core/components/charts.js": "542985201e1077b185bb5e5677065cab79d921a0236ff2cb7af77ad8cb6adcec", "packages/core/components/handwriting.js": "7acebd9e2de58ae8daa141d47a3fe23d33d257fd30fd707268b83d3f1a88140e", "packages/core/components/code.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "packages/core/components/review.js": "84f457e34262ddba03e98f32e14df97ac8563e1a6bf1a6bd76a630e0fe22fa40"}}</script>
+<script type="application/json" data-nota-manifiesto>{"version": "4", "paginas": ["apariencia"], "modulos": ["packages/core/components/audio.js", "packages/core/components/controls.js", "packages/core/components/editorial-pieces.js", "packages/core/components/reader.js", "packages/core/components/charts.js", "packages/core/components/handwriting.js", "packages/core/components/code.js", "packages/core/components/review.js"], "fuentes": {"packages/core/styles/fonts.css": "c496fb4f095a14cbb6a82503a4a828720c01a8120df3c73113495d832e5d40cb", "packages/core/styles/artifact.css": "ef1d34e07a7c3276170782b131b120890b8434b3eff417943959153f4b28f60e", "packages/core/components/audio.js": "b0587cb0e20f88bcf00fadb1103721cc200b11412b5a9a46b3105c6d4fdc8973", "packages/core/components/controls.js": "1404b8abb8ce5534bbfccae6fc38ca7db4d4d29c399538fafe19c625dc203532", "packages/core/components/editorial-pieces.js": "8604004dfc2aacf7e51ae4a0e6184950fdaaa0187f64e956b562adb787cd5fe9", "packages/core/components/reader.js": "6c9e70ccb0a46a04591e53729e8c8fea8398ef00970dcb944d6604d30ca61161", "packages/core/components/charts.js": "542985201e1077b185bb5e5677065cab79d921a0236ff2cb7af77ad8cb6adcec", "packages/core/components/handwriting.js": "7acebd9e2de58ae8daa141d47a3fe23d33d257fd30fd707268b83d3f1a88140e", "packages/core/components/code.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "packages/core/components/review.js": "84f457e34262ddba03e98f32e14df97ac8563e1a6bf1a6bd76a630e0fe22fa40"}}</script>

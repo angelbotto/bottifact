@@ -142,6 +142,30 @@
         "riesgos",
         "gantt"
       ]
+    },
+    {
+      "id": "continuity",
+      "nombre": "Retomar una sesión con contexto",
+      "pregunta": "¿Qué produjo la conversación, qué sigue pendiente y qué debo entregarle al agente?",
+      "componentes": [
+        "session-brief",
+        "context-bundle",
+        "review-queue",
+        "version-comparison",
+        "apuntes"
+      ]
+    },
+    {
+      "id": "knowledge",
+      "nombre": "Explorar relaciones y evidencia",
+      "pregunta": "¿Qué conecta esta pieza con una decisión y qué evidencia falta?",
+      "componentes": [
+        "relationship-map",
+        "evidence-ledger",
+        "decision",
+        "referencias",
+        "metodologia"
+      ]
     }
   ]
 }

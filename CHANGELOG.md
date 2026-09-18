@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0 — Component discovery and local relationship exploration
+
+- Expand the library to 88 documented recipes with six continuity compositions.
+- Add local relationship exploration: named nodes, directed explanations, search, one/two-hop focus, state/type filters, history, zoom and source tables.
+- Make the visual guide searchable by need, category and composition journey; add a component playbook.
+- Document 36 workbench directions while distinguishing local examples from connected portal capabilities.
+- Add regression checks for graph navigation, invalid data, lifecycle and catalog discovery. The portal graph model is unchanged.
+
 ## 0.2.1 — Hosted onboarding
 
 - Make artifacts.botto.is the primary onboarding path, with account connection, publication, review handoff and update instructions.

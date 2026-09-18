@@ -1,0 +1,10 @@
+{
+  "id": "review-queue",
+  "legacyId": "review-queue",
+  "category": "tablas",
+  "title": "Bandeja de revisi\u00f3n contextual",
+  "dependencies": [
+    "packages/core/styles/fonts.css",
+    "packages/core/styles/artifact.css"
+  ]
+}

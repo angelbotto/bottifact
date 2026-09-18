@@ -39,6 +39,10 @@ Redacta listo para compartir, sin mensajes del asistente al usuario. Abre con co
 
 [docs/executive-voice.md](docs/executive-voice.md) contiene el perfil completo y la matriz de componentes. [examples/generated/executive.html](examples/generated/executive.html) muestra la composición; [docs/communication-references.md](docs/communication-references.md) declara las lecturas y su alcance.
 
+## Catálogo y continuidad
+
+Usa [el playbook de componentes](docs/component-playbook.md) y el buscador de la guía: familia, necesidad y recorrido. Cada ejemplo debe explicar datos, interacción, accesibilidad y límites. Para trabajo conectado consulta las recetas `session-brief`, `context-bundle`, `evidence-ledger`, `review-queue`, `version-comparison` y `relationship-map`. El mapa de relaciones es local y declarado; no lo confundas con el grafo del portal ni prometas importar o reabrir sesiones. [La propuesta del espacio de conocimiento](docs/knowledge-workbench.md) separa capacidades existentes de evolución.
+
 ## Elegir y componer
 
 ```bash
@@ -109,7 +113,7 @@ Para contribuir sigue [CONTRIBUTING.md](CONTRIBUTING.md); conserva [LICENSE](LIC
 
 Las recetas editables están en `packages/core/recipes/<id>/`: `example.html`, `component.json` y `README.md`. Los temas están en `packages/core/themes/families/`. No edites `docs/components.md`, el registro ni ejemplos generados como fuente. Consulta [arquitectura](docs/architecture.md) y [contribución](docs/contributing-components.md). Archivos nuevos en inglés; conserva IDs persistidos y la lengua que pida el lector.
 
-La capa React es opcional: 8 exports nativos y las 82 recetas mediante `RecipePreview` aislado. No atribuyas comentarios compartidos ni paridad completa a los componentes nativos. Consulta [React](docs/react.md).
+La capa React es opcional: 8 exports nativos y las 88 recetas mediante `RecipePreview` aislado. No atribuyas comentarios compartidos ni paridad completa a los componentes nativos. Consulta [React](docs/react.md).
 
 ## Comentarios con origen de sesión
 

@@ -406,5 +406,29 @@
   {
     "file": "zoomable-evidence/README.md",
     "example": "zoomable-evidence/example.html"
+  },
+  {
+    "file": "relationship-map/README.md",
+    "example": "relationship-map/example.html"
+  },
+  {
+    "file": "session-brief/README.md",
+    "example": "session-brief/example.html"
+  },
+  {
+    "file": "context-bundle/README.md",
+    "example": "context-bundle/example.html"
+  },
+  {
+    "file": "evidence-ledger/README.md",
+    "example": "evidence-ledger/example.html"
+  },
+  {
+    "file": "review-queue/README.md",
+    "example": "review-queue/example.html"
+  },
+  {
+    "file": "version-comparison/README.md",
+    "example": "version-comparison/example.html"
   }
 ]

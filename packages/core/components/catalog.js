@@ -16,11 +16,11 @@
   document.querySelectorAll('[data-buscador-recetas]').forEach(root=>{
     const input=root.querySelector('input'),list=root.querySelector('.catalogo-indice'),status=root.querySelector('[role="status"]');
     if(!input||!list||!status)return;
-    const items=[...list.children];
+    const items=[...list.children],category=root.querySelector('[data-catalog-category]'),intent=root.querySelector('[data-catalog-intent]');
     const update=()=>{const words=normal(input.value).trim().split(/\s+/);let count=0;
-      items.forEach(li=>{li.hidden=!words.every(w=>normal(li.textContent+' '+(li.dataset.claves||'')).includes(w));if(!li.hidden)count++;});
+      items.forEach(li=>{li.hidden=!!((category?.value && li.dataset.category!==category.value)||(intent?.value && !(li.dataset.intents||'').split('|').includes(intent.value))||!words.every(w=>normal(li.textContent+' '+(li.dataset.claves||'')).includes(w)));if(!li.hidden)count++;});
       status.textContent=count?'Encuentra '+count+' de '+items.length+' recetas.':'Sin coincidencias. Prueba con tabla, artículo, globo o prototipo.';
     };
-    input.addEventListener('input',update);update();
+    input.addEventListener('input',update);category?.addEventListener('change',update);intent?.addEventListener('change',update);root.querySelector('[data-catalog-reset]')?.addEventListener('click',()=>{input.value='';if(category)category.value='';if(intent)intent.value='';update();input.focus();});update();
   });
 })();

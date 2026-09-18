@@ -28,7 +28,7 @@ npm pack --workspace @bottifact/react --pack-destination /tmp
 Then, in your existing React application:
 
 ```bash
-npm install /tmp/bottifact-core-0.2.0.tgz /tmp/bottifact-react-0.2.0.tgz
+npm install /tmp/bottifact-core-0.3.0.tgz /tmp/bottifact-react-0.3.0.tgz
 ```
 
 The host supplies React and React DOM (18.3 or 19). Use a bundler with ESM/JSON support, such as Vite. Import the CSS once:
@@ -61,7 +61,7 @@ export function Example() {
 | `CardGrid` | Editorial cards with dotted framing and links | Unsafe executable link schemes are refused |
 | `DataTable` | Search, numeric/text sort, accessible headers, empty state | No native grouping, virtualization or remote data source yet |
 | `ArtifactFrame` | Isolated HTML viewer with explicit title and height | No portal identity bridge or parent DOM access |
-| `RecipePreview` | Any of the 82 recipes, selected theme/mode, lazy asset load | Sandboxed original runtime, not 82 native React components |
+| `RecipePreview` | Any of the 88 recipes, selected theme/mode, lazy asset load | Sandboxed original runtime, not 88 native React components |
 
 Props and data interfaces are exported from `packages/react/src/index.ts`. The working example in `examples/react/main.tsx` shows the native components together. `recipes` exposes English IDs, original IDs, HTML, dependencies and guidance. `getRecipe` also accepts a preserved legacy ID. `themeFamilies` and `getThemeTokens` are available through `@bottifact/core/themes` without loading recipe/runtime assets.
 

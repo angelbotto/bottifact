@@ -15,6 +15,8 @@ Start with the path matching your goal. Start with the hosted service for the sh
 | Upgrade paths from the original repository | [v0.2 migration](migration-0.2.md) |
 | Publish a screenshot safely | [Screenshot policy](screenshots.md) |
 | Compose a complete artifact | [Composition](composition.md), [artifact contract](artifact-contract.md) |
+| Choose components and compose continuity flows | [Component playbook](component-playbook.md) |
+| Explore knowledge-workbench directions | [Graph usability and product backlog](knowledge-workbench.md) |
 | Explore all existing recipes | [Generated component reference](components.md), [HTML guide](../examples/generated/guide.html) |
 | Choose a voice and use evidence | [Executive voice](executive-voice.md), [communication references](communication-references.md) |
 | Inspect typography, themes and brand identity | [Themes](themes.md), [brands](brands.md), [design](design.md) |

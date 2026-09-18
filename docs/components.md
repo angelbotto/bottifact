@@ -3052,3 +3052,117 @@ sólo en Sonido. No interpretes esos cambios como permiso para quitar nombres ac
 **Datos comunes:** una sola tabla fuente; unidad en `data-unidad` de 1–40 caracteres (la imagen usa una lista de zonas). Valores finitos de magnitud máxima 10¹². La vista redondea a ocho cifras significativas y usa notación científica en extremos; la tabla conserva los valores originales.
 
 **Dependencia:** packages/core/components/evidence.js. Inicializa con `NotaEvidencia.init(raíz)`, consulta con `NotaEvidencia.get(elemento)` y llama a `destroy()` antes de retirar la pieza o actualizar su fuente. No hace fetch ni carga bibliotecas externas. Los datos fuente permanecen disponibles si JavaScript falla.
+
+## Mapa de relaciones explorable
+
+<!-- nota:ejemplo relationship-map -->
+```html
+<section class="pieza amplio" id="relationship-map-example" data-relationship-map>
+<p class="ceja">Relaciones de ejemplo · datos sintéticos</p><h3>Del proyecto a la decisión</h3><p>Empieza en una pieza, sigue una conexión y vuelve atrás. Buscar encuentra piezas incluso fuera de la vecindad visible. Los filtros cambian el alcance, no la fuente.</p>
+<details><summary>Fuente completa y alternativa sin JavaScript</summary>
+<div class="tabla-caja" tabindex="0" role="region" aria-label="Piezas del mapa"><table data-map-nodes><caption>Piezas de ejemplo</caption><thead><tr><th scope="col">Nombre</th><th scope="col">Tipo</th><th scope="col">Contexto</th></tr></thead><tbody>
+<tr data-node="project"><th scope="row">Piloto Horizonte</th><td>Proyecto</td><td>Determinar si existe evidencia suficiente para una prueba acotada.</td></tr>
+<tr data-node="session"><th scope="row">Evaluar capacidad</th><td>Sesión</td><td>Conversación sintética; sin historial importado ni agente conectado.</td></tr>
+<tr data-node="report"><th scope="row">Informe de capacidad · v2</th><td>Artefacto</td><td>Borrador ilustrativo con un supuesto de demanda pendiente de validar.</td></tr>
+<tr data-node="source"><th scope="row">Registro de restricciones</th><td>Artefacto</td><td>Ejemplo de fuente relacionada; no contiene métricas de negocio reales.</td></tr>
+<tr data-node="decision"><th scope="row">Alcance del piloto</th><td>Decisión</td><td>Propuesta condicionada a comprobar el supuesto. No hay aprobación registrada.</td></tr>
+<tr data-node="review"><th scope="row">Verificar la demanda</th><td>Revisión</td><td>Comentario ilustrativo sobre la fuente de una afirmación.</td></tr>
+</tbody></table></div>
+<div class="tabla-caja" tabindex="0" role="region" aria-label="Relaciones del mapa"><table data-map-edges><caption>Relaciones declaradas y sugeridas del ejemplo</caption><thead><tr><th scope="col">Relación</th><th scope="col">Razón / fuente</th><th scope="col">Estado</th></tr></thead><tbody>
+<tr data-source="project" data-target="session"><th scope="row">contiene</th><td>El objetivo de esta sesión pertenece al piloto de ejemplo.</td><td>Declarada</td></tr>
+<tr data-source="session" data-target="report"><th scope="row">produjo</th><td>El informe representa el resultado declarado de la sesión sintética.</td><td>Declarada</td></tr>
+<tr data-source="report" data-target="decision"><th scope="row">informa</th><td>La propuesta cita el informe; citarlo no demuestra que el supuesto sea válido.</td><td>Declarada</td></tr>
+<tr data-source="review" data-target="report"><th scope="row">cuestiona</th><td>El comentario solicita la fuente de la demanda en la versión 2.</td><td>Declarada</td></tr>
+<tr data-source="source" data-target="decision"><th scope="row">podría informar</th><td>Propuesta manual de conexión por una restricción compartida. Falta revisión.</td><td>Sugerida</td></tr>
+</tbody></table></div></details></section>
+```
+
+**Cuándo:** entender la vecindad de una pieza y seguir relaciones con dirección, motivo y estado. Incluye búsqueda global dentro del conjunto local, uno/dos saltos, mapa completo, filtros por relación/estado, historial de navegación, zoom, ajuste y lista equivalente.
+
+**Datos necesarios:** tablas `data-map-nodes` y `data-map-edges`. Cada nodo usa `data-node` único, nombre, tipo y contexto. Cada relación declara `data-source`, `data-target`, tipo, razón y estado `Declarada` o `Sugerida`. Los extremos deben existir. Usa un ID único en el contenedor. No inventes conexiones ni confianza porcentual. Las relaciones del ejemplo fueron escritas para la muestra; no se infieren con IA.
+
+**Interacción y accesibilidad:** botones y controles nativos con teclado; texto completo en inspector y fuente tabular. Buscar encuentra también piezas fuera de la vecindad. En móvil la región tiene scroll local; no encoger el texto por defecto. Ajustar es opcional y puede reducirlo: 100 % recupera su tamaño. Las líneas discontinuas tienen también etiqueta textual de estado. Sin JavaScript quedan las dos tablas. Seleccionar un nodo explora su vecindad; Volver restaura el nodo anterior con los filtros actuales.
+
+**Límite:** componente local, hasta 100 nodos y 250 relaciones. No conecta el grafo del portal, no importa sesiones, no crea proyectos persistentes ni edita relaciones. El servidor debe filtrar permisos antes de generar el HTML: esconder nodos en el navegador no protege datos. La disposición es determinista por tipo; no es un motor de fuerzas ni un trazador de rutas óptimas. Relaciones entrantes y salientes participan en el alcance de uno/dos saltos.
+
+**Runtime:** `BottifactRelationships.init/get/destroy`; destruir limpia controles y listeners, conserva las tablas originales y permite volver a inicializar. Datos inválidos conservan la fuente sin montar un mapa parcial.
+
+## Ficha de sesión y continuación
+
+<!-- nota:ejemplo session-brief -->
+```html
+<section class="pieza ancho" id="session-brief-example"><p class="ceja">Sesión de ejemplo · pendiente de continuar</p><h3>Evaluar el alcance del piloto</h3><p>Objetivo: identificar la evidencia necesaria antes de recomendar una prueba.</p><dl class="datos"><div><dt>Agente / dispositivo</dt><dd>Codex · equipo de ejemplo</dd></div><div><dt>Origen</dt><dd>No conectado · muestra sintética</dd></div><div><dt>Resultado</dt><dd>Borrador del informe · versión 2</dd></div><div><dt>Siguiente paso</dt><dd>Validar la fuente del supuesto de demanda</dd></div></dl><details><summary>Qué conservar para retomar</summary><p>Pregunta inicial, restricciones conocidas, versiones producidas, decisiones abiertas y referencia real de la conversación cuando exista. Esta ficha no abre ni importa sesiones.</p></details></section>
+```
+
+**Cuándo:** Retomar trabajo con objetivo, resultados y siguiente paso.
+
+**Datos necesarios:** reemplaza documento, versión, cita, fuente, audiencia y estado por valores conocidos; deja lo desconocido explícito. Los ejemplos son sintéticos.
+
+**Interacción y accesibilidad:** lectura semántica, detalles con teclado y redistribución en móvil. El paquete permite copiar su texto mediante el control estándar.
+
+**Límite:** No es una entidad de sesión del portal ni importa conversaciones. Usar referencias reales sólo cuando existan.
+
+## Paquete de contexto para agentes
+
+<!-- nota:ejemplo context-bundle -->
+```html
+<section class="pieza ancho" id="context-bundle-example"><p class="ceja">Contexto de ejemplo · preparado, no enviado</p><h3>Verificar un supuesto antes de editar</h3><dl class="datos"><div><dt>Documento / versión</dt><dd>Informe del piloto · v2 ilustrativa</dd></div><div><dt>Audiencia</dt><dd>Creador y agente elegido</dd></div><div><dt>Incluido</dt><dd>Comentario, cita y objetivo del cambio</dd></div><div><dt>Excluido</dt><dd>Notas privadas no seleccionadas e historial completo</dd></div></dl><blockquote>«¿Cuál es la fuente de la demanda prevista?»</blockquote><div class="codigo codigo-editorial"><div class="cab"><span>Instrucción revisable</span><button type="button" data-copiar="context-bundle-prompt" aria-label="Copiar contexto de ejemplo">Copiar</button><span class="copia-estado" role="status"></span></div><pre tabindex="0" aria-label="Contexto de ejemplo"><code id="context-bundle-prompt">Documento: Informe del piloto. Versión: v2 (ejemplo).
+Cita comentada: “La demanda prevista permite iniciar un piloto”.
+Comentario: verificar la fuente de la demanda.
+Objetivo: separar datos observados de supuestos. Si falta evidencia, indicarlo.
+Entrega: proponer una revisión; no marcar el comentario como resuelto.
+Origen: sin sesión conectada; no inventar una referencia.</code></pre></div><p class="procedencia">Copiar no entrega el paquete a un agente. Sustituye los datos ilustrativos antes de usarlo.</p></section>
+```
+
+**Cuándo:** Revisar y copiar un encargo con cita, versión, audiencia y objetivo.
+
+**Datos necesarios:** reemplaza documento, versión, cita, fuente, audiencia y estado por valores conocidos; deja lo desconocido explícito. Los ejemplos son sintéticos.
+
+**Interacción y accesibilidad:** lectura semántica, detalles con teclado y redistribución en móvil. El paquete permite copiar su texto mediante el control estándar.
+
+**Límite:** La copia local no envía mensajes ni reabre agentes. Omitir información privada que no corresponda al destinatario.
+
+## Registro de afirmaciones y evidencia
+
+<!-- nota:ejemplo evidence-ledger -->
+```html
+<figure class="ancho" id="evidence-ledger-example"><div class="tabla-caja" tabindex="0" role="region" aria-label="Registro de evidencia, tabla desplazable"><table><caption>Afirmaciones del piloto · ejemplo sin datos de negocio</caption><thead><tr><th scope="col">Afirmación</th><th scope="col">Estado</th><th scope="col">Fuente y alcance</th><th scope="col">Qué falta</th></tr></thead><tbody><tr><th scope="row">Existe demanda suficiente</th><td>Hipótesis</td><td>Sin fuente adjunta</td><td>Definir ventana, unidad y denominador</td></tr><tr><th scope="row">La interfaz permite revisar el informe</th><td>Propuesta verificable</td><td>Prototipo ilustrativo, no prueba de usuarios</td><td>Observar la tarea y registrar errores</td></tr><tr><th scope="row">La revisión reduce retrabajo</th><td>Pendiente de medir</td><td>No se infiere desde actividad</td><td>Establecer comparación y criterio de éxito</td></tr></tbody></table></div><figcaption>Distingue evidencia, interpretación y vacío. No asigna porcentajes de confianza inventados.</figcaption></figure>
+```
+
+**Cuándo:** Contrastar afirmaciones y mostrar vacíos de evidencia antes de decidir.
+
+**Datos necesarios:** reemplaza documento, versión, cita, fuente, audiencia y estado por valores conocidos; deja lo desconocido explícito. Los ejemplos son sintéticos.
+
+**Interacción y accesibilidad:** lectura semántica, detalles con teclado y redistribución en móvil. El paquete permite copiar su texto mediante el control estándar.
+
+**Límite:** No calcula confianza ni valida fuentes automáticamente. La tabla conserva scroll local y encabezados semánticos.
+
+## Bandeja de revisión contextual
+
+<!-- nota:ejemplo review-queue -->
+```html
+<section class="pieza ancho" id="review-queue-example"><p class="ceja">Revisión de ejemplo</p><h3>Dos pendientes, contextos diferentes</h3><div class="cards-trazadas cards-abiertas"><article><p class="ceja">Comentario compartido · abierto</p><h4>Validar la fuente de demanda</h4><blockquote>«La demanda permite iniciar un piloto»</blockquote><p>Informe · v2 · sección Supuestos. La cita sigue pendiente de comprobar.</p><details><summary>Qué se necesita para resolver</summary><p>Una fuente verificable y una versión revisada. Exportar el comentario no lo resuelve.</p></details></article><article><p class="ceja">Nota privada · ejemplo</p><h4>Preparar una pregunta para el agente</h4><p>Comparar el escenario conservador antes de recomendar.</p><details><summary>Audiencia del contexto</summary><p>Una interfaz debe filtrar esta nota por permisos antes de renderizarla. Ocultarla con CSS no la hace privada.</p></details></article></div><p class="procedencia">Muestra estática. Los hilos reales se crean desde los comentarios flotantes; esta receta no sincroniza ni administra permisos.</p></section>
+```
+
+**Cuándo:** Mostrar diferencias entre comentario compartido y nota personal con su contexto.
+
+**Datos necesarios:** reemplaza documento, versión, cita, fuente, audiencia y estado por valores conocidos; deja lo desconocido explícito. Los ejemplos son sintéticos.
+
+**Interacción y accesibilidad:** lectura semántica, detalles con teclado y redistribución en móvil. El paquete permite copiar su texto mediante el control estándar.
+
+**Límite:** Es una composición de muestra, no un gestor conectado. Filtrar permisos en servidor antes de construir el HTML.
+
+## Comparación editorial entre versiones
+
+<!-- nota:ejemplo version-comparison -->
+```html
+<section class="pieza ancho" id="version-comparison-example"><p class="ceja">Revisión editorial · ejemplo</p><h3>De una afirmación a un supuesto explícito</h3><div class="cards-trazadas cards-abiertas"><article><p class="ceja">Antes · v2 ilustrativa</p><blockquote>La demanda permite iniciar el piloto.</blockquote><p>Problema: presenta una conclusión sin fuente.</p></article><article><p class="ceja">Propuesta · v3 ilustrativa</p><blockquote>El piloto depende de validar la demanda prevista. Todavía falta una fuente con período y denominador.</blockquote><p>El cambio aclara el límite; no fabrica evidencia.</p></article></div><details><summary>Revisión y trazabilidad</summary><p>Motivo: comentario sobre el supuesto. Estado: propuesta, no aceptada. Una comparación real debe enlazar versiones inmutables y conservar la cita original.</p></details></section>
+```
+
+**Cuándo:** Explicar una corrección editorial y su motivo sin ocultar la incertidumbre.
+
+**Datos necesarios:** reemplaza documento, versión, cita, fuente, audiencia y estado por valores conocidos; deja lo desconocido explícito. Los ejemplos son sintéticos.
+
+**Interacción y accesibilidad:** lectura semántica, detalles con teclado y redistribución en móvil. El paquete permite copiar su texto mediante el control estándar.
+
+**Límite:** Comparación manual de fragmentos, no motor de diff ni control de versiones. Mantener títulos Antes/Propuesta en móvil.

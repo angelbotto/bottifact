@@ -15,6 +15,6 @@ export function Brief() {
 }
 ```
 
-Eight exports: `Artifact`, `Callout`, `MarginNote`, `Timeline`, `CardGrid`, `DataTable`, `ArtifactFrame`, `RecipePreview`. Native React components scope their theme and clean up effects. `RecipePreview` accesses all 82 original recipes through a sandboxed iframe; these are not 82 native rewrites. Frames do not receive portal credentials or parent DOM access. Shared comments and publication remain portal capabilities.
+Eight exports: `Artifact`, `Callout`, `MarginNote`, `Timeline`, `CardGrid`, `DataTable`, `ArtifactFrame`, `RecipePreview`. Native React components scope their theme and clean up effects. `RecipePreview` accesses all 88 original recipes through a sandboxed iframe; these are not 88 native rewrites. Frames do not receive portal credentials or parent DOM access. Shared comments and publication remain portal capabilities.
 
 This version is available through workspace builds or tarballs, not the npm registry. See the [React guide](https://github.com/angelbotto/bottifact/blob/main/docs/react.md) for installation in another app, lifecycle behavior and limitations. Third-party notices ship in `NOTICE` and `licenses/`.

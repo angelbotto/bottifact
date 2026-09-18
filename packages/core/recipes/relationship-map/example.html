@@ -1,0 +1,18 @@
+<section class="pieza amplio" id="relationship-map-example" data-relationship-map>
+<p class="ceja">Relaciones de ejemplo · datos sintéticos</p><h3>Del proyecto a la decisión</h3><p>Empieza en una pieza, sigue una conexión y vuelve atrás. Buscar encuentra piezas incluso fuera de la vecindad visible. Los filtros cambian el alcance, no la fuente.</p>
+<details><summary>Fuente completa y alternativa sin JavaScript</summary>
+<div class="tabla-caja" tabindex="0" role="region" aria-label="Piezas del mapa"><table data-map-nodes><caption>Piezas de ejemplo</caption><thead><tr><th scope="col">Nombre</th><th scope="col">Tipo</th><th scope="col">Contexto</th></tr></thead><tbody>
+<tr data-node="project"><th scope="row">Piloto Horizonte</th><td>Proyecto</td><td>Determinar si existe evidencia suficiente para una prueba acotada.</td></tr>
+<tr data-node="session"><th scope="row">Evaluar capacidad</th><td>Sesión</td><td>Conversación sintética; sin historial importado ni agente conectado.</td></tr>
+<tr data-node="report"><th scope="row">Informe de capacidad · v2</th><td>Artefacto</td><td>Borrador ilustrativo con un supuesto de demanda pendiente de validar.</td></tr>
+<tr data-node="source"><th scope="row">Registro de restricciones</th><td>Artefacto</td><td>Ejemplo de fuente relacionada; no contiene métricas de negocio reales.</td></tr>
+<tr data-node="decision"><th scope="row">Alcance del piloto</th><td>Decisión</td><td>Propuesta condicionada a comprobar el supuesto. No hay aprobación registrada.</td></tr>
+<tr data-node="review"><th scope="row">Verificar la demanda</th><td>Revisión</td><td>Comentario ilustrativo sobre la fuente de una afirmación.</td></tr>
+</tbody></table></div>
+<div class="tabla-caja" tabindex="0" role="region" aria-label="Relaciones del mapa"><table data-map-edges><caption>Relaciones declaradas y sugeridas del ejemplo</caption><thead><tr><th scope="col">Relación</th><th scope="col">Razón / fuente</th><th scope="col">Estado</th></tr></thead><tbody>
+<tr data-source="project" data-target="session"><th scope="row">contiene</th><td>El objetivo de esta sesión pertenece al piloto de ejemplo.</td><td>Declarada</td></tr>
+<tr data-source="session" data-target="report"><th scope="row">produjo</th><td>El informe representa el resultado declarado de la sesión sintética.</td><td>Declarada</td></tr>
+<tr data-source="report" data-target="decision"><th scope="row">informa</th><td>La propuesta cita el informe; citarlo no demuestra que el supuesto sea válido.</td><td>Declarada</td></tr>
+<tr data-source="review" data-target="report"><th scope="row">cuestiona</th><td>El comentario solicita la fuente de la demanda en la versión 2.</td><td>Declarada</td></tr>
+<tr data-source="source" data-target="decision"><th scope="row">podría informar</th><td>Propuesta manual de conexión por una restricción compartida. Falta revisión.</td><td>Sugerida</td></tr>
+</tbody></table></div></details></section>

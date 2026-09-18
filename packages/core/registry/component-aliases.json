@@ -82,5 +82,11 @@
   "navegacion": "navigation",
   "codigo-lineas": "code-lines",
   "informe": "report-layout",
-  "multipagina": "chapter-layout"
+  "multipagina": "chapter-layout",
+  "relationship-map": "relationship-map",
+  "session-brief": "session-brief",
+  "context-bundle": "context-bundle",
+  "evidence-ledger": "evidence-ledger",
+  "review-queue": "review-queue",
+  "version-comparison": "version-comparison"
 }

@@ -1,6 +1,6 @@
 # Bottifact
 
-Biblioteca de componentes, skill para agentes y portal opcional para crear, compartir y revisar artefactos HTML. Incluye 82 recetas, 15 familias de temas con claro/oscuro/sistema, comentarios, notas, versiones, búsqueda y grafos de relaciones.
+Biblioteca de componentes, skill para agentes y portal opcional para crear, compartir y revisar artefactos HTML. Incluye 88 recetas, 15 familias de temas con claro/oscuro/sistema, comentarios, notas, versiones, búsqueda y grafos de relaciones.
 
 [README completo](README.md) · [Documentación](docs/README.md) · [Arquitectura](docs/architecture.md)
 
@@ -42,7 +42,7 @@ Cada instancia conserva sus propias cuentas, tokens y documentos. Cambiar el ser
 
 ## Componentes y React
 
-Las recetas viven en `packages/core/recipes/`, los temas en `packages/core/themes/families/` y las interacciones en `packages/core/components/`. React añade 8 exports nativos y un visor aislado para las 82 recetas. **No son 82 componentes React reescritos**. Los paquetes aún no están publicados en npm; usa el workspace o tarballs según la [guía React](docs/react.md).
+Las recetas viven en `packages/core/recipes/`, los temas en `packages/core/themes/families/` y las interacciones en `packages/core/components/`. React añade 8 exports nativos y un visor aislado para las 88 recetas. **No son 88 componentes React reescritos**. Los paquetes aún no están publicados en npm; usa el workspace o tarballs según la [guía React](docs/react.md).
 
 ```bash
 npm ci

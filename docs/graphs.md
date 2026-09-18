@@ -28,3 +28,7 @@ An artifact can record its publishing agent/session/device. Feedback exports use
 - Test sparse, dense, empty and access-revoked graphs before increasing limits.
 
 These are extension directions, not shipped embedding search, automatic model training or transcript synchronization. Tests in `portal/test_knowledge.py` exercise classification and graph access behavior.
+
+## Local relationship explorer
+
+The `relationship-map` library recipe is a separate, local component with declared typed edges, search, one/two-hop focus, relation/state filters, history and an accessible source table. It does not alter the portal graph or create session/project records. See [component playbook](component-playbook.md) and [workbench directions](knowledge-workbench.md).

@@ -1,0 +1,10 @@
+{
+  "id": "evidence-ledger",
+  "legacyId": "evidence-ledger",
+  "category": "reportes",
+  "title": "Registro de afirmaciones y evidencia",
+  "dependencies": [
+    "packages/core/styles/fonts.css",
+    "packages/core/styles/artifact.css"
+  ]
+}

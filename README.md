@@ -19,7 +19,7 @@ An open-source component library, portable agent skill and optional self-hosted 
 
 *This screenshot comes from the synthetic local demo. No customer documents, accounts, comments or session identifiers are shown.*
 
-Bottifact brings together **82 interactive recipes**, **15 theme families with light/dark/system modes**, a shared skill for **Claude Code, Codex and Hermes**, and a portal you can run on your own server. Generate standalone HTML without an account. Add the portal when you need shared comments, private notes, permissions, versions and a searchable library.
+Bottifact brings together **88 component recipes**, **15 theme families with light/dark/system modes**, a shared skill for **Claude Code, Codex and Hermes**, and a portal you can run on your own server. Generate standalone HTML without an account. Add the portal when you need shared comments, private notes, permissions, versions and a searchable library.
 
 ## Choose how to use Bottifact
 
@@ -127,6 +127,12 @@ The portal offers a searchable library with list/gallery/table views, previews, 
 
 This is an explainable local graph, not embedding search or automatic knowledge of your chat history. It does not upload conversations or train a model. [Graph model, limits and extension points →](docs/graphs.md)
 
+## Discover the components
+
+The [visual guide](examples/generated/guide.html) shows every recipe with live examples, usage limits and copyable HTML. Search by need and combine family and composition-journey filters. The [component playbook](docs/component-playbook.md) explains how to choose and combine pieces.
+
+New continuity recipes include a local relationship explorer, session brief, context bundle, evidence ledger, review queue and version comparison. These are portable components, not new persistent project/session entities in the portal. [Knowledge workbench directions →](docs/knowledge-workbench.md)
+
 ## Use components in React
 
 The source workspace includes `@bottifact/core` and `@bottifact/react`. These package names are **not yet published to npm**. Run the working showcase:
@@ -155,7 +161,7 @@ export function Brief() {
 }
 ```
 
-There are **8 native React exports**: `Artifact`, `Callout`, `MarginNote`, `Timeline`, `CardGrid`, `DataTable`, `ArtifactFrame` and `RecipePreview`. The last provides access to **all 82 existing recipes inside sandboxed frames**. This is not a claim that all 82 have been rewritten as native React components. Full shared review and publication remain portal capabilities. [Using packed packages in another app, API and limitations →](docs/react.md)
+There are **8 native React exports**: `Artifact`, `Callout`, `MarginNote`, `Timeline`, `CardGrid`, `DataTable`, `ArtifactFrame` and `RecipePreview`. The last provides access to **all 88 existing recipes inside sandboxed frames**. This is not a claim that all 88 have been rewritten as native React components. Full shared review and publication remain portal capabilities. [Using packed packages in another app, API and limitations →](docs/react.md)
 
 ## Repository map
 

@@ -1,0 +1,10 @@
+{
+  "id": "version-comparison",
+  "legacyId": "version-comparison",
+  "category": "reportes",
+  "title": "Comparaci\u00f3n editorial entre versiones",
+  "dependencies": [
+    "packages/core/styles/fonts.css",
+    "packages/core/styles/artifact.css"
+  ]
+}

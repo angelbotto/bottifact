@@ -1,0 +1,10 @@
+{
+  "id": "session-brief",
+  "legacyId": "session-brief",
+  "category": "reportes",
+  "title": "Ficha de sesi\u00f3n y continuaci\u00f3n",
+  "dependencies": [
+    "packages/core/styles/fonts.css",
+    "packages/core/styles/artifact.css"
+  ]
+}
