@@ -77,7 +77,7 @@ Los ejemplos siguientes usan hechos de Bottifact, no resultados financieros ni a
 | Redacción débil | Redacción lista para compartir |
 | --- | --- |
 | Aquí tienes una biblioteca increíble para potenciar tu equipo. | Bottifact reúne 82 recetas. Propongo usar una base compartida para conservar la misma experiencia de lectura y revisión. |
-| La colaboración es robusta y está lista para escalar. | Los hilos se guardan en el navegador y se comparten por archivo. Falta sincronización entre equipos; ese límite condiciona una revisión simultánea. |
+| La colaboración es robusta y está lista para escalar. | El HTML independiente guarda hilos en el navegador; el portal conectado los centraliza con permisos. El retorno a la sesión del agente todavía requiere una entrega manual. |
 | Como CTO deberías aprovechar las métricas. | Quiero medir si el documento permite decidir. El número de componentes describe el catálogo; no demuestra adopción ni ahorro de tiempo. |
 | Decidimos lanzar el viernes y Ana se encargará. | Propongo comprobar primero un encargo real por agente. Responsable y fecha: por definir. |
 

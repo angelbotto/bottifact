@@ -1,5 +1,7 @@
 # Host Bottifact on your own server
 
+To use the existing service without operating a server, follow [artifacts.botto.is onboarding](hosted-service.md). This guide is only for deploying your own instance.
+
 The portal is optional. A skill-only installation creates HTML without a server. Hosting adds accounts, access controls, comments, notes, versions and a searchable artifact library. Your instance has its own users, files and tokens; it does not synchronize them with botto.is.
 
 ## 1. Prepare the host

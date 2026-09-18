@@ -1,5 +1,11 @@
 # Install, connect and update
 
+## Start with the hosted service
+
+To use the existing service, follow [Use artifacts.botto.is](hosted-service.md). Install the skill from that origin, sign in, create a personal agent token and connect it. **No `.env`, Docker or server setup is needed.**
+
+To run an independent server, use [Self-hosting](self-hosting.md). The local-only path below remains available without any account.
+
 ## Local-only skill
 
 Requirements: Python 3.10+ and a modern browser. No Python packages, Node, account or environment variables are needed for HTML generation.
@@ -52,4 +58,4 @@ Local ZIP installation: update the source checkout, rebuild the package and repe
 | No shared comments in an HTML file | Publish through a connected portal; local HTML comments are local storage |
 | React package cannot be found on npm | Use workspace or packed tarballs; registry publication has not happened |
 
-The [README environment table](../README.md#environment-variables) is for the optional portal, not the standalone skill.
+The [self-hosting environment table](self-hosting.md#configuration-reference) is for the optional portal, not the standalone skill.

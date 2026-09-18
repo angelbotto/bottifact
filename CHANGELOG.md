@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.1 — Hosted onboarding
+
+- Make artifacts.botto.is the primary onboarding path, with account connection, publication, review handoff and update instructions.
+- Keep self-hosting and local-only installation as independent documented paths.
+- Teach the shared skill to preserve the chosen service and avoid asking hosted users for server configuration.
+- Correct outdated composition and review descriptions; no portal runtime changes.
+
 ## 0.2.0 — Organized sources and React adapter
 
 - Move runtime, recipes, themes, examples, documentation and verification records into explicit English paths. Preserve published identities and legacy selectors.

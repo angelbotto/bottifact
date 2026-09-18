@@ -1,9 +1,10 @@
 # Bottifact documentation
 
-Start with the path matching your goal. The README provides copyable installation commands and the environment table.
+Start with the path matching your goal. Start with the hosted service for the shortest path. Environment configuration belongs to the independent self-hosting guide.
 
 | Goal | Guide |
 | --- | --- |
+| Use the existing hosted service | [Hosted service: artifacts.botto.is](hosted-service.md) |
 | Install or update the shared agent skill | [Installation](installation.md) |
 | Operate your own server | [Self-hosting, authentication, backups and upgrades](self-hosting.md) |
 | Understand source boundaries and tradeoffs | [Architecture](architecture.md) |

@@ -2,9 +2,26 @@
 
 Biblioteca de componentes, skill para agentes y portal opcional para crear, compartir y revisar artefactos HTML. Incluye 82 recetas, 15 familias de temas con claro/oscuro/sistema, comentarios, notas, versiones, búsqueda y grafos de relaciones.
 
-[README completo y variables de entorno](README.md) · [Documentación](docs/README.md) · [Arquitectura](docs/architecture.md)
+[README completo](README.md) · [Documentación](docs/README.md) · [Arquitectura](docs/architecture.md)
 
-## Instalar el skill
+## Usar artifacts.botto.is — sin servidor propio
+
+1. Entra a [artifacts.botto.is](https://artifacts.botto.is), inicia sesión y crea un token en **Conectar un agente**.
+2. Instala el skill y conecta tu cuenta:
+
+```bash
+curl -fsSL https://artifacts.botto.is/install.sh -o /tmp/bottifact-install.sh
+# Revisa el script antes de ejecutarlo.
+bash /tmp/bottifact-install.sh
+bottifact connect --server https://artifacts.botto.is
+bottifact status
+```
+
+Pega el token en el prompt privado. Recarga los skills del agente. Para actualizar: `bottifact update`. Los lectores de enlaces compartidos no necesitan instalar el skill; el acceso depende de los permisos del artefacto.
+
+**No necesitas Docker, NAS, Google Cloud ni variables de entorno.** [Guía del servicio alojado](docs/hosted-service.md).
+
+## Instalar el skill sin servidor
 
 Python 3.10+; generar HTML no requiere cuenta, Node ni variables de entorno.
 
@@ -17,34 +34,11 @@ python3 scripts/update.py --package dist/bottifact-portable.zip
 
 Instala una biblioteca compartida y enlaces para Claude Code, Codex y Hermes. Conserva carpetas independientes existentes. Añade `~/.local/bin` al PATH y recarga el descubrimiento de skills del agente. No instala un skill en la web de ChatGPT.
 
-Desde un portal propio:
-
-```bash
-curl -fsSL https://artifacts.example.com/install.sh -o /tmp/bottifact-install.sh
-# Revisa el script antes de ejecutarlo.
-bash /tmp/bottifact-install.sh
-bottifact connect --server https://artifacts.example.com
-```
-
-El token se obtiene iniciando sesión en el portal. El CLI lo pide sin mostrarlo. Actualizar: `bottifact update`. Para instalaciones independientes, reconstruye el ZIP y repite la instalación local.
-
 ## Desplegar tu portal
 
-```bash
-python3 scripts/configure_portal.py \
-  --origin https://artifacts.example.com --admin owner@example.com
-docker compose -f compose.yaml -f deploy/https.yaml up -d --build
-```
+Si prefieres operar una instancia propia, sigue la [guía independiente de self-hosting](docs/self-hosting.md): Docker, dominio, HTTPS, variables de entorno, autenticación, administrador inicial, backups y actualizaciones. La configuración de referencia está en [`.env.example`](.env.example).
 
-Configura DNS y puertos 80/443. El comando genera un `.env` privado. Requiere `BOTTIFACT_ORIGIN`, `BOTTIFACT_DOMAIN`, `BOTTIFACT_ADMIN_EMAILS` y un `BOTTIFACT_AUTH_SECRET` aleatorio. Google usa `BOTTIFACT_GOOGLE_ENABLED`, `BOTTIFACT_GOOGLE_ID` y `BOTTIFACT_GOOGLE_SECRET`. Correo usa `BOTTIFACT_EMAIL_PROVIDER`, `BOTTIFACT_EMAIL_URL`, `BOTTIFACT_EMAIL_FROM` y `BOTTIFACT_EMAIL_KEY`. La tabla completa, valores predeterminados y requisitos están en el [README](README.md#environment-variables) y [`.env.example`](.env.example).
-
-Primer administrador:
-
-```bash
-docker compose exec app python -m portal.manage bootstrap --email owner@example.com
-```
-
-Abre el enlace temporal en privado. Configura Google o correo antes de invitar usuarios. No necesitas botto.is, Cloudflare ni Supabase. [Autenticación, backups y actualizaciones](docs/self-hosting.md).
+Cada instancia conserva sus propias cuentas, tokens y documentos. Cambiar el servidor del skill no migra los datos. Este despliegue es opcional y no forma parte de la instalación para usar artifacts.botto.is.
 
 ## Componentes y React
 

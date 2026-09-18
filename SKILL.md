@@ -9,6 +9,10 @@ Bottifact combina Bottico y artifact: biblioteca editorial, generador y un únic
 
 Requisitos: Generación con Python 3.10 o posterior, sin paquetes externos. Navegador moderno para interacción; Three.js usa un CDN fijado. Claude, Codex y Hermes pueden cargar el mismo directorio.
 
+## Elegir el servicio
+
+Para usar la instancia existente, sigue [artifacts.botto.is](docs/hosted-service.md): instalar el skill, iniciar sesión y conectar un token personal. No pidas Docker, `.env` ni credenciales de Google Cloud para ese camino. El [self-hosting](docs/self-hosting.md) es una opción independiente para operar otra instancia. Conserva siempre el servidor que el usuario ya haya elegido; no migres conexiones por iniciativa propia.
+
 ## Crear un artefacto
 
 Si hay una conexión personal, ejecuta `python3 scripts/publish.py status`: muestra el servidor, la cuenta y `publish_on_create`, nunca el token. Esa preferencia representa la instrucción persistente del usuario para terminar los artefactos publicándolos como privados. Si está activa, el resultado incluye HTML validado y enlace del portal. Si falta conexión, conserva el borrador y explica que aún no está publicado. Una petición actual de dejarlo local prevalece. No uses un host alternativo por iniciativa propia.

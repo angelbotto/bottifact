@@ -11,7 +11,7 @@ An open-source component library, portable agent skill and optional self-hosted 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/angelbotto/bottifact?style=flat)](https://github.com/angelbotto/bottifact/stargazers)
 
-[Install](#install-the-agent-skill) · [Self-host](#host-your-own-workspace) · [React](#use-components-in-react) · [Documentation](docs/README.md) · [Español](README.es.md)
+[Use artifacts.botto.is](#use-artifactsbottois) · [Self-host](docs/self-hosting.md) · [React](#use-components-in-react) · [Documentation](docs/README.md) · [Español](README.es.md)
 
 </div>
 
@@ -21,17 +21,51 @@ An open-source component library, portable agent skill and optional self-hosted 
 
 Bottifact brings together **82 interactive recipes**, **15 theme families with light/dark/system modes**, a shared skill for **Claude Code, Codex and Hermes**, and a portal you can run on your own server. Generate standalone HTML without an account. Add the portal when you need shared comments, private notes, permissions, versions and a searchable library.
 
-## Choose your starting point
+## Choose how to use Bottifact
 
-| I want to… | Start here | Requirements |
-| --- | --- | --- |
-| Make artifacts with my agent | Install the skill below | Python 3.10+, modern browser |
-| Use components in a React app | [React SDK](docs/react.md) | Node 22.12+, React 18.3 or 19 |
-| Host my own library and review workspace | [Self-hosting](docs/self-hosting.md) | Docker + Compose v2, persistent disk; HTTPS for remote use |
-| Add or improve a component | [Component contribution guide](docs/contributing-components.md) | Python; Node only for the React layer |
-| Understand the implementation | [Architecture](docs/architecture.md) | No installation needed |
+| Path | Who operates the server? | What you install | Configuration |
+| --- | --- | --- | --- |
+| **[Use artifacts.botto.is](docs/hosted-service.md)** | Botto operates the existing service | The agent skill, if you want to create/publish from an agent | Sign in and connect your personal token; no `.env` |
+| **[Self-host](docs/self-hosting.md)** | You operate your own instance | Portal + optional agent skill | Docker, domain, environment variables, authentication, backups |
+| **[Local only](docs/installation.md#local-only-skill)** | No server | The agent skill | No account, token or environment variables |
+| **[React integration](docs/react.md)** | Your application | Core/React packages | Node 22.12+, React 18.3 or 19 |
 
-## Install the agent skill
+## Use artifacts.botto.is
+
+This is the shortest route to an existing library with accounts, shared review and versions. **You do not need Docker, a NAS, Google Cloud credentials or environment variables.**
+
+1. Open [artifacts.botto.is](https://artifacts.botto.is), sign in, and open **Conectar un agente** to create a personal token. Readers can use a shared artifact link without installing the skill; the document's access policy determines whether sign-in is required.
+2. Install the shared skill for Claude Code, Codex and Hermes:
+
+```bash
+curl -fsSL https://artifacts.botto.is/install.sh -o /tmp/bottifact-install.sh
+# Review the downloaded script before running it.
+bash /tmp/bottifact-install.sh
+```
+
+3. Connect through the CLI's masked token prompt:
+
+```bash
+bottifact connect --server https://artifacts.botto.is
+bottifact status
+```
+
+If the command is not found, add `~/.local/bin` to PATH. Reload your agent's skill discovery and ask it to use **Bottifact**. Installing a skill does not itself sign in or publish files.
+
+4. Create an artifact with your agent, then publish it when ready:
+
+```bash
+bottifact publish --file /path/to/brief.html --title 'Decision brief' \
+  --visibility private --agent codex --session SESSION_ID --device DEVICE_LABEL
+bottifact comments --artifact-id ARTIFACT_ID --open
+bottifact update
+```
+
+Replace the path and origin metadata with your actual values; omit unknown session IDs rather than inventing them. New artifacts are private by default. Share from the portal according to the audience you intend. Tokens and private artifacts are not included in the open-source repository or portable skill.
+
+[Complete hosted-service guide: browser use, agent connection, first publication, review and troubleshooting →](docs/hosted-service.md)
+
+## Install locally without a service
 
 The independent installation needs **no account, token or environment variables**:
 
@@ -44,15 +78,7 @@ python3 scripts/update.py --package dist/bottifact-portable.zip
 
 This installs one shared library in `~/.local/share/bottifact/library`, links it into `~/.agents/skills`, `~/.claude/skills` and `~/.hermes/skills`, and creates `~/.local/bin/bottifact`. Existing independent skill directories are preserved. Add `~/.local/bin` to your `PATH` if necessary. Restart or reload your agent's skill discovery and ask it to use **Bottifact**. Agent versions control how skills are discovered; this is not an installer for the ChatGPT website.
 
-To install from your own portal instead:
-
-```bash
-curl -fsSL https://artifacts.example.com/install.sh -o /tmp/bottifact-install.sh
-# Inspect the downloaded script before running it.
-bash /tmp/bottifact-install.sh
-```
-
-The shell entrypoint uses Python for verified downloads, safe extraction and agent links. Update from the configured portal with `bottifact update`. For an independent ZIP installation, update the checkout, rebuild the ZIP and repeat the local command above. Downloadable ZIPs and SHA-256 checksums are also attached to [GitHub releases](https://github.com/angelbotto/bottifact/releases).
+For hosted installation and updates, follow the section above. For an independent ZIP installation, update the checkout, rebuild the ZIP and repeat the local command. Downloadable ZIPs and checksums are attached to [GitHub releases](https://github.com/angelbotto/bottifact/releases).
 
 Generate your first artifact from the checkout:
 
@@ -68,51 +94,16 @@ Keep the same `--document-id` when revising a document. Generation embeds fonts,
 
 ## Host your own workspace
 
-Your instance owns its data and users; it does not need a botto.is, Cloudflare or Supabase account. From the cloned repository:
+Self-hosting is an independent path for people who want to operate their own instance. Follow the **[self-hosting guide](docs/self-hosting.md)** for Docker Compose, every environment variable, domain/HTTPS, Google and email setup, administrator bootstrap, backups and upgrades. The starting configuration is [`.env.example`](.env.example).
 
-```bash
-python3 scripts/configure_portal.py \
-  --origin https://artifacts.example.com --admin owner@example.com
-# Creates a private .env with a fresh random secret. Configure authentication below.
-docker compose -f compose.yaml -f deploy/https.yaml up -d --build
-```
-
-Point the domain at the server and make ports 80/443 available for the optional Caddy HTTPS overlay. With an existing reverse proxy, use `docker compose up -d --build` and forward your HTTPS origin to `127.0.0.1:8788`. A fresh workspace starts empty.
-
-### Environment variables
-
-The complete starting file is [`.env.example`](.env.example). The configuration helper fills the first four values. Never commit the resulting `.env`.
-
-| Variable | Required / default | Meaning |
-| --- | --- | --- |
-| `BOTTIFACT_ORIGIN` | Required | External origin, e.g. `https://artifacts.example.com` |
-| `BOTTIFACT_DOMAIN` | Required for Caddy | Domain only, e.g. `artifacts.example.com` |
-| `BOTTIFACT_ADMIN_EMAILS` | Required | Comma-separated administrators |
-| `BOTTIFACT_AUTH_SECRET` | Required; generated by helper | Random authentication secret; do not use the placeholder |
-| `BOTTIFACT_OWNER_ALIASES` | Optional, empty | Emails belonging to **one person**, canonical first; never merge teammates |
-| `BOTTIFACT_GOOGLE_ENABLED` | `0` | Set `1` to enable Google sign-in |
-| `BOTTIFACT_GOOGLE_ID` / `BOTTIFACT_GOOGLE_SECRET` | Required when Google is enabled | Your OAuth client credentials |
-| `BOTTIFACT_EMAIL_PROVIDER` | `usesend` | `usesend` or `resend`; not SMTP |
-| `BOTTIFACT_EMAIL_URL` / `BOTTIFACT_EMAIL_FROM` / `BOTTIFACT_EMAIL_KEY` | Required for email codes | Provider URL, verified sender and API key |
-| `BOTTIFACT_DATA` / `BOTTIFACT_BACKUPS` / `BOTTIFACT_RELEASES` | `/data` / `/backups` / `/releases` | Container paths; keep these with the supplied Compose file |
-| `BOTTIFACT_BIND` / `BOTTIFACT_PORT` | `127.0.0.1` / `8788` | Host HTTP binding behind your proxy |
-| `BOTTIFACT_UID` / `BOTTIFACT_GID` | `1000` / `1000` | Container user/group; changing existing volumes needs ownership migration |
-| `BOTTIFACT_IMAGE_TAG` | `latest` | Optional local container image tag |
-
-Configure Google with redirect URI `https://artifacts.example.com/auth/google/callback`, email codes, or both. For the first administrator, server access allows a one-time bootstrap:
-
-```bash
-docker compose exec app python -m portal.manage bootstrap --email owner@example.com
-```
-
-Open the returned single-use link privately. There is no default password. Configure normal authentication before inviting other users. The portal uses FastAPI, SQLite/FTS and a background worker. Run one app instance with a local persistent volume. Backups, provider setup, recovery and upgrades are covered in the [self-hosting runbook](docs/self-hosting.md).
+Your own instance has separate users, tokens and data. A botto.is token does not sign in to another instance. Point the skill at the server you choose; installing the open-source library does not require using the hosted service.
 
 ## Publish, review and return feedback to your session
 
 Sign in to your portal, create an agent token under **Conectar un agente**, then connect through the masked prompt:
 
 ```bash
-bottifact connect --server https://artifacts.example.com
+bottifact connect --server https://artifacts.botto.is
 bottifact publish --file /tmp/decision-brief.html --title 'Decision brief' \
   --visibility private --agent codex --session SESSION_ID --device DEVICE_LABEL
 ```

@@ -3,7 +3,7 @@
 Esta es una biblioteca de HTML, CSS y JavaScript, y también un skill para que un agente la use.
 La guía visual [examples/generated/guide.html](../examples/generated/guide.html) contiene todas las recetas completas. [packages/core/registry/registry.json](../packages/core/registry/registry.json)
 es el inventario ejecutable; [docs/components.md](components.md) conserva HTML, criterio y límites.
-El generador proporciona la experiencia común. No es un paquete React ni un registro del CLI de shadcn.
+El generador proporciona la experiencia común del HTML independiente. La capa React opcional se documenta en [React](react.md); usa ocho exports nativos y visores aislados para las recetas existentes.
 
 ## Antes de escoger piezas
 
