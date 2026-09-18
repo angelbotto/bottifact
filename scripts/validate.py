@@ -83,7 +83,7 @@ assert len(menu_palettes)==4 and all(p==menu_palettes[0] for p in menu_palettes)
 new_palettes=[set(re.findall(r'(--[\w-]+)\s*:',body)) for _,body in re.findall(r'(:root[^{}]*)\{([^{}]*)\}',legacy_css.split('/* 15 —')[1]) if '--calor-0:' in body]
 base_colors=set(re.findall(r'(--[\w-]+)\s*:',css.split('/* 01 —')[1].split('--texto:')[0]))
 assert len(new_palettes)==3 and all(p==new_palettes[0] and p>=base_colors|palettes[0] for p in new_palettes), 'Paleta adicional incompleta'
-new_themes=[set(re.findall(r'(--[\w-]+)\s*:',body)) for selector,body in re.findall(r'(:root[^{}]*)\{([^{}]*)\}',css.split('/* 28 —')[1].split('/* TEMAS GENERADOS')[0]) if '--calor-0:' in body]
+new_themes=[set(re.findall(r'(--[\w-]+)\s*:',body)) for selector,body in re.findall(r'(:root[^{}]*)\{([^{}]*)\}',css.split('/* 28 —')[1].split('/* GENERATED THEMES')[0]) if '--calor-0:' in body]
 assert len(new_themes)==5 and all(p==new_themes[0] and p>=new_palettes[0] for p in new_themes),'Tema nuevo incompleto'
 for doc in ['SKILL.md','docs/components.md','docs/editorial-reference.md']:
  for ref in re.findall(r'\]\(([^)]+)\)',(ROOT/doc).read_text()):
