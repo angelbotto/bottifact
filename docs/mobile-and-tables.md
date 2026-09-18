@@ -36,3 +36,10 @@ Use the current generator to rebuild an artifact from its content. Preserve docu
 The native React and portable table adapters share the query model but have different control implementations. The administrator's document table remains its own interface. These improvements do not claim a migration of the administrator to the new record layout.
 
 Try `examples/generated/workbench.html` with synthetic Liftit, Tikin and Catabum records. Mobile layout checks cover 320px and 390px frames and a 768px tablet frame; desktop comparison should also remain usable. Geometry checks complement, rather than replace, visual inspection and real-device testing.
+
+
+### Review and presentation update
+
+The reader dock exposes Appearance, one writing action, counted Comments, and Share. Privacy is selected inside the composer; existing thread types stay immutable. The count includes open threads visible to the current reader, including their own private notes, and excludes replies/resolved threads. Nearby pins group by position and open every contained thread. Share owns link/access and creator management; there is no generic More dock.
+
+Record explorers support Table, List, Cards and Board. List reduces per-record spacing; Board groups the existing rows by the selected field (preferring a categorical status/team field initially). The portable board shows the current filtered page, with per-lane counts explicitly scoped to that page. React uses its supplied filtered dataset. Both preserve source records and selection. This is a read-only presentation, not drag-and-drop state editing or an inferred workflow. Saved portable views include presentation. Horizontal scrolling stays local to the board; print returns to a table.

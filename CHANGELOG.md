@@ -1,6 +1,13 @@
 # Changelog
 
 
+## 0.7.0 — 2026-09-18
+
+- Unify writing in one dock action with visible per-thread privacy. Keep access management in Share and remove the generic More dock.
+- Show the current reader's open-thread count, group overlapping pins, and expose all threads at a point.
+- Add List and grouped Board presentations to portable and React record explorers, preserving filtering, selection and source anchors. Boards are read-only; portable lane counts cover the current page.
+- Test pin collisions, live counters, read-only reviewer capabilities and presentation changes with active filters/selection.
+
 ## 0.6.0 — 2026-09-18
 
 - Adopt Margen as the product, repository and canonical agent skill name. Preserve document IDs, URLs, account storage, runtime APIs and legacy commands.

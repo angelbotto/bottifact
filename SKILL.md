@@ -21,7 +21,7 @@ Read [automatic updates](docs/automatic-updates.md). An opted-in scheduler check
 
 When the user refers to a map, companies, topics or Obsidian in their library, work on the [administrator knowledge graph](docs/graphs.md), not a chart inside a document. Explain connections and enforce permissions. The [administrator table](docs/connected-library.md) shares server search, filters and sorting with list and gallery views.
 
-Read [the unified workspace](docs/unified-workspace.md) for tables, review and context. The generator includes one reader toolbar: appearance, comment, private note, review, share and more. Do not invent another toolbar. Private notes require explicit selection when preparing AI context. Record only real agent, session and device references; never fabricate provenance. Copying a prompt does not reopen an agent session.
+Read [the unified workspace](docs/unified-workspace.md) for tables, review and context. The generator includes one reader toolbar: appearance, a unified comment composer, counted review and sharing. Do not invent another toolbar. Private notes require explicit selection when preparing AI context. Record only real agent, session and device references; never fabricate provenance. Copying a prompt does not reopen an agent session.
 
 ## Create an artifact
 
@@ -47,9 +47,9 @@ The base includes appearance (themes, typography and sound), anchored review, co
 
 Follow [interface direction](docs/interface-direction.md): primary, secondary and quiet actions; consistent SVG icons; one floating dock. Retain text for ambiguous actions. Icon-only controls need accessible names, focus/hover hints and sufficient touch targets. Use `BottifactUI.decorate` for portable controls without replacing live nodes or handlers; never decorate source data as controls.
 
-The comment composer prioritizes text, author and privacy. Context, type and session are progressive options. Do not expose storage infrastructure or optional metadata as a large form. Preserve feedback anchors and immutable entry types when editing existing notes.
+The comment composer prioritizes text, author and privacy. Privacy stays visible in the composer; context and session are progressive options. Overlapping pins expose their count and all threads. Do not expose storage infrastructure or optional metadata as a large form. Preserve feedback anchors and immutable entry types when editing existing notes.
 
-Read [tables and mobile](docs/mobile-and-tables.md). Use `data-explorador` for searchable records, value facets, removable filter chips and Table/Cards switching. Group related actions. Mobile cards preserve existing cells and stable IDs; do not duplicate the table. Keep local horizontal scrolling available for numeric comparisons. Declare units, denominator, source and total scope. Missing values are not zero. Updating a skill does not rewrite historical HTML: regenerate, review and publish a new version with the same identity.
+Read [tables and mobile](docs/mobile-and-tables.md). Use `data-explorador` for searchable records, value facets, removable filter chips and Table/List/Cards/Board switching. Group related actions. Mobile cards preserve existing cells and stable IDs; do not duplicate the table. Keep local horizontal scrolling available for numeric comparisons. Declare units, denominator, source and total scope. Missing values are not zero. Updating a skill does not rewrite historical HTML: regenerate, review and publish a new version with the same identity.
 
 ## Voice and evidence
 

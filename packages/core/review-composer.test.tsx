@@ -53,3 +53,21 @@ it('can be destroyed and mounted again without losing original controls or dupli
   expect(document.querySelectorAll('[data-revision-cancelar]')).toHaveLength(1);
   expect((document.querySelector('[data-revision-editor]') as HTMLDialogElement).open).toBe(true);
 });
+it('groups overlapping pins without losing any thread and publishes the open count',async()=>{
+ const counts:number[]=[];const receive=(e:any)=>counts.push(e.detail.open);document.addEventListener('bottifact:review-count',receive);
+ mount();
+ for(const text of ['First point','Second point']){
+  open();const editor=document.querySelector('[data-revision-editor]') as HTMLDialogElement;
+  const draft=editor.querySelector('textarea')!;draft.value=text;draft.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',ctrlKey:true,bubbles:true}));
+  await vi.waitFor(()=>expect(editor.open).toBe(false));
+ }
+ // Position inside the visible page (jsdom otherwise has a zero-sized viewport rect).
+ const claim=document.querySelector('#claim') as HTMLElement;
+ claim.getBoundingClientRect=()=>({x:100,y:100,left:100,right:300,top:100,bottom:200,width:200,height:100,toJSON(){return {};}});
+ window.dispatchEvent(new Event('resize'));
+ const pins=[...document.querySelectorAll('.revision-marca')].filter(n=>!(n as HTMLElement).hidden);
+ expect(pins).toHaveLength(1);expect(pins[0].textContent).toBe('2');
+ (pins[0] as HTMLElement).click();expect(document.querySelectorAll('.revision-hilo')).toHaveLength(2);
+ expect(counts.at(-1)).toBe(2);
+ document.removeEventListener('bottifact:review-count',receive);
+});

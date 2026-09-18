@@ -63,3 +63,10 @@ The generated table module is committed so Python-only skill installations need 
 ## Current boundaries
 
 No automatic agent delivery, semantic embeddings, transcript imports, shared boards or editable spreadsheet cells. Workbench dialogs use a common layout; the existing artifact preview remains the sidebar. Saved views are personal. Local views cannot synchronize from an opaque iframe without a connected capability; unavailable storage is reported. Account settings do not yet follow a person across devices for every appearance choice. Each surface's actual support is documented rather than inferred from a component name.
+
+
+### Review and presentation update
+
+The reader dock exposes Appearance, one writing action, counted Comments, and Share. Privacy is selected inside the composer; existing thread types stay immutable. The count includes open threads visible to the current reader, including their own private notes, and excludes replies/resolved threads. Nearby pins group by position and open every contained thread. Share owns link/access and creator management; there is no generic More dock.
+
+Record explorers support Table, List, Cards and Board. List reduces per-record spacing; Board groups the existing rows by the selected field (preferring a categorical status/team field initially). The portable board shows the current filtered page, with per-lane counts explicitly scoped to that page. React uses its supplied filtered dataset. Both preserve source records and selection. This is a read-only presentation, not drag-and-drop state editing or an inferred workflow. Saved portable views include presentation. Horizontal scrolling stays local to the board; print returns to a table.

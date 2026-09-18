@@ -84,3 +84,17 @@ it("tears down and remounts without losing original form controls or duplicating
   expect(root.querySelectorAll(".explorer-presentation")).toHaveLength(1);
   expect(engine().visible).toHaveLength(6);
 });
+it('reuses filtered records and selection across board, list and table views',()=>{
+ const cell=root.querySelector('tbody td')!,id=cell.id;
+ (root.querySelector('.explorador-seleccion') as HTMLInputElement).click();
+ (root.querySelector('.explorer-presentation [data-layout=board]') as HTMLElement).click();
+ expect(root.dataset.layout).toBe('board');
+ expect((root.querySelector('[name=grupo]') as HTMLSelectElement).value).not.toBe('');
+ expect(root.querySelectorAll('tbody')).toHaveLength(3);
+ (root.querySelector('[data-facet-value="Producto"]') as HTMLInputElement).click();
+ expect(engine().visible).toHaveLength(2);
+ (root.querySelector('.explorer-presentation [data-layout=list]') as HTMLElement).click();
+ expect(engine().visible).toHaveLength(2);expect(engine().selected).toHaveLength(1);
+ (root.querySelector(".explorer-filter-chips button") as HTMLElement).click();
+ expect(document.getElementById(id)).toBe(cell);
+});

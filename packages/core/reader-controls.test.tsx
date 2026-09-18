@@ -29,11 +29,8 @@ it("renders one toolbar for hosted legacy markup and routes sharing to the host"
   window.eval(source);
   document.dispatchEvent(new Event("DOMContentLoaded"));
   expect(document.querySelectorAll(".bottifact-toolbar")).toHaveLength(1);
-  (
-    document.querySelector(
-      'button[aria-label="Compartir"]',
-    ) as HTMLButtonElement
-  ).click();
+  (document.querySelector('summary[aria-label="Compartir"]') as HTMLElement).click();
+  ([...document.querySelectorAll('.bf-menu button')].find(b=>b.textContent==='Enlace y acceso') as HTMLElement).click();
   expect(action).toHaveBeenCalledWith("share");
   expect(ready).toHaveBeenCalledOnce();
 });
@@ -105,14 +102,10 @@ it("applies host permissions to both shortcuts and menu actions", () => {
         '[aria-label="Comentar en un punto"]',
       ) as HTMLButtonElement
     ).disabled,
-  ).toBe(true);
-  expect(
-    (
-      document.querySelector(
-        '[aria-label="Añadir nota privada"]',
-      ) as HTMLButtonElement
-    ).disabled,
   ).toBe(false);
+  const note=[...document.querySelectorAll('.bf-menu button')].find(b=>b.textContent==='Añadir nota personal') as HTMLButtonElement;
+  expect(note.disabled).toBe(false);
+
 });
 it("moves between tools with arrow keys and exposes keyboard tooltip text", async () => {
   vi.useFakeTimers();
@@ -132,7 +125,17 @@ it("moves between tools with arrow keys and exposes keyboard tooltip text", asyn
     new KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true }),
   );
   expect(document.activeElement?.getAttribute("aria-label")).toBe(
-    "Añadir nota privada",
+    "Comentarios · 0 abiertos",
   );
   vi.useRealTimers();
+});
+
+it("shows the open-thread count and removes the duplicated note and generic more shortcuts",()=>{
+ document.body.innerHTML='<div class="revision-barra"><button>Comment</button><button>3</button></div>';
+ window.eval(source);document.dispatchEvent(new Event('DOMContentLoaded'));
+ expect(document.querySelector('.bf-review-count')?.textContent).toBe('3');
+ document.dispatchEvent(new CustomEvent('bottifact:review-count',{detail:{open:5,total:8}}));
+ expect(document.querySelector('.bf-review-count')?.textContent).toBe('5');
+ expect(document.querySelector('summary[aria-label="Más opciones"]')).toBeNull();
+ expect(document.querySelector('.bottifact-toolbar>button[aria-label="Añadir nota privada"]')).toBeNull();
 });

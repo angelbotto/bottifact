@@ -35,5 +35,5 @@ if __name__=='__main__':
   dest,backup=install(Path(__file__).resolve().parents[1],args.destino,args.actualizar)
   print('Instalado y verificado: '+str(dest))
   if backup:print('Versión anterior conservada: '+str(backup))
-  print('Abre una conversación nueva y pide usar bottifact. La carga del agente se comprueba en este equipo.')
+  print('Abre una conversación nueva y pide usar margen. La carga del agente se comprueba en este equipo.')
  except (ValueError,KeyError,OSError) as e:p.exit(1,str(e)+'\n')

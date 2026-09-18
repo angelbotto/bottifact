@@ -51,13 +51,14 @@ export interface DataTableProps<Row> {
   inspectable?: boolean;
   persistenceKey?: string;
   /** Automatic uses readable records below 640px; readers can still compare columns. */
-  presentation?: "auto" | "table" | "cards";
+  presentation?: "auto" | "table" | "cards" | "list" | "board";
 }
 const features = tableFeatures({
   columnVisibilityFeature,
   rowSelectionFeature,
 });
 interface View {
+  presentation?: "auto" | "table" | "list" | "cards" | "board";
   name: string;
   query: TableQuery;
   hidden: Record<string, boolean>;
@@ -139,10 +140,11 @@ export function DataTable<Row extends RowData>({
   });
   const shown = table.getVisibleLeafColumns(),
     selected = rows.filter((r) => table.state.rowSelection[rowKey(r)]);
+  const effectiveGroup=group || (effectiveLayout === "board" ? (columns.find(c=>/status|state|team|category/i.test(c.id)) || columns.find(c=>c.type!=="number"))?.id || "" : "");
   const groups = new Map<string, Row[]>();
   for (const row of visible) {
-    const label = group
-      ? String(columns.find((c) => c.id === group)?.value(row) ?? "Missing")
+    const label = effectiveGroup
+      ? String(columns.find((c) => c.id === effectiveGroup)?.value(row) ?? "Missing")
       : "";
     if (!groups.has(label)) groups.set(label, []);
     groups.get(label)!.push(row);
@@ -167,6 +169,7 @@ export function DataTable<Row extends RowData>({
     if (!storageKey || !viewName.trim()) return;
     const view: View = {
       name: viewName.trim().slice(0, 80),
+      presentation: layout,
       query,
       hidden: table.state.columnVisibility,
       group,
@@ -186,6 +189,7 @@ export function DataTable<Row extends RowData>({
     }
   }
   function apply(v: View) {
+    setLayout(v.presentation && ["auto","table","list","cards","board"].includes(v.presentation) ? v.presentation : "auto");
     setQuery(v.query);
     setGroup(v.group);
     setDensity(v.density);
@@ -403,20 +407,7 @@ export function DataTable<Row extends RowData>({
           {visible.length} of {rows.length} rows
         </p>
         <div className="bf-table-presentation" aria-label="Record presentation">
-          <button
-            type="button"
-            aria-pressed={effectiveLayout === "table"}
-            onClick={() => setLayout("table")}
-          >
-            <ControlIcon name="table" /> Table
-          </button>
-          <button
-            type="button"
-            aria-pressed={effectiveLayout === "cards"}
-            onClick={() => setLayout("cards")}
-          >
-            <ControlIcon name="cards" /> Cards
-          </button>
+          {(["table","list","cards","board"] as const).map(value=><button key={value} type="button" aria-pressed={effectiveLayout===value} onClick={()=>setLayout(value)}><ControlIcon name={value==="table"?"table":value==="list"?"review":value==="board"?"columns":"cards"}/>{{table:"Table",list:"List",cards:"Cards",board:"Board"}[value]}</button>)}
         </div>
       </div>
       {(query.search || query.rules.length > 0) && (
@@ -449,7 +440,7 @@ export function DataTable<Row extends RowData>({
           ))}
         </div>
       )}
-      {effectiveLayout === "cards" && (
+      {effectiveLayout !== "table" && (
         <label className="bf-card-sort">
           Order records
           <select
@@ -585,10 +576,9 @@ export function DataTable<Row extends RowData>({
               {inspectable && <TableHead>Details</TableHead>}
             </TableRow>
           </TableHeader>
-          <TableBody role="rowgroup">
             {[...groups].map(([label, members]) => (
-              <Fragment key={label}>
-                {group && (
+              <TableBody role="rowgroup" key={label}>
+                {effectiveGroup && (
                   <TableRow className="bf-group">
                     <TableHead colSpan={shown.length + extra}>
                       {label} · {members.length} matching rows
@@ -680,16 +670,15 @@ export function DataTable<Row extends RowData>({
                     )}
                   </TableRow>
                 ))}
-              </Fragment>
+              </TableBody>
             ))}
             {!visible.length && (
-              <TableRow role="row">
+              <TableBody role="rowgroup"><TableRow role="row">
                 <TableCell colSpan={shown.length + extra}>
                   No matching rows.
                 </TableCell>
-              </TableRow>
+              </TableRow></TableBody>
             )}
-          </TableBody>
         </Table>
       </div>
       <Inspector
