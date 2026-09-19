@@ -1,16 +1,16 @@
 # Documents, chapters and presentations
 
-Margen supports three native HTML formats through the same generator, company identity, components and review runtime. These are reading formats, not different authentication or storage systems.
+Margen supports three native HTML formats through the same generator, company identity, components and review runtime. Articles and presentations are different authored deliverables. They share collaboration infrastructure, not a reader conversion switch. Chapters organize a long document; they are not automatically slides.
 
 | Format | Use it for | Behavior |
 | --- | --- | --- |
 | `document` | A memo, article or short report | One continuous page with contents and reading progress |
 | `chapters` | Long reports, documentation and evidence appendices | Page navigation, per-page contents, stable deep links and browser history |
-| `presentation` | A live discussion or executive briefing | Slide navigation, overview, keyboard controls, continuous reading and printable pages |
+| `presentation` | A live discussion or executive briefing | Slide navigation, overview, keyboard controls and printable pages |
 
 If omitted, format follows the source page count. A single source page can still be a presentation. `document` rejects multiple source pages instead of silently discarding them.
 
-## Author once, choose the reading format
+## Choose the deliverable before writing
 
 ```json
 {
@@ -27,17 +27,17 @@ If omitted, format follows the source page count. A single source page can still
 
 ```bash
 python3 scripts/create_artifact.py --config /project/review.json --project-root /project --output /project/review.html
-python3 scripts/create_artifact.py --config /project/review.json --format presentation --document-id operations-briefing --output /project/briefing.html
+python3 scripts/create_artifact.py --config /project/slides.json --output /project/briefing.html
 ```
 
-English configuration keys are canonical for new work; existing Spanish aliases continue to work. A separately published briefing gets a distinct document ID. A new revision of the same briefing keeps its existing ID and stable page/section IDs. Switching between Present and Read within one artifact reuses the DOM and anchors.
+English configuration keys are canonical for new work; existing Spanish aliases continue to work. A separately published briefing gets a distinct document ID. A new revision of the same briefing keeps its existing ID and stable page/section IDs. A slide deck needs its own slide content and configuration. Do not reuse article prose and relabel it as a presentation.
 
 ## Presentation controls
 
 - Previous/next buttons, a slide counter and an overview of titles and summaries.
 - Arrow keys, Page Up/Down, Home and End when focus is outside interactive controls.
 - Shortcuts do not interrupt typing, code, table controls, dialogs or point-comment mode.
-- Read shows all slides as a continuous document; Present returns to the selected slide.
+- No Read/Present toggle: the reader cannot change the artifact’s authored format.
 - Fullscreen appears only where browser/embedding policy supports it. A hosted sandbox may not offer it.
 - Small screens retain readable type and natural vertical scrolling. Dense content is not scaled down to force a fixed canvas.
 - Print CSS includes every slide, with landscape pages and page breaks. Long content can span printed pages; inspect the PDF before sending it.
@@ -48,6 +48,12 @@ Speaker notes are not private merely because they are visually hidden. Keep conf
 
 A slide should advance one decision or claim. Prefer a conclusion, relevant evidence, comparison or next action over a page of small bullet text. Keep source, date, unit and caveats with the evidence. Put long tables and operational detail in chapters or appendices, while preserving their links. Do not invent figures to fill a slide.
 
-The runnable samples are [chapter report](../examples/generated/project-chapters.html) and [presentation](../examples/generated/project-presentation.html), generated from [one source set](../examples/content/project-formats/presentation.json). All sample business content is illustrative.
+The runnable samples are [chapter report](../examples/generated/project-chapters.html) and [presentation](../examples/generated/project-presentation.html), authored independently under [the example project](../examples/content/project-formats/presentation.json). All sample business content is illustrative.
 
 For editable Office output, advanced presenter workflows or publication-quality pagination, see [the evaluated tools and integration boundaries](presentation-ecosystem.md). Those external exporters are not installed or bundled by this release.
+
+## Existing presentations
+
+Publish an existing HTML deck directly with `scripts/publish.py publish --file deck.html`. The portal adds the scoped collaboration toolbar and contextual review bridge. It does not run the article generator, replace the deck navigation, choose another font, or add a theme selector when the original has no appearance system. Preserve slide IDs, assets, aspect ratio, layout and existing keyboard behavior. The toolbar must not inherit broad `nav` positioning rules or add body padding to a foreign canvas.
+
+Inspect the actual deck before changing it. Scroll-based slide canvases, paged decks and approval storyboards are distinct layouts, all supported as existing HTML. Test comments on text and visuals, keyboard behavior while typing, and the original navigation. Publishing HTML does not add native PowerPoint editing or change hosted sandbox restrictions.

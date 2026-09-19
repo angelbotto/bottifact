@@ -27,7 +27,7 @@ Margen brings together **88 component recipes**, **15 theme families with light/
 
 A [project profile](docs/project-identity.md) selects company logo, theme, mode and typography. Exact registered GitHub organizations can supply defaults; reader themes never replace company identity. Generic headers use the compact Margen cube.
 
-Create a continuous document, a chapter report or a presentation with the [same generator](docs/document-formats.md). Native slides include navigation, overview, continuous reading and contextual review. See the [tool and skill assessment](docs/presentation-ecosystem.md) for optional Office/export directions and their limits.
+Create a continuous document, a chapter report or a presentation with the [same generator](docs/document-formats.md). Articles and presentations are authored separately. Native slides include navigation, overview and contextual review; existing decks retain their own design and navigation. See the [tool and skill assessment](docs/presentation-ecosystem.md) for optional Office/export directions and their limits.
 
 ## Choose how to use Margen
 

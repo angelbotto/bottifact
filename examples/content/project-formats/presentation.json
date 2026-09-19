@@ -6,23 +6,23 @@
   "pages": [
     {
       "id": "introduction",
-      "title": "Un proyecto, tres formatos",
-      "content": "introduction.html"
+      "title": "Dos formatos, dos composiciones",
+      "content": "slide-introduction.html"
     },
     {
       "id": "identity",
-      "title": "Reconocer el proyecto",
-      "content": "identity.html"
+      "title": "La marca acompaña al contenido",
+      "content": "slide-identity.html"
     },
     {
       "id": "formats",
-      "title": "Elegir cómo compartir",
-      "content": "formats.html"
+      "title": "La presentación sigue siendo tuya",
+      "content": "slide-formats.html"
     },
     {
       "id": "feedback",
-      "title": "Continuar con contexto",
-      "content": "feedback.html"
+      "title": "Comentarios que vuelven con contexto",
+      "content": "slide-feedback.html"
     }
   ]
 }

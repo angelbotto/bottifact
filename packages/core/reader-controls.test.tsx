@@ -123,3 +123,15 @@ it("honors project appearance while retaining the company and other reader prefe
  expect(set).not.toHaveBeenCalled();expect(configure).toHaveBeenCalledWith({preferred:false,volume:undefined});
  meta.remove();delete (window as any).NotaTemas;delete (window as any).NotaAudio;
 });
+it("hides empty badges and prevents deck navigation while editing feedback", () => {
+  document.body.innerHTML='<div class="revision-barra"><button>Comment</button><button>0</button></div><textarea></textarea>';
+  window.eval(source);document.dispatchEvent(new Event('DOMContentLoaded'));
+  expect((document.querySelector('.bf-review-count') as HTMLElement).hidden).toBe(true);
+  const navigate=vi.fn();window.addEventListener('keydown',navigate);
+  const event=new KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true,cancelable:true});
+  document.querySelector('textarea')!.dispatchEvent(event);
+  expect(navigate).not.toHaveBeenCalled();expect(event.defaultPrevented).toBe(false);
+  window.removeEventListener('keydown',navigate);
+  document.dispatchEvent(new CustomEvent('bottifact:review-count',{detail:{open:2}}));
+  expect((document.querySelector('.bf-review-count') as HTMLElement).hidden).toBe(false);
+});
