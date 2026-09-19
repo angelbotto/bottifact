@@ -7,6 +7,7 @@ ROOT=Path(__file__).resolve().parents[1]
 VERSION='4'
 from themes import THEMES,FAMILIES,MODES,normalize
 from brands import BRANDS,identity,logo
+from identity import mark as margen_mark, favicon as margen_favicon
 STYLES=('editorial','sobrio','tecnico','libro','revista','bitacora')
 NOSCRIPT='.nota-estandar > .pagina { display:grid!important; grid-template-columns:1fr min(var(--texto),calc(100% - 2 * var(--gutter))) 1fr; row-gap:28px; }.nota-estandar .indice,.nota-estandar ~ .regla,.navegacion-editorial,.nota-estandar .paginacion { display:none!important; }'
 THREE='https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js'
@@ -80,7 +81,7 @@ def build(title,pages,description='',brand='Margen',theme=None,style=None,docume
  if multi:
   nav='<div class="navegacion-scroll" data-capitulos-scroll tabindex="0" role="region" aria-label="Capítulos, desplazables"><nav aria-label="Capítulos">'+('<span class="nav-separador" aria-hidden="true">/</span>'.join('<button type="button" data-ir="'+p['id']+'">'+escape(p['titulo'])+'</button>' for p in pages))+'</nav></div>'
  else:nav='<span class="procedencia">Documento para revisión</span>'
- header='<a class="salto" href="#'+ids[0]+'">Saltar al contenido</a><header class="barra capitulos navegacion-editorial" id="nota-inicio"><a class="firma-editorial" aria-label="'+escape(brand,quote=True)+' · Inicio" href="#'+ids[0]+'">'+(logo(brand_id) if brand_id else '<span>'+escape(brand)+'</span>')+'</a>'+nav+appearance()+'</header>'
+ header='<a class="salto" href="#'+ids[0]+'">Saltar al contenido</a><header class="barra capitulos navegacion-editorial" id="nota-inicio"><a class="firma-editorial" aria-label="'+escape(brand,quote=True)+' · Inicio" href="#'+ids[0]+'">'+(logo(brand_id) if brand_id else (margen_mark() if brand=='Margen' else '')+'<span>'+escape(brand)+'</span>')+'</a>'+nav+appearance()+'</header>'
  pieces=[]
  for i,p in enumerate(pages):
   heading='<header class="cabecera"'+('' if multi else ' id="'+p['id']+'"')+'><h1>'+escape(p['titulo'] if multi else title)+'</h1>'+('<p class="bajada">'+escape(description)+'</p>' if i==0 and description else '')+'</header>'
@@ -95,6 +96,7 @@ def build(title,pages,description='',brand='Margen',theme=None,style=None,docume
  files=['packages/core/styles/fonts.css','packages/core/styles/artifact.css',*modules]
  manifest={'version':VERSION,'paginas':ids,'modulos':modules,'fuentes':{f:hashlib.sha256((ROOT/f).read_text().encode('utf-8')).hexdigest() for f in files}}
  result='<title>'+escape(title)+'</title>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="nota-tikin-version" content="'+VERSION+'">\n'
+ result+=margen_favicon()+'\n'
  result+='<meta name="nota-documento" content="'+(document_id or 'nota-'+hashlib.sha256(title.encode()).hexdigest()[:24])+'">\n'
  for name,value in [('nota-tema-inicial',theme),('nota-modo-inicial',mode),('nota-estilo-inicial',style)]:
   if value is not None:result+='<meta name="'+name+'" content="'+value+'">\n'
@@ -160,7 +162,7 @@ def validate(html):
   if n.tag=='img':require(n.attrs.get('src','').startswith('data:') and 'alt' in n.attrs,'Imagen externa o sin alternativa.')
   for attr in ['href','src','style']:
    value=n.attrs.get(attr) or '';require(not re.search(r'javascript:|@import|url\(\s*[\'"]?https?:',value,re.I),'Recurso o código fuera del contrato: '+attr)
-  if n.tag=='link':require(False,'El estilo y las fuentes deben estar incrustados.')
+  if n.tag=='link':require(n.attrs.get('rel')=='icon' and n.attrs.get('type')=='image/svg+xml' and n.attrs.get('href','').startswith('data:image/svg+xml;base64,'),'El estilo y las fuentes deben estar incrustados; el favicon debe ser un SVG incrustado.')
  scripts=[n for n in nodes if n.tag=='script' and n.attrs.get('type')!='application/json'];module_nodes=[n for n in scripts if 'data-nota-modulo' in n.attrs]
  names=[n.attrs['data-nota-modulo'] for n in module_nodes];required=modules_for(nodes,multi)
  require(len(names)==len(set(names)),'Hay módulos duplicados.')

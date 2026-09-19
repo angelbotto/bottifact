@@ -3081,6 +3081,8 @@ body:has(.revision-barra) { padding-bottom:0; }
 @media(prefers-reduced-motion:no-preference){:is(.control-menu>summary,.apariencia-panel button,.revision-panel-v2 button,.visor-herramientas button){transition:background-color 120ms ease-out,color 120ms ease-out,border-color 120ms ease-out}}
 @media(max-width:640px){.explorer-ready .explorador-utilidades>details>summary {gap:4px}.explorer-ready .explorador-utilidades>details>summary .bf-ui-icon{width:14px;height:14px}.explorer-ready .explorador-paginacion button{width:44px}}
 
+.firma-editorial .margen-mark{width:30px;height:30px;flex:none;color:var(--tinta);vertical-align:middle;margin-right:9px}
+
 /* REVIEW COMPOSER START */
 /* Shared by portable artifacts and the hosted adapter. */
 [data-revision-editor].review-composer{padding:12px!important;border:1px solid var(--linea)!important;border-radius:14px!important;background:var(--papel)!important;color:var(--tinta);box-shadow:0 4px 10px #00000008,0 16px 48px #00000022!important;max-width:calc(100vw - 24px)}
@@ -3197,6 +3199,15 @@ body:has(.revision-barra) { padding-bottom:0; }
 .explorer-ready .bf-inline-detail{margin-top:4px}.explorer-ready .bf-inline-detail>summary{padding:3px 0;font-size:11px}
 .explorer-ready :is([data-value-type=texto],th){word-break:normal}
 @media(max-width:640px){.explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) tbody [data-primary=true]{padding-right:40px}.explorer-ready tbody [data-primary=true]>.explorador-inspeccionar{right:0;top:0}}
+
+/* Contextual review stays outside the document layout and respects theme tokens. */
+.review-context-menu{position:fixed;z-index:160;min-width:180px;max-width:calc(100vw - 16px);padding:5px;border:1px solid var(--linea,#ddd);border-radius:10px;background:var(--papel,#fff);color:var(--tinta,#222);box-shadow:0 4px 12px #0001,0 12px 32px #0002;font:13px/1.4 var(--sans,system-ui)}
+.review-context-menu[hidden]{display:none!important}
+.review-context-menu button{display:flex;align-items:center;gap:8px;width:100%;min-height:38px;padding:8px 12px;border:0;border-radius:6px;background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.review-context-menu button:hover,.review-context-menu button:focus-visible{background:var(--panel,#f2f2f2);outline:2px solid var(--foco,#6765cc);outline-offset:-2px}
+.review-new-comment{grid-column:1/-1;justify-self:start}
+@media(pointer:coarse){.review-context-menu button{min-height:44px}}
+@media print{.review-context-menu{display:none!important}}
 /* REVIEW COMPOSER END */
 
 /* TABLE CONTENT START */
@@ -4858,7 +4869,15 @@ body:has(.revision-barra) { padding-bottom:0; }
     }
     return node;
   }
+  // IDENTITY START
+  const identityMarkup = "<svg class=\"margen-mark\" width=\"30\" height=\"30\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" fill=\"none\"><g stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M16 3 28 10v13l-12 7L4 23V10Z\" stroke-dasharray=\".6 3.2\"/><path d=\"m4 10 12 7 12-7M16 17v13\"/><path d=\"M16 3v13M4 23l12-7 12 7\" opacity=\".35\" stroke-dasharray=\".6 3.2\"/></g></svg>";
+  const faviconMarkup = "<link rel=\"icon\" type=\"image/svg+xml\" href=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSI+PHN0eWxlPnN2Z3tjb2xvcjojMjgyNzMzfUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2VjZWJmM319PC9zdHlsZT48ZyBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTE2IDMgMjggMTB2MTNsLTEyIDdMNCAyM1YxMFoiIHN0cm9rZS1kYXNoYXJyYXk9Ii42IDMuMiIvPjxwYXRoIGQ9Im00IDEwIDEyIDcgMTItN00xNiAxN3YxMyIvPjxwYXRoIGQ9Ik0xNiAzdjEzTTQgMjNsMTItNyAxMiA3IiBvcGFjaXR5PSIuMzUiIHN0cm9rZS1kYXNoYXJyYXk9Ii42IDMuMiIvPjwvZz48L3N2Zz4K\">";
+  // IDENTITY END
   function mount() {
+    for (const brand of document.querySelectorAll('.firma-editorial')) {
+      if (!brand.querySelector('svg,img') && brand.textContent.trim().startsWith('Margen')) brand.insertAdjacentHTML('afterbegin', identityMarkup);
+    }
+    if (!document.querySelector('link[rel="icon"]')) document.head.insertAdjacentHTML('beforeend', faviconMarkup);
     if (document.querySelector("[data-bottifact-interface]")) return;
     const style = document.createElement("style");
     style.dataset.bottifactInterface = "";

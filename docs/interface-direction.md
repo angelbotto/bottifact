@@ -21,7 +21,7 @@ The prototype feeling came from accumulated controls with equal visual weight, i
 
 ## Behavior
 
-The dock groups appearance; comment, private note and review; share and more. Main mobile tools have 44 px targets. Keyboard focus, arrow navigation and reduced motion are preserved. Tooltips supplement accessible labels. Comment context, optional session and entry type are disclosed; privacy stays visible. Blank submissions are disabled and failed saves retain text. The theme picker keeps the current choice visible in its header even while searching other families.
+The dock contains Comments (including point creation, private notes and its open-thread badge), Share, and Preferences. There is no duplicate review or More tool. Main mobile tools have 44 px targets. Keyboard focus, arrow navigation and reduced motion are preserved. Tooltips supplement accessible labels. Comment context, optional session and entry type are disclosed; privacy stays visible. Blank submissions are disabled and failed saves retain text. The theme picker keeps the current choice visible in its header even while searching other families.
 
 The portal keeps strict CSP and opaque artifact isolation. Shared reader styles are generated from one source. Stored artifact versions remain immutable; updating source content requires a reviewed revision. Copying context neither sends data to an agent nor changes permissions.
 
