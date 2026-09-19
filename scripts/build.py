@@ -247,8 +247,9 @@ if (ROOT/"portal/static").is_dir():
  interface_css = re.search(r'style\.textContent\s*=\s*`(.*?)`', interface, re.S).group(1)
  (ROOT/'portal/static/interface.css').write_text('/* Generated from core/components/interface.js. */\n'+interface_css+'\n')
 
-for asset in (ROOT/'packages/core/assets/identity').glob('*.svg'):
- (ROOT/'portal/static'/asset.name).write_bytes(asset.read_bytes())
+if (ROOT/'portal/static').is_dir():
+ for asset in (ROOT/'packages/core/assets/identity').glob('*.svg'):
+  (ROOT/'portal/static'/asset.name).write_bytes(asset.read_bytes())
 
 # Resolve navigation from the generated examples directory without touching runtime code.
 for page in (ROOT / 'examples/generated').glob('*.html'):
