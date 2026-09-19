@@ -52,60 +52,26 @@ it("keeps the existing appearance and review controls as the action owners", () 
   addNote.click();
   expect(click).toHaveBeenCalledOnce();
 });
-it("offers direct point actions and tracks the active review tool", () => {
-  document.body.innerHTML =
-    '<div class="revision-barra"><button>Comment</button><button aria-label="Añadir nota privada">Note</button><button>List</button></div>';
-  const click = vi.fn();
-  document
-    .querySelector(".revision-barra>button")!
-    .addEventListener("click", click);
-  window.eval(source);
-  document.dispatchEvent(new Event("DOMContentLoaded"));
-  const quick = document.querySelector(
-    '.bottifact-toolbar>button[aria-label="Comentar en un punto"]',
-  ) as HTMLButtonElement;
-  quick.click();
-  expect(click).toHaveBeenCalledOnce();
-  document.dispatchEvent(
-    new CustomEvent("bottifact:review-mode", {
-      detail: { active: true, kind: "comment" },
-    }),
-  );
-  expect(quick.getAttribute("aria-pressed")).toBe("true");
-  document.dispatchEvent(
-    new CustomEvent("bottifact:review-mode", {
-      detail: { active: false, kind: "comment" },
-    }),
-  );
-  expect(quick.getAttribute("aria-pressed")).toBe("false");
+it("uses the actual comment icon for its badge and keeps exactly three named tools", () => {
+ document.body.innerHTML='<details data-apariencia-menu><summary>Appearance</summary></details><div class="revision-barra"><button>Comment</button><button>9</button></div>';
+ const icons:string[]=[];(window as any).BottifactUI={icon:(name:string)=>{icons.push(name);const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.dataset.icon=name;return svg;},decorate:()=>{}};
+ window.eval(source);document.dispatchEvent(new Event('DOMContentLoaded'));
+ const tools=[...document.querySelectorAll('.bottifact-toolbar>details>summary')];
+ expect(tools.map(t=>t.querySelector('.bf-tool-label')?.textContent)).toEqual(['Comentarios','Compartir','Preferencias']);
+ expect(tools[0].querySelector('svg')?.dataset.icon).toBe('comment');
+ expect(tools[0].querySelector('.bf-review-count')?.textContent).toBe('9');
+ expect(document.querySelector('.bottifact-toolbar>button')).toBeNull();
+ document.dispatchEvent(new CustomEvent('bottifact:review-mode',{detail:{active:true}}));
+ expect(tools[0].classList.contains('bf-tool-active')).toBe(true);
+ delete (window as any).BottifactUI;
 });
-it("applies host permissions to both shortcuts and menu actions", () => {
-  let receive: any;
-  (window as any).BottifactReviewBridge = {
-    action: vi.fn(),
-    subscribe: (fn: any) => {
-      receive = fn;
-    },
-    controlsReady: vi.fn(),
-  };
-  window.eval(source);
-  document.dispatchEvent(new Event("DOMContentLoaded"));
-  receive({
-    author: "Reader",
-    verified: true,
-    permissions: { comment: false, edit: false },
-    preferences: {},
-  });
-  expect(
-    (
-      document.querySelector(
-        '[aria-label="Comentar en un punto"]',
-      ) as HTMLButtonElement
-    ).disabled,
-  ).toBe(false);
-  const note=[...document.querySelectorAll('.bf-menu button')].find(b=>b.textContent==='Añadir nota personal') as HTMLButtonElement;
-  expect(note.disabled).toBe(false);
-
+it("keeps private notes available to a verified read-only reader", () => {
+ let receive:any;(window as any).BottifactReviewBridge={action:vi.fn(),subscribe:(fn:any)=>receive=fn,controlsReady:vi.fn()};
+ window.eval(source);document.dispatchEvent(new Event('DOMContentLoaded'));
+ receive({author:'Reader',verified:true,permissions:{comment:false,edit:false}});
+ const buttons=[...document.querySelectorAll('.bf-menu button')] as HTMLButtonElement[];
+ expect(buttons.find(b=>b.textContent==='Añadir comentario')?.disabled).toBe(true);
+ expect(buttons.find(b=>b.textContent==='Añadir nota personal')?.disabled).toBe(false);
 });
 it("moves between tools with arrow keys and exposes keyboard tooltip text", async () => {
   vi.useFakeTimers();
@@ -114,18 +80,18 @@ it("moves between tools with arrow keys and exposes keyboard tooltip text", asyn
   window.eval(source);
   document.dispatchEvent(new Event("DOMContentLoaded"));
   const first = document.querySelector(
-    ".bottifact-toolbar>button",
+    ".bottifact-toolbar>details>summary",
   ) as HTMLButtonElement;
   first.focus();
   await vi.advanceTimersByTimeAsync(1);
   expect(document.querySelector('[role="tooltip"]')?.textContent).toBe(
-    "Comentar en un punto",
+    "Comentarios · 0 abiertos",
   );
   first.dispatchEvent(
     new KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true }),
   );
   expect(document.activeElement?.getAttribute("aria-label")).toBe(
-    "Comentarios · 0 abiertos",
+    "Compartir",
   );
   vi.useRealTimers();
 });

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.9.0 — 2026-09-18
+
+- Unified reader toolbar: Comments with its speech-bubble count, Share and Preferences.
+- Point comments on cells, images, cards and charts; accessible contextual creation and permission checks.
+- Legacy hosted comments wait for a point instead of defaulting to the first heading.
+- Original dotted-cube Margen identity and embedded, adaptive SVG favicon.
+- Regression coverage for media anchors, remounts, count placement, native menus and keyboard cancellation.
+
+
 ## 0.8.0 — 2026-09-18
 
 - Use Radix Popover and Avatar in the React data workspace, with shared theme tokens and a compact responsive toolbar.

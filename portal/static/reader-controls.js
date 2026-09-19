@@ -46,6 +46,11 @@
     .bf-theme-favorite{margin:8px 0!important;width:auto!important;font-size:12px!important;min-height:34px;border:0!important;background:transparent!important}.bf-theme-hint{font-size:12px;color:var(--tinta-2,#625f5a)}
     @media(prefers-reduced-motion:no-preference){.bottifact-toolbar>button,.bottifact-toolbar>details>summary{transition:background-color 120ms ease-out,color 120ms ease-out}.bottifact-toolbar>button:active:not(:disabled),.bottifact-toolbar>details>summary:active{transform:scale(.95)}}
     @media(max-width:540px){.bottifact-toolbar{bottom:max(10px,env(safe-area-inset-bottom));max-width:calc(100vw - 16px);padding:5px;gap:0;border-radius:16px}.bottifact-toolbar>button,.bottifact-toolbar>details>summary,.bottifact-toolbar .apariencia-menu>summary{width:44px;height:44px;min-width:44px}.bottifact-toolbar .bf-dock-divider{margin-inline:2px;height:20px}.bottifact-controls-ready .revision-panel-v2[open]{inset:auto 8px max(80px,env(safe-area-inset-bottom)) 8px;width:calc(100vw - 16px);max-height:75dvh;resize:none}.bf-controls-status{bottom:80px}}
+    .bottifact-toolbar>details>summary,.bottifact-toolbar .apariencia-menu>summary{width:auto;min-width:88px;height:48px;padding:5px 10px;display:flex;flex-direction:column;gap:3px}
+    .bf-tool-label{font:500 10px/1.2 var(--sans,system-ui);white-space:nowrap}
+    .bottifact-toolbar>details>summary.bf-tool-active{color:var(--foco,#6865c8);background:var(--panel,#edeae5)}
+    .bottifact-toolbar [data-review-tool]>summary .bf-review-count{top:1px;right:22px}
+    @media(max-width:360px){.bottifact-toolbar>details>summary,.bottifact-toolbar .apariencia-menu>summary{min-width:84px;padding-inline:6px}}
     @media print{.bottifact-toolbar,.bf-controls-status,.bf-dock-tooltip{display:none!important}}
     `;
     document.head.append(style);
@@ -76,16 +81,6 @@
         say(e.message || "No se completó la acción.");
       }
     };
-    function button(label, icon, fn, parent = bar) {
-      const b = make("button");
-      b.type = "button";
-      b.dataset.tooltip = label;
-      b.setAttribute("aria-label", label);
-      b.append(svg(icon));
-      b.addEventListener("click", run(fn));
-      parent.append(b);
-      return b;
-    }
     function menu(label, icon) {
       const d = make("details"),
         s = make("summary");
@@ -128,32 +123,12 @@
       menu.p.append(b);
       return b;
     }
-    if (appearance) {
-      bar.append(appearance);
-      const trigger = appearance.querySelector("summary");
-      trigger.removeAttribute("title");
-      trigger.dataset.tooltip = "Apariencia";
-      trigger.setAttribute("aria-label", "Apariencia");
-      if (window.BottifactUI) trigger.replaceChildren(svg("appearance"));
-    }
-    const divider = () => {
-      const d = make("span", null, "bf-dock-divider");
-      d.setAttribute("aria-hidden", "true");
-      bar.append(d);
-    };
-    divider();
-    const quickComment = button("Comentar en un punto", "comment", () =>
-      remote?.verified && !remote.permissions.comment ? note.click() : comment.click(),
-    );
-    quickComment.setAttribute("aria-pressed", "false");
+    const reviewMenu = menu("Comentarios", "comment");
+    reviewMenu.d.dataset.reviewTool = "";
     document.addEventListener("bottifact:review-mode", (event) => {
+      reviewMenu.d.querySelector("summary").classList.toggle("bf-tool-active", event.detail.active);
       if (!event.detail.active) say("");
-      quickComment.setAttribute(
-        "aria-pressed",
-        String(event.detail.active),
-      );
     });
-    const reviewMenu = menu("Comentarios", "review");
     const reviewCount=make("span", "0", "bf-review-count");
     reviewMenu.d.querySelector("summary").append(reviewCount);
     function updateCount(count){
@@ -193,7 +168,6 @@
           : "Revisión local en este navegador. Exporta para compartirla.",
       ),
     );
-    divider();
     const shareMenu=menu("Compartir", "share");
     action(shareMenu, "Enlace y acceso", async () => {
       if (bridge) return bridge.action("share");
@@ -232,6 +206,17 @@
       action(reviewMenu, "Referencias y conexiones", () => bridge.action("related"));
       action(reviewMenu, "Buscar en mi biblioteca", () => bridge.action("search"));
     } else action(shareMenu, "Imprimir o guardar PDF", () => print());
+    if (appearance) {
+      bar.append(appearance);
+      const trigger = appearance.querySelector("summary");
+      trigger.removeAttribute("title");
+      trigger.dataset.tooltip = "Preferencias";
+      trigger.setAttribute("aria-label", "Preferencias");
+      if (window.BottifactUI) trigger.replaceChildren(svg("appearance"));
+    }
+    for (const trigger of bar.querySelectorAll(":scope>details>summary")) {
+      trigger.append(make("span", trigger.getAttribute("aria-label").split(" · ")[0], "bf-tool-label"));
+    }
     document.body.append(bar, status);
     const tooltip = make("div", null, "bf-dock-tooltip");
     tooltip.id = "bf-dock-tooltip";
@@ -443,7 +428,6 @@
           updateCount([...threads.values()].filter(t=>!t.resolved&&!t.deleted).length);
         }
         manage.hidden = !value.reader?.manage;
-        quickComment.disabled = !value.permissions.comment && !value.verified && !!value.author;
         comment.disabled = !value.permissions.comment && !!value.author;
         note.disabled = !value.verified;
         bundle.disabled = !value.verified;

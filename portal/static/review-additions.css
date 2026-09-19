@@ -113,3 +113,12 @@
 .explorer-ready .bf-inline-detail{margin-top:4px}.explorer-ready .bf-inline-detail>summary{padding:3px 0;font-size:11px}
 .explorer-ready :is([data-value-type=texto],th){word-break:normal}
 @media(max-width:640px){.explorer-ready:is([data-layout=cards],[data-layout=list],[data-layout=board]) tbody [data-primary=true]{padding-right:40px}.explorer-ready tbody [data-primary=true]>.explorador-inspeccionar{right:0;top:0}}
+
+/* Contextual review stays outside the document layout and respects theme tokens. */
+.review-context-menu{position:fixed;z-index:160;min-width:180px;max-width:calc(100vw - 16px);padding:5px;border:1px solid var(--linea,#ddd);border-radius:10px;background:var(--papel,#fff);color:var(--tinta,#222);box-shadow:0 4px 12px #0001,0 12px 32px #0002;font:13px/1.4 var(--sans,system-ui)}
+.review-context-menu[hidden]{display:none!important}
+.review-context-menu button{display:flex;align-items:center;gap:8px;width:100%;min-height:38px;padding:8px 12px;border:0;border-radius:6px;background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.review-context-menu button:hover,.review-context-menu button:focus-visible{background:var(--panel,#f2f2f2);outline:2px solid var(--foco,#6765cc);outline-offset:-2px}
+.review-new-comment{grid-column:1/-1;justify-self:start}
+@media(pointer:coarse){.review-context-menu button{min-height:44px}}
+@media print{.review-context-menu{display:none!important}}

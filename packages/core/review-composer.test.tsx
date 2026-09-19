@@ -71,3 +71,45 @@ it('groups overlapping pins without losing any thread and publishes the open cou
  expect(counts.at(-1)).toBe(2);
  document.removeEventListener('bottifact:review-count',receive);
 });
+
+it.each([
+ ['image','<img id="surface" alt="Delivery exception evidence" src="data:image/svg+xml,%3Csvg/%3E">','IMG','Delivery exception evidence'],
+ ['cell','<table><tbody><tr><td id="surface">Delivered · 12 packages</td></tr></tbody></table>','TD','Delivered · 12 packages'],
+ ['chart','<svg id="surface" aria-label="Volume by week"><path d="M0 0h10"/></svg>','svg','Volume by week'],
+ ['card','<div id="surface">Nested detail card</div>','DIV','Nested detail card'],
+ ['canvas','<canvas id="surface" aria-label="Fleet positions"></canvas>','CANVAS','Fleet positions'],
+])('anchors a comment to the %s itself and restores it after remount',async(_name,html,tag,text)=>{
+ document.querySelector('#evidence')!.insertAdjacentHTML('beforeend',html);mount();
+ (document.querySelector('[data-revision-modo]') as HTMLElement).click();
+ const surface=document.querySelector('#surface')!;
+ surface.getClientRects=()=>[{width:100,height:100}] as any;
+ surface.getBoundingClientRect=()=>({left:20,top:30,width:100,height:100,right:120,bottom:130,x:20,y:30,toJSON(){return {};}});
+ (surface.querySelector('path')||surface).dispatchEvent(new MouseEvent('click',{bubbles:true,clientX:45,clientY:105}));
+ const editor=document.querySelector('[data-revision-editor]') as HTMLDialogElement;expect(editor.open).toBe(true);
+ const draft=editor.querySelector('textarea')!;draft.value='Review this exact surface.';
+ draft.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',ctrlKey:true,bubbles:true}));await vi.waitFor(()=>expect(editor.open).toBe(false));
+ expect(instance.exportData().events[0].anchor).toMatchObject({reference:'surface',tag,text,quote:text,x:.25,y:.75});
+ instance.destroy();instance=(window as any).NotaRevision.init()[0];
+ expect(document.querySelector('.revision-hilo')?.textContent).not.toContain('El bloque cambió');
+ expect(document.querySelector('.revision-hilo a')?.getAttribute('href')).toBe('#surface');
+});
+it('offers a contextual action on content while keeping native link, selection and form menus',()=>{
+ document.querySelector('#evidence')!.insertAdjacentHTML('beforeend','<a id="link" href="#">Link</a><input id="field">');mount();
+ const event=new MouseEvent('contextmenu',{bubbles:true,cancelable:true,clientX:30,clientY:40});document.querySelector('#claim')!.dispatchEvent(event);
+ expect(event.defaultPrevented).toBe(true);expect((document.querySelector('.review-context-menu') as HTMLElement).hidden).toBe(false);
+ (document.querySelector('.review-context-menu button') as HTMLElement).click();expect((document.querySelector('[data-revision-editor]') as HTMLDialogElement).open).toBe(true);
+ for(const id of ['link','field']){const native=new MouseEvent('contextmenu',{bubbles:true,cancelable:true});document.getElementById(id)!.dispatchEvent(native);expect(native.defaultPrevented).toBe(false);}
+ const shifted=new MouseEvent('contextmenu',{bubbles:true,cancelable:true,shiftKey:true});document.querySelector('#claim')!.dispatchEvent(shifted);expect(shifted.defaultPrevented).toBe(false);
+});
+it('does not offer context creation before permissions arrive or to an unverified read-only reader',()=>{
+ let receive:any;(window as any).BottifactReviewBridge={subscribe:(fn:any)=>{receive=fn;return ()=>{};},identify:vi.fn()};mount();
+ function check(){const event=new MouseEvent('contextmenu',{bubbles:true,cancelable:true});document.querySelector('#claim')!.dispatchEvent(event);expect(event.defaultPrevented).toBe(false);}
+ check();receive({author:'Guest',verified:false,permissions:{comment:false},snapshot:instance.exportData()});check();
+});
+it('supports the keyboard context menu and restores focus on Escape',()=>{
+ mount();const target=document.querySelector('#claim') as HTMLElement;target.tabIndex=0;target.focus();
+ target.dispatchEvent(new KeyboardEvent('keydown',{key:'F10',shiftKey:true,bubbles:true,cancelable:true}));
+ expect(document.activeElement).toBe(document.querySelector('.review-context-menu button'));
+ document.activeElement!.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}));
+ expect((document.querySelector('.review-context-menu') as HTMLElement).hidden).toBe(true);expect(document.activeElement).toBe(target);
+});

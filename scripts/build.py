@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
 """Genera fragmentos autocontenidos desde las fuentes del skill, sin red."""
+from identity import mark as margen_mark, favicon as margen_favicon
 from pathlib import Path
 import json, base64, hashlib, re, html as html_escape
 ROOT = Path(__file__).resolve().parents[1]
+interface_path=ROOT/'packages/core/components/interface.js'
+interface_source=interface_path.read_text()
+identity_block='// IDENTITY START\n  const identityMarkup = '+json.dumps(margen_mark())+';\n  const faviconMarkup = '+json.dumps(margen_favicon())+';\n  // IDENTITY END'
+interface_path.write_text(re.sub(r'// IDENTITY START.*?// IDENTITY END',lambda _:identity_block,interface_source,flags=re.S))
 # Keep review styling identical in standalone and hosted documents.
 review_css=(ROOT/'packages/core/styles/review-composer.css').read_text()
 css_path=ROOT/'packages/core/styles/artifact.css'
@@ -52,7 +57,7 @@ def start(title):
  return '<title>' + title + '</title>\n<meta charset="utf-8">\n<style>\n' + (ROOT / 'packages/core/styles/fonts.css').read_text() + '\n' + (ROOT / 'packages/core/styles/artifact.css').read_text() + '\n</style>\n<meta name="viewport" content="width=device-width, initial-scale=1">\n'
 
 def tools():
- return '<div class="herramientas"><a href="#inicio" class="firma-editorial" aria-label="Inicio de la nota"><span>Margen</span><small>Cuadernos</small></a>'+appearance()+'</div>'
+ return '<div class="herramientas"><a href="#inicio" class="firma-editorial" aria-label="Inicio de la nota">'+margen_mark()+'<span>Margen</span><small>Cuadernos</small></a>'+appearance()+'</div>'
 
 def appearance():
  # Fuente única: copiar el control circular documentado, con IDs/nombres de cabecera.
@@ -242,8 +247,13 @@ if (ROOT/"portal/static").is_dir():
  interface_css = re.search(r'style\.textContent\s*=\s*`(.*?)`', interface, re.S).group(1)
  (ROOT/'portal/static/interface.css').write_text('/* Generated from core/components/interface.js. */\n'+interface_css+'\n')
 
+for asset in (ROOT/'packages/core/assets/identity').glob('*.svg'):
+ (ROOT/'portal/static'/asset.name).write_bytes(asset.read_bytes())
+
 # Resolve navigation from the generated examples directory without touching runtime code.
 for page in (ROOT / 'examples/generated').glob('*.html'):
+ content=page.read_text()
+ if 'rel="icon"' not in content:page.write_text(content.replace('</title>','</title>'+margen_favicon(),1))
  text = page.read_text()
  text = re.sub(r'(href=")examples/generated/', r'\1', text)
  text = re.sub(r'(href=")docs/', r'\1../../docs/', text)

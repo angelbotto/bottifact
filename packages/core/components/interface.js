@@ -72,7 +72,15 @@
     }
     return node;
   }
+  // IDENTITY START
+  const identityMarkup = "<svg class=\"margen-mark\" width=\"30\" height=\"30\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" fill=\"none\"><g stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M16 3 28 10v13l-12 7L4 23V10Z\" stroke-dasharray=\".6 3.2\"/><path d=\"m4 10 12 7 12-7M16 17v13\"/><path d=\"M16 3v13M4 23l12-7 12 7\" opacity=\".35\" stroke-dasharray=\".6 3.2\"/></g></svg>";
+  const faviconMarkup = "<link rel=\"icon\" type=\"image/svg+xml\" href=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSI+PHN0eWxlPnN2Z3tjb2xvcjojMjgyNzMzfUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2VjZWJmM319PC9zdHlsZT48ZyBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTE2IDMgMjggMTB2MTNsLTEyIDdMNCAyM1YxMFoiIHN0cm9rZS1kYXNoYXJyYXk9Ii42IDMuMiIvPjxwYXRoIGQ9Im00IDEwIDEyIDcgMTItN00xNiAxN3YxMyIvPjxwYXRoIGQ9Ik0xNiAzdjEzTTQgMjNsMTItNyAxMiA3IiBvcGFjaXR5PSIuMzUiIHN0cm9rZS1kYXNoYXJyYXk9Ii42IDMuMiIvPjwvZz48L3N2Zz4K\">";
+  // IDENTITY END
   function mount() {
+    for (const brand of document.querySelectorAll('.firma-editorial')) {
+      if (!brand.querySelector('svg,img') && brand.textContent.trim().startsWith('Margen')) brand.insertAdjacentHTML('afterbegin', identityMarkup);
+    }
+    if (!document.querySelector('link[rel="icon"]')) document.head.insertAdjacentHTML('beforeend', faviconMarkup);
     if (document.querySelector("[data-bottifact-interface]")) return;
     const style = document.createElement("style");
     style.dataset.bottifactInterface = "";
