@@ -28,18 +28,19 @@ Read [the unified workspace](docs/unified-workspace.md) for tables, review and c
 If a personal connection exists, run `python3 scripts/publish.py status`. It reports the account, server and `publish_on_create` without exposing the token. An enabled preference is the user's standing instruction to finish new artifacts by publishing privately. A current request to keep work local overrides it. If disconnected, keep a validated local draft and state that it is unpublished; do not choose another host.
 
 1. Read [executive voice](docs/executive-voice.md). Write from the user to their team, other readers or themselves. Identify author, audience, question, evidence and next action. The current brief takes precedence. Browse component names and IDs; read the HTML, guidance, limits and dependencies of selected pieces.
-2. Read [composition](docs/composition.md) for the relevant format: article, report, logistics, finance, technical documentation or prototype. [The interactive guide](examples/generated/guide.html) exposes the full catalog.
-3. Write semantic HTML. Give each `h2` its own ID or an ID on its section. Wide figures (`.ancho` / `.amplio`) are siblings of text blocks inside `.hoja` or `.pagina`.
-4. Generate from the canonical base rather than recreating its controls:
+2. Resolve [project identity](docs/project-identity.md): discover `.margen.json` or use `--project-root` for temporary content. Use an exact registered repository organization only; do not infer a company from arbitrary text. Keep the cube-only generic header, company logo and project appearance independent. Explicit user choices take precedence.
+3. Read [composition](docs/composition.md) for the relevant format: article, report, logistics, finance, technical documentation or prototype. [The interactive guide](examples/generated/guide.html) exposes the full catalog.
+4. Write semantic HTML. Give each `h2` its own ID or an ID on its section. Wide figures (`.ancho` / `.amplio`) are siblings of text blocks inside `.hoja` or `.pagina`.
+5. Generate from the canonical base rather than recreating its controls:
 
 ```bash
 python3 scripts/create_artifact.py --content /path/content.html --title 'Document title' --document-id stable-document-id --theme linear --mode light --typography sobrio --output /path/artifact.html
 python3 scripts/validate_artifact.py /path/artifact.html
 ```
 
-Read [the artifact contract](docs/artifact-contract.md) for chapters and configuration. Keep `--document-id` across revisions; use a new ID for a different document.
+Read [document formats](docs/document-formats.md) for `document`, `chapters` and `presentation`, and [the artifact contract](docs/artifact-contract.md) for configuration. Native presentations preserve review and offer continuous reading. Route explicitly requested Office exports through [evaluated external tools](docs/presentation-ecosystem.md); do not claim these adapters are bundled or copy third-party proprietary skills. Keep `--document-id` across revisions; use a new ID for a different document.
 
-5. Check desktop and 320/390 px layouts in a browser: reading, focus, controls, local scrolling and chosen themes. Verify reduced motion and a non-WebGL alternative where applicable. State untested behavior. Measuring Web Audio does not establish human-perceived sound quality.
+6. Check desktop and 320/390 px layouts in a browser: reading, focus, controls, local scrolling and chosen themes. Verify reduced motion and a non-WebGL alternative where applicable. State untested behavior. Measuring Web Audio does not establish human-perceived sound quality.
 
 The base includes appearance (themes, typography and sound), anchored review, contents and reading progress. Sound follows the saved preference, waits for a real interaction and respects mute/volume. Explicit requests to omit or alter a component take precedence.
 

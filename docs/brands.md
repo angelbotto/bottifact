@@ -11,3 +11,5 @@ The corresponding families each include light/dark variants. System mode follows
 To update a brand, inspect the recorded repository path and commit, verify current authorized assets, edit family tokens and asset records, rebuild and test both modes and mobile. Do not overwrite unrelated checkouts or discard local changes. Logo rights remain with their owners; the project license does not grant trademark rights.
 
 Agent installation is documented in [installation](installation.md); upgrading a library updates its shared skill, not existing immutable artifact versions.
+
+Project profiles can select these identities automatically or embed another company’s local logo. See [project identity](project-identity.md) for discovery, exact remote matching and preference precedence.

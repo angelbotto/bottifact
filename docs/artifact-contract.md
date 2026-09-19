@@ -11,6 +11,10 @@ python3 scripts/validate_artifact.py /path/review.html
 
 Use `--help` for chapter input and supported options. Titles and IDs must be escaped; each heading/section target must be unique. The same logical document retains its ID across title changes and revisions. New documents get new IDs. Do not fabricate session or device metadata.
 
+## Project and format selection
+
+Read [project identity](project-identity.md) for `.margen.json`, custom company logos and explicit CLI precedence. [Document formats](document-formats.md) covers English chapter configuration and presentation mode. Existing Spanish configuration keys remain supported.
+
 ## Structure
 
 The generator embeds complete fonts, CSS and required modules. Wide `.ancho` or `.amplio` figures are siblings of text sections inside `.hoja` or `.pagina`; nesting them in a narrow paragraph column breaks their width. Multipage documents use a grid on each `.pagina`, not a competing grid on the outer wrapper. Chapter navigation is page navigation; local content tabs use tab semantics.

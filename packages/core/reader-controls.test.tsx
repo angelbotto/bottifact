@@ -112,3 +112,14 @@ it('counts authorized host threads even when a legacy artifact has no embedded r
  receive({author:'Reader',verified:true,permissions:{comment:true},snapshot:{events:[event('create','a',1),event('create','b',2),event('reply','a',3),event('create','c',4),event('resolve','b',5,{resolved:true}),event('delete','c',6)]}});
  expect(document.querySelector('.bf-review-count')?.textContent).toBe('1');
 });
+
+it("honors project appearance while retaining the company and other reader preferences",()=>{
+ const meta=document.createElement('meta');meta.name='margen-theme-policy';meta.content='project';document.head.append(meta);
+ let receive:any;const set=vi.fn(),configure=vi.fn();
+ (window as any).NotaTemas={set,get:()=>({family:'liftit',mode:'light'})};(window as any).NotaAudio={configure};
+ (window as any).BottifactReviewBridge={subscribe:(fn:any)=>receive=fn,controlsReady:vi.fn()};
+ window.eval(source);document.dispatchEvent(new Event('DOMContentLoaded'));
+ receive({verified:true,permissions:{comment:true},reader:{preferences:{theme:'hacker',mode:'dark',sound:false}}});
+ expect(set).not.toHaveBeenCalled();expect(configure).toHaveBeenCalledWith({preferred:false,volume:undefined});
+ meta.remove();delete (window as any).NotaTemas;delete (window as any).NotaAudio;
+});

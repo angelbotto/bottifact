@@ -1,0 +1,28 @@
+{
+  "title": "Liftit · Identidad y formatos",
+  "document_id": "margen-format-demo-chapters",
+  "description": "Configuración ilustrativa; no representa datos de operación.",
+  "format": "chapters",
+  "pages": [
+    {
+      "id": "introduction",
+      "title": "Un proyecto, tres formatos",
+      "content": "introduction.html"
+    },
+    {
+      "id": "identity",
+      "title": "Reconocer el proyecto",
+      "content": "identity.html"
+    },
+    {
+      "id": "formats",
+      "title": "Elegir cómo compartir",
+      "content": "formats.html"
+    },
+    {
+      "id": "feedback",
+      "title": "Continuar con contexto",
+      "content": "feedback.html"
+    }
+  ]
+}

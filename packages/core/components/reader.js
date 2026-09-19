@@ -40,7 +40,7 @@
     document.querySelectorAll('[data-apariencia-menu]').forEach(menu=>{
       menu.dataset.oscuro=String(effective==='dark');
       const name=selected.nombre+' · '+modeNames[effective];
-      menu.querySelector('summary').setAttribute('aria-label','Apariencia. '+name+(mode==='system'?', según el sistema':'')+'.');
+      menu.querySelector('summary').setAttribute('aria-label',(menu.closest('.bottifact-toolbar')?'Preferencias. ':'Apariencia. ')+name+(mode==='system'?', según el sistema':'')+'.');
       menu.querySelectorAll('[data-tema-actual]').forEach(label=>label.textContent=name);
       menu.querySelectorAll('[data-modo-estado]').forEach(label=>label.textContent=mode==='system'?'Ahora en '+modeNames[effective].toLowerCase()+', según tu dispositivo.':'Modo '+modeNames[effective].toLowerCase()+' para cualquier tema.');
     });

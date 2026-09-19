@@ -23,6 +23,12 @@ Margen brings together **88 component recipes**, **15 theme families with light/
 
 > Renamed from Bottifact in v0.6.0. Existing documents, links and commands remain compatible. See the [migration guide](docs/migration-margen.md).
 
+## Project identity and formats
+
+A [project profile](docs/project-identity.md) selects company logo, theme, mode and typography. Exact registered GitHub organizations can supply defaults; reader themes never replace company identity. Generic headers use the compact Margen cube.
+
+Create a continuous document, a chapter report or a presentation with the [same generator](docs/document-formats.md). Native slides include navigation, overview, continuous reading and contextual review. See the [tool and skill assessment](docs/presentation-ecosystem.md) for optional Office/export directions and their limits.
+
 ## Choose how to use Margen
 
 | Path | Who operates the server? | What you install | Configuration |
