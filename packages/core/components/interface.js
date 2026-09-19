@@ -78,7 +78,11 @@
   // IDENTITY END
   function mount() {
     for (const brand of document.querySelectorAll('.firma-editorial')) {
-      if (!brand.querySelector('svg,img') && brand.textContent.trim().startsWith('Margen')) brand.insertAdjacentHTML('afterbegin', identityMarkup);
+      if (!brand.querySelector('.marca-firma,img') && /^Margen(?:Cuadernos)?$/.test(brand.textContent.trim())) {
+        brand.innerHTML = identityMarkup;
+        brand.setAttribute('aria-label', 'Margen · Inicio');
+        brand.title = 'Margen';
+      }
     }
     if (!document.querySelector('link[rel="icon"]')) document.head.insertAdjacentHTML('beforeend', faviconMarkup);
     if (document.querySelector("[data-bottifact-interface]")) return;

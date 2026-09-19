@@ -27,6 +27,10 @@ Declare source, date, unit, denominator and aggregate scope. Avoid summing ratio
 
 Use the shared dock and existing controls. Prefer grouped table actions, compact comment composition and progressive appearance settings. Keep creator management out of the document. Code copy buttons need clear success/fallback states; examples do not execute merely because they look like a terminal.
 
+## Formats and project identity
+
+Use [project profiles](project-identity.md) for company identity and preferred appearance. Choose [document, chapters or presentation](document-formats.md) for the reading task. Preserve the same source IDs across revisions, and use separate document IDs for separately published report and briefing deliverables.
+
 ## Finish
 
 Generate with the canonical contract, validate, inspect browser behavior and preserve the document ID during revisions. Follow the saved publishing preference and deliver the appropriate published or draft URL. The skill's language is English; write the artifact in the user's requested language and voice. See [executive voice](executive-voice.md), [artifact contract](artifact-contract.md), [mobile tables](mobile-and-tables.md) and [component playbook](component-playbook.md).
@@ -37,7 +41,7 @@ Use the main column for the argument. A left note can challenge an assumption; a
 
 ## Reader controls
 
-Mount one shared dock. Appearance, comment, private note, review and share have distinct purposes. Reader preferences remain separate from creator management. Preserve comment context, version and session when exporting feedback; personal notes stay private unless explicitly included by their author. Keep the composer short, disclose metadata on request, and return focus after closing.
+Mount one shared dock. Comments, Share and Preferences have distinct purposes. Reader preferences remain separate from creator management. Preserve comment context, version and session when exporting feedback; personal notes stay private unless explicitly included by their author. Keep the composer short, disclose metadata on request, and return focus after closing.
 
 ## Visual voice
 

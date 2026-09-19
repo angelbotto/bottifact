@@ -4,6 +4,8 @@
 <meta name="nota-tikin-version" content="4">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSI+PHN0eWxlPnN2Z3tjb2xvcjojMjgyNzMzfUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2VjZWJmM319PC9zdHlsZT48ZyBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTE2IDMgMjggMTB2MTNsLTEyIDdMNCAyM1YxMFoiIHN0cm9rZS1kYXNoYXJyYXk9Ii42IDMuMiIvPjxwYXRoIGQ9Im00IDEwIDEyIDcgMTItN00xNiAxN3YxMyIvPjxwYXRoIGQ9Ik0xNiAzdjEzTTQgMjNsMTItNyAxMiA3IiBvcGFjaXR5PSIuMzUiIHN0cm9rZS1kYXNoYXJyYXk9Ii42IDMuMiIvPjwvZz48L3N2Zz4K">
 <meta name="nota-documento" content="nota-18eb8a62218bfde51a4a440b">
+<meta name="margen-format" content="document">
+<meta name="margen-theme-policy" content="reader">
 <style data-nota-fuente="packages/core/styles/fonts.css">
 /* Nota Tikin · Fuentes incrustadas. Google Fonts CSS2, 13-sep-2026.
 No hay solicitudes de fuentes en tiempo de ejecución. Conservar estos avisos OFL. */
@@ -3215,6 +3217,70 @@ body:has(.revision-barra) { padding-bottom:0; }
 @media print{.review-context-menu{display:none!important}}
 /* REVIEW COMPOSER END */
 
+/* PRESENTATION START */
+/* Slides keep readable content on narrow screens; long evidence scrolls rather than shrinking. */
+.firma-editorial:has(>.margen-mark){display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:4px}
+.firma-editorial>.margen-mark{margin:0!important;width:28px;height:28px}
+.marca-logo{object-fit:contain}
+.brand:has(>.margen-mark){display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px}
+.brand>.margen-mark{margin:0}
+.presentation-tools{position:sticky;top:max(68px,calc(var(--lectura-cabecera,92px) - 16px));z-index:90;display:flex;align-items:center;justify-content:center;gap:5px;width:max-content;max-width:calc(100% - 24px);margin:16px auto 0;padding:5px;background:var(--papel);border:1px solid var(--linea);border-radius:12px;box-shadow:0 3px 14px #00000008;font:12px/1.4 var(--sans)}
+.presentation-tools button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:38px;min-width:38px;padding:6px 10px;border:0;border-radius:7px;background:transparent;color:var(--tinta);font:inherit;cursor:pointer}
+.presentation-tools button:hover{background:var(--panel)}
+.presentation-tools button:disabled{opacity:.35;cursor:default}
+.presentation-tools button:focus-visible{outline:2px solid var(--foco);outline-offset:1px}
+.presentation-tools [hidden]{display:none!important}
+.presentation-count{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+main.hoja[data-presentation]{margin-top:22px}
+[data-presentation-view=slides] main.hoja[data-presentation]{--texto:62rem}
+[data-presentation-view=slides] [data-presentation] p{max-width:75ch}
+[data-presentation-view=slides] main[data-presentation]>.pagina{min-height:calc(100svh - 245px);align-content:center;padding-block:24px;row-gap:24px}
+[data-presentation-view=slides] main[data-presentation]>.pagina[hidden]{display:none}
+[data-presentation-view=slides] [data-presentation] .cabecera{grid-column:2;max-width:62rem;width:100%;justify-self:center;text-align:left;padding:0;margin:0}
+[data-presentation-view=slides] [data-presentation] .cabecera h1{font-size:clamp(32px,4.8vw,68px);line-height:1.08;max-width:20ch;text-wrap:balance}
+[data-presentation-view=slides] [data-presentation]>.pagina>.indice,[data-presentation-view=slides] [data-presentation]>.paginacion{display:none!important}
+[data-presentation-view=slides] [data-presentation]>.pie{display:none}
+[data-presentation-view=reading] [data-presentation]>.pagina{display:grid!important;margin-bottom:72px}
+[data-presentation-view=reading] [data-presentation]>.paginacion{display:none}
+.presentation-overview{width:min(920px,calc(100vw - 24px));max-height:80dvh;padding:24px;border:1px solid var(--linea);border-radius:16px;background:var(--papel);color:var(--tinta);box-shadow:0 16px 64px #0002}
+.presentation-overview::backdrop{background:#0005}
+.presentation-overview>h2{margin:0 0 16px;font:500 24px var(--sans)}
+.presentation-overview>button{position:absolute;right:20px;top:20px}
+.presentation-slide-index{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:12px}
+.presentation-slide-index button{display:grid;align-content:start;gap:12px;min-height:154px;padding:18px;border:1px solid var(--linea);border-radius:9px;background:var(--panel);color:var(--tinta);text-align:left;font:13px/1.5 var(--sans);cursor:pointer}
+.presentation-slide-index strong{font:500 23px/1.15 var(--serif)}
+.presentation-slide-index button[aria-current],.presentation-slide-index button:focus-visible{outline:2px solid var(--foco);outline-offset:2px}
+.presentation-slide-number{font:11px var(--mono);color:var(--tinta-2)}
+@media(max-width:640px){.presentation-tools{margin-top:12px}.presentation-tools button{min-height:44px;min-width:44px}main.hoja[data-presentation]{margin-top:8px}[data-presentation-view=slides] main[data-presentation]>.pagina{min-height:0;padding-block:18px;row-gap:20px}}
+@media print{
+ .presentation-tools,.presentation-overview{display:none!important}
+ main.hoja[data-presentation]{margin:0;padding:0}
+ main[data-presentation]>.pagina,main[data-presentation]>.pagina[hidden]{display:block!important;min-height:0!important;page:presentation;break-before:page;break-inside:auto;padding:12mm 10mm!important;margin:0!important}
+ main[data-presentation]>.pagina:first-child{break-before:auto}
+ main[data-presentation]>.pagina>*{width:100%;max-width:none;margin-bottom:16pt}
+ main[data-presentation]>.pie,main[data-presentation]>.paginacion{display:none!important}
+ @page presentation{size:A4 landscape;margin:10mm}
+}
+
+:root[data-presentation-view] .regla{display:none}
+@media print{main[data-presentation]{--tinta:#252322;--tinta-2:#514b45;--tinta-3:#625c55;--papel:#fff;--panel:#f5f4f2;--linea:#c9c6c1;--linea-fuerte:#98938d;color:var(--tinta)}}
+
+.presentation-print-brand{display:none}
+@media print{
+ main[data-presentation] .presentation-print-brand{display:flex!important;align-items:center;height:28pt;margin:0 0 12pt}
+ main[data-presentation] .presentation-print-brand .margen-mark{height:24pt;width:24pt}
+ main[data-presentation] .marca-logo-dark{display:none!important}
+ main[data-presentation] .marca-logo-light{display:block!important}
+ main[data-presentation] .cabecera{padding:0!important;margin-bottom:12pt!important}
+ main[data-presentation] .cabecera h1{font-size:28pt!important;line-height:1.12;max-width:none;margin:0!important}
+ main[data-presentation] h2{font-size:19pt;line-height:1.2}
+ main[data-presentation] h3{font-size:15pt;line-height:1.2}
+ main[data-presentation] .publicaciones{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:18pt}
+ main[data-presentation] .publicaciones>article{padding-top:8pt}
+ main[data-presentation] .publicaciones>article>*+*{margin-top:8pt}
+}
+/* PRESENTATION END */
+
 /* TABLE CONTENT START */
 /* Rich records share visual semantics across React and portable HTML. */
 .bf-person,.bf-media{display:flex;align-items:center;gap:10px;min-width:0;text-align:left;font:13px/1.4 var(--sans,system-ui,sans-serif)}
@@ -4776,7 +4842,7 @@ body:has(.revision-barra) { padding-bottom:0; }
 :root[data-color-mode="dark"] .paleta-mini[data-muestra-tema="solarized"] { --vista-papel:#002b36; --vista-tinta:#d6ded7; --vista-acento:#6cc2c0; }
 
 </style>
-<a class="salto" href="#experiencia">Saltar al contenido</a><header class="barra capitulos navegacion-editorial" id="nota-inicio"><a class="firma-editorial" aria-label="Margen · Inicio" href="#experiencia"><svg class="margen-mark" width="30" height="30" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none"><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3 28 10v13l-12 7L4 23V10Z" stroke-dasharray=".6 3.2"/><path d="m4 10 12 7 12-7M16 17v13"/><path d="M16 3v13M4 23l12-7 12 7" opacity=".35" stroke-dasharray=".6 3.2"/></g></svg><span>Margen</span></a><span class="procedencia">Documento para revisión</span><details class="apariencia-menu orbita" data-apariencia-menu>
+<a class="salto" href="#experiencia">Saltar al contenido</a><header class="barra capitulos navegacion-editorial" id="nota-inicio"><a class="firma-editorial" aria-label="Margen · Inicio" title="Margen" href="#experiencia"><svg class="margen-mark" width="30" height="30" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none"><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3 28 10v13l-12 7L4 23V10Z" stroke-dasharray=".6 3.2"/><path d="m4 10 12 7 12-7M16 17v13"/><path d="M16 3v13M4 23l12-7 12 7" opacity=".35" stroke-dasharray=".6 3.2"/></g></svg></a><span class="procedencia">Documento para revisión</span><details class="apariencia-menu orbita" data-apariencia-menu>
   <summary aria-label="Apariencia del documento" aria-controls="panel-apariencia-principal"><span class="apariencia-icono"><svg class="icono-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icono-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14A8.6 8.6 0 0 1 10 3.6 8.6 8.6 0 1 0 20.4 14Z"/></svg></span></summary>
   <div class="apariencia-panel apariencia-explorador" id="panel-apariencia-principal" tabindex="0" role="region" aria-label="Opciones de apariencia, desplazables">
     <div class="apariencia-encabezado"><p class="apariencia-titulo">Apariencia</p><span data-tema-actual>Sistema</span></div>
@@ -4912,7 +4978,11 @@ body:has(.revision-barra) { padding-bottom:0; }
   // IDENTITY END
   function mount() {
     for (const brand of document.querySelectorAll('.firma-editorial')) {
-      if (!brand.querySelector('svg,img') && brand.textContent.trim().startsWith('Margen')) brand.insertAdjacentHTML('afterbegin', identityMarkup);
+      if (!brand.querySelector('.marca-firma,img') && /^Margen(?:Cuadernos)?$/.test(brand.textContent.trim())) {
+        brand.innerHTML = identityMarkup;
+        brand.setAttribute('aria-label', 'Margen · Inicio');
+        brand.title = 'Margen';
+      }
     }
     if (!document.querySelector('link[rel="icon"]')) document.head.insertAdjacentHTML('beforeend', faviconMarkup);
     if (document.querySelector("[data-bottifact-interface]")) return;
@@ -5262,12 +5332,13 @@ body:has(.revision-barra) { padding-bottom:0; }
     let applied = false;
     function applyPreferences(p) {
       if (!p) return;
-      if (p.theme && p.mode)
+      const projectAppearance=document.querySelector('meta[name="margen-theme-policy"]')?.content==="project";
+      if (!projectAppearance && p.theme && p.mode)
         window.NotaTemas?.set({ family: p.theme, mode: p.mode });
       const type = document.querySelector(
         '[data-elegir-estilo][value="' + (p.typography || "editorial") + '"]',
       );
-      if (type) {
+      if (type && !projectAppearance) {
         type.checked = true;
         type.dispatchEvent(new Event("change", { bubbles: true }));
       }
@@ -5641,7 +5712,7 @@ body:has(.revision-barra) { padding-bottom:0; }
     document.querySelectorAll('[data-apariencia-menu]').forEach(menu=>{
       menu.dataset.oscuro=String(effective==='dark');
       const name=selected.nombre+' · '+modeNames[effective];
-      menu.querySelector('summary').setAttribute('aria-label','Apariencia. '+name+(mode==='system'?', según el sistema':'')+'.');
+      menu.querySelector('summary').setAttribute('aria-label',(menu.closest('.bottifact-toolbar')?'Preferencias. ':'Apariencia. ')+name+(mode==='system'?', según el sistema':'')+'.');
       menu.querySelectorAll('[data-tema-actual]').forEach(label=>label.textContent=name);
       menu.querySelectorAll('[data-modo-estado]').forEach(label=>label.textContent=mode==='system'?'Ahora en '+modeNames[effective].toLowerCase()+', según tu dispositivo.':'Modo '+modeNames[effective].toLowerCase()+' para cualquier tema.');
     });
@@ -6162,4 +6233,4 @@ body:has(.revision-barra) { padding-bottom:0; }
 })();
 
 </script>
-<script type="application/json" data-nota-manifiesto>{"version": "4", "paginas": ["experiencia"], "modulos": ["packages/core/components/interface.js", "packages/core/components/reader-controls.js", "packages/core/components/audio.js", "packages/core/components/controls.js", "packages/core/components/editorial-pieces.js", "packages/core/components/reader.js", "packages/core/components/handwriting.js", "packages/core/components/code.js", "packages/core/components/review.js"], "fuentes": {"packages/core/styles/fonts.css": "c496fb4f095a14cbb6a82503a4a828720c01a8120df3c73113495d832e5d40cb", "packages/core/styles/artifact.css": "a1026b0d6c0f23b91586b0a861e6ba4b6c269e8562f6f822d03e76fb861576f8", "packages/core/components/interface.js": "bd2ce42e2c4e4e945584c4824c33daa1026fe9f7714c0e8c53fa1738b99a7a6a", "packages/core/components/reader-controls.js": "645eb068b42dbec65c22e8a4983f692788ec8f8bf818e1f028d296043625b03b", "packages/core/components/audio.js": "db6014d04e8710e87912c453eedbe9c24b7feb8bfb02934f5c0cca26da682232", "packages/core/components/controls.js": "b3881b4411e12ae56a1859a56dd14c2fb073712fa732874fce50e9c2061d0aa5", "packages/core/components/editorial-pieces.js": "8604004dfc2aacf7e51ae4a0e6184950fdaaa0187f64e956b562adb787cd5fe9", "packages/core/components/reader.js": "02e08ec1ab76d7fa16003b5126f7a0b12993108f2dbe7e18cef0c10ae424b23f", "packages/core/components/handwriting.js": "7acebd9e2de58ae8daa141d47a3fe23d33d257fd30fd707268b83d3f1a88140e", "packages/core/components/code.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "packages/core/components/review.js": "ad144dd2cc37a70a2adb4898e6aaa96cd06d2974e895ac1943bf35cf43bd72d7"}}</script>
+<script type="application/json" data-nota-manifiesto>{"version": "4", "paginas": ["experiencia"], "modulos": ["packages/core/components/interface.js", "packages/core/components/reader-controls.js", "packages/core/components/audio.js", "packages/core/components/controls.js", "packages/core/components/editorial-pieces.js", "packages/core/components/reader.js", "packages/core/components/handwriting.js", "packages/core/components/code.js", "packages/core/components/review.js"], "fuentes": {"packages/core/styles/fonts.css": "c496fb4f095a14cbb6a82503a4a828720c01a8120df3c73113495d832e5d40cb", "packages/core/styles/artifact.css": "e2ae4b9ec3080d34fe4622d2bd6104be183da077aea8fec8d53ac11775e67bcd", "packages/core/components/interface.js": "ff69cb2a6b493303c0b356beedd3de2ae97cfef990bc091221779564e394a064", "packages/core/components/reader-controls.js": "d4001e0d6b9ea9f7299e6c75744874f5e58fdae382c1a7408cef7439511863f9", "packages/core/components/audio.js": "db6014d04e8710e87912c453eedbe9c24b7feb8bfb02934f5c0cca26da682232", "packages/core/components/controls.js": "b3881b4411e12ae56a1859a56dd14c2fb073712fa732874fce50e9c2061d0aa5", "packages/core/components/editorial-pieces.js": "8604004dfc2aacf7e51ae4a0e6184950fdaaa0187f64e956b562adb787cd5fe9", "packages/core/components/reader.js": "a517796cab8ed2d658e22cb5af2805d6c0a98de38985df411286217ae4a19b71", "packages/core/components/handwriting.js": "7acebd9e2de58ae8daa141d47a3fe23d33d257fd30fd707268b83d3f1a88140e", "packages/core/components/code.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "packages/core/components/review.js": "ad144dd2cc37a70a2adb4898e6aaa96cd06d2974e895ac1943bf35cf43bd72d7"}}</script>

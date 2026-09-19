@@ -14,6 +14,7 @@ css_path=ROOT/'packages/core/styles/artifact.css'
 css=css_path.read_text()
 blocks = [
     ("REVIEW COMPOSER", review_css),
+    ("PRESENTATION", (ROOT/'packages/core/styles/presentation.css').read_text()),
     ("TABLE CONTENT", (ROOT/'packages/core/styles/table-content.css').read_text()),
 ]
 for name, content in blocks:
@@ -57,7 +58,7 @@ def start(title):
  return '<title>' + title + '</title>\n<meta charset="utf-8">\n<style>\n' + (ROOT / 'packages/core/styles/fonts.css').read_text() + '\n' + (ROOT / 'packages/core/styles/artifact.css').read_text() + '\n</style>\n<meta name="viewport" content="width=device-width, initial-scale=1">\n'
 
 def tools():
- return '<div class="herramientas"><a href="#inicio" class="firma-editorial" aria-label="Inicio de la nota">'+margen_mark()+'<span>Margen</span><small>Cuadernos</small></a>'+appearance()+'</div>'
+ return '<div class="herramientas"><a href="#inicio" class="firma-editorial" aria-label="Inicio de la nota">'+margen_mark()+'</a>'+appearance()+'</div>'
 
 def appearance():
  # Fuente única: copiar el control circular documentado, con IDs/nombres de cabecera.
@@ -259,3 +260,6 @@ for page in (ROOT / 'examples/generated').glob('*.html'):
  text = re.sub(r'(href=")examples/generated/', r'\1', text)
  text = re.sub(r'(href=")docs/', r'\1../../docs/', text)
  page.write_text(text)
+
+from example_formats import generate as generate_project_formats
+generate_project_formats()

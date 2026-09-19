@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "project": {"id": "liftit-format-demo", "name": "Operación · ejemplo de formatos"},
+  "company": {"brand": "liftit"},
+  "preferences": {"theme": "liftit", "mode": "light", "typography": "sobrio", "themePolicy": "project"}
+}

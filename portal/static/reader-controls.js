@@ -323,12 +323,13 @@
     let applied = false;
     function applyPreferences(p) {
       if (!p) return;
-      if (p.theme && p.mode)
+      const projectAppearance=document.querySelector('meta[name="margen-theme-policy"]')?.content==="project";
+      if (!projectAppearance && p.theme && p.mode)
         window.NotaTemas?.set({ family: p.theme, mode: p.mode });
       const type = document.querySelector(
         '[data-elegir-estilo][value="' + (p.typography || "editorial") + '"]',
       );
-      if (type) {
+      if (type && !projectAppearance) {
         type.checked = true;
         type.dispatchEvent(new Event("change", { bubbles: true }));
       }

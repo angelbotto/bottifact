@@ -8,12 +8,13 @@ VERSION='4'
 from themes import THEMES,FAMILIES,MODES,normalize
 from brands import BRANDS,identity,logo
 from identity import mark as margen_mark, favicon as margen_favicon
+from project_profile import FORMATS, company_logo
 STYLES=('editorial','sobrio','tecnico','libro','revista','bitacora')
 NOSCRIPT='.nota-estandar > .pagina { display:grid!important; grid-template-columns:1fr min(var(--texto),calc(100% - 2 * var(--gutter))) 1fr; row-gap:28px; }.nota-estandar .indice,.nota-estandar ~ .regla,.navegacion-editorial,.nota-estandar .paginacion { display:none!important; }'
 THREE='https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js'
 CORE=['packages/core/components/interface.js','packages/core/components/reader-controls.js','packages/core/components/audio.js','packages/core/components/controls.js','packages/core/components/editorial-pieces.js','packages/core/components/reader.js','packages/core/components/code.js','packages/core/components/review.js']
-ORDER=['packages/core/components/interface.js','packages/core/components/reader-controls.js','packages/core/components/relationship-map.js','packages/core/components/catalog.js','packages/core/components/audio.js','packages/core/components/controls.js','packages/core/components/editorial-pieces.js','packages/core/components/reader.js','packages/core/components/chapters.js','packages/core/components/geography.js','packages/core/components/globe.js','packages/core/components/fleet.js','packages/core/components/charts.js','packages/core/components/analytics.js','packages/core/components/tables.js','packages/core/components/sound.js','packages/core/components/writing.js','packages/core/components/handwriting.js','packages/core/components/attention-map.js','packages/core/components/scene.js','packages/core/components/reports.js','packages/core/components/prototype.js','packages/core/components/tabs.js','packages/core/components/editorial.js','packages/core/components/invitation.js','packages/core/components/code.js','packages/core/components/table-model.js','packages/core/components/data-explorer.js','packages/core/components/evidence.js','packages/core/components/review.js']
-ATTRS={'data-relationship-map':['packages/core/components/relationship-map.js'],'data-buscador-recetas':['packages/core/components/catalog.js'],'data-evidencia':['packages/core/components/evidence.js'],'data-flota':['packages/core/components/geography.js','packages/core/components/globe.js','packages/core/components/fleet.js'],'data-actividad':['packages/core/components/editorial-pieces.js'],'data-aviso-animado':['packages/core/components/editorial-pieces.js'],'data-galeria':['packages/core/components/editorial-pieces.js'],'data-grafica':['packages/core/components/charts.js'],'data-analitica':['packages/core/components/geography.js','packages/core/components/analytics.js'],'data-tabla':['packages/core/components/tables.js'],'data-escena':['packages/core/components/geography.js','packages/core/components/scene.js'],'data-reporte':['packages/core/components/reports.js'],'data-escritura':['packages/core/components/sound.js','packages/core/components/writing.js'],'data-mano':['packages/core/components/handwriting.js'],'data-subrayar':['packages/core/components/handwriting.js'],'data-atencion':['packages/core/components/attention-map.js'],'data-visor':['packages/core/components/prototype.js'],'data-pestanas':['packages/core/components/tabs.js'],'data-archivo':['packages/core/components/editorial.js'],'data-config-editorial':['packages/core/components/editorial.js'],'data-invitacion':['packages/core/components/invitation.js'],'data-explorador':['packages/core/components/table-model.js','packages/core/components/data-explorer.js'],'data-canal-sonido':['packages/core/components/sound.js']}
+ORDER=['packages/core/components/interface.js','packages/core/components/reader-controls.js','packages/core/components/relationship-map.js','packages/core/components/catalog.js','packages/core/components/audio.js','packages/core/components/controls.js','packages/core/components/editorial-pieces.js','packages/core/components/reader.js','packages/core/components/chapters.js','packages/core/components/presentation.js','packages/core/components/geography.js','packages/core/components/globe.js','packages/core/components/fleet.js','packages/core/components/charts.js','packages/core/components/analytics.js','packages/core/components/tables.js','packages/core/components/sound.js','packages/core/components/writing.js','packages/core/components/handwriting.js','packages/core/components/attention-map.js','packages/core/components/scene.js','packages/core/components/reports.js','packages/core/components/prototype.js','packages/core/components/tabs.js','packages/core/components/editorial.js','packages/core/components/invitation.js','packages/core/components/code.js','packages/core/components/table-model.js','packages/core/components/data-explorer.js','packages/core/components/evidence.js','packages/core/components/review.js']
+ATTRS={'data-presentation':['packages/core/components/presentation.js'],'data-relationship-map':['packages/core/components/relationship-map.js'],'data-buscador-recetas':['packages/core/components/catalog.js'],'data-evidencia':['packages/core/components/evidence.js'],'data-flota':['packages/core/components/geography.js','packages/core/components/globe.js','packages/core/components/fleet.js'],'data-actividad':['packages/core/components/editorial-pieces.js'],'data-aviso-animado':['packages/core/components/editorial-pieces.js'],'data-galeria':['packages/core/components/editorial-pieces.js'],'data-grafica':['packages/core/components/charts.js'],'data-analitica':['packages/core/components/geography.js','packages/core/components/analytics.js'],'data-tabla':['packages/core/components/tables.js'],'data-escena':['packages/core/components/geography.js','packages/core/components/scene.js'],'data-reporte':['packages/core/components/reports.js'],'data-escritura':['packages/core/components/sound.js','packages/core/components/writing.js'],'data-mano':['packages/core/components/handwriting.js'],'data-subrayar':['packages/core/components/handwriting.js'],'data-atencion':['packages/core/components/attention-map.js'],'data-visor':['packages/core/components/prototype.js'],'data-pestanas':['packages/core/components/tabs.js'],'data-archivo':['packages/core/components/editorial.js'],'data-config-editorial':['packages/core/components/editorial.js'],'data-invitacion':['packages/core/components/invitation.js'],'data-explorador':['packages/core/components/table-model.js','packages/core/components/data-explorer.js'],'data-canal-sonido':['packages/core/components/sound.js']}
 VOID={'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
 class Node:
  def __init__(self,tag='',attrs=(),parent=None):self.tag=tag;self.attrs=dict(attrs);self.parent=parent;self.children=[];self.parts=[]
@@ -62,11 +63,20 @@ def toc(content):
   items.append((anchor.attrs['id'],n.text().strip()))
  return items
 
-def build(title,pages,description='',brand='Margen',theme=None,style=None,document_id=None,mode=None,marca=None):
+def build(title,pages,description='',brand='Margen',theme=None,style=None,document_id=None,mode=None,marca=None,project=None,format=None,theme_policy=None):
  if document_id is not None and (not isinstance(document_id,str) or not re.fullmatch(r'[a-zA-Z0-9_-]{1,120}',document_id)):raise ValueError('documento_id: 1–120 letras, números, guiones o subrayados.')
  if theme is not None or mode is not None:theme,mode=normalize(theme,mode)
+ project=project or {};company=project.get('company',{});project_info=project.get('project',{})
+ if marca is not None:company={'brand':marca} if marca not in ('bottifact','margen') else {}
+ elif company:marca=company.get('brand','margen')
  brand_id=identity(marca,theme)
  if brand_id:brand=BRANDS[brand_id]['nombre']
+ elif company.get('name'):brand=company['name']
+ brand_markup=logo(brand_id) if brand_id else company_logo(company,project['_root']) if company.get('logo') else margen_mark() if brand=='Margen' else '<span>'+escape(brand)+'</span>'
+ format=format or ('chapters' if len(pages)>1 else 'document')
+ if format not in FORMATS or format=='document' and len(pages)>1:raise ValueError('Use chapters or presentation for multiple pages.')
+ theme_policy=theme_policy or ('project' if project.get('company') else 'reader')
+ if theme_policy not in ('project','reader'):raise ValueError('Unknown theme policy.')
  if style is not None and style not in STYLES:raise ValueError('Estilo desconocido: '+str(style))
  if not isinstance(title,str) or not title.strip() or not isinstance(pages,list) or not pages:raise ValueError('Faltan título o páginas.')
  if not isinstance(description,str) or any(not isinstance(p,dict) or any(not isinstance(p.get(k),str) for k in ['id','titulo','html']) for p in pages):raise ValueError('Cada página requiere id, titulo y html de texto.')
@@ -76,30 +86,32 @@ def build(title,pages,description='',brand='Margen',theme=None,style=None,docume
   for n in Document(p['html']).live:
    if n.tag in {'html','head','body','main','script','style','link','iframe'}:raise ValueError('El contenido sólo lleva bloques de la hoja; no '+n.tag+'.')
    if 'data-apariencia-menu' in n.attrs or 'data-revision' in n.attrs:raise ValueError('Apariencia y comentarios ya pertenecen a la base; no los dupliques.')
- multi=len(pages)>1;nodes=[n for p in pages for n in Document(p['html']).live];modules=modules_for(nodes,multi)
+ multi=format in ('chapters','presentation');nodes=[n for p in pages for n in Document(p['html']).live];modules=modules_for(nodes,multi)
+ if format=='presentation':modules=[m for m in ORDER if m in modules or m=='packages/core/components/presentation.js']
  nav=''
  if multi:
   nav='<div class="navegacion-scroll" data-capitulos-scroll tabindex="0" role="region" aria-label="Capítulos, desplazables"><nav aria-label="Capítulos">'+('<span class="nav-separador" aria-hidden="true">/</span>'.join('<button type="button" data-ir="'+p['id']+'">'+escape(p['titulo'])+'</button>' for p in pages))+'</nav></div>'
- else:nav='<span class="procedencia">Documento para revisión</span>'
- header='<a class="salto" href="#'+ids[0]+'">Saltar al contenido</a><header class="barra capitulos navegacion-editorial" id="nota-inicio"><a class="firma-editorial" aria-label="'+escape(brand,quote=True)+' · Inicio" href="#'+ids[0]+'">'+(logo(brand_id) if brand_id else (margen_mark() if brand=='Margen' else '')+'<span>'+escape(brand)+'</span>')+'</a>'+nav+appearance()+'</header>'
+ else:nav='<span class="procedencia">'+escape(project_info.get('name') or 'Documento para revisión')+'</span>'
+ header='<a class="salto" href="#'+ids[0]+'">Saltar al contenido</a><header class="barra capitulos navegacion-editorial" id="nota-inicio"><a class="firma-editorial" aria-label="'+escape(brand,quote=True)+' · Inicio" title="'+escape(brand,quote=True)+'" href="#'+ids[0]+'">'+brand_markup+'</a>'+nav+appearance()+'</header>'
  pieces=[]
  for i,p in enumerate(pages):
   heading='<header class="cabecera"'+('' if multi else ' id="'+p['id']+'"')+'><h1>'+escape(p['titulo'] if multi else title)+'</h1>'+('<p class="bajada">'+escape(description)+'</p>' if i==0 and description else '')+'</header>'
   items=toc(p['html'])
   index='<nav class="indice" tabindex="0" aria-label="En esta página"><p class="ceja">En esta página</p><ol>'+''.join('<li><a href="#'+escape(id,quote=True)+'">'+escape(label)+'</a></li>' for id,label in items)+'</ol></nav>' if items else ''
-  block=heading+index+p['html']
+  print_brand='<div class="presentation-print-brand" aria-hidden="true">'+brand_markup+'</div>' if format=='presentation' else ''
+  block=print_brand+heading+index+p['html']
   if multi:block='<article class="pagina'+(' viva' if i==0 else '')+'" id="'+p['id']+'" data-pagina'+('' if i==0 else ' hidden')+'>'+block+'</article>'
   pieces.append(block)
  pag='<div class="paginacion" data-paginacion><button type="button" data-nav="prev"><span class="et">Anterior</span><span class="tit"></span></button><button type="button" data-nav="next"><span class="et">Siguiente</span><span class="tit"></span></button></div>' if multi else ''
- main='<main class="hoja lectura-guiada nota-estandar marcos-editoriales'+(' multipagina edicion' if multi else '')+'" data-lectura'+(' data-progreso-pagina data-historial data-enlaces-internos' if multi else '')+' lang="es">'+''.join(pieces)+pag+'<footer class="pie"><p>'+escape(brand)+' · '+escape(title)+'</p></footer></main>'
+ main='<main class="hoja lectura-guiada nota-estandar marcos-editoriales'+(' multipagina edicion' if multi else '')+'" data-lectura'+(' data-presentation' if format=='presentation' else '')+(' data-progreso-pagina data-historial data-enlaces-internos' if multi else '')+' lang="es">'+''.join(pieces)+pag+'<footer class="pie"><p>'+escape(brand)+' · '+escape(title)+'</p></footer></main>'
  ruler='<div class="regla regla-guiada" role="slider" tabindex="0" aria-orientation="horizontal" aria-label="Progreso de lectura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="ticks"></div><div class="cursor"></div><span class="val">0%</span></div>'
  files=['packages/core/styles/fonts.css','packages/core/styles/artifact.css',*modules]
  manifest={'version':VERSION,'paginas':ids,'modulos':modules,'fuentes':{f:hashlib.sha256((ROOT/f).read_text().encode('utf-8')).hexdigest() for f in files}}
  result='<title>'+escape(title)+'</title>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="nota-tikin-version" content="'+VERSION+'">\n'
  result+=margen_favicon()+'\n'
  result+='<meta name="nota-documento" content="'+(document_id or 'nota-'+hashlib.sha256(title.encode()).hexdigest()[:24])+'">\n'
- for name,value in [('nota-tema-inicial',theme),('nota-modo-inicial',mode),('nota-estilo-inicial',style)]:
-  if value is not None:result+='<meta name="'+name+'" content="'+value+'">\n'
+ for name,value in [('nota-tema-inicial',theme),('nota-modo-inicial',mode),('nota-estilo-inicial',style),('margen-format',format),('margen-project-id',project_info.get('id')),('margen-project-name',project_info.get('name')),('margen-company',brand if brand!='Margen' else None),('margen-brand',brand_id),('margen-theme-policy',theme_policy)]:
+  if value is not None:result+='<meta name="'+name+'" content="'+escape(str(value),quote=True)+'">\n'
  for file in files[:2]:result+='<style data-nota-fuente="'+file+'">\n'+(ROOT/file).read_text()+'\n</style>\n'
  result+=header+main+ruler+revision()
  if multi:result+='<noscript><style data-nota-sin-js>'+NOSCRIPT+'</style><p>JavaScript está desactivado: se muestran todos los capítulos para lectura.</p></noscript>'
@@ -118,7 +130,7 @@ def validate(html):
  def classes(cls):return [n for n in nodes if cls in n.classes]
  require(html.startswith('<title>') and '<meta charset="utf-8">' in html[:1024],'Faltan título o charset temprano.')
  require(not any(n.tag in {'html','head','body','iframe'} for n in nodes),'El artefacto debe ser un fragmento sin iframe.')
- for name,allowed in [('nota-tema-inicial',FAMILIES),('nota-modo-inicial',MODES),('nota-estilo-inicial',STYLES)]:
+ for name,allowed in [('margen-format',FORMATS),('margen-theme-policy',('project','reader')),('nota-tema-inicial',FAMILIES),('nota-modo-inicial',MODES),('nota-estilo-inicial',STYLES)]:
   settings=[n for n in nodes if n.tag=='meta' and n.attrs.get('name')==name]
   require(len(settings)<=1 and all(n.attrs.get('content') in allowed for n in settings),'Preferencia inicial inválida: '+name)
  ids=[n.attrs['id'] for n in nodes if n.attrs.get('id')];require(len(ids)==len(set(ids)),'Hay IDs duplicados.')
@@ -140,6 +152,8 @@ def validate(html):
   require(len(has(attr))==1,'Falta o se duplica '+attr+'.')
  mains=[n for n in nodes if n.tag=='main'];require(len(mains)==1 and {'hoja','lectura-guiada','nota-estandar','marcos-editoriales'}<=mains[0].classes,'Falta la hoja estándar con lectura guiada.')
  multi=bool(mains and 'multipagina' in mains[0].classes)
+ formats=[n.attrs.get('content') for n in nodes if n.tag=='meta' and n.attrs.get('name')=='margen-format']
+ if formats:require(bool(has('data-presentation'))==(formats[0]=='presentation'),'Presentation format and runtime marker must agree.')
  require(len(classes('regla-guiada'))==1,'Falta la regla de lectura.')
  for page in (classes('pagina') if multi else mains):
   headings=[n for n in page.descendants() if n.tag=='h2' and not n.has_ancestor('template')]

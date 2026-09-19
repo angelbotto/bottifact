@@ -15,6 +15,8 @@ Start with the path matching your goal. Start with the hosted service for the sh
 | Adopt the Margen name without losing existing work | [Margen migration](migration-margen.md) |
 | Upgrade paths from the original repository | [v0.2 migration](migration-0.2.md) |
 | Publish a screenshot safely | [Screenshot policy](screenshots.md) |
+| Recognize a project, company logo and preferred theme | [Project identity](project-identity.md) |
+| Create chapters, briefings and evaluate Office exports | [Document formats](document-formats.md), [ecosystem assessment](presentation-ecosystem.md) |
 | Compose a complete artifact | [Composition](composition.md), [artifact contract](artifact-contract.md) |
 | Choose components and compose continuity flows | [Component playbook](component-playbook.md) |
 | Explore knowledge-workbench directions | [Graph usability and product backlog](knowledge-workbench.md) |

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.10.0 — 2026-09-18
+
+- Compact cube-only Margen headers, preserving company identities and the adaptive favicon.
+- Discover project identity from `.margen.json` or exact registered GitHub organizations; embed safe local company logos and declared project metadata.
+- Separate project appearance from saved reader defaults with explicit CLI/configuration precedence.
+- Add native presentations over chapter navigation: overview, keyboard controls, continuous reading, shared anchors and print layout.
+- Add English document configuration, chapter/presentation examples, project regression tests and a sourced assessment of external Office/presentation tools.
+
+
 ## 0.9.0 — 2026-09-18
 
 - Unified reader toolbar: Comments with its speech-bubble count, Share and Preferences.

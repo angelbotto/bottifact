@@ -9,9 +9,9 @@ BRANDS = json.loads((ROOT / 'packages/core/brands/brands.json').read_text())['ma
 
 
 def identity(marca, theme):
-    if marca is not None and marca not in [*BRANDS, 'bottifact']:
+    if marca is not None and marca not in [*BRANDS, 'bottifact', 'margen']:
         raise ValueError('Marca desconocida: ' + str(marca))
-    return None if marca == 'bottifact' else marca or (theme if theme in BRANDS else None)
+    return None if marca in ('bottifact', 'margen') else marca or (theme if theme in BRANDS else None)
 
 
 def logo(marca):
