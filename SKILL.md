@@ -38,7 +38,7 @@ python3 scripts/create_artifact.py --content /path/content.html --title 'Documen
 python3 scripts/validate_artifact.py /path/artifact.html
 ```
 
-Read [document formats](docs/document-formats.md) for `document`, `chapters` and `presentation`, and [the artifact contract](docs/artifact-contract.md) for configuration. Native presentations preserve review and offer continuous reading. Route explicitly requested Office exports through [evaluated external tools](docs/presentation-ecosystem.md); do not claim these adapters are bundled or copy third-party proprietary skills. Keep `--document-id` across revisions; use a new ID for a different document.
+Read [document formats](docs/document-formats.md) for `document`, `chapters` and `presentation`, and [the artifact contract](docs/artifact-contract.md) for configuration. Articles and presentations are distinct authored deliverables, never reader modes of each other. Compose slides deliberately; do not turn chapter prose into slides by changing a flag. Preserve an existing deck’s layout, navigation, branding and slide IDs; add only the collaboration shell when publishing it. Never regenerate an imported deck through the article template. Route explicitly requested Office exports through [evaluated external tools](docs/presentation-ecosystem.md); do not claim these adapters are bundled or copy third-party proprietary skills. Keep `--document-id` across revisions; use a new ID for a different document.
 
 6. Check desktop and 320/390 px layouts in a browser: reading, focus, controls, local scrolling and chosen themes. Verify reduced motion and a non-WebGL alternative where applicable. State untested behavior. Measuring Web Audio does not establish human-perceived sound quality.
 

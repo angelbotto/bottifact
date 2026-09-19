@@ -3245,8 +3245,6 @@ main.hoja[data-presentation]{margin-top:22px}
 [data-presentation-view=slides] [data-presentation] .cabecera h1{font-size:clamp(32px,4.8vw,68px);line-height:1.08;max-width:20ch;text-wrap:balance}
 [data-presentation-view=slides] [data-presentation]>.pagina>.indice,[data-presentation-view=slides] [data-presentation]>.paginacion{display:none!important}
 [data-presentation-view=slides] [data-presentation]>.pie{display:none}
-[data-presentation-view=reading] [data-presentation]>.pagina{display:grid!important;margin-bottom:72px}
-[data-presentation-view=reading] [data-presentation]>.paginacion{display:none}
 .presentation-overview{width:min(920px,calc(100vw - 24px));max-height:80dvh;padding:24px;border:1px solid var(--linea);border-radius:16px;background:var(--papel);color:var(--tinta);box-shadow:0 16px 64px #0002}
 .presentation-overview::backdrop{background:#0005}
 .presentation-overview>h2{margin:0 0 16px;font:500 24px var(--sans)}
@@ -3267,7 +3265,7 @@ main.hoja[data-presentation]{margin-top:22px}
  @page presentation{size:A4 landscape;margin:10mm}
 }
 
-:root[data-presentation-view] .regla{display:none}
+:root[data-presentation-view] .regla,:root[data-presentation-view] .barra nav{display:none}
 @media print{main[data-presentation]{--tinta:#252322;--tinta-2:#514b45;--tinta-3:#625c55;--papel:#fff;--panel:#f5f4f2;--linea:#c9c6c1;--linea-fuerte:#98938d;color:var(--tinta)}}
 
 .presentation-print-brand{display:none}
@@ -5087,18 +5085,25 @@ main.hoja[data-presentation]{margin-top:22px}
     .bottifact-toolbar .bf-menu button:hover:not(:disabled){background:var(--panel,#edeae5)}.bottifact-toolbar .bf-menu button:disabled{opacity:.4;cursor:not-allowed}
     .bottifact-toolbar .bf-menu button svg{width:16px;height:16px;color:var(--tinta-2,#625f5a)}.bottifact-toolbar .bf-menu p{margin:8px 11px;font-size:11px;line-height:1.5;color:var(--tinta-2,#625f5a)}
     .bottifact-toolbar .bf-menu-heading{font-size:11px;font-weight:600;color:var(--tinta-2,#625f5a);padding:8px 11px 5px}
-    .bottifact-toolbar [hidden]{display:none!important}.bottifact-controls-ready .revision-barra{display:none!important}.bottifact-controls-ready body{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+    .bottifact-toolbar [hidden]{display:none!important}.bottifact-controls-ready .revision-barra{display:none!important}.bottifact-controls-ready body:has(>main.hoja){padding-bottom:calc(96px + env(safe-area-inset-bottom))}
     .bf-dock-tooltip{position:fixed;z-index:160;max-width:calc(100vw - 24px);pointer-events:none;border-radius:7px;padding:7px 10px;background:var(--tinta,#252322);color:var(--papel,#faf9f7);font:500 12px/1.3 var(--sans,system-ui);box-shadow:0 3px 12px #0002;white-space:nowrap}
     .bf-controls-status{position:fixed;bottom:88px;left:50%;transform:translateX(-50%);z-index:131;max-width:min(440px,calc(100vw - 32px));padding:10px 14px;border-radius:10px;background:var(--papel,#faf9f7);color:var(--tinta,#252322);border:1px solid var(--linea,#d8d5ce);box-shadow:0 3px 16px #0001;font:13px/1.4 var(--sans,system-ui)}.bf-controls-status:empty{display:none}
     .bottifact-controls-ready .revision-panel-v2[open]{position:fixed;inset:12px 12px 90px auto;margin:0;width:min(460px,calc(100vw - 24px));max-width:calc(100vw - 24px);height:auto;max-height:calc(100dvh - 102px);resize:horizontal;overflow:auto;border-radius:16px;padding:22px;border-color:var(--linea);box-shadow:0 16px 64px #0002}.bottifact-controls-ready .revision-panel-v2::backdrop{background:#0002}
     .bf-theme-favorite{margin:8px 0!important;width:auto!important;font-size:12px!important;min-height:34px;border:0!important;background:transparent!important}.bf-theme-hint{font-size:12px;color:var(--tinta-2,#625f5a)}
     @media(prefers-reduced-motion:no-preference){.bottifact-toolbar>button,.bottifact-toolbar>details>summary{transition:background-color 120ms ease-out,color 120ms ease-out}.bottifact-toolbar>button:active:not(:disabled),.bottifact-toolbar>details>summary:active{transform:scale(.95)}}
     @media(max-width:540px){.bottifact-toolbar{bottom:max(10px,env(safe-area-inset-bottom));max-width:calc(100vw - 16px);padding:5px;gap:0;border-radius:16px}.bottifact-toolbar>button,.bottifact-toolbar>details>summary,.bottifact-toolbar .apariencia-menu>summary{width:44px;height:44px;min-width:44px}.bottifact-toolbar .bf-dock-divider{margin-inline:2px;height:20px}.bottifact-controls-ready .revision-panel-v2[open]{inset:auto 8px max(80px,env(safe-area-inset-bottom)) 8px;width:calc(100vw - 16px);max-height:75dvh;resize:none}.bf-controls-status{bottom:80px}}
-    .bottifact-toolbar>details>summary,.bottifact-toolbar .apariencia-menu>summary{width:auto;min-width:88px;height:48px;padding:5px 10px;display:flex;flex-direction:column;gap:3px}
-    .bf-tool-label{font:500 10px/1.2 var(--sans,system-ui);white-space:nowrap}
-    .bottifact-toolbar>details>summary.bf-tool-active{color:var(--foco,#6865c8);background:var(--panel,#edeae5)}
-    .bottifact-toolbar [data-review-tool]>summary .bf-review-count{top:1px;right:22px}
-    @media(max-width:360px){.bottifact-toolbar>details>summary,.bottifact-toolbar .apariencia-menu>summary{min-width:84px;padding-inline:6px}}
+    /* Editorial chrome is isolated from legacy decks' broad nav/button rules. */
+    nav.bottifact-toolbar{inset:auto 0 max(18px,env(safe-area-inset-bottom));height:auto;min-height:0;max-height:none;width:max-content;max-width:calc(100vw - 24px);margin:0 auto;padding:6px;gap:2px;flex-direction:row;flex-wrap:nowrap;transform:none;letter-spacing:normal;text-transform:none;border:1px solid color-mix(in srgb,var(--tinta,#302b28) 18%,transparent);border-radius:12px;background:var(--papel,#faf8f4);box-shadow:0 2px 4px #00000006,0 8px 28px #00000016;isolation:isolate}
+    nav.bottifact-toolbar::before{content:"";position:absolute;inset:-5px;pointer-events:none;border:1px dotted color-mix(in srgb,var(--tinta,#302b28) 23%,transparent);border-radius:16px;mask-image:linear-gradient(110deg,#000,transparent 35%,transparent 65%,#000)}
+    .bottifact-toolbar>details{padding:0;border:0;border-radius:0;background:transparent;color:inherit;box-shadow:none;float:none}
+    .bottifact-toolbar>details+details{border-left:1px dotted var(--linea,#d9d1c8);padding-left:3px;margin-left:3px}
+    .bottifact-toolbar>details>summary,.bottifact-toolbar .apariencia-menu>summary{width:auto;min-width:0;max-width:none;height:44px;min-height:44px;padding:8px 13px;display:flex;flex-direction:row;gap:9px;border-radius:7px;letter-spacing:0;text-transform:none;line-height:1;color:var(--tinta-2,#655e56)}
+    .bf-tool-label{font:500 12px/1.2 var(--sans,system-ui);white-space:nowrap;letter-spacing:0;text-transform:none}
+    .bottifact-toolbar>details>summary.bf-tool-active,.bottifact-toolbar>details[open]>summary{color:var(--tinta,#302b28);background:var(--panel,#efe9e1);box-shadow:inset 0 -2px var(--marcador,var(--foco,#aa5635))}
+    .bottifact-toolbar [data-review-tool]>summary .bf-review-count{position:relative;inset:auto;order:3;display:grid;place-items:center;min-width:18px;height:18px;padding:0 4px;border:0;border-radius:5px;background:var(--tinta,#302b28);color:var(--papel,#faf8f4);font:500 10px/1 var(--mono,monospace)}
+    .bottifact-toolbar .bf-menu{bottom:calc(100% + 12px);padding:8px;border-radius:10px;border-color:var(--linea,#d9d1c8);background:var(--papel,#faf8f4)}
+    .bottifact-toolbar .bf-menu-heading{font:500 11px/1.4 var(--mono,monospace);letter-spacing:.02em;border-bottom:1px dotted var(--linea,#d9d1c8);margin:0 5px 5px;padding:7px 5px 10px}
+    @media(max-width:540px){nav.bottifact-toolbar{bottom:max(12px,env(safe-area-inset-bottom));padding:5px}.bottifact-toolbar>details>summary,.bottifact-toolbar .apariencia-menu>summary{position:relative;min-width:79px;height:48px;padding:5px 7px;flex-direction:column;gap:4px}.bf-tool-label{font-size:10px}.bottifact-toolbar [data-review-tool]>summary .bf-review-count{position:absolute;top:1px;right:14px;min-width:15px;height:15px;font-size:9px;box-shadow:0 0 0 2px var(--papel,#faf8f4)}}
     @media print{.bottifact-toolbar,.bf-controls-status,.bf-dock-tooltip{display:none!important}}
     `;
     document.head.append(style);
@@ -5181,6 +5186,7 @@ main.hoja[data-presentation]{margin-top:22px}
     reviewMenu.d.querySelector("summary").append(reviewCount);
     function updateCount(count){
       reviewCount.textContent=String(count);
+      reviewCount.hidden = count === 0;
       const label="Comentarios · "+count+" abiertos";
       reviewMenu.d.querySelector("summary").setAttribute("aria-label",label);
       reviewMenu.d.querySelector("summary").dataset.tooltip=label;
@@ -5266,6 +5272,10 @@ main.hoja[data-presentation]{margin-top:22px}
       trigger.append(make("span", trigger.getAttribute("aria-label").split(" · ")[0], "bf-tool-label"));
     }
     document.body.append(bar, status);
+    document.addEventListener("keydown", event => {
+      if (!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(event.key)) return;
+      if (event.target.closest('.bottifact-toolbar,.revision-ui,[data-revision],dialog,input,textarea,[contenteditable="true"]')) event.stopPropagation();
+    });
     const tooltip = make("div", null, "bf-dock-tooltip");
     tooltip.id = "bf-dock-tooltip";
     tooltip.setAttribute("role", "tooltip");
@@ -6488,4 +6498,4 @@ main.hoja[data-presentation]{margin-top:22px}
 })();
 
 </script>
-<script type="application/json" data-nota-manifiesto>{"version": "4", "paginas": ["contenido"], "modulos": ["packages/core/components/interface.js", "packages/core/components/reader-controls.js", "packages/core/components/audio.js", "packages/core/components/controls.js", "packages/core/components/editorial-pieces.js", "packages/core/components/reader.js", "packages/core/components/handwriting.js", "packages/core/components/reports.js", "packages/core/components/code.js", "packages/core/components/review.js"], "fuentes": {"packages/core/styles/fonts.css": "c496fb4f095a14cbb6a82503a4a828720c01a8120df3c73113495d832e5d40cb", "packages/core/styles/artifact.css": "e2ae4b9ec3080d34fe4622d2bd6104be183da077aea8fec8d53ac11775e67bcd", "packages/core/components/interface.js": "ff69cb2a6b493303c0b356beedd3de2ae97cfef990bc091221779564e394a064", "packages/core/components/reader-controls.js": "d4001e0d6b9ea9f7299e6c75744874f5e58fdae382c1a7408cef7439511863f9", "packages/core/components/audio.js": "db6014d04e8710e87912c453eedbe9c24b7feb8bfb02934f5c0cca26da682232", "packages/core/components/controls.js": "b3881b4411e12ae56a1859a56dd14c2fb073712fa732874fce50e9c2061d0aa5", "packages/core/components/editorial-pieces.js": "8604004dfc2aacf7e51ae4a0e6184950fdaaa0187f64e956b562adb787cd5fe9", "packages/core/components/reader.js": "a517796cab8ed2d658e22cb5af2805d6c0a98de38985df411286217ae4a19b71", "packages/core/components/handwriting.js": "7acebd9e2de58ae8daa141d47a3fe23d33d257fd30fd707268b83d3f1a88140e", "packages/core/components/reports.js": "08db8aadcda0fe74e4303c92dce6ab8f688d978be0707a086b74cffea4cf5522", "packages/core/components/code.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "packages/core/components/review.js": "ad144dd2cc37a70a2adb4898e6aaa96cd06d2974e895ac1943bf35cf43bd72d7"}}</script>
+<script type="application/json" data-nota-manifiesto>{"version": "4", "paginas": ["contenido"], "modulos": ["packages/core/components/interface.js", "packages/core/components/reader-controls.js", "packages/core/components/audio.js", "packages/core/components/controls.js", "packages/core/components/editorial-pieces.js", "packages/core/components/reader.js", "packages/core/components/handwriting.js", "packages/core/components/reports.js", "packages/core/components/code.js", "packages/core/components/review.js"], "fuentes": {"packages/core/styles/fonts.css": "c496fb4f095a14cbb6a82503a4a828720c01a8120df3c73113495d832e5d40cb", "packages/core/styles/artifact.css": "a4fc83123d80bfb1dbc2e94cbc4d5068e59a31d96e61f24991fb9bbbf7793d45", "packages/core/components/interface.js": "ff69cb2a6b493303c0b356beedd3de2ae97cfef990bc091221779564e394a064", "packages/core/components/reader-controls.js": "86146a15612033b89eb5e5261aec56e0ce8dd2c7bb3d21eaa71ffc377af6af2b", "packages/core/components/audio.js": "db6014d04e8710e87912c453eedbe9c24b7feb8bfb02934f5c0cca26da682232", "packages/core/components/controls.js": "b3881b4411e12ae56a1859a56dd14c2fb073712fa732874fce50e9c2061d0aa5", "packages/core/components/editorial-pieces.js": "8604004dfc2aacf7e51ae4a0e6184950fdaaa0187f64e956b562adb787cd5fe9", "packages/core/components/reader.js": "a517796cab8ed2d658e22cb5af2805d6c0a98de38985df411286217ae4a19b71", "packages/core/components/handwriting.js": "7acebd9e2de58ae8daa141d47a3fe23d33d257fd30fd707268b83d3f1a88140e", "packages/core/components/reports.js": "08db8aadcda0fe74e4303c92dce6ab8f688d978be0707a086b74cffea4cf5522", "packages/core/components/code.js": "16e94c9d0be68b13a270bd57485c129e3fa7b071cfa4aa2ee9d52052363796a7", "packages/core/components/review.js": "ad144dd2cc37a70a2adb4898e6aaa96cd06d2974e895ac1943bf35cf43bd72d7"}}</script>

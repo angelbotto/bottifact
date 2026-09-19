@@ -1,4 +1,4 @@
-"""Generate a chapter report and a presentation from one project and source set."""
+"""Generate a chapter report and a presentation with separate article and slide compositions."""
 import json
 from contract_artifact import ROOT, build
 from project_profile import resolve

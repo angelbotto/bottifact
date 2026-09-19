@@ -22,12 +22,12 @@ it('navigates slides and opens an accessible overview without copying source anc
  expect(d.querySelector('dialog')?.open).toBe(true);expect(d.querySelectorAll('#point')).toHaveLength(1);
  (d.querySelector('.presentation-slide-index button') as HTMLButtonElement).click();expect(d.querySelector('dialog')?.open).toBe(false);expect((d.querySelector('#first') as HTMLElement).hidden).toBe(false);
 });
-it('switches to continuous reading and back without removing slide content',()=>{
+it('keeps a presentation as slides without an article conversion control',()=>{
  const d=frame.contentDocument!;
- (d.querySelector('[aria-label="Leer como documento continuo"]') as HTMLButtonElement).click();
- expect([...d.querySelectorAll<HTMLElement>('.pagina')].every(p=>!p.hidden)).toBe(true);
- (d.querySelector('[aria-label="Ver como presentación"]') as HTMLButtonElement).click();
- expect(d.querySelectorAll('.pagina[hidden]')).toHaveLength(1);expect(d.querySelector('#point')?.textContent).toBe('Evidence');
+ expect(d.querySelector('[aria-label="Leer como documento continuo"]')).toBeNull();
+ expect(d.documentElement.dataset.presentationView).toBe('slides');
+ expect(d.querySelectorAll('.pagina[hidden]')).toHaveLength(1);
+ expect(d.querySelector('#point')?.textContent).toBe('Evidence');
 });
 it('ignores slide shortcuts in input fields, dialogs and point-comment mode',()=>{
  const w=frame.contentWindow!,d=w.document;

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.10.1 — 2026-09-18
+
+- Treat articles and presentations as independently authored deliverables; remove the slide-to-article reader toggle and give the deck example dedicated slide content.
+- Preserve existing HTML decks and document the collaboration-only publishing path.
+- Restyle the shared reader toolbar with editorial paper, dotted edges and compact labeled controls. Reset inherited navigation geometry so legacy deck CSS cannot stretch the toolbar across the viewport; do not add body padding to external canvases.
+- Hide empty comment badges and isolate navigation keys while editing feedback.
+
 ## 0.10.0 — 2026-09-18
 
 - Compact cube-only Margen headers, preserving company identities and the adaptive favicon.
